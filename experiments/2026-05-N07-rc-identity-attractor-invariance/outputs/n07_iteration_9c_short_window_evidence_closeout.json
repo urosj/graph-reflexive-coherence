@@ -1,0 +1,1323 @@
+{
+  "acceptance": {
+    "artifact_only_replay_passed": true,
+    "derived_id_ceiling": "ID5",
+    "id6_claimed": false,
+    "next_iteration": "10_long_horizon_compatibility_design",
+    "one_window_compatibility_status": "pass",
+    "primary_blocker": "wrong_basin",
+    "private_runtime_state_used": false,
+    "prolonged_compatibility_status": "blocked",
+    "runtime_state_used": false,
+    "statement": "Iteration 9-C replays the N07 short-window evidence chain through 9-B2 from artifacts only. It records 9-B as one-window compatibility evidence, records 9-B2 as prolonged-stress failure, freezes the ceiling at ID5, and does not claim ID6 or identity acceptance."
+  },
+  "artifact_digests": {
+    "artifact_replay_chain_digest": "244cee3b4fab86d9b2db6b9ee86cc6f7ab9266c4e47991cc158fd40274b1ba2b",
+    "checks_digest": "bedf8431fbfafb7be1eca0fa31df5aa960134e4b66ce71282f18a3ade080c914",
+    "claim_boundary_digest": "e4b3ea6782a52982d160df9757cbebf399c7385f93ab8bba634022acb9462388",
+    "closeout_row_artifact_digest": "a055750c8f5c9d074474c459b17fdba554d435c5b07eb9a4675e631bc57605f0",
+    "closeout_row_digest": "94e9b7919dd0c3bee91898b0812a40ae5e7712d2a82b97a88caeaf6bdfe18707",
+    "source_artifacts_digest": "7f6c068829b1e286f062e6ea698403d311fdca091a4175a782f54329b78ab133"
+  },
+  "artifact_replay_chain": {
+    "artifact_only": true,
+    "artifact_replay_chain_digest": "244cee3b4fab86d9b2db6b9ee86cc6f7ab9266c4e47991cc158fd40274b1ba2b",
+    "c3_fixture_digest": "d6a96b467f62a995dc212d3b0d0f0392939fabab65974c4edcec20675a2b0d7b",
+    "closeout_decision": {
+      "final_n07_ceiling": "ID5",
+      "id6_claimed": false,
+      "next_iteration": "10_long_horizon_compatibility_design",
+      "one_window_compatibility": "pass",
+      "prolonged_compatibility": "blocked",
+      "prolonged_primary_blocker": "wrong_basin",
+      "single_basin_ceiling": "ID5"
+    },
+    "control_replay": {
+      "all_control_digests_match": true,
+      "blockers": [
+        "destructive_interference",
+        "ambiguous_overlap",
+        "wrong_basin",
+        "hidden_support_field",
+        "budget_discontinuity",
+        "support_drift_beyond_threshold",
+        "wrong_basin"
+      ],
+      "control_ceilings_source_specific": true,
+      "control_rows": [
+        {
+          "control_id": "destructive_interference",
+          "declared_digest": "537f909a513135c4f9f39129fd4ead488c3789136e1fdaabccea89f24355484a",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "destructive_interference",
+          "recomputed_digest": "537f909a513135c4f9f39129fd4ead488c3789136e1fdaabccea89f24355484a",
+          "source": "iteration_9b",
+          "status": "blocked"
+        },
+        {
+          "control_id": "ambiguous_overlap",
+          "declared_digest": "ef9c26f650f2733ba3ca656fb551322fb8e82fae2c8ee1617ac1ba6e03d15883",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "ambiguous_overlap",
+          "recomputed_digest": "ef9c26f650f2733ba3ca656fb551322fb8e82fae2c8ee1617ac1ba6e03d15883",
+          "source": "iteration_9b",
+          "status": "blocked"
+        },
+        {
+          "control_id": "wrong_basin",
+          "declared_digest": "bf41e97e373f6efb9326e21738b4b59fdbe26029b0baf994fc7feb6879bfd091",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "wrong_basin",
+          "recomputed_digest": "bf41e97e373f6efb9326e21738b4b59fdbe26029b0baf994fc7feb6879bfd091",
+          "source": "iteration_9b",
+          "status": "blocked"
+        },
+        {
+          "control_id": "hidden_support_field",
+          "declared_digest": "82094ed7c852a091bccc4583cc39f9629d2dc09e1dcaea98385427d6a43f7c50",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "hidden_support_field",
+          "recomputed_digest": "82094ed7c852a091bccc4583cc39f9629d2dc09e1dcaea98385427d6a43f7c50",
+          "source": "iteration_9b",
+          "status": "blocked"
+        },
+        {
+          "control_id": "budget_discontinuity",
+          "declared_digest": "e569bbdb36669499baf7d353fa3a6dff35cbd68b3d86407db424160a01d50f08",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "budget_discontinuity",
+          "recomputed_digest": "e569bbdb36669499baf7d353fa3a6dff35cbd68b3d86407db424160a01d50f08",
+          "source": "iteration_9b",
+          "status": "blocked"
+        },
+        {
+          "control_id": "support_drift_beyond_threshold",
+          "declared_digest": "bd05c85249fad222c8af1746d35fb5cd359c812a6326389f3a0370e3ebc75f35",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "support_drift_beyond_threshold",
+          "recomputed_digest": "bd05c85249fad222c8af1746d35fb5cd359c812a6326389f3a0370e3ebc75f35",
+          "source": "iteration_9b",
+          "status": "blocked"
+        },
+        {
+          "control_id": "prolonged_compatibility_stress",
+          "declared_digest": "7a94a8c02013af380445a45ee28f49673caf45e91aa6daef21073784dab2c2ac",
+          "derived_id_ceiling": "ID5",
+          "digest_matches": true,
+          "primary_blocker": "wrong_basin",
+          "recomputed_digest": "7a94a8c02013af380445a45ee28f49673caf45e91aa6daef21073784dab2c2ac",
+          "source": "iteration_9b2",
+          "status": "blocked"
+        }
+      ],
+      "distinct_blockers": [
+        "ambiguous_overlap",
+        "budget_discontinuity",
+        "destructive_interference",
+        "hidden_support_field",
+        "support_drift_beyond_threshold",
+        "wrong_basin"
+      ],
+      "prolonged_stress_blocker": "wrong_basin",
+      "source_control_count": 7
+    },
+    "metric_replay": {
+      "all_metric_digests_match": true,
+      "all_metrics_passed": true,
+      "artifact_replay_status_source": "pending_iteration_9c",
+      "compatibility_gate": "pass",
+      "compatibility_record_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+      "compatibility_record_digest_matches": true,
+      "compatibility_record_recomputed_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+      "metric_rows": [
+        {
+          "comparison": "greater_than_or_equal",
+          "declared_digest": "8bd8b323485571e78b3a4b8feb7a9f6503a74dd7de8a43fa7be1d5aba858bc52",
+          "digest_matches": true,
+          "metric_name": "a_support_retention_near_b",
+          "passed": true,
+          "primary_blocker_if_failed": null,
+          "recomputed_digest": "8bd8b323485571e78b3a4b8feb7a9f6503a74dd7de8a43fa7be1d5aba858bc52",
+          "threshold": 0.85,
+          "value": 0.952348066298
+        },
+        {
+          "comparison": "greater_than_or_equal",
+          "declared_digest": "69e428628373832b827861b3b26a6d32f9b0766eb2d0a728b27723e1994bac56",
+          "digest_matches": true,
+          "metric_name": "b_support_retention_near_a",
+          "passed": true,
+          "primary_blocker_if_failed": null,
+          "recomputed_digest": "69e428628373832b827861b3b26a6d32f9b0766eb2d0a728b27723e1994bac56",
+          "threshold": 0.85,
+          "value": 0.958333333333
+        },
+        {
+          "comparison": "less_than_or_equal",
+          "declared_digest": "c6b729007ab806d43976c72d1f92f6afc3d8e5198dcfed6490d879eaf7d6c8b3",
+          "digest_matches": true,
+          "metric_name": "destructive_interference_score",
+          "passed": true,
+          "primary_blocker_if_failed": "destructive_interference",
+          "recomputed_digest": "c6b729007ab806d43976c72d1f92f6afc3d8e5198dcfed6490d879eaf7d6c8b3",
+          "threshold": 0.15,
+          "value": 0.047619047619
+        },
+        {
+          "comparison": "less_than_or_equal",
+          "declared_digest": "e1295a2f69e084b35eee7ba786cf98fa693c890084912f664acec366ea983e1e",
+          "digest_matches": true,
+          "metric_name": "ambiguous_overlap_score",
+          "passed": true,
+          "primary_blocker_if_failed": "ambiguous_overlap",
+          "recomputed_digest": "e1295a2f69e084b35eee7ba786cf98fa693c890084912f664acec366ea983e1e",
+          "threshold": 0.2,
+          "value": 0.0
+        },
+        {
+          "comparison": "less_than_or_equal",
+          "declared_digest": "169b1f37d1e01b8bbfd71d3a250bee6ed9e966943128406443facc093e5a87d4",
+          "digest_matches": true,
+          "metric_name": "wrong_basin_leakage_score",
+          "passed": true,
+          "primary_blocker_if_failed": "wrong_basin",
+          "recomputed_digest": "169b1f37d1e01b8bbfd71d3a250bee6ed9e966943128406443facc093e5a87d4",
+          "threshold": 0.1,
+          "value": 0.04
+        },
+        {
+          "comparison": "must_equal",
+          "declared_digest": "434d7db0d5b2e1a5c3126cca0b65eb846fe58fbd5d6dc588f02d1b7dcb1aa145",
+          "digest_matches": true,
+          "metric_name": "hidden_support_rejection_rule",
+          "passed": true,
+          "primary_blocker_if_failed": "hidden_support_field",
+          "recomputed_digest": "434d7db0d5b2e1a5c3126cca0b65eb846fe58fbd5d6dc588f02d1b7dcb1aa145",
+          "threshold": 0,
+          "value": 0
+        }
+      ],
+      "one_window_compatibility_passed": true
+    },
+    "prior_control_summary": {
+      "iteration_1": {
+        "blocked_count": 0,
+        "blockers": [],
+        "control_count": 0
+      },
+      "iteration_2": {
+        "blocked_count": 0,
+        "blockers": [],
+        "control_count": 0
+      },
+      "iteration_3": {
+        "blocked_count": 6,
+        "blockers": [
+          "budget_discontinuity",
+          "duplicate_support_row",
+          "external_label_only",
+          "hidden_support_field",
+          "label_only_null_topology",
+          "missing_support_area"
+        ],
+        "control_count": 6
+      },
+      "iteration_4": {
+        "blocked_count": 5,
+        "blockers": [
+          "budget_discontinuity",
+          "hidden_potential_or_report_side_well_score",
+          "posthoc_threshold_change",
+          "unstable_basin_no_local_well",
+          "wrong_support_area"
+        ],
+        "control_count": 5
+      },
+      "iteration_5": {
+        "blocked_count": 6,
+        "blockers": [
+          "budget_discontinuity",
+          "hidden_route_context_steering",
+          "non_attractive_flux",
+          "subthreshold_flux",
+          "wrong_basin",
+          "wrong_polarity"
+        ],
+        "control_count": 6
+      },
+      "iteration_5b": {
+        "blocked_count": 7,
+        "blockers": [
+          "budget_discontinuity",
+          "failed_persistence",
+          "hidden_route_context_steering",
+          "non_attractive_flux",
+          "subthreshold_flux",
+          "wrong_basin",
+          "wrong_polarity"
+        ],
+        "control_count": 7
+      },
+      "iteration_6": {
+        "blocked_count": 6,
+        "blockers": [
+          "budget_discontinuity",
+          "identity_claim_promotion",
+          "lineage_map_scrambled",
+          "missing_topology_state_reabsorption",
+          "stale_node_id_replay",
+          "support_drift_beyond_threshold"
+        ],
+        "control_count": 6
+      },
+      "iteration_6b": {
+        "blocked_count": 8,
+        "blockers": [
+          "ambiguous_overlap",
+          "budget_discontinuity",
+          "direct_state_or_topology_rewrite",
+          "identity_claim_promotion",
+          "lineage_map_scrambled",
+          "missing_topology_state_reabsorption",
+          "stale_node_id_replay",
+          "support_drift_beyond_threshold"
+        ],
+        "control_count": 8
+      },
+      "iteration_7": {
+        "blocked_count": 7,
+        "blockers": [
+          "agency_claim_promotion",
+          "closure_not_consumed_by_later_cycle",
+          "failed_persistence",
+          "improper_proper_time_threshold",
+          "no_reentry",
+          "producer_mutation_boundary_violation",
+          "unauthorized_identity_acceptance_event"
+        ],
+        "control_count": 7
+      },
+      "iteration_7b": {
+        "blocked_count": 9,
+        "blockers": [
+          "agency_claim_promotion",
+          "budget_discontinuity",
+          "closure_not_consumed_by_later_cycle",
+          "failed_persistence",
+          "hidden_support_field",
+          "improper_proper_time_threshold",
+          "no_reentry",
+          "producer_mutation_boundary_violation",
+          "unauthorized_identity_acceptance_event"
+        ],
+        "control_count": 9
+      },
+      "iteration_8": {
+        "blocked_count": 11,
+        "blockers": [
+          "agency_claim_promotion",
+          "ambiguous_overlap",
+          "budget_discontinuity",
+          "closure_not_consumed_by_later_cycle",
+          "destructive_interference",
+          "hidden_support_field",
+          "identity_claim_promotion",
+          "identity_threshold_missing",
+          "lineage_map_scrambled",
+          "missing_support_area",
+          "no_reentry",
+          "non_attractive_flux",
+          "unauthorized_identity_acceptance_event",
+          "unstable_basin_no_local_well",
+          "wrong_basin"
+        ],
+        "control_count": 15
+      },
+      "iteration_9": {
+        "blocked_count": 0,
+        "blockers": [],
+        "control_count": 0
+      },
+      "iteration_9b": {
+        "blocked_count": 6,
+        "blockers": [
+          "ambiguous_overlap",
+          "budget_discontinuity",
+          "destructive_interference",
+          "hidden_support_field",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "control_count": 6
+      },
+      "iteration_9b2": {
+        "blocked_count": 0,
+        "blockers": [],
+        "control_count": 0
+      }
+    },
+    "private_runtime_state_used": false,
+    "runtime_state_used": false,
+    "semantic_consistency": {
+      "A_support_area_id": "n07_support_area_A_v1",
+      "B_support_area_id": "n07_support_area_B_v1",
+      "budget_surface": "node_plus_packet",
+      "carrier_kind": "coherence_basin",
+      "compatibility_metric_id": "n07_coherence_compatibility_v1",
+      "identity_carrier_surface": "runtime_coherence_basin",
+      "semantic_consistency_passed": true,
+      "shared_neighborhood": "n07_U_shared_A_B_competing_basin_v1"
+    },
+    "single_basin_replay": {
+      "artifact_only": true,
+      "iteration_8_closeout_digest": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+      "private_runtime_state_used": false,
+      "row_digest_chain_digest": "3adba4ab8e70193b00837e4c984176e52321f1dd0d3a372ba97e43c4172761f6",
+      "rows": [
+        {
+          "iteration": "3",
+          "row_digest": "f3f9c176531c9d782ebc0b9b22eafb2e83e6a03879cadceae4ef27520b7d97e9",
+          "row_digest_key": "id1_candidate_row_digest",
+          "row_key": "id1_candidate_row",
+          "rung": "ID1"
+        },
+        {
+          "iteration": "4",
+          "row_digest": "5370ea86856620fa283c12a1a1f2ae2dda7cb031511b6c3e7bd7918c44fa8226",
+          "row_digest_key": "id2_candidate_row_digest",
+          "row_key": "id2_candidate_row",
+          "rung": "ID2"
+        },
+        {
+          "iteration": "5",
+          "row_digest": "ccc285afc59abcad2c07fb1f75009a42400f5ce2357a4adb7d796536fd677177",
+          "row_digest_key": "id3_candidate_row_digest",
+          "row_key": "id3_candidate_row",
+          "rung": "ID3"
+        },
+        {
+          "iteration": "5-B",
+          "row_digest": "7b299541e9450501c6748398fff9b0a306fb287c397a97aa3d9f041aa2f62431",
+          "row_digest_key": "id3_stress_candidate_row_digest",
+          "row_key": "id3_attractivity_stress_candidate_row",
+          "rung": "ID3"
+        },
+        {
+          "iteration": "6",
+          "row_digest": "f88dd0e1385dbdbea8f6411782e39becce26b0fe3fe1302855fda11261f64710",
+          "row_digest_key": "id4_candidate_row_digest",
+          "row_key": "id4_invariance_candidate_row",
+          "rung": "ID4"
+        },
+        {
+          "iteration": "6-B",
+          "row_digest": "e3042131c1b2beffb797ffb371f2afa7380ffdf2e91f8977dda0eeaf2788eeba",
+          "row_digest_key": "id4_stress_candidate_row_digest",
+          "row_key": "id4_topology_stress_candidate_row",
+          "rung": "ID4"
+        },
+        {
+          "iteration": "7",
+          "row_digest": "1d9a5bca48662fbb927e66abfd3ee346a0adb512da5fbc0a9ae59f39417a6e2a",
+          "row_digest_key": "id5_candidate_row_digest",
+          "row_key": "id5_reflexive_closure_candidate_row",
+          "rung": "ID5"
+        },
+        {
+          "iteration": "7-B",
+          "row_digest": "88f284dd115bcabc77db0e5cea038f1c7c043abfbd720afcf94145839e2c0e56",
+          "row_digest_key": "id5_candidate_row_digest",
+          "row_key": "id5_source_backed_t6_candidate_row",
+          "rung": "ID5"
+        },
+        {
+          "iteration": "8",
+          "row_digest": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+          "row_digest_key": "closeout_row_digest",
+          "row_key": "c1_t6_closeout_row",
+          "rung": "ID5"
+        }
+      ],
+      "runtime_state_used": false,
+      "strongest_single_basin_ceiling": "ID5"
+    },
+    "source_status_replay": {
+      "iteration_1": {
+        "check_count": 0,
+        "checks_passed": true,
+        "schema": "n07_iteration_1_baseline_theory_schema_inventory_v1",
+        "status": "passed"
+      },
+      "iteration_2": {
+        "check_count": 46,
+        "checks_passed": true,
+        "schema": "n07_iteration_2_fixture_manifest_validation_v1",
+        "status": "passed"
+      },
+      "iteration_3": {
+        "check_count": 31,
+        "checks_passed": true,
+        "schema": "n07_iteration_3_id1_support_area_candidate_v1",
+        "status": "passed"
+      },
+      "iteration_4": {
+        "check_count": 33,
+        "checks_passed": true,
+        "schema": "n07_iteration_4_id2_stability_candidate_v1",
+        "status": "passed"
+      },
+      "iteration_5": {
+        "check_count": 37,
+        "checks_passed": true,
+        "schema": "n07_iteration_5_id3_attractivity_candidate_v1",
+        "status": "passed"
+      },
+      "iteration_5b": {
+        "check_count": 39,
+        "checks_passed": true,
+        "schema": "n07_iteration_5b_id3_attractivity_stress_candidate_v1",
+        "status": "passed"
+      },
+      "iteration_6": {
+        "check_count": 43,
+        "checks_passed": true,
+        "schema": "n07_iteration_6_id4_invariance_candidate_v1",
+        "status": "passed"
+      },
+      "iteration_6b": {
+        "check_count": 46,
+        "checks_passed": true,
+        "schema": "n07_iteration_6b_id4_topology_split_birth_invariance_stress_v1",
+        "status": "passed"
+      },
+      "iteration_7": {
+        "check_count": 42,
+        "checks_passed": true,
+        "schema": "n07_iteration_7_id5_reflexive_closure_persistence_v1",
+        "status": "passed"
+      },
+      "iteration_7b": {
+        "check_count": 35,
+        "checks_passed": true,
+        "schema": "n07_iteration_7b_source_backed_t6_reflexive_closure_v1",
+        "status": "passed"
+      },
+      "iteration_8": {
+        "check_count": 34,
+        "checks_passed": true,
+        "schema": "n07_iteration_8_c1_t6_artifact_replay_closeout_v1",
+        "status": "passed"
+      },
+      "iteration_9": {
+        "check_count": 12,
+        "checks_passed": true,
+        "schema": "n07_iteration_9_c3_t7_compatibility_fixture_design_v1",
+        "status": "passed"
+      },
+      "iteration_9b": {
+        "check_count": 33,
+        "checks_passed": true,
+        "schema": "n07_iteration_9b_c3_compatibility_interference_probe_v1",
+        "status": "passed"
+      },
+      "iteration_9b2": {
+        "check_count": 17,
+        "checks_passed": true,
+        "schema": "n07_iteration_9b2_c3_compatibility_prolonged_stress_v1",
+        "status": "passed"
+      }
+    },
+    "stress_replay": {
+      "all_stress_window_digests_match": true,
+      "dynamic_lgrc_step_count": 0,
+      "first_failure": {
+        "A_cumulative_support_retention": 0.8637481156814181,
+        "B_cumulative_support_retention": 0.8801359953694519,
+        "cumulative_destructive_interference_score": 0.13625188431858193,
+        "cumulative_wrong_basin_leakage_score": 0.12,
+        "primary_blockers": [
+          "wrong_basin"
+        ],
+        "stress_window": 3
+      },
+      "stress_model_digest": "874e983bb9bb1054ea523fb7938cd4b1c6a68932e258561fdb345199bb3837c3",
+      "stress_model_digest_matches": true,
+      "stress_model_id": "n07_c3_repeated_window_no_recovery_accumulation_v1",
+      "stress_model_recomputed_digest": "874e983bb9bb1054ea523fb7938cd4b1c6a68932e258561fdb345199bb3837c3",
+      "stress_model_scope": "experiment_local_repeated_window_stress_not_native_lgrc_dynamics",
+      "stress_passed_all_windows": false,
+      "stress_window_count": 12,
+      "stress_window_replay": [
+        {
+          "declared_digest": "e22f1e613f6e24aec0e9aeab144dd03e7ca02f4a81619b7a9994c8c1e27e3e8d",
+          "digest_matches": true,
+          "primary_blockers": [],
+          "recomputed_digest": "e22f1e613f6e24aec0e9aeab144dd03e7ca02f4a81619b7a9994c8c1e27e3e8d",
+          "stress_window": 1,
+          "window_passed": true
+        },
+        {
+          "declared_digest": "cb81aa939a37546db016dae405e87df0c41e59732b4697ee13874afec51f7352",
+          "digest_matches": true,
+          "primary_blockers": [],
+          "recomputed_digest": "cb81aa939a37546db016dae405e87df0c41e59732b4697ee13874afec51f7352",
+          "stress_window": 2,
+          "window_passed": true
+        },
+        {
+          "declared_digest": "32a86c17eecd5ff2a348ca5f471d492b58899bd33b27a10b6da98d542e9d81ba",
+          "digest_matches": true,
+          "primary_blockers": [
+            "wrong_basin"
+          ],
+          "recomputed_digest": "32a86c17eecd5ff2a348ca5f471d492b58899bd33b27a10b6da98d542e9d81ba",
+          "stress_window": 3,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "fb233d8abdbd7f47f9ca17561939ee226bda90638372041e5f14031b3ee5eb40",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "fb233d8abdbd7f47f9ca17561939ee226bda90638372041e5f14031b3ee5eb40",
+          "stress_window": 4,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "2dd69ddbc9c95477c1c380b77ad91186b76bfe4dae559c2cd5ea5ee56825f9ad",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "2dd69ddbc9c95477c1c380b77ad91186b76bfe4dae559c2cd5ea5ee56825f9ad",
+          "stress_window": 5,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "8696377efb7ae97ca7aaf1d63d391ee4766bbb37ca46e1407c8ee6be8749e2e3",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "8696377efb7ae97ca7aaf1d63d391ee4766bbb37ca46e1407c8ee6be8749e2e3",
+          "stress_window": 6,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "7bd5e7782c5d5d7a1110350e4add55c9a9a3ab999ee38e4871a79ad4aa3bee36",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "7bd5e7782c5d5d7a1110350e4add55c9a9a3ab999ee38e4871a79ad4aa3bee36",
+          "stress_window": 7,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "0d0dd0f9315d893036a4d6b6ebc77d97db9f7746701bbefb0f4cb57ec0e76381",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "0d0dd0f9315d893036a4d6b6ebc77d97db9f7746701bbefb0f4cb57ec0e76381",
+          "stress_window": 8,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "c5f9bb5fbedc982a0be94db2d7e20808a6ba3e10c5d23b49b4057eb62c4c6b41",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "c5f9bb5fbedc982a0be94db2d7e20808a6ba3e10c5d23b49b4057eb62c4c6b41",
+          "stress_window": 9,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "c2ce051e23fbc57917bf604e18920cd14c2cca3828ed0e697247d2b83f3c5e87",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "c2ce051e23fbc57917bf604e18920cd14c2cca3828ed0e697247d2b83f3c5e87",
+          "stress_window": 10,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "0265db2a1119598cde4a87f6ec7226a1abbcd52a2eee86e244d0c2a64864b381",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "0265db2a1119598cde4a87f6ec7226a1abbcd52a2eee86e244d0c2a64864b381",
+          "stress_window": 11,
+          "window_passed": false
+        },
+        {
+          "declared_digest": "71e6aceb53235e0ee77050de299e4c31f5dcf0b8f9004e20420f62634c5f13c0",
+          "digest_matches": true,
+          "primary_blockers": [
+            "destructive_interference",
+            "support_drift_beyond_threshold",
+            "wrong_basin"
+          ],
+          "recomputed_digest": "71e6aceb53235e0ee77050de299e4c31f5dcf0b8f9004e20420f62634c5f13c0",
+          "stress_window": 12,
+          "window_passed": false
+        }
+      ]
+    },
+    "support_digest_replay": {
+      "A": {
+        "declared_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "declared_support_area_row_digest": "e15784368f0482c69054b69660469228127790cb4c4a8ec5d31ce6179f0697da",
+        "recomputed_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "recomputed_support_area_row_digest": "e15784368f0482c69054b69660469228127790cb4c4a8ec5d31ce6179f0697da",
+        "source_status": "source_backed_from_iteration_8_closeout_and_iteration_7b_state",
+        "support_area_digest_matches": true,
+        "support_area_id": "n07_support_area_A_v1",
+        "support_area_row_digest_matches": true
+      },
+      "B": {
+        "declared_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "declared_support_area_row_digest": "bcca680261e60cf5d87edb9441fb24ba6029997f8a863bb642dc90bda5e57ad9",
+        "recomputed_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "recomputed_support_area_row_digest": "bcca680261e60cf5d87edb9441fb24ba6029997f8a863bb642dc90bda5e57ad9",
+        "source_status": "source_backed_in_iteration_9b_probe",
+        "support_area_digest_matches": true,
+        "support_area_id": "n07_support_area_B_v1",
+        "support_area_row_digest_matches": true
+      }
+    }
+  },
+  "checks": {
+    "A_support_digest_replayed": true,
+    "B_support_digest_replayed": true,
+    "acceptance_matches_closeout": true,
+    "all_source_artifacts_passed": true,
+    "artifact_only": true,
+    "artifact_replay_gate_pass": true,
+    "claim_flags_false": true,
+    "closeout_boundary_rung_allowed": true,
+    "closeout_ceiling_id5": true,
+    "closeout_claim_flags_false": true,
+    "closeout_digest_recomputed": true,
+    "closeout_does_not_claim_id6": true,
+    "closeout_implementation_surface_allowed": true,
+    "closeout_records_wrong_basin_blocker": true,
+    "closeout_required_fields_present": true,
+    "closeout_runtime_family_allowed": true,
+    "compatibility_gate_blocked": true,
+    "compatibility_record_digest_replayed": true,
+    "control_ceilings_source_specific": true,
+    "control_digests_replayed": true,
+    "metric_digests_replayed": true,
+    "next_iteration_is_10": true,
+    "no_src_changes_required": true,
+    "one_window_compatibility_passed": true,
+    "private_runtime_state_not_used": true,
+    "prolonged_stress_blocked": true,
+    "prolonged_stress_digest_replayed": true,
+    "prolonged_stress_primary_blocker_wrong_basin": true,
+    "runtime_state_not_used": true,
+    "semantic_consistency_passed": true,
+    "single_basin_ceiling_id5": true,
+    "source_artifact_hashes_present": true,
+    "status_passed": true,
+    "visuals_not_evidence": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_9c_short_window_evidence_closeout.py",
+  "environment": {
+    "generated_at_utc": "2026-06-07T10:01:19.186666+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "experiment": "N07",
+  "git": {
+    "rev_parse_head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "3abf8bc7f95c9f8a2ddf37099aaec1ad484a8a5e"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N07-rc-identity-attractor-invariance/README.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationChecklist.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationPlan.md\n?? ../../../../Obsidian/SentientLife/Self/26-06/2026-06-07.md\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/configs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/reports/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": "9-C",
+  "purpose": "artifact_only_short_window_closeout_no_id6_promotion",
+  "schema": "n07_iteration_9c_short_window_evidence_closeout_v1",
+  "short_window_closeout_row": {
+    "activity_history_digest": "b2638f5432178ec5eb916b1d7802a99982e4739b0af1297d140da318b9b9cf8d",
+    "activity_history_digest_scope": {
+      "artifact_replay_chain_digest": "244cee3b4fab86d9b2db6b9ee86cc6f7ab9266c4e47991cc158fd40274b1ba2b",
+      "final_n07_ceiling": "ID5",
+      "source_iteration_8_closeout": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+      "source_iteration_9_fixture": "d6a96b467f62a995dc212d3b0d0f0392939fabab65974c4edcec20675a2b0d7b",
+      "source_iteration_9b2_stress": "7a94a8c02013af380445a45ee28f49673caf45e91aa6daef21073784dab2c2ac",
+      "source_iteration_9b_candidate": "843a3d09c56ba4e52291c3cc8b1d988f9afd3f044bdb90aa2b6b9b044cce993f"
+    },
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "artifact_only": true,
+    "becoming_class_status": "reusable_class",
+    "biological_claim_allowed": false,
+    "boundary_rung": "recurrence_or_continuation",
+    "candidate_identity_carrier_type": "coherence_basin",
+    "claim_ceiling": "id5_short_window_identity_and_compatibility_evidence_persistent_c3_blocked",
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "closeout_row_digest": "94e9b7919dd0c3bee91898b0812a40ae5e7712d2a82b97a88caeaf6bdfe18707",
+    "closeout_row_digest_input": {
+      "activity_history_digest": "b2638f5432178ec5eb916b1d7802a99982e4739b0af1297d140da318b9b9cf8d",
+      "activity_history_digest_scope": {
+        "artifact_replay_chain_digest": "244cee3b4fab86d9b2db6b9ee86cc6f7ab9266c4e47991cc158fd40274b1ba2b",
+        "final_n07_ceiling": "ID5",
+        "source_iteration_8_closeout": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+        "source_iteration_9_fixture": "d6a96b467f62a995dc212d3b0d0f0392939fabab65974c4edcec20675a2b0d7b",
+        "source_iteration_9b2_stress": "7a94a8c02013af380445a45ee28f49673caf45e91aa6daef21073784dab2c2ac",
+        "source_iteration_9b_candidate": "843a3d09c56ba4e52291c3cc8b1d988f9afd3f044bdb90aa2b6b9b044cce993f"
+      },
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "artifact_only": true,
+      "becoming_class_status": "reusable_class",
+      "biological_claim_allowed": false,
+      "boundary_rung": "recurrence_or_continuation",
+      "candidate_identity_carrier_type": "coherence_basin",
+      "claim_ceiling": "id5_short_window_identity_and_compatibility_evidence_persistent_c3_blocked",
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+      "derived_id_ceiling": "ID5",
+      "experiment_local_observables_used": [
+        "A_support_retention_near_B",
+        "B_support_retention_near_A",
+        "wrong_basin_leakage_score",
+        "destructive_interference_score",
+        "prolonged_stress_window"
+      ],
+      "gate_vector": {
+        "artifact_replay": "pass",
+        "attractivity": "pass",
+        "compatibility": "blocked",
+        "invariance": "pass",
+        "lineage_current": "pass",
+        "reflexive_closure": "pass",
+        "stability": "pass",
+        "support": "pass"
+      },
+      "goal_proxy_regulation_claim_allowed": false,
+      "id6_blocker": "persistent_c3_compatibility_blocked_by_wrong_basin",
+      "id6_claimed": false,
+      "id_level": "ID5",
+      "identity_acceptance_claim_allowed": false,
+      "identity_carrier_surface": "runtime_coherence_basin",
+      "implementation_surface": "artifact_only_validator",
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "native_observables_used": [
+        "source_support_area_digest",
+        "node_plus_packet_budget_surface"
+      ],
+      "native_policy_blockers": [
+        "persistent_c3_compatibility_blocked_by_wrong_basin",
+        "native_identity_acceptance_contract_missing"
+      ],
+      "native_support_status": "experiment_local",
+      "naturalization_rung": "Nat0_probe_dependent_expression",
+      "next_iteration": "10_long_horizon_compatibility_design",
+      "one_window_compatibility_status": "pass",
+      "personhood_claim_allowed": false,
+      "primary_blocker": "wrong_basin",
+      "probe_role": "diagnostic_probe",
+      "prolonged_compatibility_primary_blocker": "wrong_basin",
+      "prolonged_compatibility_status": "blocked",
+      "rc_identity_collapse_claim_allowed": false,
+      "row_id": "n07_i9c_short_window_evidence_closeout_row_v1",
+      "runtime_family": "hybrid_lgrc9v3_experiment_local",
+      "runtime_state_used": false,
+      "semantic_choice_claim_allowed": false,
+      "source_artifact_sha256": {
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json": "9447a5d60c261db66e8bca4ccf8e47598b6668ae1b9ddc4a337857bf5f210e58",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_1_baseline_theory_schema_inventory.json": "56e27d9b0783ac33f97ab06e42e64cf153e9289a00b07e77e02ff17e0ad6b0c2",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_2_fixture_manifest_validation.json": "b27cd665aec68f992632f3198e83794852ff645e1996e2edd1f1497f15f9fd26",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_3_id1_support_area_candidate.json": "9fe490f364545dd9efe90f25be5a7196747df812b469e2c1e7282576da277035",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_4_id2_stability_candidate.json": "bd5eb02a7ba419d6837340b46c537e5201353aa27e9619abbe7aaa1886bce97c",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5_id3_attractivity_candidate.json": "7da0bfbc044eb8589d0d4749d59fe21b72dc095299546807b1d46058c07c2ebc",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5b_id3_attractivity_stress_candidate.json": "418334600c32cc2bda5ff4343ae08fcf6b49ee3cf248fca9249846d15f7da6f0",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6_id4_invariance_candidate.json": "7134db432a859e9e94e191c525ba92f5f84e94e787246bc11b668f9343f92fcc",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6b_id4_topology_split_birth_invariance_stress.json": "50fec7cad7be08cb94e0b467e1700ac4350c77aca1f13017ca6ad68912a16f77",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7_id5_reflexive_closure_persistence.json": "59b6a2dd5f0b88abe453997e74263ef4cf01ce629f975b0fb6f1712e98dde15e",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json": "3cb3da0aec3437971af8694abc4eb29c2e256374f4f69a8e6387cd746b1e594c",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json": "173d3a49fb4c6a0022d2e0560a60942527cfaaaf53cff53209926645fbfd5a14",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b2_c3_compatibility_prolonged_stress.json": "2ca5bde6c2bfc3d12fd5be976e66f53da5a1ac1133f182749d96368331861c7e",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json": "814eb489c9fddd884c6a3642bfb5d247b1cb8662db7c97daf1214cb2cd34fef3",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_3_id1_support_area_candidate.md": "172854c3736d860f9e5ef4ea3a43d2843dc8fc5ae47c750da97b6551ff965ac2",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_4_id2_stability_candidate.md": "e5e07fe53c9028247d376ee1947788ca20db3328893202752b95ce1c0708ce4f",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5_id3_attractivity_candidate.md": "5c0b0678b26056ac4a8ffd7fced456160e40c700624cc9ca857c8a516b2afcf6",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5b_id3_attractivity_stress_candidate.md": "df11920ef76e1aa7a71811378131123eb95e9f351b1e498e7045dbe187804fb7",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6_id4_invariance_candidate.md": "ce74a24f9bac7f3c05a98063ecb9864f26716779de04442bc355548d412f9ea0",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6b_id4_topology_split_birth_invariance_stress.md": "5ef2dda323b44c4e6c2cd026773a90e0dbe2d41e8b7c28671e8dc372a8a1a8c8",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7_id5_reflexive_closure_persistence.md": "a43304bbfafa5f7d5a1645f870716be3d1c93602c6f4916abe7a29a5c24d231b",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md": "5da517fd853adfadc69b753c0cdb55c28867593a825a6100c64fc36661f228c0",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md": "98aa0b1ce5b2d0fd671abde3d89038fb21f7abf1d45b5e6fcdae574af93530c2",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md": "0bf73a4d4c103cd8c7c5280b2760075941232d2bada8ddd8b73fe003c61e8749",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b2_c3_compatibility_prolonged_stress.md": "46bcabd67fe70b268ae3c2e680990569cf99fa5c06b1681a1af582e9c9171600",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md": "cabeec9503dbb01a00aec3cff320a9a4af7a79ea7becb176e2baa68db8e77de7"
+      },
+      "source_artifacts": [
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_1_baseline_theory_schema_inventory.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_2_fixture_manifest_validation.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_3_id1_support_area_candidate.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_4_id2_stability_candidate.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5_id3_attractivity_candidate.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5b_id3_attractivity_stress_candidate.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6_id4_invariance_candidate.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6b_id4_topology_split_birth_invariance_stress.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7_id5_reflexive_closure_persistence.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b2_c3_compatibility_prolonged_stress.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_3_id1_support_area_candidate.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_4_id2_stability_candidate.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5_id3_attractivity_candidate.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5b_id3_attractivity_stress_candidate.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6_id4_invariance_candidate.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6b_id4_topology_split_birth_invariance_stress.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7_id5_reflexive_closure_persistence.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b2_c3_compatibility_prolonged_stress.md"
+      ],
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "support_dependency_status": "probe_dependent",
+      "topology_family_id": "n07_T7_compatibility",
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false,
+      "visual_is_evidence_source": false,
+      "visual_reference": null,
+      "withdrawal_test_status": "not_tested"
+    },
+    "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+    "derived_id_ceiling": "ID5",
+    "experiment_local_observables_used": [
+      "A_support_retention_near_B",
+      "B_support_retention_near_A",
+      "wrong_basin_leakage_score",
+      "destructive_interference_score",
+      "prolonged_stress_window"
+    ],
+    "gate_vector": {
+      "artifact_replay": "pass",
+      "attractivity": "pass",
+      "compatibility": "blocked",
+      "invariance": "pass",
+      "lineage_current": "pass",
+      "reflexive_closure": "pass",
+      "stability": "pass",
+      "support": "pass"
+    },
+    "goal_proxy_regulation_claim_allowed": false,
+    "id6_blocker": "persistent_c3_compatibility_blocked_by_wrong_basin",
+    "id6_claimed": false,
+    "id_level": "ID5",
+    "identity_acceptance_claim_allowed": false,
+    "identity_carrier_surface": "runtime_coherence_basin",
+    "implementation_surface": "artifact_only_validator",
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_observables_used": [
+      "source_support_area_digest",
+      "node_plus_packet_budget_surface"
+    ],
+    "native_policy_blockers": [
+      "persistent_c3_compatibility_blocked_by_wrong_basin",
+      "native_identity_acceptance_contract_missing"
+    ],
+    "native_support_status": "experiment_local",
+    "naturalization_rung": "Nat0_probe_dependent_expression",
+    "next_iteration": "10_long_horizon_compatibility_design",
+    "one_window_compatibility_status": "pass",
+    "personhood_claim_allowed": false,
+    "primary_blocker": "wrong_basin",
+    "probe_role": "diagnostic_probe",
+    "prolonged_compatibility_primary_blocker": "wrong_basin",
+    "prolonged_compatibility_status": "blocked",
+    "rc_identity_collapse_claim_allowed": false,
+    "row_id": "n07_i9c_short_window_evidence_closeout_row_v1",
+    "runtime_family": "hybrid_lgrc9v3_experiment_local",
+    "runtime_state_used": false,
+    "semantic_choice_claim_allowed": false,
+    "source_artifact_sha256": {
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json": "9447a5d60c261db66e8bca4ccf8e47598b6668ae1b9ddc4a337857bf5f210e58",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_1_baseline_theory_schema_inventory.json": "56e27d9b0783ac33f97ab06e42e64cf153e9289a00b07e77e02ff17e0ad6b0c2",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_2_fixture_manifest_validation.json": "b27cd665aec68f992632f3198e83794852ff645e1996e2edd1f1497f15f9fd26",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_3_id1_support_area_candidate.json": "9fe490f364545dd9efe90f25be5a7196747df812b469e2c1e7282576da277035",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_4_id2_stability_candidate.json": "bd5eb02a7ba419d6837340b46c537e5201353aa27e9619abbe7aaa1886bce97c",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5_id3_attractivity_candidate.json": "7da0bfbc044eb8589d0d4749d59fe21b72dc095299546807b1d46058c07c2ebc",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5b_id3_attractivity_stress_candidate.json": "418334600c32cc2bda5ff4343ae08fcf6b49ee3cf248fca9249846d15f7da6f0",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6_id4_invariance_candidate.json": "7134db432a859e9e94e191c525ba92f5f84e94e787246bc11b668f9343f92fcc",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6b_id4_topology_split_birth_invariance_stress.json": "50fec7cad7be08cb94e0b467e1700ac4350c77aca1f13017ca6ad68912a16f77",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7_id5_reflexive_closure_persistence.json": "59b6a2dd5f0b88abe453997e74263ef4cf01ce629f975b0fb6f1712e98dde15e",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json": "3cb3da0aec3437971af8694abc4eb29c2e256374f4f69a8e6387cd746b1e594c",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json": "173d3a49fb4c6a0022d2e0560a60942527cfaaaf53cff53209926645fbfd5a14",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b2_c3_compatibility_prolonged_stress.json": "2ca5bde6c2bfc3d12fd5be976e66f53da5a1ac1133f182749d96368331861c7e",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json": "814eb489c9fddd884c6a3642bfb5d247b1cb8662db7c97daf1214cb2cd34fef3",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_3_id1_support_area_candidate.md": "172854c3736d860f9e5ef4ea3a43d2843dc8fc5ae47c750da97b6551ff965ac2",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_4_id2_stability_candidate.md": "e5e07fe53c9028247d376ee1947788ca20db3328893202752b95ce1c0708ce4f",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5_id3_attractivity_candidate.md": "5c0b0678b26056ac4a8ffd7fced456160e40c700624cc9ca857c8a516b2afcf6",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5b_id3_attractivity_stress_candidate.md": "df11920ef76e1aa7a71811378131123eb95e9f351b1e498e7045dbe187804fb7",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6_id4_invariance_candidate.md": "ce74a24f9bac7f3c05a98063ecb9864f26716779de04442bc355548d412f9ea0",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6b_id4_topology_split_birth_invariance_stress.md": "5ef2dda323b44c4e6c2cd026773a90e0dbe2d41e8b7c28671e8dc372a8a1a8c8",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7_id5_reflexive_closure_persistence.md": "a43304bbfafa5f7d5a1645f870716be3d1c93602c6f4916abe7a29a5c24d231b",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md": "5da517fd853adfadc69b753c0cdb55c28867593a825a6100c64fc36661f228c0",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md": "98aa0b1ce5b2d0fd671abde3d89038fb21f7abf1d45b5e6fcdae574af93530c2",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md": "0bf73a4d4c103cd8c7c5280b2760075941232d2bada8ddd8b73fe003c61e8749",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b2_c3_compatibility_prolonged_stress.md": "46bcabd67fe70b268ae3c2e680990569cf99fa5c06b1681a1af582e9c9171600",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md": "cabeec9503dbb01a00aec3cff320a9a4af7a79ea7becb176e2baa68db8e77de7"
+    },
+    "source_artifacts": [
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_1_baseline_theory_schema_inventory.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_2_fixture_manifest_validation.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_3_id1_support_area_candidate.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_4_id2_stability_candidate.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5_id3_attractivity_candidate.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5b_id3_attractivity_stress_candidate.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6_id4_invariance_candidate.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6b_id4_topology_split_birth_invariance_stress.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7_id5_reflexive_closure_persistence.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b2_c3_compatibility_prolonged_stress.json"
+    ],
+    "source_reports": [
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_3_id1_support_area_candidate.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_4_id2_stability_candidate.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5_id3_attractivity_candidate.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5b_id3_attractivity_stress_candidate.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6_id4_invariance_candidate.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6b_id4_topology_split_birth_invariance_stress.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7_id5_reflexive_closure_persistence.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b2_c3_compatibility_prolonged_stress.md"
+    ],
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1",
+    "support_dependency_status": "probe_dependent",
+    "topology_family_id": "n07_T7_compatibility",
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false,
+    "visual_is_evidence_source": false,
+    "visual_reference": null,
+    "withdrawal_test_status": "not_tested"
+  },
+  "source_artifacts": [
+    {
+      "name": "n07_fixture_manifest_v1",
+      "object_digest": "89d46bf941cb40f359b99381f0c7d1b391f67ae3eb07955ec850a8c03a242e5e",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+      "sha256": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603"
+    },
+    {
+      "name": "n07_c3_t7_compatibility_fixture_v1",
+      "object_digest": "d6a96b467f62a995dc212d3b0d0f0392939fabab65974c4edcec20675a2b0d7b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+      "sha256": "9447a5d60c261db66e8bca4ccf8e47598b6668ae1b9ddc4a337857bf5f210e58"
+    },
+    {
+      "check_count": 0,
+      "name": "iteration_1",
+      "object_digest": "b38d2b7945724fad281d0c9db493ce887d2867059f4f6258830780cc4e1eee0b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_1_baseline_theory_schema_inventory.json",
+      "schema": "n07_iteration_1_baseline_theory_schema_inventory_v1",
+      "sha256": "56e27d9b0783ac33f97ab06e42e64cf153e9289a00b07e77e02ff17e0ad6b0c2",
+      "status": "passed"
+    },
+    {
+      "check_count": 46,
+      "name": "iteration_2",
+      "object_digest": "df89737f45e8f2eaaa4916bd6c1f2d6a8878758532846e3aac24fb217576cfdf",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_2_fixture_manifest_validation.json",
+      "schema": "n07_iteration_2_fixture_manifest_validation_v1",
+      "sha256": "b27cd665aec68f992632f3198e83794852ff645e1996e2edd1f1497f15f9fd26",
+      "status": "passed"
+    },
+    {
+      "check_count": 31,
+      "name": "iteration_3",
+      "object_digest": "f664b0eac297f7a96216ede1524b62ff3913aafaab7ec6e841e7ca48cf44bc39",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_3_id1_support_area_candidate.json",
+      "schema": "n07_iteration_3_id1_support_area_candidate_v1",
+      "sha256": "9fe490f364545dd9efe90f25be5a7196747df812b469e2c1e7282576da277035",
+      "status": "passed"
+    },
+    {
+      "check_count": 33,
+      "name": "iteration_4",
+      "object_digest": "7877a10caa45ade0ad864bc948d1769c9cf6f4126e5ac4d3126827a8c0dc02c8",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_4_id2_stability_candidate.json",
+      "schema": "n07_iteration_4_id2_stability_candidate_v1",
+      "sha256": "bd5eb02a7ba419d6837340b46c537e5201353aa27e9619abbe7aaa1886bce97c",
+      "status": "passed"
+    },
+    {
+      "check_count": 37,
+      "name": "iteration_5",
+      "object_digest": "d97b407b5476c5f87b44ac2bdf684875c492645d3109a525dca6e454288b2539",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5_id3_attractivity_candidate.json",
+      "schema": "n07_iteration_5_id3_attractivity_candidate_v1",
+      "sha256": "7da0bfbc044eb8589d0d4749d59fe21b72dc095299546807b1d46058c07c2ebc",
+      "status": "passed"
+    },
+    {
+      "check_count": 39,
+      "name": "iteration_5b",
+      "object_digest": "3fa1077854a8a41b862e2af97cf4f468a6304383a5c2e083efabf1d72b006475",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_5b_id3_attractivity_stress_candidate.json",
+      "schema": "n07_iteration_5b_id3_attractivity_stress_candidate_v1",
+      "sha256": "418334600c32cc2bda5ff4343ae08fcf6b49ee3cf248fca9249846d15f7da6f0",
+      "status": "passed"
+    },
+    {
+      "check_count": 43,
+      "name": "iteration_6",
+      "object_digest": "881d6c6f7844ce8ab47e448f79a4575d2efdbd324b64bdd29be65e8207a993aa",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6_id4_invariance_candidate.json",
+      "schema": "n07_iteration_6_id4_invariance_candidate_v1",
+      "sha256": "7134db432a859e9e94e191c525ba92f5f84e94e787246bc11b668f9343f92fcc",
+      "status": "passed"
+    },
+    {
+      "check_count": 46,
+      "name": "iteration_6b",
+      "object_digest": "778723022c1f69bd00961a0a52c64f22059a80dbf506dbdc8e6422261cbfb8b4",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_6b_id4_topology_split_birth_invariance_stress.json",
+      "schema": "n07_iteration_6b_id4_topology_split_birth_invariance_stress_v1",
+      "sha256": "50fec7cad7be08cb94e0b467e1700ac4350c77aca1f13017ca6ad68912a16f77",
+      "status": "passed"
+    },
+    {
+      "check_count": 42,
+      "name": "iteration_7",
+      "object_digest": "d520a7db44b48dc106723e65b6018d41e2bb9008506cc4e20f66f5738060ebc2",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7_id5_reflexive_closure_persistence.json",
+      "schema": "n07_iteration_7_id5_reflexive_closure_persistence_v1",
+      "sha256": "59b6a2dd5f0b88abe453997e74263ef4cf01ce629f975b0fb6f1712e98dde15e",
+      "status": "passed"
+    },
+    {
+      "check_count": 35,
+      "name": "iteration_7b",
+      "object_digest": "c4a3bda9d46639b1cc832f43be9bee26ec25220e09785be5714c7b99c2dec4f2",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+      "schema": "n07_iteration_7b_source_backed_t6_reflexive_closure_v1",
+      "sha256": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+      "status": "passed"
+    },
+    {
+      "check_count": 34,
+      "name": "iteration_8",
+      "object_digest": "6fb9a9892e1c2a60b3cad80a9226d31637b3370956dfc80076c1fa874a307d2f",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json",
+      "schema": "n07_iteration_8_c1_t6_artifact_replay_closeout_v1",
+      "sha256": "3cb3da0aec3437971af8694abc4eb29c2e256374f4f69a8e6387cd746b1e594c",
+      "status": "passed"
+    },
+    {
+      "check_count": 12,
+      "name": "iteration_9",
+      "object_digest": "f9c2bacf74c34fde9f2eb2a9426d1df6316b38b2a504e651b37ee72cd4761477",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json",
+      "schema": "n07_iteration_9_c3_t7_compatibility_fixture_design_v1",
+      "sha256": "173d3a49fb4c6a0022d2e0560a60942527cfaaaf53cff53209926645fbfd5a14",
+      "status": "passed"
+    },
+    {
+      "check_count": 33,
+      "name": "iteration_9b",
+      "object_digest": "71684c95a1bb28817546960d9cbd7643f254f9b334feaee39e788c93da09996b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+      "schema": "n07_iteration_9b_c3_compatibility_interference_probe_v1",
+      "sha256": "814eb489c9fddd884c6a3642bfb5d247b1cb8662db7c97daf1214cb2cd34fef3",
+      "status": "passed"
+    },
+    {
+      "check_count": 17,
+      "name": "iteration_9b2",
+      "object_digest": "264749879e3e546e2b379f3efb8dae19bc4e96a626ecf7bdbdb51d15ab140aa7",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b2_c3_compatibility_prolonged_stress.json",
+      "schema": "n07_iteration_9b2_c3_compatibility_prolonged_stress_v1",
+      "sha256": "2ca5bde6c2bfc3d12fd5be976e66f53da5a1ac1133f182749d96368331861c7e",
+      "status": "passed"
+    }
+  ],
+  "source_reports": [
+    {
+      "name": "iteration_3",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_3_id1_support_area_candidate.md",
+      "sha256": "172854c3736d860f9e5ef4ea3a43d2843dc8fc5ae47c750da97b6551ff965ac2"
+    },
+    {
+      "name": "iteration_4",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_4_id2_stability_candidate.md",
+      "sha256": "e5e07fe53c9028247d376ee1947788ca20db3328893202752b95ce1c0708ce4f"
+    },
+    {
+      "name": "iteration_5",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5_id3_attractivity_candidate.md",
+      "sha256": "5c0b0678b26056ac4a8ffd7fced456160e40c700624cc9ca857c8a516b2afcf6"
+    },
+    {
+      "name": "iteration_5b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_5b_id3_attractivity_stress_candidate.md",
+      "sha256": "df11920ef76e1aa7a71811378131123eb95e9f351b1e498e7045dbe187804fb7"
+    },
+    {
+      "name": "iteration_6",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6_id4_invariance_candidate.md",
+      "sha256": "ce74a24f9bac7f3c05a98063ecb9864f26716779de04442bc355548d412f9ea0"
+    },
+    {
+      "name": "iteration_6b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_6b_id4_topology_split_birth_invariance_stress.md",
+      "sha256": "5ef2dda323b44c4e6c2cd026773a90e0dbe2d41e8b7c28671e8dc372a8a1a8c8"
+    },
+    {
+      "name": "iteration_7",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7_id5_reflexive_closure_persistence.md",
+      "sha256": "a43304bbfafa5f7d5a1645f870716be3d1c93602c6f4916abe7a29a5c24d231b"
+    },
+    {
+      "name": "iteration_7b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+      "sha256": "5da517fd853adfadc69b753c0cdb55c28867593a825a6100c64fc36661f228c0"
+    },
+    {
+      "name": "iteration_8",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md",
+      "sha256": "98aa0b1ce5b2d0fd671abde3d89038fb21f7abf1d45b5e6fcdae574af93530c2"
+    },
+    {
+      "name": "iteration_9",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md",
+      "sha256": "0bf73a4d4c103cd8c7c5280b2760075941232d2bada8ddd8b73fe003c61e8749"
+    },
+    {
+      "name": "iteration_9b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md",
+      "sha256": "cabeec9503dbb01a00aec3cff320a9a4af7a79ea7becb176e2baa68db8e77de7"
+    },
+    {
+      "name": "iteration_9b2",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b2_c3_compatibility_prolonged_stress.md",
+      "sha256": "46bcabd67fe70b268ae3c2e680990569cf99fa5c06b1681a1af582e9c9171600"
+    }
+  ],
+  "status": "passed"
+}

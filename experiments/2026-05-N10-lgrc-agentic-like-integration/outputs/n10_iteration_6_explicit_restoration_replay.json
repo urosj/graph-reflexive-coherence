@@ -1,0 +1,340 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 6 passes if integration can resume after support disruption only through explicit, source-backed restoration evidence, while preserving the history of disruption and restoration.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_only_replay": {
+    "artifact_only": true,
+    "n07_source_status": "passed",
+    "replay_chain": [
+      {
+        "artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "digest": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+        "step": "load_n09_goal_proxy_regulation_closeout"
+      },
+      {
+        "artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_5_disrupted_support_control.json",
+        "blocked_record_digest": "56e2de6ab77b877a02cbc2df948f43be9461b4fa734232396d934b358edf426d",
+        "digest": "521e7012bfc852977cea41c21dd4574d832c76a1fb312c95bd47b93c3f2134af",
+        "step": "load_iteration_5_disrupted_support_blocker"
+      },
+      {
+        "artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+        "n09_withdrawal_digest": "8e09a8de0b8d66e57e425a6c15a52abdf2e5090c65878eaf434c0751cc43fd84",
+        "restoration_fraction": 0.8,
+        "step": "load_n07_explicit_restoration_lane",
+        "support_lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+        "support_lane_id": "restored_after_n09_partial_withdrawal",
+        "support_survival_threshold": 0.85
+      },
+      {
+        "accepted_integration_level": "A4",
+        "integration_allowed": true,
+        "positive_integration_row_emitted": true,
+        "step": "resume_support_aware_regulation_replay_after_restoration"
+      },
+      {
+        "ali3_status": "support_sensitive_regulation_closed_for_artifact_only_support_regulation_path",
+        "integration_row_digest": "7dd3f8df667d098a22ca34af5ca3d72f027b7471b3966f55b87bd14da6a4e5cf",
+        "n10_category_level": "ALI3",
+        "step": "emit_restoration_gated_integration_row"
+      }
+    ],
+    "runtime_state_used": false
+  },
+  "checks": {
+    "a5_relevant_not_a5_closeout": true,
+    "a6_not_supported_by_iteration_6": true,
+    "accepted_integration_level_is_a4": true,
+    "ali3_closed_for_support_regulation_path": true,
+    "artifact_only_replay": true,
+    "attempted_integration_level_is_a4": true,
+    "claim_flags_all_false": true,
+    "controls_passed": true,
+    "explicit_restoration_present": true,
+    "fixture_required_support_state_tag_matched": true,
+    "integration_allowed_true_after_restoration": true,
+    "integration_row_digest_valid": true,
+    "integration_row_required_fields_present": true,
+    "n09_budget_control_passed": true,
+    "n09_goal_proxy_candidate_available": true,
+    "n09_gpr6_available": true,
+    "n10_category_level_is_ali3": true,
+    "positive_integration_row_emitted": true,
+    "primary_blocker_absent_after_restoration": true,
+    "prior_disruption_history_preserved": true,
+    "prior_disruption_was_blocked": true,
+    "restored_support_budget_error_zero": true,
+    "restored_support_lane_survives": true,
+    "restored_support_retention_meets_threshold": true,
+    "route_memory_not_consumed_for_ali3": true,
+    "same_n09_withdrawal_digest_as_disruption": true,
+    "source_artifact_digests_match_baseline": true,
+    "src_clean_for_iteration_6": true,
+    "support_state_tag_is_explicit_restoration": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N10-lgrc-agentic-like-integration/scripts/run_n10_iteration_6_explicit_restoration_replay.py",
+  "controls": {
+    "budget_surface_ambiguity": {
+      "control_passed": true,
+      "primary_blocker": "budget_surface_ambiguity",
+      "reason": "Iteration 6 claims source-artifact budget compatibility only, not cross-artifact live ledger continuity"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "explicit restoration does not emit agency, A6, identity acceptance, or goal-ownership claims"
+    },
+    "disruption_history_preserved": {
+      "control_passed": true,
+      "primary_blocker": "stale_identity_support_baseline",
+      "reason": "restoration references the same N09 withdrawal digest and preserves the Iteration 5 blocked history"
+    },
+    "missing_goal_proxy_regulation_artifact": {
+      "control_passed": true,
+      "primary_blocker": "missing_goal_proxy_regulation_artifact",
+      "reason": "restoration replay requires N09 GPR closeout evidence"
+    },
+    "missing_identity_support_artifact": {
+      "control_passed": true,
+      "primary_blocker": "missing_identity_support_artifact",
+      "reason": "restoration replay requires N07 Iteration 13 support lane evidence"
+    },
+    "restoration_required_but_missing": {
+      "control_passed": true,
+      "primary_blocker": "restoration_required_but_missing",
+      "reason": "integration resumes only because the explicit restoration lane is present and above threshold"
+    },
+    "source_artifact_digest_mismatch": {
+      "control_passed": true,
+      "primary_blocker": "source_artifact_digest_mismatch",
+      "reason": "N07/N09 source artifact digests are rechecked against Iteration 1"
+    },
+    "stale_identity_support_baseline": {
+      "control_passed": true,
+      "primary_blocker": "stale_identity_support_baseline",
+      "reason": "restored support state is read from the current N07 Iteration 13 lane and matched against the N10 manifest summary"
+    },
+    "support_disrupted_control_not_erased": {
+      "control_passed": true,
+      "primary_blocker": "support_disrupted_but_integration_allowed",
+      "reason": "restoration resumes after, rather than deletes, the disrupted-support blocker"
+    }
+  },
+  "experiment": "2026-05-N10-lgrc-agentic-like-integration",
+  "generated_at": "2026-06-10T18:04:05.878687+00:00",
+  "git": {
+    "head": "d9591085aff939215d2b18f4dbc3149e01722654",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "integration_row": {
+    "a5_relevance": "restoration_gated_support_regulation_component_not_a5_closeout",
+    "accepted_integration_level": "A4",
+    "ali3_status": "support_sensitive_regulation_closed_for_artifact_only_support_regulation_path",
+    "artifact_only": true,
+    "attempted_integration_level": "A4",
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "aco_like_behavior",
+      "ant_colony_behavior",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "personhood",
+      "unrestricted_identity",
+      "unrestricted_movement",
+      "unrestricted_agency"
+    ],
+    "blocker_reason": null,
+    "budget_mode": "source_artifact_budget_compatibility_not_single_runtime_continuity",
+    "category_boundary": "ALI3 support-sensitive regulation is satisfied for the bounded artifact-only support/regulation replay path: support-intact and mild-withdrawal lanes proceed, disrupted support blocks, and explicit restoration resumes integration. Route/memory composition remains deferred to ALI4.",
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_ownership_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": "artifact_replay_n10_i6",
+    "fixture_lane": {
+      "expected_role": "restoration_gated_integration_candidate",
+      "lane_id": "explicit_restoration_replay",
+      "required_support_state_tag": "explicit_restoration_recovers_support",
+      "source_support_lane_id": "restored_after_n09_partial_withdrawal"
+    },
+    "goal_proxy_regulation_artifact": "n09_hypothesis_a_closeout",
+    "goal_proxy_regulation_digest": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+    "identity_support_artifact": "n07_withdrawal_baseline",
+    "identity_support_digest": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+    "integration_allowed": true,
+    "integration_level": "A4",
+    "integration_outcome_tag": "restoration_gated_integration_candidate",
+    "integration_policy_digest": "ac8312dfb61dc3a57a4c8722a430cd4d15101224c7dc777288518bb3f732fbfd",
+    "integration_policy_id": "n10_bounded_artifact_only_integration_policy_v1",
+    "integration_row_digest": "7dd3f8df667d098a22ca34af5ca3d72f027b7471b3966f55b87bd14da6a4e5cf",
+    "integration_row_id": "n10_i6_explicit_restoration_replay_row_v1",
+    "memory_affordance_artifact": null,
+    "memory_affordance_digest": null,
+    "memory_budget_surface": "not_applicable_ali3_restoration_replay",
+    "memory_scope_tag": "memory_scope_not_applicable",
+    "n10_category_level": "ALI3",
+    "native_policy_gap": [
+      "native_agentic_like_integration_policy_missing",
+      "native_identity_acceptance_validator_missing",
+      "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+      "native_route_conductance_memory_policy_missing"
+    ],
+    "node_plus_packet_budget_after": null,
+    "node_plus_packet_budget_before": null,
+    "node_plus_packet_budget_error": 0.0,
+    "positive_integration_row_emitted": true,
+    "primary_blocker": null,
+    "prior_disruption_evidence": {
+      "blocked_record_digest": "56e2de6ab77b877a02cbc2df948f43be9461b4fa734232396d934b358edf426d",
+      "disruption_history_preserved": true,
+      "integration_allowed": false,
+      "n09_withdrawal_digest": "8e09a8de0b8d66e57e425a6c15a52abdf2e5090c65878eaf434c0751cc43fd84",
+      "positive_integration_row_emitted": false,
+      "primary_blocker": "support_disrupted_but_integration_allowed",
+      "source_iteration": 5,
+      "support_lane_digest": "987651daaf122f47d3e26d3fd9d7611ceebb3149879b0326e6ca2775a18e4387",
+      "support_lane_id": "n09_matched_partial_support_withdrawal",
+      "support_survival_passed": false,
+      "withdrawal_depth": 0.25
+    },
+    "producer_scaffold_used": true,
+    "proxy_budget_surface": "n09_source_proxy_budget_compatibility",
+    "regulation_evidence": {
+      "source_artifact_only_runtime_fallback_blocked": true,
+      "source_budget_control_passed": true,
+      "source_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+      "source_gpr_level": "GPR6",
+      "source_hypothesis_a_status": "closed"
+    },
+    "regulation_scope_tag": "artifact_only_goal_proxy_regulation_candidate",
+    "route_choice_artifact": null,
+    "route_choice_digest": null,
+    "route_context_tag": "route_context_not_applicable",
+    "runtime_state_used": false,
+    "scheduler_event_index": null,
+    "source_artifact_digests": {
+      "n07_withdrawal_baseline": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "n09_hypothesis_a_closeout": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "n10_baseline_inventory": "31def07724e77697275bedac0055a963cd2cc65a75bb44817598ea7c8bde7f39",
+      "n10_fixture_manifest": "55536ce1c244a966a5f927f55c2f41f7e787a18728ee76b543f86e36a7bececd",
+      "n10_iteration_3_support_aware_regulation_replay": "b8abcfc2348a6c55e8debee6837e77dacdf061ee9af001ea1e8849612c9b1dcd",
+      "n10_iteration_4_mild_withdrawal_survival_replay": "94e21b2d20dca3b911eb26599281e6e083bf46ee7bf5d247f6289e571ee26417",
+      "n10_iteration_5_disrupted_support_control": "521e7012bfc852977cea41c21dd4574d832c76a1fb312c95bd47b93c3f2134af"
+    },
+    "source_artifacts": {
+      "n07_withdrawal_baseline": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "n09_hypothesis_a_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "n10_baseline_inventory": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_1_baseline_inventory.json",
+      "n10_fixture_manifest": "experiments/2026-05-N10-lgrc-agentic-like-integration/configs/n10_integration_fixture_manifest_v1.json",
+      "n10_iteration_3_support_aware_regulation_replay": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_3_support_aware_regulation_replay.json",
+      "n10_iteration_4_mild_withdrawal_survival_replay": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_4_mild_withdrawal_survival_replay.json",
+      "n10_iteration_5_disrupted_support_control": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_5_disrupted_support_control.json"
+    },
+    "source_experiment_ids": [
+      "N07",
+      "N09",
+      "N10"
+    ],
+    "source_reports": {
+      "n07_withdrawal_baseline": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "n09_hypothesis_a_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+    },
+    "support_evidence": {
+      "explicit_restoration_present": true,
+      "final_A_support_retention": 0.9244958974324687,
+      "final_basin_separability": 0.9244958974324687,
+      "final_budget_error": 0.0,
+      "identity_support_outcome_tag": "explicit_restoration_recovers_support_survival_baseline",
+      "lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+      "n09_withdrawal_digest": "8e09a8de0b8d66e57e425a6c15a52abdf2e5090c65878eaf434c0751cc43fd84",
+      "reference_A_support_retention": 0.9731535762447039,
+      "restoration_fraction": 0.8,
+      "source_lane_id": "restored_after_n09_partial_withdrawal",
+      "support_above_threshold_after_restoration": true,
+      "support_loss_from_reference": 0.04865767881223515,
+      "support_survival_passed": true,
+      "support_survival_threshold": 0.85,
+      "withdrawal_depth": 0.25,
+      "withdrawal_kind": "partial_support_weakening_with_explicit_restoration"
+    },
+    "support_state_tag": "explicit_restoration_recovers_support"
+  },
+  "iteration": 6,
+  "manifest_digest": "8fbcba8838098bee67585f42554452d782e3b8d5f50bf184bc8bd35db91cd638",
+  "next_iteration": "7_route_memory_regulation_composition",
+  "output_digest": "64a06e25f579994ca386376f24e53ed9aa12fb798b524704e20beca94704087c",
+  "purpose": "explicit_restoration_gated_support_regulation_replay",
+  "schema": "n10_iteration_6_explicit_restoration_replay_v1",
+  "source_artifacts": {
+    "n07_withdrawal_baseline": {
+      "baseline_sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b"
+    },
+    "n09_hypothesis_a_closeout": {
+      "baseline_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+    },
+    "n10_baseline_inventory": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_1_baseline_inventory.json",
+      "sha256": "31def07724e77697275bedac0055a963cd2cc65a75bb44817598ea7c8bde7f39"
+    },
+    "n10_fixture_manifest": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/configs/n10_integration_fixture_manifest_v1.json",
+      "sha256": "55536ce1c244a966a5f927f55c2f41f7e787a18728ee76b543f86e36a7bececd"
+    },
+    "n10_iteration_3_support_aware_regulation_replay": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_3_support_aware_regulation_replay.json",
+      "sha256": "b8abcfc2348a6c55e8debee6837e77dacdf061ee9af001ea1e8849612c9b1dcd"
+    },
+    "n10_iteration_4_mild_withdrawal_survival_replay": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_4_mild_withdrawal_survival_replay.json",
+      "sha256": "94e21b2d20dca3b911eb26599281e6e083bf46ee7bf5d247f6289e571ee26417"
+    },
+    "n10_iteration_5_disrupted_support_control": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_5_disrupted_support_control.json",
+      "sha256": "521e7012bfc852977cea41c21dd4574d832c76a1fb312c95bd47b93c3f2134af"
+    }
+  },
+  "source_reports": {
+    "n07_withdrawal_baseline": {
+      "baseline_sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc"
+    },
+    "n09_hypothesis_a_closeout": {
+      "baseline_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    }
+  },
+  "status": "passed"
+}

@@ -1,0 +1,43 @@
+{
+  "adapter_required_for_d2_3_semantics": false,
+  "adapter_trigger_used_as_execution_engine": false,
+  "agency_claim_allowed": false,
+  "artifacts": {
+    "config": "configs/e3_native_lgrc9v3_packet_loop_route_manifest.json",
+    "e3_0": "outputs/e3_0_dependency_and_fixture_baseline.json",
+    "e3_1": "outputs/e3_1_native_positive_reproduction.json",
+    "e3_2": "outputs/e3_2_native_control_parity.json",
+    "e3_3": "outputs/e3_3_snapshot_telemetry_reproduction.json",
+    "e3_4": "outputs/e3_native_lgrc9v3_packet_loop_closeout.json"
+  },
+  "biology_claim_allowed": false,
+  "classification": "n03_native_lgrc9v3_packet_loop_reproduced",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_e3_native_lgrc9v3_packet_loop_reproduction.py",
+  "controls_passed": true,
+  "core_follow_up_required": false,
+  "entire_n03_experiment_closed": false,
+  "movement_claim_allowed": false,
+  "native_d2_3_equivalent": true,
+  "native_grc9v3_proposal_flux_loop_evidence": false,
+  "native_lgrc9v3_execution": true,
+  "native_packet_execution": true,
+  "native_self_rearm_evidence": true,
+  "native_static_route_only": false,
+  "native_surplus_trigger": true,
+  "prototype_runner_used_as_execution_engine": false,
+  "remaining_n03_scope": [
+    "movement_ladder_handoff",
+    "boundary_coupled_pulse_experiments",
+    "multi_pole_basin_loops",
+    "larger_fixture_families",
+    "output_bundling_and_artifact_cleanup",
+    "paper_polish_against_full_implementation_record"
+  ],
+  "scope_closed": "d2_3_native_lgrc_packet_loop_branch",
+  "snapshot_telemetry_replayable": true,
+  "status": "passed",
+  "two_layer_result": {
+    "negative_synchronous_result": "Native fixed-topology GRC9V3 proposal flux did not produce polarized loops on tested fixtures.",
+    "positive_causal_history_result": "Native LGRC9V3 packetized causal execution reproduces the self-rearming polarized packet loop under controls."
+  }
+}

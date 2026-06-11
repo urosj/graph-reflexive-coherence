@@ -1,0 +1,73 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Transport Basin Rerouting Positive
+  description: Seed-backed GRCL-9V3 transport-rerouting declaration anchored in the reviewed GRC9V3 motif catalog.
+  source_kind: manual_seed
+  source_reference: outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, s0014, transport, rerouting]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: source
+    type: basin
+    coherence_prior: 1.0
+  - id: route
+    type: valley
+    from_id: source
+    to_id: sink
+    extensions:
+      grcl9v3:
+        term_kind: transport_rerouting_region
+        term_id: transport_basin_rerouting_positive_control_transport
+        region_id: route
+        source_role: positive_control
+        profile:
+          source_region_id: source
+          sink_region_id: sink
+          route_preference_profile:
+            corridor: preferred
+  - id: channel
+    type: valley
+    from_id: source
+    to_id: sink
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: transport_basin_rerouting_positive_control_valley
+        region_id: route
+        source_role: positive_control
+        profile:
+          channel: transport_corridor
+  - id: sink
+    type: basin
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: transport_basin_rerouting_positive_control
+    manifest_entry_id: future_vocabulary_transport_basin_rerouting_v1
+    motif_id: grc9v3-motif-s0006-transport-basin-rerouting-positive-control
+    expected_selector_ids: [transport_rerouting_signature]
+    notes:
+      discovery_anchor: S0014 source-language handoff
+      boundary: source preconditions only

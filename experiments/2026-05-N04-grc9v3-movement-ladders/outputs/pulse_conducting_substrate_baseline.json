@@ -1,0 +1,707 @@
+{
+  "allowed_evidence_labels": [
+    "pulse_transport_only"
+  ],
+  "blocked_claims": [
+    "pulse_local_geometry_coupling",
+    "traveling_deformation",
+    "movement_response",
+    "boundary_coupled_movement",
+    "loop_driven_movement",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "native_lgrc9v3_pulse_substrate"
+  ],
+  "budget_surface": "node_only",
+  "checks": {
+    "blocked_edge_control_negative": true,
+    "budget_conserved": true,
+    "budget_surface_node_only": true,
+    "budget_violation_blocked": true,
+    "does_not_update_n04_claim_ceiling": true,
+    "local_transport_rule_declared": true,
+    "native_m6_status_unchanged": true,
+    "no_direct_movement_writes": true,
+    "no_movement_claims": true,
+    "no_nonlocal_jumps": true,
+    "nonnegative": true,
+    "peak_source_is_field_argmax": true,
+    "positive_final_peak_expected": true,
+    "positive_transport_observed": true,
+    "pulse_disabled_control_negative": true,
+    "pulse_state_separate_from_geometry_support": true,
+    "static_pulse_control_negative": true,
+    "substrate_and_pulse_state_declared": true,
+    "wrong_direction_control_negative": true
+  },
+  "claim_ceiling": "pulse_transport_only",
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_transport_baseline.py",
+  "config": {
+    "budget": {
+      "budget_surface": "node_only",
+      "geometry_budget_mutated": false,
+      "pulse_budget": 1.0
+    },
+    "claim_boundary": {
+      "adaptive_topology_entry_allowed": false,
+      "boundary_coupled_movement_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_claim_inherited_from_n03": false,
+      "native_grc9v3_proposal_flux_control_used": false,
+      "native_grc9v3_proposal_flux_loop_claim": false,
+      "native_lgrc9v3_e3_pulse_used": false,
+      "pulse_local_geometry_coupling_claim_allowed": false,
+      "traveling_deformation_claim_allowed": false
+    },
+    "geometry_state": {
+      "enabled": false,
+      "status": "unchanged_or_not_enabled"
+    },
+    "pulse_state": {
+      "direction": "positive",
+      "direction_vector": [
+        1.0
+      ],
+      "initial_mass": 1.0,
+      "initial_node": 4,
+      "initial_width": 1,
+      "state_surface": "separate_pulse_field"
+    },
+    "runtime_family": "experiment_local",
+    "schema": "pulse_substrate_coupling_manifest_v1",
+    "substrate": {
+      "base_fixture": "S0_chain_v1",
+      "coordinate_periodic": false,
+      "coordinate_policy": "chain_index",
+      "edges": [
+        {
+          "edge_id": 0,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 0,
+          "v": 1,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 1,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 1,
+          "v": 2,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 2,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 2,
+          "v": 3,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 3,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 3,
+          "v": 4,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 4,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 4,
+          "v": 5,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 5,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 5,
+          "v": 6,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 6,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 6,
+          "v": 7,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 7,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 7,
+          "v": 8,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 8,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 8,
+          "v": 9,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 9,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 9,
+          "v": 10,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 10,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 10,
+          "v": 11,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 11,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 11,
+          "v": 12,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 12,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 12,
+          "v": 13,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 13,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 13,
+          "v": 14,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 14,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 14,
+          "v": 15,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 15,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 15,
+          "v": 16,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 16,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 16,
+          "v": 17,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 17,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 17,
+          "v": 18,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 18,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 18,
+          "v": 19,
+          "weight": 1.0
+        },
+        {
+          "edge_id": 19,
+          "proper_time_delay": 1.0,
+          "temporal_delay": 1.0,
+          "u": 19,
+          "v": 20,
+          "weight": 1.0
+        }
+      ],
+      "fixture_id": "D1_s0_chain_pulse_transport_v1",
+      "node_count": 21,
+      "type": "chain"
+    },
+    "support_state": {
+      "enabled": false,
+      "status": "unchanged_or_not_enabled"
+    },
+    "transport_rule": {
+      "description": "At each step, pulse mass transfers from node i to i+1 through the local edge if present and unblocked.",
+      "max_hop_distance": 1,
+      "peak_source": "argmax_post_transfer_pulse_field",
+      "rule_id": "deterministic_local_neighbor_shift_v1",
+      "transfer_fraction": 1.0,
+      "uses_preauthored_itinerary": false
+    }
+  },
+  "controls": {
+    "blocked_edge": {
+      "blocked_transfer_count": 6,
+      "budget_passed": true,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "boundary_coupled_movement_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false,
+        "native_grc9v3_proposal_flux_control_used": false,
+        "native_grc9v3_proposal_flux_loop_claim": false,
+        "native_lgrc9v3_e3_pulse_used": false,
+        "pulse_local_geometry_coupling_claim_allowed": false,
+        "traveling_deformation_claim_allowed": false
+      },
+      "direct_writes": {
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false
+      },
+      "expected_final_peak_node": 8,
+      "final_peak_node": 8,
+      "geometry_state": "unchanged_or_not_enabled",
+      "initial_peak_node": 4,
+      "lane_id": "D1_blocked_edge_control",
+      "local_rule_violations": 0,
+      "local_transport_passed": true,
+      "max_budget_error": 0.0,
+      "max_hop_distance": 1,
+      "min_pulse_state": 0.0,
+      "negative_for_full_path_transport": true,
+      "nonlocal_jump_detected": false,
+      "nonnegative_passed": true,
+      "passed_negative_control": true,
+      "peak_sequence": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "peak_source": "argmax_post_transfer_pulse_field",
+      "primary_blocker": "local_transport_blocked",
+      "pulse_budget_abs_error_max": 0.0,
+      "pulse_budget_final": 1.0,
+      "pulse_budget_initial": 1.0,
+      "pulse_local_geometry_coupling_observed": false,
+      "pulse_peak_mass_min": 1.0,
+      "pulse_profile_coherence_note": "transport_only_not_shape_claim",
+      "pulse_width_max": 1,
+      "support_state": "unchanged_or_not_enabled",
+      "timeseries": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/D1_blocked_edge_control.jsonl",
+        "sha256": "32c94ad0bec6f5d600765790a3cb7690235c49efefb91dedef0be54e3e124e46",
+        "timeseries_digest": "0676c5cba9003dd470b6ecdc7cd2c85971079110761850f24898c937d30e63de"
+      },
+      "tracked_basin_identity_moved": false,
+      "transported": true,
+      "traveling_deformation_observed": false,
+      "uses_preauthored_itinerary": false
+    },
+    "budget_violating_synthetic": {
+      "blocked_transfer_count": 0,
+      "budget_passed": false,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "boundary_coupled_movement_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false,
+        "native_grc9v3_proposal_flux_control_used": false,
+        "native_grc9v3_proposal_flux_loop_claim": false,
+        "native_lgrc9v3_e3_pulse_used": false,
+        "pulse_local_geometry_coupling_claim_allowed": false,
+        "traveling_deformation_claim_allowed": false
+      },
+      "direct_writes": {
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false
+      },
+      "expected_final_peak_node": 14,
+      "final_peak_node": 14,
+      "geometry_state": "unchanged_or_not_enabled",
+      "initial_peak_node": 4,
+      "lane_id": "D1_budget_violating_synthetic_blocker",
+      "local_rule_violations": 0,
+      "local_transport_passed": true,
+      "max_budget_error": 0.19999999999999996,
+      "max_hop_distance": 1,
+      "min_pulse_state": 0.0,
+      "negative_for_claim": true,
+      "nonlocal_jump_detected": false,
+      "nonnegative_passed": true,
+      "passed_negative_control": true,
+      "peak_sequence": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "peak_source": "argmax_post_transfer_pulse_field",
+      "primary_blocker": "budget_gate_failed",
+      "pulse_budget_abs_error_max": 0.19999999999999996,
+      "pulse_budget_final": 1.0,
+      "pulse_budget_initial": 1.0,
+      "pulse_local_geometry_coupling_observed": false,
+      "pulse_peak_mass_min": 1.0,
+      "pulse_profile_coherence_note": "transport_only_not_shape_claim",
+      "pulse_width_max": 1,
+      "support_state": "unchanged_or_not_enabled",
+      "timeseries": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/D1_budget_violating_synthetic_blocker.jsonl",
+        "sha256": "26e4827ef1cc8d67705de6858a4071bbebf7b75ee47e92497eff4860f67a29ef",
+        "timeseries_digest": "d84175930067897d1f17db720ebf326c0e0d72a3d44b4747c7595bf129757fae"
+      },
+      "tracked_basin_identity_moved": false,
+      "transported": true,
+      "traveling_deformation_observed": false,
+      "uses_preauthored_itinerary": false
+    },
+    "pulse_disabled": {
+      "blocked_transfer_count": 0,
+      "budget_passed": true,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "boundary_coupled_movement_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false,
+        "native_grc9v3_proposal_flux_control_used": false,
+        "native_grc9v3_proposal_flux_loop_claim": false,
+        "native_lgrc9v3_e3_pulse_used": false,
+        "pulse_local_geometry_coupling_claim_allowed": false,
+        "traveling_deformation_claim_allowed": false
+      },
+      "direct_writes": {
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false
+      },
+      "expected_final_peak_node": null,
+      "final_peak_node": null,
+      "geometry_state": "unchanged_or_not_enabled",
+      "initial_peak_node": null,
+      "lane_id": "D1_pulse_disabled_control",
+      "local_rule_violations": 0,
+      "local_transport_passed": true,
+      "max_budget_error": 0.0,
+      "max_hop_distance": 0,
+      "min_pulse_state": 0.0,
+      "negative_for_transport": true,
+      "nonlocal_jump_detected": false,
+      "nonnegative_passed": true,
+      "passed_negative_control": true,
+      "peak_sequence": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "peak_source": "argmax_post_transfer_pulse_field",
+      "primary_blocker": "pulse_absent",
+      "pulse_budget_abs_error_max": 0.0,
+      "pulse_budget_final": 0.0,
+      "pulse_budget_initial": 0.0,
+      "pulse_local_geometry_coupling_observed": false,
+      "pulse_peak_mass_min": 0.0,
+      "pulse_profile_coherence_note": "transport_only_not_shape_claim",
+      "pulse_width_max": 0,
+      "support_state": "unchanged_or_not_enabled",
+      "timeseries": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/D1_pulse_disabled_control.jsonl",
+        "sha256": "0c79452da07e8ed90ffdd581025da3a28765185b9493803343a43062a5227fc7",
+        "timeseries_digest": "6667f08d7e7e443a31c8540926d0dbe94dcdcd7969e30ee0be6a8f9e2d076dbc"
+      },
+      "tracked_basin_identity_moved": false,
+      "transported": false,
+      "traveling_deformation_observed": false,
+      "uses_preauthored_itinerary": false
+    },
+    "static_pulse": {
+      "blocked_transfer_count": 0,
+      "budget_passed": true,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "boundary_coupled_movement_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false,
+        "native_grc9v3_proposal_flux_control_used": false,
+        "native_grc9v3_proposal_flux_loop_claim": false,
+        "native_lgrc9v3_e3_pulse_used": false,
+        "pulse_local_geometry_coupling_claim_allowed": false,
+        "traveling_deformation_claim_allowed": false
+      },
+      "direct_writes": {
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false
+      },
+      "expected_final_peak_node": 4,
+      "final_peak_node": 4,
+      "geometry_state": "unchanged_or_not_enabled",
+      "initial_peak_node": 4,
+      "lane_id": "D1_static_pulse_control",
+      "local_rule_violations": 0,
+      "local_transport_passed": true,
+      "max_budget_error": 0.0,
+      "max_hop_distance": 0,
+      "min_pulse_state": 0.0,
+      "negative_for_transport": true,
+      "nonlocal_jump_detected": false,
+      "nonnegative_passed": true,
+      "passed_negative_control": true,
+      "peak_sequence": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "peak_source": "argmax_post_transfer_pulse_field",
+      "primary_blocker": "no_propagation",
+      "pulse_budget_abs_error_max": 0.0,
+      "pulse_budget_final": 1.0,
+      "pulse_budget_initial": 1.0,
+      "pulse_local_geometry_coupling_observed": false,
+      "pulse_peak_mass_min": 1.0,
+      "pulse_profile_coherence_note": "transport_only_not_shape_claim",
+      "pulse_width_max": 1,
+      "support_state": "unchanged_or_not_enabled",
+      "timeseries": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/D1_static_pulse_control.jsonl",
+        "sha256": "1d85c60a2e7c5096d3e4790467664582bc94d2a00168a54fa2b422f739e2edb9",
+        "timeseries_digest": "96331c47f24d885fe2bf5b9730a1aafc8ae4a48c94a66128eede0cde5dc940b7"
+      },
+      "tracked_basin_identity_moved": false,
+      "transported": false,
+      "traveling_deformation_observed": false,
+      "uses_preauthored_itinerary": false
+    },
+    "wrong_direction": {
+      "blocked_transfer_count": 6,
+      "budget_passed": true,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "boundary_coupled_movement_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false,
+        "native_grc9v3_proposal_flux_control_used": false,
+        "native_grc9v3_proposal_flux_loop_claim": false,
+        "native_lgrc9v3_e3_pulse_used": false,
+        "pulse_local_geometry_coupling_claim_allowed": false,
+        "traveling_deformation_claim_allowed": false
+      },
+      "direct_writes": {
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false
+      },
+      "expected_final_peak_node": -6,
+      "final_peak_node": 0,
+      "geometry_state": "unchanged_or_not_enabled",
+      "initial_peak_node": 4,
+      "lane_id": "D1_wrong_direction_control",
+      "local_rule_violations": 0,
+      "local_transport_passed": true,
+      "max_budget_error": 0.0,
+      "max_hop_distance": 1,
+      "min_pulse_state": 0.0,
+      "negative_for_positive_path_transport": true,
+      "nonlocal_jump_detected": false,
+      "nonnegative_passed": true,
+      "passed_negative_control": true,
+      "peak_sequence": [
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "peak_source": "argmax_post_transfer_pulse_field",
+      "primary_blocker": "wrong_direction_for_positive_path",
+      "pulse_budget_abs_error_max": 0.0,
+      "pulse_budget_final": 1.0,
+      "pulse_budget_initial": 1.0,
+      "pulse_local_geometry_coupling_observed": false,
+      "pulse_peak_mass_min": 1.0,
+      "pulse_profile_coherence_note": "transport_only_not_shape_claim",
+      "pulse_width_max": 1,
+      "support_state": "unchanged_or_not_enabled",
+      "timeseries": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/D1_wrong_direction_control.jsonl",
+        "sha256": "0fea268dbfeba48184bb00316480ea82821988cb2ae79305ccc3a0d178e1249b",
+        "timeseries_digest": "8eb3a048348da360016c06c68998dc165b88ee899ddd1c51e97072dee5ce755a"
+      },
+      "tracked_basin_identity_moved": false,
+      "transported": true,
+      "traveling_deformation_observed": false,
+      "uses_preauthored_itinerary": false
+    }
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/feedback_coupled_pulse_regeneration_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/pulse_substrate_coupling_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/feedback_contract_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/feedback_triggered_pulse_regeneration_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration10_failure_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_a_post_iteration10_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_lock_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_condition_restoration_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_baseline.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_local_geometry_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_local_geometry_coupling_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_substrate_direction_null_controls.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_substrate_movement_reclassification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reopened_m6_feedback_gate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/self_renewing_movement_candidate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/traveling_deformation_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/feedback_contract_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/feedback_triggered_pulse_regeneration_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration10_failure_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_a_post_iteration10_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_direction_parity_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_lock_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_condition_restoration_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_conducting_substrate_baseline.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_local_geometry_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_substrate_direction_null_controls.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_substrate_movement_reclassification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reopened_m6_feedback_gate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_boundary_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_m4_m5_classification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_telemetry_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/self_renewing_movement_candidate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/traveling_deformation_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/audit_lane_b_direction_parity_lock.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration10_failure_review.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_lane_a_post_iteration10_review.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_feedback_coupled_pulse_regeneration.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_lane_b_reversed_e3_direction_parity.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_local_geometry_coupling.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_substrate_direction_null_controls.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_substrate_movement_reclassification.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_transport_baseline.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_traveling_deformation_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_self_renewing_movement_candidate.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "iteration": "D1",
+  "lane": "D",
+  "native_m6_status_changed": false,
+  "positive_lane": {
+    "blocked_transfer_count": 0,
+    "budget_passed": true,
+    "claim_flags": {
+      "adaptive_topology_entry_allowed": false,
+      "boundary_coupled_movement_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_claim_inherited_from_n03": false,
+      "native_grc9v3_proposal_flux_control_used": false,
+      "native_grc9v3_proposal_flux_loop_claim": false,
+      "native_lgrc9v3_e3_pulse_used": false,
+      "pulse_local_geometry_coupling_claim_allowed": false,
+      "traveling_deformation_claim_allowed": false
+    },
+    "direct_writes": {
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false
+    },
+    "expected_final_peak_node": 14,
+    "final_peak_node": 14,
+    "geometry_state": "unchanged_or_not_enabled",
+    "initial_peak_node": 4,
+    "lane_id": "D1_positive_local_transport",
+    "local_rule_violations": 0,
+    "local_transport_passed": true,
+    "max_budget_error": 0.0,
+    "max_hop_distance": 1,
+    "min_pulse_state": 0.0,
+    "nonlocal_jump_detected": false,
+    "nonnegative_passed": true,
+    "peak_sequence": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "peak_source": "argmax_post_transfer_pulse_field",
+    "pulse_budget_abs_error_max": 0.0,
+    "pulse_budget_final": 1.0,
+    "pulse_budget_initial": 1.0,
+    "pulse_local_geometry_coupling_observed": false,
+    "pulse_peak_mass_min": 1.0,
+    "pulse_profile_coherence_note": "transport_only_not_shape_claim",
+    "pulse_width_max": 1,
+    "support_state": "unchanged_or_not_enabled",
+    "timeseries": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/D1_positive_local_transport.jsonl",
+      "sha256": "19501e2d486a42e5d897ab3833249102803ce1a7bc1c235b153c7082d03d5dba",
+      "timeseries_digest": "6fed7bf28cfe4d79a7fd0daaf1de35d87274736b6362bcd4e050a326ce4e0d8b"
+    },
+    "tracked_basin_identity_moved": false,
+    "transported": true,
+    "traveling_deformation_observed": false,
+    "uses_preauthored_itinerary": false
+  },
+  "report_kind": "pulse_conducting_substrate_baseline_v1",
+  "runtime_family": "experiment_local",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "config": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/pulse_substrate_coupling_manifest_v1.json",
+      "sha256": "135edf2df77065ab0a1d2692b6db6150c10cd3ccec5a664fb35a93cf6968a95e"
+    }
+  },
+  "status": "passed",
+  "updates_n04_claim_ceiling": false
+}

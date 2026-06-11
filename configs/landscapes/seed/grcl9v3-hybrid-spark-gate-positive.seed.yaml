@@ -1,0 +1,116 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Hybrid Spark Gate Positive
+  description: Seed-backed GRCL-9V3 critical region based on the S0014 hybrid spark source candidate.
+  source_kind: manual_seed
+  source_reference: outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, s0014, hybrid_spark, tensor]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - This seed is a GRCL/Morse source declaration, not a raw GRC9V3 graph.
+    - Runtime spark evidence must be observed through Phase T-GRC9V3 telemetry.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: candidate
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [support_a, support_b, support_c]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: hybrid_spark_gate_positive_control_critical
+        region_id: candidate
+        source_role: positive_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: hessian_profile
+    type: junction
+    host_id: candidate
+    branch_target_ids: [support_a, support_b]
+    extensions:
+      grcl9v3:
+        term_kind: tensor_hessian_profile
+        term_id: hybrid_spark_gate_positive_control_hessian
+        region_id: candidate
+        source_role: positive_control
+        profile:
+          hessian_backend: row_basis_diagonal
+          row_basis_profile:
+            hessian_mode: anisotropic
+            basis: row_basis_diagonal
+          signed_history_required: false
+  - id: tensor_profile
+    type: ridge
+    owner_id: candidate
+    adjacent_ids: [support_b]
+    extensions:
+      grcl9v3:
+        term_kind: tensor_hessian_profile
+        term_id: hybrid_spark_gate_positive_control_tensor
+        region_id: candidate
+        source_role: positive_control
+        profile:
+          anisotropy_axis: row_2
+          tensor_profile:
+            tensor_mode: anisotropic
+            row_mismatch: high
+  - id: column_channel
+    type: valley
+    from_id: support_a
+    to_id: candidate
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: hybrid_spark_gate_positive_control_column_channel
+        region_id: candidate
+        source_role: positive_control
+        profile:
+          target_column: 2
+          cancellation_mode: near_cancellation
+          column_profile:
+            column_2: near_cancellation
+  - id: support_a
+    type: basin
+    coherence_prior: 0.5
+  - id: support_b
+    type: basin
+    coherence_prior: 0.5
+  - id: support_c
+    type: basin
+    coherence_prior: 0.5
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: hybrid_spark_gate_positive_control
+    manifest_entry_id: grcl9v3_lowering_hybrid_spark_gate_v1
+    motif_id: grc9v3-motif-s0006-hybrid-spark-gate-positive-control
+    expected_selector_ids: [hybrid_spark_events, hybrid_tensor_available]
+    notes:
+      discovery_anchor: S0014 source-language handoff
+      boundary: source preconditions only

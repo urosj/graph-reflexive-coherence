@@ -1,0 +1,62 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "artifact_source_map": {
+    "D1": "outputs/d1_factorization_summary.json",
+    "D2": "outputs/d2_scoring_summary.json",
+    "D3": "outputs/d3_transpose_summary.json",
+    "D4": "outputs/d4_saturation_summary.json",
+    "D5": "outputs/d5_interface_memory_summary.json",
+    "D6": "outputs/d6_port_interaction_summary.json",
+    "D7": "outputs/d7_multiscale_summary.json",
+    "D8": "outputs/d8_identity_emergence_summary.json"
+  },
+  "classification": "anonymous_port_null_partially_rejected_with_lane_a_boundaries",
+  "command": "python experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_synthesis.py --write-defaults",
+  "discriminator_id": "discriminator_synthesis",
+  "evidence_labels": [
+    "direct",
+    "derived",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "fixture_id": [
+    "D1-D8 completed discriminator summaries"
+  ],
+  "git_commit": "3f2aa0d621c890562b9af14280b9fab96d1c3b37",
+  "git_status_short": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-06-GRC9V3-HessiansV1DesignEvaluation.md\n M experiments/2026-05-N01-grc9v3-properties/guides/GRC9V3-Ports-ConceptualAndDesignGuide.md\n M experiments/2026-05-N01-grc9v3-properties/guides/GRC9V3-Ports-Reference.md\n M experiments/2026-05-N01-grc9v3-properties/implementation/ExperimentHandoff.md\n M experiments/2026-05-N01-grc9v3-properties/outputs/discriminator_followup_surfaces.csv\n M experiments/2026-05-N01-grc9v3-properties/outputs/discriminator_synthesis_summary.json\n M experiments/2026-05-N01-grc9v3-properties/outputs/family_level_followup_surfaces.csv\n M experiments/2026-05-N01-grc9v3-properties/outputs/family_level_hypothesis_status.csv\n M experiments/2026-05-N01-grc9v3-properties/outputs/family_level_prediction_check.csv\n M experiments/2026-05-N01-grc9v3-properties/outputs/family_level_synthesis_manifest.json\n M experiments/2026-05-N01-grc9v3-properties/outputs/family_level_synthesis_summary.json\n M experiments/2026-05-N01-grc9v3-properties/reports/artifact_surface_inventory.md\n M experiments/2026-05-N01-grc9v3-properties/reports/family_level_synthesis.md\n M experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_synthesis.py\n M experiments/2026-05-N01-grc9v3-properties/scripts/run_family_level_synthesis.py\n M implementation/GRC9V3-ArtifactSurfaceHardening.md\n M implementation/GRC9V3-CanonicalColumnH-ImplementationChecklist.md\n M implementation/GRC9V3-CanonicalColumnH-ImplementationPlan.md\n M implementation/GRC9V3-CanonicalColumnH-LaneDecision.md\n M implementation/GRC9V3-Hessian-Handoff.md\n M implementation/GRC9V3-Hessian-ImplementationChecklist.md\n M implementation/GRC9V3-Hessian-ImplementationPlan.md\n M implementation/Phase-T-GRC9V3-TelemetryContract.md\n M specs/README.md\n M specs/grc-9-v3-spec.md\n M src/pygrc/models/grc_9_v3.py\n M src/pygrc/models/grc_9_v3_sparks.py\n M src/pygrc/telemetry/__init__.py\n M src/pygrc/telemetry/_grc9v3_extensions.py\n M src/pygrc/telemetry/grc9v3_contract.py\n M src/pygrc/telemetry/grcl9v3_replay.py\n M tests/models/test_grc_9_v3_sparks.py\n M tests/telemetry/test_grc9v3_contract.py\n M tests/telemetry/test_grc9v3_extensions.py\n?? experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_branch_attribution.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_candidate_comparison.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_comparison_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_identity_comparison.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_refinement_comparison.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/reports/lane_c_blocked_observations.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/lane_c_comparison_report.md\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_lane_c_comparison.py\n?? implementation/GRC9V3-LaneC-ComparisonSetup.md\n?? tests/models/test_grc_9_v3_column_h_assisted.py",
+  "iteration": "11",
+  "lane_id": "current_hybrid_signed_hessian",
+  "manifest_required_fields": [
+    "discriminator_id",
+    "iteration",
+    "script_path",
+    "command",
+    "git_commit",
+    "lane_id",
+    "fixture_id",
+    "transform_id",
+    "seed",
+    "runtime_params",
+    "artifact_schema_version",
+    "artifact_source_map",
+    "output_paths"
+  ],
+  "output_paths": {
+    "followups": "outputs/discriminator_followup_surfaces.csv",
+    "hypothesis_status": "outputs/discriminator_hypothesis_status.csv",
+    "manifest": "outputs/discriminator_synthesis_manifest.json",
+    "prediction_comparison": "outputs/discriminator_prediction_comparison.csv",
+    "report": "reports/discriminator_synthesis.md",
+    "summary": "outputs/discriminator_synthesis_summary.json"
+  },
+  "runtime_params": {
+    "mode": "reuse_completed_discriminator_outputs",
+    "runtime_mutation": "none"
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_synthesis.py",
+  "seed": 0,
+  "transform_id": [
+    "summary"
+  ]
+}

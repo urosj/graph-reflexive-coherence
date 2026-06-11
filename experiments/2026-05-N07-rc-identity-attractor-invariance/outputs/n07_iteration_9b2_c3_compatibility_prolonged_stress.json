@@ -1,0 +1,3350 @@
+{
+  "acceptance": {
+    "achieved": true,
+    "statement": "Iteration 9-B2 passes if it explicitly tests prolonged compatibility under a serialized stress model, records whether the 9-B leakage/support-loss boundary remains stable, and does not promote ID6 or identity claims."
+  },
+  "artifact_digests": {
+    "checks_digest": "ad4276fe245becb091f78146c0c1f154838724654e582f2dcb96f57a1fa08bf9",
+    "claim_boundary_digest": "e4b3ea6782a52982d160df9757cbebf399c7385f93ab8bba634022acb9462388",
+    "interpretation_digest": "312b3210fdd8c82b8823dc10c3c796af1bb5a978c71f801d5b3a484f880095ee",
+    "stress_candidate_row_digest": "7a94a8c02013af380445a45ee28f49673caf45e91aa6daef21073784dab2c2ac",
+    "stress_model_digest": "874e983bb9bb1054ea523fb7938cd4b1c6a68932e258561fdb345199bb3837c3"
+  },
+  "checks": {
+    "budget_error_zero_all_windows": true,
+    "claim_flags_false": true,
+    "compatibility_stress_blocked": true,
+    "cumulative_wrong_basin_exceeds_threshold_at_failure": true,
+    "first_failure_is_wrong_basin": true,
+    "first_failure_recorded": true,
+    "next_iteration_is_9c": true,
+    "no_src_changes_required": true,
+    "source_9b_dynamic_lgrc_steps_zero": true,
+    "source_9b_passed": true,
+    "source_9b_was_one_window": true,
+    "source_artifact_hashes_present": true,
+    "status_passed": true,
+    "stress_candidate_ceiling_id5": true,
+    "stress_does_not_claim_id6": true,
+    "stress_model_not_native_lgrc_dynamics": true,
+    "stress_window_count_gt_one": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_9b2_c3_compatibility_prolonged_stress.py",
+  "environment": {
+    "generated_at_utc": "2026-06-07T09:44:17.426545+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "experiment": "N07",
+  "git": {
+    "rev_parse_head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "3abf8bc7f95c9f8a2ddf37099aaec1ad484a8a5e"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N07-rc-identity-attractor-invariance/README.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationChecklist.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationPlan.md\n?? ../../../../Obsidian/SentientLife/Self/26-06/2026-06-07.md\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/configs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/reports/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "interpretation": {
+    "claim_boundary": "This stress result does not emit identity acceptance, RC identity collapse, semantic choice, agency, biological identity, personhood, movement, or unrestricted identity claims.",
+    "first_failure": {
+      "A_cumulative_support_retention": 0.8637481156814181,
+      "B_cumulative_support_retention": 0.8801359953694519,
+      "cumulative_destructive_interference_score": 0.13625188431858193,
+      "cumulative_wrong_basin_leakage_score": 0.12,
+      "primary_blockers": [
+        "wrong_basin"
+      ],
+      "stress_window": 3
+    },
+    "identity_ladder_effect": {
+      "compatibility_stress_status": "blocked",
+      "current_ceiling": "ID5",
+      "id6_claimed": false,
+      "primary_blocker": "wrong_basin",
+      "why_not_id6": "C3/T7 compatibility does not survive this prolonged stress model, and Iteration 9-C artifact replay has not yet closed the evidence chain."
+    },
+    "needed_next": "Either record 9-C as a closeout of one-window compatibility plus a prolonged-stress blocker, or design a recovery/re-separation probe that can keep wrong-basin leakage and support drift bounded across repeated windows.",
+    "stress_failed": true,
+    "summary": "Iteration 9-B2 is a negative prolonged-stress result. The 9-B one-window compatibility pass does not justify multi-window C3 stability when the observed wrong-basin leakage and support loss are allowed to recur without a recovery mechanism.",
+    "what_it_shows": [
+      "The 4% one-window wrong-basin leakage is not negligible under a repeated-window no-recovery stress model.",
+      "The first compatibility failure occurs before the 12-window stress horizon completes.",
+      "9-B should be treated as one-window compatibility evidence, not as persistent A/B compatibility."
+    ]
+  },
+  "iteration": "9-B2",
+  "next_iteration": "9C_c3_artifact_only_replay_and_compatibility_closeout",
+  "purpose": "prolonged_c3_compatibility_stress_no_id6_promotion",
+  "schema": "n07_iteration_9b2_c3_compatibility_prolonged_stress_v1",
+  "source_artifacts": [
+    {
+      "name": "n07_iteration_9b_c3_compatibility_interference_probe",
+      "object_digest": "71684c95a1bb28817546960d9cbd7643f254f9b334feaee39e788c93da09996b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+      "sha256": "814eb489c9fddd884c6a3642bfb5d247b1cb8662db7c97daf1214cb2cd34fef3",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_9b_c3_compatibility_interference_probe_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md",
+      "sha256": "cabeec9503dbb01a00aec3cff320a9a4af7a79ea7becb176e2baa68db8e77de7"
+    }
+  ],
+  "source_iteration_9b": {
+    "acceptance": {
+      "achieved": true,
+      "statement": "Iteration 9-B passes if the C3 fixture emits source-backed compatibility evidence and source control rows while keeping artifact replay, ID6, identity acceptance, RC identity collapse, agency, and semantic choice unclaimed."
+    },
+    "artifact_digests": {
+      "A_support_area_row_digest": "e15784368f0482c69054b69660469228127790cb4c4a8ec5d31ce6179f0697da",
+      "B_support_area_row_digest": "bcca680261e60cf5d87edb9441fb24ba6029997f8a863bb642dc90bda5e57ad9",
+      "candidate_row_digest": "843a3d09c56ba4e52291c3cc8b1d988f9afd3f044bdb90aa2b6b9b044cce993f",
+      "checks_digest": "9056b4a1e62a600782dfac4f287c0240f9a054308cea16630d66cfdda378edc3",
+      "claim_boundary_digest": "e4b3ea6782a52982d160df9757cbebf399c7385f93ab8bba634022acb9462388",
+      "compatibility_record_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+      "control_rows_digest": "ac5530f3cddb8b22d42425f404b6b323196b171130e04ea16c378c2fd30b6d4f",
+      "interpretation_digest": "852cb936aa0b9bbb627e3afe73675730f1f3b5f5133c1ae2c9f0f7345e523a65",
+      "metric_records_digest": "ebfcf10f9393d5386853fe5b1598d7a20603cc4084c995a3b15d763ae9d64913",
+      "shared_u_row_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d"
+    },
+    "c3_compatibility_candidate_row": {
+      "activity_history_digest": "65626432e620c57f0ef1540664e51b379236697d40536f191092bbf14391a86d",
+      "activity_history_digest_scope": {
+        "A_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "artifact_replay_status": "pending_iteration_9c",
+        "compatibility_record_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+        "fixture_id": "n07_c3_t7_competing_basin_compatibility_fixture_v1",
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_closeout": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7"
+      },
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "becoming_class_status": "reusable_class",
+      "biological_claim_allowed": false,
+      "boundary_rung": "source_specific_expression",
+      "candidate_identity_carrier_type": "coherence_basin",
+      "candidate_row_digest": "843a3d09c56ba4e52291c3cc8b1d988f9afd3f044bdb90aa2b6b9b044cce993f",
+      "claim_ceiling": "c3_compatibility_probe_supported_identity_candidate_pending_artifact_replay",
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "companion_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+      "companion_support_area_id": "n07_support_area_B_v1",
+      "compatibility_record_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+      "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+      "derived_id_ceiling": "ID5",
+      "experiment_local_observables_used": [
+        "support_retention_near_competitor",
+        "destructive_interference_score",
+        "ambiguous_overlap_score",
+        "wrong_basin_leakage_score",
+        "hidden_support_field_count"
+      ],
+      "gate_vector": {
+        "artifact_replay": "not_measured",
+        "attractivity": "pass",
+        "compatibility": "pass",
+        "invariance": "pass",
+        "lineage_current": "pass",
+        "reflexive_closure": "pass",
+        "stability": "pass",
+        "support": "pass"
+      },
+      "goal_proxy_regulation_claim_allowed": false,
+      "id6_blocker": "c3_artifact_replay_pending_iteration_9c",
+      "id6_claimed": false,
+      "id_level": "ID5",
+      "identity_acceptance_claim_allowed": false,
+      "identity_carrier_surface": "runtime_coherence_basin",
+      "implementation_surface": "experiment_local",
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_context_only": true,
+      "native_observables_used": [
+        "source_support_area_digest",
+        "node_plus_packet_budget_surface"
+      ],
+      "native_policy_blockers": [
+        "native_c3_compatibility_policy_missing",
+        "c3_artifact_replay_pending_iteration_9c"
+      ],
+      "native_support_status": "experiment_local_compatibility_probe",
+      "naturalization_rung": "Nat0_probe_dependent_expression",
+      "oscillator_context_only": true,
+      "personhood_claim_allowed": false,
+      "primary_blocker": null,
+      "probe_role": "diagnostic_probe",
+      "rc_identity_collapse_claim_allowed": false,
+      "route_choice_context_only": true,
+      "row_id": "n07_i9b_c3_compatibility_probe_candidate_row_v1",
+      "runtime_family": "hybrid_lgrc9v3_experiment_local",
+      "semantic_choice_claim_allowed": false,
+      "shared_neighborhood_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+      "shared_neighborhood_id": "n07_U_shared_A_B_competing_basin_v1",
+      "source_artifact_sha256": {
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json": "9447a5d60c261db66e8bca4ccf8e47598b6668ae1b9ddc4a337857bf5f210e58",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json": "3cb3da0aec3437971af8694abc4eb29c2e256374f4f69a8e6387cd746b1e594c",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json": "173d3a49fb4c6a0022d2e0560a60942527cfaaaf53cff53209926645fbfd5a14",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md": "5da517fd853adfadc69b753c0cdb55c28867593a825a6100c64fc36661f228c0",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md": "98aa0b1ce5b2d0fd671abde3d89038fb21f7abf1d45b5e6fcdae574af93530c2",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md": "0bf73a4d4c103cd8c7c5280b2760075941232d2bada8ddd8b73fe003c61e8749"
+      },
+      "source_artifacts": [
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md"
+      ],
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "support_dependency_status": "probe_dependent",
+      "topology_family_id": "n07_T7_compatibility",
+      "topology_mutation_context_only": true,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false,
+      "visual_is_evidence_source": false,
+      "visual_reference": null,
+      "withdrawal_test_status": "not_tested"
+    },
+    "checks": {
+      "A_B_U_node_sets_disjoint": true,
+      "A_support_digest_recomputes": true,
+      "A_support_row_source_backed": true,
+      "B_support_digest_recomputes": true,
+      "B_support_row_source_backed": true,
+      "all_metric_rows_passed": true,
+      "artifact_replay_pending": true,
+      "budget_exact": true,
+      "candidate_boundary_rung_allowed": true,
+      "candidate_claim_flags_false": true,
+      "claim_flags_false": true,
+      "compatibility_gate_passed": true,
+      "control_blockers_distinct": true,
+      "control_blockers_match_fixture": true,
+      "control_ceilings_id5": true,
+      "control_count_matches_fixture": true,
+      "controls_are_source_rows": true,
+      "controls_blocked": true,
+      "derived_ceiling_id5": true,
+      "fixture_schema_matches": true,
+      "fixture_status_passed": true,
+      "id6_not_claimed": true,
+      "metric_count_matches_fixture": true,
+      "native_policy_blocker_recorded": true,
+      "next_iteration_is_9c": true,
+      "no_src_changes_required": true,
+      "route_movement_oscillator_topology_context_only": true,
+      "semantic_competition_not_agency": true,
+      "source_artifact_hashes_present": true,
+      "source_iteration_7b_passed": true,
+      "source_iteration_8_passed": true,
+      "status_passed": true,
+      "visuals_not_evidence": true
+    },
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "command": ".venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_9b_c3_compatibility_interference_probe.py",
+    "compatibility_metric_rows": [
+      {
+        "comparison": "greater_than_or_equal",
+        "event_time_key": "n07_i9b_compatibility_metric_evaluation",
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_kind": "support_retention",
+        "metric_name": "a_support_retention_near_b",
+        "metric_record_digest": "8bd8b323485571e78b3a4b8feb7a9f6503a74dd7de8a43fa7be1d5aba858bc52",
+        "metric_record_id": "n07_i9b_metric_a_support_retention_near_b",
+        "passed": true,
+        "primary_blocker_if_failed": null,
+        "runtime_visible_inputs": {
+          "A_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "A_support_mass_after_near_B": 1.379,
+          "A_support_mass_before": 1.448,
+          "node_plus_packet_budget_surface": "node_plus_packet"
+        },
+        "scheduler_event_index": 103,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "source_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "threshold": 0.85,
+        "value": 0.952348066298
+      },
+      {
+        "comparison": "greater_than_or_equal",
+        "event_time_key": "n07_i9b_compatibility_metric_evaluation",
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_kind": "support_retention",
+        "metric_name": "b_support_retention_near_a",
+        "metric_record_digest": "69e428628373832b827861b3b26a6d32f9b0766eb2d0a728b27723e1994bac56",
+        "metric_record_id": "n07_i9b_metric_b_support_retention_near_a",
+        "passed": true,
+        "primary_blocker_if_failed": null,
+        "runtime_visible_inputs": {
+          "B_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+          "B_support_mass_after_near_A": 1.15,
+          "B_support_mass_before": 1.2,
+          "node_plus_packet_budget_surface": "node_plus_packet"
+        },
+        "scheduler_event_index": 103,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "source_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "threshold": 0.85,
+        "value": 0.958333333333
+      },
+      {
+        "comparison": "less_than_or_equal",
+        "event_time_key": "n07_i9b_compatibility_metric_evaluation",
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_kind": "interference",
+        "metric_name": "destructive_interference_score",
+        "metric_record_digest": "c6b729007ab806d43976c72d1f92f6afc3d8e5198dcfed6490d879eaf7d6c8b3",
+        "metric_record_id": "n07_i9b_metric_destructive_interference_score",
+        "passed": true,
+        "primary_blocker_if_failed": "destructive_interference",
+        "runtime_visible_inputs": {
+          "A_support_loss": 0.06899999999999995,
+          "B_support_loss": 0.050000000000000044,
+          "node_plus_packet_budget_surface": "node_plus_packet",
+          "shared_U_flux_balance": 0.0
+        },
+        "scheduler_event_index": 103,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "source_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "threshold": 0.15,
+        "value": 0.047619047619
+      },
+      {
+        "comparison": "less_than_or_equal",
+        "event_time_key": "n07_i9b_compatibility_metric_evaluation",
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_kind": "support_overlap",
+        "metric_name": "ambiguous_overlap_score",
+        "metric_record_digest": "e1295a2f69e084b35eee7ba786cf98fa693c890084912f664acec366ea983e1e",
+        "metric_record_id": "n07_i9b_metric_ambiguous_overlap_score",
+        "passed": true,
+        "primary_blocker_if_failed": "ambiguous_overlap",
+        "runtime_visible_inputs": {
+          "A_support_node_ids": [
+            30,
+            31,
+            32
+          ],
+          "B_support_node_ids": [
+            40,
+            41,
+            42
+          ],
+          "shared_U_node_ids": [
+            33,
+            34,
+            35
+          ]
+        },
+        "scheduler_event_index": 103,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "source_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "threshold": 0.2,
+        "value": 0.0
+      },
+      {
+        "comparison": "less_than_or_equal",
+        "event_time_key": "n07_i9b_compatibility_metric_evaluation",
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_kind": "wrong_basin_leakage",
+        "metric_name": "wrong_basin_leakage_score",
+        "metric_record_digest": "169b1f37d1e01b8bbfd71d3a250bee6ed9e966943128406443facc093e5a87d4",
+        "metric_record_id": "n07_i9b_metric_wrong_basin_leakage_score",
+        "passed": true,
+        "primary_blocker_if_failed": "wrong_basin",
+        "runtime_visible_inputs": {
+          "A_flux_into_B_support": 0.02,
+          "B_flux_into_A_support": 0.02
+        },
+        "scheduler_event_index": 103,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "source_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "threshold": 0.1,
+        "value": 0.04
+      },
+      {
+        "comparison": "must_equal",
+        "event_time_key": "n07_i9b_compatibility_metric_evaluation",
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_kind": "schema_guard",
+        "metric_name": "hidden_support_rejection_rule",
+        "metric_record_digest": "434d7db0d5b2e1a5c3126cca0b65eb846fe58fbd5d6dc588f02d1b7dcb1aa145",
+        "metric_record_id": "n07_i9b_metric_hidden_support_rejection_rule",
+        "passed": true,
+        "primary_blocker_if_failed": "hidden_support_field",
+        "runtime_visible_inputs": {},
+        "scheduler_event_index": 103,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "source_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "threshold": 0,
+        "value": 0
+      }
+    ],
+    "compatibility_record": {
+      "A_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "B_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+      "all_metrics_pass": true,
+      "artifact_replay_status": "pending_iteration_9c",
+      "compatibility_gate": "pass",
+      "compatibility_record_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+      "fixture_id": "n07_c3_t7_competing_basin_compatibility_fixture_v1",
+      "id6_blocker": "c3_artifact_replay_pending_iteration_9c",
+      "id6_claimed": false,
+      "metric_id": "n07_coherence_compatibility_v1",
+      "metric_record_digests": [
+        "8bd8b323485571e78b3a4b8feb7a9f6503a74dd7de8a43fa7be1d5aba858bc52",
+        "69e428628373832b827861b3b26a6d32f9b0766eb2d0a728b27723e1994bac56",
+        "c6b729007ab806d43976c72d1f92f6afc3d8e5198dcfed6490d879eaf7d6c8b3",
+        "e1295a2f69e084b35eee7ba786cf98fa693c890084912f664acec366ea983e1e",
+        "169b1f37d1e01b8bbfd71d3a250bee6ed9e966943128406443facc093e5a87d4",
+        "434d7db0d5b2e1a5c3126cca0b65eb846fe58fbd5d6dc588f02d1b7dcb1aa145"
+      ],
+      "node_plus_packet_budget_after": 6.0,
+      "node_plus_packet_budget_before": 6.0,
+      "node_plus_packet_budget_error": 0.0,
+      "primary_blocker": null,
+      "record_id": "n07_i9b_c3_compatibility_record_v1",
+      "runtime_visible": true,
+      "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+      "source_backed": true
+    },
+    "control_rows": [
+      {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "claim_flags_must_remain_false": true,
+        "control_gate": "compatibility",
+        "control_id": "destructive_interference",
+        "control_row_digest": "537f909a513135c4f9f39129fd4ead488c3789136e1fdaabccea89f24355484a",
+        "control_row_id": "n07_i9b_control_destructive_interference",
+        "derived_id_ceiling": "ID5",
+        "event_time_key": "n07_i9b_control_destructive_interference",
+        "gate_result": "compatibility_blocked",
+        "must_replay_from_source_artifact_in_iteration_9c": true,
+        "mutation": {
+          "comparison": "less_than_or_equal",
+          "mutated_field": "destructive_interference_score",
+          "mutated_value": 0.25,
+          "threshold": 0.15
+        },
+        "primary_blocker": "destructive_interference",
+        "scheduler_event_index": 111,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_probe_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "status": "blocked",
+        "synthetic_closeout_control": false
+      },
+      {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "claim_flags_must_remain_false": true,
+        "control_gate": "compatibility",
+        "control_id": "ambiguous_overlap",
+        "control_row_digest": "ef9c26f650f2733ba3ca656fb551322fb8e82fae2c8ee1617ac1ba6e03d15883",
+        "control_row_id": "n07_i9b_control_ambiguous_overlap",
+        "derived_id_ceiling": "ID5",
+        "event_time_key": "n07_i9b_control_ambiguous_overlap",
+        "gate_result": "compatibility_blocked",
+        "must_replay_from_source_artifact_in_iteration_9c": true,
+        "mutation": {
+          "comparison": "less_than_or_equal",
+          "mutated_field": "ambiguous_overlap_score",
+          "mutated_value": 0.5,
+          "threshold": 0.2
+        },
+        "primary_blocker": "ambiguous_overlap",
+        "scheduler_event_index": 112,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_probe_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "status": "blocked",
+        "synthetic_closeout_control": false
+      },
+      {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "claim_flags_must_remain_false": true,
+        "control_gate": "compatibility",
+        "control_id": "wrong_basin",
+        "control_row_digest": "bf41e97e373f6efb9326e21738b4b59fdbe26029b0baf994fc7feb6879bfd091",
+        "control_row_id": "n07_i9b_control_wrong_basin",
+        "derived_id_ceiling": "ID5",
+        "event_time_key": "n07_i9b_control_wrong_basin",
+        "gate_result": "compatibility_blocked",
+        "must_replay_from_source_artifact_in_iteration_9c": true,
+        "mutation": {
+          "comparison": "less_than_or_equal",
+          "mutated_field": "wrong_basin_leakage_score",
+          "mutated_value": 0.22,
+          "threshold": 0.1
+        },
+        "primary_blocker": "wrong_basin",
+        "scheduler_event_index": 113,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_probe_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "status": "blocked",
+        "synthetic_closeout_control": false
+      },
+      {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "claim_flags_must_remain_false": true,
+        "control_gate": "compatibility",
+        "control_id": "hidden_support_field",
+        "control_row_digest": "82094ed7c852a091bccc4583cc39f9629d2dc09e1dcaea98385427d6a43f7c50",
+        "control_row_id": "n07_i9b_control_hidden_support_field",
+        "derived_id_ceiling": "ID5",
+        "event_time_key": "n07_i9b_control_hidden_support_field",
+        "gate_result": "compatibility_blocked",
+        "must_replay_from_source_artifact_in_iteration_9c": true,
+        "mutation": {
+          "comparison": "must_equal",
+          "mutated_field": "hidden_support_field_count",
+          "mutated_value": 1,
+          "threshold": 0
+        },
+        "primary_blocker": "hidden_support_field",
+        "scheduler_event_index": 114,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_probe_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "status": "blocked",
+        "synthetic_closeout_control": false
+      },
+      {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "claim_flags_must_remain_false": true,
+        "control_gate": "compatibility",
+        "control_id": "budget_discontinuity",
+        "control_row_digest": "e569bbdb36669499baf7d353fa3a6dff35cbd68b3d86407db424160a01d50f08",
+        "control_row_id": "n07_i9b_control_budget_discontinuity",
+        "derived_id_ceiling": "ID5",
+        "event_time_key": "n07_i9b_control_budget_discontinuity",
+        "gate_result": "compatibility_blocked",
+        "must_replay_from_source_artifact_in_iteration_9c": true,
+        "mutation": {
+          "comparison": "must_equal",
+          "mutated_field": "node_plus_packet_budget_error",
+          "mutated_value": 0.1,
+          "threshold": 0.0
+        },
+        "primary_blocker": "budget_discontinuity",
+        "scheduler_event_index": 115,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_probe_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "status": "blocked",
+        "synthetic_closeout_control": false
+      },
+      {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "claim_flags_must_remain_false": true,
+        "control_gate": "compatibility",
+        "control_id": "support_drift_beyond_threshold",
+        "control_row_digest": "bd05c85249fad222c8af1746d35fb5cd359c812a6326389f3a0370e3ebc75f35",
+        "control_row_id": "n07_i9b_control_support_drift_beyond_threshold",
+        "derived_id_ceiling": "ID5",
+        "event_time_key": "n07_i9b_control_support_drift_beyond_threshold",
+        "gate_result": "compatibility_blocked",
+        "must_replay_from_source_artifact_in_iteration_9c": true,
+        "mutation": {
+          "comparison": "greater_than_or_equal",
+          "mutated_field": "a_support_retention_near_b",
+          "mutated_value": 0.7,
+          "threshold": 0.85
+        },
+        "primary_blocker": "support_drift_beyond_threshold",
+        "scheduler_event_index": 116,
+        "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+        "source_probe_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+        "source_support_area_digests": [
+          "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        ],
+        "status": "blocked",
+        "synthetic_closeout_control": false
+      }
+    ],
+    "environment": {
+      "generated_at_utc": "2026-06-07T09:38:25.731436+00:00",
+      "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+      "python": "3.12.3"
+    },
+    "experiment": "N07",
+    "fixture": {
+      "artifact_replay_requirements": {
+        "artifact_only": true,
+        "private_runtime_state_allowed": false,
+        "required_chain": [
+          "A_support_area_row",
+          "B_support_area_row",
+          "shared_neighborhood_U",
+          "compatibility_metric_records",
+          "source_control_rows",
+          "budget_records",
+          "closeout_row"
+        ],
+        "semantic_consistency_required": true,
+        "support_area_digest_replay_required_for": [
+          "A",
+          "B"
+        ],
+        "support_digest_replay_chain": [
+          "support_surface_descriptor_digest",
+          "support_area_digest_input_digest"
+        ],
+        "support_surface_descriptor_kind": "n07_c3_t7_design_support_surface_descriptor",
+        "support_surface_descriptor_kind_declared_here": true
+      },
+      "basins": {
+        "A": {
+          "basin_id": "n07_basin_A_candidate_v1",
+          "source_backing_scope": {
+            "support_area_digest": "source_backed_from_iteration_8_closeout",
+            "support_edge_ids": "c3_design_extension",
+            "support_node_ids": "source_backed_from_iteration_7b_later_cycle_state_row",
+            "support_port_ids": "c3_design_extension"
+          },
+          "source_status": "source_backed_c1_t6_nodes_structurally_reexpressed_for_c3",
+          "source_support_area_digest": "565a3f024ebb217cb62b0cd9aaa2c816ff1613d74cee6b65b9a6d94edb8a3075",
+          "structural_reexpression_note": "Basin A imports the source-backed C1/T6 support nodes and support digest, then declares new C3-specific edge/port ids for the competing-basin fixture. The new edges and ports are design extensions, not prior runtime evidence.",
+          "support_area_row": {
+            "basin_id": "n07_basin_A_candidate_v1",
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "budget_surface": "node_plus_packet",
+            "candidate_identity_carrier_type": "coherence_basin",
+            "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+            "lineage_map_digest": null,
+            "lineage_status": "fixed_c3_t7_fixture_design",
+            "role": "candidate_A_source_backed_c1_t6_basin_reexpressed_for_c3_design",
+            "scheduler_event_index": null,
+            "support_area_digest": "b5885854c210804f752d87c82904b284957426c76af51df3d8b2450d18d5168a",
+            "support_area_digest_input": {
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "budget_surface": "node_plus_packet",
+              "candidate_identity_carrier_type": "coherence_basin",
+              "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+              "lineage_map_digest": null,
+              "lineage_status": "fixed_c3_t7_fixture_design",
+              "scheduler_event_index": null,
+              "support_area_id": "n07_support_area_A_v1",
+              "support_edge_ids": [
+                300,
+                301,
+                302,
+                306
+              ],
+              "support_node_ids": [
+                30,
+                31,
+                32
+              ],
+              "support_port_ids": [
+                "A_support_front",
+                "A_support_rear",
+                "A_support_shared_U",
+                "A_support_reentry"
+              ],
+              "support_surface_digest": "93b7177c553cb66414710f88070e10d9a0de6854674ce2a7fa3aa1aaf4f9a5a7"
+            },
+            "support_area_id": "n07_support_area_A_v1",
+            "support_digest_replay_required": true,
+            "support_edge_ids": [
+              300,
+              301,
+              302,
+              306
+            ],
+            "support_node_ids": [
+              30,
+              31,
+              32
+            ],
+            "support_port_ids": [
+              "A_support_front",
+              "A_support_rear",
+              "A_support_shared_U",
+              "A_support_reentry"
+            ],
+            "support_surface_descriptor": {
+              "basin_id": "n07_basin_A_candidate_v1",
+              "descriptor_kind": "n07_c3_t7_design_support_surface_descriptor",
+              "design_only": true,
+              "role": "candidate_A_source_backed_c1_t6_basin_reexpressed_for_c3_design",
+              "source_digest": "565a3f024ebb217cb62b0cd9aaa2c816ff1613d74cee6b65b9a6d94edb8a3075",
+              "support_area_id": "n07_support_area_A_v1",
+              "support_edge_ids": [
+                300,
+                301,
+                302,
+                306
+              ],
+              "support_node_ids": [
+                30,
+                31,
+                32
+              ],
+              "support_port_ids": [
+                "A_support_front",
+                "A_support_rear",
+                "A_support_shared_U",
+                "A_support_reentry"
+              ]
+            },
+            "support_surface_digest": "93b7177c553cb66414710f88070e10d9a0de6854674ce2a7fa3aa1aaf4f9a5a7",
+            "visual_is_evidence_source": false
+          }
+        },
+        "B": {
+          "basin_id": "n07_basin_B_competitor_v1",
+          "source_backing_required_in_iteration_9b": true,
+          "source_backing_requirement": "Iteration 9-B must emit source-backed B support/probe rows before B can be used as compatibility evidence. This design row alone is not evidence for B-basin identity.",
+          "source_status": "declared_design_fixture_until_iteration_9b",
+          "support_area_row": {
+            "basin_id": "n07_basin_B_competitor_v1",
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "budget_surface": "node_plus_packet",
+            "candidate_identity_carrier_type": "coherence_basin",
+            "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+            "lineage_map_digest": null,
+            "lineage_status": "fixed_c3_t7_fixture_design",
+            "role": "candidate_B_declared_competing_basin_design_only",
+            "scheduler_event_index": null,
+            "support_area_digest": "97baab5d67462d060ef2a96bfad90283091e70ab127f1e4ff9a5b0dfe479366c",
+            "support_area_digest_input": {
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "budget_surface": "node_plus_packet",
+              "candidate_identity_carrier_type": "coherence_basin",
+              "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+              "lineage_map_digest": null,
+              "lineage_status": "fixed_c3_t7_fixture_design",
+              "scheduler_event_index": null,
+              "support_area_id": "n07_support_area_B_v1",
+              "support_edge_ids": [
+                303,
+                304,
+                305,
+                307
+              ],
+              "support_node_ids": [
+                40,
+                41,
+                42
+              ],
+              "support_port_ids": [
+                "B_support_front",
+                "B_support_rear",
+                "B_support_shared_U",
+                "B_support_reentry"
+              ],
+              "support_surface_digest": "0f288503a68dc4dda4a185b2fc2901b45fce993fdaa8059f3a55eb98b79e0e1f"
+            },
+            "support_area_id": "n07_support_area_B_v1",
+            "support_digest_replay_required": true,
+            "support_edge_ids": [
+              303,
+              304,
+              305,
+              307
+            ],
+            "support_node_ids": [
+              40,
+              41,
+              42
+            ],
+            "support_port_ids": [
+              "B_support_front",
+              "B_support_rear",
+              "B_support_shared_U",
+              "B_support_reentry"
+            ],
+            "support_surface_descriptor": {
+              "basin_id": "n07_basin_B_competitor_v1",
+              "descriptor_kind": "n07_c3_t7_design_support_surface_descriptor",
+              "design_only": true,
+              "role": "candidate_B_declared_competing_basin_design_only",
+              "source_digest": null,
+              "support_area_id": "n07_support_area_B_v1",
+              "support_edge_ids": [
+                303,
+                304,
+                305,
+                307
+              ],
+              "support_node_ids": [
+                40,
+                41,
+                42
+              ],
+              "support_port_ids": [
+                "B_support_front",
+                "B_support_rear",
+                "B_support_shared_U",
+                "B_support_reentry"
+              ]
+            },
+            "support_surface_digest": "0f288503a68dc4dda4a185b2fc2901b45fce993fdaa8059f3a55eb98b79e0e1f",
+            "visual_is_evidence_source": false
+          }
+        }
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "compatibility_metric_contract": {
+        "compatibility_gate_mapping": {
+          "all_metrics_pass": "compatibility=pass",
+          "any_metric_fails": "compatibility=blocked",
+          "probe_not_run": "compatibility=not_measured"
+        },
+        "frozen_before_probe": true,
+        "hidden_report_side_metric_allowed": false,
+        "metric_id": "n07_coherence_compatibility_v1",
+        "metric_names": [
+          "a_support_retention_near_b",
+          "b_support_retention_near_a",
+          "destructive_interference_score",
+          "ambiguous_overlap_score",
+          "wrong_basin_leakage_score",
+          "hidden_support_rejection_rule"
+        ],
+        "metrics": [
+          {
+            "comparison": "greater_than_or_equal",
+            "metric_kind": "support_retention",
+            "metric_name": "a_support_retention_near_b",
+            "runtime_visible_inputs_required": [
+              "A_support_area_digest",
+              "A_support_mass_before",
+              "A_support_mass_after_near_B",
+              "node_plus_packet_budget_surface"
+            ],
+            "source_support_area_id": "n07_support_area_A_v1",
+            "target_basin": "A",
+            "threshold": 0.85
+          },
+          {
+            "comparison": "greater_than_or_equal",
+            "metric_kind": "support_retention",
+            "metric_name": "b_support_retention_near_a",
+            "runtime_visible_inputs_required": [
+              "B_support_area_digest",
+              "B_support_mass_before",
+              "B_support_mass_after_near_A",
+              "node_plus_packet_budget_surface"
+            ],
+            "source_support_area_id": "n07_support_area_B_v1",
+            "target_basin": "B",
+            "threshold": 0.85
+          },
+          {
+            "comparison": "less_than_or_equal",
+            "metric_kind": "interference",
+            "metric_name": "destructive_interference_score",
+            "primary_blocker": "destructive_interference",
+            "runtime_visible_inputs_required": [
+              "A_support_loss",
+              "B_support_loss",
+              "shared_U_flux_balance",
+              "node_plus_packet_budget_surface"
+            ],
+            "threshold": 0.15
+          },
+          {
+            "comparison": "less_than_or_equal",
+            "metric_kind": "support_overlap",
+            "metric_name": "ambiguous_overlap_score",
+            "primary_blocker": "ambiguous_overlap",
+            "runtime_visible_inputs_required": [
+              "A_support_node_ids",
+              "B_support_node_ids",
+              "lineage_status",
+              "shared_U_node_ids"
+            ],
+            "threshold": 0.2
+          },
+          {
+            "comparison": "less_than_or_equal",
+            "metric_kind": "wrong_basin_leakage",
+            "metric_name": "wrong_basin_leakage_score",
+            "primary_blocker": "wrong_basin",
+            "runtime_visible_inputs_required": [
+              "A_flux_into_B_support",
+              "B_flux_into_A_support",
+              "shared_U_route_context"
+            ],
+            "threshold": 0.1
+          },
+          {
+            "comparison": "must_equal",
+            "metric_formula": "hidden_support_field_count == 0",
+            "metric_kind": "schema_guard",
+            "metric_name": "hidden_support_rejection_rule",
+            "metric_semantics": "Count support-affecting fields not present in the declared support_area_digest_input or source support rows. The metric passes only when no hidden support fields are consumed.",
+            "primary_blocker": "hidden_support_field",
+            "runtime_visible_inputs_required": [
+              "support_area_digest_input",
+              "source_artifact_digest",
+              "declared_support_rows"
+            ],
+            "threshold": 0
+          }
+        ],
+        "source_metric_conditions": [
+          "budget_error == 0",
+          "min_active_node_coherence >= 0",
+          "candidate_support_overlap_with_competitor <= declared_overlap_threshold",
+          "lineage_conflict_detected = false",
+          "hidden_support_source_detected = false",
+          "destructive_interference_score <= declared_interference_threshold"
+        ],
+        "thresholds_are_frozen": true
+      },
+      "competition_semantics": {
+        "claim_boundary": "A positive result would support compatibility of an ID5 basin near another basin; it would not prove semantic choice, agency, identity acceptance, RC identity collapse, or biological identity.",
+        "competition_axes": [
+          "shared_neighborhood_U",
+          "flux_ambiguity",
+          "support_overlap_risk",
+          "attractor_interference",
+          "wrong_basin_leakage",
+          "artifact_replay_identity_ambiguity"
+        ],
+        "definition": "Competing basins are structurally coupled alternatives on the same coherence/flux field. They share or border a local neighborhood U such that coherence, flux, support evidence, or basin legibility can be captured by, leaked into, or disturbed by either basin.",
+        "iteration_9b_question": "Does Basin A remain distinct, coherent, and replayable as A when Basin B is source-backed and present in the shared-U compatibility fixture?",
+        "not_meant_as": [
+          "semantic_choice",
+          "agency",
+          "goal_directed_competition",
+          "biological_competition",
+          "identity_acceptance"
+        ]
+      },
+      "composite_topology": {
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+        "design_iteration_derived_id_ceiling": "ID5",
+        "id6_requires": [
+          "iteration_9b_compatibility_pass",
+          "iteration_9c_artifact_replay_pass",
+          "all_claim_flags_false"
+        ],
+        "manifest_primitive_blocks_combined": [
+          "n07_T2_stable_well_basin",
+          "n07_T3_attractor_neighborhood"
+        ],
+        "primitive_blocks_combined": [
+          "n07_T1_support_area_minimal",
+          "n07_T2_stable_well_basin",
+          "n07_T3_attractor_neighborhood",
+          "n07_T5_lineage_current_invariance",
+          "n07_T6_reflexive_closure",
+          "n07_T7_compatibility"
+        ],
+        "primitive_extension_policy": "The frozen Iteration 2 C3 manifest declares a minimal T2/T3 compatibility sketch. Iteration 9 extends C3 after the Iteration 8 C1/T6 closeout by composing the closed ID5 chain with T7 compatibility. The frozen manifest is not rewritten; 9-B/9-C use this fixture as the authoritative C3/T7 extension contract.",
+        "primitive_extension_requires_fixture_validation": true,
+        "source_context_closeout_row_digest": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+        "source_context_closeout_row_id": "n07_i8_c1_t6_artifact_replay_closeout_row_v1",
+        "source_context_derived_id_ceiling": "ID5",
+        "source_manifest_composite_topology": {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID5_or_ID6_only_after_T7_compatibility_and_replay",
+          "false_positive_confusion_under_test": "basin_overlap_misread_as_compatibility",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID2",
+            "ID3"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T2_stable_well_basin",
+            "n07_T3_attractor_neighborhood"
+          ]
+        }
+      },
+      "control_requirements": [
+        {
+          "claim_flags_must_remain_false": true,
+          "control_gate": "compatibility",
+          "control_id": "destructive_interference",
+          "declared_before_probe": true,
+          "gate_specific_derived_id_ceiling": "ID5",
+          "must_emit_source_control_row_in_iteration_9b": true,
+          "must_replay_from_source_artifact_in_iteration_9c": true,
+          "primary_blocker": "destructive_interference"
+        },
+        {
+          "claim_flags_must_remain_false": true,
+          "control_gate": "compatibility",
+          "control_id": "ambiguous_overlap",
+          "declared_before_probe": true,
+          "gate_specific_derived_id_ceiling": "ID5",
+          "must_emit_source_control_row_in_iteration_9b": true,
+          "must_replay_from_source_artifact_in_iteration_9c": true,
+          "primary_blocker": "ambiguous_overlap"
+        },
+        {
+          "claim_flags_must_remain_false": true,
+          "control_gate": "compatibility",
+          "control_id": "wrong_basin",
+          "declared_before_probe": true,
+          "gate_specific_derived_id_ceiling": "ID5",
+          "must_emit_source_control_row_in_iteration_9b": true,
+          "must_replay_from_source_artifact_in_iteration_9c": true,
+          "primary_blocker": "wrong_basin"
+        },
+        {
+          "claim_flags_must_remain_false": true,
+          "control_gate": "compatibility",
+          "control_id": "hidden_support_field",
+          "declared_before_probe": true,
+          "gate_specific_derived_id_ceiling": "ID5",
+          "must_emit_source_control_row_in_iteration_9b": true,
+          "must_replay_from_source_artifact_in_iteration_9c": true,
+          "primary_blocker": "hidden_support_field"
+        },
+        {
+          "claim_flags_must_remain_false": true,
+          "control_gate": "compatibility",
+          "control_id": "budget_discontinuity",
+          "declared_before_probe": true,
+          "gate_specific_derived_id_ceiling": "ID5",
+          "must_emit_source_control_row_in_iteration_9b": true,
+          "must_replay_from_source_artifact_in_iteration_9c": true,
+          "primary_blocker": "budget_discontinuity"
+        },
+        {
+          "claim_flags_must_remain_false": true,
+          "control_gate": "compatibility",
+          "control_id": "support_drift_beyond_threshold",
+          "declared_before_probe": true,
+          "gate_specific_derived_id_ceiling": "ID5",
+          "must_emit_source_control_row_in_iteration_9b": true,
+          "must_replay_from_source_artifact_in_iteration_9c": true,
+          "primary_blocker": "support_drift_beyond_threshold"
+        }
+      ],
+      "fixture_id": "n07_c3_t7_competing_basin_compatibility_fixture_v1",
+      "gate_vector_mapping": {
+        "artifact_replay_status": "not_run",
+        "compatibility_probe_status": "not_run",
+        "iteration_9_design_gate_vector": {
+          "artifact_replay": "not_measured",
+          "attractivity": "pass",
+          "compatibility": "not_measured",
+          "invariance": "pass",
+          "lineage_current": "pass",
+          "reflexive_closure": "pass",
+          "stability": "pass",
+          "support": "pass"
+        },
+        "source_c1_t6_gate_vector": {
+          "artifact_replay": "pass",
+          "attractivity": "pass",
+          "compatibility": "blocked",
+          "invariance": "pass",
+          "lineage_current": "pass",
+          "reflexive_closure": "pass",
+          "stability": "pass",
+          "support": "pass"
+        }
+      },
+      "manifest_extension_policy": {
+        "extension_declared_in_fixture": true,
+        "frozen_manifest_path": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+        "frozen_manifest_sha256": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603",
+        "iteration_9b_9c_validation_source": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+        "manifest_remains_frozen": true,
+        "rationale": "Changing n07_fixture_manifest_v1 after Iteration 2 would invalidate pinned prior artifacts. Iteration 9 therefore declares T7 as a post-closeout fixture extension and records that downstream C3/T7 iterations validate against this fixture.",
+        "topology_family_extension_id": "n07_T7_compatibility"
+      },
+      "non_actions": {
+        "agency_claim_allowed": false,
+        "artifact_replay_passed": false,
+        "compatibility_passed": false,
+        "compatibility_probe_run": false,
+        "id6_claimed": false,
+        "identity_acceptance_event_emitted": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false
+      },
+      "purpose": "design_only_no_probe_no_id_promotion",
+      "row_schema_requirements": {
+        "becoming_enum_values": {
+          "becoming_class_status": [
+            "observation_tag",
+            "reusable_class",
+            "generative_class",
+            "coherence_preserving_class"
+          ],
+          "boundary_rung": [
+            "eligible_state",
+            "event",
+            "substrate_consequence",
+            "structured_consequence",
+            "source_specific_expression",
+            "recurrence_or_continuation",
+            "natural_regime_expression"
+          ],
+          "naturalization_rung": [
+            "Nat0_probe_dependent_expression",
+            "Nat1_probe_weakened_expression",
+            "Nat2_regime_assisted_expression",
+            "Nat3_endogenous_precondition_formation",
+            "Nat4_native_expression",
+            "Nat5_recurrent_native_expression",
+            "Nat6_self_interrogating_regime",
+            "not_applicable"
+          ],
+          "probe_role": [
+            "none",
+            "diagnostic_probe",
+            "constructive_probe",
+            "boundary_probe",
+            "withdrawal_probe",
+            "naturalization_probe"
+          ],
+          "support_dependency_status": [
+            "not_tested",
+            "probe_dependent",
+            "weakened_support_survives",
+            "regime_assisted",
+            "endogenous_precondition_candidate",
+            "native_expression_candidate",
+            "recurrent_native_expression_candidate"
+          ],
+          "withdrawal_test_status": [
+            "not_tested",
+            "support_weakened_passed",
+            "support_removed_passed",
+            "support_removed_failed",
+            "not_applicable"
+          ]
+        },
+        "implementation_surface_allowed_values": [
+          "experiment_local",
+          "native_lgrc_telemetry",
+          "native_causal_pulse_substrate_surface",
+          "surface_lineage_transport",
+          "topology_state_reabsorption",
+          "native_route_arbitration",
+          "proper_time_identity_evaluation",
+          "artifact_only_validator",
+          "not_applicable"
+        ],
+        "required_fields": [
+          "row_id",
+          "id_level",
+          "topology_family_id",
+          "composite_topology_id",
+          "candidate_identity_carrier_type",
+          "identity_carrier_surface",
+          "support_area_id",
+          "support_area_digest",
+          "source_artifacts",
+          "source_artifact_sha256",
+          "source_reports",
+          "runtime_family",
+          "implementation_surface",
+          "gate_vector",
+          "derived_id_ceiling",
+          "primary_blocker",
+          "native_support_status",
+          "native_observables_used",
+          "experiment_local_observables_used",
+          "native_policy_blockers",
+          "becoming_class_status",
+          "probe_role",
+          "boundary_rung",
+          "support_dependency_status",
+          "withdrawal_test_status",
+          "naturalization_rung",
+          "activity_history_digest",
+          "claim_flags",
+          "visual_reference",
+          "visual_is_evidence_source"
+        ],
+        "runtime_family_allowed_values": [
+          "LGRC9V3",
+          "experiment_local",
+          "hybrid_lgrc9v3_experiment_local",
+          "not_applicable"
+        ]
+      },
+      "schema": "n07_c3_t7_compatibility_fixture_v1",
+      "shared_neighborhood_U": {
+        "connects_support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "edge_ids": [
+          308,
+          309,
+          310,
+          311
+        ],
+        "neighborhood_id": "n07_U_shared_A_B_competing_basin_v1",
+        "node_ids": [
+          33,
+          34,
+          35
+        ],
+        "ports": [
+          "U_to_A_front",
+          "U_to_A_rear",
+          "U_to_B_front",
+          "U_to_B_rear"
+        ],
+        "route_choice_claim_allowed": false,
+        "wrong_basin_leakage_measured": true
+      },
+      "source_control_replay_requirements": {
+        "b_basin_source_backing_required_in_iteration_9b": true,
+        "gate_specific_ceilings_required": true,
+        "iteration_9b": "emit probe/control rows from the frozen fixture",
+        "iteration_9c": "replay 9-B source probe/control rows from artifacts only",
+        "synthetic_closeout_controls_allowed": false
+      },
+      "source_iteration_7b_direct_artifact": {
+        "later_cycle_state_digest": "ac273d194207e577eba900fec8ec816e40508eb0fc71fc8f399989a274cdb08e",
+        "matches_iteration_8_embedded_7b": true,
+        "object_digest": "c4a3bda9d46639b1cc832f43be9bee26ec25220e09785be5714c7b99c2dec4f2",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+        "sha256": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33"
+      },
+      "source_iteration_8_closeout_row_digest": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+      "t7_becoming_method_guidance": {
+        "boundary_rung_for_9c_artifact_closeout_if_compatibility_passes": "recurrence_or_continuation",
+        "boundary_rung_for_design_only_fixture": "eligible_state",
+        "boundary_rung_for_positive_9b_probe_candidate": "source_specific_expression",
+        "identity_acceptance_claim_allowed": false,
+        "note": "T7 compatibility can strengthen an artifact-only ID candidate, but does not by itself authorize identity acceptance, RC identity collapse, agency, or semantic choice."
+      },
+      "topology_family": {
+        "budget_surface": "node_plus_packet",
+        "candidate_identity_carrier_type": "coherence_basin",
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "compatibility_evidence_emitted": false,
+        "declaration_source": "n07_c3_t7_compatibility_fixture_v1",
+        "expected_maximum_id_ceiling": "ID6_only_after_9b_compatibility_and_9c_artifact_replay",
+        "frozen_manifest_not_mutated": true,
+        "frozen_manifest_topology_family_present": false,
+        "gate_under_test": "compatibility",
+        "identity_carrier_surface": "runtime_coherence_basin",
+        "manifest_extension_status": "post_iteration_8_fixture_extension",
+        "paired_negative_control_topologies": [
+          "ambiguous_overlap",
+          "budget_discontinuity",
+          "destructive_interference",
+          "hidden_support_field",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "primary_positive_metric": "n07_coherence_compatibility_v1",
+        "probe_run": false,
+        "shared_neighborhood_U": "n07_U_shared_A_B_competing_basin_v1",
+        "support_area_ids": [
+          "n07_support_area_A_v1",
+          "n07_support_area_B_v1"
+        ],
+        "target_id_level": "ID6",
+        "topology_family_id": "n07_T7_compatibility"
+      },
+      "visual_is_evidence_source": false,
+      "visual_reference": null
+    },
+    "git": {
+      "rev_parse_head": {
+        "command": "git rev-parse HEAD",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "3abf8bc7f95c9f8a2ddf37099aaec1ad484a8a5e"
+      },
+      "status_short": {
+        "command": "git status --short",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N07-rc-identity-attractor-invariance/README.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationChecklist.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationPlan.md\n?? ../../../../Obsidian/SentientLife/Self/26-06/2026-06-07.md\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/configs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/reports/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/"
+      },
+      "status_short_src": {
+        "command": "git status --short src",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "interpretation": {
+      "claim_boundary": "This is structural compatibility evidence for coherence-basin identity. It is not identity acceptance, RC identity collapse, semantic choice, agency, biological identity, personhood, movement, or unrestricted identity.",
+      "control_meaning": "The six source control rows show the compatibility gate has separate failure modes for destructive interference, ambiguous overlap, wrong-basin leakage, hidden support, budget drift, and support drift. A future closeout cannot collapse these into one generic blocker.",
+      "identity_ladder_effect": {
+        "does_not_yet_promote_to": "ID6",
+        "id6_blocker": "c3_artifact_replay_pending_iteration_9c",
+        "strengthens": "ID5_identity_candidate_with_C3_compatibility_evidence",
+        "why_not_id6": "9-B is a source-backed one-window probe artifact. C3 needs Iteration 9-C artifact-only replay to prove the compatibility chain can be reconstructed without private runtime state, and a separate prolonged compatibility stress probe would be needed to claim multi-step persistence of the A/B relation."
+      },
+      "main_measurements": {
+        "A_support_retention_near_B": 0.952348066298,
+        "B_support_retention_near_A": 0.958333333333,
+        "ambiguous_overlap_score": 0.0,
+        "destructive_interference_score": 0.047619047619,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "wrong_basin_leakage_score": 0.04
+      },
+      "next_question": "Iteration 9-C should replay the A support row, B support row, shared-U row, metric records, controls, and compatibility candidate row from artifacts only, then decide whether C3/T7 can close as ID6 or remains an ID5 compatibility-supported candidate.",
+      "prolongation_expectation": "Unknown from 9-B. If the simulation is prolonged, A/B support could remain separated, drift below retention threshold, leak into the wrong basin, develop destructive interference, or expose budget drift. Those are exactly the conditions a future 9-B-stress or post-9-C stress iteration should measure rather than infer.",
+      "simulation_scope": {
+        "control_event_indices_used": [
+          111,
+          112,
+          113,
+          114,
+          115,
+          116
+        ],
+        "dynamic_lgrc_step_count": 0,
+        "event_indices_used": [
+          100,
+          101,
+          102,
+          103
+        ],
+        "probe_window_count": 1,
+        "prolonged_simulation_result": "not_tested",
+        "prolonged_simulation_run": false,
+        "scope_note": "9-B emits source-backed support, metric, and control rows for one compatibility window. It does not iterate the A/B/shared-U system forward through repeated LGRC steps."
+      },
+      "summary": "Iteration 9-B is a positive one-window C3/T7 compatibility probe: Basin A retains coherent, legible support near source-backed Basin B, and Basin B retains support near A, under the frozen shared-U compatibility metric contract.",
+      "support_retention_delta": {
+        "A_support_loss_near_B": 0.06899999999999995,
+        "B_support_loss_near_A": 0.050000000000000044
+      },
+      "what_it_shows": [
+        "A and B are compatible as distinct support areas in this serialized shared-U probe window without collapsing into ambiguous overlap.",
+        "The shared neighborhood permits bounded interaction without destructive interference under the frozen thresholds for this window.",
+        "Wrong-basin leakage stays below threshold, so the probe does not show evidence being captured by the competitor basin.",
+        "The positive compatibility result uses declared support rows and serialized metrics, not hidden support fields."
+      ]
+    },
+    "iteration": "9-B",
+    "next_iteration": "9C_c3_artifact_only_replay_and_compatibility_closeout",
+    "non_actions": {
+      "agency_claim_allowed": false,
+      "artifact_replay_passed": false,
+      "id6_claimed": false,
+      "identity_acceptance_event_emitted": false,
+      "movement_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "topology_mutation_claim_allowed": false
+    },
+    "purpose": "c3_compatibility_interference_probe_no_id6_promotion",
+    "schema": "n07_iteration_9b_c3_compatibility_interference_probe_v1",
+    "shared_neighborhood_U_row": {
+      "budget_surface": "node_plus_packet",
+      "connects_support_area_ids": [
+        "n07_support_area_A_v1",
+        "n07_support_area_B_v1"
+      ],
+      "edge_ids": [
+        308,
+        309,
+        310,
+        311
+      ],
+      "event_time_key": "n07_i9b_shared_u_commit",
+      "lineage_status": "fixed_c3_t7_probe_shared_neighborhood",
+      "neighborhood_id": "n07_U_shared_A_B_competing_basin_v1",
+      "node_ids": [
+        33,
+        34,
+        35
+      ],
+      "ports": [
+        "U_to_A_front",
+        "U_to_A_rear",
+        "U_to_B_front",
+        "U_to_B_rear"
+      ],
+      "route_choice_claim_allowed": false,
+      "scheduler_event_index": 102,
+      "shared_u_digest": "a7c45b58886bf1780d07da5c94456e31d1c50a9bd399273782d035dec653ac0d",
+      "wrong_basin_leakage_measured": true
+    },
+    "source_artifacts": [
+      {
+        "name": "n07_fixture_manifest_v1",
+        "object_digest": "89d46bf941cb40f359b99381f0c7d1b391f67ae3eb07955ec850a8c03a242e5e",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+        "sha256": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603"
+      },
+      {
+        "name": "n07_c3_t7_compatibility_fixture_v1",
+        "object_digest": "d6a96b467f62a995dc212d3b0d0f0392939fabab65974c4edcec20675a2b0d7b",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+        "sha256": "9447a5d60c261db66e8bca4ccf8e47598b6668ae1b9ddc4a337857bf5f210e58"
+      },
+      {
+        "name": "n07_iteration_7b_source_backed_t6_reflexive_closure",
+        "object_digest": "c4a3bda9d46639b1cc832f43be9bee26ec25220e09785be5714c7b99c2dec4f2",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+        "sha256": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+        "status": "passed"
+      },
+      {
+        "name": "n07_iteration_8_c1_t6_artifact_replay_closeout",
+        "object_digest": "6fb9a9892e1c2a60b3cad80a9226d31637b3370956dfc80076c1fa874a307d2f",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_8_c1_t6_artifact_replay_closeout.json",
+        "sha256": "3cb3da0aec3437971af8694abc4eb29c2e256374f4f69a8e6387cd746b1e594c",
+        "status": "passed"
+      },
+      {
+        "name": "n07_iteration_9_c3_t7_compatibility_fixture_design",
+        "object_digest": "f9c2bacf74c34fde9f2eb2a9426d1df6316b38b2a504e651b37ee72cd4761477",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9_c3_t7_compatibility_fixture_design.json",
+        "sha256": "173d3a49fb4c6a0022d2e0560a60942527cfaaaf53cff53209926645fbfd5a14",
+        "status": "passed"
+      }
+    ],
+    "source_manifest": {
+      "becoming_method_fields": {
+        "activity_history_digest_scope": [
+          "orientation",
+          "observation",
+          "classification",
+          "probe",
+          "withdrawal",
+          "naturalization",
+          "integration"
+        ],
+        "enum_values": {
+          "becoming_class_status": [
+            "observation_tag",
+            "reusable_class",
+            "generative_class",
+            "coherence_preserving_class"
+          ],
+          "boundary_rung": [
+            "eligible_state",
+            "event",
+            "substrate_consequence",
+            "structured_consequence",
+            "source_specific_expression",
+            "recurrence_or_continuation",
+            "natural_regime_expression"
+          ],
+          "naturalization_rung": [
+            "Nat0_probe_dependent_expression",
+            "Nat1_probe_weakened_expression",
+            "Nat2_regime_assisted_expression",
+            "Nat3_endogenous_precondition_formation",
+            "Nat4_native_expression",
+            "Nat5_recurrent_native_expression",
+            "Nat6_self_interrogating_regime",
+            "not_applicable"
+          ],
+          "probe_role": [
+            "none",
+            "diagnostic_probe",
+            "constructive_probe",
+            "boundary_probe",
+            "withdrawal_probe",
+            "naturalization_probe"
+          ],
+          "support_dependency_status": [
+            "not_tested",
+            "probe_dependent",
+            "weakened_support_survives",
+            "regime_assisted",
+            "endogenous_precondition_candidate",
+            "native_expression_candidate",
+            "recurrent_native_expression_candidate"
+          ],
+          "withdrawal_test_status": [
+            "not_tested",
+            "support_weakened_passed",
+            "support_removed_passed",
+            "support_removed_failed",
+            "not_applicable"
+          ]
+        },
+        "naturalization_rung_recorded_without_claim_promotion": true,
+        "probe_supported_results_marked_probe_supported": true,
+        "result_classified_at_lowest_valid_rung": true,
+        "withdrawal_support_dependence_recorded": true
+      },
+      "claim_boundary": {
+        "agency_or_personhood_claim_emitted": false,
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "id_levels_are_claim_flags": false,
+        "identity_acceptance_event_emitted": false
+      },
+      "composite_topologies": [
+        {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C1_recurrent_single_basin_identity_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID5_after_reflexive_closure_probe",
+          "false_positive_confusion_under_test": "cycle_persistence_misread_as_reflexive_self_maintenance",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID1",
+            "ID2",
+            "ID3",
+            "ID4"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T1_support_area_minimal",
+            "n07_T2_stable_well_basin",
+            "n07_T3_attractor_neighborhood",
+            "n07_T6_reflexive_closure"
+          ]
+        },
+        {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C2_lineage_current_topology_mutating_identity_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID4_until_reflexive_closure_passes",
+          "false_positive_confusion_under_test": "stale_node_label_continuity_misread_as_identity",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [
+            "N04_22B_boundary_evidence"
+          ],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID1",
+            "ID3"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T1_support_area_minimal",
+            "n07_T5_lineage_current_invariance"
+          ]
+        },
+        {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID5_or_ID6_only_after_T7_compatibility_and_replay",
+          "false_positive_confusion_under_test": "basin_overlap_misread_as_compatibility",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID2",
+            "ID3"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T2_stable_well_basin",
+            "n07_T3_attractor_neighborhood"
+          ]
+        },
+        {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C4_route_fed_route_independent_identity_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID3_until_identity_gates_pass_independently",
+          "false_positive_confusion_under_test": "route_choice_misread_as_identity",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [
+            "N06_route_choice_context"
+          ],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID1",
+            "ID2"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T1_support_area_minimal",
+            "n07_T3_attractor_neighborhood"
+          ]
+        },
+        {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C5_movement_carried_movement_independent_identity_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID4_until_movement_independence_passes",
+          "false_positive_confusion_under_test": "movement_trace_misread_as_identity_acceptance",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [
+            "N04_topology_mutating_movement_candidate"
+          ],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID1",
+            "ID3"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T1_support_area_minimal",
+            "n07_T5_lineage_current_invariance"
+          ]
+        },
+        {
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "composite_topology_id": "n07_C6_parent_child_refinement_identity_boundary_candidate",
+          "derived_id_ceiling": "ID0",
+          "expected_id_ceiling": "ID4_until_parent_child_compatibility_passes",
+          "false_positive_confusion_under_test": "mechanical_refinement_misread_as_identity_fission",
+          "gate_vector": {
+            "artifact_replay": "not_measured",
+            "attractivity": "not_measured",
+            "compatibility": "not_measured",
+            "invariance": "not_measured",
+            "lineage_current": "not_measured",
+            "reflexive_closure": "not_measured",
+            "stability": "not_measured",
+            "support": "not_measured"
+          },
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "imported_prior_experiment_surfaces": [
+            "GRC9V3_refinement_boundary"
+          ],
+          "imported_surfaces_evidence_only": true,
+          "informative_lower_ceilings": [
+            "ID1",
+            "ID2",
+            "ID3"
+          ],
+          "primary_blocker": "not_run_iteration_2_manifest_only",
+          "primitive_blocks_combined": [
+            "n07_T1_support_area_minimal",
+            "n07_T5_lineage_current_invariance"
+          ]
+        }
+      ],
+      "composite_topology_policy": {
+        "composites_derive_id_ceiling_from_gate_vectors": true,
+        "imported_prior_surfaces_are_evidence_only": true,
+        "mechanical_refinement_is_not_identity_fission": true,
+        "movement_trace_is_not_identity_acceptance": true,
+        "route_choice_is_not_identity": true
+      },
+      "controls": [
+        {
+          "control_id": "label_only_null_topology",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "label_only_null_topology"
+        },
+        {
+          "control_id": "missing_support_area",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "missing_support_area"
+        },
+        {
+          "control_id": "external_label_only",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "external_label_only"
+        },
+        {
+          "control_id": "duplicate_support_row",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "duplicate_support_row"
+        },
+        {
+          "control_id": "budget_discontinuity",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "budget_discontinuity"
+        },
+        {
+          "control_id": "stale_node_id_replay",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "stale_node_id_replay"
+        },
+        {
+          "control_id": "missing_topology_state_reabsorption",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "missing_topology_state_reabsorption"
+        },
+        {
+          "control_id": "lineage_map_scrambled",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "lineage_map_scrambled"
+        },
+        {
+          "control_id": "support_drift_beyond_threshold",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "support_drift_beyond_threshold"
+        },
+        {
+          "control_id": "unstable_basin_no_local_well",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "unstable_basin_no_local_well"
+        },
+        {
+          "control_id": "hidden_potential_or_report_side_well_score",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "hidden_potential_or_report_side_well_score"
+        },
+        {
+          "control_id": "posthoc_threshold_change",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "posthoc_threshold_change"
+        },
+        {
+          "control_id": "identity_threshold_missing",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "identity_threshold_missing"
+        },
+        {
+          "control_id": "wrong_support_area",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "wrong_support_area"
+        },
+        {
+          "control_id": "no_reentry",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "no_reentry"
+        },
+        {
+          "control_id": "closure_not_consumed_by_later_cycle",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "closure_not_consumed_by_later_cycle"
+        },
+        {
+          "control_id": "improper_proper_time_threshold",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "improper_proper_time_threshold"
+        },
+        {
+          "control_id": "failed_persistence",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "failed_persistence"
+        },
+        {
+          "control_id": "non_attractive_flux",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "non_attractive_flux"
+        },
+        {
+          "control_id": "wrong_basin",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "wrong_basin"
+        },
+        {
+          "control_id": "wrong_polarity",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "wrong_polarity"
+        },
+        {
+          "control_id": "subthreshold_flux",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "subthreshold_flux"
+        },
+        {
+          "control_id": "hidden_route_context_steering",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "hidden_route_context_steering"
+        },
+        {
+          "control_id": "destructive_interference",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "destructive_interference"
+        },
+        {
+          "control_id": "ambiguous_overlap",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "ambiguous_overlap"
+        },
+        {
+          "control_id": "hidden_support_field",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "hidden_support_field"
+        },
+        {
+          "control_id": "producer_mutation_boundary_violation",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "producer_mutation_boundary_violation"
+        },
+        {
+          "control_id": "direct_state_or_topology_rewrite",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "direct_state_or_topology_rewrite"
+        },
+        {
+          "control_id": "unauthorized_identity_acceptance_event",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "unauthorized_identity_acceptance_event"
+        },
+        {
+          "control_id": "identity_claim_promotion",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "identity_claim_promotion"
+        },
+        {
+          "control_id": "agency_claim_promotion",
+          "declared_before_probe": true,
+          "distinct_primary_blocker": true,
+          "primary_blocker": "agency_claim_promotion"
+        }
+      ],
+      "experiment": "2026-05-N07-rc-identity-attractor-invariance",
+      "fixture": {
+        "budget_surface": {
+          "budget_ambiguity_allowed": false,
+          "budget_surface": "node_plus_packet",
+          "budget_surface_id": "n07_node_plus_packet_budget_v1",
+          "budget_tolerance": 0.0,
+          "conserved_budget_total": 6.0
+        },
+        "candidate_identity_carrier_type": "coherence_basin",
+        "candidate_runtime_coherence_basin": {
+          "basin_id": "n07_basin_A_candidate_v1",
+          "carrier_surface": "runtime_coherence_basin",
+          "identity_label_is_evidence": false,
+          "support_area_id": "n07_support_area_A_v1"
+        },
+        "edge_count": 6,
+        "edges": [
+          {
+            "edge_id": 0,
+            "role": "source_to_ingress",
+            "u": 0,
+            "v": 1
+          },
+          {
+            "edge_id": 1,
+            "role": "ingress_to_support",
+            "u": 1,
+            "v": 2
+          },
+          {
+            "edge_id": 2,
+            "role": "support_to_egress",
+            "u": 2,
+            "v": 3
+          },
+          {
+            "edge_id": 3,
+            "role": "reentry_to_support",
+            "u": 4,
+            "v": 2
+          },
+          {
+            "edge_id": 4,
+            "role": "competitor_to_support",
+            "u": 5,
+            "v": 2
+          },
+          {
+            "edge_id": 5,
+            "role": "support_to_reentry",
+            "u": 2,
+            "v": 4
+          }
+        ],
+        "fixture_id": "N07_S0_identity_support_chain_v1",
+        "fixture_kind": "identity_support_chain_with_reentry_and_competitor",
+        "neighborhood_U": {
+          "excluded_wrong_basin_node_ids": [
+            5
+          ],
+          "flux_source_node_ids": [
+            0,
+            4
+          ],
+          "neighborhood_id": "n07_U_support_A_v1",
+          "node_ids": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "target_support_area_id": "n07_support_area_A_v1"
+        },
+        "node_count": 6,
+        "nodes": [
+          {
+            "coord": [
+              0.0,
+              0.0
+            ],
+            "node_id": 0,
+            "role": "flux_source"
+          },
+          {
+            "coord": [
+              1.0,
+              0.0
+            ],
+            "node_id": 1,
+            "role": "ingress_neighbor"
+          },
+          {
+            "coord": [
+              2.0,
+              0.0
+            ],
+            "node_id": 2,
+            "role": "candidate_support_core"
+          },
+          {
+            "coord": [
+              3.0,
+              0.0
+            ],
+            "node_id": 3,
+            "role": "egress_neighbor"
+          },
+          {
+            "coord": [
+              2.0,
+              1.0
+            ],
+            "node_id": 4,
+            "role": "reentry_neighbor"
+          },
+          {
+            "coord": [
+              2.0,
+              -1.0
+            ],
+            "node_id": 5,
+            "role": "competitor_neighbor"
+          }
+        ],
+        "ports": [
+          {
+            "edge_id": 1,
+            "node_id": 2,
+            "port_id": "support_front"
+          },
+          {
+            "edge_id": 2,
+            "node_id": 2,
+            "port_id": "support_rear"
+          },
+          {
+            "edge_id": 3,
+            "node_id": 2,
+            "port_id": "support_reentry"
+          },
+          {
+            "edge_id": 4,
+            "node_id": 2,
+            "port_id": "support_competitor"
+          }
+        ]
+      },
+      "gate_vector_schema": {
+        "allowed_values": [
+          "blocked",
+          "fail",
+          "not_applicable",
+          "not_measured",
+          "pass"
+        ],
+        "derived_id_ceiling_algorithm": "weakest_required_gate",
+        "fields": [
+          "artifact_replay",
+          "attractivity",
+          "compatibility",
+          "invariance",
+          "lineage_current",
+          "reflexive_closure",
+          "stability",
+          "support"
+        ],
+        "lineage_current_condition": "lineage_current must pass when topology_mutation_occurs is true; otherwise lineage_current is not_applicable"
+      },
+      "identity_probe_run": false,
+      "implementation_scope": "experiment_local_manifest_only",
+      "manifest_id": "n07_fixture_manifest_v1",
+      "metric_definitions": {
+        "coherence_compatibility": {
+          "compatibility_controls_deferred_until": "T7_or_C3",
+          "conditions": [
+            "budget_error == 0",
+            "min_active_node_coherence >= 0",
+            "candidate_support_overlap_with_competitor <= declared_overlap_threshold",
+            "lineage_conflict_detected = false",
+            "hidden_support_source_detected = false",
+            "destructive_interference_score <= declared_interference_threshold"
+          ],
+          "metric_id": "n07_coherence_compatibility_v1"
+        },
+        "flux_convergence": {
+          "controls": [
+            "non_attractive_flux",
+            "wrong_polarity",
+            "subthreshold_flux",
+            "wrong_basin"
+          ],
+          "formula": "net_flux_into_support_from_U > net_flux_out_of_support",
+          "metric_id": "n07_flux_convergence_to_support_v1",
+          "native_policy_available": false,
+          "native_policy_blocker": "native_attractor_neighborhood_policy_missing",
+          "positive_threshold": 0.0,
+          "runtime_visible_inputs": [
+            "neighborhood_U",
+            "packet_work_events",
+            "surface_rows",
+            "budget_surface"
+          ]
+        },
+        "invariance": {
+          "controls": [
+            "stale_node_id_replay",
+            "missing_topology_state_reabsorption",
+            "lineage_map_scrambled",
+            "support_drift_beyond_threshold",
+            "budget_discontinuity",
+            "identity_claim_promotion"
+          ],
+          "destructive_perturbation_blocker": "support_drift_beyond_threshold",
+          "lineage_current_overlap_method": "fraction_of_lineage_mapped_support_nodes_retaining_current_support_membership",
+          "lineage_current_overlap_threshold": 0.95,
+          "literal_node_set_overlap_serialized": true,
+          "metric_id": "n07_invariance_support_overlap_lineage_v1",
+          "missing_threshold_blocker": "identity_threshold_missing",
+          "native_policy_available": false,
+          "native_policy_blocker": "native_identity_invariance_policy_missing",
+          "overlap_computation_method": "lineage_weighted_jaccard_over_declared_lineage_transfer_map",
+          "perturbation_magnitude": 0.1,
+          "perturbation_window": "one_proper_time_window",
+          "proper_time_only": true,
+          "proper_time_persistence_threshold": 3,
+          "runtime_visible_inputs": [
+            "proper_time_cycle_events",
+            "support_area_digest",
+            "transported_support_area_digest",
+            "topology_event_digest",
+            "surface_lineage_record_digest",
+            "topology_state_reabsorption_record_digest",
+            "node_plus_packet_budget_surface"
+          ],
+          "support_overlap_kind": "lineage_weighted",
+          "support_overlap_threshold": 0.95
+        },
+        "reflexive_closure": {
+          "basin_evidence_bundle": [
+            "support_area_mass",
+            "retention_score",
+            "proper_time_persistence_score",
+            "basin_evidence_digest"
+          ],
+          "conditions": [
+            "reentry_coherence_into_support > 0",
+            "basin_evidence_after_reentry >= basin_evidence_before_reentry",
+            "later_cycle_consumed_updated_basin_evidence = true",
+            "budget_error == 0"
+          ],
+          "controls": [
+            "no_reentry",
+            "closure_not_consumed_by_later_cycle",
+            "improper_proper_time_threshold",
+            "failed_persistence",
+            "unauthorized_identity_acceptance_event",
+            "producer_mutation_boundary_violation",
+            "agency_claim_promotion"
+          ],
+          "identity_acceptance_blocker": "unauthorized_identity_acceptance_event",
+          "identity_acceptance_contract_available": false,
+          "metric_id": "n07_reflexive_closure_reentry_v1",
+          "native_policy_available": false,
+          "native_policy_blocker": "native_reflexive_closure_policy_missing",
+          "proper_time_persistence_threshold": 3,
+          "runtime_visible_inputs": [
+            "reentry_packet_event",
+            "producer_record",
+            "processed_packet_event",
+            "basin_evidence_before_reentry",
+            "basin_evidence_after_reentry",
+            "later_cycle_consumed_basin_evidence_digest",
+            "proper_time_identity_persistence_evaluation",
+            "node_plus_packet_budget_surface"
+          ],
+          "stale_digest_blocker": "closure_not_consumed_by_later_cycle"
+        },
+        "stability_well_proxy": {
+          "digest_scope": [
+            "proxy_formula",
+            "threshold",
+            "input_fields",
+            "support_area_digest"
+          ],
+          "hidden_report_side_score_allowed": false,
+          "input_fields": [
+            "support_area_mass_before",
+            "support_area_mass_after",
+            "incoming_flux_to_support",
+            "outgoing_flux_from_support"
+          ],
+          "native_policy_available": false,
+          "native_policy_blocker": "native_basin_potential_policy_missing",
+          "proxy_formula": "0.5 * support_area_mass_retention + 0.5 * local_inflow_dominance_score",
+          "selected_proxy": "experiment_local_declared_second_difference_retention_proxy",
+          "threshold": 0.75
+        },
+        "support_area_digest": {
+          "excludes_fields": [
+            "support_area_digest"
+          ],
+          "method": "sha256_canonical_json_sorted_keys",
+          "required_input_fields": [
+            "support_area_id",
+            "candidate_identity_carrier_type",
+            "support_node_ids",
+            "support_edge_ids",
+            "support_port_ids",
+            "lineage_status",
+            "lineage_map_digest",
+            "support_surface_digest",
+            "event_time_key",
+            "scheduler_event_index",
+            "budget_surface",
+            "budget_before",
+            "budget_after",
+            "budget_error"
+          ]
+        }
+      },
+      "positive_identity_evidence_generated": false,
+      "purpose": "declare_identity_fixture_manifest_and_discrete_rc_observable_mapping_before_identity_probes",
+      "runtime_family": "LGRC9V3",
+      "schema": "n07_identity_fixture_manifest_v1",
+      "source_baseline": {
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_1_baseline_theory_schema_inventory.json",
+        "schema": "n07_iteration_1_baseline_theory_schema_inventory_v1",
+        "sha256": "56e27d9b0783ac33f97ab06e42e64cf153e9289a00b07e77e02ff17e0ad6b0c2"
+      },
+      "support_area": {
+        "authored_central_node_is_identity_evidence": false,
+        "budget_after": 6.0,
+        "budget_before": 6.0,
+        "budget_error": 0.0,
+        "budget_surface": "node_plus_packet",
+        "candidate_identity_carrier_type": "coherence_basin",
+        "duplicate_support_row_primary_blocker": "duplicate_support_row",
+        "event_time_key": "manifest_declared_no_runtime_event",
+        "idempotency_key_fields": [
+          "support_area_id",
+          "support_area_digest",
+          "event_time_key",
+          "scheduler_event_index",
+          "lineage_status"
+        ],
+        "identity_label_is_evidence": false,
+        "lineage_map_digest": null,
+        "lineage_status": "fixed_topology",
+        "scheduler_event_index": null,
+        "support_area_digest": "0942731278e985c654cb39323ee9ac78550e293d6183c927b386de93ac02c887",
+        "support_area_id": "n07_support_area_A_v1",
+        "support_edge_ids": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "support_node_ids": [
+          2
+        ],
+        "support_port_ids": [
+          "support_front",
+          "support_rear",
+          "support_reentry"
+        ],
+        "support_surface_digest": "manifest_symbolic_support_surface_digest_pending_iteration_3"
+      },
+      "support_rows_emitted": false,
+      "t4_deferral": {
+        "deferred": true,
+        "not_omitted_from_ladder": true,
+        "rationale": "T4 is the recurrence/no-mutation baseline and must be run before interpreting topology-free recurrence as stronger than ID4.",
+        "topology_family": "T4_no_mutation_invariance"
+      },
+      "topology_design_policy": {
+        "authored_central_node_identity_evidence_allowed": false,
+        "composite_fixtures_prove_taxonomy_usefulness": true,
+        "each_negative_topology_breaks_one_declared_property": true,
+        "each_positive_topology_isolates_one_identity_gate": true,
+        "hidden_identity_labels_as_evidence_allowed": false,
+        "primitive_fixtures_prove_gate_legibility": true,
+        "rich_omnibus_fixtures_disallowed_first_pass": true,
+        "topology_is_experimental_object": true
+      },
+      "topology_families": [
+        {
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "candidate_runtime_coherence_basin": "n07_basin_A_candidate_v1",
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "expected_maximum_id_ceiling": "ID1",
+          "expected_primary_blocker": "missing_support_area",
+          "gate_under_test": "support",
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "identity_evidence_emitted": false,
+          "lineage_current_support_required": false,
+          "neighborhood_U": "n07_U_support_A_v1",
+          "paired_negative_control_topology": "label_only_null_topology",
+          "primary_positive_metric": "support_area_digest",
+          "probe_run": false,
+          "support_area_id": "n07_support_area_A_v1",
+          "target_id_level": "ID1",
+          "topology_family_id": "n07_T1_support_area_minimal",
+          "topology_mutation_occurs": false
+        },
+        {
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "candidate_runtime_coherence_basin": "n07_basin_A_candidate_v1",
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "expected_maximum_id_ceiling": "ID2",
+          "expected_primary_blocker": "unstable_basin_no_local_well",
+          "gate_under_test": "stability",
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "identity_evidence_emitted": false,
+          "lineage_current_support_required": false,
+          "neighborhood_U": "n07_U_support_A_v1",
+          "paired_negative_control_topology": "unstable_basin_no_local_well",
+          "primary_positive_metric": "stability_well_proxy",
+          "probe_run": false,
+          "support_area_id": "n07_support_area_A_v1",
+          "target_id_level": "ID2",
+          "topology_family_id": "n07_T2_stable_well_basin",
+          "topology_mutation_occurs": false
+        },
+        {
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "candidate_runtime_coherence_basin": "n07_basin_A_candidate_v1",
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "expected_maximum_id_ceiling": "ID3",
+          "expected_primary_blocker": "non_attractive_flux",
+          "gate_under_test": "attractivity",
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "identity_evidence_emitted": false,
+          "lineage_current_support_required": false,
+          "neighborhood_U": "n07_U_support_A_v1",
+          "paired_negative_control_topology": "non_attractive_flux",
+          "primary_positive_metric": "flux_convergence",
+          "probe_run": false,
+          "support_area_id": "n07_support_area_A_v1",
+          "target_id_level": "ID3",
+          "topology_family_id": "n07_T3_attractor_neighborhood",
+          "topology_mutation_occurs": false
+        },
+        {
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "candidate_runtime_coherence_basin": "n07_basin_A_candidate_v1",
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "expected_maximum_id_ceiling": "ID4",
+          "expected_primary_blocker": "stale_node_id_replay",
+          "gate_under_test": "lineage_current",
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "identity_evidence_emitted": false,
+          "lineage_current_support_required": true,
+          "neighborhood_U": "n07_U_support_A_v1",
+          "paired_negative_control_topology": "stale_node_id_replay",
+          "primary_positive_metric": "invariance",
+          "probe_run": false,
+          "support_area_id": "n07_support_area_A_v1",
+          "target_id_level": "ID4",
+          "topology_family_id": "n07_T5_lineage_current_invariance",
+          "topology_mutation_occurs": true
+        },
+        {
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "candidate_runtime_coherence_basin": "n07_basin_A_candidate_v1",
+          "claim_flags": {
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "expected_maximum_id_ceiling": "ID5",
+          "expected_primary_blocker": "no_reentry",
+          "gate_under_test": "reflexive_closure",
+          "identity_carrier_surface": "runtime_coherence_basin",
+          "identity_evidence_emitted": false,
+          "lineage_current_support_required": false,
+          "neighborhood_U": "n07_U_support_A_v1",
+          "paired_negative_control_topology": "no_reentry",
+          "primary_positive_metric": "reflexive_closure",
+          "probe_run": false,
+          "support_area_id": "n07_support_area_A_v1",
+          "target_id_level": "ID5",
+          "topology_family_id": "n07_T6_reflexive_closure",
+          "topology_mutation_occurs": false
+        }
+      ]
+    },
+    "source_reports": [
+      {
+        "name": "n07_iteration_7b_source_backed_t6_reflexive_closure_report",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+        "sha256": "5da517fd853adfadc69b753c0cdb55c28867593a825a6100c64fc36661f228c0"
+      },
+      {
+        "name": "n07_iteration_8_c1_t6_artifact_replay_closeout_report",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_8_c1_t6_artifact_replay_closeout.md",
+        "sha256": "98aa0b1ce5b2d0fd671abde3d89038fb21f7abf1d45b5e6fcdae574af93530c2"
+      },
+      {
+        "name": "n07_iteration_9_c3_t7_compatibility_fixture_design_report",
+        "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9_c3_t7_compatibility_fixture_design.md",
+        "sha256": "0bf73a4d4c103cd8c7c5280b2760075941232d2bada8ddd8b73fe003c61e8749"
+      }
+    ],
+    "source_status": {
+      "iteration_7b_schema": "n07_iteration_7b_source_backed_t6_reflexive_closure_v1",
+      "iteration_7b_status": "passed",
+      "iteration_8_schema": "n07_iteration_8_c1_t6_artifact_replay_closeout_v1",
+      "iteration_8_status": "passed",
+      "iteration_9_schema": "n07_iteration_9_c3_t7_compatibility_fixture_design_v1",
+      "iteration_9_status": "passed"
+    },
+    "status": "passed",
+    "support_area_rows": {
+      "A": {
+        "basin_id": "n07_basin_A_candidate_v1",
+        "budget_after": 6.0,
+        "budget_before": 6.0,
+        "budget_error": 0.0,
+        "budget_surface": "node_plus_packet",
+        "candidate_identity_carrier_type": "coherence_basin",
+        "competitor_support_area_id": "n07_support_area_B_v1",
+        "event_time_key": "n07_i9b_support_A_commit",
+        "lineage_map_digest": null,
+        "lineage_status": "fixed_c3_t7_probe_source_row",
+        "role": "candidate_A_source_backed_c1_t6_basin_reexpressed_for_c3_probe",
+        "scheduler_event_index": 100,
+        "source_digest": "565a3f024ebb217cb62b0cd9aaa2c816ff1613d74cee6b65b9a6d94edb8a3075",
+        "source_status": "source_backed_from_iteration_8_closeout_and_iteration_7b_state",
+        "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "support_area_digest_input": {
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "event_time_key": "n07_i9b_support_A_commit",
+          "lineage_map_digest": null,
+          "lineage_status": "fixed_c3_t7_probe_source_row",
+          "scheduler_event_index": 100,
+          "support_area_id": "n07_support_area_A_v1",
+          "support_edge_ids": [
+            300,
+            301,
+            302,
+            306
+          ],
+          "support_node_ids": [
+            30,
+            31,
+            32
+          ],
+          "support_port_ids": [
+            "A_support_front",
+            "A_support_rear",
+            "A_support_shared_U",
+            "A_support_reentry"
+          ],
+          "support_surface_digest": "d315fbd93dda84f257bdeb2c61beff2cf54eba523a582401d2521f306e12f944"
+        },
+        "support_area_id": "n07_support_area_A_v1",
+        "support_area_row_digest": "e15784368f0482c69054b69660469228127790cb4c4a8ec5d31ce6179f0697da",
+        "support_digest_replay_required": true,
+        "support_edge_ids": [
+          300,
+          301,
+          302,
+          306
+        ],
+        "support_mass_after_competitor_near": 1.379,
+        "support_mass_before": 1.448,
+        "support_node_ids": [
+          30,
+          31,
+          32
+        ],
+        "support_port_ids": [
+          "A_support_front",
+          "A_support_rear",
+          "A_support_shared_U",
+          "A_support_reentry"
+        ],
+        "support_retention_near_competitor": 0.9523480662983426,
+        "support_surface_descriptor": {
+          "basin_id": "n07_basin_A_candidate_v1",
+          "descriptor_kind": "n07_c3_t7_probe_support_surface_descriptor",
+          "design_only": false,
+          "probe_iteration": "9-B",
+          "role": "candidate_A_source_backed_c1_t6_basin_reexpressed_for_c3_probe",
+          "source_digest": "565a3f024ebb217cb62b0cd9aaa2c816ff1613d74cee6b65b9a6d94edb8a3075",
+          "source_status": "source_backed_from_iteration_8_closeout_and_iteration_7b_state",
+          "support_area_id": "n07_support_area_A_v1",
+          "support_edge_ids": [
+            300,
+            301,
+            302,
+            306
+          ],
+          "support_node_ids": [
+            30,
+            31,
+            32
+          ],
+          "support_port_ids": [
+            "A_support_front",
+            "A_support_rear",
+            "A_support_shared_U",
+            "A_support_reentry"
+          ]
+        },
+        "support_surface_descriptor_digest": "d315fbd93dda84f257bdeb2c61beff2cf54eba523a582401d2521f306e12f944",
+        "support_surface_digest": "d315fbd93dda84f257bdeb2c61beff2cf54eba523a582401d2521f306e12f944",
+        "visual_is_evidence_source": false
+      },
+      "B": {
+        "basin_id": "n07_basin_B_competitor_v1",
+        "budget_after": 6.0,
+        "budget_before": 6.0,
+        "budget_error": 0.0,
+        "budget_surface": "node_plus_packet",
+        "candidate_identity_carrier_type": "coherence_basin",
+        "competitor_support_area_id": "n07_support_area_A_v1",
+        "event_time_key": "n07_i9b_support_B_commit",
+        "lineage_map_digest": null,
+        "lineage_status": "fixed_c3_t7_probe_source_row",
+        "role": "candidate_B_source_backed_competitor_basin_probe",
+        "scheduler_event_index": 101,
+        "source_digest": "0f288503a68dc4dda4a185b2fc2901b45fce993fdaa8059f3a55eb98b79e0e1f",
+        "source_status": "source_backed_in_iteration_9b_probe",
+        "support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "support_area_digest_input": {
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "event_time_key": "n07_i9b_support_B_commit",
+          "lineage_map_digest": null,
+          "lineage_status": "fixed_c3_t7_probe_source_row",
+          "scheduler_event_index": 101,
+          "support_area_id": "n07_support_area_B_v1",
+          "support_edge_ids": [
+            303,
+            304,
+            305,
+            307
+          ],
+          "support_node_ids": [
+            40,
+            41,
+            42
+          ],
+          "support_port_ids": [
+            "B_support_front",
+            "B_support_rear",
+            "B_support_shared_U",
+            "B_support_reentry"
+          ],
+          "support_surface_digest": "bca5f31932e5f7324ae4fc29ded2e74e90b799221d11c29651116909f12ce546"
+        },
+        "support_area_id": "n07_support_area_B_v1",
+        "support_area_row_digest": "bcca680261e60cf5d87edb9441fb24ba6029997f8a863bb642dc90bda5e57ad9",
+        "support_digest_replay_required": true,
+        "support_edge_ids": [
+          303,
+          304,
+          305,
+          307
+        ],
+        "support_mass_after_competitor_near": 1.15,
+        "support_mass_before": 1.2,
+        "support_node_ids": [
+          40,
+          41,
+          42
+        ],
+        "support_port_ids": [
+          "B_support_front",
+          "B_support_rear",
+          "B_support_shared_U",
+          "B_support_reentry"
+        ],
+        "support_retention_near_competitor": 0.9583333333333333,
+        "support_surface_descriptor": {
+          "basin_id": "n07_basin_B_competitor_v1",
+          "descriptor_kind": "n07_c3_t7_probe_support_surface_descriptor",
+          "design_only": false,
+          "probe_iteration": "9-B",
+          "role": "candidate_B_source_backed_competitor_basin_probe",
+          "source_digest": "0f288503a68dc4dda4a185b2fc2901b45fce993fdaa8059f3a55eb98b79e0e1f",
+          "source_status": "source_backed_in_iteration_9b_probe",
+          "support_area_id": "n07_support_area_B_v1",
+          "support_edge_ids": [
+            303,
+            304,
+            305,
+            307
+          ],
+          "support_node_ids": [
+            40,
+            41,
+            42
+          ],
+          "support_port_ids": [
+            "B_support_front",
+            "B_support_rear",
+            "B_support_shared_U",
+            "B_support_reentry"
+          ]
+        },
+        "support_surface_descriptor_digest": "bca5f31932e5f7324ae4fc29ded2e74e90b799221d11c29651116909f12ce546",
+        "support_surface_digest": "bca5f31932e5f7324ae4fc29ded2e74e90b799221d11c29651116909f12ce546",
+        "visual_is_evidence_source": false
+      }
+    }
+  },
+  "status": "passed",
+  "stress_candidate_row": {
+    "claim_ceiling": "c3_one_window_compatibility_only_prolonged_stress_blocked",
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "compatibility_stress_status": "blocked",
+    "derived_id_ceiling": "ID5",
+    "id6_blocker": "c3_prolonged_compatibility_stress_failed",
+    "id6_claimed": false,
+    "id_level": "ID5",
+    "implementation_surface": "experiment_local",
+    "native_support_status": "not_native_lgrc_dynamic_simulation",
+    "primary_blocker": "wrong_basin",
+    "row_id": "n07_i9b2_c3_compatibility_prolonged_stress_row_v1",
+    "runtime_family": "experiment_local",
+    "source_compatibility_record_digest": "5557960abd77fd4da5e2dcc8cc6d5b1cd7b069e1bb5d778853df2626a40e9aa1",
+    "source_iteration": "9-B",
+    "stress_candidate_row_digest": "7a94a8c02013af380445a45ee28f49673caf45e91aa6daef21073784dab2c2ac",
+    "stress_model_digest": "874e983bb9bb1054ea523fb7938cd4b1c6a68932e258561fdb345199bb3837c3",
+    "visual_is_evidence_source": false,
+    "visual_reference": null
+  },
+  "stress_model": {
+    "assumption": "The 9-B per-window support loss and wrong-basin leakage recur without endogenous recovery, re-separation, or corrective lineage/compatibility policy.",
+    "dynamic_lgrc_step_count": 0,
+    "first_failure": {
+      "A_cumulative_support_retention": 0.8637481156814181,
+      "B_cumulative_support_retention": 0.8801359953694519,
+      "cumulative_destructive_interference_score": 0.13625188431858193,
+      "cumulative_wrong_basin_leakage_score": 0.12,
+      "primary_blockers": [
+        "wrong_basin"
+      ],
+      "stress_window": 3
+    },
+    "model_scope": "experiment_local_repeated_window_stress_not_native_lgrc_dynamics",
+    "source_per_window_metrics": {
+      "A_support_retention_near_B": 0.952348066298,
+      "B_support_retention_near_A": 0.958333333333,
+      "ambiguous_overlap_score": 0.0,
+      "hidden_support_field_count": 0,
+      "node_plus_packet_budget_error": 0.0,
+      "wrong_basin_leakage_score": 0.04
+    },
+    "source_window": "n07_iteration_9b_one_window_compatibility_probe",
+    "stress_model_digest": "874e983bb9bb1054ea523fb7938cd4b1c6a68932e258561fdb345199bb3837c3",
+    "stress_model_id": "n07_c3_repeated_window_no_recovery_accumulation_v1",
+    "stress_passed_all_windows": false,
+    "stress_window_count": 12,
+    "stress_windows": [
+      {
+        "A_cumulative_support_retention": 0.952348066298,
+        "B_cumulative_support_retention": 0.958333333333,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.04765193370200005,
+        "cumulative_wrong_basin_leakage_score": 0.04,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [],
+        "stress_window": 1,
+        "stress_window_digest": "e22f1e613f6e24aec0e9aeab144dd03e7ca02f4a81619b7a9994c8c1e27e3e8d",
+        "window_passed": true
+      },
+      {
+        "A_cumulative_support_retention": 0.9069668393815397,
+        "B_cumulative_support_retention": 0.9184027777771389,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.09303316061846034,
+        "cumulative_wrong_basin_leakage_score": 0.08,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [],
+        "stress_window": 2,
+        "stress_window_digest": "cb81aa939a37546db016dae405e87df0c41e59732b4697ee13874afec51f7352",
+        "window_passed": true
+      },
+      {
+        "A_cumulative_support_retention": 0.8637481156814181,
+        "B_cumulative_support_retention": 0.8801359953694519,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.13625188431858193,
+        "cumulative_wrong_basin_leakage_score": 0.12,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "wrong_basin"
+        ],
+        "stress_window": 3,
+        "stress_window_digest": "32a86c17eecd5ff2a348ca5f471d492b58899bd33b27a10b6da98d542e9d81ba",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.8225888477377397,
+        "B_cumulative_support_retention": 0.8434636622287647,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.17741115226226034,
+        "cumulative_wrong_basin_leakage_score": 0.16,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 4,
+        "stress_window_digest": "fb233d8abdbd7f47f9ca17561939ee226bda90638372041e5f14031b3ee5eb40",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.7833908985013363,
+        "B_cumulative_support_retention": 0.8083193429689516,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.21660910149866375,
+        "cumulative_wrong_basin_leakage_score": 0.2,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 5,
+        "stress_window_digest": "2dd69ddbc9c95477c1c380b77ad91186b76bfe4dae559c2cd5ea5ee56825f9ad",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.7460608073432003,
+        "B_cumulative_support_retention": 0.7746393703449759,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.25393919265679965,
+        "cumulative_wrong_basin_leakage_score": 0.24,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 6,
+        "stress_window_digest": "8696377efb7ae97ca7aaf1d63d391ee4766bbb37ca46e1407c8ee6be8749e2e3",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.7105095672140215,
+        "B_cumulative_support_retention": 0.7423627299136769,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.2894904327859785,
+        "cumulative_wrong_basin_leakage_score": 0.28,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 7,
+        "stress_window_digest": "7bd5e7782c5d5d7a1110350e4add55c9a9a3ab999ee38e4871a79ad4aa3bee36",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.6766524124225022,
+        "B_cumulative_support_retention": 0.7114309495003596,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.3233475875774978,
+        "cumulative_wrong_basin_leakage_score": 0.32,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 8,
+        "stress_window_digest": "0d0dd0f9315d893036a4d6b6ebc77d97db9f7746701bbefb0f4cb57ec0e76381",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.6444086165264468,
+        "B_cumulative_support_retention": 0.6817879932709408,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.35559138347355324,
+        "cumulative_wrong_basin_leakage_score": 0.36,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 9,
+        "stress_window_digest": "c5f9bb5fbedc982a0be94db2d7e20808a6ba3e10c5d23b49b4057eb62c4c6b41",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.613701299854731,
+        "B_cumulative_support_retention": 0.6533801602177576,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.386298700145269,
+        "cumulative_wrong_basin_leakage_score": 0.4,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 10,
+        "stress_window_digest": "c2ce051e23fbc57917bf604e18920cd14c2cca3828ed0e697247d2b83f3c5e87",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.5844572462012221,
+        "B_cumulative_support_retention": 0.6261559868751333,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.4155427537987779,
+        "cumulative_wrong_basin_leakage_score": 0.44,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 11,
+        "stress_window_digest": "0265db2a1119598cde4a87f6ec7226a1abbcd52a2eee86e244d0c2a64864b381",
+        "window_passed": false
+      },
+      {
+        "A_cumulative_support_retention": 0.5566067282535879,
+        "B_cumulative_support_retention": 0.6000661540884606,
+        "ambiguous_overlap_score": 0.0,
+        "cumulative_destructive_interference_score": 0.4433932717464121,
+        "cumulative_wrong_basin_leakage_score": 0.48,
+        "hidden_support_field_count": 0,
+        "node_plus_packet_budget_error": 0.0,
+        "primary_blockers": [
+          "destructive_interference",
+          "support_drift_beyond_threshold",
+          "wrong_basin"
+        ],
+        "stress_window": 12,
+        "stress_window_digest": "71e6aceb53235e0ee77050de299e4c31f5dcf0b8f9004e20420f62634c5f13c0",
+        "window_passed": false
+      }
+    ],
+    "thresholds": {
+      "ambiguous_overlap_max": 0.2,
+      "destructive_interference_max": 0.15,
+      "hidden_support_field_count": 0,
+      "support_retention_min": 0.85,
+      "wrong_basin_leakage_max": 0.1
+    }
+  }
+}

@@ -1,0 +1,957 @@
+# N11 Iteration 8 Hidden, Stale, And Claim Controls
+
+Status: `passed`.
+
+## Result
+
+Iteration 8 attacked the positive N11 GALI6 chain with hidden, stale,
+out-of-envelope, budget, native-relabeling, inheritance, and direct
+claim-promotion controls. Each control failed closed with its expected
+primary blocker; no generic validation failure was used.
+
+Control summary:
+
+```text
+control_count = 12
+all_controls_passed = True
+all_primary_blockers_distinct = True
+no_generic_failures = True
+A7/GALI7 supported = false
+agency/intention/semantic goal ownership/identity acceptance = false
+```
+
+## Primary Blockers
+
+```json
+{
+  "a7_by_inheritance_blocked": 1,
+  "budget_surface_ambiguity": 1,
+  "claim_promotion_blocked": 1,
+  "gali7_by_inheritance_blocked": 1,
+  "hidden_context_substitution_blocked": 1,
+  "hidden_experiment_side_steering": 1,
+  "native_relabel_without_phase8_blocked": 1,
+  "node_plus_packet_budget_discontinuity": 1,
+  "out_of_envelope_proxy_blocked": 1,
+  "stale_context_blocked": 1,
+  "stale_proxy_state_blocked": 1,
+  "stale_support_state_blocked": 1
+}
+```
+
+## Control Records
+
+```json
+[
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_hidden_context_substitution_control_v1",
+    "control_kind": "hidden_context_substitution",
+    "control_passed": true,
+    "control_record_digest": "a678faa4b3784fb4a9c60430c9998e0d97e15bcbf781e33168c43c1886bc4a8f",
+    "expected_primary_blocker": "hidden_context_substitution_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "context_tag": "context_hidden",
+      "hidden_context_value": "report_side_route_context_override",
+      "source_context_digest_reused": true
+    },
+    "observed_primary_blocker": "hidden_context_substitution_blocked",
+    "reason": "A hidden context override cannot satisfy source-backed context transfer.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_stale_route_context_control_v1",
+    "control_kind": "stale_route_context",
+    "control_passed": true,
+    "control_record_digest": "cf69e979c47779915cd3317019f8245a9e685cdfadb371a5c195e4c278222868",
+    "expected_primary_blocker": "stale_context_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "context_tag": "context_stale",
+      "source_current": false,
+      "stale_context_digest": "162d9726dff33a31c36f8488d5b757071f8d600476756ac2af4e8aacafa9e4a2"
+    },
+    "observed_primary_blocker": "stale_context_blocked",
+    "reason": "A stale route-context digest cannot remain source-current over the replay window.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_stale_support_state_control_v1",
+    "control_kind": "stale_support_state",
+    "control_passed": true,
+    "control_record_digest": "c2b533cbd49aa4e206c2c96f13e548b825165777ed2a9a0e59208aed25214c4e",
+    "expected_primary_blocker": "stale_support_state_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "support_retention_reused_after_stale_mark": true,
+      "support_source_current": false,
+      "support_state_tag": "support_state_stale"
+    },
+    "observed_primary_blocker": "stale_support_state_blocked",
+    "reason": "Support-state evidence must be source-current; stale support cannot pass.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_stale_proxy_state_control_v1",
+    "control_kind": "stale_proxy_state",
+    "control_passed": true,
+    "control_record_digest": "32e78331154b9c092d1a4fcb15334dfdeb0c9353cf1b16927caa4ee25f36fe0d",
+    "expected_primary_blocker": "stale_proxy_state_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "proxy_condition_tag": "proxy_stale",
+      "proxy_source_current": false,
+      "target_band_digest_reused_after_stale_mark": true
+    },
+    "observed_primary_blocker": "stale_proxy_state_blocked",
+    "reason": "Proxy evidence must cite current same-band or 4-B variant digests.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_out_of_envelope_proxy_target_control_v1",
+    "control_kind": "out_of_envelope_proxy_target",
+    "control_passed": true,
+    "control_record_digest": "21c4b5e2a8be889c65b134cea754cd1ebad93c38c067479e8fa778fd12f37726",
+    "expected_primary_blocker": "out_of_envelope_proxy_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "declared_lower_bound": 0.7,
+      "declared_target_value": 0.75,
+      "declared_upper_bound": 0.8,
+      "max_allowed_shift": 0.05,
+      "proxy_condition_tag": "proxy_out_of_envelope"
+    },
+    "observed_primary_blocker": "out_of_envelope_proxy_blocked",
+    "reason": "A proxy target outside the declared envelope cannot inherit the 4-B result.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_budget_surface_ambiguity_control_v1",
+    "control_kind": "budget_surface_ambiguity",
+    "control_passed": true,
+    "control_record_digest": "5da4980d0e42ec3444109a61b1fe08f55d3688179e404724b1de1a7f4111931a",
+    "expected_primary_blocker": "budget_surface_ambiguity",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "budget_surfaces_separate": false,
+      "memory_budget_surface": "merged_budget_surface",
+      "proxy_budget_surface": "merged_budget_surface",
+      "support_budget_surface": "merged_budget_surface"
+    },
+    "observed_primary_blocker": "budget_surface_ambiguity",
+    "reason": "Memory, proxy, support, and node-plus-packet budget surfaces must remain distinct.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_node_plus_packet_budget_discontinuity_control_v1",
+    "control_kind": "node_plus_packet_budget_discontinuity",
+    "control_passed": true,
+    "control_record_digest": "68050f7e9b8d38d5141abe147218a2696191e727e364f199224bcfc38632cc72",
+    "expected_primary_blocker": "node_plus_packet_budget_discontinuity",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "declared_allowed_error": 0.0,
+      "node_plus_packet_budget_error": 0.01,
+      "window_index": 5
+    },
+    "observed_primary_blocker": "node_plus_packet_budget_discontinuity",
+    "reason": "A nonzero node-plus-packet budget error breaks the longer-horizon gate.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_hidden_experiment_side_steering_control_v1",
+    "control_kind": "hidden_experiment_side_steering",
+    "control_passed": true,
+    "control_record_digest": "30ff118113aaf5b525b0d6d817bc857d0714aa88ee997393f67067401b2abec7",
+    "expected_primary_blocker": "hidden_experiment_side_steering",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "hidden_steering_used": true,
+      "report_side_row_selection": true,
+      "source_artifact_digest_unchanged": true
+    },
+    "observed_primary_blocker": "hidden_experiment_side_steering",
+    "reason": "Report-side steering cannot decide which rows pass the matrix or horizon.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_native_support_relabeling_control_v1",
+    "control_kind": "native_support_relabeling",
+    "control_passed": true,
+    "control_record_digest": "98134c47992f70935651d6fe150fbcaf667b08eb6904013a3ac31c87ea3bacd5",
+    "expected_primary_blocker": "native_relabel_without_phase8_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "native_support_opened": true,
+      "phase8_native_policy_artifact_present": false,
+      "producer_mediation_classification": "constitutive_native"
+    },
+    "observed_primary_blocker": "native_relabel_without_phase8_blocked",
+    "reason": "Producer-mediated artifact evidence cannot be relabelled native without Phase 8 support.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_a7_by_inheritance_control_v1",
+    "control_kind": "a7_by_inheritance",
+    "control_passed": true,
+    "control_record_digest": "cfc4846f7c849e0e0124b7d8d375b1df8476bc3c9d085d8bc3bf77f36686daf4",
+    "expected_primary_blocker": "a7_by_inheritance_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "attempted_inherited_claim": "A7",
+      "basis": "GALI6_longer_horizon_success_only"
+    },
+    "observed_primary_blocker": "a7_by_inheritance_blocked",
+    "reason": "GALI6 does not imply A7 by inheritance.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_gali7_by_inheritance_control_v1",
+    "control_kind": "gali7_by_inheritance",
+    "control_passed": true,
+    "control_record_digest": "e005ea8c4b331842ec77397c6c0ca0cb877e3830878c3ba202fbbcd3cad4ab25",
+    "expected_primary_blocker": "gali7_by_inheritance_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "attempted_inherited_claim": "GALI7",
+      "basis": "GALI6_longer_horizon_success_only"
+    },
+    "observed_primary_blocker": "gali7_by_inheritance_blocked",
+    "reason": "GALI6 does not imply GALI7 by inheritance.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  },
+  {
+    "all_claim_flags_false_after_control": true,
+    "claim_flags_after_control": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "control_id": "n11_i8_direct_claim_promotion_control_v1",
+    "control_kind": "direct_claim_promotion",
+    "control_passed": true,
+    "control_record_digest": "7535c92758e8197c4ada4e7cfe12f4107d6ee1761c453f06d046dfacbed2aa3e",
+    "expected_primary_blocker": "claim_promotion_blocked",
+    "fail_closed": true,
+    "generic_failure_used": false,
+    "mutation": {
+      "claim_flags_attempted_true": [
+        "agency_claim_allowed",
+        "intention_claim_allowed",
+        "semantic_goal_ownership_claim_allowed",
+        "identity_acceptance_claim_allowed",
+        "gali7_claim_allowed"
+      ],
+      "validator_source_for_claims": "none"
+    },
+    "observed_primary_blocker": "claim_promotion_blocked",
+    "reason": "Direct claim-promotion fields are rejected regardless of positive transfer evidence.",
+    "source_gali_level": "GALI6",
+    "source_iteration_7_row_digest": "3144ac324efaa9e63699368682bb480e02bf60765d576f24b46ff2270e1165e8",
+    "source_iteration_7_row_id": "n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1",
+    "source_iteration_7_trend_digest": "bcfc95e9aeb5f41e8694fd2b256c67855235db4108976f9793b500c56a11b0b2",
+    "source_positive_artifact_digests": {
+      "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+      "n11_iteration_2_fixture_manifest_validation": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "n11_iteration_6_multi_axis_transfer_matrix": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "n11_iteration_7_longer_horizon_generalization_window": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a"
+    },
+    "source_positive_artifacts": {
+      "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+      "n11_iteration_2_fixture_manifest_validation": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json"
+    },
+    "source_positive_reports": {
+      "n11_iteration_6_multi_axis_transfer_matrix": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_6_multi_axis_transfer_matrix.md",
+      "n11_iteration_7_longer_horizon_generalization_window": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_7_longer_horizon_generalization_window.md"
+    }
+  }
+]
+```
+
+## Validation
+
+```json
+{
+  "all_claim_flags_false_after_controls": true,
+  "all_control_record_digests_valid": true,
+  "all_controls_fail_closed": true,
+  "all_controls_passed": true,
+  "all_primary_blockers_distinct": true,
+  "control_validations": {
+    "n11_i8_a7_by_inheritance_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "a7_by_inheritance_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "a7_by_inheritance_blocked"
+    },
+    "n11_i8_budget_surface_ambiguity_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "budget_surface_ambiguity",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "budget_surface_ambiguity"
+    },
+    "n11_i8_direct_claim_promotion_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "claim_promotion_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "claim_promotion_blocked"
+    },
+    "n11_i8_gali7_by_inheritance_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "gali7_by_inheritance_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "gali7_by_inheritance_blocked"
+    },
+    "n11_i8_hidden_context_substitution_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "hidden_context_substitution_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "hidden_context_substitution_blocked"
+    },
+    "n11_i8_hidden_experiment_side_steering_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "hidden_experiment_side_steering",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "hidden_experiment_side_steering"
+    },
+    "n11_i8_native_support_relabeling_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "native_relabel_without_phase8_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "native_relabel_without_phase8_blocked"
+    },
+    "n11_i8_node_plus_packet_budget_discontinuity_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "node_plus_packet_budget_discontinuity",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "node_plus_packet_budget_discontinuity"
+    },
+    "n11_i8_out_of_envelope_proxy_target_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "out_of_envelope_proxy_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "out_of_envelope_proxy_blocked"
+    },
+    "n11_i8_stale_proxy_state_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "stale_proxy_state_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "stale_proxy_state_blocked"
+    },
+    "n11_i8_stale_route_context_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "stale_context_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "stale_context_blocked"
+    },
+    "n11_i8_stale_support_state_control_v1": {
+      "all_claim_flags_false_after_control": true,
+      "blocker_distinct": true,
+      "control_passed": true,
+      "control_record_digest_valid": true,
+      "expected_primary_blocker": "stale_support_state_blocked",
+      "generic_failure_used": false,
+      "observed_primary_blocker": "stale_support_state_blocked"
+    }
+  },
+  "no_generic_failures": true
+}
+```
+
+## Checks
+
+```json
+{
+  "a7_by_inheritance_control_present": true,
+  "a7_not_supported": true,
+  "all_claim_flags_false_after_controls": true,
+  "all_control_record_digests_valid": true,
+  "all_controls_fail_closed": true,
+  "all_controls_passed": true,
+  "all_primary_blockers_distinct": true,
+  "baseline_passed": true,
+  "budget_surface_ambiguity_control_present": true,
+  "control_count_matches_checklist": true,
+  "direct_claim_promotion_control_present": true,
+  "gali7_by_inheritance_control_present": true,
+  "gali7_not_supported": true,
+  "hidden_context_substitution_control_present": true,
+  "hidden_experiment_side_steering_control_present": true,
+  "iteration_6_passed": true,
+  "iteration_7_passed": true,
+  "manifest_passed": true,
+  "native_support_relabeling_control_present": true,
+  "no_generic_failures": true,
+  "node_plus_packet_budget_discontinuity_control_present": true,
+  "out_of_envelope_proxy_control_present": true,
+  "positive_gali6_not_promoted": true,
+  "src_clean_for_iteration_8": true,
+  "stale_proxy_state_control_present": true,
+  "stale_route_context_control_present": true,
+  "stale_support_state_control_present": true
+}
+```
+
+## Interpretation
+
+This is a safety-lock iteration. It does not add a stronger positive
+rung; it protects the GALI6 result from being overread. The positive
+chain still remains artifact-only and producer-mediated. Hidden inputs,
+stale sources, out-of-envelope proxy changes, budget ambiguity, native
+relabeling, A7/GALI7 inheritance, and direct claim promotion are all
+blocked with specific reasons.
+
+## Acceptance
+
+Iteration 8 passes if hidden steering, stale context/support/proxy, out-of-envelope proxy, budget ambiguity, native relabeling, A7/GALI7 inheritance, and claim-promotion controls all fail closed with distinct primary blockers. No control may fail only generically.
+
+Acceptance state: `passed`.
+
+## Run Record
+
+```text
+.venv/bin/python experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/run_n11_iteration_8_hidden_stale_claim_controls.py
+```
+
+Output digest:
+
+```text
+bd0c597fb93cddf376b2c41e00f6ac5391f1cd6124eda6ce904c0e7d43d50b57
+```

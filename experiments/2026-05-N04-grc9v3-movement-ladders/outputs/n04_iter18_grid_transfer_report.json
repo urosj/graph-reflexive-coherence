@@ -1,0 +1,758 @@
+{
+  "achieved_movement_level": "M6",
+  "blocked_claims": [
+    "port_graph_transfer",
+    "adaptive_topology_movement",
+    "topology_mutating_movement",
+    "broad_geometry_transfer",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "agency",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "candidate_geometry": {
+    "budget_abs_error": 0.0,
+    "budget_after": 25.0,
+    "budget_before": 25.0,
+    "center_coordinate": [
+      2.0,
+      2.0
+    ],
+    "center_node": 12,
+    "compensating_debit_nodes": [
+      7,
+      17
+    ],
+    "compensating_debit_per_node": 0.125,
+    "coordinate_frame": "grid_xy",
+    "diagonal_edges_enabled": false,
+    "direct_centroid_write": false,
+    "direct_claim_flag_write": false,
+    "direct_displacement_write": false,
+    "direct_support_mask_write": false,
+    "direct_topology_write": false,
+    "forward_target": 13,
+    "forward_target_coordinate": [
+      3.0,
+      2.0
+    ],
+    "front_rear_policy": "route_defined_east_west_through_center",
+    "front_region": [
+      13
+    ],
+    "geometry_family": "s3_grid_local_route_with_center_reservoir",
+    "geometry_id": "s3_grid_route_defined_front_rear_v1",
+    "grid_height": 5,
+    "grid_width": 5,
+    "nonnegative_after_geometry_init": true,
+    "rear_region": [
+      11
+    ],
+    "reason": "Iteration 18 transfers the strongest ring-series ceiling to a 5x5 S3 grid with route-defined east/west front/rear masks. The grid has local horizontal/vertical unit edges only; diagonal shortcuts are disabled.",
+    "reservoir_boost": 0.25,
+    "reversed_target": 11,
+    "reversed_target_coordinate": [
+      1.0,
+      2.0
+    ],
+    "route_axis": "x",
+    "route_edges_are_local_unit_edges": true,
+    "route_shortcuts_enabled": false,
+    "source_geometry": "s1_ring_circular_motion_evidence_candidate_with_unwrap_robustness",
+    "topology_changed_by_fixture_definition": true,
+    "topology_fixed_during_run": true,
+    "topology_mutated_during_run": false
+  },
+  "checks": {
+    "artifact_validators_passed": true,
+    "broader_claims_blocked": true,
+    "budget_and_nonnegative_gates_passed": true,
+    "controls_fail_for_distinct_blockers": true,
+    "diagonal_route_shortcuts_disabled": true,
+    "feedback_authorized_not_schedule_copied": true,
+    "front_rear_masks_declared_before_run": true,
+    "grid_direction_parity_passed": true,
+    "grid_fixture_declared_before_run": true,
+    "identity_shape_gates_passed": true,
+    "iteration_17c_available": true,
+    "local_unit_route_edges_only": true,
+    "m4_boundary_response_passed": true,
+    "m5_direction_control_passed": true,
+    "m6_grid_transfer_candidate_passed": true,
+    "native_feedback_producer_semantics_unchanged": true,
+    "native_surface_semantics_unchanged": true,
+    "no_direct_writes": true,
+    "no_y_axis_drift": true,
+    "route_based_direction_declared": true
+  },
+  "claim_ceiling": "s3_grid_route_defined_m6_transfer_candidate",
+  "claim_flags": {
+    "adaptive_topology_claim_allowed": false,
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "grid_transfer_candidate_gate_passed": true,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "diagonal_shortcut": {
+      "control_id": "diagonal_shortcut_control",
+      "diagonal_edges_enabled": false,
+      "passed_negative_control": true,
+      "primary_blocker": "diagonal_route_shortcuts_disabled_by_fixture_policy",
+      "route_shortcuts_enabled": false
+    },
+    "wrong_direction": {
+      "control_id": "wrong_direction_polarity_control",
+      "passed_negative_control": true,
+      "primary_blocker": "feedback_wrong_polarity",
+      "producer_reason_code": "feedback_coupled_pulse_wrong_polarity",
+      "scheduled_event_id": null
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18_grid_transfer.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "forward": {
+    "all_recovery_pulses_feedback_authorized": true,
+    "artifact_validator": {
+      "failure_reasons": [],
+      "movement_claim_allowed": false,
+      "native_lgrc_pulse_substrate_supported": true,
+      "native_m6": false,
+      "surface_row_count": 26,
+      "valid": true,
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-7b555fc41487ec33:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-29bce78c13b1f909:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-29bce78c13b1f909:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-db732f5401adc16f:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-35eb967363919f23:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-35eb967363919f23:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-12fb5cbc2ad96816:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-758fc007c902f417:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-17528ad29a4a74ae:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-17528ad29a4a74ae:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-2645f552d8172001:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-5d008c6029df270e:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-5d008c6029df270e:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-998c4789c6a5c147:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-2fa3aa99bad38f6f:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-2fa3aa99bad38f6f:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-8900c9f34b5f05f6:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-079786a4440913a4:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-079786a4440913a4:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-ad8ec1605b80f13c:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-a8d4e9050c2579bc:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-a8d4e9050c2579bc:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-b66b37eab26da2be:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-e1ff422502657134:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+    },
+    "baseline_cycles": [
+      {
+        "boundary_polarity_score": 0.25,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "de2f3f0d790cc4a6d68ba946207fe45564f2f92b77ba0fb33a94e075a6418bd4",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+        "source_surface_digest": "ef888ceabf78ab713002d1b95e9ad80da31c7ff3765dae151ab3f1318ca077b4",
+        "surface_digest": "0bfed9f249e84d226199fe8282ac5c30721ee8c9fa7e34990bdf66c9f5147d31"
+      },
+      {
+        "boundary_polarity_score": 0.3500000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "978a50bd6b1475b8b1cc63615b415ce0d8a718e3db1d4d621893113d7498789c",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-12fb5cbc2ad96816",
+        "source_surface_digest": "c3cc2ebe98f820639f3952e5dda3e0f8fe218b7dc1de7011e75a87a44d23ec42",
+        "surface_digest": "52087bdc6ebeb97b3c7df6c5f2032dd3527935dd0f033d6a3924b5db3221b126"
+      },
+      {
+        "boundary_polarity_score": 0.4500000000000002,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "a387ad685557e81e6cbf8f4f0e04d36d0375e4ece36d36992a47df4cc085161f",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-758fc007c902f417",
+        "source_surface_digest": "6851310dfef80df7b31de6d79cd8d379d2a949f72fc5b2645632c6e619ed0cd4",
+        "surface_digest": "4bd05c2a0e4a94cad475452ccb13e54805512884e36fe54c4bb996934287e885"
+      },
+      {
+        "boundary_polarity_score": 0.5500000000000003,
+        "copied_from_original_schedule": false,
+        "cycle_index": 3,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "929a901f44926df9e6f92fbbb9299fde55980cafced6da3922eeedaa4bb766e5",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-2645f552d8172001",
+        "source_surface_digest": "2389dfc8b2359ca78b2e90251655854e99601c6a425e2a6aa66e3793a0f071f9",
+        "surface_digest": "a52daee1bcec64f3c229956588ac5aa755d883c943c81b7dedb16b4293d65bbe"
+      },
+      {
+        "boundary_polarity_score": 0.6500000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 4,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "cfc9f83a747e45b6400cd80fa47ba0d1a6ae00d71785b342ce77b0be401e9fe5",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-998c4789c6a5c147",
+        "source_surface_digest": "2537919531310ed6e6b1d271acac321b7a7ad0cd88e80e3fefb4125de0a7a97a",
+        "surface_digest": "218e6f078f0315467f39d1c5c0dfdc67c29947301cbbd5d4f290cdfe6ebdcd42"
+      }
+    ],
+    "budget_abs_error": 0.0,
+    "budget_final": 25.0,
+    "budget_initial": 25.0,
+    "diagonal_shortcut_used": false,
+    "direction": "forward",
+    "edge_id": 10,
+    "final_centroid_xy": {
+      "x": 1.9404761904761905,
+      "y": 1.619047619047619
+    },
+    "front_nodes": [
+      13
+    ],
+    "geometry_init": {
+      "budget_abs_error": 0.0,
+      "budget_after": 25.0,
+      "budget_before": 25.0,
+      "center_coordinate": [
+        2.0,
+        2.0
+      ],
+      "center_node": 12,
+      "compensating_debit_nodes": [
+        7,
+        17
+      ],
+      "compensating_debit_per_node": 0.125,
+      "coordinate_frame": "grid_xy",
+      "diagonal_edges_enabled": false,
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "forward_target": 13,
+      "forward_target_coordinate": [
+        3.0,
+        2.0
+      ],
+      "front_rear_policy": "route_defined_east_west_through_center",
+      "front_region": [
+        13
+      ],
+      "geometry_family": "s3_grid_local_route_with_center_reservoir",
+      "geometry_id": "s3_grid_route_defined_front_rear_v1",
+      "grid_height": 5,
+      "grid_width": 5,
+      "nonnegative_after_geometry_init": true,
+      "rear_region": [
+        11
+      ],
+      "reason": "Iteration 18 transfers the strongest ring-series ceiling to a 5x5 S3 grid with route-defined east/west front/rear masks. The grid has local horizontal/vertical unit edges only; diagonal shortcuts are disabled.",
+      "reservoir_boost": 0.25,
+      "reversed_target": 11,
+      "reversed_target_coordinate": [
+        1.0,
+        2.0
+      ],
+      "route_axis": "x",
+      "route_edges_are_local_unit_edges": true,
+      "route_shortcuts_enabled": false,
+      "source_geometry": "s1_ring_circular_motion_evidence_candidate_with_unwrap_robustness",
+      "topology_changed_by_fixture_definition": true,
+      "topology_fixed_during_run": true,
+      "topology_mutated_during_run": false
+    },
+    "identity_shape_gates_passed": true,
+    "initial_centroid_xy": {
+      "x": 1.9047619047619047,
+      "y": 1.619047619047619
+    },
+    "m4_boundary_response_passed": true,
+    "m5_direction_control_passed": true,
+    "m6_grid_transfer_candidate_passed": true,
+    "nonnegative_gate_passed": true,
+    "perturbation": {
+      "budget_abs_error": 0.0,
+      "budget_after": 25.0,
+      "budget_before": 25.0,
+      "credit_nodes": [
+        11
+      ],
+      "debit_nodes": [
+        13
+      ],
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "node_delta_digest": "2c2ce14bd0cbac4f2878e5021509a80ce746235a8e1245825fb7f0228cc06c16",
+      "nonnegative_after_perturbation": true,
+      "perturbation_kind": "budget_neutral_grid_route_polarity_damping",
+      "transfer_amount": 0.15
+    },
+    "post_perturbation_centroid_xy": {
+      "x": 1.9261904761904762,
+      "y": 1.619047619047619
+    },
+    "pre_transfer_centroid_xy": {
+      "x": 1.9404761904761905,
+      "y": 1.619047619047619
+    },
+    "producer_records_digest": "cb78260d8df0d22e341ba80bf152c5421413f9d999215c79f61ce08e6b54708c",
+    "profile_similarity": 0.9561168819430651,
+    "raw_final_x_delta": 0.03571428571428581,
+    "raw_final_y_delta": 0.0,
+    "raw_post_perturbation_x_delta": 0.021428571428571574,
+    "raw_pre_transfer_x_delta": 0.03571428571428581,
+    "rear_nodes": [
+      11
+    ],
+    "recovery_cycles": [
+      {
+        "boundary_polarity_score": 0.4500000000000006,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "eb57db3228bd26595f11e7e988f74698d26452617091ce7d99cef9764f07e876",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-8900c9f34b5f05f6",
+        "source_surface_digest": "85316764e90403f2db4bfc8d0f062c038c025295e113b6ef1958d30795aa9593",
+        "surface_digest": "a9ddbba6cabb56421fef5aebc66f683c4dbf9641ffe3613f2d49a3918b2c5e16"
+      },
+      {
+        "boundary_polarity_score": 0.5500000000000007,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "ffc63ae451bd77e9a1729ce77432e20157247348c036087e78e54191bd9fdc8e",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-ad8ec1605b80f13c",
+        "source_surface_digest": "b30cc6583b48f9bf6bdc9687e77c31c573bccdab06a8c1a35860d5dd25676212",
+        "surface_digest": "b2c7ce70d1e2f7865f9a495641c35a1fb899d856ebc5a58b3bababd9d4b44460"
+      },
+      {
+        "boundary_polarity_score": 0.6500000000000008,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "b0e25a3293a957707a5d10c6ddc1fe88239f78e98a52cccf79f4a8bbf063f850",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-b66b37eab26da2be",
+        "source_surface_digest": "1ae5317c1c1c0087f8adf6a6c15562c9068a99f85f52784db50e1ed510bfc8e6",
+        "surface_digest": "e89a1564e5a859582d419c304c0a07a6258cb1c52302356e02f1eee4120f8ab9"
+      }
+    ],
+    "recovery_scheduled_cycle_count": 3,
+    "route_axis": "x",
+    "route_is_local_unit_edge": true,
+    "seeded_event_count": 6,
+    "seeded_events_digest": "4157b0ff5dd87d24d90d5b22c5120245010b3ed665e4d5a97ae310f8c604fcc0",
+    "signed_final_score": 0.7500000000000009,
+    "signed_final_x_delta": 0.03571428571428581,
+    "signed_post_perturbation_score": 0.4500000000000006,
+    "signed_post_perturbation_x_delta": 0.021428571428571574,
+    "signed_pre_transfer_score": 0.7500000000000004,
+    "signed_pre_transfer_x_delta": 0.03571428571428581,
+    "source_node_id": 12,
+    "surface_log_digest": "31928c94c52e31c93400d4b810dc2073bee60e113557022d172f7ed3c536a0dd",
+    "surface_row_count": 26,
+    "target_node_id": 13,
+    "width_relative_change": 0.007794356389600921
+  },
+  "geometry_scope": "transferred_geometry",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15e_large_shock_absorber_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16_corridor_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16b_corridor_perturbation_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16c_high_shock_corridor_resilience.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_unwrap_policy.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17b_circular_ring_motion_evidence_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17c_ring_geometry_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15e_large_shock_absorber_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16_corridor_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16b_corridor_perturbation_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16c_high_shock_corridor_resilience.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17_ring_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17a_ring_unwrap_robustness_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17b_circular_ring_motion_evidence_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17c_ring_geometry_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter17c_ring_geometry_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15e_large_shock_absorber_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16_corridor_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16b_corridor_perturbation_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16c_high_shock_corridor_resilience.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17_ring_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17a_ring_unwrap_robustness.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18_grid_transfer.py"
+    }
+  },
+  "go_no_go_for_iteration_19": {
+    "guidance": "Iteration 19 may test port-graph and adaptive-topology gates. Grid evidence does not automatically promote topology-mutating or adaptive-topology claims.",
+    "iteration_19_allowed": true,
+    "port_graph_ceiling_to_test": "s3_grid_route_defined_m6_transfer_candidate"
+  },
+  "grid_route_policy": {
+    "center_node": 12,
+    "coordinate_frame": "grid_xy",
+    "declared_before_run": true,
+    "diagonal_edges_enabled": false,
+    "forward_route": [
+      12,
+      13
+    ],
+    "front_nodes": [
+      13
+    ],
+    "grid_height": 5,
+    "grid_width": 5,
+    "policy_id": "s3_grid_route_defined_front_rear_policy_v1",
+    "rear_nodes": [
+      11
+    ],
+    "reversed_route": [
+      12,
+      11
+    ],
+    "route_axis": "x",
+    "route_shortcuts_enabled": false
+  },
+  "grid_transfer_summary": {
+    "achieved_level": "M6",
+    "entry_ceiling": "s1_ring_circular_motion_evidence_candidate_with_unwrap_robustness",
+    "forward_final_x_delta": 0.03571428571428581,
+    "forward_signed_final_x_delta": 0.03571428571428581,
+    "interpretation": "The ring-series ceiling transfers to a route-defined S3 grid candidate under local east/west unit edges. The 2D grid does not use diagonal shortcuts, direct displacement writes, or post-hoc front/rear masks.",
+    "max_abs_y_drift": 0.0,
+    "reversed_final_x_delta": -0.03571428571428559,
+    "reversed_signed_final_x_delta": 0.03571428571428559
+  },
+  "input_iteration_17c": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17c_ring_geometry_closeout.json",
+    "sha256": "94ef28d1e420dd2e6e8f734a760438722b52b36f6a1bd2f5cc9feebd7e33f3d5"
+  },
+  "iteration": "18",
+  "movement_substrate": "S3_grid_route_defined_front_rear_v1",
+  "next_iteration": "19_s7_port_graph_and_adaptive_topology_gate",
+  "persistence_axis": {
+    "persistence_basis": "s3_grid_route_defined_front_rear_recovers_0_15",
+    "persistence_level": "T6_candidate",
+    "recovery_passed": true,
+    "recovery_perturbation": 0.15,
+    "recovery_status": "recovers_0_15_grid_route_defined_front_rear",
+    "recovery_tested": true,
+    "repeatability_status": "forward_and_reversed_three_cycle_recovery_on_s3_grid_route",
+    "self_renewed_cycle_count": 3,
+    "t6_full_claim_allowed": false,
+    "t6_full_claim_blocker": "single_grid_route_no_port_graph_or_adaptive_topology_transfer"
+  },
+  "report_kind": "n04_iter18_grid_transfer_v1",
+  "reversed": {
+    "all_recovery_pulses_feedback_authorized": true,
+    "artifact_validator": {
+      "failure_reasons": [],
+      "movement_claim_allowed": false,
+      "native_lgrc_pulse_substrate_supported": true,
+      "native_m6": false,
+      "surface_row_count": 26,
+      "valid": true,
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-b5dd5dc83d4ffd2b:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-e5fe7bdf58d5ceb2:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-e5fe7bdf58d5ceb2:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-a627012d8dca16ca:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-c70cc94edfeb605b:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-c70cc94edfeb605b:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-6f6f5017e221d398:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-02c8e7d1c9b3078d:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-02c8e7d1c9b3078d:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-ebc421d55b4919a7:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-8cc40013b3bd0fbf:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-8cc40013b3bd0fbf:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-2577ad286ce1921d:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-f944bea3264b6c10:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-f944bea3264b6c10:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-408a9253386fce35:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-cb092e83fd4fa1eb:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-cb092e83fd4fa1eb:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-7ff3a09ca20cc3ca:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-5b3afd75bd571481:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-5b3afd75bd571481:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-1f8054d3b52fabd9:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-16443fe3822f425b:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-16443fe3822f425b:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-83cfda2d85621779:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-27fed52482908bcf:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+    },
+    "baseline_cycles": [
+      {
+        "boundary_polarity_score": -0.25,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "cab2f1bba5140e7cd694b55bd1658bb1b91e0f3072e06aee38648cca03740dfc",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-a627012d8dca16ca",
+        "source_surface_digest": "1490e6858a82592ed8fe72560f46dfa5b5523a03a246a9b3ce214e19055db3d7",
+        "surface_digest": "fe200566be6d2b85523f7c2fd127647e69b4b1de44e18a831aece52f81a628a3"
+      },
+      {
+        "boundary_polarity_score": -0.3500000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "726e98166abf23391bb172d1bc3dcf0039d52d985f8dac898d6b16104d204e0a",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-6f6f5017e221d398",
+        "source_surface_digest": "954f0bca3c2d29f4d18476cbe51954d2ccb2e4c6716611439daeba656544046a",
+        "surface_digest": "a30b12958864f5ac7f3e3a3ba11382884b3e9e6876e4e084ef4b50a00a5f5912"
+      },
+      {
+        "boundary_polarity_score": -0.4500000000000002,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "df45c41e306cbec0ee0a633dfa03fbcb625b79133fbafb8bdc1751ea60d27300",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-ebc421d55b4919a7",
+        "source_surface_digest": "306b0df3355867390e76fe4e83cc7295cda17d4c7b67548a0a262593c36f9db6",
+        "surface_digest": "8e0240e29b65a7e77eff64c9b4e578cdb2523afbb691329368121dd81736116b"
+      },
+      {
+        "boundary_polarity_score": -0.5500000000000003,
+        "copied_from_original_schedule": false,
+        "cycle_index": 3,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "d310dbc4aa973fa7ef25bb415d17c2013474c342e6c479f72850fee31ac00078",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-2577ad286ce1921d",
+        "source_surface_digest": "a5a791106f886bee614563f828771491516c7e0d84a12d2a9692f909370bd9cf",
+        "surface_digest": "f6ceac4acc3632677215cd332a6691ac7def3fa24fee9142980bbc763a04031b"
+      },
+      {
+        "boundary_polarity_score": -0.6500000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 4,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "e265fee48c4cb48be7dbbbbe374d0a5c1549cbfdbeb2d65575fa6415cd16d563",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-408a9253386fce35",
+        "source_surface_digest": "d4c760cb21606b32d2f9d6e79e8d717c4522260c73bbf4fa8d4a62758bb156d8",
+        "surface_digest": "9111a42cea2e9888b861a537ec2e2495aeb265d17e42ec7ab4cb42c89c7b5ebb"
+      }
+    ],
+    "budget_abs_error": 0.0,
+    "budget_final": 25.0,
+    "budget_initial": 25.0,
+    "diagonal_shortcut_used": false,
+    "direction": "reversed",
+    "edge_id": 9,
+    "final_centroid_xy": {
+      "x": 1.869047619047619,
+      "y": 1.619047619047619
+    },
+    "front_nodes": [
+      13
+    ],
+    "geometry_init": {
+      "budget_abs_error": 0.0,
+      "budget_after": 25.0,
+      "budget_before": 25.0,
+      "center_coordinate": [
+        2.0,
+        2.0
+      ],
+      "center_node": 12,
+      "compensating_debit_nodes": [
+        7,
+        17
+      ],
+      "compensating_debit_per_node": 0.125,
+      "coordinate_frame": "grid_xy",
+      "diagonal_edges_enabled": false,
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "forward_target": 13,
+      "forward_target_coordinate": [
+        3.0,
+        2.0
+      ],
+      "front_rear_policy": "route_defined_east_west_through_center",
+      "front_region": [
+        13
+      ],
+      "geometry_family": "s3_grid_local_route_with_center_reservoir",
+      "geometry_id": "s3_grid_route_defined_front_rear_v1",
+      "grid_height": 5,
+      "grid_width": 5,
+      "nonnegative_after_geometry_init": true,
+      "rear_region": [
+        11
+      ],
+      "reason": "Iteration 18 transfers the strongest ring-series ceiling to a 5x5 S3 grid with route-defined east/west front/rear masks. The grid has local horizontal/vertical unit edges only; diagonal shortcuts are disabled.",
+      "reservoir_boost": 0.25,
+      "reversed_target": 11,
+      "reversed_target_coordinate": [
+        1.0,
+        2.0
+      ],
+      "route_axis": "x",
+      "route_edges_are_local_unit_edges": true,
+      "route_shortcuts_enabled": false,
+      "source_geometry": "s1_ring_circular_motion_evidence_candidate_with_unwrap_robustness",
+      "topology_changed_by_fixture_definition": true,
+      "topology_fixed_during_run": true,
+      "topology_mutated_during_run": false
+    },
+    "identity_shape_gates_passed": true,
+    "initial_centroid_xy": {
+      "x": 1.9047619047619047,
+      "y": 1.619047619047619
+    },
+    "m4_boundary_response_passed": true,
+    "m5_direction_control_passed": true,
+    "m6_grid_transfer_candidate_passed": true,
+    "nonnegative_gate_passed": true,
+    "perturbation": {
+      "budget_abs_error": 0.0,
+      "budget_after": 25.0,
+      "budget_before": 25.0,
+      "credit_nodes": [
+        13
+      ],
+      "debit_nodes": [
+        11
+      ],
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "node_delta_digest": "a8f0919b62f0e4598208ee4e9d48c107511c5b3e695b01bc69eb7698b38bdc15",
+      "nonnegative_after_perturbation": true,
+      "perturbation_kind": "budget_neutral_grid_route_polarity_damping",
+      "transfer_amount": 0.15
+    },
+    "post_perturbation_centroid_xy": {
+      "x": 1.8833333333333333,
+      "y": 1.619047619047619
+    },
+    "pre_transfer_centroid_xy": {
+      "x": 1.869047619047619,
+      "y": 1.619047619047619
+    },
+    "producer_records_digest": "c76a774cd364a85c626190e11e744ca9d39172162ed913d5b997b5105af17967",
+    "profile_similarity": 0.9561168819430651,
+    "raw_final_x_delta": -0.03571428571428559,
+    "raw_final_y_delta": 0.0,
+    "raw_post_perturbation_x_delta": -0.021428571428571352,
+    "raw_pre_transfer_x_delta": -0.03571428571428559,
+    "rear_nodes": [
+      11
+    ],
+    "recovery_cycles": [
+      {
+        "boundary_polarity_score": -0.4500000000000006,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "3bc8ee5c91be892d048bab6823e7a7289785bd46a2154e64fce664491670eeb5",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-7ff3a09ca20cc3ca",
+        "source_surface_digest": "69b494946bb18f5f0fb472d21e94f87da5c2de9acda495a311f2d11beabdd683",
+        "surface_digest": "eecf20135ac9b494a5b4d7b167125a4d0ab8ab361529d2c9ed81ce9ee0dec059"
+      },
+      {
+        "boundary_polarity_score": -0.5500000000000007,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "a909622298c789a9f603703d823904ae3498aea22b838bfd1950a40f45416b1c",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-1f8054d3b52fabd9",
+        "source_surface_digest": "a77f961c7bbe43cf3f05caa98a00338bd1ac593f863635a9d36dbd7917019435",
+        "surface_digest": "9cc8c48646e2966f06697e904d6a82ea22f9d14fb658fe04f186ca08e3c86e80"
+      },
+      {
+        "boundary_polarity_score": -0.6500000000000008,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "b46b3ac114aee92c219d5fb73138fc5a83d6d8f3e69391acb70c016833a41f0e",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-83cfda2d85621779",
+        "source_surface_digest": "0c276d63b0af09370fc4c69a4554f3b69c9eabea52a8890503c3b01ee714a46c",
+        "surface_digest": "21811b9dea94692018ca8795305227efc42da71e91ed4c01f2439d8f3a9a7359"
+      }
+    ],
+    "recovery_scheduled_cycle_count": 3,
+    "route_axis": "x",
+    "route_is_local_unit_edge": true,
+    "seeded_event_count": 6,
+    "seeded_events_digest": "5b61f37da6bff21a4a5e36f5ec8c2a4c6452976a1314cf1786f6930cdd9118bb",
+    "signed_final_score": 0.7500000000000009,
+    "signed_final_x_delta": 0.03571428571428559,
+    "signed_post_perturbation_score": 0.4500000000000006,
+    "signed_post_perturbation_x_delta": 0.021428571428571352,
+    "signed_pre_transfer_score": 0.7500000000000004,
+    "signed_pre_transfer_x_delta": 0.03571428571428559,
+    "source_node_id": 12,
+    "surface_log_digest": "839fd88bfa89705de59c48a90c965ce815d226cf16d18d0876aaad94638d972d",
+    "surface_row_count": 26,
+    "target_node_id": 11,
+    "width_relative_change": 0.0058901462980715455
+  },
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "status": "passed",
+  "substrate_class": "grid"
+}

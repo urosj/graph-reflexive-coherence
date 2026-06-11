@@ -1,0 +1,138 @@
+{
+  "artifact_kind": "phase8_lgrc9_causal_pulse_substrate_surface_lineage_baseline_freeze",
+  "artifact_schema_version": "phase8_lgrc9_causal_pulse_substrate_surface_lineage_baseline_freeze_v1",
+  "phase": "Phase 8 LGRC9 causal pulse-substrate surface lineage continuation",
+  "iteration": 58,
+  "status": "passed",
+  "date": "2026-05-17",
+  "purpose": "freeze current fixed-topology native surface behavior before source changes for surface lineage transport",
+  "head_commit": "eb840a740fa972f78307611945a1960fbac2b39f",
+  "worktree_state": {
+    "status": "dirty",
+    "src_status_short": "",
+    "src_diff_empty": true,
+    "note": "The working tree contains N04 taxonomy artifacts and the new Phase 8 surface-lineage plan/checklist. No src/* changes exist at this baseline."
+  },
+  "frozen_boundary": {
+    "existing_lgrc3_topology_lineage_replay_passed": true,
+    "existing_causal_pulse_substrate_surface_lineage_status": "fixed_topology_only",
+    "surface_v1_rejects_lineage_transport_rows": true,
+    "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status",
+    "current_n04_claim_ceiling": "s7_fixed_port_composed_gate_candidate",
+    "return_to_n04_after_phase8": "N04 Iteration 19-C"
+  },
+  "expected_baseline_claim_flags": {
+    "native_causal_pulse_substrate_surface_lineage_transport_enabled": false,
+    "native_causal_pulse_substrate_surface_lineage_transport_validated": false,
+    "native_causal_pulse_substrate_surface_lineage_transport_supported": false,
+    "adaptive_topology_entry_allowed": false,
+    "topology_mutating_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false
+  },
+  "runtime_and_format_baseline": {
+    "lineage_transport_required_lgrc_level": "lgrc3",
+    "existing_native_surface_required_lgrc_level": "lgrc2_or_higher",
+    "snapshot_schema": "pygrc.snapshot",
+    "snapshot_version": 1,
+    "telemetry_family": "lgrc9v3",
+    "telemetry_contract_version": "phase8_lgrc9v3_iter29_v1",
+    "surface_log": "causal_pulse_substrate_surface_log",
+    "surface_row_lineage_status": "fixed_topology",
+    "topology_lineage_replay_schema": "lgrc9v3_topology_event_replay_validation_v1",
+    "producer_records": [
+      "native_pulse_substrate_coupling_producer",
+      "native_feedback_coupled_pulse_producer"
+    ],
+    "packet_ledger": "node_plus_packet_budget",
+    "lineage_transport_fields_present": false
+  },
+  "source_artifacts": {
+    "n04_iteration_19b": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19b_topology_lineage_adaptive_gate_report.json",
+      "sha256": "cba7628158f88613148ccb99a4d221b6e001ebe221900f215ad8238d6847433f",
+      "status": "passed",
+      "claim_ceiling": "s7_fixed_port_composed_gate_candidate",
+      "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status"
+    },
+    "n04_taxonomy_continuation_closeout": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json",
+      "sha256": "bf92931093905fc354c5a74d2b1e37e208c4395db7d1c22ddfec23d11501742d",
+      "next_work": "phase8_causal_pulse_substrate_surface_lineage_transport"
+    },
+    "phase8_causal_pulse_substrate_closeout": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateCloseout.json",
+      "sha256": "2c2b1171c31cc8ad4bcc4373d6a8a04f94865714707d7f9924066ce7e3feb2e2",
+      "claim_ceiling": "native_lgrc_pulse_substrate_surface_supported",
+      "topology_lineage_decision": "deferred_for_native_surface_v1"
+    },
+    "lineage_plan": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineagePlan.md",
+      "sha256": "c2a65be0e46a940fee9f358eafc64c50c8107c6f32b47a5555db0f852a9e0209"
+    }
+  },
+  "verification": {
+    "commands": [
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_runtime tests.models.test_lgrc_9_v3_construction tests.models.test_lgrc_9_v3_contract tests.models.test_lgrc_9_v3_autonomy_contract -q",
+        "result": "passed",
+        "tests": 192
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_native_packet_loop_baseline tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect tests.models.test_lgrc_9_v3_native_packet_loop_control_parity tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger -q",
+        "result": "passed",
+        "tests": 42
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_module_split -q",
+        "result": "passed",
+        "tests": 2
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python -m unittest tests.telemetry.test_lgrc9v3_contract -q",
+        "result": "passed",
+        "tests": 4
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python -m unittest discover tests -p 'test_lgrc*.py' -q",
+        "result": "passed",
+        "tests": 236
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python -m unittest discover tests -q",
+        "result": "passed",
+        "tests": 1031
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19b_topology_lineage_adaptive_gate.py",
+        "result": "passed"
+      },
+      {
+        "command": "env PYTHONPATH=src .venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py",
+        "result": "passed"
+      },
+      {
+        "command": "git diff --check",
+        "result": "passed"
+      },
+      {
+        "command": "git diff -- src",
+        "result": "empty"
+      },
+      {
+        "command": "git status --short src",
+        "result": "empty"
+      }
+    ],
+    "focused_lgrc9v3_runtime_tests_passed": true,
+    "lgrc3_topology_lineage_tests_passed": true,
+    "causal_pulse_substrate_tests_passed": true,
+    "native_packet_loop_tests_passed": true,
+    "full_lgrc_sweep_passed": true,
+    "full_unittest_discovery_passed": true,
+    "diff_check_passed": true
+  },
+  "baseline_statement": "Before Iteration 59 source changes, LGRC-3 topology lineage replay is available, the native causal pulse-substrate surface remains fixed-topology-only, lineage transport/supersession support is absent, N04 remains capped at s7_fixed_port_composed_gate_candidate, and movement/adaptive-topology/choice/agency/identity claims remain blocked."
+}

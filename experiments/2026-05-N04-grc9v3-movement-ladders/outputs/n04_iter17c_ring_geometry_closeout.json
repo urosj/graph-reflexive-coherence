@@ -1,0 +1,120 @@
+{
+  "achieved_movement_level": "M6",
+  "blocked_claims": [
+    "circular_locomotion",
+    "full_T6_general_persistence",
+    "grid_transfer",
+    "port_graph_transfer",
+    "broad_geometry_transfer",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "biological_behavior",
+    "agency",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "all_ring_results_m6_candidate": true,
+    "all_ring_results_t6_candidate": true,
+    "broader_claims_blocked": true,
+    "circular_forward_reversed_signs_passed": true,
+    "circular_motion_evidence_passed": true,
+    "circular_result_has_controls": true,
+    "iteration_17_passed": true,
+    "iteration_17a_passed": true,
+    "iteration_17b_passed": true,
+    "single_unwrap_ring_transfer_passed": true,
+    "summary_only_no_new_probe": true,
+    "unwrap_robustness_has_seam_controls": true,
+    "unwrap_robustness_passed": true
+  },
+  "claim_ceiling": "s1_ring_circular_motion_evidence_candidate_with_unwrap_robustness",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "circular_locomotion_claim_allowed": false,
+    "circular_motion_evidence_candidate_gate_passed": true,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "unrestricted_movement_claim_allowed": false,
+    "wrap_crossing_movement_claim_allowed": false
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter17c_ring_geometry_closeout.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "geometry_scope": "transferred_geometry",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15e_large_shock_absorber_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16_corridor_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16b_corridor_perturbation_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16c_high_shock_corridor_resilience.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_unwrap_policy.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17b_circular_ring_motion_evidence_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15e_large_shock_absorber_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16_corridor_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16b_corridor_perturbation_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16c_high_shock_corridor_resilience.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17_ring_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17a_ring_unwrap_robustness_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17b_circular_ring_motion_evidence_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter17c_ring_geometry_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15e_large_shock_absorber_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16_corridor_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16b_corridor_perturbation_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16c_high_shock_corridor_resilience.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17_ring_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17a_ring_unwrap_robustness.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py"
+    }
+  },
+  "go_no_go_for_iteration_18": {
+    "grid_transfer_ceiling_to_test": "s1_ring_circular_motion_evidence_candidate_with_unwrap_robustness",
+    "guidance": "Iteration 18 may test whether the ring-series ceiling transfers to S3 grid route-defined front/rear geometry. Ring evidence does not automatically promote grid, port-graph, broad geometry-transfer, locomotion-like, or adaptive-topology claims.",
+    "iteration_18_allowed": true
+  },
+  "iteration": "17-C",
+  "next_iteration": "18_s3_grid_route_defined_front_rear",
+  "persistence_axis": {
+    "persistence_basis": "s1_ring_circular_motion_with_unwrap_robustness",
+    "persistence_level": "T6_candidate",
+    "recovery_passed": true,
+    "recovery_perturbation": 0.15,
+    "recovery_status": "recovers_0_15_single_unwrap_multi_unwrap_and_circular_wrap_route",
+    "recovery_tested": true,
+    "repeatability_status": "ring_series_forward_reversed_three_cycle_recovery",
+    "self_renewed_cycle_count": 3,
+    "t6_full_claim_allowed": false,
+    "t6_full_claim_blocker": "ring_series_only_no_grid_or_port_graph_transfer"
+  },
+  "purpose": "ring_geometry_series_closeout_no_new_probe",
+  "report_kind": "n04_iter17c_ring_geometry_closeout_v1",
+  "ring_series_summary": {
+    "accepted_unwrap_origin_count": 13,
+    "forward_circular_displacement_nodes": 1.0,
+    "forward_phase_error_to_target_nodes": 0.0,
+    "interpretation": "The ring series supports a scoped S1 ring circular-motion evidence candidate with unwrap robustness: the result first passed under a declared unwrap, then across all equivalent non-seam unwraps, then on the wrap edge under a circular phase metric. It remains a ring evidence candidate, not broad geometry transfer or locomotion-like movement.",
+    "iteration_17_ceiling": "s1_ring_m6_transfer_candidate_under_declared_unwrap",
+    "iteration_17a_ceiling": "s1_ring_unwrap_robust_transfer_candidate",
+    "iteration_17b_ceiling": "s1_ring_circular_motion_evidence_candidate",
+    "reversed_circular_displacement_nodes": -1.0,
+    "reversed_phase_error_to_target_nodes": 0.0,
+    "seam_control_origin_count": 8
+  },
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_17": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json",
+      "sha256": "cac8c95e4a8671115cc12d96fc1d94d470f64638e79d1f98969aabe88976b7ac"
+    },
+    "iteration_17a": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json",
+      "sha256": "10508582f9d1f3e899fc4a673992dfc4bbebfb76a6f5e6f780968aa5ba0383dc"
+    },
+    "iteration_17b": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17b_circular_ring_motion_evidence_report.json",
+      "sha256": "e6016f59c718353137a3d061035c32f76f4239d97db9cecdcab8169f5666c589"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "ring"
+}

@@ -1,0 +1,214 @@
+{
+  "checks": {
+    "controls_fail_for_distinct_blockers": {
+      "evidence": {
+        "budget_violation": "budget_surface_gate_failed",
+        "feedback_disabled": "feedback_coupled_pulse_disabled",
+        "pulse_disabled": "feedback_surface_requires_committed_pulse_contact",
+        "subthreshold": "feedback_coupled_pulse_subthreshold",
+        "wrong_polarity": "feedback_coupled_pulse_wrong_polarity"
+      },
+      "passed": true
+    },
+    "cycle_count_semantics": {
+      "evidence": {
+        "forward_scheduled_event_ids": [
+          "lgrc9v3-packet-event-65f66f7963d62c47",
+          "lgrc9v3-packet-event-90f0eb8f587e1192",
+          "lgrc9v3-packet-event-f88bdb90870f7496"
+        ],
+        "forward_self_renewed_cycle_count": 3,
+        "reversed_scheduled_event_ids": [
+          "lgrc9v3-packet-event-122f7aa8efa6a432",
+          "lgrc9v3-packet-event-f989032d067f3bc3",
+          "lgrc9v3-packet-event-7a0eb51fab3133c3"
+        ],
+        "reversed_self_renewed_cycle_count": 3
+      },
+      "passed": true
+    },
+    "forward_reversed_symmetry": {
+      "evidence": {
+        "forward_centroid_delta": 0.026190476190476986,
+        "front_mask": [
+          13,
+          14
+        ],
+        "movement_substrate": "S0_chain_v1",
+        "rear_mask": [
+          6,
+          7
+        ],
+        "reversed_centroid_delta": -0.026190476190476986
+      },
+      "passed": true
+    },
+    "identity_shape_same_fixture_scope": {
+      "evidence": {
+        "blocked_claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "movement_claim_inherited_from_n03": false
+        },
+        "forward_profile_similarity": 0.9858991950828835,
+        "forward_width_relative_change": 0.0017747856122328975,
+        "movement_substrate": "S0_chain_v1",
+        "reversed_profile_similarity": 0.9858991950828835,
+        "reversed_width_relative_change": 0.0017747856122328975
+      },
+      "passed": true
+    },
+    "native_artifact_chain_replay": {
+      "evidence": {
+        "forward_surface_row_count": 11,
+        "forward_validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-40d01adf710c4c1a:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-62a473ae29c494bf:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-62a473ae29c494bf:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-65f66f7963d62c47:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-6d41f26f9a37745b:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-6d41f26f9a37745b:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-90f0eb8f587e1192:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-3a7a4878dec36f2c:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-3a7a4878dec36f2c:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-f88bdb90870f7496:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-67e466fd236a4b74:route_local_pulse_contact"
+        ],
+        "reversed_surface_row_count": 11,
+        "reversed_validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-9b4b51bdc31a583a:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-5578e7f0e6e3f4b5:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-5578e7f0e6e3f4b5:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-122f7aa8efa6a432:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-192fd7bd75e1b1b1:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-192fd7bd75e1b1b1:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-f989032d067f3bc3:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-3377f3adae4e5502:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-3377f3adae4e5502:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-7a0eb51fab3133c3:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-dc21b99671e720a7:route_local_pulse_contact"
+        ],
+        "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+      },
+      "limitation": "The artifact validator passes and surface ids are serialized, but the native M6 JSON stores producer/event chain details as digests rather than a full per-cycle expanded chain.",
+      "passed": true
+    },
+    "runtime_producers_do_not_emit_claims": {
+      "evidence": {
+        "forward_artifact_validator_claims": {
+          "movement_claim_allowed": false,
+          "native_m6": false
+        },
+        "report_claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "movement_claim_inherited_from_n03": false,
+          "native_m6": true,
+          "native_m6_candidate_gate_passed": true
+        },
+        "reversed_artifact_validator_claims": {
+          "movement_claim_allowed": false,
+          "native_m6": false
+        }
+      },
+      "passed": true
+    },
+    "seeded_first_contact_vs_self_renewed_later_pulses": {
+      "evidence": {
+        "forward": {
+          "all_scheduled_from_feedback_eligibility": true,
+          "boundary_polarity_scores": [
+            0.25,
+            0.3500000000000001,
+            0.4500000000000002
+          ],
+          "cycle_record_count": 3,
+          "direction": "forward",
+          "no_cycle_copied_from_original_schedule": true,
+          "scheduled_cycle_count": 3,
+          "scheduled_event_ids": [
+            "lgrc9v3-packet-event-65f66f7963d62c47",
+            "lgrc9v3-packet-event-90f0eb8f587e1192",
+            "lgrc9v3-packet-event-f88bdb90870f7496"
+          ],
+          "scheduled_event_ids_unique": true,
+          "seeded_first_response_required": true,
+          "self_renewed_cycle_count": 3,
+          "surface_digests": [
+            "cd632b6be56e851cc27e8e0a811a2967ae5468e90ff94b8e8bb7e6434ea7057e",
+            "d2e72c0822397b7050a560c42ca1a5a71122d91eb830e3dc3de3afd5ecf16d99",
+            "3067fbcad1084a9709921a208aeb78b122e4e7082e8cf82ff10f835265a340e0"
+          ],
+          "surface_digests_unique": true
+        },
+        "reversed": {
+          "all_scheduled_from_feedback_eligibility": true,
+          "boundary_polarity_scores": [
+            -0.25,
+            -0.3500000000000001,
+            -0.4500000000000002
+          ],
+          "cycle_record_count": 3,
+          "direction": "reversed",
+          "no_cycle_copied_from_original_schedule": true,
+          "scheduled_cycle_count": 3,
+          "scheduled_event_ids": [
+            "lgrc9v3-packet-event-122f7aa8efa6a432",
+            "lgrc9v3-packet-event-f989032d067f3bc3",
+            "lgrc9v3-packet-event-7a0eb51fab3133c3"
+          ],
+          "scheduled_event_ids_unique": true,
+          "seeded_first_response_required": true,
+          "self_renewed_cycle_count": 3,
+          "surface_digests": [
+            "d7e7c103b59a8df46994b7cb4949bdf85fdfcbfb274f903cd96017a641966248",
+            "dbce3a963e0f9a2e827f0d633638fd6bbd55943c8a6418d3f5540addb61d7401",
+            "49d2d695b12f7609e5179614997e81b4ab231d0e70c6d8e5536bb302d51ceebe"
+          ],
+          "surface_digests_unique": true
+        }
+      },
+      "passed": true
+    }
+  },
+  "claim_ceiling": "native_m6_same_fixture_self_renewal_candidate",
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/audit_native_m6_validation_list.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "git": {
+    "diff_check": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "rev_parse_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "be7ca4c09948e8571d7db51e31ff9d8477837d00"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M docs/status/LGRC9V3-Causal-Time-Design-Observations.md\n M docs/status/LGRC9V3-Implementation-State-And-Design-Tension.md\n M docs/status/PyGRC-Library-Shape-And-Refactor-Policy.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/README.md\n M implementation/ImplementationPhases.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_evidence_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_same_fixture_validator.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/native_m6_evidence_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/native_m6_same_fixture_validator.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/audit_native_m6_validation_list.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/review_native_m6_evidence.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_native_m6_same_fixture_validator.py"
+    }
+  },
+  "native_m6_candidate_gate_passed": true,
+  "report_kind": "native_m6_validation_checklist_audit_v1",
+  "schema": "movement_ladder_report_v1",
+  "source_artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_same_fixture_validator.json",
+  "status": "passed",
+  "summary": "The native M6 validation checklist passes. The current evidence supports a bounded same-fixture native M6 candidate, with broader movement, locomotion-like, adaptive topology, biological, agency, identity-acceptance, and inherited-N03 claims still blocked."
+}

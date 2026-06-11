@@ -1,0 +1,275 @@
+{
+  "schema": "grc9v3_polarized_basin_loop_fixture_manifest_v1",
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "version": "v1",
+  "scope": {
+    "model_family": "GRC9V3",
+    "runner_mode": "fixed_topology_continuity_runner",
+    "topology_events_enabled": false,
+    "external_source_sink_terms_enabled": false,
+    "multi_pole_appendix_a_enabled": false,
+    "movement_claims_enabled": false,
+    "pruning_enabled": false,
+    "src_changes_allowed": false
+  },
+  "runner_config": {
+    "dt": 0.01,
+    "total_steps": 140,
+    "step_index_start": 0,
+    "runner_sequence": [
+      "C_pre",
+      "rebuild_differential_state",
+      "rebuild_transport_state",
+      "capture_transport_state_flux_uv",
+      "apply_continuity",
+      "capture_C_post_continuity",
+      "enforce_quadrature_budget",
+      "capture_C_post_budget",
+      "rebuild_differential_state",
+      "rebuild_transport_state",
+      "rebuild_identity_state",
+      "compute_observables",
+      "experiment_local_loop_observables"
+    ],
+    "total_steps_reason": "washout_steps + min_eval_steps + 30 step margin for cascade/cycle detection"
+  },
+  "metric_config_defaults": {
+    "n_cycles_min": 3,
+    "washout_steps": 10,
+    "min_eval_steps": 100,
+    "theta_export": 1e-6,
+    "theta_import": 1e-6,
+    "theta_mass": 1e-8,
+    "theta_null_margin": 1e-4,
+    "phase_lock_min": 0.25,
+    "phase_lock_max_lag": 20,
+    "phase_cascade_max_stage_lag": 20,
+    "phase_cascade_score_min": 0.25
+  },
+  "budget": {
+    "total_budget": 1.0,
+    "projection_rule": "nonnegative_conserved_simplex",
+    "constraints": {
+      "nonnegative_coherence": true,
+      "sum_coherence_equals_budget": true
+    }
+  },
+  "default_edge_properties": {
+    "base_conductance": 1.0,
+    "geometric_length": 1.0,
+    "flux_uv_initial": 0.0,
+    "flux_coupling_initial": 0.0,
+    "temporal_delay_initial": 1.0,
+    "note": "explicit defaults used when an edge omits optional transport labels"
+  },
+  "fixtures": {
+    "grc9v3_ported_ring_v1": {
+      "type": "ported_ring",
+      "claim_role": "canonical_grc9v3_fixture",
+      "node_count": 12,
+      "edge_count": 12,
+      "port_convention": {
+        "port_layout": "GRC9 row-major 3x3 ports",
+        "clockwise_out_port": 6,
+        "clockwise_out_port_rc": [2, 3],
+        "clockwise_in_port": 4,
+        "clockwise_in_port_rc": [2, 1],
+        "inactive_ports": [1, 2, 3, 5, 7, 8, 9],
+        "reason": "ports 4 and 6 provide a deterministic row-2 boundary pair while keeping active degree below 9"
+      },
+      "nodes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      "edges": [
+        {"edge_id": 0, "node_u": 0, "port_u": 6, "node_v": 1, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 1, "node_u": 1, "port_u": 6, "node_v": 2, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 2, "node_u": 2, "port_u": 6, "node_v": 3, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 3, "node_u": 3, "port_u": 6, "node_v": 4, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 4, "node_u": 4, "port_u": 6, "node_v": 5, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 5, "node_u": 5, "port_u": 6, "node_v": 6, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 6, "node_u": 6, "port_u": 6, "node_v": 7, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 7, "node_u": 7, "port_u": 6, "node_v": 8, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 8, "node_u": 8, "port_u": 6, "node_v": 9, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 9, "node_u": 9, "port_u": 6, "node_v": 10, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 10, "node_u": 10, "port_u": 6, "node_v": 11, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0},
+        {"edge_id": 11, "node_u": 11, "port_u": 6, "node_v": 0, "port_v": 4, "orientation": "clockwise", "base_conductance": 1.0, "geometric_length": 1.0, "flux_uv_initial": 0.0}
+      ],
+      "masks": {
+        "parent_basin_nodes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        "source_aspect_nodes": [0, 1],
+        "sink_aspect_nodes": [6, 7],
+        "forward_channel_edges": [1, 2, 3, 4, 5],
+        "return_channel_edges": [7, 8, 9, 10, 11],
+        "source_internal_edges": [0],
+        "sink_internal_edges": [6],
+        "same_parent_basin_mode": "configured_parent_region_only",
+        "claim_ceiling_note": "configured_parent_region_only supports candidate loop claims until flux_successor_basin evidence is implemented"
+      },
+      "reversed_masks": {
+        "source_aspect_nodes": [6, 7],
+        "sink_aspect_nodes": [0, 1],
+        "forward_channel_edges": [7, 8, 9, 10, 11],
+        "return_channel_edges": [1, 2, 3, 4, 5]
+      }
+    },
+    "simple_unported_ring_v1": {
+      "type": "simple_unported_ring",
+      "claim_role": "analysis_control_fixture",
+      "reversed_masks_available": false,
+      "reversed_masks_note": "simple_unported_ring_v1 is an analysis/control fixture; reversal controls should use grc9v3_ported_ring_v1 unless explicitly added here",
+      "node_count": 12,
+      "edge_count": 12,
+      "nodes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      "edges": [
+        [0, 1], [1, 2], [2, 3], [3, 4],
+        [4, 5], [5, 6], [6, 7], [7, 8],
+        [8, 9], [9, 10], [10, 11], [11, 0]
+      ],
+      "masks": {
+        "parent_basin_nodes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        "source_aspect_nodes": [0, 1],
+        "sink_aspect_nodes": [6, 7],
+        "forward_channel_edges": [1, 2, 3, 4, 5],
+        "return_channel_edges": [7, 8, 9, 10, 11]
+      }
+    }
+  },
+  "initialization": {
+    "coordinate": {
+      "theta_i": "2*pi*i/N"
+    },
+    "projection": {
+      "name": "nonnegative_conserved_simplex",
+      "formula": "C_i >= 0; sum_i C_i = B"
+    },
+    "formulas": {
+      "uniform": "C_i = B/N",
+      "canonical_ring_bump": "C_i = C_0 + A * exp(kappa * cos(theta_i - theta_0)); then project to conserved simplex",
+      "two_equal_canonical_ring_bumps": "Apply canonical_ring_bump twice with equal A and kappa at theta_0 values listed in lane.bump_centers; sum the two bumps with C_0 and project to conserved simplex",
+      "canonical_ring_bump_plus_small_local_source_sink_modulation": "Apply canonical_ring_bump first, then add small_local_source_sink_modulation using source/sink masks, then project once to the conserved simplex; record pre-projection sum and projection delta",
+      "small_local_source_sink_modulation": "C_i <- C_i + epsilon_s*m_s(i) - epsilon_k*m_k(i); then project to conserved simplex",
+      "zero_sum_kick": "C_i <- C_i + delta*k_source(i) - delta*k_sink(i); then project to conserved simplex"
+    },
+    "default_parameters": {
+      "C_0": 0.08333333333333333,
+      "A": 0.02,
+      "kappa": 3.0,
+      "theta_0": 0.0,
+      "epsilon_s": 0.01,
+      "epsilon_k": 0.01,
+      "kick_delta": 0.02
+    }
+  },
+  "lanes": {
+    "U": {
+      "description": "unperturbed/null lane family",
+      "variants": ["U0", "U1", "U2"]
+    },
+    "U0": {
+      "name": "uniform_field",
+      "initialization": "uniform",
+      "expected_claim_ceiling": "no_loop_evidence"
+    },
+    "U1": {
+      "name": "symmetric_bump",
+      "initialization": "two_equal_canonical_ring_bumps",
+      "bump_centers": [0.0, 3.141592653589793],
+      "source_sink_modulation_enabled": false,
+      "expected_claim_ceiling": "null_control"
+    },
+    "U2": {
+      "name": "symmetric_closed_substrate_masks",
+      "initialization": "uniform",
+      "masks_enabled": true,
+      "source_sink_modulation_enabled": false,
+      "expected_claim_ceiling": "null_control"
+    },
+    "S": {
+      "name": "structured_initialization",
+      "initialization": "canonical_ring_bump_plus_small_local_source_sink_modulation",
+      "source_sink_modulation_enabled": true,
+      "external_source_sink_terms_enabled": false
+    },
+    "K": {
+      "name": "one_time_zero_sum_kick",
+      "base_lane": "U2",
+      "initialization": "uniform",
+      "kick_step": 0,
+      "kick": "zero_sum_kick",
+      "washout_steps": 10,
+      "min_eval_steps": 100,
+      "composition": "resolve base_lane U2, initialize uniform closed-substrate masks, then apply zero_sum_kick at kick_step",
+      "external_source_sink_terms_enabled": false
+    },
+    "K_reversed": {
+      "name": "one_time_zero_sum_kick_reversed",
+      "base_lane": "K",
+      "use_reversed_masks": true,
+      "expected_control_outcome": "antisymmetric_pass|substrate_biased_pass|failure"
+    }
+  },
+  "controls": {
+    "reversed_source_sink": {
+      "type": "runtime_control",
+      "enabled_for_lanes": ["S", "K"],
+      "mask_source": "fixtures.grc9v3_ported_ring_v1.reversed_masks"
+    },
+    "shuffled_conductance": {
+      "type": "runtime_or_classifier_control",
+      "default_surface": "initial_fixture_base_conductance",
+      "allowed_surfaces": [
+        "initial_fixture_base_conductance",
+        "per_tick_rebuilt_base_conductance",
+        "channel_mask_assignment",
+        "posthoc_flux_series_assignment"
+      ],
+      "deterministic_seed": 0,
+      "uniform_conductance_note": "initial_fixture_base_conductance is uniform in grc9v3_ported_ring_v1, so shuffling that surface is non-informative unless conductance heterogeneity is added; channel_mask_assignment is the first informative shuffled control"
+    },
+    "zero_flux_reset": {
+      "type": "runtime_initialization_control",
+      "action": "set all initial flux_uv values to 0 before first transport rebuild",
+      "fresh_rebuild_only_status": "not_applicable_allowed"
+    },
+    "budget_projection_disabled_dry_run": {
+      "type": "diagnostic_dry_run",
+      "positive_conservation_claims_allowed": false
+    },
+    "randomized_labels_posthoc": {
+      "type": "posthoc_classifier_control",
+      "rerun_dynamics": false,
+      "deterministic_seed": 0
+    },
+    "topology_disabled": {
+      "type": "runtime_contract",
+      "topology_events_enabled": false,
+      "spark_enabled": false,
+      "growth_enabled": false,
+      "boundary_behavior_enabled": false,
+      "pruning_enabled": false,
+      "birth_enabled": false
+    }
+  },
+  "observable_semantics": {
+    "edge_field_aliases": {
+      "u": "node_u",
+      "v": "node_v",
+      "u_port": "port_u",
+      "v_port": "port_v"
+    },
+    "return_channel_sign": {
+      "meaning": "return flux is positive in the declared clockwise edge orientation, not counterclockwise or opposite-sign flux",
+      "return_channel_edges": [7, 8, 9, 10, 11],
+      "route": "7 -> 8 -> 9 -> 10 -> 11 -> 0"
+    },
+    "channel_vs_region_boundary": {
+      "J_forward": "sum over forward_channel_edges only",
+      "J_return": "sum over return_channel_edges only",
+      "source_export": "boundary export from source_aspect_nodes",
+      "sink_import": "boundary import into sink_aspect_nodes",
+      "note": "channel flux and region boundary export/import are related but not identical"
+    },
+    "zero_sum_initialization_audit": {
+      "source_sink_modulation": "record pre-projection sum and projection delta",
+      "kick": "record pre-projection sum and projection delta; K_reversed applies reversed masks to both labels and kick direction"
+    }
+  }
+}

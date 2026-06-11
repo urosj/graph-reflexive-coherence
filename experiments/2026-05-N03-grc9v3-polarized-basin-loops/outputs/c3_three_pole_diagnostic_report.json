@@ -1,0 +1,468 @@
+{
+  "claim_ceiling": "three_pole_diagnostic_surface_not_positive_loop_claim",
+  "classification": "c3_fixed_topology_no_three_pole_candidate_rows",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_c3_three_pole_diagnostic.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "fixture": {
+    "channels": {
+      "R1_R2": [
+        1,
+        2,
+        3
+      ],
+      "R2_R3": [
+        5,
+        6,
+        7
+      ],
+      "R3_R1": [
+        9,
+        10,
+        11
+      ]
+    },
+    "edge_count": 12,
+    "edges": [
+      {
+        "base_conductance": 1.0,
+        "edge_id": 0,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 0,
+        "node_v": 1,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 1,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 1,
+        "node_v": 2,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 2,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 2,
+        "node_v": 3,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 3,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 3,
+        "node_v": 4,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 4,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 4,
+        "node_v": 5,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 5,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 5,
+        "node_v": 6,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 6,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 6,
+        "node_v": 7,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 7,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 7,
+        "node_v": 8,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 8,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 8,
+        "node_v": 9,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 9,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 9,
+        "node_v": 10,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 10,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 10,
+        "node_v": 11,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      },
+      {
+        "base_conductance": 1.0,
+        "edge_id": 11,
+        "flux_uv_initial": 0.0,
+        "geometric_length": 1.0,
+        "node_u": 11,
+        "node_v": 0,
+        "orientation": "clockwise",
+        "port_u": 6,
+        "port_v": 4
+      }
+    ],
+    "fixture_id": "c3_three_pole_ported_ring_v1",
+    "internal_edges": {
+      "R1": [
+        0
+      ],
+      "R2": [
+        4
+      ],
+      "R3": [
+        8
+      ]
+    },
+    "node_count": 12,
+    "nodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "phase_target": [
+      "R1",
+      "R2",
+      "R3",
+      "R1"
+    ],
+    "poles": {
+      "R1": [
+        0,
+        1
+      ],
+      "R2": [
+        4,
+        5
+      ],
+      "R3": [
+        8,
+        9
+      ]
+    },
+    "same_parent_basin_mode": "configured_parent_region_only",
+    "type": "three_pole_ported_ring"
+  },
+  "runtime": {
+    "errors": [],
+    "reports": {
+      "P": {
+        "P_R1_R2_mean": -0.04462760941468971,
+        "P_R2_R3_mean": -0.021441966582299646,
+        "P_R3_R1_mean": 0.05500308404776597,
+        "blocked_reasons": [
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [],
+        "lane_id": "P",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_records": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_raw_records/c3_runtime_p_raw_records.jsonl"
+        },
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "c3_fixed_topology_continuity_runner",
+        "three_pole_candidate_claim_allowed": false,
+        "timeseries": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_timeseries/c3_runtime_p_timeseries.jsonl"
+        },
+        "topology": {
+          "changed": false,
+          "final_edge_count": 12,
+          "final_node_count": 12,
+          "initial_edge_count": 12,
+          "initial_node_count": 12
+        }
+      },
+      "P_reversed": {
+        "P_R1_R2_mean": 0.021441966582299646,
+        "P_R2_R3_mean": 0.04462760941468971,
+        "P_R3_R1_mean": -0.05500308404776597,
+        "blocked_reasons": [
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [],
+        "lane_id": "P_reversed",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_records": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_raw_records/c3_runtime_p_reversed_raw_records.jsonl"
+        },
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "c3_fixed_topology_continuity_runner",
+        "three_pole_candidate_claim_allowed": false,
+        "timeseries": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_timeseries/c3_runtime_p_reversed_timeseries.jsonl"
+        },
+        "topology": {
+          "changed": false,
+          "final_edge_count": 12,
+          "final_node_count": 12,
+          "initial_edge_count": 12,
+          "initial_node_count": 12
+        }
+      },
+      "U0": {
+        "P_R1_R2_mean": 0.0,
+        "P_R2_R3_mean": 0.0,
+        "P_R3_R1_mean": 0.0,
+        "blocked_reasons": [
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [],
+        "lane_id": "U0",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_records": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_raw_records/c3_runtime_u0_raw_records.jsonl"
+        },
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "c3_fixed_topology_continuity_runner",
+        "three_pole_candidate_claim_allowed": false,
+        "timeseries": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_timeseries/c3_runtime_u0_timeseries.jsonl"
+        },
+        "topology": {
+          "changed": false,
+          "final_edge_count": 12,
+          "final_node_count": 12,
+          "initial_edge_count": 12,
+          "initial_node_count": 12
+        }
+      },
+      "U3": {
+        "P_R1_R2_mean": 0.0,
+        "P_R2_R3_mean": 0.0,
+        "P_R3_R1_mean": 0.0,
+        "blocked_reasons": [
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [],
+        "lane_id": "U3",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_records": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_raw_records/c3_runtime_u3_raw_records.jsonl"
+        },
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "c3_fixed_topology_continuity_runner",
+        "three_pole_candidate_claim_allowed": false,
+        "timeseries": {
+          "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_three_pole_timeseries/c3_runtime_u3_timeseries.jsonl"
+        },
+        "topology": {
+          "changed": false,
+          "final_edge_count": 12,
+          "final_node_count": 12,
+          "initial_edge_count": 12,
+          "initial_node_count": 12
+        }
+      }
+    }
+  },
+  "runtime_candidate_lanes": [],
+  "schema": "grc9v3_polarized_basin_loop_c3_three_pole_diagnostic_v1",
+  "status": "pass",
+  "synthetic": {
+    "errors": [],
+    "reports": {
+      "budget_drift": {
+        "P_R1_R2_mean": 0.0,
+        "P_R2_R3_mean": 0.0,
+        "P_R3_R1_mean": 0.0,
+        "blocked_reasons": [
+          "synthetic_trace_not_runtime_evidence",
+          "budget_gate_failed",
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": false,
+        "cascades": [],
+        "lane_id": "budget_drift",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "synthetic_trace_validator",
+        "three_pole_candidate_claim_allowed": false
+      },
+      "ordered": {
+        "P_R1_R2_mean": 0.00015000000000000001,
+        "P_R2_R3_mean": 0.00015000000000000001,
+        "P_R3_R1_mean": 0.00015000000000000001,
+        "blocked_reasons": [
+          "synthetic_trace_not_runtime_evidence",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [
+          {
+            "P_R1_R2_step": 21,
+            "P_R2_R3_step": 23,
+            "P_R3_R1_step": 25,
+            "R1_drop_step": 20,
+            "R1_refill_step": 26,
+            "R2_rise_step": 22,
+            "R3_rise_step": 24
+          },
+          {
+            "P_R1_R2_step": 39,
+            "P_R2_R3_step": 41,
+            "P_R3_R1_step": 43,
+            "R1_drop_step": 38,
+            "R1_refill_step": 44,
+            "R2_rise_step": 40,
+            "R3_rise_step": 42
+          },
+          {
+            "P_R1_R2_step": 57,
+            "P_R2_R3_step": 59,
+            "P_R3_R1_step": 61,
+            "R1_drop_step": 56,
+            "R1_refill_step": 62,
+            "R2_rise_step": 58,
+            "R3_rise_step": 60
+          },
+          {
+            "P_R1_R2_step": 75,
+            "P_R2_R3_step": 77,
+            "P_R3_R1_step": 79,
+            "R1_drop_step": 74,
+            "R1_refill_step": 80,
+            "R2_rise_step": 76,
+            "R3_rise_step": 78
+          }
+        ],
+        "lane_id": "ordered",
+        "n_cycles_min": 3,
+        "network_closure_score": 1.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_three_pole_cascade_count": 4,
+        "role_gated_three_pole_cascade_count": 4,
+        "runner_mode": "synthetic_trace_validator",
+        "three_pole_candidate_claim_allowed": false
+      },
+      "scrambled": {
+        "P_R1_R2_mean": 0.0,
+        "P_R2_R3_mean": 0.0,
+        "P_R3_R1_mean": 0.00045000000000000004,
+        "blocked_reasons": [
+          "synthetic_trace_not_runtime_evidence",
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [],
+        "lane_id": "scrambled",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "synthetic_trace_validator",
+        "three_pole_candidate_claim_allowed": false
+      },
+      "two_pole": {
+        "P_R1_R2_mean": 0.00015000000000000001,
+        "P_R2_R3_mean": 0.0,
+        "P_R3_R1_mean": 0.0,
+        "blocked_reasons": [
+          "synthetic_trace_not_runtime_evidence",
+          "role_gated_cycle_gate_failed",
+          "three_pole_diagnostic_claim_ceiling"
+        ],
+        "budget_passed": true,
+        "cascades": [],
+        "lane_id": "two_pole",
+        "n_cycles_min": 3,
+        "network_closure_score": 0.0,
+        "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "runner_mode": "synthetic_trace_validator",
+        "three_pole_candidate_claim_allowed": false
+      }
+    }
+  }
+}

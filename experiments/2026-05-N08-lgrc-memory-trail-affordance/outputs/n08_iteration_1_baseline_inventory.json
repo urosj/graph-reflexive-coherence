@@ -1,0 +1,676 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 1 passes if N08 has a source-backed baseline inventory of inherited N05/N06/N07 artifacts, a frozen MEM ladder and row schema, a recorded native memory/trail policy gap inventory, clean claim boundaries, and no memory probe execution.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "available_native_memory_like_surfaces": {
+    "n07_support_area_anchors": {
+      "available": true,
+      "native_memory_surface": false,
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+    },
+    "native_route_candidate_runtime_visible_inputs": {
+      "available": true,
+      "native_memory_surface": false,
+      "semantics": "runtime-visible input names can cite memory artifact digests later, but current core has no memory surface validator"
+    },
+    "native_route_candidate_score_components": {
+      "available": true,
+      "native_memory_surface": false,
+      "semantics": "arbitrary finite non-forbidden component keys can be serialized, but memory/trail semantics must be supplied by N08 artifact rows until Phase 8 adds native memory"
+    },
+    "route_aspect_surface_from_n05": {
+      "available": true,
+      "limitation": "route aspect is replayable carrier/circuit evidence, not route conductance memory",
+      "native_memory_surface": false,
+      "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1"
+    }
+  },
+  "baseline_json_report_schema": {
+    "json_required_sections": [
+      "n05_inventory",
+      "n06_inventory",
+      "n07_inventory",
+      "available_native_memory_like_surfaces",
+      "missing_native_memory_policy_surfaces",
+      "native_route_arbitration_contract_inventory",
+      "n07_support_fields_available_as_memory_keys",
+      "mem_ladder",
+      "frozen_mem_row_schema",
+      "memory_surface_key_contract",
+      "claim_flags",
+      "memory_or_trail_promotion_criteria",
+      "checks"
+    ],
+    "report_required_sections": [
+      "Result",
+      "Inherited Evidence Inventory",
+      "Native Contract Inventory",
+      "Frozen MEM Schema",
+      "Memory Surface Key Contract",
+      "Claim Boundary",
+      "Source Report Digests",
+      "Acceptance Result"
+    ]
+  },
+  "checks": {
+    "baseline_json_schema_self_validates": true,
+    "claim_flags_all_false": true,
+    "forbidden_inputs_inventoried": true,
+    "frozen_row_schema_has_budget_split": true,
+    "frozen_row_schema_has_memory_snapshot": true,
+    "mem_ladder_complete": true,
+    "memory_or_trail_requires_mem6": true,
+    "memory_probe_not_run": true,
+    "memory_surface_key_contract_explicit": true,
+    "missing_native_memory_policy_surfaces_recorded": true,
+    "n05_o5_inventory_present": true,
+    "n05_o6_blocker_recorded": true,
+    "n05_route_memory_absent": true,
+    "n05_status_passed": true,
+    "n06_candidate_route_records_present": true,
+    "n06_candidate_score_components_present": true,
+    "n06_candidate_set_records_present": true,
+    "n06_cycle_structure_valid": true,
+    "n06_native_route_arbitration_records_present": true,
+    "n06_sc6_inventory_present": true,
+    "n06_selection_not_route_use": true,
+    "n06_status_passed": true,
+    "n07_11b_report_digest_recorded": true,
+    "n07_bounded_exchange_inventory_present": true,
+    "n07_status_passed": true,
+    "n07_support_fields_present": true,
+    "native_candidate_score_components_can_carry_memory_keys_by_name": true,
+    "native_memory_semantics_missing_recorded": true,
+    "promotion_criteria_encoded_as_required_gates": true,
+    "proposed_memory_score_components_not_forbidden": true,
+    "src_clean_for_iteration_1": true
+  },
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/build_n08_iteration_1_baseline_inventory.py",
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "frozen_mem_row_schema": [
+    "row_id",
+    "mem_level",
+    "mem_level_is_evidence_classification",
+    "claim_ceiling",
+    "claim_flags",
+    "source_artifacts",
+    "source_reports",
+    "route_use_event_id",
+    "route_use_event_digest",
+    "route_use_commit_status",
+    "route_id",
+    "selected_route_id",
+    "route_aspect_digest",
+    "source_arbitration_record_digest",
+    "selected_candidate_route_digest",
+    "rejected_candidate_route_digests",
+    "memory_surface_id",
+    "memory_surface_digest",
+    "memory_surface_key",
+    "memory_surface_key_digest",
+    "source_support_area_digest",
+    "target_support_area_digest",
+    "support_area_id",
+    "support_area_digest",
+    "memory_policy_id",
+    "memory_policy_digest",
+    "decay_policy_id",
+    "reinforcement_policy_id",
+    "memory_surface_state_snapshot",
+    "memory_surface_state_snapshot_digest",
+    "candidate_route_digests",
+    "candidate_set_digest",
+    "native_route_arbitration_record_digest",
+    "event_time_key",
+    "scheduler_event_index",
+    "node_plus_packet_budget_before",
+    "node_plus_packet_budget_after",
+    "node_plus_packet_budget_error",
+    "memory_budget_surface",
+    "memory_budget_before",
+    "memory_budget_after",
+    "memory_budget_error",
+    "native_support_status",
+    "native_policy_blockers",
+    "visual_reference",
+    "visual_is_evidence_source"
+  ],
+  "generated_at": "2026-06-07T12:55:33.472511+00:00",
+  "git": {
+    "head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "inventory_digest": "c27c011e1875c7e967aac398818c2a72b55adfb064752b594524e91530ed20de",
+  "inventory_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "inventory_digest"
+    ],
+    "included": "all inventory fields except generated_at and inventory_digest",
+    "stable_across_same_inputs": true
+  },
+  "iteration": 1,
+  "mem_ladder": {
+    "MEM0": "external_or_label_only_memory_no_runtime_visible_route_use_event",
+    "MEM1": "route_use_event_trace_recorded_with_digest_and_budget",
+    "MEM2": "persisted_trail_or_affordance_memory_surface_after_route_use",
+    "MEM3": "serialized_decay_or_reinforcement_update_with_budget",
+    "MEM4": "memory_surface_digest_shapes_candidate_route_score",
+    "MEM5": "repeated_memory_shaped_selection_over_multiple_cycles",
+    "MEM6": "artifact_only_replay_of_route_use_memory_update_arbitration_controls"
+  },
+  "memory_or_trail_promotion_criteria": {
+    "blocked_until": "MEM6",
+    "memory_or_trail_claim_allowed_initial": false,
+    "required_gates": [
+      "MEM6 required",
+      "artifact-only replay passes",
+      "route-use events replay",
+      "memory surface state reconstructs",
+      "decay/reinforcement policies replay",
+      "memory-derived candidate scores recompute exactly",
+      "controls fail with distinct blockers",
+      "node-plus-packet budget passes",
+      "memory budget passes",
+      "does not promote ACO, agency, identity, or locomotion claims"
+    ],
+    "status": "criteria_defined_not_satisfied_iteration_1"
+  },
+  "memory_probe_run": false,
+  "memory_surface_key_contract": {
+    "digest_field_name": "memory_surface_key_digest",
+    "digest_rule": "sha256(canonical_json(memory_surface_key))",
+    "field_name": "memory_surface_key",
+    "field_type": "canonical_json_object",
+    "not_a_scalar_string": true,
+    "not_hidden_process_memory": true,
+    "required_fields": [
+      "route_id",
+      "source_support_area_digest",
+      "target_support_area_digest",
+      "route_aspect_digest",
+      "memory_policy_id"
+    ]
+  },
+  "missing_native_memory_policy_surfaces": [
+    "native_route_conductance_memory_policy_missing",
+    "native_trail_memory_surface_missing",
+    "native_memory_surface_serialization_policy_missing",
+    "native_memory_surface_keying_policy_missing",
+    "native_memory_budget_accounting_policy_missing",
+    "native_memory_cross_cycle_persistence_policy_missing",
+    "native_memory_decay_policy_missing",
+    "native_memory_reinforcement_policy_missing",
+    "native_memory_candidate_score_component_semantics_missing",
+    "native_memory_artifact_replay_validator_missing"
+  ],
+  "n05_inventory": {
+    "o6_primary_blocker": "missing_route_conductance_memory_policy",
+    "o6_supported": false,
+    "phase3_native_policy_blockers": [
+      "missing_serialized_custom_node_potentials_policy",
+      "missing_serialized_potential_inversion_policy",
+      "missing_flux_facilitated_metric_map_policy",
+      "missing_serialized_delayed_passive_response_policy",
+      "missing_route_conductance_memory_policy"
+    ],
+    "route_aspect_fields": {
+      "channel_sequence": [
+        "S_to_K",
+        "K_to_S"
+      ],
+      "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+      "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+      "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+      "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+      "route_conductance_memory_digest": null,
+      "route_conductance_memory_policy_id": null,
+      "route_edge_ids": [
+        0,
+        1
+      ],
+      "trail_reinforcement_surface_digest": null
+    },
+    "route_aspect_serialized": true,
+    "route_memory_absent_fields": {
+      "route_conductance_memory_digest": null,
+      "route_conductance_memory_policy_id": null,
+      "route_memory_runtime_visible": false,
+      "trail_memory_blocker": "missing_route_conductance_memory_policy",
+      "trail_reinforcement_surface_digest": null
+    },
+    "source_artifact": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+    "status": "passed",
+    "strongest_claim_ceiling": "self_sustained_oscillator_candidate",
+    "strongest_supported_o_level": "O5"
+  },
+  "n06_inventory": {
+    "candidate_route_records_present": true,
+    "candidate_score_components_present": true,
+    "candidate_set_records_present": true,
+    "context_surfaces_present": true,
+    "cycle_count": 4,
+    "native_route_arbitration_records_present": true,
+    "route_digest_rows": [
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "candidate_set_digest": "cc28d581e856d3782a840c63157f7b1d4d565387e8c00ed28b8365cba7b5f4a9",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_a",
+        "cycle_id": "cycle_0",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:0"
+        ],
+        "rejected_candidate_route_digests": [
+          "56eba296ce0ae91bb1e0b9c44557be6b52dd2932cd0bd6453156608114f07b0a"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+        "selected_route": "route_a",
+        "source_arbitration_record_id": "native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      },
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "candidate_set_digest": "5c8918b0cdf07c3c5b303bf2c71d4c5c184370f5b875dc01af6b3aaff2506648",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_b",
+        "cycle_id": "cycle_1",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410:0"
+        ],
+        "rejected_candidate_route_digests": [
+          "6c56a159bc33d047f6017d8baec972244bff49ca3df60954c1bbf0a41b6cf707"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "21ff5096388e202c1c708be518b6966013049873a36fb34e9eedf245e9d79c63",
+        "selected_route": "route_b",
+        "source_arbitration_record_id": "native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      },
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "candidate_set_digest": "30217e1dcc8c533d3175131d2b2be0a265829a41714fe338a1330982b6c8e510",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_a",
+        "cycle_id": "cycle_2",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:ef3e9c9a4d37bb19f8b312c71b9989b5:0"
+        ],
+        "rejected_candidate_route_digests": [
+          "a7e307a6e2a456fa2765169f936361f8591e9c382a79d7acffc18c89779c3f7b"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "56df5ea777c43a139b3d26d314b41affc82cedafd8dc54e7f1af615cb43d52a1",
+        "selected_route": "route_a",
+        "source_arbitration_record_id": "native-route-arbitration:ef3e9c9a4d37bb19f8b312c71b9989b5",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      },
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "candidate_set_digest": "cc8603974788f12118e143fb8f6c96ae3ef6eb1c021e3a6c6c14aba8469db765",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_b",
+        "cycle_id": "cycle_3",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea:0"
+        ],
+        "rejected_candidate_route_digests": [
+          "7bd9d0e3c92cc61ef267466ee39de3f53d5dfe4dacbd7c33b9d4b91583afb2b8"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "1732ca519398908214633ffb085a0c5d25b7c772891a025f5e7c1df0a5da7304",
+        "selected_route": "route_b",
+        "source_arbitration_record_id": "native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      }
+    ],
+    "route_use_boundary_for_n08": {
+      "n06_selection_is_committed_route_use": false,
+      "reason": "N06 SC6 is selection-only and pre-topology; N08 MEM1 requires a new ordered route-use event.",
+      "required_next_record": "n08_route_use_event"
+    },
+    "selected_and_rejected_route_digests_present": true,
+    "selection_scope": "not_applicable_pre_topology_selection_only_scope",
+    "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+    "status": "passed",
+    "strongest_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+    "strongest_supported_sc_level": "SC6"
+  },
+  "n07_inventory": {
+    "claim_boundary_fields": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "frozen_long_horizon_c3_class": "bounded_non_destructive_exchange",
+    "frozen_n07_ceiling": "ID6",
+    "n07_11b_candidate_row": {
+      "candidate_row_digest": "44bd5935324e40451d45dabaf447b66d98d39c0f8ce4bfcf0b6a4ae28fb5073c",
+      "claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+      "native_support_status": "experiment_local_serialized_reservoir_policy",
+      "row_id": "n07_i11b_neutral_absorber_reservoir_row_v1",
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "trajectory_regime": "bounded_non_destructive_exchange"
+    },
+    "runtime_identity_acceptance_claim_allowed": false,
+    "source_11b_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+    "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+    "source_specific_support_anchor": {
+      "candidate_identity_carrier_type": "coherence_basin",
+      "identity_carrier_surface": "runtime_coherence_basin",
+      "reservoir_runtime_visible_inputs": {
+        "A_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "raw_destructive_interference_per_window": 0.047619047619,
+        "raw_wrong_basin_leakage_per_window": 0.04,
+        "support_retention_threshold": 0.85,
+        "wrong_basin_threshold": 0.1
+      },
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+    },
+    "status": "passed",
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1"
+  },
+  "n07_support_fields_available_as_memory_keys": {
+    "field_values": {
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+    },
+    "source_support_area_digest": true,
+    "support_area_digest": true,
+    "support_area_id": true,
+    "target_support_area_digest": true
+  },
+  "native_route_arbitration_contract_inventory": {
+    "all_proposed_memory_components_allowed_as_component_names": true,
+    "candidate_score_component_contract": {
+      "candidate_budget_prediction_required": true,
+      "candidate_lineage_transfer_map_required": true,
+      "candidate_route_score_equals_sum_components": true,
+      "candidate_runtime_visible_inputs_must_not_be_empty": true,
+      "score_components_must_be_finite": true,
+      "score_components_must_not_be_empty": true
+    },
+    "forbidden_input_keys": [
+      "experiment_if_else",
+      "hidden_fixture_array",
+      "hidden_fixture_state",
+      "posthoc_threshold",
+      "preselected_sink_id",
+      "report_code"
+    ],
+    "forbidden_surface_keys_relevant_to_claims": [
+      "agency_claim_allowed",
+      "biological_claim_allowed",
+      "choice_or_agency_claim_allowed",
+      "claim_promotion",
+      "identity_acceptance_claim_allowed",
+      "locomotion_like_claim_allowed",
+      "loop_driven_movement_claim_allowed",
+      "movement_claim_allowed",
+      "native_lgrc_choice_selection_claim_allowed",
+      "rc_identity_collapse_claim_allowed",
+      "rc_identity_through_topology_claim_allowed",
+      "semantic_choice_claim_allowed",
+      "topology_mutating_movement_claim_allowed",
+      "unrestricted_movement_claim_allowed"
+    ],
+    "memory_semantics_native_supported": false,
+    "proposed_memory_components": [
+      {
+        "blocker_if_used_without_memory_surface": "native_memory_candidate_score_component_semantics_missing",
+        "component_name": "memory_trail_strength",
+        "component_name_is_forbidden_route_input": false,
+        "component_name_is_forbidden_surface_key": false,
+        "native_memory_semantics_exist": false,
+        "required_runtime_visible_inputs": [
+          "memory_surface_id",
+          "memory_surface_digest",
+          "memory_surface_state_snapshot_digest",
+          "memory_policy_id",
+          "route_use_event_digest",
+          "memory_event_time_key"
+        ],
+        "route_candidate_score_key_allowed_by_current_native_contract": true
+      },
+      {
+        "blocker_if_used_without_memory_surface": "native_memory_candidate_score_component_semantics_missing",
+        "component_name": "memory_surface_digest_match",
+        "component_name_is_forbidden_route_input": false,
+        "component_name_is_forbidden_surface_key": false,
+        "native_memory_semantics_exist": false,
+        "required_runtime_visible_inputs": [
+          "memory_surface_id",
+          "memory_surface_digest",
+          "memory_surface_state_snapshot_digest",
+          "memory_policy_id",
+          "route_use_event_digest",
+          "memory_event_time_key"
+        ],
+        "route_candidate_score_key_allowed_by_current_native_contract": true
+      },
+      {
+        "blocker_if_used_without_memory_surface": "native_memory_candidate_score_component_semantics_missing",
+        "component_name": "memory_recency_weight",
+        "component_name_is_forbidden_route_input": false,
+        "component_name_is_forbidden_surface_key": false,
+        "native_memory_semantics_exist": false,
+        "required_runtime_visible_inputs": [
+          "memory_surface_id",
+          "memory_surface_digest",
+          "memory_surface_state_snapshot_digest",
+          "memory_policy_id",
+          "route_use_event_digest",
+          "memory_event_time_key"
+        ],
+        "route_candidate_score_key_allowed_by_current_native_contract": true
+      },
+      {
+        "blocker_if_used_without_memory_surface": "native_memory_candidate_score_component_semantics_missing",
+        "component_name": "memory_decay_adjusted_strength",
+        "component_name_is_forbidden_route_input": false,
+        "component_name_is_forbidden_surface_key": false,
+        "native_memory_semantics_exist": false,
+        "required_runtime_visible_inputs": [
+          "memory_surface_id",
+          "memory_surface_digest",
+          "memory_surface_state_snapshot_digest",
+          "memory_policy_id",
+          "route_use_event_digest",
+          "memory_event_time_key"
+        ],
+        "route_candidate_score_key_allowed_by_current_native_contract": true
+      }
+    ]
+  },
+  "purpose": "baseline_schema_inventory_no_memory_probe",
+  "schema": "n08_iteration_1_baseline_inventory_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+  },
+  "source_reports": {
+    "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_8_o6_closeout.md": "fa9d3b7f7d44ddc03e5a14537f4d06fb6540019c0d3251dd503b0182d1a425c2",
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8"
+  },
+  "status": "passed"
+}

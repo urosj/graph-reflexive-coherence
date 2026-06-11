@@ -1,0 +1,94 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Saddle Branch Instability Pass
+  description: ComposingCells-aligned seed with a saddle branch whose unstable direction has high outgoing cut and weak support.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-saddle-branch-instability-pass
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, saddle, branch, instability]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - Branch instability is source geometry; runtime spark evidence must be observed through telemetry.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: branch_saddle
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [weak_support_basin, cut_valley_a, cut_valley_b]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: cell_saddle_branch_instability_pass_critical_region
+        motif_id: spark_instability
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: saddle_branch_cell
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: anisotropic_branch
+        spark_gate_intent: saturation_instability
+  - id: weak_support_basin
+    type: basin
+    coherence_prior: 0.2
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.35]
+  - id: cut_valley_a
+    type: valley
+    from_id: branch_saddle
+    to_id: exterior_a
+    channel_role: outgoing_cut
+    width_hint: 0.08
+  - id: cut_valley_b
+    type: valley
+    from_id: branch_saddle
+    to_id: exterior_b
+    channel_role: outgoing_cut
+    width_hint: 0.08
+    extensions:
+      grcl9:
+        term_kind: unstable_direction
+        term_id: cell_saddle_branch_instability_pass_unstable_direction
+        motif_id: spark_instability
+        direction_id: unstable_row_1
+        region_id: candidate
+        axis_role: row_1
+        support_class: weak_support
+        cut_class: high_cut
+        tau_instability: 0.25
+  - id: exterior_a
+    type: plateau
+    coherence_prior: 0.1
+    chart_center_hint: [0.25, 0.5]
+  - id: exterior_b
+    type: plateau
+    coherence_prior: 0.1
+    chart_center_hint: [0.75, 0.5]
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_saddle_branch_instability_pass
+    manifest_entry_id: grcl9_lowering_spark_instability_v1
+    expected_selector_ids: [spark_instability_count]
+    notes: ComposingCells saddle/branch seed mapped to the spark instability manifest entry.

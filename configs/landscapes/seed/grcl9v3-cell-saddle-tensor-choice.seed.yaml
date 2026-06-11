@@ -1,0 +1,121 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Cell Saddle Tensor Choice
+  description: ComposingCells-aligned saddle branch seed coupling tensor/Hessian instability with choice/collapse.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-84-composingcells-aligned-hybrid-seeds
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, saddle, tensor, choice]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: saddle_core
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [basin_a, basin_b, tensor_support]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: cell_saddle_tensor_choice_critical
+        region_id: saddle_core
+        source_role: composing_cell_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: saddle_tensor
+    type: ridge
+    owner_id: saddle_core
+    adjacent_ids: [basin_a, basin_b]
+    extensions:
+      grcl9v3:
+        term_kind: tensor_hessian_profile
+        term_id: cell_saddle_tensor_choice_tensor
+        region_id: saddle_core
+        source_role: composing_cell_control
+        profile:
+          hessian_backend: row_basis_diagonal
+          row_basis_profile:
+            hessian_mode: anisotropic
+            basis: row_basis_diagonal
+          signed_history_required: false
+          anisotropy_axis: row_2
+          tensor_profile:
+            tensor_mode: anisotropic
+            row_mismatch: high
+  - id: choice_saddle
+    type: saddle
+    branch_target_ids: [basin_a, basin_b]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: cell_saddle_tensor_choice_choice
+        region_id: choice_saddle
+        source_role: composing_cell_control
+        profile:
+          basin_region_a: basin_a
+          basin_region_b: basin_b
+          collapse_target_region: basin_a
+          compatibility_profile:
+            compatibility: high_contrast
+  - id: basin_a
+    type: basin
+    coherence_prior: 1.0
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: cell_saddle_tensor_choice_basin_a
+        region_id: basin_a
+        source_role: composing_cell_control
+        profile:
+          basin: choice_branch_a
+  - id: basin_b
+    type: basin
+    coherence_prior: 0.4
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: cell_saddle_tensor_choice_basin_b
+        region_id: basin_b
+        source_role: composing_cell_control
+        profile:
+          basin: choice_branch_b
+  - id: tensor_support
+    type: plateau
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: cell_saddle_tensor_choice
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0019-cell-saddle-tensor-choice
+    expected_selector_ids: [hybrid_spark_events, hybrid_tensor_available, choice_collapse_events]
+    notes:
+      composing_cells_anchor: saddle branch with tensor/Hessian instability and semantic choice
+      boundary: source preconditions only
+      composed_source_ancestry:
+        - hybrid_spark_gate_positive_control
+        - choice_collapse_positive_control
+

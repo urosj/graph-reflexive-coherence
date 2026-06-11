@@ -1,0 +1,3 @@
+experiment,observation,status,artifact_source,reconstruction_attempt,notes
+experiment_f_path_disagreement,runtime_path_solver,inconclusive,experiment-local path analyzer,Enumerated simple paths over GRC9V3 topology.,The edge labels are runtime state surfaces; path solving is experiment-local analysis.
+experiment_f_path_disagreement,row_column_path_semantic_claim,inconclusive,path fixture,"Port ids are recorded, but path disagreement is label-driven.","Experiment F supports multi-label path disagreement, not direct row/column semantic separation."

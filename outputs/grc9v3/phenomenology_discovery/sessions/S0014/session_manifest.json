@@ -1,0 +1,31 @@
+{
+  "control_role": "handoff",
+  "created_at": "2026-04-26",
+  "dirty_worktree": null,
+  "family": "grc9v3",
+  "git_revision": "",
+  "input_paths": [
+    "outputs/grc9v3/phenomenology_discovery/sessions/S0013/expanded_motif_catalog.json"
+  ],
+  "iteration": "I10_source_language_handoff",
+  "non_claims": [
+    "no_grcl9_source_lowering_claim",
+    "no_source_language_construct_claim",
+    "no_lorentzian_causal_layer_claim",
+    "no_visual_only_promotion"
+  ],
+  "observation_summary": "8 source-expression candidates, 12 vocabulary-needed records, 6 runtime-only records.",
+  "output_paths": [
+    "outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json",
+    "outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.md",
+    "outputs/grc9v3/phenomenology_discovery/sessions/S0014/reports/source_language_handoff_report.json"
+  ],
+  "phenomenon": "GRC9V3 runtime motif source-language planning handoff",
+  "program": "grc9v3_phenomenology_discovery",
+  "replay_command": "PYTHONPATH=src ./.venv/bin/python -m pygrc.discovery.grc9v3_source_handoff --session-id S0014",
+  "seed_family": "S0013",
+  "session_id": "S0014",
+  "session_kind": "source_language_handoff",
+  "status": "completed",
+  "track": "phenomenology_discovery"
+}

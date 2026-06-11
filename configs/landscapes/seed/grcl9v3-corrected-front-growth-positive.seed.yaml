@@ -1,0 +1,92 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Corrected Front Growth Positive
+  description: Corrected GRCL-9V3 front-growth seed with explicit refinement-created front capacity.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-921-corrected-elementary-growth-seeds
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, corrected_growth, front_capacity, positive_control]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: front_parent
+    type: basin
+    coherence_prior: 1.0
+  - id: refinement_front
+    type: ridge
+    owner_id: front_parent
+    adjacent_ids: [outside]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: corrected_front_growth_positive_refinement
+        region_id: front_parent
+        source_role: positive_control
+        profile:
+          target_effective_degree: 9
+          expansion_distribution_mode: equal
+  - id: exposed_front_boundary
+    type: ridge
+    owner_id: front_parent
+    adjacent_ids: [outside]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: corrected_front_growth_positive_boundary
+        region_id: front_parent
+        source_role: positive_control
+        profile:
+          inactive_parent_port: 5
+          front_capacity_source: spark_expansion_front
+          front_source_construct_id: corrected_front_growth_positive_control_front_parent_refinement_region
+  - id: front_growth
+    type: valley
+    from_id: front_parent
+    to_id: outside
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: corrected_front_growth_positive_growth
+        region_id: front_parent
+        source_role: positive_control
+        profile:
+          outward_pressure_profile:
+            pressure: corrected_front_high_outward_pressure
+          lambda_birth: 100.0
+          growth_semantics: front_capacity
+          front_capacity_source: spark_expansion_front
+          front_source_construct_id: corrected_front_growth_positive_control_front_parent_refinement_region
+  - id: outside
+    type: plateau
+    coherence_prior: 0.1
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: corrected_front_growth_positive_control
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0043-corrected-front-growth-positive-control
+    expected_selector_ids: [growth_events, front_growth_provenance, no_choice_collapse_events]
+    notes:
+      iteration: 9.2.1
+      corrected_growth_semantics: front_capacity
+      boundary: source preconditions only
+      composed_source_ancestry: [growth_pressure_positive_control, spark_to_expansion_positive_control]

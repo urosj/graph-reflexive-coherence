@@ -1,0 +1,175 @@
+{
+  "artifact_extraction_registry": {
+    "coarse_split_reconstruction": {
+      "evidence_label": "direct",
+      "primary_sources": "Experiment E reconstruction rows and summary"
+    },
+    "derived_column_proxy": {
+      "evidence_label": "derived",
+      "primary_sources": "Experiment B rows; endpoint ports and conductance/coherence/flux"
+    },
+    "identity_persistence": {
+      "evidence_label": "partial",
+      "primary_sources": "Experiment D persistence rows; later D8 windows"
+    },
+    "lane_a_saturation_gate": {
+      "evidence_label": "direct",
+      "primary_sources": "Experiment C rows; spark candidates and event payloads"
+    },
+    "motion_port_history": {
+      "evidence_label": "partial",
+      "primary_sources": "Experiment G checkpoint-overlay port history"
+    },
+    "path_label_selection": {
+      "evidence_label": "direct",
+      "primary_sources": "Experiment F edge/path/criteria rows"
+    },
+    "refinement_reassignment": {
+      "evidence_label": "direct",
+      "primary_sources": "Experiment D reassignment rows; expansion payload"
+    },
+    "row_differential_signature": {
+      "evidence_label": "derived",
+      "primary_sources": "Experiment A rows; GRC9V3State/cached row artifacts"
+    }
+  },
+  "blocked_observation_schema": {
+    "artifact_source": "attempted artifact surface",
+    "discriminator_id": "D1-D8 id",
+    "notes": "why no stronger claim is made",
+    "observation": "claim-specific observation",
+    "reconstruction_attempt": "short extraction/reconstruction note",
+    "status": "blocked | inconclusive"
+  },
+  "classifications": [
+    "supported",
+    "weakened",
+    "refuted",
+    "blocked",
+    "inconclusive"
+  ],
+  "d2_schema_scoring_split": {
+    "rule": "Do not run final D2 scoring until enough O-style and D-style rows exist.",
+    "schema_iteration": "Iteration 3",
+    "scoring_iteration": "Iteration 10"
+  },
+  "evidence_labels": [
+    "direct",
+    "derived",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "expected_outputs": {
+    "D1": [
+      "outputs/d1_equivariance_matrix.csv",
+      "reports/d1_artifact_distance_report.md",
+      "outputs/d1_transform_pair_records.jsonl",
+      "reports/d1_blocked_observations.md"
+    ],
+    "D2_schema": [
+      "reports/d2_target_definitions.md",
+      "reports/d2_blocked_observations.md"
+    ],
+    "D2_scoring": [
+      "outputs/d2_feature_family_scores.csv",
+      "reports/d2_cross_validation_report.md",
+      "outputs/d2_random_grouping_controls.csv",
+      "reports/d2_blocked_observations.md"
+    ],
+    "D3": [
+      "outputs/d3_transpose_pair_scores.csv",
+      "reports/d3_role_separation_report.md",
+      "outputs/d3_control_patterns.csv",
+      "reports/d3_blocked_observations.md"
+    ],
+    "D4": [
+      "outputs/d4_saturation_gate_table.csv",
+      "reports/d4_saturation_report.md",
+      "reports/d4_blocked_observations.md"
+    ],
+    "D5": [
+      "outputs/d5_interface_memory_edges.csv",
+      "reports/d5_interface_memory_report.md",
+      "outputs/d5_random_column_controls.csv",
+      "reports/d5_blocked_observations.md"
+    ],
+    "D6": [
+      "outputs/d6_interaction_model_scores.csv",
+      "reports/d6_port_interaction_report.md",
+      "reports/d6_blocked_observations.md"
+    ],
+    "D7": [
+      "outputs/d7_reconstruction_errors.csv",
+      "reports/d7_multiscale_report.md",
+      "outputs/d7_signed_flux_controls.csv",
+      "outputs/d7_grouping_semantic_comparison.csv",
+      "reports/d7_blocked_observations.md"
+    ],
+    "D8": [
+      "outputs/d8_identity_emergence_windows.csv",
+      "reports/d8_identity_emergence_report.md",
+      "outputs/d8_negative_controls.csv",
+      "reports/d8_blocked_observations.md"
+    ]
+  },
+  "fixture_description_schema": {
+    "active_ports": "space-separated canonical port ids",
+    "artifact_inputs": "source rows/reports/events used by discriminator",
+    "condition_id": "condition id where applicable",
+    "expected_behavior": "declared expectation before scoring",
+    "fixture_id": "stable fixture id",
+    "source_experiment": "O-style or D-style source"
+  },
+  "lane_id": "current_hybrid_signed_hessian",
+  "manifest_schema": {
+    "artifact_schema_version": "grc9v3_properties_iter2_v1",
+    "artifact_source_map": "input files and runtime surfaces",
+    "command": "reproducible command",
+    "discriminator_id": "D1-D8 id",
+    "fixture_id": "or row-level fixture ids if multiple",
+    "git_commit": "repository commit",
+    "iteration": "checklist iteration number",
+    "lane_id": "current_hybrid_signed_hessian",
+    "output_paths": "generated output paths",
+    "runtime_params": "runtime params or reused-output declaration",
+    "script_path": "script that generated outputs",
+    "seed": "integer seed",
+    "transform_id": "or list of transform ids if multiple"
+  },
+  "run_record_schema": {
+    "artifact_class": "row, column, port, event, path, basin, or refinement class",
+    "artifact_source": "input file, runtime field, event payload, or derived formula",
+    "classification": "supported | weakened | refuted | blocked | inconclusive",
+    "discriminator_id": "D1-D8 id such as d1_factorization",
+    "evidence_label": "direct | derived | partial | blocked | inconclusive",
+    "fixture_id": "stable fixture id",
+    "lane_id": "current_hybrid_signed_hessian",
+    "notes": "claim boundary and caveats",
+    "run_id": "stable run id",
+    "schema_version": "grc9v3_properties_iter2_v1",
+    "seed": "integer seed",
+    "transform_id": "identity or named transform"
+  },
+  "runtime_mutation_policy": "experiment-local only; do not mutate src/pygrc",
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/discriminator_harness.py",
+  "transform_classes": [
+    "identity",
+    "row_permutation",
+    "column_permutation",
+    "row_column_permutation",
+    "row_column_transpose",
+    "degree_preserving_s9_relabel",
+    "random_triple_regrouping"
+  ],
+  "transform_metadata_schema": {
+    "inverse_port_map": "target port to source port mapping",
+    "port_map": "source port to target port mapping",
+    "preserves_degree": "boolean",
+    "preserves_row_column_factorization": "boolean",
+    "semantic_interpretability": "canonical | transpose | non_factorized",
+    "transform_class": "one of transform_classes",
+    "transform_id": "stable transform id"
+  }
+}

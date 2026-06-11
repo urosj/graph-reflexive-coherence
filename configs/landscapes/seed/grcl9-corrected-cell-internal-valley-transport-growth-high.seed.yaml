@@ -1,0 +1,101 @@
+seed_schema: pygrc.landscape_seed
+seed_version: '0.1'
+meta:
+  name: Corrected GRCL9 Cell Internal Valley Transport Growth High
+  description: ComposingCells-aligned seed with an internal valley channel that concentrates
+    outward pressure on an inactive boundary stratum.
+  source_kind: manual_seed
+  source_reference: implementation/GRC9-GRCL9-GrowthCorrection-Checklist.md#iteration-52-corrected-grcl-9-composite-reruns
+  source_schema_version: '0.1'
+  source_domain: grcl9
+  tags:
+  - grcl9
+  - composing_cells
+  - valley
+  - transport
+  - growth
+  - corrected_growth
+  - front_capacity
+  translator_name: manual_seed_authoring
+  translator_version: '0.1'
+  translation_mode: semantic_enrichment
+  translation_notes:
+  - The valley/channel is source structure; growth must be observed through telemetry.
+  - 'Corrected growth migration: any growth_locus compiles to front_capacity semantics
+    instead of legacy broad parent eligibility.'
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+primitives:
+- id: parent_basin
+  type: basin
+  coherence_prior: 1.0
+  depth_hint: 0
+  boundary_ids:
+  - growth_boundary
+  chart_center_hint:
+  - 0.4
+  - 0.5
+- id: transport_plateau
+  type: plateau
+  coherence_prior: 0.6
+  hosted_primitive_ids:
+  - pressure_valley
+  chart_center_hint:
+  - 0.65
+  - 0.5
+- id: pressure_valley
+  type: valley
+  from_id: parent_basin
+  to_id: growth_boundary
+  channel_role: outward_flux_channel
+  width_hint: 0.12
+  coherence_prior: 0.9
+  extensions:
+    grcl9:
+      term_kind: gradient_pressure
+      term_id: cell_internal_valley_transport_growth_high_gradient_pressure
+      motif_id: growth_pressure
+      pressure_id: outward_pressure
+      boundary_stratum_id: growth_boundary
+      pressure_class: high
+      lambda_birth: 2.0
+      growth_semantics: front_capacity
+      front_capacity_source: preexisting_front
+- id: growth_boundary
+  type: ridge
+  owner_id: parent_basin
+  adjacent_ids:
+  - transport_plateau
+  ridge_kind: membrane_boundary
+  permeability_hint:
+    class: inactive_port_with_pressure
+    port: 5
+  extensions:
+    grcl9:
+      term_kind: boundary_stratum
+      term_id: cell_internal_valley_transport_growth_high_boundary_stratum
+      motif_id: growth_pressure
+      stratum_id: growth_boundary
+      parent_region_id: parent
+      inactive_port: 5
+      boundary_role: preexisting_front_capacity
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: corrected_cell_internal_valley_transport_growth_high
+    manifest_entry_id: grcl9_lowering_growth_pressure_v1
+    expected_selector_ids:
+    - growth_count
+    notes: Corrected 5.2 composite replay seed; legacy broad-growth source has been
+      migrated to front-capacity semantics. ComposingCells valley/channel seed mapped
+      to the growth pressure manifest entry.

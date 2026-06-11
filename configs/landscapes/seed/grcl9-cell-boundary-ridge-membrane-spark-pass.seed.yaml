@@ -1,0 +1,90 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Boundary Ridge Membrane Spark Pass
+  description: ComposingCells-aligned seed with a basin bounded by a ridge membrane and a saturated critical region near a column cancellation gate.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-boundary-ridge-membrane-spark-pass
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, ridge, membrane, spark]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - This seed composes a basin, ridge membrane, valley, plateau, and saddle before GRCL-9 lowering.
+    - Runtime spark evidence must be observed through telemetry.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: identity_cell
+    type: basin
+    coherence_prior: 1.0
+    depth_hint: 0
+    boundary_ids: [membrane_ridge]
+    chart_center_hint: [0.5, 0.5]
+    notes: Stable cell basin bounded by a membrane ridge.
+  - id: membrane_ridge
+    type: ridge
+    owner_id: identity_cell
+    adjacent_ids: [outer_plateau]
+    ridge_kind: membrane
+    permeability_hint:
+      class: selective
+      column_gradient: near_cancellation
+  - id: outer_plateau
+    type: plateau
+    coherence_prior: 0.25
+    hosted_primitive_ids: [candidate_saddle, support_valley]
+    chart_center_hint: [0.5, 0.35]
+  - id: support_valley
+    type: valley
+    from_id: outer_plateau
+    to_id: identity_cell
+    channel_role: boundary_support
+    width_hint: 0.2
+  - id: candidate_saddle
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.42]
+    branch_target_ids: [identity_cell, outer_plateau, support_valley]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: cell_boundary_ridge_membrane_spark_pass_critical_region
+        motif_id: spark_column_proxy
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: membrane_bounded_cell
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: columnwise_membrane
+          ridge_role: selective_membrane
+        columnwise_near_cancellation:
+          target_column: 2
+          diagnostic_mode: near_epsilon
+          spark_threshold: 0.02
+        spark_gate_intent: saturation_column_proxy
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_boundary_ridge_membrane_spark_pass
+    manifest_entry_id: grcl9_lowering_spark_column_proxy_v1
+    expected_selector_ids: [spark_column_proxy_count]
+    notes: ComposingCells boundary ridge/membrane seed mapped to the column-proxy spark manifest entry.

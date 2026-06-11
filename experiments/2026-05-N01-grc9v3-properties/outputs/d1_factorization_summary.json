@@ -1,0 +1,167 @@
+{
+  "claim_scope": "D1 supports higher semantic error for non-factorized S9/random-triple controls on row/column-sensitive artifacts. Lane A saturation and mechanical refinement convention artifacts are reported separately.",
+  "classification": "supported_with_lane_a_boundaries",
+  "discriminator": "d1_factorization",
+  "evidence_labels_preserved": [
+    "direct",
+    "derived",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "input_paths": {
+    "a_rows": "outputs/experiment_a_row_mode_stress_rows.csv",
+    "b_rows": "outputs/experiment_b_column_interface_cancellation_rows.csv",
+    "c_rows": "outputs/experiment_c_saturation_rows.csv",
+    "d_reassignments": "outputs/experiment_d_refinement_identity_reassignments.csv",
+    "harness_schema": "outputs/discriminator_harness_schema.json"
+  },
+  "inverse_transform_maps": {
+    "column_permutation_312": {
+      "1": 2,
+      "2": 3,
+      "3": 1,
+      "4": 5,
+      "5": 6,
+      "6": 4,
+      "7": 8,
+      "8": 9,
+      "9": 7
+    },
+    "degree_preserving_random_relabel": {
+      "1": 5,
+      "2": 8,
+      "3": 6,
+      "4": 7,
+      "5": 3,
+      "6": 1,
+      "7": 9,
+      "8": 2,
+      "9": 4
+    },
+    "identity": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    },
+    "row_column_transpose": {
+      "1": 1,
+      "2": 4,
+      "3": 7,
+      "4": 2,
+      "5": 5,
+      "6": 8,
+      "7": 3,
+      "8": 6,
+      "9": 9
+    },
+    "row_permutation_231": {
+      "1": 7,
+      "2": 8,
+      "3": 9,
+      "4": 1,
+      "5": 2,
+      "6": 3,
+      "7": 4,
+      "8": 5,
+      "9": 6
+    }
+  },
+  "lane_a_gate_reported_separately": true,
+  "lane_id": "current_hybrid_signed_hessian",
+  "manifest_required_fields": [
+    "discriminator_id",
+    "iteration",
+    "script_path",
+    "command",
+    "git_commit",
+    "lane_id",
+    "fixture_id",
+    "transform_id",
+    "seed",
+    "runtime_params",
+    "artifact_schema_version",
+    "artifact_source_map",
+    "output_paths"
+  ],
+  "matrix_row_count": 20,
+  "mechanical_refinement_convention_reported_separately": true,
+  "random_triple_control_status": "proxied_by_degree_preserving_random_relabel_as_non_factorized_grouping",
+  "record_count": 70,
+  "s9_error_exceeds_structured_error": true,
+  "s9_factorization_mean_error": 1.0,
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "seed": 0,
+  "shared_harness_expected_outputs": [
+    "outputs/d1_equivariance_matrix.csv",
+    "reports/d1_artifact_distance_report.md",
+    "outputs/d1_transform_pair_records.jsonl",
+    "reports/d1_blocked_observations.md"
+  ],
+  "shared_harness_schema_path": "outputs/discriminator_harness_schema.json",
+  "shared_harness_schema_version": "grc9v3_properties_iter2_v1",
+  "structured_factorization_mean_error": 0.0,
+  "transform_maps": {
+    "column_permutation_312": {
+      "1": 3,
+      "2": 1,
+      "3": 2,
+      "4": 6,
+      "5": 4,
+      "6": 5,
+      "7": 9,
+      "8": 7,
+      "9": 8
+    },
+    "degree_preserving_random_relabel": {
+      "1": 6,
+      "2": 8,
+      "3": 5,
+      "4": 9,
+      "5": 1,
+      "6": 3,
+      "7": 4,
+      "8": 2,
+      "9": 7
+    },
+    "identity": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    },
+    "row_column_transpose": {
+      "1": 1,
+      "2": 4,
+      "3": 7,
+      "4": 2,
+      "5": 5,
+      "6": 8,
+      "7": 3,
+      "8": 6,
+      "9": 9
+    },
+    "row_permutation_231": {
+      "1": 4,
+      "2": 5,
+      "3": 6,
+      "4": 7,
+      "5": 8,
+      "6": 9,
+      "7": 1,
+      "8": 2,
+      "9": 3
+    }
+  }
+}

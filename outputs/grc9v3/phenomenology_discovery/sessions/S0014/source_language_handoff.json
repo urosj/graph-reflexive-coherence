@@ -1,0 +1,2021 @@
+{
+  "boundary_statement": "This handoff does not implement GRCL/source lowering and does not claim that any GRC9V3 runtime motif is already a source-language construct.",
+  "entries": [
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "hybrid_spark_gate_positive_control",
+      "motif_id": "grc9v3-motif-s0006-hybrid-spark-gate-positive-control",
+      "phenomenon": "hybrid_spark_gate",
+      "profile": "hybrid_spark_gate_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_candidate_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hybrid_spark_state",
+          "family_extensions.grc9v3.hybrid_tensor.tensor_trace_mean"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_candidate_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hybrid_spark_state",
+          "family_extensions.grc9v3.hybrid_tensor.tensor_trace_mean"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/hybrid_spark_gate_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "spark_to_expansion_positive_control",
+      "motif_id": "grc9v3-motif-s0006-spark-to-expansion-positive-control",
+      "phenomenon": "spark_to_expansion",
+      "profile": "spark_to_expansion_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.expansion_summary",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.expansion_summary",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/spark_to_expansion_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "daughter sink evidence",
+        "hierarchy mutation evidence",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "appendix_e_cell_division_positive_control",
+      "motif_id": "grc9v3-motif-s0006-appendix-e-cell-division-positive-control",
+      "phenomenon": "appendix_e_cell_division",
+      "profile": "appendix_e_cell_division_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.representative_appendix_e_summary",
+          "family_extensions.grc9v3.hierarchy_state",
+          "family_extensions.grc9v3.final_identity_basin_summary"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.representative_appendix_e_summary",
+          "family_extensions.grc9v3.hierarchy_state",
+          "family_extensions.grc9v3.final_identity_basin_summary"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/appendix_e_cell_division_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "cell_division_or_daughter_sink_split",
+      "source_vocabulary_needs": [
+        "post-expansion daughter sink region",
+        "hierarchy parent/child relation",
+        "module basin support"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "choice/collapse event evidence",
+        "basin summary fields",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "choice_collapse_positive_control",
+      "motif_id": "grc9v3-motif-s0006-choice-collapse-positive-control",
+      "phenomenon": "choice_collapse",
+      "profile": "choice_collapse_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count",
+          "family_extensions.grc9v3.choice_collapse"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count",
+          "family_extensions.grc9v3.choice_collapse"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/choice_collapse_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "choice_collapse_basin_constraint",
+      "source_vocabulary_needs": [
+        "Morse-style competing basins",
+        "collapse target selector",
+        "choice compatibility predicate"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "growth_pressure_positive_control",
+      "motif_id": "grc9v3-motif-s0006-growth-pressure-positive-control",
+      "phenomenon": "growth_pressure",
+      "profile": "growth_pressure_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.growth_state",
+          "family_extensions.grc9v3.transport.flux_abs_sum"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.growth_state",
+          "family_extensions.grc9v3.transport.flux_abs_sum"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/growth_pressure_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "inactive boundary port",
+        "outward flux pressure",
+        "birth-rate parameter"
+      ]
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "control_role": "complex_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "daughter sink evidence",
+        "hierarchy mutation evidence",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "complex_spark_expansion_hierarchy_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-expansion-hierarchy-complex-control",
+      "phenomenon": "complex_spark_expansion_hierarchy_complex_control",
+      "profile": "complex_spark_expansion_hierarchy_complex_control_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_spark_expansion_hierarchy_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "control_role": "complex_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "choice/collapse event evidence",
+        "basin summary fields",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "complex_spark_expansion_choice_collapse_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-expansion-choice-collapse-complex-control",
+      "phenomenon": "complex_spark_expansion_choice_collapse_complex_control",
+      "profile": "complex_spark_expansion_choice_collapse_complex_control_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_spark_expansion_choice_collapse_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "control_role": "complex_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "complex_expansion_growth_budget_coarse_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-expansion-growth-budget-coarse-complex-control",
+      "phenomenon": "complex_expansion_growth_budget_coarse_complex_control",
+      "profile": "complex_expansion_growth_budget_coarse_complex_control_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.budget_correction.budget_error",
+          "family_extensions.grc9v3.coarse_cache.coarse_cache_invalidated"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.budget_correction.budget_error",
+          "family_extensions.grc9v3.coarse_cache.coarse_cache_invalidated"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_expansion_growth_budget_coarse_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "inactive boundary port",
+        "outward flux pressure",
+        "birth-rate parameter"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "hybrid_spark_gate_negative_control",
+      "motif_id": "grc9v3-motif-s0006-hybrid-spark-gate-negative-control",
+      "phenomenon": "hybrid_spark_gate",
+      "profile": "hybrid_spark_gate_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/hybrid_spark_gate_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "spark_to_expansion_negative_control",
+      "motif_id": "grc9v3-motif-s0006-spark-to-expansion-negative-control",
+      "phenomenon": "spark_to_expansion",
+      "profile": "spark_to_expansion_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/spark_to_expansion_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "daughter sink evidence",
+        "hierarchy mutation evidence"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "appendix_e_cell_division_negative_control",
+      "motif_id": "grc9v3-motif-s0006-appendix-e-cell-division-negative-control",
+      "phenomenon": "appendix_e_cell_division",
+      "profile": "appendix_e_cell_division_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/appendix_e_cell_division_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "cell_division_or_daughter_sink_split",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "choice/collapse event evidence",
+        "basin summary fields"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "choice_collapse_negative_control",
+      "motif_id": "grc9v3-motif-s0006-choice-collapse-negative-control",
+      "phenomenon": "choice_collapse",
+      "profile": "choice_collapse_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/choice_collapse_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "choice_collapse_basin_constraint",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "growth_pressure_negative_control",
+      "motif_id": "grc9v3-motif-s0006-growth-pressure-negative-control",
+      "phenomenon": "growth_pressure",
+      "profile": "growth_pressure_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/growth_pressure_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "budget_preservation_negative_control",
+      "motif_id": "grc9v3-motif-s0006-budget-preservation-negative-control",
+      "phenomenon": "budget_preservation",
+      "profile": "budget_preservation_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/budget_preservation_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_motif",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "mechanism_diagnostic_motif",
+      "control_role": "mechanism_diagnostic_motif",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "transport flux telemetry",
+        "basin rerouting contrast"
+      ],
+      "handoff_notes": "Transport rerouting is source-relevant but needs explicit vocabulary before lowering.",
+      "lane_name": "transport_basin_rerouting_positive_control",
+      "motif_id": "grc9v3-motif-s0006-transport-basin-rerouting-positive-control",
+      "phenomenon": "transport_basin_rerouting",
+      "profile": "transport_basin_rerouting_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/transport_basin_rerouting_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "transport_route_or_basin_rerouting_constraint",
+      "source_vocabulary_needs": [
+        "source-level route preference",
+        "basin redirection or saddle/ridge control",
+        "telemetry-backed flux contrast predicate"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "transport flux telemetry",
+        "basin rerouting contrast"
+      ],
+      "handoff_notes": "Transport rerouting is source-relevant but needs explicit vocabulary before lowering.",
+      "lane_name": "transport_basin_rerouting_negative_control",
+      "motif_id": "grc9v3-motif-s0006-transport-basin-rerouting-negative-control",
+      "phenomenon": "transport_basin_rerouting",
+      "profile": "transport_basin_rerouting_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/transport_basin_rerouting_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "transport_route_or_basin_rerouting_constraint",
+      "source_vocabulary_needs": [
+        "source-level route preference",
+        "basin redirection or saddle/ridge control",
+        "telemetry-backed flux contrast predicate"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "coarse_cache_invalidation_negative_control",
+      "motif_id": "grc9v3-motif-s0006-coarse-cache-invalidation-negative-control",
+      "phenomenon": "coarse_cache_invalidation",
+      "profile": "coarse_cache_invalidation_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/coarse_cache_invalidation_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_motif",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "quiescent_control",
+      "control_role": "quiescent_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "quiescent_hybrid_control_no_event_control",
+      "motif_id": "grc9v3-motif-s0006-quiescent-hybrid-control-no-event-control",
+      "phenomenon": "quiescent_hybrid_control",
+      "profile": "quiescent_hybrid_control_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/quiescent_hybrid_control_no_event_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "quiescent_basin_constraint",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "choice/collapse event evidence",
+        "basin summary fields"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "complex_spark_choice_no_saturation_perturbation_perturbation_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-choice-no-saturation-perturbation-perturbation-control",
+      "phenomenon": "complex_spark_choice_no_saturation_perturbation_perturbation_control",
+      "profile": "complex_spark_choice_no_saturation_perturbation_perturbation_control_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_spark_choice_no_saturation_perturbation_perturbation_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "complex_growth_low_birth_perturbation_perturbation_control",
+      "motif_id": "grc9v3-motif-s0008-complex-growth-low-birth-perturbation-perturbation-control",
+      "phenomenon": "complex_growth_low_birth_perturbation_perturbation_control",
+      "profile": "complex_growth_low_birth_perturbation_perturbation_control_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_growth_low_birth_perturbation_perturbation_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "positive_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "budget_preservation_positive_control",
+      "motif_id": "grc9v3-motif-s0006-budget-preservation-positive-control",
+      "phenomenon": "budget_preservation",
+      "profile": "budget_preservation_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/budget_preservation_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "baseline_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "hessian_backend_comparison_baseline_control",
+      "motif_id": "grc9v3-motif-s0006-hessian-backend-comparison-baseline-control",
+      "phenomenon": "hessian_backend_comparison",
+      "profile": "hessian_backend_comparison_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/hessian_backend_comparison_baseline_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "positive_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "hessian_backend_comparison_positive_control",
+      "motif_id": "grc9v3-motif-s0006-hessian-backend-comparison-positive-control",
+      "phenomenon": "hessian_backend_comparison",
+      "profile": "hessian_backend_comparison_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/hessian_backend_comparison_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "positive_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "coarse_cache_invalidation_positive_control",
+      "motif_id": "grc9v3-motif-s0006-coarse-cache-invalidation-positive-control",
+      "phenomenon": "coarse_cache_invalidation",
+      "profile": "coarse_cache_invalidation_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/coarse_cache_invalidation_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "baseline_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "complex_hessian_row_basis_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-hessian-row-basis-complex-control",
+      "phenomenon": "complex_hessian_row_basis_complex_control",
+      "profile": "complex_hessian_row_basis_complex_control_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_hessian_row_basis_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "baseline_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "complex_hessian_weighted_least_squares_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-hessian-weighted-least-squares-complex-control",
+      "phenomenon": "complex_hessian_weighted_least_squares_complex_control",
+      "profile": "complex_hessian_weighted_least_squares_complex_control_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_hessian_weighted_least_squares_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    }
+  ],
+  "non_claims": [
+    "no_grcl9_source_lowering_claim",
+    "no_lorentzian_causal_layer_claim",
+    "no_source_language_construct_claim",
+    "no_visual_only_promotion"
+  ],
+  "requires_new_source_vocabulary": [
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "hybrid_spark_gate_negative_control",
+      "motif_id": "grc9v3-motif-s0006-hybrid-spark-gate-negative-control",
+      "phenomenon": "hybrid_spark_gate",
+      "profile": "hybrid_spark_gate_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/hybrid_spark_gate_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "spark_to_expansion_negative_control",
+      "motif_id": "grc9v3-motif-s0006-spark-to-expansion-negative-control",
+      "phenomenon": "spark_to_expansion",
+      "profile": "spark_to_expansion_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/spark_to_expansion_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "daughter sink evidence",
+        "hierarchy mutation evidence"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "appendix_e_cell_division_negative_control",
+      "motif_id": "grc9v3-motif-s0006-appendix-e-cell-division-negative-control",
+      "phenomenon": "appendix_e_cell_division",
+      "profile": "appendix_e_cell_division_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/appendix_e_cell_division_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "cell_division_or_daughter_sink_split",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "choice/collapse event evidence",
+        "basin summary fields"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "choice_collapse_negative_control",
+      "motif_id": "grc9v3-motif-s0006-choice-collapse-negative-control",
+      "phenomenon": "choice_collapse",
+      "profile": "choice_collapse_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/choice_collapse_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "choice_collapse_basin_constraint",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "growth_pressure_negative_control",
+      "motif_id": "grc9v3-motif-s0006-growth-pressure-negative-control",
+      "phenomenon": "growth_pressure",
+      "profile": "growth_pressure_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/growth_pressure_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "budget_preservation_negative_control",
+      "motif_id": "grc9v3-motif-s0006-budget-preservation-negative-control",
+      "phenomenon": "budget_preservation",
+      "profile": "budget_preservation_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/budget_preservation_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_motif",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "mechanism_diagnostic_motif",
+      "control_role": "mechanism_diagnostic_motif",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "transport flux telemetry",
+        "basin rerouting contrast"
+      ],
+      "handoff_notes": "Transport rerouting is source-relevant but needs explicit vocabulary before lowering.",
+      "lane_name": "transport_basin_rerouting_positive_control",
+      "motif_id": "grc9v3-motif-s0006-transport-basin-rerouting-positive-control",
+      "phenomenon": "transport_basin_rerouting",
+      "profile": "transport_basin_rerouting_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/transport_basin_rerouting_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "transport_route_or_basin_rerouting_constraint",
+      "source_vocabulary_needs": [
+        "source-level route preference",
+        "basin redirection or saddle/ridge control",
+        "telemetry-backed flux contrast predicate"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "transport flux telemetry",
+        "basin rerouting contrast"
+      ],
+      "handoff_notes": "Transport rerouting is source-relevant but needs explicit vocabulary before lowering.",
+      "lane_name": "transport_basin_rerouting_negative_control",
+      "motif_id": "grc9v3-motif-s0006-transport-basin-rerouting-negative-control",
+      "phenomenon": "transport_basin_rerouting",
+      "profile": "transport_basin_rerouting_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/transport_basin_rerouting_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "transport_route_or_basin_rerouting_constraint",
+      "source_vocabulary_needs": [
+        "source-level route preference",
+        "basin redirection or saddle/ridge control",
+        "telemetry-backed flux contrast predicate"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "coarse_cache_invalidation_negative_control",
+      "motif_id": "grc9v3-motif-s0006-coarse-cache-invalidation-negative-control",
+      "phenomenon": "coarse_cache_invalidation",
+      "profile": "coarse_cache_invalidation_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/coarse_cache_invalidation_negative_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_motif",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "quiescent_control",
+      "control_role": "quiescent_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "quiescent_hybrid_control_no_event_control",
+      "motif_id": "grc9v3-motif-s0006-quiescent-hybrid-control-no-event-control",
+      "phenomenon": "quiescent_hybrid_control",
+      "profile": "quiescent_hybrid_control_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/quiescent_hybrid_control_no_event_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "quiescent_basin_constraint",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "choice/collapse event evidence",
+        "basin summary fields"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "complex_spark_choice_no_saturation_perturbation_perturbation_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-choice-no-saturation-perturbation-perturbation-control",
+      "phenomenon": "complex_spark_choice_no_saturation_perturbation_perturbation_control",
+      "profile": "complex_spark_choice_no_saturation_perturbation_perturbation_control_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_spark_choice_no_saturation_perturbation_perturbation_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    },
+    {
+      "catalog_category": "negative_control",
+      "control_role": "negative_control",
+      "disposition": "requires_new_source_vocabulary",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry"
+      ],
+      "handoff_notes": "Control evidence is useful for source fixtures but is not an event motif.",
+      "lane_name": "complex_growth_low_birth_perturbation_perturbation_control",
+      "motif_id": "grc9v3-motif-s0008-complex-growth-low-birth-perturbation-perturbation-control",
+      "phenomenon": "complex_growth_low_birth_perturbation_perturbation_control",
+      "profile": "complex_growth_low_birth_perturbation_perturbation_control_profile",
+      "review_status": "strong_candidate",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_growth_low_birth_perturbation_perturbation_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "source-level control role",
+        "absence-of-event expectation",
+        "pass/fail perturbation declaration"
+      ]
+    }
+  ],
+  "runtime_only": [
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "positive_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "budget_preservation_positive_control",
+      "motif_id": "grc9v3-motif-s0006-budget-preservation-positive-control",
+      "phenomenon": "budget_preservation",
+      "profile": "budget_preservation_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/budget_preservation_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "baseline_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "hessian_backend_comparison_baseline_control",
+      "motif_id": "grc9v3-motif-s0006-hessian-backend-comparison-baseline-control",
+      "phenomenon": "hessian_backend_comparison",
+      "profile": "hessian_backend_comparison_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/hessian_backend_comparison_baseline_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "positive_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "hessian_backend_comparison_positive_control",
+      "motif_id": "grc9v3-motif-s0006-hessian-backend-comparison-positive-control",
+      "phenomenon": "hessian_backend_comparison",
+      "profile": "hessian_backend_comparison_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/hessian_backend_comparison_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "positive_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "coarse_cache_invalidation_positive_control",
+      "motif_id": "grc9v3-motif-s0006-coarse-cache-invalidation-positive-control",
+      "phenomenon": "coarse_cache_invalidation",
+      "profile": "coarse_cache_invalidation_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/coarse_cache_invalidation_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "baseline_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "complex_hessian_row_basis_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-hessian-row-basis-complex-control",
+      "phenomenon": "complex_hessian_row_basis_complex_control",
+      "profile": "complex_hessian_row_basis_complex_control_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_hessian_row_basis_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "control_role": "baseline_control",
+      "disposition": "runtime_only",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths"
+      ],
+      "handoff_notes": "This record is a runtime invariant, cache/backend diagnostic, or implementation comparator.",
+      "lane_name": "complex_hessian_weighted_least_squares_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-hessian-weighted-least-squares-complex-control",
+      "phenomenon": "complex_hessian_weighted_least_squares_complex_control",
+      "profile": "complex_hessian_weighted_least_squares_complex_control_profile",
+      "review_status": "diagnostic_comparator",
+      "runtime_evidence": {
+        "checkpoint_count": 0,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [],
+        "predicted_evidence_fields": [],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_hessian_weighted_least_squares_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "runtime_diagnostic_or_backend_constraint",
+      "source_vocabulary_needs": []
+    }
+  ],
+  "session_id": "S0014",
+  "source_catalog_path": "outputs/grc9v3/phenomenology_discovery/sessions/S0013/expanded_motif_catalog.json",
+  "source_catalog_session_id": "S0013",
+  "source_expression_candidates": [
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "hybrid_spark_gate_positive_control",
+      "motif_id": "grc9v3-motif-s0006-hybrid-spark-gate-positive-control",
+      "phenomenon": "hybrid_spark_gate",
+      "profile": "hybrid_spark_gate_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_candidate_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hybrid_spark_state",
+          "family_extensions.grc9v3.hybrid_tensor.tensor_trace_mean"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_candidate_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hybrid_spark_state",
+          "family_extensions.grc9v3.hybrid_tensor.tensor_trace_mean"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/hybrid_spark_gate_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "spark_to_expansion_positive_control",
+      "motif_id": "grc9v3-motif-s0006-spark-to-expansion-positive-control",
+      "phenomenon": "spark_to_expansion",
+      "profile": "spark_to_expansion_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.expansion_summary",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.expansion_summary",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/spark_to_expansion_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "daughter sink evidence",
+        "hierarchy mutation evidence",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "appendix_e_cell_division_positive_control",
+      "motif_id": "grc9v3-motif-s0006-appendix-e-cell-division-positive-control",
+      "phenomenon": "appendix_e_cell_division",
+      "profile": "appendix_e_cell_division_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.representative_appendix_e_summary",
+          "family_extensions.grc9v3.hierarchy_state",
+          "family_extensions.grc9v3.final_identity_basin_summary"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.representative_appendix_e_summary",
+          "family_extensions.grc9v3.hierarchy_state",
+          "family_extensions.grc9v3.final_identity_basin_summary"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/appendix_e_cell_division_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "cell_division_or_daughter_sink_split",
+      "source_vocabulary_needs": [
+        "post-expansion daughter sink region",
+        "hierarchy parent/child relation",
+        "module basin support"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "choice/collapse event evidence",
+        "basin summary fields",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "choice_collapse_positive_control",
+      "motif_id": "grc9v3-motif-s0006-choice-collapse-positive-control",
+      "phenomenon": "choice_collapse",
+      "profile": "choice_collapse_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count",
+          "family_extensions.grc9v3.choice_collapse"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count",
+          "family_extensions.grc9v3.choice_collapse"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/choice_collapse_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "choice_collapse_basin_constraint",
+      "source_vocabulary_needs": [
+        "Morse-style competing basins",
+        "collapse target selector",
+        "choice compatibility predicate"
+      ]
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "control_role": "positive_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "growth_pressure_positive_control",
+      "motif_id": "grc9v3-motif-s0006-growth-pressure-positive-control",
+      "phenomenon": "growth_pressure",
+      "profile": "growth_pressure_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.growth_state",
+          "family_extensions.grc9v3.transport.flux_abs_sum"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.growth_state",
+          "family_extensions.grc9v3.transport.flux_abs_sum"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/growth_pressure_positive_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "inactive boundary port",
+        "outward flux pressure",
+        "birth-rate parameter"
+      ]
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "control_role": "complex_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "daughter sink evidence",
+        "hierarchy mutation evidence",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "complex_spark_expansion_hierarchy_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-expansion-hierarchy-complex-control",
+      "phenomenon": "complex_spark_expansion_hierarchy_complex_control",
+      "profile": "complex_spark_expansion_hierarchy_complex_control_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+          "family_extensions.grc9v3.hierarchy_state"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_spark_expansion_hierarchy_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "control_role": "complex_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "saturation gate evidence",
+        "hybrid spark event ordering",
+        "choice/collapse event evidence",
+        "basin summary fields",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "complex_spark_expansion_choice_collapse_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-expansion-choice-collapse-complex-control",
+      "phenomenon": "complex_spark_expansion_choice_collapse_complex_control",
+      "profile": "complex_spark_expansion_choice_collapse_complex_control_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.collapse_count"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_spark_expansion_choice_collapse_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "hybrid_spark_precursor",
+      "source_vocabulary_needs": [
+        "saturated identity region",
+        "row-basis Hessian or tensor gate",
+        "column proxy fallback status"
+      ]
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "control_role": "complex_control",
+      "disposition": "source_expression_candidate",
+      "explicit_non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "future_source_work_must_preserve": [
+        "linked reviewed runtime motif id",
+        "runtime evidence paths",
+        "growth event evidence",
+        "birth-pressure telemetry",
+        "observed evidence field list"
+      ],
+      "handoff_notes": "Accepted lifecycle evidence can seed later source-expression design.",
+      "lane_name": "complex_expansion_growth_budget_coarse_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-expansion-growth-budget-coarse-complex-control",
+      "phenomenon": "complex_expansion_growth_budget_coarse_complex_control",
+      "profile": "complex_expansion_growth_budget_coarse_complex_control_profile",
+      "review_status": "accepted",
+      "runtime_evidence": {
+        "checkpoint_count": 1,
+        "event_counts_by_kind": {},
+        "observed_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.budget_correction.budget_error",
+          "family_extensions.grc9v3.coarse_cache.coarse_cache_invalidated"
+        ],
+        "predicted_evidence_fields": [
+          "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+          "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+          "family_extensions.grc9v3.budget_correction.budget_error",
+          "family_extensions.grc9v3.coarse_cache.coarse_cache_invalidated"
+        ],
+        "telemetry_artifact_root": "experiments/grc9v3/complex_expansion_growth_budget_coarse_complex_control"
+      },
+      "source_claim_status": "runtime_evidence_only",
+      "source_construct_hint": "growth_locus_with_outward_pressure",
+      "source_vocabulary_needs": [
+        "inactive boundary port",
+        "outward flux pressure",
+        "birth-rate parameter"
+      ]
+    }
+  ],
+  "version": "grc9v3_source_handoff_v1"
+}

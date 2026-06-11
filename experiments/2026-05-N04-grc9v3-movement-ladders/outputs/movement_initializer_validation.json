@@ -1,0 +1,865 @@
+{
+  "checks": {
+    "all_lanes_passed": true,
+    "formulas_serialized": true,
+    "projection_declared": true,
+    "reversed_controls_deterministic": true
+  },
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false
+  },
+  "initializer_defaults": {
+    "baseline_coherence": 1.0,
+    "bump_amplitude": 0.4,
+    "kick_mask_node_count": 1,
+    "tilt_epsilon": 0.02
+  },
+  "initializer_formulas": {
+    "locally_tapered_asymmetric_bump": {
+      "formula": "C_i = C0 + A * exp(-d(i, center)^2 / (2 * sigma^2)) + epsilon * d_signed(i, center, direction) * exp(-d(i, center)^2 / (2 * sigma_tilt^2))",
+      "global_background_gradient_allowed": false,
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "symmetric_bump": {
+      "formula": "C_i = C0 + A * exp(-d(i, center)^2 / (2 * sigma^2))",
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "uniform": {
+      "formula": "C_i = B / N",
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "zero_sum_kick": {
+      "formula": "C_front += delta, C_rear -= delta over equal-size local masks",
+      "projection": "conserved_nonnegative_simplex"
+    }
+  },
+  "lane_results": {
+    "S0_chain_v1:B0": {
+      "budget_error": 0.0,
+      "centroid": 10.0,
+      "centroid_shift_due_to_projection": 0.0,
+      "checks": {
+        "budget_preserved": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 0.9045109006136312,
+        "1": 0.9045254360713195,
+        "10": 1.3045094099523622,
+        "11": 1.2575081709862004,
+        "12": 1.1471216738374157,
+        "13": 1.034370396895702,
+        "14": 0.9586435232470074,
+        "15": 0.9220841834017253,
+        "16": 0.9089530085676591,
+        "17": 0.9053844063996355,
+        "18": 0.9046435950035232,
+        "19": 0.9045254360713195,
+        "2": 0.9046435950035232,
+        "20": 0.9045109006136312,
+        "3": 0.9053844063996355,
+        "4": 0.9089530085676591,
+        "5": 0.9220841834017253,
+        "6": 0.9586435232470074,
+        "7": 1.034370396895702,
+        "8": 1.1471216738374157,
+        "9": 1.2575081709862004
+      },
+      "fixture_id": "S0_chain_v1",
+      "formula": "symmetric_bump",
+      "initializer": "symmetric_bump",
+      "kick": null,
+      "lane_id": "B0",
+      "max_value": 1.3045094099523622,
+      "min_value": 0.9045109006136312,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 10,
+        "sigma": 2.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": 0.0,
+      "projected_budget": 21.0,
+      "projection_delta_norm": 0.4375928570492966,
+      "raw_centroid_before_projection": 10.0,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 1.0000014906612689,
+      "raw_sum_before_projection": 23.00530239100039,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": 0.0,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S0_chain_v1:B1": {
+      "budget_error": 0.0,
+      "centroid": 10.064050795748608,
+      "centroid_shift_due_to_projection": 0.005583113478673241,
+      "checks": {
+        "budget_preserved": true,
+        "local_tilt_tapered": true,
+        "nonnegative": true,
+        "projection_sum_matches": true,
+        "tilt_nonzero": true
+      },
+      "coherence_by_node": {
+        "0": 0.9037377165857365,
+        "1": 0.9025258166944359,
+        "10": 1.3045094099523622,
+        "11": 1.2764273603643357,
+        "12": 1.179151169954088,
+        "13": 1.0707622364784601,
+        "14": 0.9915325064875824,
+        "15": 0.9470194042794549,
+        "16": 0.9251932425560527,
+        "17": 0.9145864004059496,
+        "18": 0.9092140751290512,
+        "19": 0.9065250554482032,
+        "2": 0.9000731148779951,
+        "20": 0.9052840846415258,
+        "3": 0.8961824123933212,
+        "4": 0.8927127745792657,
+        "5": 0.8971489625239957,
+        "6": 0.9257545400064324,
+        "7": 0.997978557312944,
+        "8": 1.1150921777207434,
+        "9": 1.238588981608065
+      },
+      "fixture_id": "S0_chain_v1",
+      "formula": "locally_tapered_asymmetric_bump",
+      "initializer": "locally_tapered_asymmetric_bump",
+      "kick": null,
+      "lane_id": "B1",
+      "max_value": 1.3045094099523622,
+      "min_value": 0.8927127745792657,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 10,
+        "max_abs_tilt": 0.036391839582758004,
+        "max_abs_tilt_outside_local_window": 0.0007731840278945616,
+        "sigma": 2.0,
+        "sigma_tilt": 3.0,
+        "tilt_epsilon": 0.02,
+        "tilt_sign": 1.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": 0.06405079574860828,
+      "projected_budget": 21.0,
+      "projection_delta_norm": 0.4375928570492966,
+      "raw_centroid_before_projection": 10.058467682269935,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 0.9882033646269034,
+      "raw_sum_before_projection": 23.00530239100039,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": 0.06405079574860828,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S0_chain_v1:B1_reversed": {
+      "budget_error": 0.0,
+      "centroid": 9.935949204251392,
+      "centroid_shift_due_to_projection": -0.005583113478675017,
+      "checks": {
+        "budget_preserved": true,
+        "local_tilt_tapered": true,
+        "nonnegative": true,
+        "projection_sum_matches": true,
+        "tilt_nonzero": true
+      },
+      "coherence_by_node": {
+        "0": 0.9052840846415258,
+        "1": 0.9065250554482032,
+        "10": 1.3045094099523622,
+        "11": 1.238588981608065,
+        "12": 1.1150921777207434,
+        "13": 0.997978557312944,
+        "14": 0.9257545400064324,
+        "15": 0.8971489625239957,
+        "16": 0.8927127745792657,
+        "17": 0.8961824123933212,
+        "18": 0.9000731148779951,
+        "19": 0.9025258166944359,
+        "2": 0.9092140751290512,
+        "20": 0.9037377165857365,
+        "3": 0.9145864004059496,
+        "4": 0.9251932425560527,
+        "5": 0.9470194042794549,
+        "6": 0.9915325064875824,
+        "7": 1.0707622364784601,
+        "8": 1.179151169954088,
+        "9": 1.2764273603643357
+      },
+      "fixture_id": "S0_chain_v1",
+      "formula": "locally_tapered_asymmetric_bump",
+      "initializer": "locally_tapered_asymmetric_bump",
+      "kick": null,
+      "lane_id": "B1_reversed",
+      "max_value": 1.3045094099523622,
+      "min_value": 0.8927127745792657,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 10,
+        "max_abs_tilt": 0.036391839582758004,
+        "max_abs_tilt_outside_local_window": 0.0007731840278945616,
+        "sigma": 2.0,
+        "sigma_tilt": 3.0,
+        "tilt_epsilon": 0.02,
+        "tilt_sign": -1.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.06405079574860828,
+      "projected_budget": 21.0,
+      "projection_delta_norm": 0.4375928570492966,
+      "raw_centroid_before_projection": 9.941532317730067,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 0.9882033646269034,
+      "raw_sum_before_projection": 23.00530239100039,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.06405079574860828,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S0_chain_v1:K1": {
+      "budget_error": 0.0,
+      "centroid": 10.001904761904763,
+      "centroid_shift_due_to_projection": 0.0001660323145067366,
+      "checks": {
+        "budget_preserved": true,
+        "kick_masks_equal_size": true,
+        "kick_zero_sum": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 0.9045109006136312,
+        "1": 0.9045254360713195,
+        "10": 1.3045094099523622,
+        "11": 1.2775081709862004,
+        "12": 1.1471216738374157,
+        "13": 1.034370396895702,
+        "14": 0.9586435232470074,
+        "15": 0.9220841834017253,
+        "16": 0.9089530085676591,
+        "17": 0.9053844063996355,
+        "18": 0.9046435950035232,
+        "19": 0.9045254360713195,
+        "2": 0.9046435950035232,
+        "20": 0.9045109006136312,
+        "3": 0.9053844063996355,
+        "4": 0.9089530085676591,
+        "5": 0.9220841834017253,
+        "6": 0.9586435232470074,
+        "7": 1.034370396895702,
+        "8": 1.1471216738374157,
+        "9": 1.2375081709862004
+      },
+      "fixture_id": "S0_chain_v1",
+      "formula": "symmetric_bump",
+      "initializer": "symmetric_bump",
+      "kick": {
+        "front_mask": [
+          11
+        ],
+        "kick_delta": 0.02,
+        "kick_mask_node_count": 1,
+        "raw_kick_sum": 0.0,
+        "rear_mask": [
+          9
+        ]
+      },
+      "lane_id": "K1",
+      "max_value": 1.3045094099523622,
+      "min_value": 0.9045109006136312,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 10,
+        "sigma": 2.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": 0.0019047619047629638,
+      "projected_budget": 21.0,
+      "projection_delta_norm": 0.4375928570492966,
+      "raw_centroid_before_projection": 10.001738729590256,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 1.0000014906612689,
+      "raw_sum_before_projection": 23.00530239100039,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": 0.0019047619047629638,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S0_chain_v1:K1_reversed": {
+      "budget_error": 0.0,
+      "centroid": 9.998095238095239,
+      "centroid_shift_due_to_projection": -0.0001660323145067366,
+      "checks": {
+        "budget_preserved": true,
+        "kick_masks_equal_size": true,
+        "kick_zero_sum": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 0.9045109006136312,
+        "1": 0.9045254360713195,
+        "10": 1.3045094099523622,
+        "11": 1.2375081709862004,
+        "12": 1.1471216738374157,
+        "13": 1.034370396895702,
+        "14": 0.9586435232470074,
+        "15": 0.9220841834017253,
+        "16": 0.9089530085676591,
+        "17": 0.9053844063996355,
+        "18": 0.9046435950035232,
+        "19": 0.9045254360713195,
+        "2": 0.9046435950035232,
+        "20": 0.9045109006136312,
+        "3": 0.9053844063996355,
+        "4": 0.9089530085676591,
+        "5": 0.9220841834017253,
+        "6": 0.9586435232470074,
+        "7": 1.034370396895702,
+        "8": 1.1471216738374157,
+        "9": 1.2775081709862004
+      },
+      "fixture_id": "S0_chain_v1",
+      "formula": "symmetric_bump",
+      "initializer": "symmetric_bump",
+      "kick": {
+        "front_mask": [
+          9
+        ],
+        "kick_delta": 0.02,
+        "kick_mask_node_count": 1,
+        "raw_kick_sum": 0.0,
+        "rear_mask": [
+          11
+        ]
+      },
+      "lane_id": "K1_reversed",
+      "max_value": 1.3045094099523622,
+      "min_value": 0.9045109006136312,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 10,
+        "sigma": 2.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.0019047619047611875,
+      "projected_budget": 21.0,
+      "projection_delta_norm": 0.4375928570492966,
+      "raw_centroid_before_projection": 9.998261270409746,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 1.0000014906612689,
+      "raw_sum_before_projection": 23.00530239100039,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.0019047619047611875,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S0_chain_v1:U0": {
+      "budget_error": 0.0,
+      "centroid": 10.0,
+      "centroid_shift_due_to_projection": 0.0,
+      "checks": {
+        "budget_preserved": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 1.0,
+        "1": 1.0,
+        "10": 1.0,
+        "11": 1.0,
+        "12": 1.0,
+        "13": 1.0,
+        "14": 1.0,
+        "15": 1.0,
+        "16": 1.0,
+        "17": 1.0,
+        "18": 1.0,
+        "19": 1.0,
+        "2": 1.0,
+        "20": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 1.0
+      },
+      "fixture_id": "S0_chain_v1",
+      "formula": "uniform",
+      "initializer": "uniform",
+      "kick": null,
+      "lane_id": "U0",
+      "max_value": 1.0,
+      "min_value": 1.0,
+      "params": {
+        "baseline_coherence": 1.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": 0.0,
+      "projected_budget": 21.0,
+      "projection_delta_norm": 0.0,
+      "raw_centroid_before_projection": 10.0,
+      "raw_max_before_projection": 1.0,
+      "raw_min_before_projection": 1.0,
+      "raw_sum_before_projection": 21.0,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": 0.0,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S1_ring_v1:B0": {
+      "budget_error": 0.0,
+      "centroid": -0.4477806715150818,
+      "centroid_shift_due_to_projection": 0.004938168626935968,
+      "checks": {
+        "budget_preserved": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 1.295557371228441,
+        "1": 1.2648039097830954,
+        "10": 0.895691556279602,
+        "11": 0.8955823798299509,
+        "12": 0.8955613430301634,
+        "13": 0.8955823798299509,
+        "14": 0.895691556279602,
+        "15": 0.8961708955001708,
+        "16": 0.8979477803864435,
+        "17": 0.903493809126189,
+        "18": 0.9180112763620945,
+        "19": 0.9496914845230862,
+        "2": 1.1860169860579175,
+        "20": 1.0067722914097188,
+        "21": 1.0902582736124298,
+        "22": 1.1860169860579175,
+        "23": 1.2648039097830954,
+        "3": 1.0902582736124298,
+        "4": 1.0067722914097188,
+        "5": 0.9496914845230862,
+        "6": 0.9180112763620945,
+        "7": 0.903493809126189,
+        "8": 0.8979477803864435,
+        "9": 0.8961708955001708
+      },
+      "fixture_id": "S1_ring_v1",
+      "formula": "symmetric_bump",
+      "initializer": "symmetric_bump",
+      "kick": null,
+      "lane_id": "B0",
+      "max_value": 1.295557371228441,
+      "min_value": 0.8955613430301634,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 0,
+        "sigma": 2.5
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.4477806715150818,
+      "projected_budget": 24.0,
+      "projection_delta_norm": 0.5116622957704898,
+      "raw_centroid_before_projection": -0.45271884014201774,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 1.0000039718017224,
+      "raw_sum_before_projection": 26.506623090517415,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.4477806715150818,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S1_ring_v1:B1": {
+      "budget_error": 0.0,
+      "centroid": -0.35902095060655115,
+      "centroid_shift_due_to_projection": 0.013328574823749273,
+      "checks": {
+        "budget_preserved": true,
+        "local_tilt_tapered": true,
+        "nonnegative": true,
+        "projection_sum_matches": true,
+        "tilt_nonzero": true
+      },
+      "coherence_by_node": {
+        "0": 1.2955853876087893,
+        "1": 1.2840320349891534,
+        "10": 0.8990955494897083,
+        "11": 0.8971863363939016,
+        "12": 0.8949169662821482,
+        "13": 0.8940344560266972,
+        "14": 0.8923435958301924,
+        "15": 0.8896004643289113,
+        "16": 0.8862366525478507,
+        "17": 0.8845748858534117,
+        "18": 0.8904313368631858,
+        "19": 0.9136747220436524,
+        "2": 1.2200196351009984,
+        "20": 0.9651642981084111,
+        "21": 1.0487321305404662,
+        "22": 1.1520703697755332,
+        "23": 1.245631817337734,
+        "3": 1.13184044944509,
+        "4": 1.0484363174717233,
+        "5": 0.9857642797632168,
+        "6": 0.9456472486216999,
+        "7": 0.9224687651596634,
+        "8": 0.9097149409857331,
+        "9": 0.9027973594321274
+      },
+      "fixture_id": "S1_ring_v1",
+      "formula": "locally_tapered_asymmetric_bump",
+      "initializer": "locally_tapered_asymmetric_bump",
+      "kick": null,
+      "lane_id": "B1",
+      "max_value": 1.2955853876087893,
+      "min_value": 0.8845748858534117,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 0,
+        "max_abs_tilt": 0.04163600968165617,
+        "max_abs_tilt_outside_local_window": 0.0015759401836022277,
+        "sigma": 2.5,
+        "sigma_tilt": 3.5,
+        "tilt_epsilon": 0.02,
+        "tilt_sign": 1.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.35902095060655115,
+      "projected_budget": 24.0,
+      "projection_delta_norm": 0.5115250440979032,
+      "raw_centroid_before_projection": -0.3723495254303004,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 0.9889894982446222,
+      "raw_sum_before_projection": 26.505950697389054,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.35902095060655115,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S1_ring_v1:B1_reversed": {
+      "budget_error": 0.0,
+      "centroid": -0.5365403924236122,
+      "centroid_shift_due_to_projection": -0.0034563149209579924,
+      "checks": {
+        "budget_preserved": true,
+        "local_tilt_tapered": true,
+        "nonnegative": true,
+        "projection_sum_matches": true,
+        "tilt_nonzero": true
+      },
+      "coherence_by_node": {
+        "0": 1.2955293548480924,
+        "1": 1.2455757845770372,
+        "10": 0.8922875630694954,
+        "11": 0.8939784232660002,
+        "12": 0.8962057197781785,
+        "13": 0.8971303036332046,
+        "14": 0.8990395167290113,
+        "15": 0.9027413266714304,
+        "16": 0.9096589082250361,
+        "17": 0.9224127323989664,
+        "18": 0.9455912158610029,
+        "19": 0.9857082470025198,
+        "2": 1.1520143370148364,
+        "20": 1.0483802847110264,
+        "21": 1.1317844166843931,
+        "22": 1.2199636023403015,
+        "23": 1.2839760022284565,
+        "3": 1.0486760977797693,
+        "4": 0.9651082653477141,
+        "5": 0.9136186892829554,
+        "6": 0.8903753041024888,
+        "7": 0.8845188530927147,
+        "8": 0.8861806197871537,
+        "9": 0.8895444315682143
+      },
+      "fixture_id": "S1_ring_v1",
+      "formula": "locally_tapered_asymmetric_bump",
+      "initializer": "locally_tapered_asymmetric_bump",
+      "kick": null,
+      "lane_id": "B1_reversed",
+      "max_value": 1.2955293548480924,
+      "min_value": 0.8845188530927147,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 0,
+        "max_abs_tilt": 0.04163600968165617,
+        "max_abs_tilt_outside_local_window": 0.0015759401836022277,
+        "sigma": 2.5,
+        "sigma_tilt": 3.5,
+        "tilt_epsilon": 0.02,
+        "tilt_sign": -1.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.5365403924236122,
+      "projected_budget": 24.0,
+      "projection_delta_norm": 0.5117995474430772,
+      "raw_centroid_before_projection": -0.5330840775026542,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 0.9889894982446222,
+      "raw_sum_before_projection": 26.50729548364578,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.5365403924236122,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S1_ring_v1:K1": {
+      "budget_error": 0.0,
+      "centroid": -0.4461140048484151,
+      "centroid_shift_due_to_projection": 0.005095778486803648,
+      "checks": {
+        "budget_preserved": true,
+        "kick_masks_equal_size": true,
+        "kick_zero_sum": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 1.295557371228441,
+        "1": 1.2848039097830954,
+        "10": 0.895691556279602,
+        "11": 0.8955823798299509,
+        "12": 0.8955613430301634,
+        "13": 0.8955823798299509,
+        "14": 0.895691556279602,
+        "15": 0.8961708955001708,
+        "16": 0.8979477803864435,
+        "17": 0.903493809126189,
+        "18": 0.9180112763620945,
+        "19": 0.9496914845230862,
+        "2": 1.1860169860579175,
+        "20": 1.0067722914097188,
+        "21": 1.0902582736124298,
+        "22": 1.1860169860579175,
+        "23": 1.2448039097830954,
+        "3": 1.0902582736124298,
+        "4": 1.0067722914097188,
+        "5": 0.9496914845230862,
+        "6": 0.9180112763620945,
+        "7": 0.903493809126189,
+        "8": 0.8979477803864435,
+        "9": 0.8961708955001708
+      },
+      "fixture_id": "S1_ring_v1",
+      "formula": "symmetric_bump",
+      "initializer": "symmetric_bump",
+      "kick": {
+        "front_mask": [
+          1
+        ],
+        "kick_delta": 0.02,
+        "kick_mask_node_count": 1,
+        "raw_kick_sum": 0.0,
+        "rear_mask": [
+          23
+        ]
+      },
+      "lane_id": "K1",
+      "max_value": 1.295557371228441,
+      "min_value": 0.8955613430301634,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 0,
+        "sigma": 2.5
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.4461140048484151,
+      "projected_budget": 24.0,
+      "projection_delta_norm": 0.5116622957704898,
+      "raw_centroid_before_projection": -0.4512097833352188,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 1.0000039718017224,
+      "raw_sum_before_projection": 26.506623090517415,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.4461140048484151,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S1_ring_v1:K1_reversed": {
+      "budget_error": 0.0,
+      "centroid": -0.44944733818174837,
+      "centroid_shift_due_to_projection": 0.004780558767068288,
+      "checks": {
+        "budget_preserved": true,
+        "kick_masks_equal_size": true,
+        "kick_zero_sum": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 1.295557371228441,
+        "1": 1.2448039097830954,
+        "10": 0.895691556279602,
+        "11": 0.8955823798299509,
+        "12": 0.8955613430301634,
+        "13": 0.8955823798299509,
+        "14": 0.895691556279602,
+        "15": 0.8961708955001708,
+        "16": 0.8979477803864435,
+        "17": 0.903493809126189,
+        "18": 0.9180112763620945,
+        "19": 0.9496914845230862,
+        "2": 1.1860169860579175,
+        "20": 1.0067722914097188,
+        "21": 1.0902582736124298,
+        "22": 1.1860169860579175,
+        "23": 1.2848039097830954,
+        "3": 1.0902582736124298,
+        "4": 1.0067722914097188,
+        "5": 0.9496914845230862,
+        "6": 0.9180112763620945,
+        "7": 0.903493809126189,
+        "8": 0.8979477803864435,
+        "9": 0.8961708955001708
+      },
+      "fixture_id": "S1_ring_v1",
+      "formula": "symmetric_bump",
+      "initializer": "symmetric_bump",
+      "kick": {
+        "front_mask": [
+          23
+        ],
+        "kick_delta": 0.02,
+        "kick_mask_node_count": 1,
+        "raw_kick_sum": 0.0,
+        "rear_mask": [
+          1
+        ]
+      },
+      "lane_id": "K1_reversed",
+      "max_value": 1.295557371228441,
+      "min_value": 0.8955613430301634,
+      "params": {
+        "baseline_coherence": 1.0,
+        "bump_amplitude": 0.4,
+        "center_node_id": 0,
+        "sigma": 2.5
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.44944733818174837,
+      "projected_budget": 24.0,
+      "projection_delta_norm": 0.5116622957704898,
+      "raw_centroid_before_projection": -0.45422789694881666,
+      "raw_max_before_projection": 1.4,
+      "raw_min_before_projection": 1.0000039718017224,
+      "raw_sum_before_projection": 26.506623090517415,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.44944733818174837,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    },
+    "S1_ring_v1:U0": {
+      "budget_error": 0.0,
+      "centroid": -0.5,
+      "centroid_shift_due_to_projection": 0.0,
+      "checks": {
+        "budget_preserved": true,
+        "nonnegative": true,
+        "projection_sum_matches": true
+      },
+      "coherence_by_node": {
+        "0": 1.0,
+        "1": 1.0,
+        "10": 1.0,
+        "11": 1.0,
+        "12": 1.0,
+        "13": 1.0,
+        "14": 1.0,
+        "15": 1.0,
+        "16": 1.0,
+        "17": 1.0,
+        "18": 1.0,
+        "19": 1.0,
+        "2": 1.0,
+        "20": 1.0,
+        "21": 1.0,
+        "22": 1.0,
+        "23": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 1.0
+      },
+      "fixture_id": "S1_ring_v1",
+      "formula": "uniform",
+      "initializer": "uniform",
+      "kick": null,
+      "lane_id": "U0",
+      "max_value": 1.0,
+      "min_value": 1.0,
+      "params": {
+        "baseline_coherence": 1.0
+      },
+      "passed": true,
+      "post_projection_centroid_bias_from_seed": -0.5,
+      "projected_budget": 24.0,
+      "projection_delta_norm": 0.0,
+      "raw_centroid_before_projection": -0.5,
+      "raw_max_before_projection": 1.0,
+      "raw_min_before_projection": 1.0,
+      "raw_sum_before_projection": 24.0,
+      "stimulus_audit": {
+        "post_projection_asymmetry_score": -0.5,
+        "post_projection_width": null,
+        "stimulus_survived_projection": true
+      }
+    }
+  },
+  "manifest_path": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json",
+  "notes": [
+    "Projection uses conserved nonnegative simplex projection.",
+    "Projection delta norm is reported per lane.",
+    "Ring signed distances use shortest unwrapped distance around the tracked basin representative.",
+    "For even-N rings, the antipodal node uses negative signed distance; uniform S1_ring_v1 therefore has centroid -0.5 by convention.",
+    "B1/B1_reversed centroid offsets must have opposite signs.",
+    "K1/K1_reversed centroid offsets must have opposite signs."
+  ],
+  "reversal_checks": {
+    "S0_chain_v1": {
+      "b1_centroid_offsets_opposite": true,
+      "b1_equal_budget": true,
+      "baseline_centroid": 10.0,
+      "k1_centroid_offsets_opposite": true,
+      "k1_equal_budget": true
+    },
+    "S1_ring_v1": {
+      "b1_centroid_offsets_opposite": true,
+      "b1_equal_budget": true,
+      "baseline_centroid": -0.4477806715150818,
+      "k1_centroid_offsets_opposite": true,
+      "k1_equal_budget": true
+    }
+  },
+  "schema": "movement_initializer_validation_v1",
+  "status": "passed"
+}

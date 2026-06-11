@@ -1,0 +1,1639 @@
+{
+  "command": "python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/validate_loop_observables.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "reports": {
+    "K_synthetic": {
+      "blocked_claims": [
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.0,
+        "max_abs_error_pre_correction": 0.0,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": true,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": true,
+        "cycle_gate_passed": true,
+        "flux_closure_gate_passed": true,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": true,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": null,
+        "role_gate_passed": true,
+        "role_gated_cycle_gate_passed": true,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 1.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0019500000000000001,
+          "passed": true,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 1.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 3,
+        "l4_cycle_requirement_met": true,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 3,
+        "role_gated_cycle_count": 3,
+        "role_gated_cycle_requirement_met": true
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.15,
+        "J_forward_mean": 0.0066,
+        "J_return_max": 0.05,
+        "J_return_mean": 0.0019500000000000001,
+        "forward_return_balance": 0.00465,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0018,
+        "source_export_series_mean": 0.00105
+      },
+      "ladder": {
+        "gates_failed": [
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "budget_gate",
+          "topology_gate",
+          "role_gate",
+          "path_closure_gate",
+          "flux_closure_gate",
+          "phase_cascade_gate",
+          "cycle_gate"
+        ],
+        "level": "L4",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "K_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [
+          {
+            "forward_flux_step": 16,
+            "return_flux_step": 18,
+            "sink_rise_step": 17,
+            "source_drop_step": 15,
+            "source_refill_step": 19
+          },
+          {
+            "forward_flux_step": 46,
+            "return_flux_step": 48,
+            "sink_rise_step": 47,
+            "source_drop_step": 45,
+            "source_refill_step": 49
+          },
+          {
+            "forward_flux_step": 76,
+            "return_flux_step": 78,
+            "sink_rise_step": 77,
+            "source_drop_step": 75,
+            "source_refill_step": 79
+          }
+        ],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 1.0,
+        "mean_lag_return_flux_to_source_refill": 1.0,
+        "mean_lag_sink_rise_to_return_flux": 1.0,
+        "mean_lag_source_drop_to_forward_flux": 1.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 3,
+        "passed": true,
+        "passed_cycle_requirement": true,
+        "score": 1.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": true,
+        "score": 0.7181848464596078,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.008665454871485725,
+        "sink_drop_to_source_rise_lag": 9,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 0.7181848464596078,
+        "source_drop_to_sink_rise_lag": 2
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.00012000000000000011,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0020000000000000018,
+        "sink_import_mean": 0.0018,
+        "sink_like_measured": true,
+        "source_delta_c_post_budget_mean": 0.0,
+        "source_delta_c_pre_budget_when_exporting_mean": -0.0020000000000000018,
+        "source_export_mean": 0.00105,
+        "source_like_measured": true,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/k_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "ca62df87cfcf6441acbe7be50e40229adcbe9f1ce8d09a37cf94b82a1e4f4096",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    },
+    "S_synthetic": {
+      "blocked_claims": [
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.0,
+        "max_abs_error_pre_correction": 0.0,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": true,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": true,
+        "cycle_gate_passed": true,
+        "flux_closure_gate_passed": true,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": true,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": null,
+        "role_gate_passed": true,
+        "role_gated_cycle_gate_passed": true,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 1.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0019500000000000001,
+          "passed": true,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 1.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 3,
+        "l4_cycle_requirement_met": true,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 3,
+        "role_gated_cycle_count": 3,
+        "role_gated_cycle_requirement_met": true
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.15,
+        "J_forward_mean": 0.0066,
+        "J_return_max": 0.05,
+        "J_return_mean": 0.0019500000000000001,
+        "forward_return_balance": 0.00465,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0018,
+        "source_export_series_mean": 0.00105
+      },
+      "ladder": {
+        "gates_failed": [
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "budget_gate",
+          "topology_gate",
+          "role_gate",
+          "path_closure_gate",
+          "flux_closure_gate",
+          "phase_cascade_gate",
+          "cycle_gate"
+        ],
+        "level": "L4",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "S_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [
+          {
+            "forward_flux_step": 16,
+            "return_flux_step": 18,
+            "sink_rise_step": 17,
+            "source_drop_step": 15,
+            "source_refill_step": 19
+          },
+          {
+            "forward_flux_step": 46,
+            "return_flux_step": 48,
+            "sink_rise_step": 47,
+            "source_drop_step": 45,
+            "source_refill_step": 49
+          },
+          {
+            "forward_flux_step": 76,
+            "return_flux_step": 78,
+            "sink_rise_step": 77,
+            "source_drop_step": 75,
+            "source_refill_step": 79
+          }
+        ],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 1.0,
+        "mean_lag_return_flux_to_source_refill": 1.0,
+        "mean_lag_sink_rise_to_return_flux": 1.0,
+        "mean_lag_source_drop_to_forward_flux": 1.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 3,
+        "passed": true,
+        "passed_cycle_requirement": true,
+        "score": 1.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": true,
+        "score": 0.7181848464596078,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.008665454871485725,
+        "sink_drop_to_source_rise_lag": 9,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 0.7181848464596078,
+        "source_drop_to_sink_rise_lag": 2
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.00012000000000000011,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0020000000000000018,
+        "sink_import_mean": 0.0018,
+        "sink_like_measured": true,
+        "source_delta_c_post_budget_mean": 0.0,
+        "source_delta_c_pre_budget_when_exporting_mean": -0.0020000000000000018,
+        "source_export_mean": 0.00105,
+        "source_like_measured": true,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/s_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "ca62df87cfcf6441acbe7be50e40229adcbe9f1ce8d09a37cf94b82a1e4f4096",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    },
+    "U0_synthetic": {
+      "blocked_claims": [
+        "role_gate_failed",
+        "flux_closure_gate_failed",
+        "phase_cascade_gate_failed",
+        "cycle_gate_failed",
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.0,
+        "max_abs_error_pre_correction": 0.0,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": true,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "role_gate_failed",
+          "flux_closure_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": true,
+        "cycle_gate_passed": false,
+        "flux_closure_gate_passed": false,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": false,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": "role_gate_failed",
+        "role_gate_passed": false,
+        "role_gated_cycle_gate_passed": false,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 0.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0,
+          "passed": false,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 0.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 0,
+        "l4_cycle_requirement_met": false,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "role_gated_cycle_requirement_met": false
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.0,
+        "J_forward_mean": 0.0,
+        "J_return_max": 0.0,
+        "J_return_mean": 0.0,
+        "forward_return_balance": 0.0,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0,
+        "source_export_series_mean": 0.0
+      },
+      "ladder": {
+        "gates_failed": [
+          "role_gate",
+          "flux_closure_gate",
+          "phase_cascade_gate",
+          "cycle_gate",
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "budget_gate",
+          "topology_gate",
+          "path_closure_gate"
+        ],
+        "level": "L1",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "U0_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 0.0,
+        "mean_lag_return_flux_to_source_refill": 0.0,
+        "mean_lag_sink_rise_to_return_flux": 0.0,
+        "mean_lag_source_drop_to_forward_flux": 0.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 0,
+        "passed": false,
+        "passed_cycle_requirement": false,
+        "score": 0.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": false,
+        "score": 0.0,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.0,
+        "sink_drop_to_source_rise_lag": 0,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 0.0,
+        "source_drop_to_sink_rise_lag": 0
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.0,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0,
+        "sink_import_mean": 0.0,
+        "sink_like_measured": false,
+        "source_delta_c_post_budget_mean": 0.0,
+        "source_delta_c_pre_budget_when_exporting_mean": 0.0,
+        "source_export_mean": 0.0,
+        "source_like_measured": false,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/u0_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "bc82b08a9d03a755d1c27ad4e3491a5d43e7531f08fd7abf72710ce78a7d1689",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    },
+    "budget_drift_synthetic": {
+      "blocked_claims": [
+        "budget_gate_failed",
+        "role_gate_failed",
+        "flux_closure_gate_failed",
+        "phase_cascade_gate_failed",
+        "cycle_gate_failed",
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.010000000000000009,
+        "max_abs_error_pre_correction": 0.010000000000000009,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": false,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "budget_gate_failed",
+          "role_gate_failed",
+          "flux_closure_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": false,
+        "cycle_gate_passed": false,
+        "flux_closure_gate_passed": false,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": false,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": "budget_gate_failed",
+        "role_gate_passed": false,
+        "role_gated_cycle_gate_passed": false,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 0.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0,
+          "passed": false,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 0.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 0,
+        "l4_cycle_requirement_met": false,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "role_gated_cycle_requirement_met": false
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.0,
+        "J_forward_mean": 0.0,
+        "J_return_max": 0.0,
+        "J_return_mean": 0.0,
+        "forward_return_balance": 0.0,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0,
+        "source_export_series_mean": 0.0
+      },
+      "ladder": {
+        "gates_failed": [
+          "budget_gate",
+          "role_gate",
+          "flux_closure_gate",
+          "phase_cascade_gate",
+          "cycle_gate",
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "topology_gate",
+          "path_closure_gate"
+        ],
+        "level": "L0",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "budget_drift_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 0.0,
+        "mean_lag_return_flux_to_source_refill": 0.0,
+        "mean_lag_sink_rise_to_return_flux": 0.0,
+        "mean_lag_source_drop_to_forward_flux": 0.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 0,
+        "passed": false,
+        "passed_cycle_requirement": false,
+        "score": 0.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": false,
+        "score": 0.0,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.0,
+        "sink_drop_to_source_rise_lag": 0,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 0.0,
+        "source_drop_to_sink_rise_lag": 0
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.0,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0,
+        "sink_import_mean": 0.0,
+        "sink_like_measured": false,
+        "source_delta_c_post_budget_mean": 9.999999999999982e-05,
+        "source_delta_c_pre_budget_when_exporting_mean": 0.0,
+        "source_export_mean": 0.0,
+        "source_like_measured": false,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/budget_drift_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "2d72204723777ad1eebc945bd499e01d320a4348e287faec254b0a3f0694a7d4",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    },
+    "budget_drift_with_cascade_synthetic": {
+      "blocked_claims": [
+        "budget_gate_failed",
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.010000000000000009,
+        "max_abs_error_pre_correction": 0.010000000000000009,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": false,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "budget_gate_failed",
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": false,
+        "cycle_gate_passed": true,
+        "flux_closure_gate_passed": true,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": true,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": "budget_gate_failed",
+        "role_gate_passed": true,
+        "role_gated_cycle_gate_passed": true,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 1.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0019500000000000001,
+          "passed": true,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 1.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 3,
+        "l4_cycle_requirement_met": true,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 3,
+        "role_gated_cycle_count": 3,
+        "role_gated_cycle_requirement_met": true
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.15,
+        "J_forward_mean": 0.0066,
+        "J_return_max": 0.05,
+        "J_return_mean": 0.0019500000000000001,
+        "forward_return_balance": 0.00465,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0018,
+        "source_export_series_mean": 0.00105
+      },
+      "ladder": {
+        "gates_failed": [
+          "budget_gate",
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "topology_gate",
+          "role_gate",
+          "path_closure_gate",
+          "flux_closure_gate",
+          "phase_cascade_gate",
+          "cycle_gate"
+        ],
+        "level": "L0",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "budget_drift_with_cascade_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [
+          {
+            "forward_flux_step": 16,
+            "return_flux_step": 18,
+            "sink_rise_step": 17,
+            "source_drop_step": 15,
+            "source_refill_step": 19
+          },
+          {
+            "forward_flux_step": 46,
+            "return_flux_step": 48,
+            "sink_rise_step": 47,
+            "source_drop_step": 45,
+            "source_refill_step": 49
+          },
+          {
+            "forward_flux_step": 76,
+            "return_flux_step": 78,
+            "sink_rise_step": 77,
+            "source_drop_step": 75,
+            "source_refill_step": 79
+          }
+        ],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 1.0,
+        "mean_lag_return_flux_to_source_refill": 1.0,
+        "mean_lag_sink_rise_to_return_flux": 1.0,
+        "mean_lag_source_drop_to_forward_flux": 1.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 3,
+        "passed": true,
+        "passed_cycle_requirement": true,
+        "score": 1.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": true,
+        "score": 0.5167937604071953,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.019656124191244437,
+        "sink_drop_to_source_rise_lag": 6,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 0.5167937604071953,
+        "source_drop_to_sink_rise_lag": 2
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.00012000000000000011,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0020000000000000018,
+        "sink_import_mean": 0.0018,
+        "sink_like_measured": true,
+        "source_delta_c_post_budget_mean": 9.999999999999982e-05,
+        "source_delta_c_pre_budget_when_exporting_mean": -0.00033333333333333826,
+        "source_export_mean": 0.00105,
+        "source_like_measured": true,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/budget_drift_with_cascade_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "132cb13660a6a21a02c2d2d4a4052912f5efa5482fb7e40c89f956e702865879",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    },
+    "partial_cascade_synthetic": {
+      "blocked_claims": [
+        "flux_closure_gate_failed",
+        "phase_cascade_gate_failed",
+        "cycle_gate_failed",
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.0,
+        "max_abs_error_pre_correction": 0.0,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": true,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "flux_closure_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": true,
+        "cycle_gate_passed": false,
+        "flux_closure_gate_passed": false,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": false,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": "flux_closure_gate_failed",
+        "role_gate_passed": true,
+        "role_gated_cycle_gate_passed": false,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 0.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0,
+          "passed": false,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 1.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 0,
+        "l4_cycle_requirement_met": false,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "role_gated_cycle_requirement_met": false
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.15,
+        "J_forward_mean": 0.0066,
+        "J_return_max": 0.0,
+        "J_return_mean": 0.0,
+        "forward_return_balance": 0.0066,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0021,
+        "source_export_series_mean": 0.0018
+      },
+      "ladder": {
+        "gates_failed": [
+          "flux_closure_gate",
+          "phase_cascade_gate",
+          "cycle_gate",
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "budget_gate",
+          "topology_gate",
+          "role_gate",
+          "path_closure_gate"
+        ],
+        "level": "L2",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "partial_cascade_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 0.0,
+        "mean_lag_return_flux_to_source_refill": 0.0,
+        "mean_lag_sink_rise_to_return_flux": 0.0,
+        "mean_lag_source_drop_to_forward_flux": 0.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 0,
+        "passed": false,
+        "passed_cycle_requirement": false,
+        "score": 0.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": true,
+        "score": 1.0000000000000002,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.0,
+        "sink_drop_to_source_rise_lag": 0,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 1.0000000000000002,
+        "source_drop_to_sink_rise_lag": 2
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.00012000000000000011,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0020000000000000018,
+        "sink_import_mean": 0.0021,
+        "sink_like_measured": true,
+        "source_delta_c_post_budget_mean": -0.00012000000000000011,
+        "source_delta_c_pre_budget_when_exporting_mean": -0.0020000000000000018,
+        "source_export_mean": 0.0018,
+        "source_like_measured": true,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/partial_cascade_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "a01fbd1739af7d27ce90521419abf759b988342225a9c65b536a41393285a383",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    },
+    "phase_scrambled_synthetic": {
+      "blocked_claims": [
+        "phase_cascade_gate_failed",
+        "cycle_gate_failed",
+        "synthetic_trace_not_runtime_evidence",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "budget": {
+        "correction_method": "per_step_recorded",
+        "max_abs_error_post_correction": 0.0,
+        "max_abs_error_pre_correction": 0.0,
+        "max_correction_magnitude": 0.0,
+        "mean_correction_magnitude": 0.0,
+        "passed": true,
+        "simplex_projection_count": 0,
+        "target_budget": 1.0,
+        "uniform_shift_count": 0
+      },
+      "claim_ceiling": {
+        "candidate_loop_claim_allowed": true,
+        "fixture_allows_candidate_claims": true,
+        "full_l_positive_allowed": false,
+        "naming_note": "candidate_loop_claim_allowed is a fixture ceiling, not an actual positive claim; use claim_gate.positive_candidate_loop_claim_allowed for the actual result",
+        "same_parent_basin_mode": "configured_parent_region_only"
+      },
+      "claim_gate": {
+        "blocked_reason": "synthetic_trace_not_runtime_evidence",
+        "blocked_reasons": [
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "synthetic_trace_not_runtime_evidence",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_gate_passed": true,
+        "cycle_gate_passed": false,
+        "flux_closure_gate_passed": true,
+        "path_closure_gate_passed": true,
+        "phase_cascade_gate_passed": false,
+        "positive_candidate_loop_claim_allowed": false,
+        "positive_full_loop_claim_allowed": false,
+        "primary_scientific_blocker": "phase_cascade_gate_failed",
+        "role_gate_passed": true,
+        "role_gated_cycle_gate_passed": false,
+        "runtime_evidence_gate_passed": false,
+        "topology_gate_passed": true
+      },
+      "closure": {
+        "closure_score": 1.0,
+        "flux_closure": {
+          "mean_return_flux": 0.0019500000000000001,
+          "passed": true,
+          "theta_import": 1e-06
+        },
+        "path_closure": {
+          "closed_route_edge_cover_complete": true,
+          "evidence_source": "fixture_manifest_masks",
+          "forward_return_edge_sets_disjoint": true,
+          "passed": true,
+          "source_sink_masks_disjoint": true
+        },
+        "polarity_score": 1.0
+      },
+      "controls_status": {
+        "budget_projection_disabled_dry_run": "not_run_iteration_3",
+        "randomized_labels_posthoc": "not_run_iteration_3",
+        "shuffled_conductance": "not_run_iteration_3",
+        "topology_disabled": "configured",
+        "zero_flux_reset": "not_run_iteration_3"
+      },
+      "cycles": {
+        "cycle_count": 0,
+        "l4_cycle_requirement_met": false,
+        "n_cycles_min": 3,
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "role_gated_cycle_requirement_met": false
+      },
+      "evaluation_window": {
+        "actual_eval_steps": 100,
+        "end_step": 109,
+        "min_eval_steps": 100,
+        "rule": "step_index >= washout_steps, then first min_eval_steps rows",
+        "start_step": 10,
+        "washout_steps": 10
+      },
+      "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+      "fixture_id": "grc9v3_ported_ring_v1",
+      "flux": {
+        "J_forward_max": 0.15,
+        "J_forward_mean": 0.0066,
+        "J_return_max": 0.05,
+        "J_return_mean": 0.0019500000000000001,
+        "forward_return_balance": 0.00465,
+        "orientation": "manifest_clockwise_flux_uv_positive",
+        "sink_import_series_mean": 0.0018,
+        "source_export_series_mean": 0.00105
+      },
+      "ladder": {
+        "gates_failed": [
+          "phase_cascade_gate",
+          "cycle_gate",
+          "runtime_evidence_gate",
+          "same_parent_basin_gate"
+        ],
+        "gates_passed": [
+          "budget_gate",
+          "topology_gate",
+          "role_gate",
+          "path_closure_gate",
+          "flux_closure_gate"
+        ],
+        "level": "L3",
+        "schema_status": "pre_iteration_6_shape_classifier"
+      },
+      "lane_id": "phase_scrambled_synthetic",
+      "metric_config": {
+        "min_eval_steps": 100,
+        "n_cycles_min": 3,
+        "phase_cascade_max_stage_lag": 20,
+        "phase_cascade_score_min": 0.25,
+        "phase_lock_max_lag": 20,
+        "phase_lock_min": 0.25,
+        "theta_export": 1e-06,
+        "theta_import": 1e-06,
+        "theta_mass": 1e-08,
+        "theta_null_margin": 0.0001,
+        "washout_steps": 10
+      },
+      "phase_cascade": {
+        "cascades": [],
+        "event_detection_rule": {
+          "forward_flux": "J_forward > theta_export",
+          "return_flux": "J_return > theta_import",
+          "sink_rise": "Delta_C_sink_pre_budget > theta_mass",
+          "source_drop": "Delta_C_source_pre_budget < -theta_mass",
+          "source_refill": "Delta_C_source_pre_budget > theta_mass"
+        },
+        "formula": "count ordered windows satisfying source_drop -> forward_flux -> sink_rise -> return_flux -> source_refill using configured theta_mass, theta_export, theta_import, phase_cascade_score_min, and n_cycles_min",
+        "max_stage_lag": 20,
+        "mean_lag_forward_flux_to_sink_rise": 0.0,
+        "mean_lag_return_flux_to_source_refill": 0.0,
+        "mean_lag_sink_rise_to_return_flux": 0.0,
+        "mean_lag_source_drop_to_forward_flux": 0.0,
+        "n_cycles_min": 3,
+        "n_detected_cascades": 0,
+        "passed": false,
+        "passed_cycle_requirement": false,
+        "score": 0.0,
+        "sign_convention": "return flux is manifest-clockwise positive channel flux",
+        "smoothing": "none"
+      },
+      "phase_lock": {
+        "formula": "best Pearson correlation over nonnegative lags between -Delta C_source and Delta C_sink, and between -Delta C_sink and Delta C_source; score is the maximum positive pairwise value",
+        "max_lag": 20,
+        "passed": true,
+        "score": 0.7181848464596078,
+        "sign_convention": "-Delta_C_source leads Delta_C_sink; -Delta_C_sink leads Delta_C_source",
+        "sink_drop_to_source_rise_correlation": 0.008665454871485725,
+        "sink_drop_to_source_rise_lag": 9,
+        "smoothing": "none",
+        "source_drop_to_sink_rise_correlation": 0.7181848464596078,
+        "source_drop_to_sink_rise_lag": 2
+      },
+      "roles": {
+        "reversal_outcome": "not_run_iteration_3",
+        "sink_delta_c_post_budget_mean": 0.00012000000000000011,
+        "sink_delta_c_pre_budget_when_importing_mean": 0.0020000000000000018,
+        "sink_import_mean": 0.0018,
+        "sink_like_measured": true,
+        "source_delta_c_post_budget_mean": 0.0,
+        "source_delta_c_pre_budget_when_exporting_mean": -0.0020000000000000018,
+        "source_export_mean": 0.00105,
+        "source_like_measured": true,
+        "source_sink_role_measurement_source": "edge_level_flux_uv_and_pre_budget_mass_change"
+      },
+      "runtime_provenance": {
+        "birth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "called_methods": [
+          "synthetic_trace_generation",
+          "experiment_local_loop_observables"
+        ],
+        "growth_enabled": false,
+        "model_family": "synthetic_trace",
+        "pruning_enabled": false,
+        "runner_mode": "synthetic_trace_validator",
+        "runtime_semantics_changed": false,
+        "source_manifest_model_family": "GRC9V3",
+        "source_manifest_runner_mode": "fixed_topology_continuity_runner",
+        "spark_enabled": false,
+        "src_changes_required": false,
+        "topology_events_enabled": false
+      },
+      "schema": "grc9v3_polarized_basin_loop_report_v1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/loop_observables_timeseries/phase_scrambled_synthetic_synthetic_timeseries.jsonl",
+        "artifact_sha256": "28785888de5cba767f49a4a8bbd72db8159b4127c332d7073dd109ada4b08821",
+        "fields": [
+          "C_source",
+          "C_sink",
+          "J_forward",
+          "J_return",
+          "source_export",
+          "sink_import",
+          "Delta_C_source_pre_budget",
+          "Delta_C_sink_pre_budget",
+          "Delta_C_source_post_budget",
+          "Delta_C_sink_post_budget",
+          "budget_error_pre_correction",
+          "budget_error_post_correction"
+        ]
+      },
+      "topology": {
+        "blocked_topology_event_kinds": [],
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12,
+        "passed_fixed_topology_gate": true,
+        "topology_event_count": 0
+      }
+    }
+  },
+  "schema": "grc9v3_polarized_basin_loop_observable_smoke_v1",
+  "src_imports_or_changes_required": false,
+  "status": "pass"
+}

@@ -1,0 +1,4 @@
+experiment,observation,status,artifact_source,reconstruction_attempt,notes
+experiment_g_mixed_motion,full_reusable_motion_loader_port_history,inconclusive,motion loader plus graph checkpoint overlays,Used experiment-local GRC9V3State checkpoint overlay analyzer.,"Current motion loader records port matrix availability, not normalized full per-port histories."
+experiment_g_mixed_motion,basin_assignment_motion,inconclusive,GRC9V3State.nodes[*].basin_id and basins,Recorded successor changes from dominant edge endpoints.,"This iteration supports successor/port transition classification, not basin-motion dynamics."
+experiment_g_mixed_motion,landscape_general_motion_semantics,inconclusive,clean synthetic checkpoint-overlay fixtures,Ran deterministic three-step fixtures and transform controls.,Landscape-seed robustness remains outside this raw O-style pass.

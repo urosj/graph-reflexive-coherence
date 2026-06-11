@@ -1,0 +1,7 @@
+surface_or_suite,status,reason,guardrail
+grc9v3_column_h_assisted Lane B / Lane C,completed post-pass comparison,Direct column-H proxy-branch spark evidence remains blocked under Lane A but observed in explicit Lane B rows.,Do not reinterpret Lane A derived B proxies or D4 Lane A sparks as direct column-H branch evidence.
+near-saturation degree-8 policy,future implementation candidate,D4 marks near-saturation blocked because Lane A has no such policy.,Do not treat degree-9 saturation support as degree-8 near-saturation support.
+checkpoint-window identity persistence,small addendum candidate,"D8 uses runtime-state windows, not persisted checkpoint observer windows.",Do not promote configured-window runtime support to checkpoint-window support.
+reusable motion-loader full port histories,future implementation candidate,Experiment G used checkpoint-overlay observer reconstruction.,Do not infer reusable loader support from observer-local overlays.
+landscape/seed predictive robustness suite,future experiment suite,D2 fitted held-out-landscape CV remains inconclusive.,Do not report clean-fixture scorecards as landscape-general statistics.
+exhaustive or broader S9 sampling,future robustness addendum,D1/D2 random controls are sampled non-factorized proxies.,Do not describe sampled S9 controls as exhaustive.

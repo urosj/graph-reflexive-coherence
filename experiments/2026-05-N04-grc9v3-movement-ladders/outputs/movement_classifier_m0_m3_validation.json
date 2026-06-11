@@ -1,0 +1,2168 @@
+{
+  "checks": {
+    "all_reports_keep_claims_false": true,
+    "boundary_churn_not_m2": true,
+    "budget_failure_blocks_promotion": true,
+    "deterministic_classification": true,
+    "identity_failure_blocks_m2_m3": true,
+    "iteration_5_subthreshold_bias_preserved": true,
+    "iteration_5_tranche_a_remains_m0": true,
+    "m0_m3_levels_emitted": true,
+    "m2_shape_failure_gate_exercised": true,
+    "nonnegative_failure_blocks_promotion": true,
+    "paired_control_results_emitted": true,
+    "schema_v1_required_fields_present": true,
+    "secondary_gate_failures_visible": true,
+    "shape_failure_blocks_m3": true,
+    "synthetic_positive_reaches_m3": true,
+    "topology_failure_blocks_promotion": true
+  },
+  "classifications": {
+    "S0_chain_v1_B0": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.0,
+      "centroid_displacement_abs": 0.0,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "null_lane",
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "B0",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9926845172118178,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_B0",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0022740827257807295
+    },
+    "S0_chain_v1_B1": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -9.506064011510773e-05,
+      "centroid_displacement_abs": 9.506064011510773e-05,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "subthreshold_directional_bias_observed",
+      "diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "B1",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.992744634053834,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_B1",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0022745415142155037
+    },
+    "S0_chain_v1_B1_reversed": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 9.506064011510773e-05,
+      "centroid_displacement_abs": 9.506064011510773e-05,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "subthreshold_directional_bias_observed",
+      "diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "B1_reversed",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.992744634053834,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_B1_reversed",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0022745415142155037
+    },
+    "S0_chain_v1_K1": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -8.72191208145523e-13,
+      "centroid_displacement_abs": 8.72191208145523e-13,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "no_threshold_level_response",
+      "diagnostic_subtype": "M0_no_kick_response",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "K1",
+      "m0_subtype_hint": "no_kick_response",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9921027329163492,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_K1",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0022740829714422033
+    },
+    "S0_chain_v1_K1_reversed": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 8.72191208145523e-13,
+      "centroid_displacement_abs": 8.72191208145523e-13,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "no_threshold_level_response",
+      "diagnostic_subtype": "M0_no_kick_response",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "K1_reversed",
+      "m0_subtype_hint": "no_kick_response",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9921027329163492,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_K1_reversed",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0022740829714422033
+    },
+    "S0_chain_v1_U0": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.0,
+      "centroid_displacement_abs": 0.0,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "null_lane",
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "U0",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_U0",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0
+    },
+    "S0_chain_v1_basin_replacement": {
+      "all_gate_failures": [
+        "identity_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "identity_gate_failed"
+      ],
+      "boundary_flip_count": 14,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.6265920227681772,
+      "centroid_displacement_abs": 0.6265920227681772,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "apparent_displacement_identity_blocked",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M1_identity_replacement_or_untracked_basin",
+      "displacement_passed": true,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 8.208236249819585,
+      "gates_failed": [
+        "identity_gate_failed"
+      ],
+      "identity_level_input": "I0_identity_lost",
+      "identity_passed": false,
+      "lane_or_case_id": "basin_replacement",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M1_apparent_centroid_displacement",
+      "movement_level_index": 1,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "identity_gate_failed",
+      "profile_similarity": 0.911910232014373,
+      "rear_left_mass": 3.4390002417193184,
+      "run_id": "S0_chain_v1_basin_replacement",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.05713791614774385
+    },
+    "S0_chain_v1_boundary_reassignment_front_gain_rear_loss": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.09548909938636996,
+      "centroid_displacement_abs": 0.09548909938636996,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 1.034370396895702,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "boundary_reassignment_front_gain_rear_loss",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.034370396895702,
+      "run_id": "S0_chain_v1_boundary_reassignment_front_gain_rear_loss",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.001286473044895355
+    },
+    "S0_chain_v1_budget_drift": {
+      "all_gate_failures": [
+        "budget_gate_failed",
+        "displacement_below_threshold",
+        "identity_gate_failed",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "budget_gate_failed"
+      ],
+      "boundary_flip_count": 3,
+      "boundary_reassignment_passed": false,
+      "budget_passed": false,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.023281360606411283,
+      "centroid_displacement_abs": 0.023281360606411283,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "blocked_by_hard_gate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_budget_failure",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "budget_gate_failed"
+      ],
+      "identity_level_input": "I1_candidate_continuity",
+      "identity_passed": false,
+      "lane_or_case_id": "budget_drift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_blocked",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "budget_gate_failed",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 2.1814920707331176,
+      "run_id": "S0_chain_v1_budget_drift",
+      "secondary_gate_failures": [
+        "displacement_below_threshold",
+        "identity_gate_failed",
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.012966462824921643
+    },
+    "S0_chain_v1_null_static": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.0,
+      "centroid_displacement_abs": 0.0,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "null_static",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_null_static",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0
+    },
+    "S0_chain_v1_reversed_shape_preserving_shift": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.09548909938636818,
+      "centroid_displacement_abs": 0.09548909938636818,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 1.034370396895702,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "reversed_shape_preserving_shift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.034370396895702,
+      "run_id": "S0_chain_v1_reversed_shape_preserving_shift",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.001286473044895355
+    },
+    "S0_chain_v1_shape_preserving_shift": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.09548909938636996,
+      "centroid_displacement_abs": 0.09548909938636996,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 1.034370396895702,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "shape_preserving_shift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.034370396895702,
+      "run_id": "S0_chain_v1_shape_preserving_shift",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.001286473044895355
+    },
+    "S0_chain_v1_smeared_shift": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 14,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.0,
+      "centroid_displacement_abs": 0.0,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_no_threshold_response",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 7.0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "smeared_shift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.0,
+      "rear_left_mass": 0,
+      "run_id": "S0_chain_v1_smeared_shift",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "shape_passed": false,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.04545872037236931
+    },
+    "S0_chain_v1_topology_changed_apparent_displacement": {
+      "all_gate_failures": [
+        "topology_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "topology_gate_failed"
+      ],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.09548909938636996,
+      "centroid_displacement_abs": 0.09548909938636996,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "blocked_by_hard_gate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_topology_failure",
+      "displacement_passed": true,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 1.034370396895702,
+      "gates_failed": [
+        "topology_gate_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "topology_changed_apparent_displacement",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_blocked",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "topology_gate_failed",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.034370396895702,
+      "run_id": "S0_chain_v1_topology_changed_apparent_displacement",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": false,
+      "width_relative_change_max": 0.001286473044895355
+    },
+    "S0_chain_v1_uniform_jitter": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "identity_gate_failed",
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 19,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -9.523809527678395e-07,
+      "centroid_displacement_abs": 9.523809527678395e-07,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S0_chain_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I0_identity_lost",
+      "identity_passed": false,
+      "lane_or_case_id": "uniform_jitter",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.0,
+      "rear_left_mass": 9.0,
+      "run_id": "S0_chain_v1_uniform_jitter",
+      "secondary_gate_failures": [
+        "identity_gate_failed",
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "shape_passed": false,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 1.2320938438918588e-14
+    },
+    "S1_ring_v1_B0": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -4.0710973299162845e-05,
+      "centroid_displacement_abs": 4.0710973299162845e-05,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "null_lane",
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "B0",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9965838989033264,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_B0",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0019140601806756476
+    },
+    "S1_ring_v1_B1": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.0016354738993570872,
+      "centroid_displacement_abs": 0.0016354738993570872,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "subthreshold_directional_bias_observed",
+      "diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "B1",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9966103392834667,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_B1",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.00190461304731073
+    },
+    "S1_ring_v1_B1_reversed": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.001554051952758373,
+      "centroid_displacement_abs": 0.001554051952758373,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "subthreshold_directional_bias_observed",
+      "diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "B1_reversed",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9966101886123304,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_B1_reversed",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0019306698463944247
+    },
+    "S1_ring_v1_K1": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -4.071097356411757e-05,
+      "centroid_displacement_abs": 4.071097356411757e-05,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "no_threshold_level_response",
+      "diagnostic_subtype": "M0_no_kick_response",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "K1",
+      "m0_subtype_hint": "no_kick_response",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9960807922985957,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_K1",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.001913996377390804
+    },
+    "S1_ring_v1_K1_reversed": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -4.071097303420812e-05,
+      "centroid_displacement_abs": 4.071097303420812e-05,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "no_threshold_level_response",
+      "diagnostic_subtype": "M0_no_kick_response",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "K1_reversed",
+      "m0_subtype_hint": "no_kick_response",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.9960807922985957,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_K1_reversed",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0019141242320587593
+    },
+    "S1_ring_v1_U0": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.0,
+      "centroid_displacement_abs": 0.0,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "null_lane",
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "U0",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_U0",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_5_fixed_substrate",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0
+    },
+    "S1_ring_v1_basin_replacement": {
+      "all_gate_failures": [
+        "identity_gate_failed",
+        "shape_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "identity_gate_failed"
+      ],
+      "boundary_flip_count": 14,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.1999980140991387,
+      "centroid_displacement_abs": 0.1999980140991387,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "apparent_displacement_identity_blocked",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M1_identity_replacement_or_untracked_basin",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 3.5410791694534427,
+      "gates_failed": [
+        "identity_gate_failed"
+      ],
+      "identity_level_input": "I0_identity_lost",
+      "identity_passed": false,
+      "lane_or_case_id": "basin_replacement",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M1_apparent_centroid_displacement",
+      "movement_level_index": 1,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "identity_gate_failed",
+      "profile_similarity": -0.20980100353843484,
+      "rear_left_mass": 3.5410791694534427,
+      "run_id": "S1_ring_v1_basin_replacement",
+      "secondary_gate_failures": [
+        "shape_gate_failed"
+      ],
+      "shape_passed": false,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.10763168247104296
+    },
+    "S1_ring_v1_boundary_reassignment_front_gain_rear_loss": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.1044176201700493,
+      "centroid_displacement_abs": 0.1044176201700493,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 1.0902582736124298,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "boundary_reassignment_front_gain_rear_loss",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.0902582736124298,
+      "run_id": "S1_ring_v1_boundary_reassignment_front_gain_rear_loss",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0021433276390231083
+    },
+    "S1_ring_v1_budget_drift": {
+      "all_gate_failures": [
+        "budget_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "budget_gate_failed"
+      ],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": false,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.10795744544164759,
+      "centroid_displacement_abs": 0.10795744544164759,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "blocked_by_hard_gate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_budget_failure",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 1.0902582736124298,
+      "gates_failed": [
+        "budget_gate_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "budget_drift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_blocked",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "budget_gate_failed",
+      "profile_similarity": 0.9600324699296942,
+      "rear_left_mass": 1.0902582736124298,
+      "run_id": "S1_ring_v1_budget_drift",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.003021901779137615
+    },
+    "S1_ring_v1_null_static": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 0,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.0,
+      "centroid_displacement_abs": 0.0,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "null_static",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_null_static",
+      "secondary_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0
+    },
+    "S1_ring_v1_reversed_shape_preserving_shift": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.10443865696983673,
+      "centroid_displacement_abs": 0.10443865696983673,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 1.0902582736124298,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "reversed_shape_preserving_shift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.0902582736124298,
+      "run_id": "S1_ring_v1_reversed_shape_preserving_shift",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 2.6905777119089424e-16
+    },
+    "S1_ring_v1_ring_wrap_forward": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 6,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.3132738973099349,
+      "centroid_displacement_abs": 0.3132738973099349,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 3.5410791694534427,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "ring_wrap_forward",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 3.5410791694534427,
+      "run_id": "S1_ring_v1_ring_wrap_forward",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.00213874361072985
+    },
+    "S1_ring_v1_ring_wrap_reverse": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 6,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.3132738973099349,
+      "centroid_displacement_abs": 0.3132738973099349,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 3.5410791694534427,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "ring_wrap_reverse",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 3.5410791694534427,
+      "run_id": "S1_ring_v1_ring_wrap_reverse",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.002138743610729716
+    },
+    "S1_ring_v1_shape_preserving_shift": {
+      "all_gate_failures": [],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03"
+      ],
+      "blocked_reasons": [],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.1044176201700493,
+      "centroid_displacement_abs": 0.1044176201700493,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "shape_preserving_identity_displacement_candidate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M3_boundary_and_shape_preserved",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 1.0902582736124298,
+      "gates_failed": [],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "shape_preserving_shift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M3_shape_preserving_identity_displacement",
+      "movement_level_index": 3,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": null,
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.0902582736124298,
+      "run_id": "S1_ring_v1_shape_preserving_shift",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.0021433276390231083
+    },
+    "S1_ring_v1_smeared_shift": {
+      "all_gate_failures": [
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "boundary_reassignment",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "boundary_reassignment_failed"
+      ],
+      "boundary_flip_count": 17,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -0.052219328484918226,
+      "centroid_displacement_abs": 0.052219328484918226,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "apparent_displacement_boundary_blocked",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M1_centroid_without_directed_boundary_reassignment",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 8.0,
+      "gates_failed": [
+        "boundary_reassignment_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "smeared_shift",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M1_apparent_centroid_displacement",
+      "movement_level_index": 1,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "boundary_reassignment_failed",
+      "profile_similarity": 0.0,
+      "rear_left_mass": 0,
+      "run_id": "S1_ring_v1_smeared_shift",
+      "secondary_gate_failures": [
+        "shape_gate_failed"
+      ],
+      "shape_passed": false,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 0.04847632201741875
+    },
+    "S1_ring_v1_topology_changed_apparent_displacement": {
+      "all_gate_failures": [
+        "topology_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "topology_gate_failed"
+      ],
+      "boundary_flip_count": 2,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.1044176201700493,
+      "centroid_displacement_abs": 0.1044176201700493,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "blocked_by_hard_gate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_topology_failure",
+      "displacement_passed": true,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 1.0902582736124298,
+      "gates_failed": [
+        "topology_gate_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "topology_changed_apparent_displacement",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_blocked",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "topology_gate_failed",
+      "profile_similarity": 1.0,
+      "rear_left_mass": 1.0902582736124298,
+      "run_id": "S1_ring_v1_topology_changed_apparent_displacement",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": false,
+      "width_relative_change_max": 0.0021433276390231083
+    },
+    "S1_ring_v1_uniform_jitter": {
+      "all_gate_failures": [
+        "displacement_below_threshold",
+        "identity_gate_failed",
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "displacement_below_threshold"
+      ],
+      "boundary_flip_count": 22,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": -8.333333333387927e-07,
+      "centroid_displacement_abs": 8.333333333387927e-07,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "no_threshold_displacement",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": null,
+      "diagnostic_subtype": "M0_null_symmetric",
+      "displacement_passed": false,
+      "fixture_id": "S1_ring_v1",
+      "front_entered_mass": 0,
+      "gates_failed": [
+        "displacement_below_threshold"
+      ],
+      "identity_level_input": "I0_identity_lost",
+      "identity_passed": false,
+      "lane_or_case_id": "uniform_jitter",
+      "m0_subtype_hint": "null_symmetric",
+      "movement_claim_allowed": false,
+      "movement_level": "M0_no_threshold_displacement",
+      "movement_level_index": 0,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "displacement_below_threshold",
+      "profile_similarity": 0.0,
+      "rear_left_mass": 11.0,
+      "run_id": "S1_ring_v1_uniform_jitter",
+      "secondary_gate_failures": [
+        "identity_gate_failed",
+        "boundary_reassignment_failed",
+        "shape_gate_failed"
+      ],
+      "shape_passed": false,
+      "source": "iteration_4_observable_synthetic",
+      "topology_passed": true,
+      "width_relative_change_max": 7.18530064546358e-15
+    },
+    "iteration_6_adversarial_boundary_churn_only": {
+      "all_gate_failures": [
+        "boundary_reassignment_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "boundary_reassignment",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "boundary_reassignment_failed"
+      ],
+      "boundary_flip_count": 32,
+      "boundary_reassignment_passed": false,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.25,
+      "centroid_displacement_abs": 0.25,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "apparent_displacement_boundary_blocked",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "adversarial_boundary_churn_without_handoff",
+      "diagnostic_subtype": "M1_centroid_without_directed_boundary_reassignment",
+      "displacement_passed": true,
+      "fixture_id": "classifier_adversarial_fixture",
+      "front_entered_mass": 0.0,
+      "gates_failed": [
+        "boundary_reassignment_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "boundary_churn_only",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M1_apparent_centroid_displacement",
+      "movement_level_index": 1,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "boundary_reassignment_failed",
+      "profile_similarity": 0.99,
+      "rear_left_mass": 0.0,
+      "run_id": "iteration_6_adversarial_boundary_churn_only",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_6_classifier_adversarial",
+      "topology_passed": true,
+      "width_relative_change_max": 0.01
+    },
+    "iteration_6_adversarial_m2_shape_failure": {
+      "all_gate_failures": [
+        "shape_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "shape_gate_failed"
+      ],
+      "boundary_flip_count": 4,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.25,
+      "centroid_displacement_abs": 0.25,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "identity_displacement_shape_blocked",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "adversarial_shape_failure_after_boundary",
+      "diagnostic_subtype": "M2_boundary_reassignment_shape_blocked",
+      "displacement_passed": true,
+      "fixture_id": "classifier_adversarial_fixture",
+      "front_entered_mass": 0.2,
+      "gates_failed": [
+        "shape_gate_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "m2_shape_failure",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M2_identity_preserving_displacement",
+      "movement_level_index": 2,
+      "nonnegative_passed": true,
+      "primary_blocked_reason": "shape_gate_failed",
+      "profile_similarity": 0.2,
+      "rear_left_mass": 0.2,
+      "run_id": "iteration_6_adversarial_m2_shape_failure",
+      "secondary_gate_failures": [],
+      "shape_passed": false,
+      "source": "iteration_6_classifier_adversarial",
+      "topology_passed": true,
+      "width_relative_change_max": 0.5
+    },
+    "iteration_6_adversarial_nonnegative_failure": {
+      "all_gate_failures": [
+        "nonnegative_coherence_gate_failed"
+      ],
+      "blocked_claims": [
+        "loop_driven_movement",
+        "locomotion_like_basin_dynamics",
+        "adaptive_topology_movement",
+        "movement_inherited_from_n03",
+        "movement_response",
+        "identity_preserving_displacement",
+        "shape_preserving_displacement"
+      ],
+      "blocked_reasons": [
+        "nonnegative_coherence_gate_failed"
+      ],
+      "boundary_flip_count": 4,
+      "boundary_reassignment_passed": true,
+      "budget_passed": true,
+      "budget_surface": "node_only",
+      "centroid_displacement": 0.25,
+      "centroid_displacement_abs": 0.25,
+      "claim_flags": {
+        "adaptive_topology_entry_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "movement_claim_inherited_from_n03": false
+      },
+      "classification": "blocked_by_hard_gate",
+      "classifier": "movement_m0_m3_classifier_v1",
+      "diagnostic_signal": "adversarial_negative_coherence",
+      "diagnostic_subtype": "M0_nonnegative_failure",
+      "displacement_passed": true,
+      "fixture_id": "classifier_adversarial_fixture",
+      "front_entered_mass": 0.2,
+      "gates_failed": [
+        "nonnegative_coherence_gate_failed"
+      ],
+      "identity_level_input": "I2_gate_passed",
+      "identity_passed": true,
+      "lane_or_case_id": "nonnegative_failure",
+      "m0_subtype_hint": null,
+      "movement_claim_allowed": false,
+      "movement_level": "M0_blocked",
+      "movement_level_index": 0,
+      "nonnegative_passed": false,
+      "primary_blocked_reason": "nonnegative_coherence_gate_failed",
+      "profile_similarity": 0.99,
+      "rear_left_mass": 0.2,
+      "run_id": "iteration_6_adversarial_nonnegative_failure",
+      "secondary_gate_failures": [],
+      "shape_passed": true,
+      "source": "iteration_6_classifier_adversarial",
+      "topology_passed": true,
+      "width_relative_change_max": 0.01
+    }
+  },
+  "classifier_rules": {
+    "M0": "no threshold displacement or hard-gate blocked",
+    "M1": "threshold centroid displacement with budget/topology/nonnegative gates, but identity may fail",
+    "M2": "M1 plus identity gate passed and directed boundary reassignment observed, but shape may fail",
+    "M3": "M2 plus shape/profile gates passed",
+    "claim_policy": "M0-M3 classifier labels evidence only; movement_claim_allowed remains false until later report policy opens it.",
+    "hard_blockers": [
+      "budget_gate_failed",
+      "topology_gate_failed",
+      "nonnegative_coherence_gate_failed"
+    ],
+    "m0_subtype_policy": "M0 subtypes are derived from explicit diagnostic signals and lane/drive metadata where available; otherwise the classifier falls back to M0_no_threshold_response.",
+    "primary_blocked_reason_precedence": [
+      "topology_gate_failed",
+      "budget_gate_failed",
+      "nonnegative_coherence_gate_failed",
+      "identity_gate_failed",
+      "displacement_below_threshold",
+      "boundary_reassignment_failed",
+      "shape_gate_failed"
+    ],
+    "validation_scope": "Iteration 6 validates Iteration 4/5 movement-observable artifacts plus classifier-adversarial cases. Iteration 7 E3 pulse import is not a movement run and is validated separately."
+  },
+  "classifier_version": "movement_m0_m3_classifier_v1",
+  "diagnostic_subtype_distribution": {
+    "M0_budget_failure": 2,
+    "M0_no_kick_response": 4,
+    "M0_no_threshold_response": 1,
+    "M0_nonnegative_failure": 1,
+    "M0_null_symmetric": 8,
+    "M0_subthreshold_directional_bias": 4,
+    "M0_topology_failure": 2,
+    "M1_centroid_without_directed_boundary_reassignment": 2,
+    "M1_identity_replacement_or_untracked_basin": 2,
+    "M2_boundary_reassignment_shape_blocked": 1,
+    "M3_boundary_and_shape_preserved": 8
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "movement_level_distribution": {
+    "M0_blocked": 5,
+    "M0_no_threshold_displacement": 17,
+    "M1_apparent_centroid_displacement": 4,
+    "M2_identity_preserving_displacement": 1,
+    "M3_shape_preserving_identity_displacement": 8
+  },
+  "paired_control_results": {
+    "S0_chain_v1_B1": {
+      "forward_diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "forward_displacement": -9.506064011510773e-05,
+      "forward_level": "M0_no_threshold_displacement",
+      "forward_run_id": "S0_chain_v1_B1",
+      "movement_claim_allowed": false,
+      "paired_control_result": "subthreshold_opposite_sign_bias",
+      "reverse_diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "reverse_displacement": 9.506064011510773e-05,
+      "reverse_level": "M0_no_threshold_displacement",
+      "reverse_run_id": "S0_chain_v1_B1_reversed"
+    },
+    "S0_chain_v1_K1": {
+      "forward_diagnostic_subtype": "M0_no_kick_response",
+      "forward_displacement": -8.72191208145523e-13,
+      "forward_level": "M0_no_threshold_displacement",
+      "forward_run_id": "S0_chain_v1_K1",
+      "movement_claim_allowed": false,
+      "paired_control_result": "no_threshold_response",
+      "reverse_diagnostic_subtype": "M0_no_kick_response",
+      "reverse_displacement": 8.72191208145523e-13,
+      "reverse_level": "M0_no_threshold_displacement",
+      "reverse_run_id": "S0_chain_v1_K1_reversed"
+    },
+    "S1_ring_v1_B1": {
+      "forward_diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "forward_displacement": -0.0016354738993570872,
+      "forward_level": "M0_no_threshold_displacement",
+      "forward_run_id": "S1_ring_v1_B1",
+      "movement_claim_allowed": false,
+      "paired_control_result": "subthreshold_opposite_sign_bias",
+      "reverse_diagnostic_subtype": "M0_subthreshold_directional_bias",
+      "reverse_displacement": 0.001554051952758373,
+      "reverse_level": "M0_no_threshold_displacement",
+      "reverse_run_id": "S1_ring_v1_B1_reversed"
+    },
+    "S1_ring_v1_K1": {
+      "forward_diagnostic_subtype": "M0_no_kick_response",
+      "forward_displacement": -4.071097356411757e-05,
+      "forward_level": "M0_no_threshold_displacement",
+      "forward_run_id": "S1_ring_v1_K1",
+      "movement_claim_allowed": false,
+      "paired_control_result": "possible_substrate_bias",
+      "reverse_diagnostic_subtype": "M0_no_kick_response",
+      "reverse_displacement": -4.071097303420812e-05,
+      "reverse_level": "M0_no_threshold_displacement",
+      "reverse_run_id": "S1_ring_v1_K1_reversed"
+    }
+  },
+  "schema": "movement_classifier_m0_m3_validation_v1",
+  "source_artifacts": {
+    "fixed_substrate_tranche_a": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json",
+    "observables": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json"
+  },
+  "status": "passed",
+  "summary": {
+    "budget_blocked_runs": [
+      "S0_chain_v1_budget_drift",
+      "S1_ring_v1_budget_drift"
+    ],
+    "identity_blocked_runs": [
+      "S0_chain_v1_basin_replacement",
+      "S1_ring_v1_basin_replacement"
+    ],
+    "iteration_5_tranche_a_levels": {
+      "S0_chain_v1_B0": "M0_no_threshold_displacement",
+      "S0_chain_v1_B1": "M0_no_threshold_displacement",
+      "S0_chain_v1_B1_reversed": "M0_no_threshold_displacement",
+      "S0_chain_v1_K1": "M0_no_threshold_displacement",
+      "S0_chain_v1_K1_reversed": "M0_no_threshold_displacement",
+      "S0_chain_v1_U0": "M0_no_threshold_displacement",
+      "S1_ring_v1_B0": "M0_no_threshold_displacement",
+      "S1_ring_v1_B1": "M0_no_threshold_displacement",
+      "S1_ring_v1_B1_reversed": "M0_no_threshold_displacement",
+      "S1_ring_v1_K1": "M0_no_threshold_displacement",
+      "S1_ring_v1_K1_reversed": "M0_no_threshold_displacement",
+      "S1_ring_v1_U0": "M0_no_threshold_displacement"
+    },
+    "m2_shape_blocked_runs": [
+      "iteration_6_adversarial_m2_shape_failure"
+    ],
+    "nonnegative_blocked_runs": [
+      "iteration_6_adversarial_nonnegative_failure"
+    ],
+    "shape_blocked_runs": [
+      "S0_chain_v1_smeared_shift",
+      "S1_ring_v1_smeared_shift"
+    ],
+    "topology_blocked_runs": [
+      "S0_chain_v1_topology_changed_apparent_displacement",
+      "S1_ring_v1_topology_changed_apparent_displacement"
+    ]
+  }
+}

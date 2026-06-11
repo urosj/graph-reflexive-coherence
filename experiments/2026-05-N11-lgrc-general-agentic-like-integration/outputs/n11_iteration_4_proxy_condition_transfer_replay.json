@@ -1,0 +1,334 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 4 passes if the N10 composition remains replay-valid under a declared proxy-condition variant, or records a distinct proxy blocker. The result must remain goal-proxy regulation only, with separated budget surfaces and no semantic goal ownership, intention, agency, A7, or GALI7 promotion.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "accepted_row_count": 0,
+  "attempted_gali_level": "GALI3",
+  "baseline_inventory_digest": "c1cf29e08ac13fb0b6d42cf85cc70735229326a4be4dae936fdb2de12caa9b65",
+  "baseline_path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+  "blocked_row_count": 1,
+  "checks": {
+    "a7_not_supported": true,
+    "all_claim_flags_false": true,
+    "all_controls_passed": true,
+    "all_required_fields_present": true,
+    "all_transfer_row_digests_valid": true,
+    "baseline_passed": true,
+    "budget_surfaces_separate": true,
+    "gali7_not_supported": true,
+    "goal_proxy_not_goal_ownership": true,
+    "iteration_3_gali2_source_preserved": true,
+    "iteration_3_passed": true,
+    "iteration_4_fixture_lane_present": true,
+    "manifest_passed": true,
+    "n09_gpr6_available": true,
+    "n10_regulation_source_gpr6_available": true,
+    "perturbation_envelope_recorded": true,
+    "proxy_condition_transfer_blocked_with_distinct_blocker": true,
+    "proxy_measurement_surface_recorded": true,
+    "proxy_target_band_recorded": true,
+    "proxy_target_band_variant_source_missing": true,
+    "same_target_band_all_windows_recorded": true,
+    "src_clean_for_iteration_4": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/run_n11_iteration_4_proxy_condition_transfer_replay.py",
+  "controls": {
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "All claim flags remain false."
+    },
+    "hidden_proxy_target_substitution": {
+      "control_passed": true,
+      "primary_blocker": "hidden_proxy_target_substitution_blocked",
+      "reason": "The attempted proxy variant is blocked unless a target-band artifact with a committed digest exists in source evidence."
+    },
+    "out_of_envelope_proxy_target": {
+      "control_passed": true,
+      "primary_blocker": "out_of_envelope_proxy_blocked",
+      "reason": "No out-of-envelope target may be introduced by Iteration 4 bookkeeping; the source band remains 0.45..0.55."
+    },
+    "semantic_goal_ownership_relabeling": {
+      "control_passed": true,
+      "primary_blocker": "goal_proxy_relabelled_as_goal_ownership",
+      "reason": "N09 evidence remains goal-proxy regulation only, not semantic goal ownership, intention, or agency."
+    },
+    "stale_proxy_state": {
+      "control_passed": true,
+      "primary_blocker": "stale_proxy_state_blocked",
+      "reason": "Proxy rows consume current source digests; stale proxy-state substitution cannot satisfy the transfer row digest."
+    }
+  },
+  "experiment": "2026-05-N11-lgrc-general-agentic-like-integration",
+  "generated_at": "2026-06-10T21:07:17.179011+00:00",
+  "git": {
+    "head": "b63c53cb1ebccb3bbb3ed56abb1b57222db5f712",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 4,
+  "iteration_3_output_digest": "301d045090005aac333786d8bad83eae5aba0519522de2f33d89699f5432bfc9",
+  "iteration_3_path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+  "manifest_digest": "1ca7ab5eb6946a0e3eb00fc7dea974d8fcbc89439211b356282a0e02da303459",
+  "manifest_path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+  "next_iteration": "5_support_state_transfer_replay",
+  "non_claim_boundary": {
+    "a7_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "gali7_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false
+  },
+  "output_digest": "df32344a5dccb1eb58520977052db86f1b40bc37188af8843790cd7715281ac2",
+  "proxy_condition_transfer_ceiling": "proxy_target_band_variant_blocked",
+  "proxy_evidence_summary": {
+    "cycle_count": 4,
+    "lower_bound": 0.45,
+    "mechanism_status_tags": [
+      "producer_mediated",
+      "threshold_authorized",
+      "memory_shaped",
+      "native_policy_gap"
+    ],
+    "memory_cycles_all_return_to_band": true,
+    "memory_cycles_all_schedule_and_process": true,
+    "n09_source_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+    "n09_source_gpr_level": "GPR6",
+    "n10_regulation_source_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+    "n10_regulation_source_gpr_level": "GPR6",
+    "native_goal_proxy_regulation_blocker": "native_goal_proxy_regulation_policy_missing",
+    "perturbation_recovery_outcome_tag": "bounded_repeated_regulation",
+    "post_response_measurements": [
+      0.55,
+      0.55,
+      0.55,
+      0.55
+    ],
+    "pre_response_measurements": [
+      0.62,
+      0.62,
+      0.62,
+      0.62
+    ],
+    "proxy_kind": "active_node_coherence_band",
+    "proxy_measurement_surface": "active_node_state",
+    "proxy_policy_id": "n09_active_node_coherence_proxy_policy_v1",
+    "proxy_surface_digest": "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+    "proxy_surface_digest_chain": [
+      "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+      "04279a86afdd505b6c786014e08adc3963049b6021135d70b3078ffd7578bb75",
+      "c735a2cd2e6b295ae4e933012bad7df29212ffe3a14850d8c8b5e7e89b77e07c",
+      "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af"
+    ],
+    "regulated_variable_id": "source_reservoir_node_coherence",
+    "regulated_variable_surface": "active_node_state",
+    "same_target_band_all_windows": true,
+    "target_band_digest": "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b",
+    "target_band_id": "n09_i3_source_reservoir_target_band_v1",
+    "target_band_policy_id": "n09_static_declared_band_policy_v1",
+    "target_band_variant_source_count": 1,
+    "target_kind": "closed_interval",
+    "target_value": 0.5,
+    "unique_target_band_digests_in_cycles": [
+      "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b"
+    ],
+    "upper_bound": 0.55,
+    "window_policy_count": 4
+  },
+  "purpose": "proxy_condition_transfer_replay",
+  "row_validation": {
+    "all_claim_flags_false": true,
+    "all_required_fields_present": true,
+    "all_transfer_row_digests_valid": true,
+    "row_validations": {
+      "n11_i4_proxy_target_band_variant_replay_row_v1": {
+        "accepted": false,
+        "claim_flags_false": true,
+        "missing_required_fields": [],
+        "primary_blocker": "proxy_target_band_variant_missing_source",
+        "transfer_row_digest_valid": true
+      }
+    }
+  },
+  "schema": "n11_iteration_4_proxy_condition_transfer_replay_v1",
+  "status": "passed",
+  "strongest_claim_ceiling": "single_axis_route_context_transfer_candidate_selection_only",
+  "strongest_supported_gali_level": "GALI2",
+  "transfer_rows": [
+    {
+      "arc_of_becoming_classification": "local_observation_tag",
+      "artifact_only": true,
+      "attempted_gali_level": "GALI3",
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "rc_identity_collapse",
+        "aco_like_behavior",
+        "ant_colony_behavior",
+        "locomotion_like_behavior",
+        "biological_behavior",
+        "personhood",
+        "unrestricted_identity",
+        "unrestricted_movement",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "A7_generalization_by_inheritance",
+        "GALI7_by_inheritance"
+      ],
+      "claim_flags": {
+        "a7_claim_allowed": false,
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "gali7_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "context_tag": "context_same_as_n10",
+      "fixture_lane": {
+        "context_tag": "context_same_as_n10",
+        "expected_role": "proxy_condition_transfer_candidate_or_blocked",
+        "hypothesis": "A_artifact_only_generalization",
+        "lane_id": "proxy_target_band_variant_replay",
+        "planned_iteration": 4,
+        "proxy_condition_tag": "proxy_target_band_variant",
+        "support_state_tag": "support_intact_survives",
+        "transfer_axis": "proxy"
+      },
+      "gali_level": "GALI2",
+      "goal_proxy_not_goal_ownership": true,
+      "hidden_steering_used": false,
+      "interpretation": "The N09/N10 source proves bounded artifact-only goal-proxy regulation under one declared target band. Iteration 4 asked for a proxy target-band variant, but the source records the same target-band digest across all repeated regulation windows. The GALI3 proxy-condition transfer is therefore blocked instead of promoted.",
+      "memory_budget_surface": "n10_source_memory_budget_compatibility",
+      "native_policy_gap": [
+        "native_agentic_like_integration_policy_missing",
+        "native_goal_proxy_regulation_policy_missing",
+        "native_identity_acceptance_validator_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_route_conductance_memory_policy_missing"
+      ],
+      "node_plus_packet_budget_after": null,
+      "node_plus_packet_budget_before": null,
+      "node_plus_packet_budget_error": 0.0,
+      "primary_blocker": "proxy_target_band_variant_missing_source",
+      "producer_mediation_classification": "producer_mediated",
+      "producer_scaffold_used": true,
+      "proxy_budget_surface": "active_node_coherence_band",
+      "proxy_condition_scope_preserved": true,
+      "proxy_condition_tag": "proxy_target_band_variant",
+      "proxy_summary": {
+        "cycle_count": 4,
+        "lower_bound": 0.45,
+        "mechanism_status_tags": [
+          "producer_mediated",
+          "threshold_authorized",
+          "memory_shaped",
+          "native_policy_gap"
+        ],
+        "memory_cycles_all_return_to_band": true,
+        "memory_cycles_all_schedule_and_process": true,
+        "n09_source_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+        "n09_source_gpr_level": "GPR6",
+        "n10_regulation_source_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+        "n10_regulation_source_gpr_level": "GPR6",
+        "native_goal_proxy_regulation_blocker": "native_goal_proxy_regulation_policy_missing",
+        "perturbation_recovery_outcome_tag": "bounded_repeated_regulation",
+        "post_response_measurements": [
+          0.55,
+          0.55,
+          0.55,
+          0.55
+        ],
+        "pre_response_measurements": [
+          0.62,
+          0.62,
+          0.62,
+          0.62
+        ],
+        "proxy_kind": "active_node_coherence_band",
+        "proxy_measurement_surface": "active_node_state",
+        "proxy_policy_id": "n09_active_node_coherence_proxy_policy_v1",
+        "proxy_surface_digest": "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+        "proxy_surface_digest_chain": [
+          "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+          "04279a86afdd505b6c786014e08adc3963049b6021135d70b3078ffd7578bb75",
+          "c735a2cd2e6b295ae4e933012bad7df29212ffe3a14850d8c8b5e7e89b77e07c",
+          "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af"
+        ],
+        "regulated_variable_id": "source_reservoir_node_coherence",
+        "regulated_variable_surface": "active_node_state",
+        "same_target_band_all_windows": true,
+        "target_band_digest": "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b",
+        "target_band_id": "n09_i3_source_reservoir_target_band_v1",
+        "target_band_policy_id": "n09_static_declared_band_policy_v1",
+        "target_band_variant_source_count": 1,
+        "target_kind": "closed_interval",
+        "target_value": 0.5,
+        "unique_target_band_digests_in_cycles": [
+          "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b"
+        ],
+        "upper_bound": 0.55,
+        "window_policy_count": 4
+      },
+      "runtime_state_used": false,
+      "source_artifact_digests": {
+        "n09_gpr1_proxy_measurement": "29a3ea964ef38f1eae1be1b5d420453a5119c02dde6e5174328341ddd2c7df15",
+        "n09_gpr5_repeated_bounded_regulation": "0aa631930ff59776764fd3147285669eb006942ee656e27b1b748dbe3e2bf483",
+        "n09_gpr6_closeout": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+        "n10_route_memory_regulation_composition": "11027db3a40f9a13358fde937579890a888f255fa6a4375f04169d63fe219ea2",
+        "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "n11_iteration_3_route_context_transfer_replay": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d"
+      },
+      "source_artifacts": {
+        "n09_gpr1_proxy_measurement": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json",
+        "n09_gpr5_repeated_bounded_regulation": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_7_gpr5_repeated_bounded_regulation.json",
+        "n09_gpr6_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_7_route_memory_regulation_composition.json",
+        "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "n11_iteration_3_route_context_transfer_replay": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json"
+      },
+      "source_boundary": "N10_iteration_15_closeout",
+      "source_reports": {
+        "n09_gpr1_proxy_measurement": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_3_gpr1_proxy_measurement.md",
+        "n09_gpr5_repeated_bounded_regulation": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_7_gpr5_repeated_bounded_regulation.md",
+        "n09_gpr6_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_7_route_memory_regulation_composition.md",
+        "n11_iteration_3_route_context_transfer_replay": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_3_route_context_transfer_replay.md"
+      },
+      "source_scope_tag": "n10_bounded_artifact_only_source",
+      "support_budget_surface": "n10_source_support_budget_compatibility",
+      "support_state_tag": "support_intact_survives",
+      "transfer_accepted": false,
+      "transfer_axis": "proxy",
+      "transfer_outcome_tag": "transfer_blocked",
+      "transfer_policy_digest": "cba8d2b5af612e8263d6b2d6fd3cc81a148afdd538a61c4424621248c82155bd",
+      "transfer_policy_id": "n11_artifact_only_generalization_transfer_policy_v1",
+      "transfer_row_digest": "3798b3cc971c681fc0417cb11c8bffde889996f0dcabf2324858fb1ed0fdef41",
+      "transfer_row_id": "n11_i4_proxy_target_band_variant_replay_row_v1",
+      "transfer_window_tag": "single_replay_window"
+    }
+  ]
+}

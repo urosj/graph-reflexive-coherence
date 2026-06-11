@@ -1,0 +1,216 @@
+{
+  "experiment_id": "2026-05-N01-grc9v3-properties",
+  "iteration": "ExperimentSpecificationChecklist.Iteration1.ArtifactSurfaceInventory",
+  "date": "2026-05-05",
+  "status_legend": {
+    "available": "Directly present in runtime state, checkpoint, telemetry, observer artifact, or public operator surface.",
+    "derived": "Reconstructable from existing artifacts without changing runtime behavior.",
+    "partial": "Present only in compressed form, only under specific capture modes, or requiring experiment-local analysis outside current observers.",
+    "blocked": "Not currently reconstructable from existing artifacts."
+  },
+  "source_surfaces": [
+    "src/pygrc/models/grc_9_v3_state.py",
+    "src/pygrc/models/grc_9_v3.py",
+    "src/pygrc/models/grc_9_v3_runtime.py",
+    "src/pygrc/models/grc_9_v3_sparks.py",
+    "src/pygrc/models/grc_9_checkpoints.py",
+    "src/pygrc/telemetry/grc9v3_contract.py",
+    "src/pygrc/telemetry/grcl9v3_replay.py",
+    "src/pygrc/landscapes/motion_loader.py"
+  ],
+  "observations": [
+    {
+      "id": "node.coherence",
+      "category": "node",
+      "status": "available",
+      "artifact_sources": [
+        "GRC9V3State.nodes[*].coherence",
+        "GraphCheckpointArtifact.node_records[*].coherence",
+        "family_extensions.grc9v3.node_overlay[*].coherence"
+      ],
+      "reconstruction_method": "direct_read",
+      "experiment_classes": ["A", "B", "C", "D", "G"]
+    },
+    {
+      "id": "node.active_degree_and_ports",
+      "category": "node_port",
+      "status": "available",
+      "artifact_sources": [
+        "state.topology.incident_edge_ids",
+        "family_extensions.grc9v3.port_overlay.by_node",
+        "GraphCheckpointArtifact.node_records[*].active_degree"
+      ],
+      "reconstruction_method": "direct_read_or_count_incident_edges",
+      "experiment_classes": ["B", "C", "D", "G"]
+    },
+    {
+      "id": "node.row_differential_state",
+      "category": "node_row",
+      "status": "available",
+      "artifact_sources": [
+        "GRC9V3State.nodes[*].gradient_row_basis",
+        "GRC9V3State.nodes[*].signed_hessian_row_basis",
+        "GRC9V3State.nodes[*].net_flux_summary",
+        "cached_quantities.row_mismatch_sums",
+        "cached_quantities.hybrid_node_tensors"
+      ],
+      "reconstruction_method": "direct_state_or_snapshot_read",
+      "experiment_classes": ["A", "B", "G"]
+    },
+    {
+      "id": "edge.endpoint_ports",
+      "category": "edge_port",
+      "status": "available",
+      "artifact_sources": [
+        "state.topology.edge_ports",
+        "GraphCheckpointArtifact.edge_records[*].source_port_id",
+        "GraphCheckpointArtifact.edge_records[*].target_port_id"
+      ],
+      "reconstruction_method": "direct_read",
+      "experiment_classes": ["A", "B", "D", "E", "F", "G"]
+    },
+    {
+      "id": "port.row_column",
+      "category": "port",
+      "status": "derived",
+      "artifact_sources": [
+        "port_id"
+      ],
+      "reconstruction_method": "row=((port_id-1)//3)+1; column=((port_id-1)%3)+1",
+      "experiment_classes": ["A", "B", "D", "E", "G"]
+    },
+    {
+      "id": "edge.labels",
+      "category": "edge_label",
+      "status": "available",
+      "artifact_sources": [
+        "GRC9V3State.geometric_length",
+        "GRC9V3State.temporal_delay",
+        "GRC9V3State.flux_coupling",
+        "GRC9V3State.edge_label_computation_mode",
+        "GraphCheckpointArtifact.edge_records[*]"
+      ],
+      "reconstruction_method": "direct_read",
+      "experiment_classes": ["E", "F", "G"]
+    },
+    {
+      "id": "edge.signed_flux",
+      "category": "edge_flux",
+      "status": "available",
+      "artifact_sources": [
+        "GRC9V3State.port_edges[*].flux_uv",
+        "cached_quantities.oriented_flux",
+        "GraphCheckpointArtifact.edge_records[*].signed_flux_source_to_target"
+      ],
+      "reconstruction_method": "direct_read_with_endpoint_orientation",
+      "experiment_classes": ["A", "B", "E", "F", "G"]
+    },
+    {
+      "id": "column.cancellation_proxy",
+      "category": "column",
+      "status": "derived",
+      "artifact_sources": [
+        "endpoint ports",
+        "node coherence",
+        "edge conductance/base_conductance",
+        "signed flux where needed"
+      ],
+      "reconstruction_method": "group incident edges by local column and compute column-local sums/proxies",
+      "experiment_classes": ["B", "D"],
+      "caution": "Current GRC9V3 hybrid spark candidates use signed-Hessian degeneracy, not a direct column-H gate."
+    },
+    {
+      "id": "spark.candidate_gates",
+      "category": "event",
+      "status": "available",
+      "artifact_sources": [
+        "StepResult.events[kind=hybrid_spark_candidate].payload",
+        "cached_quantities.hybrid_spark_candidate_count",
+        "telemetry event family_extensions.grc9v3"
+      ],
+      "reconstruction_method": "direct_event_or_cached_summary_read",
+      "experiment_classes": ["B", "C"]
+    },
+    {
+      "id": "refinement.expansion_mapping",
+      "category": "event_refinement",
+      "status": "available",
+      "artifact_sources": [
+        "StepResult.events[kind=hybrid_mechanical_expansion].payload.reassignment_map",
+        "cached_quantities.last_hybrid_expansion",
+        "GRC9V3State.expansion_registry",
+        "family_extensions.grc9v3.module_overlay"
+      ],
+      "reconstruction_method": "direct_event_payload_preferred; checkpoint module overlay as supporting evidence",
+      "experiment_classes": ["D"]
+    },
+    {
+      "id": "identity.sink_basin_hierarchy",
+      "category": "identity",
+      "status": "available",
+      "artifact_sources": [
+        "GRC9V3State.sink_set",
+        "GRC9V3State.basins",
+        "GRC9V3State.hierarchy",
+        "cached_quantities.flux_identity",
+        "cached_quantities.geometric_identity",
+        "family_extensions.grc9v3.node_overlay"
+      ],
+      "reconstruction_method": "direct_read; persistence analysis over checkpoint windows",
+      "experiment_classes": ["D", "G"]
+    },
+    {
+      "id": "coarse.split",
+      "category": "coarse_graining",
+      "status": "available",
+      "artifact_sources": [
+        "GRC9V3.coarse_grain_columns(field_name)",
+        "GRC9V3.split_columns(coarse_state)",
+        "GRC9V3State.coarse_cache"
+      ],
+      "reconstruction_method": "public_operator_call",
+      "experiment_classes": ["E"]
+    },
+    {
+      "id": "motion.window",
+      "category": "motion",
+      "status": "available",
+      "artifact_sources": [
+        "load_motion_window",
+        "MotionCheckpointNodeEvidence",
+        "MotionCheckpointEdgeEvidence"
+      ],
+      "reconstruction_method": "motion_loader",
+      "experiment_classes": ["G"]
+    },
+    {
+      "id": "motion.full_port_history",
+      "category": "motion",
+      "status": "partial",
+      "artifact_sources": [
+        "graph checkpoints",
+        "family_extensions.grc9v3.port_overlay",
+        "family_extensions.grc9v3.edge_overlay"
+      ],
+      "reconstruction_method": "experiment-local checkpoint overlay reader",
+      "experiment_classes": ["G"],
+      "caution": "Current motion loader records port_matrix_available but not full per-port histories."
+    }
+  ],
+  "experiment_surface_status": {
+    "A_row_mode_stress": "available",
+    "B_column_interface_cancellation": "derived",
+    "C_saturation": "available",
+    "D_refinement_child_identity": "available",
+    "E_coarse_graining_split": "available",
+    "F_path_disagreement": "available",
+    "G_mixed_row_column_motion": "partial"
+  },
+  "blocked_observations": [],
+  "partial_or_derived_cautions": [
+    "Column cancellation/H-style evidence is derived for current GRC9V3 unless a lane explicitly records a column-proxy fallback.",
+    "Exact row vectors and tensors are state/snapshot surfaces; checkpoint telemetry may only expose compressed summaries.",
+    "Full port-history motion classification requires experiment-local graph checkpoint overlay analysis.",
+    "Expansion reassignment claims should cite event payloads or cached last_hybrid_expansion rather than module overlays alone."
+  ]
+}

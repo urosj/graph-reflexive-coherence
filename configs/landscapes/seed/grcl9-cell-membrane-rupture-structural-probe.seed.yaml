@@ -1,0 +1,92 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Membrane Rupture Structural Probe
+  description: Collapse-adjacent ComposingCells seed with a weakening membrane ridge around a saturated critical region.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-membrane-rupture-structural-probe
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, membrane, ridge, structural_probe]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - This seed declares a membrane/ridge structural probe only.
+    - GRC9 has no runtime collapse event in the current contract.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: identity_cell
+    type: basin
+    coherence_prior: 1.0
+    depth_hint: 0
+    boundary_ids: [rupture_prone_membrane]
+    chart_center_hint: [0.48, 0.5]
+    notes: Cell basin whose membrane support is intentionally weakened.
+  - id: rupture_prone_membrane
+    type: ridge
+    owner_id: identity_cell
+    adjacent_ids: [outer_plateau]
+    ridge_kind: membrane
+    permeability_hint:
+      class: weakening
+      column_gradient: near_cancellation
+  - id: outer_plateau
+    type: plateau
+    coherence_prior: 0.25
+    hosted_primitive_ids: [candidate_saddle, support_valley]
+    chart_center_hint: [0.52, 0.36]
+  - id: support_valley
+    type: valley
+    from_id: outer_plateau
+    to_id: identity_cell
+    channel_role: weakening_boundary_support
+    width_hint: 0.08
+  - id: candidate_saddle
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.42]
+    branch_target_ids: [identity_cell, outer_plateau, support_valley]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: cell_membrane_rupture_structural_probe_critical_region
+        motif_id: spark_column_proxy
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: membrane_bounded_cell
+          collapse_probe_kind: membrane_rupture_structural_probe
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: columnwise_membrane
+          ridge_role: rupture_prone_membrane
+          support_status: weakening_boundary
+        columnwise_near_cancellation:
+          target_column: 2
+          diagnostic_mode: near_epsilon
+          spark_threshold: 0.02
+        spark_gate_intent: saturation_column_proxy
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_membrane_rupture_structural_probe
+    manifest_entry_id: grcl9_lowering_spark_column_proxy_v1
+    expected_selector_ids: [membrane_rupture_structural_probe]
+    notes: Collapse-adjacent membrane/ridge structural probe; no runtime collapse is claimed.

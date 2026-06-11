@@ -1,0 +1,441 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 1 passes if N10 has a source-backed inventory of all prerequisite N05-N09 artifacts and records the exact evidence ceilings and blocked claims without promoting them into integration evidence.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "baseline_facts": {
+    "a6_supported_at_start": false,
+    "integration_rows_present_at_start": false,
+    "n10_positive_probe_run": false
+  },
+  "checks": {
+    "a6_not_supported_at_start": true,
+    "claim_flags_all_false": true,
+    "n05_source_present": true,
+    "n06_source_present": true,
+    "n07_i13_baseline_consumable": true,
+    "n07_i13_has_disrupted_support_control": true,
+    "n07_i13_has_explicit_restoration_lane": true,
+    "n07_i13_has_four_support_lanes": true,
+    "n07_i13_source_present": true,
+    "n07_source_present": true,
+    "n08_hypothesis_a_scope_artifact_only": true,
+    "n08_hypothesis_a_source_present": true,
+    "n08_hypothesis_b_source_present": true,
+    "n09_hypothesis_a_goal_proxy_available": true,
+    "n09_hypothesis_a_source_present": true,
+    "n09_hypothesis_b_native_general_regulation_blocked": true,
+    "n09_hypothesis_b_source_present": true,
+    "native_policy_gaps_recorded": true,
+    "no_integration_probe_run": true,
+    "no_integration_rows_at_start": true,
+    "src_clean_for_iteration_1": true
+  },
+  "claim_boundary": {
+    "a6_supported_at_start": false,
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "aco_like_behavior",
+      "ant_colony_behavior",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "personhood",
+      "unrestricted_identity",
+      "unrestricted_movement",
+      "unrestricted_agency"
+    ],
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_ownership_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "integration_level_is_evidence_classification": true,
+    "integration_rows_present_at_start": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N10-lgrc-agentic-like-integration/scripts/build_n10_iteration_1_baseline_inventory.py",
+  "experiment": "2026-05-N10-lgrc-agentic-like-integration",
+  "generated_at": "2026-06-10T17:24:33.056947+00:00",
+  "git": {
+    "head": "d9591085aff939215d2b18f4dbc3149e01722654",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "hypothesis_orientation": {
+    "hypothesis_b_role": "required_support_sensitivity_controls",
+    "hypothesis_c_role": "tracked_native_policy_gap_not_solved_in_first_tranche",
+    "iterations_1_to_9_primary_path": "hypothesis_a_bounded_artifact_only_integration"
+  },
+  "inventory_digest": "eda16e097598d336f5ea8897ea6390d4cbaef308315f70b24e17df81f11982e7",
+  "iteration": 1,
+  "native_policy_gaps": [
+    "native_agentic_like_integration_policy_missing",
+    "native_identity_acceptance_validator_missing",
+    "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+    "native_route_conductance_memory_policy_missing"
+  ],
+  "next_iteration": "2_integration_schema_and_fixture_manifest",
+  "purpose": "baseline_source_inventory_no_integration_probe_no_claim_promotion",
+  "schema": "n10_iteration_1_baseline_inventory_v1",
+  "source_artifacts": {
+    "n05_closeout": {
+      "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+      "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8"
+    },
+    "n06_closeout": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+      "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf"
+    },
+    "n07_closeout": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+      "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+    },
+    "n07_withdrawal_baseline": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b"
+    },
+    "n08_hypothesis_a_closeout": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e"
+    },
+    "n08_hypothesis_b_closeout": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+      "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+    },
+    "n09_hypothesis_a_closeout": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+    },
+    "n09_hypothesis_b_closeout": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json",
+      "sha256": "4beae1d67f34819c52d70593f2be99d79961447dd3cd2243975a705bc3acf6ba"
+    }
+  },
+  "source_inventory": {
+    "n05": {
+      "artifact_key": "n05_closeout",
+      "claim_ceiling": "self_sustained_oscillator_candidate",
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "n10_role": "oscillator_and_route_aspect_background_only",
+      "o6_supported": false,
+      "primary_blocker": "missing_route_conductance_memory_policy",
+      "status": "passed",
+      "strongest_supported_o_level": "O5"
+    },
+    "n06": {
+      "artifact_key": "n06_closeout",
+      "claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "n10_role": "route_choice_source_only_not_agency",
+      "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay",
+      "selection_scope": "not_applicable_pre_topology_selection_only_scope",
+      "status": "passed",
+      "strongest_supported_sc_level": "SC6"
+    },
+    "n07": {
+      "artifact_key": "n07_closeout",
+      "claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "derived_id_ceiling": "ID6",
+      "id_level": "ID6",
+      "n10_role": "identity_support_baseline_source_not_identity_acceptance",
+      "runtime_identity_acceptance": false,
+      "status": "passed",
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "support_dependency_status": "regime_assisted",
+      "trajectory_regime": "bounded_non_destructive_exchange"
+    },
+    "n07_iteration_13": {
+      "artifact_key": "n07_withdrawal_baseline",
+      "baseline_available": true,
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "n09_prior_blocker": "n07_identity_withdrawal_baseline_not_available",
+      "n09_prior_blocker_resolved_for_future_consumption": true,
+      "n10_can_consume": true,
+      "n10_role": "load_bearing_support_survival_disruption_restoration_baseline",
+      "status": "passed",
+      "support_lanes": [
+        {
+          "final_A_support_retention": 0.9731535762447039,
+          "final_basin_separability": 0.9731535762447039,
+          "final_budget_error": 0.0,
+          "identity_support_outcome_tag": "support_intact_bounded_exchange_reference",
+          "lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+          "lane_id": "support_intact_reference",
+          "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+          "restoration_fraction": 0.0,
+          "support_survival_passed": true,
+          "withdrawal_depth": 0.0
+        },
+        {
+          "final_A_support_retention": 0.8758382186202335,
+          "final_basin_separability": 0.8758382186202335,
+          "final_budget_error": 0.0,
+          "identity_support_outcome_tag": "support_withdrawal_survival_baseline",
+          "lane_digest": "d5fae1cee95b0650287173c3e0456f1df42464771336b4e6e02cfb4e095bff69",
+          "lane_id": "mild_support_weakening",
+          "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+          "restoration_fraction": 0.0,
+          "support_survival_passed": true,
+          "withdrawal_depth": 0.1
+        },
+        {
+          "final_A_support_retention": 0.7298651821835279,
+          "final_basin_separability": 0.7298651821835279,
+          "final_budget_error": 0.0,
+          "identity_support_outcome_tag": "support_disrupted_by_withdrawal_without_restoration",
+          "lane_digest": "987651daaf122f47d3e26d3fd9d7611ceebb3149879b0326e6ca2775a18e4387",
+          "lane_id": "n09_matched_partial_support_withdrawal",
+          "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+          "restoration_fraction": 0.0,
+          "support_survival_passed": false,
+          "withdrawal_depth": 0.25
+        },
+        {
+          "final_A_support_retention": 0.9244958974324687,
+          "final_basin_separability": 0.9244958974324687,
+          "final_budget_error": 0.0,
+          "identity_support_outcome_tag": "explicit_restoration_recovers_support_survival_baseline",
+          "lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+          "lane_id": "restored_after_n09_partial_withdrawal",
+          "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+          "restoration_fraction": 0.8,
+          "support_survival_passed": true,
+          "withdrawal_depth": 0.25
+        }
+      ]
+    },
+    "n08_hypothesis_a": {
+      "artifact_key": "n08_hypothesis_a_closeout",
+      "claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": true,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+      "mem_level": "MEM6",
+      "n10_role": "memory_trail_affordance_source_scoped_to_artifact_only_serialized_policy",
+      "native_support_status": "experiment_local_artifact_replay",
+      "status": "passed"
+    },
+    "n08_hypothesis_b": {
+      "artifact_key": "n08_hypothesis_b_closeout",
+      "claim_ceiling": "static_positive_geometry_route_response_persistence_candidate",
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "hypothesis_b_native_geometry_mediated_trail_claim_allowed": false,
+        "hypothesis_b_pure_coherence_flux_trail_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "native_geometry_mediated_trail_claim_allowed": false,
+        "native_route_conductance_memory_policy_supported": false,
+        "personhood_claim_allowed": false,
+        "pure_coherence_flux_trail_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "n10_role": "native_geometry_trail_design_direction_and_policy_gap",
+      "native_policy_absorption_needed": true,
+      "primary_blocker": "native_route_conductance_memory_policy_missing",
+      "status": "passed"
+    },
+    "n09_hypothesis_a": {
+      "artifact_key": "n09_hypothesis_a_closeout",
+      "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "gpr_level": "GPR6",
+      "hypothesis_a_status": "closed",
+      "n10_role": "goal_proxy_regulation_source_before_i13_support_update",
+      "primary_blocker_for_n10_prior_to_i13": "n07_identity_withdrawal_baseline_not_available",
+      "status": "passed"
+    },
+    "n09_hypothesis_b": {
+      "artifact_key": "n09_hypothesis_b_closeout",
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "native_substrate_mediated_goal_proxy_regulation_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "general_native_goal_proxy_regulation_supported": false,
+      "hypothesis_a_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+      "hypothesis_b_claim_ceiling": "native_substrate_mediated_goal_proxy_regulation_design_candidate",
+      "hypothesis_b_status": "closed_scoped_design_candidate",
+      "missing_native_policy_surface_count": 24,
+      "n10_role": "goal_proxy_regulation_closeout_and_native_policy_gap_record",
+      "primary_blocker": "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+      "status": "passed",
+      "strongest_evidence": "finite_envelope_band_buffered_return_scaffold_candidate"
+    }
+  },
+  "source_reports": {
+    "n05_closeout": {
+      "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_8_o6_closeout.md",
+      "sha256": "fa9d3b7f7d44ddc03e5a14537f4d06fb6540019c0d3251dd503b0182d1a425c2"
+    },
+    "n06_closeout": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+      "sha256": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f"
+    },
+    "n07_closeout": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+      "sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8"
+    },
+    "n07_withdrawal_baseline": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc"
+    },
+    "n08_hypothesis_a_closeout": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+    },
+    "n08_hypothesis_b_closeout": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md",
+      "sha256": "d8916078bf5b7ea5016514641b53436f2a1695071c27aa2c14a4aafe2445a4f1"
+    },
+    "n09_hypothesis_a_closeout": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "n09_hypothesis_b_closeout": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_12_hypothesis_b2_native_substrate_closeout.md",
+      "sha256": "2a40d2b63236e0cab59e758d6d786f4234fe8537a2e9499863c757aa11897ed5"
+    }
+  },
+  "status": "passed"
+}

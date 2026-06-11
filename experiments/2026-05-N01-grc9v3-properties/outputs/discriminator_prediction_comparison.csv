@@ -1,0 +1,8 @@
+prediction,observed_result,synthesis
+"H0 will be partially rejected, not completely destroyed.",matched,H0 is weakened for row/column/port-sensitive artifact classes but remains competitive for generic capacity and edge-label targets.
+Rows will show clean geometry/differential evidence.,matched,"A, D2, and D3 support row-geometric/differential targets."
+Columns will show strongest mechanical support in refinement/coarse-graining.,matched,D5 and D7 support column refinement/multiscale targets.
+Direct/dynamic column claims may need caveats.,matched,Direct column-H remains blocked under Lane A; D5 post-window support is partial.
+Port interaction is fixture-dependent.,matched,D6 supports a signed edge-local witness but runtime absolute flux is additive.
+Path disagreement depends on exposed labels.,supported,Experiment F and D2 confirm edge-label path disagreement as a generic path-label target.
+Identity emergence is most uncertain.,partially_supported_with_boundaries,D8 supports configured-window child-basin persistence only with strict thresholds.

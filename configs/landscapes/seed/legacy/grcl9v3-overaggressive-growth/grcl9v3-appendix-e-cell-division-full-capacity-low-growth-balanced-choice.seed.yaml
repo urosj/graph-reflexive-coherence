@@ -1,0 +1,223 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Appendix E Full Capacity Low Growth Balanced Choice
+  description: Full-capacity GRCL-9V3 cascade combining low growth and balanced choice perturbations.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-85-full-capacity-hybrid-cascade-and-robustness
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, full_capacity, cascade, low_growth, balanced_choice]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: cascade_parent
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [daughter_a, daughter_b, cascade_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: full_capacity_low_growth_balanced_choice_critical
+        region_id: cascade_parent
+        source_role: robustness_perturbation
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: cascade_tensor
+    type: ridge
+    owner_id: cascade_parent
+    adjacent_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: tensor_hessian_profile
+        term_id: full_capacity_low_growth_balanced_choice_tensor
+        region_id: cascade_parent
+        source_role: robustness_perturbation
+        profile:
+          hessian_backend: row_basis_diagonal
+          row_basis_profile:
+            hessian_mode: anisotropic
+            basis: row_basis_diagonal
+          signed_history_required: false
+          anisotropy_axis: row_2
+          tensor_profile:
+            tensor_mode: anisotropic
+            row_mismatch: high
+  - id: cascade_refinement
+    type: junction
+    host_id: cascade_parent
+    branch_target_ids: [daughter_a, daughter_b, cascade_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: full_capacity_low_growth_balanced_choice_refinement
+        region_id: cascade_parent
+        source_role: robustness_perturbation
+        profile:
+          target_effective_degree: 51
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+  - id: cascade_division
+    type: junction
+    host_id: cascade_parent
+    branch_target_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: appendix_e_cell_division_region
+        term_id: full_capacity_low_growth_balanced_choice_appendix_e
+        region_id: cascade_parent
+        source_role: robustness_perturbation
+        profile:
+          daughter_region_a: daughter_a
+          daughter_region_b: daughter_b
+          module_basin_support:
+            support_mode: balanced_daughter_support
+  - id: growth_boundary
+    type: ridge
+    owner_id: growth_parent
+    adjacent_ids: [outside_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: full_capacity_low_growth_balanced_choice_boundary
+        region_id: growth_parent
+        source_role: robustness_perturbation
+        profile:
+          inactive_parent_port: 5
+  - id: growth_locus
+    type: valley
+    from_id: growth_parent
+    to_id: outside_plateau
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: full_capacity_low_growth_balanced_choice_growth
+        region_id: growth_parent
+        source_role: robustness_perturbation
+        profile:
+          outward_pressure_profile:
+            pressure: low_outward_pressure
+          lambda_birth: 0.02
+  - id: transport_corridor
+    type: valley
+    from_id: source_basin
+    to_id: sink_basin
+    extensions:
+      grcl9v3:
+        term_kind: transport_rerouting_region
+        term_id: full_capacity_low_growth_balanced_choice_transport
+        region_id: transport_corridor
+        source_role: robustness_perturbation
+        profile:
+          source_region_id: source_basin
+          sink_region_id: sink_basin
+          route_preference_profile:
+            corridor: preferred
+  - id: transport_channel
+    type: valley
+    from_id: source_basin
+    to_id: transport_corridor
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: full_capacity_low_growth_balanced_choice_transport_channel
+        region_id: transport_corridor
+        source_role: robustness_perturbation
+        profile:
+          channel: transport_corridor
+  - id: choice_saddle
+    type: saddle
+    branch_target_ids: [choice_basin_a, choice_basin_b]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: full_capacity_low_growth_balanced_choice_choice
+        region_id: choice_saddle
+        source_role: robustness_perturbation
+        profile:
+          basin_region_a: choice_basin_a
+          basin_region_b: choice_basin_b
+          collapse_target_region: choice_basin_a
+          compatibility_profile:
+            compatibility: low_contrast
+  - id: choice_basin_a
+    type: basin
+    coherence_prior: 1.0
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: full_capacity_low_growth_balanced_choice_basin_a
+        region_id: choice_basin_a
+        source_role: robustness_perturbation
+        profile:
+          basin: balanced_branch_a
+  - id: choice_basin_b
+    type: basin
+    coherence_prior: 1.0
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: full_capacity_low_growth_balanced_choice_basin_b
+        region_id: choice_basin_b
+        source_role: robustness_perturbation
+        profile:
+          basin: balanced_branch_b
+  - id: daughter_a
+    type: basin
+    coherence_prior: 0.9
+  - id: daughter_b
+    type: basin
+    coherence_prior: 0.9
+  - id: cascade_plateau
+    type: plateau
+    coherence_prior: 0.6
+  - id: growth_parent
+    type: basin
+    coherence_prior: 1.0
+  - id: outside_plateau
+    type: plateau
+    coherence_prior: 0.1
+  - id: source_basin
+    type: basin
+    coherence_prior: 1.0
+  - id: sink_basin
+    type: basin
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: appendix_e_cell_division_full_capacity_low_growth_balanced_choice
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0022-appendix-e-cell-division-full-capacity-low-growth-balanced-choice
+    expected_selector_ids: [appendix_e_summary, hybrid_tensor_available, no_growth_events, no_choice_collapse_events, transport_rerouting_signature]
+    notes:
+      composing_cells_anchor: full capacity cascade combined low-growth and balanced-choice perturbation
+      boundary: source preconditions only
+      robustness_role: combined_negative_control
+      composed_source_ancestry:
+        - appendix_e_cell_division_full_capacity_cascade
+        - growth_pressure_negative_control
+        - choice_collapse_negative_control
+

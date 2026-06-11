@@ -1,0 +1,98 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Basin Merge Before Persistence Probe
+  description: Collapse-adjacent ComposingCells seed with two sink-capable basins under a high persistence mass threshold.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-basin-merge-before-persistence-probe
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, basin, saddle, structural_probe]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - This seed targets failed fission persistence and basin-merge pressure.
+    - The source declares two sink-capable regions but does not claim fission or collapse.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: pre_persistence_plateau
+    type: plateau
+    coherence_prior: 1.0
+    hosted_primitive_ids: [sink_a_region, sink_b_region, merge_saddle]
+    chart_center_hint: [0.5, 0.5]
+    extensions:
+      grcl9:
+        term_kind: post_refinement_two_sink_region
+        term_id: cell_basin_merge_before_persistence_probe_two_sink_region
+        motif_id: post_expansion_fission
+        region_id: pre_persistence_region
+        module_region_id: module
+        sink_region_a: sink_a
+        sink_region_b: sink_b
+        identity_fission_min_basin_mass: 0.95
+        identity_fission_persistence_delta: 3
+  - id: sink_a_region
+    type: basin
+    parent_id: pre_persistence_plateau
+    coherence_prior: 0.75
+    depth_hint: 1
+    chart_center_hint: [0.38, 0.5]
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_basin_merge_before_persistence_probe_stable_basin_a
+        motif_id: post_expansion_fission
+        basin_id: sink_a
+        stability_class: stable
+        mass_hint: 0.75
+  - id: sink_b_region
+    type: basin
+    parent_id: pre_persistence_plateau
+    coherence_prior: 0.25
+    depth_hint: 1
+    chart_center_hint: [0.62, 0.5]
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_basin_merge_before_persistence_probe_stable_basin_b
+        motif_id: post_expansion_fission
+        basin_id: sink_b
+        stability_class: stable
+        mass_hint: 0.25
+  - id: merge_saddle
+    type: saddle
+    coherence_prior: 0.1
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [sink_a_region, sink_b_region]
+    extensions:
+      grcl9:
+        term_kind: saddle_bridge
+        term_id: cell_basin_merge_before_persistence_probe_saddle_bridge
+        motif_id: post_expansion_fission
+        bridge_id: weak_merge_bridge
+        region_a: sink_a
+        region_b: sink_b
+        bridge_class: weak_saddle_bridge
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_basin_merge_before_persistence_probe
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    expected_selector_ids: [fission_persistence_failed_candidate, basin_merge_pressure_candidate]
+    notes: Collapse-adjacent basin pressure probe; failed persistence is diagnostic evidence, not collapse.

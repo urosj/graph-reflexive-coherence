@@ -1,0 +1,75 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Post Expansion Fission Min Mass Pass
+  description: Seed-backed GRCL-9 post-refinement two-sink candidate with a weak saddle bridge and low min-mass threshold.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-post-expansion-fission-min-mass-pass
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: module_region
+    type: plateau
+    coherence_prior: 0.8
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.5]
+    extensions:
+      grcl9:
+        term_kind: post_refinement_two_sink_region
+        term_id: post_expansion_fission_min_mass_pass_two_sink_region
+        motif_id: post_expansion_fission
+        region_id: two_sink_region
+        module_region_id: module_region
+        sink_region_a: sink_a
+        sink_region_b: sink_b
+        identity_fission_min_basin_mass: 0.0
+        identity_fission_persistence_delta: 3
+  - id: sink_a
+    type: basin
+    coherence_prior: 0.6
+    depth_hint: 0
+    chart_center_hint: [0.35, 0.5]
+  - id: sink_b
+    type: basin
+    coherence_prior: 0.6
+    depth_hint: 0
+    chart_center_hint: [0.65, 0.5]
+  - id: weak_bridge
+    type: saddle
+    coherence_prior: 0.2
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [sink_a, sink_b, module_region]
+    extensions:
+      grcl9:
+        term_kind: saddle_bridge
+        term_id: post_expansion_fission_min_mass_pass_saddle_bridge
+        motif_id: post_expansion_fission
+        bridge_id: weak_bridge
+        region_a: sink_a
+        region_b: sink_b
+        bridge_class: weak_saddle_bridge
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: post_expansion_fission_min_mass_pass
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    notes: Seed-backed GRCL-9 fission min-mass pass example.

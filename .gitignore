@@ -1,0 +1,40 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+/.venv/
+/.venv*/
+/venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Top-level scratch outputs
+/outputs/*
+!/outputs/grc9v3/
+/outputs/grc9v3/*
+!/outputs/grc9v3/hessian_readiness/
+/outputs/grc9v3/hessian_readiness/*
+!/outputs/grc9v3/hessian_readiness/theory_runtime_gap_ledger.json
+!/outputs/grc9v3/hessian_readiness/theory_runtime_gap_ledger.md
+!/outputs/grc9v3/phenomenology_discovery/
+/outputs/grc9v3/phenomenology_discovery/*
+!/outputs/grc9v3/phenomenology_discovery/ExperimentalLog.md
+!/outputs/grc9v3/phenomenology_discovery/sessions/
+/outputs/grc9v3/phenomenology_discovery/sessions/*
+!/outputs/grc9v3/phenomenology_discovery/sessions/S0013/
+/outputs/grc9v3/phenomenology_discovery/sessions/S0013/*
+!/outputs/grc9v3/phenomenology_discovery/sessions/S0013/expanded_motif_catalog.json
+!/outputs/grc9v3/phenomenology_discovery/sessions/S0014/
+!/outputs/grc9v3/phenomenology_discovery/sessions/S0014/**
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Local tool state
+.codex/

@@ -1,0 +1,152 @@
+{
+  "schema": "phase8_lgrc9_topology_state_reabsorption_closeout_v1",
+  "date": "2026-05-18",
+  "phase": "Phase 8",
+  "continuation": "native_topology_state_reabsorption",
+  "status": "closed",
+  "head_commit": "2736641f9738312897b52f428907a46fcd4fef04",
+  "environment": {
+    "cwd": ".",
+    "python": ".venv/bin/python",
+    "timezone": "Europe/Ljubljana"
+  },
+  "worktree_state": {
+    "status": "dirty",
+    "notes": [
+      "Source, tests, Phase 8 docs, and N04 handoff/taxonomy artifacts are modified as part of the active development session.",
+      "Unrelated Obsidian workspace/diary files are also dirty and were not touched by this closeout."
+    ],
+    "new_closeout_artifacts": [
+      "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md",
+      "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json"
+    ]
+  },
+  "input_blocker": {
+    "source": "N04 Iteration 19-D",
+    "primary_blocker": "packet_ledger_state_reabsorption_mismatch_after_topology_event",
+    "ledger_node_total": 6.0,
+    "active_state_node_total": 5.9,
+    "delta": 0.1
+  },
+  "supported_capability": {
+    "native_topology_state_reabsorption_supported": true,
+    "native_topology_state_reabsorption_validated": true,
+    "default_policy_enabled": false,
+    "enabled_implies_supported": false
+  },
+  "iteration_results": [
+    {
+      "iteration": 66,
+      "status": "passed",
+      "summary": "Baseline froze the N04 19-D blocker and confirmed topology-state reabsorption flags absent or false before source changes."
+    },
+    {
+      "iteration": 67,
+      "status": "passed",
+      "summary": "Added default-off topology-state reabsorption schema, policy flags, canonical digest, idempotency key, and fail-closed construction controls."
+    },
+    {
+      "iteration": 68,
+      "status": "passed",
+      "summary": "Committed LGRC-3 topology events can reabsorb active node and edge state through explicit lineage maps without producer mutation."
+    },
+    {
+      "iteration": 69,
+      "status": "passed",
+      "summary": "Packet ledger and active runtime state are rebased through the same topology event and lineage map; the original 6.0 vs 5.9 mismatch is resolved."
+    },
+    {
+      "iteration": 70,
+      "status": "passed",
+      "summary": "Coupling and feedback producers schedule post-topology work only from transported surface evidence plus a matching topology-state reabsorption record."
+    },
+    {
+      "iteration": 71,
+      "status": "passed",
+      "summary": "Snapshot, telemetry, artifact replay, negative controls, and compatibility checks validate the topology-state reabsorption chain."
+    },
+    {
+      "iteration": 72,
+      "status": "passed",
+      "summary": "Closeout artifacts produced and N04 return path recorded."
+    }
+  ],
+  "artifact_only_replay": {
+    "artifact_only": true,
+    "runtime_state_used": false,
+    "chain_reconstructed": [
+      "packet_event",
+      "source_surface_row",
+      "topology_event",
+      "topology_state_reabsorption_record",
+      "transported_or_superseded_surface_row",
+      "producer_record",
+      "scheduled_packet",
+      "processed_packet"
+    ],
+    "producer_record_digest_available": false,
+    "producer_linkage_validation": [
+      "causal_surface_digest",
+      "topology_event_digest",
+      "topology_state_reabsorption_record_digest",
+      "reason_code",
+      "scheduler_order",
+      "scheduled_packet_reference"
+    ],
+    "scope_limitation": "Producer records are validated by strict linkage under the current producer-record contract, not by canonical producer_record_digest."
+  },
+  "runtime_boundaries": {
+    "topology_state_reabsorption_owner": "committed_topology_event",
+    "producer_mutates_active_state": false,
+    "producer_mutates_packet_ledger": false,
+    "producer_changes_topology": false,
+    "producer_emits_claims": false,
+    "step_remains_packet_mutation_boundary": true
+  },
+  "claim_flags": {
+    "movement_claim_allowed": false,
+    "adaptive_topology_movement_claim_allowed": false,
+    "topology_mutating_movement_claim_allowed": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false
+  },
+  "verification": [
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py tests/telemetry/test_lgrc9v3_contract.py -q",
+      "result": "117 passed"
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py tests/models/test_lgrc_9_v3_module_split.py tests/telemetry/test_lgrc9v3_contract.py -q",
+      "result": "238 passed, 39 subtests passed"
+    },
+    {
+      "command": "uv run ruff check src/pygrc/models/lgrc_9_v3_contract.py src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/lgrc_9_v3_runtime_state.py src/pygrc/models/__init__.py src/pygrc/telemetry/lgrc9v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/telemetry/test_lgrc9v3_contract.py --extend-ignore F401,F403,F405",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "compatibility": {
+    "fixed_topology_lgrc2_behavior_changed": false,
+    "default_off_telemetry_changed": false,
+    "surface_lineage_transport_remains_supported": true,
+    "packet_loop_compatibility_checked": true
+  },
+  "n04_return": {
+    "current_n04_ceiling": "adaptive_topology_entry_candidate",
+    "next_iteration": "19-E",
+    "next_question": "Rerun strict topology-mutating movement with native topology-state reabsorption support enabled.",
+    "movement_claims_remain_blocked_until_n04_validator_passes": true
+  },
+  "future_hardening": [
+    "Add canonical producer_record_digest and validate producer records by digest as well as linkage.",
+    "Add an independent packet-ledger-by-digest artifact index for stronger artifact replay diagnostics.",
+    "Run the full repository test suite before committing the whole Phase 8 continuation checkpoint."
+  ]
+}

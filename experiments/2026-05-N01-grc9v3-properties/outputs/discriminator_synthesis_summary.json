@@ -1,0 +1,34 @@
+{
+  "blocked_or_inconclusive_surfaces": [
+    "degree-8 near-saturation",
+    "checkpoint-window identity persistence",
+    "landscape-general identity emergence",
+    "full fitted held-out-landscape predictive CV",
+    "reusable motion-loader full port histories",
+    "exhaustive S9 coverage"
+  ],
+  "boundary": "D1-D8 partially reject the anonymous-port null for controlled Lane A artifact classes. The result does not establish landscape-general semantics, near-saturation policy, checkpoint-window identity, or exhaustive S9 robustness.",
+  "classification": "anonymous_port_null_partially_rejected_with_lane_a_boundaries",
+  "discriminator_id": "discriminator_synthesis",
+  "h0_competitive_targets": [
+    "d5_post_window_column_memory",
+    "d4_lane_a_saturation_gate",
+    "experiment_f_edge_label_path_disagreement"
+  ],
+  "h0_status": "partially_weakened_not_globally_refuted",
+  "hypothesis_row_count": 9,
+  "lane_id": "current_hybrid_signed_hessian",
+  "runtime_mutation": "none",
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "source_intent_only_claims_promoted": false,
+  "supported_or_partially_supported": [
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D8"
+  ]
+}

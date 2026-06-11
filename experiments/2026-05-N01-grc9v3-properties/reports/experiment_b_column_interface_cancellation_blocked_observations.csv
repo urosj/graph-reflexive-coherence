@@ -1,0 +1,5 @@
+experiment,observation,status,artifact_source,reconstruction_attempt,notes
+experiment_b_column_interface_cancellation,direct_column_h_spark_gate,blocked,Lane A GRC9V3 spark events,Checked candidate and step event evidence.,"Column-H is an analysis-derived proxy under Lane A, not a direct gate."
+experiment_b_column_interface_cancellation,routing_changes_by_column,inconclusive,single-step raw central-node fixture,Computed flux balance and event evidence.,No post-event routing window is produced by this fixture.
+experiment_b_column_interface_cancellation,refinement_reassignment_by_column,inconclusive,StepResult.events,Looked for hybrid_mechanical_expansion events.,No refinement events occurred in this Lane A proxy fixture.
+experiment_b_column_interface_cancellation,completed_identity_event,blocked,StepResult.events and post-event basin artifacts,Looked for hybrid_spark_completed events.,No completed identity-level event can be claimed without persistent child basins.

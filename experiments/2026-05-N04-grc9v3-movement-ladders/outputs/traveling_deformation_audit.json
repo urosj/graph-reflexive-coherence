@@ -1,0 +1,994 @@
+{
+  "allowed_evidence_labels": [
+    "traveling_deformation_candidate"
+  ],
+  "blocked_claims": [
+    "movement_response",
+    "boundary_coupled_movement",
+    "loop_driven_movement",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "native_lgrc9v3_pulse_substrate"
+  ],
+  "checks": {
+    "d1_source_passed": true,
+    "d2_source_passed": true,
+    "geometry_disabled_control_not_traveling": true,
+    "instantaneous_reference_deformation_tracks_pulse": true,
+    "lagged_causal_deformation_tracks_pulse": true,
+    "lagged_causal_time_lag_matches": true,
+    "movement_claims_blocked": true,
+    "positive_phase_lag_bounded": true,
+    "positive_traveling_deformation_observed": true,
+    "pulse_and_deformation_timeseries_extracted": true,
+    "pulse_disabled_control_not_traveling": true,
+    "reversed_pulse_reverses_deformation": true,
+    "static_control_not_traveling": true,
+    "width_profile_preserved": true
+  },
+  "claim_ceiling": "traveling_deformation_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "boundary_coupled_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_grc9v3_proposal_flux_loop_claim": false,
+    "native_lgrc9v3_e3_pulse_used": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_traveling_deformation_audit.py",
+  "controls": {
+    "geometry_coupling_disabled": {
+      "causal_lag_matches": true,
+      "causal_time_lag_steps": null,
+      "deformation_displacement": 0,
+      "deformation_peak_sequence": [],
+      "deformation_tracks_pulse": false,
+      "deformation_travels": false,
+      "deformation_width_max": 0,
+      "deformation_width_min": 0,
+      "direction_passed": true,
+      "expected_direction": null,
+      "expected_traveling": false,
+      "lane_id": "D3_geometry_coupling_disabled_control",
+      "passed_control": true,
+      "phase_lag_bounded": false,
+      "phase_lag_nodes": [],
+      "primary_blocker": "deformation_absent",
+      "pulse_displacement": 10,
+      "pulse_peak_sequence": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "series": [
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 4,
+          "step_index": 0,
+          "support_delta": 0.0,
+          "time": 0.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 5,
+          "step_index": 1,
+          "support_delta": 0.0,
+          "time": 1.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 6,
+          "step_index": 2,
+          "support_delta": 0.0,
+          "time": 2.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 7,
+          "step_index": 3,
+          "support_delta": 0.0,
+          "time": 3.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 8,
+          "step_index": 4,
+          "support_delta": 0.0,
+          "time": 4.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 9,
+          "step_index": 5,
+          "support_delta": 0.0,
+          "time": 5.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 10,
+          "step_index": 6,
+          "support_delta": 0.0,
+          "time": 6.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 11,
+          "step_index": 7,
+          "support_delta": 0.0,
+          "time": 7.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 12,
+          "step_index": 8,
+          "support_delta": 0.0,
+          "time": 8.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 13,
+          "step_index": 9,
+          "support_delta": 0.0,
+          "time": 9.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 14,
+          "step_index": 10,
+          "support_delta": 0.0,
+          "time": 10.0
+        }
+      ],
+      "width_profile_preserved": true
+    },
+    "pulse_disabled": {
+      "causal_lag_matches": true,
+      "causal_time_lag_steps": null,
+      "deformation_displacement": 0,
+      "deformation_peak_sequence": [],
+      "deformation_tracks_pulse": false,
+      "deformation_travels": false,
+      "deformation_width_max": 0,
+      "deformation_width_min": 0,
+      "direction_passed": true,
+      "expected_direction": null,
+      "expected_traveling": false,
+      "lane_id": "D3_pulse_disabled_control",
+      "passed_control": true,
+      "phase_lag_bounded": false,
+      "phase_lag_nodes": [],
+      "primary_blocker": "pulse_absent",
+      "pulse_displacement": 0,
+      "pulse_peak_sequence": [],
+      "series": [
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 0,
+          "support_delta": 0.0,
+          "time": 0.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 1,
+          "support_delta": 0.0,
+          "time": 1.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 2,
+          "support_delta": 0.0,
+          "time": 2.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 3,
+          "support_delta": 0.0,
+          "time": 3.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 4,
+          "support_delta": 0.0,
+          "time": 4.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 5,
+          "support_delta": 0.0,
+          "time": 5.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 6,
+          "support_delta": 0.0,
+          "time": 6.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 7,
+          "support_delta": 0.0,
+          "time": 7.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 8,
+          "support_delta": 0.0,
+          "time": 8.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 9,
+          "support_delta": 0.0,
+          "time": 9.0
+        },
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 10,
+          "support_delta": 0.0,
+          "time": 10.0
+        }
+      ],
+      "width_profile_preserved": true
+    },
+    "reversed_pulse": {
+      "causal_lag_matches": true,
+      "causal_time_lag_steps": 1,
+      "deformation_displacement": -4,
+      "deformation_peak_sequence": [
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "deformation_tracks_pulse": true,
+      "deformation_travels": true,
+      "deformation_width_max": 2,
+      "deformation_width_min": 2,
+      "direction_passed": true,
+      "expected_direction": -1,
+      "expected_traveling": true,
+      "lane_id": "D3_lagged_reversed_pulse_traveling_deformation",
+      "passed_direction_control": true,
+      "phase_lag_bounded": true,
+      "phase_lag_nodes": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "primary_blocker": "not_a_negative_control_direction_reversal_positive",
+      "pulse_displacement": -4,
+      "pulse_peak_sequence": [
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "series": [
+        {
+          "deformation_peak_node": null,
+          "deformation_width": 0,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": 4,
+          "step_index": 0,
+          "support_delta": 0.0,
+          "time": 0.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 1,
+          "pulse_peak_node": 3,
+          "step_index": 1,
+          "support_delta": 0.1,
+          "time": 1.0
+        },
+        {
+          "deformation_peak_node": 3,
+          "deformation_width": 2,
+          "phase_lag_nodes": 1,
+          "pulse_peak_node": 2,
+          "step_index": 2,
+          "support_delta": 0.1,
+          "time": 2.0
+        },
+        {
+          "deformation_peak_node": 2,
+          "deformation_width": 2,
+          "phase_lag_nodes": 1,
+          "pulse_peak_node": 1,
+          "step_index": 3,
+          "support_delta": 0.1,
+          "time": 3.0
+        },
+        {
+          "deformation_peak_node": 1,
+          "deformation_width": 2,
+          "phase_lag_nodes": 1,
+          "pulse_peak_node": 0,
+          "step_index": 4,
+          "support_delta": 0.1,
+          "time": 4.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 0,
+          "step_index": 5,
+          "support_delta": 0.1,
+          "time": 5.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 0,
+          "step_index": 6,
+          "support_delta": 0.1,
+          "time": 6.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 0,
+          "step_index": 7,
+          "support_delta": 0.1,
+          "time": 7.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 0,
+          "step_index": 8,
+          "support_delta": 0.1,
+          "time": 8.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 0,
+          "step_index": 9,
+          "support_delta": 0.1,
+          "time": 9.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 0,
+          "step_index": 10,
+          "support_delta": 0.1,
+          "time": 10.0
+        },
+        {
+          "deformation_peak_node": 0,
+          "deformation_width": 2,
+          "phase_lag_nodes": null,
+          "pulse_peak_node": null,
+          "step_index": 11,
+          "support_delta": 0.1,
+          "time": 11.0
+        }
+      ],
+      "width_profile_preserved": true
+    },
+    "static_pulse": {
+      "causal_lag_matches": true,
+      "causal_time_lag_steps": null,
+      "deformation_displacement": 0,
+      "deformation_peak_sequence": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "deformation_tracks_pulse": true,
+      "deformation_travels": false,
+      "deformation_width_max": 2,
+      "deformation_width_min": 2,
+      "direction_passed": true,
+      "expected_direction": null,
+      "expected_traveling": false,
+      "lane_id": "D3_static_pulse_local_deformation_control",
+      "passed_control": true,
+      "phase_lag_bounded": true,
+      "phase_lag_nodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "primary_blocker": "local_deformation_without_travel",
+      "pulse_displacement": 0,
+      "pulse_peak_sequence": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "series": [
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 0,
+          "support_delta": 0.10000000000000009,
+          "time": 0.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 1,
+          "support_delta": 0.10000000000000009,
+          "time": 1.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 2,
+          "support_delta": 0.10000000000000009,
+          "time": 2.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 3,
+          "support_delta": 0.10000000000000009,
+          "time": 3.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 4,
+          "support_delta": 0.10000000000000009,
+          "time": 4.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 5,
+          "support_delta": 0.10000000000000009,
+          "time": 5.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 6,
+          "support_delta": 0.10000000000000009,
+          "time": 6.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 7,
+          "support_delta": 0.10000000000000009,
+          "time": 7.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 8,
+          "support_delta": 0.10000000000000009,
+          "time": 8.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 9,
+          "support_delta": 0.10000000000000009,
+          "time": 9.0
+        },
+        {
+          "deformation_peak_node": 4,
+          "deformation_width": 2,
+          "phase_lag_nodes": 0,
+          "pulse_peak_node": 4,
+          "step_index": 10,
+          "support_delta": 0.10000000000000009,
+          "time": 10.0
+        }
+      ],
+      "width_profile_preserved": true
+    }
+  },
+  "d_gates": {
+    "D0_no_deformation": false,
+    "D1_local_deformation_at_pulse_contact": true,
+    "D2_deformation_peak_tracks_pulse": true,
+    "D3_reversed_pulse_reverses_deformation_direction": true,
+    "D4_deformation_preserves_width_profile_envelope": true,
+    "D5_deformation_survives_controls_and_is_replayable": true
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/feedback_coupled_pulse_regeneration_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/pulse_substrate_coupling_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/feedback_contract_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/feedback_triggered_pulse_regeneration_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration10_failure_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_a_post_iteration10_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_lock_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_condition_restoration_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_baseline.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_local_geometry_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_local_geometry_coupling_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_substrate_direction_null_controls.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_substrate_movement_reclassification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reopened_m6_feedback_gate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/self_renewing_movement_candidate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/traveling_deformation_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/feedback_contract_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/feedback_triggered_pulse_regeneration_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration10_failure_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_a_post_iteration10_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_direction_parity_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_lock_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_condition_restoration_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_conducting_substrate_baseline.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_local_geometry_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_substrate_direction_null_controls.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/pulse_substrate_movement_reclassification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reopened_m6_feedback_gate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_boundary_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_m4_m5_classification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_telemetry_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/self_renewing_movement_candidate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/traveling_deformation_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/audit_lane_b_direction_parity_lock.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration10_failure_review.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_lane_a_post_iteration10_review.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_feedback_coupled_pulse_regeneration.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_lane_b_reversed_e3_direction_parity.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_local_geometry_coupling.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_substrate_direction_null_controls.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_substrate_movement_reclassification.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_pulse_transport_baseline.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_traveling_deformation_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_self_renewing_movement_candidate.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "instantaneous_reference_lane": {
+    "causal_lag_matches": true,
+    "causal_time_lag_steps": null,
+    "deformation_displacement": 10,
+    "deformation_peak_sequence": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "deformation_tracks_pulse": true,
+    "deformation_travels": true,
+    "deformation_width_max": 2,
+    "deformation_width_min": 2,
+    "direction_passed": true,
+    "expected_direction": 1,
+    "expected_traveling": true,
+    "lane_id": "D3_instantaneous_reference_traveling_deformation",
+    "phase_lag_bounded": true,
+    "phase_lag_nodes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "pulse_displacement": 10,
+    "pulse_peak_sequence": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "series": [
+      {
+        "deformation_peak_node": 4,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 4,
+        "step_index": 0,
+        "support_delta": 0.10000000000000009,
+        "time": 0.0
+      },
+      {
+        "deformation_peak_node": 5,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 5,
+        "step_index": 1,
+        "support_delta": 0.10000000000000009,
+        "time": 1.0
+      },
+      {
+        "deformation_peak_node": 6,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 6,
+        "step_index": 2,
+        "support_delta": 0.10000000000000009,
+        "time": 2.0
+      },
+      {
+        "deformation_peak_node": 7,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 7,
+        "step_index": 3,
+        "support_delta": 0.10000000000000009,
+        "time": 3.0
+      },
+      {
+        "deformation_peak_node": 8,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 8,
+        "step_index": 4,
+        "support_delta": 0.10000000000000009,
+        "time": 4.0
+      },
+      {
+        "deformation_peak_node": 9,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 9,
+        "step_index": 5,
+        "support_delta": 0.10000000000000009,
+        "time": 5.0
+      },
+      {
+        "deformation_peak_node": 10,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 10,
+        "step_index": 6,
+        "support_delta": 0.10000000000000009,
+        "time": 6.0
+      },
+      {
+        "deformation_peak_node": 11,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 11,
+        "step_index": 7,
+        "support_delta": 0.10000000000000009,
+        "time": 7.0
+      },
+      {
+        "deformation_peak_node": 12,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 12,
+        "step_index": 8,
+        "support_delta": 0.10000000000000009,
+        "time": 8.0
+      },
+      {
+        "deformation_peak_node": 13,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 13,
+        "step_index": 9,
+        "support_delta": 0.10000000000000009,
+        "time": 9.0
+      },
+      {
+        "deformation_peak_node": 14,
+        "deformation_width": 2,
+        "phase_lag_nodes": 0,
+        "pulse_peak_node": 14,
+        "step_index": 10,
+        "support_delta": 0.10000000000000009,
+        "time": 10.0
+      }
+    ],
+    "width_profile_preserved": true
+  },
+  "iteration": "D3",
+  "lane": "D",
+  "phase_lag_policy": {
+    "allowed_forward_lag_nodes_max": -1,
+    "allowed_forward_lag_nodes_min": -1,
+    "allowed_reverse_lag_nodes_max": 1,
+    "allowed_reverse_lag_nodes_min": 0,
+    "geometry_response_policy": "causal_one_step_lagged_local_support_coupling",
+    "interpretation": "the deformation at step t must be caused by pulse contact at step t-1; the instantaneous D2 response remains serialized as a reference lane",
+    "required_time_lag_steps": 1
+  },
+  "positive_lane": {
+    "causal_lag_matches": true,
+    "causal_time_lag_steps": 1,
+    "deformation_displacement": 10,
+    "deformation_peak_sequence": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "deformation_tracks_pulse": true,
+    "deformation_travels": true,
+    "deformation_width_max": 2,
+    "deformation_width_min": 2,
+    "direction_passed": true,
+    "expected_direction": 1,
+    "expected_traveling": true,
+    "lane_id": "D3_lagged_causal_traveling_deformation",
+    "phase_lag_bounded": true,
+    "phase_lag_nodes": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "pulse_displacement": 10,
+    "pulse_peak_sequence": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "series": [
+      {
+        "deformation_peak_node": null,
+        "deformation_width": 0,
+        "phase_lag_nodes": null,
+        "pulse_peak_node": 4,
+        "step_index": 0,
+        "support_delta": 0.0,
+        "time": 0.0
+      },
+      {
+        "deformation_peak_node": 4,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 5,
+        "step_index": 1,
+        "support_delta": 0.1,
+        "time": 1.0
+      },
+      {
+        "deformation_peak_node": 5,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 6,
+        "step_index": 2,
+        "support_delta": 0.1,
+        "time": 2.0
+      },
+      {
+        "deformation_peak_node": 6,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 7,
+        "step_index": 3,
+        "support_delta": 0.1,
+        "time": 3.0
+      },
+      {
+        "deformation_peak_node": 7,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 8,
+        "step_index": 4,
+        "support_delta": 0.1,
+        "time": 4.0
+      },
+      {
+        "deformation_peak_node": 8,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 9,
+        "step_index": 5,
+        "support_delta": 0.1,
+        "time": 5.0
+      },
+      {
+        "deformation_peak_node": 9,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 10,
+        "step_index": 6,
+        "support_delta": 0.1,
+        "time": 6.0
+      },
+      {
+        "deformation_peak_node": 10,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 11,
+        "step_index": 7,
+        "support_delta": 0.1,
+        "time": 7.0
+      },
+      {
+        "deformation_peak_node": 11,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 12,
+        "step_index": 8,
+        "support_delta": 0.1,
+        "time": 8.0
+      },
+      {
+        "deformation_peak_node": 12,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 13,
+        "step_index": 9,
+        "support_delta": 0.1,
+        "time": 9.0
+      },
+      {
+        "deformation_peak_node": 13,
+        "deformation_width": 2,
+        "phase_lag_nodes": -1,
+        "pulse_peak_node": 14,
+        "step_index": 10,
+        "support_delta": 0.1,
+        "time": 10.0
+      },
+      {
+        "deformation_peak_node": 14,
+        "deformation_width": 2,
+        "phase_lag_nodes": null,
+        "pulse_peak_node": null,
+        "step_index": 11,
+        "support_delta": 0.1,
+        "time": 11.0
+      }
+    ],
+    "width_profile_preserved": true
+  },
+  "report_kind": "traveling_deformation_audit_v1",
+  "runtime_family": "experiment_local",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "d1_transport": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_conducting_substrate_baseline.json",
+      "sha256": "87f4516eb34311711db6ba10734587d47aec426533220897c170dab50ff4fa11"
+    },
+    "d2_geometry_coupling": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/pulse_local_geometry_coupling_report.json",
+      "sha256": "36f44904d1ba181da7a7534725b6ce62dfa0326fa85d457fbbdcbbfa0fe0f407"
+    }
+  },
+  "status": "passed"
+}

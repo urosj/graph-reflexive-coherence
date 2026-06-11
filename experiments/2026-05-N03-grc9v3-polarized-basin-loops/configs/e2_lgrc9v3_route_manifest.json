@@ -1,0 +1,113 @@
+{
+  "branch": "E2.0",
+  "channels": {
+    "K1_to_S1": {
+      "route_hops": [
+        {
+          "edge_id": 10,
+          "source_node_id": 10,
+          "target_node_id": 11
+        },
+        {
+          "edge_id": 11,
+          "source_node_id": 11,
+          "target_node_id": 0
+        }
+      ],
+      "source_pole": "K1",
+      "target_pole": "S1"
+    },
+    "K2_to_S2": {
+      "route_hops": [
+        {
+          "edge_id": 4,
+          "source_node_id": 4,
+          "target_node_id": 5
+        },
+        {
+          "edge_id": 5,
+          "source_node_id": 5,
+          "target_node_id": 6
+        }
+      ],
+      "source_pole": "K2",
+      "target_pole": "S2"
+    },
+    "S1_to_K2": {
+      "route_hops": [
+        {
+          "edge_id": 1,
+          "source_node_id": 1,
+          "target_node_id": 2
+        },
+        {
+          "edge_id": 2,
+          "source_node_id": 2,
+          "target_node_id": 3
+        }
+      ],
+      "source_pole": "S1",
+      "target_pole": "K2"
+    },
+    "S2_to_K1": {
+      "route_hops": [
+        {
+          "edge_id": 7,
+          "source_node_id": 7,
+          "target_node_id": 8
+        },
+        {
+          "edge_id": 8,
+          "source_node_id": 8,
+          "target_node_id": 9
+        }
+      ],
+      "source_pole": "S2",
+      "target_pole": "K1"
+    }
+  },
+  "declared_routes": {
+    "d2_3_cw_closed_loop": [
+      "S1_to_K2",
+      "K2_to_S2",
+      "S2_to_K1",
+      "K1_to_S1"
+    ]
+  },
+  "e2_0_probe": {
+    "amount": 0.006,
+    "channel_id": "S1_to_K2",
+    "edge_id": 1,
+    "hop_index": 0,
+    "source_node_id": 1,
+    "target_node_id": 2
+  },
+  "edge_count": 12,
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "fixture": "e2_lgrc9v3_ported_ring_v1",
+  "node_count": 12,
+  "poles": {
+    "K1": [
+      9,
+      10
+    ],
+    "K2": [
+      3,
+      4
+    ],
+    "S1": [
+      0,
+      1
+    ],
+    "S2": [
+      6,
+      7
+    ]
+  },
+  "ports": {
+    "clockwise_in_port": 4,
+    "clockwise_out_port": 6,
+    "port_numbering": "PortEdge records use 1-based ports; graph construction uses zero-based slots."
+  },
+  "schema": "n03_e2_lgrc9v3_route_manifest_v1"
+}

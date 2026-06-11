@@ -1,0 +1,140 @@
+{
+  "checks": {
+    "blocked_claim_flags_remain_false": true,
+    "iteration_10_artifact_fail_closed": true,
+    "lane_b_lock_available": true,
+    "passed_gates_do_not_imply_m6": true,
+    "primary_blocker_is_feedback_absence": true
+  },
+  "claim_ceiling_after_failure": "m5_direction_parity_supported_boundary_response",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "boundary_coupled_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "m6_opened": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_grc9v3_proposal_flux_loop_claim": false,
+    "native_lgrc9v3_e3_pulse_used": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration10_failure_review.py",
+  "diagnosis": {
+    "boundary_response_is_readout_not_rearm_source": true,
+    "failure_is_due_to_absent_feedback_loop": true,
+    "failure_is_expected_from_fixture_design": true,
+    "failure_is_not_due_to_budget_identity_or_shape": true,
+    "failure_is_not_due_to_direction_parity": true,
+    "pulse_drive_is_external_to_s0_movement_substrate": true
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration10_failure_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_a_post_iteration10_review.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_lock_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/self_renewing_movement_candidate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration10_failure_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_a_post_iteration10_review.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_direction_parity_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_lock_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_boundary_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_m4_m5_classification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_telemetry_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/self_renewing_movement_candidate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/audit_lane_b_direction_parity_lock.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration10_failure_review.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_lane_a_post_iteration10_review.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_lane_b_reversed_e3_direction_parity.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_self_renewing_movement_candidate.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "failed_gates": {
+    "feedback_path_present": false,
+    "full_m5_movement_support_available": false,
+    "m6_gate_passed": false,
+    "movement_restores_pulse_conditions": false,
+    "polarity_regeneration_measured": false,
+    "repeated_cycle_persistence_self_renewed": false
+  },
+  "iteration": "A3",
+  "iteration_10_result": {
+    "claim_ceiling": "m6_not_opened_feedback_path_absent",
+    "m6_gate_passed": false,
+    "m6_opened": false,
+    "primary_blocker": "no_feedback_path_from_boundary_response_to_pulse_generation",
+    "status": "passed_fail_closed"
+  },
+  "lane": "A",
+  "lane_input_summary": {
+    "P2_asymmetric_boundary_coupling_forward": {
+      "centroid_delta_total": 0.08333333333333215,
+      "distinct_pulse_locked_window_count": 4,
+      "externally_rescheduled_pulse_drive": true,
+      "feedback_path_from_movement_substrate_to_e3_producer": false,
+      "m6_lane_passed": false,
+      "movement_restores_pulse_generating_conditions": false,
+      "polarity_regeneration_measured": false
+    },
+    "P3_true_reversed_e3_pulse_boundary_coupling": {
+      "centroid_delta_total": -0.08333333333333393,
+      "distinct_pulse_locked_window_count": 4,
+      "externally_rescheduled_pulse_drive": true,
+      "feedback_path_from_movement_substrate_to_e3_producer": false,
+      "m6_lane_passed": false,
+      "movement_restores_pulse_generating_conditions": false,
+      "polarity_regeneration_measured": false
+    }
+  },
+  "needed_to_reopen_m6": [
+    {
+      "description": "Define a runtime-visible path by which S0 movement-substrate state changes alter native pulse-producing surplus/route conditions.",
+      "requirement": "define_feedback_path"
+    },
+    {
+      "description": "Measure that a boundary response restores or raises the next pulse eligibility condition without external rescheduling.",
+      "requirement": "measure_post_response_pulse_condition_restoration"
+    },
+    {
+      "description": "Show that post-response state regenerates the correct forward or reversed polarity rather than consuming imported telemetry.",
+      "requirement": "measure_polarity_regeneration"
+    },
+    {
+      "description": "Count only response windows caused by regenerated pulse conditions, not windows inherited from the original E3 pulse schedule.",
+      "requirement": "distinguish_self_renewed_windows_from_pulse_schedule"
+    }
+  ],
+  "passed_before_failure": {
+    "bounded_boundary_fixture_cost_measured": true,
+    "identity_continuity_passed": true,
+    "lane_b_locked_baseline_available": true,
+    "m5_direction_parity_supported_boundary_response": true,
+    "repeated_boundary_response_measured": true,
+    "shape_economy_passed": true
+  },
+  "recommended_next_decision": "Close N04 at direction-parity-supported boundary response, or open a separate mechanism task that explicitly defines feedback from movement-substrate state to pulse-generation conditions.",
+  "report_kind": "n04_iteration10_failure_review_v1",
+  "review_subject": "Iteration 10 M6 failure",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_10_m6": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/self_renewing_movement_candidate_report.json",
+      "sha256": "fb1eee8d4b324d2303657f471fefc8997e1a193d9def37b1be7f972524fcb5d6"
+    },
+    "lane_b_closeout": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json",
+      "sha256": "12be7455ab16fab1ee94d6920b4b771d3f65c0cba08d354a6285f827492353ed"
+    },
+    "lane_b_lock": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_lock_audit.json",
+      "sha256": "7ccbf4b2ffa2f45d6ebbe43c2030f1dfa7d87ca7270a688de90ea2ff2cce8bdc"
+    }
+  },
+  "status": "passed",
+  "what_this_does_not_rule_out": [
+    "A future fixture with explicit movement-substrate-to-pulse feedback could reopen M6.",
+    "A native pulse-through-substrate mechanism could be tested separately.",
+    "Adaptive topology remains blocked here, not disproven in general."
+  ],
+  "what_this_rules_out": [
+    "The current S0 boundary fixture does not demonstrate self-renewing movement.",
+    "Repeated boundary-response windows are not evidence of M6 when they are inherited from the E3 pulse schedule.",
+    "Direction-parity-supported boundary response is not sufficient for locomotion-like dynamics."
+  ]
+}

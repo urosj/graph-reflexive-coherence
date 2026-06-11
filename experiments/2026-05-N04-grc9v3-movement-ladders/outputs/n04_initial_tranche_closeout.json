@@ -1,0 +1,161 @@
+{
+  "blocked_claims": [
+    "movement_claim_allowed",
+    "loop_driven_movement_claim_allowed",
+    "locomotion_like_claim_allowed",
+    "adaptive_topology_entry_allowed",
+    "biological_claim_allowed",
+    "agency_claim_allowed",
+    "identity_acceptance_claim_allowed",
+    "movement_claim_inherited_from_n03",
+    "unrestricted_movement_claim_allowed"
+  ],
+  "checks": {
+    "all_source_artifacts_present": true,
+    "broader_claims_blocked": true,
+    "fixed_substrate_claims_remain_blocked": true,
+    "m2_runtime_fixture_passed": true,
+    "m5_direction_parity_supported": true,
+    "native_m6_same_fixture_candidate_passed": true,
+    "taxonomy_continuation_opened": true,
+    "visual_reference_current": true
+  },
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py",
+    "git_diff_check": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "iteration": "12",
+  "m0_m3_summary": {
+    "distribution": {
+      "M0_blocked": 5,
+      "M0_no_threshold_displacement": 17,
+      "M1_apparent_centroid_displacement": 4,
+      "M2_identity_preserving_displacement": 1,
+      "M3_shape_preserving_identity_displacement": 8
+    },
+    "fixed_substrate_all_m0": true,
+    "fixed_substrate_claims_blocked": true
+  },
+  "m2_runtime_summary": {
+    "centroid_displacement": 0.17167957557684588,
+    "movement_level": "M2_identity_preserving_displacement",
+    "primary_blocked_reason": "shape_gate_failed",
+    "profile_similarity_aligned": 0.7614634487196019
+  },
+  "m5_summary": {
+    "claim_ceiling": "m5_direction_parity_supported_boundary_response",
+    "primary_result": "m5_direction_parity_supported_boundary_response"
+  },
+  "m6_summary": {
+    "claim_ceiling": "native_m6_same_fixture_self_renewal_candidate",
+    "forward_dx": 0.026190476190476986,
+    "forward_self_renewed_cycles": 3,
+    "movement_substrate": "S0_chain_v1",
+    "profile_similarity": 0.9858991950828835,
+    "reversed_dx": -0.026190476190476986,
+    "reversed_self_renewed_cycles": 3,
+    "width_relative_change": 0.0017747856122328975
+  },
+  "next_iteration": "13_taxonomy_inventory",
+  "report_kind": "n04_initial_tranche_closeout_v1",
+  "result": "closed_with_taxonomy_handoff",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "boundary_coupled_pulse_fixture": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json",
+      "sha256": "75600c24540653f3bebccbbadce7087bf7d2985310a8f4d8d2624af83d6418c8"
+    },
+    "fixed_substrate_tranche_a": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json",
+      "sha256": "1530b0cb50c81f4e5450d1f65b9221efc370dbfb6fca1d41a5337f6cc5c2608d"
+    },
+    "lane_b_direction_parity": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json",
+      "sha256": "12be7455ab16fab1ee94d6920b4b771d3f65c0cba08d354a6285f827492353ed"
+    },
+    "m0_m3_classifier": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json",
+      "sha256": "ac2de40f9752888ba18fd635b26eaa1cc0677e34c6a718d442dfdbe9769baf04"
+    },
+    "m2_runtime_shape_blocked": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m2_runtime_shape_blocked_fixture.json",
+      "sha256": "b901761a25ea8336d0c66de30ccac21d2cba9be5a1d55c43d173c9ccfdd6c2f6"
+    },
+    "m4_m5_classifier": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json",
+      "sha256": "6cd2deb4206fb45f5b83c9dd2ee9465ca8b9213e11f43549566688b5610e7448"
+    },
+    "native_m6_audit": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_validation_checklist_audit.json",
+      "sha256": "bff027e615d0a4d884d8dd66d0c947fa09b3a4bc7d72e3c8122d4821fecfdc12"
+    },
+    "native_m6_validator": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_same_fixture_validator.json",
+      "sha256": "c402f142c69d7bfb0d92fdd8fc444cb1b32d9b5d6bfdde2e02c609552c68c8d6"
+    },
+    "visual_reference": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference.json",
+      "sha256": "c7c88fe97d3e278340834eecabbeec6254ff4324d7641975473ede5d70aab321"
+    }
+  },
+  "source_of_truth_by_rung": {
+    "M0": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json",
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json"
+    ],
+    "M1": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/S0_chain_v1_basin_replacement.jsonl",
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json"
+    ],
+    "M2": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m2_runtime_shape_blocked_fixture.json",
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m2_runtime_shape_blocked_timeseries/M2_shape_degraded_boundary_handoff.jsonl"
+    ],
+    "M3": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/S0_chain_v1_shape_preserving_shift.jsonl",
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json"
+    ],
+    "M4": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json",
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json"
+    ],
+    "M5": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json"
+    ],
+    "M6": [
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_same_fixture_validator.json",
+      "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_validation_checklist_audit.json"
+    ]
+  },
+  "status": "passed",
+  "strongest_current_ceiling": "native_m6_same_fixture_self_renewal_candidate",
+  "taxonomy_continuation": {
+    "adaptive_topology_status": "blocked_until_explicit_topology_controls",
+    "first_artifacts": [
+      "outputs/n04_taxonomy_inventory_v1.json",
+      "reports/n04_taxonomy_inventory_v1.md"
+    ],
+    "purpose": "Inventory and separate movement taxonomy classes across centroid, boundary, shape, deformation, basin identity, self-renewal, geometry, and topology axes."
+  },
+  "tranche": "initial_fixed_substrate_m0_m6"
+}

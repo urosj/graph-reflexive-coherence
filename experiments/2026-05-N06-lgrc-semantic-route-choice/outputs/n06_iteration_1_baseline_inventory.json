@@ -1,0 +1,627 @@
+{
+  "acceptance": {
+    "claim_flags_frozen_false": true,
+    "no_route_choice_probe_run": true,
+    "no_src_changes_required": true,
+    "sc_schema_frozen": true,
+    "source_backed_inventory": true
+  },
+  "artifact_digests": {
+    "claim_boundary_digest": "ffcf9f3262407e22fdad4c175e46b4759fe8ef86a17e7349c3442493bbe53607",
+    "context_affordance_inventory_digest": "843d173ca5132180492f36dd40c087eb1142a3462737a218052e77f4592cc294",
+    "native_route_arbitration_surfaces_digest": "53ef97f95efd039d518fedcfa50108f052ef6beaf2c2250a58ef695e7573cb95",
+    "sc_ladder_schema_digest": "4ac6a7742fd5dcd167506e3a0f4fbc3ec063274fe1943961b5f574e32c7c9396",
+    "source_artifacts_digest": "d6125fd11ca305ee7235b9e60ae8509cdba8839c3e174234fb1b4e4125ca5934"
+  },
+  "baseline_decisions": {
+    "arbitration_window_boundary_deferred_to_iteration_2": true,
+    "context_mapping_decision_status": "deferred_to_iteration_2_fixture_manifest",
+    "memory_trail_claim_inherited": false,
+    "n04_phase8_artifacts_are_precedent_not_n06_evidence": true,
+    "native_lane_runtime_decision": "native N06 route-arbitration rows must run at LGRC-3; any LGRC-2 early lanes are experiment-local scaffolds or controls",
+    "native_route_arbitration_policy_gate": "policy != disabled",
+    "oscillator_claim_inherited": false,
+    "recommended_iteration_2_compatibility_gate": "native_score_components_with_threshold_interpretation",
+    "recommended_iteration_2_context_mapping": "candidate_score_components plus candidate_runtime_visible_inputs and arbitration_runtime_visible_inputs",
+    "recommended_iteration_2_native_policy": "score_ordered_topology_route_candidates",
+    "route_choice_probe_run": false,
+    "selected_arbitration_window_boundary": null,
+    "selected_candidate_source_fields": null,
+    "selected_compatibility_gate_representation": null,
+    "selected_context_mapping": null
+  },
+  "claim_boundary": {
+    "blocked_claims": [
+      "memory_or_trail",
+      "agency",
+      "agentic_like_behavior",
+      "rc_identity_collapse",
+      "identity_acceptance",
+      "goal_proxy_regulation",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "ant_colony_behavior",
+      "unrestricted_movement"
+    ],
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "memory_trail_deferred_to": "N08",
+    "oscillator_inheritance_promotes_choice": false,
+    "route_arbitration_alone_is_semantic_choice": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_choice_claim_policy": "semantic_route_choice_candidate may be claimed only after context-conditioned native arbitration and artifact replay pass; Iteration 1 sets no such claim"
+  },
+  "command": ".venv/bin/python experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/build_n06_iteration_1_baseline_inventory.py",
+  "context_affordance_inventory": {
+    "allowed_native_field_mappings": [
+      {
+        "field": "candidate_score_components",
+        "native": true,
+        "use": "numeric context/affordance contribution; route score must equal the component sum"
+      },
+      {
+        "field": "candidate_runtime_visible_inputs",
+        "native": true,
+        "use": "serialized names of context inputs consumed by a candidate"
+      },
+      {
+        "field": "arbitration_runtime_visible_inputs",
+        "native": true,
+        "use": "serialized names of inputs consumed by arbitration"
+      },
+      {
+        "field": "causal_pulse_substrate_surface_rows",
+        "native": true,
+        "use": "context from local_support_mass, boundary_polarity_score, proper_time_phase, surface_deformation, route_local_pulse_contact, or feedback_eligibility"
+      },
+      {
+        "field": "route_aspect_mass_polarity_channel_fields",
+        "native": true,
+        "use": "route aspect context from serialized route semantics"
+      },
+      {
+        "field": "experiment_local_compatibility_gate_record",
+        "native": false,
+        "use": "exploratory scaffold only; not native route-arbitration context"
+      }
+    ],
+    "blocked_context_sources": [
+      "hidden_fixture_array",
+      "hidden_fixture_state",
+      "experiment_if_else",
+      "preselected_sink_id",
+      "posthoc_threshold",
+      "report_code"
+    ],
+    "compatibility_gate_options": [
+      "native_score_components_with_threshold_interpretation",
+      "experiment_local_gate_records"
+    ],
+    "dedicated_native_context_surface_exists": false,
+    "mapping_elimination_criteria": [
+      "reject if context state is not serialized in runtime-visible fields",
+      "reject if compatibility is decided by fixture/report code",
+      "reject if the mapping requires hidden context arrays",
+      "reject if the mapping cannot reconstruct A/B selection from artifacts",
+      "label as experiment-local if it cannot be expressed by native fields"
+    ],
+    "preferred_default_native_mapping_for_iteration_2": {
+      "arbitration_context_sources": "arbitration_runtime_visible_inputs",
+      "candidate_context_sources": "candidate_runtime_visible_inputs",
+      "default_compatibility_gate": "native_score_components_with_threshold_interpretation",
+      "fallback_only": "experiment_local_compatibility_gate_record",
+      "score_surface": "candidate_score_components",
+      "surface_row_inputs": "optional source evidence when context is derived from native causal pulse-substrate rows"
+    },
+    "required_iteration_2_decision": "map context states A/B to native score/runtime-visible input fields or explicitly label an experiment-local gate"
+  },
+  "controls_inventory": {
+    "distinct_primary_blockers_required": true,
+    "negative_controls_required_from_iteration_2": [
+      "policy_disabled",
+      "no_candidates",
+      "unresolved_tie",
+      "hidden_context",
+      "hidden_route_preference",
+      "preselected_sink",
+      "experiment_side_if_else",
+      "report_side_selection",
+      "posthoc_threshold_change",
+      "budget_mismatch",
+      "order_inversion",
+      "stale_candidate",
+      "stale_context",
+      "duplicate_arbitration",
+      "producer_mutation",
+      "claim_promotion"
+    ]
+  },
+  "environment": {
+    "generated_at": "2026-06-05T06:12:48.751977+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_stage": "baseline_inventory_no_route_choice_probe",
+  "git": {
+    "head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "b837c85c58293b81574ee2de07c3a55fc161a8e2"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 1,
+  "n05_inheritance": {
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "inherited_background": "oscillator_circuit_background_only",
+    "n06_inheritance_claims": {
+      "agency_inherited": false,
+      "identity_acceptance_inherited": false,
+      "locomotion_inherited": false,
+      "memory_or_trail_inherited": false,
+      "semantic_choice_inherited": false
+    },
+    "n06_ready": true,
+    "o6_primary_blocker": "missing_route_conductance_memory_policy",
+    "o6_route_coupled_oscillator_supported": false,
+    "source_artifact": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+    "source_status": "passed",
+    "strongest_claim_ceiling": "self_sustained_oscillator_candidate",
+    "strongest_supported_o_level": "O5"
+  },
+  "native_route_arbitration_surfaces": {
+    "arbitration_record_fields": {
+      "required": [
+        "native_route_arbitration_record_id",
+        "candidate_set_id",
+        "candidate_set_digest",
+        "selected_candidate_route_digest",
+        "rejected_candidate_route_digests",
+        "arbitration_reason_code",
+        "arbitration_score",
+        "arbitration_rule",
+        "arbitration_runtime_visible_inputs",
+        "event_time_key",
+        "scheduler_event_index",
+        "idempotency_key",
+        "native_route_arbitration_digest"
+      ],
+      "selected_topology_linkage": [
+        "selected_topology_event_id",
+        "selected_topology_event_digest"
+      ]
+    },
+    "candidate_record_fields": {
+      "budget_fields": [
+        "candidate_budget_prediction"
+      ],
+      "digest_field": "candidate_route_digest",
+      "ordering_fields": [
+        "event_time_key",
+        "scheduler_event_index"
+      ],
+      "route_fields": [
+        "route_intent",
+        "candidate_topology_event_kind",
+        "candidate_competing_sink_ids",
+        "candidate_selected_sink_id",
+        "candidate_losing_sink_ids",
+        "candidate_transferred_node_ids",
+        "candidate_lineage_transfer_map",
+        "candidate_source_node_ids",
+        "candidate_target_node_ids",
+        "candidate_retired_node_ids",
+        "candidate_source_edge_ids",
+        "candidate_target_edge_ids",
+        "candidate_retired_edge_ids"
+      ],
+      "score_and_context_fields": [
+        "candidate_route_score",
+        "candidate_score_components",
+        "candidate_runtime_visible_inputs",
+        "candidate_order_key"
+      ],
+      "score_component_invariant": {
+        "enforced_by": "LGRC9V3NativeRouteCandidateRecord.__post_init__",
+        "owner": "native_lgrc9v3_candidate_record_contract",
+        "rule": "candidate_route_score == sum(candidate_score_components)",
+        "tolerance": "1e-12"
+      },
+      "source_linkage": [
+        "candidate_source_surface_digest",
+        "candidate_source_producer_record_id",
+        "candidate_source_topology_state_reabsorption_digest"
+      ]
+    },
+    "candidate_set_fields": {
+      "required": [
+        "candidate_set_id",
+        "arbitration_window_id",
+        "candidate_route_digests",
+        "candidate_set_order_key",
+        "unresolved_tie_policy",
+        "event_time_key",
+        "scheduler_event_index",
+        "idempotency_key",
+        "candidate_set_digest"
+      ]
+    },
+    "candidate_set_order_keys": [
+      "score_desc_then_candidate_id",
+      "digest_ascending"
+    ],
+    "candidate_set_ordering": {
+      "default_for_n06": "score_desc_then_candidate_id",
+      "digest_ascending_order": [
+        "candidate_route_digest ascending"
+      ],
+      "iteration_2_requirement": "fixture manifest must declare the order key before candidate emission; list order alone is not native evidence",
+      "policy_configurable_values": [
+        "score_desc_then_candidate_id",
+        "digest_ascending"
+      ],
+      "score_desc_then_candidate_id_order": [
+        "candidate_route_score descending",
+        "candidate_order_key ascending",
+        "candidate_route_id ascending"
+      ]
+    },
+    "declared_tiebreaker_serialization": {
+      "blocked_sources": [
+        "fixture hidden order",
+        "experiment if/else",
+        "Python/list order unless declared by candidate_set_order_key",
+        "report-side selected route"
+      ],
+      "policy": "declared_runtime_visible_tiebreaker",
+      "serialized_fields": [
+        "candidate_set.unresolved_tie_policy",
+        "candidate_set.candidate_set_order_key",
+        "candidate.candidate_order_key",
+        "candidate.candidate_route_digest",
+        "arbitration_record.arbitration_runtime_visible_inputs"
+      ]
+    },
+    "forbidden_inputs": [
+      "hidden_fixture_array",
+      "hidden_fixture_state",
+      "experiment_if_else",
+      "preselected_sink_id",
+      "posthoc_threshold",
+      "report_code"
+    ],
+    "native_route_arbitration_contract": {
+      "arbitration_record_class": "LGRC9V3NativeRouteArbitrationRecord",
+      "candidate_record_class": "LGRC9V3NativeRouteCandidateRecord",
+      "candidate_set_record_class": "LGRC9V3NativeRouteCandidateSetRecord",
+      "contract_file": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "runtime_file": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "telemetry_file": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "validator": "validate_lgrc9v3_native_route_arbitration_artifacts",
+      "validator_failure_modes": {
+        "budget_invalid": "native_route_arbitration_budget_invalid",
+        "budget_mismatch": "native_route_candidate_budget_mismatch",
+        "candidate_digest_mismatch": "candidate_route_digest_mismatch",
+        "candidate_order_inversion": "native_route_arbitration_order_invalid:candidate_set_before_candidate",
+        "candidate_set_digest_mismatch": "candidate_set_digest_mismatch",
+        "candidate_set_missing_candidate": "candidate_set_missing_candidate",
+        "candidate_source_surface_missing": "native_route_candidate_unknown_source_surface",
+        "claim_promotion": "native_route_arbitration_claim_promotion_blocked",
+        "disabled_policy": "native_route_arbitration_policy_disabled",
+        "duplicate_arbitration": "duplicate_native_route_arbitration",
+        "duplicate_candidate": "duplicate_native_route_candidate",
+        "duplicate_candidate_set": "duplicate_native_route_candidate_set",
+        "hidden_input": "native_route_arbitration_hidden_input_rejected",
+        "no_candidates": "native_route_arbitration_no_candidates",
+        "order_invalid": "native_route_arbitration_order_invalid",
+        "selected_candidate_outside_set": "native_route_arbitration_selected_candidate_outside_set",
+        "unresolved_tie": "native_route_arbitration_unresolved_tie"
+      },
+      "validator_scope": "artifact-only replay of candidate routes, candidate sets, arbitration records, selected topology event, lineage, topology-state reabsorption, and producer scheduling",
+      "validator_signature": {
+        "optional": [
+          "surface_rows",
+          "surface_lineage_records",
+          "topology_events",
+          "topology_state_reabsorption_records",
+          "production_results",
+          "budget_tolerance"
+        ],
+        "required": [
+          "events",
+          "candidate_route_records",
+          "candidate_set_records",
+          "route_arbitration_records"
+        ]
+      }
+    },
+    "native_runtime_gate": {
+      "causal_layer_mode": "topology_changing_causal_history",
+      "causal_pulse_substrate_surface_lineage_transport_supported": true,
+      "causal_topology_integration_allowed": true,
+      "causal_topology_state_reabsorption_supported": true,
+      "disabled_policy_requires_enabled_false": true,
+      "lgrc2_native_route_arbitration_allowed": false,
+      "lgrc_runtime_level": "lgrc3",
+      "n06_default_native_lgrc_route_arbitration_policy": "score_ordered_topology_route_candidates",
+      "native_lgrc_route_arbitration_enabled": true,
+      "native_lgrc_route_arbitration_policy_gate": "policy != disabled"
+    },
+    "policies": {
+      "disabled": "disabled",
+      "score_ordered_candidates": "score_ordered_topology_route_candidates"
+    },
+    "reason_codes": [
+      "native_route_arbitration_selected_highest_score",
+      "native_route_arbitration_selected_declared_local_preference",
+      "native_route_arbitration_no_candidates",
+      "native_route_arbitration_unresolved_tie",
+      "native_route_arbitration_policy_disabled",
+      "native_route_arbitration_budget_invalid",
+      "native_route_arbitration_order_invalid",
+      "native_route_arbitration_hidden_input_rejected"
+    ],
+    "route_intent_classes": {
+      "redirect_policy": "redirect is a native route-intent value, but N06 must declare whether it is used as a fixed-route/control scaffold or with an explicit topology-event kind; redirect alone must not be read as topology-mutating movement evidence",
+      "topology_mutating_native_intents": [
+        "collapse",
+        "reabsorb",
+        "split",
+        "merge"
+      ]
+    },
+    "route_intents": [
+      "collapse",
+      "reabsorb",
+      "split",
+      "merge",
+      "redirect"
+    ],
+    "source_digest_pin_policy": "Iteration 1 records current SHA-256 digests for native contract, runtime, and telemetry sources. Later iterations should compare against these source_artifacts records if source drift matters.",
+    "unresolved_tie_policies": [
+      "fail_closed",
+      "declared_runtime_visible_tiebreaker"
+    ]
+  },
+  "route_choice_probe_run": false,
+  "run_id": "n06_iteration_1_baseline_inventory_v1",
+  "runtime_family": "LGRC9V3",
+  "sc_ladder_schema": {
+    "claim_flags_are_separate_from_sc_level": true,
+    "experiment_local_lgrc2_rows": "allowed only as non-native scaffolds or controls; they do not satisfy native route-arbitration evidence",
+    "minimum_native_runtime_level_by_sc": {
+      "SC0": "lgrc0_lgrc1_lgrc2_fixed_route_control",
+      "SC1": "lgrc3_for_native_candidate_emission",
+      "SC2": "lgrc3_topology_changing_causal_history",
+      "SC3": "lgrc3_for_native_route_arbitrated_rows",
+      "SC4": "lgrc3_for_native_route_arbitrated_rows",
+      "SC5": "lgrc3_for_native_route_arbitrated_rows",
+      "SC6": "lgrc3_for_native_artifact_replay"
+    },
+    "minimum_runtime_level_by_sc": {
+      "SC0": {
+        "experiment_local_or_control": "lgrc0_lgrc1_lgrc2",
+        "native": "not_applicable_fixed_route_control"
+      },
+      "SC1": {
+        "experiment_local_or_control": "lgrc2_allowed_only_as_non_native_scaffold_or_control",
+        "native": "lgrc3_for_candidate_route_and_candidate_set_records"
+      },
+      "SC2": {
+        "experiment_local_or_control": "does_not_satisfy_native_sc2",
+        "native": "lgrc3_topology_changing_causal_history"
+      },
+      "SC3": {
+        "experiment_local_or_control": "does_not_satisfy_native_sc3",
+        "native": "lgrc3_for_context_conditioned_route_arbitration"
+      },
+      "SC4": {
+        "experiment_local_or_control": "does_not_satisfy_native_sc4",
+        "native": "lgrc3_for_context_swap_route_arbitration"
+      },
+      "SC5": {
+        "experiment_local_or_control": "does_not_satisfy_native_sc5",
+        "native": "lgrc3_for_repeated_context_conditioned_arbitration"
+      },
+      "SC6": {
+        "experiment_local_or_control": "does_not_satisfy_native_sc6",
+        "native": "lgrc3_for_native_artifact_replay"
+      }
+    },
+    "minimum_runtime_level_scope": "native route-arbitration evidence is LGRC-3-only; overall SC1 may also include LGRC-2 experiment-local scaffold/control rows when explicitly labeled non-native",
+    "row_required_fields": [
+      "run_id",
+      "sc_level",
+      "sc_level_is_evidence_classification",
+      "claim_ceiling",
+      "claim_flags",
+      "runtime_family",
+      "lgrc_runtime_level",
+      "source_native_surfaces",
+      "fixture_id",
+      "source_node_id",
+      "candidate_route_records",
+      "candidate_route_digests",
+      "candidate_set_record",
+      "candidate_set_digest",
+      "native_route_arbitration_record",
+      "native_route_arbitration_digest",
+      "selected_candidate_route_digest",
+      "rejected_candidate_route_digests",
+      "context_surface",
+      "context_surface_digest",
+      "context_relation",
+      "context_runtime_visible",
+      "selection_rule",
+      "selection_reason_code",
+      "score_components",
+      "compatibility_gate_components",
+      "arbitration_window_id",
+      "candidate_source_surface_digest",
+      "candidate_source_producer_record_id",
+      "candidate_source_topology_state_reabsorption_digest",
+      "route_intent",
+      "selected_topology_event_id",
+      "event_time_key",
+      "scheduler_event_index",
+      "causal_epoch",
+      "node_proper_time",
+      "scheduled_packet_id",
+      "processed_packet_id",
+      "node_plus_packet_budget_before",
+      "node_plus_packet_budget_after",
+      "node_plus_packet_budget_error",
+      "producer_records",
+      "producer_boundary",
+      "artifact_only_replay",
+      "controls",
+      "blocked_claims"
+    ],
+    "sc_level_is_evidence_classification": true,
+    "sc_levels": {
+      "SC0": "no_choice_fixed_route",
+      "SC1": "alternatives_exposed",
+      "SC2": "native_arbitration_selection",
+      "SC3": "context_conditioned_selection",
+      "SC4": "bidirectional_or_context_swap_selection",
+      "SC5": "repeated_context_conditioned_selection",
+      "SC6": "artifact_only_semantic_route_choice_candidate"
+    },
+    "schema_name": "semantic_route_choice_report_v1"
+  },
+  "schema": "semantic_route_choice_report_v1",
+  "source_artifacts": [
+    {
+      "exists": true,
+      "name": "n06_readme",
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/README.md",
+      "sha256": "831417f96820f0eefc1679d68c3745936c117d0425960e1efd107dd6d572b556"
+    },
+    {
+      "exists": true,
+      "name": "n06_plan",
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/implementation/SemanticRouteChoiceImplementationPlan.md",
+      "sha256": "e988d66c3170d7acefec4ef655fba27940ac0ed3fb2d2de0df3d26342ebb5838"
+    },
+    {
+      "exists": true,
+      "name": "n06_checklist",
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/implementation/SemanticRouteChoiceImplementationChecklist.md",
+      "sha256": "b99c9d15e5aa3db067300d3160c2cb07fa6738064bd6df2c47088bb27a8b159b"
+    },
+    {
+      "exists": true,
+      "name": "n06_implementation_readme",
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/implementation/README.md",
+      "sha256": "285990f5d6e44f143d2bdaaf7f04220da52de8efbb7d2382af74317a1f64640d"
+    },
+    {
+      "exists": true,
+      "name": "n05_n11_roadmap",
+      "path": "experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md",
+      "sha256": "fcc30afaeecf6410ccd94ca453f45a6a3d4f51286b22731e47caa3312cf7b0a0"
+    },
+    {
+      "exists": true,
+      "name": "n05_closeout",
+      "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+      "sha256": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+      "status": "passed"
+    },
+    {
+      "exists": true,
+      "name": "n05_closeout_report",
+      "path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_8_o6_closeout.md",
+      "sha256": "fa9d3b7f7d44ddc03e5a14537f4d06fb6540019c0d3251dd503b0182d1a425c2"
+    },
+    {
+      "exists": true,
+      "name": "n04_native_route_arbitration_rerun",
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21b_native_lgrc_route_arbitration_rerun.json",
+      "sha256": "4d28f1fa0d2822de374d09ae20927eac6c682c112b7434254010890c059694c1",
+      "status": "passed"
+    },
+    {
+      "exists": true,
+      "name": "n04_native_route_arbitration_rerun_report",
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21b_native_lgrc_route_arbitration_rerun.md",
+      "sha256": "95a22fdfeddf38bc55456c648907f03c9a2acea452c038ebb670f23fa90be4ca"
+    },
+    {
+      "exists": true,
+      "name": "n04_identity_native_route_arbitrated_topology",
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22b_identity_through_native_route_arbitrated_topology.json",
+      "sha256": "65477fda0529097244fa7191df540721f8f148526619193007e639e7d4dc6714",
+      "status": "passed"
+    },
+    {
+      "exists": true,
+      "name": "phase8_native_route_arbitration_closeout",
+      "path": "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.md",
+      "sha256": "1d3166a3ca4b08cf88aa50b6054782442e7739b11eb2d2e7157c0581d830292c"
+    },
+    {
+      "exists": true,
+      "name": "phase8_native_route_arbitration_closeout_json",
+      "path": "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json",
+      "sha256": "cabc1f5b81fdb19154d778b04463f74f32e82653db6291daa62b1e5128d01b65",
+      "status": "closed"
+    },
+    {
+      "exists": true,
+      "name": "lgrc9v3_contract_source",
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "0c50cffe638ff18ada4375f8e3acd897e054eb48d75137da735d6d5a4cdafe8a"
+    },
+    {
+      "exists": true,
+      "name": "lgrc9v3_runtime_source",
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "70c065b003ebdd4351fad7b5089abc27557dee9a04b6e1c7834e1d01bd5fa6ee"
+    },
+    {
+      "exists": true,
+      "name": "lgrc9v3_telemetry_source",
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "4af287dad2ec42bec6a619d294238e8f9fb915821374207a694afc553e57d026"
+    }
+  ],
+  "status": "passed"
+}

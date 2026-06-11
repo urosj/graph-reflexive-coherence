@@ -1,0 +1,1047 @@
+{
+  "a7_supported": false,
+  "acceptance": {
+    "acceptance_statement": "Iteration 9 passes if an artifact-only validator reconstructs the accepted N11 generalization chain and controls from exported artifacts, with stable digests, event/window ordering, separated budget surfaces, source-current status, and no private runtime fallback.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_digest_pass": {
+    "all_artifact_digests_valid": true,
+    "all_artifact_statuses_passed": true,
+    "all_artifacts_present": true,
+    "artifact_rows": {
+      "iteration_1": {
+        "digest_field": "inventory_digest",
+        "digest_valid": true,
+        "expected_digest": "c1cf29e08ac13fb0b6d42cf85cc70735229326a4be4dae936fdb2de12caa9b65",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "recomputed_digest": "c1cf29e08ac13fb0b6d42cf85cc70735229326a4be4dae936fdb2de12caa9b65",
+        "sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "status": "passed"
+      },
+      "iteration_2": {
+        "digest_field": "validation_digest",
+        "digest_valid": true,
+        "expected_digest": "0b5db686ece0f0aa4a22f17470de32acc5c183afe8f15dbfdebb116a608b1018",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "recomputed_digest": "0b5db686ece0f0aa4a22f17470de32acc5c183afe8f15dbfdebb116a608b1018",
+        "sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "status": "passed"
+      },
+      "iteration_3": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "301d045090005aac333786d8bad83eae5aba0519522de2f33d89699f5432bfc9",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "recomputed_digest": "301d045090005aac333786d8bad83eae5aba0519522de2f33d89699f5432bfc9",
+        "sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "status": "passed"
+      },
+      "iteration_4": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "df32344a5dccb1eb58520977052db86f1b40bc37188af8843790cd7715281ac2",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "recomputed_digest": "df32344a5dccb1eb58520977052db86f1b40bc37188af8843790cd7715281ac2",
+        "sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "status": "passed"
+      },
+      "iteration_4b": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "08925d575181c5206eacc2541712d953ce2d2c2d4e303770f5c23d96319c7a05",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+        "recomputed_digest": "08925d575181c5206eacc2541712d953ce2d2c2d4e303770f5c23d96319c7a05",
+        "sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "status": "passed"
+      },
+      "iteration_5": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "14d1fe3decea295a4a9bb5c94b558e49bc7e8a3bdc71b23ad3681572803896d4",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+        "recomputed_digest": "14d1fe3decea295a4a9bb5c94b558e49bc7e8a3bdc71b23ad3681572803896d4",
+        "sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "status": "passed"
+      },
+      "iteration_6": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "a906f1190f94fea78c10754834f6b3312797280df40c933bd5497a6b0868fd9c",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+        "recomputed_digest": "a906f1190f94fea78c10754834f6b3312797280df40c933bd5497a6b0868fd9c",
+        "sha256": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+        "status": "passed"
+      },
+      "iteration_7": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "dd1409f5f777a46958467ca1f161b83e8173258a003423575b44e86a7b2e552f",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json",
+        "recomputed_digest": "dd1409f5f777a46958467ca1f161b83e8173258a003423575b44e86a7b2e552f",
+        "sha256": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a",
+        "status": "passed"
+      },
+      "iteration_8": {
+        "digest_field": "output_digest",
+        "digest_valid": true,
+        "expected_digest": "bd0c597fb93cddf376b2c41e00f6ac5391f1cd6124eda6ce904c0e7d43d50b57",
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_8_hidden_stale_claim_controls.json",
+        "recomputed_digest": "bd0c597fb93cddf376b2c41e00f6ac5391f1cd6124eda6ce904c0e7d43d50b57",
+        "sha256": "b0f36a69286da4f27486dbcef7e256c834d708e6b0c6311cb1110918e5c97eb5",
+        "status": "passed"
+      }
+    }
+  },
+  "artifact_only": true,
+  "budget_surface_pass": {
+    "control_budget_discontinuity_rejected": true,
+    "longer_horizon_budget_zero": true,
+    "matrix_budget_surfaces_separate": true,
+    "passed": true
+  },
+  "checks": {
+    "all_artifact_digests_valid": true,
+    "all_artifact_statuses_passed": true,
+    "all_artifacts_present": true,
+    "all_manifest_required_passes_passed": true,
+    "all_source_digest_links_match": true,
+    "artifact_only": true,
+    "budget_surfaces_validate": true,
+    "claim_boundary_validates": true,
+    "controls_validate": true,
+    "longer_horizon_validates": true,
+    "manifest_required_passes_match": true,
+    "matrix_validates": true,
+    "runtime_state_not_used": true,
+    "src_clean_for_iteration_9": true,
+    "transfer_rows_validate": true
+  },
+  "claim_boundary_pass": {
+    "a7_not_supported": true,
+    "all_control_claim_flags_false": true,
+    "all_transfer_row_claim_flags_false": true,
+    "gali7_not_supported": true,
+    "passed": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/run_n11_iteration_9_artifact_only_generalization_validator.py",
+  "context_proxy_support_matrix_pass": {
+    "accepted_and_blocked_rows_present": true,
+    "accepted_gali5_row_count": 7,
+    "accepted_row_count": 12,
+    "all_budget_surfaces_separate": true,
+    "all_source_status_digest_links_present": true,
+    "blocked_row_count": 12,
+    "context_variant_count": 3,
+    "distinct_blockers_present": true,
+    "matrix_cell_digests_valid": true,
+    "proxy_variant_count": 2,
+    "row_count": 24,
+    "row_count_matches_manifest": true,
+    "support_variant_count": 4
+  },
+  "controls_supported": 12,
+  "experiment": "2026-05-N11-lgrc-general-agentic-like-integration",
+  "gali7_supported": false,
+  "generated_at": "2026-06-10T22:07:59.131231+00:00",
+  "git": {
+    "head": "b63c53cb1ebccb3bbb3ed56abb1b57222db5f712",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 9,
+  "longer_horizon_window_pass": {
+    "accepted_gali6_row_count": 7,
+    "budget_zero_all_windows": true,
+    "event_window_order_valid": true,
+    "node_plus_packet_budget_error_max": 0.0,
+    "proxy_in_band_all_windows": true,
+    "row_count": 12,
+    "source_current_all_windows": true,
+    "support_survives_all_windows": true,
+    "transfer_stable_all_windows": true,
+    "trend_digests_valid": true,
+    "trend_fields_present": true,
+    "unstable_window_count": 0
+  },
+  "manifest_required_passes": [
+    "source_artifact_digest_pass",
+    "transfer_row_schema_pass",
+    "context_proxy_support_matrix_pass",
+    "longer_horizon_window_pass",
+    "negative_control_pass",
+    "budget_surface_pass",
+    "claim_boundary_pass"
+  ],
+  "missing_manifest_passes": [],
+  "negative_control_pass": {
+    "all_claim_flags_false_after_controls": true,
+    "all_controls_fail_closed": true,
+    "all_controls_passed": true,
+    "all_observed_blockers_match_expected": true,
+    "all_primary_blockers_distinct": true,
+    "control_count": 12,
+    "control_record_digests_valid": true,
+    "no_generic_failures": true
+  },
+  "next_iteration": "10_hypothesis_ab_closeout",
+  "output_digest": "a44607c05a90c9d3169bce2e9fbb4bd560e9811180420631a7ccd1faaf8aa481",
+  "private_runtime_state_used": false,
+  "purpose": "artifact_only_generalization_replay_validator",
+  "runtime_state_fallback_used": false,
+  "runtime_state_used": false,
+  "schema": "n11_iteration_9_artifact_only_generalization_validator_v1",
+  "source_digest_pass": {
+    "all_source_digest_links_match": true,
+    "checked_link_count": 300,
+    "checked_links": [
+      {
+        "artifact_key": "n11_baseline_inventory",
+        "current_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "exists": true,
+        "expected_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_fixture_manifest",
+        "current_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "exists": true,
+        "expected_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_2_fixture_manifest_validation",
+        "current_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "exists": true,
+        "expected_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_3_route_context_transfer_replay",
+        "current_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "exists": true,
+        "expected_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4_proxy_condition_transfer_replay",
+        "current_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "exists": true,
+        "expected_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4b_proxy_target_band_variant_probe",
+        "current_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "exists": true,
+        "expected_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_5_support_state_transfer_replay",
+        "current_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "exists": true,
+        "expected_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_baseline_inventory",
+        "current_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "exists": true,
+        "expected_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_fixture_manifest",
+        "current_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "exists": true,
+        "expected_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_2_fixture_manifest_validation",
+        "current_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "exists": true,
+        "expected_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_3_route_context_transfer_replay",
+        "current_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "exists": true,
+        "expected_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4_proxy_condition_transfer_replay",
+        "current_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "exists": true,
+        "expected_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4b_proxy_target_band_variant_probe",
+        "current_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "exists": true,
+        "expected_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_5_support_state_transfer_replay",
+        "current_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "exists": true,
+        "expected_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_baseline_inventory",
+        "current_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "exists": true,
+        "expected_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_fixture_manifest",
+        "current_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "exists": true,
+        "expected_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_2_fixture_manifest_validation",
+        "current_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "exists": true,
+        "expected_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_3_route_context_transfer_replay",
+        "current_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "exists": true,
+        "expected_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4_proxy_condition_transfer_replay",
+        "current_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "exists": true,
+        "expected_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4b_proxy_target_band_variant_probe",
+        "current_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "exists": true,
+        "expected_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_5_support_state_transfer_replay",
+        "current_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "exists": true,
+        "expected_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_baseline_inventory",
+        "current_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "exists": true,
+        "expected_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_fixture_manifest",
+        "current_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "exists": true,
+        "expected_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_2_fixture_manifest_validation",
+        "current_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "exists": true,
+        "expected_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_3_route_context_transfer_replay",
+        "current_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "exists": true,
+        "expected_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4_proxy_condition_transfer_replay",
+        "current_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "exists": true,
+        "expected_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4b_proxy_target_band_variant_probe",
+        "current_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "exists": true,
+        "expected_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_5_support_state_transfer_replay",
+        "current_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "exists": true,
+        "expected_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_baseline_inventory",
+        "current_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "exists": true,
+        "expected_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_fixture_manifest",
+        "current_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "exists": true,
+        "expected_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_2_fixture_manifest_validation",
+        "current_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "exists": true,
+        "expected_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_3_route_context_transfer_replay",
+        "current_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "exists": true,
+        "expected_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4_proxy_condition_transfer_replay",
+        "current_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "exists": true,
+        "expected_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4b_proxy_target_band_variant_probe",
+        "current_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "exists": true,
+        "expected_sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_5_support_state_transfer_replay",
+        "current_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "exists": true,
+        "expected_sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_baseline_inventory",
+        "current_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "exists": true,
+        "expected_sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_fixture_manifest",
+        "current_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "exists": true,
+        "expected_sha256": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_2_fixture_manifest_validation",
+        "current_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "exists": true,
+        "expected_sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_3_route_context_transfer_replay",
+        "current_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "exists": true,
+        "expected_sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+        "record_source": "iteration_6"
+      },
+      {
+        "artifact_key": "n11_iteration_4_proxy_condition_transfer_replay",
+        "current_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "exists": true,
+        "expected_sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+        "matches": true,
+        "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+        "record_source": "iteration_6"
+      }
+    ],
+    "checked_links_truncated": true
+  },
+  "status": "passed",
+  "strongest_replayed_claim_ceiling": "longer_horizon_generalization_candidate",
+  "strongest_replayed_gali_level": "GALI6",
+  "transfer_row_schema_pass": {
+    "all_claim_flags_false": true,
+    "all_required_fields_present": true,
+    "all_rows_artifact_only": true,
+    "all_rows_runtime_state_unused": true,
+    "all_transfer_row_digests_valid": true,
+    "row_count": 45,
+    "row_validations": {
+      "iteration_3:n11_i3_context_arbitration_policy_variant_replay_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI1",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_3:n11_i3_context_route_variant_replay_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI2",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_3:n11_i3_context_same_as_n10_reference_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI1",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_4:n11_i4_proxy_target_band_variant_replay_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI2",
+        "missing_required_fields": [],
+        "primary_blocker": "proxy_target_band_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_4b:n11_i4b_proxy_target_band_variant_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI3",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_5:n11_i5_explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_5:n11_i5_mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_5:n11_i5_n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": "support_disrupted_but_integration_allowed",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_5:n11_i5_support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_same_as_n10__explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_same_as_n10__mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_same_as_n10__n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_same_as_n10__support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_target_band_variant__explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_target_band_variant__n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_arbitration_policy_variant__proxy_target_band_variant__support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_same_as_n10__explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_same_as_n10__mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_same_as_n10__n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "support_disrupted_but_integration_allowed",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_same_as_n10__support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_target_band_variant__explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_target_band_variant__n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "support_disrupted_but_integration_allowed",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_route_variant__proxy_target_band_variant__support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_same_as_n10__explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_same_as_n10__mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_same_as_n10__n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "support_disrupted_but_integration_allowed",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_same_as_n10__support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI1",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_target_band_variant__explicit_restoration_recovers_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_target_band_variant__mild_withdrawal_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_target_band_variant__n09_matched_withdrawal_disrupts_support_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI5",
+        "missing_required_fields": [],
+        "primary_blocker": "support_disrupted_but_integration_allowed",
+        "runtime_state_used": false,
+        "transfer_accepted": false,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_6:n11_i6_context_same_as_n10__proxy_target_band_variant__support_intact_survives_row_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_route_variant__proxy_same_as_n10__explicit_restoration_recovers_support_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_route_variant__proxy_same_as_n10__mild_withdrawal_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_route_variant__proxy_same_as_n10__support_intact_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__explicit_restoration_recovers_support_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_route_variant__proxy_target_band_variant__support_intact_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_same_as_n10__proxy_same_as_n10__explicit_restoration_recovers_support_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_same_as_n10__proxy_same_as_n10__mild_withdrawal_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_same_as_n10__proxy_same_as_n10__support_intact_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI1",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_same_as_n10__proxy_target_band_variant__explicit_restoration_recovers_support_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_same_as_n10__proxy_target_band_variant__mild_withdrawal_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI6",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      },
+      "iteration_7:n11_i7_n11_i6_context_same_as_n10__proxy_target_band_variant__support_intact_survives_row_v1_longer_window_v1": {
+        "artifact_only": true,
+        "claim_flags_false": true,
+        "gali_level": "GALI4",
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "runtime_state_used": false,
+        "transfer_accepted": true,
+        "transfer_row_digest_valid": true
+      }
+    }
+  },
+  "undeclared_validation_passes": [],
+  "validation_passes": {
+    "budget_surface_pass": true,
+    "claim_boundary_pass": true,
+    "context_proxy_support_matrix_pass": true,
+    "longer_horizon_window_pass": true,
+    "negative_control_pass": true,
+    "source_artifact_digest_pass": true,
+    "transfer_row_schema_pass": true
+  },
+  "validator_architecture": {
+    "required_passes": [
+      "source_artifact_digest_pass",
+      "transfer_row_schema_pass",
+      "context_proxy_support_matrix_pass",
+      "longer_horizon_window_pass",
+      "negative_control_pass",
+      "budget_surface_pass",
+      "claim_boundary_pass"
+    ],
+    "runtime_state_used": false,
+    "validator_shape": "single_script_with_separate_validation_passes"
+  }
+}

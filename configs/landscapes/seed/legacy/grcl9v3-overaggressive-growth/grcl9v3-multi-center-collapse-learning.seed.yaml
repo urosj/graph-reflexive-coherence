@@ -1,0 +1,139 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Multi Center Collapse Learning
+  description: Multi-center GRCL-9V3 seed with growth loci preceding collapse-driven basin-assignment learning.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-86-multi-center-collapse-and-basin-assignment-learning
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, multi_center, collapse, learning, growth]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params: {a: 1.0, b: 1.2}
+
+primitives:
+  - id: growth_center_a_boundary
+    type: ridge
+    owner_id: growth_center_a
+    adjacent_ids: [outer_a]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: multi_center_growth_a_boundary
+        region_id: growth_center_a
+        source_role: multi_center_learning_probe
+        profile: {inactive_parent_port: 5}
+  - id: growth_center_a_locus
+    type: valley
+    from_id: growth_center_a
+    to_id: outer_a
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: multi_center_growth_a_locus
+        region_id: growth_center_a
+        source_role: multi_center_learning_probe
+        profile:
+          outward_pressure_profile: {pressure: high_outward_pressure}
+          lambda_birth: 1.4
+  - id: growth_center_b_boundary
+    type: ridge
+    owner_id: growth_center_b
+    adjacent_ids: [outer_b]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: multi_center_growth_b_boundary
+        region_id: growth_center_b
+        source_role: multi_center_learning_probe
+        profile: {inactive_parent_port: 5}
+  - id: growth_center_b_locus
+    type: valley
+    from_id: growth_center_b
+    to_id: outer_b
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: multi_center_growth_b_locus
+        region_id: growth_center_b
+        source_role: multi_center_learning_probe
+        profile:
+          outward_pressure_profile: {pressure: high_outward_pressure}
+          lambda_birth: 1.4
+  - id: choice_center_a
+    type: saddle
+    branch_target_ids: [winner_center, losing_center_a]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: multi_center_choice_a
+        region_id: choice_center_a
+        source_role: multi_center_learning_probe
+        profile:
+          basin_region_a: winner_center
+          basin_region_b: losing_center_a
+          collapse_target_region: winner_center
+          compatibility_profile: {compatibility: high_contrast, seed_choice_registry: false}
+  - id: choice_center_b
+    type: saddle
+    branch_target_ids: [winner_center, losing_center_b]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: multi_center_choice_b
+        region_id: choice_center_b
+        source_role: multi_center_learning_probe
+        profile:
+          basin_region_a: winner_center
+          basin_region_b: losing_center_b
+          collapse_target_region: winner_center
+          compatibility_profile: {compatibility: high_contrast, seed_choice_registry: false}
+  - id: growth_center_a
+    type: basin
+    coherence_prior: 1.0
+  - id: growth_center_b
+    type: basin
+    coherence_prior: 1.0
+  - id: outer_a
+    type: plateau
+    coherence_prior: 0.1
+  - id: outer_b
+    type: plateau
+    coherence_prior: 0.1
+  - id: winner_center
+    type: basin
+    coherence_prior: 1.0
+  - id: losing_center_a
+    type: basin
+    coherence_prior: 0.4
+  - id: losing_center_b
+    type: basin
+    coherence_prior: 0.4
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: multi_center_collapse_learning
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0028-multi-center-collapse-learning
+    expected_selector_ids: [growth_events, growth_before_collapse, choice_collapse_events, basin_assignment_learning]
+    notes:
+      composing_cells_anchor: multi-center collapse-learning probe
+      boundary: source preconditions only
+      learning_claim_boundary: basin_assignment_learning_only
+      composed_source_ancestry:
+        - growth_pressure_positive_control
+        - choice_collapse_positive_control

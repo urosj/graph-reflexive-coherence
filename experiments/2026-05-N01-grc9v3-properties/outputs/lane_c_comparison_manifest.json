@@ -1,0 +1,49 @@
+{
+  "artifact_schema_version": "grc9v3_lane_c_comparison_v1",
+  "command": "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_lane_c_comparison.py --write-defaults --seed 0",
+  "git_branch": "master",
+  "git_commit": "3f2aa0d621c890562b9af14280b9fab96d1c3b37",
+  "lane_a_id": "current_hybrid_signed_hessian",
+  "lane_b_id": "grc9v3_column_h_assisted",
+  "lane_c_id": "comparison",
+  "output_paths": {
+    "blocked": "reports/lane_c_blocked_observations.md",
+    "branch": "outputs/lane_c_branch_attribution.csv",
+    "candidate": "outputs/lane_c_candidate_comparison.csv",
+    "identity": "outputs/lane_c_identity_comparison.csv",
+    "manifest": "outputs/lane_c_comparison_manifest.json",
+    "refinement": "outputs/lane_c_refinement_comparison.csv",
+    "report": "reports/lane_c_comparison_report.md",
+    "summary": "outputs/lane_c_summary.json"
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_lane_c_comparison.py",
+  "seed": 0,
+  "source_setup": "implementation/GRC9V3-LaneC-ComparisonSetup.md",
+  "summary": {
+    "artifact_schema_version": "grc9v3_lane_c_comparison_v1",
+    "candidate_count_lane_a_total": 25,
+    "candidate_count_lane_b_total": 40,
+    "candidate_delta_rows": 15,
+    "classification": "lane_c_comparison_complete_direct_column_h_branch_delta_observed_with_boundaries",
+    "comparison_row_count": 60,
+    "degree_8_near_saturation_blocked": true,
+    "direct_runtime_proxy_branch_rows": 15,
+    "identity_claim_boundary": "mechanical expansion is not identity; identity status uses post-event basin persistence",
+    "lane_a_column_evidence_label": "derived_non_gating",
+    "lane_a_id": "current_hybrid_signed_hessian",
+    "lane_b_direct_branch_evidence_rule": "spark_lane == grc9v3_column_h_assisted and column_h_branch_hit with a column-H gate reason",
+    "lane_b_id": "grc9v3_column_h_assisted",
+    "lane_c_id": "comparison",
+    "refinement_count_lane_a_total": 25,
+    "refinement_count_lane_b_total": 40,
+    "refinement_delta_rows": 15,
+    "seed": 0,
+    "signed_hessian_only_lane_b_candidate_rows": 25
+  },
+  "validation_commands": [
+    "PYTHONPATH=src .venv/bin/python -m py_compile experiments/2026-05-N01-grc9v3-properties/scripts/run_lane_c_comparison.py",
+    "PYTHONPATH=src .venv/bin/ruff check experiments/2026-05-N01-grc9v3-properties/scripts/run_lane_c_comparison.py",
+    "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_lane_c_comparison.py --write-defaults --seed 0",
+    ".venv/bin/python -m json.tool experiments/2026-05-N01-grc9v3-properties/outputs/lane_c_summary.json"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "closed_iterations": [
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82
+  ],
+  "date": "2026-05-22",
+  "n04_return": {
+    "next_iteration": "21-B_native_lgrc_route_arbitration_rerun",
+    "question": "rerun the N04 Iteration 21 route-selection boundary with native route-arbitration records as the causal selection source"
+  },
+  "report_kind": "phase8_lgrc9_native_route_arbitration_closeout_v1",
+  "resolved_boundary": "native_lgrc_topology_route_selection_not_exposed",
+  "status": "closed",
+  "supported_capability": {
+    "native_lgrc_route_arbitration_supported": true,
+    "support_scope": "runtime route arbitration support only; not semantic choice, agency, RC identity collapse, identity acceptance, locomotion-like behavior, biological behavior, or unrestricted movement"
+  },
+  "support_gate": {
+    "artifact_only_replay": true,
+    "candidate_route_records_from_runtime_visible_evidence": true,
+    "claim_promotion_controls_passed": true,
+    "fail_closed_controls_passed": true,
+    "producer_reads_lineage_current_reabsorbed_state": true,
+    "selected_topology_event_references_arbitration": true,
+    "surface_lineage_consumes_selected_topology_event": true,
+    "topology_state_reabsorption_consumes_selected_topology_event": true
+  },
+  "verification": {
+    "closeout_suite_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_contract.py tests/telemetry/test_lgrc9v3_contract.py -q",
+    "closeout_suite_result": "281 passed, 59 subtests passed",
+    "diff_check": "passed",
+    "diff_check_command": "git diff --check",
+    "route_arbitration_slice_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route_arbitration\"",
+    "route_arbitration_slice_result": "26 passed, 125 deselected",
+    "runtime_suite_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q",
+    "runtime_suite_result": "151 passed",
+    "telemetry_contract_command": ".venv/bin/python -m pytest tests/telemetry/test_lgrc9v3_contract.py -q",
+    "telemetry_contract_result": "7 passed"
+  }
+}

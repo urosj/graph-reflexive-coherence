@@ -1,0 +1,106 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Developed Basin Centroid Collapse Long Window
+  description: Multi-node developed-basin GRCL-9 collapse discovery seed with centroid-selected target basin.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-developed-basin-centroid-collapse-long-window
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, basin, saddle, collapse_discovery, centroid]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - This seed mirrors the GRCL-V3 group-centroid pattern in a GRCL-9-native two-basin fission geometry.
+    - The source declares developed basin support and a centroid target policy; it does not claim collapse.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: developed_plateau
+    type: plateau
+    coherence_prior: 1.0
+    hosted_primitive_ids: [basin_a_centroid, basin_b_decaying_core, merge_saddle]
+    chart_center_hint: [0.5, 0.5]
+    extensions:
+      grcl9:
+        term_kind: post_refinement_two_sink_region
+        term_id: cell_developed_basin_centroid_collapse_long_window_two_sink_region
+        motif_id: post_expansion_fission
+        region_id: developed_post_refinement_region
+        module_region_id: module
+        sink_region_a: sink_a
+        sink_region_b: sink_b
+        identity_fission_min_basin_mass: 0.10
+        identity_fission_persistence_delta: 6
+  - id: basin_a_centroid
+    type: basin
+    parent_id: developed_plateau
+    coherence_prior: 0.90
+    depth_hint: 1
+    chart_center_hint: [0.36, 0.5]
+    chart_scale_hint:
+      radius: 0.11
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_developed_basin_centroid_collapse_long_window_stable_basin_a
+        motif_id: post_expansion_fission
+        basin_id: sink_a
+        stability_class: stable
+        mass_hint: 0.90
+        support_node_count: 6
+        selection_policy: group_centroid
+  - id: basin_b_decaying_core
+    type: basin
+    parent_id: developed_plateau
+    coherence_prior: 0.04
+    depth_hint: 1
+    chart_center_hint: [0.64, 0.5]
+    chart_scale_hint:
+      radius: 0.11
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_developed_basin_centroid_collapse_long_window_stable_basin_b
+        motif_id: post_expansion_fission
+        basin_id: sink_b
+        stability_class: collapsing
+        mass_hint: 0.04
+        support_node_count: 6
+        selection_policy: member_node
+  - id: merge_saddle
+    type: saddle
+    coherence_prior: 0.08
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [basin_a_centroid, basin_b_decaying_core]
+    extensions:
+      grcl9:
+        term_kind: saddle_bridge
+        term_id: cell_developed_basin_centroid_collapse_long_window_saddle_bridge
+        motif_id: post_expansion_fission
+        bridge_id: centroid_merge_bridge
+        region_a: sink_a
+        region_b: sink_b
+        bridge_class: merge_saddle_bridge
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_developed_basin_centroid_collapse_long_window
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    expected_selector_ids: [runtime_collapse_like_long_window]
+    notes: Long-window developed-basin collapse discovery seed; target selection uses group_centroid and runtime evidence must come from GRC9 telemetry/checkpoints.

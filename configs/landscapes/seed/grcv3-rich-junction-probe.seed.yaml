@@ -1,0 +1,143 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCV3 Rich Junction Probe
+  description: Minimal GRCL-v3 saddle/junction probe with explicit branch order and branch-target mapping.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl-v3-rich-junction-probe
+  source_schema_version: "0.1"
+  source_domain: "2d"
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+  translation_notes:
+    - This fixture is not derived from the PDE landscape corpus.
+    - It exists to test the first grcv3.rich.v1 contract and projector lowering path.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: left_basin
+    type: basin
+    coherence_prior: 0.95
+    depth_hint: 0
+    chart_center_hint: [0.34, 0.5]
+    chart_scale_hint:
+      radius: 0.075
+
+  - id: right_basin
+    type: basin
+    coherence_prior: 0.95
+    depth_hint: 0
+    chart_center_hint: [0.66, 0.5]
+    chart_scale_hint:
+      radius: 0.075
+
+  - id: upper_basin
+    type: basin
+    coherence_prior: 0.68
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.28]
+    chart_scale_hint:
+      radius: 0.065
+
+  - id: lower_basin
+    type: basin
+    coherence_prior: 0.68
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.72]
+    chart_scale_hint:
+      radius: 0.065
+
+  - id: decision_core
+    type: saddle
+    coherence_prior: 0.52
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids:
+      - left_basin
+      - right_basin
+      - upper_basin
+      - lower_basin
+    notes: Hostless explicit routing center for GRCL-v3 rich-seed probing.
+    extensions:
+      grcv3:
+        realization:
+          kind: junction_motif
+          support_count: 4
+          radius_scale: 0.45
+          branch_order: [north, east, south, west]
+        local_geometry:
+          frame_mode: branch_ordered
+          weak_axis_role: east
+        interfaces:
+          branch_targets:
+            north: upper_basin
+            east: right_basin
+            south: lower_basin
+            west: left_basin
+
+  - id: channel_left_to_core
+    type: valley
+    from_id: left_basin
+    to_id: decision_core
+    width_hint: 0.03
+    coherence_prior: 0.46
+    path_hint: bezier
+    waypoints:
+      - [0.41, 0.5]
+      - [0.46, 0.5]
+
+  - id: channel_core_to_right
+    type: valley
+    from_id: decision_core
+    to_id: right_basin
+    width_hint: 0.03
+    coherence_prior: 0.46
+    path_hint: bezier
+    waypoints:
+      - [0.54, 0.5]
+      - [0.59, 0.5]
+
+  - id: channel_upper_to_core
+    type: valley
+    from_id: upper_basin
+    to_id: decision_core
+    width_hint: 0.022
+    coherence_prior: 0.22
+    path_hint: bezier
+    waypoints:
+      - [0.5, 0.37]
+      - [0.5, 0.44]
+
+  - id: channel_core_to_lower
+    type: valley
+    from_id: decision_core
+    to_id: lower_basin
+    width_hint: 0.022
+    coherence_prior: 0.22
+    path_hint: bezier
+    waypoints:
+      - [0.5, 0.56]
+      - [0.5, 0.63]
+
+extensions:
+  grcv3:
+    contract_version: grcv3.rich.v1
+    rich_required: true
+  source_probe:
+    purpose: grcv3_rich_v1_junction_probe
+    intended_geometry:
+      - explicit branch-ordered junction motif
+      - explicit weak axis on east branch role
+      - explicit branch-target to channel attachment contract

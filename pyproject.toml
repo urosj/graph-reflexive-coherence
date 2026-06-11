@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pygrc"
+version = "0.1"
+description = "Reference Python implementation workspace for the GRC model family."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Uros Jovanovic" },
+]
+dependencies = [
+  "matplotlib>=3.8",
+  "networkx>=3.2",
+  "pyvis>=0.3.2",
+  "PyYAML>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/urosj/graph-reflexive-coherence"
+Repository = "https://github.com/urosj/graph-reflexive-coherence"
+Documentation = "https://github.com/urosj/graph-reflexive-coherence/tree/main/docs"
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.8",
+  "ruff>=0.5",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]
+mypy_path = "src"

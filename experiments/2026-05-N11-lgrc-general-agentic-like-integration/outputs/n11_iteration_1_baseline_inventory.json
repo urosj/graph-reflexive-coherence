@@ -1,0 +1,430 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 1 passes if N11 has a source-backed inventory of N10 closeout artifacts and records exact N10 evidence ceilings, support-sensitive boundaries, and native blockers without promoting them into N11 generalization evidence.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "checks": {
+    "a7_not_supported_at_start": true,
+    "all_required_artifacts_passed": true,
+    "all_required_artifacts_present": true,
+    "all_required_reports_present": true,
+    "claim_flags_all_false": true,
+    "expected_native_blockers_preserved": true,
+    "fully_native_boundary_preserved": true,
+    "gali7_not_supported_at_start": true,
+    "hypothesis_a_artifact_only": true,
+    "hypothesis_a_runtime_state_not_used": true,
+    "hypothesis_b_disrupted_support_blocks": true,
+    "hypothesis_b_supported": true,
+    "hypothesis_c_contract_complete": true,
+    "hypothesis_c_inventory_blockers_recorded": true,
+    "n10_category_level_preserved": true,
+    "n10_final_ceiling_preserved": true,
+    "n10_integration_level_preserved": true,
+    "n11_handoff_ready": true,
+    "native_support_flags_not_opened": true,
+    "no_n11_generalization_rows_at_start": true,
+    "no_n11_transfer_probe_run": true,
+    "prior_output_digests_valid": true,
+    "src_clean_for_iteration_1": true,
+    "support_sensitive_boundary_preserved": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/build_n11_iteration_1_baseline_inventory.py",
+  "controls": {
+    "claim_flags_all_false": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked"
+    },
+    "fully_native_remains_blocked": {
+      "control_passed": true,
+      "primary_blocker": "fully_native_agentic_like_integration_overread"
+    },
+    "no_a7_or_gali7_by_inheritance": {
+      "control_passed": true,
+      "primary_blocker": "n10_a6_overread_as_n11_a7"
+    },
+    "no_n11_transfer_probe": {
+      "control_passed": true,
+      "primary_blocker": "n11_transfer_probe_run_during_baseline_inventory"
+    },
+    "source_artifacts_digest_pinned": {
+      "control_passed": true,
+      "primary_blocker": "n10_source_artifact_digest_mismatch"
+    }
+  },
+  "experiment": "2026-05-N11-lgrc-general-agentic-like-integration",
+  "generated_at": "2026-06-10T20:52:23.406303+00:00",
+  "git": {
+    "head": "b63c53cb1ebccb3bbb3ed56abb1b57222db5f712",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "inventory_digest": "c1cf29e08ac13fb0b6d42cf85cc70735229326a4be4dae936fdb2de12caa9b65",
+  "iteration": 1,
+  "n11_baseline": {
+    "a7_supported_at_start": false,
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "semantic_goal_understanding",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "aco_like_behavior",
+      "ant_colony_behavior",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "personhood",
+      "unrestricted_identity",
+      "unrestricted_movement",
+      "unrestricted_agency",
+      "fully_native_agentic_like_integration",
+      "A7_generalization_by_inheritance",
+      "GALI7_by_inheritance"
+    ],
+    "claim_flags": {
+      "a7_claim_allowed": false,
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "gali7_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "fully_native_agentic_like_integration_supported": false,
+    "gali7_supported_at_start": false,
+    "n10_category_level": "ALI6",
+    "n10_final_ceiling": "bounded_artifact_only_agentic_like_integration_candidate",
+    "n10_integration_level": "A6",
+    "n11_baseline_digest": "e28ff3e3b31b81f8998671506cf32082d37c68ef9a8dbd268817c91e4c1027e9",
+    "n11_baseline_row_id": "n11_i1_baseline_inventory_v1",
+    "n11_generalization_rows_at_start": 0,
+    "n11_starting_gali_level": "GALI1",
+    "n11_starting_gali_level_reason": "Iteration 1 inventories source-backed transfer inputs only; no generalization replay row exists yet.",
+    "native_support_flags_opened": false,
+    "primary_native_blockers": [
+      "native_route_conductance_memory_policy_missing",
+      "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+      "native_identity_acceptance_validator_missing",
+      "native_agentic_like_integration_policy_missing"
+    ],
+    "source_boundary": "N10_iteration_15_closeout",
+    "support_sensitive_integration_supported": true
+  },
+  "next_iteration": "2_generalization_schema_and_fixture_manifest",
+  "purpose": "baseline_n10_source_inventory_no_transfer_probe_no_claim_promotion",
+  "schema": "n11_iteration_1_baseline_inventory_v1",
+  "source_artifacts": {
+    "n10_final_closeout": {
+      "output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+      "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+      "status": "passed"
+    },
+    "n10_hypothesis_a_closeout": {
+      "output_digest": "97346d8284d684f535170627226a1ca5d7c4cadbf05fe8ee46a82771755e51eb",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_9_artifact_only_closeout.json",
+      "sha256": "4e383df53f633e61e75070fd5f85174ce267d38a5120b6c06c153ba2c20c7c4c",
+      "status": "passed"
+    },
+    "n10_hypothesis_b_closeout": {
+      "output_digest": "9d85c7dc9d77a969680a2ed0b67283f4411cf3dca715aa27191529ceeb59aa18",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json",
+      "sha256": "bbeeeca3f094ce5771304f174d1866ab34708719d3f0a86c2671f0022d9b17c1",
+      "status": "passed"
+    },
+    "n10_hypothesis_c_contract": {
+      "output_digest": "0ec283968d91de44d2960bcc15fbdce740658ba356c5603dc8183108b8069a7f",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json",
+      "sha256": "044d7fd2f0fef213f0ec61ea67bbc07d098099560c264e4c403e464e6b590451",
+      "status": "passed"
+    },
+    "n10_hypothesis_c_inventory": {
+      "output_digest": "96ac54b9f1db55fcbe8c1d7e7fde7f9726d68db428ec9a2fbe50a1a42df30f89",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_13_hypothesis_c_native_policy_gap_inventory.json",
+      "sha256": "2261c45053f177105418483db649ca01abcfe5201c84bb98c8e48ca8e39bf693",
+      "status": "passed"
+    }
+  },
+  "source_inventory": {
+    "n10_final_closeout": {
+      "artifact_key": "n10_final_closeout",
+      "bounded_artifact_only_agentic_like_integration_supported": true,
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "native_agentic_like_integration_supported": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "final_n10_ceiling": "bounded_artifact_only_agentic_like_integration_candidate",
+      "fully_native_agentic_like_integration_supported": false,
+      "integration_level": "A6",
+      "n10_category_level": "ALI6",
+      "n10_final_status": "closed_bounded_artifact_only_agentic_like_integration_with_support_sensitive_and_native_contract_handoff",
+      "n11_handoff_ready": true,
+      "n11_must_not_overread": [
+        "agency",
+        "intention",
+        "semantic goal ownership",
+        "identity acceptance",
+        "RC identity collapse",
+        "ACO or ant-colony behavior",
+        "biological behavior",
+        "personhood",
+        "unrestricted agency",
+        "fully native agentic-like integration"
+      ],
+      "n11_must_preserve": [
+        "N10 evidence is bounded and artifact-only",
+        "N06 route context remains selection-only unless a later source broadens it",
+        "N08 memory/trail is not native route conductance memory yet",
+        "N09 regulation is goal-proxy regulation, not semantic goal ownership",
+        "N07 support/invariance is not identity acceptance",
+        "disrupted support blocks attempted A6/ALI6 unless explicit restoration is present",
+        "fully native agentic-like integration remains blocked until a separate native implementation"
+      ],
+      "native_support_flags_opened": false,
+      "primary_native_blockers": [
+        "native_route_conductance_memory_policy_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_identity_acceptance_validator_missing",
+        "native_agentic_like_integration_policy_missing"
+      ],
+      "status": "passed",
+      "support_sensitive_integration_supported": true
+    },
+    "n10_hypothesis_a_closeout": {
+      "artifact_key": "n10_hypothesis_a_closeout",
+      "artifact_only": true,
+      "bounded_window_count": 4,
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_ownership_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "final_n10_ceiling": "bounded_artifact_only_agentic_like_integration_candidate",
+      "integration_level": "A6",
+      "memory_scope": "N08_MEM6_serialized_producer_policy_memory_or_trail",
+      "n10_category_level": "ALI6",
+      "native_policy_gaps_preserved": [
+        "native_agentic_like_integration_policy_missing",
+        "native_identity_acceptance_validator_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_route_conductance_memory_policy_missing"
+      ],
+      "runtime_state_used": false,
+      "status": "passed",
+      "support_matrix_deferred_to_hypothesis_b": true
+    },
+    "n10_hypothesis_b_closeout": {
+      "artifact_key": "n10_hypothesis_b_closeout",
+      "artifact_only": true,
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_ownership_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "disrupted_support_blocker": "support_disrupted_but_integration_allowed",
+      "hypothesis_b_status": "supported_bounded_support_sensitive_full_composition",
+      "hypothesis_b_supported": true,
+      "matrix_states": [
+        "support_intact_survives",
+        "mild_withdrawal_survives",
+        "n09_matched_withdrawal_disrupts_support",
+        "explicit_restoration_recovers_support"
+      ],
+      "positive_scope": "bounded_artifact_only_support_sensitive_full_composition",
+      "restoration_preserves_disruption_history": true,
+      "runtime_state_used": false,
+      "status": "passed",
+      "support_sensitive_rule": "intact, mild-withdrawal, and explicit-restoration support states may preserve or resume bounded composition; disrupted support must block or downgrade the full composition unless explicit restoration is present",
+      "support_state_matrix": [
+        {
+          "accepted_integration_level": "A5",
+          "accepted_n10_category_level": "ALI5",
+          "expected_outcome": "composition_preserved",
+          "integration_allowed": true,
+          "matrix_row_digest": "b2a0a61cfa78c3a8d1ca7c7a42258605aa9756a2918afb6f1232ca881b291c2e",
+          "matrix_state": "support_intact_survives",
+          "outcome_matches_expectation": true
+        },
+        {
+          "accepted_integration_level": "A5",
+          "accepted_n10_category_level": "ALI5",
+          "expected_outcome": "composition_preserved_under_bounded_companion_scope",
+          "integration_allowed": true,
+          "matrix_row_digest": "3d386c98bc1f66d4250b7af0c761d39ffe8e99a5df90f1c1deb598c97d31ca38",
+          "matrix_state": "mild_withdrawal_survives",
+          "outcome_matches_expectation": true
+        },
+        {
+          "accepted_integration_level": null,
+          "accepted_n10_category_level": null,
+          "expected_outcome": "composition_blocked_or_downgraded",
+          "integration_allowed": false,
+          "matrix_row_digest": "56f4e1c524bc4bd6ea2712963e6476e15686c639861e56677feca3e7534ccafe",
+          "matrix_state": "n09_matched_withdrawal_disrupts_support",
+          "outcome_matches_expectation": true
+        },
+        {
+          "accepted_integration_level": "A6",
+          "accepted_n10_category_level": "ALI6",
+          "expected_outcome": "composition_restoration_gated_resume",
+          "integration_allowed": true,
+          "matrix_row_digest": "fa7dd2ba177e34efca3558a0504743c1ade39046aedfec80deee83eea202c56a",
+          "matrix_state": "explicit_restoration_recovers_support",
+          "outcome_matches_expectation": true
+        }
+      ]
+    },
+    "n10_hypothesis_c_contract": {
+      "artifact_key": "n10_hypothesis_c_contract",
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "native_agentic_like_integration_supported": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "contract_status": "native_contract_requirements_complete",
+      "fully_native_agentic_like_integration_supported": false,
+      "native_support_flags_opened": false,
+      "phase_8_absorption_step_count": 6,
+      "primary_native_blockers": [
+        "native_route_conductance_memory_policy_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_identity_acceptance_validator_missing",
+        "native_agentic_like_integration_policy_missing"
+      ],
+      "required_policy_records": [
+        "native_route_context_record",
+        "native_route_conductance_memory_policy_record",
+        "native_geometry_conductance_update_policy_record",
+        "native_goal_proxy_regulation_policy_record",
+        "native_response_magnitude_policy_record",
+        "native_identity_support_validator_record",
+        "native_agentic_like_integration_policy_record",
+        "native_support_state_integration_gate_record",
+        "native_budget_surface_contract_record",
+        "native_claim_boundary_contract_record"
+      ],
+      "status": "passed"
+    },
+    "n10_hypothesis_c_inventory": {
+      "artifact_key": "n10_hypothesis_c_inventory",
+      "claim_flags": {},
+      "classification_counts": {
+        "bookkeeping_and_replay_validation": 1,
+        "claim_boundary": 1,
+        "constitutive_policy_input": 5,
+        "constitutive_prerequisite_and_replay_validation": 1,
+        "replay_validation": 1,
+        "replay_validation_and_constitutive_gate": 1
+      },
+      "gap_row_count": 10,
+      "load_bearing_gap_row_count": 9,
+      "primary_native_blockers": [
+        "native_agentic_like_integration_policy_missing",
+        "native_goal_proxy_regulation_policy_missing",
+        "native_identity_acceptance_validator_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_route_conductance_memory_policy_missing"
+      ],
+      "purpose": "hypothesis_c_native_policy_gap_inventory",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "n10_final_closeout": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md",
+      "sha256": "4603752309ace1a77d5ee6c4f486b8ac0ff723d185742617a43a086254524a61"
+    },
+    "n10_hypothesis_a_closeout": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_9_artifact_only_closeout.md",
+      "sha256": "381e245bde15db105c52eebf2ea3b76a9fb0329601b43d8dd2d84a08a2d0bea5"
+    },
+    "n10_hypothesis_b_closeout": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md",
+      "sha256": "78de216677b04cc9cf7dee2de8859b6f8d63f63f98f5207bf81598261beaaa33"
+    },
+    "n10_hypothesis_c_contract": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md",
+      "sha256": "9aa9940afb0f51104176e9ead58f7b86682845f8e557117e2fbc40193b3bb844"
+    },
+    "n10_hypothesis_c_inventory": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_13_hypothesis_c_native_policy_gap_inventory.md",
+      "sha256": "cf19d474058d72647fe7a309be2dfbd6cb7f925d8f6a13f069c52af912efe384"
+    }
+  },
+  "status": "passed"
+}

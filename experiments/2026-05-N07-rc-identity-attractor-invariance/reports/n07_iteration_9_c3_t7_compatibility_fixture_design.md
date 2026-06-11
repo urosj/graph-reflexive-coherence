@@ -1,0 +1,883 @@
+# N07 Iteration 9: C3/T7 Compatibility Fixture Design
+
+Status: passed.
+
+Command:
+
+```bash
+.venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_9_c3_t7_compatibility_fixture_design.py
+```
+
+Iteration 9 is a design/freeze iteration. It declares the C3/T7
+competing-basin compatibility fixture, frozen compatibility metrics,
+support-area digest replay inputs, source-control replay requirements, and
+artifact-only replay requirements. It does not run the compatibility probe and
+does not claim ID6.
+
+## Compatibility Metrics
+
+| Metric | Kind | Comparison | Threshold |
+|---|---|---|---:|
+| `a_support_retention_near_b` | `support_retention` | `greater_than_or_equal` | `0.85` |
+| `b_support_retention_near_a` | `support_retention` | `greater_than_or_equal` | `0.85` |
+| `destructive_interference_score` | `interference` | `less_than_or_equal` | `0.15` |
+| `ambiguous_overlap_score` | `support_overlap` | `less_than_or_equal` | `0.2` |
+| `wrong_basin_leakage_score` | `wrong_basin_leakage` | `less_than_or_equal` | `0.1` |
+| `hidden_support_rejection_rule` | `schema_guard` | `must_equal` | `0` |
+
+## Control Requirements
+
+| Control | Primary blocker | Gate | Blocked ceiling |
+|---|---|---|---|
+| `destructive_interference` | `destructive_interference` | `compatibility` | `ID5` |
+| `ambiguous_overlap` | `ambiguous_overlap` | `compatibility` | `ID5` |
+| `wrong_basin` | `wrong_basin` | `compatibility` | `ID5` |
+| `hidden_support_field` | `hidden_support_field` | `compatibility` | `ID5` |
+| `budget_discontinuity` | `budget_discontinuity` | `compatibility` | `ID5` |
+| `support_drift_beyond_threshold` | `support_drift_beyond_threshold` | `compatibility` | `ID5` |
+
+## Fixture Checks
+
+| Check | Passed |
+|---|---:|
+| `a_b_support_areas_declared` | `True` |
+| `a_b_u_node_edge_ids_disjoint` | `True` |
+| `all_required_metrics_declared` | `True` |
+| `artifact_replay_requirements_declared` | `True` |
+| `basin_a_reexpression_scope_recorded` | `True` |
+| `basin_b_source_backing_required_for_9b` | `True` |
+| `c3_composite_declared` | `True` |
+| `c3_primitive_extension_policy_declared` | `True` |
+| `claim_flags_all_false` | `True` |
+| `competition_semantics_declared` | `True` |
+| `control_blockers_distinct` | `True` |
+| `control_blockers_match_manifest` | `True` |
+| `control_ceilings_gate_specific` | `True` |
+| `control_requirements_complete` | `True` |
+| `direct_iteration_7b_provenance_verified` | `True` |
+| `frozen_id_row_fields_declared` | `True` |
+| `gate_vector_no_compatibility_promotion` | `True` |
+| `hidden_metric_inputs_blocked` | `True` |
+| `hidden_support_metric_semantics_declared` | `True` |
+| `iteration_8_source_passed` | `True` |
+| `metric_contract_frozen` | `True` |
+| `non_actions_preserved` | `True` |
+| `schema_matches` | `True` |
+| `shared_u_declared` | `True` |
+| `source_control_replay_required` | `True` |
+| `support_digest_chain_declared` | `True` |
+| `support_digest_inputs_recompute` | `True` |
+| `support_visuals_non_authoritative` | `True` |
+| `t7_becoming_guidance_declared` | `True` |
+| `t7_family_declared` | `True` |
+| `t7_manifest_extension_policy_declared` | `True` |
+
+## Checks
+
+| Check | Passed |
+|---|---:|
+| `artifact_replay_not_run` | `True` |
+| `claim_flags_false` | `True` |
+| `compatibility_not_run` | `True` |
+| `design_only` | `True` |
+| `fixture_checks_passed` | `True` |
+| `fixture_file_digest_matches` | `True` |
+| `fixture_file_reloads` | `True` |
+| `fixture_file_written` | `True` |
+| `id6_not_claimed` | `True` |
+| `next_iteration_is_9b` | `True` |
+| `no_src_changes_required` | `True` |
+| `status_passed` | `True` |
+
+## Fixture
+
+```json
+{
+  "artifact_replay_requirements": {
+    "artifact_only": true,
+    "private_runtime_state_allowed": false,
+    "required_chain": [
+      "A_support_area_row",
+      "B_support_area_row",
+      "shared_neighborhood_U",
+      "compatibility_metric_records",
+      "source_control_rows",
+      "budget_records",
+      "closeout_row"
+    ],
+    "semantic_consistency_required": true,
+    "support_area_digest_replay_required_for": [
+      "A",
+      "B"
+    ],
+    "support_digest_replay_chain": [
+      "support_surface_descriptor_digest",
+      "support_area_digest_input_digest"
+    ],
+    "support_surface_descriptor_kind": "n07_c3_t7_design_support_surface_descriptor",
+    "support_surface_descriptor_kind_declared_here": true
+  },
+  "basins": {
+    "A": {
+      "basin_id": "n07_basin_A_candidate_v1",
+      "source_backing_scope": {
+        "support_area_digest": "source_backed_from_iteration_8_closeout",
+        "support_edge_ids": "c3_design_extension",
+        "support_node_ids": "source_backed_from_iteration_7b_later_cycle_state_row",
+        "support_port_ids": "c3_design_extension"
+      },
+      "source_status": "source_backed_c1_t6_nodes_structurally_reexpressed_for_c3",
+      "source_support_area_digest": "565a3f024ebb217cb62b0cd9aaa2c816ff1613d74cee6b65b9a6d94edb8a3075",
+      "structural_reexpression_note": "Basin A imports the source-backed C1/T6 support nodes and support digest, then declares new C3-specific edge/port ids for the competing-basin fixture. The new edges and ports are design extensions, not prior runtime evidence.",
+      "support_area_row": {
+        "basin_id": "n07_basin_A_candidate_v1",
+        "budget_after": 6.0,
+        "budget_before": 6.0,
+        "budget_error": 0.0,
+        "budget_surface": "node_plus_packet",
+        "candidate_identity_carrier_type": "coherence_basin",
+        "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+        "lineage_map_digest": null,
+        "lineage_status": "fixed_c3_t7_fixture_design",
+        "role": "candidate_A_source_backed_c1_t6_basin_reexpressed_for_c3_design",
+        "scheduler_event_index": null,
+        "support_area_digest": "b5885854c210804f752d87c82904b284957426c76af51df3d8b2450d18d5168a",
+        "support_area_digest_input": {
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+          "lineage_map_digest": null,
+          "lineage_status": "fixed_c3_t7_fixture_design",
+          "scheduler_event_index": null,
+          "support_area_id": "n07_support_area_A_v1",
+          "support_edge_ids": [
+            300,
+            301,
+            302,
+            306
+          ],
+          "support_node_ids": [
+            30,
+            31,
+            32
+          ],
+          "support_port_ids": [
+            "A_support_front",
+            "A_support_rear",
+            "A_support_shared_U",
+            "A_support_reentry"
+          ],
+          "support_surface_digest": "93b7177c553cb66414710f88070e10d9a0de6854674ce2a7fa3aa1aaf4f9a5a7"
+        },
+        "support_area_id": "n07_support_area_A_v1",
+        "support_digest_replay_required": true,
+        "support_edge_ids": [
+          300,
+          301,
+          302,
+          306
+        ],
+        "support_node_ids": [
+          30,
+          31,
+          32
+        ],
+        "support_port_ids": [
+          "A_support_front",
+          "A_support_rear",
+          "A_support_shared_U",
+          "A_support_reentry"
+        ],
+        "support_surface_descriptor": {
+          "basin_id": "n07_basin_A_candidate_v1",
+          "descriptor_kind": "n07_c3_t7_design_support_surface_descriptor",
+          "design_only": true,
+          "role": "candidate_A_source_backed_c1_t6_basin_reexpressed_for_c3_design",
+          "source_digest": "565a3f024ebb217cb62b0cd9aaa2c816ff1613d74cee6b65b9a6d94edb8a3075",
+          "support_area_id": "n07_support_area_A_v1",
+          "support_edge_ids": [
+            300,
+            301,
+            302,
+            306
+          ],
+          "support_node_ids": [
+            30,
+            31,
+            32
+          ],
+          "support_port_ids": [
+            "A_support_front",
+            "A_support_rear",
+            "A_support_shared_U",
+            "A_support_reentry"
+          ]
+        },
+        "support_surface_digest": "93b7177c553cb66414710f88070e10d9a0de6854674ce2a7fa3aa1aaf4f9a5a7",
+        "visual_is_evidence_source": false
+      }
+    },
+    "B": {
+      "basin_id": "n07_basin_B_competitor_v1",
+      "source_backing_required_in_iteration_9b": true,
+      "source_backing_requirement": "Iteration 9-B must emit source-backed B support/probe rows before B can be used as compatibility evidence. This design row alone is not evidence for B-basin identity.",
+      "source_status": "declared_design_fixture_until_iteration_9b",
+      "support_area_row": {
+        "basin_id": "n07_basin_B_competitor_v1",
+        "budget_after": 6.0,
+        "budget_before": 6.0,
+        "budget_error": 0.0,
+        "budget_surface": "node_plus_packet",
+        "candidate_identity_carrier_type": "coherence_basin",
+        "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+        "lineage_map_digest": null,
+        "lineage_status": "fixed_c3_t7_fixture_design",
+        "role": "candidate_B_declared_competing_basin_design_only",
+        "scheduler_event_index": null,
+        "support_area_digest": "97baab5d67462d060ef2a96bfad90283091e70ab127f1e4ff9a5b0dfe479366c",
+        "support_area_digest_input": {
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "budget_surface": "node_plus_packet",
+          "candidate_identity_carrier_type": "coherence_basin",
+          "event_time_key": "n07_i9_c3_t7_fixture_design_no_probe",
+          "lineage_map_digest": null,
+          "lineage_status": "fixed_c3_t7_fixture_design",
+          "scheduler_event_index": null,
+          "support_area_id": "n07_support_area_B_v1",
+          "support_edge_ids": [
+            303,
+            304,
+            305,
+            307
+          ],
+          "support_node_ids": [
+            40,
+            41,
+            42
+          ],
+          "support_port_ids": [
+            "B_support_front",
+            "B_support_rear",
+            "B_support_shared_U",
+            "B_support_reentry"
+          ],
+          "support_surface_digest": "0f288503a68dc4dda4a185b2fc2901b45fce993fdaa8059f3a55eb98b79e0e1f"
+        },
+        "support_area_id": "n07_support_area_B_v1",
+        "support_digest_replay_required": true,
+        "support_edge_ids": [
+          303,
+          304,
+          305,
+          307
+        ],
+        "support_node_ids": [
+          40,
+          41,
+          42
+        ],
+        "support_port_ids": [
+          "B_support_front",
+          "B_support_rear",
+          "B_support_shared_U",
+          "B_support_reentry"
+        ],
+        "support_surface_descriptor": {
+          "basin_id": "n07_basin_B_competitor_v1",
+          "descriptor_kind": "n07_c3_t7_design_support_surface_descriptor",
+          "design_only": true,
+          "role": "candidate_B_declared_competing_basin_design_only",
+          "source_digest": null,
+          "support_area_id": "n07_support_area_B_v1",
+          "support_edge_ids": [
+            303,
+            304,
+            305,
+            307
+          ],
+          "support_node_ids": [
+            40,
+            41,
+            42
+          ],
+          "support_port_ids": [
+            "B_support_front",
+            "B_support_rear",
+            "B_support_shared_U",
+            "B_support_reentry"
+          ]
+        },
+        "support_surface_digest": "0f288503a68dc4dda4a185b2fc2901b45fce993fdaa8059f3a55eb98b79e0e1f",
+        "visual_is_evidence_source": false
+      }
+    }
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "compatibility_metric_contract": {
+    "compatibility_gate_mapping": {
+      "all_metrics_pass": "compatibility=pass",
+      "any_metric_fails": "compatibility=blocked",
+      "probe_not_run": "compatibility=not_measured"
+    },
+    "frozen_before_probe": true,
+    "hidden_report_side_metric_allowed": false,
+    "metric_id": "n07_coherence_compatibility_v1",
+    "metric_names": [
+      "a_support_retention_near_b",
+      "b_support_retention_near_a",
+      "destructive_interference_score",
+      "ambiguous_overlap_score",
+      "wrong_basin_leakage_score",
+      "hidden_support_rejection_rule"
+    ],
+    "metrics": [
+      {
+        "comparison": "greater_than_or_equal",
+        "metric_kind": "support_retention",
+        "metric_name": "a_support_retention_near_b",
+        "runtime_visible_inputs_required": [
+          "A_support_area_digest",
+          "A_support_mass_before",
+          "A_support_mass_after_near_B",
+          "node_plus_packet_budget_surface"
+        ],
+        "source_support_area_id": "n07_support_area_A_v1",
+        "target_basin": "A",
+        "threshold": 0.85
+      },
+      {
+        "comparison": "greater_than_or_equal",
+        "metric_kind": "support_retention",
+        "metric_name": "b_support_retention_near_a",
+        "runtime_visible_inputs_required": [
+          "B_support_area_digest",
+          "B_support_mass_before",
+          "B_support_mass_after_near_A",
+          "node_plus_packet_budget_surface"
+        ],
+        "source_support_area_id": "n07_support_area_B_v1",
+        "target_basin": "B",
+        "threshold": 0.85
+      },
+      {
+        "comparison": "less_than_or_equal",
+        "metric_kind": "interference",
+        "metric_name": "destructive_interference_score",
+        "primary_blocker": "destructive_interference",
+        "runtime_visible_inputs_required": [
+          "A_support_loss",
+          "B_support_loss",
+          "shared_U_flux_balance",
+          "node_plus_packet_budget_surface"
+        ],
+        "threshold": 0.15
+      },
+      {
+        "comparison": "less_than_or_equal",
+        "metric_kind": "support_overlap",
+        "metric_name": "ambiguous_overlap_score",
+        "primary_blocker": "ambiguous_overlap",
+        "runtime_visible_inputs_required": [
+          "A_support_node_ids",
+          "B_support_node_ids",
+          "lineage_status",
+          "shared_U_node_ids"
+        ],
+        "threshold": 0.2
+      },
+      {
+        "comparison": "less_than_or_equal",
+        "metric_kind": "wrong_basin_leakage",
+        "metric_name": "wrong_basin_leakage_score",
+        "primary_blocker": "wrong_basin",
+        "runtime_visible_inputs_required": [
+          "A_flux_into_B_support",
+          "B_flux_into_A_support",
+          "shared_U_route_context"
+        ],
+        "threshold": 0.1
+      },
+      {
+        "comparison": "must_equal",
+        "metric_formula": "hidden_support_field_count == 0",
+        "metric_kind": "schema_guard",
+        "metric_name": "hidden_support_rejection_rule",
+        "metric_semantics": "Count support-affecting fields not present in the declared support_area_digest_input or source support rows. The metric passes only when no hidden support fields are consumed.",
+        "primary_blocker": "hidden_support_field",
+        "runtime_visible_inputs_required": [
+          "support_area_digest_input",
+          "source_artifact_digest",
+          "declared_support_rows"
+        ],
+        "threshold": 0
+      }
+    ],
+    "source_metric_conditions": [
+      "budget_error == 0",
+      "min_active_node_coherence >= 0",
+      "candidate_support_overlap_with_competitor <= declared_overlap_threshold",
+      "lineage_conflict_detected = false",
+      "hidden_support_source_detected = false",
+      "destructive_interference_score <= declared_interference_threshold"
+    ],
+    "thresholds_are_frozen": true
+  },
+  "competition_semantics": {
+    "claim_boundary": "A positive result would support compatibility of an ID5 basin near another basin; it would not prove semantic choice, agency, identity acceptance, RC identity collapse, or biological identity.",
+    "competition_axes": [
+      "shared_neighborhood_U",
+      "flux_ambiguity",
+      "support_overlap_risk",
+      "attractor_interference",
+      "wrong_basin_leakage",
+      "artifact_replay_identity_ambiguity"
+    ],
+    "definition": "Competing basins are structurally coupled alternatives on the same coherence/flux field. They share or border a local neighborhood U such that coherence, flux, support evidence, or basin legibility can be captured by, leaked into, or disturbed by either basin.",
+    "iteration_9b_question": "Does Basin A remain distinct, coherent, and replayable as A when Basin B is source-backed and present in the shared-U compatibility fixture?",
+    "not_meant_as": [
+      "semantic_choice",
+      "agency",
+      "goal_directed_competition",
+      "biological_competition",
+      "identity_acceptance"
+    ]
+  },
+  "composite_topology": {
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+    "design_iteration_derived_id_ceiling": "ID5",
+    "id6_requires": [
+      "iteration_9b_compatibility_pass",
+      "iteration_9c_artifact_replay_pass",
+      "all_claim_flags_false"
+    ],
+    "manifest_primitive_blocks_combined": [
+      "n07_T2_stable_well_basin",
+      "n07_T3_attractor_neighborhood"
+    ],
+    "primitive_blocks_combined": [
+      "n07_T1_support_area_minimal",
+      "n07_T2_stable_well_basin",
+      "n07_T3_attractor_neighborhood",
+      "n07_T5_lineage_current_invariance",
+      "n07_T6_reflexive_closure",
+      "n07_T7_compatibility"
+    ],
+    "primitive_extension_policy": "The frozen Iteration 2 C3 manifest declares a minimal T2/T3 compatibility sketch. Iteration 9 extends C3 after the Iteration 8 C1/T6 closeout by composing the closed ID5 chain with T7 compatibility. The frozen manifest is not rewritten; 9-B/9-C use this fixture as the authoritative C3/T7 extension contract.",
+    "primitive_extension_requires_fixture_validation": true,
+    "source_context_closeout_row_digest": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+    "source_context_closeout_row_id": "n07_i8_c1_t6_artifact_replay_closeout_row_v1",
+    "source_context_derived_id_ceiling": "ID5",
+    "source_manifest_composite_topology": {
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+      "derived_id_ceiling": "ID0",
+      "expected_id_ceiling": "ID5_or_ID6_only_after_T7_compatibility_and_replay",
+      "false_positive_confusion_under_test": "basin_overlap_misread_as_compatibility",
+      "gate_vector": {
+        "artifact_replay": "not_measured",
+        "attractivity": "not_measured",
+        "compatibility": "not_measured",
+        "invariance": "not_measured",
+        "lineage_current": "not_measured",
+        "reflexive_closure": "not_measured",
+        "stability": "not_measured",
+        "support": "not_measured"
+      },
+      "identity_carrier_surface": "runtime_coherence_basin",
+      "imported_prior_experiment_surfaces": [],
+      "imported_surfaces_evidence_only": true,
+      "informative_lower_ceilings": [
+        "ID2",
+        "ID3"
+      ],
+      "primary_blocker": "not_run_iteration_2_manifest_only",
+      "primitive_blocks_combined": [
+        "n07_T2_stable_well_basin",
+        "n07_T3_attractor_neighborhood"
+      ]
+    }
+  },
+  "control_requirements": [
+    {
+      "claim_flags_must_remain_false": true,
+      "control_gate": "compatibility",
+      "control_id": "destructive_interference",
+      "declared_before_probe": true,
+      "gate_specific_derived_id_ceiling": "ID5",
+      "must_emit_source_control_row_in_iteration_9b": true,
+      "must_replay_from_source_artifact_in_iteration_9c": true,
+      "primary_blocker": "destructive_interference"
+    },
+    {
+      "claim_flags_must_remain_false": true,
+      "control_gate": "compatibility",
+      "control_id": "ambiguous_overlap",
+      "declared_before_probe": true,
+      "gate_specific_derived_id_ceiling": "ID5",
+      "must_emit_source_control_row_in_iteration_9b": true,
+      "must_replay_from_source_artifact_in_iteration_9c": true,
+      "primary_blocker": "ambiguous_overlap"
+    },
+    {
+      "claim_flags_must_remain_false": true,
+      "control_gate": "compatibility",
+      "control_id": "wrong_basin",
+      "declared_before_probe": true,
+      "gate_specific_derived_id_ceiling": "ID5",
+      "must_emit_source_control_row_in_iteration_9b": true,
+      "must_replay_from_source_artifact_in_iteration_9c": true,
+      "primary_blocker": "wrong_basin"
+    },
+    {
+      "claim_flags_must_remain_false": true,
+      "control_gate": "compatibility",
+      "control_id": "hidden_support_field",
+      "declared_before_probe": true,
+      "gate_specific_derived_id_ceiling": "ID5",
+      "must_emit_source_control_row_in_iteration_9b": true,
+      "must_replay_from_source_artifact_in_iteration_9c": true,
+      "primary_blocker": "hidden_support_field"
+    },
+    {
+      "claim_flags_must_remain_false": true,
+      "control_gate": "compatibility",
+      "control_id": "budget_discontinuity",
+      "declared_before_probe": true,
+      "gate_specific_derived_id_ceiling": "ID5",
+      "must_emit_source_control_row_in_iteration_9b": true,
+      "must_replay_from_source_artifact_in_iteration_9c": true,
+      "primary_blocker": "budget_discontinuity"
+    },
+    {
+      "claim_flags_must_remain_false": true,
+      "control_gate": "compatibility",
+      "control_id": "support_drift_beyond_threshold",
+      "declared_before_probe": true,
+      "gate_specific_derived_id_ceiling": "ID5",
+      "must_emit_source_control_row_in_iteration_9b": true,
+      "must_replay_from_source_artifact_in_iteration_9c": true,
+      "primary_blocker": "support_drift_beyond_threshold"
+    }
+  ],
+  "fixture_id": "n07_c3_t7_competing_basin_compatibility_fixture_v1",
+  "gate_vector_mapping": {
+    "artifact_replay_status": "not_run",
+    "compatibility_probe_status": "not_run",
+    "iteration_9_design_gate_vector": {
+      "artifact_replay": "not_measured",
+      "attractivity": "pass",
+      "compatibility": "not_measured",
+      "invariance": "pass",
+      "lineage_current": "pass",
+      "reflexive_closure": "pass",
+      "stability": "pass",
+      "support": "pass"
+    },
+    "source_c1_t6_gate_vector": {
+      "artifact_replay": "pass",
+      "attractivity": "pass",
+      "compatibility": "blocked",
+      "invariance": "pass",
+      "lineage_current": "pass",
+      "reflexive_closure": "pass",
+      "stability": "pass",
+      "support": "pass"
+    }
+  },
+  "manifest_extension_policy": {
+    "extension_declared_in_fixture": true,
+    "frozen_manifest_path": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_fixture_manifest_v1.json",
+    "frozen_manifest_sha256": "e40f383520c95e3587be70d588e6f126d82f35e093ecb53e0d4e3ed5a0715603",
+    "iteration_9b_9c_validation_source": "experiments/2026-05-N07-rc-identity-attractor-invariance/configs/n07_c3_t7_compatibility_fixture_v1.json",
+    "manifest_remains_frozen": true,
+    "rationale": "Changing n07_fixture_manifest_v1 after Iteration 2 would invalidate pinned prior artifacts. Iteration 9 therefore declares T7 as a post-closeout fixture extension and records that downstream C3/T7 iterations validate against this fixture.",
+    "topology_family_extension_id": "n07_T7_compatibility"
+  },
+  "non_actions": {
+    "agency_claim_allowed": false,
+    "artifact_replay_passed": false,
+    "compatibility_passed": false,
+    "compatibility_probe_run": false,
+    "id6_claimed": false,
+    "identity_acceptance_event_emitted": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false
+  },
+  "purpose": "design_only_no_probe_no_id_promotion",
+  "row_schema_requirements": {
+    "becoming_enum_values": {
+      "becoming_class_status": [
+        "observation_tag",
+        "reusable_class",
+        "generative_class",
+        "coherence_preserving_class"
+      ],
+      "boundary_rung": [
+        "eligible_state",
+        "event",
+        "substrate_consequence",
+        "structured_consequence",
+        "source_specific_expression",
+        "recurrence_or_continuation",
+        "natural_regime_expression"
+      ],
+      "naturalization_rung": [
+        "Nat0_probe_dependent_expression",
+        "Nat1_probe_weakened_expression",
+        "Nat2_regime_assisted_expression",
+        "Nat3_endogenous_precondition_formation",
+        "Nat4_native_expression",
+        "Nat5_recurrent_native_expression",
+        "Nat6_self_interrogating_regime",
+        "not_applicable"
+      ],
+      "probe_role": [
+        "none",
+        "diagnostic_probe",
+        "constructive_probe",
+        "boundary_probe",
+        "withdrawal_probe",
+        "naturalization_probe"
+      ],
+      "support_dependency_status": [
+        "not_tested",
+        "probe_dependent",
+        "weakened_support_survives",
+        "regime_assisted",
+        "endogenous_precondition_candidate",
+        "native_expression_candidate",
+        "recurrent_native_expression_candidate"
+      ],
+      "withdrawal_test_status": [
+        "not_tested",
+        "support_weakened_passed",
+        "support_removed_passed",
+        "support_removed_failed",
+        "not_applicable"
+      ]
+    },
+    "implementation_surface_allowed_values": [
+      "experiment_local",
+      "native_lgrc_telemetry",
+      "native_causal_pulse_substrate_surface",
+      "surface_lineage_transport",
+      "topology_state_reabsorption",
+      "native_route_arbitration",
+      "proper_time_identity_evaluation",
+      "artifact_only_validator",
+      "not_applicable"
+    ],
+    "required_fields": [
+      "row_id",
+      "id_level",
+      "topology_family_id",
+      "composite_topology_id",
+      "candidate_identity_carrier_type",
+      "identity_carrier_surface",
+      "support_area_id",
+      "support_area_digest",
+      "source_artifacts",
+      "source_artifact_sha256",
+      "source_reports",
+      "runtime_family",
+      "implementation_surface",
+      "gate_vector",
+      "derived_id_ceiling",
+      "primary_blocker",
+      "native_support_status",
+      "native_observables_used",
+      "experiment_local_observables_used",
+      "native_policy_blockers",
+      "becoming_class_status",
+      "probe_role",
+      "boundary_rung",
+      "support_dependency_status",
+      "withdrawal_test_status",
+      "naturalization_rung",
+      "activity_history_digest",
+      "claim_flags",
+      "visual_reference",
+      "visual_is_evidence_source"
+    ],
+    "runtime_family_allowed_values": [
+      "LGRC9V3",
+      "experiment_local",
+      "hybrid_lgrc9v3_experiment_local",
+      "not_applicable"
+    ]
+  },
+  "schema": "n07_c3_t7_compatibility_fixture_v1",
+  "shared_neighborhood_U": {
+    "connects_support_area_ids": [
+      "n07_support_area_A_v1",
+      "n07_support_area_B_v1"
+    ],
+    "edge_ids": [
+      308,
+      309,
+      310,
+      311
+    ],
+    "neighborhood_id": "n07_U_shared_A_B_competing_basin_v1",
+    "node_ids": [
+      33,
+      34,
+      35
+    ],
+    "ports": [
+      "U_to_A_front",
+      "U_to_A_rear",
+      "U_to_B_front",
+      "U_to_B_rear"
+    ],
+    "route_choice_claim_allowed": false,
+    "wrong_basin_leakage_measured": true
+  },
+  "source_control_replay_requirements": {
+    "b_basin_source_backing_required_in_iteration_9b": true,
+    "gate_specific_ceilings_required": true,
+    "iteration_9b": "emit probe/control rows from the frozen fixture",
+    "iteration_9c": "replay 9-B source probe/control rows from artifacts only",
+    "synthetic_closeout_controls_allowed": false
+  },
+  "source_iteration_7b_direct_artifact": {
+    "later_cycle_state_digest": "ac273d194207e577eba900fec8ec816e40508eb0fc71fc8f399989a274cdb08e",
+    "matches_iteration_8_embedded_7b": true,
+    "object_digest": "c4a3bda9d46639b1cc832f43be9bee26ec25220e09785be5714c7b99c2dec4f2",
+    "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+    "sha256": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33"
+  },
+  "source_iteration_8_closeout_row_digest": "6a074e6680fb3f7e80f63cdc8ecfc92066d811a3a8cb32284bd9e7334ed8e1d7",
+  "t7_becoming_method_guidance": {
+    "boundary_rung_for_9c_artifact_closeout_if_compatibility_passes": "recurrence_or_continuation",
+    "boundary_rung_for_design_only_fixture": "eligible_state",
+    "boundary_rung_for_positive_9b_probe_candidate": "source_specific_expression",
+    "identity_acceptance_claim_allowed": false,
+    "note": "T7 compatibility can strengthen an artifact-only ID candidate, but does not by itself authorize identity acceptance, RC identity collapse, agency, or semantic choice."
+  },
+  "topology_family": {
+    "budget_surface": "node_plus_packet",
+    "candidate_identity_carrier_type": "coherence_basin",
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "compatibility_evidence_emitted": false,
+    "declaration_source": "n07_c3_t7_compatibility_fixture_v1",
+    "expected_maximum_id_ceiling": "ID6_only_after_9b_compatibility_and_9c_artifact_replay",
+    "frozen_manifest_not_mutated": true,
+    "frozen_manifest_topology_family_present": false,
+    "gate_under_test": "compatibility",
+    "identity_carrier_surface": "runtime_coherence_basin",
+    "manifest_extension_status": "post_iteration_8_fixture_extension",
+    "paired_negative_control_topologies": [
+      "ambiguous_overlap",
+      "budget_discontinuity",
+      "destructive_interference",
+      "hidden_support_field",
+      "support_drift_beyond_threshold",
+      "wrong_basin"
+    ],
+    "primary_positive_metric": "n07_coherence_compatibility_v1",
+    "probe_run": false,
+    "shared_neighborhood_U": "n07_U_shared_A_B_competing_basin_v1",
+    "support_area_ids": [
+      "n07_support_area_A_v1",
+      "n07_support_area_B_v1"
+    ],
+    "target_id_level": "ID6",
+    "topology_family_id": "n07_T7_compatibility"
+  },
+  "visual_is_evidence_source": false,
+  "visual_reference": null
+}
+```
+
+## Artifact Digests
+
+```json
+{
+  "acceptance_digest": "d6513c6cb3a50e4bbb65853388c07ea03b442908f3f4586b49b3fa4b3f286866",
+  "checks_digest": "02358d5daf1ac2b3bc6f146fc4dd6211d78c98081cf02c1d022295f18d88d3ec",
+  "claim_boundary_digest": "e4b3ea6782a52982d160df9757cbebf399c7385f93ab8bba634022acb9462388",
+  "fixture_checks_digest": "32b3b0123a956dc69bffee752c2e7fbd42bdbb44270120d24989e6e7a0ab0958",
+  "fixture_digest": "d6a96b467f62a995dc212d3b0d0f0392939fabab65974c4edcec20675a2b0d7b"
+}
+```
+
+## Acceptance
+
+Iteration 9 passes because the C3/T7 compatibility fixture is frozen before
+probes run. A and B support areas, shared neighborhood U, metric thresholds,
+control replay requirements, artifact replay requirements, and frozen ID row
+fields are declared. Compatibility remains not measured, artifact replay is not
+run, ID6 is not claimed, and all identity acceptance, RC identity collapse,
+agency, semantic choice, biological identity, personhood, and unrestricted
+identity claims remain blocked.

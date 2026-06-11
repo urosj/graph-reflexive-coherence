@@ -1,0 +1,299 @@
+{
+  "blocked_claims": [
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "biological_behavior",
+    "agency",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement",
+    "T6_perturbation_recovery",
+    "R6_polarity_recovery_after_perturbation"
+  ],
+  "checks": {
+    "artifact_validators_passed": true,
+    "baseline_m6_available": true,
+    "broader_claims_blocked": true,
+    "budget_error_bounded": true,
+    "cost_scaling_bounded": true,
+    "cycle3_to_cycle5_cost_not_doubled": true,
+    "direction_parity_preserved": true,
+    "forward_five_feedback_cycles": true,
+    "identity_shape_gates_passed": true,
+    "m5_replay_passed": true,
+    "nonnegative_gate_passed": true,
+    "recovery_status_recorded": true,
+    "reversed_five_feedback_cycles": true,
+    "seeded_vs_feedback_cycles_separated": true,
+    "tag_schema_passed": true
+  },
+  "claim_ceiling": "native_m6_same_fixture_self_renewal_candidate_stress_passed",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "cost_scaling": {
+    "forward": {
+      "bounded": true,
+      "cost_per_cycle_cycle3": 0.1,
+      "cost_per_cycle_cycle5": 0.1,
+      "cycle5_to_cycle3_ratio": 1.0,
+      "failure_condition_triggered": false
+    },
+    "reversed": {
+      "bounded": true,
+      "cost_per_cycle_cycle3": 0.1,
+      "cost_per_cycle_cycle5": 0.1,
+      "cycle5_to_cycle3_ratio": 1.0,
+      "failure_condition_triggered": false
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "forward": {
+    "all_regenerated_pulses_feedback_authorized": true,
+    "artifact_validator_passed": true,
+    "budget_abs_error": 0.0,
+    "centroid_delta": 0.035714285714286476,
+    "cost_metric": "total_redistribution_load_per_cycle",
+    "cost_per_cycle": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "cost_per_cycle_cycle3": 0.1,
+    "cost_per_cycle_cycle5": 0.1,
+    "cost_per_cycle_max": 0.1,
+    "cost_per_cycle_min": 0.1,
+    "cycle_count_required": 5,
+    "direction": "forward",
+    "identity_shape_gates_passed": true,
+    "nonnegative_gate_passed": true,
+    "profile_similarity": 0.9742446008949094,
+    "scheduled_cycles": [
+      {
+        "boundary_polarity_score": 0.25,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-65f66f7963d62c47",
+        "surface_digest": "cd632b6be56e851cc27e8e0a811a2967ae5468e90ff94b8e8bb7e6434ea7057e"
+      },
+      {
+        "boundary_polarity_score": 0.3500000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-90f0eb8f587e1192",
+        "surface_digest": "d2e72c0822397b7050a560c42ca1a5a71122d91eb830e3dc3de3afd5ecf16d99"
+      },
+      {
+        "boundary_polarity_score": 0.4500000000000002,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-f88bdb90870f7496",
+        "surface_digest": "3067fbcad1084a9709921a208aeb78b122e4e7082e8cf82ff10f835265a340e0"
+      },
+      {
+        "boundary_polarity_score": 0.5500000000000003,
+        "copied_from_original_schedule": false,
+        "cycle_index": 3,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-cf2d431ea971015b",
+        "surface_digest": "8cf5fdc3b273da808fd43e7e66c1eb26581fc66ee6dfe47368649936b5f46f21"
+      },
+      {
+        "boundary_polarity_score": 0.6500000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 4,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-9a1bb192b3a0eed8",
+        "surface_digest": "4e6e97e639561399e09d709fbb34546a5d90f208cd16793372e0fa7d80466857"
+      }
+    ],
+    "seeded_first_contact_load": 0.25,
+    "seeded_first_response_required": true,
+    "self_renewed_cycle_count": 5,
+    "total_feedback_redistribution_load": 0.5,
+    "width_relative_change": 0.002414756090611547
+  },
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py"
+    }
+  },
+  "go_no_go_for_iteration_16": {
+    "bounded_cost": true,
+    "entry_ceiling_for_geometry_transfer": "native_m6_same_fixture_self_renewal_candidate_stress_passed",
+    "iteration_16_allowed": true,
+    "m6_sustained_five_feedback_cycles": true
+  },
+  "input_tag_schema": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json",
+    "sha256": "f62ac83cb66a51e75accde5af456864e70db0f4bee6f537aa88bdde9740219bd"
+  },
+  "iteration": "15",
+  "m5_replay_audit": {
+    "claim_ceiling_unchanged": true,
+    "claim_flags": {
+      "adaptive_topology_entry_allowed": false,
+      "boundary_coupled_movement_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_claim_inherited_from_n03": false,
+      "native_grc9v3_proposal_flux_control_used": false,
+      "native_grc9v3_proposal_flux_loop_claim": false,
+      "native_lgrc9v3_e3_pulse_used": true
+    },
+    "direction_parity_supported": true,
+    "forward_centroid_delta": 0.08333333333333215,
+    "same_gates_and_policies_reused": true,
+    "source_artifacts": {
+      "classification": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json",
+        "sha256": "a2bf9656b569ccb8e4728bae243bfffc8f6191bca8c12b9d15e8c942d80d4289"
+      },
+      "closeout": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json",
+        "sha256": "12be7455ab16fab1ee94d6920b4b771d3f65c0cba08d354a6285f827492353ed"
+      }
+    },
+    "source_claim_ceiling": "m5_direction_parity_supported_boundary_response",
+    "status_passed": true,
+    "true_reversed_centroid_delta": -0.08333333333333393
+  },
+  "m6_baseline": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_m6_same_fixture_validator.json",
+    "sha256": "c402f142c69d7bfb0d92fdd8fc444cb1b32d9b5d6bfdde2e02c609552c68c8d6"
+  },
+  "movement_substrate": "S0_chain_v1",
+  "next_iteration": "16_s4_corridor_or_widened_chain_geometry_transfer",
+  "persistence_update": {
+    "cost_scaling_status": "bounded",
+    "persistence_basis": "native_feedback_renewed_cycles_extended_to_five",
+    "persistence_level": "T5_candidate",
+    "r6_claim_allowed": false,
+    "recovery_passed": false,
+    "recovery_status": "not_tested_blocked_until_perturbation_recovery_probe",
+    "recovery_tested": false,
+    "repeatability_status": "same_fixture_five_feedback_renewed_cycles_passed",
+    "self_renewed_cycle_count": 5,
+    "t6_claim_allowed": false
+  },
+  "report_kind": "n04_iter15_s0_chain_stress_report_v1",
+  "reversed": {
+    "all_regenerated_pulses_feedback_authorized": true,
+    "artifact_validator_passed": true,
+    "budget_abs_error": 0.0,
+    "centroid_delta": -0.035714285714286476,
+    "cost_metric": "total_redistribution_load_per_cycle",
+    "cost_per_cycle": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "cost_per_cycle_cycle3": 0.1,
+    "cost_per_cycle_cycle5": 0.1,
+    "cost_per_cycle_max": 0.1,
+    "cost_per_cycle_min": 0.1,
+    "cycle_count_required": 5,
+    "direction": "reversed",
+    "identity_shape_gates_passed": true,
+    "nonnegative_gate_passed": true,
+    "profile_similarity": 0.9742446008949094,
+    "scheduled_cycles": [
+      {
+        "boundary_polarity_score": -0.25,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-122f7aa8efa6a432",
+        "surface_digest": "d7e7c103b59a8df46994b7cb4949bdf85fdfcbfb274f903cd96017a641966248"
+      },
+      {
+        "boundary_polarity_score": -0.3500000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-f989032d067f3bc3",
+        "surface_digest": "dbce3a963e0f9a2e827f0d633638fd6bbd55943c8a6418d3f5540addb61d7401"
+      },
+      {
+        "boundary_polarity_score": -0.4500000000000002,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-7a0eb51fab3133c3",
+        "surface_digest": "49d2d695b12f7609e5179614997e81b4ab231d0e70c6d8e5536bb302d51ceebe"
+      },
+      {
+        "boundary_polarity_score": -0.5500000000000003,
+        "copied_from_original_schedule": false,
+        "cycle_index": 3,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-bfb26f02e9ec09f2",
+        "surface_digest": "5ce077f443f28006777ef1f6ffbdfe40138d2c712c981b23b14ef6e0103c0658"
+      },
+      {
+        "boundary_polarity_score": -0.6500000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 4,
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-91416ef5e7d7d7c8",
+        "surface_digest": "95f10003317ca323ceb0eede759bf3e5061528314bd8e6db572d99ab6ff3d6ab"
+      }
+    ],
+    "seeded_first_contact_load": 0.25,
+    "seeded_first_response_required": true,
+    "self_renewed_cycle_count": 5,
+    "total_feedback_redistribution_load": 0.5,
+    "width_relative_change": 0.002414756090611547
+  },
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "status": "passed",
+  "stress_policy": {
+    "boundedness_criterion": "cost per feedback-renewed cycle does not grow superlinearly and cycle 5 cost does not double relative to cycle 3",
+    "cost_metric": "total_redistribution_load_per_cycle",
+    "cost_metric_interpretation": "Packetized feedback transport load per self-renewed cycle; implemented as the native feedback packet amount for each feedback-authorized cycle.",
+    "cycle_count_required": 5,
+    "epsilon_budget": 1e-12,
+    "failure_condition": "downgrade if cost per cycle doubles between cycle 3 and 5, or if budget error accumulates beyond epsilon_budget"
+  }
+}

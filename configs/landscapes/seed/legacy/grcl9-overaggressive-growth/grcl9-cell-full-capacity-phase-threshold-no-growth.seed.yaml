@@ -1,0 +1,177 @@
+seed_schema: pygrc.landscape_seed
+seed_version: '0.1'
+meta:
+  name: GRCL9 Cell Full Capacity Phase Threshold No Growth
+  description: Full-capacity GRCL-9 phase diagram seed for cell_full_capacity_phase_threshold_no_growth.
+  source_kind: manual_seed
+  source_reference: implementation/manual/cell-full-capacity-phase-threshold-no-growth
+  source_schema_version: '0.1'
+  source_domain: grcl9
+  tags:
+  - grcl9
+  - composing_cells
+  - cascade
+  - robustness
+  - phase_diagram
+  translator_name: manual_seed_authoring
+  translator_version: '0.1'
+  translation_mode: semantic_enrichment
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: multi_well
+    params:
+      basin_count: 3
+      saddle_bias: cascade
+primitives:
+- id: spark_saddle
+  type: saddle
+  branch_target_ids:
+  - basin_a
+  - basin_b
+  extensions:
+    grcl9:
+      term_kind: critical_region
+      term_id: cell_full_capacity_phase_threshold_no_growth_critical_region
+      motif_id: cascade_refinement
+      non_claims:
+      - no_runtime_event_injection
+      - no_solved_flux
+      - no_solved_diagnostic
+      - no_source_level_fission_confirmation
+      - no_grcv3_hierarchy_semantics
+      - no_lorentzian_causal_layer
+      - no_observer_local_semantics
+      region_id: candidate
+      stability_intent: critical
+      coherence_profile:
+        critical_region: saturated_membrane_bounded_identity
+        local_basin: cascade_source_cell
+      boundary_gradient_profile:
+        boundary_ports: all_nine
+        gradient_structure: columnwise_membrane
+        ridge_role: rupture_prone_membrane
+      columnwise_near_cancellation:
+        diagnostic_mode: near_epsilon
+        spark_threshold: 0.02
+        target_column: 2
+      spark_gate_intent: saturation_column_proxy
+- id: refinement_locus
+  type: plateau
+  extensions:
+    grcl9:
+      term_kind: refinement_locus
+      term_id: cell_full_capacity_phase_threshold_no_growth_refinement_locus
+      motif_id: cascade_refinement
+      non_claims:
+      - no_runtime_event_injection
+      - no_solved_flux
+      - no_solved_diagnostic
+      - no_source_level_fission_confirmation
+      - no_grcv3_hierarchy_semantics
+      - no_lorentzian_causal_layer
+      - no_observer_local_semantics
+      locus_id: refinement_locus
+      region_id: candidate
+      target_effective_degree: 44
+      coherence_transfer_mode: equal
+- id: post_refinement_plateau
+  type: plateau
+  extensions:
+    grcl9:
+      term_kind: post_refinement_two_sink_region
+      term_id: cell_full_capacity_phase_threshold_no_growth_two_sink_region
+      motif_id: cascade_fission
+      non_claims:
+      - no_runtime_event_injection
+      - no_solved_flux
+      - no_solved_diagnostic
+      - no_source_level_fission_confirmation
+      - no_grcv3_hierarchy_semantics
+      - no_lorentzian_causal_layer
+      - no_observer_local_semantics
+      region_id: post_refinement_region
+      module_region_id: module
+      sink_region_a: sink_a
+      sink_region_b: sink_b
+      identity_fission_min_basin_mass: 0.1
+      identity_fission_persistence_delta: 6
+- id: basin_a
+  type: basin
+  extensions:
+    grcl9:
+      term_kind: stable_basin
+      term_id: cell_full_capacity_phase_threshold_no_growth_stable_basin_a
+      motif_id: cascade_fission
+      non_claims:
+      - no_runtime_event_injection
+      - no_solved_flux
+      - no_solved_diagnostic
+      - no_source_level_fission_confirmation
+      - no_grcv3_hierarchy_semantics
+      - no_lorentzian_causal_layer
+      - no_observer_local_semantics
+      basin_id: sink_a
+      stability_class: stable
+      mass_hint: 0.9
+      support_node_count: 4
+      selection_policy: group_centroid
+- id: basin_b
+  type: basin
+  extensions:
+    grcl9:
+      term_kind: stable_basin
+      term_id: cell_full_capacity_phase_threshold_no_growth_stable_basin_b
+      motif_id: cascade_fission
+      non_claims:
+      - no_runtime_event_injection
+      - no_solved_flux
+      - no_solved_diagnostic
+      - no_source_level_fission_confirmation
+      - no_grcv3_hierarchy_semantics
+      - no_lorentzian_causal_layer
+      - no_observer_local_semantics
+      basin_id: sink_b
+      stability_class: weak
+      mass_hint: 0.12
+      support_node_count: 4
+      selection_policy: member_node
+- id: merge_saddle
+  type: saddle
+  branch_target_ids:
+  - basin_a
+  - basin_b
+  extensions:
+    grcl9:
+      term_kind: saddle_bridge
+      term_id: cell_full_capacity_phase_threshold_no_growth_saddle_bridge
+      motif_id: cascade_fission
+      non_claims:
+      - no_runtime_event_injection
+      - no_solved_flux
+      - no_solved_diagnostic
+      - no_source_level_fission_confirmation
+      - no_grcv3_hierarchy_semantics
+      - no_lorentzian_causal_layer
+      - no_observer_local_semantics
+      bridge_id: cascade_merge_bridge
+      region_a: sink_a
+      region_b: sink_b
+      bridge_class: merge_saddle_bridge
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_full_capacity_phase_threshold_no_growth
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    expected_selector_ids:
+    - spark_column_proxy_count
+    - expansion_module_size
+    - growth_count
+    - runtime_collapse_like_classification
+    notes: Full-capacity cascade phase diagram lane; selector records collapse-like
+      classification without preselecting the outcome.

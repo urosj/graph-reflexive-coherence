@@ -1,0 +1,119 @@
+{
+  "branch": "E1.2",
+  "claim_boundary": {
+    "adapter_only": true,
+    "movement_claim_allowed": false,
+    "native_grc9v3_evidence": false,
+    "native_lgrc9v3_execution": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/convert_d2_3_to_e1_lgrc_ledger.py",
+  "converted_lane_count": 12,
+  "errors": [],
+  "event_counts_by_kind": {
+    "control_blocked": 8,
+    "cycle_complete": 44,
+    "packet_arrival": 235,
+    "packet_departure": 240,
+    "self_rearm": 44,
+    "state_trigger": 240
+  },
+  "inferred_fields": [
+    "budget_after",
+    "budget_before",
+    "event_id",
+    "event_kind",
+    "event_time_key",
+    "node_proper_time",
+    "scheduler_event_index"
+  ],
+  "lane_summaries": [
+    {
+      "event_count": 1,
+      "expected_positive": false,
+      "lane_id": "D2.3-U0-no-surplus",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_u0_no_surplus_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 162,
+      "expected_positive": true,
+      "lane_id": "D2.3-P-self-rearming-cw",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_p_self_rearming_cw_ledger.jsonl",
+      "prototype_positive": true
+    },
+    {
+      "event_count": 162,
+      "expected_positive": true,
+      "lane_id": "D2.3-R-self-rearming-ccw",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_r_self_rearming_ccw_ledger.jsonl",
+      "prototype_positive": true
+    },
+    {
+      "event_count": 1,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-single-pass-no-rearm",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_single_pass_no_rearm_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 1,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-subthreshold",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_subthreshold_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 1,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-threshold-too-high",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_threshold_too_high_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 162,
+      "expected_positive": true,
+      "lane_id": "D2.3-S-low-threshold",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_s_low_threshold_ledger.jsonl",
+      "prototype_positive": true
+    },
+    {
+      "event_count": 141,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-wrong-direction",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_wrong_direction_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 4,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-forward-only",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_forward_only_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 10,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-broken-return",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_broken_return_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 4,
+      "expected_positive": false,
+      "lane_id": "D2.3-C-scrambled-order",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_c_scrambled_order_ledger.jsonl",
+      "prototype_positive": false
+    },
+    {
+      "event_count": 162,
+      "expected_positive": true,
+      "lane_id": "D2.3-N-jittered-delay",
+      "ledger_path": "outputs/e1_d2_3_lgrc_event_ledgers/d2_3_n_jittered_delay_ledger.jsonl",
+      "prototype_positive": true
+    }
+  ],
+  "schema": "n03_e1_d2_3_lgrc_event_ledger_summary_v1",
+  "source_summary": "outputs/d2_3_self_rearming_packets.json",
+  "status": "passed",
+  "total_event_count": 811
+}

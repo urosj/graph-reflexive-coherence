@@ -1,0 +1,97 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Cell Refinement Budget Expansion
+  description: ComposingCells-aligned refinement cell with explicit budget-partition intent observed through expansion telemetry.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-84-composingcells-aligned-hybrid-seeds
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, refinement, expansion, budget]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: refinement_parent
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [refined_a, refined_b, refined_c]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: cell_refinement_budget_expansion_critical
+        region_id: refinement_parent
+        source_role: composing_cell_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: refinement_locus
+    type: junction
+    host_id: refinement_parent
+    branch_target_ids: [refined_a, refined_b, refined_c]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: cell_refinement_budget_expansion_refinement
+        region_id: refinement_parent
+        source_role: composing_cell_control
+        profile:
+          target_effective_degree: 51
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+          budget_partition_intent: partition_source_mass_not_copy
+  - id: refinement_membrane
+    type: ridge
+    owner_id: refinement_parent
+    adjacent_ids: [refined_a, refined_b]
+    extensions:
+      grcl9v3:
+        term_kind: ridge_membrane
+        term_id: cell_refinement_budget_expansion_membrane
+        region_id: refinement_membrane
+        source_role: composing_cell_control
+        profile:
+          boundary: refinement_budget_membrane
+  - id: refined_a
+    type: basin
+    coherence_prior: 0.5
+  - id: refined_b
+    type: basin
+    coherence_prior: 0.5
+  - id: refined_c
+    type: plateau
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: cell_refinement_budget_expansion
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0019-cell-refinement-budget-expansion
+    expected_selector_ids: [hybrid_expansion_events]
+    notes:
+      composing_cells_anchor: refinement locus partitions source mass during expansion
+      boundary: source preconditions only
+      telemetry_only: budget preservation remains runtime telemetry, not source outcome
+      composed_source_ancestry:
+        - spark_to_expansion_positive_control
+        - hybrid_spark_gate_positive_control

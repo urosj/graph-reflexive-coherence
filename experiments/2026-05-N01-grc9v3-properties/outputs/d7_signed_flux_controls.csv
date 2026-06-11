@@ -1,0 +1,3 @@
+discriminator,schema_version,lane_id,control_id,mode,eligible,reconstruction_path,max_abs_error,compressed_signed_control_error,signed_flux_j_split_available,classification,evidence_label,notes
+d7_multiscale,grc9v3_properties_iter2_v1,current_hybrid_signed_hessian,signed_flux,signed_flux_split,True,G(J+) + G(J-) -> Split -> J+ - J-,0.0,,True,exact_j_plus_j_minus,direct,Signed flux reconstructs exactly through J+/J- column split.
+d7_multiscale,grc9v3_properties_iter2_v1,current_hybrid_signed_hessian,signed_flux_compressed_total,compressed_signed_column_total_uniform_split,False,sum signed flux per column -> uniform Split,2.0833333333333335,2.0833333333333335,False,lossy_compressed_diagnostic,derived,Lossy signed compression diagnostic only; not exact reconstruction.

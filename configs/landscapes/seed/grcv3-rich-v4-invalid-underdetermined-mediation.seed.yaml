@@ -1,0 +1,227 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCV3 Rich V4 Invalid Underdetermined Mediation
+  description: Invalid validation fixture proving that rich.v4 transfer mediation must cover every declared transfer role pair explicitly.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcv3-rich-v4-invalid-underdetermined-mediation
+  source_schema_version: "0.1"
+  source_domain: "2d"
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+  translation_notes:
+    - This fixture is intentionally invalid.
+    - It omits one pair mediation assignment even though all transfer_role_pairs are declared.
+    - The expected behavior is explicit validation failure rather than projector downgrade or fallback inference.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: left_reservoir
+    type: basin
+    coherence_prior: 0.52
+    depth_hint: 0
+    chart_center_hint: [0.18, 0.5]
+    chart_scale_hint:
+      radius: 0.085
+
+  - id: right_reservoir
+    type: basin
+    coherence_prior: 0.52
+    depth_hint: 0
+    chart_center_hint: [0.82, 0.5]
+    chart_scale_hint:
+      radius: 0.085
+
+  - id: upper_shell
+    type: basin
+    coherence_prior: 0.22
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.28]
+    chart_scale_hint:
+      radius: 0.07
+
+  - id: lower_shell
+    type: basin
+    coherence_prior: 0.22
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.72]
+    chart_scale_hint:
+      radius: 0.07
+
+  - id: spindle_core
+    type: basin
+    coherence_prior: 0.78
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.5]
+    chart_scale_hint:
+      radius: 0.12
+    extensions:
+      grcv3:
+        local_geometry:
+          frame_mode: axis_declared
+          axis_roles: [north, east, south, west]
+          weak_axis_role: east
+          symmetry_class: bilateral
+          center_role: interior_probe
+        curvature_intent:
+          class: near_degenerate
+          stable_axis_roles: [north, south]
+          weak_axis_role: east
+          ordering: weak << stable
+        interfaces:
+          boundary_roles: [clamp_north, clamp_south]
+          channel_roles: [inlet, outlet]
+          preferred_attachment_sites:
+            clamp_north: north
+            clamp_south: south
+            inlet: west
+            outlet: east
+        interior_geometry:
+          probe_mode: interior_candidate
+          support_profile:
+            north: tight
+            east: loose
+            south: tight
+            west: loose
+          attachment_isolation: support_only
+          interior_clearance_class: shielded
+          support_connectivity: spindle
+          support_role_groups:
+            stable: [north, south]
+            weak: [east, west]
+        interior_partition:
+          partition_mode: two_tier_probe_shell
+          load_role_groups:
+            clamp: [north, south]
+            transport: [east, west]
+          load_transfer_mode: support_mediated
+          probe_protection_class: shielded
+          attachment_transfer_roles: [north, south, east, west]
+        interior_load_carriers:
+          carrier_layout_mode: group_midpoints
+          carrier_anchor_policy: group_centroid
+          transfer_topology_mode: paired_role_bridge
+          transfer_role_pairs:
+            - [north, north]
+            - [south, south]
+            - [east, north]
+            - [west, south]
+          carrier_attachment_roles: [north, south, east, west]
+        transfer_mediation:
+          mediation_mode: guarded_pairs
+          pair_mediation_classes:
+            - [north, north, medium]
+            - [south, south, medium]
+            - [east, north, weak]
+          probe_guard_class: guarded_center
+          lateral_spill_policy: axis_locked
+
+  - id: upper_clamp
+    type: ridge
+    owner_id: spindle_core
+    adjacent_ids: [upper_shell]
+    ridge_kind: boundary
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.78
+    exterior_coherence_hint: 0.22
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcv3:
+        boundary_geometry:
+          realization_kind: support_arc
+          normal_role: north
+          tangent_role: east
+          arc_span: tight
+          support_distribution: uniform
+        interfaces:
+          boundary_roles: [clamp_north]
+          preferred_attachment_sites:
+            clamp_north: north
+
+  - id: lower_clamp
+    type: ridge
+    owner_id: spindle_core
+    adjacent_ids: [lower_shell]
+    ridge_kind: boundary
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.78
+    exterior_coherence_hint: 0.22
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcv3:
+        boundary_geometry:
+          realization_kind: support_arc
+          normal_role: south
+          tangent_role: east
+          arc_span: tight
+          support_distribution: uniform
+        interfaces:
+          boundary_roles: [clamp_south]
+          preferred_attachment_sites:
+            clamp_south: south
+
+  - id: left_inlet
+    type: valley
+    from_id: left_reservoir
+    to_id: spindle_core
+    width_hint: 0.022
+    coherence_prior: 0.18
+    path_hint: bezier
+    waypoints:
+      - [0.3, 0.5]
+      - [0.4, 0.5]
+    extensions:
+      grcv3:
+        channel_geometry:
+          realization_kind: single_channel
+          interior_count: 1
+          waypoint_policy: midpoint_only
+          entry_role: east
+          exit_role: west
+        interfaces:
+          channel_roles: [inlet]
+          preferred_attachment_sites:
+            inlet: west
+
+  - id: right_outlet
+    type: valley
+    from_id: spindle_core
+    to_id: right_reservoir
+    width_hint: 0.022
+    coherence_prior: 0.18
+    path_hint: bezier
+    waypoints:
+      - [0.6, 0.5]
+      - [0.7, 0.5]
+    extensions:
+      grcv3:
+        channel_geometry:
+          realization_kind: single_channel
+          interior_count: 1
+          waypoint_policy: midpoint_only
+          entry_role: east
+          exit_role: west
+        interfaces:
+          channel_roles: [outlet]
+          preferred_attachment_sites:
+            outlet: east
+
+extensions:
+  grcv3:
+    contract_version: grcv3.rich.v4
+    rich_required: true
+  source_probe:
+    purpose: grcv3_rich_v4_invalid_underdetermined_mediation

@@ -1,0 +1,107 @@
+{
+  "artifacts": {
+    "json": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_f_native_surface_closeout.json",
+      "payload_sha256_without_artifacts": "1f9d77fc3f792795711bd937935f276a251af339da62ce241c3672c043b6de87"
+    },
+    "markdown": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_f_native_surface_closeout.md",
+      "sha256": "fa3a5ee6050d0582789a1765c5b7be2db41680936ad87feaff826df61ec10167"
+    }
+  },
+  "budget_surface": "node_plus_packet",
+  "claim_ceiling": "native_lgrc_pulse_substrate_surface_supported",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_causal_pulse_substrate_surface_enabled": true,
+    "native_causal_pulse_substrate_surface_validated": true,
+    "native_lgrc_pulse_substrate_supported": true,
+    "native_m6": false
+  },
+  "controls": {
+    "all_controls_passed": true,
+    "control_count": 14,
+    "primary_blockers": {
+      "F_budget_surface_merging_control": "budget_surface_ambiguity",
+      "F_coupling_disabled_control": "coupling_disabled",
+      "F_coupling_subthreshold_control": "subthreshold",
+      "F_default_off_synchronous_noop_control": "surface_policy_disabled",
+      "F_disabled_surface_policy_producer_control": "surface_policy_disabled",
+      "F_feedback_budget_violation_control": "budget_surface_gate_failed",
+      "F_feedback_disabled_control": "feedback_disabled",
+      "F_feedback_order_mismatch_control": "canonical_causal_order_failed",
+      "F_feedback_subthreshold_control": "subthreshold",
+      "F_feedback_wrong_polarity_control": "wrong_polarity",
+      "F_lgrc0_lgrc1_inertness_control": "lgrc_runtime_level_below_2",
+      "F_producer_coherence_mutation_control": "producer_mutation_boundary_violation",
+      "F_snapshot_continue_after_load_with_producers_control": null,
+      "F_topology_lineage_deferred_control": "topology_lineage_deferred"
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/close_native_lgrc_lane_f.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "git": {
+    "rev_parse_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "fe47313792c9a173451bb4a9383703f85bafec1f"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M implementation/ImplementationPhases.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M papers/2026-05-LGRC9V3-Causal-Pulse-Substrate-Surfaces.md\n M src/pygrc/models/__init__.py\n M src/pygrc/models/lgrc_9_v3_contract.py\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M src/pygrc/models/lgrc_9_v3_runtime_state.py\n M src/pygrc/telemetry/__init__.py\n M src/pygrc/telemetry/lgrc9v3_contract.py\n M tests/models/test_lgrc_9_v3_contract.py\n M tests/models/test_lgrc_9_v3_runtime.py\n M tests/telemetry/test_lgrc9v3_contract.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_f_native_surface_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_lgrc_lane_f_surface_bridge.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_f_native_surface_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/native_lgrc_lane_f_surface_bridge.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/close_native_lgrc_lane_f.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_native_lgrc_lane_f_surface_bridge.py\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.json\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.md\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateChecklist.md\n?? implementation/Phase-8-LGRC9-CausalPulseSubstratePlan.md"
+    }
+  },
+  "lane_f_status": "native_surface_support_complete",
+  "n04_interpretation": "Lane F validates native LGRC causal pulse-substrate surface support as artifact-validatable scheduling evidence. It does not validate movement, native M6, agency, biological behavior, or RC identity acceptance.",
+  "native_surface_evidence": {
+    "artifact_only_full_chain_reconstructed": true,
+    "coupling_scheduled": true,
+    "feedback_scheduled": true,
+    "native_causal_pulse_substrate_surface_validated": true,
+    "native_lgrc_pulse_substrate_supported": true,
+    "regenerated_native_pulse_work_not_copied_from_original_e3_schedule": true,
+    "regenerated_pulse_source": "feedback_eligibility",
+    "surface_row_count": 6,
+    "topology_changed": false,
+    "topology_events_enabled": false,
+    "validated_chain": [
+      "source_packet_event",
+      "surface_row",
+      "producer_record",
+      "scheduled_packet",
+      "processed_packet_event"
+    ]
+  },
+  "next_step": "phase8_iteration_57_closeout",
+  "report_kind": "n04_lane_f_native_surface_closeout_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifact": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_lgrc_lane_f_surface_bridge.json",
+    "report_kind": "n04_lane_f_native_lgrc_surface_bridge_v1",
+    "sha256": "0c88c5e5696169bda153e2d5ed1735e0d7d1f3b3a06bbb54cff8d9e23b8f2655"
+  },
+  "topology_lineage": {
+    "claim_impact": "does_not_block_fixed_topology_native_surface_support",
+    "control_lane": "F_topology_lineage_deferred_control",
+    "decision": "deferred_for_native_surface_v1",
+    "lgrc3_lineage_transport_implemented": false
+  },
+  "validation": {
+    "failure_reasons": [],
+    "status": "passed"
+  }
+}

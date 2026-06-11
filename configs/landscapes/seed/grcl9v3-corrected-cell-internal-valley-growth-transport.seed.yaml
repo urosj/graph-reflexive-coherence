@@ -1,0 +1,133 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Corrected Cell Internal Valley Growth Transport
+  description: ComposingCells-aligned internal valley seed with front-capacity growth and transport routing.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-923-corrected-composingcells-growth-seeds
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, corrected_growth, front_capacity, valley, growth, transport]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: source_basin
+    type: basin
+    coherence_prior: 1.0
+  - id: growth_parent
+    type: basin
+    coherence_prior: 1.0
+  - id: refinement_front
+    type: junction
+    host_id: growth_parent
+    branch_target_ids: [front_boundary, outside_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: corrected_cell_internal_valley_growth_transport_refinement
+        region_id: growth_parent
+        source_role: composing_cell_control
+        profile:
+          target_effective_degree: 9
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+          front_capacity_role: internal_valley_refinement_front
+  - id: front_boundary
+    type: ridge
+    owner_id: growth_parent
+    adjacent_ids: [outside_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: corrected_cell_internal_valley_growth_transport_boundary
+        region_id: growth_parent
+        source_role: composing_cell_control
+        profile:
+          inactive_parent_port: 5
+          ridge_role: exposed_internal_valley_front
+          front_capacity_source: spark_expansion_front
+          front_source_construct_id: corrected_cell_internal_valley_growth_transport_expansion_region
+  - id: growth_valley
+    type: valley
+    from_id: growth_parent
+    to_id: outside_plateau
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: corrected_cell_internal_valley_growth_transport_growth
+        region_id: growth_parent
+        source_role: composing_cell_control
+        profile:
+          outward_pressure_profile:
+            pressure: corrected_front_high_outward_pressure
+            valley_role: internal_front_channel
+          lambda_birth: 100.0
+          growth_semantics: front_capacity
+          front_capacity_source: spark_expansion_front
+          front_source_construct_id: corrected_cell_internal_valley_growth_transport_expansion_region
+  - id: transport_corridor
+    type: valley
+    from_id: source_basin
+    to_id: sink_basin
+    extensions:
+      grcl9v3:
+        term_kind: transport_rerouting_region
+        term_id: corrected_cell_internal_valley_growth_transport_route
+        region_id: transport_corridor
+        source_role: composing_cell_control
+        profile:
+          source_region_id: source_basin
+          sink_region_id: sink_basin
+          route_preference_profile:
+            corridor: preferred
+  - id: transport_channel
+    type: valley
+    from_id: source_basin
+    to_id: transport_corridor
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: corrected_cell_internal_valley_growth_transport_channel
+        region_id: transport_corridor
+        source_role: composing_cell_control
+        profile:
+          channel: transport_corridor
+  - id: outside_plateau
+    type: plateau
+    coherence_prior: 0.1
+  - id: sink_basin
+    type: basin
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: corrected_cell_internal_valley_growth_transport
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0049-corrected-cell-internal-valley-growth-transport
+    expected_selector_ids: [growth_events, front_growth_provenance, transport_rerouting_signature, no_choice_collapse_events]
+    notes:
+      iteration: 9.2.3
+      corrected_growth_semantics: front_capacity
+      composing_cells_anchor: internal valley is now a refinement-front growth channel, not a standalone source growth locus
+      boundary: source preconditions only
+      corrected_from_legacy_seed: cell_internal_valley_growth_transport
+      composed_source_ancestry:
+        - corrected_front_growth_positive_control
+        - transport_basin_rerouting_positive_control

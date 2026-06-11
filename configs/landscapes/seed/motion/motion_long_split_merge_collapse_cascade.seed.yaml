@@ -1,0 +1,185 @@
+seed_schema: pygrc.landscape_seed.v1
+seed_version: motion_seed_iter10_v1
+meta:
+  name: motion_long_split_merge_collapse_cascade
+  source_kind: authored_motion_seed
+  source_reference: implementation/Motion-ImplementationPlan.md#iteration-10
+  source_schema_version: motion_seed.v1
+  source_domain: motion_inference
+  description: Authored preconditions for identity, boundary, topological motion review.
+  tags:
+  - motion
+  - iteration_10
+  - grc9v3
+  translator_name: motion_seed_examples
+  translator_version: motion_seed_examples_iter10_v1
+  translation_mode: semantic_enrichment
+  translation_notes:
+  - source_preconditions_only
+  - no_runtime_motion_claim
+  - no_motion_record_claim
+  - no_solved_checkpoint_claim
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.0
+  zeta_c: 1.0
+  kappa_c: 1.0
+  dt: 0.1
+  potential:
+    type: motion_source_precondition
+    params: {}
+  budget_b: null
+  notes: Authoring profile for runtime projection tests; not a solved motion outcome.
+  source_params: {}
+primitives:
+- id: cascade_parent
+  type: basin
+  label: cascade parent
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 2.0
+  chart_center_hint:
+  - 0.0
+  - 0.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: cascade_child_a
+  type: basin
+  label: cascade child a
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 1.0
+  chart_center_hint:
+  - -0.75
+  - 1.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: cascade_child_b
+  type: basin
+  label: cascade child b
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 1.0
+  chart_center_hint:
+  - 0.75
+  - 1.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: cascade_merge_sink
+  type: basin
+  label: cascade merge sink
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 2.0
+  chart_center_hint:
+  - 0.0
+  - 2.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: cascade_collapse_sink
+  type: basin
+  label: cascade collapse sink
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 0.5
+  chart_center_hint:
+  - 0.0
+  - 3.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: cascade_frontier_locus
+  type: junction
+  label: cascade frontier locus
+  role: motion_source_junction
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: topology_precondition
+  host_id: cascade_merge_sink
+  branch_target_ids: []
+  junction_role: frontier_or_refinement_precondition
+  coherence_prior: null
+  chart_center_hint: null
+  notes: null
+transport_intent:
+- id: long_cascade_topology_intent
+  mode: delayed_split_merge_collapse_precondition
+  sources:
+  - cascade_parent
+  targets:
+  - cascade_collapse_sink
+  magnitude_hint: 1.0
+  priority: null
+  carrier_id: null
+  direction_hint: null
+  notes: null
+geometry_hints:
+  source_chart: motion_iter10_source_chart
+  periodicity: {}
+  scale_units: null
+  separation_hints: {}
+  coordinate_convention: null
+extensions:
+  motion_seed:
+    contract_version: motion_seed.v1
+    runtime_family: grc9v3
+    source_status: long_window_composite_projected_runtime_evidence
+    target_motion_modes:
+    - identity
+    - boundary
+    - topological
+    projected_example_names:
+    - motion_long_split_merge_collapse_cascade
+    non_claims:
+    - source_preconditions_only
+    - no_runtime_motion_claim
+    - no_motion_record_claim
+    - no_solved_checkpoint_claim
+    notes:
+    - Twenty-four checkpoint cascade with delayed split, merge, and collapse.

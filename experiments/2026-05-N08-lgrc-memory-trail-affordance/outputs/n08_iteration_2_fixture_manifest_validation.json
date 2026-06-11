@@ -1,0 +1,644 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 2 passes if the fixture manifest and route-use/memory contracts are defined before positive memory probes. The manifest must make route-use events, memory surfaces, decay/reinforcement policies, budget surfaces, event ordering, and controls replayable from artifacts.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_digests": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/configs/n08_fixture_manifest_v1.json": "be8556f209b0dd31ed0b9896c04e5a91fcdeca0efb7702ba53e48ea4202818c6",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_1_baseline_inventory.json": "32f46adb7f07e78d391fd1160c4fc2e4513235371c29da115ab2762b112bf4c9"
+  },
+  "checks": {
+    "claim_flags_all_false": true,
+    "committed_route_use_semantics_complete": true,
+    "control_blockers_distinct": true,
+    "controls_include_required_blockers": true,
+    "decay_policy_can_only_reduce_strength": true,
+    "decay_policy_schema_complete": true,
+    "event_ordering_contract_declared": true,
+    "hidden_route_history_and_hidden_preference_distinct": true,
+    "iteration_3_requires_all_n06_cycles": true,
+    "manifest_digest_stable_scope_declared": true,
+    "mem2_plus_requires_snapshot_or_rows": true,
+    "memory_budget_equation_declared": true,
+    "memory_probe_not_run": true,
+    "memory_strength_mapping_declared": true,
+    "memory_surface_budget_equation_terms_serialized": true,
+    "memory_surface_claim_flags_reference_frozen_set": true,
+    "memory_surface_digest_algorithm_declared": true,
+    "memory_surface_key_contract_complete": true,
+    "memory_surface_kind_definitions_declared": true,
+    "memory_surface_schema_required_fields_present": true,
+    "memory_surface_storage_experiment_local": true,
+    "native_policy_blockers_inherited": true,
+    "node_plus_packet_budget_separate": true,
+    "producer_step_boundary_declared": true,
+    "reinforcement_policy_schema_complete": true,
+    "route_use_claim_flags_reference_frozen_set": true,
+    "route_use_event_schema_required_fields_present": true,
+    "route_use_event_schema_requires_arbitration_digest": true,
+    "route_use_template_arbitration_digest_resolution_explicit": true,
+    "route_use_templates_cover_two_routes": true,
+    "route_use_templates_source_backed": true,
+    "runtime_visible_inputs_declared": true,
+    "same_window_update_order_serialized": true,
+    "score_component_names_match_baseline": true,
+    "source_baseline_digest_matches": true,
+    "source_baseline_passed": true,
+    "special_controls_present": true,
+    "support_anchors_present_in_templates": true,
+    "topology_commit_requirement_explicit": true
+  },
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/build_n08_iteration_2_fixture_manifest.py",
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "fixture_manifest": {
+    "budget_contract": {
+      "memory_budget": {
+        "equation": "memory_budget_before + reinforcement_input - decay_loss - saturation_clamp_loss == memory_budget_after",
+        "fields": [
+          "memory_budget_surface",
+          "memory_budget_before",
+          "reinforcement_input",
+          "decay_loss",
+          "saturation_clamp_loss",
+          "memory_budget_after",
+          "memory_budget_error"
+        ],
+        "semantics": "serialized trail/affordance strength accounting, not node coherence"
+      },
+      "node_plus_packet_budget": {
+        "fields": [
+          "node_plus_packet_budget_before",
+          "node_plus_packet_budget_after",
+          "node_plus_packet_budget_error"
+        ],
+        "must_remain_exact": true,
+        "semantics": "physical coherence accounting; memory bookkeeping cannot repair node-plus-packet drift"
+      }
+    },
+    "claim_boundary": {
+      "aco_agency_identity_locomotion_claims_blocked": true,
+      "claim_flags": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "claim_flags_must_remain_false_until_mem6": true,
+      "memory_or_trail_claim_allowed_requires_mem6": true
+    },
+    "control_contract": [
+      {
+        "control_id": "hidden_route_history",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "hidden_route_history"
+      },
+      {
+        "control_id": "missing_route_use_event",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "missing_route_use_event"
+      },
+      {
+        "control_id": "memory_surface_missing",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "memory_surface_missing"
+      },
+      {
+        "control_id": "memory_surface_digest_mismatch",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "memory_surface_digest_mismatch"
+      },
+      {
+        "control_id": "memory_surface_poisoned",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "memory_surface_poisoned"
+      },
+      {
+        "control_id": "memory_policy_missing",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "memory_policy_missing"
+      },
+      {
+        "control_id": "memory_policy_hidden_preference",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "memory_policy_hidden_preference"
+      },
+      {
+        "control_id": "decay_policy_missing",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "decay_policy_missing"
+      },
+      {
+        "control_id": "reinforcement_policy_missing",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "reinforcement_policy_missing"
+      },
+      {
+        "control_id": "candidate_score_memory_digest_missing",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "candidate_score_memory_digest_missing"
+      },
+      {
+        "control_id": "candidate_score_hidden_memory_input",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "candidate_score_hidden_memory_input"
+      },
+      {
+        "control_id": "arbitration_memory_order_invalid",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "arbitration_memory_order_invalid"
+      },
+      {
+        "control_id": "memory_budget_discontinuity",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "memory_budget_discontinuity"
+      },
+      {
+        "control_id": "node_plus_packet_budget_discontinuity",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "node_plus_packet_budget_discontinuity"
+      },
+      {
+        "control_id": "stale_memory_surface_read",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "stale_memory_surface_read"
+      },
+      {
+        "control_id": "cross_cycle_memory_leak",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "cross_cycle_memory_leak"
+      },
+      {
+        "control_id": "duplicate_memory_update",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "duplicate_memory_update"
+      },
+      {
+        "control_id": "policy_disabled",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "policy_disabled"
+      },
+      {
+        "control_id": "producer_mutation_boundary_violation",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "producer_mutation_boundary_violation"
+      },
+      {
+        "control_id": "no_memory_surface_read_by_arbitration",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "no_memory_surface_read_by_arbitration"
+      },
+      {
+        "control_id": "posthoc_memory_threshold_change",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "posthoc_memory_threshold_change"
+      },
+      {
+        "control_id": "claim_promotion",
+        "distinct_primary_blocker_required": true,
+        "expected_status": "blocked",
+        "primary_blocker": "claim_promotion"
+      }
+    ],
+    "control_distinctions": {
+      "hidden_route_history": "route history exists only in fixture/report code and is not serialized",
+      "memory_policy_hidden_preference": "serialized memory policy contains undeclared route preference not derived from route-use evidence"
+    },
+    "decay_policy_schema": {
+      "default_policy": {
+        "decay_can_only_reduce_strength": true,
+        "decay_factor": 0.9,
+        "decay_function": "exponential_per_memory_window",
+        "decay_policy_id": "n08_exponential_decay_v1",
+        "floor": 0.0,
+        "hidden_decay_allowed": false,
+        "records_decay_loss": true
+      },
+      "required_fields": [
+        "decay_policy_id",
+        "decay_function",
+        "decay_factor",
+        "floor",
+        "decay_can_only_reduce_strength",
+        "records_decay_loss"
+      ]
+    },
+    "event_ordering_contract": {
+      "order_inversion_blocker": "arbitration_memory_order_invalid",
+      "ordered_chain": [
+        "route_arbitration",
+        "selected_route_use",
+        "memory_update",
+        "later_candidate_scoring",
+        "native_route_arbitration"
+      ],
+      "strict_event_time_order_required": true,
+      "strict_scheduler_order_required": true
+    },
+    "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+    "iteration": 2,
+    "iteration_3_route_use_cycle_contract": {
+      "iteration_3_route_use_event_scope": "all_source_n06_sc6_cycles",
+      "non_template_source_cycle_ids_to_emit_in_iteration_3": [
+        "cycle_2",
+        "cycle_3"
+      ],
+      "required_route_use_event_count": 4,
+      "required_source_arbitration_record_ids": [
+        "native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8",
+        "native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410",
+        "native-route-arbitration:ef3e9c9a4d37bb19f8b312c71b9989b5",
+        "native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea"
+      ],
+      "required_source_cycle_ids": [
+        "cycle_0",
+        "cycle_1",
+        "cycle_2",
+        "cycle_3"
+      ],
+      "source_cycle_count": 4,
+      "template_scope": "unique_selected_routes_only",
+      "template_scope_rationale": "Iteration 2 templates define reusable route-use shapes for route_a and route_b; they do not exhaust the source N06 cycle evidence.",
+      "template_source_cycle_ids": [
+        "cycle_0",
+        "cycle_1"
+      ]
+    },
+    "manifest_digest": "7dbcdf1ada38683a33abb1230a5354972fe9365bbe24ee54c448c9ca4110a85a",
+    "manifest_digest_scope": {
+      "excluded": [
+        "manifest_digest"
+      ],
+      "included": "manifest fields except manifest_digest",
+      "stable_across_same_inputs": true
+    },
+    "memory_derived_score_component_contract": {
+      "candidate_route_score_invariant": "candidate_route_score == sum(candidate_score_components)",
+      "component_names": [
+        "memory_trail_strength",
+        "memory_surface_digest_match",
+        "memory_recency_weight",
+        "memory_decay_adjusted_strength"
+      ],
+      "component_names_not_native_forbidden_inputs": true,
+      "hidden_memory_input_allowed": false,
+      "required_candidate_runtime_visible_inputs": [
+        "memory_surface_id",
+        "memory_surface_digest",
+        "memory_surface_state_snapshot_digest",
+        "memory_policy_id",
+        "route_use_event_digest",
+        "memory_event_time_key"
+      ]
+    },
+    "memory_policy_schema": {
+      "default_policy": {
+        "hidden_preference_allowed": false,
+        "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+        "memory_policy_digest_rule": "sha256(canonical_json(memory_policy_without_memory_policy_digest))",
+        "memory_policy_id": "n08_memory_policy_v1",
+        "memory_strength_ceiling": 1.0,
+        "memory_strength_floor": 0.0,
+        "native_support_status": "experiment_local_until_phase8_memory_surface",
+        "policy_surface": "experiment_local_serialized_json_rows",
+        "route_preference_source": "committed_route_use_events_only"
+      },
+      "required_fields": [
+        "memory_policy_id",
+        "policy_surface",
+        "route_preference_source",
+        "memory_strength_floor",
+        "memory_strength_ceiling",
+        "memory_policy_digest"
+      ]
+    },
+    "memory_probe_run": false,
+    "memory_surface_key_contract": {
+      "digest_field": "memory_surface_key_digest",
+      "digest_rule": "sha256(canonical_json(memory_surface_key))",
+      "field_name": "memory_surface_key",
+      "field_type": "canonical_json_object",
+      "not_a_scalar_string": true,
+      "not_hidden_process_memory": true,
+      "required_fields": [
+        "route_id",
+        "source_support_area_digest",
+        "target_support_area_digest",
+        "route_aspect_digest",
+        "memory_policy_id"
+      ]
+    },
+    "memory_surface_row_schema": {
+      "artifact_kind": "n08_memory_surface_row",
+      "claim_flags_must_remain_false": true,
+      "claim_flags_reference": "must match Iteration 1 frozen claim flag keys with all values false",
+      "digest_field": "memory_surface_digest",
+      "digest_rule": "sha256(canonical_json(memory_surface_record_without_memory_surface_digest))",
+      "digest_without_serialized_state_is_insufficient_for_mem6": true,
+      "mem2_plus_requires_one_of": [
+        "memory_surface_state_snapshot",
+        "memory_surface_rows"
+      ],
+      "mem_evidence_mapping": {
+        "memory_strength_source": "MEM2+ evidence rows read memory_strength from serialized memory_surface_state_snapshot or memory_surface_rows",
+        "memory_surface_digest_source": "memory_surface_digest",
+        "memory_surface_policy_source": "memory_policy_id"
+      },
+      "memory_surface_kind_definitions": {
+        "affordance": "serialized prospective route capability signal derived from trail/support/aspect evidence, not a hidden preference",
+        "trail": "serialized persistence of prior committed route use on a route/support/aspect key"
+      },
+      "memory_surface_kind_values": [
+        "trail",
+        "affordance"
+      ],
+      "native_memory_surface": false,
+      "phase8_required_for_native_memory_surface": true,
+      "required_claim_flag_keys": [
+        "aco_like_claim_allowed",
+        "agency_claim_allowed",
+        "agentic_like_claim_allowed",
+        "ant_colony_claim_allowed",
+        "biological_claim_allowed",
+        "goal_proxy_regulation_claim_allowed",
+        "identity_acceptance_claim_allowed",
+        "intention_claim_allowed",
+        "locomotion_like_claim_allowed",
+        "memory_or_trail_claim_allowed",
+        "movement_claim_allowed",
+        "personhood_claim_allowed",
+        "rc_identity_collapse_claim_allowed",
+        "runtime_identity_acceptance_claim_allowed",
+        "semantic_choice_claim_allowed",
+        "unrestricted_identity_claim_allowed",
+        "unrestricted_movement_claim_allowed"
+      ],
+      "required_fields": [
+        "memory_surface_id",
+        "memory_surface_kind",
+        "route_use_event_digest",
+        "memory_surface_key",
+        "memory_surface_key_digest",
+        "memory_policy_id",
+        "memory_policy_digest",
+        "memory_strength",
+        "event_time_key",
+        "scheduler_event_index",
+        "node_plus_packet_budget_before",
+        "node_plus_packet_budget_after",
+        "node_plus_packet_budget_error",
+        "memory_budget_surface",
+        "memory_budget_before",
+        "reinforcement_input",
+        "decay_loss",
+        "saturation_clamp_loss",
+        "memory_budget_after",
+        "memory_budget_error",
+        "claim_flags",
+        "memory_surface_digest"
+      ],
+      "schema_version": "n08_memory_surface_row_v1",
+      "storage_format": "experiment_local_serialized_json_artifact_rows"
+    },
+    "native_policy_blockers_inherited": [
+      "native_route_conductance_memory_policy_missing",
+      "native_trail_memory_surface_missing",
+      "native_memory_surface_serialization_policy_missing",
+      "native_memory_surface_keying_policy_missing",
+      "native_memory_budget_accounting_policy_missing",
+      "native_memory_cross_cycle_persistence_policy_missing",
+      "native_memory_decay_policy_missing",
+      "native_memory_reinforcement_policy_missing",
+      "native_memory_candidate_score_component_semantics_missing",
+      "native_memory_artifact_replay_validator_missing"
+    ],
+    "producer_step_boundary": {
+      "primary_blocker": "producer_mutation_boundary_violation",
+      "producer_may_mutate_memory_surface": false,
+      "producer_may_mutate_node_coherence": false,
+      "producer_may_mutate_packet_ledger": false,
+      "producer_scheduling_allowed": true,
+      "step_remains_packet_mutation_boundary": true
+    },
+    "purpose": "fixture_manifest_and_route_use_memory_contract",
+    "reinforcement_policy_schema": {
+      "default_policy": {
+        "ceiling": 1.0,
+        "floor": 0.0,
+        "hidden_reinforcement_allowed": false,
+        "records_reinforcement_input": true,
+        "records_saturation_clamp_loss": true,
+        "reinforcement_amount": 0.25,
+        "reinforcement_function": "saturating_additive",
+        "reinforcement_policy_id": "n08_saturating_additive_reinforcement_v1"
+      },
+      "required_fields": [
+        "reinforcement_policy_id",
+        "reinforcement_function",
+        "reinforcement_amount",
+        "floor",
+        "ceiling",
+        "records_reinforcement_input",
+        "records_saturation_clamp_loss"
+      ]
+    },
+    "route_use_event_schema": {
+      "artifact_kind": "n08_route_use_event",
+      "claim_flags_must_remain_false": true,
+      "claim_flags_reference": "must match Iteration 1 frozen claim flag keys with all values false",
+      "commit_status_values": [
+        "committed"
+      ],
+      "committed_semantics": {
+        "budget_audited": true,
+        "digest_pinned": true,
+        "ordered": true,
+        "route_arbitration_record_exists": true,
+        "route_consumption_for_memory_formation_recorded": true,
+        "selected_candidate_digest_exists": true,
+        "serialized": true,
+        "topology_commit_required_by_default": false
+      },
+      "digest_field": "route_use_event_digest",
+      "digest_rule": "sha256(canonical_json(route_use_event_without_route_use_event_digest))",
+      "required_claim_flag_keys": [
+        "aco_like_claim_allowed",
+        "agency_claim_allowed",
+        "agentic_like_claim_allowed",
+        "ant_colony_claim_allowed",
+        "biological_claim_allowed",
+        "goal_proxy_regulation_claim_allowed",
+        "identity_acceptance_claim_allowed",
+        "intention_claim_allowed",
+        "locomotion_like_claim_allowed",
+        "memory_or_trail_claim_allowed",
+        "movement_claim_allowed",
+        "personhood_claim_allowed",
+        "rc_identity_collapse_claim_allowed",
+        "runtime_identity_acceptance_claim_allowed",
+        "semantic_choice_claim_allowed",
+        "unrestricted_identity_claim_allowed",
+        "unrestricted_movement_claim_allowed"
+      ],
+      "required_fields": [
+        "route_use_event_id",
+        "route_use_commit_status",
+        "source_arbitration_record_digest",
+        "source_candidate_set_digest",
+        "selected_candidate_route_digest",
+        "selected_route_id",
+        "route_aspect_digest",
+        "source_support_area_digest",
+        "target_support_area_digest",
+        "topology_commit_required",
+        "event_time_key",
+        "scheduler_event_index",
+        "node_plus_packet_budget_before",
+        "node_plus_packet_budget_after",
+        "node_plus_packet_budget_error",
+        "claim_flags",
+        "route_use_event_digest"
+      ],
+      "schema_version": "n08_route_use_event_v1"
+    },
+    "route_use_fixture_templates": [
+      {
+        "node_plus_packet_budget_semantics": "route_use_event_is_evidence_only_and_must_be_budget_neutral",
+        "rejected_candidate_route_digests": [
+          "56eba296ce0ae91bb1e0b9c44557be6b52dd2932cd0bd6453156608114f07b0a"
+        ],
+        "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+        "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+        "route_use_event_commits_memory_lane_consumption": true,
+        "selected_candidate_route_digest": "7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+        "selected_route_id": "route_a",
+        "source_arbitration_record_digest_required_for_route_use_event": true,
+        "source_arbitration_record_digest_resolution": "must_be_resolved_by_iteration_3_from_source_artifact; N06 SC6 closeout per-cycle rows replay native arbitration records but do not serialize the positive arbitration digest directly in the row",
+        "source_arbitration_record_id": "native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8",
+        "source_candidate_set_digest": "cc28d581e856d3782a840c63157f7b1d4d565387e8c00ed28b8365cba7b5f4a9",
+        "source_context_state_id": "context_a",
+        "source_cycle_id": "cycle_0",
+        "source_experiment": "N06",
+        "source_selection_scope": "selection_only_pre_topology_not_committed_route_use",
+        "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+        "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "template_id": "n08_mem1_route_use_template_route_a",
+        "topology_commit_required": false,
+        "topology_commit_requirement_rationale": "Early N08 route-use events are ordered, serialized, budget-audited, and digest-pinned memory-lane consumption records. They do not require topology commit unless a later fixture explicitly uses a topology-committing route."
+      },
+      {
+        "node_plus_packet_budget_semantics": "route_use_event_is_evidence_only_and_must_be_budget_neutral",
+        "rejected_candidate_route_digests": [
+          "6c56a159bc33d047f6017d8baec972244bff49ca3df60954c1bbf0a41b6cf707"
+        ],
+        "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+        "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+        "route_use_event_commits_memory_lane_consumption": true,
+        "selected_candidate_route_digest": "21ff5096388e202c1c708be518b6966013049873a36fb34e9eedf245e9d79c63",
+        "selected_route_id": "route_b",
+        "source_arbitration_record_digest_required_for_route_use_event": true,
+        "source_arbitration_record_digest_resolution": "must_be_resolved_by_iteration_3_from_source_artifact; N06 SC6 closeout per-cycle rows replay native arbitration records but do not serialize the positive arbitration digest directly in the row",
+        "source_arbitration_record_id": "native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410",
+        "source_candidate_set_digest": "5c8918b0cdf07c3c5b303bf2c71d4c5c184370f5b875dc01af6b3aaff2506648",
+        "source_context_state_id": "context_b",
+        "source_cycle_id": "cycle_1",
+        "source_experiment": "N06",
+        "source_selection_scope": "selection_only_pre_topology_not_committed_route_use",
+        "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+        "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "template_id": "n08_mem1_route_use_template_route_b",
+        "topology_commit_required": false,
+        "topology_commit_requirement_rationale": "Early N08 route-use events are ordered, serialized, budget-audited, and digest-pinned memory-lane consumption records. They do not require topology commit unless a later fixture explicitly uses a topology-committing route."
+      }
+    ],
+    "same_window_update_order": {
+      "default_order": [
+        "decay",
+        "reinforcement"
+      ],
+      "serialized_order_required": true
+    },
+    "schema": "n08_fixture_manifest_v1",
+    "source_baseline_inventory": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_1_baseline_inventory.json",
+    "source_baseline_inventory_digest": "c27c011e1875c7e967aac398818c2a72b55adfb064752b594524e91530ed20de"
+  },
+  "fixture_manifest_path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/configs/n08_fixture_manifest_v1.json",
+  "generated_at": "2026-06-07T13:47:57.794566+00:00",
+  "git": {
+    "head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 2,
+  "memory_probe_run": false,
+  "schema": "n08_iteration_2_fixture_manifest_validation_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_1_baseline_inventory.json": "32f46adb7f07e78d391fd1160c4fc2e4513235371c29da115ab2762b112bf4c9"
+  },
+  "status": "passed",
+  "validation_digest": "1ad3ec9766390e621c5338671466f65654929d80643d3003efb1cac294f7779a",
+  "validation_digest_scope": {
+    "artifact_digest_dependency": "validation_digest includes artifact_digests; generated artifacts are written with sorted keys and fixed indentation for stable file hashes",
+    "excluded": [
+      "generated_at",
+      "validation_digest"
+    ],
+    "included": "all validation fields except generated_at and validation_digest",
+    "stable_across_same_inputs": true
+  }
+}

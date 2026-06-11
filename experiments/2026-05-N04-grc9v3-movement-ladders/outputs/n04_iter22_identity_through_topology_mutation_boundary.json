@@ -1,0 +1,193 @@
+{
+  "attempted_promotion": "rc_identity_through_topology_mutation_candidate",
+  "blocked_claims": [
+    "rc_identity_through_topology_mutation",
+    "rc_identity_collapse",
+    "identity_acceptance",
+    "native_lgrc_choice_selection",
+    "semantic_choice",
+    "agency",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "boundary": {
+    "identity_acceptance_supported": false,
+    "interpretation": "The native artifacts prove topology-aware continuity of surface evidence, active state, packet ledger, and producer scheduling. They do not serialize a stable RC coherence-basin identity or prove attractor-basin invariance through topology mutation.",
+    "lineage_continuity_supported": true,
+    "rc_identity_through_topology_supported": false,
+    "topology_mutating_movement_candidate_remains_supported": true
+  },
+  "checks": {
+    "artifact_only_replay_passed": true,
+    "claim_boundary_preserved": true,
+    "identity_acceptance_claim_blocked": true,
+    "identity_kind_after_recorded": true,
+    "identity_kind_before_recorded": true,
+    "identity_surface_after_recorded": true,
+    "identity_surface_before_recorded": true,
+    "iteration_20_baseline_passed": true,
+    "iteration_21_choice_boundary_consumed": true,
+    "producer_schedules_from_current_reabsorbed_evidence": true,
+    "rc_identity_invariants_not_serialized": true,
+    "reabsorbed_state_continuity_passed": true,
+    "topology_lineage_continuity_passed": true
+  },
+  "claim_ceiling": "topology_mutating_movement_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": true,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "rc_identity_through_topology_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "semantic_choice_claim_allowed": false,
+    "topology_mutating_movement_claim_allowed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "identity_acceptance_claim_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "identity_acceptance_not_emitted_by_runtime"
+    },
+    "rc_identity_collapse_claim_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "rc_identity_collapse_not_validated"
+    },
+    "surface_lineage_only_is_not_rc_identity": {
+      "passed_negative_control": true,
+      "primary_blocker": "surface_lineage_evidence_is_not_rc_identity_basin"
+    },
+    "topology_state_reabsorption_only_is_not_rc_identity": {
+      "passed_negative_control": true,
+      "primary_blocker": "state_reabsorption_evidence_is_not_identity_acceptance"
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter22_identity_through_topology_mutation_boundary.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface_plus_topology_state_reabsorption",
+  "geometry_scope": "topology_mutating",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "9fb22cb4737b6f6f6c393491cd472b83911b1b8c"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M ../../../../Obsidian/SentientLife/Self/26-05/2026-05-22.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/README.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_continuation_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n M implementation/Phase-8-LGRC9-ImplementationChecklist.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M tests/models/test_lgrc_9_v3_runtime.py\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-LGRC-Applications.md\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-RC-ACO.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21_native_lgrc_choice_selection_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22_identity_through_topology_mutation_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter20_topology_mutating_repeatability_stress.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21_native_lgrc_choice_selection_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter22_identity_through_topology_mutation_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter20_topology_mutating_repeatability_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21_native_lgrc_choice_selection_boundary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter22_identity_through_topology_mutation_boundary.py\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationChecklist.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationPlan.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayChecklist.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayPlan.md"
+    }
+  },
+  "identity_audit": {
+    "active_state_digest_after": "5815955d8e781f81522f3137ee624a44942caa556d2373632cc555eefffe4e6c",
+    "active_state_digest_before": "93fbce46a524a420ddaf34d72830397388f33cad3ab7ba7104f5335a606a5221",
+    "identity_acceptance_claim_allowed": false,
+    "identity_boundary_class_after": "transported_surface_plus_reabsorbed_state_continuity",
+    "identity_boundary_class_before": "runtime_coherence_basin_candidate_not_rc_identity",
+    "identity_kind_after": "boundary_signal",
+    "identity_kind_before": "boundary_signal",
+    "identity_surface_after": "native_causal_pulse_substrate_surface",
+    "identity_surface_before": "native_causal_pulse_substrate_surface",
+    "interpretation": "The native artifacts prove topology-aware continuity of surface evidence, active state, packet ledger, and producer scheduling. They do not serialize a stable RC coherence-basin identity or prove attractor-basin invariance through topology mutation.",
+    "lineage_evidence_supported": true,
+    "lineage_transfer_map": {
+      "1": "0",
+      "2": "0"
+    },
+    "primary_identity_blocker": "rc_identity_basin_invariance_not_validated_across_topology_mutation",
+    "rc_identity_invariants": {
+      "attractivity_invariance_checked": false,
+      "basin_identity_id_serialized": false,
+      "coherence_compatibility_checked_as_rc_identity": false,
+      "identity_acceptance_event_emitted": false,
+      "reflexive_closure_checked": false,
+      "stable_self_maintaining_attractor_basin_serialized": false
+    },
+    "rc_identity_through_topology_supported": false,
+    "source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+    "source_surface_nodes": [
+      1,
+      2
+    ],
+    "topology_state_reabsorption_digest": "c9bf6e2bfafb053bb33812542bfee4ed47ff11df0a3452da82ca04b3b8635fa6",
+    "transported_surface_digest": "6b05770f10cfa447b24f2c24c3ddbb89dfe6fd414cf0893b2cb82374355b0d0a",
+    "transported_surface_nodes": [
+      0
+    ]
+  },
+  "input_ceiling": "topology_mutating_movement_candidate",
+  "iteration": "22",
+  "movement_substrate": "S7_port_graph_topology_lineage_probe_v1",
+  "native_lane": {
+    "artifact_validator": {
+      "artifact_only": true,
+      "failure_reasons": [],
+      "lineage_record_count": 1,
+      "movement_claim_allowed": false,
+      "native_causal_pulse_substrate_surface_lineage_transport_supported": true,
+      "native_m6": false,
+      "native_topology_state_reabsorption_supported": true,
+      "producer_record_count": 1,
+      "runtime_state_used": false,
+      "superseded_record_count": 0,
+      "surface_row_count": 4,
+      "topology_event_count": 1,
+      "topology_state_reabsorption_digest_fields_checked": true,
+      "topology_state_reabsorption_record_count": 1,
+      "transported_record_count": 1,
+      "valid": true,
+      "validated_lineage_record_ids": [
+        "surface-lineage:0e61f52bed36f098bf003f0504bb46e4"
+      ],
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-a1cd2fdd5114c522",
+        "surface:lgrc9v3-packet-event-404fa41884262268:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-8e61f6d3441e4a00:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_lineage_artifacts"
+    },
+    "lane_id": "identity_through_topology_mutation_forward",
+    "producer_uses_current_reabsorbed_evidence": true,
+    "reabsorbed_state_continuity_passed": true,
+    "scheduled_packet_processed_by_step": true,
+    "source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+    "surface_lineage_record_digest": "42fd20debe26004ff5e302b20a4533c63c1af9b29c88f7af488c042e652c1adc",
+    "topology_lineage_continuity_passed": true,
+    "topology_state_reabsorption_record_digest": "c9bf6e2bfafb053bb33812542bfee4ed47ff11df0a3452da82ca04b3b8635fa6",
+    "transported_surface_digest": "6b05770f10cfa447b24f2c24c3ddbb89dfe6fd414cf0893b2cb82374355b0d0a"
+  },
+  "next_iteration": "23_topology_mutating_taxonomy_closeout",
+  "primary_blocker": "rc_identity_basin_invariance_not_validated_across_topology_mutation",
+  "promotion_result": "blocked",
+  "report_kind": "n04_iter22_identity_through_topology_mutation_boundary_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_20": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json",
+      "sha256": "6794efd6522afddec262dde9e2487a4ebfe5cc771035b230ecd4ee5b21adf59b"
+    },
+    "iteration_21": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21_native_lgrc_choice_selection_boundary.json",
+      "sha256": "6d417e2492c2782f16ab849b72dc508be417a124d827fa8b0129414d06e22370"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "port_graph"
+}

@@ -1,0 +1,407 @@
+{
+  "acceptance_state": "achieved",
+  "artifact_digest": "278061ddab47371700ffb50089bda6d75850a790b97ca6d7d8b2d90799b2e2a8",
+  "artifact_only_b_path_replay": {
+    "artifact_dependency_order_valid": true,
+    "artifact_only": true,
+    "b1_consumes_b0": true,
+    "b1a_consumes_b1": true,
+    "b1b_consumes_b1_and_b1a": true,
+    "hypothesis_a_ceiling_preserved": true,
+    "ordered_chain": [
+      {
+        "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+        "digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "step": "hypothesis_a_gpr6_closeout"
+      },
+      {
+        "digest": "88612218d51d084af7cdba784ff2da2adf44d2b1cdd391866aeb9c109928dfa3",
+        "primary_blocker": "native_goal_proxy_regulation_policy_missing",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_10_hypothesis_b0_native_substrate_inventory.json",
+        "step": "b0_native_substrate_inventory"
+      },
+      {
+        "classification": "no_response_native_policy_gap",
+        "digest": "693fb54255de3745fcd1e0cd5a8c236f1ee6677b78dcb32df60bc58d9bacf6aa",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11_hypothesis_b1_geometry_substrate_probe.json",
+        "step": "b1_fixed_geometry_probe"
+      },
+      {
+        "classification": "predeclared_return_scaffold_band_return_design_candidate",
+        "digest": "38abed917bc8fea2cfbbf552965a860c6ba227ecd044024a6b7e728134c37a5e",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11a_positive_geometry_return_scaffold_probe.json",
+        "step": "b1a_matched_return_scaffold_probe"
+      },
+      {
+        "classification": "finite_envelope_band_buffered_return_scaffold_candidate",
+        "digest": "00078dd0006a9d907eee410152b6cb11af6a20ed589d7caee35a6f15ae4daa29",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11b_band_buffered_return_scaffold_probe.json",
+        "step": "b1b_band_buffered_return_scaffold_family_probe"
+      }
+    ],
+    "replay_chain_digest": "0026b3d4c94cef8449449f5f8e2ccc727a7ca0c5eb1f35f4821be7ffb29d73c7",
+    "runtime_state_used": false
+  },
+  "blocked_claims": [
+    "aco_like_behavior",
+    "agency",
+    "ant_colony_behavior",
+    "biological_behavior",
+    "general_native_goal_proxy_regulation",
+    "goal_ownership",
+    "identity_acceptance",
+    "intention",
+    "locomotion_like_behavior",
+    "native_memory_trail",
+    "native_substrate_goal_proxy_regulation",
+    "personhood",
+    "rc_identity_collapse",
+    "runtime_identity_acceptance",
+    "semantic_goal_understanding",
+    "unbounded_native_response_magnitude_selection",
+    "unrestricted_movement"
+  ],
+  "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_substrate_mediated_goal_proxy_regulation_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_12_hypothesis_b2_native_substrate_closeout.py",
+  "controls": {
+    "artifact_runtime_fallback": {
+      "control_passed": true,
+      "primary_blocker": "runtime_state_fallback_blocked",
+      "reason": "closeout replay uses exported B-path artifacts only"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "B-path closeout keeps all semantic goal, agency, identity, ACO, and unrestricted claims false"
+    },
+    "future_11c_not_blocking": {
+      "control_passed": true,
+      "primary_blocker": "optional_cultivation_misclassified_as_closeout_blocker",
+      "reason": "11-C is recorded as optional cultivation, not required for N09 closeout"
+    },
+    "general_native_regulation_overclaim": {
+      "control_passed": true,
+      "primary_blocker": "general_native_regulation_overclaim_blocked",
+      "reason": "B-path evidence is finite-envelope design evidence, not general native regulation"
+    },
+    "hypothesis_a_promotion_to_b": {
+      "control_passed": true,
+      "primary_blocker": "hypothesis_a_to_b_promotion_blocked",
+      "reason": "producer-mediated A-path closeout is preserved and not promoted into B"
+    },
+    "missing_policy_surfaces_recorded": {
+      "control_passed": true,
+      "primary_blocker": "missing_policy_surface_record_absent",
+      "reason": "closeout records the refined native policy blockers"
+    }
+  },
+  "digest_recomputation": {
+    "b0_artifact_digest_recomputes": true,
+    "b1_artifact_digest_recomputes": true,
+    "b1a_artifact_digest_recomputes": true,
+    "b1b_artifact_digest_recomputes": true,
+    "gpr6_closeout_artifact_digest_recomputes": true
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "future_cultivation": {
+    "candidate_iteration": "11-C",
+    "claim_boundary": "future envelope cultivation would still be scaffold design evidence unless it exposes a native proxy/error/response policy surface",
+    "future_cultivation_digest": "8ec771384824a8e5ba8d7f2764340472945afc98fd357b384aa8e9dd4c9b0bfc",
+    "not_required_for_iteration_12_closeout": true,
+    "question": "Can multi-stage predeclared geometry widen the finite response envelope without reading post-perturbation error?",
+    "status": "deferred_optional_not_n09_blocker",
+    "topic": "geometry_envelope_cultivation",
+    "why_deferred": "Iteration 11-B already established the N09-B evidence needed for closeout: geometry can improve regulation-like behavior inside a finite envelope, and the remaining blocker is native response-magnitude selection.",
+    "would_test": [
+      "multiple fixed return channels",
+      "delayed staged returns",
+      "wider perturbation family",
+      "whether bounded partial return can become wider band return"
+    ]
+  },
+  "generated_at": "2026-06-09T21:36:21.899055+00:00",
+  "git": {
+    "head": "1621f65b01e82db6be31763ef1fc6f7eba517fe0",
+    "status_short_experiment": "M experiments/2026-05-N09-lgrc-goal-proxy-regulation/README.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationChecklist.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationPlan.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_10_hypothesis_b0_native_substrate_inventory.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11_hypothesis_b1_geometry_substrate_probe.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11a_positive_geometry_return_scaffold_probe.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11b_band_buffered_return_scaffold_probe.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_1_baseline_inventory.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_4_gpr2_error_signal.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_7_gpr5_repeated_bounded_regulation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_10_hypothesis_b0_native_substrate_inventory.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_11_hypothesis_b1_geometry_substrate_probe.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_11a_positive_geometry_return_scaffold_probe.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_11b_band_buffered_return_scaffold_probe.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_12_hypothesis_b2_native_substrate_closeout.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_1_baseline_inventory.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_3_gpr1_proxy_measurement.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_4_gpr2_error_signal.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_5_gpr3_proxy_conditioned_eligibility.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_6_gpr4_single_cycle_correction.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_7_gpr5_repeated_bounded_regulation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_8_perturbation_withdrawal_support.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_1_baseline_inventory.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_2_fixture_manifest.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_10_hypothesis_b0_native_substrate_inventory.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_11_hypothesis_b1_geometry_substrate_probe.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_11a_positive_geometry_return_scaffold_probe.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_11b_band_buffered_return_scaffold_probe.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_12_hypothesis_b2_native_substrate_closeout.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_3_gpr1_proxy_measurement.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_4_gpr2_error_signal.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_5_gpr3_proxy_conditioned_eligibility.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_6_gpr4_single_cycle_correction.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_7_gpr5_repeated_bounded_regulation.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_8_perturbation_withdrawal_support.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_9_gpr6_closeout.py",
+    "status_short_src": ""
+  },
+  "hypothesis_a_closeout": {
+    "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+    "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+    "status": "closed"
+  },
+  "hypothesis_b_closeout": {
+    "b_path_closeout_digest": "ec4371fe792e7df0b3864edb288c2cb5d89517a4cd51317fa41b8d6c073b9568",
+    "claim_ceiling": "native_substrate_mediated_goal_proxy_regulation_design_candidate",
+    "general_native_goal_proxy_regulation_supported": false,
+    "primary_blocker": "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+    "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11b_band_buffered_return_scaffold_probe.json",
+    "status": "closed_scoped_design_candidate",
+    "strongest_evidence": "finite_envelope_band_buffered_return_scaffold_candidate",
+    "supporting_blockers": [
+      "native_goal_proxy_regulation_policy_missing",
+      "native_goal_proxy_response_policy_missing_for_general_regulation",
+      "native_response_magnitude_policy_missing_for_unbounded_perturbations"
+    ]
+  },
+  "iteration": 12,
+  "missing_native_policy_surfaces": [
+    {
+      "blocker": "native_goal_proxy_regulation_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "c0fcaa4a3f5c64d35da0ca8f9fca30f38b8f55c405d354bb193ab2304fc94ce8",
+      "role": "primary_b_path_blocker",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_proxy_surface_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "6bf23797a9c7099f74cd6328d77cbe6729082cb4b4ef0ef173d8532cda8b9d9c",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_target_band_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "bd20f29a68a7eafb6e8f8f6c5c7d1ff13985dd4a2ce6e58757b5ad80f85de972",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_proxy_error_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "fe6790f6299c3984681245633fa05f817456a9b3c3a793ea7932d1e536e970b2",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_proxy_conditioned_response_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "3508d4fd8ffa4c078d1b48803c17f6d28b77470c4c9fe3ae0550f61b02a6d96f",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_response_amount_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "bab91068b5d37d0a211b5e20469edbb491bc1784a0996eabffdc5c64e19a1f53",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_repeated_goal_proxy_regulation_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "4d8ec06bb687932638230d1f1c6032cab60b5d3d12e51c65ff39e32d7c7c4ade",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "perturbation_recovery_policy_not_constitutive_native",
+      "blocks_general_native_regulation": true,
+      "record_digest": "93f1ab286931817d67f14eede0180170378e2641435e1ea3d8efd1561120610f",
+      "role": "supporting_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_memory_shaped_regulation_surface_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "926b2dbd502937b001654599c98547c596c0b01b3625784b6bf5e4616b9bd70d",
+      "role": "memory_or_route_response_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_route_conductance_memory_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "a72d77dabaf1734d63d69675636e26221aa1a0cec7c6959d9a9c6bb106bb6712",
+      "role": "memory_or_route_response_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_route_conductance_memory_policy",
+      "blocks_general_native_regulation": true,
+      "record_digest": "4d1fa0d54912afc8ebe90f22d617ec0608421ea562a912d4c191321c9729a1d9",
+      "role": "memory_or_route_response_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_serialized_delayed_passive_response_policy",
+      "blocks_general_native_regulation": true,
+      "record_digest": "01621e4b596b98ecfa9fa79530b519ac85409eebca2bb96f141dd35b9d815551",
+      "role": "oscillation_or_potential_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_serialized_custom_node_potentials_policy",
+      "blocks_general_native_regulation": true,
+      "record_digest": "6d9c57b40748f851da46f57bac4353794ccc053e98e2a3b268ef40a62fa2f7cb",
+      "role": "oscillation_or_potential_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_serialized_potential_inversion_policy",
+      "blocks_general_native_regulation": true,
+      "record_digest": "3006008bbf9377f53634f931ff4154256a363defcd64770d64980ba32e6d68f0",
+      "role": "oscillation_or_potential_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_flux_facilitated_metric_map_policy",
+      "blocks_general_native_regulation": true,
+      "record_digest": "d9496af9d721b4acbe62af18f09e96444957c61b6908e2803945f1f4ad6fdf14",
+      "role": "oscillation_or_potential_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_identity_preserving_regulation_validator_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "076b4d74b79a8dfa8f73620387c6ebbe5661c932ab0106aca803d713c1566540",
+      "role": "identity_support_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "n07_identity_withdrawal_baseline_not_available",
+      "blocks_general_native_regulation": true,
+      "record_digest": "552699edc71563cc9be4b36db3352d1833e5f2ec11ddc7cd4ac8bd11fa451ab6",
+      "role": "identity_support_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_neutral_absorber_reservoir_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "43f39c49d67550d2c460d2aaa8f5d3635791ccbb0b164dbec19df453335a6146",
+      "role": "supporting_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_identity_acceptance_contract_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "ac294c678095ba75b39275546deb3560fb9650f120c71dc308e0b10e95ba88f3",
+      "role": "identity_support_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_long_horizon_c3_replay_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "fd657c8a58ab911c9f528a63f112585e5422deba4bfee4bcc706d52e63e64e15",
+      "role": "supporting_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_goal_proxy_regulation_artifact_replay_validator_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "d4fe659168c8a5d13c8f852774940cebb71a20e2c53463919d2f11bcf7c5533f",
+      "role": "supporting_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_oscillator_return_regulation_policy_missing",
+      "blocks_general_native_regulation": true,
+      "record_digest": "20227d5db22c80c81ff16fc30b96a83aa7487af8368718b943765f64fd2d0459",
+      "role": "supporting_native_gap",
+      "source": "iteration_10_inventory",
+      "status": "open"
+    },
+    {
+      "blocker": "native_goal_proxy_response_policy_missing_for_general_regulation",
+      "blocks_general_native_regulation": true,
+      "record_digest": "df8b66ab09ff8145072f33d5d5af2a0f45307fa66ebbe9c20b91a5e3654dc4a8",
+      "role": "scaffold_success_but_no_general_response_policy",
+      "source": "iteration_11a_matched_return_scaffold",
+      "status": "open"
+    },
+    {
+      "blocker": "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+      "blocks_general_native_regulation": true,
+      "record_digest": "abe10d19a7edb3e445432400ed6c2a4d86cf05ac369aa06b24ddeade416c95c6",
+      "role": "finite_envelope_success_but_no_unbounded_response_magnitude_policy",
+      "source": "iteration_11b_finite_envelope_probe",
+      "status": "open"
+    }
+  ],
+  "next_iteration": "n10_or_later_goal_proxy_regulation_consumption_after_closeout",
+  "purpose": "hypothesis_b2_artifact_only_native_substrate_closeout",
+  "schema": "n09_iteration_12_hypothesis_b2_native_substrate_closeout_v1",
+  "source_artifact_sha256": {
+    "b0_inventory": "2f5104039f2ac670d8dfbfc9c2e78c4aa69071ec197bc9212f0c06076ff480b8",
+    "b1_probe": "035e5c97081be5e7eca2ce230f4f747ddaaf403d507330c2a0515600ee037fa1",
+    "b1a_probe": "4e875cc973d844a8fc9a61199cfd205d56df0528af38fe4ec7adc80b27f65356",
+    "b1b_probe": "d3bb8d934a7838414afb720236e63d7a9433b009068371687b5870d5166464b7",
+    "gpr6_closeout": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+    "manifest": "e8ac646605f8524e344f378ae060bb6c25420c6701024f8802a7972e77d59c45"
+  },
+  "source_artifacts": {
+    "b0_inventory": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_10_hypothesis_b0_native_substrate_inventory.json",
+    "b1_probe": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11_hypothesis_b1_geometry_substrate_probe.json",
+    "b1a_probe": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11a_positive_geometry_return_scaffold_probe.json",
+    "b1b_probe": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11b_band_buffered_return_scaffold_probe.json",
+    "gpr6_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+    "manifest": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json"
+  },
+  "source_reports": {
+    "b0_inventory": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_10_hypothesis_b0_native_substrate_inventory.md",
+    "b1_probe": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_11_hypothesis_b1_geometry_substrate_probe.md",
+    "b1a_probe": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_11a_positive_geometry_return_scaffold_probe.md",
+    "b1b_probe": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_11b_band_buffered_return_scaffold_probe.md"
+  },
+  "status": "passed",
+  "validation_checks": {
+    "all_artifact_digests_recompute": true,
+    "all_source_acceptance_achieved": true,
+    "all_source_artifacts_passed": true,
+    "artifact_only_replay_used": true,
+    "b1_no_response_boundary_preserved": true,
+    "b1a_scaffold_design_candidate_preserved": true,
+    "b1b_finite_envelope_preserved": true,
+    "b_path_ceiling_frozen": true,
+    "b_path_replay_chain_reconstructed": true,
+    "claim_flags_all_false": true,
+    "controls_all_passed": true,
+    "future_11c_deferred_not_blocking": true,
+    "general_native_regulation_blocked": true,
+    "hypothesis_a_ceiling_preserved": true,
+    "missing_policy_surfaces_recorded": true,
+    "runtime_state_not_used": true
+  }
+}

@@ -1,0 +1,229 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: Cell-4
+  description: Cell-3 plus saddle-like routing junction represented by a small hub basin and branch valleys.
+  source_kind: pde_landscape_dsl
+  source_reference: rc-sim/configs/landscapes/cell-4.json
+  source_schema_version: "1.0.0"
+  source_domain: "2d"
+  translator_name: pde_landscape_to_seed
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+  translation_notes:
+    - Routing hub 'routing_junction' is preserved conservatively as a basin with implied_role 'saddle_like_hub'; no explicit saddle primitive is synthesized in lossless_source_normalization mode.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: cytoplasm
+    type: basin
+    coherence_prior: 0.85
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.5]
+    chart_scale_hint:
+      radius: 0.34
+
+  - id: plasma_membrane
+    type: ridge
+    owner_id: cytoplasm
+    ridge_kind: boundary
+    thickness_hint: 0.03
+    interior_coherence_hint: 0.85
+    exterior_coherence_hint: 0.15
+    hints:
+      inner_radius: 0.34
+      outer_radius: 0.37
+
+  - id: nucleus
+    type: basin
+    parent_id: cytoplasm
+    coherence_prior: 0.94
+    depth_hint: 1
+    chart_center_hint: [0.46, 0.54]
+    chart_scale_hint:
+      radius: 0.12
+
+  - id: nuclear_envelope
+    type: ridge
+    owner_id: nucleus
+    ridge_kind: boundary
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.94
+    exterior_coherence_hint: 0.85
+    hints:
+      inner_radius: 0.12
+      outer_radius: 0.14
+
+  - id: mitochondrion_1
+    type: basin
+    parent_id: cytoplasm
+    coherence_prior: 0.8
+    depth_hint: 1
+    chart_center_hint: [0.34, 0.44]
+    chart_scale_hint:
+      radius: 0.06
+
+  - id: mito_membrane_1
+    type: ridge
+    owner_id: mitochondrion_1
+    ridge_kind: boundary
+    thickness_hint: 0.014
+    interior_coherence_hint: 0.8
+    exterior_coherence_hint: 0.75
+    hints:
+      inner_radius: 0.06
+      outer_radius: 0.074
+
+  - id: mitochondrion_2
+    type: basin
+    parent_id: cytoplasm
+    coherence_prior: 0.8
+    depth_hint: 1
+    chart_center_hint: [0.62, 0.42]
+    chart_scale_hint:
+      radius: 0.06
+
+  - id: mito_membrane_2
+    type: ridge
+    owner_id: mitochondrion_2
+    ridge_kind: boundary
+    thickness_hint: 0.014
+    interior_coherence_hint: 0.8
+    exterior_coherence_hint: 0.75
+    hints:
+      inner_radius: 0.06
+      outer_radius: 0.074
+
+  - id: mitochondrion_3
+    type: basin
+    parent_id: cytoplasm
+    coherence_prior: 0.8
+    depth_hint: 1
+    chart_center_hint: [0.58, 0.66]
+    chart_scale_hint:
+      radius: 0.06
+
+  - id: mito_membrane_3
+    type: ridge
+    owner_id: mitochondrion_3
+    ridge_kind: boundary
+    thickness_hint: 0.014
+    interior_coherence_hint: 0.8
+    exterior_coherence_hint: 0.75
+    hints:
+      inner_radius: 0.06
+      outer_radius: 0.074
+
+  - id: routing_junction
+    type: basin
+    parent_id: cytoplasm
+    coherence_prior: 0.77
+    depth_hint: 1
+    chart_center_hint: [0.52, 0.56]
+    chart_scale_hint:
+      radius: 0.04
+    extensions:
+      source_pde:
+        implied_role: saddle_like_hub
+        implied_structure:
+          outgoing_valley_ids:
+            - channel_junction_to_mito1
+            - channel_junction_to_mito2
+            - channel_junction_to_mito3
+          incoming_valley_ids:
+            - channel_nucleus_to_junction
+          owned_ridge_ids:
+            - routing_junction_ridge
+
+  - id: routing_junction_ridge
+    type: ridge
+    owner_id: routing_junction
+    ridge_kind: internal
+    thickness_hint: 0.01
+    interior_coherence_hint: 0.77
+    exterior_coherence_hint: 0.64
+    hints:
+      inner_radius: 0.04
+      outer_radius: 0.05
+
+  - id: channel_nucleus_to_junction
+    type: valley
+    from_id: nucleus
+    to_id: routing_junction
+    width_hint: 0.03
+    coherence_prior: 0.56
+    path_hint: bezier
+    waypoints:
+      - [0.49, 0.56]
+      - [0.51, 0.56]
+
+  - id: channel_junction_to_mito1
+    type: valley
+    from_id: routing_junction
+    to_id: mitochondrion_1
+    width_hint: 0.03
+    coherence_prior: 0.53
+    path_hint: bezier
+    waypoints:
+      - [0.46, 0.53]
+      - [0.4, 0.48]
+
+  - id: channel_junction_to_mito2
+    type: valley
+    from_id: routing_junction
+    to_id: mitochondrion_2
+    width_hint: 0.03
+    coherence_prior: 0.53
+    path_hint: bezier
+    waypoints:
+      - [0.56, 0.52]
+      - [0.6, 0.47]
+
+  - id: channel_junction_to_mito3
+    type: valley
+    from_id: routing_junction
+    to_id: mitochondrion_3
+    width_hint: 0.03
+    coherence_prior: 0.52
+    path_hint: bezier
+    waypoints:
+      - [0.56, 0.61]
+      - [0.57, 0.64]
+
+extensions:
+  source_pde:
+    meta:
+      author: RC Landscape Iteration 1
+      date: "2026-02-16"
+    compile:
+      composition_mode: blend
+      value_range:
+        mode: clamp
+        min: 0.0
+        max: 1.0
+      mass_normalization:
+        mode: none
+    potential_compile_policy:
+      profile_transform: band_remap
+      band_remap:
+        source: [0.15, 0.95]
+        target: [0.12, 0.98]
+    translation_notes:
+      - Routing hub 'routing_junction' is preserved conservatively as a basin with implied_role 'saddle_like_hub'; no explicit saddle primitive is synthesized in lossless_source_normalization mode.
+    initial_flux:
+      enabled: false
+      direction: none
+      magnitude: 0.0
+      channels: []

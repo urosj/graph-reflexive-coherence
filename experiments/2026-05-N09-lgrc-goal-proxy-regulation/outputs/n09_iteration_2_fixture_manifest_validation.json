@@ -1,0 +1,205 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 2 passes if N09 has a replayable proxy-regulation fixture contract with target/error policies, producer/route boundaries, budget separation, memory/no-memory lanes, perturbation/support schemas, identity/support outcome tags, ceiling algorithm, N10 handoff fields, controls, and claim flags frozen before any positive regulation probe.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "checks": {
+    "allowed_proxy_kinds_runtime_visible": true,
+    "artifact_only_replay_chain_declared": true,
+    "artifact_only_replay_chain_includes_perturbation_and_withdrawal": true,
+    "ceiling_algorithm_inherited": true,
+    "claim_flag_keys_match_baseline": true,
+    "claim_flags_all_false": true,
+    "control_blockers_match_contract": true,
+    "controls_have_distinct_blockers": true,
+    "default_fixture_is_budget_auditable_node_band": true,
+    "error_signal_schema_complete": true,
+    "identity_support_outcome_tags_declared": true,
+    "memory_lane_field_mapping_to_n08_declared": true,
+    "memory_lane_required": true,
+    "n06_candidate_budget_prediction_gap_recorded": true,
+    "n06_packet_execution_not_inherited": true,
+    "n06_unknown_source_blocker_preserved": true,
+    "n07_identity_support_area_excluded_as_proxy_kind": true,
+    "n07_withdrawal_gap_preserved": true,
+    "n08_support_anchor_consistency_revalidated": true,
+    "n10_handoff_fields_inherited": true,
+    "native_policy_gaps_recorded": true,
+    "no_memory_comparator_required": true,
+    "node_plus_packet_budget_separate_and_exact": true,
+    "oscillator_fixture_deferred": true,
+    "packet_response_fields_complete": true,
+    "perturbation_recovery_fields_declared": true,
+    "perturbation_schema_complete": true,
+    "positive_regulation_evidence_not_generated": true,
+    "producer_record_linkage_schema_structured": true,
+    "proxy_budget_ambiguity_blocker_declared": true,
+    "proxy_surface_schema_complete": true,
+    "regulation_outcome_taxonomy_inherited": true,
+    "regulation_policy_digest_rule_declared": true,
+    "regulation_probe_not_run": true,
+    "regulation_response_attaches_identity_support_fields": true,
+    "regulation_response_attaches_memory_lane_fields": true,
+    "regulation_response_schema_complete": true,
+    "required_controls_present": true,
+    "route_arbitration_context_constraint_visible": true,
+    "route_producer_evidence_fields_complete": true,
+    "same_proxy_target_policy_required_for_lane_comparison": true,
+    "source_baseline_digest_matches": true,
+    "support_withdrawal_kind_declared": true,
+    "support_withdrawal_schema_complete": true,
+    "target_band_bounds_valid_for_coherence": true,
+    "target_band_schema_complete": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_2_fixture_manifest.py",
+  "contract_summary": {
+    "default_fixture_family": "n09_default_active_node_band_regulation_v1",
+    "memory_lane_required": true,
+    "n06_packet_execution_inherited": false,
+    "n07_withdrawal_baseline_available": false,
+    "native_goal_proxy_regulation_policy_available": false,
+    "no_memory_comparator_required": true,
+    "oscillator_fixture_status": "deferred_secondary_fixture"
+  },
+  "control_summary": {
+    "artifact_order_inversion": {
+      "primary_blocker": "artifact_order_inversion",
+      "status": "blocked"
+    },
+    "candidate_budget_prediction_missing": {
+      "primary_blocker": "candidate_budget_prediction_missing",
+      "status": "blocked"
+    },
+    "claim_promotion": {
+      "primary_blocker": "claim_promotion_blocked",
+      "status": "blocked"
+    },
+    "duplicate_regulation_response": {
+      "primary_blocker": "duplicate_regulation_response",
+      "status": "blocked"
+    },
+    "error_policy_missing": {
+      "primary_blocker": "error_policy_missing",
+      "status": "blocked"
+    },
+    "error_signal_digest_mismatch": {
+      "primary_blocker": "error_signal_digest_mismatch",
+      "status": "blocked"
+    },
+    "hidden_proxy_source": {
+      "primary_blocker": "hidden_proxy_source_rejected",
+      "status": "blocked"
+    },
+    "hidden_proxy_target": {
+      "primary_blocker": "hidden_proxy_target_rejected",
+      "status": "blocked"
+    },
+    "hidden_reward_or_goal_label": {
+      "primary_blocker": "hidden_reward_or_goal_label_rejected",
+      "status": "blocked"
+    },
+    "identity_support_digest_mismatch": {
+      "primary_blocker": "identity_support_digest_mismatch",
+      "status": "blocked"
+    },
+    "memory_surface_missing_for_memory_lane": {
+      "primary_blocker": "memory_surface_missing_for_memory_lane",
+      "status": "blocked"
+    },
+    "memory_surface_read_in_no_memory_lane": {
+      "primary_blocker": "memory_surface_read_in_no_memory_lane",
+      "status": "blocked"
+    },
+    "missing_proxy_surface": {
+      "primary_blocker": "proxy_surface_missing",
+      "status": "blocked"
+    },
+    "n06_packet_execution_inherited": {
+      "primary_blocker": "n06_selection_only_no_packet_execution_for_regulation",
+      "status": "blocked"
+    },
+    "node_plus_packet_budget_discontinuity": {
+      "primary_blocker": "node_plus_packet_budget_discontinuity",
+      "status": "blocked"
+    },
+    "oscillator_fixture_without_explicit_opt_in": {
+      "primary_blocker": "oscillator_regulation_fixture_requires_explicit_opt_in",
+      "status": "blocked"
+    },
+    "perturbation_schema_missing": {
+      "primary_blocker": "perturbation_schema_missing",
+      "status": "blocked"
+    },
+    "posthoc_target_change": {
+      "primary_blocker": "posthoc_target_change_rejected",
+      "status": "blocked"
+    },
+    "processed_packet_missing": {
+      "primary_blocker": "processed_packet_missing",
+      "status": "blocked"
+    },
+    "producer_direct_mutation": {
+      "primary_blocker": "producer_direct_mutation_blocked",
+      "status": "blocked"
+    },
+    "proxy_budget_ambiguity": {
+      "primary_blocker": "proxy_budget_ambiguity",
+      "status": "blocked"
+    },
+    "proxy_surface_digest_mismatch": {
+      "primary_blocker": "proxy_surface_digest_mismatch",
+      "status": "blocked"
+    },
+    "regulation_policy_missing": {
+      "primary_blocker": "regulation_policy_missing",
+      "status": "blocked"
+    },
+    "scheduled_packet_missing": {
+      "primary_blocker": "scheduled_packet_missing",
+      "status": "blocked"
+    },
+    "support_withdrawal_baseline_missing": {
+      "primary_blocker": "n07_identity_withdrawal_baseline_not_available",
+      "status": "blocked"
+    },
+    "target_band_missing": {
+      "primary_blocker": "target_band_missing",
+      "status": "blocked"
+    },
+    "unknown_candidate_source_surface": {
+      "primary_blocker": "native_route_candidate_committed_source_surface_required",
+      "status": "blocked"
+    },
+    "wrong_direction_response": {
+      "primary_blocker": "wrong_direction_response",
+      "status": "blocked"
+    }
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "generated_at": "2026-06-09T19:28:45.028102+00:00",
+  "git": {
+    "head": "1621f65b01e82db6be31763ef1fc6f7eba517fe0",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 2,
+  "manifest_digest": "084925ff201f49c53db6040e22fa9970736ca9a5e7ad4d090165966bd8efab2a",
+  "manifest_path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json",
+  "manifest_sha256": "e8ac646605f8524e344f378ae060bb6c25420c6701024f8802a7972e77d59c45",
+  "purpose": "fixture_manifest_and_proxy_regulation_contract_validation",
+  "schema": "n09_iteration_2_fixture_manifest_validation_v1",
+  "source_baseline_inventory": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_1_baseline_inventory.json",
+  "source_baseline_inventory_digest": "78865ce35a12e73d1071b6a124a262e0fb946f90a77e997e505f4245358fd7a3",
+  "status": "passed",
+  "validation_digest": "6c49700ab9f3a735bbfe2fec2b88b5e0c6920fc935fd896b5587e6f1dc9059ac",
+  "validation_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "validation_digest",
+      "git"
+    ],
+    "included": "validation fields except generated_at, validation_digest, and git",
+    "stable_across_same_inputs": true
+  }
+}

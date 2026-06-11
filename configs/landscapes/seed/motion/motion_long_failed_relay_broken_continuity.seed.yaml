@@ -1,0 +1,128 @@
+seed_schema: pygrc.landscape_seed.v1
+seed_version: motion_seed_iter10_v1
+meta:
+  name: motion_long_failed_relay_broken_continuity
+  source_kind: authored_motion_seed
+  source_reference: implementation/Motion-ImplementationPlan.md#iteration-10
+  source_schema_version: motion_seed.v1
+  source_domain: motion_inference
+  description: Authored preconditions for identity, topological motion review.
+  tags:
+  - motion
+  - iteration_10
+  - grc9v3
+  translator_name: motion_seed_examples
+  translator_version: motion_seed_examples_iter10_v1
+  translation_mode: semantic_enrichment
+  translation_notes:
+  - source_preconditions_only
+  - no_runtime_motion_claim
+  - no_motion_record_claim
+  - no_solved_checkpoint_claim
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.0
+  zeta_c: 1.0
+  kappa_c: 1.0
+  dt: 0.1
+  potential:
+    type: motion_source_precondition
+    params: {}
+  budget_b: null
+  notes: Authoring profile for runtime projection tests; not a solved motion outcome.
+  source_params: {}
+primitives:
+- id: failed_relay_origin
+  type: basin
+  label: failed relay origin
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 2.0
+  chart_center_hint:
+  - 0.0
+  - 0.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: failed_relay_terminal
+  type: basin
+  label: failed relay terminal
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 2.0
+  chart_center_hint:
+  - 4.0
+  - 0.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: failed_relay_missing_channel
+  type: valley
+  label: failed relay missing channel
+  role: motion_source_channel
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: flux_path_precondition
+  from_id: failed_relay_origin
+  to_id: failed_relay_terminal
+  path_hint: null
+  width_hint: null
+  coherence_prior: null
+  channel_role: transport_precondition
+  waypoints: []
+  notes: null
+transport_intent:
+- id: failed_relay_continuity_intent
+  mode: insufficient_successor_flux_precondition
+  sources:
+  - failed_relay_origin
+  targets:
+  - failed_relay_terminal
+  magnitude_hint: 0.0
+  priority: null
+  carrier_id: null
+  direction_hint: null
+  notes: 'Negative composite: source preconditions do not produce identity walking
+    evidence.'
+geometry_hints:
+  source_chart: motion_iter10_source_chart
+  periodicity: {}
+  scale_units: null
+  separation_hints: {}
+  coordinate_convention: null
+extensions:
+  motion_seed:
+    contract_version: motion_seed.v1
+    runtime_family: grc9v3
+    source_status: long_window_failed_composite_projected_runtime_evidence
+    target_motion_modes:
+    - identity
+    - topological
+    projected_example_names:
+    - motion_long_failed_relay_broken_continuity
+    non_claims:
+    - source_preconditions_only
+    - no_runtime_motion_claim
+    - no_motion_record_claim
+    - no_solved_checkpoint_claim
+    notes:
+    - Twenty-one checkpoint failed relay; records why a source-level relay can remain
+      dissolved/emerged instead of walked.

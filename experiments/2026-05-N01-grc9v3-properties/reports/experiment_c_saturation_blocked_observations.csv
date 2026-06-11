@@ -1,0 +1,4 @@
+experiment,observation,status,artifact_source,reconstruction_attempt,notes
+experiment_c_saturation,near_saturation_policy_degree_8,blocked,Lane A GRC9V3 candidate predicate,Checked candidate predicate and runtime modes.,Lane A canonical gate is active_degree == 9; no degree-8 near-saturation policy is implemented.
+experiment_c_saturation,direct_column_h_saturation_gate,blocked,Lane A GRC9V3 spark events,Separated derived column diagnostic from candidate event payload.,"Column-H remains an analysis diagnostic under Lane A, not a direct saturation/refinement gate."
+experiment_c_saturation,persistent_child_identity_after_saturation,inconclusive,single application of apply_hybrid_sparks,Captured completed event and child basin stabilization payload when expansion occurred.,Iteration 6 records event-level evidence only; persistent post-event identity windows are deferred to Experiment D.

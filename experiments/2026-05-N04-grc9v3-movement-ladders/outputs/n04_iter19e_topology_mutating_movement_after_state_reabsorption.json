@@ -1,0 +1,418 @@
+{
+  "attempted_promotion": "topology_mutating_movement_candidate",
+  "blocked_claims": [
+    "native_lgrc_choice_selection",
+    "rc_identity_collapse",
+    "semantic_choice",
+    "agency",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "boundary": {
+    "does_not_support_agency_or_locomotion": true,
+    "does_not_support_native_lgrc_choice_selection": true,
+    "does_not_support_rc_identity_collapse": true,
+    "interpretation": "19-E supports a topology-mutating movement candidate because post-topology packet work schedules and processes from lineage-current, reabsorbed native state. It does not support native LGRC choice selection, RC identity collapse, agency, locomotion-like behavior, biological behavior, identity acceptance, inherited-N03 movement, or unrestricted movement.",
+    "supports_adaptive_topology_entry_candidate": true,
+    "supports_topology_mutating_movement_candidate": true
+  },
+  "checks": {
+    "artifact_only_replay_passed": true,
+    "claim_boundary_preserved": true,
+    "committed_topology_event_logged": true,
+    "disabled_reabsorption_control_blocks_scheduling": true,
+    "iteration_19c_adaptive_entry_passed": true,
+    "iteration_19d_failed_for_expected_runtime_gap": true,
+    "ledger_state_reabsorption_gap_resolved": true,
+    "phase8_topology_state_reabsorption_supported": true,
+    "post_topology_packet_budget_exact": true,
+    "post_topology_packet_work_processed_by_step": true,
+    "post_topology_packet_work_scheduled": true,
+    "producer_reads_reabsorbed_transport": true,
+    "superseded_source_read_control_still_passes": true,
+    "topology_only_claim_control_passes": true,
+    "topology_state_reabsorption_record_emitted": true,
+    "transported_surface_row_emitted": true
+  },
+  "claim_ceiling": "topology_mutating_movement_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": true,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "topology_mutating_movement_claim_allowed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "state_reabsorption_disabled_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "topology_state_reabsorption_required_before_producer_scheduling",
+      "producer_reason_code": "topology_state_reabsorption_required_before_producer_scheduling",
+      "topology_state_reabsorption_records": 0
+    },
+    "superseded_source_stale_read_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "producer_stale_surface_read_blocked"
+    },
+    "topology_only_claim_promotion_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "runtime_topology_state_reabsorption_support_is_not_by_itself_choice_agency_or_identity_collapse"
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19e_topology_mutating_movement_after_state_reabsorption.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface_plus_topology_state_reabsorption",
+  "geometry_scope": "topology_mutating",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "2736641f9738312897b52f428907a46fcd4fef04"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19b_topology_lineage_adaptive_gate_report.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter19b_topology_lineage_adaptive_gate_report.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_continuation_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n M implementation/Phase-8-LGRC9-ImplementationChecklist.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M src/pygrc/models/__init__.py\n M src/pygrc/models/lgrc_9_v3_contract.py\n M src/pygrc/models/lgrc_9_v3_packets.py\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M src/pygrc/models/lgrc_9_v3_runtime_state.py\n M src/pygrc/models/lgrc_9_v3_topology.py\n M src/pygrc/telemetry/lgrc9v3_contract.py\n M tests/models/test_lgrc_9_v3_contract.py\n M tests/models/test_lgrc_9_v3_runtime.py\n M tests/telemetry/test_lgrc9v3_contract.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19c_s7_adaptive_gate_with_native_surface_lineage.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19d_topology_mutating_movement_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19e_topology_mutating_movement_after_state_reabsorption.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter19c_s7_adaptive_gate_with_native_surface_lineage.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter19d_topology_mutating_movement_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter19e_topology_mutating_movement_after_state_reabsorption.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19c_s7_adaptive_gate_with_native_surface_lineage.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19d_topology_mutating_movement_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19e_topology_mutating_movement_after_state_reabsorption.py\n?? implementation/Phase-8-LGRC9-TopologyStateReabsorptionBaselineFreeze.json\n?? implementation/Phase-8-LGRC9-TopologyStateReabsorptionBaselineFreeze.md\n?? implementation/Phase-8-LGRC9-TopologyStateReabsorptionChecklist.md\n?? implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json\n?? implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md\n?? implementation/Phase-8-LGRC9-TopologyStateReabsorptionPlan.md"
+    }
+  },
+  "input_ceiling": "adaptive_topology_entry_candidate",
+  "iteration": "19-E",
+  "movement_substrate": "S7_port_graph_topology_lineage_probe_v1",
+  "next_work": "review_topology_mutating_movement_candidate_and_update_taxonomy_inventory",
+  "primary_blocker": null,
+  "promotion_result": "supported_candidate",
+  "report_kind": "n04_iter19e_topology_mutating_movement_after_state_reabsorption_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_19a": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19a_s7_fixed_port_execution_report.json",
+      "sha256": "1e49625d90d15bf13947db6b0c31de588f109dbcfabeabec2514be69b6ebece2"
+    },
+    "iteration_19c": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19c_s7_adaptive_gate_with_native_surface_lineage.json",
+      "sha256": "2b0e7b4981f4e9b8ff372a24a5d5fb64562a48d29199ebbb426eff8bcc00ca43"
+    },
+    "iteration_19d": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19d_topology_mutating_movement_probe.json",
+      "sha256": "28df03d76ced295508d535848b4efee9bbcf782840d8688e442b4e7257b2b653"
+    },
+    "phase8_topology_state_reabsorption_closeout": {
+      "path": "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json",
+      "sha256": "7db33f5c04b34e3046ebbfda523a245c1b8dd80457e6fdf3a158dae1a6ecac31"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "port_graph",
+  "topology_mutating_movement_attempt": {
+    "active_graph_topology_mutated": false,
+    "artifact_validator": {
+      "artifact_only": true,
+      "failure_reasons": [],
+      "lineage_record_count": 1,
+      "movement_claim_allowed": false,
+      "native_causal_pulse_substrate_surface_lineage_transport_supported": true,
+      "native_m6": false,
+      "native_topology_state_reabsorption_supported": true,
+      "producer_record_count": 1,
+      "runtime_state_used": false,
+      "superseded_record_count": 0,
+      "surface_row_count": 4,
+      "topology_event_count": 1,
+      "topology_state_reabsorption_digest_fields_checked": true,
+      "topology_state_reabsorption_record_count": 1,
+      "transported_record_count": 1,
+      "valid": true,
+      "validated_lineage_record_ids": [
+        "surface-lineage:3dae1c199a20719087673d193d0e4e47"
+      ],
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-a1cd2fdd5114c522",
+        "surface:lgrc9v3-packet-event-404fa41884262268:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-8e61f6d3441e4a00:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_lineage_artifacts"
+    },
+    "budget_exact_after_post_topology_packet": true,
+    "budget_exact_after_reabsorption": true,
+    "claim_interpretation": "topology-mutating movement candidate only; not native LGRC choice, RC identity collapse, agency, locomotion-like behavior, biological behavior, or unrestricted movement",
+    "ledger_after_initial_packet": {
+      "base_node_coherence_total": 5.9,
+      "fixed_topology": true,
+      "ledger_conserved_budget_total": 6.0,
+      "ledger_in_flight_packet_total": 0.1,
+      "ledger_node_coherence_total": 5.9,
+      "node_plus_packet_total": 6.0,
+      "node_total_delta_ledger_minus_state": 0.0,
+      "packet_ledger_present": true,
+      "packet_transport_through_topology_change": false,
+      "topology_change_allowed": false
+    },
+    "ledger_after_post_topology_arrival": {
+      "base_node_coherence_total": 6.0,
+      "fixed_topology": false,
+      "ledger_conserved_budget_total": 6.0,
+      "ledger_in_flight_packet_total": 0.0,
+      "ledger_node_coherence_total": 6.0,
+      "node_plus_packet_total": 6.0,
+      "node_total_delta_ledger_minus_state": 0.0,
+      "packet_ledger_present": true,
+      "packet_transport_through_topology_change": true,
+      "topology_change_allowed": true
+    },
+    "ledger_after_post_topology_departure": {
+      "base_node_coherence_total": 5.9,
+      "fixed_topology": false,
+      "ledger_conserved_budget_total": 6.0,
+      "ledger_in_flight_packet_total": 0.1,
+      "ledger_node_coherence_total": 5.9,
+      "node_plus_packet_total": 6.0,
+      "node_total_delta_ledger_minus_state": 0.0,
+      "packet_ledger_present": true,
+      "packet_transport_through_topology_change": true,
+      "topology_change_allowed": true
+    },
+    "ledger_after_reabsorption": {
+      "base_node_coherence_total": 6.0,
+      "fixed_topology": false,
+      "ledger_conserved_budget_total": 6.0,
+      "ledger_in_flight_packet_total": 0.0,
+      "ledger_node_coherence_total": 6.0,
+      "node_plus_packet_total": 6.0,
+      "node_total_delta_ledger_minus_state": 0.0,
+      "packet_ledger_present": true,
+      "packet_transport_through_topology_change": true,
+      "topology_change_allowed": true
+    },
+    "lineage_action": "transported",
+    "lineage_record_digest": "abe417880408f18847f1ed0fdbb4e3a417bf858e0f2df3ea8c42d875fdac0a92",
+    "lineage_status": "transported_topology_lineage",
+    "post_topology_packet_scheduled": true,
+    "post_topology_packet_work_supported": true,
+    "post_topology_producer_attempted": true,
+    "processed_event_ids": [
+      "lgrc9v3-packet-event-404fa41884262268",
+      "lgrc9v3-packet-event-8e61f6d3441e4a00"
+    ],
+    "processed_event_kinds": [
+      "lgrc9v3_packet_departure",
+      "lgrc9v3_packet_arrival"
+    ],
+    "producer_causal_surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+    "producer_mutation_boundary": {
+      "direct_claim_write": false,
+      "direct_topology_write": false,
+      "producer_emitted_claim_label": false,
+      "producer_mutated_coherence": false,
+      "producer_mutated_packet_ledger": false
+    },
+    "producer_reads_transported_digest": true,
+    "producer_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+    "producer_record_artifact": {
+      "causal_surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+      "idempotency_key": "ecfd07f5c79b820b16ab2bec8655550f019a71dd9e08f5cfbe855bfc769c84be",
+      "observed_evidence": {
+        "adaptive_topology_entry_allowed": false,
+        "direct_centroid_write": false,
+        "direct_claim_write": false,
+        "direct_coherence_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "edge_id": 2,
+        "locomotion_like_claim_allowed": false,
+        "loop_driven_movement_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "observed_value": 0.1,
+        "packet_amount_source": "serialized_producer_policy",
+        "producer_emitted_claim_label": false,
+        "producer_marked_packet_processed": false,
+        "producer_mutated_coherence": false,
+        "producer_mutation_ownership": "step_processes_packet_departure",
+        "producer_reads_committed_surface_row": true,
+        "producer_reads_transport_successor": true,
+        "reference_value": 0.0,
+        "reference_value_source": "serialized_producer_policy",
+        "response_value": 0.1,
+        "scheduled_departure_event_time_key": 1.0,
+        "scheduled_packet_id": "lgrc9v3-packet-f6c5e5e2b6f4a88a",
+        "source_node_id": 0,
+        "source_pulse_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+        "source_pulse_event_kind": "lgrc9v3_packet_departure",
+        "source_pulse_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+        "surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+        "surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-a1cd2fdd5114c522",
+        "surface_lineage_current": true,
+        "surface_lineage_record_digest": "abe417880408f18847f1ed0fdbb4e3a417bf858e0f2df3ea8c42d875fdac0a92",
+        "surface_lineage_record_id": "surface-lineage:3dae1c199a20719087673d193d0e4e47",
+        "target_node_id": 2,
+        "threshold": 0.0,
+        "threshold_source": "serialized_producer_policy",
+        "topology_event_digest": "9cdd0efaac458830b92fe640e2fca8224e45df1458d2e7b972a1f6b6e46e2486",
+        "topology_event_id": "lgrc9v3-topology-a1cd2fdd5114c522",
+        "topology_state_reabsorption_record_digest": "50fbbe774f433d777f76049b128ec28a1712804d66b55c0c078900672a9d0880",
+        "topology_state_reabsorption_verified": true
+      },
+      "producer_policy": "packet_departure_from_pulse_substrate_coupling_policy",
+      "producer_version": "lgrc9v3_autonomy_v1",
+      "queued_work_consumed": false,
+      "reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+      "record_id": "lgrc9v3-producer-record-135b9068cf265ffb43f6002d",
+      "scheduled_event_id": "lgrc9v3-packet-event-404fa41884262268",
+      "scheduled_event_kind": "lgrc9v3_packet_departure",
+      "scheduled_event_time_key": 1.0,
+      "thresholds": {
+        "packet_amount": 0.1,
+        "reference_value": 0.0,
+        "threshold": 0.0
+      },
+      "topology_mutated": false,
+      "trigger_edge_id": 2,
+      "trigger_node_id": 0
+    },
+    "producer_references_stale_source_digest": false,
+    "producer_result_artifact": {
+      "artifact_kind": "lgrc9v3_autonomous_event_production_result",
+      "artifact_schema_version": "lgrc9v3_autonomous_event_production_result_v1",
+      "causal_surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+      "checkpoint_index": 1,
+      "collapse_reabsorption_emitted": false,
+      "event_time_key": 1.0,
+      "evidence_class": "autonomous_event_production",
+      "idempotency_policy": "causal_surface_digest_once",
+      "identity_acceptance_emitted": false,
+      "mode_version": "lgrc9v3_autonomy_v1",
+      "producer_policy": "packet_departure_from_pulse_substrate_coupling_policy",
+      "producer_version": "lgrc9v3_autonomy_v1",
+      "production_records": [
+        {
+          "causal_surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+          "idempotency_key": "ecfd07f5c79b820b16ab2bec8655550f019a71dd9e08f5cfbe855bfc769c84be",
+          "observed_evidence": {
+            "adaptive_topology_entry_allowed": false,
+            "direct_centroid_write": false,
+            "direct_claim_write": false,
+            "direct_coherence_write": false,
+            "direct_displacement_write": false,
+            "direct_support_mask_write": false,
+            "direct_topology_write": false,
+            "edge_id": 2,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "observed_value": 0.1,
+            "packet_amount_source": "serialized_producer_policy",
+            "producer_emitted_claim_label": false,
+            "producer_marked_packet_processed": false,
+            "producer_mutated_coherence": false,
+            "producer_mutation_ownership": "step_processes_packet_departure",
+            "producer_reads_committed_surface_row": true,
+            "producer_reads_transport_successor": true,
+            "reference_value": 0.0,
+            "reference_value_source": "serialized_producer_policy",
+            "response_value": 0.1,
+            "scheduled_departure_event_time_key": 1.0,
+            "scheduled_packet_id": "lgrc9v3-packet-f6c5e5e2b6f4a88a",
+            "source_node_id": 0,
+            "source_pulse_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "source_pulse_event_kind": "lgrc9v3_packet_departure",
+            "source_pulse_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+            "surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-a1cd2fdd5114c522",
+            "surface_lineage_current": true,
+            "surface_lineage_record_digest": "abe417880408f18847f1ed0fdbb4e3a417bf858e0f2df3ea8c42d875fdac0a92",
+            "surface_lineage_record_id": "surface-lineage:3dae1c199a20719087673d193d0e4e47",
+            "target_node_id": 2,
+            "threshold": 0.0,
+            "threshold_source": "serialized_producer_policy",
+            "topology_event_digest": "9cdd0efaac458830b92fe640e2fca8224e45df1458d2e7b972a1f6b6e46e2486",
+            "topology_event_id": "lgrc9v3-topology-a1cd2fdd5114c522",
+            "topology_state_reabsorption_record_digest": "50fbbe774f433d777f76049b128ec28a1712804d66b55c0c078900672a9d0880",
+            "topology_state_reabsorption_verified": true
+          },
+          "producer_policy": "packet_departure_from_pulse_substrate_coupling_policy",
+          "producer_version": "lgrc9v3_autonomy_v1",
+          "queued_work_consumed": false,
+          "reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+          "record_id": "lgrc9v3-producer-record-135b9068cf265ffb43f6002d",
+          "scheduled_event_id": "lgrc9v3-packet-event-404fa41884262268",
+          "scheduled_event_kind": "lgrc9v3_packet_departure",
+          "scheduled_event_time_key": 1.0,
+          "thresholds": {
+            "packet_amount": 0.1,
+            "reference_value": 0.0,
+            "threshold": 0.0
+          },
+          "topology_mutated": false,
+          "trigger_edge_id": 2,
+          "trigger_node_id": 0
+        }
+      ],
+      "queue_ownership_policy": "producers_enqueue_step_consumes",
+      "queued_work_consumed": false,
+      "record_count": 1,
+      "runtime_family": "LGRC9V3",
+      "scheduled_event_count": 1,
+      "scheduler_event_index": 4,
+      "state_mutated": true,
+      "topology_mutated": false
+    },
+    "producer_uses_topology_state_reabsorption_record": true,
+    "scheduled_packet_event_id": "lgrc9v3-packet-event-404fa41884262268",
+    "scheduled_packet_processed_by_step": true,
+    "source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+    "source_surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+    "strict_gate_passed": true,
+    "topology_event_id": "lgrc9v3-topology-a1cd2fdd5114c522",
+    "topology_event_logged": true,
+    "topology_signature_after_topology_event": {
+      "edges": [
+        0,
+        1,
+        2
+      ],
+      "nodes": [
+        0,
+        1,
+        2
+      ]
+    },
+    "topology_signature_before": {
+      "edges": [
+        0,
+        1,
+        2
+      ],
+      "nodes": [
+        0,
+        1,
+        2
+      ]
+    },
+    "topology_state_reabsorption_action": "merged",
+    "topology_state_reabsorption_emitted": true,
+    "topology_state_reabsorption_record_digest": "50fbbe774f433d777f76049b128ec28a1712804d66b55c0c078900672a9d0880",
+    "topology_state_reabsorption_record_id": "topology-state-reabsorption:1acd353cc149503d54a9052400c7310a",
+    "transported_surface_digest": "b0f871911c54f11cc54a565160217b3718e13e4872d201a15d99c30a1e7789f6",
+    "transported_surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-a1cd2fdd5114c522",
+    "transported_surface_row_emitted": true
+  }
+}

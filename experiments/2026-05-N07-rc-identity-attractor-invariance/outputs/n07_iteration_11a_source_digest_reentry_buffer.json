@@ -1,0 +1,1588 @@
+{
+  "acceptance": {
+    "achieved": true,
+    "statement": "Iteration 11-A passes if it records whether source_digest_reentry_buffer_v1 changes the 11-0 trajectory class, emits the reentry chain records, preserves budget exactness and claim boundaries, and records the next 11-* question."
+  },
+  "arc_of_becoming_interpretation": {
+    "arc_interpretation_digest": "dbc5e47f329a03559cb09ee3c0dfa6879e919ca8d2afa8f2fb5bec423a64c1d8",
+    "claim_boundary": {
+      "agency_claim_allowed": false,
+      "id6_claimed": false,
+      "identity_acceptance_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "reason": "A bounded-degrading 12-window endpoint does not justify ID6, identity acceptance, agency, or semantic choice claims.",
+      "semantic_choice_claim_allowed": false
+    },
+    "classification": {
+      "claim_gate": "blocked_from_id6_by_bounded_degrading_trend",
+      "classification_status": "reusable_partial_recovery_class",
+      "endpoint_status": "passed_12_window_horizon",
+      "not_merely_passed_endpoint": true,
+      "primary_blocker": "bounded_degrading_trend",
+      "trajectory_regime": "bounded_degrading"
+    },
+    "cultivation": {
+      "next_branch": "11-B_neutral_absorber_reservoir",
+      "next_question": "Can neutral_absorber_reservoir_v1 convert bounded-degrading source-digest reentry into bounded-flat or recovering long-horizon compatibility?",
+      "what_this_branch_teaches": [
+        "Source-digest reentry is enough to beat 11-0 over 12 windows.",
+        "Endpoint survival alone is not sufficient because slopes still degrade.",
+        "The next branch should test whether neutral absorption can flatten unresolved leakage and support/interference slopes."
+      ]
+    },
+    "expressed_property": "Serialized source-digest reentry expresses partial recovery: it bounds the 12-window endpoint while preserving a degrading trend.",
+    "interpretation_id": "n07_i11a_arc_of_becoming_interpretation_v1",
+    "naturalization": {
+      "naturalization_rung": "Nat2_regime_assisted_expression",
+      "recovery_mechanism_observed": true,
+      "self_regenerated_support_observed": false,
+      "why_not_naturalized": "The branch uses a serialized experiment-local reentry policy. It is regime-assisted recovery, not endogenous native formation of the recovery precondition."
+    },
+    "observations": [
+      {
+        "change": "positive_slope_reduced",
+        "interpretation": "The buffer reduces unresolved leakage from the 11-0 baseline, but does not flatten it.",
+        "metric": "wrong_basin_leakage_level",
+        "observation_id": "unresolved_leakage_slope_reduced",
+        "value": 0.007999999999999998
+      },
+      {
+        "change": "blocked_to_passed_12_window_horizon",
+        "interpretation": "The fixed 12-window endpoint passes under this policy.",
+        "metric": "endpoint_pass_status",
+        "observation_id": "endpoint_survives_horizon",
+        "value": "passed_12_window_horizon"
+      },
+      {
+        "change": "negative_slope_reduced",
+        "interpretation": "Support decay is reduced enough to remain inside the horizon threshold, but it still trends downward.",
+        "metric": "A_and_B_support_retention_level",
+        "observation_id": "support_retention_still_degrades",
+        "values": {
+          "A": -0.009002364041475657,
+          "B": -0.007928026592438813
+        }
+      },
+      {
+        "change": "zero_slope",
+        "interpretation": "The improvement is not caused by mass creation or budget discontinuity.",
+        "metric": "budget_error_level",
+        "observation_id": "budget_exactness_preserved",
+        "value": 0.0
+      }
+    ],
+    "policy_digest": "276db7febae6ba4880ba8db37ea99abcd99eae58de378c35fb803be58622bdaa",
+    "question": "Can source_digest_reentry_buffer_v1 convert the 11-0 trajectory from unbounded degradation into bounded-flat, bounded-improving, or oscillatory-recovering compatibility?",
+    "source_papers": [
+      "Classification of Becoming",
+      "Cultivation of Becoming",
+      "Naturalization of Becoming"
+    ],
+    "style": "question_observation_classification_cultivation_naturalization"
+  },
+  "artifact_digests": {
+    "arc_interpretation_digest": "dbc5e47f329a03559cb09ee3c0dfa6879e919ca8d2afa8f2fb5bec423a64c1d8",
+    "branch_record_digest": "7e42262b015200b7fb0c49bc029f5e910dd15752046b1adccc1ea33be5acdf95",
+    "candidate_row_digest": "b3a50d87d55bdac6cf778e283874116c7938e74cbb55bcab52911f9124626988",
+    "checks_digest": "300d217f18d4b78f5ce08ff4f3803947e41a7345e132fa2dfcd395ca893de791",
+    "claim_boundary_digest": "e4b3ea6782a52982d160df9757cbebf399c7385f93ab8bba634022acb9462388",
+    "control_rows_digest": "4c72ef02e3c19a492a13cc676e6710803d927b32823f6b59f0989590d0b50be0",
+    "reentry_policy_digest": "276db7febae6ba4880ba8db37ea99abcd99eae58de378c35fb803be58622bdaa",
+    "reentry_window_records_digest": "4133812cd6a5dec3b3e68d4d9c8e9388a93cc68e77893aadda39265f780871e5",
+    "series_decision_digest": "d706153f561b1844d82c0e5de7642cfdb2c52fcbbd65efe27873c155f0d9a2db",
+    "trajectory_digest": "9e8265bc4ed9c506e3e5adebecf553bfc0248f2042feb63a1c37680390c9be66"
+  },
+  "branch_id": "11-A",
+  "branch_record": {
+    "branch_id": "11-A",
+    "branch_record_digest": "7e42262b015200b7fb0c49bc029f5e910dd15752046b1adccc1ea33be5acdf95",
+    "claim_flags_false": true,
+    "endpoint_pass_status": "passed_12_window_horizon",
+    "mechanism_or_fixture_change": "source_digest_reentry_buffer_v1",
+    "next_branch": "11-B_neutral_absorber_reservoir",
+    "next_question": "Can neutral_absorber_reservoir_v1 convert bounded-degrading source-digest reentry into bounded-flat or recovering long-horizon compatibility?",
+    "question_answered": "Can source_digest_reentry_buffer_v1 convert the 11-0 trajectory from unbounded degradation into bounded-flat, bounded-improving, or oscillatory-recovering compatibility?",
+    "series_scope": "11_star_long_horizon_c3_classification_learning_series",
+    "trajectory_interpretation": "Source-digest reentry changes the no-recovery class from unbounded degradation to bounded degradation over the frozen 12-window horizon. This is real improvement, but the positive leakage/interference slopes mean it is not stable long-term C3 compatibility.",
+    "trajectory_regime": "bounded_degrading",
+    "what_was_learned": [
+      "Source-digest reentry is enough to beat 11-0 over 12 windows.",
+      "Endpoint survival alone is not sufficient because slopes still degrade.",
+      "The next branch should test whether neutral absorption can flatten unresolved leakage and support/interference slopes."
+    ]
+  },
+  "checks": {
+    "all_window_records_have_required_reentry_chain": true,
+    "arc_endpoint_not_enough": true,
+    "arc_interpretation_present": true,
+    "arc_naturalization_regime_assisted": true,
+    "arc_partial_recovery_classified": true,
+    "branch_id_is_11a": true,
+    "budget_error_zero_all_windows": true,
+    "candidate_ceiling_id5": true,
+    "candidate_claim_flags_false": true,
+    "candidate_no_id6": true,
+    "capture_fraction_meets_contract": true,
+    "claim_flags_false": true,
+    "control_blockers_distinct": true,
+    "controls_passed": true,
+    "controls_present": true,
+    "destructive_slope_reduced_but_positive": true,
+    "endpoint_passes_12_window_horizon": true,
+    "hidden_routing_disallowed": true,
+    "intro_question_recorded": true,
+    "next_branch_is_11b": true,
+    "no_src_changes_required": true,
+    "series_not_ready_for_iteration_12": true,
+    "source_10_passed": true,
+    "source_11_0_passed": true,
+    "source_7b_passed": true,
+    "source_9b_passed": true,
+    "source_artifact_hashes_present": true,
+    "status_passed": true,
+    "support_slopes_improved_but_negative": true,
+    "trajectory_regime_bounded_degrading": true,
+    "wrong_basin_slope_reduced": true,
+    "wrong_basin_slope_within_contract": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_11a_source_digest_reentry_buffer.py",
+  "control_rows": [
+    {
+      "control_id": "baseline_no_recovery_would_degrade",
+      "control_passed": true,
+      "control_row_digest": "5277f18587641d088581b66edb01c4d688abff72d07a0d35e2979894897a7a24",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "wrong_basin",
+      "purpose": "Keep the 11-0 source failure visible as the baseline."
+    },
+    {
+      "control_id": "capture_fraction_below_contract",
+      "control_passed": true,
+      "control_row_digest": "95c6060e7e396cf447edeb6a3d0d56c9cece781daddb02c7f9d2cdbfc168e2f4",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "wrong_basin_slope_unbounded",
+      "purpose": "Reject a reentry buffer that cannot meet the frozen leakage budget."
+    },
+    {
+      "control_id": "source_digest_scrambled",
+      "control_passed": true,
+      "control_row_digest": "1b3f70e53b8f95dd904164c074672ea39230386a55ca03a7e7cc77a6566f7504",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "wrong_support_area",
+      "purpose": "Reject reentry credited to the wrong basin digest."
+    },
+    {
+      "control_id": "hidden_reentry_preference",
+      "control_passed": true,
+      "control_row_digest": "dc0130b8ae3aad96d7daf1d93e7470c133cd1b74153f91de5726835506d88332",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "hidden_support_field",
+      "purpose": "Reject fixture-side or report-side route preference."
+    },
+    {
+      "control_id": "budget_discontinuity_after_reentry",
+      "control_passed": true,
+      "control_row_digest": "cfb728b7effeb0519ac3b0410bb47b6f7608d0d3214ae241fe9f439bb9d03043",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "budget_discontinuity",
+      "purpose": "Reject recovery by mass creation or silent normalization."
+    },
+    {
+      "control_id": "endpoint_only_promotion",
+      "control_passed": true,
+      "control_row_digest": "b411b2a76611d463ca00fdb353a5e962c3aa4399542dee490d8abd286c603055",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "bounded_degrading_trend",
+      "purpose": "Reject ID6 promotion from endpoint pass alone."
+    },
+    {
+      "control_id": "identity_claim_promotion",
+      "control_passed": true,
+      "control_row_digest": "9585154e00e47bb3fe286178d796aa6a73a719748337f6bec9e8de49a39af859",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "identity_claim_promotion",
+      "purpose": "Reject identity-acceptance or RC-collapse claims."
+    }
+  ],
+  "environment": {
+    "generated_at_utc": "2026-06-07T10:55:12.659138+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "experiment": "N07",
+  "git": {
+    "rev_parse_head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "3abf8bc7f95c9f8a2ddf37099aaec1ad484a8a5e"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N07-rc-identity-attractor-invariance/README.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationChecklist.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationPlan.md\n?? ../../../../Obsidian/SentientLife/Self/26-06/2026-06-07.md\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/configs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/reports/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": "11-A",
+  "long_horizon_candidate_row": {
+    "activity_history_digest": "b7c9201b9e41769e8ddd2726544875cd8f22cc5e75737d8e67145039954b55fa",
+    "activity_history_digest_scope": {
+      "arc_interpretation_digest": "dbc5e47f329a03559cb09ee3c0dfa6879e919ca8d2afa8f2fb5bec423a64c1d8",
+      "branch_record_digest": "7e42262b015200b7fb0c49bc029f5e910dd15752046b1adccc1ea33be5acdf95",
+      "source_iteration_10_design_row_digest": "f0c8ecb84ef2c2e6c16f4ae0de256f99f789c4fabc607c5f8d65217de4713d3c",
+      "trajectory_digest": "9e8265bc4ed9c506e3e5adebecf553bfc0248f2042feb63a1c37680390c9be66"
+    },
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "becoming_class_status": "reusable_class",
+    "becoming_expressed_property": "Serialized source-digest reentry expresses partial recovery: it bounds the 12-window endpoint while preserving a degrading trend.",
+    "becoming_interpretation_style": "question_observation_classification_cultivation_naturalization",
+    "biological_claim_allowed": false,
+    "boundary_rung": "recurrence_or_continuation",
+    "branch_id": "11-A",
+    "candidate_identity_carrier_type": "coherence_basin",
+    "candidate_row_digest": "b3a50d87d55bdac6cf778e283874116c7938e74cbb55bcab52911f9124626988",
+    "claim_ceiling": "id5_long_horizon_c3_partial_recovery_bounded_degrading",
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+    "derived_id_ceiling": "ID5",
+    "endpoint_pass_status": "passed_12_window_horizon",
+    "gate_vector": {
+      "artifact_replay": "pending_iteration_12",
+      "attractivity": "pass",
+      "compatibility": "bounded_degrading",
+      "invariance": "pass",
+      "lineage_current": "pass",
+      "long_horizon_trajectory": "bounded_degrading",
+      "reflexive_closure": "pass",
+      "stability": "pass",
+      "support": "pass"
+    },
+    "goal_proxy_regulation_claim_allowed": false,
+    "id6_blocker": "bounded_degrading_trend_after_source_digest_reentry",
+    "id6_claimed": false,
+    "id_level": "ID5",
+    "identity_acceptance_claim_allowed": false,
+    "identity_carrier_surface": "runtime_coherence_basin",
+    "implementation_surface": "experiment_local_serialized_reentry_policy",
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_policy_blockers": [
+      "native_long_horizon_compatibility_policy_missing",
+      "native_source_digest_reentry_buffer_policy_missing"
+    ],
+    "native_support_status": "experiment_local_serialized_reentry_policy",
+    "naturalization_rung": "Nat2_regime_assisted_expression",
+    "personhood_claim_allowed": false,
+    "primary_blocker": "bounded_degrading_trend",
+    "probe_role": "diagnostic_probe",
+    "rc_identity_collapse_claim_allowed": false,
+    "row_id": "n07_i11a_source_digest_reentry_buffer_row_v1",
+    "runtime_family": "experiment_local",
+    "semantic_choice_claim_allowed": false,
+    "source_artifact_sha256": {
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_10_long_horizon_compatibility_design.json": "e226de77cfc29d7f88ad39b92ed19bdb2c383842ee93b4b9114a46df0db14ee2",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11_long_horizon_compatibility_recovery_probe.json": "976cf7dea0d0feb131697a5b439c3f297d9c1bf3515fd5521a3ed93a95d14811",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json": "814eb489c9fddd884c6a3642bfb5d247b1cb8662db7c97daf1214cb2cd34fef3"
+    },
+    "source_artifacts": [
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_10_long_horizon_compatibility_design.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11_long_horizon_compatibility_recovery_probe.json"
+    ],
+    "source_reports": [
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_10_long_horizon_compatibility_design.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11_long_horizon_compatibility_recovery_probe.md"
+    ],
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1",
+    "support_dependency_status": "regime_assisted",
+    "topology_family_id": "n07_T7_compatibility",
+    "trajectory_regime": "bounded_degrading",
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false,
+    "visual_is_evidence_source": false,
+    "visual_reference": null,
+    "withdrawal_test_status": "not_tested"
+  },
+  "next_iteration": "11-B_neutral_absorber_reservoir",
+  "purpose": "source_digest_reentry_buffer_trajectory_branch",
+  "reentry_policy": {
+    "budget_surface": "node_plus_packet",
+    "buffer_residual_required": 0.0,
+    "capture_fraction": 0.8,
+    "capture_fraction_derivation": "The frozen per-window unresolved leakage budget requires capturing at least 79.1666% of the 0.04 source wrong-basin leakage. 11-A uses the deterministic serialized value 0.8.",
+    "declared_ports_required": true,
+    "hidden_routing_allowed": false,
+    "minimum_capture_fraction_from_contract": 0.7916666666666667,
+    "native_support_status": "not_native_lgrc_policy",
+    "policy_digest": "276db7febae6ba4880ba8db37ea99abcd99eae58de378c35fb803be58622bdaa",
+    "policy_id": "source_digest_reentry_buffer_v1",
+    "policy_role": "iteration_11a_primary_candidate",
+    "runtime_scope": "experiment_local_serialized_reentry_policy",
+    "source_digest_required": true
+  },
+  "reentry_window_records": [
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "c9625ae2d9295efaa8307b20497562e248af3113be692c0ed6f46fb6c887de5e",
+        "event_id": "n07_i11a_w01_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 1
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "b62876f6b41010aaddc927cadfe47c2c091fa7554afaa4fce58f1ad5a0ebef81",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w01_neutral_buffer_state",
+        "stress_window": 1,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9904696132596685,
+        "B_support_retention_level": 0.9916666666666667,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.009530386740331465,
+        "measurement_digest": "eb29b62c8890bf7f6328b82b5243b363808101b49bfe7639399fe8965e010daa",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w01_post_reentry_support_measurement",
+        "stress_window": 1,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.007999999999999998
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w01_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "be27129c01f32b38fbc1700355b237ca8d0e7771c608c00a06e006325e64a9a7",
+        "source_digest_routing_used": true,
+        "stress_window": 1
+      },
+      "stress_window": 1,
+      "window_record_digest": "f2e85a5d232d4781db8b109848793a6bff488d8a32d81743a5e8c4d02a5549ca"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "6c18d630453eb84b5ed67cfbed1b19eeeb35c22b95205ac311091ca8bf81afa0",
+        "event_id": "n07_i11a_w02_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 2
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "f2c594965d3a8bc948de4eea74fa19d6b6b0ddf7832ebabe447ea692aa278096",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w02_neutral_buffer_state",
+        "stress_window": 2,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9810300547907573,
+        "B_support_retention_level": 0.9834027777777778,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.018969945209242667,
+        "measurement_digest": "005dcc39f1383ba1e5abcc5e475d82bc4950f13490441e857b6d196e9b560a22",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w02_post_reentry_support_measurement",
+        "stress_window": 2,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.015999999999999997
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w02_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "6f00f0a58f188e5153a4d3c195cf859cb56383c7c4a82c84d8cd5e2164951ab6",
+        "source_digest_routing_used": true,
+        "stress_window": 2
+      },
+      "stress_window": 2,
+      "window_record_digest": "6d320e79922f551f39c9fbd98ea37faa086608d5ffb7c5cdc1e338d85ff2c003"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "c6afeef6d184c6986d1dbbcf145c9222ab203d8a1e3b066018efaec5245b47aa",
+        "event_id": "n07_i11a_w03_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 3
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "030e4e52dd5448fcfab8bae1c777f3aeff65de4ae40d4382a082c99e48de17d1",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w03_neutral_buffer_state",
+        "stress_window": 3,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9716804589647129,
+        "B_support_retention_level": 0.9752077546296297,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.02831954103528711,
+        "measurement_digest": "4e5b1816deb6dd6ef0535bbfcf06d611da2c49f913bbcd0b5b8d174eae1e5ff9",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w03_post_reentry_support_measurement",
+        "stress_window": 3,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.023999999999999994
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w03_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "8d2082f2c8f2fb548da21763de5fa82ad3cddbd3cc4b7b642abc296397ec8a8b",
+        "source_digest_routing_used": true,
+        "stress_window": 3
+      },
+      "stress_window": 3,
+      "window_record_digest": "c0325afc8d5545cdd577ae00b7c1020f48c3a15f07825c4fcc586d3cb5e5f687"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "b69a880a8ddc721113a4849c9291463e429fb550c4bd4d951d86a6508935767d",
+        "event_id": "n07_i11a_w04_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 4
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "482114ca19c8dd1bdcc28386ac515aafae8060035f2821af1b5ce952b35a60c9",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w04_neutral_buffer_state",
+        "stress_window": 4,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9624199684027563,
+        "B_support_retention_level": 0.9670810233410495,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.03758003159724366,
+        "measurement_digest": "b4b2829bf8f366d4b2f9d9b20af59ec865518c5a8e328e97be6944aaf71b7fc2",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w04_post_reentry_support_measurement",
+        "stress_window": 4,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.031999999999999994
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w04_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "f8f7478dfb977924db01c8b2f3779fc320ca9f8ee1d4b4da93b0fb1acffe396e",
+        "source_digest_routing_used": true,
+        "stress_window": 4
+      },
+      "stress_window": 4,
+      "window_record_digest": "636b1f8758025d340a9ef82437b361411504774048ab738080e7b2f9384023ff"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "8240d9f59bf365c4a56b7c0941e26f2ca32c1b91afc0ffa5adf3133dd2f0a56e",
+        "event_id": "n07_i11a_w05_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 5
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "90d87635ca22e6b8ee83902ea3ca55fe99c1e2a2f5c2e618f46ea7773d3b1191",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w05_neutral_buffer_state",
+        "stress_window": 5,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9532477338972605,
+        "B_support_retention_level": 0.9590220148132075,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.046752266102739526,
+        "measurement_digest": "1cc23b2ce45ff9ea99c0bff535aef808d526527b409f4dbca0570950ad2badd2",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w05_post_reentry_support_measurement",
+        "stress_window": 5,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.039999999999999994
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w05_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "5f66de07a34cecc985353561422ca83e2688df31dcac1e01777e94554594548e",
+        "source_digest_routing_used": true,
+        "stress_window": 5
+      },
+      "stress_window": 5,
+      "window_record_digest": "d83e342c1b520ca45e961e0d1505f4f204fae32a00e61b847774a0533a776ccf"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "9dbe8778bc32e70bd98058976db2f35c969f5028fdc44fd4a5ed25f02cdf2662",
+        "event_id": "n07_i11a_w06_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 6
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "c9da25675030613fb8d1f95395dfaec65a5646b9b94f8d94bdf4973eb876f764",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w06_neutral_buffer_state",
+        "stress_window": 6,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.944162914333875,
+        "B_support_retention_level": 0.9510301646897641,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.055837085666125,
+        "measurement_digest": "0b26609ec5e393790e87be6c17d923ebf2dc08164ce5d0ea2e57a5c8d985f31f",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w06_post_reentry_support_measurement",
+        "stress_window": 6,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.04799999999999999
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w06_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "7b668d9533a55e1f9f19e6bad33071caa04e1084d6ae64969d5d17c4b7d7b181",
+        "source_digest_routing_used": true,
+        "stress_window": 6
+      },
+      "stress_window": 6,
+      "window_record_digest": "82f6ba038b14d1ff25d78c84d45180c51a7e04f6bc79ec70ee05d639b60f2046"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "685e2c470518888bd1c8fadc5e04b16e57bd422ed4f4ccfbb69da3a60bc859b5",
+        "event_id": "n07_i11a_w07_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 7
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "b434d272578be26fa1bba5509a6dae91a1add7e147db5b8c7f4100bdf1499cae",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w07_neutral_buffer_state",
+        "stress_window": 7,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9351646766143947,
+        "B_support_retention_level": 0.9431049133173494,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.06483532338560527,
+        "measurement_digest": "76c1bbd61a40b0c59f91e13c270b9f7f5e0846263b647fcea098a34cc71a1c10",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w07_post_reentry_support_measurement",
+        "stress_window": 7,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.05599999999999999
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w07_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "a5f81de07546006ddc035343a63ce36e482efba88a5801daac8882b62efeb66e",
+        "source_digest_routing_used": true,
+        "stress_window": 7
+      },
+      "stress_window": 7,
+      "window_record_digest": "d4c0503714f3e32310fc3afc81545d46bb228dd671e0fb4f8974c92c9817350f"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "858e8da35f8b0dc415c5ab371a27654efe233a305a470ec86a85223d91cb0fb2",
+        "event_id": "n07_i11a_w08_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 8
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "98dc636bdf887d971a577dc30ed6cb5b8206b52ba63fe4811b02c9a43fadc508",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w08_neutral_buffer_state",
+        "stress_window": 8,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9262521955803625,
+        "B_support_retention_level": 0.9352457057063716,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.07374780441963746,
+        "measurement_digest": "6f76fe3b04aa249c2ba3c363482f45aa2835787e147b83a9fa11f1102555195e",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w08_post_reentry_support_measurement",
+        "stress_window": 8,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.06399999999999999
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w08_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "cdcf0319558d9733fa16f8fddfca9495bec68bf0727ff6298b5469ea0ac3dea9",
+        "source_digest_routing_used": true,
+        "stress_window": 8
+      },
+      "stress_window": 8,
+      "window_record_digest": "b512c1f9f565250901af9aca5ab9b947edb1d214301db9708918672eb688d6ee"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "b0aa86bea0ac0014121766a60c7487c83e89fcd04a93f4c508c9b5a5353b5582",
+        "event_id": "n07_i11a_w09_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 9
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "d6c12da5d292bd03a87278ae08a64443fb8c4ff630051ac993291c548c59db6f",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w09_neutral_buffer_state",
+        "stress_window": 9,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9174246539374006,
+        "B_support_retention_level": 0.9274519914921517,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.08257534606259942,
+        "measurement_digest": "d9cff9e21c64fbcb5b934666f854c7002748c166ccd3e7c1b2567b90500f8b89",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w09_post_reentry_support_measurement",
+        "stress_window": 9,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.07199999999999998
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w09_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "fadbe760262bebd97b328e2b9bbd5e43926628e121473accf6d9e2cce65ae39c",
+        "source_digest_routing_used": true,
+        "stress_window": 9
+      },
+      "stress_window": 9,
+      "window_record_digest": "9251cc2787dd9435dbc842068a8b103e1d541f68b5563a8e5ff68cfe0a14aef4"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "f34c7264b24968a02ba81a735b90f73df2b29ffb0ff20111bc7ec0cba0c5fa05",
+        "event_id": "n07_i11a_w10_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 10
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "78ae81f7b41eadf9dd33b4c650a8df4cee37847670a623735fc361fcc9e931aa",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w10_neutral_buffer_state",
+        "stress_window": 10,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9086812421802624,
+        "B_support_retention_level": 0.9197232248963839,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.09131875781973764,
+        "measurement_digest": "b1d4b2aa6fd8ebb738c181f58b3332e3c61bac033b45a07f33938e5f6c443f67",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w10_post_reentry_support_measurement",
+        "stress_window": 10,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.07999999999999999
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w10_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "42105222293c11da5231c4d666cd1777f30315feabb8aa567c78f82340d6d5da",
+        "source_digest_routing_used": true,
+        "stress_window": 10
+      },
+      "stress_window": 10,
+      "window_record_digest": "61651164a6613388aa61fd57dbb4ea1ba2993db945a6c37420ed40a4a08132f7"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "2bf7d6aa58d9bdfd4c5d5d0ddf8e0c828fd953da3df396089cd90b1811c75a84",
+        "event_id": "n07_i11a_w11_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 11
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "eb2121e80074b078e636282b5766995f65b3fc51d4ddd367b003bb63cf20aa8e",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w11_neutral_buffer_state",
+        "stress_window": 11,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.9000211585185998,
+        "B_support_retention_level": 0.9120588646889141,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.09997884148140024,
+        "measurement_digest": "dc64a21d9a4d033ba6b3cebf2b839dcfdedf305189a58fd3e147ec1bc7cae8ad",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w11_post_reentry_support_measurement",
+        "stress_window": 11,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.08799999999999998
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w11_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "13782724062d2af4bdd41948e4c21df8599f0fc3f159d7dea2d76e6df6d4a09e",
+        "source_digest_routing_used": true,
+        "stress_window": 11
+      },
+      "stress_window": 11,
+      "window_record_digest": "ed797ce7b92e6e5e3d555ced900f2a83c2d36bac64f6ad94747ed09781891b5a"
+    },
+    {
+      "leakage_event": {
+        "A_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_source_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "event_digest": "593953f21a3bfebc7708b626d001ae0aa3bf4a0945b27bd2ba7bd033583c163a",
+        "event_id": "n07_i11a_w12_leakage_event",
+        "raw_A_flux_into_B_support": 0.02,
+        "raw_B_flux_into_A_support": 0.02,
+        "raw_wrong_basin_leakage": 0.04,
+        "source_visible": true,
+        "stress_window": 12
+      },
+      "neutral_buffer_state": {
+        "A_captured_support_loss": 0.055199999999999964,
+        "B_captured_support_loss": 0.040000000000000036,
+        "budget_error": 0.0,
+        "buffer_residual_after_reentry": 0.0,
+        "buffer_state_digest": "62497caa51c116ba73d5d6c7092623cccbb159d20c7fbe5250c416ca892853b4",
+        "capture_fraction": 0.8,
+        "captured_wrong_basin_leakage": 0.032,
+        "record_id": "n07_i11a_w12_neutral_buffer_state",
+        "stress_window": 12,
+        "unresolved_wrong_basin_leakage": 0.007999999999999998
+      },
+      "post_reentry_support_measurement": {
+        "A_support_retention_level": 0.8914436088034363,
+        "B_support_retention_level": 0.9044583741498398,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.10855639119656368,
+        "measurement_digest": "427c774e3619e1d81a48602dd6b29b52b24145b48891569838a06ff18a48ba28",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w12_post_reentry_support_measurement",
+        "stress_window": 12,
+        "window_passed": true,
+        "wrong_basin_leakage_level": 0.09599999999999997
+      },
+      "source_digest_reentry_event": {
+        "A_reentered_support": 0.055199999999999964,
+        "A_reentry_target_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "B_reentered_support": 0.040000000000000036,
+        "B_reentry_target_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "budget_error": 0.0,
+        "declared_ports_used": [
+          "A_support_reentry",
+          "B_support_reentry"
+        ],
+        "event_id": "n07_i11a_w12_source_digest_reentry_event",
+        "hidden_preference_used": false,
+        "reentry_event_digest": "beaa0febde2e7e1aff7ff5e2b98bcdf10e72de07123169d0820b0bc23ec2c17f",
+        "source_digest_routing_used": true,
+        "stress_window": 12
+      },
+      "stress_window": 12,
+      "window_record_digest": "a8253b43bfe7df548db7e59332e819e683d8e647b77358d5db12e3441a1267c0"
+    }
+  ],
+  "schema": "n07_iteration_11a_source_digest_reentry_buffer_v1",
+  "series_decision": {
+    "claim_boundary": "No ID6, identity acceptance, RC identity collapse, agency, semantic choice, biological identity, personhood, or unrestricted identity claim is opened by 11-A.",
+    "next_branch": "11-B_neutral_absorber_reservoir",
+    "next_branch_question": "Can neutral_absorber_reservoir_v1 convert bounded-degrading source-digest reentry into bounded-flat or recovering long-horizon compatibility?",
+    "reason": "11-A improves the baseline and passes the frozen 12-window endpoint, but it remains bounded-degrading. The 11-* series needs another branch before closeout.",
+    "series_decision_digest": "d706153f561b1844d82c0e5de7642cfdb2c52fcbbd65efe27873c155f0d9a2db",
+    "series_ready_for_iteration_12": false,
+    "stop_condition_met": false
+  },
+  "source_artifacts": [
+    {
+      "name": "n07_iteration_7b_source_backed_t6_reflexive_closure",
+      "object_digest": "c4a3bda9d46639b1cc832f43be9bee26ec25220e09785be5714c7b99c2dec4f2",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_7b_source_backed_t6_reflexive_closure.json",
+      "sha256": "617bb86c85ccc4a653280237f51b8749ecda50670b3df2efa9afc01b39464b33",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_9b_c3_compatibility_interference_probe",
+      "object_digest": "71684c95a1bb28817546960d9cbd7643f254f9b334feaee39e788c93da09996b",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_9b_c3_compatibility_interference_probe.json",
+      "sha256": "814eb489c9fddd884c6a3642bfb5d247b1cb8662db7c97daf1214cb2cd34fef3",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_10_long_horizon_compatibility_design",
+      "object_digest": "00c192499503835595cdeb0c87678d44aec2de981410730b770e89a0315e28a1",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_10_long_horizon_compatibility_design.json",
+      "sha256": "e226de77cfc29d7f88ad39b92ed19bdb2c383842ee93b4b9114a46df0db14ee2",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_11_long_horizon_compatibility_recovery_probe",
+      "object_digest": "a863a233da9f58054abb57f1666d54164e27eae32d7e2402a197beabf5648ca8",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11_long_horizon_compatibility_recovery_probe.json",
+      "sha256": "976cf7dea0d0feb131697a5b439c3f297d9c1bf3515fd5521a3ed93a95d14811",
+      "status": "passed"
+    }
+  ],
+  "source_contract": {
+    "A_support_retention_min_each_window": 0.85,
+    "B_support_retention_min_each_window": 0.85,
+    "cumulative_wrong_basin_leakage_max_each_window": 0.1,
+    "net_unresolved_wrong_basin_leakage_budget_per_window": 0.008333333333333333,
+    "stress_horizon_windows": 12
+  },
+  "source_metrics": {
+    "A_flux_into_B_support_per_window": 0.02,
+    "A_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "A_support_loss_per_window": 0.06899999999999995,
+    "A_support_mass_after_near_B": 1.379,
+    "A_support_mass_before": 1.448,
+    "B_flux_into_A_support_per_window": 0.02,
+    "B_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+    "B_support_loss_per_window": 0.050000000000000044,
+    "B_support_mass_after_near_A": 1.15,
+    "B_support_mass_before": 1.2,
+    "ambiguous_overlap_level": 0.0,
+    "ambiguous_overlap_threshold": 0.2,
+    "destructive_interference_per_window": 0.047619047619,
+    "destructive_interference_threshold": 0.15,
+    "support_retention_threshold": 0.85,
+    "wrong_basin_leakage_per_window": 0.04,
+    "wrong_basin_leakage_threshold": 0.1
+  },
+  "source_reports": [
+    {
+      "name": "n07_iteration_7b_source_backed_t6_reflexive_closure_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_7b_source_backed_t6_reflexive_closure.md",
+      "sha256": "5da517fd853adfadc69b753c0cdb55c28867593a825a6100c64fc36661f228c0"
+    },
+    {
+      "name": "n07_iteration_9b_c3_compatibility_interference_probe_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_9b_c3_compatibility_interference_probe.md",
+      "sha256": "cabeec9503dbb01a00aec3cff320a9a4af7a79ea7becb176e2baa68db8e77de7"
+    },
+    {
+      "name": "n07_iteration_10_long_horizon_compatibility_design_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_10_long_horizon_compatibility_design.md",
+      "sha256": "1385850e55705d9b6c075ccee3c1c3356b5e826449e43229b7b1fa647ecfd89a"
+    },
+    {
+      "name": "n07_iteration_11_long_horizon_compatibility_recovery_probe_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11_long_horizon_compatibility_recovery_probe.md",
+      "sha256": "950a0627b7d244c5539024af60ede3c07a002e99c95c6776ba205380bc95a685"
+    }
+  ],
+  "source_status": {
+    "iteration_10_status": "passed",
+    "iteration_11_0_status": "passed",
+    "iteration_7b_status": "passed",
+    "iteration_9b_status": "passed"
+  },
+  "status": "passed",
+  "trajectory": {
+    "baseline_comparison": {
+      "baseline_A_support_slope": -0.03597648527676473,
+      "baseline_branch": "11-0",
+      "baseline_destructive_interference_slope": 0.03597648527676473,
+      "baseline_endpoint_status": "blocked",
+      "baseline_trajectory_regime": "unbounded_degrading_without_recovery",
+      "baseline_wrong_basin_slope": 0.04,
+      "reentry_A_support_slope": -0.009002364041475657,
+      "reentry_destructive_interference_slope": 0.009002364041475657,
+      "reentry_wrong_basin_slope": 0.007999999999999998,
+      "wrong_basin_slope_reduction": 0.032
+    },
+    "branch_id": "11-A",
+    "branch_name": "source_digest_reentry_buffer",
+    "endpoint_pass_status": "passed_12_window_horizon",
+    "first_failure_window": null,
+    "metric_slopes_per_window": {
+      "A_support_retention_level_slope_per_window": -0.009002364041475657,
+      "B_support_retention_level_slope_per_window": -0.007928026592438813,
+      "ambiguous_overlap_level_slope_per_window": 0.0,
+      "budget_error_level_slope_per_window": 0.0,
+      "destructive_interference_level_slope_per_window": 0.009002364041475657,
+      "wrong_basin_leakage_level_slope_per_window": 0.007999999999999998
+    },
+    "per_window_metric_deltas": {
+      "delta_A_support_retention_level": [
+        -0.009439558468911202,
+        -0.009349595826044443,
+        -0.009260490561956547,
+        -0.009172234505495869,
+        -0.009084819563385471,
+        -0.008998237719480273,
+        -0.008912481034032194,
+        -0.008827541642961956,
+        -0.00874341175713822,
+        -0.008660083661662599,
+        -0.008577549715163446
+      ],
+      "delta_B_support_retention_level": [
+        -0.008263888888888848,
+        -0.008195023148148128,
+        -0.008126731288580213,
+        -0.008059008527842026,
+        -0.00799185012344339,
+        -0.007925251372414732,
+        -0.007859207610977803,
+        -0.007793714214219816,
+        -0.007728766595767822,
+        -0.007664360207469856,
+        -0.0076004905390743005
+      ],
+      "delta_ambiguous_overlap_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_budget_error_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_destructive_interference_level": [
+        0.009439558468911202,
+        0.009349595826044443,
+        0.009260490561956547,
+        0.009172234505495869,
+        0.009084819563385471,
+        0.008998237719480273,
+        0.008912481034032194,
+        0.008827541642961956,
+        0.00874341175713822,
+        0.008660083661662599,
+        0.008577549715163446
+      ],
+      "delta_wrong_basin_leakage_level": [
+        0.007999999999999998,
+        0.007999999999999997,
+        0.008,
+        0.008,
+        0.007999999999999993,
+        0.008,
+        0.008,
+        0.007999999999999993,
+        0.008000000000000007,
+        0.007999999999999993,
+        0.007999999999999993
+      ]
+    },
+    "per_window_metric_second_deltas": {
+      "delta_delta_A_support_retention_level": [
+        8.996264286675881e-05,
+        8.910526408789643e-05,
+        8.825605646067824e-05,
+        8.741494211039758e-05,
+        8.658184390519796e-05,
+        8.575668544807957e-05,
+        8.493939107023785e-05,
+        8.412988582373604e-05,
+        8.332809547562103e-05,
+        8.253394649915258e-05
+      ],
+      "delta_delta_B_support_retention_level": [
+        6.886574074072005e-05,
+        6.829185956791495e-05,
+        6.772276073818695e-05,
+        6.71584043986373e-05,
+        6.659875102865698e-05,
+        6.604376143692914e-05,
+        6.549339675798738e-05,
+        6.49476184519937e-05,
+        6.440638829796619e-05,
+        6.38696683955553e-05
+      ],
+      "delta_delta_ambiguous_overlap_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_delta_budget_error_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_delta_destructive_interference_level": [
+        -8.996264286675881e-05,
+        -8.910526408789643e-05,
+        -8.825605646067824e-05,
+        -8.741494211039758e-05,
+        -8.658184390519796e-05,
+        -8.575668544807957e-05,
+        -8.493939107023785e-05,
+        -8.412988582373604e-05,
+        -8.332809547562103e-05,
+        -8.253394649915258e-05
+      ],
+      "delta_delta_wrong_basin_leakage_level": [
+        -1.734723475976807e-18,
+        3.469446951953614e-18,
+        0.0,
+        -6.938893903907228e-18,
+        6.938893903907228e-18,
+        0.0,
+        -6.938893903907228e-18,
+        1.3877787807814457e-17,
+        -1.3877787807814457e-17,
+        0.0
+      ]
+    },
+    "per_window_metric_series": {
+      "A_support_retention_level": [
+        0.9904696132596685,
+        0.9810300547907573,
+        0.9716804589647129,
+        0.9624199684027563,
+        0.9532477338972605,
+        0.944162914333875,
+        0.9351646766143947,
+        0.9262521955803625,
+        0.9174246539374006,
+        0.9086812421802624,
+        0.9000211585185998,
+        0.8914436088034363
+      ],
+      "B_support_retention_level": [
+        0.9916666666666667,
+        0.9834027777777778,
+        0.9752077546296297,
+        0.9670810233410495,
+        0.9590220148132075,
+        0.9510301646897641,
+        0.9431049133173494,
+        0.9352457057063716,
+        0.9274519914921517,
+        0.9197232248963839,
+        0.9120588646889141,
+        0.9044583741498398
+      ],
+      "ambiguous_overlap_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "budget_error_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "destructive_interference_level": [
+        0.009530386740331465,
+        0.018969945209242667,
+        0.02831954103528711,
+        0.03758003159724366,
+        0.046752266102739526,
+        0.055837085666125,
+        0.06483532338560527,
+        0.07374780441963746,
+        0.08257534606259942,
+        0.09131875781973764,
+        0.09997884148140024,
+        0.10855639119656368
+      ],
+      "wrong_basin_leakage_level": [
+        0.007999999999999998,
+        0.015999999999999997,
+        0.023999999999999994,
+        0.031999999999999994,
+        0.039999999999999994,
+        0.04799999999999999,
+        0.05599999999999999,
+        0.06399999999999999,
+        0.07199999999999998,
+        0.07999999999999999,
+        0.08799999999999998,
+        0.09599999999999997
+      ]
+    },
+    "primary_blocker": "bounded_degrading_trend",
+    "trajectory_digest": "9e8265bc4ed9c506e3e5adebecf553bfc0248f2042feb63a1c37680390c9be66",
+    "trajectory_interpretation": "Source-digest reentry changes the no-recovery class from unbounded degradation to bounded degradation over the frozen 12-window horizon. This is real improvement, but the positive leakage/interference slopes mean it is not stable long-term C3 compatibility.",
+    "trajectory_regime": "bounded_degrading",
+    "windows": [
+      {
+        "A_support_retention_level": 0.9904696132596685,
+        "B_support_retention_level": 0.9916666666666667,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.009530386740331465,
+        "measurement_digest": "eb29b62c8890bf7f6328b82b5243b363808101b49bfe7639399fe8965e010daa",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w01_post_reentry_support_measurement",
+        "stress_window": 1,
+        "window_passed": true,
+        "window_record_digest": "f2e85a5d232d4781db8b109848793a6bff488d8a32d81743a5e8c4d02a5549ca",
+        "wrong_basin_leakage_level": 0.007999999999999998
+      },
+      {
+        "A_support_retention_level": 0.9810300547907573,
+        "B_support_retention_level": 0.9834027777777778,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.018969945209242667,
+        "measurement_digest": "005dcc39f1383ba1e5abcc5e475d82bc4950f13490441e857b6d196e9b560a22",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w02_post_reentry_support_measurement",
+        "stress_window": 2,
+        "window_passed": true,
+        "window_record_digest": "6d320e79922f551f39c9fbd98ea37faa086608d5ffb7c5cdc1e338d85ff2c003",
+        "wrong_basin_leakage_level": 0.015999999999999997
+      },
+      {
+        "A_support_retention_level": 0.9716804589647129,
+        "B_support_retention_level": 0.9752077546296297,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.02831954103528711,
+        "measurement_digest": "4e5b1816deb6dd6ef0535bbfcf06d611da2c49f913bbcd0b5b8d174eae1e5ff9",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w03_post_reentry_support_measurement",
+        "stress_window": 3,
+        "window_passed": true,
+        "window_record_digest": "c0325afc8d5545cdd577ae00b7c1020f48c3a15f07825c4fcc586d3cb5e5f687",
+        "wrong_basin_leakage_level": 0.023999999999999994
+      },
+      {
+        "A_support_retention_level": 0.9624199684027563,
+        "B_support_retention_level": 0.9670810233410495,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.03758003159724366,
+        "measurement_digest": "b4b2829bf8f366d4b2f9d9b20af59ec865518c5a8e328e97be6944aaf71b7fc2",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w04_post_reentry_support_measurement",
+        "stress_window": 4,
+        "window_passed": true,
+        "window_record_digest": "636b1f8758025d340a9ef82437b361411504774048ab738080e7b2f9384023ff",
+        "wrong_basin_leakage_level": 0.031999999999999994
+      },
+      {
+        "A_support_retention_level": 0.9532477338972605,
+        "B_support_retention_level": 0.9590220148132075,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.046752266102739526,
+        "measurement_digest": "1cc23b2ce45ff9ea99c0bff535aef808d526527b409f4dbca0570950ad2badd2",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w05_post_reentry_support_measurement",
+        "stress_window": 5,
+        "window_passed": true,
+        "window_record_digest": "d83e342c1b520ca45e961e0d1505f4f204fae32a00e61b847774a0533a776ccf",
+        "wrong_basin_leakage_level": 0.039999999999999994
+      },
+      {
+        "A_support_retention_level": 0.944162914333875,
+        "B_support_retention_level": 0.9510301646897641,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.055837085666125,
+        "measurement_digest": "0b26609ec5e393790e87be6c17d923ebf2dc08164ce5d0ea2e57a5c8d985f31f",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w06_post_reentry_support_measurement",
+        "stress_window": 6,
+        "window_passed": true,
+        "window_record_digest": "82f6ba038b14d1ff25d78c84d45180c51a7e04f6bc79ec70ee05d639b60f2046",
+        "wrong_basin_leakage_level": 0.04799999999999999
+      },
+      {
+        "A_support_retention_level": 0.9351646766143947,
+        "B_support_retention_level": 0.9431049133173494,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.06483532338560527,
+        "measurement_digest": "76c1bbd61a40b0c59f91e13c270b9f7f5e0846263b647fcea098a34cc71a1c10",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w07_post_reentry_support_measurement",
+        "stress_window": 7,
+        "window_passed": true,
+        "window_record_digest": "d4c0503714f3e32310fc3afc81545d46bb228dd671e0fb4f8974c92c9817350f",
+        "wrong_basin_leakage_level": 0.05599999999999999
+      },
+      {
+        "A_support_retention_level": 0.9262521955803625,
+        "B_support_retention_level": 0.9352457057063716,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.07374780441963746,
+        "measurement_digest": "6f76fe3b04aa249c2ba3c363482f45aa2835787e147b83a9fa11f1102555195e",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w08_post_reentry_support_measurement",
+        "stress_window": 8,
+        "window_passed": true,
+        "window_record_digest": "b512c1f9f565250901af9aca5ab9b947edb1d214301db9708918672eb688d6ee",
+        "wrong_basin_leakage_level": 0.06399999999999999
+      },
+      {
+        "A_support_retention_level": 0.9174246539374006,
+        "B_support_retention_level": 0.9274519914921517,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.08257534606259942,
+        "measurement_digest": "d9cff9e21c64fbcb5b934666f854c7002748c166ccd3e7c1b2567b90500f8b89",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w09_post_reentry_support_measurement",
+        "stress_window": 9,
+        "window_passed": true,
+        "window_record_digest": "9251cc2787dd9435dbc842068a8b103e1d541f68b5563a8e5ff68cfe0a14aef4",
+        "wrong_basin_leakage_level": 0.07199999999999998
+      },
+      {
+        "A_support_retention_level": 0.9086812421802624,
+        "B_support_retention_level": 0.9197232248963839,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.09131875781973764,
+        "measurement_digest": "b1d4b2aa6fd8ebb738c181f58b3332e3c61bac033b45a07f33938e5f6c443f67",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w10_post_reentry_support_measurement",
+        "stress_window": 10,
+        "window_passed": true,
+        "window_record_digest": "61651164a6613388aa61fd57dbb4ea1ba2993db945a6c37420ed40a4a08132f7",
+        "wrong_basin_leakage_level": 0.07999999999999999
+      },
+      {
+        "A_support_retention_level": 0.9000211585185998,
+        "B_support_retention_level": 0.9120588646889141,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.09997884148140024,
+        "measurement_digest": "dc64a21d9a4d033ba6b3cebf2b839dcfdedf305189a58fd3e147ec1bc7cae8ad",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w11_post_reentry_support_measurement",
+        "stress_window": 11,
+        "window_passed": true,
+        "window_record_digest": "ed797ce7b92e6e5e3d555ced900f2a83c2d36bac64f6ad94747ed09781891b5a",
+        "wrong_basin_leakage_level": 0.08799999999999998
+      },
+      {
+        "A_support_retention_level": 0.8914436088034363,
+        "B_support_retention_level": 0.9044583741498398,
+        "ambiguous_overlap_level": 0.0,
+        "budget_error_level": 0.0,
+        "destructive_interference_level": 0.10855639119656368,
+        "measurement_digest": "427c774e3619e1d81a48602dd6b29b52b24145b48891569838a06ff18a48ba28",
+        "primary_blockers": [],
+        "record_id": "n07_i11a_w12_post_reentry_support_measurement",
+        "stress_window": 12,
+        "window_passed": true,
+        "window_record_digest": "a8253b43bfe7df548db7e59332e819e683d8e647b77358d5db12e3441a1267c0",
+        "wrong_basin_leakage_level": 0.09599999999999997
+      }
+    ]
+  }
+}

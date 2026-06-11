@@ -1,0 +1,626 @@
+{
+  "reconstruction_note": "Reconstructed from the GRCL-9V3 lowering manifest so S0014 source-language handoff replay remains available in the public repository. The original telemetry-scale artifacts are not included.",
+  "record_count": 26,
+  "records": [
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "hybrid_spark_gate_positive_control",
+      "motif_id": "grc9v3-motif-s0006-hybrid-spark-gate-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_candidate_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+        "family_extensions.grc9v3.hybrid_spark_state",
+        "family_extensions.grc9v3.hybrid_tensor.tensor_trace_mean"
+      ],
+      "phenomenon": "hybrid_spark_gate",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_candidate_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+        "family_extensions.grc9v3.hybrid_spark_state",
+        "family_extensions.grc9v3.hybrid_tensor.tensor_trace_mean"
+      ],
+      "profile": "hybrid_spark_gate_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/hybrid_spark_gate_positive_control"
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "spark_to_expansion_positive_control",
+      "motif_id": "grc9v3-motif-s0006-spark-to-expansion-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+        "family_extensions.grc9v3.expansion_summary",
+        "family_extensions.grc9v3.hierarchy_state"
+      ],
+      "phenomenon": "spark_to_expansion",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+        "family_extensions.grc9v3.expansion_summary",
+        "family_extensions.grc9v3.hierarchy_state"
+      ],
+      "profile": "spark_to_expansion_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/spark_to_expansion_positive_control"
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "appendix_e_cell_division_positive_control",
+      "motif_id": "grc9v3-motif-s0006-appendix-e-cell-division-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.representative_appendix_e_summary",
+        "family_extensions.grc9v3.hierarchy_state",
+        "family_extensions.grc9v3.final_identity_basin_summary"
+      ],
+      "phenomenon": "appendix_e_cell_division",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.representative_appendix_e_summary",
+        "family_extensions.grc9v3.hierarchy_state",
+        "family_extensions.grc9v3.final_identity_basin_summary"
+      ],
+      "profile": "appendix_e_cell_division_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/appendix_e_cell_division_positive_control"
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "choice_collapse_positive_control",
+      "motif_id": "grc9v3-motif-s0006-choice-collapse-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.collapse_count",
+        "family_extensions.grc9v3.choice_collapse"
+      ],
+      "phenomenon": "choice_collapse",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.collapse_count",
+        "family_extensions.grc9v3.choice_collapse"
+      ],
+      "profile": "choice_collapse_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/choice_collapse_positive_control"
+    },
+    {
+      "catalog_category": "simple_lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "growth_pressure_positive_control",
+      "motif_id": "grc9v3-motif-s0006-growth-pressure-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+        "family_extensions.grc9v3.growth_state",
+        "family_extensions.grc9v3.transport.flux_abs_sum"
+      ],
+      "phenomenon": "growth_pressure",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+        "family_extensions.grc9v3.growth_state",
+        "family_extensions.grc9v3.transport.flux_abs_sum"
+      ],
+      "profile": "growth_pressure_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/growth_pressure_positive_control"
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "complex_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_spark_expansion_hierarchy_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-expansion-hierarchy-complex-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+        "family_extensions.grc9v3.hierarchy_state"
+      ],
+      "phenomenon": "complex_spark_expansion_hierarchy_complex_control",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_spark_completed_count",
+        "family_extensions.grc9v3.hierarchy_state"
+      ],
+      "profile": "complex_spark_expansion_hierarchy_complex_control_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_spark_expansion_hierarchy_complex_control"
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "complex_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_spark_expansion_choice_collapse_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-expansion-choice-collapse-complex-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.collapse_count"
+      ],
+      "phenomenon": "complex_spark_expansion_choice_collapse_complex_control",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.choice_detected_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.collapse_count"
+      ],
+      "profile": "complex_spark_expansion_choice_collapse_complex_control_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_spark_expansion_choice_collapse_complex_control"
+    },
+    {
+      "catalog_category": "lifecycle_motif",
+      "checkpoint_links": [
+        {
+          "checkpoint_id": "step-00000000"
+        }
+      ],
+      "control_role": "complex_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_expansion_growth_budget_coarse_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-expansion-growth-budget-coarse-complex-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+        "family_extensions.grc9v3.budget_correction.budget_error",
+        "family_extensions.grc9v3.coarse_cache.coarse_cache_invalidated"
+      ],
+      "phenomenon": "complex_expansion_growth_budget_coarse_complex_control",
+      "predicted_evidence_fields": [
+        "family_extensions.grc9v3.lifecycle_event_counts.hybrid_mechanical_expansion_count",
+        "family_extensions.grc9v3.lifecycle_event_counts.growth_count",
+        "family_extensions.grc9v3.budget_correction.budget_error",
+        "family_extensions.grc9v3.coarse_cache.coarse_cache_invalidated"
+      ],
+      "profile": "complex_expansion_growth_budget_coarse_complex_control_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_expansion_growth_budget_coarse_complex_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "hybrid_spark_gate_negative_control",
+      "motif_id": "grc9v3-motif-s0006-hybrid-spark-gate-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "hybrid_spark_gate",
+      "predicted_evidence_fields": [],
+      "profile": "hybrid_spark_gate_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/hybrid_spark_gate_negative_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "spark_to_expansion_negative_control",
+      "motif_id": "grc9v3-motif-s0006-spark-to-expansion-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "spark_to_expansion",
+      "predicted_evidence_fields": [],
+      "profile": "spark_to_expansion_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/spark_to_expansion_negative_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "appendix_e_cell_division_negative_control",
+      "motif_id": "grc9v3-motif-s0006-appendix-e-cell-division-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "appendix_e_cell_division",
+      "predicted_evidence_fields": [],
+      "profile": "appendix_e_cell_division_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/appendix_e_cell_division_negative_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "choice_collapse_negative_control",
+      "motif_id": "grc9v3-motif-s0006-choice-collapse-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "choice_collapse",
+      "predicted_evidence_fields": [],
+      "profile": "choice_collapse_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/choice_collapse_negative_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "growth_pressure_negative_control",
+      "motif_id": "grc9v3-motif-s0006-growth-pressure-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "growth_pressure",
+      "predicted_evidence_fields": [],
+      "profile": "growth_pressure_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/growth_pressure_negative_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "budget_preservation_negative_control",
+      "motif_id": "grc9v3-motif-s0006-budget-preservation-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "budget_preservation",
+      "predicted_evidence_fields": [],
+      "profile": "budget_preservation_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/budget_preservation_negative_control"
+    },
+    {
+      "catalog_category": "mechanism_diagnostic_motif",
+      "checkpoint_links": [],
+      "control_role": "mechanism_diagnostic_motif",
+      "event_counts_by_kind": {},
+      "lane_name": "transport_basin_rerouting_positive_control",
+      "motif_id": "grc9v3-motif-s0006-transport-basin-rerouting-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "transport_basin_rerouting",
+      "predicted_evidence_fields": [],
+      "profile": "transport_basin_rerouting_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/transport_basin_rerouting_positive_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "transport_basin_rerouting_negative_control",
+      "motif_id": "grc9v3-motif-s0006-transport-basin-rerouting-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "transport_basin_rerouting",
+      "predicted_evidence_fields": [],
+      "profile": "transport_basin_rerouting_profile",
+      "review_status": "accepted",
+      "telemetry_artifact_root": "experiments/grc9v3/transport_basin_rerouting_negative_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "coarse_cache_invalidation_negative_control",
+      "motif_id": "grc9v3-motif-s0006-coarse-cache-invalidation-negative-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "coarse_cache_invalidation",
+      "predicted_evidence_fields": [],
+      "profile": "coarse_cache_invalidation_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/coarse_cache_invalidation_negative_control"
+    },
+    {
+      "catalog_category": "quiescent_control",
+      "checkpoint_links": [],
+      "control_role": "quiescent_control",
+      "event_counts_by_kind": {},
+      "lane_name": "quiescent_hybrid_control_no_event_control",
+      "motif_id": "grc9v3-motif-s0006-quiescent-hybrid-control-no-event-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "quiescent_hybrid_control",
+      "predicted_evidence_fields": [],
+      "profile": "quiescent_hybrid_control_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/quiescent_hybrid_control_no_event_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_spark_choice_no_saturation_perturbation_perturbation_control",
+      "motif_id": "grc9v3-motif-s0008-complex-spark-choice-no-saturation-perturbation-perturbation-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "complex_spark_choice_no_saturation_perturbation_perturbation_control",
+      "predicted_evidence_fields": [],
+      "profile": "complex_spark_choice_no_saturation_perturbation_perturbation_control_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_spark_choice_no_saturation_perturbation_perturbation_control"
+    },
+    {
+      "catalog_category": "negative_control",
+      "checkpoint_links": [],
+      "control_role": "negative_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_growth_low_birth_perturbation_perturbation_control",
+      "motif_id": "grc9v3-motif-s0008-complex-growth-low-birth-perturbation-perturbation-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "complex_growth_low_birth_perturbation_perturbation_control",
+      "predicted_evidence_fields": [],
+      "profile": "complex_growth_low_birth_perturbation_perturbation_control_profile",
+      "review_status": "strong_candidate",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_growth_low_birth_perturbation_perturbation_control"
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "checkpoint_links": [],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "budget_preservation_positive_control",
+      "motif_id": "grc9v3-motif-s0006-budget-preservation-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "budget_preservation",
+      "predicted_evidence_fields": [],
+      "profile": "budget_preservation_profile",
+      "review_status": "diagnostic_comparator",
+      "telemetry_artifact_root": "experiments/grc9v3/budget_preservation_positive_control"
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "checkpoint_links": [],
+      "control_role": "baseline_control",
+      "event_counts_by_kind": {},
+      "lane_name": "hessian_backend_comparison_baseline_control",
+      "motif_id": "grc9v3-motif-s0006-hessian-backend-comparison-baseline-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "hessian_backend_comparison",
+      "predicted_evidence_fields": [],
+      "profile": "hessian_backend_comparison_profile",
+      "review_status": "diagnostic_comparator",
+      "telemetry_artifact_root": "experiments/grc9v3/hessian_backend_comparison_baseline_control"
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "checkpoint_links": [],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "hessian_backend_comparison_positive_control",
+      "motif_id": "grc9v3-motif-s0006-hessian-backend-comparison-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "hessian_backend_comparison",
+      "predicted_evidence_fields": [],
+      "profile": "hessian_backend_comparison_profile",
+      "review_status": "diagnostic_comparator",
+      "telemetry_artifact_root": "experiments/grc9v3/hessian_backend_comparison_positive_control"
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "checkpoint_links": [],
+      "control_role": "positive_control",
+      "event_counts_by_kind": {},
+      "lane_name": "coarse_cache_invalidation_positive_control",
+      "motif_id": "grc9v3-motif-s0006-coarse-cache-invalidation-positive-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "coarse_cache_invalidation",
+      "predicted_evidence_fields": [],
+      "profile": "coarse_cache_invalidation_profile",
+      "review_status": "diagnostic_comparator",
+      "telemetry_artifact_root": "experiments/grc9v3/coarse_cache_invalidation_positive_control"
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "checkpoint_links": [],
+      "control_role": "baseline_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_hessian_row_basis_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-hessian-row-basis-complex-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "complex_hessian_row_basis_complex_control",
+      "predicted_evidence_fields": [],
+      "profile": "complex_hessian_row_basis_complex_control_profile",
+      "review_status": "diagnostic_comparator",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_hessian_row_basis_complex_control"
+    },
+    {
+      "catalog_category": "diagnostic_comparator",
+      "checkpoint_links": [],
+      "control_role": "baseline_control",
+      "event_counts_by_kind": {},
+      "lane_name": "complex_hessian_weighted_least_squares_complex_control",
+      "motif_id": "grc9v3-motif-s0008-complex-hessian-weighted-least-squares-complex-control",
+      "non_claims": [
+        "no_grcl9_source_lowering_claim",
+        "no_source_language_construct_claim",
+        "no_lorentzian_causal_layer_claim",
+        "no_visual_only_promotion"
+      ],
+      "observed_evidence_fields": [],
+      "phenomenon": "complex_hessian_weighted_least_squares_complex_control",
+      "predicted_evidence_fields": [],
+      "profile": "complex_hessian_weighted_least_squares_complex_control_profile",
+      "review_status": "diagnostic_comparator",
+      "telemetry_artifact_root": "experiments/grc9v3/complex_hessian_weighted_least_squares_complex_control"
+    }
+  ],
+  "session_id": "S0013",
+  "version": "grc9v3_expanded_motif_catalog_v1_reconstructed"
+}

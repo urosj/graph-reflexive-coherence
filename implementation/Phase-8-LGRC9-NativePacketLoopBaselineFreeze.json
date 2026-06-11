@@ -1,0 +1,116 @@
+{
+  "artifact_kind": "phase8_lgrc9_native_packet_loop_baseline_freeze",
+  "artifact_schema_version": "phase8_lgrc9_native_packet_loop_baseline_freeze_v1",
+  "phase": "Phase 8 LGRC9 native packet-loop continuation",
+  "iteration": 43,
+  "status": "passed",
+  "date": "2026-05-15",
+  "purpose": "Freeze existing LGRC9V3 behavior before native route-aspect or surplus-trigger implementation.",
+  "git": {
+    "head_commit": "7ab7044c9dc96600e8e4e7b0c342bfa3145e7c2d",
+    "src_diff": "empty",
+    "status_scope": [
+      "modified: implementation/ImplementationPhases.md",
+      "modified: implementation/Phase-8-LGRC9-ImplementationChecklist.md",
+      "modified: implementation/Phase-8-LGRC9-ImplementationPlan.md",
+      "untracked: implementation/Phase-8-LGRC9-NativePacketLoopChecklist.md",
+      "untracked: implementation/Phase-8-LGRC9-NativePacketLoopPlan.md",
+      "untracked: tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py"
+    ]
+  },
+  "fixtures": {
+    "e2_route_manifest_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/configs/e2_lgrc9v3_route_manifest.json",
+    "e2_route_manifest_sha256": "df086174ce417b30dd3182d5bef43d67f798e1fea7e1e25b7dc8d506f047ea1a",
+    "compact_test_fixture_path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+    "compact_test_fixture_sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+    "fixture_semantics": {
+      "node_count": 12,
+      "edge_count": 12,
+      "route": "d2_3_cw_closed_loop",
+      "channel_order": [
+        "S1_to_K2",
+        "K2_to_S2",
+        "S2_to_K1",
+        "K1_to_S1"
+      ],
+      "route_hops": [
+        {"source_node_id": 1, "target_node_id": 2, "edge_id": 1},
+        {"source_node_id": 2, "target_node_id": 3, "edge_id": 2},
+        {"source_node_id": 4, "target_node_id": 5, "edge_id": 4},
+        {"source_node_id": 5, "target_node_id": 6, "edge_id": 5},
+        {"source_node_id": 7, "target_node_id": 8, "edge_id": 7},
+        {"source_node_id": 8, "target_node_id": 9, "edge_id": 8},
+        {"source_node_id": 10, "target_node_id": 11, "edge_id": 10},
+        {"source_node_id": 11, "target_node_id": 0, "edge_id": 11}
+      ]
+    }
+  },
+  "claim_flags": {
+    "native_lgrc9v3_execution": true,
+    "native_packet_execution": true,
+    "native_static_route_autonomy": true,
+    "native_surplus_trigger": false,
+    "native_self_rearm_evidence": false,
+    "native_d2_3_equivalent": false,
+    "adapter_required_for_d2_3_semantics": true,
+    "native_static_route_only": true,
+    "native_grc9v3_loop_evidence": false,
+    "movement_claim_allowed": false
+  },
+  "audits": {
+    "src_diff_empty": true,
+    "scheduled_packet_route_replay_preserved": true,
+    "static_route_autonomy_preserved": true,
+    "disabled_policy_noop": true,
+    "disabled_policy_preserves_static_route_autonomy": true,
+    "no_self_rearm_evidence_emitted_by_existing_static_route_producer": true,
+    "native_surplus_trigger_policy_absent_or_unclaimed": true,
+    "node_plus_packet_budget_preserved_in_baseline": true,
+    "topology_unchanged_in_baseline": true,
+    "event_time_and_scheduler_indices_present_in_runtime_events": true,
+    "arrival_proper_time_update_present": true,
+    "route_aspect_native_surface_present": false,
+    "route_aspect_digest_native_surface_present": false,
+    "self_rearm_chain_native_surface_present": false
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_native_packet_loop_baseline -q",
+      "result": "passed",
+      "tests": 6
+    },
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_autonomy_contract tests.models.test_lgrc_9_v3_runtime tests.models.test_lgrc_9_v3_construction tests.models.test_lgrc_9_v3_native_packet_loop_baseline -q",
+      "result": "passed",
+      "tests": 64
+    },
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest discover tests -p 'test_lgrc*.py' -q",
+      "result": "passed",
+      "tests": 149
+    },
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest discover tests/models -p 'test_grc_9_v3*.py' -q",
+      "result": "passed",
+      "tests": 123
+    },
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest discover tests -q",
+      "result": "passed",
+      "tests": 944
+    },
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m ruff check tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check -- tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py implementation/Phase-8-LGRC9-NativePacketLoopChecklist.md",
+      "result": "passed"
+    },
+    {
+      "command": "git diff -- src",
+      "result": "empty"
+    }
+  ],
+  "minimal_pass_statement": "Before adding native route-aspects or surplus triggers, existing LGRC9V3 packet execution and static-route autonomy pass; no D2.3-equivalent surplus trigger or self-rearm claim is emitted; claim flags are explicit; budget, topology, timing, and src-diff audits are clean; and the imported E2 fixture is replayable."
+}

@@ -1,0 +1,666 @@
+{
+  "acceptance": {
+    "all_claim_flags_false": true,
+    "candidate_alternatives_exposed": true,
+    "candidate_set_contract_valid_pre_arbitration": true,
+    "claim_ceiling": "candidate_alternatives_exposed_no_selection",
+    "context_to_score_reconstructable": true,
+    "default_off_no_candidates": true,
+    "packet_scheduled_by_candidate_emission": false,
+    "route_selected": false,
+    "sc_level": "SC1",
+    "semantic_choice_claim_allowed": false,
+    "status": "passed",
+    "topology_event_committed": false
+  },
+  "artifact_digests": {
+    "acceptance_digest": "797e171d001749ee33d81798796dca1507e178113342bb2423be7f8728e4eb98",
+    "claim_flags_digest": "9107d7c83c7cad6cf67508a0727b2ae7e6a1403c2ae889ecf04f35b885cb7fbd",
+    "controls_digest": "0a282475cd1a0ecc5c7c2e90c0730db8ca43f51a14e0e5bfbac28d39468b6eca",
+    "enabled_lane_digest": "c78e13ca3cfbfc3e3974aede500bad52632402bf4b8424a533c1c0a4e446b843"
+  },
+  "checks": {
+    "claim_flags_remain_false": true,
+    "controls_passed": true,
+    "default_off_noop_passed": true,
+    "enabled_sc1_lane_passed": true,
+    "no_packet_scheduled_by_candidate_emission": true,
+    "no_route_arbitration_record_emitted": true,
+    "no_selected_topology_event_committed": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/run_n06_iteration_3_sc1_candidate_alternatives.py",
+  "controls": {
+    "claim_promotion": {
+      "control_id": "claim_promotion",
+      "detail": {
+        "failure_reasons": [
+          "native_route_arbitration_claim_promotion_blocked:route_a",
+          "corrupted_native_route_candidate_record:route_a:native route candidate cannot promote claim flag: semantic_choice_claim_allowed",
+          "candidate_set_missing_candidate:native-route-candidate-set:a729de2d50f5c669f262616f7281e106:6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+          "no_native_route_arbitration_records"
+        ],
+        "side_effect_failures_allowed": [
+          "corrupted record digest mismatch",
+          "candidate set missing corrupted candidate digest",
+          "no_native_route_arbitration_records at SC1 scope"
+        ],
+        "specific_claim_promotion_blocker_present": true
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_claim_promotion_blocked"
+    },
+    "duplicate_candidate": {
+      "control_id": "duplicate_candidate",
+      "detail": {
+        "candidate_route_count_after_duplicate_input": 1,
+        "candidate_set_route_digest_count": 1
+      },
+      "passed": true,
+      "primary_blocker": "duplicate_native_route_candidate_suppressed"
+    },
+    "hidden_context": {
+      "control_id": "hidden_context",
+      "detail": "native_route_arbitration_hidden_input_rejected: ['hidden_fixture_state']",
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected"
+    },
+    "hidden_route": {
+      "control_id": "hidden_route",
+      "detail": "native_route_arbitration_hidden_input_rejected: ['experiment_if_else']",
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected"
+    },
+    "malformed_candidate": {
+      "control_id": "malformed_candidate",
+      "detail": "candidate_selected_sink_id must be in competing sinks",
+      "passed": true,
+      "primary_blocker": "native_route_candidate_schema_rejected_malformed_candidate"
+    },
+    "missing_budget_prediction": {
+      "control_id": "missing_budget_prediction",
+      "detail": "native_route_arbitration_budget_invalid: candidate_budget_prediction is required",
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_budget_invalid"
+    },
+    "unknown_source_surface_digest": {
+      "control_id": "unknown_source_surface_digest",
+      "detail": "native route candidate requires committed source surface evidence",
+      "passed": true,
+      "primary_blocker": "native_route_candidate_committed_source_surface_required"
+    }
+  },
+  "experiment": "2026-05-N06-lgrc-semantic-route-choice",
+  "generated_at": "2026-06-05T20:31:25.586292+00:00",
+  "git": {
+    "diff_check_experiment": {
+      "command": "git diff --check -- experiments/2026-05-N06-lgrc-semantic-route-choice",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "status_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 3,
+  "iteration_name": "SC1 Alternatives Exposed",
+  "lanes": {
+    "default_off": {
+      "after_counts": {
+        "candidate_route_count": 0,
+        "candidate_set_count": 0,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 0,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "before_counts": {
+        "candidate_route_count": 0,
+        "candidate_set_count": 0,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 0,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "emit_result": {
+        "candidate_record_count": 0,
+        "candidate_set_record_present": false,
+        "emitted": false,
+        "reason_code": "native_route_arbitration_policy_disabled"
+      },
+      "lane_id": "default_off_no_candidate_emission",
+      "native_lgrc_route_arbitration_enabled": false,
+      "passed": true,
+      "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+    },
+    "enabled_sc1": {
+      "after_counts": {
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 0,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "arbitration_window": {
+        "arbitration_window_id": "n06_window_context_state_candidate_emission_v1",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_epoch": "n06_epoch_context_candidate_emission_v1",
+        "checkpoint_index": 0,
+        "unresolved_tie_policy": "fail_closed"
+      },
+      "before_counts": {
+        "candidate_route_count": 0,
+        "candidate_set_count": 0,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 0,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "budget_prediction_checks": {
+        "budget_predictions_match_manifest": true,
+        "comparison_tolerance": 1e-09,
+        "per_candidate": {
+          "route_a": {
+            "actual": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "expected": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "field_checks": {
+              "node_plus_packet_budget_after": true,
+              "node_plus_packet_budget_before": true,
+              "node_plus_packet_budget_error": true
+            },
+            "matches_manifest": true,
+            "node_plus_packet_budget_error_within_tolerance": true
+          },
+          "route_b": {
+            "actual": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "expected": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "field_checks": {
+              "node_plus_packet_budget_after": true,
+              "node_plus_packet_budget_before": true,
+              "node_plus_packet_budget_error": true
+            },
+            "matches_manifest": true,
+            "node_plus_packet_budget_error_within_tolerance": true
+          }
+        }
+      },
+      "candidate_only_artifact_validation": {
+        "agency_claim_allowed": false,
+        "artifact_only": true,
+        "biological_claim_allowed": false,
+        "candidate_route_count": 2,
+        "candidate_set_contract_valid": true,
+        "candidate_set_count": 1,
+        "candidate_set_reconstructed": true,
+        "control_blockers": [],
+        "downstream_lineage_reabsorption_producer_chain_reconstructed": false,
+        "expected_incomplete_reasons": [
+          "no_native_route_arbitration_records"
+        ],
+        "failure_reasons": [
+          "no_native_route_arbitration_records"
+        ],
+        "identity_acceptance_claim_allowed": false,
+        "lineage_replay_valid": null,
+        "locomotion_like_claim_allowed": false,
+        "native_lgrc_choice_selection_claim_allowed": false,
+        "native_lgrc_route_arbitration_supported": false,
+        "post_arbitration_linked_producer_count": 0,
+        "rc_identity_collapse_claim_allowed": false,
+        "route_arbitration_reconstructed": false,
+        "route_arbitration_record_count": 0,
+        "route_selection_reconstructed_from_artifacts": false,
+        "runtime_state_used": false,
+        "selected_route_arbitration_record_ids": [],
+        "selected_topology_event_count": 0,
+        "selected_topology_event_reconstructed": false,
+        "semantic_choice_claim_allowed": false,
+        "unexpected_failure_reasons": [],
+        "unrestricted_movement_claim_allowed": false,
+        "valid": false,
+        "validator": "validate_lgrc9v3_native_route_arbitration_artifacts",
+        "validator_scope": "candidate_set_only_pre_arbitration"
+      },
+      "candidate_order": [
+        "route_a",
+        "route_b"
+      ],
+      "candidate_records": [
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_lineage_transfer_map": {
+            "0": "2",
+            "1": "2",
+            "2": "2"
+          },
+          "candidate_lineage_transfer_map_digest": "0cebf8faac200535dae793f1a1fa61cc7585edb135154a0aecf601d064d5b023",
+          "candidate_losing_sink_ids": [
+            3
+          ],
+          "candidate_order_key": "route_a",
+          "candidate_retired_edge_ids": [
+            2
+          ],
+          "candidate_retired_node_ids": [
+            3
+          ],
+          "candidate_route_digest": "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+          "candidate_route_id": "route_a",
+          "candidate_route_score": 1.0,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+            "active_context_node_id:4",
+            "candidate_route_id:route_a",
+            "compatible_route_id:route_a",
+            "candidate_score_components",
+            "candidate_budget_prediction",
+            "candidate_lineage_transfer_map",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "budget_validity": 0.2,
+            "context_match": 0.6,
+            "lineage_ready": 0.2
+          },
+          "candidate_selected_sink_id": 2,
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "candidate_source_edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "candidate_source_node_ids": [
+            0,
+            1
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0,
+            1
+          ],
+          "candidate_target_node_ids": [
+            2
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            0,
+            1,
+            2
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        },
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_lineage_transfer_map": {
+            "0": "3",
+            "1": "3",
+            "3": "3"
+          },
+          "candidate_lineage_transfer_map_digest": "bf78a37980c93c819e9c3beee00b738f31ba0bb62f697e49d305683c60806b6b",
+          "candidate_losing_sink_ids": [
+            2
+          ],
+          "candidate_order_key": "route_b",
+          "candidate_retired_edge_ids": [
+            1
+          ],
+          "candidate_retired_node_ids": [
+            2
+          ],
+          "candidate_route_digest": "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf",
+          "candidate_route_id": "route_b",
+          "candidate_route_score": 0.4,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+            "active_context_node_id:4",
+            "candidate_route_id:route_b",
+            "compatible_route_id:route_a",
+            "candidate_score_components",
+            "candidate_budget_prediction",
+            "candidate_lineage_transfer_map",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "budget_validity": 0.2,
+            "context_match": 0.0,
+            "lineage_ready": 0.2
+          },
+          "candidate_selected_sink_id": 3,
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "candidate_source_edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "candidate_source_node_ids": [
+            0,
+            1
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0,
+            2
+          ],
+          "candidate_target_node_ids": [
+            3
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            0,
+            1,
+            3
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        }
+      ],
+      "candidate_route_count": 2,
+      "candidate_route_digests": [
+        "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+        "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+      ],
+      "candidate_set_count": 1,
+      "candidate_set_digest": "b2e4fc1d53538a2c75a0127e5876ddc5de2f8faba102759774d5a8ad855af081",
+      "candidate_set_idempotency_check": {
+        "reconstructable": true,
+        "reconstructed_idempotency_key": "c676f271c54e4ed14e05c54fb95cb39c68025a089af79e05719b95a9462db72d",
+        "recorded_idempotency_key": "c676f271c54e4ed14e05c54fb95cb39c68025a089af79e05719b95a9462db72d"
+      },
+      "candidate_set_idempotency_key": "c676f271c54e4ed14e05c54fb95cb39c68025a089af79e05719b95a9462db72d",
+      "candidate_set_record": {
+        "arbitration_window_id": "n06_window_context_state_candidate_emission_v1",
+        "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "candidate_route_digests": [
+          "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+          "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+        ],
+        "candidate_set_digest": "b2e4fc1d53538a2c75a0127e5876ddc5de2f8faba102759774d5a8ad855af081",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "c676f271c54e4ed14e05c54fb95cb39c68025a089af79e05719b95a9462db72d",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "unresolved_tie_policy": "fail_closed"
+      },
+      "checks": {
+        "candidate_budget_predictions_match_manifest": true,
+        "candidate_budget_predictions_present": true,
+        "candidate_route_count_is_two": true,
+        "candidate_route_digests_recorded": true,
+        "candidate_set_contract_valid_pre_arbitration": true,
+        "candidate_set_count_is_one": true,
+        "candidate_set_idempotency_key_reconstructable": true,
+        "candidate_set_includes_all_window_candidates": true,
+        "candidate_sources_committed": true,
+        "candidate_sources_non_null": true,
+        "causal_epoch_and_checkpoint_recorded_in_report": true,
+        "claim_flags_remain_false": true,
+        "context_to_score_reconstructable": true,
+        "deterministic_candidate_order": true,
+        "event_time_and_scheduler_order_present": true,
+        "no_packet_scheduled_by_candidate_emission": true,
+        "no_route_arbitration_record": true,
+        "no_selected_topology_event_committed": true,
+        "sc1_reabsorption_digest_absent": true,
+        "source_producer_record_id_null_when_not_producer_backed": true
+      },
+      "context_derivation": {
+        "active_context_node_id": 4,
+        "allowed_support_fields": [
+          "candidate_budget_prediction",
+          "candidate_lineage_transfer_map",
+          "candidate_score_components",
+          "candidate_source_surface_digest",
+          "serialized_route_arbitration_policy"
+        ],
+        "comparison_tolerance": 1e-09,
+        "compatible_route_id": "route_a",
+        "context_state_id": "context_a",
+        "context_to_score_reconstructable": true,
+        "declared_context_fields": [
+          "active_context_node_id",
+          "candidate_route_id",
+          "compatible_route_id",
+          "context_surface_digest"
+        ],
+        "per_candidate": {
+          "route_a": {
+            "component_checks": {
+              "budget_validity": true,
+              "context_match": true,
+              "lineage_ready": true
+            },
+            "reconstructable": true,
+            "runtime_visible_field_names": [
+              "active_context_node_id",
+              "candidate_budget_prediction",
+              "candidate_lineage_transfer_map",
+              "candidate_route_id",
+              "candidate_score_components",
+              "candidate_source_surface_digest",
+              "compatible_route_id",
+              "context_surface_digest",
+              "serialized_route_arbitration_policy"
+            ],
+            "runtime_visible_input_checks": {
+              "active_context_node_id_serialized": true,
+              "candidate_route_id_serialized": true,
+              "compatible_route_id_serialized": true,
+              "context_surface_digest_serialized": true,
+              "declared_context_fields_present": true,
+              "no_undeclared_runtime_visible_fields": true
+            },
+            "undeclared_runtime_visible_field_names": []
+          },
+          "route_b": {
+            "component_checks": {
+              "budget_validity": true,
+              "context_match": true,
+              "lineage_ready": true
+            },
+            "reconstructable": true,
+            "runtime_visible_field_names": [
+              "active_context_node_id",
+              "candidate_budget_prediction",
+              "candidate_lineage_transfer_map",
+              "candidate_route_id",
+              "candidate_score_components",
+              "candidate_source_surface_digest",
+              "compatible_route_id",
+              "context_surface_digest",
+              "serialized_route_arbitration_policy"
+            ],
+            "runtime_visible_input_checks": {
+              "active_context_node_id_serialized": true,
+              "candidate_route_id_serialized": true,
+              "compatible_route_id_serialized": true,
+              "context_surface_digest_serialized": true,
+              "declared_context_fields_present": true,
+              "no_undeclared_runtime_visible_fields": true
+            },
+            "undeclared_runtime_visible_field_names": []
+          }
+        },
+        "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+      },
+      "context_scope": {
+        "checked_context_state_ids": [
+          "context_a"
+        ],
+        "deferred_context_state_ids": [
+          "context_b"
+        ],
+        "deferred_to_iteration": "Iteration 5 / SC3 context-conditioned route selection",
+        "reason": "SC1 exposes alternatives from one committed context surface and does not yet prove context switching."
+      },
+      "expected_candidate_order": [
+        "route_a",
+        "route_b"
+      ],
+      "lane_id": "enabled_sc1_candidate_alternatives",
+      "native_lgrc_route_arbitration_enabled": true,
+      "passed": true,
+      "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+      "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+      "source_surface_kind": "route_local_pulse_contact"
+    }
+  },
+  "manifest": {
+    "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/configs/n06_fixture_manifest_v1.json",
+    "sha256": "867a2bb464bbbdc0c782f334cf3bb9821b3d8f60d792dceab4644695b947363b"
+  },
+  "platform": {
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "schema": "semantic_route_choice_report_v1",
+  "status": "passed"
+}

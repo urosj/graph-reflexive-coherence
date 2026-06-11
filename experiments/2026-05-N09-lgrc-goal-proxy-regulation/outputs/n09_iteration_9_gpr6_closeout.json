@@ -1,0 +1,416 @@
+{
+  "acceptance_state": "achieved",
+  "artifact_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+  "artifact_only_validator": {
+    "artifact_dependency_order_valid": true,
+    "artifact_only": true,
+    "candidate_selection_reconstructed_from_artifact": true,
+    "ordered_chain": [
+      {
+        "digest": "084925ff201f49c53db6040e22fa9970736ca9a5e7ad4d090165966bd8efab2a",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json",
+        "step": "fixture_manifest"
+      },
+      {
+        "digest": "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json",
+        "step": "proxy_surface_row"
+      },
+      {
+        "digest": "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json",
+        "step": "target_band"
+      },
+      {
+        "digest": "a82a3a9c72aacfe7935c8f332d333aef0eb44d26982ced4040539403cfc09e48",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_4_gpr2_error_signal.json",
+        "step": "error_signal"
+      },
+      {
+        "digest": "896133e8af4cdbb6cabb1436d9cb6f41a2ad1ad300f0ceca79f460d392358d40",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json",
+        "step": "regulation_policy"
+      },
+      {
+        "candidate_set_digest": "134e35907533c2da88e567dfcfa83db5e68b885f55c25f6c09e478395f328ffa",
+        "producer_record_digest": "3a40547f7ec5d895b999bdd80560713d06b0193d9ad8388b2833ee400ead83f9",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json",
+        "step": "route_or_producer_evidence"
+      },
+      {
+        "digest": "f9d727ade35f1dc466e2fbcaa204b7d574786bd559d93755fa4808a416e97cb9",
+        "scheduled_packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json",
+        "step": "scheduled_packet"
+      },
+      {
+        "digest": "3733406f9e3bb04765ee6844e5986d96532aec3bbc8430b9048ebba1e7f16ca0",
+        "processed_packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json",
+        "step": "processed_packet"
+      },
+      {
+        "cycle_count": 4,
+        "regulation_outcome_tag": "bounded_repeated_regulation",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_7_gpr5_repeated_bounded_regulation.json",
+        "step": "repeated_bounded_regulation"
+      },
+      {
+        "digest": "28df8c72d85e9a8c38a91ee9d0d5ff00b8c408bdd5ddf4996ac50e6d25cf0ee4",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+        "step": "perturbation_if_tested"
+      },
+      {
+        "digest": "8e09a8de0b8d66e57e425a6c15a52abdf2e5090c65878eaf434c0751cc43fd84",
+        "identity_support_outcome_tag": "identity_support_withdrawal_baseline_missing",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+        "step": "support_withdrawal_if_tested"
+      },
+      {
+        "digest": "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+        "step": "post_response_proxy_surface_row"
+      },
+      {
+        "digest": "7f33759d102c3eee102f4b32bb515b9d0cf8eecb40cd22057de7c475dcde9d34",
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+        "step": "regulation_response"
+      }
+    ],
+    "perturbation_recovery_reconstructed": true,
+    "runtime_state_used": false,
+    "scheduled_processed_packet_reconstructed": true,
+    "within_window_scheduler_order_valid": true
+  },
+  "blocked_claims": [
+    "intention",
+    "agency",
+    "semantic_goal_understanding",
+    "goal_ownership",
+    "identity_acceptance",
+    "runtime_identity_acceptance",
+    "rc_identity_collapse",
+    "aco_like_behavior",
+    "ant_colony_behavior",
+    "locomotion_like_behavior",
+    "biological_behavior",
+    "personhood",
+    "unrestricted_movement"
+  ],
+  "ceiling_algorithm_result": {
+    "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+    "hypothesis_a_status": "closed",
+    "hypothesis_b_status": "staged_native_policy_gap",
+    "lower_gpr5_evidence_preserved": true,
+    "primary_blocker_for_hypothesis_b": "native_goal_proxy_regulation_policy_missing",
+    "primary_blocker_for_n10_identity_support_consumption": "n07_identity_withdrawal_baseline_not_available",
+    "strongest_passing_gpr_level": "GPR6"
+  },
+  "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_9_gpr6_closeout.py",
+  "controls": {
+    "artifact_runtime_fallback": {
+      "control_passed": true,
+      "primary_blocker": "runtime_state_fallback_blocked",
+      "reason": "closeout replay uses exported artifacts only"
+    },
+    "budget_violation": {
+      "control_passed": true,
+      "primary_blocker": "budget_violation",
+      "reason": "latest perturbation recovery preserves node-plus-packet budget"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "GPR6 closeout cannot emit agency, identity, ACO, locomotion, or biological claims"
+    },
+    "error_mismatch": {
+      "control_passed": true,
+      "primary_blocker": "proxy_error_mismatch",
+      "reason": "error signal digest is recomputed from serialized error row"
+    },
+    "native_policy_gap": {
+      "control_passed": true,
+      "primary_blocker": "native_goal_proxy_regulation_policy_missing",
+      "reason": "Hypothesis B remains staged and unpromoted"
+    },
+    "processed_packet_missing": {
+      "control_passed": true,
+      "primary_blocker": "processed_packet_missing",
+      "reason": "latest perturbation recovery has processed packet evidence"
+    },
+    "proxy_digest_mismatch": {
+      "control_passed": true,
+      "primary_blocker": "proxy_surface_digest_mismatch",
+      "reason": "proxy row digests are recomputed from serialized rows"
+    },
+    "route_or_producer_missing": {
+      "control_passed": true,
+      "primary_blocker": "route_or_producer_evidence_missing",
+      "reason": "memory candidate set and producer digests are present"
+    },
+    "scheduled_packet_missing": {
+      "control_passed": true,
+      "primary_blocker": "scheduled_packet_missing",
+      "reason": "latest perturbation recovery has scheduled packet evidence"
+    },
+    "support_withdrawal_baseline_missing": {
+      "control_passed": true,
+      "primary_blocker": "n07_identity_withdrawal_baseline_not_available",
+      "reason": "support lane is blocked for N10 consumption instead of overclaimed"
+    }
+  },
+  "digest_recomputation": {
+    "gpr1_artifact_digest_recomputes": true,
+    "gpr1_proxy_surface_digest_recomputes": true,
+    "gpr1_target_band_digest_recomputes": true,
+    "gpr2_artifact_digest_recomputes": true,
+    "gpr2_error_signal_digest_recomputes": true,
+    "gpr3_artifact_digest_recomputes": true,
+    "gpr3_memory_candidate_set_digest_recomputes": true,
+    "gpr3_memory_producer_digest_recomputes": true,
+    "gpr4_artifact_digest_recomputes": true,
+    "gpr4_packet_response_digest_recomputes": true,
+    "gpr4_regulation_response_digest_recomputes": true,
+    "gpr4_schedule_request_digest_recomputes": true,
+    "gpr5_artifact_digest_recomputes": true,
+    "gpr5_cycle_digests_recompute": true,
+    "gpr5_packet_response_digests_recompute": true,
+    "gpr5_regulation_response_digests_recompute": true,
+    "gpr8_artifact_digest_recomputes": true,
+    "gpr8_packet_response_digest_recomputes": true,
+    "gpr8_perturbation_digest_recomputes": true,
+    "gpr8_regulation_response_digest_recomputes": true,
+    "gpr8_support_withdrawal_digest_recomputes": true,
+    "manifest_digest_recomputes": true
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "generated_at": "2026-06-09T20:48:02.002348+00:00",
+  "git": {
+    "head": "1621f65b01e82db6be31763ef1fc6f7eba517fe0",
+    "status_short_experiment": "M experiments/2026-05-N09-lgrc-goal-proxy-regulation/README.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationChecklist.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationPlan.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_1_baseline_inventory.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_4_gpr2_error_signal.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_7_gpr5_repeated_bounded_regulation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_1_baseline_inventory.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_3_gpr1_proxy_measurement.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_4_gpr2_error_signal.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_5_gpr3_proxy_conditioned_eligibility.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_6_gpr4_single_cycle_correction.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_7_gpr5_repeated_bounded_regulation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_8_perturbation_withdrawal_support.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_1_baseline_inventory.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_2_fixture_manifest.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_3_gpr1_proxy_measurement.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_4_gpr2_error_signal.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_5_gpr3_proxy_conditioned_eligibility.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_6_gpr4_single_cycle_correction.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_7_gpr5_repeated_bounded_regulation.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_8_perturbation_withdrawal_support.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_9_gpr6_closeout.py",
+    "status_short_src": ""
+  },
+  "gpr_level": "GPR6",
+  "hypothesis_a_closeout": {
+    "scope": "artifact_only_serialized_producer_policy_goal_proxy_regulation",
+    "status": "closed",
+    "strongest_evidence": "artifact_only_goal_proxy_regulation_candidate"
+  },
+  "hypothesis_b_status": {
+    "native_substrate_mediated_goal_proxy_regulation_supported": false,
+    "primary_blocker": "native_goal_proxy_regulation_policy_missing",
+    "status": "staged"
+  },
+  "identity_support_boundary": {
+    "baseline_available": false,
+    "identity_support_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "identity_support_outcome_tag": "identity_support_withdrawal_baseline_missing",
+    "lower_gpr5_evidence_preserved": true,
+    "n10_consumption_allowed": false,
+    "primary_blocker": "n07_identity_withdrawal_baseline_not_available"
+  },
+  "iteration": 9,
+  "n10_handoff_fields": {
+    "error_policy_digest": "61c34d66e9416772b40a8db54dff3cf7a34f5a6ece4a18428a590f8d9594b706",
+    "goal_proxy_regulation_policy_digest": "896133e8af4cdbb6cabb1436d9cb6f41a2ad1ad300f0ceca79f460d392358d40",
+    "identity_support_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "identity_support_outcome_tag": "identity_support_withdrawal_baseline_missing",
+    "mechanism_status_tags": [
+      "producer_mediated",
+      "threshold_authorized",
+      "memory_shaped",
+      "native_policy_gap"
+    ],
+    "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+    "memory_surface_digest": "b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+    "n10_consumption": {
+      "goal_proxy_regulation_artifact_candidate": true,
+      "hypothesis_a_path_closed": true,
+      "hypothesis_b_path_staged": true,
+      "identity_support_lane_consumption_allowed": false,
+      "identity_support_primary_blocker": "n07_identity_withdrawal_baseline_not_available"
+    },
+    "native_policy_gap_records": [
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_goal_proxy_regulation_policy_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_proxy_surface_policy_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_proxy_error_policy_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_proxy_conditioned_response_policy_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_goal_proxy_regulation_artifact_replay_validator_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_memory_shaped_regulation_surface_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_identity_preserving_regulation_validator_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "native_oscillator_return_regulation_policy_missing",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "record_gap_do_not_promote_claim",
+        "gap_id": "perturbation_recovery_policy_not_constitutive_native",
+        "status": "missing"
+      },
+      {
+        "claim_boundary": "blocks_n10_support_lane_consumption_only",
+        "gap_id": "n07_identity_withdrawal_baseline_not_available",
+        "status": "missing"
+      }
+    ],
+    "perturbation_recovery_outcome_tag": "bounded_repeated_regulation",
+    "proxy_surface_digest": "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af",
+    "proxy_surface_digest_chain": [
+      "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+      "04279a86afdd505b6c786014e08adc3963049b6021135d70b3078ffd7578bb75",
+      "c735a2cd2e6b295ae4e933012bad7df29212ffe3a14850d8c8b5e7e89b77e07c",
+      "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af"
+    ],
+    "regulation_outcome_tag": "bounded_repeated_regulation",
+    "regulation_response_digest": "7f33759d102c3eee102f4b32bb515b9d0cf8eecb40cd22057de7c475dcde9d34",
+    "repeated_regulation_response_digests": [
+      "e764425f585c2d7a63b0b03ae7517d22acf070e205378f8377930a61d2238d81",
+      "0ebef74ae51ad8a22f7fad82533850b12855eaedc830090aa20753b6a6791cbb",
+      "b92f6c3d54d118e9780ffa5c4961745512707eb11b1e1b014a76232d149e16e8",
+      "b09829ce116bf67a47976c5bf1965ea85bdfd382f9d5a34194795d8eb5eeeeba"
+    ],
+    "source_candidate_set_digest": "134e35907533c2da88e567dfcfa83db5e68b885f55c25f6c09e478395f328ffa"
+  },
+  "native_policy_gap_records": [
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_goal_proxy_regulation_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_proxy_surface_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_proxy_error_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_proxy_conditioned_response_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_goal_proxy_regulation_artifact_replay_validator_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_memory_shaped_regulation_surface_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_identity_preserving_regulation_validator_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_oscillator_return_regulation_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "perturbation_recovery_policy_not_constitutive_native",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "blocks_n10_support_lane_consumption_only",
+      "gap_id": "n07_identity_withdrawal_baseline_not_available",
+      "status": "missing"
+    }
+  ],
+  "purpose": "gpr6_artifact_only_replay_and_hypothesis_a_closeout",
+  "regulation_summary": {
+    "gpr5_cycle_count": 4,
+    "gpr5_regulation_outcome_tag": "bounded_repeated_regulation",
+    "gpr8_perturbation_classification": "perturbation_recovered_to_band",
+    "gpr8_perturbation_recovery_in_band": true,
+    "node_plus_packet_budget_error": 0.0
+  },
+  "schema": "n09_iteration_9_gpr6_closeout_v1",
+  "source_artifact_sha256": {
+    "gpr1": "29a3ea964ef38f1eae1be1b5d420453a5119c02dde6e5174328341ddd2c7df15",
+    "gpr2": "dff8dac7dc821cff08c802b0505a9548ab3f2902de6d736e04d2c79775707fc7",
+    "gpr3": "7d31f6d593cc43ec15223292cb70e8981a503b17276a1f0f9a2823a1850b5242",
+    "gpr4": "49570e9cb1210c4f334faf8947deb4eb11acba119bb8c8e03ae389252de88f88",
+    "gpr5": "0aa631930ff59776764fd3147285669eb006942ee656e27b1b748dbe3e2bf483",
+    "gpr8": "873114340bf655becf39f47dbbd4758f46204eee05a1fb93a0a7457db3caa472",
+    "manifest": "e8ac646605f8524e344f378ae060bb6c25420c6701024f8802a7972e77d59c45"
+  },
+  "source_artifacts": {
+    "gpr1": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json",
+    "gpr2": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_4_gpr2_error_signal.json",
+    "gpr3": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json",
+    "gpr4": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json",
+    "gpr5": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_7_gpr5_repeated_bounded_regulation.json",
+    "gpr8": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+    "manifest": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json"
+  },
+  "status": "passed",
+  "validation_checks": {
+    "all_digests_recompute": true,
+    "all_source_artifacts_passed": true,
+    "artifact_only_validator_used": true,
+    "claim_flags_all_false": true,
+    "controls_all_passed": true,
+    "gpr5_backbone_bounded": true,
+    "gpr8_perturbation_recovered": true,
+    "identity_support_blocker_preserved": true,
+    "n10_handoff_fields_complete": true,
+    "ordered_chain_reconstructed": true,
+    "runtime_state_used": false
+  }
+}

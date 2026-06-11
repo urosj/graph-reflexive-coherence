@@ -1,0 +1,248 @@
+seed_schema: pygrc.landscape_seed
+seed_version: '0.1'
+meta:
+  name: Corrected GRCL9 Cell Full Capacity Phenomenology Cascade
+  description: Multi-phenomenology GRCL-9 seed combining spark, expansion, growth,
+    fission, and collapse-like basin selection in one connected cascade.
+  source_kind: manual_seed
+  source_reference: implementation/GRC9-GRCL9-GrowthCorrection-Checklist.md#iteration-52-corrected-grcl-9-composite-reruns
+  source_schema_version: '0.1'
+  source_domain: grcl9
+  tags:
+  - grcl9
+  - composing_cells
+  - cascade
+  - spark
+  - expansion
+  - growth
+  - fission
+  - collapse_discovery
+  - corrected_growth
+  - front_capacity
+  translator_name: manual_seed_authoring
+  translator_version: '0.1'
+  translation_mode: semantic_enrichment
+  translation_notes:
+  - This seed is a full-capacity GRCL-9 source example, not a raw GRC9 graph.
+  - It combines source terms that compile into multiple GRCL-9 mechanical constructs.
+  - Runtime evidence must come from GRC9 telemetry and checkpoints.
+  - 'Corrected growth migration: any growth_locus compiles to front_capacity semantics
+    instead of legacy broad parent eligibility.'
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: multi_well
+    params:
+      basin_count: 3
+      saddle_bias: cascade
+primitives:
+- id: cascade_identity_cell
+  type: basin
+  coherence_prior: 1.0
+  boundary_ids:
+  - spark_membrane
+  - growth_boundary
+  chart_center_hint:
+  - 0.3
+  - 0.5
+  notes: Source cell whose saturated membrane critical region initiates refinement.
+- id: spark_membrane
+  type: ridge
+  owner_id: cascade_identity_cell
+  adjacent_ids:
+  - refinement_plateau
+  ridge_kind: membrane
+  permeability_hint:
+    class: selective
+    column_gradient: near_cancellation
+- id: refinement_plateau
+  type: plateau
+  coherence_prior: 0.75
+  hosted_primitive_ids:
+  - spark_saddle
+  - refinement_locus
+  chart_center_hint:
+  - 0.42
+  - 0.56
+- id: spark_saddle
+  type: saddle
+  coherence_prior: 1.0
+  chart_center_hint:
+  - 0.4
+  - 0.5
+  branch_target_ids:
+  - cascade_identity_cell
+  - refinement_plateau
+  - cascade_valley
+  extensions:
+    grcl9:
+      term_kind: critical_region
+      term_id: cell_full_capacity_phenomenology_cascade_critical_region
+      motif_id: cascade_refinement
+      region_id: candidate
+      stability_intent: critical
+      coherence_profile:
+        critical_region: saturated_membrane_bounded_identity
+        local_basin: cascade_source_cell
+      boundary_gradient_profile:
+        boundary_ports: all_nine
+        gradient_structure: columnwise_membrane
+        ridge_role: rupture_prone_membrane
+      columnwise_near_cancellation:
+        target_column: 2
+        diagnostic_mode: near_epsilon
+        spark_threshold: 0.02
+      spark_gate_intent: saturation_column_proxy
+- id: refinement_locus
+  type: plateau
+  parent_id: refinement_plateau
+  coherence_prior: 0.45
+  chart_center_hint:
+  - 0.48
+  - 0.54
+  extensions:
+    grcl9:
+      term_kind: refinement_locus
+      term_id: cell_full_capacity_phenomenology_cascade_refinement_locus
+      motif_id: cascade_refinement
+      locus_id: refinement_locus
+      region_id: candidate
+      target_effective_degree: 44
+      coherence_transfer_mode: equal
+- id: cascade_valley
+  type: valley
+  from_id: refinement_plateau
+  to_id: growth_boundary
+  channel_role: post_refinement_outward_flux_channel
+  width_hint: 0.12
+  coherence_prior: 0.9
+  extensions:
+    grcl9:
+      term_kind: gradient_pressure
+      term_id: cell_full_capacity_phenomenology_cascade_gradient_pressure
+      motif_id: cascade_growth
+      pressure_id: outward_pressure
+      boundary_stratum_id: growth_boundary
+      pressure_class: high
+      lambda_birth: 0.05
+      growth_semantics: front_capacity
+      front_capacity_source: spark_expansion_front
+      front_source_construct_id: corrected_cell_full_capacity_phenomenology_cascade_expansion_region
+- id: growth_boundary
+  type: ridge
+  owner_id: cascade_identity_cell
+  adjacent_ids:
+  - post_refinement_plateau
+  ridge_kind: membrane_boundary
+  permeability_hint:
+    class: inactive_port_with_pressure
+    port: 5
+  extensions:
+    grcl9:
+      term_kind: boundary_stratum
+      term_id: cell_full_capacity_phenomenology_cascade_boundary_stratum
+      motif_id: cascade_growth
+      stratum_id: growth_boundary
+      parent_region_id: parent
+      inactive_port: 5
+      boundary_role: spark_refinement_front
+- id: post_refinement_plateau
+  type: plateau
+  coherence_prior: 0.8
+  hosted_primitive_ids:
+  - basin_a_centroid
+  - basin_b_decaying_core
+  - merge_saddle
+  chart_center_hint:
+  - 0.67
+  - 0.5
+  extensions:
+    grcl9:
+      term_kind: post_refinement_two_sink_region
+      term_id: cell_full_capacity_phenomenology_cascade_two_sink_region
+      motif_id: cascade_fission
+      region_id: post_refinement_region
+      module_region_id: module
+      sink_region_a: sink_a
+      sink_region_b: sink_b
+      identity_fission_min_basin_mass: 0.1
+      identity_fission_persistence_delta: 6
+- id: basin_a_centroid
+  type: basin
+  parent_id: post_refinement_plateau
+  coherence_prior: 0.9
+  depth_hint: 1
+  chart_center_hint:
+  - 0.6
+  - 0.49
+  chart_scale_hint:
+    radius: 0.1
+  extensions:
+    grcl9:
+      term_kind: stable_basin
+      term_id: cell_full_capacity_phenomenology_cascade_stable_basin_a
+      motif_id: cascade_fission
+      basin_id: sink_a
+      stability_class: stable
+      mass_hint: 0.9
+      support_node_count: 8
+      selection_policy: group_centroid
+- id: basin_b_decaying_core
+  type: basin
+  parent_id: post_refinement_plateau
+  coherence_prior: 0.04
+  depth_hint: 1
+  chart_center_hint:
+  - 0.76
+  - 0.51
+  chart_scale_hint:
+    radius: 0.1
+  extensions:
+    grcl9:
+      term_kind: stable_basin
+      term_id: cell_full_capacity_phenomenology_cascade_stable_basin_b
+      motif_id: cascade_fission
+      basin_id: sink_b
+      stability_class: collapsing
+      mass_hint: 0.04
+      support_node_count: 8
+      selection_policy: member_node
+- id: merge_saddle
+  type: saddle
+  coherence_prior: 0.08
+  chart_center_hint:
+  - 0.68
+  - 0.5
+  branch_target_ids:
+  - basin_a_centroid
+  - basin_b_decaying_core
+  extensions:
+    grcl9:
+      term_kind: saddle_bridge
+      term_id: cell_full_capacity_phenomenology_cascade_saddle_bridge
+      motif_id: cascade_fission
+      bridge_id: cascade_merge_bridge
+      region_a: sink_a
+      region_b: sink_b
+      bridge_class: merge_saddle_bridge
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: corrected_cell_full_capacity_phenomenology_cascade
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    expected_selector_ids:
+    - spark_column_proxy_count
+    - expansion_module_size
+    - growth_count
+    - runtime_collapse_like_long_window
+    notes: 'Corrected 5.2 composite replay seed; legacy broad-growth source has been
+      migrated to front-capacity semantics. Full-capacity GRCL-9 cascade seed. It
+      declares source preconditions for spark, expansion, growth, fission, and collapse-like
+      target selection; runtime observations must be measured after replay. 5.2.1
+      parity tuning: low-growth lambda and/or basin support increased within corrected
+      front-capacity semantics.'

@@ -1,0 +1,240 @@
+{
+  "a7_by_inheritance_allowed": false,
+  "acceptance": {
+    "acceptance_statement": "Iteration 10 passes if Hypotheses A and B close with the strongest source-backed GALI ceiling and a clear generalization envelope. GALI7 may be claimed only if transfer, matrix, longer-horizon replay, artifact-only validation, and controls all pass.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "checks": {
+    "all_source_artifact_statuses_passed": true,
+    "gali2_supported": true,
+    "gali3_supported": true,
+    "gali4_supported": true,
+    "gali5_supported": true,
+    "gali6_supported": true,
+    "gali7_supported": true,
+    "iteration_3_checks_passed": true,
+    "iteration_4b_checks_passed": true,
+    "iteration_5_checks_passed": true,
+    "iteration_6_checks_passed": true,
+    "iteration_7_checks_passed": true,
+    "iteration_8_checks_passed": true,
+    "iteration_9_checks_passed": true,
+    "negative_results_preserved": true,
+    "src_clean_for_iteration_10": true,
+    "unsafe_claim_flags_all_false": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/build_n11_iteration_10_hypothesis_ab_closeout.py",
+  "experiment": "2026-05-N11-lgrc-general-agentic-like-integration",
+  "gali7_by_inheritance_allowed": false,
+  "gali7_evidence_classification_supported": true,
+  "gali7_support_basis": "explicit_iteration_10_closeout_over_iterations_3_to_9",
+  "generated_at": "2026-06-10T22:21:23.541883+00:00",
+  "git": {
+    "head": "b63c53cb1ebccb3bbb3ed56abb1b57222db5f712",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "hypothesis_distinction": {
+    "hypothesis_a": {
+      "name": "artifact_only_generalization_path",
+      "primary_iterations": [
+        "3",
+        "4",
+        "4-B",
+        "8",
+        "9"
+      ],
+      "question": "Can the N10 bounded composition transfer under declared variation without hidden steering, budget drift, source loss, or claim leakage?",
+      "role_so_far": "Hypothesis A proves transfer is not just bookkeeping. It covers route/context transfer, the proxy source audit and declared target-band variant, fail-closed controls, and the artifact-only replay validator.",
+      "short_form": "Can the N10 composition transfer artifact-only under declared variation?"
+    },
+    "hypothesis_b": {
+      "name": "generalization_envelope_and_robustness_path",
+      "primary_iterations": [
+        "5",
+        "6",
+        "7",
+        "10"
+      ],
+      "question": "Once transfer is source-backed, what envelope of support, proxy, context, and window variation does it survive, degrade within, or block?",
+      "role_so_far": "Hypothesis B maps where the transferred composition holds, degrades, recovers, or fails. It covers support-state transfer, the context/proxy/support matrix, longer-horizon trend replay, and this A/B closeout decision.",
+      "short_form": "What envelope of support/proxy/context/window variation does the transferred composition survive?"
+    },
+    "relationship": "Hypothesis A establishes that transfer can be source-backed and artifact-only. Hypothesis B turns that transferred result into a mapped envelope of accepted, blocked, restored, and longer-horizon conditions. A proves the transfer boundary; B maps the survival and failure envelope."
+  },
+  "interpretation": {
+    "what_was_achieved": "N11 Hypotheses A and B reached local GALI7: a broader/general artifact-only agentic-like integration candidate over declared context, proxy, support, matrix, longer-horizon, control, and artifact-replay conditions.",
+    "what_was_not_achieved": "This is not semantic agency, intention, goal ownership, identity acceptance, RC identity collapse, ACO behavior, biological behavior, personhood, unrestricted agency, or fully native LGRC agentic-like integration.",
+    "why_iteration_10_was_needed": "Iteration 9 validated replayability but intentionally did not promote the ceiling. Iteration 10 consumes the full Iterations 3-9 record and makes the strongest-ceiling decision."
+  },
+  "iteration": 10,
+  "level_decisions": {
+    "GALI2": {
+      "basis": "Iteration 3 accepted source-backed route-context transfer while preserving selection-only scope.",
+      "blocker_if_false": "route_context_transfer_not_supported",
+      "supported": true
+    },
+    "GALI3": {
+      "basis": "Iteration 4-B supplied a declared target-band proxy variant while preserving Iteration 4's negative source audit.",
+      "blocker_if_false": "proxy_condition_transfer_not_supported",
+      "supported": true
+    },
+    "GALI4": {
+      "basis": "Iteration 5 transferred support-state variants while preserving disrupted-support blocking and explicit restoration.",
+      "blocker_if_false": "support_state_transfer_not_supported",
+      "supported": true
+    },
+    "GALI5": {
+      "basis": "Iteration 6 built the context/proxy/support matrix with accepted bounded rows and distinct blockers.",
+      "blocker_if_false": "multi_axis_transfer_not_supported",
+      "supported": true
+    },
+    "GALI6": {
+      "basis": "Iteration 7 extended accepted multi-axis rows over the declared 8-window trend horizon.",
+      "blocker_if_false": "longer_horizon_generalization_not_supported",
+      "supported": true
+    },
+    "GALI7": {
+      "basis": "Iterations 3-9 now satisfy the local GALI7 criterion: transfer, matrix envelope, longer-horizon replay, controls, and artifact-only validation all pass.",
+      "blocker_if_false": "broader_general_artifact_only_integration_not_supported",
+      "prerequisites": {
+        "gali2_context_transfer_supported": true,
+        "gali3_proxy_condition_transfer_supported": true,
+        "gali4_support_state_transfer_supported": true,
+        "gali5_multi_axis_transfer_supported": true,
+        "gali6_longer_horizon_supported": true,
+        "iteration_8_controls_distinct": true,
+        "iteration_8_controls_passed": true,
+        "iteration_8_no_generic_failures": true,
+        "iteration_9_all_manifest_passes_passed": true,
+        "iteration_9_artifact_only": true,
+        "iteration_9_artifact_validator_passed": true,
+        "iteration_9_no_runtime_state": true,
+        "unsafe_claim_flags_remain_false": true
+      },
+      "support_is_by_explicit_closeout_not_inheritance": true,
+      "supported": true
+    }
+  },
+  "native_support_flags": {
+    "fully_native_agentic_like_integration_supported": false,
+    "native_agentic_like_integration_policy_supported": false,
+    "native_identity_acceptance_validator_supported": false,
+    "native_semantic_goal_ownership_supported": false
+  },
+  "negative_envelope": {
+    "iteration_3_blocker": "context_arbitration_policy_variant_missing_source",
+    "iteration_4_blocker": "proxy_target_band_variant_missing_source",
+    "iteration_5_blocker": "support_disrupted_but_integration_allowed",
+    "iteration_6_blockers": {
+      "context_arbitration_policy_variant_missing_source": 8,
+      "null": 12,
+      "support_disrupted_but_integration_allowed": 4
+    },
+    "iteration_8_control_blockers": {
+      "a7_by_inheritance_blocked": 1,
+      "budget_surface_ambiguity": 1,
+      "claim_promotion_blocked": 1,
+      "gali7_by_inheritance_blocked": 1,
+      "hidden_context_substitution_blocked": 1,
+      "hidden_experiment_side_steering": 1,
+      "native_relabel_without_phase8_blocked": 1,
+      "node_plus_packet_budget_discontinuity": 1,
+      "out_of_envelope_proxy_blocked": 1,
+      "stale_context_blocked": 1,
+      "stale_proxy_state_blocked": 1,
+      "stale_support_state_blocked": 1
+    }
+  },
+  "next_iteration": "11_hypothesis_c_native_generalization_gap",
+  "output_digest": "52c4e46ce245024ebcfbac4e6a5c9dd90ea7b7106ceb14f0be0136859edc1831",
+  "purpose": "hypothesis_ab_closeout_and_strongest_gali_decision",
+  "roadmap_a7_local_evidence_target_met": true,
+  "schema": "n11_iteration_10_hypothesis_ab_closeout_v1",
+  "source_artifacts": {
+    "iteration_1": {
+      "output_digest": "c1cf29e08ac13fb0b6d42cf85cc70735229326a4be4dae936fdb2de12caa9b65",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+      "sha256": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+      "status": "passed"
+    },
+    "iteration_2": {
+      "output_digest": "0b5db686ece0f0aa4a22f17470de32acc5c183afe8f15dbfdebb116a608b1018",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_2_fixture_manifest_validation.json",
+      "sha256": "70fc8c4036735e68ab4667c99466614ef44fcf6076f48e4223dccaf9d82026df",
+      "status": "passed"
+    },
+    "iteration_3": {
+      "output_digest": "301d045090005aac333786d8bad83eae5aba0519522de2f33d89699f5432bfc9",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_3_route_context_transfer_replay.json",
+      "sha256": "badddb1b9c08c92bf6efa64a31c2a50c0019bceac008d40fcdb471ebc8c5817d",
+      "status": "passed"
+    },
+    "iteration_4": {
+      "output_digest": "df32344a5dccb1eb58520977052db86f1b40bc37188af8843790cd7715281ac2",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4_proxy_condition_transfer_replay.json",
+      "sha256": "6ebc8d832cf58fd071ab7587a6abf4585075d0eee6842b98a90dfa32cf9fb70a",
+      "status": "passed"
+    },
+    "iteration_4b": {
+      "output_digest": "08925d575181c5206eacc2541712d953ce2d2c2d4e303770f5c23d96319c7a05",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_4b_proxy_target_band_variant_probe.json",
+      "sha256": "7db81ae8b964883285b471778679639fec24b80eb635332a8e63f50fb65e26f5",
+      "status": "passed"
+    },
+    "iteration_5": {
+      "output_digest": "14d1fe3decea295a4a9bb5c94b558e49bc7e8a3bdc71b23ad3681572803896d4",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_5_support_state_transfer_replay.json",
+      "sha256": "f71fcf27f944854b4991d1343ae89175a5782917bdd7e2ad4dee42016025312d",
+      "status": "passed"
+    },
+    "iteration_6": {
+      "output_digest": "a906f1190f94fea78c10754834f6b3312797280df40c933bd5497a6b0868fd9c",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_6_multi_axis_transfer_matrix.json",
+      "sha256": "9dff6b26c3df467f17cd9607ebe32a1499db3cf4e8f7de1a86d13687ba8e754e",
+      "status": "passed"
+    },
+    "iteration_7": {
+      "output_digest": "dd1409f5f777a46958467ca1f161b83e8173258a003423575b44e86a7b2e552f",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_7_longer_horizon_generalization_window.json",
+      "sha256": "46d4844e0922bba44ac4a51601f61570707df5cd7dbaad1b5ec6833c8667977a",
+      "status": "passed"
+    },
+    "iteration_8": {
+      "output_digest": "bd0c597fb93cddf376b2c41e00f6ac5391f1cd6124eda6ce904c0e7d43d50b57",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_8_hidden_stale_claim_controls.json",
+      "sha256": "b0f36a69286da4f27486dbcef7e256c834d708e6b0c6311cb1110918e5c97eb5",
+      "status": "passed"
+    },
+    "iteration_9": {
+      "output_digest": "a44607c05a90c9d3169bce2e9fbb4bd560e9811180420631a7ccd1faaf8aa481",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_9_artifact_only_generalization_validator.json",
+      "sha256": "01a9ea8b36b4767306c0e8ea5787ed4fc2f2aed866b3efb62024cd6622e44fb9",
+      "status": "passed"
+    }
+  },
+  "status": "passed",
+  "strongest_supported_claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+  "strongest_supported_gali_level": "GALI7",
+  "unsafe_claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  }
+}

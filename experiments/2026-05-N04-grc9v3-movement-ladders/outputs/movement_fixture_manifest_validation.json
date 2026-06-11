@@ -1,0 +1,205 @@
+{
+  "checks": {
+    "active_fixtures_passed": true,
+    "adaptive_topology_entry_blocked": true,
+    "default_edge_properties_positive": true,
+    "default_edge_properties_present": true,
+    "fixtures_present": true,
+    "initializer_defaults_positive": true,
+    "initializer_defaults_present": true,
+    "lanes_passed": true,
+    "null_envelope_calibration_status_present": true,
+    "null_envelope_present": true,
+    "required_formulas_present": true,
+    "required_metrics_present": true,
+    "schema_matches": true,
+    "topology_events_disabled": true,
+    "topology_policy_blocks_changes": true,
+    "topology_policy_present": true
+  },
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false
+  },
+  "default_edge_properties": {
+    "base_conductance": 1.0,
+    "interpretation": "Unit coupling and unit edge delay for first fixed-substrate movement tranche unless an edge overrides these fields.",
+    "proper_time_delay": 1.0,
+    "temporal_delay": 1.0,
+    "weight": 1.0
+  },
+  "effective_displacement_min_rule": "max(configured_displacement_min, mean + null_calibration_k * std)",
+  "fixture_results": {
+    "S0_chain_v1": {
+      "checks": {
+        "basin_center_exists": true,
+        "basin_support_exists": true,
+        "chain_edge_count": true,
+        "chain_mapping_declared": true,
+        "chain_nonperiodic": true,
+        "chain_unwrap_not_applicable": true,
+        "connected": true,
+        "coordinate_policy_present": true,
+        "edge_conductance_present": true,
+        "edge_count_matches": true,
+        "edge_delays_positive": true,
+        "edge_endpoints_exist": true,
+        "edge_ids_unique": true,
+        "edge_proper_time_delay_present": true,
+        "edge_temporal_delay_present": true,
+        "edge_weights_positive": true,
+        "edge_weights_present": true,
+        "front_rear_direction_present": true,
+        "node_count_matches": true,
+        "node_ids_unique": true,
+        "total_budget_positive": true
+      },
+      "fixture_id": "S0_chain_v1",
+      "passed": true,
+      "status": "active"
+    },
+    "S1_ring_v1": {
+      "checks": {
+        "basin_center_exists": true,
+        "basin_support_exists": true,
+        "connected": true,
+        "coordinate_policy_present": true,
+        "edge_conductance_present": true,
+        "edge_count_matches": true,
+        "edge_delays_positive": true,
+        "edge_endpoints_exist": true,
+        "edge_ids_unique": true,
+        "edge_proper_time_delay_present": true,
+        "edge_temporal_delay_present": true,
+        "edge_weights_positive": true,
+        "edge_weights_present": true,
+        "front_rear_direction_present": true,
+        "node_count_matches": true,
+        "node_ids_unique": true,
+        "ring_antipodal_tie_break_declared": true,
+        "ring_antipodal_tie_break_note_present": true,
+        "ring_coordinate_mapping_declared": true,
+        "ring_direction_mapping_declared": true,
+        "ring_edge_count": true,
+        "ring_has_wrap_edge": true,
+        "ring_periodic": true,
+        "ring_unwrap_declared": true,
+        "total_budget_positive": true
+      },
+      "fixture_id": "S1_ring_v1",
+      "passed": true,
+      "status": "active"
+    },
+    "S3_grid_v1": {
+      "checks": {
+        "deferred_reason_present": true
+      },
+      "fixture_id": "S3_grid_v1",
+      "passed": true,
+      "status": "deferred"
+    }
+  },
+  "initializer_defaults": {
+    "baseline_coherence": 1.0,
+    "bump_amplitude": 0.4,
+    "kick_mask_node_count": 1,
+    "tilt_epsilon": 0.02
+  },
+  "lane_results": {
+    "all_lanes_passed": true,
+    "lane_checks": {
+      "B0": {
+        "checks": {
+          "expected_claim_ceiling_present": true,
+          "front_rear_direction_present": true,
+          "front_rear_direction_source_valid": true,
+          "initializer_resolves": true
+        },
+        "passed": true
+      },
+      "B1": {
+        "checks": {
+          "bump_amplitude_positive": true,
+          "expected_claim_ceiling_present": true,
+          "front_rear_direction_present": true,
+          "front_rear_direction_source_valid": true,
+          "initializer_resolves": true,
+          "tilt_epsilon_positive": true
+        },
+        "passed": true
+      },
+      "B1_reversed": {
+        "checks": {
+          "bump_amplitude_positive": true,
+          "expected_claim_ceiling_present": true,
+          "front_rear_direction_present": true,
+          "front_rear_direction_source_valid": true,
+          "initializer_resolves": true,
+          "reversal_target_exists": true,
+          "tilt_epsilon_positive": true
+        },
+        "passed": true
+      },
+      "K1": {
+        "checks": {
+          "expected_claim_ceiling_present": true,
+          "front_rear_direction_present": true,
+          "front_rear_direction_source_valid": true,
+          "initializer_resolves": true,
+          "kick_delta_positive": true,
+          "kick_mask_node_count_positive": true,
+          "kick_resolves": true
+        },
+        "passed": true
+      },
+      "K1_reversed": {
+        "checks": {
+          "expected_claim_ceiling_present": true,
+          "front_rear_direction_present": true,
+          "front_rear_direction_source_valid": true,
+          "initializer_resolves": true,
+          "kick_delta_positive": true,
+          "kick_mask_node_count_positive": true,
+          "kick_resolves": true,
+          "reversal_target_exists": true
+        },
+        "passed": true
+      },
+      "U0": {
+        "checks": {
+          "expected_claim_ceiling_present": true,
+          "front_rear_direction_present": true,
+          "front_rear_direction_source_valid": true,
+          "initializer_resolves": true
+        },
+        "passed": true
+      }
+    },
+    "required_lanes_present": true
+  },
+  "manifest_path": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json",
+  "metric_defaults": {
+    "configured_displacement_min": 0.05,
+    "epsilon_budget": 1e-09,
+    "identity_mass_ratio_min": 0.95,
+    "null_calibration_k": 3.0,
+    "profile_similarity_min": 0.8,
+    "width_relative_change_max": 0.15
+  },
+  "notes": [
+    "S0 and S1 are active first-tranche fixtures.",
+    "S3 is declared but deferred until S0/S1 observables and classifier are validated.",
+    "Ring centroid movement must use the declared unwrap policy.",
+    "Topology events are disabled for the first movement tranche."
+  ],
+  "schema": "movement_fixture_manifest_validation_v1",
+  "status": "passed",
+  "topology_policy": {
+    "fixed_substrate_required": true,
+    "topology_changed_allowed": false,
+    "topology_changed_required": false
+  }
+}

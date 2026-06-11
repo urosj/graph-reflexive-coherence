@@ -1,0 +1,75 @@
+{
+  "all_equalized_paths_collapse_to_tie_broken_path": true,
+  "artifact_entry_points": {
+    "blocked_observations": "../reports/<run_id>_blocked_observations.csv",
+    "comparison_report": "../reports/<run_id>_comparison.md",
+    "lane_a_spark_gate_traces": "../outputs/<run_id>/lane_a_spark_gate_traces.jsonl",
+    "run_manifest": "../outputs/<run_id>/run_manifest.json",
+    "state_snapshots": "../outputs/<run_id>/snapshots/",
+    "step_events": "../outputs/<run_id>/step_events.jsonl"
+  },
+  "base_metric_delay_flux_disagree": true,
+  "base_primary_paths_all_distinct": true,
+  "blocked_observations_schema": {
+    "artifact_source": "artifact path or runtime surface attempted",
+    "experiment": "experiment or discriminator id",
+    "notes": "free-form audit note",
+    "observation": "claim-specific observation name",
+    "reconstruction_attempt": "short description of extraction/reconstruction attempt",
+    "status": "blocked | inconclusive"
+  },
+  "comparison_report_schema": {
+    "artifact_sources": "artifact_entry_points object",
+    "blocked_observations_schema": "blocked_observations_schema object",
+    "blocked_or_inconclusive_claims": [
+      "string"
+    ],
+    "energy_profile": "perturbation_energy object",
+    "factorization_class": "row_column | transpose | non_factorized",
+    "fixture_id": "string",
+    "lane_id": "current_hybrid_signed_hessian",
+    "port_map": {
+      "source_port": "target_port"
+    },
+    "preserves_active_degree": "boolean",
+    "preserves_edge_count": "boolean",
+    "run_id": "string",
+    "schema_version": "grc9v3_properties_iter2_v1",
+    "seed": "integer",
+    "transform_id": "string"
+  },
+  "edge_label_modes": {
+    "flux_coupling": "absolute_flux",
+    "geometric_length": "experiment_fixed_corridor_fixture",
+    "signed_flux": "PortEdge.flux_uv orientation",
+    "temporal_delay": "transport_ratio_from_fixed_labels"
+  },
+  "equalized_flux_collapses_flux_path_to_metric_path": true,
+  "equalized_temporal_removes_delay_specific_winner": true,
+  "experiment": "experiment_f_path_disagreement",
+  "lane_id": "current_hybrid_signed_hessian",
+  "path_disagreement_claim_scope": "auditable edge-label path separation; not direct row_column semantic evidence",
+  "port_relabel_preserves_path_choices": true,
+  "run_id_convention": {
+    "format": "<experiment_id>__<fixture_id>__<transform_id>__seed_<seed>__<schema_version>",
+    "normalization": "lowercase ASCII; replace non [a-z0-9_.-] characters with underscores",
+    "stability": "deterministic; no timestamp in reproducible run ids"
+  },
+  "runtime_assumptions": {
+    "column_h_status": "derived_analysis_proxy_only",
+    "lane_id": "current_hybrid_signed_hessian",
+    "runtime_mutation_policy": "experiment code must not mutate src/pygrc",
+    "signed_hessian_backend": "row_basis_diagonal"
+  },
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "scoring_conventions": {
+    "delay_path": "minimize sum temporal_delay(e)",
+    "metric_path": "minimize sum geometric_length(e)",
+    "primary_coupling_path": "maximize min_e flux_coupling(e)",
+    "primary_flux_path": "maximize min_e abs(signed_flux(e))",
+    "secondary_coupling_diagnostic": "maximize sum flux_coupling(e)",
+    "secondary_flux_diagnostic": "maximize sum abs(signed_flux(e))",
+    "tie_break": "prefer fewer edges, then lexicographic edge-id tuple"
+  },
+  "seed": 0
+}

@@ -1,0 +1,129 @@
+{
+  "acceptance_statement": "Lane B resolves the Iteration 9 direction-parity blocker. True native counter-clockwise E3 telemetry is available and validated. When run through the same fixed S0 boundary-coupled fixture and frozen M4/M5 classifier, the native forward E3 lane produces dX=+0.083333333 and the native reversed E3 lane produces dX=-0.083333333, with matched boundary_coupling_score=0.25 and matched distinct pulse-locked response windows=4. The M5 candidate gate and full direction-parity gate pass. The upgraded claim ceiling is m5_direction_parity_supported_boundary_response. This supports a native direction-parity-controlled repeated loop-driven boundary-response candidate, while movement, locomotion-like, adaptive-topology, M6, biological, agency, and inherited-N03 claims remain blocked.",
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_lock_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_direction_parity_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_lock_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_boundary_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_m4_m5_classification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_telemetry_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/audit_lane_b_direction_parity_lock.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_lane_b_reversed_e3_direction_parity.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "recomputed_metrics": {
+    "forward_boundary_coupling_score": 0.25,
+    "forward_centroid_delta": 0.08333333333333215,
+    "forward_distinct_pulse_locked_response_window": 12.0,
+    "forward_distinct_pulse_locked_window_count": 4,
+    "forward_timeseries_digest_verified": true,
+    "true_reversed_boundary_coupling_score": 0.25,
+    "true_reversed_centroid_delta": -0.08333333333333393,
+    "true_reversed_distinct_pulse_locked_response_window": 12.0,
+    "true_reversed_distinct_pulse_locked_window_count": 4,
+    "true_reversed_timeseries_digest_verified": true
+  },
+  "report_kind": "n04_lane_b_direction_parity_lock_audit_v1",
+  "schema": "movement_ladder_report_v1",
+  "sections": {
+    "claim_flag_consistency": {
+      "adaptive_topology_entry_allowed": false,
+      "claim_ceiling": "m5_direction_parity_supported_boundary_response",
+      "direction_parity_gate_passed": true,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "m5_candidate_gate_passed": true,
+      "m6_opened": false,
+      "movement_claim_allowed": false,
+      "passed": true
+    },
+    "controls_still_negative": {
+      "distinct_reasons": {
+        "pulse_disabled": "pulse_disabled",
+        "scrambled_order": "loop_order_scrambled",
+        "symmetric_boundary_null": "balanced_front_rear_coupling"
+      },
+      "passed": true,
+      "pulse_disabled_negative": true,
+      "scrambled_order_blocks_loop_driven_movement": true,
+      "symmetric_null_negative": true
+    },
+    "matched_metrics_recomputed_from_timeseries": {
+      "boundary_score_matches_report": true,
+      "forward_dx_matches_report": true,
+      "passed": true,
+      "timeseries_digests_verified": true,
+      "true_reversed_dx_matches_report": true,
+      "window_count_matches_report": true
+    },
+    "native_reversed_telemetry_validation": {
+      "count_symmetry_only": false,
+      "max_checkpoint_budget_error": 0.0,
+      "max_event_budget_error": 0.0,
+      "native_d2_3_equivalent": true,
+      "native_lgrc9v3_execution": true,
+      "native_packet_execution": true,
+      "native_self_rearm_evidence": true,
+      "passed": true,
+      "structural_reversal_passed": true,
+      "topology_changed": false
+    },
+    "only_pulse_direction_changes": {
+      "boundary_masks_changed": false,
+      "coupling_reversal_substitute_used": false,
+      "direct_state_write_changed": false,
+      "direction_specific_signal_note": "The reversed lane uses the same state-mediated coherence-coupling fixture, but reads the native counter-clockwise route counterpart S1/K2 signal instead of the clockwise S1/K1 signal.",
+      "displacement_sign_convention_changed": false,
+      "passed": true,
+      "support_extraction_policy_changed": false,
+      "true_reversed_e3_telemetry_used": true
+    },
+    "same_fixture_and_mapping": {
+      "passed": true,
+      "same_coupling_strength": true,
+      "same_displacement_threshold": true,
+      "same_m4_m5_classifier_policy": {
+        "boundary_score_min": true,
+        "pulse_locked_window_min_coupling_fraction": true,
+        "repeated_response_min_count": true,
+        "repeated_response_min_window": true,
+        "response_count_policy": true
+      },
+      "same_mapping_and_masks": true,
+      "same_s0_substrate": true
+    }
+  },
+  "source_artifacts": {
+    "boundary_coupling": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json",
+      "sha256": "f0778f7c2b60b66fc45d26a2419c70819b94db32443146c97a15722b826e193d"
+    },
+    "classification": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json",
+      "sha256": "a2bf9656b569ccb8e4728bae243bfffc8f6191bca8c12b9d15e8c942d80d4289"
+    },
+    "closeout": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json",
+      "sha256": "12be7455ab16fab1ee94d6920b4b771d3f65c0cba08d354a6285f827492353ed"
+    },
+    "iteration_8_boundary_report": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json",
+      "sha256": "75600c24540653f3bebccbbadce7087bf7d2985310a8f4d8d2624af83d6418c8"
+    },
+    "iteration_9_classifier_report": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json",
+      "sha256": "6cd2deb4206fb45f5b83c9dd2ee9465ca8b9213e11f43549566688b5610e7448"
+    },
+    "telemetry_validation": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json",
+      "sha256": "a02aa4fe3b0294812679d1d27ac5b24b19cd07e1e2e8954bdaa125901fb718ab"
+    }
+  },
+  "status": "passed"
+}

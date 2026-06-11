@@ -1,0 +1,596 @@
+{
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_d1c_port_rotation_audit.py",
+  "d1_baseline": {
+    "available": true,
+    "classification": "d1_weak_residual_loop_circulation_observed",
+    "max_abs_loop_circulation": 0.0070727893817062425,
+    "max_abs_normalized_circulation": 0.006041388204739038
+  },
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "interpretation": "Port-rotation fixtures are native GRC9V3 fixed-topology tests. A material result would require normalized circulation >= 0.01. Weak residual rows remain diagnostic only and do not promote loop evidence.",
+  "port_cycle": {
+    "clockwise": [
+      1,
+      2,
+      3,
+      6,
+      9,
+      8,
+      7,
+      4
+    ],
+    "counter_clockwise": [
+      4,
+      7,
+      8,
+      9,
+      6,
+      3,
+      2,
+      1
+    ]
+  },
+  "scenarios": [
+    {
+      "budget": {
+        "max_abs_error_post_correction": 0.0,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "mean_abs_normalized_circulation": 0.0,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          8,
+          7,
+          4
+        ],
+        "profile": "uniform",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_cw_uniform_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_cw_uniform",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_cw_uniform_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.002847598048962799,
+        "final_mean_abs_flux": 0.17313276825393423,
+        "initial_loop_circulation": 0.00012816252825326342,
+        "initial_mean_abs_flux": 0.02739653020201918,
+        "max_abs_loop_circulation": 0.002847598048962799,
+        "max_abs_normalized_circulation": 0.002055935220756579,
+        "mean_abs_loop_circulation": 0.00039877885459782195,
+        "mean_abs_normalized_circulation": 0.0005896741440715985,
+        "persistence_ratio_final_over_initial_abs": 22.21864758578754
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          8,
+          7,
+          4
+        ],
+        "profile": "single_bump",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_cw_single_bump_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_cw_single_bump",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_cw_single_bump_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -0.002432172224484306,
+        "final_mean_abs_flux": 0.07808592853111873,
+        "initial_loop_circulation": 0.00017035840892211905,
+        "initial_mean_abs_flux": 0.018616469979861144,
+        "max_abs_loop_circulation": 0.002432172224484306,
+        "max_abs_normalized_circulation": 0.003893422717505112,
+        "mean_abs_loop_circulation": 0.0005049177205098616,
+        "mean_abs_normalized_circulation": 0.0010085779019628645,
+        "persistence_ratio_final_over_initial_abs": 14.276795843967975
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          8,
+          7,
+          4
+        ],
+        "profile": "traveling_phase_seed",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_cw_traveling_phase_seed_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_cw_traveling_phase_seed",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_cw_traveling_phase_seed_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -0.0011629854004840123,
+        "final_mean_abs_flux": 0.18038876694221911,
+        "initial_loop_circulation": -6.211018629347954e-05,
+        "initial_mean_abs_flux": 0.014689140199422319,
+        "max_abs_loop_circulation": 0.0011629854004840123,
+        "max_abs_normalized_circulation": 0.0008058881798724555,
+        "mean_abs_loop_circulation": 0.00016652601317730182,
+        "mean_abs_normalized_circulation": 0.0003177827497856041,
+        "persistence_ratio_final_over_initial_abs": 18.72455179877805
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          8,
+          7,
+          4
+        ],
+        "profile": "quadrature",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_cw_quadrature_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_cw_quadrature",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_cw_quadrature_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0014509291898722187,
+        "final_mean_abs_flux": 0.18090754500407547,
+        "initial_loop_circulation": 2.2644813571504052e-07,
+        "initial_mean_abs_flux": 0.053297367977917794,
+        "max_abs_loop_circulation": 0.0014509291898722187,
+        "max_abs_normalized_circulation": 0.001002535017154434,
+        "mean_abs_loop_circulation": 0.0010150297850519843,
+        "mean_abs_normalized_circulation": 0.0007033366082581169,
+        "persistence_ratio_final_over_initial_abs": 6407.3355485604425
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          8,
+          7,
+          4
+        ],
+        "profile": "alternating",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_cw_alternating_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_cw_alternating",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_cw_alternating_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 4.440892098500626e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -0.0036735167365173384,
+        "final_mean_abs_flux": 0.08558170555942872,
+        "initial_loop_circulation": 6.937582699422917e-05,
+        "initial_mean_abs_flux": 0.01862625672917371,
+        "max_abs_loop_circulation": 0.0036735167365173384,
+        "max_abs_normalized_circulation": 0.005365511110850693,
+        "mean_abs_loop_circulation": 0.0005163286557891083,
+        "mean_abs_normalized_circulation": 0.0008657438766161073,
+        "persistence_ratio_final_over_initial_abs": 52.95096138923014
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          4,
+          7,
+          8,
+          9,
+          6,
+          3,
+          2,
+          1
+        ],
+        "profile": "traveling_phase_seed",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_ccw_traveling_phase_seed_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_ccw_traveling_phase_seed",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_ccw_traveling_phase_seed_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0011629854004841234,
+        "final_mean_abs_flux": 0.18038876694221911,
+        "initial_loop_circulation": 6.211018629347954e-05,
+        "initial_mean_abs_flux": 0.014689140199422319,
+        "max_abs_loop_circulation": 0.0011629854004841234,
+        "max_abs_normalized_circulation": 0.0008058881798725325,
+        "mean_abs_loop_circulation": 0.0001665260131773038,
+        "mean_abs_normalized_circulation": 0.00031778274978560276,
+        "persistence_ratio_final_over_initial_abs": 18.72455179877984
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          4,
+          7,
+          8,
+          9,
+          6,
+          3,
+          2,
+          1
+        ],
+        "profile": "quadrature",
+        "reverse_phase": false
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_ccw_quadrature_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_ccw_quadrature",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_ccw_quadrature_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0036735167365173904,
+        "final_mean_abs_flux": 0.08558170555942864,
+        "initial_loop_circulation": -6.93758269942283e-05,
+        "initial_mean_abs_flux": 0.018626256729173694,
+        "max_abs_loop_circulation": 0.0036735167365173904,
+        "max_abs_normalized_circulation": 0.005365511110850774,
+        "mean_abs_loop_circulation": 0.000516328655789103,
+        "mean_abs_normalized_circulation": 0.0008657438766161017,
+        "persistence_ratio_final_over_initial_abs": 52.95096138923155
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "port_rotation_fixture": {
+        "port_cycle": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          8,
+          7,
+          4
+        ],
+        "profile": "traveling_phase_seed",
+        "reverse_phase": true
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1c_rotation_cw_traveling_phase_seed_reversed_raw_records.jsonl"
+      },
+      "scenario_id": "d1c_rotation_cw_traveling_phase_seed_reversed",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1c_rotation_cw_traveling_phase_seed_reversed_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 8,
+        "final_node_count": 8,
+        "initial_edge_count": 8,
+        "initial_node_count": 8
+      }
+    }
+  ],
+  "schema": "grc9v3_polarized_basin_loop_d1c_port_rotation_audit_v1",
+  "status": "pass",
+  "summary": {
+    "classification": "d1c_weak_residual_port_rotation_circulation_observed",
+    "classification_thresholds": {
+      "material_normalized_min": 0.01,
+      "none_abs_max": 1e-12
+    },
+    "compact_rows": [
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "mean_abs_normalized_circulation": 0.0,
+        "scenario_id": "d1c_rotation_cw_uniform",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.002847598048962799,
+        "final_mean_abs_flux": 0.17313276825393423,
+        "initial_loop_circulation": 0.00012816252825326342,
+        "initial_mean_abs_flux": 0.02739653020201918,
+        "max_abs_loop_circulation": 0.002847598048962799,
+        "max_abs_normalized_circulation": 0.002055935220756579,
+        "mean_abs_loop_circulation": 0.00039877885459782195,
+        "mean_abs_normalized_circulation": 0.0005896741440715985,
+        "scenario_id": "d1c_rotation_cw_single_bump",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -0.002432172224484306,
+        "final_mean_abs_flux": 0.07808592853111873,
+        "initial_loop_circulation": 0.00017035840892211905,
+        "initial_mean_abs_flux": 0.018616469979861144,
+        "max_abs_loop_circulation": 0.002432172224484306,
+        "max_abs_normalized_circulation": 0.003893422717505112,
+        "mean_abs_loop_circulation": 0.0005049177205098616,
+        "mean_abs_normalized_circulation": 0.0010085779019628645,
+        "scenario_id": "d1c_rotation_cw_traveling_phase_seed",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -0.0011629854004840123,
+        "final_mean_abs_flux": 0.18038876694221911,
+        "initial_loop_circulation": -6.211018629347954e-05,
+        "initial_mean_abs_flux": 0.014689140199422319,
+        "max_abs_loop_circulation": 0.0011629854004840123,
+        "max_abs_normalized_circulation": 0.0008058881798724555,
+        "mean_abs_loop_circulation": 0.00016652601317730182,
+        "mean_abs_normalized_circulation": 0.0003177827497856041,
+        "scenario_id": "d1c_rotation_cw_quadrature",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0014509291898722187,
+        "final_mean_abs_flux": 0.18090754500407547,
+        "initial_loop_circulation": 2.2644813571504052e-07,
+        "initial_mean_abs_flux": 0.053297367977917794,
+        "max_abs_loop_circulation": 0.0014509291898722187,
+        "max_abs_normalized_circulation": 0.001002535017154434,
+        "mean_abs_loop_circulation": 0.0010150297850519843,
+        "mean_abs_normalized_circulation": 0.0007033366082581169,
+        "scenario_id": "d1c_rotation_cw_alternating",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -0.0036735167365173384,
+        "final_mean_abs_flux": 0.08558170555942872,
+        "initial_loop_circulation": 6.937582699422917e-05,
+        "initial_mean_abs_flux": 0.01862625672917371,
+        "max_abs_loop_circulation": 0.0036735167365173384,
+        "max_abs_normalized_circulation": 0.005365511110850693,
+        "mean_abs_loop_circulation": 0.0005163286557891083,
+        "mean_abs_normalized_circulation": 0.0008657438766161073,
+        "scenario_id": "d1c_rotation_ccw_traveling_phase_seed",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0011629854004841234,
+        "final_mean_abs_flux": 0.18038876694221911,
+        "initial_loop_circulation": 6.211018629347954e-05,
+        "initial_mean_abs_flux": 0.014689140199422319,
+        "max_abs_loop_circulation": 0.0011629854004841234,
+        "max_abs_normalized_circulation": 0.0008058881798725325,
+        "mean_abs_loop_circulation": 0.0001665260131773038,
+        "mean_abs_normalized_circulation": 0.00031778274978560276,
+        "scenario_id": "d1c_rotation_ccw_quadrature",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0036735167365173904,
+        "final_mean_abs_flux": 0.08558170555942864,
+        "initial_loop_circulation": -6.93758269942283e-05,
+        "initial_mean_abs_flux": 0.018626256729173694,
+        "max_abs_loop_circulation": 0.0036735167365173904,
+        "max_abs_normalized_circulation": 0.005365511110850774,
+        "mean_abs_loop_circulation": 0.000516328655789103,
+        "mean_abs_normalized_circulation": 0.0008657438766161017,
+        "scenario_id": "d1c_rotation_cw_traveling_phase_seed_reversed",
+        "topology_changed": false
+      }
+    ],
+    "material_rows": [],
+    "max_abs_loop_circulation": 0.0036735167365173904,
+    "max_abs_normalized_circulation": 0.005365511110850774,
+    "scenario_count": 8
+  },
+  "target_metric": "port_rotation_loop_circulation(t) = signed sum of flux_uv around a declared port-cycle fixture"
+}

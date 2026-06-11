@@ -1,0 +1,16 @@
+{
+  "boundary": "D3 uses existing A/B pre-event artifact rows. Column evidence is a Lane A derived proxy, direct column-H proxy-branch evidence remains blocked, and transpose-specific event-capable behavior is inconclusive.",
+  "classification": "supported_with_available_controls",
+  "column_fixture_count": 3,
+  "column_local_interface_response_mean": 0.9886779479761213,
+  "column_local_transpose_interface_response_mean": 0.0,
+  "discriminator_id": "d3_row_column_transpose",
+  "evidence_label": "derived",
+  "lane_id": "current_hybrid_signed_hessian",
+  "role_separation_index": 1.2823960779719024,
+  "row_fixture_count": 3,
+  "row_local_geometry_response_mean": 0.6270514633291143,
+  "row_local_transpose_geometry_response_mean": 0.3333333333333333,
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "transpose_moves_effects_between_artifact_classes": true
+}

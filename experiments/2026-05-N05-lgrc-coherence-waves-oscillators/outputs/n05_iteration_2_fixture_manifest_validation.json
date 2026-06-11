@@ -1,0 +1,188 @@
+{
+  "checks": {
+    "all_required_controls_declared": true,
+    "budget_nodes_cover_fixture_nodes": true,
+    "budget_surfaces_separated": true,
+    "budget_total_matches_node_sum": true,
+    "claim_flags_all_false": true,
+    "control_blockers_are_unique": true,
+    "cycle_definition_frozen": true,
+    "default_off_noop_declared": true,
+    "edge_count_matches": true,
+    "edge_endpoints_exist": true,
+    "edge_ids_unique": true,
+    "fixed_topology_declared": true,
+    "fixture_roles_are_nonsemantic": true,
+    "hidden_reservoir_arrays_disallowed": true,
+    "hidden_schedule_disallowed_on_routes": true,
+    "idempotency_key_declared": true,
+    "initial_node_coherence_nonnegative": true,
+    "lgrc2_minimum_declared": true,
+    "native_surface_cross_references_declared": true,
+    "new_n05_fixture_strategy_declared": true,
+    "no_oscillator_probe_run": true,
+    "no_positive_o_level_evidence_generated": true,
+    "node_count_matches": true,
+    "node_ids_unique": true,
+    "node_plus_packet_conserved_total_matches": true,
+    "o_ladder_claim_ceiling_progression_declared": true,
+    "o_ladder_contract_complete": true,
+    "o_ladder_runtime_levels_declared": true,
+    "outbound_and_return_routes_present": true,
+    "packet_ledger_declared": true,
+    "packetized_flux_declared": true,
+    "phase_1_hidden_schedule_blocked": true,
+    "phase_1_policy_fields_declared": true,
+    "phase_2_runtime_threshold_fields_declared": true,
+    "phase_3_audit_fields_declared": true,
+    "plateau_samples_not_cycles": true,
+    "producer_writes_only_evidence": true,
+    "required_lgrc_defaults_present": true,
+    "reservoir_native_surplus_mapping_declared": true,
+    "route_aspect_contract_declared": true,
+    "route_delays_match_edge_delays": true,
+    "routes_resolve_to_existing_edges": true,
+    "run_autonomous_stop_conditions_declared": true,
+    "schema_matches": true,
+    "self_rearm_reference_declared": true,
+    "snapshot_contract_declared": true,
+    "source_node_exists": true,
+    "source_target_distinct": true,
+    "surplus_trigger_reference_declared": true,
+    "symmetric_delay_declared": true,
+    "target_node_exists": true,
+    "target_reservoir_distinct": true,
+    "target_reservoir_initial_coherence_nonnegative": true,
+    "target_reservoir_node_exists": true,
+    "timing_vocabulary_declared": true,
+    "timing_vocabulary_symbols_declared": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/validate_n05_fixture_manifest.py",
+  "cycle_definition": {
+    "cycle_id_required": true,
+    "distinct_event_time_keys_required": true,
+    "distinct_packet_ids_required": true,
+    "ordered_steps": [
+      "outbound_departure",
+      "target_contact",
+      "return_eligibility",
+      "return_packet",
+      "source_contact_absorption"
+    ],
+    "plateau_samples_counted_as_cycles": false
+  },
+  "environment": {
+    "generated_at": "2026-06-04T19:01:45.867533+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "experiment": "2026-05-N05-lgrc-coherence-waves-oscillators",
+  "fixture_summary": {
+    "fixture_id": "N05_S0_source_target_reservoir_chain_v1",
+    "node_plus_packet_conserved_total": 3.5,
+    "outbound_route_id": "n05_o1_source_to_target_route_v1",
+    "return_route_id": "n05_o2_target_to_source_return_route_v1",
+    "source_node_id": 0,
+    "target_node_id": 2,
+    "target_reservoir_node_id": 3
+  },
+  "git": {
+    "head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "553f423d6c6f787e535450b983997890d28b5dd8"
+    },
+    "status_n05": {
+      "command": "git status --short experiments/2026-05-N05-lgrc-coherence-waves-oscillators",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N05-lgrc-coherence-waves-oscillators/README.md\n M experiments/2026-05-N05-lgrc-coherence-waves-oscillators/implementation/CoherenceOscillatorsImplementationChecklist.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/configs/n05_fixture_manifest_v1.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_1_baseline_inventory.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_1_baseline_inventory.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/build_n05_iteration_1_baseline_inventory.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/validate_n05_fixture_manifest.py"
+    },
+    "status_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 2,
+  "manifest_digest_canonical_json": "3f6a2f09668651b62290b52b167b87a765470918cea65666e65087ad3fbadac7",
+  "manifest_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/configs/n05_fixture_manifest_v1.json",
+  "manifest_sha256": "f3ade569aa97e92bbad8b4a59463dbe98953341789d2520cb5d0301c639e702f",
+  "negative_control_results": {
+    "budget_ambiguity": {
+      "primary_blocker": "n05_budget_surface_ambiguity",
+      "rejected": true
+    },
+    "claim_promotion_attempt": {
+      "primary_blocker": "n05_claim_promotion_rejected",
+      "rejected": true
+    },
+    "hidden_reservoir": {
+      "primary_blocker": "n05_hidden_reservoir_rejected",
+      "rejected": true
+    },
+    "hidden_schedule": {
+      "primary_blocker": "n05_hidden_schedule_rejected",
+      "rejected": true
+    },
+    "idempotent_duplicate_production": {
+      "duplicate_suppression_key_declared": true,
+      "primary_blocker": "n05_duplicate_production_suppressed"
+    },
+    "missing_route": {
+      "primary_blocker": "n05_missing_route",
+      "rejected": true
+    },
+    "missing_source": {
+      "primary_blocker": "n05_missing_source_node",
+      "rejected": true
+    },
+    "missing_target": {
+      "primary_blocker": "n05_missing_target_node",
+      "rejected": true
+    },
+    "policy_disabled": {
+      "noop_verified": true,
+      "primary_blocker": "n05_policy_disabled_noop"
+    },
+    "producer_mutation_attempt": {
+      "primary_blocker": "n05_producer_mutation_boundary_violation",
+      "rejected": true
+    },
+    "pulse_disabled": {
+      "noop_verified": true,
+      "primary_blocker": "n05_pulse_disabled_no_packet"
+    },
+    "snapshot_continue_after_load": {
+      "continue_after_load_idempotency_declared": true,
+      "primary_blocker": "n05_snapshot_continue_after_load_idempotent"
+    },
+    "stale_producer_read": {
+      "primary_blocker": "n05_stale_producer_read_blocked",
+      "rejected": true
+    }
+  },
+  "negative_controls_passed": true,
+  "oscillator_probe_run": false,
+  "positive_o_level_evidence_generated": false,
+  "purpose": "fixture_manifest_and_controls_no_oscillator_probe",
+  "schema": "n05_iteration_2_fixture_manifest_validation_v1",
+  "src_changes_required": false,
+  "status": "passed"
+}

@@ -1,0 +1,859 @@
+{
+  "blocked_claims": [
+    "T6_perturbation_recovery",
+    "R6_full_perturbation_recovery",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "biological_behavior",
+    "agency",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "artifact_validators_passed": true,
+    "budget_neutral_all_points": true,
+    "every_point_classified": true,
+    "iteration_15b_available": true,
+    "no_forbidden_direct_writes": true,
+    "no_t6_r6_claim_promotion": true,
+    "nonnegative_and_shape_gates_passed": true,
+    "primary_blockers_recorded_for_failed_points": true,
+    "same_native_s0_policy_reused": true,
+    "same_recovery_window_reused": true,
+    "sweep_values_declared_before_run": true,
+    "tolerance_boundaries_recorded": true,
+    "topology_fixed_all_points": true
+  },
+  "claim_ceiling": "s0_same_fixture_perturbation_tolerance_profile",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "r6_claim_allowed": false,
+    "t6_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py"
+    }
+  },
+  "go_no_go_for_iteration_15d": {
+    "challenge_perturbation": 0.02,
+    "challenge_reason": "smallest_positive_t6_failure_under_current_s0",
+    "iteration_15d_allowed": true,
+    "s0_reference_claim_ceiling": "s0_same_fixture_perturbation_tolerance_profile",
+    "target_failure_mode_to_improve": "source_budget_exhausted"
+  },
+  "input_iteration_15b": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json",
+    "sha256": "31c4152850c3b618665d233e1a73379f4a214ddfbe40ffd626a4a11f86646c83"
+  },
+  "iteration": "15-C",
+  "movement_substrate": "S0_chain_v1",
+  "next_iteration": "15d_shock_resistant_recovery_geometry_probe",
+  "report_kind": "n04_iter15c_s0_perturbation_tolerance_profile_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "status": "passed",
+  "sweep_points": [
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "cd0a76daf3f3c907767b7d0174dc9bfd1d650e40d24ab92e58b8a27ab7e7e96b",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.045238095238095966,
+          "signed_final_score": 0.9500000000000006,
+          "signed_post_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_post_perturbation_score": 0.7500000000000004,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "6249d37b85b5b525354c2257fd340b1b724782984ac75bbbbf4710d413c01316",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "80881564442be2bfd511b7033c0f718a29e42cabb9dd302bdfdc7db92b94561e",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.04523809523809419,
+          "signed_final_score": 0.9500000000000006,
+          "signed_post_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_post_perturbation_score": 0.7500000000000004,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "7d5653bb256270ed5fd1e8fa08cc5b3a0dfb2191f0f0e5f6fc62baed7f48360b",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.0
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "c3912a3300396530332c9ad0123d418ab63be1a82e90418e63019b93cb47d8ee",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.03857142857142826,
+          "signed_final_score": 0.9100000000000006,
+          "signed_post_perturbation_centroid_delta": 0.029047619047620543,
+          "signed_post_perturbation_score": 0.7100000000000004,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "34eda718928e719af25ad5d23ca8f6d8062d411f0c24b0fd749a0926e46c6d40",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "32cd3b31e2bab79237585589027704cdf340a4ba0e2ff2986ef3394b3a27545d",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.03857142857142826,
+          "signed_final_score": 0.9100000000000006,
+          "signed_post_perturbation_centroid_delta": 0.029047619047618767,
+          "signed_post_perturbation_score": 0.7100000000000004,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "d305b1ddc4bc1ee97339758e1e656e8ade7ceadff209f89be1116de975b6fde5",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": true,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.02
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "eeb1747d30f85dae1d46121a800b84272dd02ecdc9b2388b52e810e64e54495a",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.028571428571430246,
+          "signed_final_score": 0.850000000000001,
+          "signed_post_perturbation_centroid_delta": 0.01904761904761898,
+          "signed_post_perturbation_score": 0.6500000000000008,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "83b890a66c63979cd55d8a056eb466b4b920a3ceb63ad7cf893c9d0e18b225c2",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "7e846b432e1b20ccb8b73bfc8da2feb219586a4f188e1e9f6c3d6866cf071550",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.02857142857142847,
+          "signed_final_score": 0.850000000000001,
+          "signed_post_perturbation_centroid_delta": 0.01904761904761898,
+          "signed_post_perturbation_score": 0.6500000000000008,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "590fc039bd3eb534988438aaa1c0f419703d72a2bdfcd7d4180e1805e9a79552",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": true,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.05
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "fc2f43d75e2b6ac03eb996b329b1ded141bee826fac76460cc0ca044ca564920",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.02023809523809561,
+          "signed_final_score": 0.8000000000000003,
+          "signed_post_perturbation_centroid_delta": 0.01071428571428612,
+          "signed_post_perturbation_score": 0.6000000000000001,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "50dc64f1f49c121ed06be1460f3bcf09c5cbd40a86c929e827de4343a28df60d",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "80b124a9cb30b5136eb813b46213b3f224b19f2ab6a3492994680595e9036853",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.020238095238093834,
+          "signed_final_score": 0.8000000000000003,
+          "signed_post_perturbation_centroid_delta": 0.01071428571428612,
+          "signed_post_perturbation_score": 0.6000000000000001,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "6b09070f2930b9097c6cc0633a1e7f341049476d694c393c0d0f95b1885df3ab",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": true,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.075
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "dd1eaf6af6be48848360fac7e13aa403c2efb19a3540b475235901bc81aec3b8",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.01190476190476275,
+          "signed_final_score": 0.7500000000000004,
+          "signed_post_perturbation_centroid_delta": 0.0023809523809532607,
+          "signed_post_perturbation_score": 0.5500000000000003,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "8ef515e0e27b08595646c3a51f24fd3cace79239caa29b767dd9ae7c082581c9",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "4b6848940a1d802c69e8e62accbaae40b6ab0e826218b7f57a8dc45bea3fc0c2",
+          "r6_recovery_candidate_passed": true,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.01190476190476275,
+          "signed_final_score": 0.7500000000000004,
+          "signed_post_perturbation_centroid_delta": 0.0023809523809514843,
+          "signed_post_perturbation_score": 0.5500000000000003,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "a16b87d136d59105f3dc5291444381310b8754fea1310816161b4ef00ceaac9a",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": true,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.1
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "1b0a8120fa76bb0f44cd33cd354071854201899967c6dd45efcc4352c1012b1a",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.003571428571429891,
+          "signed_final_score": 0.7000000000000006,
+          "signed_post_perturbation_centroid_delta": -0.005952380952381375,
+          "signed_post_perturbation_score": 0.5000000000000004,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "c6874d2295f0935f02686b2024c46a5c8f55ae8be7f37d3f67d4dbece618c5b1",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "bb4dd4e4c80f9f8c2a44c79179064580b9276ce46c292043416e31228492d4c5",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": 0.0035714285714281147,
+          "signed_final_score": 0.7000000000000006,
+          "signed_post_perturbation_centroid_delta": -0.005952380952381375,
+          "signed_post_perturbation_score": 0.5000000000000004,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "4eedb3c673fee2dfe46a6020396e1c761f2ca94359da66fac95f6af5924c3aad",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.125
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "20873f8893b18634728a87e7acff5563106a352c7114213b59125b8625b451df",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.004761904761904745,
+          "signed_final_score": 0.6500000000000008,
+          "signed_post_perturbation_centroid_delta": -0.014285714285714235,
+          "signed_post_perturbation_score": 0.4500000000000006,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "5648a4f42a8a0d3c7f50f930a252aaed9bb975142eb7b55b122d1a068379b997",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "a0a1c527ac5e3dd349ee33176e4b55d141707306fda5e8310af2c8fda39488e9",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.004761904761904745,
+          "signed_final_score": 0.6500000000000008,
+          "signed_post_perturbation_centroid_delta": -0.014285714285714235,
+          "signed_post_perturbation_score": 0.4500000000000006,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "0138a4d7565d75bf4a185e6937ba19ffecf5e1532f772a3b333ec9def35288cd",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.15
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "f2845a0996bb3c8407f92e801512ed9863363f0db03b904002d4931b496ddcf9",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.013095238095237605,
+          "signed_final_score": 0.600000000000001,
+          "signed_post_perturbation_centroid_delta": -0.022619047619047095,
+          "signed_post_perturbation_score": 0.4000000000000008,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "8b523df2d2eb770ec56db4f42ef30c498298fa8bdb9bb807fcc08e48b6e9e2dd",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "92ed4866b2c843016c2ad4f8707bbe1423d6848818f3ebaec204537b92dd530d",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.013095238095237605,
+          "signed_final_score": 0.600000000000001,
+          "signed_post_perturbation_centroid_delta": -0.022619047619047095,
+          "signed_post_perturbation_score": 0.4000000000000008,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "57132dfd0ae9e511c78007443770f9ba7ef26bc2292a35240a9b335cfb747130",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.175
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "eb502dbe1e69ccd9aa71fbece683a4a42aa845880805a63033721eab690f99ce",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.021428571428570464,
+          "signed_final_score": 0.5500000000000003,
+          "signed_post_perturbation_centroid_delta": -0.03095238095238173,
+          "signed_post_perturbation_score": 0.3500000000000001,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "6473fe829704437e86cac1a9f59ec4195af7db06f67d2b6e649d5b982b935406",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "e181b32be91defca1cd390bb4d6a7fda33049a3dc4e7699b5b8b308d6cdcd444",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.02142857142857224,
+          "signed_final_score": 0.5500000000000003,
+          "signed_post_perturbation_centroid_delta": -0.03095238095238173,
+          "signed_post_perturbation_score": 0.3500000000000001,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "45e7f22a300abb25865f2c590acb750d1ce37e3f75d28ec803108388c51fbd17",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.2
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "cc34c793fd3061f97e9da3b6d8a45ea14f1f36e0adac06547610868076db3d34",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.03809523809523796,
+          "signed_final_score": 0.4500000000000006,
+          "signed_post_perturbation_centroid_delta": -0.04761904761904745,
+          "signed_post_perturbation_score": 0.25000000000000044,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "ed4761bfa6f7886183dbba53d6971d633d48a4463d72b3f86f2ac394a315b80c",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "partially_recovered",
+          "primary_blocker": "source_budget_exhausted",
+          "producer_records_digest": "d408ed5d90704bce10a8a309a1af55abce980f765d591bbf294dcfa121052c98",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_coupled_pulse_packet_departure_scheduled",
+            "feedback_source_budget_exhausted"
+          ],
+          "recovery_scheduled_cycle_count": 2,
+          "signed_final_centroid_delta": -0.03809523809523796,
+          "signed_final_score": 0.4500000000000006,
+          "signed_post_perturbation_centroid_delta": -0.04761904761904745,
+          "signed_post_perturbation_score": 0.25000000000000044,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "a1fa3dc797dea62ccc4326b17dce6e9b5d0d2866606129e61762c8a816860606",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.25
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "failed_closed",
+          "primary_blocker": "subthreshold",
+          "producer_records_digest": "0433794058479a34e8de6ff88248741eabcd9a9eadcb64548f5dae625b88f96e",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold"
+          ],
+          "recovery_scheduled_cycle_count": 0,
+          "signed_final_centroid_delta": -0.06428571428571317,
+          "signed_final_score": 0.1500000000000008,
+          "signed_post_perturbation_centroid_delta": -0.06428571428571317,
+          "signed_post_perturbation_score": 0.1500000000000008,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "ceedc41801e3cc97a52fc67159109e45262cf994dff418dc15f0de76ff9bd82f",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "failed_closed",
+          "primary_blocker": "subthreshold",
+          "producer_records_digest": "323eb7d9888026d353484ca2432259e530aabdda53e8282b67b63d27a55a19d8",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold"
+          ],
+          "recovery_scheduled_cycle_count": 0,
+          "signed_final_centroid_delta": -0.06428571428571317,
+          "signed_final_score": 0.1500000000000008,
+          "signed_post_perturbation_centroid_delta": -0.06428571428571317,
+          "signed_post_perturbation_score": 0.1500000000000008,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "3c3becbf6cc6a525e49c576c0d6da4af575d7bcac271912760f6e3a8ec229315",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "failed_closed",
+      "primary_blocker": "subthreshold",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.3
+    },
+    {
+      "budget_neutral": true,
+      "directions": [
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "forward",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "failed_closed",
+          "primary_blocker": "subthreshold",
+          "producer_records_digest": "7f69293ccca2ed8c56ce43fcac03f953537385e16fe73086ac97a19d9710d594",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold"
+          ],
+          "recovery_scheduled_cycle_count": 0,
+          "signed_final_centroid_delta": -0.08095238095238066,
+          "signed_final_score": 0.050000000000000266,
+          "signed_post_perturbation_centroid_delta": -0.08095238095238066,
+          "signed_post_perturbation_score": 0.050000000000000266,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "9aeb8e28a500fda62f82b3adf0daf407a760578e2dfe3e8abb71b77e4279138d",
+          "t6_recovery_candidate_passed": false
+        },
+        {
+          "artifact_validator_passed": true,
+          "budget_abs_error": 0.0,
+          "direction": "reversed",
+          "identity_shape_gates_passed": true,
+          "nonnegative_gate_passed": true,
+          "outcome": "failed_closed",
+          "primary_blocker": "subthreshold",
+          "producer_records_digest": "f563defd8003cff47bcdf2cf0300fb6784e6f55053c23bd462b29906e5976938",
+          "r6_recovery_candidate_passed": false,
+          "recovery_reason_codes": [
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold",
+            "feedback_coupled_pulse_subthreshold"
+          ],
+          "recovery_scheduled_cycle_count": 0,
+          "signed_final_centroid_delta": -0.08095238095238066,
+          "signed_final_score": 0.050000000000000266,
+          "signed_post_perturbation_centroid_delta": -0.08095238095238066,
+          "signed_post_perturbation_score": 0.050000000000000266,
+          "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+          "signed_pre_perturbation_score": 0.7500000000000004,
+          "surface_log_digest": "acc3c65e6263506d228edbc8195c9a03c5414aeb9aba51f13703c4ef1e8839b0",
+          "t6_recovery_candidate_passed": false
+        }
+      ],
+      "forbidden_direct_writes": false,
+      "outcome": "failed_closed",
+      "primary_blocker": "subthreshold",
+      "r6_recovered_both_directions": false,
+      "t6_recovered_both_directions": false,
+      "topology_fixed": true,
+      "transfer_amount": 0.35
+    }
+  ],
+  "sweep_policy": {
+    "budget_neutral": true,
+    "perturbation_kind": "budget_neutral_front_rear_polarity_damping",
+    "policy_id": "s0_front_rear_polarity_damping_sweep_v1",
+    "pre_perturbation_cycles": 5,
+    "recovery_window_cycles": 3,
+    "topology_fixed": true,
+    "transfer_amounts": [
+      0.0,
+      0.02,
+      0.05,
+      0.075,
+      0.1,
+      0.125,
+      0.15,
+      0.175,
+      0.2,
+      0.25,
+      0.3,
+      0.35
+    ]
+  },
+  "tolerance_summary": {
+    "dominant_t6_blocker": "source_budget_exhausted",
+    "first_failing_s0_perturbation_for_15d": 0.02,
+    "interpretation": "Current S0 does not complete the three-cycle T6 recovery window at any tested perturbation amount, including the zero-perturbation reservoir control. Smaller perturbations can restore R6 polarity, but T6 remains source-reservoir limited after the five-cycle pre-perturbation baseline.",
+    "largest_r6_recoverable_perturbation": 0.1,
+    "largest_t6_recoverable_perturbation": null,
+    "smallest_positive_r6_failed_perturbation": 0.125,
+    "smallest_positive_t6_failed_perturbation": 0.02,
+    "smallest_r6_failed_perturbation": 0.0,
+    "smallest_t6_failed_perturbation": 0.0
+  }
+}

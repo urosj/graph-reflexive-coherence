@@ -1,0 +1,87 @@
+{
+  "artifacts": {
+    "E1.0": [
+      "outputs/e1_lgrc9v3_surface_inventory.json",
+      "reports/e1_lgrc9v3_surface_inventory.md"
+    ],
+    "E1.1": [
+      "configs/e1_lgrc9v3_event_ledger_schema.json",
+      "outputs/e1_event_ledger_schema_validation.json",
+      "reports/e1_event_ledger_schema_validation.md"
+    ],
+    "E1.2": [
+      "outputs/e1_d2_3_lgrc_event_ledgers/*.jsonl",
+      "outputs/e1_d2_3_lgrc_event_ledger_summary.json",
+      "reports/e1_d2_3_lgrc_event_ledger_summary.md"
+    ],
+    "E1.3": [
+      "outputs/e1_ledger_only_validation.json",
+      "reports/e1_ledger_only_validation.md"
+    ],
+    "E1.4": [
+      "outputs/e1_lgrc9v3_compatibility.json",
+      "reports/e1_lgrc9v3_compatibility.md"
+    ],
+    "E1.5": [
+      "outputs/e1_lgrc9v3_alignment_closeout.json",
+      "reports/e1_lgrc9v3_alignment_closeout.md"
+    ]
+  },
+  "blocked_claims": [
+    "native GRC9V3 loop formation",
+    "native LGRC9V3 execution",
+    "movement or locomotion",
+    "agency or intention",
+    "biological behavior",
+    "multi-pole native behavior"
+  ],
+  "branch": "E1.5",
+  "claim_boundary": {
+    "adapter_only": true,
+    "movement_claim_allowed": false,
+    "native_grc9v3_evidence": false,
+    "native_lgrc9v3_execution": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/build_e1_5_alignment_closeout.py",
+  "commands": {
+    "E1.0": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_e1_0_lgrc9v3_surface_inventory.py",
+    "E1.1": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/validate_e1_1_event_ledger_schema.py",
+    "E1.2": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/convert_d2_3_to_e1_lgrc_ledger.py",
+    "E1.3": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/validate_e1_3_ledger_only.py",
+    "E1.4": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/build_e1_4_lgrc9v3_compatibility.py",
+    "E1.5": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/build_e1_5_alignment_closeout.py"
+  },
+  "final_decision": {
+    "adapter_only_alignment_record": true,
+    "core_lgrc9v3_task_requested": false,
+    "experiment_local_e2_proposal": false,
+    "movement_ladders_handoff_now": false,
+    "next_branch_if_pursued_later": "Can native LGRC9V3.step or LGRC9V3.run_event_queue produce the D2.3 event ledger through declared runtime primitives?",
+    "reason": "E1 answered its central question: D2.3 can be faithfully represented as LGRC9V3-style causal packet history. The result is adapter-compatible, not native runtime execution, so E1 should close without requesting a core task or movement handoff.",
+    "selected_outcome": "stop_and_publish_n03_native_grc9v3_negative_packet_positive_lgrc_adapter_compatible"
+  },
+  "open_future_question": "Can native LGRC9V3.step or LGRC9V3.run_event_queue produce the D2.3 event ledger through declared runtime primitives?",
+  "schema": "n03_e1_lgrc9v3_alignment_closeout_v1",
+  "status": "complete",
+  "summary_claims": {
+    "core_task_requested": false,
+    "experiment_local_packetized_mechanism": "positive_for_self_rearming_packet_pulse_under_controls",
+    "lgrc9v3_compatibility": "adapter_compatible",
+    "lgrc_style_event_ledger": "validated_from_ledger_only",
+    "native_fixed_topology_grc9v3_proposal_flux": "negative_for_loop_generation_under_tested_fixtures"
+  },
+  "validated_evidence": {
+    "compatibility_classification": "adapter_compatible",
+    "converted_lane_count": 12,
+    "ledger_event_count": 811,
+    "ledger_only_validation_status": "passed",
+    "ledger_positive_lanes": [
+      "D2.3-P-self-rearming-cw",
+      "D2.3-R-self-rearming-ccw",
+      "D2.3-S-low-threshold",
+      "D2.3-N-jittered-delay"
+    ],
+    "schema_validation_status": "passed",
+    "surface_inventory_classification": "adapter_compatible"
+  }
+}

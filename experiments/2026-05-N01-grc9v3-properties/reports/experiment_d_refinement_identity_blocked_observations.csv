@@ -1,0 +1,4 @@
+experiment,observation,status,artifact_source,reconstruction_attempt,notes
+experiment_d_refinement_identity,inflow_weighted_state_transfer,blocked,GRC9V3 expansion distribution modes,Checked supported expansion_distribution_mode values.,"GRC9V3 exposes equal and custom weights, not an inflow-weighted transfer lane."
+experiment_d_refinement_identity,checkpoint_window_identity_persistence,inconclusive,experiment-local runtime window,Used post-expansion and post-step GRC9V3State snapshots in memory.,Persistent child basin support is available from runtime state; checkpoint-window observer support remains for a later artifact-capture pass.
+experiment_d_refinement_identity,landscape_general_child_identity,inconclusive,raw central-node fixture,Ran deterministic clean fixtures only.,"Identity persistence is supported in this clean raw fixture, not landscape-general."

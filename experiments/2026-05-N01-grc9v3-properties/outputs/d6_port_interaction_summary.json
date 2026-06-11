@@ -1,0 +1,33 @@
+{
+  "boundary": "D6 supports interaction need for the signed edge-local target. The runtime absolute-flux transport control does not require an interaction term in this matched fixture.",
+  "canonical_port_ids_tested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "classification": "supported_for_signed_edge_local_target_with_runtime_abs_control",
+  "discriminator_id": "d6_port_interaction",
+  "evidence_label": "direct",
+  "lane_id": "current_hybrid_signed_hessian",
+  "matched_perturbation_magnitude": true,
+  "neighbor_shell_equal": true,
+  "primary_additive_r2": 0.19999999999999996,
+  "primary_interaction_improves_over_additive": true,
+  "primary_interaction_r2": 1.0,
+  "primary_port_level_r2": 1.0,
+  "primary_random_triple_r2": 0.09999999999999998,
+  "primary_target": "signed_edge_flux_interaction_target",
+  "random_triple_control_present": true,
+  "row_column_permutation_controls_present": true,
+  "runtime_abs_flux_additive_r2": 1.0,
+  "runtime_abs_flux_interaction_r2": 1.0,
+  "runtime_abs_flux_interaction_required": false,
+  "sampled_s9_relabel_control_present": true,
+  "schema_version": "grc9v3_properties_iter2_v1"
+}

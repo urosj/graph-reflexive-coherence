@@ -1,0 +1,75 @@
+{
+  "schema": "phase8_lgrc9_topology_state_reabsorption_baseline_freeze_v1",
+  "iteration": 66,
+  "status": "passed",
+  "date": "2026-05-18",
+  "purpose": "Freeze current LGRC9V3 and N04 behavior before native topology-state reabsorption source changes.",
+  "head_commit": "2736641f9738312897b52f428907a46fcd4fef04",
+  "src_diff_before_iteration_67": "",
+  "n04_boundary": {
+    "current_ceiling": "adaptive_topology_entry_candidate",
+    "source_artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19d_topology_mutating_movement_probe.json",
+    "source_artifact_sha256": "28df03d76ced295508d535848b4efee9bbcf782840d8688e442b4e7257b2b653",
+    "primary_blocker": "packet_ledger_state_reabsorption_mismatch_after_topology_event",
+    "ledger_node_total": 6.0,
+    "active_state_node_total": 5.9,
+    "ledger_active_state_delta": 0.1,
+    "post_topology_packet_scheduled": false,
+    "post_topology_packet_processed": false,
+    "topology_mutating_movement_claim_allowed": false
+  },
+  "surface_lineage_closeout": {
+    "source_artifact": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.json",
+    "source_artifact_sha256": "97ad2e56ba6f2b2b303070dcbc4eb16ee54a5267c4911269abb664f35571709f",
+    "native_causal_pulse_substrate_surface_lineage_transport_supported": true
+  },
+  "taxonomy_closeout": {
+    "source_artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json",
+    "source_artifact_sha256": "2b37e9ff1999b3aa75c97d44b93d4e6c82c3f624afa0c744475178f541105a0d"
+  },
+  "baseline_policy_flags": {
+    "causal_topology_state_reabsorption_enabled": false,
+    "causal_topology_state_reabsorption_policy": "disabled",
+    "causal_topology_state_reabsorption_validated": false,
+    "causal_topology_state_reabsorption_supported": false
+  },
+  "baseline_claim_flags": {
+    "movement_claim_allowed": false,
+    "adaptive_topology_movement_claim_allowed": false,
+    "topology_mutating_movement_claim_allowed": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false
+  },
+  "snapshot_telemetry_baseline": {
+    "new_topology_state_reabsorption_snapshot_fields_present": false,
+    "new_topology_state_reabsorption_telemetry_fields_present": false,
+    "src_telemetry_diff_before_iteration_67": ""
+  },
+  "verification": [
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q",
+      "result": "200 passed, 24 subtests passed in 3.14s"
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py -q",
+      "result": "42 passed in 2.76s"
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_module_split.py tests/telemetry/test_lgrc9v3_contract.py -q",
+      "result": "7 passed in 1.79s"
+    },
+    {
+      "command": "git diff -- src tests/models tests/telemetry",
+      "result": "empty"
+    },
+    {
+      "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19d_topology_mutating_movement_probe.py",
+      "result": "passed fail-closed; primary_blocker=packet_ledger_state_reabsorption_mismatch_after_topology_event; ledger_node_total=6.0; active_state_node_total=5.9; delta=0.09999999999999964; post_topology_packet_scheduled=false"
+    }
+  ],
+  "next_iteration": "67_contract_and_policy_schema"
+}

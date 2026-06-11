@@ -1,0 +1,109 @@
+{
+  "artifact": "Phase-8-LGRC9-NativeRouteArbitrationReplay",
+  "iteration": 81,
+  "status": "passed",
+  "scope": "snapshot_telemetry_artifact_replay_controls",
+  "runtime_support": {
+    "native_lgrc_route_arbitration_enabled_default": false,
+    "native_lgrc_route_arbitration_validated_default": false,
+    "native_lgrc_route_arbitration_supported_default": false,
+    "support_claim": "artifact_only_route_arbitration_replay_validated_under_current_contract"
+  },
+  "snapshot_roundtrip": {
+    "candidate_route_log_preserved": true,
+    "candidate_set_log_preserved": true,
+    "route_arbitration_log_preserved": true,
+    "selected_topology_events_preserved": true,
+    "surface_lineage_records_preserved": true,
+    "topology_state_reabsorption_records_preserved": true,
+    "idempotency_keys_preserved": true,
+    "continue_after_load_duplicate_arbitration": false,
+    "continue_after_load_duplicate_topology_event": false,
+    "continue_after_load_duplicate_surface_lineage": false,
+    "continue_after_load_duplicate_topology_state_reabsorption": false,
+    "continue_after_load_duplicate_producer_scheduling": false
+  },
+  "telemetry": {
+    "core_runtime_snapshot_exports_route_logs": true,
+    "telemetry_namespace_updated": true,
+    "telemetry_files": [
+      "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "tests/telemetry/test_lgrc9v3_contract.py"
+    ],
+    "default_off_route_arbitration_telemetry_omitted": true,
+    "enabled_step_extension_exports_summary": true,
+    "enabled_run_summary_exports_final_route_arbitration": true,
+    "enabled_graph_checkpoint_exports_candidate_logs": true,
+    "enabled_graph_checkpoint_exports_candidate_set_logs": true,
+    "enabled_graph_checkpoint_exports_arbitration_logs": true,
+    "event_extension_exports_selected_route_backreferences": true
+  },
+  "artifact_only_validator": {
+    "validator": "validate_lgrc9v3_native_route_arbitration_artifacts",
+    "artifact_only": true,
+    "runtime_state_used": false,
+    "reconstructs_chain": [
+      "candidate_route_records",
+      "candidate_set_record",
+      "route_arbitration_record",
+      "selected_topology_event",
+      "surface_lineage_record",
+      "topology_state_reabsorption_record",
+      "producer_record",
+      "scheduled_processed_packet"
+    ],
+    "candidate_set_reconstructed": true,
+    "route_arbitration_reconstructed": true,
+    "route_selection_reconstructed_from_artifacts": true,
+    "selected_topology_event_reconstructed": true,
+    "downstream_lineage_reabsorption_producer_chain_reconstructed": true,
+    "topology_duplicate_deduplication": "identical topology artifacts are deduped by event id and digest; conflicting duplicates fail",
+    "lineage_validator_reused": "validate_lgrc9v3_causal_pulse_substrate_surface_lineage_artifacts"
+  },
+  "controls": {
+    "disabled_policy": "native_route_arbitration_policy_disabled",
+    "no_candidates": "native_route_arbitration_no_candidates",
+    "unresolved_tie": "native_route_arbitration_unresolved_tie",
+    "hidden_input": "native_route_arbitration_hidden_input_rejected",
+    "budget_mismatch": "native_route_candidate_budget_mismatch",
+    "order_inversion": "native_route_arbitration_order_invalid",
+    "duplicate_arbitration": "duplicate_native_route_arbitration",
+    "topology_drift": "selected_topology_event_candidate_mismatch",
+    "stale_state": "surface_lineage_or_topology_state_reabsorption_validator_blocker",
+    "direct_rewrite": "route_arbitration_lineage_replay_direct_rewrite_blocker",
+    "claim_promotion": "native_route_arbitration_claim_promotion_blocked"
+  },
+  "claim_flags": {
+    "semantic_choice_claim_allowed": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "verification": {
+    "runtime_route_arbitration_slice": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route_arbitration\"",
+      "result": "26 passed, 125 deselected"
+    },
+    "runtime_suite": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q",
+      "result": "151 passed"
+    },
+    "focused_model_compatibility": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route or time_scopes_producer_reads or rejects_source_read_after_transport or topology_state_reabsorption_artifact_validator_reconstructs_chain\"",
+      "result": "48 passed, 222 deselected, 20 subtests passed"
+    },
+    "contract_suite": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q",
+      "result": "123 passed, 59 subtests passed"
+    },
+    "telemetry_contract_suite": {
+      "command": ".venv/bin/python -m pytest tests/telemetry/test_lgrc9v3_contract.py -q",
+      "result": "7 passed"
+    }
+  },
+  "next_iteration": "82_closeout_and_n04_return"
+}

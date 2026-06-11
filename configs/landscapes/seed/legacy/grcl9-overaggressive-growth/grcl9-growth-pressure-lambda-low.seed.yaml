@@ -1,0 +1,71 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Growth Pressure Lambda Low
+  description: Seed-backed GRCL-9 boundary stratum with low outward gradient pressure.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-growth-pressure-lambda-low
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: parent_region
+    type: basin
+    coherence_prior: 1.0
+    depth_hint: 0
+    chart_center_hint: [0.45, 0.5]
+  - id: growth_boundary
+    type: ridge
+    owner_id: parent_region
+    adjacent_ids: [parent_region]
+    thickness_hint: 0.02
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcl9:
+        term_kind: boundary_stratum
+        term_id: growth_pressure_lambda_low_boundary_stratum
+        motif_id: growth_pressure
+        stratum_id: growth_boundary
+        parent_region_id: parent_region
+        boundary_role: outward_port
+        inactive_port: 9
+  - id: outward_gradient
+    type: valley
+    from_id: parent_region
+    to_id: growth_boundary
+    width_hint: 0.03
+    coherence_prior: 0.7
+    path_hint: direct
+    extensions:
+      grcl9:
+        term_kind: gradient_pressure
+        term_id: growth_pressure_lambda_low_gradient_pressure
+        motif_id: growth_pressure
+        pressure_id: outward_gradient
+        boundary_stratum_id: growth_boundary
+        pressure_class: low
+        lambda_birth: 0.05
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: growth_pressure_lambda_low
+    manifest_entry_id: grcl9_lowering_growth_pressure_v1
+    notes: Seed-backed GRCL-9 growth pressure low-lambda control.

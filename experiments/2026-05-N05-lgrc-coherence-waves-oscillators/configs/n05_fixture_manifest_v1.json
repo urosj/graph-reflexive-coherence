@@ -1,0 +1,534 @@
+{
+  "schema": "n05_coherence_oscillator_fixture_manifest_v1",
+  "experiment": "2026-05-N05-lgrc-coherence-waves-oscillators",
+  "manifest_id": "n05_fixture_manifest_v1",
+  "purpose": "declare fixtures_controls_and_budget_surfaces_before_oscillator_probes",
+  "oscillator_probe_run": false,
+  "positive_o_level_evidence_generated": false,
+  "fixture_reuse_strategy": {
+    "selected_strategy": "define_new_n05_source_target_reservoir_fixture",
+    "rationale": "N05 needs a minimal source-target-reservoir fixture with explicit outbound and return routes before O1/O2 probes. N03 E3 and N04 pulse-substrate artifacts are used as design priors, not as direct source-of-truth execution evidence for this fixture.",
+    "prior_artifacts": [
+      {
+        "experiment": "N03",
+        "artifact": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/configs/e3_native_lgrc9v3_packet_loop_route_manifest.json",
+        "use": "native packet-loop route-aspect precedent"
+      },
+      {
+        "experiment": "N04",
+        "artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/pulse_substrate_coupling_manifest_v1.json",
+        "use": "pulse-substrate control and claim-boundary precedent"
+      }
+    ]
+  },
+  "runtime_family": "LGRC9V3",
+  "minimum_lgrc_runtime_level": "lgrc2",
+  "semantic_role_boundary": {
+    "source_node_role": "mechanical_source_or_reservoir_role_only",
+    "target_node_role": "mechanical_interaction_site_only",
+    "target_reservoir_role": "declared_runtime_visible_coherence_storage_only",
+    "route_role": "delayed_packet_channel_only",
+    "packet_or_wave_peak_role": "visible_packet_or_wave_peak_only",
+    "nest_semantic_object_claim_allowed": false,
+    "food_semantic_object_claim_allowed": false,
+    "trail_memory_claim_allowed": false,
+    "ant_or_agent_object_claim_allowed": false
+  },
+  "o_ladder_contract": {
+    "O0": {
+      "description": "no oscillation / passive relaxation",
+      "minimum_lgrc_runtime_level": "lgrc0_or_synchronous_control",
+      "claim_ceiling": "no_oscillation"
+    },
+    "O1": {
+      "description": "delayed outbound pulse",
+      "minimum_lgrc_runtime_level": "lgrc2",
+      "claim_ceiling": "delayed_pulse_candidate",
+      "preferred_native_surface": "native_packet_loop_flux_route_producer"
+    },
+    "O2": {
+      "description": "reflected return pulse",
+      "minimum_lgrc_runtime_level": "lgrc2",
+      "claim_ceiling": "reflected_pulse_candidate",
+      "preferred_native_surface": "native_causal_pulse_substrate_surface"
+    },
+    "O3": {
+      "description": "amplified return with reservoir accounting",
+      "minimum_lgrc_runtime_level": "lgrc2",
+      "claim_ceiling": "amplified_return_candidate",
+      "preferred_native_surface": "native_packet_loop_route_aspect_surplus_producer"
+    },
+    "O4": {
+      "description": "repeated source-target-source cycle",
+      "minimum_lgrc_runtime_level": "lgrc2",
+      "claim_ceiling": "repeated_oscillator_cycle_candidate",
+      "preferred_native_surface": "native_self_rearm_evidence"
+    },
+    "O5": {
+      "description": "self-sustained delayed oscillator boundary",
+      "minimum_lgrc_runtime_level": "lgrc2",
+      "claim_ceiling": "self_sustained_oscillator_candidate",
+      "preferred_native_surface": "bounded_autonomous_run_loop"
+    },
+    "O6": {
+      "description": "route-coupled / trail-reinforced oscillator boundary",
+      "minimum_lgrc_runtime_level": "lgrc2_or_lgrc3_if_topology_aware",
+      "claim_ceiling": "route_coupled_oscillator_candidate",
+      "preferred_native_surface": "native_route_arbitration_if_route_coupling_is_topology_aware"
+    }
+  },
+  "native_surface_cross_references": {
+    "route_aspect_contract": {
+      "native_contract": "LGRC9V3RouteAspect",
+      "native_channel_contract": "LGRC9V3RouteAspectChannel",
+      "native_hop_contract": "LGRC9V3RouteAspectHop",
+      "required_digest_fields": [
+        "route_aspect_digest",
+        "pole_region_digest",
+        "channel_sequence_digest"
+      ],
+      "n05_use": "serialize route and channel semantics before O1/O2 packet probes"
+    },
+    "flux_route_producer": {
+      "producer_policy_constant": "LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_PACKET_DEPARTURE_FROM_FLUX_ROUTE",
+      "n05_use": "O1 delayed outbound packet scheduling from declared causal flux route"
+    },
+    "surplus_trigger_producer": {
+      "producer_policy_constant": "LGRC9V3_AUTONOMOUS_PRODUCER_POLICY_PACKET_DEPARTURE_FROM_ROUTE_SURPLUS",
+      "configuration_api": "LGRC9V3.set_route_aspect_surplus_trigger(...)",
+      "native_observed_mass_field": "pole_mass",
+      "native_reference_mass_field": "reference_mass",
+      "native_surplus_field": "surplus",
+      "n05_use": "O3-O5 runtime-visible reservoir/surplus-triggered scheduling"
+    },
+    "self_rearm_evidence": {
+      "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts(...)",
+      "n05_use": "O4/O5 repeated-cycle and self-rearm evidence"
+    },
+    "causal_pulse_substrate_surface": {
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts(...)",
+      "n05_use": "O2/O3 committed target-contact evidence"
+    },
+    "time_scoped_lineage_replay": {
+      "support_flag": "time_scoped_lineage_replay_supported",
+      "n05_use": "artifact replay of producer reads at their scheduler/event time if O6 becomes topology-aware"
+    },
+    "snapshot_restore": {
+      "api": "LGRC9V3.load(...)",
+      "n05_use": "snapshot continue-after-load controls"
+    },
+    "bounded_autonomous_run_loop": {
+      "api": "LGRC9V3.run_autonomous(...)",
+      "policy": "LGRC9V3_AUTONOMOUS_RUN_POLICY_BOUNDED_V1",
+      "stop_conditions": [
+        "max_events_reached",
+        "natural_exhaustion_no_producer_can_schedule_and_queues_empty"
+      ],
+      "n05_use": "O4-O6 bounded repeated-cycle probes"
+    },
+    "native_route_arbitration": {
+      "support_flag": "native_lgrc_route_arbitration_supported",
+      "n05_use": "O6 route coupling only; not semantic choice"
+    }
+  },
+  "lgrc_timing_vocabulary": {
+    "scheduler_event_index": {
+      "symbol": "kappa",
+      "meaning": "computational scheduler order"
+    },
+    "snapshot_index": {
+      "symbol": "k",
+      "meaning": "observer/replay snapshot order"
+    },
+    "event_time_key": {
+      "symbol": "T_e",
+      "meaning": "event queue ordering key"
+    },
+    "node_proper_time": {
+      "symbol": "tau_i",
+      "meaning": "local accumulated proper time"
+    },
+    "edge_causal_delay": {
+      "symbol": "tau_ij",
+      "meaning": "causal delay on an edge"
+    }
+  },
+  "topology_policy": {
+    "topology_events_enabled": false,
+    "fixed_topology_required": true,
+    "topology_mutation_allowed": false
+  },
+  "fixture": {
+    "fixture_id": "N05_S0_source_target_reservoir_chain_v1",
+    "fixture_kind": "source_target_reservoir_chain",
+    "node_count": 4,
+    "edge_count": 3,
+    "coordinate_policy": {
+      "node_coordinate_policy": "chain_index_with_declared_reservoir_branch",
+      "coordinate_periodic": false,
+      "centroid_coordinate_frame": "not_used_for_n05_iteration_2",
+      "ring_unwrap_policy": "not_applicable"
+    },
+    "nodes": [
+      {
+        "node_id": 0,
+        "role": "source",
+        "coord": [
+          0.0
+        ]
+      },
+      {
+        "node_id": 1,
+        "role": "transit",
+        "coord": [
+          1.0
+        ]
+      },
+      {
+        "node_id": 2,
+        "role": "target",
+        "coord": [
+          2.0
+        ]
+      },
+      {
+        "node_id": 3,
+        "role": "target_reservoir",
+        "coord": [
+          2.0,
+          1.0
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "edge_id": 0,
+        "u": 0,
+        "v": 1,
+        "route_eligible": true,
+        "weight": 1.0,
+        "base_conductance": 1.0,
+        "temporal_delay": 1.0,
+        "proper_time_delay": 1.0
+      },
+      {
+        "edge_id": 1,
+        "u": 1,
+        "v": 2,
+        "route_eligible": true,
+        "weight": 1.0,
+        "base_conductance": 1.0,
+        "temporal_delay": 1.0,
+        "proper_time_delay": 1.0
+      },
+      {
+        "edge_id": 2,
+        "u": 2,
+        "v": 3,
+        "route_eligible": false,
+        "reservoir_accounting_edge": true,
+        "weight": 1.0,
+        "base_conductance": 1.0,
+        "temporal_delay": 1.0,
+        "proper_time_delay": 1.0
+      }
+    ],
+    "source_node_id": 0,
+    "target_node_id": 2,
+    "source_reservoir_node_id": 0,
+    "target_reservoir_node_id": 3
+  },
+  "routes": {
+    "n05_o1_source_to_target_route_v1": {
+      "route_id": "n05_o1_source_to_target_route_v1",
+      "route_kind": "outbound",
+      "source_node_id": 0,
+      "target_node_id": 2,
+      "route_hops": [
+        {
+          "edge_id": 0,
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        {
+          "edge_id": 1,
+          "source_node_id": 1,
+          "target_node_id": 2
+        }
+      ],
+      "causal_delay_ticks": 2,
+      "proper_time_delay_ticks": 2,
+      "hidden_schedule_allowed": false
+    },
+    "n05_o2_target_to_source_return_route_v1": {
+      "route_id": "n05_o2_target_to_source_return_route_v1",
+      "route_kind": "return",
+      "source_node_id": 2,
+      "target_node_id": 0,
+      "route_hops": [
+        {
+          "edge_id": 1,
+          "source_node_id": 2,
+          "target_node_id": 1
+        },
+        {
+          "edge_id": 0,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ],
+      "causal_delay_ticks": 2,
+      "proper_time_delay_ticks": 2,
+      "hidden_schedule_allowed": false
+    }
+  },
+  "budget_surfaces": {
+    "node_plus_packet": {
+      "surface_id": "node_plus_packet_budget",
+      "surface_kind": "active_node_coherence_plus_in_flight_packet_amount",
+      "initial_node_coherence_by_node": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 0.5
+      },
+      "initial_node_coherence_total": 3.5,
+      "initial_in_flight_packet_total": 0.0,
+      "conserved_total": 3.5,
+      "epsilon_budget": 1e-09
+    },
+    "surface_accounting": {
+      "surface_id": "declared_reservoir_surface_accounting",
+      "separate_from_node_plus_packet": true,
+      "target_reservoir_source_node_id": 3,
+      "source_reservoir_source_node_id": 0,
+      "hidden_reservoir_arrays_allowed": false,
+      "return_excess_requires_reservoir_debit": true
+    }
+  },
+  "reservoir_accounting": {
+    "source_reservoir": {
+      "reservoir_id": "source_node_coherence_reservoir",
+      "node_id": 0,
+      "storage_kind": "ordinary_runtime_node_coherence",
+      "hidden_fixture_array_allowed": false
+    },
+    "target_reservoir": {
+      "reservoir_id": "target_declared_reservoir_node",
+      "node_id": 3,
+      "storage_kind": "ordinary_runtime_node_coherence",
+      "hidden_fixture_array_allowed": false,
+      "native_surplus_trigger_mapping": {
+        "observed_mass_field": "pole_mass",
+        "reference_mass_field": "reference_mass",
+        "surplus_field": "surplus",
+        "reference_mass_source": "serialized_policy_field",
+        "surplus_source": "observed_node_coherence_minus_reference_mass",
+        "hidden_surplus_array_allowed": false
+      }
+    }
+  },
+  "cycle_definition": {
+    "cycle_id_required": true,
+    "ordered_steps": [
+      "outbound_departure",
+      "target_contact",
+      "return_eligibility",
+      "return_packet",
+      "source_contact_absorption"
+    ],
+    "distinct_packet_ids_required": true,
+    "distinct_event_time_keys_required": true,
+    "plateau_samples_counted_as_cycles": false
+  },
+  "conservative_lgrc_defaults": {
+    "lapse_policy": {
+      "policy_id": "n05_no_implicit_lapse_policy_v1",
+      "implicit_lapse_allowed": false
+    },
+    "edge_delay_policy": {
+      "policy_id": "n05_unit_edge_delay_policy_v1",
+      "temporal_delay_per_route_edge": 1.0,
+      "proper_time_delay_per_route_edge": 1.0
+    },
+    "symmetric_delay_policy": {
+      "policy_id": "n05_symmetric_outbound_return_delay_policy_v1",
+      "outbound_delay_ticks": 2,
+      "return_delay_ticks": 2,
+      "reverse_route_uses_same_edges": true
+    },
+    "packetized_causal_flux_representation": {
+      "representation_id": "n05_packetized_causal_flux_v1",
+      "packet_amount_field": "amount",
+      "packet_route_field": "route_id",
+      "packet_event_time_field": "event_time_key"
+    },
+    "packet_pending_flux_ledger_representation": {
+      "representation_id": "n05_pending_flux_packet_ledger_v1",
+      "ledger_entries": [
+        "scheduled_packet_records",
+        "processed_packet_records",
+        "in_flight_packet_total"
+      ],
+      "idempotency_key_fields": [
+        "policy_id",
+        "source_event_id",
+        "route_id",
+        "event_time_key",
+        "packet_amount",
+        "cycle_id"
+      ]
+    }
+  },
+  "policies": {
+    "default_off_behavior": {
+      "coherence_oscillator_policy_enabled": false,
+      "pulse_policy_enabled": false,
+      "producer_policy_enabled": false,
+      "surface_policy_enabled": false,
+      "expected_candidate_records": 0,
+      "expected_producer_records": 0,
+      "expected_scheduled_packets": 0,
+      "expected_processed_packets": 0
+    },
+    "phase_1_explicit_scheduling_policy_fields": {
+      "policy_id": "n05_phase_1_explicit_scheduling_fields_v1",
+      "allowed_fields": [
+        "policy_id",
+        "source_event_id",
+        "route_id",
+        "packet_amount",
+        "not_before_scheduler_event_index",
+        "cycle_id"
+      ],
+      "preauthored_event_list_allowed": false,
+      "hidden_schedule_allowed": false,
+      "producer_writable_fields": [
+        "producer_records",
+        "scheduling_eligibility"
+      ],
+      "producer_forbidden_writes": [
+        "active_node_coherence",
+        "packet_ledger",
+        "topology",
+        "support_mask",
+        "centroid",
+        "displacement",
+        "claim_flags"
+      ]
+    },
+    "phase_2_runtime_threshold_policy_fields": {
+      "policy_id": "n05_phase_2_runtime_threshold_fields_v1",
+      "allowed_fields": [
+        "policy_id",
+        "observed_node_id",
+        "observed_value_field",
+        "reference_value",
+        "threshold",
+        "route_id",
+        "packet_amount",
+        "cycle_id"
+      ],
+      "observed_values_must_be_runtime_visible": true,
+      "threshold_sources_must_be_serialized": true,
+      "hidden_threshold_arrays_allowed": false
+    },
+    "phase_3_native_policy_support_audit_fields": {
+      "policy_id": "n05_phase_3_native_policy_support_audit_fields_v1",
+      "audit_required_before_pure_native_claim": true,
+      "custom_node_potentials_supported": "not_audited",
+      "potential_inversion_supported": "not_audited",
+      "flux_facilitated_metric_maps_supported": "not_audited",
+      "delayed_passive_response_supported": "not_audited",
+      "route_conductance_memory_supported": "not_audited",
+      "if_unsupported_status": "record_runtime_capability_gap"
+    }
+  },
+  "controls": [
+    {
+      "control_id": "policy_disabled",
+      "primary_blocker": "n05_policy_disabled_noop",
+      "expected_outcome": "no_producer_records_no_scheduled_packets"
+    },
+    {
+      "control_id": "pulse_disabled",
+      "primary_blocker": "n05_pulse_disabled_no_packet",
+      "expected_outcome": "no_packet_emission"
+    },
+    {
+      "control_id": "missing_source",
+      "primary_blocker": "n05_missing_source_node",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "missing_target",
+      "primary_blocker": "n05_missing_target_node",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "missing_route",
+      "primary_blocker": "n05_missing_route",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "hidden_schedule",
+      "primary_blocker": "n05_hidden_schedule_rejected",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "hidden_reservoir",
+      "primary_blocker": "n05_hidden_reservoir_rejected",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "budget_ambiguity",
+      "primary_blocker": "n05_budget_surface_ambiguity",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "stale_producer_read",
+      "primary_blocker": "n05_stale_producer_read_blocked",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "idempotent_duplicate_production",
+      "primary_blocker": "n05_duplicate_production_suppressed",
+      "expected_outcome": "duplicate_suppressed"
+    },
+    {
+      "control_id": "snapshot_continue_after_load",
+      "primary_blocker": "n05_snapshot_continue_after_load_idempotent",
+      "expected_outcome": "continue_after_load_preserves_idempotency"
+    },
+    {
+      "control_id": "producer_mutation_attempt",
+      "primary_blocker": "n05_producer_mutation_boundary_violation",
+      "expected_outcome": "fail_closed"
+    },
+    {
+      "control_id": "claim_promotion_attempt",
+      "primary_blocker": "n05_claim_promotion_rejected",
+      "expected_outcome": "fail_closed"
+    }
+  ],
+  "snapshot_contract": {
+    "snapshot_roundtrip_required": true,
+    "continue_after_load_required": true,
+    "idempotency_keys_preserved": true,
+    "duplicate_production_after_load_allowed": false
+  },
+  "claim_boundary": {
+    "movement_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  }
+}

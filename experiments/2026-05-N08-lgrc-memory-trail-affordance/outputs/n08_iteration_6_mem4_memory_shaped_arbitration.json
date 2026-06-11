@@ -1,0 +1,963 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 6 passes if memory surface state changes candidate-route evidence and native route arbitration selects according to serialized memory-derived score components.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "arc_of_becoming_interpretation": {
+    "arc_interpretation_digest": "4cbf9ef6faf9383f948b18101a0bf129cf3e00e5a43eae4f20916e3065525ee7",
+    "claim_boundary": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "reason": "MEM4 supports a memory-shaped route-selection candidate only. The narrow memory/trail claim remains closed until MEM6 artifact replay.",
+      "semantic_choice_claim_allowed": false
+    },
+    "classification": {
+      "affordance_status": "operational_as_score_evidence_only",
+      "claim_gate": "closed_until_mem6_artifact_replay",
+      "classification_status": "memory_shaped_route_selection_candidate",
+      "hypothesis": "A_serialized_producer_policy_memory",
+      "mem_level": "MEM4",
+      "not_merely_true_false_endpoint": true
+    },
+    "cultivation": {
+      "next_iteration": "7_MEM5_repeated_memory_shaped_selection",
+      "next_question": "Can repeated route-use, memory update, and memory-shaped arbitration cycles remain replayable without hidden steering or budget drift?",
+      "what_this_iteration_teaches": [
+        "Serialized memory rows can become route-score evidence.",
+        "The no-memory counterfactual separates deterministic tie-breaking from memory-shaped selection.",
+        "This remains a score-policy mechanism and does not solve native geometry-mediated trail memory."
+      ]
+    },
+    "interpretation_id": "n08_i6_arc_of_becoming_mem4_arbitration_v1",
+    "learning_boundary": {
+      "candidate_score_updated_by_memory_component": true,
+      "distinction": "Iteration 6 changes candidate evidence through serialized memory components. It does not change native geometry or coherence flux.",
+      "is_graph_weight_propagation": false,
+      "is_neural_weight_update": false,
+      "is_reinforcement_learning": false,
+      "native_geometry_trail_claimed": false,
+      "policy_updated": false,
+      "pure_coherence_flux_trail_claimed": false,
+      "route_weight_updated": false
+    },
+    "memory_score_delta": 0.0995,
+    "naturalization": {
+      "memory_operational_in_route_selection": true,
+      "naturalization_rung": "Nat3_score_operational_artifact_surface",
+      "self_persistent_memory_observed": true,
+      "self_updating_memory_observed": true,
+      "why_not_more_naturalized": "Memory changes score evidence, but it is still an independent serialized policy surface rather than native geometry/flux."
+    },
+    "observations": [
+      {
+        "interpretation": "Without memory components, both candidates have equal score and deterministic order selects route_a.",
+        "metric": "counterfactual_selected_route",
+        "observation_id": "counterfactual_tie_selects_order_key",
+        "value": "route_a"
+      },
+      {
+        "interpretation": "With serialized memory components, route_b wins because its MEM3 strength and recency score are higher.",
+        "metric": "memory_shaped_selected_route",
+        "observation_id": "memory_components_select_stronger_trace",
+        "value": "route_b"
+      },
+      {
+        "interpretation": "The selected route changes only when memory-derived score components are included.",
+        "metric": "selected_route_delta",
+        "observation_id": "selected_route_delta_observed",
+        "value": {
+          "with_memory": "route_b",
+          "without_memory": "route_a"
+        }
+      },
+      {
+        "interpretation": "The score delta is replayable from serialized MEM3 surface fields, not fixture-side route preference.",
+        "metric": "route_b_minus_route_a_memory_score_delta",
+        "observation_id": "memory_score_delta_serialized",
+        "value": 0.0995
+      }
+    ],
+    "question": "Can serialized MEM3 trail state become route-arbitration evidence without hidden memory inputs?",
+    "selected_route_delta": {
+      "changed": true,
+      "with_memory": "route_b",
+      "without_memory": "route_a"
+    },
+    "source_papers": [
+      "Classification of Becoming",
+      "Cultivation of Becoming",
+      "Naturalization of Becoming"
+    ],
+    "style": "question_observation_classification_cultivation_naturalization"
+  },
+  "artifact_digests": {
+    "arc_interpretation_digest": "4cbf9ef6faf9383f948b18101a0bf129cf3e00e5a43eae4f20916e3065525ee7",
+    "checks_digest": "3e1631b965951352a5f238e5399ef2caf5d88f891c915f608e57ec238c095c84",
+    "controls_digest": "f6f7301589c2e3e2a8d06fdeaaa904001c85bc73c51ba9545ccdd46670c06dfc",
+    "counterfactual_lane_digest": "6402c1f4c73c0fdc569455d463fb255624b03e6844f01b3680df2c1f5efa994c",
+    "memory_shaped_lane_digest": "0ef2545b508d9cbc2551dd538468a747489de31fffa511821613516f8c0f7116"
+  },
+  "checks": {
+    "arc_interpretation_present": true,
+    "arc_not_endpoint_only": true,
+    "candidate_budget_predictions_exact": true,
+    "candidate_route_digests_recompute": true,
+    "candidate_scores_equal_component_sums": true,
+    "candidate_set_digests_recompute": true,
+    "claim_flags_all_false": true,
+    "control_blockers_distinct": true,
+    "controls_passed": true,
+    "controls_present": true,
+    "counterfactual_has_no_memory_components": true,
+    "counterfactual_selected_route_a": true,
+    "hypothesis_a_only_no_native_geometry_claim": true,
+    "memory_candidate_components_allowed": true,
+    "memory_candidate_order_after_mem3": true,
+    "memory_claim_still_closed": true,
+    "memory_runtime_inputs_cite_source_mem3_digest": true,
+    "memory_runtime_inputs_include_required_fields": true,
+    "memory_score_delta_positive": true,
+    "memory_shaped_selected_route_b": true,
+    "memory_surface_read_by_arbitration": true,
+    "native_memory_still_experiment_local": true,
+    "no_topology_or_packet_side_effects": true,
+    "producer_step_boundary_preserved": true,
+    "route_arbitration_digests_recompute": true,
+    "selected_route_delta_recorded": true,
+    "source_manifest_passed": true,
+    "source_mem3_passed": true,
+    "src_clean": true
+  },
+  "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/run_n08_iteration_6_mem4_memory_shaped_arbitration.py",
+  "controls": [
+    {
+      "control_id": "candidate_score_memory_digest_missing",
+      "control_passed": true,
+      "control_row_digest": "1b258ce0daac2a4b52cebd9e17b5535a798eb762a2c3892bac51588f71f50c49",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "candidate_score_memory_digest_missing",
+      "purpose": "Reject memory score components without a memory surface digest."
+    },
+    {
+      "control_id": "candidate_score_hidden_memory_input",
+      "control_passed": true,
+      "control_row_digest": "1618d1cecea9b6248d6c0ca2c5f3118fd265b00843dbf63f7141fe640ee6ef3e",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "candidate_score_hidden_memory_input",
+      "purpose": "Reject memory score inputs not serialized as runtime-visible fields."
+    },
+    {
+      "control_id": "stale_memory_surface_read",
+      "control_passed": true,
+      "control_row_digest": "764b3955357daa490e67d3bd4ef8f6af77d6cb03f1bffd50d84b9c57360516b8",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "stale_memory_surface_read",
+      "purpose": "Reject candidate scoring against a stale MEM2 surface digest."
+    },
+    {
+      "control_id": "arbitration_memory_order_invalid",
+      "control_passed": true,
+      "control_row_digest": "be6454b293d66f9d4ba29a6096bdf24c71ddb357ed689b6f1a59ae9230266f75",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "arbitration_memory_order_invalid",
+      "purpose": "Reject candidate scoring before the MEM3 memory update row."
+    },
+    {
+      "control_id": "memory_budget_discontinuity",
+      "control_passed": true,
+      "control_row_digest": "5cd8af098b46d5f75e0c5acf9116761221cb0a0a037a511cccca9d4a7f31b3e4",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "memory_budget_discontinuity",
+      "purpose": "Reject memory-shaped scoring from invalid memory budget rows."
+    },
+    {
+      "control_id": "node_plus_packet_budget_discontinuity",
+      "control_passed": true,
+      "control_row_digest": "6b3e88046afc2fc567198c51c26176486845a2a702023693939101ec056182e8",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "node_plus_packet_budget_discontinuity",
+      "purpose": "Reject memory-shaped scoring that hides physical budget drift."
+    },
+    {
+      "control_id": "no_memory_surface_read_by_arbitration",
+      "control_passed": true,
+      "control_row_digest": "38042981a481f2a3cf23c98beccdcba62bc6064c9c3b91c241c683dc35054e2b",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "no_memory_surface_read_by_arbitration",
+      "purpose": "Reject MEM4 claim if arbitration does not read memory evidence."
+    },
+    {
+      "control_id": "claim_promotion",
+      "control_passed": true,
+      "control_row_digest": "73c56da1427d2fbad40290325cd94be755f84d854b52e39fe8ae213ed3cce1c7",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "claim_promotion",
+      "purpose": "Reject MEM4 promotion to memory claim, ACO, agency, or movement."
+    }
+  ],
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "generated_at": "2026-06-07T16:06:37.414497+00:00",
+  "git": {
+    "head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "hypothesis_boundary": {
+    "hypothesis": "A_serialized_producer_policy_memory",
+    "hypothesis_b_remains_open": true,
+    "independent_memory_strength_used_as_physical_flux": false,
+    "independent_memory_strength_used_as_score_evidence": true,
+    "native_geometry_mediated_trail_path": false,
+    "native_geometry_trail_claimed": false,
+    "pure_coherence_flux_trail_claimed": false,
+    "serialized_memory_policy_path": true
+  },
+  "inherited_native_policy_blockers": [
+    "native_route_conductance_memory_policy_missing",
+    "native_trail_memory_surface_missing",
+    "native_memory_surface_serialization_policy_missing",
+    "native_memory_surface_keying_policy_missing",
+    "native_memory_budget_accounting_policy_missing",
+    "native_memory_cross_cycle_persistence_policy_missing",
+    "native_memory_decay_policy_missing",
+    "native_memory_reinforcement_policy_missing",
+    "native_memory_candidate_score_component_semantics_missing",
+    "native_memory_artifact_replay_validator_missing"
+  ],
+  "iteration": 6,
+  "lanes": {
+    "counterfactual_without_memory_component": {
+      "candidate_route_records": [
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 0.0,
+            "node_plus_packet_budget_before": 0.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_mem3_update_window_policy_digest": "3adaccba822f131195901dc3938687a600cae7b6e1016a172477bcad138750ee",
+          "candidate_memory_budget_prediction": {
+            "memory_budget_after": 0.655,
+            "memory_budget_before": 0.5,
+            "memory_budget_error": 0.0
+          },
+          "candidate_memory_event_time_key": 5.5,
+          "candidate_memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "candidate_memory_policy_id": "n08_memory_policy_v1",
+          "candidate_memory_scheduler_event_index": 25,
+          "candidate_memory_surface_digest": "a0ba9befc3a8ad113271636fe3a799f63deb5e10baaafebfb674629fd8757447",
+          "candidate_memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:mem3:3adaccba822f",
+          "candidate_memory_surface_state_snapshot_digest": "284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+          "candidate_order_key": "route_a",
+          "candidate_route_digest": "bec628c9779ac5817dafbf89d98369a13eb778fe199840c9efa5a1cc8b9c3472",
+          "candidate_route_id": "route_a",
+          "candidate_route_score": 0,
+          "candidate_route_use_event_digest": "04706f438525fecc15574b77f01f06720d8bd063090cc38dbe574b69af4c3b92",
+          "candidate_runtime_visible_inputs": [
+            "counterfactual_without_memory_component",
+            "candidate_score_components",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {},
+          "candidate_score_is_memory_shaped": false,
+          "candidate_selected_sink_id": 2,
+          "candidate_topology_event_kind": "not_committed_for_mem4_selection_only",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+          "claim_flags": {
+            "aco_like_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "runtime_identity_acceptance_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 6.0,
+          "evidence_class": "memory_shaped_route_arbitration",
+          "experiment": "N08",
+          "hidden_memory_input_used": false,
+          "hypothesis": "A_serialized_producer_policy_memory",
+          "lane_id": "n08_mem4_counterfactual_without_memory_component",
+          "lane_kind": "counterfactual_without_memory_component",
+          "lgrc_runtime_level": "lgrc3",
+          "mem_level": "MEM4",
+          "mem_level_is_evidence_classification": true,
+          "memory_component_names_allowed": [
+            "memory_trail_strength",
+            "memory_surface_digest_match",
+            "memory_recency_weight",
+            "memory_decay_adjusted_strength"
+          ],
+          "memory_component_source": "not_used_in_counterfactual",
+          "memory_score_component_count": 0,
+          "memory_surface_read_by_arbitration": false,
+          "native_geometry_trail_claimed": false,
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "pure_coherence_flux_trail_claimed": false,
+          "route_specific_hidden_preference_used": false,
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 35,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "score_only_policy_path": true,
+          "selected_topology_event_digest": null,
+          "selected_topology_event_id": null
+        },
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 0.0,
+            "node_plus_packet_budget_before": 0.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_mem3_update_window_policy_digest": "3adaccba822f131195901dc3938687a600cae7b6e1016a172477bcad138750ee",
+          "candidate_memory_budget_prediction": {
+            "memory_budget_after": 0.7,
+            "memory_budget_before": 0.5,
+            "memory_budget_error": 0.0
+          },
+          "candidate_memory_event_time_key": 5.51,
+          "candidate_memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "candidate_memory_policy_id": "n08_memory_policy_v1",
+          "candidate_memory_scheduler_event_index": 26,
+          "candidate_memory_surface_digest": "b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+          "candidate_memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:mem3:3adaccba822f",
+          "candidate_memory_surface_state_snapshot_digest": "284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+          "candidate_order_key": "route_b",
+          "candidate_route_digest": "6f80bea69e673bc39d40953e9257f8e7aa5871c0c12fecd10785c733524ddd0c",
+          "candidate_route_id": "route_b",
+          "candidate_route_score": 0,
+          "candidate_route_use_event_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+          "candidate_runtime_visible_inputs": [
+            "counterfactual_without_memory_component",
+            "candidate_score_components",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {},
+          "candidate_score_is_memory_shaped": false,
+          "candidate_selected_sink_id": 3,
+          "candidate_topology_event_kind": "not_committed_for_mem4_selection_only",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+          "claim_flags": {
+            "aco_like_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "runtime_identity_acceptance_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 6.01,
+          "evidence_class": "memory_shaped_route_arbitration",
+          "experiment": "N08",
+          "hidden_memory_input_used": false,
+          "hypothesis": "A_serialized_producer_policy_memory",
+          "lane_id": "n08_mem4_counterfactual_without_memory_component",
+          "lane_kind": "counterfactual_without_memory_component",
+          "lgrc_runtime_level": "lgrc3",
+          "mem_level": "MEM4",
+          "mem_level_is_evidence_classification": true,
+          "memory_component_names_allowed": [
+            "memory_trail_strength",
+            "memory_surface_digest_match",
+            "memory_recency_weight",
+            "memory_decay_adjusted_strength"
+          ],
+          "memory_component_source": "not_used_in_counterfactual",
+          "memory_score_component_count": 0,
+          "memory_surface_read_by_arbitration": false,
+          "native_geometry_trail_claimed": false,
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "pure_coherence_flux_trail_claimed": false,
+          "route_specific_hidden_preference_used": false,
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 36,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "score_only_policy_path": true,
+          "selected_topology_event_digest": null,
+          "selected_topology_event_id": null
+        }
+      ],
+      "candidate_score_components_by_route": {
+        "route_a": {},
+        "route_b": {}
+      },
+      "candidate_scores_by_route": {
+        "route_a": 0,
+        "route_b": 0
+      },
+      "candidate_set_record": {
+        "arbitration_window_id": "n08_mem4_arbitration_window:n08_mem4_counterfactual_without_memory_component",
+        "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "candidate_route_digests": [
+          "bec628c9779ac5817dafbf89d98369a13eb778fe199840c9efa5a1cc8b9c3472",
+          "6f80bea69e673bc39d40953e9257f8e7aa5871c0c12fecd10785c733524ddd0c"
+        ],
+        "candidate_route_ids": [
+          "route_a",
+          "route_b"
+        ],
+        "candidate_set_digest": "6960657b8233d70f972bb3eca04e0f32e02bd280df4e16fe4aee1eb8534e16c6",
+        "candidate_set_id": "n08-native-route-candidate-set:n08_mem4_counterfactual_without_memory_component",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "aco_like_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "runtime_identity_acceptance_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 6.05,
+        "evidence_class": "memory_shaped_route_arbitration",
+        "experiment": "N08",
+        "hypothesis": "A_serialized_producer_policy_memory",
+        "idempotency_key": "8cc20da05f7b95baff0d874a39ee87e74b0e1debb024263d0a323fedba6245e5",
+        "lane_id": "n08_mem4_counterfactual_without_memory_component",
+        "lane_kind": "counterfactual_without_memory_component",
+        "lgrc_runtime_level": "lgrc3",
+        "mem_level": "MEM4",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 40,
+        "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "unresolved_tie_policy": "deterministic_candidate_order_key"
+      },
+      "lane_id": "n08_mem4_counterfactual_without_memory_component",
+      "lane_kind": "counterfactual_without_memory_component",
+      "route_arbitration_record": {
+        "arbitration_reason_code": "native_route_arbitration_selected_declared_order_tiebreak",
+        "arbitration_rule": "highest_score_then_candidate_order_key",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key",
+          "candidate_score_components",
+          "counterfactual_without_memory_component"
+        ],
+        "arbitration_score": 0,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "6960657b8233d70f972bb3eca04e0f32e02bd280df4e16fe4aee1eb8534e16c6",
+        "candidate_set_id": "n08-native-route-candidate-set:n08_mem4_counterfactual_without_memory_component",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+        "claim_flags": {
+          "aco_like_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "runtime_identity_acceptance_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 6.1,
+        "evidence_class": "memory_shaped_route_arbitration",
+        "experiment": "N08",
+        "hypothesis": "A_serialized_producer_policy_memory",
+        "idempotency_key": "c046974f3d4d0277b5a3b96a2df45bf44e50b0a724bf1711f99d69f8224070c1",
+        "lane_id": "n08_mem4_counterfactual_without_memory_component",
+        "lane_kind": "counterfactual_without_memory_component",
+        "lgrc_runtime_level": "lgrc3",
+        "mem_level": "MEM4",
+        "mem_level_is_evidence_classification": true,
+        "native_route_arbitration_digest": "fc86e61b4e81e4d311832a495eb086ce9139cd4a66f66976dec090d4c37caac8",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "n08-native-route-arbitration:n08_mem4_counterfactual_without_memory_component:route_a",
+        "packet_scheduled": false,
+        "rejected_candidate_route_digests": [
+          "6f80bea69e673bc39d40953e9257f8e7aa5871c0c12fecd10785c733524ddd0c"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 45,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": "bec628c9779ac5817dafbf89d98369a13eb778fe199840c9efa5a1cc8b9c3472",
+        "selected_candidate_route_id": "route_a",
+        "selected_topology_event_digest": null,
+        "selected_topology_event_id": null,
+        "state_mutated": false,
+        "topology_event_committed": false
+      },
+      "selected_candidate_route_digest": "bec628c9779ac5817dafbf89d98369a13eb778fe199840c9efa5a1cc8b9c3472",
+      "selected_route_id": "route_a"
+    },
+    "memory_shaped_arbitration": {
+      "candidate_route_records": [
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 0.0,
+            "node_plus_packet_budget_before": 0.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_mem3_update_window_policy_digest": "3adaccba822f131195901dc3938687a600cae7b6e1016a172477bcad138750ee",
+          "candidate_memory_budget_prediction": {
+            "memory_budget_after": 0.655,
+            "memory_budget_before": 0.5,
+            "memory_budget_error": 0.0
+          },
+          "candidate_memory_event_time_key": 5.5,
+          "candidate_memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "candidate_memory_policy_id": "n08_memory_policy_v1",
+          "candidate_memory_scheduler_event_index": 25,
+          "candidate_memory_surface_digest": "a0ba9befc3a8ad113271636fe3a799f63deb5e10baaafebfb674629fd8757447",
+          "candidate_memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:mem3:3adaccba822f",
+          "candidate_memory_surface_state_snapshot_digest": "284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+          "candidate_order_key": "route_a",
+          "candidate_route_digest": "af55b2f9ed867ed75a3c828934c684853733853805adeecf2d22d9a0ed9b14df",
+          "candidate_route_id": "route_a",
+          "candidate_route_score": 0.8455,
+          "candidate_route_use_event_digest": "04706f438525fecc15574b77f01f06720d8bd063090cc38dbe574b69af4c3b92",
+          "candidate_runtime_visible_inputs": [
+            "memory_surface_id:n08-memory-surface:c0a6fdca6c30cca1:mem3:3adaccba822f",
+            "memory_surface_digest:a0ba9befc3a8ad113271636fe3a799f63deb5e10baaafebfb674629fd8757447",
+            "memory_surface_state_snapshot_digest:284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+            "memory_policy_id:n08_memory_policy_v1",
+            "route_use_event_digest:04706f438525fecc15574b77f01f06720d8bd063090cc38dbe574b69af4c3b92",
+            "memory_event_time_key:5.5",
+            "candidate_score_components",
+            "serialized_memory_component_policy"
+          ],
+          "candidate_score_components": {
+            "memory_decay_adjusted_strength": 0.0405,
+            "memory_recency_weight": 0.05,
+            "memory_surface_digest_match": 0.1,
+            "memory_trail_strength": 0.655
+          },
+          "candidate_score_is_memory_shaped": true,
+          "candidate_selected_sink_id": 2,
+          "candidate_topology_event_kind": "not_committed_for_mem4_selection_only",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+          "claim_flags": {
+            "aco_like_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "runtime_identity_acceptance_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 6.2,
+          "evidence_class": "memory_shaped_route_arbitration",
+          "experiment": "N08",
+          "hidden_memory_input_used": false,
+          "hypothesis": "A_serialized_producer_policy_memory",
+          "lane_id": "n08_mem4_memory_shaped_arbitration",
+          "lane_kind": "memory_shaped_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mem_level": "MEM4",
+          "mem_level_is_evidence_classification": true,
+          "memory_component_names_allowed": [
+            "memory_trail_strength",
+            "memory_surface_digest_match",
+            "memory_recency_weight",
+            "memory_decay_adjusted_strength"
+          ],
+          "memory_component_source": "n08_iteration_5_mem3_decay_reinforcement",
+          "memory_score_component_count": 4,
+          "memory_surface_read_by_arbitration": true,
+          "native_geometry_trail_claimed": false,
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "pure_coherence_flux_trail_claimed": false,
+          "route_specific_hidden_preference_used": false,
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 45,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "score_only_policy_path": true,
+          "selected_topology_event_digest": null,
+          "selected_topology_event_id": null
+        },
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 0.0,
+            "node_plus_packet_budget_before": 0.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_mem3_update_window_policy_digest": "3adaccba822f131195901dc3938687a600cae7b6e1016a172477bcad138750ee",
+          "candidate_memory_budget_prediction": {
+            "memory_budget_after": 0.7,
+            "memory_budget_before": 0.5,
+            "memory_budget_error": 0.0
+          },
+          "candidate_memory_event_time_key": 5.51,
+          "candidate_memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "candidate_memory_policy_id": "n08_memory_policy_v1",
+          "candidate_memory_scheduler_event_index": 26,
+          "candidate_memory_surface_digest": "b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+          "candidate_memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:mem3:3adaccba822f",
+          "candidate_memory_surface_state_snapshot_digest": "284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+          "candidate_order_key": "route_b",
+          "candidate_route_digest": "e856d8fb1fe78aa972d784f9e4041ee6617b10db1d24b19aac0930d977b2bdd7",
+          "candidate_route_id": "route_b",
+          "candidate_route_score": 0.945,
+          "candidate_route_use_event_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+          "candidate_runtime_visible_inputs": [
+            "memory_surface_id:n08-memory-surface:3dca55df466ac3a1:mem3:3adaccba822f",
+            "memory_surface_digest:b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+            "memory_surface_state_snapshot_digest:284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+            "memory_policy_id:n08_memory_policy_v1",
+            "route_use_event_digest:e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+            "memory_event_time_key:5.51",
+            "candidate_score_components",
+            "serialized_memory_component_policy"
+          ],
+          "candidate_score_components": {
+            "memory_decay_adjusted_strength": 0.045,
+            "memory_recency_weight": 0.1,
+            "memory_surface_digest_match": 0.1,
+            "memory_trail_strength": 0.7
+          },
+          "candidate_score_is_memory_shaped": true,
+          "candidate_selected_sink_id": 3,
+          "candidate_topology_event_kind": "not_committed_for_mem4_selection_only",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+          "claim_flags": {
+            "aco_like_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "agentic_like_claim_allowed": false,
+            "ant_colony_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "goal_proxy_regulation_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "intention_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "memory_or_trail_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "personhood_claim_allowed": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "runtime_identity_acceptance_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "unrestricted_identity_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 6.21,
+          "evidence_class": "memory_shaped_route_arbitration",
+          "experiment": "N08",
+          "hidden_memory_input_used": false,
+          "hypothesis": "A_serialized_producer_policy_memory",
+          "lane_id": "n08_mem4_memory_shaped_arbitration",
+          "lane_kind": "memory_shaped_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mem_level": "MEM4",
+          "mem_level_is_evidence_classification": true,
+          "memory_component_names_allowed": [
+            "memory_trail_strength",
+            "memory_surface_digest_match",
+            "memory_recency_weight",
+            "memory_decay_adjusted_strength"
+          ],
+          "memory_component_source": "n08_iteration_5_mem3_decay_reinforcement",
+          "memory_score_component_count": 4,
+          "memory_surface_read_by_arbitration": true,
+          "native_geometry_trail_claimed": false,
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "pure_coherence_flux_trail_claimed": false,
+          "route_specific_hidden_preference_used": false,
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 46,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "score_only_policy_path": true,
+          "selected_topology_event_digest": null,
+          "selected_topology_event_id": null
+        }
+      ],
+      "candidate_score_components_by_route": {
+        "route_a": {
+          "memory_decay_adjusted_strength": 0.0405,
+          "memory_recency_weight": 0.05,
+          "memory_surface_digest_match": 0.1,
+          "memory_trail_strength": 0.655
+        },
+        "route_b": {
+          "memory_decay_adjusted_strength": 0.045,
+          "memory_recency_weight": 0.1,
+          "memory_surface_digest_match": 0.1,
+          "memory_trail_strength": 0.7
+        }
+      },
+      "candidate_scores_by_route": {
+        "route_a": 0.8455,
+        "route_b": 0.945
+      },
+      "candidate_set_record": {
+        "arbitration_window_id": "n08_mem4_arbitration_window:n08_mem4_memory_shaped_arbitration",
+        "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "candidate_route_digests": [
+          "e856d8fb1fe78aa972d784f9e4041ee6617b10db1d24b19aac0930d977b2bdd7",
+          "af55b2f9ed867ed75a3c828934c684853733853805adeecf2d22d9a0ed9b14df"
+        ],
+        "candidate_route_ids": [
+          "route_b",
+          "route_a"
+        ],
+        "candidate_set_digest": "4fcb1a43c3849912ed121caec4bd68ec57484e35dd6c6f93da9cb3153700b896",
+        "candidate_set_id": "n08-native-route-candidate-set:n08_mem4_memory_shaped_arbitration",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "aco_like_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "runtime_identity_acceptance_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 6.25,
+        "evidence_class": "memory_shaped_route_arbitration",
+        "experiment": "N08",
+        "hypothesis": "A_serialized_producer_policy_memory",
+        "idempotency_key": "73f4aaa99e3eddf9990c85d2340349572bea4db4908bc9ff307906c33f10f76b",
+        "lane_id": "n08_mem4_memory_shaped_arbitration",
+        "lane_kind": "memory_shaped_arbitration",
+        "lgrc_runtime_level": "lgrc3",
+        "mem_level": "MEM4",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 50,
+        "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "unresolved_tie_policy": "deterministic_candidate_order_key"
+      },
+      "lane_id": "n08_mem4_memory_shaped_arbitration",
+      "lane_kind": "memory_shaped_arbitration",
+      "route_arbitration_record": {
+        "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+        "arbitration_rule": "highest_score_then_candidate_order_key",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key",
+          "candidate_score_components",
+          "memory_surface_digest:b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+          "memory_surface_state_snapshot_digest:284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209"
+        ],
+        "arbitration_score": 0.945,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "4fcb1a43c3849912ed121caec4bd68ec57484e35dd6c6f93da9cb3153700b896",
+        "candidate_set_id": "n08-native-route-candidate-set:n08_mem4_memory_shaped_arbitration",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_ceiling": "mem4_memory_shaped_route_selection_candidate",
+        "claim_flags": {
+          "aco_like_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "agentic_like_claim_allowed": false,
+          "ant_colony_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "goal_proxy_regulation_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "memory_or_trail_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "personhood_claim_allowed": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "runtime_identity_acceptance_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "unrestricted_identity_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 6.3,
+        "evidence_class": "memory_shaped_route_arbitration",
+        "experiment": "N08",
+        "hypothesis": "A_serialized_producer_policy_memory",
+        "idempotency_key": "e57e4852b8c733cc2927f80663a9e2979c3186803c97dd1288f6ca3869b121d5",
+        "lane_id": "n08_mem4_memory_shaped_arbitration",
+        "lane_kind": "memory_shaped_arbitration",
+        "lgrc_runtime_level": "lgrc3",
+        "mem_level": "MEM4",
+        "mem_level_is_evidence_classification": true,
+        "native_route_arbitration_digest": "de7100ef762ab666835dac8bd6d64c14f3f7733d00c656743bc3d0a53b14f9bf",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "n08-native-route-arbitration:n08_mem4_memory_shaped_arbitration:route_b",
+        "packet_scheduled": false,
+        "rejected_candidate_route_digests": [
+          "af55b2f9ed867ed75a3c828934c684853733853805adeecf2d22d9a0ed9b14df"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 55,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": "e856d8fb1fe78aa972d784f9e4041ee6617b10db1d24b19aac0930d977b2bdd7",
+        "selected_candidate_route_id": "route_b",
+        "selected_topology_event_digest": null,
+        "selected_topology_event_id": null,
+        "state_mutated": false,
+        "topology_event_committed": false
+      },
+      "selected_candidate_route_digest": "e856d8fb1fe78aa972d784f9e4041ee6617b10db1d24b19aac0930d977b2bdd7",
+      "selected_route_id": "route_b"
+    }
+  },
+  "mem4_score_component_contract": {
+    "allowed_memory_component_names": [
+      "memory_trail_strength",
+      "memory_surface_digest_match",
+      "memory_recency_weight",
+      "memory_decay_adjusted_strength"
+    ],
+    "counterfactual_without_memory_component_required": true,
+    "required_candidate_runtime_visible_input_prefixes": [
+      "memory_surface_id:",
+      "memory_surface_digest:",
+      "memory_surface_state_snapshot_digest:",
+      "memory_policy_id:",
+      "route_use_event_digest:",
+      "memory_event_time_key:"
+    ],
+    "score_invariant": "candidate_route_score == sum(candidate_score_components)"
+  },
+  "mem_level": "MEM4",
+  "output_digest": "f154865ec31bcd2187b777682cb58269d2845c92d981e1196507cb53a08d6cc5",
+  "output_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "output_digest"
+    ],
+    "included": "all output fields except generated_at and output_digest",
+    "stable_across_same_inputs": true
+  },
+  "producer_step_boundary": {
+    "primary_blocker": "producer_mutation_boundary_violation",
+    "producer_may_mutate_memory_surface": false,
+    "producer_may_mutate_node_coherence": false,
+    "producer_may_mutate_packet_ledger": false,
+    "producer_scheduling_allowed": true,
+    "step_remains_packet_mutation_boundary": true
+  },
+  "schema": "n08_iteration_6_mem4_memory_shaped_arbitration_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_2_fixture_manifest_validation.json": "dae2805fc7bcb4cd85a8f6f204ceacf4b06196fa7790e7d447796d87c877ee70",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_5_mem3_decay_reinforcement.json": "21383fe9661e98ebaf0b0956c35e5bc0268b85adbe936843b7b5147f3b5ba45f"
+  },
+  "source_reports": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_5_mem3_decay_reinforcement.md": "19b9ca7b7fc810405bdb6dcc8703c0e3e5afe2d34abaaa60b6d86af1f055bd62"
+  },
+  "status": "passed"
+}

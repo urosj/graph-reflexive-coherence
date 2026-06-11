@@ -1,0 +1,110 @@
+seed_schema: pygrc.landscape_seed
+seed_version: '0.1'
+meta:
+  name: Corrected GRCL9 Cell Support Loss Identity Decay Probe
+  description: Collapse-adjacent ComposingCells seed with a weak boundary support
+    path and suppressed birth pressure.
+  source_kind: manual_seed
+  source_reference: implementation/GRC9-GRCL9-GrowthCorrection-Checklist.md#iteration-52-corrected-grcl-9-composite-reruns
+  source_schema_version: '0.1'
+  source_domain: grcl9
+  tags:
+  - grcl9
+  - composing_cells
+  - support_loss
+  - valley
+  - structural_probe
+  - corrected_growth
+  - front_capacity
+  translator_name: manual_seed_authoring
+  translator_version: '0.1'
+  translation_mode: semantic_enrichment
+  translation_notes:
+  - This seed targets support-loss pressure using existing GRC9 transport and checkpoint
+    evidence.
+  - It does not claim source-level identity decay has occurred.
+  - 'Corrected growth migration: any growth_locus compiles to front_capacity semantics
+    instead of legacy broad parent eligibility.'
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+primitives:
+- id: identity_basin
+  type: basin
+  coherence_prior: 1.0
+  depth_hint: 0
+  boundary_ids:
+  - support_boundary
+  chart_center_hint:
+  - 0.45
+  - 0.5
+- id: support_boundary
+  type: ridge
+  owner_id: identity_basin
+  adjacent_ids:
+  - outer_plateau
+  ridge_kind: support_boundary
+  permeability_hint:
+    class: weakening
+- id: weak_support_valley
+  type: valley
+  from_id: identity_basin
+  to_id: outer_plateau
+  channel_role: identity_support_loss
+  width_hint: 0.05
+  extensions:
+    grcl9:
+      term_kind: boundary_stratum
+      term_id: cell_support_loss_identity_decay_probe_boundary_stratum
+      motif_id: growth_pressure
+      stratum_id: support_loss_boundary
+      parent_region_id: parent
+      inactive_port: 5
+      boundary_role: preexisting_front_capacity
+- id: outer_plateau
+  type: plateau
+  coherence_prior: 0.2
+  hosted_primitive_ids:
+  - weak_support_pressure
+  chart_center_hint:
+  - 0.62
+  - 0.5
+- id: weak_support_pressure
+  type: saddle
+  coherence_prior: 0.05
+  chart_center_hint:
+  - 0.56
+  - 0.5
+  branch_target_ids:
+  - weak_support_valley
+  - outer_plateau
+  extensions:
+    grcl9:
+      term_kind: gradient_pressure
+      term_id: cell_support_loss_identity_decay_probe_gradient_pressure
+      motif_id: growth_pressure
+      pressure_id: weakening_support_pressure
+      boundary_stratum_id: support_loss_boundary
+      pressure_class: support_loss_low
+      lambda_birth: 0.05
+      growth_semantics: front_capacity
+      front_capacity_source: preexisting_front
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: corrected_cell_support_loss_identity_decay_probe
+    manifest_entry_id: grcl9_lowering_growth_pressure_v1
+    expected_selector_ids:
+    - support_loss_pressure_candidate
+    notes: Corrected 5.2 composite replay seed; legacy broad-growth source has been
+      migrated to front-capacity semantics. Collapse-adjacent support-loss structural
+      probe; no runtime collapse or solved identity decay is claimed.

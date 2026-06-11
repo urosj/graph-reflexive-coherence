@@ -1,0 +1,21 @@
+{
+  "artifact_schema_version": "grc9v3_lane_c_comparison_v1",
+  "candidate_count_lane_a_total": 25,
+  "candidate_count_lane_b_total": 40,
+  "candidate_delta_rows": 15,
+  "classification": "lane_c_comparison_complete_direct_column_h_branch_delta_observed_with_boundaries",
+  "comparison_row_count": 60,
+  "degree_8_near_saturation_blocked": true,
+  "direct_runtime_proxy_branch_rows": 15,
+  "identity_claim_boundary": "mechanical expansion is not identity; identity status uses post-event basin persistence",
+  "lane_a_column_evidence_label": "derived_non_gating",
+  "lane_a_id": "current_hybrid_signed_hessian",
+  "lane_b_direct_branch_evidence_rule": "spark_lane == grc9v3_column_h_assisted and column_h_branch_hit with a column-H gate reason",
+  "lane_b_id": "grc9v3_column_h_assisted",
+  "lane_c_id": "comparison",
+  "refinement_count_lane_a_total": 25,
+  "refinement_count_lane_b_total": 40,
+  "refinement_delta_rows": 15,
+  "seed": 0,
+  "signed_hessian_only_lane_b_candidate_rows": 25
+}

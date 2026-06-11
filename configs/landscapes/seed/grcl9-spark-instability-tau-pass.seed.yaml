@@ -1,0 +1,80 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Spark Instability Tau Pass
+  description: Seed-backed GRCL-9 critical region with an authored unstable direction and weak support/high cut profile.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-spark-instability-tau-pass
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: candidate
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [support_w, support_e]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: spark_instability_tau_pass_critical_region
+        motif_id: spark_instability
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: single_candidate
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: anisotropic
+        spark_gate_intent: saturation_instability
+  - id: unstable_axis
+    type: ridge
+    adjacent_ids: [candidate, support_e]
+    thickness_hint: 0.02
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcl9:
+        term_kind: unstable_direction
+        term_id: spark_instability_tau_pass_unstable_direction
+        motif_id: spark_instability
+        direction_id: unstable_axis
+        region_id: candidate
+        axis_role: row_axis
+        support_class: weak_support
+        cut_class: high_cut
+        tau_instability: 0.25
+  - id: support_w
+    type: basin
+    coherence_prior: 0.4
+    depth_hint: 0
+    chart_center_hint: [0.3, 0.5]
+  - id: support_e
+    type: basin
+    coherence_prior: 0.4
+    depth_hint: 0
+    chart_center_hint: [0.7, 0.5]
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: spark_instability_tau_pass
+    manifest_entry_id: grcl9_lowering_spark_instability_v1
+    notes: Seed-backed GRCL-9 instability pass example.

@@ -1,0 +1,155 @@
+{
+  "attempted_promotion": "native_lgrc_choice_selection_candidate",
+  "blocked_claims": [
+    "native_lgrc_choice_selection",
+    "semantic_choice",
+    "agency",
+    "rc_identity_collapse",
+    "identity_acceptance",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "boundary": {
+    "candidate_routes_executable_when_supplied": true,
+    "interpretation": "Iteration 21 shows that multiple topology-mutating continuations are executable and artifact-valid when supplied, but current LGRC does not natively choose among unresolved competing topology routes. Declared local preference remains deterministic bias, not native choice, agency, semantic choice, or RC identity collapse.",
+    "native_lgrc_choice_selection_supported": false,
+    "selection_requires_experiment_supplied_topology_event": true,
+    "topology_mutating_movement_candidate_remains_supported": true
+  },
+  "candidate_routes": {
+    "route_a": {
+      "artifact_replay_passed": true,
+      "node_plus_packet_budget_exact": true,
+      "passed": true,
+      "producer_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+      "producer_uses_topology_state_reabsorption_record": true,
+      "route_id": "route_a_forward_collapse",
+      "scheduled_packet_processed_by_step": true,
+      "status": "passed"
+    },
+    "route_b": {
+      "artifact_replay_passed": true,
+      "node_plus_packet_budget_exact": true,
+      "passed": true,
+      "producer_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+      "producer_uses_topology_state_reabsorption_record": true,
+      "route_id": "route_b_reversed_collapse",
+      "scheduled_packet_processed_by_step": true,
+      "status": "passed"
+    }
+  },
+  "checks": {
+    "both_candidate_routes_executable_when_supplied": true,
+    "claim_boundary_preserved": true,
+    "competing_topology_mutating_routes_constructed": true,
+    "iteration_20_baseline_passed": true,
+    "local_preference_distinguished_from_native_choice": true,
+    "no_native_competing_route_arbitrator_present": true,
+    "route_a_artifact_replay_passed": true,
+    "route_b_artifact_replay_passed": true,
+    "selected_route_provenance_is_experiment_supplied": true,
+    "unresolved_competing_route_control_blocks_choice": true
+  },
+  "claim_ceiling": "topology_mutating_movement_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": true,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "semantic_choice_claim_allowed": false,
+    "topology_mutating_movement_claim_allowed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "claim_promotion_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "choice_agency_identity_claims_not_emitted_by_runtime"
+    },
+    "local_preference_boundary": {
+      "balanced_local_preference_available": true,
+      "interpretation": "Balanced local preference is deterministic local symmetry breaking inside declared branch geometry. It is useful route-bias evidence, but it is not native LGRC choice selection or semantic choice.",
+      "native_branch_arbitration_supported": false,
+      "passed_boundary_check": true,
+      "primary_reason": "deterministic_local_preference_is_not_native_choice",
+      "selection_mechanism": "local_preference_breaks_near_tie_by_native_branch_eligibility",
+      "source_artifact": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18f_balanced_local_preference_fork_report.json",
+        "sha256": "d3f442ec0b91dcbf451c65e934179997f5c4f245853bf467ac2a6ff45446f727"
+      }
+    },
+    "unresolved_competing_route_control": {
+      "candidate_routes_available": [
+        "route_a_forward_collapse",
+        "route_b_reversed_collapse"
+      ],
+      "control_id": "unresolved_competing_topology_routes_no_native_arbitration",
+      "native_route_arbitration_result": null,
+      "passed_negative_control": true,
+      "primary_blocker": "native_lgrc_topology_route_selection_not_exposed",
+      "reason": "LGRC can validate and execute each supplied topology-mutating continuation, but current runtime APIs require selected_sink_id and lineage transfer map to be declared before process_causal_collapse_reabsorption."
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21_native_lgrc_choice_selection_boundary.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface_plus_topology_state_reabsorption",
+  "geometry_scope": "topology_mutating",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "9fb22cb4737b6f6f6c393491cd472b83911b1b8c"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M ../../../../Obsidian/SentientLife/Self/26-05/2026-05-22.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/README.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_continuation_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n M implementation/Phase-8-LGRC9-ImplementationChecklist.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M tests/models/test_lgrc_9_v3_runtime.py\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-LGRC-Applications.md\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-RC-ACO.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21_native_lgrc_choice_selection_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22_identity_through_topology_mutation_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter20_topology_mutating_repeatability_stress.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21_native_lgrc_choice_selection_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter22_identity_through_topology_mutation_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter20_topology_mutating_repeatability_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21_native_lgrc_choice_selection_boundary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter22_identity_through_topology_mutation_boundary.py\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationChecklist.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationPlan.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayChecklist.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayPlan.md"
+    }
+  },
+  "input_ceiling": "topology_mutating_movement_candidate",
+  "iteration": "21",
+  "movement_substrate": "S7_port_graph_topology_lineage_probe_v1",
+  "next_iteration": "22_identity_through_topology_mutation_boundary",
+  "primary_blocker": "native_lgrc_topology_route_selection_not_exposed",
+  "promotion_result": "blocked",
+  "report_kind": "n04_iter21_native_lgrc_choice_selection_boundary_v1",
+  "route_selection_provenance": {
+    "native_choice_selection_policy_present": false,
+    "native_competing_topology_route_arbitrator_present": false,
+    "native_unresolved_route_set_api_present": false,
+    "producer_selected_topology_event": false,
+    "selected_route_source": "experiment_supplied_topology_event_arguments",
+    "selected_sink_id_supplied_by_experiment": true,
+    "selected_sink_id_supplied_by_runtime": false,
+    "step_selected_among_competing_topology_events": false
+  },
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_18f": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18f_balanced_local_preference_fork_report.json",
+      "sha256": "d3f442ec0b91dcbf451c65e934179997f5c4f245853bf467ac2a6ff45446f727"
+    },
+    "iteration_20": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json",
+      "sha256": "6794efd6522afddec262dde9e2487a4ebfe5cc771035b230ecd4ee5b21adf59b"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "port_graph"
+}

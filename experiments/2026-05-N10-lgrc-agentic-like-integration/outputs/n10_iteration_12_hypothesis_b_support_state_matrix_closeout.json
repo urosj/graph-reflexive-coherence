@@ -1,0 +1,305 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 12 passes if the bounded N10 full composition is validated as support-sensitive: intact and mild-withdrawal support may preserve the composition, disrupted support blocks or downgrades it, and explicit restoration can resume it without erasing disruption history. The closeout is artifact-only, source-backed, budget-clean, and claim-clean.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_only_replay": {
+    "artifact_only": true,
+    "replay_chain": [
+      {
+        "artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_8_bounded_repeated_integration.json",
+        "step": "load_support_intact_and_mild_withdrawal_rows"
+      },
+      {
+        "artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_9_artifact_only_closeout.json",
+        "step": "load_hypothesis_a_closeout"
+      },
+      {
+        "artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_10_full_composition_disrupted_support_control.json",
+        "step": "load_disrupted_support_block"
+      },
+      {
+        "artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_11_full_composition_explicit_restoration_replay.json",
+        "step": "load_explicit_restoration_resumption"
+      },
+      {
+        "hypothesis_b_closeout_digest": "1771992e1216138a3ca90bf28368315b2a05c821344d0e890e5c0d59d46b8e32",
+        "hypothesis_b_supported": true,
+        "step": "emit_hypothesis_b_support_state_matrix_closeout"
+      }
+    ],
+    "runtime_state_used": false
+  },
+  "artifact_records": {
+    "n10_iteration_10_disrupted_support_control": {
+      "output_digest": "bcda2eb478e64228c3de65b5e76903817ec83da68cf9e0323eca902ff2072fcc",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_10_full_composition_disrupted_support_control.json",
+      "sha256": "86044fa69201fb2ad381f87c6eadd1f7e38a780d1c94eca829e35ddf6ce102b5",
+      "status": "passed"
+    },
+    "n10_iteration_11_explicit_restoration_replay": {
+      "output_digest": "6513e248421090b7b039e002ced29f89465dc80ca0351e751005d91635e6db6e",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_11_full_composition_explicit_restoration_replay.json",
+      "sha256": "0836792913d3274895a79f2f4d38c62d41c7c2b711d1c15e694571ad3538e997",
+      "status": "passed"
+    },
+    "n10_iteration_8_bounded_repeated_integration": {
+      "output_digest": "043ca2e2038bc6b402083b87758c57922b293761474b1215b719b932c6e42a58",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_8_bounded_repeated_integration.json",
+      "sha256": "0b1fa946c0a1393d4558302ccdd67891b574da8d2c4215109d28da40b76c7c9e",
+      "status": "passed"
+    },
+    "n10_iteration_9_hypothesis_a_closeout": {
+      "output_digest": "97346d8284d684f535170627226a1ca5d7c4cadbf05fe8ee46a82771755e51eb",
+      "output_digest_valid": true,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_9_artifact_only_closeout.json",
+      "sha256": "4e383df53f633e61e75070fd5f85174ce267d38a5120b6c06c153ba2c20c7c4c",
+      "status": "passed"
+    }
+  },
+  "checks": {
+    "all_matrix_row_digests_valid": true,
+    "all_required_artifacts_passed": true,
+    "all_required_artifacts_present": true,
+    "artifact_only_replay": true,
+    "claim_flags_all_false": true,
+    "closeout_digest_valid": true,
+    "controls_passed": true,
+    "disrupted_support_blocks_full_composition": true,
+    "explicit_restoration_resumes_full_composition": true,
+    "hypothesis_b_supported": true,
+    "mild_withdrawal_preserves_bounded_companion": true,
+    "prior_output_digests_valid": true,
+    "restoration_preserves_disruption_history": true,
+    "src_clean_for_iteration_12": true,
+    "support_intact_preserves_composition": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N10-lgrc-agentic-like-integration/scripts/run_n10_iteration_12_hypothesis_b_support_state_matrix_closeout.py",
+  "controls": {
+    "artifact_only_replay": {
+      "control_passed": true,
+      "primary_blocker": "artifact_only_replay_missing_link",
+      "reason": "support-state matrix is reconstructed from exported artifacts only"
+    },
+    "budget_surfaces": {
+      "control_passed": true,
+      "primary_blocker": "budget_surface_ambiguity",
+      "reason": "source-artifact budget compatibility remains exact in every matrix state"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "Hypothesis B closeout does not emit agency, identity acceptance, A7, or fully native claims"
+    },
+    "disrupted_support_blocks": {
+      "control_passed": true,
+      "primary_blocker": "support_disrupted_but_integration_allowed",
+      "reason": "disrupted support blocks the attempted A6/ALI6 full composition"
+    },
+    "explicit_restoration_resumes": {
+      "control_passed": true,
+      "primary_blocker": "restoration_required_but_missing",
+      "reason": "explicit restoration resumes the full composition and preserves disruption history"
+    },
+    "mild_withdrawal_positive": {
+      "control_passed": true,
+      "primary_blocker": "mild_withdrawal_full_composition_missing",
+      "reason": "mild-withdrawal companion remains valid under bounded scope"
+    },
+    "support_intact_positive": {
+      "control_passed": true,
+      "primary_blocker": "support_intact_full_composition_missing",
+      "reason": "support-intact full composition remains available from Iteration 8"
+    }
+  },
+  "experiment": "2026-05-N10-lgrc-agentic-like-integration",
+  "generated_at": "2026-06-10T19:11:54.883924+00:00",
+  "git": {
+    "head": "d1c3335a6d80d83501f97db6977aded4a4976beb",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "hypothesis_b_closeout": {
+    "artifact_only": true,
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "aco_like_behavior",
+      "ant_colony_behavior",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "personhood",
+      "unrestricted_identity",
+      "unrestricted_movement",
+      "unrestricted_agency"
+    ],
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_ownership_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "disrupted_support_blocker": "support_disrupted_but_integration_allowed",
+    "hypothesis_a_ceiling_preserved": "bounded_artifact_only_agentic_like_integration_candidate",
+    "hypothesis_b_closeout_digest": "1771992e1216138a3ca90bf28368315b2a05c821344d0e890e5c0d59d46b8e32",
+    "hypothesis_b_closeout_row_id": "n10_i12_hypothesis_b_support_state_matrix_closeout_v1",
+    "hypothesis_b_status": "supported_bounded_support_sensitive_full_composition",
+    "hypothesis_b_supported": true,
+    "matrix_row_digests": [
+      "b2a0a61cfa78c3a8d1ca7c7a42258605aa9756a2918afb6f1232ca881b291c2e",
+      "3d386c98bc1f66d4250b7af0c761d39ffe8e99a5df90f1c1deb598c97d31ca38",
+      "56f4e1c524bc4bd6ea2712963e6476e15686c639861e56677feca3e7534ccafe",
+      "fa7dd2ba177e34efca3558a0504743c1ade39046aedfec80deee83eea202c56a"
+    ],
+    "matrix_states": [
+      "support_intact_survives",
+      "mild_withdrawal_survives",
+      "n09_matched_withdrawal_disrupts_support",
+      "explicit_restoration_recovers_support"
+    ],
+    "next_hypothesis": "C_native_policy_gap",
+    "non_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "aco_like_behavior",
+      "ant_colony_behavior",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "personhood",
+      "unrestricted_agency",
+      "A7_generalization",
+      "fully_native_agentic_like_integration"
+    ],
+    "positive_scope": "bounded_artifact_only_support_sensitive_full_composition",
+    "restoration_gated_row_digest": "34986a49e5be51dbd83fb90c8587de37000255ab1f74c91c23ccc41bff97c1cc",
+    "restoration_preserves_disruption_history": true,
+    "runtime_state_used": false,
+    "support_sensitive_rule": "intact, mild-withdrawal, and explicit-restoration support states may preserve or resume bounded composition; disrupted support must block or downgrade the full composition unless explicit restoration is present"
+  },
+  "iteration": 12,
+  "next_iteration": "13_hypothesis_c_native_policy_gap_inventory",
+  "output_digest": "9d85c7dc9d77a969680a2ed0b67283f4411cf3dca715aa27191529ceeb59aa18",
+  "purpose": "close_hypothesis_b_support_sensitive_full_composition_matrix",
+  "report_records": {
+    "n10_iteration_10_disrupted_support_control": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_10_full_composition_disrupted_support_control.md",
+      "sha256": "12b6b2c7c035c5573beb629c99966cd052f284b3ca53a358d34d38383344e05f"
+    },
+    "n10_iteration_11_explicit_restoration_replay": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_11_full_composition_explicit_restoration_replay.md",
+      "sha256": "d85fb8b37abd845b3a104ed6f3d4b387e020f89796f6aac00a9331a24c5b711d"
+    },
+    "n10_iteration_8_bounded_repeated_integration": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_8_bounded_repeated_integration.md",
+      "sha256": "8c20215092b331e96e57d2b43a217f768f79c1fe46685c94a58136a4a708f687"
+    },
+    "n10_iteration_9_hypothesis_a_closeout": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_9_artifact_only_closeout.md",
+      "sha256": "381e245bde15db105c52eebf2ea3b76a9fb0329601b43d8dd2d84a08a2d0bea5"
+    }
+  },
+  "schema": "n10_iteration_12_hypothesis_b_support_state_matrix_closeout_v1",
+  "status": "passed",
+  "support_state_matrix": [
+    {
+      "accepted_integration_level": "A5",
+      "accepted_n10_category_level": "ALI5",
+      "artifact_only": true,
+      "budget_error_zero": true,
+      "claim_flags_false": true,
+      "expected_outcome": "composition_preserved",
+      "integration_allowed": true,
+      "integration_outcome_tag": "bounded_artifact_only_agentic_like_integration_candidate",
+      "matrix_row_digest": "b2a0a61cfa78c3a8d1ca7c7a42258605aa9756a2918afb6f1232ca881b291c2e",
+      "matrix_state": "support_intact_survives",
+      "outcome_matches_expectation": true,
+      "row_digest_valid": true,
+      "runtime_state_used": false,
+      "source_iteration": 8,
+      "source_row_digest": "8ad9934bc4cef846dfbc510661dc70f1bef1fa34b354a8c7087a70d25722559e",
+      "support_state_tag": "support_intact_survives"
+    },
+    {
+      "accepted_integration_level": "A5",
+      "accepted_n10_category_level": "ALI5",
+      "artifact_only": true,
+      "budget_error_zero": true,
+      "claim_flags_false": true,
+      "expected_outcome": "composition_preserved_under_bounded_companion_scope",
+      "integration_allowed": true,
+      "integration_outcome_tag": "route_memory_regulation_composition_candidate",
+      "matrix_row_digest": "3d386c98bc1f66d4250b7af0c761d39ffe8e99a5df90f1c1deb598c97d31ca38",
+      "matrix_state": "mild_withdrawal_survives",
+      "outcome_matches_expectation": true,
+      "row_digest_valid": true,
+      "runtime_state_used": false,
+      "source_iteration": 8,
+      "source_row_digest": "d56e47861c728bcd694e4601bb9fde17919373a7374306e1995acc33931f6bf3",
+      "support_state_tag": "mild_withdrawal_survives"
+    },
+    {
+      "accepted_integration_level": null,
+      "accepted_n10_category_level": null,
+      "artifact_only": true,
+      "attempted_integration_level": "A6",
+      "attempted_n10_category_level": "ALI6",
+      "budget_error_zero": true,
+      "claim_flags_false": true,
+      "expected_outcome": "composition_blocked_or_downgraded",
+      "integration_allowed": false,
+      "matrix_row_digest": "56f4e1c524bc4bd6ea2712963e6476e15686c639861e56677feca3e7534ccafe",
+      "matrix_state": "n09_matched_withdrawal_disrupts_support",
+      "outcome_matches_expectation": true,
+      "primary_blocker": "support_disrupted_but_integration_allowed",
+      "row_digest_valid": true,
+      "runtime_state_used": false,
+      "source_iteration": 10,
+      "source_row_digest": "22b6166b43401ea2ceab6577f6ad6748771663995a8163ac803b55716836ebec",
+      "support_state_tag": "n09_matched_withdrawal_disrupts_support"
+    },
+    {
+      "accepted_integration_level": "A6",
+      "accepted_n10_category_level": "ALI6",
+      "artifact_only": true,
+      "budget_error_zero": true,
+      "claim_flags_false": true,
+      "expected_outcome": "composition_restoration_gated_resume",
+      "integration_allowed": true,
+      "integration_outcome_tag": "restoration_gated_integration_candidate",
+      "matrix_row_digest": "fa7dd2ba177e34efca3558a0504743c1ade39046aedfec80deee83eea202c56a",
+      "matrix_state": "explicit_restoration_recovers_support",
+      "outcome_matches_expectation": true,
+      "prior_disruption_history_preserved": true,
+      "row_digest_valid": true,
+      "runtime_state_used": false,
+      "source_iteration": 11,
+      "source_row_digest": "34986a49e5be51dbd83fb90c8587de37000255ab1f74c91c23ccc41bff97c1cc",
+      "support_state_tag": "explicit_restoration_recovers_support"
+    }
+  ]
+}

@@ -1,0 +1,894 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 1 passes if N09 has a source-backed inventory of inherited N05/N06/N07/N08 artifacts, available proxy/regulation surfaces, missing native policy surfaces, Hypothesis B staged status, memory and identity/support source fields, frozen GPR row schema, regulation outcome taxonomy, ceiling algorithm, N10 handoff fields, clean claim boundaries, and no regulation probe execution.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "available_proxy_conditioned_action_surfaces": [
+    {
+      "allowed_boundary": "producer schedules_only_step_mutates",
+      "native": false,
+      "source": "committed runtime-visible state observed by producer",
+      "surface_id": "producer_scheduling_eligibility_record"
+    },
+    {
+      "allowed_boundary": "serialized_runtime_visible_score_components",
+      "native": true,
+      "source": "LGRC9V3 route arbitration candidate records",
+      "surface_id": "native_route_candidate_score_components"
+    },
+    {
+      "allowed_boundary": "artifact-backed memory-shaped comparator",
+      "native": false,
+      "source": "N08 Hypothesis A memory score components",
+      "surface_id": "n08_memory_shaped_candidate_score_components"
+    },
+    {
+      "allowed_boundary": "staged_hypothesis_b_design_direction",
+      "native": "partial_static_geometry_response_only",
+      "source": "N08 Hypothesis B positive geometry route response",
+      "surface_id": "n08_static_positive_geometry_route_response"
+    }
+  ],
+  "available_proxy_measurement_surfaces": [
+    {
+      "budget_auditable": true,
+      "native": true,
+      "preferred_default_fixture": true,
+      "runtime_visible": true,
+      "source": "LGRC runtime active node state and packet ledger",
+      "surface_id": "active_node_coherence_band"
+    },
+    {
+      "budget_auditable": false,
+      "native": true,
+      "preferred_default_fixture": false,
+      "regulation_constraint": "selection surface only; cannot supply GPR4+ packet execution without an N09 scheduling/processing lane",
+      "runtime_visible": true,
+      "source": "N06 candidate context values and source surface digests",
+      "surface_id": "route_arbitration_context_surface"
+    },
+    {
+      "budget_auditable": "memory_budget_only_not_node_plus_packet",
+      "native": false,
+      "preferred_default_fixture": false,
+      "runtime_visible": true,
+      "source": "N08 Hypothesis A memory surface rows",
+      "surface_id": "n08_serialized_memory_surface_strength"
+    },
+    {
+      "budget_auditable": false,
+      "native": false,
+      "preferred_default_fixture": false,
+      "regulation_constraint": "identity/support anchor only; cannot be used directly as regulated_variable_surface",
+      "runtime_visible": false,
+      "source": "N07 ID6 support area and activity history digests",
+      "surface_id": "n07_identity_support_area"
+    },
+    {
+      "budget_auditable": true,
+      "native": true,
+      "preferred_default_fixture": false,
+      "runtime_visible": true,
+      "secondary_fixture_fields": [
+        "return_amount",
+        "return_route_id",
+        "cycle_definition",
+        "cycle_ids",
+        "route_aspect_digest",
+        "channel_sequence_digest"
+      ],
+      "source": "N05 O5 self-rearm return amount",
+      "surface_id": "n05_oscillator_return_amount"
+    }
+  ],
+  "ceiling_algorithm": {
+    "fallback_examples": {
+      "artifact_replay_fails_after_gpr5": {
+        "blocker": "artifact_only_goal_proxy_replay_failed",
+        "ceiling": "repeated_bounded_proxy_regulation_candidate"
+      },
+      "correction_absent_after_gpr3": {
+        "blocker": "no_response_to_error",
+        "ceiling": "proxy_conditioned_route_selection_candidate"
+      },
+      "repeated_windows_fail_after_gpr4": {
+        "blocker": "repeated_regulation_not_bounded",
+        "ceiling": "single_cycle_proxy_correction_candidate"
+      }
+    },
+    "identity_support_rule": "identity/support disruption blocks N10 consumption but does not automatically erase lower valid proxy-regulation evidence",
+    "rule": "ceiling equals highest GPR level whose required gates pass; later gate failure falls back to strongest passing level and records primary blocker"
+  },
+  "checks": {
+    "ceiling_algorithm_frozen": true,
+    "claim_flags_all_false": true,
+    "gpr_ladder_complete": true,
+    "gpr_row_schema_has_proxy_fields": true,
+    "hypothesis_b_b0_inventory_complete": true,
+    "hypothesis_b_staged_status_recorded": true,
+    "n05_o5_inventory_present": true,
+    "n05_o6_blocker_recorded": true,
+    "n05_status_passed": true,
+    "n06_route_arbitration_records_present": true,
+    "n06_sc6_inventory_present": true,
+    "n06_selected_rejected_digests_present": true,
+    "n06_selection_scope_constraint_recorded": true,
+    "n06_status_passed": true,
+    "n06_unknown_source_blocker_carried_forward": true,
+    "n07_id6_inventory_present": true,
+    "n07_status_passed": true,
+    "n07_support_dependency_status_recorded": true,
+    "n07_support_digest_present": true,
+    "n07_withdrawal_precondition_gap_recorded": true,
+    "n08_hypothesis_a_consumable_for_memory_lane": true,
+    "n08_hypothesis_a_passed": true,
+    "n08_hypothesis_b_passed": true,
+    "n08_hypothesis_b_staged_not_native_regulation": true,
+    "n08_mem5_candidate_fields_present": true,
+    "n08_memory_rows_have_route_id": true,
+    "n08_n07_support_anchor_consistency_checked": true,
+    "n10_handoff_fields_frozen": true,
+    "native_goal_proxy_blocker_recorded": true,
+    "no_regulation_probe_run": true,
+    "proxy_conditioned_action_surfaces_inventoried": true,
+    "proxy_measurement_surfaces_inventoried": true,
+    "regulation_outcome_taxonomy_frozen": true,
+    "src_clean_for_iteration_1": true
+  },
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_1_baseline_inventory.py",
+  "downstream_iteration_constraints": {
+    "iteration_2": [
+      {
+        "constraint_id": "n06_selection_only_no_packet_execution",
+        "requirement": "Fixture contract must create N09 packet scheduling/processing evidence for GPR4+ instead of inheriting it from N06.",
+        "severity": "high"
+      },
+      {
+        "constraint_id": "n06_candidate_source_surface_required",
+        "requirement": "Any N06 route-arbitration surface consumed by N09 must preserve committed source surface provenance and reject unknown source digests.",
+        "severity": "medium"
+      }
+    ],
+    "iteration_8": [
+      {
+        "constraint_id": "n07_withdrawal_baseline_not_tested",
+        "requirement": "Identity/support disruption tags need a baseline or control because N07 withdrawal stability was not tested.",
+        "severity": "high"
+      }
+    ]
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "frozen_gpr_row_schema": [
+    "row_id",
+    "gpr_level",
+    "claim_ceiling",
+    "proxy_id",
+    "proxy_kind",
+    "regulated_variable_id",
+    "regulated_variable_surface",
+    "regulated_variable_digest",
+    "measurement_value",
+    "target_band",
+    "error_metric",
+    "error_value",
+    "event_time_key",
+    "scheduler_event_index",
+    "proxy_policy_id",
+    "proxy_policy_digest",
+    "error_policy_id",
+    "error_policy_digest",
+    "regulation_response_digest",
+    "regulation_response_policy_id",
+    "mechanism_status_tags",
+    "memory_surface_digest",
+    "memory_surface_policy_digest",
+    "identity_support_digest",
+    "identity_support_outcome_tag",
+    "regulation_outcome_tag",
+    "source_candidate_set_digest",
+    "source_route_arbitration_record_digest",
+    "selected_candidate_route_digest",
+    "producer_record_digest",
+    "scheduled_packet_id",
+    "processed_packet_id",
+    "node_plus_packet_budget_before",
+    "node_plus_packet_budget_after",
+    "node_plus_packet_budget_error",
+    "source_artifacts",
+    "source_reports",
+    "claim_flags"
+  ],
+  "generated_at": "2026-06-09T18:37:15.664243+00:00",
+  "git": {
+    "head": "1621f65b01e82db6be31763ef1fc6f7eba517fe0",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "gpr_ladder": {
+    "GPR0": "no_regulation_label_only_or_unmeasured_proxy",
+    "GPR1": "proxy_measurement_serialized_with_digest_and_order",
+    "GPR2": "error_signal_from_serialized_runtime_visible_evidence",
+    "GPR3": "proxy_conditioned_action_eligibility_without_direct_mutation",
+    "GPR4": "single_cycle_proxy_error_reduction_or_band_return",
+    "GPR5": "repeated_bounded_proxy_regulation",
+    "GPR6": "artifact_only_goal_proxy_regulation_candidate"
+  },
+  "hypothesis_b_staged_status": {
+    "b0_considered_surfaces": [
+      {
+        "current_limit": "no native route conductance memory or regulation policy",
+        "possible_role": "proxy_carrier_or_circuit_background",
+        "surface_id": "n05_oscillator_route_aspect",
+        "usable_for_b1": "secondary_fixture_after_simple_proxy_path"
+      },
+      {
+        "current_limit": "selection-only; no inherited packet execution",
+        "possible_role": "proxy_conditioned route-score carrier",
+        "surface_id": "n06_native_route_candidate_score_components",
+        "usable_for_b1": "yes_as_selection_surface_not_correction_execution"
+      },
+      {
+        "current_limit": "not runtime regulated variable; withdrawal baseline untested",
+        "possible_role": "identity/support preservation anchor",
+        "surface_id": "n07_identity_support_area_digest",
+        "usable_for_b1": "anchor_only_not_proxy_surface"
+      },
+      {
+        "current_limit": "static response only; native regulation policy missing",
+        "possible_role": "substrate-mediated response design direction",
+        "surface_id": "n08_static_positive_geometry_route_response",
+        "usable_for_b1": "yes_as_design_direction_not_native_policy"
+      }
+    ],
+    "b0_inventory": "complete_iteration_1",
+    "b1_probe": "planned_after_hypothesis_a_identifies_load_bearing_proxy_variables_and_response_laws",
+    "b2_native_absorption_blocker": "native_goal_proxy_regulation_policy_missing",
+    "full_native_absorption_deferred": true,
+    "not_discarded": true,
+    "status": "staged"
+  },
+  "inventory_digest": "78865ce35a12e73d1071b6a124a262e0fb946f90a77e997e505f4245358fd7a3",
+  "inventory_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "inventory_digest",
+      "git"
+    ],
+    "included": "all fields except generated_at, inventory_digest, and git metadata",
+    "stable_across_same_inputs": true
+  },
+  "iteration": 1,
+  "missing_native_policy_surfaces": [
+    "native_goal_proxy_regulation_policy_missing",
+    "native_proxy_surface_policy_missing",
+    "native_proxy_error_policy_missing",
+    "native_proxy_conditioned_response_policy_missing",
+    "native_goal_proxy_regulation_artifact_replay_validator_missing",
+    "native_memory_shaped_regulation_surface_missing",
+    "native_identity_preserving_regulation_validator_missing",
+    "native_oscillator_return_regulation_policy_missing"
+  ],
+  "n05_inventory": {
+    "o5_cycle_count": 3,
+    "o5_cycle_definition": "seeded_parent_arrival_then_native_self_rearm_S_to_K_and_K_to_S",
+    "o5_cycle_ids": [
+      "n05_o5_self_rearm_cycle_000",
+      "n05_o5_self_rearm_cycle_001",
+      "n05_o5_self_rearm_cycle_002"
+    ],
+    "o5_return_amount": 0.1,
+    "o5_return_route_id": "K_to_S",
+    "o5_source_artifact": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_7_o5_self_sustained_boundary.json",
+    "o6_primary_blocker": "missing_route_conductance_memory_policy",
+    "o6_supported": false,
+    "oscillator_proxy_field_inventory": {
+      "amplification_accounting_status": "available_in_n05_o3_source_but_not_default_n09_fixture",
+      "causal_delay_status": "not_frozen_as_n09_default_fixture",
+      "channel_sequence": [
+        "S_to_K",
+        "K_to_S"
+      ],
+      "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+      "cycle_count": 3,
+      "cycle_count_basis": "completed_native_self_rearm_pairs",
+      "cycle_definition": "seeded_parent_arrival_then_native_self_rearm_S_to_K_and_K_to_S",
+      "cycle_ids": [
+        "n05_o5_self_rearm_cycle_000",
+        "n05_o5_self_rearm_cycle_001",
+        "n05_o5_self_rearm_cycle_002"
+      ],
+      "proxy_surface_id": "n05_oscillator_return_amount",
+      "return_amount": 0.1,
+      "return_route_id": "K_to_S",
+      "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+      "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+      "route_edge_ids": [
+        0,
+        1
+      ]
+    },
+    "oscillator_regulation_fixture_status": "secondary_fixture_deferred_until_simple_proxy_path_understood",
+    "phase3_native_policy_blockers": [
+      "missing_serialized_custom_node_potentials_policy",
+      "missing_serialized_potential_inversion_policy",
+      "missing_flux_facilitated_metric_map_policy",
+      "missing_serialized_delayed_passive_response_policy",
+      "missing_route_conductance_memory_policy"
+    ],
+    "route_coupling_fields": {
+      "channel_sequence": [
+        "S_to_K",
+        "K_to_S"
+      ],
+      "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+      "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+      "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+      "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+      "route_conductance_memory_digest": null,
+      "route_conductance_memory_policy_id": null,
+      "route_edge_ids": [
+        0,
+        1
+      ],
+      "trail_reinforcement_surface_digest": null
+    },
+    "source_artifact": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+    "status": "passed",
+    "strongest_claim_ceiling": "self_sustained_oscillator_candidate",
+    "strongest_supported_o_level": "O5"
+  },
+  "n06_inventory": {
+    "candidate_route_records_present": true,
+    "candidate_set_records_present": true,
+    "context_affordance_evidence_present": true,
+    "native_route_arbitration_records_present": true,
+    "regulation_constraint": {
+      "iteration_2_requirement": "N09 must define its own packet scheduling/processing path for GPR4+; N06 supplies route-selection evidence only.",
+      "n06_selection_only_pre_topology_commit": true,
+      "packet_execution_inherited_from_n06": false,
+      "primary_blocker_if_packet_execution_inherited": "n06_selection_only_no_packet_execution_for_regulation",
+      "scheduled_processed_packet_scope": "not_applicable_pre_topology_selection_only_scope"
+    },
+    "scheduled_processed_packet_scope": "not_applicable_pre_topology_selection_only_scope",
+    "selected_rejected_route_digest_rows": [
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "candidate_set_digest": "cc28d581e856d3782a840c63157f7b1d4d565387e8c00ed28b8365cba7b5f4a9",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_a",
+        "cycle_id": "cycle_0",
+        "rejected_candidate_route_digests": [
+          "56eba296ce0ae91bb1e0b9c44557be6b52dd2932cd0bd6453156608114f07b0a"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+        "selected_route": "route_a",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      },
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "candidate_set_digest": "5c8918b0cdf07c3c5b303bf2c71d4c5c184370f5b875dc01af6b3aaff2506648",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_b",
+        "cycle_id": "cycle_1",
+        "rejected_candidate_route_digests": [
+          "6c56a159bc33d047f6017d8baec972244bff49ca3df60954c1bbf0a41b6cf707"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "21ff5096388e202c1c708be518b6966013049873a36fb34e9eedf245e9d79c63",
+        "selected_route": "route_b",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      },
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "candidate_set_digest": "30217e1dcc8c533d3175131d2b2be0a265829a41714fe338a1330982b6c8e510",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_a",
+        "cycle_id": "cycle_2",
+        "rejected_candidate_route_digests": [
+          "a7e307a6e2a456fa2765169f936361f8591e9c382a79d7acffc18c89779c3f7b"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "56df5ea777c43a139b3d26d314b41affc82cedafd8dc54e7f1af615cb43d52a1",
+        "selected_route": "route_a",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      },
+      {
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "candidate_set_digest": "cc8603974788f12118e143fb8f6c96ae3ef6eb1c021e3a6c6c14aba8469db765",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "context_state_id": "context_b",
+        "cycle_id": "cycle_3",
+        "rejected_candidate_route_digests": [
+          "7bd9d0e3c92cc61ef267466ee39de3f53d5dfe4dacbd7c33b9d4b91583afb2b8"
+        ],
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "1732ca519398908214633ffb085a0c5d25b7c772891a025f5e7c1df0a5da7304",
+        "selected_route": "route_b",
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        }
+      }
+    ],
+    "selection_scope": "selection_only_pre_topology_commit",
+    "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+    "source_provenance_constraints": {
+      "committed_source_surface_required": true,
+      "unknown_source_blockers": [
+        "native_route_candidate_committed_source_surface_required"
+      ]
+    },
+    "status": "passed",
+    "strongest_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+    "strongest_supported_sc_level": "SC6"
+  },
+  "n07_inventory": {
+    "activity_history_digest": "e66250281733f76b1b56e0f1c9e5ceecc47d3f1e00dfed07d836ff233346fbb1",
+    "candidate_identity_carrier_type": "coherence_basin",
+    "claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+    "frozen_n07_ceiling": "ID6",
+    "identity_acceptance_claim_allowed": false,
+    "identity_carrier_surface": "runtime_coherence_basin",
+    "identity_preservation_precondition_gap": {
+      "identity_withdrawal_stability_baseline_available": false,
+      "iteration_8_requirement": "N09 support-withdrawal lanes must include a baseline or control that distinguishes regulation disruption from pre-existing untested withdrawal stability.",
+      "primary_blocker_if_untreated": "n07_identity_withdrawal_baseline_not_available",
+      "withdrawal_test_status": "not_tested"
+    },
+    "identity_support_fields_for_n09": {
+      "gate_vector": {
+        "artifact_replay": "pass",
+        "attractivity": "pass",
+        "compatibility": "pass_bounded_non_destructive_exchange",
+        "invariance": "pass",
+        "lineage_current": "pass",
+        "long_horizon_trajectory": "bounded_non_destructive_exchange",
+        "reflexive_closure": "pass",
+        "stability": "pass",
+        "support": "pass"
+      },
+      "identity_support_digest": "e66250281733f76b1b56e0f1c9e5ceecc47d3f1e00dfed07d836ff233346fbb1",
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "support_dependency_status": "regime_assisted",
+      "trajectory_regime": "bounded_non_destructive_exchange",
+      "withdrawal_test_status": "not_tested"
+    },
+    "source_11b_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+    "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+    "status": "passed",
+    "strongest_trajectory_regime": "bounded_non_destructive_exchange",
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1"
+  },
+  "n08_inventory": {
+    "hypothesis_a": {
+      "claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+      "consumable_for_n09_memory_shaped_lane": true,
+      "consumption_boundary": "serialized producer/policy memory evidence only; not native trail memory and not goal-proxy regulation",
+      "mem5_candidate_fields": {
+        "candidate_budget_prediction": {
+          "node_plus_packet_budget_after": 0.0,
+          "node_plus_packet_budget_before": 0.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "candidate_memory_budget_prediction": {
+          "memory_budget_after": 0.655,
+          "memory_budget_before": 0.655,
+          "memory_budget_error": 0.0
+        },
+        "candidate_route_record_schema": "lgrc9v3_native_route_candidate_record_v1",
+        "candidate_runtime_visible_inputs": [
+          "memory_surface_id:n08-memory-surface:c0a6fdca6c30cca1:mem3:3adaccba822f",
+          "memory_surface_digest:a0ba9befc3a8ad113271636fe3a799f63deb5e10baaafebfb674629fd8757447",
+          "memory_surface_state_snapshot_digest:284cf90a485db74c28e0d5e8c90cc3aceb4aac1f6073f4d9c1a0fade35623209",
+          "memory_policy_id:n08_memory_policy_v1",
+          "route_use_event_digest:04706f438525fecc15574b77f01f06720d8bd063090cc38dbe574b69af4c3b92",
+          "memory_event_time_key:5.5",
+          "candidate_score_components",
+          "serialized_memory_component_policy"
+        ],
+        "candidate_score_components": [
+          "memory_decay_adjusted_strength",
+          "memory_recency_weight",
+          "memory_surface_digest_match",
+          "memory_trail_strength"
+        ],
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "present": true
+      },
+      "mem5_trend_summary": {
+        "competing_memory_behavior": "route_b_converges_to_saturation_while_route_a_decays_without_reinforcement",
+        "oscillation_observed": false,
+        "route_a_extinction_trend_observed": true,
+        "route_a_floor_reached": false,
+        "route_a_strength_after_each_cycle": [
+          0.5895,
+          0.53055,
+          0.477495,
+          0.4297455
+        ],
+        "route_b_saturation_observed": true,
+        "route_b_strength_after_each_cycle": [
+          0.88,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "selected_routes": [
+          "route_b",
+          "route_b",
+          "route_b",
+          "route_b"
+        ],
+        "tie_observed": false
+      },
+      "mem_level": "MEM6",
+      "memory_or_trail_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+      "sample_memory_surface_rows": [
+        {
+          "claim_ceiling": "mem2_trail_surface_candidate",
+          "memory_budget_error": 0.0,
+          "memory_budget_surface": "trail_strength",
+          "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "memory_policy_id": "n08_memory_policy_v1",
+          "memory_strength": 0.25,
+          "memory_surface_digest": "7530f78c0ddd3dea6ae37c4b32bc4e82f6be9ea23410c412db3621f38d647a87",
+          "memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:0175e7d7bf57f875",
+          "memory_surface_key": {
+            "memory_policy_id": "n08_memory_policy_v1",
+            "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+            "route_id": "route_a",
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          "memory_surface_key_digest": "c0a6fdca6c30cca1bbb900de543844c70ea23af922e6a4d8ddca16f7e5d4458d",
+          "memory_surface_kind": "trail",
+          "node_plus_packet_budget_error": 0.0,
+          "route_id": "route_a",
+          "route_id_missing": false,
+          "route_id_source": "selected_route_id",
+          "route_use_event_digest": "0175e7d7bf57f875fd8e0c981a6f835c4d78aba56de99cb3d2629f95ca0a163e",
+          "source_arbitration_record_digest": "c55c034882aea07b7ce6093249ea4c30c533f89e2ede7bc7bf040106a8731a24"
+        },
+        {
+          "claim_ceiling": "mem2_trail_surface_candidate",
+          "memory_budget_error": 0.0,
+          "memory_budget_surface": "trail_strength",
+          "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "memory_policy_id": "n08_memory_policy_v1",
+          "memory_strength": 0.25,
+          "memory_surface_digest": "12098eba4caf7dd4972a650442400e1c31727bc6c14ea509812f6d39d940ec1a",
+          "memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:82c11ea3789bc7ba",
+          "memory_surface_key": {
+            "memory_policy_id": "n08_memory_policy_v1",
+            "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+            "route_id": "route_b",
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          "memory_surface_key_digest": "3dca55df466ac3a101798884520a2ec1142994f03728aa4dd47aebcf4893de11",
+          "memory_surface_kind": "trail",
+          "node_plus_packet_budget_error": 0.0,
+          "route_id": "route_b",
+          "route_id_missing": false,
+          "route_id_source": "selected_route_id",
+          "route_use_event_digest": "82c11ea3789bc7bafbcd8431a519f4072be06b7632f164db83d393989682d2a3",
+          "source_arbitration_record_digest": "e55e128a031d39708b11de4f34289d55f5ce5216ff1a8ca59bd5ad133e04ea9b"
+        },
+        {
+          "claim_ceiling": "mem2_trail_surface_candidate",
+          "memory_budget_error": 0.0,
+          "memory_budget_surface": "trail_strength",
+          "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "memory_policy_id": "n08_memory_policy_v1",
+          "memory_strength": 0.5,
+          "memory_surface_digest": "f11487b6fbf0888a450543dd04859bb27ea04831573f3b26e281fc8c627f8074",
+          "memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:04706f438525fecc",
+          "memory_surface_key": {
+            "memory_policy_id": "n08_memory_policy_v1",
+            "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+            "route_id": "route_a",
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          "memory_surface_key_digest": "c0a6fdca6c30cca1bbb900de543844c70ea23af922e6a4d8ddca16f7e5d4458d",
+          "memory_surface_kind": "trail",
+          "node_plus_packet_budget_error": 0.0,
+          "route_id": "route_a",
+          "route_id_missing": false,
+          "route_id_source": "selected_route_id",
+          "route_use_event_digest": "04706f438525fecc15574b77f01f06720d8bd063090cc38dbe574b69af4c3b92",
+          "source_arbitration_record_digest": "715bbac6df142956748a403236d214a949c7b36f3a87716a3cb2978e3f959e8f"
+        },
+        {
+          "claim_ceiling": "mem2_trail_surface_candidate",
+          "memory_budget_error": 0.0,
+          "memory_budget_surface": "trail_strength",
+          "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+          "memory_policy_id": "n08_memory_policy_v1",
+          "memory_strength": 0.5,
+          "memory_surface_digest": "82f3aba24f0e0093525dbe9c671dec8bbf88f8cd4b96f583e88de68a961a81d4",
+          "memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:e44cdc336ccfc5ad",
+          "memory_surface_key": {
+            "memory_policy_id": "n08_memory_policy_v1",
+            "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+            "route_id": "route_b",
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          "memory_surface_key_digest": "3dca55df466ac3a101798884520a2ec1142994f03728aa4dd47aebcf4893de11",
+          "memory_surface_kind": "trail",
+          "node_plus_packet_budget_error": 0.0,
+          "route_id": "route_b",
+          "route_id_missing": false,
+          "route_id_source": "selected_route_id",
+          "route_use_event_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+          "source_arbitration_record_digest": "274002a129793722412f4019ea2ff18f2b45710c0fa8d80e6bebb083cf085db0"
+        }
+      ],
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "status": "passed",
+      "support_anchor_consistency": {
+        "all_source_support_digests_match_n07": true,
+        "all_target_support_digests_match_n07_11b": true,
+        "memory_row_count_checked": 4,
+        "n07_11b_target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+        "n07_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "rows": [
+          {
+            "memory_surface_digest": "7530f78c0ddd3dea6ae37c4b32bc4e82f6be9ea23410c412db3621f38d647a87",
+            "memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:0175e7d7bf57f875",
+            "route_id": "route_a",
+            "source_matches_n07_support_area": true,
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_matches_n07_11b_target_support_area": true,
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          {
+            "memory_surface_digest": "12098eba4caf7dd4972a650442400e1c31727bc6c14ea509812f6d39d940ec1a",
+            "memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:82c11ea3789bc7ba",
+            "route_id": "route_b",
+            "source_matches_n07_support_area": true,
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_matches_n07_11b_target_support_area": true,
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          {
+            "memory_surface_digest": "f11487b6fbf0888a450543dd04859bb27ea04831573f3b26e281fc8c627f8074",
+            "memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:04706f438525fecc",
+            "route_id": "route_a",
+            "source_matches_n07_support_area": true,
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_matches_n07_11b_target_support_area": true,
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          },
+          {
+            "memory_surface_digest": "82f3aba24f0e0093525dbe9c671dec8bbf88f8cd4b96f583e88de68a961a81d4",
+            "memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:e44cdc336ccfc5ad",
+            "route_id": "route_b",
+            "source_matches_n07_support_area": true,
+            "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+            "target_matches_n07_11b_target_support_area": true,
+            "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+          }
+        ]
+      }
+    },
+    "hypothesis_b": {
+      "claim_ceiling": "static_positive_geometry_route_response_persistence_candidate",
+      "consumable_as_native_regulation_policy": false,
+      "consumable_for_n09_hypothesis_b_inventory": true,
+      "current_blocker": "native_route_conductance_memory_policy_missing",
+      "hypothesis": "B_native_geometry_mediated_trail_memory",
+      "native_policy_absorption_needed": true,
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+      "static_positive_geometry_response_persisted": true,
+      "status": "passed",
+      "status_detail": "closed_bounded_native_policy_gap_recorded"
+    }
+  },
+  "n10_handoff_fields": [
+    "goal_proxy_regulation_policy_digest",
+    "proxy_surface_digest",
+    "error_policy_digest",
+    "regulation_response_digest",
+    "memory_surface_digest",
+    "identity_support_digest",
+    "mechanism_status_tags",
+    "regulation_outcome_tag",
+    "identity_support_outcome_tag",
+    "native_policy_gap_records"
+  ],
+  "purpose": "baseline_source_inventory_no_regulation_probe",
+  "regulation_outcome_taxonomy": [
+    "no_response_to_error",
+    "wrong_direction_response",
+    "single_cycle_error_reduction",
+    "single_cycle_band_return",
+    "bounded_repeated_regulation",
+    "overshoot_oscillation",
+    "saturation_no_recovery",
+    "policy_saturation",
+    "memory_poisoning",
+    "budget_violation",
+    "identity_disrupted_under_regulation",
+    "identity_preserved_under_regulation",
+    "native_policy_gap"
+  ],
+  "regulation_probe_run": false,
+  "schema": "n09_iteration_1_baseline_inventory_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_7_o5_self_sustained_boundary.json": "822293c4c7eb06ebe7b50e9287d3cd3959f467b237de813b6ac022bded4f0911",
+    "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_4_mem2_memory_surface.json": "61f388c526f8afe3cbce5ac7a394fd5ff8e82cb8a40c54834926c074a8e407a6",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_7_mem5_repeated_memory_selection.json": "2ea61b7024e6275b352ddbd1fabf76e2b92862f285739279dcf5f87b3b296772",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e"
+  },
+  "source_reports": {
+    "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_7_o5_self_sustained_boundary.md": "51d5a85290aee3c05e6686e97eb4f3eb5d3f3e33a92b83c737bffa7754e88c1c",
+    "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_8_o6_closeout.md": "fa9d3b7f7d44ddc03e5a14537f4d06fb6540019c0d3251dd503b0182d1a425c2",
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md": "d8916078bf5b7ea5016514641b53436f2a1695071c27aa2c14a4aafe2445a4f1",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_4_mem2_memory_surface.md": "d7e1a0894f24169ecee2b70f9171e4778bc6abe1024f91809277c0772d73689c",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_7_mem5_repeated_memory_selection.md": "97314510d3b2db24e6c28b01d0719237d733179e8442be0922d9c85121c21131",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+  },
+  "status": "passed"
+}

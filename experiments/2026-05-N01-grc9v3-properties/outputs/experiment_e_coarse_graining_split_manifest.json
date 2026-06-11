@@ -1,0 +1,55 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "command": "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_e_coarse_graining_split.py --write-defaults --seed 0",
+  "compressed_signed_flux_formula": "sum signed flux per column, then uniformly split the signed total across the three ports in that column",
+  "experiment_id": "experiment_e_coarse_graining_split",
+  "git_branch": "master",
+  "git_commit": "76cf2e10eb17ebb303e0b73ce2478dba89aa2d5a",
+  "iteration": 5,
+  "lane_id": "current_hybrid_signed_hessian",
+  "output_paths": {
+    "blocked_observations_csv": "reports/experiment_e_coarse_graining_split_blocked_observations.csv",
+    "errors_csv": "outputs/experiment_e_coarse_graining_split_errors.csv",
+    "manifest_json": "outputs/experiment_e_coarse_graining_split_manifest.json",
+    "report_md": "reports/experiment_e_coarse_graining_split.md",
+    "summary_json": "outputs/experiment_e_coarse_graining_split_summary.json"
+  },
+  "reconstruction_error_tolerance": 1e-12,
+  "reuse_notes": {
+    "d2": "Use reconstruction errors as multiscale feature targets after enough runs exist.",
+    "d7": "Use field rows as reconstruction evidence; compare semantic grouping against rows/random triples later."
+  },
+  "runtime_params": {
+    "constitutive_semantic_modes": {
+      "boundary_mode": "prune",
+      "edge_label_selection": "all",
+      "hessian_backend": "row_basis_diagonal"
+    },
+    "dt": 0.1,
+    "evolution": {
+      "alpha": 1e-12,
+      "beta": 1e-12,
+      "eps_tau": 1e-12,
+      "eta": 1.0,
+      "gamma": 1e-12,
+      "kappa_c": 1.0,
+      "rho": 1.0,
+      "rng_seed": 0,
+      "site_potential_params": {
+        "mu": 0.0,
+        "scale": 0.0
+      },
+      "site_potential_selection": "quadratic",
+      "v0": 1.0
+    }
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_e_coarse_graining_split.py",
+  "seed": 0,
+  "signed_flux_j_split_formula": "J = Split(G(J+)) - Split(G(J-))",
+  "signed_flux_orientation_convention": "local oriented flux: PortEdge.flux_uv at node_u and -flux_uv at node_v",
+  "validation_commands": [
+    "PYTHONPATH=src .venv/bin/python -m py_compile experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_e_coarse_graining_split.py",
+    "PYTHONPATH=src .venv/bin/python -m ruff check experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_e_coarse_graining_split.py experiments/2026-05-N01-grc9v3-properties/scripts/grc9v3_fixture_harness.py",
+    ".venv/bin/python -m json.tool experiments/2026-05-N01-grc9v3-properties/outputs/experiment_e_coarse_graining_split_summary.json"
+  ]
+}

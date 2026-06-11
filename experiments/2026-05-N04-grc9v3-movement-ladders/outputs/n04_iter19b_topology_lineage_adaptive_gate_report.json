@@ -1,0 +1,232 @@
+{
+  "attempted_promotion": "adaptive_topology_entry_candidate",
+  "blocked_claims": [
+    "adaptive_topology_movement",
+    "topology_mutating_movement",
+    "native_pulse_surface_topology_lineage_transport",
+    "native_lgrc_choice_selection",
+    "rc_identity_collapse",
+    "semantic_choice",
+    "agency",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "adaptive_topology_gate_passed": false,
+    "broader_claims_blocked": true,
+    "claim_ceiling_remains_19a": true,
+    "iteration_19a_fixed_port_baseline_passed": true,
+    "native_lgrc3_topology_lineage_replay_passed": true,
+    "surface_v1_fixed_topology_row_valid": true,
+    "surface_v1_rejects_lineage_transport_rows": true,
+    "topology_mutating_movement_gate_passed": false
+  },
+  "claim_ceiling": "s7_fixed_port_composed_gate_candidate",
+  "claim_flags": {
+    "adaptive_topology_claim_allowed": false,
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "port_graph_transfer_claim_allowed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "topology_mutating_movement_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "native_lgrc3_topology_lineage_available": {
+      "passed_control": true,
+      "primary_reason": "native_lgrc3_collapse_reabsorption_replay_conserves_budget_and_lineage",
+      "topology_event_kind": "lgrc9v3_causal_collapse"
+    },
+    "pulse_surface_lineage_transport_blocked": {
+      "exception_type": "ValueError",
+      "passed_negative_control": true,
+      "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status"
+    },
+    "topology_disabled_baseline": {
+      "passed_control": true,
+      "primary_reason": "iteration_19a_fixed_port_baseline_no_topology_events",
+      "source_claim_ceiling": "s7_fixed_port_composed_gate_candidate"
+    },
+    "topology_only_claim_promotion_blocked": {
+      "passed_negative_control": true,
+      "primary_blocker": "topology_lineage_evidence_without_pulse_surface_lineage_transport_cannot_promote_adaptive_movement"
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19b_topology_lineage_adaptive_gate.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "geometry_scope": "topology_lineage_probe",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "eb840a740fa972f78307611945a1960fbac2b39f"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "?? implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageChecklist.md\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineagePlan.md"
+    }
+  },
+  "input_ceiling": "s7_fixed_port_composed_gate_candidate",
+  "iteration": "19-B",
+  "movement_substrate": "S7_port_graph_fixed_composed_gate_v1",
+  "native_topology_lineage_probe": {
+    "lineage_budget_passed": true,
+    "topology_artifact": {
+      "artifact_kind": "lgrc9v3_collapse_reabsorption_result",
+      "artifact_schema_version": "lgrc9v3_collapse_reabsorption_result_v1",
+      "budget_after": 25.0,
+      "budget_before": 25.0,
+      "budget_error": 0.0,
+      "budget_transfer_policy": "budget_conserving_transfer",
+      "causal_layer_mode": "topology_changing_causal_history",
+      "checkpoint_index": 2,
+      "coherence_transfer_amount": 0.0,
+      "collapse_reabsorption_allowed": true,
+      "collapse_reabsorption_processing_implemented": true,
+      "competing_sink_ids": [
+        7,
+        13
+      ],
+      "event_time_key": 5.0,
+      "evidence_class": "collapse_reabsorption",
+      "identity_acceptance_emitted": false,
+      "lgrc_runtime_level": "lgrc3",
+      "lineage_transfer_map": {
+        "13": "north_out-lineage"
+      },
+      "lineage_transfer_policy": "explicit_lineage_transfer_map",
+      "losing_sink_ids": [
+        13
+      ],
+      "mode_version": "lgrc3_topology_contract_v1",
+      "node_proper_time": {
+        "13": 4.0,
+        "7": 4.0
+      },
+      "packet_transport_emitted": false,
+      "proper_time_transfer_policy": "selected_sink_clock_continuity",
+      "runtime_family": "LGRC9V3",
+      "scheduler_event_index": 8,
+      "selected_sink_id": 7,
+      "source_lineage_ids": {
+        "13": "east_out-lineage"
+      },
+      "source_packet_ledger_schema_version": null,
+      "source_pending_flux_ledger_schema_version": null,
+      "state_mutated": false,
+      "target_lineage_id": "north_out-lineage",
+      "topology_event_id": "lgrc9v3-topology-0e3803bd60f67b85",
+      "topology_event_kind": "lgrc9v3_causal_collapse",
+      "topology_mutated": false,
+      "transferred_node_ids": [
+        13
+      ],
+      "transferred_packet_ids": [],
+      "transferred_pending_flux_entry_ids": []
+    },
+    "topology_event_kind": "lgrc9v3_causal_collapse",
+    "topology_replay_validation": {
+      "accepted_artifact_count": 1,
+      "artifact_kind": "lgrc9v3_topology_event_replay_validation",
+      "artifact_schema_version": "lgrc9v3_topology_event_replay_validation_v1",
+      "budget_conservation_valid": true,
+      "budget_error": 0.0,
+      "causal_layer_mode": "topology_changing_causal_history",
+      "end_budget": 25.0,
+      "event_time_order_valid": true,
+      "evidence_class": "topology_event_replay_validation",
+      "lgrc_runtime_level": "lgrc3",
+      "lineage_continuity_valid": true,
+      "mode_version": "lgrc3_topology_contract_v1",
+      "replay_records": [
+        {
+          "budget_after": 25.0,
+          "budget_before": 25.0,
+          "budget_error": 0.0,
+          "checkpoint_index": 2,
+          "creates_topology_event": true,
+          "event_time_key": 5.0,
+          "identity_acceptance_emitted": false,
+          "lineage_ids": [
+            "east_out-lineage",
+            "north_out-lineage"
+          ],
+          "record_kind": "lgrc9v3_collapse_reabsorption_result",
+          "replay_record_id": "lgrc9v3-topology-0e3803bd60f67b85",
+          "scheduler_event_index": 8,
+          "source_identity_evaluation_id": null,
+          "source_topology_event_ids": [],
+          "topology_event_id": "lgrc9v3-topology-0e3803bd60f67b85",
+          "topology_event_kind": "lgrc9v3_causal_collapse"
+        }
+      ],
+      "replay_valid": true,
+      "runtime_family": "LGRC9V3",
+      "start_budget": 25.0
+    }
+  },
+  "next_iteration": "19-C_s7_topology_lineage_adaptive_gate_with_native_surface_lineage",
+  "next_work": {
+    "option": "rerun_adaptive_gate_with_native_surface_lineage_transport",
+    "reason": "Phase 8 closed the native causal pulse-substrate surface lineage transport capability gap. N04 can now rerun the S7 topology-lineage/adaptive gate as Iteration 19-C."
+  },
+  "phase8_resolution": {
+    "status": "runtime_blocker_resolved",
+    "closeout_json": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.json",
+    "closeout_report": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.md",
+    "phase8_claim_ceiling": "native_causal_pulse_substrate_surface_lineage_transport_supported",
+    "native_surface_lineage_transport_supported": true,
+    "producer_stale_read_prevention_supported": true,
+    "artifact_only_lineage_replay_validator_supported": true,
+    "full_regression_after_phase8": {
+      "command": ".venv/bin/python -m pytest tests -q",
+      "result": "passed",
+      "tests": 1529,
+      "subtests": 684,
+      "warnings": 6
+    },
+    "n04_claim_promotion_from_phase8": false,
+    "n04_required_next_probe": "19-C_s7_topology_lineage_adaptive_gate_with_native_surface_lineage"
+  },
+  "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status",
+  "primary_blocker_current_status": "resolved_externally_by_phase8_lineage_closeout",
+  "promotion_result": "blocked",
+  "report_kind": "n04_iter19b_topology_lineage_adaptive_gate_v1",
+  "result_kind": "expected_fail_closed_boundary_probe",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_19a": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19a_s7_fixed_port_execution_report.json",
+      "sha256": "1e49625d90d15bf13947db6b0c31de588f109dbcfabeabec2514be69b6ebece2"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "port_graph",
+  "surface_lineage_transport_probe": {
+    "exception_message": "surface row v1 requires fixed_topology lineage_status",
+    "exception_type": "ValueError",
+    "fixed_topology_surface_row_valid": true,
+    "lineage_transport_surface_row_constructed": false,
+    "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "attempted_promotion": "native_lgrc_route_arbitration_selection_candidate",
+  "blocked_claims": [
+    "native_lgrc_choice_selection_as_semantic_choice",
+    "semantic_choice",
+    "agency",
+    "rc_identity_collapse",
+    "identity_acceptance",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "boundary": {
+    "agency_claim_allowed": false,
+    "interpretation": "Iteration 21-B resolves the old route-selection exposure blocker as runtime route arbitration: candidate routes are formed from committed runtime-visible evidence, serialized policy selects one route, the selected topology event cites the arbitration record, and artifact-only replay reconstructs the downstream lineage/reabsorption/producer/step chain. This is not semantic choice, agency, or RC identity collapse.",
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_route_arbitration_supported": true,
+    "old_route_selection_blocker_resolved": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false
+  },
+  "checks": {
+    "artifact_only_route_arbitration_replay_passed": true,
+    "candidate_route_set_emitted": true,
+    "claim_boundary_preserved": true,
+    "hidden_input_control_blocks_selection": true,
+    "iteration_20_baseline_passed": true,
+    "native_route_arbitration_record_emitted": true,
+    "old_primary_blocker_resolved": true,
+    "phase8_native_route_arbitration_closed": true,
+    "producer_scheduled_from_reabsorbed_transport": true,
+    "scheduled_packet_processed_by_step": true,
+    "selected_route_not_experiment_if_else": true,
+    "selected_topology_event_from_arbitration_record": true,
+    "surface_lineage_and_reabsorption_consumed_selected_event": true,
+    "unresolved_tie_control_blocks_selection": true
+  },
+  "claim_ceiling": "topology_mutating_movement_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": true,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_lgrc_route_arbitration_supported": true,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "semantic_choice_claim_allowed": false,
+    "topology_mutating_movement_claim_allowed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "claim_promotion_control": {
+      "passed_negative_control": true,
+      "primary_blocker": "route_arbitration_is_not_semantic_choice_or_agency"
+    },
+    "hidden_input_control": {
+      "control_id": "hidden_input_route_selection_rejected",
+      "passed_negative_control": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected",
+      "reason_code": "native_route_arbitration_hidden_input_rejected",
+      "selected_candidate_route_digest": null,
+      "selected_topology_event_count": 0
+    },
+    "unresolved_tie_control": {
+      "control_id": "unresolved_tie_no_selected_route",
+      "passed_negative_control": true,
+      "primary_blocker": "native_route_arbitration_unresolved_tie",
+      "reason_code": "native_route_arbitration_unresolved_tie",
+      "selected_candidate_route_digest": null,
+      "selected_topology_event_count": 0
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21b_native_lgrc_route_arbitration_rerun.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_route_arbitration_plus_surface_lineage_and_topology_state_reabsorption",
+  "geometry_scope": "topology_mutating",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "9fb22cb4737b6f6f6c393491cd472b83911b1b8c"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M ../../../../Obsidian/SentientLife/Self/26-05/2026-05-22.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/README.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_continuation_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n M implementation/ImplementationPhases.md\n M implementation/Phase-8-LGRC9-Closeout.md\n M implementation/Phase-8-LGRC9-Handoff.md\n M implementation/Phase-8-LGRC9-ImplementationChecklist.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M src/pygrc/models/__init__.py\n M src/pygrc/models/lgrc_9_v3_contract.py\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M src/pygrc/models/lgrc_9_v3_runtime_state.py\n M src/pygrc/models/lgrc_9_v3_topology.py\n M src/pygrc/telemetry/lgrc9v3_contract.py\n M tests/models/test_lgrc_9_v3_contract.py\n M tests/models/test_lgrc_9_v3_runtime.py\n M tests/telemetry/test_lgrc9v3_contract.py\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-LGRC-Applications.md\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-RC-ACO.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21_native_lgrc_choice_selection_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21b_native_lgrc_route_arbitration_rerun.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22_identity_through_topology_mutation_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter20_topology_mutating_repeatability_stress.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21_native_lgrc_choice_selection_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21b_native_lgrc_route_arbitration_rerun.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter22_identity_through_topology_mutation_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter20_topology_mutating_repeatability_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21_native_lgrc_choice_selection_boundary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21b_native_lgrc_route_arbitration_rerun.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter22_identity_through_topology_mutation_boundary.py\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationBaselineFreeze.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationBaselineFreeze.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCandidateEmission.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCandidateEmission.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationChecklist.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCommit.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCommit.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationContractSchema.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationContractSchema.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationPlan.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationReplay.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationReplay.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationSelection.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationSelection.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayChecklist.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayPlan.md"
+    }
+  },
+  "input_ceiling": "topology_mutating_movement_candidate",
+  "iteration": "21-B",
+  "movement_substrate": "S7_port_graph_topology_lineage_probe_v1",
+  "next_iteration": "22-B_or_23_topology_mutating_taxonomy_closeout",
+  "positive_lane": {
+    "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+    "artifact_validator": {
+      "agency_claim_allowed": false,
+      "artifact_only": true,
+      "biological_claim_allowed": false,
+      "candidate_route_count": 2,
+      "candidate_set_count": 1,
+      "candidate_set_reconstructed": true,
+      "control_blockers": [],
+      "downstream_lineage_reabsorption_producer_chain_reconstructed": true,
+      "failure_reasons": [],
+      "identity_acceptance_claim_allowed": false,
+      "lineage_replay_valid": true,
+      "locomotion_like_claim_allowed": false,
+      "native_lgrc_choice_selection_claim_allowed": false,
+      "native_lgrc_route_arbitration_supported": true,
+      "post_arbitration_linked_producer_count": 1,
+      "rc_identity_collapse_claim_allowed": false,
+      "route_arbitration_reconstructed": true,
+      "route_arbitration_record_count": 1,
+      "route_selection_reconstructed_from_artifacts": true,
+      "runtime_state_used": false,
+      "selected_route_arbitration_record_ids": [
+        "native-route-arbitration:1cb543ca611462354354470f5c4b3e0d"
+      ],
+      "selected_topology_event_count": 1,
+      "selected_topology_event_reconstructed": true,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false,
+      "valid": true,
+      "validator": "validate_lgrc9v3_native_route_arbitration_artifacts"
+    },
+    "candidate_route_count": 2,
+    "candidate_set_digest": "ccefb990687374ddd8ebf2ae1e94cb0d530f7ea060e96750f704add33ea22d4e",
+    "lane_id": "native_route_arbitrated_topology_mutating_lane",
+    "ledger_after_processing": {
+      "base_node_coherence_total": 6.0,
+      "fixed_topology": false,
+      "ledger_conserved_budget_total": 6.0,
+      "ledger_in_flight_packet_total": 0.0,
+      "ledger_node_coherence_total": 6.0,
+      "node_plus_packet_total": 6.0,
+      "node_total_delta_ledger_minus_state": 0.0,
+      "packet_ledger_present": true,
+      "packet_transport_through_topology_change": true,
+      "topology_change_allowed": true
+    },
+    "passed": true,
+    "producer_reads_transported_digest": true,
+    "producer_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+    "producer_uses_topology_state_reabsorption_record": true,
+    "rejected_candidate_route_digests": [
+      "afd365b0ea166283c63d4367a0f3e7b2946b3d65ce3bb77e3ed0e592f205d3e3"
+    ],
+    "route_arbitration_digest": "f48e4724f6f237215abfa23abe6c81beb6701a8a60e8b1ef6bf937c0c44b6128",
+    "route_arbitration_record_id": "native-route-arbitration:1cb543ca611462354354470f5c4b3e0d",
+    "scheduled_packet_event_id": "lgrc9v3-packet-event-404fa41884262268",
+    "scheduled_packet_processed_by_step": true,
+    "selected_candidate_route_digest": "97d37fd2573fae6c86d74e9781ca2ea56defa392a8faf5b869bc0d25e0c6a4b3",
+    "selected_candidate_route_id": "route_a_collapse_to_sink_0",
+    "selected_topology_event_digest": "17acddae6eb6ace130055cbf321ee569efd4fada8c8b9c5b50db39d0f7fffa01",
+    "selected_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+    "selected_topology_event_references_arbitration": true,
+    "status": "passed",
+    "surface_lineage_record_digest": "46619faec4ae3491f6828406235a16a326ab31f2cc600f373b55aeee84fca314",
+    "topology_state_reabsorption_record_digest": "01a95b99720382381b5745fb3b709ea845b1dc078bbb905ba2aa67e3c8f83a45"
+  },
+  "previous_primary_blocker": "native_lgrc_topology_route_selection_not_exposed",
+  "primary_blocker": null,
+  "promotion_result": "runtime_route_arbitration_supported_choice_claim_blocked",
+  "report_kind": "n04_iter21b_native_lgrc_route_arbitration_rerun_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_20": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json",
+      "sha256": "948c94441a6f98a355f228d763603b56280de6d5e3046135399ad810e4c2db04"
+    },
+    "phase8_native_route_arbitration_closeout": {
+      "path": "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json",
+      "sha256": "cabc1f5b81fdb19154d778b04463f74f32e82653db6291daa62b1e5128d01b65"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "port_graph"
+}

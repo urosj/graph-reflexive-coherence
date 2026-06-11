@@ -1,0 +1,306 @@
+{
+  "schema": "grc9v3_polarized_basin_loop_artifact_surface_inventory_v1",
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "iteration": "1",
+  "status": "complete",
+  "selected_runner": {
+    "runner_mode": "fixed_topology_continuity_runner",
+    "model_family": "GRC9V3",
+    "full_step_runner": "blocked_by_default",
+    "reason": "GRC9V3.step includes spark, choice/collapse, growth, boundary behavior, continuity, budget correction, and final rebuild phases."
+  },
+  "selected_same_parent_basin_mode": {
+    "mode": "configured_parent_region_only",
+    "claim_ceiling": "candidate_loop_only",
+    "reason": "GRC9V3 exposes sink/basin identity surfaces, but strong flux_successor_basin evidence is deferred until fixture masks and the fixed-topology runner exist."
+  },
+  "runtime_surfaces": {
+    "allowed_fixed_topology_calls": [
+      "rebuild_differential_state",
+      "rebuild_transport_state",
+      "apply_continuity",
+      "enforce_quadrature_budget",
+      "rebuild_identity_state",
+      "compute_observables"
+    ],
+    "excluded_first_pass_calls": [
+      "detect_hybrid_spark_candidates",
+      "apply_hybrid_sparks",
+      "apply_growth",
+      "apply_boundary_behavior",
+      "rebuild_choice_state",
+      "step"
+    ],
+    "default_call_sequence": [
+      "C_pre",
+      "rebuild_differential_state",
+      "rebuild_transport_state",
+      "capture_transport_state_flux_uv",
+      "apply_continuity",
+      "capture_C_post_continuity",
+      "enforce_quadrature_budget",
+      "capture_C_post_budget_and_budget_summary",
+      "rebuild_differential_state",
+      "rebuild_transport_state",
+      "rebuild_identity_state",
+      "compute_observables",
+      "experiment_local_loop_observables"
+    ]
+  },
+  "observable_sources": {
+    "node_coherence_history": {
+      "status": "available",
+      "sources": [
+        "GRC9V3State.nodes[node_id].coherence"
+      ],
+      "derived_fields": [
+        "C_pre",
+        "C_post_continuity",
+        "C_post_budget",
+        "C_source",
+        "C_sink",
+        "source_delta_C_pre_budget",
+        "sink_delta_C_pre_budget"
+      ]
+    },
+    "edge_flux_conductance_history": {
+      "status": "available",
+      "sources": [
+        "GRC9V3State.port_edges[edge_id].flux_uv",
+        "GRC9V3State.port_edges[edge_id].conductance",
+        "GRC9V3State.base_conductance[edge_id]",
+        "GRC9V3State.flux_coupling[edge_id]",
+        "GRC9V3State.geometric_length[edge_id]",
+        "GRC9V3State.temporal_delay[edge_id]",
+        "GRC9V3State.potential[node_id]"
+      ]
+    },
+    "edge_endpoint_orientation": {
+      "status": "available",
+      "sources": [
+        "PortEdge.node_u",
+        "PortEdge.port_u",
+        "PortEdge.node_v",
+        "PortEdge.port_v",
+        "PortGraphBackend.edge_ports(edge_id)",
+        "PortGraphBackend.incident_edge_ids(node_id)"
+      ],
+      "orientation_convention": "oriented_flux(edge,node)=+flux_uv when node==node_u and -flux_uv when node==node_v"
+    },
+    "basin_sink_parent_basin": {
+      "status": "partial",
+      "sources": [
+        "GRC9V3State.sink_set",
+        "GRC9V3State.basins",
+        "GRC9V3NodeState.basin_id",
+        "GRC9V3NodeState.parent_id",
+        "GRC9V3NodeState.basin_mass",
+        "GRC9V3NodeState.depth",
+        "GRC9V3State.hierarchy"
+      ],
+      "notes": [
+        "Runtime sink_set is not the experiment sink_aspect mask.",
+        "Configured parent region evidence is selected first."
+      ]
+    },
+    "budget_audit": {
+      "status": "available",
+      "sources": [
+        "sum(node.coherence)",
+        "GRC9V3.enforce_quadrature_budget",
+        "GRC9V3State.cached_quantities.last_quadrature_budget"
+      ],
+      "core_summary_fields": [
+        "quadrature_mode",
+        "budget_correction_method",
+        "budget_before",
+        "budget_after_negative_clamp",
+        "budget_target",
+        "budget_after",
+        "budget_error",
+        "negative_mass_correction"
+      ],
+      "runner_derived_fields": [
+        "before_continuity",
+        "after_continuity",
+        "after_correction",
+        "error_pre_correction",
+        "error_post_correction",
+        "correction_magnitude",
+        "simplex_projection_count",
+        "uniform_shift_count"
+      ]
+    },
+    "fixed_topology_audit": {
+      "status": "available",
+      "sources": [
+        "PortGraphBackend.iter_live_node_ids",
+        "PortGraphBackend.iter_live_edge_ids",
+        "GRC9V3State.event_log",
+        "GRC9V3.compute_observables"
+      ]
+    },
+    "topology_config_flags": {
+      "status": "derived",
+      "native_sources": [
+        "evolution.lambda_birth",
+        "constitutive_semantic_modes.boundary_mode",
+        "constitutive_semantic_modes.spark_lane",
+        "constitutive_semantic_modes.enable_column_h_threshold",
+        "constitutive_semantic_modes.enable_column_h_sign_crossing"
+      ],
+      "first_pass_flags": {
+        "topology_events_enabled": false,
+        "spark_enabled": false,
+        "growth_enabled": false,
+        "boundary_behavior_enabled": false,
+        "birth_enabled": false
+      }
+    },
+    "region_export_import": {
+      "status": "derived",
+      "required_sources": [
+        "edge-level flux_uv",
+        "edge endpoint orientation",
+        "region masks"
+      ],
+      "derived_fields": [
+        "source_export",
+        "sink_import",
+        "J_forward",
+        "J_return",
+        "source_delta_C_pre_budget",
+        "sink_delta_C_pre_budget",
+        "source_delta_C_post_budget",
+        "sink_delta_C_post_budget"
+      ],
+      "do_not_use_as_authoritative": [
+        "GRC9V3NodeState.net_flux_summary alone"
+      ]
+    }
+  },
+  "time_series": {
+    "status": "available_as_experiment_artifact",
+    "selected_storage": "canonical_jsonl",
+    "digest": "sha256_file_bytes",
+    "acceptable_later_alternatives": [
+      "csv",
+      "npz",
+      "canonical_json"
+    ]
+  },
+  "readme_runner_mapping": [
+    {
+      "readme_step": "compute basin attributes",
+      "status": "available",
+      "runtime_phase": "rebuild_differential_state + rebuild_identity_state"
+    },
+    {
+      "readme_step": "compute K_i-like local state",
+      "status": "available_as_model_diagnostics",
+      "runtime_phase": "rebuild_differential_state"
+    },
+    {
+      "readme_step": "update conductances",
+      "status": "available",
+      "runtime_phase": "rebuild_transport_state"
+    },
+    {
+      "readme_step": "compute potentials",
+      "status": "available",
+      "runtime_phase": "rebuild_transport_state"
+    },
+    {
+      "readme_step": "compute antisymmetric flux",
+      "status": "available",
+      "runtime_phase": "rebuild_transport_state / flux_uv"
+    },
+    {
+      "readme_step": "update C_i by continuity",
+      "status": "available",
+      "runtime_phase": "apply_continuity"
+    },
+    {
+      "readme_step": "enforce budget / projection",
+      "status": "available",
+      "runtime_phase": "enforce_quadrature_budget"
+    },
+    {
+      "readme_step": "identify basins",
+      "status": "partial",
+      "runtime_phase": "rebuild_identity_state plus configured-parent evidence"
+    },
+    {
+      "readme_step": "compute source/sink summaries",
+      "status": "derived",
+      "runtime_phase": "experiment-local postprocessor"
+    },
+    {
+      "readme_step": "compute loop scores",
+      "status": "derived",
+      "runtime_phase": "experiment-local postprocessor"
+    },
+    {
+      "readme_step": "assign L-level",
+      "status": "derived",
+      "runtime_phase": "experiment-local classifier"
+    }
+  ],
+  "fixture_decision": {
+    "first_serious_grc9v3_fixture": "grc9v3_ported_ring_v1",
+    "analysis_control_fixture": "simple_unported_ring_v1"
+  },
+  "control_feasibility": {
+    "shuffled_conductance": {
+      "status": "partial",
+      "notes": "Must declare whether shuffling targets initial fixture base conductance, per-tick rebuilt conductance, channel mask assignment, or posthoc flux series assignment."
+    },
+    "zero_flux_reset": {
+      "status": "available_or_not_applicable",
+      "notes": "Useful for snapshot/replay lanes; fresh rebuild-only lanes can mark it not applicable."
+    },
+    "budget_projection_disabled_dry_run": {
+      "status": "partial",
+      "notes": "Diagnostic only; cannot support positive conservation claims."
+    },
+    "randomized_labels_posthoc": {
+      "status": "available",
+      "notes": "Classifier sanity check; does not rerun dynamics."
+    },
+    "topology_disabled": {
+      "status": "available_by_runner_selection",
+      "notes": "Enforced by not invoking topology-changing phases plus topology audit."
+    }
+  },
+  "blocked_or_partial_surfaces": [
+    {
+      "surface": "flux_successor_basin_strong_evidence",
+      "status": "partial",
+      "reason": "defer until runner/fixture masks define directed successor path evidence"
+    },
+    {
+      "surface": "full_GRC9V3_step_fixed_topology_evidence",
+      "status": "blocked_by_default",
+      "reason": "too broad for first fixed-topology pass"
+    },
+    {
+      "surface": "accumulated_projection_counts_from_core",
+      "status": "derived",
+      "reason": "core returns per-call budget summary; experiment runner counts calls"
+    },
+    {
+      "surface": "budget_projection_disabled_dry_run_positive_evidence",
+      "status": "blocked",
+      "reason": "diagnostic only"
+    },
+    {
+      "surface": "multi_pole_appendix_a_evidence",
+      "status": "deferred",
+      "reason": "not part of first two-aspect implementation"
+    }
+  ],
+  "core_library_stop_rule": {
+    "src_changes_required": false,
+    "notes": "No src/* changes are required for Iteration 1."
+  }
+}

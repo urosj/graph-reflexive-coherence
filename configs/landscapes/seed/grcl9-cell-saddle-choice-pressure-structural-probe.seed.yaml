@@ -1,0 +1,103 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Saddle Choice Pressure Structural Probe
+  description: Collapse-adjacent ComposingCells seed with asymmetric saddle pressure but no GRCV3 choice semantics.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-saddle-choice-pressure-structural-probe
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, saddle, choice_pressure, structural_probe]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - This seed uses saddle/unstable-direction language to author pressure structure.
+    - It does not import GRCV3 choice or collapse semantics.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: inner_basin
+    type: basin
+    coherence_prior: 1.0
+    depth_hint: 0
+    boundary_ids: [choice_saddle]
+    chart_center_hint: [0.42, 0.5]
+  - id: outer_basin
+    type: basin
+    coherence_prior: 0.4
+    depth_hint: 0
+    boundary_ids: [choice_saddle]
+    chart_center_hint: [0.65, 0.5]
+  - id: choice_saddle
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.52, 0.5]
+    branch_target_ids: [inner_basin, outer_basin]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: cell_saddle_choice_pressure_structural_probe_critical_region
+        motif_id: spark_instability
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: saddle_pressure_cell
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: anisotropic
+        columnwise_near_cancellation: {}
+        spark_gate_intent: saturation_instability
+  - id: pressure_direction
+    type: valley
+    from_id: choice_saddle
+    to_id: outer_basin
+    channel_role: asymmetric_choice_pressure
+    width_hint: 0.12
+    extensions:
+      grcl9:
+        term_kind: unstable_direction
+        term_id: cell_saddle_choice_pressure_structural_probe_unstable_direction
+        motif_id: spark_instability
+        direction_id: choice_pressure_direction
+        region_id: candidate
+        axis_role: row_1
+        support_class: asymmetric_support
+        cut_class: high_cut
+        tau_instability: 0.25
+  - id: weak_choice_bridge
+    type: saddle
+    coherence_prior: 0.1
+    chart_center_hint: [0.56, 0.5]
+    branch_target_ids: [inner_basin, outer_basin]
+    extensions:
+      grcl9:
+        term_kind: saddle_bridge
+        term_id: cell_saddle_choice_pressure_structural_probe_saddle_bridge
+        motif_id: spark_instability
+        bridge_id: choice_pressure_saddle
+        region_a: candidate
+        region_b: outer_basin
+        bridge_class: weak_saddle_bridge
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_saddle_choice_pressure_structural_probe
+    manifest_entry_id: grcl9_lowering_spark_instability_v1
+    expected_selector_ids: [saddle_pressure_structural_probe]
+    notes: Collapse-adjacent saddle-pressure structural probe; no GRCV3 choice or runtime collapse is claimed.

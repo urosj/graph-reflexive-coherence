@@ -1,0 +1,92 @@
+{
+  "artifact": "Phase-8-LGRC9-NativeRouteArbitrationSelection",
+  "schema_version": "phase8_lgrc9_native_route_arbitration_selection_v1",
+  "date": "2026-05-22",
+  "status": "passed",
+  "iteration": 79,
+  "purpose": "select_one_candidate_route_from_serialized_runtime_visible_candidate_set",
+  "implementation_files": [
+    "src/pygrc/models/lgrc_9_v3_runtime.py",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+    "tests/models/test_lgrc_9_v3_runtime.py"
+  ],
+  "runtime_api": {
+    "method": "LGRC9V3.arbitrate_native_route_candidate_set",
+    "default_off": true,
+    "emits_route_arbitration_record": true,
+    "requires_committed_candidate_set": true,
+    "requires_committed_candidate_records": true,
+    "commits_topology_event": false,
+    "schedules_packets": false,
+    "mutates_state": false
+  },
+  "selection_policy": {
+    "default_rule": "highest_score",
+    "selected_reason_code": "native_route_arbitration_selected_highest_score",
+    "declared_tiebreaker_reason_code": "native_route_arbitration_selected_declared_local_preference",
+    "unresolved_tie_blocker": "native_route_arbitration_unresolved_tie",
+    "rejected_candidates_remain_auditable": true,
+    "selected_candidate_in_candidate_set": true,
+    "selected_candidate_count": 1,
+    "selection_replayable_from_artifact": true
+  },
+  "fail_closed_controls": {
+    "no_candidates_rejected": true,
+    "no_candidates_blocker": "native_route_arbitration_no_candidates",
+    "experiment_if_else_selection_rejected": true,
+    "unresolved_tie_rejected_without_declared_tiebreaker": true,
+    "budget_invalid_rejected": true,
+    "order_invalid_rejected": true,
+    "hidden_input_rejected": true
+  },
+  "idempotency": {
+    "duplicate_arbitration_suppressed": true,
+    "same_candidate_set_replay_keeps_one_arbitration_log_record": true
+  },
+  "selected_topology_event": {
+    "authorized_by_route_arbitration_record": true,
+    "selected_topology_event_id_serialized": true,
+    "selected_topology_event_digest_serialized": true,
+    "topology_event_committed": false,
+    "commit_deferred_to_iteration": 80
+  },
+  "runtime_state_serialization": {
+    "native_route_arbitration_log": true,
+    "old_snapshots_without_arbitration_log_load": true
+  },
+  "non_actions": {
+    "candidate_emission_performed": false,
+    "selected_topology_event_committed": false,
+    "packet_scheduled": false,
+    "state_mutated": false,
+    "claim_promoted": false
+  },
+  "verification": {
+    "route_arbitration_tests": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route_arbitration\"",
+      "status": "passed",
+      "result": "10 passed, 124 deselected"
+    },
+    "focused_regression": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route or time_scopes_producer_reads or rejects_source_read_after_transport or topology_state_reabsorption_artifact_validator_reconstructs_chain\"",
+      "status": "passed",
+      "result": "35 passed, 222 deselected, 20 subtests passed"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  },
+  "claim_flags": {
+    "movement_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "next_iteration": "80_commit_selected_topology_event_and_producers"
+}

@@ -1,0 +1,227 @@
+{
+  "blocked_observation_rules": {
+    "insufficient_fixture_count": "mark scoring inconclusive",
+    "missing_feature_family": "mark family blocked for that target",
+    "missing_target_artifact": "mark target blocked",
+    "source_intent_only": "do not promote to supported evidence"
+  },
+  "controls": [
+    {
+      "control": "random_row_triples",
+      "purpose": "test true row grouping against arbitrary triples"
+    },
+    {
+      "control": "random_column_triples",
+      "purpose": "test true column grouping against arbitrary triples"
+    },
+    {
+      "control": "arbitrary_s9_port_relabeling",
+      "purpose": "test anonymous-port null against structured features"
+    },
+    {
+      "control": "degree_only_features",
+      "purpose": "test whether ordinary graph structure explains all targets"
+    },
+    {
+      "control": "shuffled_target_labels",
+      "purpose": "detect spurious predictive signal"
+    },
+    {
+      "control": "cross_validation_by_fixture",
+      "purpose": "avoid memorizing one fixture or transform family"
+    }
+  ],
+  "discriminator_id": "d2_predictive_role_separation_schema",
+  "evidence_labels": [
+    "direct",
+    "derived",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "expected_outputs_schema_phase": [
+    "reports/d2_target_definitions.md",
+    "reports/d2_blocked_observations.md"
+  ],
+  "expected_outputs_scoring_phase": [
+    "outputs/d2_feature_family_scores.csv",
+    "reports/d2_cross_validation_report.md",
+    "outputs/d2_random_grouping_controls.csv",
+    "reports/d2_blocked_observations.md"
+  ],
+  "feature_families": [
+    {
+      "evidence_label": "direct",
+      "feature_family": "degree_adjacency_baseline",
+      "features": [
+        "active_degree",
+        "incident_edge_count",
+        "neighbor_count",
+        "conductance_sum",
+        "absolute_flux_sum",
+        "graph_distance_or_path_membership_where_available"
+      ],
+      "role": "H0 baseline",
+      "source_artifacts": "topology, PortEdge records, edge labels"
+    },
+    {
+      "evidence_label": "derived",
+      "feature_family": "row",
+      "features": [
+        "row_id",
+        "row occupancy",
+        "row perturbation energy",
+        "row-resolved gradient or mismatch response",
+        "row-resolved tensor/diagonal signature where available"
+      ],
+      "role": "geometric/differential predictor",
+      "source_artifacts": "Experiment A rows, port_to_rc, state/cached row artifacts"
+    },
+    {
+      "evidence_label": "derived",
+      "feature_family": "column",
+      "features": [
+        "column_id",
+        "column occupancy",
+        "column cancellation score",
+        "column pressure proxy",
+        "refinement reassignment column",
+        "G/Split column profile"
+      ],
+      "role": "interface/refinement/multiscale predictor",
+      "source_artifacts": "Experiments B, D, E; endpoint ports and expansion payloads"
+    },
+    {
+      "evidence_label": "direct",
+      "feature_family": "port",
+      "features": [
+        "port_id",
+        "row_id",
+        "column_id",
+        "port occupancy",
+        "port-local flux",
+        "dominant port over window",
+        "old/new refinement port mapping"
+      ],
+      "role": "edge-local and row-column intersection predictor",
+      "source_artifacts": "PortEdge records, Experiments D, F, G"
+    },
+    {
+      "evidence_label": "derived",
+      "feature_family": "random_grouping",
+      "features": [
+        "random triple id",
+        "non-factorized S9 group id",
+        "random grouped occupancy",
+        "random grouped score aggregates"
+      ],
+      "role": "negative semantic grouping control",
+      "source_artifacts": "shared transform harness and D1 non-factorized controls"
+    }
+  ],
+  "harness_schema": "outputs/discriminator_harness_schema.json",
+  "lane_id": "current_hybrid_signed_hessian",
+  "manifest_required_fields": [
+    "discriminator_id",
+    "iteration",
+    "script_path",
+    "command",
+    "git_commit",
+    "lane_id",
+    "fixture_id",
+    "transform_id",
+    "seed",
+    "runtime_params",
+    "artifact_schema_version",
+    "artifact_source_map",
+    "output_paths"
+  ],
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "scoring_contract": {
+    "allowed_methods": [
+      "linear_or_ridge_regression_for_scalar_targets",
+      "logistic_regression_for_binary_targets",
+      "multinomial_logistic_regression_for_categorical_targets",
+      "decision_stumps_or_shallow_trees",
+      "mutual_information_for_small_datasets",
+      "rank_correlation_for_monotonic_relationships"
+    ],
+    "comparison_rule": "compare feature-family performance by target class against degree/adjacency and random grouping controls",
+    "primary_split": "cross_validation_by_fixture",
+    "scoring_readiness": {
+      "late_scoring_iteration": "Discriminator checklist Iteration 10",
+      "minimum_inputs": [
+        "O-style A-G rows",
+        "D1 factorization rows",
+        "at least one additional D-style target family beyond D1"
+      ],
+      "status": "blocked_until_enough_completed_run_data_exist"
+    }
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d2_schema.py",
+  "target_classes": [
+    {
+      "current_sources": "Experiment A rows",
+      "example_targets": [
+        "K anisotropy",
+        "row-resolved gradient response",
+        "row-resolved flux stress",
+        "Hessian-like row signature"
+      ],
+      "expected_strongest_family": "row",
+      "scoring_status": "schema_defined_scoring_deferred",
+      "target_class": "geometric_differential"
+    },
+    {
+      "current_sources": "Experiments B, C, D",
+      "example_targets": [
+        "column cancellation",
+        "boundary pressure",
+        "spark eligibility",
+        "spark/refinement event",
+        "boundary edge reassignment",
+        "post-refinement routing role"
+      ],
+      "expected_strongest_family": "column",
+      "scoring_status": "schema_defined_scoring_deferred",
+      "target_class": "interface_routing_refinement"
+    },
+    {
+      "current_sources": "Experiments F, G",
+      "example_targets": [
+        "dominant port",
+        "flux reversal",
+        "strongest edge",
+        "path membership",
+        "route class"
+      ],
+      "expected_strongest_family": "port",
+      "scoring_status": "schema_defined_scoring_deferred",
+      "target_class": "edge_local"
+    },
+    {
+      "current_sources": "A-G summaries and topology rows",
+      "example_targets": [
+        "active degree",
+        "total flux magnitude",
+        "ordinary sink status",
+        "local coherence accumulation"
+      ],
+      "expected_strongest_family": "degree_adjacency_baseline",
+      "scoring_status": "schema_defined_scoring_deferred",
+      "target_class": "generic_activity"
+    },
+    {
+      "current_sources": "Experiment D persistence rows; later D8 windows",
+      "example_targets": [
+        "sink status",
+        "basin assignment",
+        "child-basin persistence",
+        "attractor-count change"
+      ],
+      "expected_strongest_family": "port_plus_column_plus_global_basin_context",
+      "scoring_status": "partial_until_D8",
+      "target_class": "identity_level_persistence"
+    }
+  ]
+}

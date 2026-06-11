@@ -1,0 +1,37 @@
+{
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "closed_iterations": [
+    73,
+    74,
+    75
+  ],
+  "date": "2026-05-22",
+  "n04_return": {
+    "iteration_20_status_after_closeout": "passed",
+    "iteration_20_stress_result_after_closeout": "repeatability_stress_supported",
+    "next_iteration": "21_native_lgrc_choice_selection_boundary"
+  },
+  "report_kind": "phase8_lgrc9_time_scoped_lineage_replay_closeout_v1",
+  "resolved_boundary": "multi_topology_event_time_scoped_producer_lineage_replay_blocked",
+  "status": "closed",
+  "supported_capability": {
+    "artifact_only_time_scoped_surface_lineage_replay_supported": true
+  },
+  "verification": {
+    "focused_pytest": "3 passed, 109 deselected",
+    "focused_pytest_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k \"time_scopes_producer_reads or rejects_source_read_after_transport or topology_state_reabsorption_artifact_validator_reconstructs_chain\"",
+    "n04_iteration_20_command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter20_topology_mutating_repeatability_stress.py",
+    "n04_iteration_20_status": "passed",
+    "runtime_pytest": "112 passed",
+    "runtime_pytest_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q"
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "boundary_coupled_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_grc9v3_proposal_flux_loop_claim": false,
+    "native_lgrc9v3_e3_pulse_used": true
+  },
+  "coupling_direction_reversal_used_as_substitute": false,
+  "direct_write_audit": {
+    "direct_boundary_label_write": false,
+    "direct_centroid_write": false,
+    "direct_displacement_write": false,
+    "direct_support_mask_write": false,
+    "direct_topology_write": false
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_direction_parity_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_boundary_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_m4_m5_classification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_telemetry_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_lane_b_reversed_e3_direction_parity.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "execution_surface": "surface_c_lgrc9v3_e3_pulse_boundary_coupling_adapter",
+  "forward_reference": {
+    "boundary_coupling_score": 0.25,
+    "centroid_delta_total": 0.08333333333333215,
+    "lane_id": "P2_asymmetric_boundary_coupling_forward",
+    "timeseries": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/P2_asymmetric_boundary_coupling_forward.jsonl",
+      "sha256": "bdc3d94d2294c36feb1b23ca09c4367252113875e917852f1e45316b09463c2a",
+      "timeseries_digest": "fc92bc6905065e853183f50a224ea36bb0cbaf87dcfaf37f6f0fa4b3602161c4",
+      "timeseries_digest_verified": true
+    }
+  },
+  "lane_result": {
+    "blocked_claims": [
+      "movement_response",
+      "boundary_coupled_movement",
+      "identity_preserving_displacement",
+      "loop_driven_movement",
+      "locomotion_like_basin_dynamics",
+      "adaptive_topology_movement",
+      "movement_inherited_from_n03"
+    ],
+    "claim_ceiling": "boundary_coupled_pulse_fixture_validation",
+    "claim_flags": {
+      "adaptive_topology_entry_allowed": false,
+      "boundary_coupled_movement_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_claim_inherited_from_n03": false
+    },
+    "conservation": {
+      "budget_abs_error_max": 0.0,
+      "budget_surface": "node_only",
+      "e3_pulse_budget_surface": "node_plus_packet",
+      "in_flight_packet_budget": 0.0,
+      "node_budget": 21.0,
+      "total_budget": 21.0
+    },
+    "drive": {
+      "boundary_coupling_enabled": true,
+      "boundary_coupling_mode": "true_reversed_e3_pulse",
+      "coupling_mode": "state_mediated_node_coherence_update",
+      "coupling_signal": "max(0, (C_S1 - C_S1_initial) - (C_K2 - C_K2_initial))",
+      "coupling_strength": 0.5,
+      "direct_boundary_write": false,
+      "direct_centroid_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "mapped_signal_present": true,
+      "movement_node_coherence_written": true,
+      "pulse_active": true,
+      "state_mediated": true,
+      "type": "state_mediated_true_reversed_e3_boundary_coupling"
+    },
+    "execution_surface": "surface_c_lgrc9v3_e3_pulse_boundary_coupling_adapter",
+    "gates": {
+      "boundary_coupling_measurable": true,
+      "budget_gate_passed": true,
+      "direct_write_gate_passed": true,
+      "movement_claim_allowed": false,
+      "nonnegative_gate_passed": true,
+      "state_mediated_gate_passed": true
+    },
+    "identity_tracking": {
+      "direct_support_mask_write": false,
+      "movement_fixture_node_coherence_written": true,
+      "parent_basin_preserved": true,
+      "support_observation_mode": "derived_from_node_coherence",
+      "support_reference_mask": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    "lane_id": "P3_true_reversed_e3_pulse_boundary_coupling",
+    "loop_dependency": {
+      "loop_ladder_level": "L5",
+      "movement_claim_inherited": false,
+      "source_direction": "counter_clockwise",
+      "source_experiment": "N03",
+      "source_result": "E3_native_LGRC9V3_D2_3_equivalent_packet_loop"
+    },
+    "mapping": {
+      "center_reservoir_mask": [
+        9,
+        10,
+        11
+      ],
+      "direction_frozen_before_run": true,
+      "direction_source": "mapped_e3_route",
+      "front_boundary_mask": [
+        13,
+        14
+      ],
+      "mapping_defined": true,
+      "mapping_id": "e3_four_pole_to_s0_chain_boundary_v1",
+      "mapping_notes": [
+        "This is the first explicit N04 mapping from the four-pole E3 route to a movement substrate.",
+        "The mapping is region-based, not node-id preserving, because E3 has 4 nodes while S0_chain_v1 has 21 nodes.",
+        "Boundary coupling changes node coherence only; it does not write support masks, centroids, or displacement values."
+      ],
+      "mapping_type": "region_based",
+      "node_id_preserving": false,
+      "positive_direction": "increasing_chain_index",
+      "rear_boundary_mask": [
+        6,
+        7
+      ],
+      "route_pole_to_target_region": {
+        "K1": {
+          "interpretation": "mapped to the rear boundary mask",
+          "role": "rear_boundary_pole",
+          "target_nodes": [
+            6,
+            7
+          ]
+        },
+        "K2": {
+          "interpretation": "mapped to the front interior shoulder",
+          "role": "front_inner_pole",
+          "target_nodes": [
+            11,
+            12
+          ]
+        },
+        "S1": {
+          "interpretation": "mapped to the center of the tracked basin",
+          "role": "source_core_pole",
+          "target_nodes": [
+            10
+          ]
+        },
+        "S2": {
+          "interpretation": "mapped to the front boundary mask",
+          "role": "front_boundary_pole",
+          "target_nodes": [
+            13,
+            14
+          ]
+        }
+      },
+      "source_fixture": "E3_four_pole_route",
+      "support_reference_mask": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "target_coordinate_frame": "linear",
+      "target_direction": "positive_x",
+      "target_direction_vector": [
+        1.0
+      ],
+      "target_fixture_id": "S0_chain_v1",
+      "target_fixture_type": "chain"
+    },
+    "movement_metrics": {
+      "boundary_coupling_score": 0.0,
+      "boundary_mass_balance_note": "Net boundary mass accumulation is not a conservation error because the movement fixture total budget includes all nodes.",
+      "centroid_delta_abs": 0.08333333333333393,
+      "centroid_delta_max_abs": 0.08333333333333393,
+      "centroid_delta_total": -0.08333333333333393,
+      "centroid_final": 9.916666666666668,
+      "centroid_initial": 10.000000000000002,
+      "centroid_recomputed_from_serialized_C": true,
+      "centroid_recomputed_value": -0.08333333333333393,
+      "configured_coupling_mass_max": 0.25,
+      "directional_boundary_gain_mass": 0.2500000000000002,
+      "directional_boundary_polarity": "true_reversed_e3_pulse",
+      "directional_boundary_release_mass": 0.25,
+      "front_advance_mass": 0.0,
+      "front_retraction_mass": 0.25,
+      "m_classifier_applied": false,
+      "measured_front_advance_mass": 0.0,
+      "measured_rear_retraction_mass": 0.0,
+      "movement_level": "not_classified_lane_b_boundary_fixture",
+      "movement_level_diagnostic": "true_reversed_e3_direction_parity_candidate",
+      "net_boundary_mass_accumulation": 2.220446049250313e-16,
+      "net_boundary_mass_delta": 2.220446049250313e-16,
+      "rear_advance_mass": 0.2500000000000002,
+      "rear_retraction_mass": 0.0,
+      "reversed_boundary_coupling_score": 0.25
+    },
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_lgrc9v3_e3_pulse_used": true,
+    "primary_blocked_reason": "lane_b_m4_m5_classification_required",
+    "primary_result": "measurable_true_reversed_e3_boundary_coupling",
+    "run_id": "S0_chain_v1_P3_true_reversed_e3_pulse_boundary_coupling",
+    "runtime_family": "experiment_local",
+    "schema": "movement_ladder_report_v1",
+    "state_mediation_note": "Node coherence is modified by the mapped pulse-coupling policy; support masks, centroids, displacement, and topology are not directly written.",
+    "substrate": {
+      "edge_count": 20,
+      "fixture_id": "S0_chain_v1",
+      "node_count": 21,
+      "topology_policy": "fixed"
+    },
+    "taxonomies": {
+      "boundary_level": "B1_boundary_coupling_measured",
+      "movement_level": "M0_boundary_coupling_fixture_measurement_only",
+      "pulse_level": "P5_native_true_reversed_e3_pulse"
+    },
+    "timeseries": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/P3_true_reversed_e3_pulse_boundary_coupling.jsonl",
+      "sha256": "1308f6bf295d71649d724eb7e82b1276824c79a31e34f03f28a7ca8c85fccf65",
+      "timeseries_digest": "fa54d693aa17a67def9adfd9ce8704ac7afbbc43786649b43eaddf2f19e5ddf8",
+      "timeseries_digest_verified": true
+    },
+    "topology": {
+      "edge_count_final": 20,
+      "edge_count_initial": 20,
+      "node_count_final": 21,
+      "node_count_initial": 21,
+      "topology_changed": false,
+      "topology_events_enabled": false
+    }
+  },
+  "report_kind": "lane_b_reversed_e3_pulse_boundary_coupling_v1",
+  "runtime_family": "experiment_local",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "boundary_coupled_pulse_report": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json",
+      "sha256": "75600c24540653f3bebccbbadce7087bf7d2985310a8f4d8d2624af83d6418c8"
+    },
+    "coupling_config": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json",
+      "sha256": "4b82b14cd4e72240178887c8e70636dbac1d7691864015f8a9606254ca594821"
+    },
+    "movement_manifest": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json",
+      "sha256": "b57aba6e2c925eb45fcd6cf5de751a5cdde5b991ed38ac3f8607f468333ebae3"
+    },
+    "reversed_e3_telemetry_validation": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json",
+      "sha256": "a02aa4fe3b0294812679d1d27ac5b24b19cd07e1e2e8954bdaa125901fb718ab"
+    }
+  },
+  "status": "passed",
+  "true_reversed_e3_telemetry_used": true
+}

@@ -1,0 +1,37 @@
+{
+  "bounded_or_inconclusive_themes": [
+    "near-saturation degree-8 policy",
+    "inflow-weighted transfer",
+    "identity fission or landscape-general identity",
+    "full reusable motion-loader port histories",
+    "landscape/seed generality",
+    "formal D-style discriminator baselines"
+  ],
+  "experiment": "family_level_synthesis",
+  "experiment_row_count": 7,
+  "family_conclusion": "The O-style A-G pass partially weakens the anonymous-port null across controlled artifact classes while preserving Lane A and clean-fixture boundaries.",
+  "followup_row_count": 7,
+  "hypothesis_row_count": 14,
+  "lane_id": "current_hybrid_signed_hessian",
+  "prediction_comparison_row_count": 7,
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "strong_supported_themes": [
+    "row-local stress signatures",
+    "derived column-local proxy observability",
+    "explicit Lane B column-H proxy-branch candidate deltas in Lane C",
+    "G/Split reconstruction and signed flux J+/J- exactness",
+    "Lane A degree-9 saturation bottleneck",
+    "column-preserving mechanical refinement",
+    "multi-label edge path disagreement",
+    "observer-local mixed row/column motion classification"
+  ],
+  "support_prechecks": {
+    "a_row_signature": true,
+    "b_column_proxy": true,
+    "c_saturation": true,
+    "d_refinement": true,
+    "e_multiscale": true,
+    "f_path_disagreement": true,
+    "g_motion": true
+  }
+}

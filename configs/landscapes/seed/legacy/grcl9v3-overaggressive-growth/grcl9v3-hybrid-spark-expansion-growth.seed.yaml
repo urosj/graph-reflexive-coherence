@@ -1,0 +1,115 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Hybrid Spark Expansion Growth
+  description: Composed GRCL-9V3 source seed combining spark-to-expansion and growth pressure elementary examples.
+  source_kind: manual_seed
+  source_reference: outputs/grcl9v3/lowering/sessions/S0011/selector_manifest.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composition, spark, expansion, growth]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: candidate
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [support_a, support_b, support_c]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: hybrid_spark_expansion_growth_composition_critical
+        region_id: candidate
+        source_role: composition_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: refinement
+    type: junction
+    host_id: candidate
+    branch_target_ids: [support_a, support_b, support_c]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: hybrid_spark_expansion_growth_composition_refinement
+        region_id: candidate
+        source_role: composition_control
+        profile:
+          target_effective_degree: 30
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+  - id: growth_parent
+    type: basin
+    coherence_prior: 1.0
+  - id: growth_boundary
+    type: ridge
+    owner_id: growth_parent
+    adjacent_ids: [outside]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: hybrid_spark_expansion_growth_composition_boundary
+        region_id: growth_parent
+        source_role: composition_control
+        profile:
+          inactive_parent_port: 5
+  - id: growth_locus
+    type: valley
+    from_id: growth_parent
+    to_id: outside
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: hybrid_spark_expansion_growth_composition_growth
+        region_id: growth_parent
+        source_role: composition_control
+        profile:
+          outward_pressure_profile:
+            pressure: high_outward_pressure
+          lambda_birth: 1.4
+  - id: support_a
+    type: basin
+    coherence_prior: 0.5
+  - id: support_b
+    type: basin
+    coherence_prior: 0.5
+  - id: support_c
+    type: basin
+    coherence_prior: 0.5
+  - id: outside
+    type: plateau
+    coherence_prior: 0.1
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: hybrid_spark_expansion_growth_composition
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0016-hybrid-spark-expansion-growth-composition
+    expected_selector_ids: [hybrid_expansion_events, growth_events]
+    notes:
+      discovery_anchor: S0011 selector-backed elementary batch
+      boundary: source preconditions only
+      composed_source_ancestry:
+        - spark_to_expansion_positive_control
+        - growth_pressure_positive_control

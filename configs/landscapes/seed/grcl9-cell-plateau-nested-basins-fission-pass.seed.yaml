@@ -1,0 +1,97 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Plateau Nested Basins Fission Pass
+  description: ComposingCells-aligned seed with a plateau hosting two nested sink-capable basins separated by a weak saddle bridge.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-plateau-nested-basins-fission-pass
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, plateau, nested_basin, fission]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - The source declares two sink-capable regions; fission confirmation remains a telemetry observation.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: refinement_plateau
+    type: plateau
+    coherence_prior: 1.0
+    hosted_primitive_ids: [sink_a_region, sink_b_region, weak_saddle_bridge]
+    chart_center_hint: [0.5, 0.5]
+    extensions:
+      grcl9:
+        term_kind: post_refinement_two_sink_region
+        term_id: cell_plateau_nested_basins_fission_pass_two_sink_region
+        motif_id: post_expansion_fission
+        region_id: post_refinement_region
+        module_region_id: module
+        sink_region_a: sink_a
+        sink_region_b: sink_b
+        identity_fission_min_basin_mass: 0.0
+        identity_fission_persistence_delta: 3
+  - id: sink_a_region
+    type: basin
+    parent_id: refinement_plateau
+    coherence_prior: 0.75
+    depth_hint: 1
+    chart_center_hint: [0.38, 0.5]
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_plateau_nested_basins_fission_pass_stable_basin_a
+        motif_id: post_expansion_fission
+        basin_id: sink_a
+        stability_class: stable
+        mass_hint: 0.75
+  - id: sink_b_region
+    type: basin
+    parent_id: refinement_plateau
+    coherence_prior: 0.75
+    depth_hint: 1
+    chart_center_hint: [0.62, 0.5]
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_plateau_nested_basins_fission_pass_stable_basin_b
+        motif_id: post_expansion_fission
+        basin_id: sink_b
+        stability_class: stable
+        mass_hint: 0.75
+  - id: weak_saddle_bridge
+    type: saddle
+    coherence_prior: 0.1
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [sink_a_region, sink_b_region]
+    extensions:
+      grcl9:
+        term_kind: saddle_bridge
+        term_id: cell_plateau_nested_basins_fission_pass_saddle_bridge
+        motif_id: post_expansion_fission
+        bridge_id: weak_bridge
+        region_a: sink_a
+        region_b: sink_b
+        bridge_class: weak_saddle_bridge
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_plateau_nested_basins_fission_pass
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    expected_selector_ids: [fission_confirmed_count]
+    notes: ComposingCells plateau/nested-basin seed mapped to the post-expansion fission manifest entry.

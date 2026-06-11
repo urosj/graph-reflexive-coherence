@@ -1,0 +1,753 @@
+{
+  "acceptance": {
+    "claim_flags_all_false": true,
+    "context_mapping_declared": true,
+    "controls_declared": true,
+    "manifest_valid": true,
+    "no_route_choice_probe_run": true
+  },
+  "artifact_digests": {
+    "checks_digest": "ddb0daf35dce931b7eccbd4547847555fcb98673d9084b34669ebfbd91857dac",
+    "claim_boundary_digest": "7feec93231b69202decd5f141c241beaadd079826dd526ee9d2311891c8bd0eb",
+    "controls_digest": "c073476ab4fab609e5f90644d43e34e4a16e88effa9bf6ef5987fe5a4780a4c7",
+    "manifest_digest": "69175ec19d0a43223b726348e0e98cbdd13244b3d7533b6323236405ba7cd7f5"
+  },
+  "checks": {
+    "all_required_controls_declared": true,
+    "arbitration_policy_declared": true,
+    "arbitration_timing_declared": true,
+    "arbitration_window_artifact_mapping_declared": true,
+    "arbitration_window_declared": true,
+    "budget_tolerance_declared": true,
+    "candidate_ordering_declared": true,
+    "candidate_scores_equal_component_sums": true,
+    "candidate_set_frozen_before_arbitration": true,
+    "candidate_source_post_topology_fields_declared": true,
+    "candidate_source_reabsorption_digest_required_post_topology": true,
+    "candidate_source_requires_native_surface": true,
+    "candidate_source_sc1_reabsorption_digest_conditional": true,
+    "candidate_source_sc1_required_fields_declared": true,
+    "candidate_templates_valid": true,
+    "claim_flags_all_false": true,
+    "claim_flags_complete": true,
+    "context_a_b_select_different_routes": true,
+    "context_nodes_exist": true,
+    "context_relation_declared": true,
+    "context_runtime_visible": true,
+    "context_states_a_b_declared": true,
+    "context_surface_mapping_preferred_native": true,
+    "context_to_score_mapping_declared": true,
+    "control_blockers_are_distinct": true,
+    "default_off_no_emission_declared": true,
+    "default_off_policy_declared": true,
+    "edge_count_matches": true,
+    "edge_endpoints_exist": true,
+    "edge_ids_unique": true,
+    "hidden_context_sources_blocked": true,
+    "iteration_3_transition_criteria_declared": true,
+    "lgrc2_native_route_arbitration_blocked": true,
+    "native_dependencies_declared": true,
+    "native_dependency_chain_policy_declared": true,
+    "native_lgrc3_gate_declared": true,
+    "native_route_intents_declared": true,
+    "no_positive_sc_evidence_generated": true,
+    "no_route_choice_probe_run": true,
+    "node_count_matches": true,
+    "node_ids_unique": true,
+    "producer_boundary_declared": true,
+    "producer_forbidden_writes_declared": true,
+    "producer_scheduling_deferred": true,
+    "redirect_caveat_declared": true,
+    "route_arbitration_alone_not_semantic_choice": true,
+    "routes_resolve_to_existing_edges": true,
+    "runtime_family_declared": true,
+    "sc1_selection_non_actions_declared": true,
+    "schema_matches": true,
+    "score_invariant_declared": true,
+    "selected_topology_event_behavior_declared": true,
+    "source_branch_and_sinks_exist": true,
+    "tie_policy_fail_closed": true,
+    "tiebreaker_fields_serialized": true,
+    "two_routes_declared": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/validate_n06_fixture_manifest.py",
+  "environment": {
+    "generated_at": "2026-06-05T20:31:14.985990+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "git": {
+    "head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "98a4ea4974acebdc5612881de007810ecbd7bf22"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N06-lgrc-semantic-route-choice/implementation/SemanticRouteChoiceImplementationChecklist.md\n M experiments/2026-05-N06-lgrc-semantic-route-choice/implementation/SemanticRouteChoiceImplementationPlan.md\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/configs/n06_fixture_manifest_v1.json\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_3_sc1_candidate_alternatives.md\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_4_sc2_native_arbitration.md\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/run_n06_iteration_3_sc1_candidate_alternatives.py\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/run_n06_iteration_4_sc2_native_arbitration.py\n?? experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/validate_n06_fixture_manifest.py"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 2,
+  "manifest": {
+    "arbitration_policy": {
+      "budget_tolerance": 1e-09,
+      "candidate_set_order_key": "score_desc_then_candidate_id",
+      "candidate_set_order_rule": [
+        "candidate_route_score descending",
+        "candidate_order_key ascending",
+        "candidate_route_id ascending"
+      ],
+      "declared_tiebreaker_fields": [
+        "candidate_set.unresolved_tie_policy",
+        "candidate_set.candidate_set_order_key",
+        "candidate.candidate_order_key",
+        "candidate.candidate_route_digest"
+      ],
+      "native_lgrc_route_arbitration_policy": "score_ordered_topology_route_candidates",
+      "native_lgrc_route_arbitration_policy_id": "n06_score_ordered_context_policy_v1",
+      "score_component_invariant": "candidate_route_score == sum(candidate_score_components)",
+      "score_tolerance": 1e-09,
+      "unresolved_tie_policy": "fail_closed"
+    },
+    "arbitration_window": {
+      "arbitration_window_id": "n06_window_context_state_candidate_emission_v1",
+      "boundary_artifact_mapping": {
+        "candidate_event_artifact_kind": "LGRC9V3NativeRouteCandidateRecord",
+        "end_event_artifact_kind": "LGRC9V3NativeRouteCandidateSetRecord",
+        "producer_policy": "n06_experiment_local_candidate_emission_wrapper_until_native_candidate_producer_exists",
+        "producer_trigger": "native_route_candidate_emission_from_committed_context_surface_row",
+        "start_event_artifact_kind": "LGRC9V3CausalPulseSubstrateSurfaceRow"
+      },
+      "boundary_type": "producer_invocation_boundary",
+      "candidate_completeness_rule": "include_all_candidate_routes_for_same_source_surface_digest_policy_id_and_arbitration_window_before_candidate_set_emission",
+      "candidate_set_is_frozen_before_arbitration": true,
+      "end_event": "candidate_set_record_emitted",
+      "start_event": "committed_context_surface_row_available",
+      "timing": {
+        "causal_epoch": "n06_epoch_context_candidate_emission_v1",
+        "checkpoint_index": 0,
+        "event_time_key_range": {
+          "monotonic_non_decreasing": true
+        },
+        "scheduler_event_index_range": {
+          "candidate_records_before_candidate_set": true,
+          "candidate_set_after_all_candidate_records": true,
+          "start_min": 0
+        }
+      }
+    },
+    "candidate_route_templates": [
+      {
+        "candidate_budget_prediction": {
+          "budget_prediction_kind": "template_expectation_not_runtime_measurement",
+          "budget_surface": "node_plus_packet",
+          "budget_surface_ambiguous": false,
+          "budget_tolerance_source": "arbitration_policy.budget_tolerance",
+          "node_plus_packet_budget_after": 6.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "candidate_competing_sink_ids": [
+          2,
+          3
+        ],
+        "candidate_edge_set_semantics": {
+          "candidate_retired_edge_ids": "candidate-predicted retired edge ids; must match reabsorption/topology records if committed",
+          "candidate_source_edge_ids": "pre-collapse source topology edges considered by the candidate",
+          "candidate_target_edge_ids": "post-collapse surviving edge ids if this candidate is committed"
+        },
+        "candidate_lineage_transfer_map": {
+          "0": "2",
+          "1": "2",
+          "2": "2"
+        },
+        "candidate_losing_sink_ids": [
+          3
+        ],
+        "candidate_reabsorption_prediction": {
+          "predicted_retired_edge_ids": [
+            2
+          ],
+          "predicted_retired_node_ids": [
+            3
+          ],
+          "prediction_only_until_selected_topology_event_commits": true
+        },
+        "candidate_retired_edge_ids": [
+          2
+        ],
+        "candidate_retired_node_ids": [
+          3
+        ],
+        "candidate_route_template_id": "n06_candidate_route_a_template_v1",
+        "candidate_selected_sink_id": 2,
+        "candidate_source_edge_ids": [
+          0,
+          1,
+          2
+        ],
+        "candidate_source_node_ids": [
+          0,
+          1
+        ],
+        "candidate_target_edge_ids": [
+          0,
+          1
+        ],
+        "candidate_target_node_ids": [
+          2
+        ],
+        "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+        "candidate_transferred_node_ids": [
+          0,
+          1,
+          2
+        ],
+        "lineage_transfer_map_semantics": {
+          "fixture_note": "collapse/reabsorption candidate lineages map all transferred nodes to the selected sink lineage, matching selected_sink_clock_continuity",
+          "key_type": "string_lineage_id",
+          "value_type": "string_lineage_id"
+        },
+        "route_id": "route_a",
+        "route_intent": "collapse"
+      },
+      {
+        "candidate_budget_prediction": {
+          "budget_prediction_kind": "template_expectation_not_runtime_measurement",
+          "budget_surface": "node_plus_packet",
+          "budget_surface_ambiguous": false,
+          "budget_tolerance_source": "arbitration_policy.budget_tolerance",
+          "node_plus_packet_budget_after": 6.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "candidate_competing_sink_ids": [
+          2,
+          3
+        ],
+        "candidate_edge_set_semantics": {
+          "candidate_retired_edge_ids": "candidate-predicted retired edge ids; must match reabsorption/topology records if committed",
+          "candidate_source_edge_ids": "pre-collapse source topology edges considered by the candidate",
+          "candidate_target_edge_ids": "post-collapse surviving edge ids if this candidate is committed"
+        },
+        "candidate_lineage_transfer_map": {
+          "0": "3",
+          "1": "3",
+          "3": "3"
+        },
+        "candidate_losing_sink_ids": [
+          2
+        ],
+        "candidate_reabsorption_prediction": {
+          "predicted_retired_edge_ids": [
+            1
+          ],
+          "predicted_retired_node_ids": [
+            2
+          ],
+          "prediction_only_until_selected_topology_event_commits": true
+        },
+        "candidate_retired_edge_ids": [
+          1
+        ],
+        "candidate_retired_node_ids": [
+          2
+        ],
+        "candidate_route_template_id": "n06_candidate_route_b_template_v1",
+        "candidate_selected_sink_id": 3,
+        "candidate_source_edge_ids": [
+          0,
+          1,
+          2
+        ],
+        "candidate_source_node_ids": [
+          0,
+          1
+        ],
+        "candidate_target_edge_ids": [
+          0,
+          2
+        ],
+        "candidate_target_node_ids": [
+          3
+        ],
+        "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+        "candidate_transferred_node_ids": [
+          0,
+          1,
+          3
+        ],
+        "lineage_transfer_map_semantics": {
+          "fixture_note": "collapse/reabsorption candidate lineages map all transferred nodes to the selected sink lineage, matching selected_sink_clock_continuity",
+          "key_type": "string_lineage_id",
+          "value_type": "string_lineage_id"
+        },
+        "route_id": "route_b",
+        "route_intent": "collapse"
+      }
+    ],
+    "candidate_source_evidence": {
+      "iteration_2_symbolic_only": true,
+      "iteration_3_transition_criteria": [
+        "each emitted candidate record has a non-null candidate_source_surface_digest",
+        "candidate_source_surface_digest resolves to a committed native causal pulse-substrate surface row or equivalent native source surface",
+        "candidate_source_producer_record_id is non-null when candidate emission is producer-backed",
+        "candidate_source_topology_state_reabsorption_digest is null/not required for the first pre-topology SC1 candidate set",
+        "no route-arbitration record, selected topology event, scheduled packet, or claim flag is emitted by SC1 candidate exposure"
+      ],
+      "post_topology_candidate_required_fields": [
+        "candidate_source_surface_digest",
+        "candidate_source_topology_state_reabsorption_digest"
+      ],
+      "sc1_optional_fields": [
+        "candidate_source_producer_record_id",
+        "candidate_source_topology_state_reabsorption_digest"
+      ],
+      "sc1_required_fields": [
+        "candidate_source_surface_digest"
+      ],
+      "source_producer_record_required_when_candidate_emission_is_producer_backed": true,
+      "source_surface_kind": "native_causal_pulse_substrate_surface",
+      "topology_state_reabsorption_digest_required_for_post_topology_candidates": true,
+      "topology_state_reabsorption_digest_required_for_sc1": false
+    },
+    "claim_boundary": {
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "goal_proxy_regulation_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "memory_or_trail_claim_allowed": false,
+        "movement_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "memory_or_trail_deferred_to": "N08",
+      "route_arbitration_alone_is_semantic_choice": false
+    },
+    "context_affordance_surface": {
+      "context_relation": "route matches active context/affordance",
+      "context_runtime_visible": true,
+      "context_states": {
+        "context_a": {
+          "active_context_node_id": 4,
+          "candidate_score_templates": {
+            "route_a": {
+              "candidate_route_score": 1.0,
+              "candidate_score_components": {
+                "budget_validity": 0.2,
+                "context_match": 0.6,
+                "lineage_ready": 0.2
+              }
+            },
+            "route_b": {
+              "candidate_route_score": 0.4,
+              "candidate_score_components": {
+                "budget_validity": 0.2,
+                "context_match": 0.0,
+                "lineage_ready": 0.2
+              }
+            }
+          },
+          "compatible_route_id": "route_a"
+        },
+        "context_b": {
+          "active_context_node_id": 5,
+          "candidate_score_templates": {
+            "route_a": {
+              "candidate_route_score": 0.4,
+              "candidate_score_components": {
+                "budget_validity": 0.2,
+                "context_match": 0.0,
+                "lineage_ready": 0.2
+              }
+            },
+            "route_b": {
+              "candidate_route_score": 1.0,
+              "candidate_score_components": {
+                "budget_validity": 0.2,
+                "context_match": 0.6,
+                "lineage_ready": 0.2
+              }
+            }
+          },
+          "compatible_route_id": "route_b"
+        }
+      },
+      "context_surface_id": "n06_context_affordance_score_surface_v1",
+      "context_to_score_component_mapping": {
+        "budget_validity": {
+          "derivation_rule": "0.2 when candidate budget surface is node_plus_packet, non-ambiguous, and predicted error is within budget_tolerance",
+          "source_artifact_kind": "LGRC9V3NativeRouteCandidateRecord.candidate_budget_prediction",
+          "value_if_valid": 0.2
+        },
+        "context_match": {
+          "derivation_rule": "context_match is 0.6 when candidate route id equals the runtime-visible compatible route for the active context node, otherwise 0.0",
+          "hidden_context_lookup_allowed": false,
+          "runtime_visible_input_fields": [
+            "active_context_node_id",
+            "candidate_route_id",
+            "compatible_route_id",
+            "context_surface_digest"
+          ],
+          "source_artifact_kind": "LGRC9V3CausalPulseSubstrateSurfaceRow",
+          "source_surface_kind": "route_local_pulse_contact_or_feedback_eligibility",
+          "value_if_context_route_matches": 0.6,
+          "value_if_context_route_mismatches": 0.0
+        },
+        "lineage_ready": {
+          "derivation_rule": "0.2 when candidate lineage transfer map covers all transferred nodes with string lineage ids",
+          "does_not_require_prior_topology_state_reabsorption_for_sc1": true,
+          "source_artifact_kind": "LGRC9V3NativeRouteCandidateRecord.candidate_lineage_transfer_map",
+          "value_if_valid": 0.2
+        }
+      },
+      "dedicated_native_context_surface_exists": false,
+      "experiment_side_if_else_allowed": false,
+      "hidden_context_sources_allowed": false,
+      "posthoc_threshold_change_allowed": false,
+      "report_side_selection_allowed": false,
+      "selected_mapping": {
+        "arbitration_context_sources": "arbitration_runtime_visible_inputs",
+        "candidate_context_sources": "candidate_runtime_visible_inputs",
+        "compatibility_gate": "native_score_components_with_threshold_interpretation",
+        "fallback_only": "experiment_local_compatibility_gate_record",
+        "score_surface": "candidate_score_components"
+      }
+    },
+    "controls": [
+      {
+        "control_id": "policy_disabled",
+        "primary_blocker": "native_route_arbitration_policy_disabled"
+      },
+      {
+        "control_id": "no_candidates",
+        "primary_blocker": "native_route_arbitration_no_candidates"
+      },
+      {
+        "control_id": "unresolved_tie",
+        "primary_blocker": "native_route_arbitration_unresolved_tie"
+      },
+      {
+        "control_id": "hidden_context",
+        "primary_blocker": "native_route_arbitration_hidden_input_rejected:hidden_context"
+      },
+      {
+        "control_id": "hidden_route_preference",
+        "primary_blocker": "native_route_arbitration_hidden_input_rejected:hidden_route_preference"
+      },
+      {
+        "control_id": "preselected_sink",
+        "primary_blocker": "native_route_arbitration_hidden_input_rejected:preselected_sink"
+      },
+      {
+        "control_id": "experiment_side_if_else",
+        "primary_blocker": "n06_experiment_side_selection_rejected"
+      },
+      {
+        "control_id": "report_side_selection",
+        "primary_blocker": "n06_report_side_selection_rejected"
+      },
+      {
+        "control_id": "posthoc_threshold_change",
+        "primary_blocker": "n06_posthoc_threshold_change_rejected"
+      },
+      {
+        "control_id": "budget_mismatch",
+        "primary_blocker": "native_route_arbitration_budget_invalid"
+      },
+      {
+        "control_id": "order_inversion",
+        "primary_blocker": "native_route_arbitration_order_invalid"
+      },
+      {
+        "control_id": "stale_candidate",
+        "primary_blocker": "n06_stale_candidate_route_blocked"
+      },
+      {
+        "control_id": "stale_context",
+        "primary_blocker": "n06_stale_context_surface_blocked"
+      },
+      {
+        "control_id": "duplicate_arbitration",
+        "primary_blocker": "duplicate_native_route_arbitration"
+      },
+      {
+        "control_id": "producer_mutation",
+        "primary_blocker": "n06_producer_mutation_boundary_violation"
+      },
+      {
+        "control_id": "claim_promotion",
+        "primary_blocker": "native_route_arbitration_claim_promotion_blocked"
+      }
+    ],
+    "default_off_policy": {
+      "candidate_routes_emitted_when_disabled": false,
+      "candidate_sets_emitted_when_disabled": false,
+      "disabled_policy": "disabled",
+      "disabled_requires_enabled_false": true,
+      "native_lgrc_route_arbitration_enabled_when_disabled": false,
+      "packets_scheduled_when_disabled": false,
+      "route_arbitration_records_emitted_when_disabled": false,
+      "topology_events_committed_when_disabled": false
+    },
+    "experiment": "2026-05-N06-lgrc-semantic-route-choice",
+    "fixture": {
+      "branch_node_id": 1,
+      "context_node_ids": [
+        4,
+        5
+      ],
+      "edge_count": 5,
+      "edges": [
+        {
+          "base_conductance": 1.0,
+          "edge_id": 0,
+          "proper_time_delay": 1.0,
+          "role": "source_to_branch",
+          "route_eligible": true,
+          "temporal_delay": 1.0,
+          "u": 0,
+          "v": 1
+        },
+        {
+          "base_conductance": 1.0,
+          "edge_id": 1,
+          "proper_time_delay": 1.0,
+          "role": "branch_to_route_a_sink",
+          "route_eligible": true,
+          "temporal_delay": 1.0,
+          "u": 1,
+          "v": 2
+        },
+        {
+          "base_conductance": 1.0,
+          "edge_id": 2,
+          "proper_time_delay": 1.0,
+          "role": "branch_to_route_b_sink",
+          "route_eligible": true,
+          "temporal_delay": 1.0,
+          "u": 1,
+          "v": 3
+        },
+        {
+          "base_conductance": 1.0,
+          "edge_id": 3,
+          "proper_time_delay": 1.0,
+          "role": "context_a_to_branch_signal",
+          "route_eligible": false,
+          "temporal_delay": 1.0,
+          "u": 4,
+          "v": 1
+        },
+        {
+          "base_conductance": 1.0,
+          "edge_id": 4,
+          "proper_time_delay": 1.0,
+          "role": "context_b_to_branch_signal",
+          "route_eligible": false,
+          "temporal_delay": 1.0,
+          "u": 5,
+          "v": 1
+        }
+      ],
+      "fixture_id": "N06_S0_source_two_route_context_fork_v1",
+      "fixture_kind": "source_two_route_context_fork",
+      "node_count": 6,
+      "nodes": [
+        {
+          "coord": [
+            0.0,
+            0.0
+          ],
+          "node_id": 0,
+          "role": "source"
+        },
+        {
+          "coord": [
+            1.0,
+            0.0
+          ],
+          "node_id": 1,
+          "role": "branch"
+        },
+        {
+          "coord": [
+            2.0,
+            1.0
+          ],
+          "node_id": 2,
+          "role": "route_a_sink"
+        },
+        {
+          "coord": [
+            2.0,
+            -1.0
+          ],
+          "node_id": 3,
+          "role": "route_b_sink"
+        },
+        {
+          "coord": [
+            1.0,
+            1.5
+          ],
+          "node_id": 4,
+          "role": "context_a_signal"
+        },
+        {
+          "coord": [
+            1.0,
+            -1.5
+          ],
+          "node_id": 5,
+          "role": "context_b_signal"
+        }
+      ],
+      "sink_node_ids": [
+        2,
+        3
+      ],
+      "source_node_id": 0
+    },
+    "manifest_id": "n06_fixture_manifest_v1",
+    "native_runtime_gate": {
+      "causal_layer_mode": "topology_changing_causal_history",
+      "causal_pulse_substrate_surface_enabled": true,
+      "causal_pulse_substrate_surface_lineage_transport_enabled": true,
+      "causal_pulse_substrate_surface_lineage_transport_supported": true,
+      "causal_pulse_substrate_surface_lineage_transport_validated": true,
+      "causal_pulse_substrate_surface_validated": true,
+      "causal_topology_integration_allowed": true,
+      "causal_topology_state_reabsorption_enabled": true,
+      "causal_topology_state_reabsorption_supported": true,
+      "causal_topology_state_reabsorption_validated": true,
+      "dependency_chain_policy": "enabled_validated_supported_chain_required_by_validate_lgrc9v3_causal_modes",
+      "lgrc2_native_route_arbitration_allowed": false,
+      "lgrc_runtime_level": "lgrc3",
+      "native_lgrc_route_arbitration_enabled": true,
+      "native_lgrc_route_arbitration_policy": "score_ordered_topology_route_candidates",
+      "native_lgrc_route_arbitration_policy_gate": "policy != disabled"
+    },
+    "positive_sc_evidence_generated": false,
+    "producer_boundary": {
+      "producer_forbidden_writes": [
+        "active_node_coherence",
+        "packet_ledger",
+        "topology",
+        "support_mask",
+        "centroid",
+        "displacement",
+        "route_arbitration_record",
+        "claim_flags"
+      ],
+      "producer_schedules_only": true,
+      "step_mutates_packet_state": true
+    },
+    "purpose": "declare semantic_route_choice_fixture_controls_and_policy_before_choice_probes",
+    "route_choice_probe_run": false,
+    "route_intent_policy": {
+      "fixture_native_intent": "collapse",
+      "native_topology_changing_intents": [
+        "collapse",
+        "reabsorb",
+        "split",
+        "merge"
+      ],
+      "redirect_allowed_only_as": "experiment_local_fixed_route_control_or_explicit_native_redirect_with_declared_topology_event_kind",
+      "redirect_is_not_topology_mutating_movement_evidence_by_itself": true
+    },
+    "routes": {
+      "route_a": {
+        "candidate_order_key": "route_a",
+        "route_hops": [
+          {
+            "edge_id": 0,
+            "source_node_id": 0,
+            "target_node_id": 1
+          },
+          {
+            "edge_id": 1,
+            "source_node_id": 1,
+            "target_node_id": 2
+          }
+        ],
+        "route_id": "n06_route_a_source_branch_sink2_v1",
+        "source_node_id": 0,
+        "target_node_id": 2
+      },
+      "route_b": {
+        "candidate_order_key": "route_b",
+        "route_hops": [
+          {
+            "edge_id": 0,
+            "source_node_id": 0,
+            "target_node_id": 1
+          },
+          {
+            "edge_id": 2,
+            "source_node_id": 1,
+            "target_node_id": 3
+          }
+        ],
+        "route_id": "n06_route_b_source_branch_sink3_v1",
+        "source_node_id": 0,
+        "target_node_id": 3
+      }
+    },
+    "runtime_family": "LGRC9V3",
+    "schema": "n06_semantic_route_choice_fixture_manifest_v1",
+    "selected_topology_event_behavior": {
+      "producer_scheduling_deferred_until_post_selection_lanes": true,
+      "sc1_behavior": {
+        "route_arbitration_record_emitted": false,
+        "scheduled_packet_emitted": false,
+        "selected_topology_event_committed": false,
+        "topology_state_reabsorption_record_required": false
+      },
+      "selected_topology_event_artifact_expected_when_native_validator_replays_selection": true,
+      "selection_authorizes_exactly_one_candidate": true,
+      "surface_lineage_reabsorption_and_producer_consumption_deferred_until_post_selection_lanes": true
+    }
+  },
+  "manifest_digest": "69175ec19d0a43223b726348e0e98cbdd13244b3d7533b6323236405ba7cd7f5",
+  "manifest_path": "experiments/2026-05-N06-lgrc-semantic-route-choice/configs/n06_fixture_manifest_v1.json",
+  "manifest_sha256": "867a2bb464bbbdc0c782f334cf3bb9821b3d8f60d792dceab4644695b947363b",
+  "positive_sc_evidence_generated": false,
+  "required_controls": [
+    "budget_mismatch",
+    "claim_promotion",
+    "duplicate_arbitration",
+    "experiment_side_if_else",
+    "hidden_context",
+    "hidden_route_preference",
+    "no_candidates",
+    "order_inversion",
+    "policy_disabled",
+    "posthoc_threshold_change",
+    "preselected_sink",
+    "producer_mutation",
+    "report_side_selection",
+    "stale_candidate",
+    "stale_context",
+    "unresolved_tie"
+  ],
+  "route_choice_probe_run": false,
+  "run_id": "n06_iteration_2_fixture_manifest_validation_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "n06_semantic_route_choice_report_v1",
+  "status": "passed"
+}

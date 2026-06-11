@@ -1,0 +1,337 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 9 passes if the native geometry-mediated trail question is frozen with a source-backed inventory of available LGRC geometry/topology/support mechanisms and explicit blockers, without using memory_strength, hidden route preference, memory-shaped scoring, or claim promotion.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_digests": {
+    "checks_digest": "a1fda59606352587511d1f39c4536db06abd18bb74faf7f33423785e8d7dfc41",
+    "claim_flags_digest": "f87dd6038f18dfdf3f64b68870e56a807857714517fc7101e6d17df930e1e314",
+    "iteration_10_entry_gate_digest": "b9522b634579669df3d694a840be08554df8e9ddf30130f221d7388b4d3d343a",
+    "mechanism_inventory_digest": "17200c72a477bcc0830f41955362df8ff53a092ecaf038a6baf56f844c4611e7"
+  },
+  "checks": {
+    "all_claim_flags_false": true,
+    "committed_topology_event_available": true,
+    "edge_split_inserted_node_candidate_available": true,
+    "geometry_parameter_update_not_confirmed": true,
+    "hypothesis_a_closeout_passed": true,
+    "hypothesis_b_separate_from_iterations_1_8": true,
+    "iteration_10_entry_gate_defined": true,
+    "no_memory_shaped_scoring_in_iteration_9": true,
+    "no_memory_strength_in_native_entry_gate": true,
+    "no_new_probe_run": true,
+    "route_conductance_memory_policy_blocked": true,
+    "src_clean": true,
+    "support_shape_update_not_confirmed": true,
+    "surface_lineage_available": true,
+    "topology_state_reabsorption_available": true
+  },
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_geometry_mediated_trail_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "pure_coherence_flux_trail_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/run_n08_iteration_9_native_geometry_trail_baseline.py",
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "generated_at": "2026-06-07T16:38:56.131280+00:00",
+  "git": {
+    "head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "hypothesis_a_source": {
+    "memory_or_trail_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "status": "passed",
+    "strongest_claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+    "strongest_supported_mem_level": "MEM6"
+  },
+  "hypothesis_b_baseline": {
+    "claim_ceiling": "native_geometry_mediated_route_trail_not_yet_supported",
+    "current_blocker": "native_geometry_mediated_trail_not_tested_before_iteration_9",
+    "question": "Can route use create a native geometry/topology/support trace that future flux/routing follows without independent memory_strength?",
+    "status": "open_not_claimed"
+  },
+  "iteration": 9,
+  "iteration_10_entry_gate": {
+    "available_mechanisms_for_iteration_10": [
+      "committed_topology_event",
+      "edge_split_or_inserted_node",
+      "surface_lineage_transport",
+      "topology_state_reabsorption",
+      "time_scoped_lineage_replay"
+    ],
+    "blocked_or_unconfirmed_mechanisms": {
+      "declared_node_or_edge_geometry_parameter_change": "declared_geometry_parameter_update_not_inventory_confirmed",
+      "packet_or_loop_residue_visible_in_existing_state": "packet_loop_residue_route_memory_not_demonstrated",
+      "route_conductance_memory_metric": "native_route_conductance_memory_policy_missing",
+      "support_shape_or_local_coupling_geometry_change": "support_shape_update_policy_not_inventory_confirmed"
+    },
+    "entry_gate_digest": "b9522b634579669df3d694a840be08554df8e9ddf30130f221d7388b4d3d343a",
+    "iteration_10_entry_allowed": true,
+    "must_not_use": [
+      "memory_strength",
+      "memory_shaped_candidate_score",
+      "hidden_route_preference",
+      "report_side_route_history",
+      "unserialized_geometry_state"
+    ],
+    "preferred_iteration_10_probe": "edge_split_or_inserted_node_topology_trace",
+    "required_controls_for_iteration_10": [
+      "missing_route_use_event",
+      "missing_geometry_or_topology_event",
+      "hidden_scalar_memory",
+      "stale_geometry_read",
+      "budget_drift",
+      "unsupported_topology_mutation",
+      "claim_promotion"
+    ]
+  },
+  "mechanism_inventory": [
+    {
+      "availability": "available_as_runtime_support",
+      "blocker": null,
+      "mechanism_id": "committed_topology_event",
+      "notes": "Topology events can exist as declared runtime events, but a native trail still requires proving route-use-created geometry/topology trace formation.",
+      "question": "Can a route-use event create a declared topology trace?",
+      "requires_phase8_before_probe": false,
+      "row_digest": "6ee69ff66331c91b6952617249c7b15ad71c2a660e2ec59c96c945bd5b98513e",
+      "source_artifacts": [
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19e_topology_mutating_movement_after_state_reabsorption.json",
+        "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json"
+      ],
+      "source_evidence": {
+        "committed_topology_event_logged": true,
+        "n04_19e_claim_ceiling": "topology_mutating_movement_candidate",
+        "n04_19e_status": "passed",
+        "phase8_supported_capability": {
+          "default_policy_enabled": false,
+          "enabled_implies_supported": false,
+          "native_topology_state_reabsorption_supported": true,
+          "native_topology_state_reabsorption_validated": true
+        }
+      },
+      "usable_for_iteration_10": true
+    },
+    {
+      "availability": "candidate_design_available_over_topology_events",
+      "blocker": null,
+      "mechanism_id": "edge_split_or_inserted_node",
+      "notes": "This is the preferred first Hypothesis B probe because it can avoid an independent memory scalar and use declared topology.",
+      "question": "Can the trace be represented as an edge split or inserted node?",
+      "requires_phase8_before_probe": false,
+      "row_digest": "aa76161e6d330290dde675f856b472485f4f44fd08b43add5f0eb568467d1b4e",
+      "source_artifacts": [
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19e_topology_mutating_movement_after_state_reabsorption.json",
+        "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json"
+      ],
+      "source_evidence": {
+        "ledger_state_gap_resolved": true,
+        "topology_state_reabsorption_supported": true
+      },
+      "usable_for_iteration_10": true
+    },
+    {
+      "availability": "available_as_runtime_support",
+      "blocker": null,
+      "mechanism_id": "surface_lineage_transport",
+      "notes": "Surface lineage is support infrastructure only. It does not itself create route memory.",
+      "question": "Can old surface evidence remain auditable after topology trace formation?",
+      "requires_phase8_before_probe": false,
+      "row_digest": "6d3a92c9b38d7924f6a37f86e146a03aeb18c2008e3a5ef89dc54170812807a1",
+      "source_artifacts": [
+        "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.json"
+      ],
+      "source_evidence": {
+        "claim_ceiling": "native_causal_pulse_substrate_surface_lineage_transport_supported",
+        "status": "passed",
+        "supported": {
+          "artifact_only_lineage_replay_validator": true,
+          "default_off_lineage_telemetry": true,
+          "formal_pygrc_telemetry_extension": true,
+          "native_causal_pulse_substrate_surface_lineage_transport": true,
+          "producer_stale_read_prevention": true,
+          "snapshot_round_trip": true,
+          "surface_rows_superseded_after_committed_topology_events": true,
+          "surface_rows_transported_through_explicit_lineage_maps": true
+        }
+      },
+      "usable_for_iteration_10": true
+    },
+    {
+      "availability": "available_as_runtime_support",
+      "blocker": null,
+      "mechanism_id": "topology_state_reabsorption",
+      "notes": "Required if the geometry trail changes topology and later packet work crosses the changed substrate.",
+      "question": "Can active state and packet ledger remain valid after the trace topology event?",
+      "requires_phase8_before_probe": false,
+      "row_digest": "5acc3772112f52d46483d496cd2ffdef47362e57ec74e41d7f50cc05b7687dd2",
+      "source_artifacts": [
+        "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json"
+      ],
+      "source_evidence": {
+        "movement_claim_allowed": false,
+        "status": "closed",
+        "supported_capability": {
+          "default_policy_enabled": false,
+          "enabled_implies_supported": false,
+          "native_topology_state_reabsorption_supported": true,
+          "native_topology_state_reabsorption_validated": true
+        }
+      },
+      "usable_for_iteration_10": true
+    },
+    {
+      "availability": "available_as_artifact_replay_support",
+      "blocker": null,
+      "mechanism_id": "time_scoped_lineage_replay",
+      "notes": "Useful for artifact replay if multiple route-use or topology events are later chained.",
+      "question": "Can historical route/surface reads remain valid across later topology events?",
+      "requires_phase8_before_probe": false,
+      "row_digest": "5c19e3e3faedba043faa6096e338ddf65878a75792fa54861f0d2440132f2405",
+      "source_artifacts": [
+        "implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json"
+      ],
+      "source_evidence": {
+        "resolved_boundary": "multi_topology_event_time_scoped_producer_lineage_replay_blocked",
+        "status": "closed",
+        "supported_capability": {
+          "artifact_only_time_scoped_surface_lineage_replay_supported": true
+        }
+      },
+      "usable_for_iteration_10": true
+    },
+    {
+      "availability": "available_as_runtime_support",
+      "blocker": null,
+      "mechanism_id": "native_route_arbitration",
+      "notes": "May be used to observe future routing response, but Iteration 11 must reject score-only memory inputs.",
+      "question": "Can future routing be selected by native candidate/arbitration records?",
+      "requires_phase8_before_probe": false,
+      "row_digest": "9ad23acc0ba65e4e776c5cac9fc9983ca5fd2226ff9173a4e7693f5629469d56",
+      "source_artifacts": [
+        "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json"
+      ],
+      "source_evidence": {
+        "status": "closed",
+        "support_gate": {
+          "artifact_only_replay": true,
+          "candidate_route_records_from_runtime_visible_evidence": true,
+          "claim_promotion_controls_passed": true,
+          "fail_closed_controls_passed": true,
+          "producer_reads_lineage_current_reabsorbed_state": true,
+          "selected_topology_event_references_arbitration": true,
+          "surface_lineage_consumes_selected_topology_event": true,
+          "topology_state_reabsorption_consumes_selected_topology_event": true
+        },
+        "supported_capability": {
+          "native_lgrc_route_arbitration_supported": true,
+          "support_scope": "runtime route arbitration support only; not semantic choice, agency, RC identity collapse, identity acceptance, locomotion-like behavior, biological behavior, or unrestricted movement"
+        }
+      },
+      "usable_for_iteration_11": true
+    },
+    {
+      "availability": "not_confirmed_in_current_n08_sources",
+      "blocker": "declared_geometry_parameter_update_not_inventory_confirmed",
+      "mechanism_id": "declared_node_or_edge_geometry_parameter_change",
+      "notes": "Do not assume custom conductance or geometry parameters are available as serialized native policy fields.",
+      "question": "Can route use alter declared node/edge geometry without topology mutation?",
+      "requires_phase8_before_probe": "unknown",
+      "row_digest": "0f2068fce1718d7629775dc9508a2cf6f98b1f60b3af8c8acde3221f12691e5a",
+      "source_artifacts": [
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json"
+      ],
+      "source_evidence": {
+        "hypothesis_a_uses_independent_memory_strength": true
+      },
+      "usable_for_iteration_10": false
+    },
+    {
+      "availability": "not_confirmed_in_current_n08_sources",
+      "blocker": "support_shape_update_policy_not_inventory_confirmed",
+      "mechanism_id": "support_shape_or_local_coupling_geometry_change",
+      "notes": "This remains attractive for a pure RC trail, but Iteration 9 does not find a source-backed native support-shape update contract.",
+      "question": "Can route use change support/coupling shape as native trail state?",
+      "requires_phase8_before_probe": "unknown",
+      "row_digest": "1aea7bd1bb44a7a08a28fd8222c61adb88765ae575f37e8b623061b54124c08f",
+      "source_artifacts": [
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json"
+      ],
+      "source_evidence": {
+        "hypothesis_b_status": "open_not_claimed"
+      },
+      "usable_for_iteration_10": false
+    },
+    {
+      "availability": "not_yet_demonstrated_as_route_memory",
+      "blocker": "packet_loop_residue_route_memory_not_demonstrated",
+      "mechanism_id": "packet_or_loop_residue_visible_in_existing_state",
+      "notes": "Existing packet/loop machinery exists, but N08 has not shown a residue that changes routing without score memory.",
+      "question": "Can future routing read a residue left by packet/loop dynamics?",
+      "requires_phase8_before_probe": "maybe",
+      "row_digest": "922722d6987a8e23b7863272e3dbe4da79faa064367dab66fbedef7af0fb61e2",
+      "source_artifacts": [
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json"
+      ],
+      "source_evidence": {
+        "hypothesis_a_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate"
+      },
+      "usable_for_iteration_10": false
+    },
+    {
+      "availability": "blocked",
+      "blocker": "native_route_conductance_memory_policy_missing",
+      "mechanism_id": "route_conductance_memory_metric",
+      "notes": "Do not smuggle Hypothesis A memory_strength into native geometry by renaming it conductance.",
+      "question": "Can route conductance memory be represented natively?",
+      "requires_phase8_before_probe": true,
+      "row_digest": "44d0d642476b2f1217e5fe1160b29c78998d2ba435fe0c7ee185508dede12f7e",
+      "source_artifacts": [
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json"
+      ],
+      "source_evidence": {
+        "hypothesis_a_memory_strength_is_physical_flux": false
+      },
+      "usable_for_iteration_10": false
+    }
+  ],
+  "output_digest": "ac57b1dd11a603ded02fe12446cb3826862d93b252a60358729da1c65346fd95",
+  "output_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "output_digest"
+    ],
+    "included": "all output fields except generated_at and output_digest",
+    "stable_across_same_inputs": true
+  },
+  "schema": "n08_iteration_9_native_geometry_trail_baseline_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19e_topology_mutating_movement_after_state_reabsorption.json": "a293e7efa74e92369d6fd59f0c73f25669ee385b224e0f3fb32d06a5204e8910",
+    "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json": "36a96f188b2d0d32ee7d8840305bec34554b54de68f46c433f96271c2c53d780",
+    "experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter19e_topology_mutating_movement_after_state_reabsorption.md": "94585dbbd9dec56290647c14b3a8eb6b846db318329d151c7c659e5e78d369ff",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+    "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.json": "97ad2e56ba6f2b2b303070dcbc4eb16ee54a5267c4911269abb664f35571709f",
+    "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json": "cabc1f5b81fdb19154d778b04463f74f32e82653db6291daa62b1e5128d01b65",
+    "implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json": "26a291a3fe17432b55e5da1fea22db950508c71ad4effe83346c09e6ee050201",
+    "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json": "7db33f5c04b34e3046ebbfda523a245c1b8dd80457e6fdf3a158dae1a6ecac31"
+  },
+  "status": "passed"
+}

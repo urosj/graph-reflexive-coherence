@@ -1,0 +1,431 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 7 passes if N10 can compose route choice, memory/trail affordance, identity/support evidence, and goal-proxy regulation into one replayable source-backed row while rejecting hidden route labels, hidden memory surfaces, stale context, budget ambiguity, and claim promotion.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_only_replay": {
+    "artifact_only": true,
+    "replay_chain": [
+      {
+        "artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+        "digest": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+        "route_context_tag": "route_context_selection_only",
+        "step": "load_n06_route_choice_closeout"
+      },
+      {
+        "artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+        "digest": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+        "memory_scope_tag": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+        "step": "load_n08_memory_trail_affordance_closeout"
+      },
+      {
+        "artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+        "step": "load_n07_support_intact_lane",
+        "support_lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+        "support_lane_id": "support_intact_reference"
+      },
+      {
+        "artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "digest": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+        "step": "load_n09_goal_proxy_regulation_closeout"
+      },
+      {
+        "ali3_status": "support_sensitive_regulation_closed_for_artifact_only_support_regulation_path",
+        "artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_6_explicit_restoration_replay.json",
+        "digest": "ab55ac355f99b7ebfa5c39370735d117292ffb6fe294813f5cca33ae773c0fb4",
+        "step": "load_n10_ali3_support_sensitive_precondition"
+      },
+      {
+        "integration_row_digest": "61c9878ab7b25bbdba922804d3b9cd9a6e5dfb4f467ddc20375a5e956ddd7f79",
+        "n10_category_level": "ALI4",
+        "step": "emit_route_memory_regulation_composition_row"
+      }
+    ],
+    "runtime_state_used": false
+  },
+  "checks": {
+    "a6_not_supported_by_iteration_7": true,
+    "ali3_support_sensitive_precondition_available": true,
+    "all_four_source_links_present": true,
+    "artifact_only_replay": true,
+    "attempted_a6_not_accepted": true,
+    "claim_flags_all_false": true,
+    "controls_passed": true,
+    "fixture_required_route_context_tag_matched": true,
+    "fixture_required_support_state_tag_matched": true,
+    "integration_allowed_true": true,
+    "integration_level_is_a4_not_a6": true,
+    "integration_row_digest_valid": true,
+    "integration_row_required_fields_present": true,
+    "memory_artifact_only_chain_reconstructed": true,
+    "memory_mem6_available": true,
+    "memory_not_physical_flux": true,
+    "memory_scope_preserved": true,
+    "memory_scope_tag_is_artifact_only_policy": true,
+    "n09_goal_proxy_candidate_available": true,
+    "n09_gpr6_available": true,
+    "n10_category_level_is_ali4": true,
+    "positive_integration_row_emitted": true,
+    "route_context_tag_is_selection_only": true,
+    "route_native_selection_replayable": true,
+    "route_sc6_available": true,
+    "route_selection_scope_preserved": true,
+    "source_artifact_digests_match_baseline": true,
+    "src_clean_for_iteration_7": true,
+    "support_intact_lane_survives": true,
+    "support_lane_budget_error_zero": true,
+    "support_state_tag_is_support_intact": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N10-lgrc-agentic-like-integration/scripts/run_n10_iteration_7_route_memory_regulation_composition.py",
+  "controls": {
+    "artifact_only_replay_missing_link": {
+      "control_passed": true,
+      "primary_blocker": "artifact_only_replay_missing_link",
+      "reason": "all four source links are present and replay remains artifact-only"
+    },
+    "budget_surface_ambiguity": {
+      "control_passed": true,
+      "primary_blocker": "budget_surface_ambiguity",
+      "reason": "Iteration 7 claims source-artifact budget compatibility only, while route, memory, support, and proxy budget surfaces remain separate"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "ALI4 composition cannot emit ACO, agency, A6, identity acceptance, or goal-ownership claims"
+    },
+    "hidden_experiment_side_steering": {
+      "control_passed": true,
+      "primary_blocker": "hidden_experiment_side_steering",
+      "reason": "route selection and memory-shaped scoring are source-backed replay evidence, not N10 report-side if/else steering"
+    },
+    "missing_goal_proxy_regulation_artifact": {
+      "control_passed": true,
+      "primary_blocker": "missing_goal_proxy_regulation_artifact",
+      "reason": "ALI4 composition requires N09 GPR closeout evidence"
+    },
+    "missing_identity_support_artifact": {
+      "control_passed": true,
+      "primary_blocker": "missing_identity_support_artifact",
+      "reason": "ALI4 composition requires N07 support baseline evidence"
+    },
+    "missing_memory_affordance_artifact": {
+      "control_passed": true,
+      "primary_blocker": "missing_memory_affordance_artifact",
+      "reason": "ALI4 composition requires the N08 Hypothesis A MEM6 closeout"
+    },
+    "missing_route_choice_artifact": {
+      "control_passed": true,
+      "primary_blocker": "missing_route_choice_artifact",
+      "reason": "ALI4 composition requires the N06 route-choice closeout"
+    },
+    "source_artifact_digest_mismatch": {
+      "control_passed": true,
+      "primary_blocker": "source_artifact_digest_mismatch",
+      "reason": "N06/N07/N08/N09 source artifact digests are rechecked against Iteration 1"
+    },
+    "stale_identity_support_baseline": {
+      "control_passed": true,
+      "primary_blocker": "stale_identity_support_baseline",
+      "reason": "support state is read from the current N07 support-intact lane and matched against the N10 manifest summary"
+    },
+    "stale_memory_surface": {
+      "control_passed": true,
+      "primary_blocker": "stale_memory_surface",
+      "reason": "N08 memory surface is consumed only as serialized artifact-only producer-policy memory evidence"
+    },
+    "stale_route_context": {
+      "control_passed": true,
+      "primary_blocker": "stale_route_context",
+      "reason": "N06 route evidence is consumed only under its declared selection-only pre-topology scope"
+    }
+  },
+  "experiment": "2026-05-N10-lgrc-agentic-like-integration",
+  "generated_at": "2026-06-10T18:14:00.613506+00:00",
+  "git": {
+    "head": "d9591085aff939215d2b18f4dbc3149e01722654",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "integration_row": {
+    "a6_relevance": "route_memory_regulation_composition_component_not_a6_closeout",
+    "accepted_integration_level": "A4",
+    "artifact_only": true,
+    "attempted_integration_level": "A6",
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "aco_like_behavior",
+      "ant_colony_behavior",
+      "locomotion_like_behavior",
+      "biological_behavior",
+      "personhood",
+      "unrestricted_identity",
+      "unrestricted_movement",
+      "unrestricted_agency"
+    ],
+    "budget_mode": "source_artifact_budget_compatibility_not_single_runtime_continuity",
+    "category_boundary": "ALI4 composes route choice, memory/trail affordance, identity support, and goal-proxy regulation from source artifacts. It does not close ALI5/ALI6 because bounded repeated integration and final artifact-only closeout remain pending.",
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_ownership_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "composition_chain": [
+      "N06 route-choice source",
+      "N08 memory/trail affordance source",
+      "N07 support-intact baseline",
+      "N09 goal-proxy regulation source",
+      "N10 ALI3 support-sensitive regulation precondition",
+      "N10 ALI4 route-memory-regulation composition row"
+    ],
+    "event_time_key": "artifact_replay_n10_i7",
+    "fixture_lane": {
+      "expected_role": "route_memory_regulation_composition_candidate",
+      "lane_id": "route_memory_regulation_composition",
+      "required_route_context_tag": "route_context_selection_only",
+      "required_support_state_tag": "support_intact_survives",
+      "route_context_constraint": "N06_SC6_is_selection_only_pre_topology_scope",
+      "source_support_lane_id": "support_intact_reference"
+    },
+    "goal_proxy_regulation_artifact": "n09_hypothesis_a_closeout",
+    "goal_proxy_regulation_digest": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+    "identity_support_artifact": "n07_withdrawal_baseline",
+    "identity_support_digest": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+    "integration_allowed": true,
+    "integration_level": "A4",
+    "integration_outcome_tag": "route_memory_regulation_composition_candidate",
+    "integration_policy_digest": "ac8312dfb61dc3a57a4c8722a430cd4d15101224c7dc777288518bb3f732fbfd",
+    "integration_policy_id": "n10_bounded_artifact_only_integration_policy_v1",
+    "integration_row_digest": "61c9878ab7b25bbdba922804d3b9cd9a6e5dfb4f467ddc20375a5e956ddd7f79",
+    "integration_row_id": "n10_i7_route_memory_regulation_composition_row_v1",
+    "memory_affordance_artifact": "n08_hypothesis_a_closeout",
+    "memory_affordance_digest": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+    "memory_budget_surface": "n08_source_memory_budget_compatibility",
+    "memory_evidence": {
+      "artifact_only_chain_reconstructed": true,
+      "artifact_only_replay_passed": true,
+      "claim_flags_scope": "source_memory_or_trail_claim_only_not_n10_agency_claim",
+      "corrupted_controls_passed": true,
+      "hidden_route_preference_control_passed": true,
+      "memory_budget_discontinuity_control_passed": true,
+      "memory_or_trail_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+      "memory_strength_used_as_physical_flux": false,
+      "memory_strength_used_as_score_evidence": true,
+      "native_support_status": "experiment_local_artifact_replay",
+      "route_a_strength_after_each_cycle": [
+        0.5895,
+        0.53055,
+        0.477495,
+        0.4297455
+      ],
+      "route_b_strength_after_each_cycle": [
+        0.88,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "selected_routes": [
+        "route_b",
+        "route_b",
+        "route_b",
+        "route_b"
+      ],
+      "source_claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+      "source_controls_replayed": true,
+      "source_mem_level": "MEM6",
+      "stale_memory_surface_control_passed": true
+    },
+    "memory_scope_tag": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "n10_category_level": "ALI4",
+    "native_policy_gap": [
+      "native_agentic_like_integration_policy_missing",
+      "native_identity_acceptance_validator_missing",
+      "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+      "native_route_conductance_memory_policy_missing"
+    ],
+    "node_plus_packet_budget_after": null,
+    "node_plus_packet_budget_before": null,
+    "node_plus_packet_budget_error": 0.0,
+    "positive_integration_row_emitted": true,
+    "primary_blocker": null,
+    "producer_scaffold_used": true,
+    "proxy_budget_surface": "n09_source_proxy_budget_compatibility",
+    "regulation_evidence": {
+      "source_artifact_only_runtime_fallback_blocked": true,
+      "source_budget_control_passed": true,
+      "source_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+      "source_gpr_level": "GPR6",
+      "source_hypothesis_a_status": "closed"
+    },
+    "regulation_scope_tag": "artifact_only_goal_proxy_regulation_candidate",
+    "route_choice_artifact": "n06_closeout",
+    "route_choice_digest": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+    "route_context_tag": "route_context_selection_only",
+    "route_evidence": {
+      "artifact_only_replay_passed": true,
+      "budget_conservation_passed": true,
+      "candidate_sets_replayed": true,
+      "claim_flags_false": true,
+      "context_relations_replayed": true,
+      "controls_passed": true,
+      "native_arbitration_records_replayed": true,
+      "native_selection_replayable_under_selection_only_scope": true,
+      "scheduled_processed_packet_evidence_applicability": "not_applicable_pre_topology_selection_only_scope",
+      "selected_route_count": 4,
+      "selected_routes": [
+        "route_a",
+        "route_b",
+        "route_a",
+        "route_b"
+      ],
+      "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay",
+      "selection_scope": "selection_only_pre_topology_commit",
+      "source_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+      "source_sc_level": "SC6"
+    },
+    "runtime_state_used": false,
+    "scheduler_event_index": null,
+    "source_artifact_digests": {
+      "n06_closeout": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+      "n07_withdrawal_baseline": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "n08_hypothesis_a_closeout": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "n09_hypothesis_a_closeout": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "n10_baseline_inventory": "31def07724e77697275bedac0055a963cd2cc65a75bb44817598ea7c8bde7f39",
+      "n10_fixture_manifest": "55536ce1c244a966a5f927f55c2f41f7e787a18728ee76b543f86e36a7bececd",
+      "n10_iteration_6_explicit_restoration_replay": "ab55ac355f99b7ebfa5c39370735d117292ffb6fe294813f5cca33ae773c0fb4"
+    },
+    "source_artifacts": {
+      "n06_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+      "n07_withdrawal_baseline": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "n08_hypothesis_a_closeout": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "n09_hypothesis_a_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "n10_baseline_inventory": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_1_baseline_inventory.json",
+      "n10_fixture_manifest": "experiments/2026-05-N10-lgrc-agentic-like-integration/configs/n10_integration_fixture_manifest_v1.json",
+      "n10_iteration_6_explicit_restoration_replay": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_6_explicit_restoration_replay.json"
+    },
+    "source_experiment_ids": [
+      "N06",
+      "N07",
+      "N08",
+      "N09",
+      "N10"
+    ],
+    "source_reports": {
+      "n06_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+      "n07_withdrawal_baseline": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "n08_hypothesis_a_closeout": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "n09_hypothesis_a_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+    },
+    "support_evidence": {
+      "final_A_support_retention": 0.9731535762447039,
+      "final_basin_separability": 0.9731535762447039,
+      "final_budget_error": 0.0,
+      "identity_support_outcome_tag": "support_intact_bounded_exchange_reference",
+      "lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+      "reference_A_support_retention": 0.9731535762447039,
+      "restoration_fraction": 0.0,
+      "source_lane_id": "support_intact_reference",
+      "support_survival_passed": true,
+      "support_survival_threshold": 0.85,
+      "withdrawal_depth": 0.0
+    },
+    "support_sensitive_precondition": {
+      "a6_not_supported_by_iteration_6": true,
+      "ali3_status": "support_sensitive_regulation_closed_for_artifact_only_support_regulation_path",
+      "artifact": "n10_iteration_6_explicit_restoration_replay",
+      "artifact_digest": "ab55ac355f99b7ebfa5c39370735d117292ffb6fe294813f5cca33ae773c0fb4",
+      "source_iteration": 6
+    },
+    "support_state_tag": "support_intact_survives"
+  },
+  "iteration": 7,
+  "manifest_digest": "8fbcba8838098bee67585f42554452d782e3b8d5f50bf184bc8bd35db91cd638",
+  "next_iteration": "8_bounded_repeated_integration",
+  "output_digest": "a00715cbf8f004340a9223f011cbdc6c89345a6a134cdb0d87da58b32e5aa020",
+  "purpose": "route_memory_regulation_composition_no_a6_closeout",
+  "schema": "n10_iteration_7_route_memory_regulation_composition_v1",
+  "source_artifacts": {
+    "n06_closeout": {
+      "baseline_sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+      "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf"
+    },
+    "n07_withdrawal_baseline": {
+      "baseline_sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b"
+    },
+    "n08_hypothesis_a_closeout": {
+      "baseline_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e"
+    },
+    "n09_hypothesis_a_closeout": {
+      "baseline_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+    },
+    "n10_baseline_inventory": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_1_baseline_inventory.json",
+      "sha256": "31def07724e77697275bedac0055a963cd2cc65a75bb44817598ea7c8bde7f39"
+    },
+    "n10_fixture_manifest": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/configs/n10_integration_fixture_manifest_v1.json",
+      "sha256": "55536ce1c244a966a5f927f55c2f41f7e787a18728ee76b543f86e36a7bececd"
+    },
+    "n10_iteration_6_explicit_restoration_replay": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_6_explicit_restoration_replay.json",
+      "sha256": "ab55ac355f99b7ebfa5c39370735d117292ffb6fe294813f5cca33ae773c0fb4"
+    }
+  },
+  "source_reports": {
+    "n06_closeout": {
+      "baseline_sha256": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+      "sha256": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f"
+    },
+    "n07_withdrawal_baseline": {
+      "baseline_sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc"
+    },
+    "n08_hypothesis_a_closeout": {
+      "baseline_sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+    },
+    "n09_hypothesis_a_closeout": {
+      "baseline_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+      "matches_baseline": true,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    }
+  },
+  "status": "passed"
+}

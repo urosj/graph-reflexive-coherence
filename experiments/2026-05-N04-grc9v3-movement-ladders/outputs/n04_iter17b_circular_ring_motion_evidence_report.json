@@ -1,0 +1,668 @@
+{
+  "achieved_movement_level": "M6",
+  "blocked_claims": [
+    "circular_locomotion",
+    "full_T6_general_persistence",
+    "grid_transfer",
+    "port_graph_transfer",
+    "broad_geometry_transfer",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "biological_behavior",
+    "agency",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "candidate_geometry": {
+    "budget_abs_error": 0.0,
+    "budget_after": 21.0,
+    "budget_before": 21.0,
+    "circular_metric": "shortest_signed_ring_distance",
+    "coordinate_frame": "circular_phase",
+    "direct_centroid_write": false,
+    "direct_claim_flag_write": false,
+    "direct_displacement_write": false,
+    "direct_support_mask_write": false,
+    "direct_topology_write": false,
+    "front_rear_policy": "phase_leading_target_vs_phase_trailing_source",
+    "geometry_family": "s1_ring_with_native_wrap_edge",
+    "geometry_id": "s1_ring_wrap_only_v1",
+    "node_count": 21,
+    "nonnegative_after_geometry_init": true,
+    "phase_metric": "positive_excess_mass_circular_mean",
+    "reason": "Iteration 17-B declares a ring-only wrap edge before execution and scores seam-crossing pulse response with circular phase metrics.",
+    "ring_wrap_edge_id": 20,
+    "source_geometry": "S0_chain_v1_plus_declared_wrap_edge",
+    "topology_changed_by_fixture_definition": true,
+    "topology_fixed_during_run": true,
+    "topology_mutated_during_run": false,
+    "wrap_edge": [
+      20,
+      0
+    ]
+  },
+  "checks": {
+    "artifact_validators_passed": true,
+    "broader_claims_blocked": true,
+    "budget_and_nonnegative_gates_passed": true,
+    "circular_distance_sign_reversal_passed": true,
+    "circular_metric_declared_before_run": true,
+    "circular_phase_target_passed": true,
+    "controls_fail_for_distinct_blockers": true,
+    "feedback_authorized_not_schedule_copied": true,
+    "identity_shape_gates_passed": true,
+    "iteration_17a_available": true,
+    "m4_boundary_response_passed": true,
+    "m5_direction_control_passed": true,
+    "m6_circular_motion_candidate_passed": true,
+    "native_feedback_producer_semantics_unchanged": true,
+    "native_surface_semantics_unchanged": true,
+    "no_direct_writes": true,
+    "seam_crossing_routes_tested": true
+  },
+  "circular_metric_policy": {
+    "declared_before_run": true,
+    "forward_route": [
+      20,
+      0
+    ],
+    "metric": "shortest_signed_ring_distance",
+    "node_count": 21,
+    "phase_metric": "positive_excess_mass_circular_mean",
+    "phase_tolerance_nodes": 0.25,
+    "policy_id": "s1_ring_circular_phase_metric_v1",
+    "reversed_route": [
+      0,
+      20
+    ],
+    "wrap_edge": [
+      20,
+      0
+    ]
+  },
+  "circular_motion_summary": {
+    "forward_circular_displacement_nodes": 1.0,
+    "forward_final_phase_error_to_target_nodes": 0.0,
+    "interpretation": "The ring supports a native seam-crossing circular-response candidate under a declared circular phase metric. This is a circular motion evidence candidate, not a locomotion-like, adaptive-topology, agency, identity-acceptance, or unrestricted movement claim.",
+    "reversed_circular_displacement_nodes": -1.0,
+    "reversed_final_phase_error_to_target_nodes": 0.0
+  },
+  "claim_ceiling": "s1_ring_circular_motion_evidence_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "circular_locomotion_claim_allowed": false,
+    "circular_motion_evidence_candidate_gate_passed": true,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "unrestricted_movement_claim_allowed": false,
+    "wrap_crossing_movement_claim_allowed": false
+  },
+  "controls": {
+    "seam_artifact": {
+      "control_id": "seam_artifact_unwrap_control",
+      "passed_negative_control": true,
+      "primary_blocker": "linear_unwrap_seam_intersects_active_route",
+      "seam_control_count": 8,
+      "source": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json",
+        "sha256": "10508582f9d1f3e899fc4a673992dfc4bbebfb76a6f5e6f780968aa5ba0383dc"
+      }
+    },
+    "static": {
+      "circular_phase": NaN,
+      "control_id": "static_no_packet_control",
+      "front_nodes": [
+        0
+      ],
+      "passed_negative_control": true,
+      "primary_blocker": "no_committed_packet_contact",
+      "rear_nodes": [
+        20
+      ],
+      "surface_row_count": 0
+    },
+    "unwrap_only": {
+      "control_id": "unwrap_only_control",
+      "passed_negative_control": true,
+      "primary_blocker": "unwrap_robustness_has_no_circular_metric_or_seam_crossing_positive_lane",
+      "source": {
+        "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json",
+        "sha256": "10508582f9d1f3e899fc4a673992dfc4bbebfb76a6f5e6f780968aa5ba0383dc"
+      }
+    },
+    "wrong_direction": {
+      "control_id": "wrong_direction_polarity_control",
+      "passed_negative_control": true,
+      "primary_blocker": "feedback_wrong_polarity",
+      "producer_reason_code": "feedback_coupled_pulse_wrong_polarity",
+      "scheduled_event_id": null
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "forward": {
+    "all_recovery_pulses_feedback_authorized": true,
+    "artifact_validator": {
+      "failure_reasons": [],
+      "movement_claim_allowed": false,
+      "native_lgrc_pulse_substrate_supported": true,
+      "native_m6": false,
+      "surface_row_count": 26,
+      "valid": true,
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-a541e4798087fb92:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-a22acdcfffdc79d9:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-a22acdcfffdc79d9:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-f0b10b3ad05c9054:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-57c53f0e94d5df26:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-57c53f0e94d5df26:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-62c0ca3272945b6a:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-32059b7562238ad0:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-32059b7562238ad0:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-02dcc4ff7411f5e4:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-3e0c17b60884dfef:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-3e0c17b60884dfef:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-12bca4cf835f3014:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-ad6adc316c4d45ec:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-ad6adc316c4d45ec:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-86143ba75971340c:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-faa49802adeb8e19:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-faa49802adeb8e19:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-04fabea18784660d:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-8882862eba46b9a3:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-8882862eba46b9a3:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-96e49eb79cc2ec40:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-16ee26cd9974f4cd:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-16ee26cd9974f4cd:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-0d8f66045ab71790:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-900cdf9dd6247598:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+    },
+    "baseline_cycles": [
+      {
+        "boundary_polarity_score": 0.5,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "6cf3e451a5eedd6456f8d3ffdc947184be69c996a057abe0abbc702b89c924eb",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-f0b10b3ad05c9054",
+        "source_surface_digest": "8bb22ac314e33eb530d29f6fadd2e648333bb3684f45ae1679e3c545590de383",
+        "surface_digest": "0e2025708cc0f435fc3a5eef777cd0359efd14d84801d727fc2bb3b03c450444"
+      },
+      {
+        "boundary_polarity_score": 0.7000000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "17010bd6543642eb835fe3605535b830f6f63337e02593d5464504d357bccc00",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-62c0ca3272945b6a",
+        "source_surface_digest": "7b7185ca7b6f0b6ca7e116ae2e1ab66fa5a353bdbd6f89d8742532d6930bdb4f",
+        "surface_digest": "48d2f1b2253ace9cecda96a0c668a6f3395f99288df79ee07b32a20933727d50"
+      },
+      {
+        "boundary_polarity_score": 0.9000000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "160a03441ed67b3aa079ee5b0a59351e068a1c588a79c02506e8e98dabc1fc91",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-02dcc4ff7411f5e4",
+        "source_surface_digest": "b47d37d018f244da9d06a65b69b8d12e8c2802d2a987e163f5dca2aa74af6777",
+        "surface_digest": "d8fa13035f72bedcdeed7b5bb5f126ec54bb1ae40499cf8c9ee4a8696c33921a"
+      },
+      {
+        "boundary_polarity_score": 1.1,
+        "copied_from_original_schedule": false,
+        "cycle_index": 3,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "6bafd2d44643f96cbe807942ec47f57d8993c20b545fe24fdf2b3bcb28f0bebc",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-12bca4cf835f3014",
+        "source_surface_digest": "253a5488ebe9add6188eb0f6d036232a1084a9aa29a264a5e3924e5542688004",
+        "surface_digest": "d0ba9ce306c24ec5a875844a75dbf8a4b4d9d10fea5216dc33a96c3cd2510fe3"
+      },
+      {
+        "boundary_polarity_score": 1.3000000000000003,
+        "copied_from_original_schedule": false,
+        "cycle_index": 4,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "1746bf4f0ea899b4e8975581a8c2bb07374c4295659d4c8a16216d0e4a7ee7f5",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-86143ba75971340c",
+        "source_surface_digest": "c4232de3f405c16476704c5891933bf3ac213b513d411818a7ab113febdf2a31",
+        "surface_digest": "4cba8f1fb0a2ff583410b88aaf43e122358a759f7ad134c56ce27c534aab66c6"
+      }
+    ],
+    "budget_abs_error": 0.0,
+    "budget_final": 21.0,
+    "budget_initial": 21.0,
+    "circular_displacement_nodes": 1.0,
+    "circular_distance_source_to_target_nodes": 1.0,
+    "circular_phase_target_passed": true,
+    "direction": "forward",
+    "edge_id": 20,
+    "final_phase_error_to_target_nodes": 0.0,
+    "final_positive_excess_phase": 0.0,
+    "front_nodes": [
+      0
+    ],
+    "geometry_init": {
+      "budget_abs_error": 0.0,
+      "budget_after": 21.0,
+      "budget_before": 21.0,
+      "circular_metric": "shortest_signed_ring_distance",
+      "coordinate_frame": "circular_phase",
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "front_rear_policy": "phase_leading_target_vs_phase_trailing_source",
+      "geometry_family": "s1_ring_with_native_wrap_edge",
+      "geometry_id": "s1_ring_wrap_only_v1",
+      "node_count": 21,
+      "nonnegative_after_geometry_init": true,
+      "phase_metric": "positive_excess_mass_circular_mean",
+      "reason": "Iteration 17-B declares a ring-only wrap edge before execution and scores seam-crossing pulse response with circular phase metrics.",
+      "ring_wrap_edge_id": 20,
+      "source_geometry": "S0_chain_v1_plus_declared_wrap_edge",
+      "topology_changed_by_fixture_definition": true,
+      "topology_fixed_during_run": true,
+      "topology_mutated_during_run": false,
+      "wrap_edge": [
+        20,
+        0
+      ]
+    },
+    "identity_shape_gates_passed": true,
+    "m4_boundary_response_passed": true,
+    "m5_direction_control_passed": true,
+    "m6_circular_motion_candidate_passed": true,
+    "nonnegative_gate_passed": true,
+    "perturbation": {
+      "budget_abs_error": 0.0,
+      "budget_after": 21.0,
+      "budget_before": 21.0,
+      "credit_nodes": [
+        20
+      ],
+      "credit_per_node": 0.15,
+      "debit_nodes": [
+        0
+      ],
+      "debit_per_node": 0.15,
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "node_delta_digest": "975d91ddb882477cba4e6374f97e5eddd9c958a12795a001553b4c177dae328e",
+      "nonnegative_after_perturbation": true,
+      "perturbation_kind": "budget_neutral_circular_polarity_damping",
+      "transfer_amount": 0.15
+    },
+    "post_positive_excess_phase": 0.0,
+    "pre_positive_excess_phase": 0.0,
+    "producer_records_digest": "b2b4efd7dedaac73d699c12633075e02f6b8cba1b9487a1d7676dc77b1ee8dc6",
+    "profile_similarity": 0.9635257977162425,
+    "rear_nodes": [
+      20
+    ],
+    "recovery_cycles": [
+      {
+        "boundary_polarity_score": 1.2000000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "0a0c9472e25b048d1c847a36f3a0452d8799e1ed4150f46008fb79f5771acbe6",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-04fabea18784660d",
+        "source_surface_digest": "05884503f7bfb7a215684ddf2772c393e33e365385eae8f11a87465e37220841",
+        "surface_digest": "38995bea87760a2b959541c2054326e15d9c73b6d613d3e4a6e617455f20652d"
+      },
+      {
+        "boundary_polarity_score": 1.4000000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "3611c9f2a15f0cf620e0c83108dce52fce51a8d8aa5d48fd5b0c7f2d48be496a",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-96e49eb79cc2ec40",
+        "source_surface_digest": "200e2286f516e006e005c143ba39481041abebe1b9a6ed95946c67d9454c9e24",
+        "surface_digest": "715be0f9c95552f578f8286e29911eb3fbde2503e216fb59a09c1a4e9caf588c"
+      },
+      {
+        "boundary_polarity_score": 1.6000000000000005,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "c16db49004c4d2cf38c5e97a486dfbc4be99721f8724c57bd568ffae6acb9947",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-0d8f66045ab71790",
+        "source_surface_digest": "815f5028024d7b16b3088c64b336a27be3097e68b86aa57310451daa086aa9f3",
+        "surface_digest": "1d5b64c97fee273849e6211b8770b1103d24909ca27ed5c6bd1945e8472e504d"
+      }
+    ],
+    "recovery_scheduled_cycle_count": 3,
+    "route_crosses_wrap_edge": true,
+    "seeded_event_count": 6,
+    "seeded_events_digest": "ada699e2fb821ad190c6789c036e8351f05d76a600af193164b35e66b8e5d126",
+    "signed_final_score": 1.8000000000000007,
+    "signed_post_perturbation_score": 1.2000000000000004,
+    "signed_pre_transfer_score": 1.5000000000000004,
+    "source_node_id": 20,
+    "surface_log_digest": "1d6e547345b38e3bd10a3702f49ea002eda534b8c6661e4f83853d687d14bbc1",
+    "surface_row_count": 26,
+    "target_node_id": 0,
+    "width_relative_change": 0.010069247750829574
+  },
+  "geometry_scope": "transferred_geometry",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15e_large_shock_absorber_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16_corridor_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16b_corridor_perturbation_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16c_high_shock_corridor_resilience.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_unwrap_policy.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15e_large_shock_absorber_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16_corridor_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16b_corridor_perturbation_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16c_high_shock_corridor_resilience.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17_ring_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17a_ring_unwrap_robustness_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15e_large_shock_absorber_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16_corridor_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16b_corridor_perturbation_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16c_high_shock_corridor_resilience.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17_ring_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17a_ring_unwrap_robustness.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py"
+    }
+  },
+  "go_no_go_for_iteration_18": {
+    "grid_transfer_ceiling_to_test": "s1_ring_circular_motion_evidence_candidate",
+    "guidance": "Iteration 18 may test whether the circular/ring result survives route-defined front/rear masks on a grid. Circular claims do not automatically transfer to grid geometry.",
+    "iteration_18_allowed": true
+  },
+  "input_iteration_17a": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json",
+    "sha256": "10508582f9d1f3e899fc4a673992dfc4bbebfb76a6f5e6f780968aa5ba0383dc"
+  },
+  "iteration": "17-B",
+  "movement_substrate": "S1_ring_wrap_only_v1",
+  "next_iteration": "18_s3_grid_route_defined_front_rear",
+  "persistence_axis": {
+    "persistence_basis": "s1_ring_circular_wrap_route_recovers_0_15",
+    "persistence_level": "T6_candidate",
+    "recovery_passed": true,
+    "recovery_perturbation": 0.15,
+    "recovery_status": "recovers_0_15_on_circular_wrap_route",
+    "recovery_tested": true,
+    "repeatability_status": "forward_and_reversed_three_cycle_recovery_on_circular_wrap_route",
+    "self_renewed_cycle_count": 3,
+    "t6_full_claim_allowed": false,
+    "t6_full_claim_blocker": "single_ring_fixture_no_grid_or_port_graph_transfer"
+  },
+  "report_kind": "n04_iter17b_circular_ring_motion_evidence_v1",
+  "reversed": {
+    "all_recovery_pulses_feedback_authorized": true,
+    "artifact_validator": {
+      "failure_reasons": [],
+      "movement_claim_allowed": false,
+      "native_lgrc_pulse_substrate_supported": true,
+      "native_m6": false,
+      "surface_row_count": 26,
+      "valid": true,
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-6ac5b6f6c39e628c:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-ab840cf19f8433c8:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-ab840cf19f8433c8:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-ca12b93315eca08e:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-61e88acf25de2595:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-61e88acf25de2595:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-e70376b689331869:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-925a673b379f683d:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-925a673b379f683d:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-6fc64d6121f58eb7:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-6edd96e91cb31b32:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-6edd96e91cb31b32:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-591beda0162a79ef:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-663accaa6a04fdfc:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-663accaa6a04fdfc:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-baf1c55ea1eb27a1:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-400a22427407e4c6:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-400a22427407e4c6:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-92f7a8d0eb14c778:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-102c8e6c6e0540d9:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-102c8e6c6e0540d9:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-7a5445b5bd815392:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-4ef34f56c9d0bc9c:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-4ef34f56c9d0bc9c:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-fbec4d4cea263ddb:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-84f10f89cf4ceb58:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+    },
+    "baseline_cycles": [
+      {
+        "boundary_polarity_score": -0.5,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "2ab0ad4fec56a76f4c45957c5e8c55fdedf5a2f0c901d3d4861eb69b601074aa",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-ca12b93315eca08e",
+        "source_surface_digest": "53cb8b5043eb4e47a5ef37fd845bbacb56a0906ba70fbda348f9ee782d5e8777",
+        "surface_digest": "117eeaa237f54f1e90d325e10e020408a1aac7aed6eefc62d7d2e9588c9b394d"
+      },
+      {
+        "boundary_polarity_score": -0.7000000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "30a20316253f32ecd3d8553198cfec85c1b20b63e1bd3d3cb51e1231e8d0b03c",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-e70376b689331869",
+        "source_surface_digest": "38f08a06edb0f41fa91cc38f1ba2b3a68d3fccbffffa522c6abdf42a0f5ae3de",
+        "surface_digest": "32025140e5fd064b01546333703fc4b1a99065856c90bc8b67e445b9cb948406"
+      },
+      {
+        "boundary_polarity_score": -0.9000000000000001,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "1dff5efacc2e7ef3b47a90830bd8ad16d1138e686c12877879e6291fd81828b2",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-6fc64d6121f58eb7",
+        "source_surface_digest": "5d8cdf8b89a96e89e77eb2f3389d67ee93191de1667ac736cc443ccc418531d3",
+        "surface_digest": "4eda9ce2c84d1ec4ae252fcf3e91b011bfeecbd4c099ba4424f7bab14ad57852"
+      },
+      {
+        "boundary_polarity_score": -1.1,
+        "copied_from_original_schedule": false,
+        "cycle_index": 3,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "8b8a4cb2329b3cf0585444ad293ba52b150b6b25aac31d04fe77c7078b0ef3fd",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-591beda0162a79ef",
+        "source_surface_digest": "f052181435c7a274985271bfd022b5b72cbd4b5f1d48e73b4100fa5d31d6ff9b",
+        "surface_digest": "7a71318da0a5af52540827480b906e1969676cb9b40daf585a27102e39897f0e"
+      },
+      {
+        "boundary_polarity_score": -1.3000000000000003,
+        "copied_from_original_schedule": false,
+        "cycle_index": 4,
+        "phase": "pre_perturbation_baseline",
+        "processed_event_count": 6,
+        "processed_events_digest": "3c9b2d35a72a3a0a3647f44e65498fed06dafc3383bf7da07aaeb3620dd86f61",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-baf1c55ea1eb27a1",
+        "source_surface_digest": "fb23438d653e4a945404fd1fb37993ebc49bf449702668fe17a91e27dd076a2e",
+        "surface_digest": "47dc21888be29f0edc5e102c8e3287e22063d144b110e48b5ff272654c961070"
+      }
+    ],
+    "budget_abs_error": 0.0,
+    "budget_final": 21.0,
+    "budget_initial": 21.0,
+    "circular_displacement_nodes": -1.0,
+    "circular_distance_source_to_target_nodes": -1.0,
+    "circular_phase_target_passed": true,
+    "direction": "reversed",
+    "edge_id": 20,
+    "final_phase_error_to_target_nodes": 0.0,
+    "final_positive_excess_phase": 20.0,
+    "front_nodes": [
+      0
+    ],
+    "geometry_init": {
+      "budget_abs_error": 0.0,
+      "budget_after": 21.0,
+      "budget_before": 21.0,
+      "circular_metric": "shortest_signed_ring_distance",
+      "coordinate_frame": "circular_phase",
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "front_rear_policy": "phase_leading_target_vs_phase_trailing_source",
+      "geometry_family": "s1_ring_with_native_wrap_edge",
+      "geometry_id": "s1_ring_wrap_only_v1",
+      "node_count": 21,
+      "nonnegative_after_geometry_init": true,
+      "phase_metric": "positive_excess_mass_circular_mean",
+      "reason": "Iteration 17-B declares a ring-only wrap edge before execution and scores seam-crossing pulse response with circular phase metrics.",
+      "ring_wrap_edge_id": 20,
+      "source_geometry": "S0_chain_v1_plus_declared_wrap_edge",
+      "topology_changed_by_fixture_definition": true,
+      "topology_fixed_during_run": true,
+      "topology_mutated_during_run": false,
+      "wrap_edge": [
+        20,
+        0
+      ]
+    },
+    "identity_shape_gates_passed": true,
+    "m4_boundary_response_passed": true,
+    "m5_direction_control_passed": true,
+    "m6_circular_motion_candidate_passed": true,
+    "nonnegative_gate_passed": true,
+    "perturbation": {
+      "budget_abs_error": 0.0,
+      "budget_after": 21.0,
+      "budget_before": 21.0,
+      "credit_nodes": [
+        0
+      ],
+      "credit_per_node": 0.15,
+      "debit_nodes": [
+        20
+      ],
+      "debit_per_node": 0.15,
+      "direct_centroid_write": false,
+      "direct_claim_flag_write": false,
+      "direct_displacement_write": false,
+      "direct_support_mask_write": false,
+      "direct_topology_write": false,
+      "node_delta_digest": "a868ea94819a53d87a47c03c8e0a643993283f965a8b7d79cc11f02a14fafb26",
+      "nonnegative_after_perturbation": true,
+      "perturbation_kind": "budget_neutral_circular_polarity_damping",
+      "transfer_amount": 0.15
+    },
+    "post_positive_excess_phase": 20.0,
+    "pre_positive_excess_phase": 20.0,
+    "producer_records_digest": "d07571f90de7aa4a7bdf8d52709dbe888d724e7f525448b9fce942a1305913c0",
+    "profile_similarity": 0.9635257977162425,
+    "rear_nodes": [
+      20
+    ],
+    "recovery_cycles": [
+      {
+        "boundary_polarity_score": -1.2000000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "64f741faf3a1d74c975b0fde6637b581fe8ee7725ee68a2ab6223063dbbd0fbc",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-92f7a8d0eb14c778",
+        "source_surface_digest": "a23f4a650c470c1af025a9ee1897fddc043646ea0c7ba840513cb04a619fb4db",
+        "surface_digest": "c4192464448453426b9fe1233b880d9baeb4d8749aa11cdb5df3d56e2106f698"
+      },
+      {
+        "boundary_polarity_score": -1.4000000000000004,
+        "copied_from_original_schedule": false,
+        "cycle_index": 1,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "2f4c04dfb28d45df2b679cc6d126f5dcdae63b7a7e3696b44103555478b82d6c",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-7a5445b5bd815392",
+        "source_surface_digest": "100f9c229b56401e7c349297b80544b64059a6efdcf58ef64c9557b3d17eb4a8",
+        "surface_digest": "7e39c59889d7637ce42e55742f19070ee572ae90cc77a2afdc627c2cd4f832cf"
+      },
+      {
+        "boundary_polarity_score": -1.6000000000000005,
+        "copied_from_original_schedule": false,
+        "cycle_index": 2,
+        "phase": "post_perturbation_recovery",
+        "processed_event_count": 6,
+        "processed_events_digest": "baf3acb479715f7c5de098d287885c11b3762eec514ed1e2dd24387893d27bf2",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-fbec4d4cea263ddb",
+        "source_surface_digest": "6aa478f01a56797bdf2ee64c2a4cc9599363defddf55bfa3c731ba610d0cdbd6",
+        "surface_digest": "4b45cd8ee535857e69f17e5ad58e654f96d0c4e1eda5d3261a6ad4788fd1f032"
+      }
+    ],
+    "recovery_scheduled_cycle_count": 3,
+    "route_crosses_wrap_edge": true,
+    "seeded_event_count": 6,
+    "seeded_events_digest": "b0277286265618e04ff14ad04b40743b717c9f4f74e239271d420127ad95dc36",
+    "signed_final_score": 1.8000000000000007,
+    "signed_post_perturbation_score": 1.2000000000000004,
+    "signed_pre_transfer_score": 1.5000000000000004,
+    "source_node_id": 0,
+    "surface_log_digest": "56df9147381f4fc2a9be89cd49de17dd1f5d5fcb6826e923b14fdf0c32b2acd1",
+    "surface_row_count": 26,
+    "target_node_id": 20,
+    "width_relative_change": 0.010069247750829574
+  },
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "status": "passed",
+  "substrate_class": "ring"
+}

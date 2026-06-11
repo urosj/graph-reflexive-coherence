@@ -1,0 +1,1745 @@
+{
+  "branch": "B2",
+  "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_b2_channel_attenuation.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "rows": [
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.5526336097413369,
+          "channel_mass_initial": 0.5318393899476306,
+          "channel_mass_max_abs_deviation": 0.020794219793706326,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.07369210142058591,
+          "first_forward_edge_mean_abs_flux": 0.06404955472948129,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07369210142058591,
+              "mean_abs_flux": 0.06404955472948129,
+              "mean_flux": 0.06404955472948129,
+              "peak_step": 0
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.07369210142058591,
+          "last_forward_edge_mean_abs_flux": 0.06404955472948129,
+          "mean_abs_attenuation_last_over_first": 1.0,
+          "peak_abs_attenuation_last_over_first": 1.0,
+          "sink_import_abs_mean": 0.022552013059427868,
+          "sink_import_abs_over_source_export_abs": 0.23895065500291665,
+          "source_export_abs_mean": 0.09437937326077887,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.7489688563594038,
+          "channel_mass_initial": 0.5392055153768173,
+          "channel_mass_max_abs_deviation": 0.20976334098258653,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.0694437828743611,
+          "first_forward_edge_mean_abs_flux": 0.03625449874971978,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.0694437828743611,
+              "mean_abs_flux": 0.03625449874971978,
+              "mean_flux": 0.01813945584745262,
+              "peak_step": 109
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.0694437828743611,
+          "last_forward_edge_mean_abs_flux": 0.03625449874971978,
+          "mean_abs_attenuation_last_over_first": 1.0,
+          "peak_abs_attenuation_last_over_first": 1.0,
+          "sink_import_abs_mean": 0.04513904742655814,
+          "sink_import_abs_over_source_export_abs": 0.820298016322362,
+          "source_export_abs_mean": 0.05502761987518854,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.8346195814306746,
+          "channel_mass_initial": 0.5318393899476306,
+          "channel_mass_max_abs_deviation": 0.302780191483044,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.0971302961546259,
+          "first_forward_edge_mean_abs_flux": 0.05029988955706969,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.0971302961546259,
+              "mean_abs_flux": 0.05029988955706969,
+              "mean_flux": -0.0013358881250131057,
+              "peak_step": 134
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.0971302961546259,
+          "last_forward_edge_mean_abs_flux": 0.05029988955706969,
+          "mean_abs_attenuation_last_over_first": 1.0,
+          "peak_abs_attenuation_last_over_first": 1.0,
+          "sink_import_abs_mean": 0.06992436138509672,
+          "sink_import_abs_over_source_export_abs": 1.4169900813999092,
+          "source_export_abs_mean": 0.04934710715548217,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "max_correction_magnitude": 5.551115123125783e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 1,
+      "forward_gap_nodes": 0,
+      "lane_id": "S",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_s_n16_gap0_raw_records.jsonl"
+      },
+      "return_edge_count": 13,
+      "row_id": "b2_s_n16_gap0",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_s_n16_gap0_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.7500727251769129,
+          "channel_mass_initial": 0.7500066013177404,
+          "channel_mass_max_abs_deviation": 8.47268209190899e-05,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.021598287893313153,
+          "first_forward_edge_mean_abs_flux": 0.007768909494087749,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.021598287893313153,
+              "mean_abs_flux": 0.007768909494087749,
+              "mean_flux": -0.006399864350287996,
+              "peak_step": 29
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.021598287893313153,
+          "last_forward_edge_mean_abs_flux": 0.007768909494087749,
+          "mean_abs_attenuation_last_over_first": 1.0,
+          "peak_abs_attenuation_last_over_first": 1.0,
+          "sink_import_abs_mean": 0.005969627914829942,
+          "sink_import_abs_over_source_export_abs": 0.9679934772132258,
+          "source_export_abs_mean": 0.006167012542291104,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.6855404169554515,
+          "channel_mass_initial": 0.7500628353332928,
+          "channel_mass_max_abs_deviation": 0.06452241837784123,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.1755449327337157,
+          "first_forward_edge_mean_abs_flux": 0.09711581457618937,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.1755449327337157,
+              "mean_abs_flux": 0.09711581457618937,
+              "mean_flux": -0.09711581457618937,
+              "peak_step": 88
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.1755449327337157,
+          "last_forward_edge_mean_abs_flux": 0.09711581457618937,
+          "mean_abs_attenuation_last_over_first": 1.0,
+          "peak_abs_attenuation_last_over_first": 1.0,
+          "sink_import_abs_mean": 0.07120309137481765,
+          "sink_import_abs_over_source_export_abs": 1.3367669188915023,
+          "source_export_abs_mean": 0.05326515069198596,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.700594672514699,
+          "channel_mass_initial": 0.7500066013177404,
+          "channel_mass_max_abs_deviation": 0.06779406299317081,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.1755449327337157,
+          "first_forward_edge_mean_abs_flux": 0.10681637634028918,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.1755449327337157,
+              "mean_abs_flux": 0.10681637634028918,
+              "mean_flux": -0.10652300952376066,
+              "peak_step": 88
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.1755449327337157,
+          "last_forward_edge_mean_abs_flux": 0.10681637634028918,
+          "mean_abs_attenuation_last_over_first": 1.0,
+          "peak_abs_attenuation_last_over_first": 1.0,
+          "sink_import_abs_mean": 0.07187273798293259,
+          "sink_import_abs_over_source_export_abs": 1.20847525243351,
+          "source_export_abs_mean": 0.05947390137961224,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "max_correction_magnitude": 4.440892098500626e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 1,
+      "forward_gap_nodes": 0,
+      "lane_id": "K",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_k_n16_gap0_raw_records.jsonl"
+      },
+      "return_edge_count": 13,
+      "row_id": "b2_k_n16_gap0",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_k_n16_gap0_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.6033703670920035,
+          "channel_mass_initial": 0.588917925033318,
+          "channel_mass_max_abs_deviation": 0.014452442058685566,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.07995524556566745,
+          "first_forward_edge_mean_abs_flux": 0.072921488267146,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07995524556566745,
+              "mean_abs_flux": 0.072921488267146,
+              "mean_flux": 0.072921488267146,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.07884395783978797,
+              "mean_abs_flux": 0.07512460833330563,
+              "mean_flux": 0.07512460833330563,
+              "peak_step": 0
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.07884395783978797,
+          "last_forward_edge_mean_abs_flux": 0.07512460833330563,
+          "mean_abs_attenuation_last_over_first": 1.0302122202729673,
+          "peak_abs_attenuation_last_over_first": 0.9861011279745645,
+          "sink_import_abs_mean": 0.05053357330277859,
+          "sink_import_abs_over_source_export_abs": 0.503221615814382,
+          "source_export_abs_mean": 0.10042011653453768,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.5974188746295952,
+          "channel_mass_initial": 0.5939729267561028,
+          "channel_mass_max_abs_deviation": 0.029551887957903644,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.0961082965473531,
+          "first_forward_edge_mean_abs_flux": 0.05299245675006927,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.0961082965473531,
+              "mean_abs_flux": 0.05299245675006927,
+              "mean_flux": 0.015565838829661076,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.17683642376202027,
+              "mean_abs_flux": 0.11405206966561852,
+              "mean_flux": 0.11405206966561852,
+              "peak_step": 97
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.17683642376202027,
+          "last_forward_edge_mean_abs_flux": 0.11405206966561852,
+          "mean_abs_attenuation_last_over_first": 2.152232160202111,
+          "peak_abs_attenuation_last_over_first": 1.839970430387266,
+          "sink_import_abs_mean": 0.026216140177268685,
+          "sink_import_abs_over_source_export_abs": 0.3143623893079431,
+          "source_export_abs_mean": 0.08339464601660054,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.6546074257957224,
+          "channel_mass_initial": 0.588917925033318,
+          "channel_mass_max_abs_deviation": 0.06568950076240443,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.1082956504063595,
+          "first_forward_edge_mean_abs_flux": 0.06586674962105445,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.1082956504063595,
+              "mean_abs_flux": 0.06586674962105445,
+              "mean_flux": -0.00579698921231837,
+              "peak_step": 135
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.17683642376202027,
+              "mean_abs_flux": 0.11837687645335279,
+              "mean_flux": 0.11837687645335279,
+              "peak_step": 97
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.17683642376202027,
+          "last_forward_edge_mean_abs_flux": 0.11837687645335279,
+          "mean_abs_attenuation_last_over_first": 1.797217520743021,
+          "peak_abs_attenuation_last_over_first": 1.6329042126666597,
+          "sink_import_abs_mean": 0.034915684833853065,
+          "sink_import_abs_over_source_export_abs": 0.2915525611915734,
+          "source_export_abs_mean": 0.11975777091839938,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "max_correction_magnitude": 4.440892098500626e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 2,
+      "forward_gap_nodes": 1,
+      "lane_id": "S",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_s_n16_gap1_raw_records.jsonl"
+      },
+      "return_edge_count": 12,
+      "row_id": "b2_s_n16_gap1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_s_n16_gap1_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.7504880349649086,
+          "channel_mass_initial": 0.7500132057435159,
+          "channel_mass_max_abs_deviation": 0.0004748292213926364,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.021888432428088033,
+          "first_forward_edge_mean_abs_flux": 0.020487785380620075,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.021888432428088033,
+              "mean_abs_flux": 0.020487785380620075,
+              "mean_flux": 0.020487785380620075,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.022956702613376158,
+              "mean_abs_flux": 0.020337745086535443,
+              "mean_flux": 0.020337745086535443,
+              "peak_step": 29
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.022956702613376158,
+          "last_forward_edge_mean_abs_flux": 0.020337745086535443,
+          "mean_abs_attenuation_last_over_first": 0.9926765977240977,
+          "peak_abs_attenuation_last_over_first": 1.048805239424879,
+          "sink_import_abs_mean": 0.012188527676828818,
+          "sink_import_abs_over_source_export_abs": 0.8857534665047077,
+          "source_export_abs_mean": 0.013760632204947783,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.7352788278321751,
+          "channel_mass_initial": 0.7501552828487922,
+          "channel_mass_max_abs_deviation": 0.018867972755633566,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.07879672192397323,
+          "first_forward_edge_mean_abs_flux": 0.04316530676677019,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07879672192397323,
+              "mean_abs_flux": 0.04316530676677019,
+              "mean_flux": 0.04316530676677019,
+              "peak_step": 82
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.07279234550916489,
+              "mean_abs_flux": 0.04351660948348664,
+              "mean_flux": 0.04351660948348664,
+              "peak_step": 100
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.07279234550916489,
+          "last_forward_edge_mean_abs_flux": 0.04351660948348664,
+          "mean_abs_attenuation_last_over_first": 1.008138543266114,
+          "peak_abs_attenuation_last_over_first": 0.9237991598102057,
+          "sink_import_abs_mean": 0.06252389036606468,
+          "sink_import_abs_over_source_export_abs": 0.8291439673714751,
+          "source_export_abs_mean": 0.07540776128936433,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.7444747022180654,
+          "channel_mass_initial": 0.7500132057435159,
+          "channel_mass_max_abs_deviation": 0.018725895650357316,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.07879672192397323,
+          "first_forward_edge_mean_abs_flux": 0.04552947236699615,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07879672192397323,
+              "mean_abs_flux": 0.04552947236699615,
+              "mean_flux": 0.04552947236699615,
+              "peak_step": 82
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.07279234550916489,
+              "mean_abs_flux": 0.047279661628347444,
+              "mean_flux": 0.047279661628347444,
+              "peak_step": 100
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.07279234550916489,
+          "last_forward_edge_mean_abs_flux": 0.047279661628347444,
+          "mean_abs_attenuation_last_over_first": 1.0384407982425905,
+          "peak_abs_attenuation_last_over_first": 0.9237991598102057,
+          "sink_import_abs_mean": 0.06465070407211604,
+          "sink_import_abs_over_source_export_abs": 0.7243539459305861,
+          "source_export_abs_mean": 0.0892529190119321,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "max_correction_magnitude": 5.551115123125783e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 2,
+      "forward_gap_nodes": 1,
+      "lane_id": "K",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_k_n16_gap1_raw_records.jsonl"
+      },
+      "return_edge_count": 12,
+      "row_id": "b2_k_n16_gap1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_k_n16_gap1_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.6297258632127378,
+          "channel_mass_initial": 0.611199924136634,
+          "channel_mass_max_abs_deviation": 0.01852593907610378,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.07151611283548269,
+          "first_forward_edge_mean_abs_flux": 0.05998062181853205,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07151611283548269,
+              "mean_abs_flux": 0.05998062181853205,
+              "mean_flux": 0.05998062181853205,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.09133464126791192,
+              "mean_abs_flux": 0.08713646289748621,
+              "mean_flux": 0.08713646289748621,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.043336833396262944,
+              "mean_abs_flux": 0.035820626228983875,
+              "mean_flux": 0.035820626228983875,
+              "peak_step": 0
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.043336833396262944,
+          "last_forward_edge_mean_abs_flux": 0.035820626228983875,
+          "mean_abs_attenuation_last_over_first": 0.5972033157201526,
+          "peak_abs_attenuation_last_over_first": 0.6059729993429032,
+          "sink_import_abs_mean": 0.02519807781392519,
+          "sink_import_abs_over_source_export_abs": 0.28259382844328884,
+          "source_export_abs_mean": 0.08916712000659265,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.7715638117624213,
+          "channel_mass_initial": 0.6177085451837374,
+          "channel_mass_max_abs_deviation": 0.15385526657868387,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.18974520391172164,
+          "first_forward_edge_mean_abs_flux": 0.0732237639861311,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.18974520391172164,
+              "mean_abs_flux": 0.0732237639861311,
+              "mean_flux": -0.03766852767887667,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.22167250625223972,
+              "mean_abs_flux": 0.15124406159473422,
+              "mean_flux": 0.15124406159473422,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.10073511372065493,
+              "mean_abs_flux": 0.05141674782820463,
+              "mean_flux": -0.032894735367276454,
+              "peak_step": 81
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.10073511372065493,
+          "last_forward_edge_mean_abs_flux": 0.05141674782820463,
+          "mean_abs_attenuation_last_over_first": 0.7021866267069142,
+          "peak_abs_attenuation_last_over_first": 0.5308967586212172,
+          "sink_import_abs_mean": 0.0799852692101014,
+          "sink_import_abs_over_source_export_abs": 1.4134623651057694,
+          "source_export_abs_mean": 0.0565881845776036,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.7723386267945928,
+          "channel_mass_initial": 0.611199924136634,
+          "channel_mass_max_abs_deviation": 0.17516321874981822,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.20487638784425,
+          "first_forward_edge_mean_abs_flux": 0.10073465420423261,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.20487638784425,
+              "mean_abs_flux": 0.10073465420423261,
+              "mean_flux": -0.06558790377725865,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.2241215534869459,
+              "mean_abs_flux": 0.1619949928133826,
+              "mean_flux": 0.1619949928133826,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.10073511372065493,
+              "mean_abs_flux": 0.05960921923406993,
+              "mean_flux": -0.040469319260492145,
+              "peak_step": 81
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.10073511372065493,
+          "last_forward_edge_mean_abs_flux": 0.05960921923406993,
+          "mean_abs_attenuation_last_over_first": 0.5917449134556646,
+          "peak_abs_attenuation_last_over_first": 0.49168727924486455,
+          "sink_import_abs_mean": 0.09406726052540831,
+          "sink_import_abs_over_source_export_abs": 1.5388586366209909,
+          "source_export_abs_mean": 0.0611279413760579,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "max_correction_magnitude": 4.440892098500626e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 3,
+      "forward_gap_nodes": 2,
+      "lane_id": "S",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_s_n16_gap2_raw_records.jsonl"
+      },
+      "return_edge_count": 11,
+      "row_id": "b2_s_n16_gap2",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_s_n16_gap2_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.7505005210944853,
+          "channel_mass_initial": 0.7500132026354809,
+          "channel_mass_max_abs_deviation": 0.0004873184590044044,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.026961861836579403,
+          "first_forward_edge_mean_abs_flux": 0.009819891716526951,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.026961861836579403,
+              "mean_abs_flux": 0.009819891716526951,
+              "mean_flux": -0.009326130067650477,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.06602143968509762,
+              "mean_abs_flux": 0.04715750764892247,
+              "mean_flux": 0.04715750764892247,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.0278850989490468,
+              "mean_abs_flux": 0.010420170434841067,
+              "mean_flux": -0.010126543218522206,
+              "peak_step": 29
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.0278850989490468,
+          "last_forward_edge_mean_abs_flux": 0.010420170434841067,
+          "mean_abs_attenuation_last_over_first": 1.0611288531118772,
+          "peak_abs_attenuation_last_over_first": 1.0342423352683616,
+          "sink_import_abs_mean": 0.01342413612280564,
+          "sink_import_abs_over_source_export_abs": 1.0938777218348974,
+          "source_export_abs_mean": 0.0122720628227876,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.8520610964361043,
+          "channel_mass_initial": 0.750158407617825,
+          "channel_mass_max_abs_deviation": 0.10190268881827924,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.22063140943231116,
+          "first_forward_edge_mean_abs_flux": 0.11591482988876749,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.22063140943231116,
+              "mean_abs_flux": 0.11591482988876749,
+              "mean_flux": -0.11591482988876749,
+              "peak_step": 103
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.19256948947842792,
+              "mean_abs_flux": 0.13904709332466791,
+              "mean_flux": 0.13904709332466791,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.13465992388296627,
+              "mean_abs_flux": 0.0840014598070944,
+              "mean_flux": -0.0840014598070944,
+              "peak_step": 73
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.13465992388296627,
+          "last_forward_edge_mean_abs_flux": 0.0840014598070944,
+          "mean_abs_attenuation_last_over_first": 0.7246825957274204,
+          "peak_abs_attenuation_last_over_first": 0.6103388643958212,
+          "sink_import_abs_mean": 0.11003598119950501,
+          "sink_import_abs_over_source_export_abs": 0.8625519875010549,
+          "source_export_abs_mean": 0.12757025987302642,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.8558436501513025,
+          "channel_mass_initial": 0.7500132026354809,
+          "channel_mass_max_abs_deviation": 0.1058304475158216,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.22063140943231116,
+          "first_forward_edge_mean_abs_flux": 0.12954890902518806,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.22063140943231116,
+              "mean_abs_flux": 0.12954890902518806,
+              "mean_flux": -0.1294431029575717,
+              "peak_step": 103
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.19259184974775184,
+              "mean_abs_flux": 0.14325779779081085,
+              "mean_flux": 0.14325779779081085,
+              "peak_step": 115
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.13465992388296627,
+              "mean_abs_flux": 0.0806388484997714,
+              "mean_flux": -0.08057592838198879,
+              "peak_step": 73
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.13465992388296627,
+          "last_forward_edge_mean_abs_flux": 0.0806388484997714,
+          "mean_abs_attenuation_last_over_first": 0.6224587231691228,
+          "peak_abs_attenuation_last_over_first": 0.6103388643958212,
+          "sink_import_abs_mean": 0.11275772953294294,
+          "sink_import_abs_over_source_export_abs": 0.8307027144705231,
+          "source_export_abs_mean": 0.135737764628364,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "max_correction_magnitude": 6.661338147750939e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 3,
+      "forward_gap_nodes": 2,
+      "lane_id": "K",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_k_n16_gap2_raw_records.jsonl"
+      },
+      "return_edge_count": 11,
+      "row_id": "b2_k_n16_gap2",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_k_n16_gap2_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.6467763117291283,
+          "channel_mass_initial": 0.6203805441932246,
+          "channel_mass_max_abs_deviation": 0.02639576753590367,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.07151698279677161,
+          "first_forward_edge_mean_abs_flux": 0.06220506157753462,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07151698279677161,
+              "mean_abs_flux": 0.06220506157753462,
+              "mean_flux": 0.06220506157753462,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.0818528281893073,
+              "mean_abs_flux": 0.07771090125778339,
+              "mean_flux": 0.07771090125778339,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.04255485455432581,
+              "mean_abs_flux": 0.033553145090893896,
+              "mean_flux": 0.033553145090893896,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.04551026940153911,
+              "mean_abs_flux": 0.03426907484254878,
+              "mean_flux": 0.03426907484254878,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.005970744043210289,
+              "mean_abs_flux": 0.003917678461612656,
+              "mean_flux": 0.003819422067689975,
+              "peak_step": 0
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.005970744043210289,
+          "last_forward_edge_mean_abs_flux": 0.003917678461612656,
+          "mean_abs_attenuation_last_over_first": 0.06298005921478786,
+          "peak_abs_attenuation_last_over_first": 0.08348707970772806,
+          "sink_import_abs_mean": 0.004223751561347228,
+          "sink_import_abs_over_source_export_abs": 0.04637989714913579,
+          "source_export_abs_mean": 0.09106858404117721,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.7836931626279131,
+          "channel_mass_initial": 0.6298916805082865,
+          "channel_mass_max_abs_deviation": 0.15380148211962663,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.19054234900999165,
+          "first_forward_edge_mean_abs_flux": 0.07418426373488937,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.19054234900999165,
+              "mean_abs_flux": 0.07418426373488937,
+              "mean_flux": -0.03342166541944039,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.20472163127926896,
+              "mean_abs_flux": 0.1423945100530798,
+              "mean_flux": 0.1423945100530798,
+              "peak_step": 85
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.17597235842649597,
+              "mean_abs_flux": 0.08766107855809312,
+              "mean_flux": -0.0733182151347545,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.22144995798003772,
+              "mean_abs_flux": 0.12499801870633202,
+              "mean_flux": 0.12499801870633202,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.08394967089180111,
+              "mean_abs_flux": 0.043820466662201366,
+              "mean_flux": -0.04265262802528001,
+              "peak_step": 109
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.08394967089180111,
+          "last_forward_edge_mean_abs_flux": 0.043820466662201366,
+          "mean_abs_attenuation_last_over_first": 0.5906976015668441,
+          "peak_abs_attenuation_last_over_first": 0.4405827435632116,
+          "sink_import_abs_mean": 0.07999494456715811,
+          "sink_import_abs_over_source_export_abs": 1.04883016014625,
+          "source_export_abs_mean": 0.07627063714110159,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.8196275127401131,
+          "channel_mass_initial": 0.6203805441932246,
+          "channel_mass_max_abs_deviation": 0.20051177251836916,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.22917731831647406,
+          "first_forward_edge_mean_abs_flux": 0.10496333897783777,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.22917731831647406,
+              "mean_abs_flux": 0.10496333897783777,
+              "mean_flux": -0.06600902037755642,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.20472163127926896,
+              "mean_abs_flux": 0.14918578301846627,
+              "mean_flux": 0.14918578301846627,
+              "peak_step": 85
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.1764579643316983,
+              "mean_abs_flux": 0.10308383566353423,
+              "mean_flux": -0.08706444447351003,
+              "peak_step": 115
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.23413458967051706,
+              "mean_abs_flux": 0.1405516781568177,
+              "mean_flux": 0.1405516781568177,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.08624295838808772,
+              "mean_abs_flux": 0.050106635462763435,
+              "mean_flux": -0.048448685349341436,
+              "peak_step": 123
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.08624295838808772,
+          "last_forward_edge_mean_abs_flux": 0.050106635462763435,
+          "mean_abs_attenuation_last_over_first": 0.477372727951643,
+          "peak_abs_attenuation_last_over_first": 0.3763154182168833,
+          "sink_import_abs_mean": 0.08869034643618227,
+          "sink_import_abs_over_source_export_abs": 0.8828227986751788,
+          "source_export_abs_mean": 0.1004622293049939,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "max_correction_magnitude": 4.440892098500626e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 5,
+      "forward_gap_nodes": 4,
+      "lane_id": "S",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_s_n16_gap4_raw_records.jsonl"
+      },
+      "return_edge_count": 9,
+      "row_id": "b2_s_n16_gap4",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_s_n16_gap4_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.750580506506635,
+          "channel_mass_initial": 0.750013202635481,
+          "channel_mass_max_abs_deviation": 0.0005673038711540013,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.014407943527009073,
+          "first_forward_edge_mean_abs_flux": 0.00478644053458142,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.014407943527009073,
+              "mean_abs_flux": 0.00478644053458142,
+              "mean_flux": -0.0039447730468252515,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.04397921709370779,
+              "mean_abs_flux": 0.027522604578788974,
+              "mean_flux": 0.027522604578788974,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.03351762890365726,
+              "mean_abs_flux": 0.013065702526401324,
+              "mean_flux": -0.013065702526401324,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.045064349016412736,
+              "mean_abs_flux": 0.028161539717844866,
+              "mean_flux": 0.028161539717844866,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.01578796221989717,
+              "mean_abs_flux": 0.005389372045314975,
+              "mean_flux": -0.004909788512284073,
+              "peak_step": 29
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.01578796221989717,
+          "last_forward_edge_mean_abs_flux": 0.005389372045314975,
+          "mean_abs_attenuation_last_over_first": 1.1259665729423465,
+          "peak_abs_attenuation_last_over_first": 1.0957817949731077,
+          "sink_import_abs_mean": 0.009544869924682294,
+          "sink_import_abs_over_source_export_abs": 1.1426587165442552,
+          "source_export_abs_mean": 0.00835321149393483,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.9148964812548903,
+          "channel_mass_initial": 0.7501631685392527,
+          "channel_mass_max_abs_deviation": 0.16473331271563763,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.21003198929968359,
+          "first_forward_edge_mean_abs_flux": 0.09348683214456498,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.21003198929968359,
+              "mean_abs_flux": 0.09348683214456498,
+              "mean_flux": -0.09348683214456498,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.17229935357871448,
+              "mean_abs_flux": 0.11498644591965074,
+              "mean_flux": 0.11498644591965074,
+              "peak_step": 71
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.19339810863057635,
+              "mean_abs_flux": 0.12481588477141578,
+              "mean_flux": -0.12481588477141578,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.21945687984293158,
+              "mean_abs_flux": 0.1369795019614388,
+              "mean_flux": 0.1369795019614388,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.10989561408985254,
+              "mean_abs_flux": 0.06328443147303439,
+              "mean_flux": -0.06328443147303439,
+              "peak_step": 72
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.10989561408985254,
+          "last_forward_edge_mean_abs_flux": 0.06328443147303439,
+          "mean_abs_attenuation_last_over_first": 0.6769341737366116,
+          "peak_abs_attenuation_last_over_first": 0.5232327440038111,
+          "sink_import_abs_mean": 0.10845310725083776,
+          "sink_import_abs_over_source_export_abs": 0.7892451968967447,
+          "source_export_abs_mean": 0.13741370574983233,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.9291353834942402,
+          "channel_mass_initial": 0.750013202635481,
+          "channel_mass_max_abs_deviation": 0.1791221808587592,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.2119005172300313,
+          "first_forward_edge_mean_abs_flux": 0.11219702228172757,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.2119005172300313,
+              "mean_abs_flux": 0.11219702228172757,
+              "mean_flux": -0.11201666496292266,
+              "peak_step": 113
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.17229935357871448,
+              "mean_abs_flux": 0.11540732150731883,
+              "mean_flux": 0.11540732150731883,
+              "peak_step": 71
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.19339810863057635,
+              "mean_abs_flux": 0.13055234704444038,
+              "mean_flux": -0.13055234704444038,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.22253057872025642,
+              "mean_abs_flux": 0.14666833868531295,
+              "mean_flux": 0.14666833868531295,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.10989561408985254,
+              "mean_abs_flux": 0.0646452406474093,
+              "mean_flux": -0.06454247274747411,
+              "peak_step": 72
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.10989561408985254,
+          "last_forward_edge_mean_abs_flux": 0.0646452406474093,
+          "mean_abs_attenuation_last_over_first": 0.5761760814389941,
+          "peak_abs_attenuation_last_over_first": 0.5186189044104784,
+          "sink_import_abs_mean": 0.1130351092254372,
+          "sink_import_abs_over_source_export_abs": 0.7290842679938552,
+          "source_export_abs_mean": 0.1550370981621426,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "max_correction_magnitude": 4.440892098500626e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 5,
+      "forward_gap_nodes": 4,
+      "lane_id": "K",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_k_n16_gap4_raw_records.jsonl"
+      },
+      "return_edge_count": 9,
+      "row_id": "b2_k_n16_gap4",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_k_n16_gap4_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.6484728365198584,
+          "channel_mass_initial": 0.6209608843816304,
+          "channel_mass_max_abs_deviation": 0.02751195213822799,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.07151698279677161,
+          "first_forward_edge_mean_abs_flux": 0.06275049802860798,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.07151698279677161,
+              "mean_abs_flux": 0.06275049802860798,
+              "mean_flux": 0.06275049802860798,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.07748241043820017,
+              "mean_abs_flux": 0.07560716578798701,
+              "mean_flux": 0.07560716578798701,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.042555012083680205,
+              "mean_abs_flux": 0.036874261482393526,
+              "mean_flux": 0.036874261482393526,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.03291636204374215,
+              "mean_abs_flux": 0.02337817327901619,
+              "mean_flux": 0.02337817327901619,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.0055440326566249054,
+              "mean_abs_flux": 0.0035462713340223056,
+              "mean_flux": 0.002470460929912493,
+              "peak_step": 0
+            },
+            {
+              "edge_id": 6,
+              "max_abs_flux": 0.025861346519720396,
+              "mean_abs_flux": 0.016865656145358336,
+              "mean_flux": 0.016865656145358336,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 7,
+              "max_abs_flux": 0.008311234699311746,
+              "mean_abs_flux": 0.0029565775484979876,
+              "mean_flux": -0.002823138296433343,
+              "peak_step": 29
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.008311234699311746,
+          "last_forward_edge_mean_abs_flux": 0.0029565775484979876,
+          "mean_abs_attenuation_last_over_first": 0.047116399732000255,
+          "peak_abs_attenuation_last_over_first": 0.11621344153918821,
+          "sink_import_abs_mean": 0.004527556917823588,
+          "sink_import_abs_over_source_export_abs": 0.04946887804884406,
+          "source_export_abs_mean": 0.09152333944896054,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.7899563064981787,
+          "channel_mass_initial": 0.6308222211506856,
+          "channel_mass_max_abs_deviation": 0.15913408534749307,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.15150205133853642,
+          "first_forward_edge_mean_abs_flux": 0.06293265674965616,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.15150205133853642,
+              "mean_abs_flux": 0.06293265674965616,
+              "mean_flux": -0.0171471990543648,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.1945378847531564,
+              "mean_abs_flux": 0.13026518293695655,
+              "mean_flux": 0.13026518293695655,
+              "peak_step": 86
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.1894010472084147,
+              "mean_abs_flux": 0.08564471213710129,
+              "mean_flux": -0.06634164757635731,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.20723420368511716,
+              "mean_abs_flux": 0.11253649113828555,
+              "mean_flux": 0.11253649113828555,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.1542885588302927,
+              "mean_abs_flux": 0.07979789458049305,
+              "mean_flux": -0.07904820140875592,
+              "peak_step": 103
+            },
+            {
+              "edge_id": 6,
+              "max_abs_flux": 0.18146185643193918,
+              "mean_abs_flux": 0.095735777650685,
+              "mean_flux": 0.095735777650685,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 7,
+              "max_abs_flux": 0.06778825991649427,
+              "mean_abs_flux": 0.03928556910796833,
+              "mean_flux": -0.03928556910796833,
+              "peak_step": 103
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.06778825991649427,
+          "last_forward_edge_mean_abs_flux": 0.03928556910796833,
+          "mean_abs_attenuation_last_over_first": 0.6242477457172181,
+          "peak_abs_attenuation_last_over_first": 0.4474412017367285,
+          "sink_import_abs_mean": 0.07707718225004562,
+          "sink_import_abs_over_source_export_abs": 0.8720446646119777,
+          "source_export_abs_mean": 0.08838673680131011,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 0.8775421527586869,
+          "channel_mass_initial": 0.6209608843816304,
+          "channel_mass_max_abs_deviation": 0.2565812683770564,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.22190572322297902,
+          "first_forward_edge_mean_abs_flux": 0.08977025061346983,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.22190572322297902,
+              "mean_abs_flux": 0.08977025061346983,
+              "mean_flux": -0.04722303354892517,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.1945378847531564,
+              "mean_abs_flux": 0.136533582337715,
+              "mean_flux": 0.136533582337715,
+              "peak_step": 86
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.19780401649262258,
+              "mean_abs_flux": 0.10576589328252607,
+              "mean_flux": -0.08608748346842465,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.21908086542692057,
+              "mean_abs_flux": 0.12759408283886323,
+              "mean_flux": 0.12759408283886323,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.1542885588302927,
+              "mean_abs_flux": 0.09005263325936044,
+              "mean_flux": -0.08876333348851727,
+              "peak_step": 103
+            },
+            {
+              "edge_id": 6,
+              "max_abs_flux": 0.1971826546786565,
+              "mean_abs_flux": 0.10987765780044223,
+              "mean_flux": 0.10987765780044223,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 7,
+              "max_abs_flux": 0.06778825991649427,
+              "mean_abs_flux": 0.04204799824893298,
+              "mean_flux": -0.04201940412349056,
+              "peak_step": 103
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.06778825991649427,
+          "last_forward_edge_mean_abs_flux": 0.04204799824893298,
+          "mean_abs_attenuation_last_over_first": 0.4683956874530968,
+          "peak_abs_attenuation_last_over_first": 0.30548225134499185,
+          "sink_import_abs_mean": 0.08340019575601074,
+          "sink_import_abs_over_source_export_abs": 0.676535481106238,
+          "source_export_abs_mean": 0.12327542026271672,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 4.440892098500626e-16,
+        "max_correction_magnitude": 5.551115123125783e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 7,
+      "forward_gap_nodes": 6,
+      "lane_id": "S",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_s_n16_gap6_raw_records.jsonl"
+      },
+      "return_edge_count": 7,
+      "row_id": "b2_s_n16_gap6",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_s_n16_gap6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    },
+    {
+      "attenuation": {
+        "early_window": {
+          "channel_mass_final": 0.750587130126995,
+          "channel_mass_initial": 0.750013202635481,
+          "channel_mass_max_abs_deviation": 0.0005739274915139703,
+          "end_step": 29,
+          "first_forward_edge_max_abs_flux": 0.01076377245500321,
+          "first_forward_edge_mean_abs_flux": 0.003769444601352287,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.01076377245500321,
+              "mean_abs_flux": 0.003769444601352287,
+              "mean_flux": -0.0028972638969933543,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.034412360438808805,
+              "mean_abs_flux": 0.02375468338490956,
+              "mean_flux": 0.02375468338490956,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.020548987993601334,
+              "mean_abs_flux": 0.007541814351344685,
+              "mean_flux": -0.007541814351344685,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.02257936478717356,
+              "mean_abs_flux": 0.008378751295304913,
+              "mean_flux": 0.008378751295304913,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.021418153379559025,
+              "mean_abs_flux": 0.007862844840085651,
+              "mean_flux": -0.007862844840085651,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 6,
+              "max_abs_flux": 0.03579239703014617,
+              "mean_abs_flux": 0.02450216179830399,
+              "mean_flux": 0.02450216179830399,
+              "peak_step": 29
+            },
+            {
+              "edge_id": 7,
+              "max_abs_flux": 0.012195260417559714,
+              "mean_abs_flux": 0.004367590866397836,
+              "mean_flux": -0.003875814108651321,
+              "peak_step": 29
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.012195260417559714,
+          "last_forward_edge_mean_abs_flux": 0.004367590866397836,
+          "mean_abs_attenuation_last_over_first": 1.1586828640036158,
+          "peak_abs_attenuation_last_over_first": 1.132991288002481,
+          "sink_import_abs_mean": 0.008735181732795671,
+          "sink_import_abs_over_source_export_abs": 1.1586828640036158,
+          "source_export_abs_mean": 0.007538889202704574,
+          "start_step": 0
+        },
+        "eval_window": {
+          "channel_mass_final": 0.9281763190012847,
+          "channel_mass_initial": 0.7501632916657561,
+          "channel_mass_max_abs_deviation": 0.1780130273355286,
+          "end_step": 109,
+          "first_forward_edge_max_abs_flux": 0.1374031251784152,
+          "first_forward_edge_mean_abs_flux": 0.06745822029105925,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.1374031251784152,
+              "mean_abs_flux": 0.06745822029105925,
+              "mean_flux": -0.06745822029105925,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.16123399537538785,
+              "mean_abs_flux": 0.09720884857584093,
+              "mean_flux": 0.09720884857584093,
+              "peak_step": 69
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.20865530896600518,
+              "mean_abs_flux": 0.11657115523301942,
+              "mean_flux": -0.11657115523301942,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.19958150645532705,
+              "mean_abs_flux": 0.11787959311637042,
+              "mean_flux": 0.11787959311637042,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.17809137661594995,
+              "mean_abs_flux": 0.10912375571192755,
+              "mean_flux": -0.10912375571192755,
+              "peak_step": 87
+            },
+            {
+              "edge_id": 6,
+              "max_abs_flux": 0.20875471679345986,
+              "mean_abs_flux": 0.12081370923294385,
+              "mean_flux": 0.12081370923294385,
+              "peak_step": 109
+            },
+            {
+              "edge_id": 7,
+              "max_abs_flux": 0.08364227190873846,
+              "mean_abs_flux": 0.05256270805568187,
+              "mean_flux": -0.05256270805568187,
+              "peak_step": 69
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.08364227190873846,
+          "last_forward_edge_mean_abs_flux": 0.05256270805568187,
+          "mean_abs_attenuation_last_over_first": 0.7791890718268535,
+          "peak_abs_attenuation_last_over_first": 0.6087363136764951,
+          "sink_import_abs_mean": 0.10512541611136374,
+          "sink_import_abs_over_source_export_abs": 0.7791890718268535,
+          "source_export_abs_mean": 0.1349164405821185,
+          "start_step": 10
+        },
+        "full_window": {
+          "channel_mass_final": 1.0,
+          "channel_mass_initial": 0.750013202635481,
+          "channel_mass_max_abs_deviation": 0.24998679736451923,
+          "end_step": 139,
+          "first_forward_edge_max_abs_flux": 0.15110264460960018,
+          "first_forward_edge_mean_abs_flux": 0.07951535036389745,
+          "forward_edge_metrics": [
+            {
+              "edge_id": 1,
+              "max_abs_flux": 0.15110264460960018,
+              "mean_abs_flux": 0.07951535036389745,
+              "mean_flux": -0.07932845449867769,
+              "peak_step": 136
+            },
+            {
+              "edge_id": 2,
+              "max_abs_flux": 0.16123399537538785,
+              "mean_abs_flux": 0.09331103980405708,
+              "mean_flux": 0.09331103980405708,
+              "peak_step": 69
+            },
+            {
+              "edge_id": 3,
+              "max_abs_flux": 0.2201537029546913,
+              "mean_abs_flux": 0.1294459005853913,
+              "mean_flux": -0.1294459005853913,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 4,
+              "max_abs_flux": 0.2001249486040047,
+              "mean_abs_flux": 0.1271203481001398,
+              "mean_flux": 0.1271203481001398,
+              "peak_step": 120
+            },
+            {
+              "edge_id": 5,
+              "max_abs_flux": 0.17809137661594995,
+              "mean_abs_flux": 0.11582568255767142,
+              "mean_flux": -0.11582568255767142,
+              "peak_step": 87
+            },
+            {
+              "edge_id": 6,
+              "max_abs_flux": 0.2220822555018134,
+              "mean_abs_flux": 0.13398614286672486,
+              "mean_flux": 0.13398614286672486,
+              "peak_step": 139
+            },
+            {
+              "edge_id": 7,
+              "max_abs_flux": 0.08364227190873846,
+              "mean_abs_flux": 0.05545440011932905,
+              "mean_flux": -0.05534901938552622,
+              "peak_step": 69
+            }
+          ],
+          "last_forward_edge_max_abs_flux": 0.08364227190873846,
+          "last_forward_edge_mean_abs_flux": 0.05545440011932905,
+          "mean_abs_attenuation_last_over_first": 0.6974049647715209,
+          "peak_abs_attenuation_last_over_first": 0.5535460489446941,
+          "sink_import_abs_mean": 0.1109088002386581,
+          "sink_import_abs_over_source_export_abs": 0.6974049647715209,
+          "source_export_abs_mean": 0.1590307007277949,
+          "start_step": 0
+        }
+      },
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "max_correction_magnitude": 5.551115123125783e-16,
+        "passed": true,
+        "target_budget": 1.0
+      },
+      "claim_ceiling": "channel_attenuation_diagnostic_not_positive_loop_claim",
+      "forward_edge_count": 7,
+      "forward_gap_nodes": 6,
+      "lane_id": "K",
+      "mask_width": 2,
+      "node_count": 16,
+      "positive_loop_claim_allowed": false,
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_raw_records/b2_k_n16_gap6_raw_records.jsonl"
+      },
+      "return_edge_count": 7,
+      "row_id": "b2_k_n16_gap6",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/b2_channel_attenuation_timeseries/b2_k_n16_gap6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 16,
+        "final_node_count": 16,
+        "initial_edge_count": 16,
+        "initial_node_count": 16
+      }
+    }
+  ],
+  "schema": "grc9v3_polarized_basin_loop_b2_channel_attenuation_v1",
+  "status": "pass",
+  "summary": {
+    "compact_rows": [
+      {
+        "early_last_over_first": 1.0,
+        "early_sink_import_over_source_export": 0.23895065500291665,
+        "eval_channel_mass_max_abs_deviation": 0.20976334098258653,
+        "eval_last_over_first": 1.0,
+        "eval_sink_import_over_source_export": 0.820298016322362,
+        "forward_edge_count": 1,
+        "forward_gap_nodes": 0,
+        "lane_id": "S",
+        "row_id": "b2_s_n16_gap0"
+      },
+      {
+        "early_last_over_first": 1.0,
+        "early_sink_import_over_source_export": 0.9679934772132258,
+        "eval_channel_mass_max_abs_deviation": 0.06452241837784123,
+        "eval_last_over_first": 1.0,
+        "eval_sink_import_over_source_export": 1.3367669188915023,
+        "forward_edge_count": 1,
+        "forward_gap_nodes": 0,
+        "lane_id": "K",
+        "row_id": "b2_k_n16_gap0"
+      },
+      {
+        "early_last_over_first": 1.0302122202729673,
+        "early_sink_import_over_source_export": 0.503221615814382,
+        "eval_channel_mass_max_abs_deviation": 0.029551887957903644,
+        "eval_last_over_first": 2.152232160202111,
+        "eval_sink_import_over_source_export": 0.3143623893079431,
+        "forward_edge_count": 2,
+        "forward_gap_nodes": 1,
+        "lane_id": "S",
+        "row_id": "b2_s_n16_gap1"
+      },
+      {
+        "early_last_over_first": 0.9926765977240977,
+        "early_sink_import_over_source_export": 0.8857534665047077,
+        "eval_channel_mass_max_abs_deviation": 0.018867972755633566,
+        "eval_last_over_first": 1.008138543266114,
+        "eval_sink_import_over_source_export": 0.8291439673714751,
+        "forward_edge_count": 2,
+        "forward_gap_nodes": 1,
+        "lane_id": "K",
+        "row_id": "b2_k_n16_gap1"
+      },
+      {
+        "early_last_over_first": 0.5972033157201526,
+        "early_sink_import_over_source_export": 0.28259382844328884,
+        "eval_channel_mass_max_abs_deviation": 0.15385526657868387,
+        "eval_last_over_first": 0.7021866267069142,
+        "eval_sink_import_over_source_export": 1.4134623651057694,
+        "forward_edge_count": 3,
+        "forward_gap_nodes": 2,
+        "lane_id": "S",
+        "row_id": "b2_s_n16_gap2"
+      },
+      {
+        "early_last_over_first": 1.0611288531118772,
+        "early_sink_import_over_source_export": 1.0938777218348974,
+        "eval_channel_mass_max_abs_deviation": 0.10190268881827924,
+        "eval_last_over_first": 0.7246825957274204,
+        "eval_sink_import_over_source_export": 0.8625519875010549,
+        "forward_edge_count": 3,
+        "forward_gap_nodes": 2,
+        "lane_id": "K",
+        "row_id": "b2_k_n16_gap2"
+      },
+      {
+        "early_last_over_first": 0.06298005921478786,
+        "early_sink_import_over_source_export": 0.04637989714913579,
+        "eval_channel_mass_max_abs_deviation": 0.15380148211962663,
+        "eval_last_over_first": 0.5906976015668441,
+        "eval_sink_import_over_source_export": 1.04883016014625,
+        "forward_edge_count": 5,
+        "forward_gap_nodes": 4,
+        "lane_id": "S",
+        "row_id": "b2_s_n16_gap4"
+      },
+      {
+        "early_last_over_first": 1.1259665729423465,
+        "early_sink_import_over_source_export": 1.1426587165442552,
+        "eval_channel_mass_max_abs_deviation": 0.16473331271563763,
+        "eval_last_over_first": 0.6769341737366116,
+        "eval_sink_import_over_source_export": 0.7892451968967447,
+        "forward_edge_count": 5,
+        "forward_gap_nodes": 4,
+        "lane_id": "K",
+        "row_id": "b2_k_n16_gap4"
+      },
+      {
+        "early_last_over_first": 0.047116399732000255,
+        "early_sink_import_over_source_export": 0.04946887804884406,
+        "eval_channel_mass_max_abs_deviation": 0.15913408534749307,
+        "eval_last_over_first": 0.6242477457172181,
+        "eval_sink_import_over_source_export": 0.8720446646119777,
+        "forward_edge_count": 7,
+        "forward_gap_nodes": 6,
+        "lane_id": "S",
+        "row_id": "b2_s_n16_gap6"
+      },
+      {
+        "early_last_over_first": 1.1586828640036158,
+        "early_sink_import_over_source_export": 1.1586828640036158,
+        "eval_channel_mass_max_abs_deviation": 0.1780130273355286,
+        "eval_last_over_first": 0.7791890718268535,
+        "eval_sink_import_over_source_export": 0.7791890718268535,
+        "forward_edge_count": 7,
+        "forward_gap_nodes": 6,
+        "lane_id": "K",
+        "row_id": "b2_k_n16_gap6"
+      }
+    ],
+    "interpretation": "channel_attenuation_diagnostic_only; compare last/first forward edge flux and sink/source boundary ratios across gap lengths",
+    "node_count": 16,
+    "positive_loop_claim_allowed": false,
+    "row_count": 10
+  }
+}

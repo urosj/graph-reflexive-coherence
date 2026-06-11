@@ -1,0 +1,177 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Appendix E Full Capacity Closed Growth Port
+  description: Calibrated 8.5.1 full-capacity cascade with the growth locus structurally omitted.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-851-calibrated-growth-robustness
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, full_capacity, cascade, closed_growth_port]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: cascade_parent
+    type: saddle
+    branch_target_ids: [daughter_a, daughter_b, cascade_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: full_capacity_closed_growth_port_critical
+        region_id: cascade_parent
+        source_role: structural_no_growth_probe
+        profile:
+          criticality: hybrid_spark_gate
+          saturation: {active_degree: 9, port_chart: nine_port_candidate}
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: cascade_tensor
+    type: ridge
+    owner_id: cascade_parent
+    adjacent_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: tensor_hessian_profile
+        term_id: full_capacity_closed_growth_port_tensor
+        region_id: cascade_parent
+        source_role: structural_no_growth_probe
+        profile:
+          hessian_backend: row_basis_diagonal
+          row_basis_profile: {hessian_mode: anisotropic, basis: row_basis_diagonal}
+          signed_history_required: false
+          anisotropy_axis: row_2
+          tensor_profile: {tensor_mode: anisotropic, row_mismatch: high}
+  - id: cascade_column
+    type: valley
+    from_id: daughter_a
+    to_id: cascade_parent
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: full_capacity_closed_growth_port_column
+        region_id: cascade_parent
+        source_role: structural_no_growth_probe
+        profile:
+          target_column: 2
+          cancellation_mode: near_cancellation
+          column_profile: {column_2: near_cancellation}
+  - id: cascade_refinement
+    type: junction
+    host_id: cascade_parent
+    branch_target_ids: [daughter_a, daughter_b, cascade_plateau]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: full_capacity_closed_growth_port_refinement
+        region_id: cascade_parent
+        source_role: structural_no_growth_probe
+        profile:
+          target_effective_degree: 51
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+  - id: cascade_division
+    type: junction
+    host_id: cascade_parent
+    branch_target_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: appendix_e_cell_division_region
+        term_id: full_capacity_closed_growth_port_appendix_e
+        region_id: cascade_parent
+        source_role: structural_no_growth_probe
+        profile:
+          daughter_region_a: daughter_a
+          daughter_region_b: daughter_b
+          module_basin_support: {support_mode: balanced_daughter_support}
+  - id: transport_corridor
+    type: valley
+    from_id: source_basin
+    to_id: sink_basin
+    extensions:
+      grcl9v3:
+        term_kind: transport_rerouting_region
+        term_id: full_capacity_closed_growth_port_transport
+        region_id: transport_corridor
+        source_role: structural_no_growth_probe
+        profile:
+          source_region_id: source_basin
+          sink_region_id: sink_basin
+          route_preference_profile: {corridor: preferred}
+  - id: transport_channel
+    type: valley
+    from_id: source_basin
+    to_id: transport_corridor
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: full_capacity_closed_growth_port_transport_channel
+        region_id: transport_corridor
+        source_role: structural_no_growth_probe
+        profile: {channel: transport_corridor}
+  - id: choice_saddle
+    type: saddle
+    branch_target_ids: [choice_basin_a, choice_basin_b]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: full_capacity_closed_growth_port_choice
+        region_id: choice_saddle
+        source_role: structural_no_growth_probe
+        profile:
+          basin_region_a: choice_basin_a
+          basin_region_b: choice_basin_b
+          collapse_target_region: choice_basin_a
+          compatibility_profile: {compatibility: high_contrast}
+  - id: daughter_a
+    type: basin
+    coherence_prior: 0.9
+  - id: daughter_b
+    type: basin
+    coherence_prior: 0.9
+  - id: cascade_plateau
+    type: plateau
+    coherence_prior: 0.6
+  - id: source_basin
+    type: basin
+    coherence_prior: 1.0
+  - id: sink_basin
+    type: basin
+    coherence_prior: 0.2
+  - id: choice_basin_a
+    type: basin
+    coherence_prior: 1.0
+  - id: choice_basin_b
+    type: basin
+    coherence_prior: 0.4
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: appendix_e_cell_division_full_capacity_closed_growth_port
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0025-appendix-e-cell-division-full-capacity-closed-growth-port
+    expected_selector_ids: [appendix_e_summary, hybrid_tensor_available, no_growth_events, choice_collapse_events, transport_rerouting_signature]
+    notes:
+      composing_cells_anchor: full capacity cascade structural no-growth calibration
+      boundary: source preconditions only
+      robustness_role: closed_growth_port_probe
+      omitted_source_constructs: [growth_locus, boundary_stratum]
+      composed_source_ancestry:
+        - appendix_e_cell_division_full_capacity_cascade
+        - quiescent_hybrid_control_no_event_control

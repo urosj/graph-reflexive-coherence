@@ -1,0 +1,18 @@
+{
+  "disposition_counts": {
+    "requires_new_source_vocabulary": 12,
+    "runtime_only": 6,
+    "source_expression_candidate": 8
+  },
+  "handoff_json_path": "outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json",
+  "handoff_markdown_path": "outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.md",
+  "motif_count": 26,
+  "report_path": "outputs/grc9v3/phenomenology_discovery/sessions/S0014/reports/source_language_handoff_report.json",
+  "requires_new_source_vocabulary_count": 12,
+  "runtime_only_count": 6,
+  "session_id": "S0014",
+  "source_catalog_path": "outputs/grc9v3/phenomenology_discovery/sessions/S0013/expanded_motif_catalog.json",
+  "source_catalog_session_id": "S0013",
+  "source_expression_candidate_count": 8,
+  "version": "grc9v3_source_handoff_v1"
+}

@@ -1,0 +1,96 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Refinement Budget Partition Expansion High
+  description: ComposingCells-aligned seed with a refinement locus inside a membrane-bounded cell and explicit mass-partition intent.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-refinement-budget-partition-expansion-high
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, refinement, expansion, budget_partition]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+  translation_notes:
+    - Budget partition is a source policy hint; budget correction remains telemetry evidence.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: parent_cell
+    type: basin
+    coherence_prior: 1.0
+    depth_hint: 0
+    boundary_ids: [partition_membrane]
+    chart_center_hint: [0.5, 0.5]
+  - id: partition_membrane
+    type: ridge
+    owner_id: parent_cell
+    adjacent_ids: [refinement_plateau]
+    ridge_kind: mass_partition_membrane
+    permeability_hint:
+      class: equal_partition
+  - id: refinement_plateau
+    type: plateau
+    coherence_prior: 0.8
+    hosted_primitive_ids: [refinement_saddle]
+    chart_center_hint: [0.5, 0.42]
+  - id: refinement_saddle
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.42]
+    branch_target_ids: [parent_cell, partition_membrane, refinement_plateau]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: cell_refinement_budget_partition_expansion_high_critical_region
+        motif_id: expansion_refinement
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: refinement_cell
+          mass_partition: equal
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: columnwise_partition
+        columnwise_near_cancellation:
+          target_column: 2
+          diagnostic_mode: near_epsilon
+          spark_threshold: 0.02
+        spark_gate_intent: saturation_column_proxy
+  - id: refinement_locus
+    type: valley
+    from_id: refinement_saddle
+    to_id: partition_membrane
+    channel_role: refinement_channel
+    width_hint: 0.16
+    extensions:
+      grcl9:
+        term_kind: refinement_locus
+        term_id: cell_refinement_budget_partition_expansion_high_refinement_locus
+        motif_id: expansion_refinement
+        locus_id: refinement_locus
+        region_id: candidate
+        target_effective_degree: 44
+        coherence_transfer_mode: equal
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_refinement_budget_partition_expansion_high
+    manifest_entry_id: grcl9_lowering_expansion_refinement_v1
+    expected_selector_ids: [expansion_module_size]
+    notes: ComposingCells refinement/budget-partition seed mapped to the expansion refinement manifest entry.

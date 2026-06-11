@@ -1,0 +1,118 @@
+{
+  "artifact": "Phase-8-LGRC9-NativeRouteArbitrationContractSchema",
+  "schema_version": "phase8_lgrc9_native_route_arbitration_contract_schema_v1",
+  "date": "2026-05-22",
+  "status": "passed",
+  "iteration": 77,
+  "purpose": "default_off_native_route_arbitration_contract_and_policy_schema",
+  "contract_files": [
+    "src/pygrc/models/lgrc_9_v3_contract.py",
+    "src/pygrc/models/__init__.py",
+    "tests/models/test_lgrc_9_v3_contract.py"
+  ],
+  "default_flags": {
+    "native_lgrc_route_arbitration_enabled": false,
+    "native_lgrc_route_arbitration_policy": "disabled",
+    "native_lgrc_route_arbitration_validated": false,
+    "native_lgrc_route_arbitration_supported": false
+  },
+  "policies": [
+    "disabled",
+    "score_ordered_topology_route_candidates"
+  ],
+  "artifact_types": {
+    "candidate_route": {
+      "artifact_kind": "lgrc9v3_native_route_candidate_record",
+      "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+      "digest_field": "candidate_route_digest"
+    },
+    "candidate_set": {
+      "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+      "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+      "digest_field": "candidate_set_digest",
+      "idempotency_key_fields": [
+        "native_route_arbitration_policy_id",
+        "arbitration_window_id",
+        "event_time_key",
+        "candidate_route_digests",
+        "candidate_set_order_key"
+      ],
+      "candidate_set_order_keys": [
+        "score_desc_then_candidate_id",
+        "digest_ascending"
+      ],
+      "candidate_route_digests_semantics": "ordered_by_declared_candidate_set_order_key",
+      "digest_ascending_requires_sorted_digests": true,
+      "unresolved_tie_policies": [
+        "fail_closed",
+        "declared_runtime_visible_tiebreaker"
+      ]
+    },
+    "route_arbitration": {
+      "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+      "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+      "digest_field": "native_route_arbitration_digest",
+      "idempotency_key_fields": [
+        "native_route_arbitration_policy_id",
+        "candidate_set_digest",
+        "selected_candidate_route_digest",
+        "arbitration_reason_code",
+        "arbitration_rule",
+        "selected_topology_event_id"
+      ]
+    }
+  },
+  "reason_codes": [
+    "native_route_arbitration_selected_highest_score",
+    "native_route_arbitration_selected_declared_local_preference",
+    "native_route_arbitration_no_candidates",
+    "native_route_arbitration_unresolved_tie",
+    "native_route_arbitration_policy_disabled",
+    "native_route_arbitration_budget_invalid",
+    "native_route_arbitration_order_invalid",
+    "native_route_arbitration_hidden_input_rejected"
+  ],
+  "schema_guards": {
+    "requires_lgrc3_when_enabled": true,
+    "requires_topology_changing_causal_history_when_enabled": true,
+    "requires_supported_surface_lineage_transport": true,
+    "requires_supported_topology_state_reabsorption": true,
+    "rejects_hidden_input_candidate_scores": true,
+    "rejects_missing_budget_predictions": true,
+    "rejects_malformed_lineage_maps": true,
+    "rejects_claim_promotion_fields": true,
+    "rejects_semantic_choice_claim_promotion_fields": true,
+    "rejects_rc_identity_claim_promotion_fields": true,
+    "does_not_commit_topology_events": true,
+    "does_not_schedule_packets": true,
+    "does_not_promote_choice_or_agency_claims": true
+  },
+  "verification": {
+    "contract_tests": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q",
+      "status": "passed",
+      "result": "123 passed, 59 subtests passed"
+    },
+    "focused_regression": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route or time_scopes_producer_reads or rejects_source_read_after_transport or topology_state_reabsorption_artifact_validator_reconstructs_chain\"",
+      "status": "passed",
+      "result": "13 passed, 222 deselected, 20 subtests passed"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  },
+  "claim_flags": {
+    "movement_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "next_iteration": "78_candidate_route_set_emission"
+}

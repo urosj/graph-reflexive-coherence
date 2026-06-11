@@ -1,0 +1,1124 @@
+{
+  "blocked_claims": [
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "biological_behavior",
+    "agency",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement",
+    "broad_geometry_transfer"
+  ],
+  "candidate_geometry": {
+    "budget_abs_error": 0.0,
+    "budget_after": 21.0,
+    "budget_before": 21.0,
+    "compensating_debit_nodes": [
+      9,
+      11
+    ],
+    "direct_centroid_write": false,
+    "direct_claim_flag_write": false,
+    "direct_displacement_write": false,
+    "direct_support_mask_write": false,
+    "direct_topology_write": false,
+    "geometry_family": "same_family_chain_with_budget_neutral_source_reservoir",
+    "geometry_id": "s0_chain_source_reservoir_buffer_v1",
+    "node_delta_digest": "47d1cdd5ae59bd40f8db596f330cfdb509d267bb06672eda66c895700ae0cf82",
+    "nonnegative_after_geometry_init": true,
+    "reason": "Iteration 15-C identified source-budget exhaustion after two recovery cycles as the T6 blocker; this variant adds symmetric budget-neutral source reservoir capacity at the native feedback source nodes without changing the producer or surface semantics.",
+    "source_reservoir_boost_per_node": 0.2,
+    "source_reservoir_nodes": [
+      8,
+      12
+    ]
+  },
+  "challenge_trial": {
+    "buffered_geometry": {
+      "forward": {
+        "all_recovery_pulses_feedback_authorized": true,
+        "artifact_validator": {
+          "failure_reasons": [],
+          "movement_claim_allowed": false,
+          "native_lgrc_pulse_substrate_supported": true,
+          "native_m6": false,
+          "surface_row_count": 26,
+          "valid": true,
+          "validated_surface_ids": [
+            "surface:lgrc9v3-packet-event-40d01adf710c4c1a:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-62a473ae29c494bf:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-62a473ae29c494bf:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-65f66f7963d62c47:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6d41f26f9a37745b:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6d41f26f9a37745b:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-90f0eb8f587e1192:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3a7a4878dec36f2c:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3a7a4878dec36f2c:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-f88bdb90870f7496:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-67e466fd236a4b74:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-67e466fd236a4b74:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-cf2d431ea971015b:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-e86ba595c4a7d60e:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-e86ba595c4a7d60e:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-9a1bb192b3a0eed8:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05d72b0d44ef808a:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05d72b0d44ef808a:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-da3c0e08f8e15e84:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-1e5e542cf5fcb578:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-1e5e542cf5fcb578:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-bfda933d28660283:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05e77ef95652a838:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05e77ef95652a838:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-65a22b96b301bd48:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-47eeb7449bca011c:route_local_pulse_contact"
+          ],
+          "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+        },
+        "baseline_cycles": [
+          {
+            "boundary_polarity_score": 0.25,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "742db3436f869f1016b7dacbb72166f95dd5271dabc5a8960c792f4273ac3da8",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-65f66f7963d62c47",
+            "source_surface_digest": "42537887a7b9218cc14e01261b9cf989fc6990dfab6be58c4d19cc2972b7cea7",
+            "surface_digest": "cd632b6be56e851cc27e8e0a811a2967ae5468e90ff94b8e8bb7e6434ea7057e"
+          },
+          {
+            "boundary_polarity_score": 0.3500000000000001,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "1c950fbdb0e9979bfb7551458ebaaa069ca57fbd9331eaeb16d33bb5592ff1d0",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-90f0eb8f587e1192",
+            "source_surface_digest": "18c8d5c5d8a96aeb5bd78d968633c16cad3cb3695dde1916b1792ccc3e431624",
+            "surface_digest": "d2e72c0822397b7050a560c42ca1a5a71122d91eb830e3dc3de3afd5ecf16d99"
+          },
+          {
+            "boundary_polarity_score": 0.4500000000000002,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "ba24513a50b302169c890e7f2dfa562f1dd542a71f66912028cb3be98362965d",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-f88bdb90870f7496",
+            "source_surface_digest": "b42259aef604777512d301363b034b5384fd6238783bdb1536564bf61c75ce77",
+            "surface_digest": "3067fbcad1084a9709921a208aeb78b122e4e7082e8cf82ff10f835265a340e0"
+          },
+          {
+            "boundary_polarity_score": 0.5500000000000003,
+            "copied_from_original_schedule": false,
+            "cycle_index": 3,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "0e6f1177f0116838f5074341485c512950dc6fda57a13d9002cf87961861b176",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-cf2d431ea971015b",
+            "source_surface_digest": "11227702e260200609b956d0f1142ce9ef7809ef59647463ee77e9ece047f9f7",
+            "surface_digest": "8cf5fdc3b273da808fd43e7e66c1eb26581fc66ee6dfe47368649936b5f46f21"
+          },
+          {
+            "boundary_polarity_score": 0.6500000000000004,
+            "copied_from_original_schedule": false,
+            "cycle_index": 4,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "e66d7f13bced384ea635d6fd20c05cc994cc7021f66a794dae5e19bf47aa586a",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-9a1bb192b3a0eed8",
+            "source_surface_digest": "227c5478dddcd04f0470ad7f4fbbd79770dcb9ba4b56c3c05431addd6b8218d0",
+            "surface_digest": "4e6e97e639561399e09d709fbb34546a5d90f208cd16793372e0fa7d80466857"
+          }
+        ],
+        "budget_abs_error": 0.0,
+        "budget_final": 21.0,
+        "budget_initial": 21.0,
+        "direction": "forward",
+        "edge_id": 12,
+        "front_mask": [
+          13,
+          14
+        ],
+        "geometry_init": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "compensating_debit_nodes": [
+            9,
+            11
+          ],
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "geometry_family": "same_family_chain_with_budget_neutral_source_reservoir",
+          "geometry_id": "s0_chain_source_reservoir_buffer_v1",
+          "node_delta_digest": "47d1cdd5ae59bd40f8db596f330cfdb509d267bb06672eda66c895700ae0cf82",
+          "nonnegative_after_geometry_init": true,
+          "reason": "Iteration 15-C identified source-budget exhaustion after two recovery cycles as the T6 blocker; this variant adds symmetric budget-neutral source reservoir capacity at the native feedback source nodes without changing the producer or surface semantics.",
+          "source_reservoir_boost_per_node": 0.2,
+          "source_reservoir_nodes": [
+            8,
+            12
+          ]
+        },
+        "identity_shape_gates_passed": true,
+        "nonnegative_gate_passed": true,
+        "perturbation": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "credit_nodes": [
+            6,
+            7
+          ],
+          "credit_per_node": 0.01,
+          "debit_nodes": [
+            13,
+            14
+          ],
+          "debit_per_node": 0.01,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "node_delta_digest": "39570e2a60d6a92915d1ed1d49fcb50d04cf9d718886f1d64c2314890de73605",
+          "nonnegative_after_perturbation": true,
+          "perturbation_kind": "budget_neutral_front_rear_polarity_damping",
+          "perturbation_target": "positive_front_rear_polarity",
+          "transfer_amount": 0.02
+        },
+        "pre_perturbation_cycle_count": 5,
+        "producer_records_digest": "90235686077748f851e3c3147b38edcdb9620324ed02c9e23a595cfec27ef696",
+        "profile_similarity": 0.951211750939741,
+        "r6_recovery_candidate_passed": true,
+        "rear_mask": [
+          6,
+          7
+        ],
+        "recovery_cycles": [
+          {
+            "boundary_polarity_score": 0.7100000000000004,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "4b5d2a614d2459e7e388ab1686e18888e74c24fa38b891d5de77009838fefed3",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-da3c0e08f8e15e84",
+            "source_surface_digest": "dd4eb79526163f26e9e56ab3be261a79bb17e44aafe117d04e9620ef73e15001",
+            "surface_digest": "e70c7185200e90c6ddb02fa7e1d1179bd67cf39a4ee3de425b73222fbfdd1e12"
+          },
+          {
+            "boundary_polarity_score": 0.8100000000000005,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "93e3f33f43c0ca989333767fde340ed94bb47fe691203eb36e2aaab692838e71",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-bfda933d28660283",
+            "source_surface_digest": "87fa7141f87184ba8f6a73705394ca7cfc0ab4709a4f32770ba377a67be9f988",
+            "surface_digest": "ddbd4904f1fd2596ed51fbcc05b44f61b93495eaa8ab300e05df89a14918eedc"
+          },
+          {
+            "boundary_polarity_score": 0.9100000000000006,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "03e5449148ce8c0be796ba7c20fea305fdf1c5b3b04728b4ce0cd9ca6d4aa5d5",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-65a22b96b301bd48",
+            "source_surface_digest": "b5de920d4e4ec5df289d9b28715af8f304c09d24df92ad1c2580c26893abff74",
+            "surface_digest": "5111696c72369f64959dbb0f0d210d1bd4778efb753656336fdbcd56e90bbe89"
+          }
+        ],
+        "recovery_scheduled_cycle_count": 3,
+        "recovery_window_cycles": 3,
+        "seeded_event_count": 6,
+        "seeded_events_digest": "a6f9ecc89075586ba10e6cb91be53d44d35902f0dfa639bfa52888428102a8ef",
+        "signed_final_centroid_delta": 0.043333333333333,
+        "signed_final_score": 1.0100000000000002,
+        "signed_post_perturbation_centroid_delta": 0.029047619047620543,
+        "signed_post_perturbation_score": 0.7100000000000004,
+        "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+        "signed_pre_perturbation_score": 0.7500000000000004,
+        "source_node_id": 12,
+        "surface_log_digest": "834a27d64773ce7539aa4ac2c53b799cab507178790ae763a1313303990c6417",
+        "surface_row_count": 26,
+        "t6_recovery_candidate_passed": true,
+        "target_node_id": 13,
+        "transfer_amount": 0.02,
+        "width_relative_change": 0.003372533100147437
+      },
+      "outcome": "recovered",
+      "r6_recovered_both_directions": true,
+      "recovery_reason_codes": [
+        [
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled"
+        ],
+        [
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled"
+        ]
+      ],
+      "reversed": {
+        "all_recovery_pulses_feedback_authorized": true,
+        "artifact_validator": {
+          "failure_reasons": [],
+          "movement_claim_allowed": false,
+          "native_lgrc_pulse_substrate_supported": true,
+          "native_m6": false,
+          "surface_row_count": 26,
+          "valid": true,
+          "validated_surface_ids": [
+            "surface:lgrc9v3-packet-event-9b4b51bdc31a583a:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-5578e7f0e6e3f4b5:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-5578e7f0e6e3f4b5:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-122f7aa8efa6a432:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-192fd7bd75e1b1b1:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-192fd7bd75e1b1b1:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-f989032d067f3bc3:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3377f3adae4e5502:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3377f3adae4e5502:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-7a0eb51fab3133c3:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-dc21b99671e720a7:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-dc21b99671e720a7:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-bfb26f02e9ec09f2:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-93c33d07c653dac7:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-93c33d07c653dac7:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-91416ef5e7d7d7c8:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-9a9f73e9786f406c:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-9a9f73e9786f406c:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-d3c8d6d494af50af:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6b1a126d79465be8:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6b1a126d79465be8:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-7f0bee07f119b026:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-2016d08ce5ee40f9:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-2016d08ce5ee40f9:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-28451c3481041530:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-fe43d0abba737132:route_local_pulse_contact"
+          ],
+          "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+        },
+        "baseline_cycles": [
+          {
+            "boundary_polarity_score": -0.25,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "1620d21136f98b8ff6632279c4c2a82c0a001de854d3d1a5992a47560e1f689b",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-122f7aa8efa6a432",
+            "source_surface_digest": "4b2c9a1db63e02c2f17831510008b6ce883e79346efd8091ee652638e7261ff0",
+            "surface_digest": "d7e7c103b59a8df46994b7cb4949bdf85fdfcbfb274f903cd96017a641966248"
+          },
+          {
+            "boundary_polarity_score": -0.3500000000000001,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "d02ad045bf38e869a698907f8520e252ea2259ec66fccc3493e1c70dadc74859",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-f989032d067f3bc3",
+            "source_surface_digest": "140e44276b919c52807e72b4e8dd036aaf94fff715b4a8bb0a25c30a49223da3",
+            "surface_digest": "dbce3a963e0f9a2e827f0d633638fd6bbd55943c8a6418d3f5540addb61d7401"
+          },
+          {
+            "boundary_polarity_score": -0.4500000000000002,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "733bbaaa7fa287a44cbabf8995240489622f77919d35400d72a80f15661ac78d",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-7a0eb51fab3133c3",
+            "source_surface_digest": "0d02d464bc897ae72caec55bf32d76c5616e97016a36e08ef9c997b4eecedeee",
+            "surface_digest": "49d2d695b12f7609e5179614997e81b4ab231d0e70c6d8e5536bb302d51ceebe"
+          },
+          {
+            "boundary_polarity_score": -0.5500000000000003,
+            "copied_from_original_schedule": false,
+            "cycle_index": 3,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "d7d3a4b1267880fde902aafd8287c64803cf24776e2fa52551a873a262dedd5d",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-bfb26f02e9ec09f2",
+            "source_surface_digest": "f66ecb6cd97ddfee10b0144981fb7b896b78b629553e2411060ab1711623008e",
+            "surface_digest": "5ce077f443f28006777ef1f6ffbdfe40138d2c712c981b23b14ef6e0103c0658"
+          },
+          {
+            "boundary_polarity_score": -0.6500000000000004,
+            "copied_from_original_schedule": false,
+            "cycle_index": 4,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "76b75117957b324f1fb3a330448b2f21396ff2da4184374946828de0d7df8ed0",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-91416ef5e7d7d7c8",
+            "source_surface_digest": "aa8d5475e864548bfd19ddb730d558dbe113e487fadf5f0dd8e30910f00418ed",
+            "surface_digest": "95f10003317ca323ceb0eede759bf3e5061528314bd8e6db572d99ab6ff3d6ab"
+          }
+        ],
+        "budget_abs_error": 0.0,
+        "budget_final": 21.0,
+        "budget_initial": 21.0,
+        "direction": "reversed",
+        "edge_id": 7,
+        "front_mask": [
+          13,
+          14
+        ],
+        "geometry_init": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "compensating_debit_nodes": [
+            9,
+            11
+          ],
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "geometry_family": "same_family_chain_with_budget_neutral_source_reservoir",
+          "geometry_id": "s0_chain_source_reservoir_buffer_v1",
+          "node_delta_digest": "47d1cdd5ae59bd40f8db596f330cfdb509d267bb06672eda66c895700ae0cf82",
+          "nonnegative_after_geometry_init": true,
+          "reason": "Iteration 15-C identified source-budget exhaustion after two recovery cycles as the T6 blocker; this variant adds symmetric budget-neutral source reservoir capacity at the native feedback source nodes without changing the producer or surface semantics.",
+          "source_reservoir_boost_per_node": 0.2,
+          "source_reservoir_nodes": [
+            8,
+            12
+          ]
+        },
+        "identity_shape_gates_passed": true,
+        "nonnegative_gate_passed": true,
+        "perturbation": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "credit_nodes": [
+            13,
+            14
+          ],
+          "credit_per_node": 0.01,
+          "debit_nodes": [
+            6,
+            7
+          ],
+          "debit_per_node": 0.01,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "node_delta_digest": "1cf8d765da140fcf376f8bd1d9c18e09998a2ae3c45fedb85080976ddd8cdf9b",
+          "nonnegative_after_perturbation": true,
+          "perturbation_kind": "budget_neutral_front_rear_polarity_damping",
+          "perturbation_target": "negative_front_rear_polarity",
+          "transfer_amount": 0.02
+        },
+        "pre_perturbation_cycle_count": 5,
+        "producer_records_digest": "d2cbc2e3d6691a067ca6863060b568b18999a1911b8a42ce9b9afd0070d6217d",
+        "profile_similarity": 0.951211750939741,
+        "r6_recovery_candidate_passed": true,
+        "rear_mask": [
+          6,
+          7
+        ],
+        "recovery_cycles": [
+          {
+            "boundary_polarity_score": -0.7100000000000004,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "6642e25cec7acb50fcef22eb19f867508ebcaf15c7ca51008963839a86be9a7c",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-d3c8d6d494af50af",
+            "source_surface_digest": "7154b850d743e4e39c7e338668ce9456762769520899c7f763eff0d5befeae4b",
+            "surface_digest": "c23f8e970ccebfd7079d2c7466ec7a873e5dfc5c107a7276ab4ccf78646a9db0"
+          },
+          {
+            "boundary_polarity_score": -0.8100000000000005,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "888893d911ff062854d0e671e45310d8e615c31a01df419e44879359fd07eca2",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-7f0bee07f119b026",
+            "source_surface_digest": "bee327b42a3b955bfbd01f427e4ba80bd861c45dc51ce6896e0c61ea93297975",
+            "surface_digest": "8cb77b23181dc57c7b6496938edac11d50f6c43c35cd50018f8d2d98bc8faadc"
+          },
+          {
+            "boundary_polarity_score": -0.9100000000000006,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "d8ee74e30eaa0747d516af3647702676b60bf17616872d98fc20f9e65793ff35",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-28451c3481041530",
+            "source_surface_digest": "ee73df0fb61bdaea887a6621a7ce79c8fcde3af240e06b4ec43088deeff71bbe",
+            "surface_digest": "0a2a6b0ab970fedf185fa514970e2baff79ecc15e105f884dbdcd3d205343b25"
+          }
+        ],
+        "recovery_scheduled_cycle_count": 3,
+        "recovery_window_cycles": 3,
+        "seeded_event_count": 6,
+        "seeded_events_digest": "58029f51010431a88de2dda831871e3ecacb2692664af078d458d74e3c42339b",
+        "signed_final_centroid_delta": 0.043333333333333,
+        "signed_final_score": 1.0100000000000002,
+        "signed_post_perturbation_centroid_delta": 0.029047619047618767,
+        "signed_post_perturbation_score": 0.7100000000000004,
+        "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+        "signed_pre_perturbation_score": 0.7500000000000004,
+        "source_node_id": 8,
+        "surface_log_digest": "8993b793aabde1643175160d77d99886fd97878268b3642417ac33e727770370",
+        "surface_row_count": 26,
+        "t6_recovery_candidate_passed": true,
+        "target_node_id": 7,
+        "transfer_amount": 0.02,
+        "width_relative_change": 0.003372533100147437
+      },
+      "scheduled_recovery_cycles": [
+        3,
+        3
+      ],
+      "t6_recovered_both_directions": true
+    },
+    "improvement": {
+      "polarity_restoration_improved": false,
+      "recovery_cycle_count_improved": true,
+      "source_budget_exhaustion_avoided": true,
+      "t6_restoration_improved": true
+    },
+    "s0_reference": {
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": true,
+      "scheduled_recovery_cycles": [
+        2,
+        2
+      ],
+      "t6_recovered_both_directions": false
+    },
+    "transfer_amount": 0.02
+  },
+  "checks": {
+    "artifact_validators_passed": true,
+    "broader_claims_blocked": true,
+    "budget_and_nonnegative_gates_passed": true,
+    "budget_neutral_geometry_init": true,
+    "candidate_geometry_declared_before_run": true,
+    "challenge_inherited_from_15c": true,
+    "challenge_recovery_improved_over_s0": true,
+    "identity_shape_gates_passed": true,
+    "iteration_15c_available": true,
+    "no_forbidden_direct_writes": true,
+    "policy_differences_declared": true,
+    "same_native_surface_and_feedback_producer_reused": true,
+    "source_budget_exhaustion_improved": true,
+    "topology_fixed": true
+  },
+  "claim_ceiling": "shock_resistant_same_family_geometry_recovery_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "geometry_scope": "same_family_resilience_design",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py"
+    }
+  },
+  "go_no_go_for_iteration_16": {
+    "entry_ceiling_for_geometry_transfer": "shock_resistant_same_family_geometry_recovery_candidate",
+    "iteration_16_allowed": true,
+    "iteration_16_fixture_guidance": "test resilience-informed corridor/widened-chain geometry"
+  },
+  "input_iteration_15c": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json",
+    "sha256": "6946639e72d4019d0c610d3acd7d4e78ad1a3ebd63014b7e973d75f0e85fc72f"
+  },
+  "iteration": "15-D",
+  "movement_substrate": "S0_chain_source_reservoir_buffer_v1",
+  "next_iteration": "16_s4_corridor_or_widened_chain_geometry_transfer",
+  "report_kind": "n04_iter15d_shock_resistant_recovery_geometry_v1",
+  "resilience_summary": {
+    "challenge_perturbation": 0.02,
+    "challenge_recovered": true,
+    "interpretation": "A symmetric source-reservoir buffer removes the S0 source-budget exhaustion failure at the first positive S0 T6-failing perturbation. At the stronger 0.15 stress point it also schedules the full recovery window and avoids source exhaustion, but it does not satisfy the T6 centroid-restoration criterion. Native surface and feedback producer semantics are unchanged.",
+    "source_budget_exhaustion_avoided_at_challenge": true,
+    "source_budget_exhaustion_avoided_at_stress": true,
+    "stress_perturbation": 0.15,
+    "stress_recovered": false,
+    "target_failure_mode": "source_budget_exhausted"
+  },
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "status": "passed",
+  "stress_trial": {
+    "buffered_geometry": {
+      "forward": {
+        "all_recovery_pulses_feedback_authorized": true,
+        "artifact_validator": {
+          "failure_reasons": [],
+          "movement_claim_allowed": false,
+          "native_lgrc_pulse_substrate_supported": true,
+          "native_m6": false,
+          "surface_row_count": 26,
+          "valid": true,
+          "validated_surface_ids": [
+            "surface:lgrc9v3-packet-event-40d01adf710c4c1a:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-62a473ae29c494bf:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-62a473ae29c494bf:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-65f66f7963d62c47:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6d41f26f9a37745b:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6d41f26f9a37745b:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-90f0eb8f587e1192:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3a7a4878dec36f2c:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3a7a4878dec36f2c:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-f88bdb90870f7496:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-67e466fd236a4b74:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-67e466fd236a4b74:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-cf2d431ea971015b:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-e86ba595c4a7d60e:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-e86ba595c4a7d60e:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-9a1bb192b3a0eed8:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05d72b0d44ef808a:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05d72b0d44ef808a:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-da3c0e08f8e15e84:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-1e5e542cf5fcb578:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-1e5e542cf5fcb578:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-bfda933d28660283:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05e77ef95652a838:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-05e77ef95652a838:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-65a22b96b301bd48:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-47eeb7449bca011c:route_local_pulse_contact"
+          ],
+          "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+        },
+        "baseline_cycles": [
+          {
+            "boundary_polarity_score": 0.25,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "742db3436f869f1016b7dacbb72166f95dd5271dabc5a8960c792f4273ac3da8",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-65f66f7963d62c47",
+            "source_surface_digest": "42537887a7b9218cc14e01261b9cf989fc6990dfab6be58c4d19cc2972b7cea7",
+            "surface_digest": "cd632b6be56e851cc27e8e0a811a2967ae5468e90ff94b8e8bb7e6434ea7057e"
+          },
+          {
+            "boundary_polarity_score": 0.3500000000000001,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "1c950fbdb0e9979bfb7551458ebaaa069ca57fbd9331eaeb16d33bb5592ff1d0",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-90f0eb8f587e1192",
+            "source_surface_digest": "18c8d5c5d8a96aeb5bd78d968633c16cad3cb3695dde1916b1792ccc3e431624",
+            "surface_digest": "d2e72c0822397b7050a560c42ca1a5a71122d91eb830e3dc3de3afd5ecf16d99"
+          },
+          {
+            "boundary_polarity_score": 0.4500000000000002,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "ba24513a50b302169c890e7f2dfa562f1dd542a71f66912028cb3be98362965d",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-f88bdb90870f7496",
+            "source_surface_digest": "b42259aef604777512d301363b034b5384fd6238783bdb1536564bf61c75ce77",
+            "surface_digest": "3067fbcad1084a9709921a208aeb78b122e4e7082e8cf82ff10f835265a340e0"
+          },
+          {
+            "boundary_polarity_score": 0.5500000000000003,
+            "copied_from_original_schedule": false,
+            "cycle_index": 3,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "0e6f1177f0116838f5074341485c512950dc6fda57a13d9002cf87961861b176",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-cf2d431ea971015b",
+            "source_surface_digest": "11227702e260200609b956d0f1142ce9ef7809ef59647463ee77e9ece047f9f7",
+            "surface_digest": "8cf5fdc3b273da808fd43e7e66c1eb26581fc66ee6dfe47368649936b5f46f21"
+          },
+          {
+            "boundary_polarity_score": 0.6500000000000004,
+            "copied_from_original_schedule": false,
+            "cycle_index": 4,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "e66d7f13bced384ea635d6fd20c05cc994cc7021f66a794dae5e19bf47aa586a",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-9a1bb192b3a0eed8",
+            "source_surface_digest": "227c5478dddcd04f0470ad7f4fbbd79770dcb9ba4b56c3c05431addd6b8218d0",
+            "surface_digest": "4e6e97e639561399e09d709fbb34546a5d90f208cd16793372e0fa7d80466857"
+          }
+        ],
+        "budget_abs_error": 0.0,
+        "budget_final": 21.0,
+        "budget_initial": 21.0,
+        "direction": "forward",
+        "edge_id": 12,
+        "front_mask": [
+          13,
+          14
+        ],
+        "geometry_init": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "compensating_debit_nodes": [
+            9,
+            11
+          ],
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "geometry_family": "same_family_chain_with_budget_neutral_source_reservoir",
+          "geometry_id": "s0_chain_source_reservoir_buffer_v1",
+          "node_delta_digest": "47d1cdd5ae59bd40f8db596f330cfdb509d267bb06672eda66c895700ae0cf82",
+          "nonnegative_after_geometry_init": true,
+          "reason": "Iteration 15-C identified source-budget exhaustion after two recovery cycles as the T6 blocker; this variant adds symmetric budget-neutral source reservoir capacity at the native feedback source nodes without changing the producer or surface semantics.",
+          "source_reservoir_boost_per_node": 0.2,
+          "source_reservoir_nodes": [
+            8,
+            12
+          ]
+        },
+        "identity_shape_gates_passed": true,
+        "nonnegative_gate_passed": true,
+        "perturbation": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "credit_nodes": [
+            6,
+            7
+          ],
+          "credit_per_node": 0.075,
+          "debit_nodes": [
+            13,
+            14
+          ],
+          "debit_per_node": 0.075,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "node_delta_digest": "8eb1d28a7b537b7a0e81fd58f7604d12019d6564c5a83359b8f3c7764c7aca96",
+          "nonnegative_after_perturbation": true,
+          "perturbation_kind": "budget_neutral_front_rear_polarity_damping",
+          "perturbation_target": "positive_front_rear_polarity",
+          "transfer_amount": 0.15
+        },
+        "pre_perturbation_cycle_count": 5,
+        "producer_records_digest": "25312e28b3ae8668323c5a4d7762e4308fad31dc7b1ab337d501b774f4e2ef6b",
+        "profile_similarity": 0.9535940947511109,
+        "r6_recovery_candidate_passed": true,
+        "rear_mask": [
+          6,
+          7
+        ],
+        "recovery_cycles": [
+          {
+            "boundary_polarity_score": 0.4500000000000006,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "1351a68c3a1470d4d1f3ad28a49e3d90ec5f73ed0f50383046b3ecc606661b68",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-da3c0e08f8e15e84",
+            "source_surface_digest": "dd4eb79526163f26e9e56ab3be261a79bb17e44aafe117d04e9620ef73e15001",
+            "surface_digest": "7bbae8f862182d2610a3682ba8953286d17b332fb1f53b6637071984237fd0d6"
+          },
+          {
+            "boundary_polarity_score": 0.5500000000000007,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "1a81c3bf850b15236c0635d7c63585759ea8a06645ee1acef57eaed8588e2b1c",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-bfda933d28660283",
+            "source_surface_digest": "87fa7141f87184ba8f6a73705394ca7cfc0ab4709a4f32770ba377a67be9f988",
+            "surface_digest": "e20cdb038e9293f1253bd6481c050101d371dac3c04a8ec7afcc664559bfd01f"
+          },
+          {
+            "boundary_polarity_score": 0.6500000000000008,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "1562f730cde46150babff3b06a64b731b4c0c5342b2dbcc565772dd290818b08",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-65a22b96b301bd48",
+            "source_surface_digest": "b5de920d4e4ec5df289d9b28715af8f304c09d24df92ad1c2580c26893abff74",
+            "surface_digest": "aed4fc6211fff56e2aa9d36564f1edaefc2308b93ae5968b93729c1e12cc8630"
+          }
+        ],
+        "recovery_scheduled_cycle_count": 3,
+        "recovery_window_cycles": 3,
+        "seeded_event_count": 6,
+        "seeded_events_digest": "a6f9ecc89075586ba10e6cb91be53d44d35902f0dfa639bfa52888428102a8ef",
+        "signed_final_centroid_delta": 0.0,
+        "signed_final_score": 0.7500000000000009,
+        "signed_post_perturbation_centroid_delta": -0.014285714285714235,
+        "signed_post_perturbation_score": 0.4500000000000006,
+        "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+        "signed_pre_perturbation_score": 0.7500000000000004,
+        "source_node_id": 12,
+        "surface_log_digest": "c2a1c201a234747c2f34aed446942765d9b0fa0d54ae0f7ab592ed52f2205aef",
+        "surface_row_count": 26,
+        "t6_recovery_candidate_passed": false,
+        "target_node_id": 13,
+        "transfer_amount": 0.15,
+        "width_relative_change": 0.003398013060673746
+      },
+      "outcome": "partially_recovered",
+      "r6_recovered_both_directions": true,
+      "recovery_reason_codes": [
+        [
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled"
+        ],
+        [
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled",
+          "feedback_coupled_pulse_packet_departure_scheduled"
+        ]
+      ],
+      "reversed": {
+        "all_recovery_pulses_feedback_authorized": true,
+        "artifact_validator": {
+          "failure_reasons": [],
+          "movement_claim_allowed": false,
+          "native_lgrc_pulse_substrate_supported": true,
+          "native_m6": false,
+          "surface_row_count": 26,
+          "valid": true,
+          "validated_surface_ids": [
+            "surface:lgrc9v3-packet-event-9b4b51bdc31a583a:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-5578e7f0e6e3f4b5:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-5578e7f0e6e3f4b5:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-122f7aa8efa6a432:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-192fd7bd75e1b1b1:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-192fd7bd75e1b1b1:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-f989032d067f3bc3:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3377f3adae4e5502:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-3377f3adae4e5502:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-7a0eb51fab3133c3:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-dc21b99671e720a7:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-dc21b99671e720a7:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-bfb26f02e9ec09f2:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-93c33d07c653dac7:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-93c33d07c653dac7:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-91416ef5e7d7d7c8:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-9a9f73e9786f406c:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-9a9f73e9786f406c:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-d3c8d6d494af50af:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6b1a126d79465be8:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-6b1a126d79465be8:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-7f0bee07f119b026:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-2016d08ce5ee40f9:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-2016d08ce5ee40f9:feedback_eligibility",
+            "surface:lgrc9v3-packet-event-28451c3481041530:route_local_pulse_contact",
+            "surface:lgrc9v3-packet-event-fe43d0abba737132:route_local_pulse_contact"
+          ],
+          "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+        },
+        "baseline_cycles": [
+          {
+            "boundary_polarity_score": -0.25,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "1620d21136f98b8ff6632279c4c2a82c0a001de854d3d1a5992a47560e1f689b",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-122f7aa8efa6a432",
+            "source_surface_digest": "4b2c9a1db63e02c2f17831510008b6ce883e79346efd8091ee652638e7261ff0",
+            "surface_digest": "d7e7c103b59a8df46994b7cb4949bdf85fdfcbfb274f903cd96017a641966248"
+          },
+          {
+            "boundary_polarity_score": -0.3500000000000001,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "d02ad045bf38e869a698907f8520e252ea2259ec66fccc3493e1c70dadc74859",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-f989032d067f3bc3",
+            "source_surface_digest": "140e44276b919c52807e72b4e8dd036aaf94fff715b4a8bb0a25c30a49223da3",
+            "surface_digest": "dbce3a963e0f9a2e827f0d633638fd6bbd55943c8a6418d3f5540addb61d7401"
+          },
+          {
+            "boundary_polarity_score": -0.4500000000000002,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "733bbaaa7fa287a44cbabf8995240489622f77919d35400d72a80f15661ac78d",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-7a0eb51fab3133c3",
+            "source_surface_digest": "0d02d464bc897ae72caec55bf32d76c5616e97016a36e08ef9c997b4eecedeee",
+            "surface_digest": "49d2d695b12f7609e5179614997e81b4ab231d0e70c6d8e5536bb302d51ceebe"
+          },
+          {
+            "boundary_polarity_score": -0.5500000000000003,
+            "copied_from_original_schedule": false,
+            "cycle_index": 3,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "d7d3a4b1267880fde902aafd8287c64803cf24776e2fa52551a873a262dedd5d",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-bfb26f02e9ec09f2",
+            "source_surface_digest": "f66ecb6cd97ddfee10b0144981fb7b896b78b629553e2411060ab1711623008e",
+            "surface_digest": "5ce077f443f28006777ef1f6ffbdfe40138d2c712c981b23b14ef6e0103c0658"
+          },
+          {
+            "boundary_polarity_score": -0.6500000000000004,
+            "copied_from_original_schedule": false,
+            "cycle_index": 4,
+            "phase": "pre_perturbation_baseline",
+            "processed_event_count": 6,
+            "processed_events_digest": "76b75117957b324f1fb3a330448b2f21396ff2da4184374946828de0d7df8ed0",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-91416ef5e7d7d7c8",
+            "source_surface_digest": "aa8d5475e864548bfd19ddb730d558dbe113e487fadf5f0dd8e30910f00418ed",
+            "surface_digest": "95f10003317ca323ceb0eede759bf3e5061528314bd8e6db572d99ab6ff3d6ab"
+          }
+        ],
+        "budget_abs_error": 0.0,
+        "budget_final": 21.0,
+        "budget_initial": 21.0,
+        "direction": "reversed",
+        "edge_id": 7,
+        "front_mask": [
+          13,
+          14
+        ],
+        "geometry_init": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "compensating_debit_nodes": [
+            9,
+            11
+          ],
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "geometry_family": "same_family_chain_with_budget_neutral_source_reservoir",
+          "geometry_id": "s0_chain_source_reservoir_buffer_v1",
+          "node_delta_digest": "47d1cdd5ae59bd40f8db596f330cfdb509d267bb06672eda66c895700ae0cf82",
+          "nonnegative_after_geometry_init": true,
+          "reason": "Iteration 15-C identified source-budget exhaustion after two recovery cycles as the T6 blocker; this variant adds symmetric budget-neutral source reservoir capacity at the native feedback source nodes without changing the producer or surface semantics.",
+          "source_reservoir_boost_per_node": 0.2,
+          "source_reservoir_nodes": [
+            8,
+            12
+          ]
+        },
+        "identity_shape_gates_passed": true,
+        "nonnegative_gate_passed": true,
+        "perturbation": {
+          "budget_abs_error": 0.0,
+          "budget_after": 21.0,
+          "budget_before": 21.0,
+          "credit_nodes": [
+            13,
+            14
+          ],
+          "credit_per_node": 0.075,
+          "debit_nodes": [
+            6,
+            7
+          ],
+          "debit_per_node": 0.075,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "node_delta_digest": "3a2770d564d5069d914d7d986daaae69598d933c0072f4a6f82b8646f9bfd746",
+          "nonnegative_after_perturbation": true,
+          "perturbation_kind": "budget_neutral_front_rear_polarity_damping",
+          "perturbation_target": "negative_front_rear_polarity",
+          "transfer_amount": 0.15
+        },
+        "pre_perturbation_cycle_count": 5,
+        "producer_records_digest": "cbca10c4982989191f9c4c56fcc9ff9b770a9e8736c1665c77b7bdcbf5a99133",
+        "profile_similarity": 0.9535940947511109,
+        "r6_recovery_candidate_passed": true,
+        "rear_mask": [
+          6,
+          7
+        ],
+        "recovery_cycles": [
+          {
+            "boundary_polarity_score": -0.4500000000000006,
+            "copied_from_original_schedule": false,
+            "cycle_index": 0,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "6642e25cec7acb50fcef22eb19f867508ebcaf15c7ca51008963839a86be9a7c",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-d3c8d6d494af50af",
+            "source_surface_digest": "7154b850d743e4e39c7e338668ce9456762769520899c7f763eff0d5befeae4b",
+            "surface_digest": "8ccee60d7118cf090eb01622e2659bb764c1e7f33073e635b56f8291c25cd26b"
+          },
+          {
+            "boundary_polarity_score": -0.5500000000000007,
+            "copied_from_original_schedule": false,
+            "cycle_index": 1,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "888893d911ff062854d0e671e45310d8e615c31a01df419e44879359fd07eca2",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-7f0bee07f119b026",
+            "source_surface_digest": "bee327b42a3b955bfbd01f427e4ba80bd861c45dc51ce6896e0c61ea93297975",
+            "surface_digest": "b6f58210e6ca3ed46eae97b9d9920ae3d069df6708c9d55a1e88fcb3dce95dd0"
+          },
+          {
+            "boundary_polarity_score": -0.6500000000000008,
+            "copied_from_original_schedule": false,
+            "cycle_index": 2,
+            "phase": "post_perturbation_recovery",
+            "processed_event_count": 6,
+            "processed_events_digest": "8fa143ed48f003d2f7325957536765e8e37dc473fa661067f41b4cae43c46e04",
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled_event_id": "lgrc9v3-packet-event-28451c3481041530",
+            "source_surface_digest": "ee73df0fb61bdaea887a6621a7ce79c8fcde3af240e06b4ec43088deeff71bbe",
+            "surface_digest": "157a60d4cf3f20942eb654cee95ebf410432aac35c5270f0dff42da6975a098e"
+          }
+        ],
+        "recovery_scheduled_cycle_count": 3,
+        "recovery_window_cycles": 3,
+        "seeded_event_count": 6,
+        "seeded_events_digest": "58029f51010431a88de2dda831871e3ecacb2692664af078d458d74e3c42339b",
+        "signed_final_centroid_delta": -0.0,
+        "signed_final_score": 0.7500000000000009,
+        "signed_post_perturbation_centroid_delta": -0.014285714285714235,
+        "signed_post_perturbation_score": 0.4500000000000006,
+        "signed_pre_perturbation_centroid_delta": 0.035714285714286476,
+        "signed_pre_perturbation_score": 0.7500000000000004,
+        "source_node_id": 8,
+        "surface_log_digest": "d65d48a528ba56bba33ca72ac6259612895aa4ffb54b40099f32166e4300c0f7",
+        "surface_row_count": 26,
+        "t6_recovery_candidate_passed": false,
+        "target_node_id": 7,
+        "transfer_amount": 0.15,
+        "width_relative_change": 0.003398013060673746
+      },
+      "scheduled_recovery_cycles": [
+        3,
+        3
+      ],
+      "t6_recovered_both_directions": false
+    },
+    "improvement": {
+      "polarity_restoration_improved": true,
+      "recovery_cycle_count_improved": true,
+      "source_budget_exhaustion_avoided": true,
+      "t6_restoration_improved": false
+    },
+    "s0_reference": {
+      "outcome": "partially_recovered",
+      "primary_blocker": "source_budget_exhausted",
+      "r6_recovered_both_directions": false,
+      "scheduled_recovery_cycles": [
+        2,
+        2
+      ],
+      "t6_recovered_both_directions": false
+    },
+    "transfer_amount": 0.15
+  }
+}

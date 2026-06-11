@@ -1,0 +1,456 @@
+{
+  "blocked_claims": [
+    "full_loop_driven_movement_without_true_reversed_e3_pulse_control",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "movement_inherited_from_n03",
+    "biological_or_agency_claim"
+  ],
+  "budget_pipeline": {
+    "coupling_budget_neutral": true,
+    "movement_fixture_budget_abs_error_max": 3.552713678800501e-15,
+    "movement_fixture_budget_surface": "node_only",
+    "native_e3_budget_surface": "node_plus_packet",
+    "nonnegative_gate_passed": true
+  },
+  "budget_surface": "node_only",
+  "candidate_lanes": [
+    "P2_asymmetric_boundary_coupling_forward",
+    "P2_asymmetric_boundary_coupling_reversed"
+  ],
+  "checks": {
+    "candidate_lanes_present": true,
+    "claims_fail_closed_when_controls_incomplete": true,
+    "coupling_reversal_symmetry_passed": true,
+    "full_claim_controls_passed": false,
+    "iteration_8_boundary_report_uses_external_timeseries": true,
+    "iteration_8_dependency_passed": true,
+    "pulse_disabled_control_negative": true,
+    "scrambled_order_control_negative": true,
+    "symmetric_null_control_negative": true,
+    "true_reversed_e3_pulse_control_recorded": true
+  },
+  "claim_ceiling": "m5_candidate_control_limited",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "boundary_coupled_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_grc9v3_proposal_flux_loop_claim": false,
+    "native_lgrc9v3_e3_pulse_used": true
+  },
+  "classifier_policy": {
+    "boundary_score_min": 0.05,
+    "count_persistent_plateau_as_one": true,
+    "displacement_threshold": 0.05,
+    "full_movement_claim_requires_m0_m3_identity_shape_and_m4_m5_direction_parity": true,
+    "m4_definition": "threshold displacement plus coordinated directional front/rear boundary exchange under hard gates",
+    "m4_m5_gate_scope": "boundary_response_structure",
+    "m5_definition": "M4 plus repeated distinct pulse-locked response windows over a finite native E3 telemetry-time interval",
+    "pulse_locked_window_min_coupling_fraction": 0.9,
+    "pulse_locked_window_min_coupling_policy": "fraction_of_lane_max_observed_coupling",
+    "relationship_to_m0_m3": "parallel_boundary_response_ladder_not_identity_shape_superset",
+    "repeated_response_min_count": 3,
+    "repeated_response_min_window": 2.0,
+    "response_count_interpretation": "window count is coupled to E3 pulse-cycle structure; it validates repeated pulse-locked response, not independent substrate responses between pulses or post-pulse persistence",
+    "response_count_policy": "distinct_pulse_locked_windows",
+    "response_threshold_epsilon": 1e-12,
+    "response_window_units": "native_E3_telemetry_time",
+    "window_deduplication_key": "time",
+    "window_deduplication_limitation": "co-temporal distinct pulse peaks would be collapsed by this policy; current E3 peak windows are at distinct times"
+  },
+  "control_results": {
+    "pulse_disabled": {
+      "m4_passed": false,
+      "m5_passed": false,
+      "primary_blocked_reason": "pulse_disabled"
+    },
+    "scrambled_order": {
+      "m4_passed": false,
+      "m5_passed": false,
+      "primary_blocked_reason": "loop_order_scrambled"
+    },
+    "symmetric_boundary_null": {
+      "m4_passed": false,
+      "m5_passed": false,
+      "primary_blocked_reason": "balanced_front_rear_coupling"
+    }
+  },
+  "controls": {
+    "coupling_reversal_symmetry": true,
+    "pulse_disabled_negative": true,
+    "scrambled_order_blocks_loop_driven_movement": true,
+    "symmetric_null_negative": true,
+    "true_reversed_e3_pulse_control_available": false
+  },
+  "coupling_reversal_symmetry": {
+    "passed": true,
+    "scope": "coupling_direction_reversal_only",
+    "uses_reversed_e3_telemetry": false
+  },
+  "direct_write_audit": {
+    "direct_boundary_label_write": false,
+    "direct_centroid_write": false,
+    "direct_displacement_write": false,
+    "direct_support_mask_write": false,
+    "direct_topology_write": false
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "execution_surface": "surface_c_lgrc9v3_e3_pulse_boundary_coupling_adapter",
+  "identity_shape_gate_scope": {
+    "full_movement_claim_requires_identity_shape_support": true,
+    "m0_m3_identity_shape_gates_rerun_here": false,
+    "m4_m5_classifies_boundary_response_structure": true
+  },
+  "lane_results": {
+    "P0_pulse_disabled_control": {
+      "boundary_coupling_mode": "disabled",
+      "boundary_coupling_score": 0.0,
+      "centroid_delta_total": 0.0,
+      "count_persistent_plateau_as_one": true,
+      "diagnostic_threshold_sample_count": 0,
+      "directional_boundary_gain_mass": 0.0,
+      "directional_boundary_release_mass": 0.0,
+      "displacement_gate_passed": false,
+      "displacement_threshold": 0.05,
+      "distinct_pulse_locked_response_window": 0.0,
+      "distinct_pulse_locked_window_count": 0,
+      "distinct_pulse_locked_windows": [],
+      "failed_gates": [
+        "displacement_gate_passed",
+        "m4_boundary_coordination_gate_passed",
+        "m5_repeated_response_gate_passed"
+      ],
+      "hard_gates": {
+        "budget_gate_passed": true,
+        "direct_write_gate_passed": true,
+        "movement_inherited_gate_passed": true,
+        "nonnegative_gate_passed": true,
+        "timeseries_digest_verified": true,
+        "topology_gate_passed": true
+      },
+      "lane_id": "P0_pulse_disabled_control",
+      "m4_boundary_coordination_gate_passed": false,
+      "m4_passed": false,
+      "m5_passed": false,
+      "m5_repeated_response_gate_passed": false,
+      "max_observed_coupling": 0.0,
+      "movement_level": "M0_no_threshold_displacement",
+      "primary_blocker": "displacement_below_threshold",
+      "pulse_locked_window_min_coupling": 0.0,
+      "pulse_locked_window_min_coupling_fraction": 0.9,
+      "response_count_policy": "distinct_pulse_locked_windows",
+      "response_sample_count": 0,
+      "response_threshold_epsilon": 1e-12,
+      "response_time_window": 0.0,
+      "response_window_units": "native_E3_telemetry_time",
+      "reversed_boundary_coupling_score": 0.0,
+      "timeseries_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/P0_pulse_disabled_control.jsonl",
+      "window_deduplication_key": "time",
+      "window_deduplication_limitation": "distinct co-temporal pulse peaks would be collapsed; current E3 peak windows occur at distinct times",
+      "window_policy": "frozen_iteration_9_classifier_policy"
+    },
+    "P1_symmetric_boundary_coupling_null": {
+      "boundary_coupling_mode": "symmetric_null",
+      "boundary_coupling_score": 0.0,
+      "centroid_delta_total": -1.7763568394002505e-15,
+      "count_persistent_plateau_as_one": true,
+      "diagnostic_threshold_sample_count": 0,
+      "directional_boundary_gain_mass": 0.0,
+      "directional_boundary_release_mass": 0.0,
+      "displacement_gate_passed": false,
+      "displacement_threshold": 0.05,
+      "distinct_pulse_locked_response_window": 0.0,
+      "distinct_pulse_locked_window_count": 0,
+      "distinct_pulse_locked_windows": [],
+      "failed_gates": [
+        "displacement_gate_passed",
+        "m4_boundary_coordination_gate_passed",
+        "m5_repeated_response_gate_passed"
+      ],
+      "hard_gates": {
+        "budget_gate_passed": true,
+        "direct_write_gate_passed": true,
+        "movement_inherited_gate_passed": true,
+        "nonnegative_gate_passed": true,
+        "timeseries_digest_verified": true,
+        "topology_gate_passed": true
+      },
+      "lane_id": "P1_symmetric_boundary_coupling_null",
+      "m4_boundary_coordination_gate_passed": false,
+      "m4_passed": false,
+      "m5_passed": false,
+      "m5_repeated_response_gate_passed": false,
+      "max_observed_coupling": 0.25,
+      "movement_level": "M0_no_threshold_displacement",
+      "primary_blocker": "displacement_below_threshold",
+      "pulse_locked_window_min_coupling": 0.225,
+      "pulse_locked_window_min_coupling_fraction": 0.9,
+      "response_count_policy": "distinct_pulse_locked_windows",
+      "response_sample_count": 0,
+      "response_threshold_epsilon": 1e-12,
+      "response_time_window": 0.0,
+      "response_window_units": "native_E3_telemetry_time",
+      "reversed_boundary_coupling_score": 0.0,
+      "timeseries_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/P1_symmetric_boundary_coupling_null.jsonl",
+      "window_deduplication_key": "time",
+      "window_deduplication_limitation": "distinct co-temporal pulse peaks would be collapsed; current E3 peak windows occur at distinct times",
+      "window_policy": "frozen_iteration_9_classifier_policy"
+    },
+    "P2_asymmetric_boundary_coupling_forward": {
+      "boundary_coupling_mode": "asymmetric_forward",
+      "boundary_coupling_score": 0.25,
+      "centroid_delta_total": 0.08333333333333215,
+      "count_persistent_plateau_as_one": true,
+      "diagnostic_threshold_sample_count": 37,
+      "directional_boundary_gain_mass": 0.2500000000000002,
+      "directional_boundary_release_mass": 0.25,
+      "displacement_gate_passed": true,
+      "displacement_threshold": 0.05,
+      "distinct_pulse_locked_response_window": 12.0,
+      "distinct_pulse_locked_window_count": 4,
+      "distinct_pulse_locked_windows": [
+        {
+          "centroid_delta": 0.08333333333333215,
+          "max_coupling_amount": 0.25,
+          "row_count": 2,
+          "step_indices": [
+            2
+          ],
+          "time": 1.0
+        },
+        {
+          "centroid_delta": 0.08333333333333215,
+          "max_coupling_amount": 0.25,
+          "row_count": 2,
+          "step_indices": [
+            10
+          ],
+          "time": 5.0
+        },
+        {
+          "centroid_delta": 0.08333333333333215,
+          "max_coupling_amount": 0.25,
+          "row_count": 2,
+          "step_indices": [
+            18
+          ],
+          "time": 9.0
+        },
+        {
+          "centroid_delta": 0.08333333333333215,
+          "max_coupling_amount": 0.25,
+          "row_count": 1,
+          "step_indices": [
+            26
+          ],
+          "time": 13.0
+        }
+      ],
+      "failed_gates": [],
+      "hard_gates": {
+        "budget_gate_passed": true,
+        "direct_write_gate_passed": true,
+        "movement_inherited_gate_passed": true,
+        "nonnegative_gate_passed": true,
+        "timeseries_digest_verified": true,
+        "topology_gate_passed": true
+      },
+      "lane_id": "P2_asymmetric_boundary_coupling_forward",
+      "m4_boundary_coordination_gate_passed": true,
+      "m4_passed": true,
+      "m5_passed": true,
+      "m5_repeated_response_gate_passed": true,
+      "max_observed_coupling": 0.25,
+      "movement_level": "M5_repeated_loop_driven_boundary_response_candidate",
+      "primary_blocker": "claim_parity_controls_not_complete",
+      "pulse_locked_window_min_coupling": 0.225,
+      "pulse_locked_window_min_coupling_fraction": 0.9,
+      "response_count_policy": "distinct_pulse_locked_windows",
+      "response_sample_count": 37,
+      "response_threshold_epsilon": 1e-12,
+      "response_time_window": 12.0,
+      "response_window_units": "native_E3_telemetry_time",
+      "reversed_boundary_coupling_score": 0.0,
+      "timeseries_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/P2_asymmetric_boundary_coupling_forward.jsonl",
+      "window_deduplication_key": "time",
+      "window_deduplication_limitation": "distinct co-temporal pulse peaks would be collapsed; current E3 peak windows occur at distinct times",
+      "window_policy": "frozen_iteration_9_classifier_policy"
+    },
+    "P2_asymmetric_boundary_coupling_reversed": {
+      "boundary_coupling_mode": "asymmetric_reversed",
+      "boundary_coupling_score": 0.0,
+      "centroid_delta_total": -0.08333333333333393,
+      "count_persistent_plateau_as_one": true,
+      "diagnostic_threshold_sample_count": 37,
+      "directional_boundary_gain_mass": 0.2500000000000002,
+      "directional_boundary_release_mass": 0.25,
+      "displacement_gate_passed": true,
+      "displacement_threshold": 0.05,
+      "distinct_pulse_locked_response_window": 12.0,
+      "distinct_pulse_locked_window_count": 4,
+      "distinct_pulse_locked_windows": [
+        {
+          "centroid_delta": -0.08333333333333393,
+          "max_coupling_amount": 0.25,
+          "row_count": 2,
+          "step_indices": [
+            2
+          ],
+          "time": 1.0
+        },
+        {
+          "centroid_delta": -0.08333333333333393,
+          "max_coupling_amount": 0.25,
+          "row_count": 2,
+          "step_indices": [
+            10
+          ],
+          "time": 5.0
+        },
+        {
+          "centroid_delta": -0.08333333333333393,
+          "max_coupling_amount": 0.25,
+          "row_count": 2,
+          "step_indices": [
+            18
+          ],
+          "time": 9.0
+        },
+        {
+          "centroid_delta": -0.08333333333333393,
+          "max_coupling_amount": 0.25,
+          "row_count": 1,
+          "step_indices": [
+            26
+          ],
+          "time": 13.0
+        }
+      ],
+      "failed_gates": [],
+      "hard_gates": {
+        "budget_gate_passed": true,
+        "direct_write_gate_passed": true,
+        "movement_inherited_gate_passed": true,
+        "nonnegative_gate_passed": true,
+        "timeseries_digest_verified": true,
+        "topology_gate_passed": true
+      },
+      "lane_id": "P2_asymmetric_boundary_coupling_reversed",
+      "m4_boundary_coordination_gate_passed": true,
+      "m4_passed": true,
+      "m5_passed": true,
+      "m5_repeated_response_gate_passed": true,
+      "max_observed_coupling": 0.25,
+      "movement_level": "M5_repeated_loop_driven_boundary_response_candidate",
+      "primary_blocker": "claim_parity_controls_not_complete",
+      "pulse_locked_window_min_coupling": 0.225,
+      "pulse_locked_window_min_coupling_fraction": 0.9,
+      "response_count_policy": "distinct_pulse_locked_windows",
+      "response_sample_count": 37,
+      "response_threshold_epsilon": 1e-12,
+      "response_time_window": 12.0,
+      "response_window_units": "native_E3_telemetry_time",
+      "reversed_boundary_coupling_score": 0.25,
+      "timeseries_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/P2_asymmetric_boundary_coupling_reversed.jsonl",
+      "window_deduplication_key": "time",
+      "window_deduplication_limitation": "distinct co-temporal pulse peaks would be collapsed; current E3 peak windows occur at distinct times",
+      "window_policy": "frozen_iteration_9_classifier_policy"
+    }
+  },
+  "m6_status": {
+    "movement_restores_pulse_conditions": false,
+    "opened": false,
+    "polarity_regeneration_measured": false,
+    "reason": "full_m5_movement_support_blocked_by_missing_true_reversed_e3_pulse_control"
+  },
+  "primary_result": "m5_candidate_blocked_by_incomplete_direction_parity_controls",
+  "report_kind": "loop_driven_movement_m4_m5_v1",
+  "required_status_checks": {
+    "candidate_lanes_present": true,
+    "claims_fail_closed_when_controls_incomplete": true,
+    "coupling_reversal_symmetry_passed": true,
+    "iteration_8_boundary_report_uses_external_timeseries": true,
+    "iteration_8_dependency_passed": true,
+    "pulse_disabled_control_negative": true,
+    "scrambled_order_control_negative": true,
+    "symmetric_null_control_negative": true,
+    "true_reversed_e3_pulse_control_recorded": true
+  },
+  "runtime_family": "experiment_local",
+  "s0_only_scope": {
+    "movement_substrate": "S0_chain_v1",
+    "s1_ring_mapping_status": "deferred",
+    "s1_ring_mapping_used": false
+  },
+  "schema": "movement_ladder_report_v1",
+  "scrambled_order_control": {
+    "canonical_pulse_order_valid": false,
+    "control_id": "scrambled_order_control_from_forward_lane",
+    "control_kind": "synthetic_classifier_sanity_check",
+    "displacement_threshold": 0.05,
+    "empirical_fixture_lane": false,
+    "empirical_scrambled_pulse_fixture_status": "deferred",
+    "m4_passed": false,
+    "m5_passed": false,
+    "magnitude_profile_reused": true,
+    "movement_claim_allowed": false,
+    "movement_level": "M0_blocked_scrambled_order",
+    "packet_activity_present": true,
+    "primary_blocker": "canonical_pulse_order_failed",
+    "source_lane_id": "P2_asymmetric_boundary_coupling_forward"
+  },
+  "scrambled_order_control_scope": {
+    "classification": "synthetic_classifier_sanity_check",
+    "deferred_empirical_control": "scrambled_E3_pulse_fixture_lane",
+    "empirical_fixture_lane": false
+  },
+  "source_artifact_requirements": {
+    "boundary_report_external_timeseries_required": true,
+    "boundary_report_sha256_consumed": "75600c24540653f3bebccbbadce7087bf7d2985310a8f4d8d2624af83d6418c8"
+  },
+  "source_artifacts": {
+    "boundary_coupled_pulse_report": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json",
+      "sha256": "75600c24540653f3bebccbbadce7087bf7d2985310a8f4d8d2624af83d6418c8"
+    },
+    "iteration_5_fixed_substrate_tranche": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json",
+      "sha256": "1530b0cb50c81f4e5450d1f65b9221efc370dbfb6fca1d41a5337f6cc5c2608d"
+    }
+  },
+  "status": "passed",
+  "summary": {
+    "forward_level": "M5_repeated_loop_driven_boundary_response_candidate",
+    "full_claim_controls_passed": false,
+    "interpretation": "Iteration 9 finds M5-style repeated boundary-response candidates in the asymmetric coupling lanes, but full loop-driven movement claims remain blocked because native true reversed-E3-pulse telemetry is not available in the current artifact set.",
+    "m5_candidate_supported": true,
+    "pulse_disabled_level": "M0_no_threshold_displacement",
+    "reversed_coupling_level": "M5_repeated_loop_driven_boundary_response_candidate",
+    "symmetric_null_level": "M0_no_threshold_displacement"
+  },
+  "true_reversed_e3_pulse_control": {
+    "available": false,
+    "claim_impact": "blocks_full_direction_parity_claim_but_not_forward_m5_candidate",
+    "status": "not_available_in_native_e3_animation_telemetry"
+  }
+}

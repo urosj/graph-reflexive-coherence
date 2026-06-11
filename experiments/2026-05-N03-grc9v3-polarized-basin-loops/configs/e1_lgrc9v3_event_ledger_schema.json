@@ -1,0 +1,183 @@
+{
+  "schema": "n03_e1_lgrc9v3_event_ledger_schema_v1",
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "branch": "E1.1",
+  "purpose": "Define the minimal experiment-local LGRC-style event ledger needed to represent the D2.3 self-rearming packet pulse mechanism.",
+  "claim_boundary": {
+    "native_grc9v3_evidence": false,
+    "native_lgrc9v3_execution": false,
+    "adapter_only": true,
+    "movement_claim_allowed": false
+  },
+  "event_kinds": [
+    "packet_departure",
+    "packet_arrival",
+    "state_trigger",
+    "self_rearm",
+    "cycle_complete",
+    "control_blocked"
+  ],
+  "budget_invariant": "node_coherence + in_flight_packet_coherence",
+  "time_semantics": {
+    "scheduler_event_index": "Monotone event processing index in the converted ledger.",
+    "event_time_key": "LGRC-compatible event-time key. For D2.3 conversion this may be derived from the source artifact step surface.",
+    "node_proper_time": "Node or pole local proper-time surface attached to the event. D2.3 conversion may infer this from event-time when no native LGRC runtime proper-time trace exists.",
+    "step_index": "Original D2.3 trace step index. This is preserved as source_step_index and is not treated as identical to event_time_key unless marked by inferred_fields."
+  },
+  "ledger_record_required_fields": [
+    "event_id",
+    "event_kind",
+    "scheduler_event_index",
+    "event_time_key",
+    "node_proper_time",
+    "source_step_index",
+    "lane_id",
+    "control_lane",
+    "direction",
+    "mode",
+    "declared_route_id",
+    "canonical_route_step",
+    "source_pole",
+    "target_pole",
+    "channel_id",
+    "packet_id",
+    "parent_packet_id",
+    "amount",
+    "trigger_policy",
+    "trigger_value",
+    "trigger_threshold",
+    "budget_before",
+    "budget_after",
+    "in_flight_packet_budget",
+    "node_budget",
+    "total_budget",
+    "source_artifact",
+    "source_record_ref",
+    "inferred_fields",
+    "inference_notes"
+  ],
+  "ledger_record_field_types": {
+    "event_id": "string",
+    "event_kind": "enum[event_kinds]",
+    "scheduler_event_index": "integer",
+    "event_time_key": "number",
+    "node_proper_time": "object[string, number]",
+    "source_step_index": "integer",
+    "lane_id": "string",
+    "control_lane": "string",
+    "direction": "string",
+    "mode": "string",
+    "declared_route_id": "string",
+    "canonical_route_step": "integer",
+    "source_pole": "string|null",
+    "target_pole": "string|null",
+    "channel_id": "string|null",
+    "packet_id": "string|null",
+    "parent_packet_id": "string|null",
+    "amount": "number|null",
+    "trigger_policy": "string|null",
+    "trigger_value": "number|null",
+    "trigger_threshold": "number|null",
+    "budget_before": "number|null",
+    "budget_after": "number|null",
+    "in_flight_packet_budget": "number|null",
+    "node_budget": "number|null",
+    "total_budget": "number|null",
+    "source_artifact": "string",
+    "source_record_ref": "object",
+    "inferred_fields": "array[string]",
+    "inference_notes": "object[string, string]"
+  },
+  "event_kind_contracts": {
+    "packet_departure": {
+      "description": "A coherence packet leaves a source pole or source node and enters in-flight packet budget.",
+      "non_null_fields": [
+        "packet_id",
+        "source_pole",
+        "target_pole",
+        "channel_id",
+        "amount",
+        "declared_route_id",
+        "canonical_route_step"
+      ]
+    },
+    "packet_arrival": {
+      "description": "A coherence packet arrives at its target pole or target node and leaves in-flight packet budget.",
+      "non_null_fields": [
+        "packet_id",
+        "source_pole",
+        "target_pole",
+        "channel_id",
+        "amount",
+        "declared_route_id",
+        "canonical_route_step"
+      ]
+    },
+    "state_trigger": {
+      "description": "A measured pole-state condition crosses the serialized threshold and permits packet departure.",
+      "non_null_fields": [
+        "source_pole",
+        "channel_id",
+        "trigger_policy",
+        "trigger_value",
+        "trigger_threshold",
+        "declared_route_id"
+      ]
+    },
+    "self_rearm": {
+      "description": "A returned packet recreates the source surplus condition that triggers the next departure.",
+      "non_null_fields": [
+        "packet_id",
+        "parent_packet_id",
+        "source_pole",
+        "channel_id",
+        "trigger_policy",
+        "trigger_value",
+        "trigger_threshold",
+        "declared_route_id"
+      ]
+    },
+    "cycle_complete": {
+      "description": "A declared route has completed one ordered closed-loop traversal.",
+      "non_null_fields": [
+        "packet_id",
+        "declared_route_id",
+        "canonical_route_step"
+      ]
+    },
+    "control_blocked": {
+      "description": "A control lane is recorded as blocked or negative for a declared reason.",
+      "non_null_fields": [
+        "control_lane",
+        "declared_route_id"
+      ]
+    }
+  },
+  "inference_policy": {
+    "required": true,
+    "rule": "Any field not directly present in the D2.3 source artifact must be listed in inferred_fields and explained in inference_notes.",
+    "expected_e1_2_inferred_fields": [
+      "event_id",
+      "scheduler_event_index",
+      "event_time_key",
+      "node_proper_time",
+      "event_kind",
+      "budget_before",
+      "budget_after"
+    ]
+  },
+  "route_policy": {
+    "route_manifest_scope": "experiment_local",
+    "route_manifest_required": true,
+    "declared_route_id_examples": [
+      "d2_3_cw_closed_loop",
+      "d2_3_ccw_closed_loop"
+    ],
+    "canonical_route_step": "Zero-based index of the channel within the declared route."
+  },
+  "semantic_notes": {
+    "self_rearm": "LGRC9V3 can represent the arrival and later departure. The self_rearm label is E1 experiment-level evidence asserting that the later departure was triggered by returned packet coherence.",
+    "state_trigger": "LGRC9V3 has packet production surfaces, but D2.3's pole-surplus threshold trigger remains experiment-local in E1.",
+    "control_blocked": "Control outcomes are ledger evidence for claim blocking, not runtime packet events."
+  }
+}

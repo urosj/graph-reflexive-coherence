@@ -1,0 +1,163 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCV3 Rich Basin Boundary Channel Probe
+  description: Broadened GRCL-v3 probe exercising basin-local geometry, boundary geometry, and channel geometry.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl-v3-rich-basin-boundary-channel-probe
+  source_schema_version: "0.1"
+  source_domain: "2d"
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+  translation_notes:
+    - This fixture is not derived from the PDE landscape corpus.
+    - It exists to test the grcv3.rich.v2 parsing and validation boundary before projector lowering expands.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: left_reservoir
+    type: basin
+    coherence_prior: 0.58
+    depth_hint: 0
+    chart_center_hint: [0.18, 0.5]
+    chart_scale_hint:
+      radius: 0.08
+
+  - id: core_basin
+    type: basin
+    coherence_prior: 1.0
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.5]
+    chart_scale_hint:
+      radius: 0.14
+    extensions:
+      grcv3:
+        local_geometry:
+          frame_mode: axis_declared
+          axis_roles: [north, east, south, west]
+          weak_axis_role: east
+          symmetry_class: cross
+          center_role: interior_probe
+        curvature_intent:
+          class: near_degenerate
+          stable_axis_roles: [north, south]
+          weak_axis_role: east
+          ordering: weak << stable
+        interfaces:
+          boundary_roles: [membrane_arc]
+          channel_roles: [inlet, outlet]
+          preferred_attachment_sites:
+            membrane_arc: north
+            inlet: west
+            outlet: east
+
+  - id: right_reservoir
+    type: basin
+    coherence_prior: 0.58
+    depth_hint: 0
+    chart_center_hint: [0.82, 0.5]
+    chart_scale_hint:
+      radius: 0.08
+
+  - id: exterior_shell
+    type: basin
+    coherence_prior: 0.25
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.82]
+    chart_scale_hint:
+      radius: 0.1
+
+  - id: upper_membrane
+    type: ridge
+    owner_id: core_basin
+    ridge_kind: boundary
+    adjacent_ids: [exterior_shell]
+    thickness_hint: 0.028
+    interior_coherence_hint: 1.0
+    exterior_coherence_hint: 0.25
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcv3:
+        boundary_geometry:
+          realization_kind: support_arc
+          normal_role: north
+          tangent_role: east
+          arc_span: 0.45
+          support_distribution: uniform
+        interfaces:
+          boundary_roles: [membrane_arc]
+          preferred_attachment_sites:
+            membrane_arc: north
+
+  - id: left_inlet
+    type: valley
+    from_id: left_reservoir
+    to_id: core_basin
+    path_hint: bezier
+    width_hint: 0.03
+    coherence_prior: 0.42
+    channel_role: inlet
+    waypoints:
+      - [0.29, 0.5]
+      - [0.39, 0.5]
+    extensions:
+      grcv3:
+        channel_geometry:
+          realization_kind: curved_chain
+          interior_count: 2
+          waypoint_policy: preserve_all
+          entry_role: west
+          exit_role: east
+        interfaces:
+          channel_roles: [inlet]
+          preferred_attachment_sites:
+            inlet: west
+
+  - id: right_outlet
+    type: valley
+    from_id: core_basin
+    to_id: right_reservoir
+    path_hint: bezier
+    width_hint: 0.03
+    coherence_prior: 0.42
+    channel_role: outlet
+    waypoints:
+      - [0.61, 0.5]
+      - [0.71, 0.5]
+    extensions:
+      grcv3:
+        channel_geometry:
+          realization_kind: curved_chain
+          interior_count: 2
+          waypoint_policy: midpoint_only
+          entry_role: west
+          exit_role: east
+        interfaces:
+          channel_roles: [outlet]
+          preferred_attachment_sites:
+            outlet: east
+
+extensions:
+  grcv3:
+    contract_version: grcv3.rich.v2
+    rich_required: true
+  source_probe:
+    purpose: grcv3_rich_v2_basin_boundary_channel_probe
+    intended_geometry:
+      - explicit basin-local axis declaration
+      - qualitative curvature intent with weak and stable role ordering
+      - explicit ridge-boundary support semantics
+      - explicit channel geometry and attachment-role semantics

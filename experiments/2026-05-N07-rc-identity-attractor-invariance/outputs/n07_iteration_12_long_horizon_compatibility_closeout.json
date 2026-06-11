@@ -1,0 +1,850 @@
+{
+  "acceptance": {
+    "achieved": true,
+    "statement": "Iteration 12 passes if the completed 11-* long-horizon C3 branch series replays from artifacts only, reconstructs the bounded non-destructive exchange class, replays controls, freezes the strongest source-specific N07 evidence ceiling, and keeps runtime identity acceptance, RC identity collapse, agency, semantic choice, biological, personhood, and unrestricted identity claims blocked."
+  },
+  "artifact_digests": {
+    "artifact_only_replay_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+    "branch_inventory_digest": "80a1d6522f3569e77fcb28a603a0a98c02872b3be258aa0d922e44e5ce18471d",
+    "candidate_row_digest": "0547fe86b8d8e52824e073ca8978e788d415cf468a49ad2da9e27945824c3523",
+    "checks_digest": "c47a1f43e26478638f454cd36a77b1b1d3b942aba35917cbf2043c27a3b7b9a8",
+    "claim_boundary_digest": "e4b3ea6782a52982d160df9757cbebf399c7385f93ab8bba634022acb9462388",
+    "closeout_decision_digest": "0a6c7a64a3d1336590d422cbf9c5400dfbb586629abee114cb05750ad7ffbf92",
+    "control_replay_digest": "0ae05ae7be38dadd6430ebcd258b484fede73d6cae3c7e1eaafc4dcb56122a10"
+  },
+  "artifact_only": true,
+  "artifact_only_replay": {
+    "artifact_only": true,
+    "artifact_series_subset": {
+      "A_support_retention_level": [
+        0.99055,
+        0.9844075,
+        0.980414875,
+        0.97781966875,
+        0.9761327846875,
+        0.975036310046875,
+        0.9743236015304687,
+        0.9738603409948047,
+        0.973559221646623,
+        0.973363494070305,
+        0.9732362711456982,
+        0.9731535762447039
+      ],
+      "B_support_retention_level": [
+        0.9913375,
+        0.985706875,
+        0.98204696875,
+        0.9796680296875,
+        0.978121719296875,
+        0.9771166175429687,
+        0.9764633014029297,
+        0.9760386459119043,
+        0.9757626198427378,
+        0.9755832028977796,
+        0.9754665818835567,
+        0.9753907782243119
+      ],
+      "basin_separability_level": [
+        0.99055,
+        0.9844075,
+        0.980414875,
+        0.97781966875,
+        0.9761327846875,
+        0.975036310046875,
+        0.9743236015304687,
+        0.9738603409948047,
+        0.973559221646623,
+        0.973363494070305,
+        0.9732362711456982,
+        0.9731535762447039
+      ],
+      "budget_error_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "destructive_interference_level": [
+        0.009449999999999958,
+        0.015592500000000009,
+        0.01958512499999998,
+        0.022180331249999963,
+        0.023867215312500023,
+        0.024963689953125034,
+        0.025676398469531292,
+        0.026139659005195326,
+        0.026440778353376992,
+        0.02663650592969502,
+        0.026763728854301783,
+        0.02684642375529611
+      ],
+      "wrong_basin_leakage_level": [
+        0.02625,
+        0.04331249999999999,
+        0.054403125,
+        0.06161203124999999,
+        0.06629782031249999,
+        0.069343583203125,
+        0.07132332908203125,
+        0.07261016390332031,
+        0.0734466065371582,
+        0.07399029424915282,
+        0.07434369126194934,
+        0.07457339932026706
+      ]
+    },
+    "budget_exact": true,
+    "leakage_bounded_below_threshold": true,
+    "nonzero_leakage_observed": true,
+    "post_transient_flattened": true,
+    "post_transient_slopes_match_artifact": true,
+    "recomputed_deltas": {
+      "delta_A_support_retention_level": [
+        -0.006142500000000051,
+        -0.003992624999999972,
+        -0.0025952062499999817,
+        -0.0016868840625000603,
+        -0.0010964746406250114,
+        -0.0007127085164062574,
+        -0.000463260535664034,
+        -0.0003011193481816665,
+        -0.00019572757631802773,
+        -0.00012722292460676243,
+        -8.269490099432897e-05
+      ],
+      "delta_B_support_retention_level": [
+        -0.005630625,
+        -0.0036599062500000112,
+        -0.002378939062499974,
+        -0.0015463103906250275,
+        -0.0010051017539062235,
+        -0.0006533161400390508,
+        -0.00042465549102543854,
+        -0.00027602606916643513,
+        -0.0001794169449582661,
+        -0.00011662101422282856,
+        -7.580365924486632e-05
+      ],
+      "delta_basin_separability_level": [
+        -0.006142500000000051,
+        -0.003992624999999972,
+        -0.0025952062499999817,
+        -0.0016868840625000603,
+        -0.0010964746406250114,
+        -0.0007127085164062574,
+        -0.000463260535664034,
+        -0.0003011193481816665,
+        -0.00019572757631802773,
+        -0.00012722292460676243,
+        -8.269490099432897e-05
+      ],
+      "delta_budget_error_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_destructive_interference_level": [
+        0.006142500000000051,
+        0.003992624999999972,
+        0.0025952062499999817,
+        0.0016868840625000603,
+        0.0010964746406250114,
+        0.0007127085164062574,
+        0.000463260535664034,
+        0.0003011193481816665,
+        0.00019572757631802773,
+        0.00012722292460676243,
+        8.269490099432897e-05
+      ],
+      "delta_wrong_basin_leakage_level": [
+        0.01706249999999999,
+        0.011090625000000007,
+        0.007208906249999994,
+        0.004685789062500001,
+        0.0030457628906250117,
+        0.0019797458789062444,
+        0.0012868348212890651,
+        0.0008364426338378916,
+        0.0005436877119946171,
+        0.00035339701279651914,
+        0.0002297080583177208
+      ]
+    },
+    "recomputed_post_transient_slopes": {
+      "A_support_retention_level_post_transient_slope_per_window": -0.00031378896702851283,
+      "B_support_retention_level_post_transient_slope_per_window": -0.00028763988644281424,
+      "basin_separability_level_post_transient_slope_per_window": -0.00031378896702851283,
+      "budget_error_level_post_transient_slope_per_window": 0.0,
+      "destructive_interference_level_post_transient_slope_per_window": 0.00031378896702851283,
+      "wrong_basin_leakage_level_post_transient_slope_per_window": 0.0008716360195236764
+    },
+    "recomputed_series": {
+      "A_support_retention_level": [
+        0.99055,
+        0.9844075,
+        0.980414875,
+        0.97781966875,
+        0.9761327846875,
+        0.975036310046875,
+        0.9743236015304687,
+        0.9738603409948047,
+        0.973559221646623,
+        0.973363494070305,
+        0.9732362711456982,
+        0.9731535762447039
+      ],
+      "B_support_retention_level": [
+        0.9913375,
+        0.985706875,
+        0.98204696875,
+        0.9796680296875,
+        0.978121719296875,
+        0.9771166175429687,
+        0.9764633014029297,
+        0.9760386459119043,
+        0.9757626198427378,
+        0.9755832028977796,
+        0.9754665818835567,
+        0.9753907782243119
+      ],
+      "basin_separability_level": [
+        0.99055,
+        0.9844075,
+        0.980414875,
+        0.97781966875,
+        0.9761327846875,
+        0.975036310046875,
+        0.9743236015304687,
+        0.9738603409948047,
+        0.973559221646623,
+        0.973363494070305,
+        0.9732362711456982,
+        0.9731535762447039
+      ],
+      "budget_error_level": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "destructive_interference_level": [
+        0.009449999999999958,
+        0.015592500000000009,
+        0.01958512499999998,
+        0.022180331249999963,
+        0.023867215312500023,
+        0.024963689953125034,
+        0.025676398469531292,
+        0.026139659005195326,
+        0.026440778353376992,
+        0.02663650592969502,
+        0.026763728854301783,
+        0.02684642375529611
+      ],
+      "wrong_basin_leakage_level": [
+        0.02625,
+        0.04331249999999999,
+        0.054403125,
+        0.06161203124999999,
+        0.06629782031249999,
+        0.069343583203125,
+        0.07132332908203125,
+        0.07261016390332031,
+        0.0734466065371582,
+        0.07399029424915282,
+        0.07434369126194934,
+        0.07457339932026706
+      ]
+    },
+    "recomputed_slopes": {
+      "A_support_retention_level_slope_per_window": -0.0015814930686632866,
+      "B_support_retention_level_slope_per_window": -0.001449701979608011,
+      "basin_separability_level_slope_per_window": -0.0015814930686632866,
+      "budget_error_level_slope_per_window": 0.0,
+      "destructive_interference_level_slope_per_window": 0.0015814930686632866,
+      "wrong_basin_leakage_level_slope_per_window": 0.00439303630184246
+    },
+    "replay_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+    "replay_passed": true,
+    "runtime_state_used": false,
+    "separability_passed": true,
+    "series_match_artifact": true,
+    "slopes_match_artifact": true,
+    "source_branch": "11-B",
+    "support_survival_passed": true,
+    "window_count": 12,
+    "window_records_have_required_chain": true
+  },
+  "branch_inventory": [
+    {
+      "arc_interpretation_digest": "e719f84ad815863bd84af62fd63fa9c1abaf84335e741184091e016e09432a2f",
+      "branch_id": "11-0",
+      "branch_record_digest": "d7ffeb8b720f079f498ba426de3b8666364ef0c47020e32dec2af19958c68282",
+      "candidate_row_digest": "571483ccf4f8206d6765104d49d3bb0836277d93ae589b5cbbc9cfcca1f29508",
+      "claim_flags_false": true,
+      "classification_status": "reusable_negative_class",
+      "endpoint_pass_status": "blocked",
+      "first_failure_window": 3,
+      "id6_evidence_before_closeout": false,
+      "inventory_row_digest": "03869d95d4fd4eeaf1118976ed823e219e71d32e7c528f8b14bcf53dee82ab4a",
+      "mechanism_or_fixture_change": "none_baseline_no_recovery_replay",
+      "naturalization_rung": "Nat0_probe_dependent_expression",
+      "primary_blocker": "wrong_basin",
+      "question_answered": "What long-horizon C3 regime is expressed when the 9-B leakage and support-loss boundary is replayed without any recovery or re-separation mechanism?",
+      "series_ready_for_iteration_12": false,
+      "source_schema": "n07_iteration_11_long_horizon_compatibility_recovery_probe_v1",
+      "source_status": "passed",
+      "trajectory_digest": "8690ea20135f7d165d45eceedf55679a1ab8cf98214d45a3615901e4252beffc",
+      "trajectory_regime": "unbounded_degrading_without_recovery"
+    },
+    {
+      "arc_interpretation_digest": "dbc5e47f329a03559cb09ee3c0dfa6879e919ca8d2afa8f2fb5bec423a64c1d8",
+      "branch_id": "11-A",
+      "branch_record_digest": "7e42262b015200b7fb0c49bc029f5e910dd15752046b1adccc1ea33be5acdf95",
+      "candidate_row_digest": "b3a50d87d55bdac6cf778e283874116c7938e74cbb55bcab52911f9124626988",
+      "claim_flags_false": true,
+      "classification_status": "reusable_partial_recovery_class",
+      "endpoint_pass_status": "passed_12_window_horizon",
+      "first_failure_window": null,
+      "id6_evidence_before_closeout": false,
+      "inventory_row_digest": "610f9c76036ce9a720c86f5437cb80c0b7efb51b04664c3321b598b02aba126a",
+      "mechanism_or_fixture_change": "source_digest_reentry_buffer_v1",
+      "naturalization_rung": "Nat2_regime_assisted_expression",
+      "primary_blocker": "bounded_degrading_trend",
+      "question_answered": "Can source_digest_reentry_buffer_v1 convert the 11-0 trajectory from unbounded degradation into bounded-flat, bounded-improving, or oscillatory-recovering compatibility?",
+      "series_ready_for_iteration_12": false,
+      "source_schema": "n07_iteration_11a_source_digest_reentry_buffer_v1",
+      "source_status": "passed",
+      "trajectory_digest": "9e8265bc4ed9c506e3e5adebecf553bfc0248f2042feb63a1c37680390c9be66",
+      "trajectory_regime": "bounded_degrading"
+    },
+    {
+      "arc_interpretation_digest": "f63a51fcc275931cf32f2782eee0da2fbd175d0e073178a51c47ed3ae583d2bc",
+      "branch_id": "11-B",
+      "branch_record_digest": "9ed01471f34bb5b30d35feb5e1c4aedcfffd41e15147ec3b4fda72fcb3df28d7",
+      "candidate_row_digest": "44bd5935324e40451d45dabaf447b66d98d39c0f8ce4bfcf0b6a4ae28fb5073c",
+      "claim_flags_false": true,
+      "classification_status": "reusable_dual_basin_exchange_class",
+      "endpoint_pass_status": "passed_12_window_horizon",
+      "first_failure_window": null,
+      "id6_evidence_before_closeout": false,
+      "inventory_row_digest": "4afa4c45b9996b5362dfeef75c740b32e749b347b082b46b93fbcf742348d6ea",
+      "mechanism_or_fixture_change": "neutral_absorber_reservoir_v1",
+      "naturalization_rung": "Nat2_regime_assisted_expression",
+      "primary_blocker": "artifact_replay_pending_iteration_12",
+      "question_answered": "Can neutral_absorber_reservoir_v1 turn connected-basin leakage into bounded non-destructive exchange while both basins remain separable attractors?",
+      "series_ready_for_iteration_12": true,
+      "source_schema": "n07_iteration_11b_neutral_absorber_reservoir_v1",
+      "source_status": "passed",
+      "trajectory_digest": "48f6bf4a8f15332f4212023715dfdf801c02107e48984a76ff642c02414a0aa9",
+      "trajectory_regime": "bounded_non_destructive_exchange"
+    }
+  ],
+  "checks": {
+    "artifact_only_replay_declared": true,
+    "branch_11b_was_ready_for_12": true,
+    "branch_inventory_complete": true,
+    "budget_exactness_replayed": true,
+    "candidate_blocks_runtime_claims": true,
+    "candidate_ceiling_id6": true,
+    "candidate_claim_flags_false": true,
+    "claim_flags_false": true,
+    "closeout_freezes_id6_evidence_classification": true,
+    "controls_replayed": true,
+    "dual_basin_survival_replayed": true,
+    "future_iteration_13_optional": true,
+    "id6_not_runtime_identity_acceptance": true,
+    "native_claims_remain_blocked": true,
+    "no_src_changes_required": true,
+    "nonzero_bounded_leakage_replayed": true,
+    "post_transient_flattening_replayed": true,
+    "post_transient_slopes_recomputed": true,
+    "required_chain_replayed": true,
+    "runtime_state_not_used": true,
+    "separability_replayed": true,
+    "series_and_slopes_recomputed": true,
+    "source_10_passed": true,
+    "source_11_0_passed": true,
+    "source_11a_passed": true,
+    "source_11b_passed": true,
+    "source_artifact_hashes_present": true,
+    "source_reports_present": true,
+    "status_passed": true,
+    "trajectory_progression_reconstructed": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "closeout_decision": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "closeout_decision_digest": "0a6c7a64a3d1336590d422cbf9c5400dfbb586629abee114cb05750ad7ffbf92",
+    "frozen_long_horizon_c3_class": "bounded_non_destructive_exchange",
+    "frozen_n07_ceiling": "ID6",
+    "future_exploration_invitation": {
+      "iteration": "13",
+      "required_for_n07_closeout": false,
+      "topics": [
+        "longer_horizon_bounded_exchange_stress",
+        "reservoir_withdrawal_or_naturalization",
+        "symmetric_dual_source_backed_reentry",
+        "native_absorber_policy_design"
+      ]
+    },
+    "goal_proxy_regulation_claim_allowed": false,
+    "id6_evidence_classification_supported": true,
+    "id6_is_runtime_identity_acceptance": false,
+    "id6_scope": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_policy_blockers": [
+      "native_neutral_absorber_reservoir_policy_missing",
+      "native_identity_acceptance_contract_missing",
+      "native_long_horizon_c3_replay_policy_missing"
+    ],
+    "native_support_status": "experiment_local_serialized_reservoir_policy",
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "replay_basis": {
+      "artifact_only_replay_passed": true,
+      "claim_flags_false": true,
+      "controls_replayed": true,
+      "source_11b_series_ready_for_12": true,
+      "source_11b_status": "passed"
+    },
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "strongest_branch": "11-B",
+    "strongest_trajectory_regime": "bounded_non_destructive_exchange",
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_12_long_horizon_compatibility_closeout.py",
+  "control_replay": {
+    "all_controls_passed": true,
+    "control_count": 21,
+    "control_replay_digest": "0ae05ae7be38dadd6430ebcd258b484fede73d6cae3c7e1eaafc4dcb56122a10",
+    "control_replay_passed": true,
+    "control_rows": [
+      {
+        "control_id": "baseline_no_recovery_reproduces_9b2_failure",
+        "control_passed": true,
+        "control_row_digest": "f8a6e27af24611a1b86641273427587af6cd87e82e76ddb2f906042d48f937ab",
+        "observed_status": "blocked",
+        "primary_blocker": "wrong_basin",
+        "source_branch": "11-0"
+      },
+      {
+        "control_id": "endpoint_only_interpretation_rejected",
+        "control_passed": true,
+        "control_row_digest": "af75799bf35cb49c44f1d30a182d175b8117d7e23c8b1e821410547b56055dd6",
+        "observed_status": "blocked",
+        "primary_blocker": "endpoint_only_interpretation_rejected",
+        "source_branch": "11-0"
+      },
+      {
+        "control_id": "trajectory_metric_omission_rejected",
+        "control_passed": true,
+        "control_row_digest": "ddd217e6c9fdb6cde42e522c12361de4433698449d3663e468e0c2458049beba",
+        "observed_status": "blocked",
+        "primary_blocker": "trajectory_metrics_missing",
+        "source_branch": "11-0"
+      },
+      {
+        "control_id": "budget_corruption_rejected",
+        "control_passed": true,
+        "control_row_digest": "cf306b3019224a33fd72c9375c45dcf28276d587eb1fd61cd8f6664fe8cdcacf",
+        "observed_status": "blocked",
+        "primary_blocker": "budget_discontinuity",
+        "source_branch": "11-0"
+      },
+      {
+        "control_id": "identity_claim_promotion_rejected",
+        "control_passed": true,
+        "control_row_digest": "854e55d38106877f36680bf5a1cda7d4880d429b931959c34bd1e33de41c0149",
+        "observed_status": "blocked",
+        "primary_blocker": "identity_claim_promotion",
+        "source_branch": "11-0"
+      },
+      {
+        "control_id": "baseline_no_recovery_would_degrade",
+        "control_passed": true,
+        "control_row_digest": "5277f18587641d088581b66edb01c4d688abff72d07a0d35e2979894897a7a24",
+        "observed_status": "blocked",
+        "primary_blocker": "wrong_basin",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "capture_fraction_below_contract",
+        "control_passed": true,
+        "control_row_digest": "95c6060e7e396cf447edeb6a3d0d56c9cece781daddb02c7f9d2cdbfc168e2f4",
+        "observed_status": "blocked",
+        "primary_blocker": "wrong_basin_slope_unbounded",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "source_digest_scrambled",
+        "control_passed": true,
+        "control_row_digest": "1b3f70e53b8f95dd904164c074672ea39230386a55ca03a7e7cc77a6566f7504",
+        "observed_status": "blocked",
+        "primary_blocker": "wrong_support_area",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "hidden_reentry_preference",
+        "control_passed": true,
+        "control_row_digest": "dc0130b8ae3aad96d7daf1d93e7470c133cd1b74153f91de5726835506d88332",
+        "observed_status": "blocked",
+        "primary_blocker": "hidden_support_field",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "budget_discontinuity_after_reentry",
+        "control_passed": true,
+        "control_row_digest": "cfb728b7effeb0519ac3b0410bb47b6f7608d0d3214ae241fe9f439bb9d03043",
+        "observed_status": "blocked",
+        "primary_blocker": "budget_discontinuity",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "endpoint_only_promotion",
+        "control_passed": true,
+        "control_row_digest": "b411b2a76611d463ca00fdb353a5e962c3aa4399542dee490d8abd286c603055",
+        "observed_status": "blocked",
+        "primary_blocker": "bounded_degrading_trend",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "identity_claim_promotion",
+        "control_passed": true,
+        "control_row_digest": "9585154e00e47bb3fe286178d796aa6a73a719748337f6bec9e8de49a39af859",
+        "observed_status": "blocked",
+        "primary_blocker": "identity_claim_promotion",
+        "source_branch": "11-A"
+      },
+      {
+        "control_id": "baseline_no_recovery_would_degrade",
+        "control_passed": true,
+        "control_row_digest": "5277f18587641d088581b66edb01c4d688abff72d07a0d35e2979894897a7a24",
+        "observed_status": "blocked",
+        "primary_blocker": "wrong_basin",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "zero_leakage_requirement_misframed",
+        "control_passed": true,
+        "control_row_digest": "5364e173914c83e8e6302e26fc8006ac72bc78cfcc5d301b2472a3a195f1a8a6",
+        "observed_status": "blocked",
+        "primary_blocker": "misframed_zero_leakage_requirement",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "reservoir_absorption_missing",
+        "control_passed": true,
+        "control_row_digest": "bd74c8c95d9c32739a3d07dbee120a9ae645c9c75213ab0c80d562744a38af0a",
+        "observed_status": "blocked",
+        "primary_blocker": "reservoir_absorption_missing",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "hidden_reservoir_routing",
+        "control_passed": true,
+        "control_row_digest": "70288d1142ea9ec110d22bacae22e89bc400b19b411afdb5543343a1c6809926",
+        "observed_status": "blocked",
+        "primary_blocker": "hidden_support_field",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "asymmetric_absorber_preference",
+        "control_passed": true,
+        "control_row_digest": "cb08bdcee188782ac21295932cd829e13dca456154f105b305e4f8fd81c7c2d7",
+        "observed_status": "blocked",
+        "primary_blocker": "asymmetric_exchange_preference",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "over_isolated_fixture",
+        "control_passed": true,
+        "control_row_digest": "3ca1746c3b9b1ea74ec5a03e2cfd74b8b12639fb4092762691e4d59812eed9ab",
+        "observed_status": "blocked",
+        "primary_blocker": "disconnected_basin_trivialization",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "budget_discontinuity_after_absorption",
+        "control_passed": true,
+        "control_row_digest": "e9ba6df3f5dfb27383b7e870556811567ffe01e240fe679252055eec41d695ed",
+        "observed_status": "blocked",
+        "primary_blocker": "budget_discontinuity",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "support_destroyed_by_allowed_exchange",
+        "control_passed": true,
+        "control_row_digest": "ba6172fb6b56c332417e8874d9afc25de364b765a0a9f16b79bcef39949d924d",
+        "observed_status": "blocked",
+        "primary_blocker": "support_drift_beyond_threshold",
+        "source_branch": "11-B"
+      },
+      {
+        "control_id": "identity_claim_promotion",
+        "control_passed": true,
+        "control_row_digest": "c3a6ec5d55b32ce5710c67640b4cb2a870f6bc448d01e6553e0eac7cb1926c95",
+        "observed_status": "blocked",
+        "primary_blocker": "identity_claim_promotion",
+        "source_branch": "11-B"
+      }
+    ],
+    "distinct_blocker_count": 14,
+    "distinct_blockers_present": true,
+    "required_closeout_blockers_present": true
+  },
+  "environment": {
+    "generated_at_utc": "2026-06-07T11:21:51.459133+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "experiment": "N07",
+  "git": {
+    "rev_parse_head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "3abf8bc7f95c9f8a2ddf37099aaec1ad484a8a5e"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/README.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationChecklist.md\n M experiments/2026-05-N07-rc-identity-attractor-invariance/implementation/RCIdentityAttractorInvarianceImplementationPlan.md\n?? ../../../../Obsidian/SentientLife/Self/26-06/2026-06-07.md\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/configs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/reports/\n?? experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": "12",
+  "long_horizon_closeout_row": {
+    "activity_history_digest": "e66250281733f76b1b56e0f1c9e5ceecc47d3f1e00dfed07d836ff233346fbb1",
+    "activity_history_digest_scope": {
+      "branch_inventory_digest": "80a1d6522f3569e77fcb28a603a0a98c02872b3be258aa0d922e44e5ce18471d",
+      "closeout_decision_digest": "0a6c7a64a3d1336590d422cbf9c5400dfbb586629abee114cb05750ad7ffbf92",
+      "control_replay_digest": "0ae05ae7be38dadd6430ebcd258b484fede73d6cae3c7e1eaafc4dcb56122a10",
+      "replay_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+      "source_11b_candidate_row_digest": "44bd5935324e40451d45dabaf447b66d98d39c0f8ce4bfcf0b6a4ae28fb5073c"
+    },
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "becoming_class_status": "source_specific_expression",
+    "becoming_expressed_property": "Connected dual basins can express bounded non-destructive exchange when shared-U flux is absorbed through a neutral reservoir rather than immediately credited as competitor support.",
+    "becoming_interpretation_style": "question_observation_classification_cultivation_naturalization",
+    "biological_claim_allowed": false,
+    "blocked_claims": [
+      "runtime_identity_acceptance",
+      "rc_identity_collapse",
+      "semantic_choice",
+      "agency",
+      "biological_identity",
+      "personhood",
+      "unrestricted_identity"
+    ],
+    "boundary_rung": "source_specific_expression",
+    "branch_id": "12",
+    "candidate_identity_carrier_type": "coherence_basin",
+    "candidate_row_digest": "0547fe86b8d8e52824e073ca8978e788d415cf468a49ad2da9e27945824c3523",
+    "claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "composite_topology_id": "n07_C3_competing_basin_compatibility_candidate",
+    "derived_id_ceiling": "ID6",
+    "endpoint_pass_status": "passed_12_window_horizon",
+    "gate_vector": {
+      "artifact_replay": "pass",
+      "attractivity": "pass",
+      "compatibility": "pass_bounded_non_destructive_exchange",
+      "invariance": "pass",
+      "lineage_current": "pass",
+      "long_horizon_trajectory": "bounded_non_destructive_exchange",
+      "reflexive_closure": "pass",
+      "stability": "pass",
+      "support": "pass"
+    },
+    "goal_proxy_regulation_claim_allowed": false,
+    "id6_evidence_classification_supported": true,
+    "id6_is_runtime_identity_acceptance": false,
+    "id_level": "ID6",
+    "identity_acceptance_claim_allowed": false,
+    "identity_carrier_surface": "runtime_coherence_basin",
+    "implementation_surface": "artifact_only_replay",
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_policy_blockers": [
+      "native_neutral_absorber_reservoir_policy_missing",
+      "native_identity_acceptance_contract_missing",
+      "native_long_horizon_c3_replay_policy_missing"
+    ],
+    "native_support_status": "experiment_local_serialized_reservoir_policy",
+    "naturalization_rung": "Nat2_regime_assisted_expression",
+    "personhood_claim_allowed": false,
+    "primary_blocker": null,
+    "probe_role": "artifact_only_closeout",
+    "rc_identity_collapse_claim_allowed": false,
+    "row_id": "n07_i12_long_horizon_c3_closeout_row_v1",
+    "runtime_family": "artifact_only_experiment_closeout",
+    "semantic_choice_claim_allowed": false,
+    "source_artifact_sha256": {
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_10_long_horizon_compatibility_design.json": "e226de77cfc29d7f88ad39b92ed19bdb2c383842ee93b4b9114a46df0db14ee2",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11_long_horizon_compatibility_recovery_probe.json": "976cf7dea0d0feb131697a5b439c3f297d9c1bf3515fd5521a3ed93a95d14811",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11a_source_digest_reentry_buffer.json": "1cc5a3e3ccb0770ef758f68e5ee1dc9cf5f4f6e530f214220bc98b3539564dce",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+    },
+    "source_artifacts": [
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_10_long_horizon_compatibility_design.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11_long_horizon_compatibility_recovery_probe.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11a_source_digest_reentry_buffer.json",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json"
+    ],
+    "source_reports": [
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_10_long_horizon_compatibility_design.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11_long_horizon_compatibility_recovery_probe.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11a_source_digest_reentry_buffer.md",
+      "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md"
+    ],
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1",
+    "support_dependency_status": "regime_assisted",
+    "topology_family_id": "n07_T7_compatibility",
+    "trajectory_regime": "bounded_non_destructive_exchange",
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false,
+    "visual_is_evidence_source": false,
+    "visual_reference": null,
+    "withdrawal_test_status": "not_tested"
+  },
+  "next_iteration": "13_future_exploration_invitations_optional",
+  "purpose": "artifact_only_long_horizon_c3_closeout",
+  "runtime_state_used": false,
+  "schema": "n07_iteration_12_long_horizon_compatibility_closeout_v1",
+  "source_artifacts": [
+    {
+      "name": "n07_iteration_10_long_horizon_compatibility_design",
+      "object_digest": "00c192499503835595cdeb0c87678d44aec2de981410730b770e89a0315e28a1",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_10_long_horizon_compatibility_design.json",
+      "sha256": "e226de77cfc29d7f88ad39b92ed19bdb2c383842ee93b4b9114a46df0db14ee2",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_11_0_long_horizon_baseline",
+      "object_digest": "a863a233da9f58054abb57f1666d54164e27eae32d7e2402a197beabf5648ca8",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11_long_horizon_compatibility_recovery_probe.json",
+      "sha256": "976cf7dea0d0feb131697a5b439c3f297d9c1bf3515fd5521a3ed93a95d14811",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_11a_source_digest_reentry_buffer",
+      "object_digest": "ca29872031f08feb88280e7d92f25f2a9fe331dff6c143d5f2081b1357ff775a",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11a_source_digest_reentry_buffer.json",
+      "sha256": "1cc5a3e3ccb0770ef758f68e5ee1dc9cf5f4f6e530f214220bc98b3539564dce",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_11b_neutral_absorber_reservoir",
+      "object_digest": "1b9dcf2b45b505b66c043935c780f855e02898a8f75dedead79ea32382694241",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+      "sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497",
+      "status": "passed"
+    }
+  ],
+  "source_reports": [
+    {
+      "name": "n07_iteration_10_long_horizon_compatibility_design_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_10_long_horizon_compatibility_design.md",
+      "sha256": "1385850e55705d9b6c075ccee3c1c3356b5e826449e43229b7b1fa647ecfd89a"
+    },
+    {
+      "name": "n07_iteration_11_0_long_horizon_baseline_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11_long_horizon_compatibility_recovery_probe.md",
+      "sha256": "950a0627b7d244c5539024af60ede3c07a002e99c95c6776ba205380bc95a685"
+    },
+    {
+      "name": "n07_iteration_11a_source_digest_reentry_buffer_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11a_source_digest_reentry_buffer.md",
+      "sha256": "96ecad412bb6ce399f4a843c6a282d34a9b4c4a179d70a7f9f5b8969979600b7"
+    },
+    {
+      "name": "n07_iteration_11b_neutral_absorber_reservoir_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+      "sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354"
+    }
+  ],
+  "source_status": {
+    "iteration_10_status": "passed",
+    "iteration_11_0_status": "passed",
+    "iteration_11a_status": "passed",
+    "iteration_11b_status": "passed"
+  },
+  "status": "passed"
+}

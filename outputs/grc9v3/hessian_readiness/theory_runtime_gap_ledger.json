@@ -1,0 +1,171 @@
+{
+  "lane_b_status": "deferred_not_rejected",
+  "reconstruction_note": "Reconstructed from implementation/GRC9V3-Hessian-ImplementationChecklist.md and implementation/GRC9V3-ArtifactSurfaceHardening.md after the telemetry-scale outputs were omitted from the public checkout.",
+  "scope": "Lane A Hessian/hybrid spark readiness surface classification",
+  "spark_lane_id": "current_hybrid_signed_hessian",
+  "status": "reconstructed_historical_artifact",
+  "summary": {
+    "absent_surface_count": 0,
+    "derived_surface_count": 1,
+    "direct_surface_count": 7,
+    "partial_surface_count": 1
+  },
+  "surfaces": [
+    {
+      "artifact_sources": [
+        "GRC9V3NodeState.gradient_row_basis",
+        "snapshot basin_attributes.nodes[*].gradient_row_basis",
+        "hybrid_spark_candidate payload gradient_norm and eps_gradient"
+      ],
+      "blocked_claims": [],
+      "experiment_impact": "Supports Lane A spark-envelope interpretation directly when state snapshots or candidate payloads are available.",
+      "id": "row_differential_state",
+      "lane_a_status": "direct",
+      "name": "Row differential state",
+      "required_change_for_lane_b": [
+        "No Lane B change required for the row differential surface itself."
+      ],
+      "theory_facing_meaning": "Per-node row-basis gradient and differential evidence used to judge the Lane A small-gradient envelope."
+    },
+    {
+      "artifact_sources": [
+        "StepResult.events[kind=hybrid_spark_candidate].payload",
+        "family_extensions.grc9v3.spark_evidence",
+        "cached_quantities.hybrid_spark_signed_crossing_status"
+      ],
+      "blocked_claims": [
+        "Direct column-H triggered the spark is blocked in Lane A."
+      ],
+      "experiment_impact": "Allows current-lane spark candidates to be audited without reinterpreting them as canonical column-H gates.",
+      "id": "signed_hessian_hybrid_spark_candidate",
+      "lane_a_status": "direct",
+      "name": "Signed-Hessian hybrid spark candidate",
+      "required_change_for_lane_b": [
+        "canonical_column_h",
+        "Add an explicit opt-in Lane B spark lane with direct column-H proxy-branch fields."
+      ],
+      "theory_facing_meaning": "Candidate events expose the current signed-Hessian degeneracy gate used by the default hybrid spark lane."
+    },
+    {
+      "artifact_sources": [
+        "hybrid_spark_candidate payload active_degree",
+        "hybrid_spark_candidate payload saturation_gate",
+        "topology endpoint slots and port occupancy"
+      ],
+      "blocked_claims": [],
+      "experiment_impact": "Separates degree-8 near-saturation observations from the degree-9 Lane A gate.",
+      "id": "active_degree_saturation",
+      "lane_a_status": "direct",
+      "name": "Active-degree saturation",
+      "required_change_for_lane_b": [
+        "No Lane B change required unless a future lane deliberately changes the active-degree gate."
+      ],
+      "theory_facing_meaning": "The active-port count and saturation gate identify whether a candidate is in the required current-lane degree envelope."
+    },
+    {
+      "artifact_sources": [
+        "StepResult.events[kind=hybrid_mechanical_expansion].payload.reassignment_map",
+        "cached_quantities.last_hybrid_expansion.reassignment_map",
+        "GRC9V3State.expansion_registry",
+        "snapshot basin_attributes.expansion_registry"
+      ],
+      "blocked_claims": [],
+      "experiment_impact": "Makes post-spark mechanical expansion claims auditable from primary event payloads with registry corroboration.",
+      "id": "mechanical_expansion_mapping",
+      "lane_a_status": "direct",
+      "name": "Mechanical expansion mapping",
+      "required_change_for_lane_b": [
+        "No Lane B change required for expansion mapping; Lane B only changes spark-gate attribution."
+      ],
+      "theory_facing_meaning": "Expansion event payloads preserve the reassignment map from a sparked sink into the mechanical refinement module."
+    },
+    {
+      "artifact_sources": [
+        "GRC9V3 edge label payloads",
+        "snapshot edge_labels",
+        "telemetry graph checkpoint overlays"
+      ],
+      "blocked_claims": [],
+      "experiment_impact": "Supports substrate-level audits and replay checks for transport and geometry-dependent claims.",
+      "id": "edge_labels",
+      "lane_a_status": "direct",
+      "name": "Edge labels",
+      "required_change_for_lane_b": [
+        "No Lane B change required."
+      ],
+      "theory_facing_meaning": "Runtime edge labels expose conductance, geometry, delay, and coupling values used by the graph substrate."
+    },
+    {
+      "artifact_sources": [
+        "GRC9V3 coarse/Split runtime helpers",
+        "tests.models.test_grc_9_v3_coarse",
+        "coarse cache invalidation telemetry when present"
+      ],
+      "blocked_claims": [],
+      "experiment_impact": "Keeps coarse-graining evidence separated from source-language claims and cache diagnostics.",
+      "id": "coarse_graining_split",
+      "lane_a_status": "direct",
+      "name": "Coarse-graining / Split",
+      "required_change_for_lane_b": [
+        "No Lane B change required."
+      ],
+      "theory_facing_meaning": "Coarse G/Split reconstruction surfaces the coarse-graining relation used to compare graph partitions and local structure."
+    },
+    {
+      "artifact_sources": [
+        "GRC9V3State.sink_set",
+        "hybrid_spark_candidate payload basin_id parent_id depth",
+        "hybrid_spark_completed payload hierarchy_parent and hierarchy_children",
+        "snapshot basin_attributes.hierarchy"
+      ],
+      "blocked_claims": [],
+      "experiment_impact": "Supports identity-event and daughter-basin interpretation when candidate, expansion, and completion evidence line up.",
+      "id": "sink_basin_hierarchy",
+      "lane_a_status": "direct",
+      "name": "Sink/basin hierarchy",
+      "required_change_for_lane_b": [
+        "No Lane B change required."
+      ],
+      "theory_facing_meaning": "Basin ids, parent links, depth, and completion events expose the hierarchy surrounding spark and expansion events."
+    },
+    {
+      "artifact_sources": [
+        "derived column-H proxy analysis",
+        "row/column basis reconstruction from direct Hessian fields",
+        "GRC9V3-LaneA-SparkGateTraceSchema.md reporting rule"
+      ],
+      "blocked_claims": [
+        "Direct column-H triggered the spark is blocked in Lane A.",
+        "Column-H is not a direct Lane A spark-gate predicate."
+      ],
+      "experiment_impact": "Reports may say the derived column-H proxy was near zero at a candidate event, but may not attribute the Lane A spark to direct column-H gating.",
+      "id": "column_h_cancellation_diagnostic",
+      "lane_a_status": "derived",
+      "name": "Column-H / cancellation diagnostic",
+      "required_change_for_lane_b": [
+        "canonical_column_h",
+        "Define a separate opt-in lane with runtime-computed column-H proxy fields, gate reasons, and positive/negative controls."
+      ],
+      "theory_facing_meaning": "Column-H-like cancellation is available only as an analysis proxy under the current Lane A baseline, not as a runtime spark predicate."
+    },
+    {
+      "artifact_sources": [
+        "ordered snapshot/checkpoint sequences",
+        "topology endpoint slots and incidence",
+        "port-history reconstruction rules in GRC9V3-ArtifactSurfaceHardening.md"
+      ],
+      "blocked_claims": [
+        "Full port-history motion is not proven from isolated candidate or summary artifacts."
+      ],
+      "experiment_impact": "Single-step artifacts can support local port state, but full motion narratives require rerun or retained checkpoint sequences.",
+      "id": "full_port_history_motion_observer",
+      "lane_a_status": "partial",
+      "name": "Full port-history motion observer",
+      "required_change_for_lane_b": [
+        "Add or retain ordered checkpoint windows and an analyzer that emits complete port-history motion tables."
+      ],
+      "theory_facing_meaning": "Complete motion claims require ordered port-occupancy changes across snapshot or checkpoint windows, not only a single candidate payload."
+    }
+  ],
+  "version": "grc9v3_theory_runtime_gap_ledger_v1_reconstructed"
+}

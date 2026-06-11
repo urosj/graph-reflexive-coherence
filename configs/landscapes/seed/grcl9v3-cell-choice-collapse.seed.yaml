@@ -1,0 +1,91 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Cell Choice Collapse
+  description: ComposingCells-aligned branch saddle seed for semantic choice and collapse evidence.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-84-composingcells-aligned-hybrid-seeds
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, saddle, choice, collapse]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: branch_saddle
+    type: saddle
+    branch_target_ids: [accepting_basin, rejecting_basin]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: cell_choice_collapse_choice
+        region_id: branch_saddle
+        source_role: composing_cell_control
+        profile:
+          basin_region_a: accepting_basin
+          basin_region_b: rejecting_basin
+          collapse_target_region: accepting_basin
+          compatibility_profile:
+            compatibility: high_contrast
+  - id: accepting_basin
+    type: basin
+    coherence_prior: 1.0
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: cell_choice_collapse_accepting_basin
+        region_id: accepting_basin
+        source_role: composing_cell_control
+        profile:
+          basin: accepting_branch
+  - id: rejecting_basin
+    type: basin
+    coherence_prior: 0.4
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: cell_choice_collapse_rejecting_basin
+        region_id: rejecting_basin
+        source_role: composing_cell_control
+        profile:
+          basin: rejecting_branch
+  - id: branch_separator
+    type: ridge
+    adjacent_ids: [accepting_basin, rejecting_basin]
+    extensions:
+      grcl9v3:
+        term_kind: separatrix
+        term_id: cell_choice_collapse_separator
+        region_id: branch_separator
+        source_role: composing_cell_control
+        profile:
+          separates: [accepting_basin, rejecting_basin]
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: cell_choice_collapse
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0019-cell-choice-collapse
+    expected_selector_ids: [choice_collapse_events]
+    notes:
+      composing_cells_anchor: saddle branch with explicit separatrix and target basin
+      boundary: source preconditions only
+      composed_source_ancestry:
+        - choice_collapse_positive_control
+        - quiescent_hybrid_control_no_event_control

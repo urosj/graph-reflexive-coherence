@@ -1,0 +1,42 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "command": "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_family_level_synthesis.py --write-defaults",
+  "experiment_id": "family_level_synthesis",
+  "git_branch": "master",
+  "git_commit": "3f2aa0d621c890562b9af14280b9fab96d1c3b37",
+  "input_summary_paths": {
+    "A": "outputs/experiment_a_row_mode_stress_summary.json",
+    "B": "outputs/experiment_b_column_interface_cancellation_summary.json",
+    "C": "outputs/experiment_c_saturation_summary.json",
+    "D": "outputs/experiment_d_refinement_identity_summary.json",
+    "E": "outputs/experiment_e_coarse_graining_split_summary.json",
+    "F": "outputs/experiment_f_path_disagreement_summary.json",
+    "G": "outputs/experiment_g_mixed_motion_summary.json"
+  },
+  "iteration": 10,
+  "lane_id": "current_hybrid_signed_hessian",
+  "output_paths": {
+    "experiment_status_csv": "outputs/family_level_experiment_status.csv",
+    "followup_surfaces_csv": "outputs/family_level_followup_surfaces.csv",
+    "hypothesis_status_csv": "outputs/family_level_hypothesis_status.csv",
+    "manifest_json": "outputs/family_level_synthesis_manifest.json",
+    "prediction_check_csv": "outputs/family_level_prediction_check.csv",
+    "report_md": "reports/family_level_synthesis.md",
+    "summary_json": "outputs/family_level_synthesis_summary.json"
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_family_level_synthesis.py",
+  "support_prechecks": {
+    "a_row_signature": true,
+    "b_column_proxy": true,
+    "c_saturation": true,
+    "d_refinement": true,
+    "e_multiscale": true,
+    "f_path_disagreement": true,
+    "g_motion": true
+  },
+  "validation_commands": [
+    "PYTHONPATH=src .venv/bin/python -m py_compile experiments/2026-05-N01-grc9v3-properties/scripts/run_family_level_synthesis.py",
+    "PYTHONPATH=src .venv/bin/python -m ruff check experiments/2026-05-N01-grc9v3-properties/scripts/run_family_level_synthesis.py experiments/2026-05-N01-grc9v3-properties/scripts/grc9v3_fixture_harness.py",
+    ".venv/bin/python -m json.tool experiments/2026-05-N01-grc9v3-properties/outputs/family_level_synthesis_summary.json"
+  ]
+}

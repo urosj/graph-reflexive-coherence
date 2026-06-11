@@ -1,0 +1,138 @@
+{
+  "schema": "grc9v3_polarized_basin_loop_fixture_manifest_validation_v1",
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "manifest_path": "configs/fixture_manifest_v1.json",
+  "status": "pass",
+  "errors": [],
+  "warnings": [],
+  "checked": {
+    "node_ids_exist": true,
+    "edge_ids_unique": true,
+    "port_ids_valid_1_to_9": true,
+    "clockwise_edge_orientation_consistent": true,
+    "active_degree_two_for_every_node": true,
+    "active_ports_are_4_and_6_for_every_node": true,
+    "source_sink_masks_disjoint": true,
+    "source_sink_masks_inside_parent_basin": true,
+    "forward_return_edge_sets_disjoint": true,
+    "forward_return_edges_live": true,
+    "reversed_masks_swap_source_sink": true,
+    "reversed_masks_swap_forward_return": true,
+    "required_lanes_present": true,
+    "required_metric_defaults_present": true,
+    "readme_controls_present": true,
+    "projection_disabled_dry_run_is_diagnostic_only": true,
+    "topology_disabled_sets_topology_events_enabled_false": true,
+    "topology_disabled_sets_pruning_enabled_false": true,
+    "two_equal_canonical_ring_bumps_resolved": true,
+    "return_channel_sign_semantics_explicit": true,
+    "channel_flux_and_region_boundary_export_are_distinct": true,
+    "edge_field_aliases_recorded": true,
+    "uniform_conductance_shuffle_caveat_recorded": true,
+    "configured_parent_claim_ceiling_note_recorded": true,
+    "runner_dt_and_total_steps_recorded": true,
+    "total_steps_cover_eval_window": true,
+    "default_edge_properties_recorded": true,
+    "s_lane_initialization_resolved": true,
+    "k_lane_base_lane_resolved": true,
+    "simple_fixture_reversal_status_explicit": true,
+    "src_changes_required": false
+  },
+  "port_orientation": {
+    "clockwise_out_port": 6,
+    "clockwise_out_port_rc": [
+      2,
+      3
+    ],
+    "clockwise_in_port": 4,
+    "clockwise_in_port_rc": [
+      2,
+      1
+    ],
+    "edge_orientation": "node_u_to_node_v_clockwise",
+    "flux_uv_positive_direction": "node_u_to_node_v"
+  },
+  "synthetic_flux_check": {
+    "flux_uv": "+1 on every clockwise edge",
+    "forward_flux_sum": 5.0,
+    "return_flux_sum": 5.0,
+    "source_region_net_export": 0.0,
+    "sink_region_net_export": 0.0,
+    "interpretation": "Channel sums are positive in the declared clockwise direction. Region net export is zero for uniform clockwise circulation because each two-node aspect has one incoming and one outgoing boundary edge."
+  },
+  "canonical_masks": {
+    "source_aspect_nodes": [
+      0,
+      1
+    ],
+    "sink_aspect_nodes": [
+      6,
+      7
+    ],
+    "forward_channel_edges": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "return_channel_edges": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source_internal_edges": [
+      0
+    ],
+    "sink_internal_edges": [
+      6
+    ]
+  },
+  "observable_semantics": {
+    "J_forward": "sum over forward_channel_edges only",
+    "J_return": "sum over return_channel_edges only",
+    "source_export": "boundary export from source_aspect_nodes",
+    "sink_import": "boundary import into sink_aspect_nodes",
+    "return_channel_sign": "positive in declared clockwise edge orientation",
+    "edge_field_aliases": {
+      "u": "node_u",
+      "v": "node_v",
+      "u_port": "port_u",
+      "v_port": "port_v"
+    }
+  },
+  "initialization_resolution": {
+    "two_equal_canonical_ring_bumps": "canonical_ring_bump applied twice with equal A and kappa at lane.bump_centers, followed by conserved simplex projection",
+    "canonical_ring_bump_plus_small_local_source_sink_modulation": "canonical_ring_bump applied first, then source/sink modulation is added, followed by one conserved simplex projection",
+    "K": "resolve base_lane U2, initialize uniform closed-substrate masks, then apply zero_sum_kick at kick_step",
+    "source_sink_modulation_audit": "record pre-projection sum and projection delta",
+    "kick_audit": "record pre-projection sum and projection delta; K_reversed applies reversed masks to labels and kick direction"
+  },
+  "control_notes": {
+    "shuffled_conductance": "initial_fixture_base_conductance is uniform in grc9v3_ported_ring_v1, so shuffling that surface is non-informative unless conductance heterogeneity is added; channel_mask_assignment is the first informative shuffled control",
+    "simple_unported_ring_reversal": "simple_unported_ring_v1 is an analysis/control fixture; reversal controls should use grc9v3_ported_ring_v1 unless explicitly added here"
+  },
+  "runner_config": {
+    "dt": 0.01,
+    "total_steps": 140,
+    "washout_steps": 10,
+    "min_eval_steps": 100
+  },
+  "default_edge_properties": {
+    "base_conductance": 1.0,
+    "geometric_length": 1.0,
+    "flux_uv_initial": 0.0,
+    "flux_coupling_initial": 0.0,
+    "temporal_delay_initial": 1.0,
+    "note": "explicit defaults used when an edge omits optional transport labels"
+  },
+  "hypothesis_record": {
+    "path": "hypotheses/polarized_basin_loop_hypothesis_v1.md"
+  },
+  "process_notes": {
+    "hypothesis_directory_populated": true
+  },
+  "conclusion": "ready_for_iteration_3_observable_implementation"
+}

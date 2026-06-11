@@ -1,0 +1,181 @@
+{
+  "artifact_inventory": [
+    {
+      "exists": true,
+      "name": "route_manifest",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/configs/e3_native_lgrc9v3_packet_loop_route_manifest.json",
+      "sha256": "12c9cd933e3209dca2fdc78eeccad84644477a206c72901bbda9b1858c66cd0f"
+    },
+    {
+      "exists": true,
+      "name": "e3_0_baseline",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_0_dependency_and_fixture_baseline.json",
+      "sha256": "66449c75c0d2df41b91f0c3b75693967c4eec1d1b595c8c380dc33549f38c7ab"
+    },
+    {
+      "exists": true,
+      "name": "e3_1_positive",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_1_native_positive_reproduction.json",
+      "sha256": "e421e11a15fba7c7df6c7483b5a026b3afe1b3a83f2d948060ba357f24c14dc7"
+    },
+    {
+      "exists": true,
+      "name": "e3_2_controls",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_2_native_control_parity.json",
+      "sha256": "4a037ccd1ba375ba1e867d41ce95cdf26f8b780477c95dc090676c24942b889b"
+    },
+    {
+      "exists": true,
+      "name": "e3_3_snapshot_telemetry",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_3_snapshot_telemetry_reproduction.json",
+      "sha256": "e03cc3d813a11d502742e91520cb17d13061201226fa9c1997e08b31ded3fd9a"
+    },
+    {
+      "exists": true,
+      "name": "e3_closeout",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_closeout.json",
+      "sha256": "75e02858f32484a8c4e9a24d9751c0ce98e4ef603fd6e550d8a47f7466e2288e"
+    },
+    {
+      "exists": true,
+      "name": "e3_visualization",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/reports/e3_native_lgrc9v3_packet_loop_visualization.svg",
+      "sha256": "ab7e955c598dc768fb3ca95fa19b16b58001e19290f154de6bde7fe19eb205ab"
+    },
+    {
+      "exists": true,
+      "name": "e3_animation_report",
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/reports/e3_native_lgrc9v3_packet_loop_animation.md",
+      "sha256": "2f6975828e1778bc081267ee2fa503f57246992a42e6e14386a6f612ed9baab4"
+    }
+  ],
+  "baseline_commands": [
+    ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py",
+    "git status --short src",
+    "git diff --check"
+  ],
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py",
+  "e3_positive_summary": {
+    "classification": "native_lgrc9v3_positive_reproduction_passed",
+    "clockwise": {
+      "cycle_count": 3,
+      "max_event_budget_error": 0.0,
+      "route_aspect_digest": "25ce1cc1550c0a717d4c1bcaa7f4179789024b67c2c22893df1f0fa21d41cb57",
+      "self_rearm_count": 12,
+      "topology_changed": false,
+      "trigger_count": 12
+    },
+    "counter_clockwise": {
+      "cycle_count": 3,
+      "max_event_budget_error": 0.0,
+      "route_aspect_digest": "a621e96cd477308e0365b1d06f2a80f4a1285c7c7f4680d24cd3715a878ef3c8",
+      "self_rearm_count": 12,
+      "topology_changed": false,
+      "trigger_count": 12
+    },
+    "direction_symmetry": {
+      "cycle_count_delta": 0,
+      "passed": true,
+      "self_rearm_count_delta": 0,
+      "trigger_count_delta": 0
+    }
+  },
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONPATH": "",
+    "VIRTUAL_ENV": "",
+    "gpu_required": false
+  },
+  "experiment_root": "experiments/2026-05-N04-grc9v3-movement-ladders",
+  "generated_at_utc": "2026-05-16T06:56:06.395757+00:00",
+  "git": {
+    "head": {
+      "command": "git rev-parse --short HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "1e549db1"
+    },
+    "src_paths_modified": [],
+    "src_status": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "working_tree_status": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py"
+    }
+  },
+  "n03_e3_handoff": {
+    "classification": "n03_native_lgrc9v3_packet_loop_reproduced",
+    "controls_passed": true,
+    "loop_ladder_level_for_n04": "L5",
+    "loop_ladder_level_interpretation": "Native LGRC9V3 self-rearming packetized pulse substrate; movement remains unopened.",
+    "movement_claim_allowed": false,
+    "native_d2_3_equivalent": true,
+    "native_grc9v3_proposal_flux_loop_evidence": false,
+    "native_lgrc9v3_execution": true,
+    "native_packet_execution": true,
+    "native_self_rearm_evidence": true,
+    "native_surplus_trigger": true,
+    "snapshot_telemetry_replayable": true,
+    "status": "passed",
+    "two_layer_result": {
+      "negative_synchronous_result": "Native fixed-topology GRC9V3 proposal flux did not produce polarized loops on tested fixtures.",
+      "positive_causal_history_result": "Native LGRC9V3 packetized causal execution reproduces the self-rearming polarized packet loop under controls."
+    }
+  },
+  "n04_boundaries": {
+    "adaptive_topology_entry_allowed": false,
+    "experiment_local": true,
+    "movement_claim_inherited_from_n03": false,
+    "src_change_policy": "stop_and_open_separate_core_task",
+    "src_changes_required": false,
+    "src_paths_modified": []
+  },
+  "python": {
+    "executable": ".venv/bin/python",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "route_manifest_summary": {
+    "claim_boundary": {
+      "agency_claim_allowed": false,
+      "biology_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "native_grc9v3_proposal_flux_loop_evidence": false
+    },
+    "execution_engine": "native_lgrc9v3",
+    "manifest_id": "e3_native_lgrc9v3_packet_loop_route_manifest_v1",
+    "n_cycles_min": 3,
+    "packet_amount": 0.1,
+    "route_aspect_ids": {
+      "clockwise": "n03_e3_native_four_pole_packet_loop_cw",
+      "counter_clockwise": "n03_e3_native_four_pole_packet_loop_ccw"
+    }
+  },
+  "runtime_surfaces": [
+    {
+      "movement_claim_source": "N04 only",
+      "purpose": "movement metrics, fixed-substrate nulls, classifier",
+      "runtime_family": "experiment_local",
+      "surface_id": "surface_a_fixed_substrate_metrics"
+    },
+    {
+      "movement_claim_source": "N04 only",
+      "purpose": "proposal-flux control and negative comparison",
+      "runtime_family": "GRC9V3",
+      "surface_id": "surface_b_grc9v3_control"
+    },
+    {
+      "movement_claim_source": "N04 only; no inherited movement claim",
+      "purpose": "native E3 pulse substrate for later P4/P5 lanes",
+      "runtime_family": "LGRC9V3",
+      "surface_id": "surface_c_lgrc9v3_e3_pulse"
+    }
+  ],
+  "schema": "n04_baseline_inventory_v1"
+}

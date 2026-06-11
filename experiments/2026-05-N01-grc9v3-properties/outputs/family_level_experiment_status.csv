@@ -1,0 +1,8 @@
+experiment,theme,classification,summary,artifact_refs
+A,row evidence,supported,Row-local stress produces expected row signatures in clean fixtures.,reports/experiment_a_row_mode_stress.md
+B,derived column evidence,supported_with_lane_a_boundary,Column-local cancellation/pressure proxy is observable and transforms correctly; direct column-H gating is blocked.,reports/experiment_b_column_interface_cancellation.md
+E,multiscale evidence,supported,G/Split reconstructs eligible nonnegative fields; signed flux is exact through J+/J-.,reports/experiment_e_coarse_graining_split.md
+C,saturation evidence,supported,Degree-9 saturation plus signed-Hessian degeneracy gates mechanical expansion under Lane A.,reports/experiment_c_saturation.md
+D,refinement and child-basin evidence,supported_with_identity_boundary,Column-preserving mechanical refinement is supported; configured-window child-basin persistence is thresholded.,reports/experiment_d_refinement_identity.md
+F,path-label evidence,supported,"Metric, delay, and strongest flux/coupling paths disagree and remain edge-auditable.",reports/experiment_f_path_disagreement.md
+G,motion-observer evidence,supported_with_observer_local_boundary,Observer-local row/column motion classification is supported in clean checkpoint-overlay fixtures.,reports/experiment_g_mixed_motion.md

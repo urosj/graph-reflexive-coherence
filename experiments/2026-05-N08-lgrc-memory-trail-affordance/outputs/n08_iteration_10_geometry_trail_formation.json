@@ -1,0 +1,776 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 10 passes if prior route use forms a native geometry/topology/support trace with artifact-visible lineage and exact budgets, without independent memory-strength storage or claim promotion.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "arc_of_becoming_interpretation": {
+    "arc_interpretation_digest": "1ef0539df2581bee6dc5a231c377d1192c67acaa59b3c1f1484f252c2e342ce2",
+    "classification": {
+      "claim_gate": "closed_until_future_flux_response_and_artifact_replay",
+      "classification_status": "native_geometry_trace_formation_boundary_probe",
+      "formation_result_scope": "degenerate_boundary_probe_not_theory_clean_reinforcement_geometry",
+      "hypothesis": "B_native_geometry_mediated_trail_memory",
+      "native_trail_response_supported": false,
+      "not_merely_true_false_endpoint": true,
+      "reinforcement_interpretation_supported": false,
+      "theory_caveat": "zero_coherence_inserted_node_not_theory_clean"
+    },
+    "cultivation": {
+      "next_iteration": "11_future_flux_response_to_geometry_trace",
+      "next_question": "Does future flux leak into or respond to the zero-coherence topology trace, and what positive-coherence or rebalanced geometry would make a viable native trail?",
+      "what_this_iteration_teaches": [
+        "Route-use history can be recoded as declared topology rather than score memory.",
+        "The edge-split trace is budget-neutral at formation time because it inserts a zero-coherence node.",
+        "Zero coherence is not a theory-clean active carrier, so the trace is a boundary probe.",
+        "The next question is whether future flux leaks into, avoids, or is redirected by the changed geometry."
+      ]
+    },
+    "interpretation_id": "n08_i10_arc_native_geometry_trace_formation_v1",
+    "naturalization": {
+      "future_flux_response_observed": false,
+      "naturalization_rung": "Nat1_degenerate_boundary_trace_probe",
+      "substrate_trace_formed": true,
+      "theory_clean_substrate_trace_formed": false,
+      "why_not_more_naturalized": "The trace exists as topology, but it uses a zero-coherence inserted node and its operational effect on future dynamics remains untested."
+    },
+    "observations": [
+      {
+        "interpretation": "The selected route-use event now has an artifact-visible topology trace: an inserted node on the used route edge.",
+        "metric": "inserted_node_id",
+        "observation_id": "route_use_becomes_geometry_trace",
+        "value": 30
+      },
+      {
+        "interpretation": "The trace is represented by topology, not by the Hypothesis A memory_strength surface.",
+        "metric": "memory_strength_used",
+        "observation_id": "trace_is_not_scalar_memory",
+        "value": false
+      },
+      {
+        "interpretation": "The trace formation preserves total budget only because the inserted node starts with zero coherence. This is a boundary caveat, not reinforcement evidence.",
+        "metric": "node_plus_packet_budget_error",
+        "observation_id": "budget_is_exact",
+        "value": 0.0
+      },
+      {
+        "interpretation": "The theory papers place ordinary RC geometry on positive-coherence support. A zero-coherence active node is therefore a degenerate probe site, not a theory-clean trail carrier.",
+        "metric": "zero_coherence_inserted_node_allowed_by_theory",
+        "observation_id": "zero_node_theory_caveat",
+        "value": false
+      },
+      {
+        "interpretation": "Future flux may leak into or be absorbed by the zero node. Iteration 11 should measure that behavior instead of assuming route reinforcement.",
+        "metric": "expected_zero_node_effect",
+        "observation_id": "likely_leakage_not_reinforcement",
+        "value": "leakage_or_absorption_into_zero_node_likely_not_reinforcement"
+      },
+      {
+        "interpretation": "This iteration forms the substrate trace. It does not yet show that future flux or route arbitration follows it.",
+        "metric": "future_flux_response_tested",
+        "observation_id": "formation_not_response",
+        "value": false
+      }
+    ],
+    "question": "What becomes available when route-use history is expressed as a declared topology trace instead of serialized memory_strength?",
+    "source_papers": [
+      "Classification of Becoming",
+      "Cultivation of Becoming",
+      "Naturalization of Becoming"
+    ],
+    "style": "question_observation_classification_cultivation_naturalization"
+  },
+  "artifact_digests": {
+    "arc_interpretation_digest": "1ef0539df2581bee6dc5a231c377d1192c67acaa59b3c1f1484f252c2e342ce2",
+    "checks_digest": "853663e4041fe26ede90efab1468b20213542efeb94d6d9e38373d7b84518db5",
+    "controls_digest": "6436fb156e39b0b3e4fdfbbe65dd5c22322c507cb9225865028a44a2532d354d",
+    "surface_lineage_record_digest": "487dcadb5ab432eb15934ac3f2134bf5d79f0e9ec7f217d5014830f2e568f664",
+    "theory_caveat_digest": "13ec614426e62f28dadf5883a1793fa8da16f00d509f878f09ec78ee1a42c245",
+    "topology_event_digest": "151c581e905f3e30622ed9045daa73a35e6d196f6ac338a38182a55ade793368",
+    "topology_state_reabsorption_digest": "904f907fc9fc5a1fba8440734e7a1b7d90273dd2176ebd8476d753c61729fb23"
+  },
+  "checks": {
+    "all_claim_flags_false": true,
+    "arc_interpretation_present": true,
+    "control_blockers_distinct": true,
+    "controls_passed": true,
+    "controls_present": true,
+    "future_response_not_claimed": true,
+    "inserted_node_zero_coherence": true,
+    "iteration_10_entry_allowed": true,
+    "iteration_9_passed": true,
+    "lineage_map_present": true,
+    "naturalization_downgraded_for_zero_node": true,
+    "no_hidden_route_preference": true,
+    "no_memory_shaped_scoring_used": true,
+    "no_memory_strength_used": true,
+    "node_plus_packet_budget_exact": true,
+    "reabsorption_digest_recomputes": true,
+    "route_use_causes_trace": true,
+    "same_lineage_map_used": true,
+    "source_mem1_passed": true,
+    "source_route_use_committed": true,
+    "src_clean": true,
+    "state_reabsorption_consumes_topology_event": true,
+    "surface_lineage_consumes_topology_event": true,
+    "surface_lineage_digest_recomputes": true,
+    "topology_event_committed": true,
+    "topology_event_digest_recomputes": true,
+    "trace_is_inserted_node_edge_split": true,
+    "zero_coherence_theory_caveat_recorded": true,
+    "zero_node_expected_leakage_recorded": true,
+    "zero_node_reinforcement_interpretation_blocked": true
+  },
+  "claim_boundary": {
+    "all_broader_claims_blocked": true,
+    "future_flux_response_tested": false,
+    "hypothesis_b_closeout_reached": false,
+    "memory_or_trail_claim_allowed": false,
+    "native_geometry_mediated_trail_claim_allowed": false,
+    "reinforcement_interpretation_allowed": false,
+    "zero_coherence_inserted_node_theory_clean": false
+  },
+  "claim_ceiling": "native_geometry_trace_formation_boundary_probe",
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/run_n08_iteration_10_geometry_trail_formation.py",
+  "controls": [
+    {
+      "control_id": "missing_route_use_event",
+      "control_passed": true,
+      "control_row_digest": "9f9cadcca65d095273e7ff6de4d854915bbd6ab3e6108790201dd3f9638e15cd",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "missing_route_use_event",
+      "purpose": "Reject topology trace formation without a committed route-use event."
+    },
+    {
+      "control_id": "missing_geometry_or_topology_event",
+      "control_passed": true,
+      "control_row_digest": "a0be6571a345fcb472bf236b65cea1a80ecd9d6df592af6bccf8bbd73c12e0ce",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "geometry_or_topology_event_missing",
+      "purpose": "Reject route-use evidence that does not emit a declared geometry/topology trace."
+    },
+    {
+      "control_id": "hidden_scalar_memory",
+      "control_passed": true,
+      "control_row_digest": "9ff440e163c8875335e7a9e57bc6206b514e07c4fe49f697943eb4b856e9d65f",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "hidden_scalar_memory_blocked",
+      "purpose": "Reject replacing the inserted-node trace with hidden memory_strength."
+    },
+    {
+      "control_id": "stale_geometry_read",
+      "control_passed": true,
+      "control_row_digest": "c18facf876be4982d06ab97aaff1ab6e33feb721a896d09361a3dacff8584592",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "stale_geometry_read",
+      "purpose": "Reject reading a geometry trace before the topology event commits."
+    },
+    {
+      "control_id": "budget_drift",
+      "control_passed": true,
+      "control_row_digest": "6aa2dcf4fc4299a68344856965da51c05fb563ef47c90cdc39ca07b2cb866dbf",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "node_plus_packet_budget_discontinuity",
+      "purpose": "Reject inserted-node formation that creates or deletes coherence."
+    },
+    {
+      "control_id": "unsupported_topology_mutation",
+      "control_passed": true,
+      "control_row_digest": "eba42601c79846e982425e1f4eb8dd4df3c8b21021308950ad9df472cb454bcd",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "unsupported_topology_mutation",
+      "purpose": "Reject a trace type not supported by the Iteration 9 entry gate."
+    },
+    {
+      "control_id": "claim_promotion",
+      "control_passed": true,
+      "control_row_digest": "161b21dc00ae991b7484ebf80da1eb13fb35a456c72131be8e6d279457249600",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "claim_promotion",
+      "purpose": "Reject promoting trace formation to native trail, ACO, agency, or movement."
+    }
+  ],
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "generated_at": "2026-06-07T16:58:49.049507+00:00",
+  "git": {
+    "head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "hypothesis": "B_native_geometry_mediated_trail_memory",
+  "iteration": 10,
+  "next_iteration": {
+    "iteration": 11,
+    "name": "future_flux_response_to_geometry_trace",
+    "question": "Does future flux leak into or respond to the zero-coherence topology trace, and what positive-coherence or rebalanced geometry would make a viable native trail?"
+  },
+  "output_digest": "07e03b829759a9df228a651eb77efc3616a5309c33eec6a5ea47fb75568373b9",
+  "output_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "output_digest"
+    ],
+    "included": "all output fields except generated_at and output_digest",
+    "stable_across_same_inputs": true
+  },
+  "post_trace_topology_snapshot": {
+    "edge_ids": [
+      0,
+      "1a",
+      "1b",
+      2
+    ],
+    "inserted_node_id": 30,
+    "node_ids": [
+      0,
+      1,
+      2,
+      3,
+      30
+    ],
+    "retired_edge_ids": [
+      1
+    ],
+    "route_id": "route_b",
+    "snapshot_kind": "n08_i10_post_trace_topology",
+    "target_edges": [
+      {
+        "edge_id": "1a",
+        "source_node_id": 1,
+        "target_node_id": 30
+      },
+      {
+        "edge_id": "1b",
+        "source_node_id": 30,
+        "target_node_id": 3
+      }
+    ],
+    "topology_snapshot_digest": "a15d719f0c892d38b5f68da6f509e608583f030ed70ef6f8bf4b2804553af517",
+    "topology_state": "after_route_use_geometry_trace"
+  },
+  "pre_trace_topology_snapshot": {
+    "edge_ids": [
+      0,
+      1,
+      2
+    ],
+    "node_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "route_edge_to_split": {
+      "edge_id": 1,
+      "source_node_id": 1,
+      "target_node_id": 3
+    },
+    "route_id": "route_b",
+    "snapshot_kind": "n08_i10_pre_trace_topology",
+    "topology_snapshot_digest": "646e382a2b71613fa6c41dd2a4dc2987267b52888393f9ea435932702c8218da",
+    "topology_state": "before_route_use_geometry_trace"
+  },
+  "schema": "n08_iteration_10_geometry_trail_formation_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json": "2f1ac9446f9095ee3b1d3a0b173a1336801846646c4a3ba4cc7b2a9db8bcfc24",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_3_mem1_route_use_trace.json": "abd7cc5485ea1f347a5c4d7c7e81722814656c16026a864c32300247f60e4c5d",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_9_native_geometry_trail_baseline.json": "d95ed03bca9ad24a2932c711d985a56ee99e67d27dab55e22610047eeab5eeb1"
+  },
+  "source_candidate_route_record": {
+    "artifact_kind": "lgrc9v3_native_route_candidate_record",
+    "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+    "candidate_budget_prediction": {
+      "node_plus_packet_budget_after": 6.0,
+      "node_plus_packet_budget_before": 6.0,
+      "node_plus_packet_budget_error": 0.0
+    },
+    "candidate_competing_sink_ids": [
+      2,
+      3
+    ],
+    "candidate_lineage_transfer_map": {
+      "0": "3",
+      "1": "3",
+      "3": "3"
+    },
+    "candidate_lineage_transfer_map_digest": "bf78a37980c93c819e9c3beee00b738f31ba0bb62f697e49d305683c60806b6b",
+    "candidate_losing_sink_ids": [
+      2
+    ],
+    "candidate_order_key": "route_b",
+    "candidate_retired_edge_ids": [
+      1
+    ],
+    "candidate_retired_node_ids": [
+      2
+    ],
+    "candidate_route_digest": "1732ca519398908214633ffb085a0c5d25b7c772891a025f5e7c1df0a5da7304",
+    "candidate_route_id": "route_b",
+    "candidate_route_score": 1.0,
+    "candidate_runtime_visible_inputs": [
+      "candidate_source_surface_digest",
+      "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+      "active_context_node_id:5",
+      "candidate_route_id:route_b",
+      "compatible_route_id:route_b",
+      "candidate_score_components",
+      "candidate_budget_prediction",
+      "candidate_lineage_transfer_map",
+      "serialized_route_arbitration_policy"
+    ],
+    "candidate_score_components": {
+      "budget_validity": 0.2,
+      "context_match": 0.6,
+      "lineage_ready": 0.2
+    },
+    "candidate_selected_sink_id": 3,
+    "candidate_set_id": "native-route-candidate-set:4cdd988a298d9525dcae631890e292ad",
+    "candidate_source_edge_ids": [
+      0,
+      1,
+      2
+    ],
+    "candidate_source_node_ids": [
+      0,
+      1
+    ],
+    "candidate_source_producer_record_id": null,
+    "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+    "candidate_source_topology_state_reabsorption_digest": null,
+    "candidate_target_edge_ids": [
+      0,
+      2
+    ],
+    "candidate_target_node_ids": [
+      3
+    ],
+    "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+    "candidate_transferred_node_ids": [
+      0,
+      1,
+      3
+    ],
+    "causal_layer_mode": "topology_changing_causal_history",
+    "claim_flags": {
+      "adaptive_topology_entry_allowed": false,
+      "adaptive_topology_movement_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "native_lgrc_choice_selection_claim_allowed": false,
+      "native_m6": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "topology_mutating_movement_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": 1.0,
+    "evidence_class": "native_route_arbitration",
+    "lgrc_runtime_level": "lgrc3",
+    "mode_version": "lgrc3_topology_contract_v1",
+    "native_route_arbitration_enabled": true,
+    "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+    "route_intent": "collapse",
+    "runtime_family": "LGRC9V3",
+    "scheduler_event_index": 1,
+    "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+  },
+  "source_reports": {
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_7_sc5_repeated_context_selection.md": "8a6510a310bd1caef14bdc4bc17b60ab0334b127f6823c229e23e89d38d9e255",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_3_mem1_route_use_trace.md": "97b2571a5bfb5a6dbbf756079bada40aa2df22a3b6d2e40d7e6b04823d663e68",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_9_native_geometry_trail_baseline.md": "69fe21ea253d92f9d95f776e14bd08cd04ab41b768fc43a0a0bafb1f2b44d5d8"
+  },
+  "source_route_use_event": {
+    "artifact_kind": "n08_route_use_event",
+    "candidate_context_values": {
+      "active_context_node_id": [
+        "5"
+      ],
+      "candidate_route_id": [
+        "route_a",
+        "route_b"
+      ],
+      "compatible_route_id": [
+        "route_b"
+      ],
+      "context_surface_digest": [
+        "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+      ]
+    },
+    "candidate_score_component_sums": {
+      "route_a": 0.4,
+      "route_b": 1.0
+    },
+    "claim_ceiling": "mem1_route_use_trace_only",
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_order_relation": "route_arbitration_precedes_selected_route_use; memory_update_must_follow_in_iteration_4",
+    "event_time_key": 4.1,
+    "event_time_key_derivation": {
+      "rationale": "Source N06 cycle arbitrations all use event_time_key 1.0; MEM1 route-use events are placed after their source arbitration and separated by source cycle index so the route-use trace has a deterministic replay order.",
+      "route_use_event_time_offset": 0.1,
+      "route_use_event_time_stride_per_cycle": 1.0,
+      "source_arbitration_event_time_key": 1.0
+    },
+    "mem_level": "MEM1",
+    "mem_level_is_evidence_classification": true,
+    "memory_surface_digest": null,
+    "memory_surface_emitted": false,
+    "memory_surface_state_snapshot": null,
+    "node_plus_packet_budget_after": 0.0,
+    "node_plus_packet_budget_before": 0.0,
+    "node_plus_packet_budget_error": 0.0,
+    "node_plus_packet_budget_semantics": "route_use_event_is_evidence_only_and_budget_neutral",
+    "rejected_candidate_route_digests": [
+      "7bd9d0e3c92cc61ef267466ee39de3f53d5dfe4dacbd7c33b9d4b91583afb2b8"
+    ],
+    "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+    "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+    "route_use_commit_semantics": "ordered_serialized_budget_audited_digest_pinned_memory_lane_consumption",
+    "route_use_commit_status": "committed",
+    "route_use_event_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+    "route_use_event_id": "n08-route-use:cycle_3:274002a129793722",
+    "scheduler_event_index": 5,
+    "schema_version": "n08_route_use_event_v1",
+    "selected_candidate_route_digest": "1732ca519398908214633ffb085a0c5d25b7c772891a025f5e7c1df0a5da7304",
+    "selected_route_id": "route_b",
+    "source_arbitration_digest_derivation": "read_from_N06_SC5_route_arbitration_record.native_route_arbitration_digest",
+    "source_arbitration_event_time_key": 1.0,
+    "source_arbitration_record_digest": "274002a129793722412f4019ea2ff18f2b45710c0fa8d80e6bebb083cf085db0",
+    "source_arbitration_record_id": "native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea",
+    "source_arbitration_record_id_from_n06_lane": "native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea",
+    "source_arbitration_record_id_matches_n06_lane": true,
+    "source_arbitration_record_id_required_by_manifest": true,
+    "source_arbitration_scheduler_event_index": 1,
+    "source_candidate_set_digest": "cc8603974788f12118e143fb8f6c96ae3ef6eb1c021e3a6c6c14aba8469db765",
+    "source_context_state_id": "context_b",
+    "source_cycle_id": "cycle_3",
+    "source_experiment": "N06",
+    "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+    "source_surface_digest_derivation": "first candidate_source_surface_digest from N08 Iteration 1 N06 cycle inventory; validation requires it to be present",
+    "source_surface_digest_present": true,
+    "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+    "topology_commit_required": false,
+    "topology_commit_status": "not_required_for_mem1_route_use_trace",
+    "visual_is_evidence_source": false,
+    "visual_reference": null
+  },
+  "status": "passed",
+  "surface_lineage_record": {
+    "artifact_kind": "n08_surface_lineage_transport_record",
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "native_geometry_mediated_trail_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "pure_coherence_flux_trail_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": 4.4,
+    "experiment": "N08",
+    "hypothesis": "B_native_geometry_mediated_trail_memory",
+    "iteration": 10,
+    "lineage_action": "transported",
+    "lineage_transfer_map_digest": "395d91428be9f568df7b684626fe05d6a28f71eeb5c8d8aab090990c385b97ea",
+    "scheduler_event_index": 16,
+    "schema_version": "n08_surface_lineage_transport_record_v1",
+    "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+    "surface_lineage_record_digest": "487dcadb5ab432eb15934ac3f2134bf5d79f0e9ec7f217d5014830f2e568f664",
+    "topology_event_digest": "151c581e905f3e30622ed9045daa73a35e6d196f6ac338a38182a55ade793368",
+    "topology_event_id": "n08-i10-topology-trace:cycle_3:route_b",
+    "transported_surface_digest": "c0ffc4c26af352bd6a75decab904600c642283cc7084cd410fa1f3ee1815003d"
+  },
+  "theory_caveat": {
+    "arc_method_note": "Treat the zero node as an observation-producing boundary probe. Iteration 11 should measure what becomes of future flux, not reduce the result to a pass/fail reinforcement claim.",
+    "caveat_id": "n08_i10_zero_coherence_inserted_node_theory_caveat_v1",
+    "expected_iteration_11_effect": "leakage_or_absorption_into_zero_node_likely_not_reinforcement",
+    "formation_result_scope": "degenerate_boundary_probe_not_theory_clean_reinforcement_geometry",
+    "inserted_node_initial_coherence": 0.0,
+    "recommended_followup_designs": [
+      "epsilon_coherence_inserted_node",
+      "coherence_split_preserving_edge_split",
+      "preloaded_neutral_buffer_node",
+      "geometry_change_without_new_zero_node"
+    ],
+    "recommended_iteration_11_measurements": [
+      "coherence_leakage_into_inserted_node",
+      "source_node_drain_or_target_node_starvation",
+      "future_route_bias_after_trace",
+      "budget_conservation_under_trace_response",
+      "control_comparison_against_no_trace_route"
+    ],
+    "reinforcement_interpretation_allowed": false,
+    "theory_basis": [
+      {
+        "basis": "RC geometric objects are defined on the interior where coherence is positive, with realized support built from nonzero coherence.",
+        "paper": "RC Distance v4"
+      },
+      {
+        "basis": "As coherence approaches zero, the region approaches dissolution rather than stable organized carrying.",
+        "paper": "Language of Becoming"
+      },
+      {
+        "basis": "The discrete dynamics use strictly positive conductance, so zero-valued active carriers should not be read as ordinary reinforcement sites.",
+        "paper": "GRC V3"
+      }
+    ],
+    "theory_caveat_digest": "13ec614426e62f28dadf5883a1793fa8da16f00d509f878f09ec78ee1a42c245",
+    "zero_coherence_inserted_node_allowed_by_theory": false
+  },
+  "topology_event": {
+    "artifact_kind": "n08_native_geometry_trace_topology_event",
+    "claim_ceiling": "native_geometry_trace_formation_boundary_probe",
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "native_geometry_mediated_trail_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "pure_coherence_flux_trail_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": 4.3,
+    "expected_zero_node_effect": "leakage_or_absorption_into_zero_node_likely_not_reinforcement",
+    "experiment": "N08",
+    "hidden_route_preference_used": false,
+    "hypothesis": "B_native_geometry_mediated_trail_memory",
+    "inserted_node_id": 30,
+    "inserted_node_initial_coherence": {
+      "30": 0.0
+    },
+    "inserted_node_origin": "route_use_event_digest",
+    "iteration": 10,
+    "lineage_transfer_map": {
+      "edges": {
+        "0": "0",
+        "1": [
+          "1a",
+          "1b"
+        ],
+        "2": "2"
+      },
+      "inserted_nodes": {
+        "30": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab"
+      },
+      "nodes": {
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3"
+      },
+      "retired_edges": [
+        1
+      ]
+    },
+    "lineage_transfer_map_digest": "395d91428be9f568df7b684626fe05d6a28f71eeb5c8d8aab090990c385b97ea",
+    "memory_shaped_candidate_score_used": false,
+    "memory_strength_used": false,
+    "node_plus_packet_budget_after": 6.0,
+    "node_plus_packet_budget_before": 6.0,
+    "node_plus_packet_budget_error": 0.0,
+    "physical_flux_claimed": false,
+    "post_trace_topology_digest": "a15d719f0c892d38b5f68da6f509e608583f030ed70ef6f8bf4b2804553af517",
+    "pre_trace_topology_digest": "646e382a2b71613fa6c41dd2a4dc2987267b52888393f9ea435932702c8218da",
+    "retired_edge_ids": [
+      1
+    ],
+    "retired_node_ids": [],
+    "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+    "scheduler_event_index": 15,
+    "schema_version": "n08_native_geometry_trace_topology_event_v1",
+    "source_candidate_lineage_transfer_map_digest": "bf78a37980c93c819e9c3beee00b738f31ba0bb62f697e49d305683c60806b6b",
+    "source_candidate_route_digest": "1732ca519398908214633ffb085a0c5d25b7c772891a025f5e7c1df0a5da7304",
+    "source_edge": {
+      "edge_id": 1,
+      "source_node_id": 1,
+      "target_node_id": 3
+    },
+    "source_edge_id": 1,
+    "source_route_id": "route_b",
+    "source_route_use_event_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+    "source_route_use_event_id": "n08-route-use:cycle_3:274002a129793722",
+    "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+    "target_edges": [
+      {
+        "edge_id": "1a",
+        "source_node_id": 1,
+        "target_node_id": 30
+      },
+      {
+        "edge_id": "1b",
+        "source_node_id": 30,
+        "target_node_id": 3
+      }
+    ],
+    "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+    "theory_clean_active_carrier": false,
+    "topology_commit_status": "committed",
+    "topology_event_digest": "151c581e905f3e30622ed9045daa73a35e6d196f6ac338a38182a55ade793368",
+    "topology_event_id": "n08-i10-topology-trace:cycle_3:route_b",
+    "topology_event_kind": "edge_split_inserted_node_trace",
+    "topology_event_owner": "route_use_geometry_trace_formation",
+    "trace_formation_stage": "formation_only_future_response_not_tested",
+    "zero_coherence_inserted_node_allowed_by_theory": false
+  },
+  "topology_state_reabsorption_record": {
+    "action": "rebased",
+    "active_edge_state_after": {
+      "0": 0.0,
+      "1a": 0.0,
+      "1b": 0.0,
+      "2": 0.0
+    },
+    "active_edge_state_before": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "active_node_state_after": {
+      "0": 1.5,
+      "1": 1.5,
+      "2": 1.5,
+      "3": 1.5,
+      "30": 0.0
+    },
+    "active_node_state_before": {
+      "0": 1.5,
+      "1": 1.5,
+      "2": 1.5,
+      "3": 1.5
+    },
+    "active_state_digest_after": "83f51475b605bba110aa0f16c7aa68cd89a0412aef6991ec233a2e5ff214a312",
+    "active_state_digest_before": "46303bba28ab34ba55a96974742f8ef339fbfd15a2a7a605a34c6812ce4d28f7",
+    "artifact_kind": "n08_topology_state_reabsorption_record",
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "native_geometry_mediated_trail_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "pure_coherence_flux_trail_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": 4.5,
+    "expected_zero_node_effect": "leakage_or_absorption_into_zero_node_likely_not_reinforcement",
+    "experiment": "N08",
+    "hypothesis": "B_native_geometry_mediated_trail_memory",
+    "inserted_node_ids": [
+      30
+    ],
+    "inserted_node_initial_coherence": {
+      "30": 0.0
+    },
+    "iteration": 10,
+    "lineage_transfer_map_digest": "395d91428be9f568df7b684626fe05d6a28f71eeb5c8d8aab090990c385b97ea",
+    "memory_strength_used": false,
+    "node_plus_packet_budget_after": 6.0,
+    "node_plus_packet_budget_before": 6.0,
+    "node_plus_packet_budget_error": 0.0,
+    "normalization_used": false,
+    "packet_ledger_in_flight_total_after": 0.0,
+    "packet_ledger_in_flight_total_before": 0.0,
+    "packet_ledger_node_total_after": 6.0,
+    "packet_ledger_node_total_before": 6.0,
+    "retired_edge_ids": [
+      1
+    ],
+    "retired_node_ids": [],
+    "scheduler_event_index": 17,
+    "schema_version": "n08_topology_state_reabsorption_record_v1",
+    "source_edge_ids": [
+      0,
+      1,
+      2
+    ],
+    "source_node_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "target_edge_ids": [
+      0,
+      "1a",
+      "1b",
+      2
+    ],
+    "target_node_ids": [
+      0,
+      1,
+      2,
+      3,
+      30
+    ],
+    "theory_clean_active_carrier": false,
+    "topology_event_digest": "151c581e905f3e30622ed9045daa73a35e6d196f6ac338a38182a55ade793368",
+    "topology_event_id": "n08-i10-topology-trace:cycle_3:route_b",
+    "topology_state_reabsorption_digest": "904f907fc9fc5a1fba8440734e7a1b7d90273dd2176ebd8476d753c61729fb23",
+    "zero_coherence_inserted_node_allowed_by_theory": false
+  }
+}

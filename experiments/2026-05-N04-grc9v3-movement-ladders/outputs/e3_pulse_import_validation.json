@@ -1,0 +1,591 @@
+{
+  "adapter_boundary": {
+    "adapter_required_for_e3_pulse_semantics": false,
+    "adapter_role": "import_metadata_and_define_controls",
+    "adapter_trigger_used_as_execution_engine": false,
+    "coupling_mode": "disabled",
+    "direct_boundary_write": false,
+    "direct_centroid_write": false,
+    "direct_support_mask_write": false
+  },
+  "blocked_claims": [
+    "movement_response",
+    "identity_preserving_displacement",
+    "loop_driven_movement",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "movement_inherited_from_n03"
+  ],
+  "budget": {
+    "budget_surface": "node_plus_packet",
+    "budget_values_serialized_in_source": false,
+    "in_flight_packet_budget": null,
+    "in_flight_packet_budget_serialized_in_source": false,
+    "max_control_event_budget_error": 8.881784197001252e-16,
+    "max_positive_event_budget_error": 0.0,
+    "node_budget": null,
+    "node_budget_serialized_in_source": false,
+    "note": "E3 source artifacts expose node-plus-packet budget surface and max event budget errors; exact node/in-flight totals are not serialized in the closeout rows imported by Iteration 7.",
+    "packet_amount": 0.1,
+    "total_budget": null,
+    "total_budget_serialized_in_source": false
+  },
+  "checks": {
+    "budget_surface_recorded": true,
+    "direct_movement_state_writes_absent": true,
+    "direction_reversal_control_available": true,
+    "fixed_substrate_classification_unchanged": true,
+    "movement_claim_not_inherited": true,
+    "native_d2_3_equivalent_true": true,
+    "native_lgrc9v3_execution_true": true,
+    "positive_pulse_rows_imported": true,
+    "pulse_active_boundary_disabled_does_not_mutate_movement_state": true,
+    "pulse_disabled_control_available": true,
+    "required_controls_available": true,
+    "route_structural_reversal_verified": true,
+    "schema_is_movement_ladder_report_v1": true,
+    "scrambled_control_available": true,
+    "snapshot_telemetry_replayable": true,
+    "source_e3_closeout_passed": true
+  },
+  "claim_ceiling": "e3_pulse_import_validation_only",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_grc9v3_loop_evidence": false,
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_lgrc9v3_e3_pulse_used": true,
+    "native_lgrc9v3_execution": true,
+    "native_packet_execution": true
+  },
+  "controls": {
+    "direction_reversal": {
+      "clockwise_cycle_count": 3,
+      "clockwise_route_order": [
+        "S1_to_K2",
+        "K2_to_S2",
+        "S2_to_K1",
+        "K1_to_S1"
+      ],
+      "control_id": "pulse_direction_reversal",
+      "counter_clockwise_cycle_count": 3,
+      "counter_clockwise_route_order": [
+        "S1_to_K1",
+        "K1_to_S2",
+        "S2_to_K2",
+        "K2_to_S1"
+      ],
+      "direction_symmetry": {
+        "cycle_count_delta": 0,
+        "passed": true,
+        "self_rearm_count_delta": 0,
+        "trigger_count_delta": 0
+      },
+      "movement_claim_allowed": false,
+      "passed": true,
+      "route_reversal_validation": {
+        "clockwise_pole_cycle": [
+          "S1",
+          "K2",
+          "S2",
+          "K1",
+          "S1"
+        ],
+        "clockwise_route_aspect_digest": "25ce1cc1550c0a717d4c1bcaa7f4179789024b67c2c22893df1f0fa21d41cb57",
+        "counter_clockwise_pole_cycle": [
+          "S1",
+          "K1",
+          "S2",
+          "K2",
+          "S1"
+        ],
+        "counter_clockwise_route_aspect_digest": "a621e96cd477308e0365b1d06f2a80f4a1285c7c7f4680d24cd3715a878ef3c8",
+        "expected_counter_clockwise_pole_cycle": [
+          "S1",
+          "K1",
+          "S2",
+          "K2",
+          "S1"
+        ],
+        "structural_reversal_passed": true
+      }
+    },
+    "n03_required_controls": {
+      "broken_return": {
+        "lane_id": "E3.2-C-broken-return",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": false,
+        "primary_blocker": "route_aspect_closed_loop_validation_failed"
+      },
+      "forward_only": {
+        "lane_id": "E3.2-C-forward-only",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": true,
+        "primary_blocker": "return_chain_missing"
+      },
+      "no_surplus": {
+        "lane_id": "E3.2-C-no-surplus",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": true,
+        "primary_blocker": "surplus_gate_failed"
+      },
+      "scrambled_order": {
+        "lane_id": "E3.2-C-scrambled-order",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": false,
+        "primary_blocker": "route_aspect_pole_contiguity_validation_failed"
+      },
+      "subthreshold": {
+        "lane_id": "E3.2-C-subthreshold",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": true,
+        "primary_blocker": "threshold_gate_failed"
+      },
+      "threshold_too_high": {
+        "lane_id": "E3.2-C-threshold-too-high",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": true,
+        "primary_blocker": "threshold_gate_failed"
+      },
+      "wrong_direction": {
+        "lane_id": "E3.2-C-wrong-direction",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": true,
+        "primary_blocker": "route_direction_gate_failed"
+      }
+    },
+    "pulse_active_boundary_coupling_disabled": {
+      "boundary_coupling_enabled": false,
+      "claim_ceiling": "pulse_import_only_no_movement",
+      "control_id": "pulse_active_boundary_coupling_disabled",
+      "direct_boundary_write": false,
+      "direct_centroid_write": false,
+      "direct_support_mask_write": false,
+      "movement_claim_allowed": false,
+      "movement_state_digest_after": "ab363e48a9a020e90be96240506098f092d02fc2bd56237aa8f3d420a52b0961",
+      "movement_state_digest_before": "ab363e48a9a020e90be96240506098f092d02fc2bd56237aa8f3d420a52b0961",
+      "movement_state_mutated": false,
+      "packet_loop_observed": true,
+      "primary_blocked_reason": "boundary_coupling_not_enabled_or_not_tested",
+      "pulse_active": true,
+      "pulse_metadata_loaded": true
+    },
+    "pulse_disabled": {
+      "boundary_coupling_enabled": false,
+      "control_id": "pulse_disabled",
+      "direct_boundary_write": false,
+      "direct_centroid_write": false,
+      "direct_support_mask_write": false,
+      "movement_claim_allowed": false,
+      "movement_state_digest_after": "ab363e48a9a020e90be96240506098f092d02fc2bd56237aa8f3d420a52b0961",
+      "movement_state_digest_before": "ab363e48a9a020e90be96240506098f092d02fc2bd56237aa8f3d420a52b0961",
+      "movement_state_mutated": false,
+      "pulse_active": false,
+      "pulse_metadata_loaded": true
+    },
+    "scrambled_non_self_rearming": {
+      "control_id": "scrambled_non_self_rearming_pulse",
+      "movement_claim_allowed": false,
+      "passed": true,
+      "source_control": {
+        "lane_id": "E3.2-C-scrambled-order",
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": false,
+        "native_lgrc9v3_execution": false,
+        "primary_blocker": "route_aspect_pole_contiguity_validation_failed"
+      }
+    }
+  },
+  "digest_relationships": {
+    "channel_sequence_digest": "Digest of ordered channel ids and expected next-channel relation.",
+    "composition": "The route_aspect_digest changes when either pole_region_digest-bearing content or channel_sequence_digest-bearing content changes.",
+    "pole_region_digest": "Digest of pole id to node-set assignments for a route aspect.",
+    "route_aspect_digest": "Digest of the full route-aspect contract, including pole regions, channel sequence, direction, and channel route definitions."
+  },
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "execution_surface": "surface_c_lgrc9v3_e3_pulse_import",
+  "fixed_substrate_classifier_boundary": {
+    "classifier_version": "movement_m0_m3_classifier_v1",
+    "e3_import_does_not_modify_m0_m3_classification": true,
+    "fixed_substrate_tranche_a_result": "no_movement_response_candidates",
+    "m0_m3_classifier_frozen": true
+  },
+  "fixture_mapping_prerequisite": {
+    "e3_node_count": 4,
+    "e3_source_fixture": "n03_e3_native_four_pole_packet_loop",
+    "mapping_strategy_defined": false,
+    "n04_active_fixture_node_counts": {
+      "S0_chain_v1": 21,
+      "S1_ring_v1": 24
+    },
+    "n04_active_fixtures": [
+      "S0_chain_v1",
+      "S1_ring_v1"
+    ],
+    "note": "Iteration 7 imports pulse semantics only. Iteration 8 must define how the four-pole E3 route maps onto N04 movement substrates before boundary coupling can be tested.",
+    "required_before_boundary_coupled_pulse_fixture": true
+  },
+  "import_noop_equivalence": {
+    "budget_equal": true,
+    "movement_metrics_equal": true,
+    "state_hash_equal": true,
+    "topology_equal": true
+  },
+  "loop_dependency": {
+    "loop_ladder_level": "L5",
+    "movement_claim_inherited": false,
+    "source_experiment": "N03",
+    "source_result": "E3_native_LGRC9V3_D2_3_equivalent_packet_loop"
+  },
+  "movement_state_mutation_audit": {
+    "digest_after_import": "ab363e48a9a020e90be96240506098f092d02fc2bd56237aa8f3d420a52b0961",
+    "digest_before_import": "ab363e48a9a020e90be96240506098f092d02fc2bd56237aa8f3d420a52b0961",
+    "mutated": false,
+    "note": "This is a read-only no-op boundary audit by design; the adapter does not write N04 movement state."
+  },
+  "notes": [
+    "Iteration 7 imports E3 pulse metadata as a drive candidate only.",
+    "No N04 movement state is mutated by the import.",
+    "The import mutation audit is true by construction because the adapter is read-only.",
+    "E3 heartbeat remains pulse-substrate evidence, not movement evidence.",
+    "Boundary coupling remains disabled until later iterations.",
+    "E3 source artifacts are pinned by SHA-256; the source seed is not serialized in the imported E3 closeout.",
+    "Iteration 8 must define the four-pole E3 route to N04 movement-fixture mapping before boundary coupling is tested.",
+    "Iteration 7-B may require additional E3 telemetry or reconstruction if exact node/in-flight budget split is needed."
+  ],
+  "pulse_metadata": {
+    "adapter_required_for_d2_3_semantics": false,
+    "n_cycles_min": 3,
+    "native_d2_3_equivalent": true,
+    "native_grc9v3_proposal_flux_loop_evidence": false,
+    "native_lgrc9v3_execution": true,
+    "native_packet_execution": true,
+    "native_self_rearm_evidence": true,
+    "native_surplus_trigger": true,
+    "positive_rows": {
+      "clockwise": {
+        "adapter_required_for_d2_3_semantics": false,
+        "budget_surface": "node_plus_packet",
+        "budget_values_serialized_in_source": false,
+        "cycle_count": 3,
+        "direction": "clockwise",
+        "in_flight_packet_budget": null,
+        "lane_id": "E3.1-positive-clockwise",
+        "max_event_budget_error": 0.0,
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": true,
+        "native_grc9v3_loop_evidence": false,
+        "native_lgrc9v3_execution": true,
+        "native_packet_execution": true,
+        "native_self_rearm_evidence": true,
+        "native_surplus_trigger": true,
+        "node_budget": null,
+        "pulse_class": "P5_self_rearming_native_lgrc9v3_packet_pulse",
+        "route_aspect_digest": "25ce1cc1550c0a717d4c1bcaa7f4179789024b67c2c22893df1f0fa21d41cb57",
+        "route_order": [
+          "S1_to_K2",
+          "K2_to_S2",
+          "S2_to_K1",
+          "K1_to_S1"
+        ],
+        "self_rearm_count": 12,
+        "topology_changed": false,
+        "total_budget": null,
+        "trigger_count": 12
+      },
+      "counter_clockwise": {
+        "adapter_required_for_d2_3_semantics": false,
+        "budget_surface": "node_plus_packet",
+        "budget_values_serialized_in_source": false,
+        "cycle_count": 3,
+        "direction": "counter_clockwise",
+        "in_flight_packet_budget": null,
+        "lane_id": "E3.1-positive-counter_clockwise",
+        "max_event_budget_error": 0.0,
+        "movement_claim_allowed": false,
+        "native_d2_3_equivalent": true,
+        "native_grc9v3_loop_evidence": false,
+        "native_lgrc9v3_execution": true,
+        "native_packet_execution": true,
+        "native_self_rearm_evidence": true,
+        "native_surplus_trigger": true,
+        "node_budget": null,
+        "pulse_class": "P5_self_rearming_native_lgrc9v3_packet_pulse",
+        "route_aspect_digest": "a621e96cd477308e0365b1d06f2a80f4a1285c7c7f4680d24cd3715a878ef3c8",
+        "route_order": [
+          "S1_to_K1",
+          "K1_to_S2",
+          "S2_to_K2",
+          "K2_to_S1"
+        ],
+        "self_rearm_count": 12,
+        "topology_changed": false,
+        "total_budget": null,
+        "trigger_count": 12
+      }
+    },
+    "pulse_class": "P5_self_rearming_native_lgrc9v3_packet_pulse",
+    "route_aspects": {
+      "clockwise": {
+        "artifact_kind": "lgrc9v3_route_aspect",
+        "artifact_schema_version": "lgrc9v3_route_aspect_v1",
+        "channel_sequence": [
+          "S1_to_K2",
+          "K2_to_S2",
+          "S2_to_K1",
+          "K1_to_S1"
+        ],
+        "channel_sequence_digest": "46cc1dfa9c14a8a762573da3a7353271dcaec997a99f8a80660d54211c6efb39",
+        "channels": [
+          {
+            "channel_id": "S1_to_K2",
+            "expected_next_channel_id": "K2_to_S2",
+            "route_hops": [
+              {
+                "edge_id": 0,
+                "source_node_id": 0,
+                "target_node_id": 1
+              }
+            ],
+            "source_pole_id": "S1",
+            "target_pole_id": "K2"
+          },
+          {
+            "channel_id": "K2_to_S2",
+            "expected_next_channel_id": "S2_to_K1",
+            "route_hops": [
+              {
+                "edge_id": 1,
+                "source_node_id": 1,
+                "target_node_id": 2
+              }
+            ],
+            "source_pole_id": "K2",
+            "target_pole_id": "S2"
+          },
+          {
+            "channel_id": "S2_to_K1",
+            "expected_next_channel_id": "K1_to_S1",
+            "route_hops": [
+              {
+                "edge_id": 2,
+                "source_node_id": 2,
+                "target_node_id": 3
+              }
+            ],
+            "source_pole_id": "S2",
+            "target_pole_id": "K1"
+          },
+          {
+            "channel_id": "K1_to_S1",
+            "expected_next_channel_id": "S1_to_K2",
+            "route_hops": [
+              {
+                "edge_id": 3,
+                "source_node_id": 3,
+                "target_node_id": 0
+              }
+            ],
+            "source_pole_id": "K1",
+            "target_pole_id": "S1"
+          }
+        ],
+        "closed_loop": true,
+        "direction": "clockwise",
+        "evidence_class": "route_aspect_contract",
+        "expected_next_channel_by_channel": {
+          "K1_to_S1": "S1_to_K2",
+          "K2_to_S2": "S2_to_K1",
+          "S1_to_K2": "K2_to_S2",
+          "S2_to_K1": "K1_to_S1"
+        },
+        "pole_region_digest": "7571c6fa98f0fe9cbfb4ddc122aabdae17d19c607f80a8cba457e59d127ebf19",
+        "pole_regions": {
+          "K1": [
+            3
+          ],
+          "K2": [
+            1
+          ],
+          "S1": [
+            0
+          ],
+          "S2": [
+            2
+          ]
+        },
+        "route_aspect_digest": "25ce1cc1550c0a717d4c1bcaa7f4179789024b67c2c22893df1f0fa21d41cb57",
+        "route_aspect_id": "n03_e3_native_four_pole_packet_loop_cw",
+        "runtime_family": "LGRC9V3"
+      },
+      "counter_clockwise": {
+        "artifact_kind": "lgrc9v3_route_aspect",
+        "artifact_schema_version": "lgrc9v3_route_aspect_v1",
+        "channel_sequence": [
+          "S1_to_K1",
+          "K1_to_S2",
+          "S2_to_K2",
+          "K2_to_S1"
+        ],
+        "channel_sequence_digest": "5eb1e9f9490a455cf82b7a25b35fe1bb5b184c0e388a4b347683e1d0dce7d84c",
+        "channels": [
+          {
+            "channel_id": "S1_to_K1",
+            "expected_next_channel_id": "K1_to_S2",
+            "route_hops": [
+              {
+                "edge_id": 0,
+                "source_node_id": 0,
+                "target_node_id": 1
+              }
+            ],
+            "source_pole_id": "S1",
+            "target_pole_id": "K1"
+          },
+          {
+            "channel_id": "K1_to_S2",
+            "expected_next_channel_id": "S2_to_K2",
+            "route_hops": [
+              {
+                "edge_id": 1,
+                "source_node_id": 1,
+                "target_node_id": 2
+              }
+            ],
+            "source_pole_id": "K1",
+            "target_pole_id": "S2"
+          },
+          {
+            "channel_id": "S2_to_K2",
+            "expected_next_channel_id": "K2_to_S1",
+            "route_hops": [
+              {
+                "edge_id": 2,
+                "source_node_id": 2,
+                "target_node_id": 3
+              }
+            ],
+            "source_pole_id": "S2",
+            "target_pole_id": "K2"
+          },
+          {
+            "channel_id": "K2_to_S1",
+            "expected_next_channel_id": "S1_to_K1",
+            "route_hops": [
+              {
+                "edge_id": 3,
+                "source_node_id": 3,
+                "target_node_id": 0
+              }
+            ],
+            "source_pole_id": "K2",
+            "target_pole_id": "S1"
+          }
+        ],
+        "closed_loop": true,
+        "direction": "counter_clockwise",
+        "evidence_class": "route_aspect_contract",
+        "expected_next_channel_by_channel": {
+          "K1_to_S2": "S2_to_K2",
+          "K2_to_S1": "S1_to_K1",
+          "S1_to_K1": "K1_to_S2",
+          "S2_to_K2": "K2_to_S1"
+        },
+        "pole_region_digest": "2d2b276bff3258858d334fc3283806ce5c0b8abbb6b13c9dcfff5058534c6faf",
+        "pole_regions": {
+          "K1": [
+            1
+          ],
+          "K2": [
+            3
+          ],
+          "S1": [
+            0
+          ],
+          "S2": [
+            2
+          ]
+        },
+        "route_aspect_digest": "a621e96cd477308e0365b1d06f2a80f4a1285c7c7f4680d24cd3715a878ef3c8",
+        "route_aspect_id": "n03_e3_native_four_pole_packet_loop_ccw",
+        "runtime_family": "LGRC9V3"
+      }
+    },
+    "trigger_threshold": 0.049
+  },
+  "pulse_taxonomy": {
+    "P0": "no pulse metadata",
+    "P1": "pulse metadata available but inactive",
+    "P2": "packet activity present without self-rearm evidence",
+    "P3": "state-triggered packet departure present",
+    "P4": "self-rearm evidence present below D2.3 control parity",
+    "P5": "native LGRC9V3 D2.3-equivalent self-rearming packet pulse under controls",
+    "status": "local_import_taxonomy_for_n04_iteration_7"
+  },
+  "report_kind": "e3_pulse_import_validation_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "closeout": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_closeout.json",
+      "sha256": "75e02858f32484a8c4e9a24d9751c0ce98e4ef603fd6e550d8a47f7466e2288e"
+    },
+    "control_parity": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_2_native_control_parity.json",
+      "sha256": "4a037ccd1ba375ba1e867d41ce95cdf26f8b780477c95dc090676c24942b889b"
+    },
+    "manifest": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/configs/e3_native_lgrc9v3_packet_loop_route_manifest.json",
+      "sha256": "12c9cd933e3209dca2fdc78eeccad84644477a206c72901bbda9b1858c66cd0f"
+    },
+    "positive_reproduction": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_1_native_positive_reproduction.json",
+      "sha256": "e421e11a15fba7c7df6c7483b5a026b3afe1b3a83f2d948060ba357f24c14dc7"
+    },
+    "snapshot_telemetry": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_3_snapshot_telemetry_reproduction.json",
+      "sha256": "e03cc3d813a11d502742e91520cb17d13061201226fa9c1997e08b31ded3fd9a"
+    }
+  },
+  "source_experiment": "N03",
+  "source_provenance": {
+    "adapter_semantics": "metadata_import_or_native_reproduction_only",
+    "commands_used_to_inspect_or_import": [
+      ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py"
+    ],
+    "source_artifact_modified": false,
+    "source_artifact_read_only": true,
+    "source_fixture": "n03_e3_native_four_pole_packet_loop",
+    "source_report_id": "e3_native_lgrc9v3_packet_loop_closeout",
+    "source_runtime_family": "LGRC9V3",
+    "source_seed": "not_serialized_in_imported_e3_closeout"
+  },
+  "source_result": "E3_native_LGRC9V3_D2_3_equivalent_packet_loop",
+  "status": "passed"
+}

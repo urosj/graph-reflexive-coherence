@@ -1,0 +1,113 @@
+{
+  "artifact_entry_points": {
+    "blocked_observations": "../reports/<run_id>_blocked_observations.csv",
+    "comparison_report": "../reports/<run_id>_comparison.md",
+    "lane_a_spark_gate_traces": "../outputs/<run_id>/lane_a_spark_gate_traces.jsonl",
+    "run_manifest": "../outputs/<run_id>/run_manifest.json",
+    "state_snapshots": "../outputs/<run_id>/snapshots/",
+    "step_events": "../outputs/<run_id>/step_events.jsonl"
+  },
+  "blocked_observations_schema": {
+    "artifact_source": "artifact path or runtime surface attempted",
+    "experiment": "experiment or discriminator id",
+    "notes": "free-form audit note",
+    "observation": "claim-specific observation name",
+    "reconstruction_attempt": "short description of extraction/reconstruction attempt",
+    "status": "blocked | inconclusive"
+  },
+  "canonical_controls_match_expected": true,
+  "claim_scope": "observer-local mixed row/column transition classification in clean fixtures; full reusable motion-loader port history remains partial",
+  "column_preserving_row_changing_supported": true,
+  "comparison_report_schema": {
+    "artifact_sources": "artifact_entry_points object",
+    "blocked_observations_schema": "blocked_observations_schema object",
+    "blocked_or_inconclusive_claims": [
+      "string"
+    ],
+    "energy_profile": "perturbation_energy object",
+    "factorization_class": "row_column | transpose | non_factorized",
+    "fixture_id": "string",
+    "lane_id": "current_hybrid_signed_hessian",
+    "port_map": {
+      "source_port": "target_port"
+    },
+    "preserves_active_degree": "boolean",
+    "preserves_edge_count": "boolean",
+    "run_id": "string",
+    "schema_version": "grc9v3_properties_iter2_v1",
+    "seed": "integer",
+    "transform_id": "string"
+  },
+  "dominant_flux_rule": "select central-node incident edge with maximum abs(PortEdge.flux_uv); ties break by edge id and are reported",
+  "experiment": "experiment_g_mixed_motion",
+  "lane_id": "current_hybrid_signed_hessian",
+  "observation_surface": "experiment-local checkpoint overlay over GRC9V3State.port_edges/topology",
+  "random_relabel_weakens_semantic_interpretability": true,
+  "row_preserving_column_changing_supported": true,
+  "run_id_convention": {
+    "format": "<experiment_id>__<fixture_id>__<transform_id>__seed_<seed>__<schema_version>",
+    "normalization": "lowercase ASCII; replace non [a-z0-9_.-] characters with underscores",
+    "stability": "deterministic; no timestamp in reproducible run ids"
+  },
+  "runtime_assumptions": {
+    "column_h_status": "derived_analysis_proxy_only",
+    "lane_id": "current_hybrid_signed_hessian",
+    "runtime_mutation_policy": "experiment code must not mutate src/pygrc",
+    "signed_hessian_backend": "row_basis_diagonal"
+  },
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "seed": 0,
+  "static_no_motion_supported": true,
+  "transforms": {
+    "column_permutation_312": {
+      "1": 3,
+      "2": 1,
+      "3": 2,
+      "4": 6,
+      "5": 4,
+      "6": 5,
+      "7": 9,
+      "8": 7,
+      "9": 8
+    },
+    "degree_preserving_random_relabel": {
+      "1": 6,
+      "2": 8,
+      "3": 5,
+      "4": 9,
+      "5": 1,
+      "6": 3,
+      "7": 4,
+      "8": 2,
+      "9": 7
+    },
+    "identity": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    },
+    "row_permutation_231": {
+      "1": 4,
+      "2": 5,
+      "3": 6,
+      "4": 7,
+      "5": 8,
+      "6": 9,
+      "7": 1,
+      "8": 2,
+      "9": 3
+    }
+  },
+  "transition_classes": [
+    "row_preserving_column_changing",
+    "column_preserving_row_changing",
+    "both_changing",
+    "neither_changing"
+  ]
+}

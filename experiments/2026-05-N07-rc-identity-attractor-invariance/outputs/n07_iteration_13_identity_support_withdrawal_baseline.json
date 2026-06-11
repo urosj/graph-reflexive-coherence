@@ -1,0 +1,354 @@
+{
+  "acceptance": {
+    "achieved": true,
+    "statement": "Iteration 13 passes if N07 emits a source-backed identity/support withdrawal baseline for N10 consumption, tied to the N07 Iteration 12 support digest and the N09 withdrawal blocker. The baseline must include support-intact, weakened, N09-matched withdrawn, and explicitly restored lanes; classify survival/disruption without private runtime state; preserve exact budget accounting; avoid retroactively changing N09 closeout artifacts; and keep identity acceptance, RC identity collapse, semantic choice, agency, biological, personhood, and unrestricted identity claims blocked."
+  },
+  "artifact_digests": {
+    "baseline_summary_digest": "927a15c2eb18b0aab72de1b2cc3bda92a23d24cf10e5549539370267f70e80a0",
+    "controls_digest": "d5c4b2d46f0bbcde0f2f591c88ccfdc9ccaba4b4dc8a57cf821975ab3e9c4894",
+    "n10_handoff_digest": "e43618a8bc369cc0c6e3d21e1dc797f168aa183e101abfae4ae4105e47339801",
+    "reference_metrics_digest": "bbcb95e33b67110b0763a32becb4a91755fe2a48d57560bb7d457f9fdb884e4d",
+    "validation_checks_digest": "c1b15a8c5ee78b1019340bf7f73221970ce7fec660751365aa05271cd377c2b1",
+    "withdrawal_lanes_digest": "1252bd7e2ce5bdcf5b910cba0e37c18f985de74d7b992727863cd202cb1b8220"
+  },
+  "baseline_summary": {
+    "baseline_available": true,
+    "baseline_summary_digest": "927a15c2eb18b0aab72de1b2cc3bda92a23d24cf10e5549539370267f70e80a0",
+    "general_identity_acceptance_supported": false,
+    "mild_withdrawal_outcome_tag": "support_withdrawal_survival_baseline",
+    "n09_partial_withdrawal_depth": 0.25,
+    "n09_partial_withdrawal_outcome_tag": "support_disrupted_by_withdrawal_without_restoration",
+    "n09_prior_blocker": "n07_identity_withdrawal_baseline_not_available",
+    "n09_prior_blocker_resolved_for_future_consumption": true,
+    "n10_can_consume_identity_support_withdrawal_baseline": true,
+    "n10_consumption_rule": "N10 may use this baseline to distinguish proxy regulation attached to surviving support from proxy regulation where identity support is disrupted or explicitly restored.",
+    "prior_n09_artifacts_retroactively_changed": false,
+    "restored_withdrawal_outcome_tag": "explicit_restoration_recovers_support_survival_baseline"
+  },
+  "blocked_claims": [
+    "runtime_identity_acceptance",
+    "rc_identity_collapse",
+    "semantic_choice",
+    "agency",
+    "biological_identity",
+    "personhood",
+    "unrestricted_identity",
+    "retroactive_n09_claim_promotion"
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "identity_withdrawal_baseline_available": true,
+    "n09_prior_artifacts_retroactively_changed": false,
+    "n10_consumption_allowed_as_baseline": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_13_identity_support_withdrawal_baseline.py",
+  "controls": {
+    "budget_exact": {
+      "control_digest": "6d0745d13d8b972d80f76681e2f08869d14ca3371e87e86d7077a7bbedb94550",
+      "control_passed": true,
+      "primary_blocker": "budget_discontinuity",
+      "reason": "withdrawal baseline is classified without introducing budget drift"
+    },
+    "identity_claim_promotion": {
+      "control_digest": "3d48e3cc40995f35197ed38b22e778c4385ef3a401688680ad642149c04a9762",
+      "control_passed": true,
+      "primary_blocker": "identity_claim_promotion",
+      "reason": "withdrawal baseline does not emit identity acceptance, agency, or collapse claims"
+    },
+    "n09_not_retroactively_promoted": {
+      "control_digest": "831ba6e37f335fa327505b676ee557bbcae01d2e9d2790abfdda394bd4b41c8a",
+      "control_passed": true,
+      "primary_blocker": "retroactive_n09_claim_promotion_blocked",
+      "reason": "new N07 baseline is for future N10 consumption, not old-artifact promotion"
+    },
+    "n09_partial_withdrawal_disrupts_support": {
+      "control_digest": "c841086c49c29b27167fa837f1f6c2a056a8a89c8137dc76d43e43d86c9a1cdf",
+      "control_passed": true,
+      "primary_blocker": "support_disruption_not_detected",
+      "reason": "N09 0.25 withdrawal is below the N07 survival threshold without restoration"
+    },
+    "n09_support_digest_match": {
+      "control_digest": "c84e36413ab22b5df6794994c1beed069f81343445a153c601cf9d2b96bd36cd",
+      "control_passed": true,
+      "primary_blocker": "identity_support_digest_mismatch",
+      "reason": "N09 support handoff digest matches the N07 source support area digest"
+    },
+    "restoration_is_explicit": {
+      "control_digest": "06d56f15333cb1cf1e998ed6c1e7a9bc9d8f1d2822fd077560860723ca20591f",
+      "control_passed": true,
+      "primary_blocker": "hidden_support_restoration_blocked",
+      "reason": "support recovery is recorded only in the explicit restoration lane"
+    },
+    "withdrawal_depth_serialized": {
+      "control_digest": "87a69d214f07c8e6eefbb0337572b48a161fa6411b87ea5ea261467f24cc3d8f",
+      "control_passed": true,
+      "primary_blocker": "withdrawal_depth_missing_or_mismatch",
+      "reason": "N09 partial support weakening depth is replayed explicitly"
+    }
+  },
+  "environment": {
+    "generated_at_utc": "2026-06-09T21:44:31.169472+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "experiment": "N07",
+  "git": {
+    "rev_parse_head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "4d82e33084bcd0f23a363c999faaf64646bfa192"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "?? experiments/2026-05-N07-rc-identity-attractor-invariance/scripts/run_n07_iteration_13_identity_support_withdrawal_baseline.py"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": "13",
+  "n10_handoff": {
+    "n07_identity_withdrawal_baseline_available": true,
+    "n07_identity_withdrawal_baseline_digest": "927a15c2eb18b0aab72de1b2cc3bda92a23d24cf10e5549539370267f70e80a0",
+    "n09_prior_blocker": "n07_identity_withdrawal_baseline_not_available",
+    "n09_prior_blocker_resolved_for_future_consumption": true,
+    "n10_can_consume_identity_support_withdrawal_baseline": true,
+    "n10_consumption_rule": "N10 may use this baseline to distinguish proxy regulation attached to surviving support from proxy regulation where identity support is disrupted or explicitly restored.",
+    "n10_handoff_digest": "e43618a8bc369cc0c6e3d21e1dc797f168aa183e101abfae4ae4105e47339801",
+    "prior_n09_artifacts_retroactively_changed": false,
+    "source_c3_class": "bounded_non_destructive_exchange",
+    "source_n07_ceiling": "ID6",
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1"
+  },
+  "next_iteration": "N10_goal_proxy_identity_support_consumption",
+  "purpose": "post_closeout_identity_support_withdrawal_baseline_for_n10",
+  "reference_metrics": {
+    "basin_separability_min": 0.9,
+    "reference_A_support_retention": 0.9731535762447039,
+    "reference_B_support_retention": 0.9753907782243119,
+    "reference_basin_separability": 0.9731535762447039,
+    "reference_budget_error": 0.0,
+    "reference_destructive_interference": 0.02684642375529611,
+    "reference_metrics_digest": "bbcb95e33b67110b0763a32becb4a91755fe2a48d57560bb7d457f9fdb884e4d",
+    "reference_wrong_basin_leakage": 0.07457339932026706,
+    "source_c3_class": "bounded_non_destructive_exchange",
+    "source_n07_ceiling": "ID6",
+    "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+    "support_area_id": "n07_support_area_A_v1",
+    "support_survival_threshold": 0.85
+  },
+  "schema": "n07_iteration_13_identity_support_withdrawal_baseline_v1",
+  "source_artifacts": [
+    {
+      "name": "n07_iteration_11b_neutral_absorber_reservoir",
+      "object_digest": "1b9dcf2b45b505b66c043935c780f855e02898a8f75dedead79ea32382694241",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+      "sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497",
+      "status": "passed"
+    },
+    {
+      "name": "n07_iteration_12_long_horizon_compatibility_closeout",
+      "object_digest": "d63f2dd37bb2a5547f58794c1ecb1073d6f3753a773c34876b4ce9d2562eb844",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+      "sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+      "status": "passed"
+    },
+    {
+      "name": "n09_iteration_8_perturbation_withdrawal_support",
+      "object_digest": "77f0cf4e608cc66c4f1c8310672baee7c20213723a08d7e4c647d5128e76359e",
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+      "sha256": "873114340bf655becf39f47dbbd4758f46204eee05a1fb93a0a7457db3caa472",
+      "status": "passed"
+    },
+    {
+      "name": "n09_iteration_12_hypothesis_b2_closeout",
+      "object_digest": "3d4a994cf1c3940aa4ef40e899ba6b8b939c207c9620aa05687fc8fbdf90a4cc",
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_12_hypothesis_b2_native_substrate_closeout.json",
+      "sha256": "4beae1d67f34819c52d70593f2be99d79961447dd3cd2243975a705bc3acf6ba",
+      "status": "passed"
+    }
+  ],
+  "source_reports": [
+    {
+      "name": "n07_iteration_11b_neutral_absorber_reservoir_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+      "sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354"
+    },
+    {
+      "name": "n07_iteration_12_long_horizon_compatibility_closeout_report",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+      "sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8"
+    },
+    {
+      "name": "n09_iteration_8_perturbation_withdrawal_support_report",
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_8_perturbation_withdrawal_support.md",
+      "sha256": "9d72834521f0b4f30bc83747992c41acb3eada9661e0d04d0c5a51302e6a710b"
+    },
+    {
+      "name": "n09_iteration_12_hypothesis_b2_closeout_report",
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_12_hypothesis_b2_native_substrate_closeout.md",
+      "sha256": "2a40d2b63236e0cab59e758d6d786f4234fe8537a2e9499863c757aa11897ed5"
+    }
+  ],
+  "status": "passed",
+  "validation_checks": {
+    "baseline_available_for_n10": true,
+    "budget_exact": true,
+    "claim_flags_all_false": true,
+    "controls_all_passed": true,
+    "explicit_restoration_recovers_support": true,
+    "four_lanes_recorded": true,
+    "mild_withdrawal_survives": true,
+    "n09_partial_withdrawal_disrupts_support": true,
+    "n09_prior_blocker_present": true,
+    "n09_support_digest_matches_n07": true,
+    "old_n09_artifacts_not_retroactively_changed": true,
+    "source_11b_passed": true,
+    "source_12_id6_artifact_classification_preserved": true,
+    "source_12_passed": true,
+    "source_n09_i12_passed": true,
+    "source_n09_i8_passed": true
+  },
+  "withdrawal_lanes": [
+    {
+      "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+      "final_A_support_retention": 0.9731535762447039,
+      "final_B_support_retention": 0.9753907782243119,
+      "final_basin_separability": 0.9731535762447039,
+      "final_budget_error": 0.0,
+      "final_destructive_interference": 0.02684642375529611,
+      "final_wrong_basin_leakage": 0.07457339932026706,
+      "identity_support_outcome_tag": "support_intact_bounded_exchange_reference",
+      "lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+      "lane_id": "support_intact_reference",
+      "n09_withdrawal_digest": null,
+      "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+      "reference_A_support_retention": 0.9731535762447039,
+      "reference_B_support_retention": 0.9753907782243119,
+      "reference_basin_separability": 0.9731535762447039,
+      "reference_budget_error": 0.0,
+      "reference_destructive_interference": 0.02684642375529611,
+      "reference_wrong_basin_leakage": 0.07457339932026706,
+      "restoration_fraction": 0.0,
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "source_support_area_id": "n07_support_area_A_v1",
+      "support_loss_from_reference": 0.0,
+      "support_survival_passed": true,
+      "support_survival_threshold": 0.85,
+      "withdrawal_depth": 0.0,
+      "withdrawal_kind": "none"
+    },
+    {
+      "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+      "final_A_support_retention": 0.8758382186202335,
+      "final_B_support_retention": 0.9753907782243119,
+      "final_basin_separability": 0.8758382186202335,
+      "final_budget_error": 0.0,
+      "final_destructive_interference": 0.12416178137976652,
+      "final_wrong_basin_leakage": 0.09890223872638466,
+      "identity_support_outcome_tag": "support_withdrawal_survival_baseline",
+      "lane_digest": "d5fae1cee95b0650287173c3e0456f1df42464771336b4e6e02cfb4e095bff69",
+      "lane_id": "mild_support_weakening",
+      "n09_withdrawal_digest": null,
+      "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+      "reference_A_support_retention": 0.9731535762447039,
+      "reference_B_support_retention": 0.9753907782243119,
+      "reference_basin_separability": 0.9731535762447039,
+      "reference_budget_error": 0.0,
+      "reference_destructive_interference": 0.02684642375529611,
+      "reference_wrong_basin_leakage": 0.07457339932026706,
+      "restoration_fraction": 0.0,
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "source_support_area_id": "n07_support_area_A_v1",
+      "support_loss_from_reference": 0.09731535762447041,
+      "support_survival_passed": true,
+      "support_survival_threshold": 0.85,
+      "withdrawal_depth": 0.1,
+      "withdrawal_kind": "partial_support_weakening"
+    },
+    {
+      "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+      "final_A_support_retention": 0.7298651821835279,
+      "final_B_support_retention": 0.9753907782243119,
+      "final_basin_separability": 0.7298651821835279,
+      "final_budget_error": 0.0,
+      "final_destructive_interference": 0.2701348178164721,
+      "final_wrong_basin_leakage": 0.13539549783556104,
+      "identity_support_outcome_tag": "support_disrupted_by_withdrawal_without_restoration",
+      "lane_digest": "987651daaf122f47d3e26d3fd9d7611ceebb3149879b0326e6ca2775a18e4387",
+      "lane_id": "n09_matched_partial_support_withdrawal",
+      "n09_withdrawal_digest": "8e09a8de0b8d66e57e425a6c15a52abdf2e5090c65878eaf434c0751cc43fd84",
+      "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+      "reference_A_support_retention": 0.9731535762447039,
+      "reference_B_support_retention": 0.9753907782243119,
+      "reference_basin_separability": 0.9731535762447039,
+      "reference_budget_error": 0.0,
+      "reference_destructive_interference": 0.02684642375529611,
+      "reference_wrong_basin_leakage": 0.07457339932026706,
+      "restoration_fraction": 0.0,
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "source_support_area_id": "n07_support_area_A_v1",
+      "support_loss_from_reference": 0.24328839406117597,
+      "support_survival_passed": false,
+      "support_survival_threshold": 0.85,
+      "withdrawal_depth": 0.25,
+      "withdrawal_kind": "partial_support_weakening"
+    },
+    {
+      "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+      "final_A_support_retention": 0.9244958974324687,
+      "final_B_support_retention": 0.9753907782243119,
+      "final_basin_separability": 0.9244958974324687,
+      "final_budget_error": 0.0,
+      "final_destructive_interference": 0.07550410256753126,
+      "final_wrong_basin_leakage": 0.08673781902332585,
+      "identity_support_outcome_tag": "explicit_restoration_recovers_support_survival_baseline",
+      "lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+      "lane_id": "restored_after_n09_partial_withdrawal",
+      "n09_withdrawal_digest": "8e09a8de0b8d66e57e425a6c15a52abdf2e5090c65878eaf434c0751cc43fd84",
+      "n10_consumption_role": "identity_support_withdrawal_baseline_lane",
+      "reference_A_support_retention": 0.9731535762447039,
+      "reference_B_support_retention": 0.9753907782243119,
+      "reference_basin_separability": 0.9731535762447039,
+      "reference_budget_error": 0.0,
+      "reference_destructive_interference": 0.02684642375529611,
+      "reference_wrong_basin_leakage": 0.07457339932026706,
+      "restoration_fraction": 0.8,
+      "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "source_support_area_id": "n07_support_area_A_v1",
+      "support_loss_from_reference": 0.04865767881223515,
+      "support_survival_passed": true,
+      "support_survival_threshold": 0.85,
+      "withdrawal_depth": 0.25,
+      "withdrawal_kind": "partial_support_weakening_with_explicit_restoration"
+    }
+  ]
+}

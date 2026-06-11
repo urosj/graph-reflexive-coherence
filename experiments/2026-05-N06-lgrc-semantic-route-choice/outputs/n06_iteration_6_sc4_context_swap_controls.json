@@ -1,0 +1,1481 @@
+{
+  "acceptance": {
+    "budget_exact": true,
+    "claim_ceiling": "context_swap_route_selection_candidate",
+    "context_a_selected_route": "route_a",
+    "context_b_selected_route": "route_b",
+    "fixture_scope": "context_swap_only_no_independent_polarity_surface",
+    "forbidden_runtime_inputs_absent": true,
+    "hidden_direction_labels_absent": true,
+    "packet_scheduled_by_arbitration": false,
+    "same_policy_thresholds_and_validator": true,
+    "sc_level": "SC4",
+    "selection_swapped_by_serialized_context": true,
+    "semantic_choice_claim_allowed": false,
+    "status": "passed",
+    "topology_event_committed": false
+  },
+  "artifact_digests": {
+    "acceptance_digest": "2c2c1c138ad04de179b351caacd0c3638cac27f9ce3f286a3d25da68f9d0238f",
+    "claim_flags_digest": "9107d7c83c7cad6cf67508a0727b2ae7e6a1403c2ae889ecf04f35b885cb7fbd",
+    "context_a_lane_digest": "153d2255f0f31656ce56b1ae5a5f6ebc06000c8df69bd0c9b23288e703783d97",
+    "context_b_lane_digest": "d1b96176bfc224b9eb29b79389b0140bf3fb2a3f933d7f2ff120e74185217c8b",
+    "controls_digest": "53abaa7f7457b7aa511f7972acea95b6056644a01431fb521d79059c18e81bdd",
+    "matched_settings_digest": "f9c67eb7959616231b20c9ed3cffd1a713cd7d9d0cc7b2fd48f61095cb7b5a2c",
+    "swap_replay_digest": "b3bf8e48e429cff26e8fef4b7f8965e61461f6acb3fba5bba1bdfdbb9f26de43"
+  },
+  "checks": {
+    "budget_exact": true,
+    "claim_flags_remain_false": true,
+    "context_a_lane_passed": true,
+    "context_b_lane_passed": true,
+    "controls_passed": true,
+    "matched_settings_passed": true,
+    "no_direction_or_polarity_labels": true,
+    "no_forbidden_runtime_inputs": true,
+    "no_topology_commit": true,
+    "selected_and_rejected_candidate_digests_recorded": true,
+    "swap_replayable": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/run_n06_iteration_6_sc4_context_swap_controls.py",
+  "controls": {
+    "budget_mismatch": {
+      "control_id": "budget_mismatch",
+      "detail": {
+        "budget_tolerance": 1e-09,
+        "mutated_budget_prediction": {
+          "node_plus_packet_budget_after": 5.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": -1.0
+        },
+        "route_arbitration_record": {
+          "arbitration_reason_code": "native_route_arbitration_budget_invalid",
+          "arbitration_rule": "highest_score",
+          "arbitration_runtime_visible_inputs": [
+            "candidate_route_score",
+            "candidate_order_key",
+            "candidate_set_order_key",
+            "active_context_node_id:4",
+            "compatible_route_id:route_a",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ],
+          "arbitration_score": 0.0,
+          "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+          "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+          "candidate_set_digest": "c8fcc81a44a1da681df7f6b283e30959fe4d44ca55d58684f5b6d020c4fdeb67",
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "idempotency_key": "7b8fff308d50690c5ad2b1b5a1dee187d7a388c6f850ebfaf58107a4aa41329b",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_digest": "b50646a07b1b6cd0d764dc8da49968cfd8ad0d81409085f5dbd16636b4003628",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "native_route_arbitration_record_id": "native-route-arbitration:dba40dbdc5c8af5b496a8bc8cc1e200d",
+          "rejected_candidate_route_digests": [
+            "0d5d653624559d5f8a4c34f74de42215109e9730120f5705e53d720848ecd95a",
+            "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+          ],
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+          "selected_candidate_route_digest": null,
+          "selected_candidate_route_id": null,
+          "selected_topology_event_digest": null,
+          "selected_topology_event_id": null
+        }
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_budget_invalid",
+      "scope": "native_arbitration_control"
+    },
+    "claim_promotion": {
+      "control_id": "claim_promotion",
+      "detail": [
+        "native_route_arbitration_claim_promotion_blocked:native-route-arbitration:60c268a4a965f371a105666dd4e5da56",
+        "corrupted_native_route_arbitration_record:native-route-arbitration:60c268a4a965f371a105666dd4e5da56:native route arbitration cannot promote claim flag: semantic_choice_claim_allowed"
+      ],
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_claim_promotion_blocked",
+      "scope": "artifact_replay_control"
+    },
+    "hidden_direction": {
+      "control_id": "hidden_direction",
+      "detail": {
+        "artifact_semantic_validator": {
+          "failure_reasons": [
+            "n06_hidden_direction_label_rejected"
+          ],
+          "valid": false
+        },
+        "injected_direction_labels": [
+          "direction_label:route_a"
+        ],
+        "positive_lane_direction_labels": []
+      },
+      "passed": true,
+      "primary_blocker": "n06_hidden_direction_label_rejected",
+      "scope": "artifact_semantic_replay_control"
+    },
+    "order_inversion": {
+      "control_id": "order_inversion",
+      "detail": {
+        "failure_reasons": [
+          "n06_context_order_inversion_blocked"
+        ],
+        "valid": false
+      },
+      "passed": true,
+      "primary_blocker": "n06_context_order_inversion_blocked",
+      "scope": "artifact_corruption_control"
+    },
+    "unswapped_context": {
+      "control_id": "unswapped_context",
+      "detail": {
+        "checks": {
+          "paired_context_b_changes_selection": true,
+          "same_context_repeats_same_selection": true
+        },
+        "first_context": "context_a",
+        "first_selected_route": "route_a",
+        "paired_context_changes_route": true,
+        "paired_swap_context": "context_b",
+        "paired_swap_selected_route": "route_b",
+        "second_context": "context_a",
+        "second_selected_route": "route_a",
+        "selection_swapped": false
+      },
+      "passed": true,
+      "primary_blocker": "n06_unswapped_context_blocked",
+      "scope": "n06_sc4_validator"
+    },
+    "wrong_polarity": {
+      "control_id": "wrong_polarity",
+      "detail": {
+        "actual_lane_context_state_id": "context_b",
+        "expected_underlying_reasons": [
+          "n06_stale_context_surface_blocked",
+          "n06_context_relation_mismatch",
+          "n06_context_evidence_not_replayable"
+        ],
+        "expected_underlying_reasons_present": [
+          "n06_stale_context_surface_blocked",
+          "n06_context_relation_mismatch",
+          "n06_context_evidence_not_replayable"
+        ],
+        "semantic_validator": {
+          "failure_reasons": [
+            "n06_stale_context_surface_blocked",
+            "n06_context_relation_mismatch",
+            "n06_context_evidence_not_replayable"
+          ],
+          "valid": false
+        },
+        "wrong_expected_context_state_id": "context_a"
+      },
+      "passed": true,
+      "primary_blocker": "n06_wrong_context_or_polarity_blocked",
+      "scope": "n06_sc4_validator"
+    }
+  },
+  "experiment": "2026-05-N06-lgrc-semantic-route-choice",
+  "generated_at": "2026-06-05T21:45:05.481754+00:00",
+  "git": {
+    "diff_check_experiment": {
+      "command": "git diff --check -- experiments/2026-05-N06-lgrc-semantic-route-choice",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "status_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 6,
+  "iteration_name": "SC4 Context-Swap Controls",
+  "lanes": {
+    "context_a": {
+      "after_counts": {
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 1,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+      "arbitration_runtime_visible_inputs": [
+        "candidate_route_score",
+        "candidate_order_key",
+        "candidate_set_order_key",
+        "active_context_node_id:4",
+        "compatible_route_id:route_a",
+        "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+      ],
+      "before_counts": {
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 0,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "candidate_route_records": [
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_lineage_transfer_map": {
+            "0": "2",
+            "1": "2",
+            "2": "2"
+          },
+          "candidate_lineage_transfer_map_digest": "0cebf8faac200535dae793f1a1fa61cc7585edb135154a0aecf601d064d5b023",
+          "candidate_losing_sink_ids": [
+            3
+          ],
+          "candidate_order_key": "route_a",
+          "candidate_retired_edge_ids": [
+            2
+          ],
+          "candidate_retired_node_ids": [
+            3
+          ],
+          "candidate_route_digest": "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+          "candidate_route_id": "route_a",
+          "candidate_route_score": 1.0,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+            "active_context_node_id:4",
+            "candidate_route_id:route_a",
+            "compatible_route_id:route_a",
+            "candidate_score_components",
+            "candidate_budget_prediction",
+            "candidate_lineage_transfer_map",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "budget_validity": 0.2,
+            "context_match": 0.6,
+            "lineage_ready": 0.2
+          },
+          "candidate_selected_sink_id": 2,
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "candidate_source_edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "candidate_source_node_ids": [
+            0,
+            1
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0,
+            1
+          ],
+          "candidate_target_node_ids": [
+            2
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            0,
+            1,
+            2
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        },
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_lineage_transfer_map": {
+            "0": "3",
+            "1": "3",
+            "3": "3"
+          },
+          "candidate_lineage_transfer_map_digest": "bf78a37980c93c819e9c3beee00b738f31ba0bb62f697e49d305683c60806b6b",
+          "candidate_losing_sink_ids": [
+            2
+          ],
+          "candidate_order_key": "route_b",
+          "candidate_retired_edge_ids": [
+            1
+          ],
+          "candidate_retired_node_ids": [
+            2
+          ],
+          "candidate_route_digest": "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf",
+          "candidate_route_id": "route_b",
+          "candidate_route_score": 0.4,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+            "active_context_node_id:4",
+            "candidate_route_id:route_b",
+            "compatible_route_id:route_a",
+            "candidate_score_components",
+            "candidate_budget_prediction",
+            "candidate_lineage_transfer_map",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "budget_validity": 0.2,
+            "context_match": 0.0,
+            "lineage_ready": 0.2
+          },
+          "candidate_selected_sink_id": 3,
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "candidate_source_edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "candidate_source_node_ids": [
+            0,
+            1
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0,
+            2
+          ],
+          "candidate_target_node_ids": [
+            3
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            0,
+            1,
+            3
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        }
+      ],
+      "candidate_set_digest": "b2e4fc1d53538a2c75a0127e5876ddc5de2f8faba102759774d5a8ad855af081",
+      "candidate_set_record": {
+        "arbitration_window_id": "n06_window_context_state_candidate_emission_v1",
+        "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "candidate_route_digests": [
+          "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+          "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+        ],
+        "candidate_set_digest": "b2e4fc1d53538a2c75a0127e5876ddc5de2f8faba102759774d5a8ad855af081",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "c676f271c54e4ed14e05c54fb95cb39c68025a089af79e05719b95a9462db72d",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "unresolved_tie_policy": "fail_closed"
+      },
+      "checks": {
+        "artifact_selection_replay_clean": true,
+        "budget_exact": true,
+        "candidate_set_emitted": true,
+        "claim_flags_remain_false": true,
+        "context_relation_replayable": true,
+        "exactly_one_route_selected": true,
+        "no_packet_scheduled_by_arbitration": true,
+        "no_topology_event_committed": true,
+        "route_arbitration_record_emitted": true,
+        "selected_route_matches_context_relation": true,
+        "topology_authorization_valid": true
+      },
+      "context_relation_replay": {
+        "active_context_node_id": 4,
+        "arbitration_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "arbitration_hidden_inputs": [],
+        "arbitration_runtime_visible_inputs": [
+          "active_context_node_id:4",
+          "candidate_order_key",
+          "candidate_route_score",
+          "candidate_set_order_key",
+          "compatible_route_id:route_a",
+          "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "arbitration_score": 1.0,
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "checks": {
+          "arbitration_context_fields_serialized": true,
+          "arbitration_hidden_inputs_absent": true,
+          "arbitration_reason_selected_highest_score": true,
+          "arbitration_score_equals_selected_candidate_score": true,
+          "candidate_arbitration_context_consistent": true,
+          "candidate_context_evidence_replayable": true,
+          "candidate_route_scores_equal_component_sums": true,
+          "hidden_inputs_absent": true,
+          "selected_route_has_highest_score": true,
+          "selected_route_matches_context_relation": true,
+          "selected_route_matches_serialized_context_relation": true,
+          "serialized_context_matches_expected_context": true,
+          "serialized_context_values_agree_across_candidates": true
+        },
+        "compatible_route_id": "route_a",
+        "context_relation_replayable": true,
+        "context_state_id": "context_a",
+        "per_candidate": {
+          "route_a": {
+            "actual_score": 1.0,
+            "actual_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.6,
+              "lineage_ready": 0.2
+            },
+            "checks": {
+              "active_context_node_serialized": true,
+              "candidate_route_id_serialized": true,
+              "compatible_route_id_serialized": true,
+              "context_fields_runtime_visible": true,
+              "context_surface_digest_serialized": true,
+              "no_hidden_inputs": true,
+              "score_components_match_context_template": true,
+              "score_matches_context_template": true
+            },
+            "expected_score": 1.0,
+            "expected_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.6,
+              "lineage_ready": 0.2
+            },
+            "hidden_inputs": [],
+            "replay_ok": true,
+            "runtime_visible_field_names": [
+              "active_context_node_id",
+              "candidate_budget_prediction",
+              "candidate_lineage_transfer_map",
+              "candidate_route_id",
+              "candidate_score_components",
+              "candidate_source_surface_digest",
+              "compatible_route_id",
+              "context_surface_digest",
+              "serialized_route_arbitration_policy"
+            ],
+            "serialized_context_values": {
+              "active_context_node_id": [
+                "4"
+              ],
+              "compatible_route_id": [
+                "route_a"
+              ],
+              "context_surface_digest": [
+                "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+              ]
+            }
+          },
+          "route_b": {
+            "actual_score": 0.4,
+            "actual_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.0,
+              "lineage_ready": 0.2
+            },
+            "checks": {
+              "active_context_node_serialized": true,
+              "candidate_route_id_serialized": true,
+              "compatible_route_id_serialized": true,
+              "context_fields_runtime_visible": true,
+              "context_surface_digest_serialized": true,
+              "no_hidden_inputs": true,
+              "score_components_match_context_template": true,
+              "score_matches_context_template": true
+            },
+            "expected_score": 0.4,
+            "expected_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.0,
+              "lineage_ready": 0.2
+            },
+            "hidden_inputs": [],
+            "replay_ok": true,
+            "runtime_visible_field_names": [
+              "active_context_node_id",
+              "candidate_budget_prediction",
+              "candidate_lineage_transfer_map",
+              "candidate_route_id",
+              "candidate_score_components",
+              "candidate_source_surface_digest",
+              "compatible_route_id",
+              "context_surface_digest",
+              "serialized_route_arbitration_policy"
+            ],
+            "serialized_context_values": {
+              "active_context_node_id": [
+                "4"
+              ],
+              "compatible_route_id": [
+                "route_a"
+              ],
+              "context_surface_digest": [
+                "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+              ]
+            }
+          }
+        },
+        "route_scores": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "score_tolerance": 1e-09,
+        "selected_candidate_score": 1.0,
+        "selected_route_id": "route_a",
+        "serialized_context_summary": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+      },
+      "context_state_id": "context_a",
+      "lane_id": "sc4_context_a_native_arbitration",
+      "passed": true,
+      "rejected_candidate_route_digests": [
+        "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+      ],
+      "route_arbitration_record": {
+        "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+        "arbitration_rule": "highest_score",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key",
+          "active_context_node_id:4",
+          "compatible_route_id:route_a",
+          "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "arbitration_score": 1.0,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "b2e4fc1d53538a2c75a0127e5876ddc5de2f8faba102759774d5a8ad855af081",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "a56c343165461189666aca70e39f2c81a5a850367fee61364eaabd602344dd4f",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_digest": "0241aeba67bedcec1303f899e4d783ce77c7783527969dddb6552fce9986b722",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "native-route-arbitration:60c268a4a965f371a105666dd4e5da56",
+        "rejected_candidate_route_digests": [
+          "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+        "selected_candidate_route_id": "route_a",
+        "selected_topology_event_digest": "78b06c790b612559c97716e521c485a769bc248693534f30b26a972ca54f3c01",
+        "selected_topology_event_id": "lgrc9v3-topology-da015ae3fe860bac"
+      },
+      "selected_candidate_route_digest": "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+      "selected_candidate_route_id": "route_a",
+      "selection_only_artifact_validation": {
+        "agency_claim_allowed": false,
+        "artifact_only": true,
+        "biological_claim_allowed": false,
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "candidate_set_reconstructed": true,
+        "control_blockers": [],
+        "downstream_lineage_reabsorption_producer_chain_reconstructed": false,
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:60c268a4a965f371a105666dd4e5da56:0"
+        ],
+        "failure_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:60c268a4a965f371a105666dd4e5da56:0"
+        ],
+        "identity_acceptance_claim_allowed": false,
+        "lineage_replay_valid": null,
+        "locomotion_like_claim_allowed": false,
+        "native_lgrc_choice_selection_claim_allowed": false,
+        "native_lgrc_route_arbitration_supported": false,
+        "post_arbitration_linked_producer_count": 0,
+        "rc_identity_collapse_claim_allowed": false,
+        "route_arbitration_reconstructed": true,
+        "route_arbitration_record_count": 1,
+        "route_selection_reconstructed_from_artifacts": true,
+        "runtime_state_used": false,
+        "selected_route_arbitration_record_ids": [
+          "native-route-arbitration:60c268a4a965f371a105666dd4e5da56"
+        ],
+        "selected_topology_event_count": 0,
+        "selected_topology_event_reconstructed": false,
+        "selection_contract_valid": true,
+        "semantic_choice_claim_allowed": false,
+        "unexpected_failure_reasons": [],
+        "unrestricted_movement_claim_allowed": false,
+        "valid": false,
+        "validator": "validate_lgrc9v3_native_route_arbitration_artifacts",
+        "validator_scope": "sc4_context_swap_pre_topology_commit"
+      },
+      "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+      "topology_event_authorization": {
+        "authorized_topology_event_matches_selected_candidate": true,
+        "candidate_lineage_transfer_map": {
+          "0": "2",
+          "1": "2",
+          "2": "2"
+        },
+        "candidate_selected_sink_id": 2,
+        "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+        "checks": {
+          "authorized_topology_event_digest_matches_candidate": true,
+          "authorized_topology_event_id_matches_candidate": true,
+          "candidate_lineage_targets_selected_sink": true,
+          "selected_candidate_found": true
+        },
+        "derived_topology_event_digest": "78b06c790b612559c97716e521c485a769bc248693534f30b26a972ca54f3c01",
+        "derived_topology_event_id": "lgrc9v3-topology-da015ae3fe860bac",
+        "recorded_topology_event_digest": "78b06c790b612559c97716e521c485a769bc248693534f30b26a972ca54f3c01",
+        "recorded_topology_event_id": "lgrc9v3-topology-da015ae3fe860bac",
+        "selected_candidate_found": true,
+        "selected_candidate_route_digest": "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+        "selected_candidate_route_id": "route_a"
+      }
+    },
+    "context_b": {
+      "after_counts": {
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 1,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+      "arbitration_runtime_visible_inputs": [
+        "candidate_route_score",
+        "candidate_order_key",
+        "candidate_set_order_key",
+        "active_context_node_id:5",
+        "compatible_route_id:route_b",
+        "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+      ],
+      "before_counts": {
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "event_count": 2,
+        "production_result_count": 0,
+        "route_arbitration_count": 0,
+        "surface_lineage_count": 0,
+        "surface_row_count": 1,
+        "topology_event_count": 0,
+        "topology_state_reabsorption_count": 0
+      },
+      "candidate_route_records": [
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_lineage_transfer_map": {
+            "0": "3",
+            "1": "3",
+            "3": "3"
+          },
+          "candidate_lineage_transfer_map_digest": "bf78a37980c93c819e9c3beee00b738f31ba0bb62f697e49d305683c60806b6b",
+          "candidate_losing_sink_ids": [
+            2
+          ],
+          "candidate_order_key": "route_b",
+          "candidate_retired_edge_ids": [
+            1
+          ],
+          "candidate_retired_node_ids": [
+            2
+          ],
+          "candidate_route_digest": "43b70f9309c436d9a19073a197b3d6290133fe6f6cd0e2ddb637e1362acdbb3d",
+          "candidate_route_id": "route_b",
+          "candidate_route_score": 1.0,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+            "active_context_node_id:5",
+            "candidate_route_id:route_b",
+            "compatible_route_id:route_b",
+            "candidate_score_components",
+            "candidate_budget_prediction",
+            "candidate_lineage_transfer_map",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "budget_validity": 0.2,
+            "context_match": 0.6,
+            "lineage_ready": 0.2
+          },
+          "candidate_selected_sink_id": 3,
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "candidate_source_edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "candidate_source_node_ids": [
+            0,
+            1
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0,
+            2
+          ],
+          "candidate_target_node_ids": [
+            3
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            0,
+            1,
+            3
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        },
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            2,
+            3
+          ],
+          "candidate_lineage_transfer_map": {
+            "0": "2",
+            "1": "2",
+            "2": "2"
+          },
+          "candidate_lineage_transfer_map_digest": "0cebf8faac200535dae793f1a1fa61cc7585edb135154a0aecf601d064d5b023",
+          "candidate_losing_sink_ids": [
+            3
+          ],
+          "candidate_order_key": "route_a",
+          "candidate_retired_edge_ids": [
+            2
+          ],
+          "candidate_retired_node_ids": [
+            3
+          ],
+          "candidate_route_digest": "7085bb595cd67defdbbfd74cafec61158c5476097efed680111833e2f4cb3d9a",
+          "candidate_route_id": "route_a",
+          "candidate_route_score": 0.4,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+            "active_context_node_id:5",
+            "candidate_route_id:route_a",
+            "compatible_route_id:route_b",
+            "candidate_score_components",
+            "candidate_budget_prediction",
+            "candidate_lineage_transfer_map",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "budget_validity": 0.2,
+            "context_match": 0.0,
+            "lineage_ready": 0.2
+          },
+          "candidate_selected_sink_id": 2,
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "candidate_source_edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "candidate_source_node_ids": [
+            0,
+            1
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0,
+            1
+          ],
+          "candidate_target_node_ids": [
+            2
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            0,
+            1,
+            2
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        }
+      ],
+      "candidate_set_digest": "e721a542cde7652fd3ef6ef341a166575c96de5022bc34ba937923e1921ec218",
+      "candidate_set_record": {
+        "arbitration_window_id": "n06_window_context_state_candidate_emission_v1",
+        "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "candidate_route_digests": [
+          "43b70f9309c436d9a19073a197b3d6290133fe6f6cd0e2ddb637e1362acdbb3d",
+          "7085bb595cd67defdbbfd74cafec61158c5476097efed680111833e2f4cb3d9a"
+        ],
+        "candidate_set_digest": "e721a542cde7652fd3ef6ef341a166575c96de5022bc34ba937923e1921ec218",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "94eddecc1a487959f7e982010a82053008b2331b92d7fd717d2a320e3b4022b9",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "unresolved_tie_policy": "fail_closed"
+      },
+      "checks": {
+        "artifact_selection_replay_clean": true,
+        "budget_exact": true,
+        "candidate_set_emitted": true,
+        "claim_flags_remain_false": true,
+        "context_relation_replayable": true,
+        "exactly_one_route_selected": true,
+        "no_packet_scheduled_by_arbitration": true,
+        "no_topology_event_committed": true,
+        "route_arbitration_record_emitted": true,
+        "selected_route_matches_context_relation": true,
+        "topology_authorization_valid": true
+      },
+      "context_relation_replay": {
+        "active_context_node_id": 5,
+        "arbitration_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "arbitration_hidden_inputs": [],
+        "arbitration_runtime_visible_inputs": [
+          "active_context_node_id:5",
+          "candidate_order_key",
+          "candidate_route_score",
+          "candidate_set_order_key",
+          "compatible_route_id:route_b",
+          "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "arbitration_score": 1.0,
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "checks": {
+          "arbitration_context_fields_serialized": true,
+          "arbitration_hidden_inputs_absent": true,
+          "arbitration_reason_selected_highest_score": true,
+          "arbitration_score_equals_selected_candidate_score": true,
+          "candidate_arbitration_context_consistent": true,
+          "candidate_context_evidence_replayable": true,
+          "candidate_route_scores_equal_component_sums": true,
+          "hidden_inputs_absent": true,
+          "selected_route_has_highest_score": true,
+          "selected_route_matches_context_relation": true,
+          "selected_route_matches_serialized_context_relation": true,
+          "serialized_context_matches_expected_context": true,
+          "serialized_context_values_agree_across_candidates": true
+        },
+        "compatible_route_id": "route_b",
+        "context_relation_replayable": true,
+        "context_state_id": "context_b",
+        "per_candidate": {
+          "route_a": {
+            "actual_score": 0.4,
+            "actual_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.0,
+              "lineage_ready": 0.2
+            },
+            "checks": {
+              "active_context_node_serialized": true,
+              "candidate_route_id_serialized": true,
+              "compatible_route_id_serialized": true,
+              "context_fields_runtime_visible": true,
+              "context_surface_digest_serialized": true,
+              "no_hidden_inputs": true,
+              "score_components_match_context_template": true,
+              "score_matches_context_template": true
+            },
+            "expected_score": 0.4,
+            "expected_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.0,
+              "lineage_ready": 0.2
+            },
+            "hidden_inputs": [],
+            "replay_ok": true,
+            "runtime_visible_field_names": [
+              "active_context_node_id",
+              "candidate_budget_prediction",
+              "candidate_lineage_transfer_map",
+              "candidate_route_id",
+              "candidate_score_components",
+              "candidate_source_surface_digest",
+              "compatible_route_id",
+              "context_surface_digest",
+              "serialized_route_arbitration_policy"
+            ],
+            "serialized_context_values": {
+              "active_context_node_id": [
+                "5"
+              ],
+              "compatible_route_id": [
+                "route_b"
+              ],
+              "context_surface_digest": [
+                "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+              ]
+            }
+          },
+          "route_b": {
+            "actual_score": 1.0,
+            "actual_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.6,
+              "lineage_ready": 0.2
+            },
+            "checks": {
+              "active_context_node_serialized": true,
+              "candidate_route_id_serialized": true,
+              "compatible_route_id_serialized": true,
+              "context_fields_runtime_visible": true,
+              "context_surface_digest_serialized": true,
+              "no_hidden_inputs": true,
+              "score_components_match_context_template": true,
+              "score_matches_context_template": true
+            },
+            "expected_score": 1.0,
+            "expected_score_components": {
+              "budget_validity": 0.2,
+              "context_match": 0.6,
+              "lineage_ready": 0.2
+            },
+            "hidden_inputs": [],
+            "replay_ok": true,
+            "runtime_visible_field_names": [
+              "active_context_node_id",
+              "candidate_budget_prediction",
+              "candidate_lineage_transfer_map",
+              "candidate_route_id",
+              "candidate_score_components",
+              "candidate_source_surface_digest",
+              "compatible_route_id",
+              "context_surface_digest",
+              "serialized_route_arbitration_policy"
+            ],
+            "serialized_context_values": {
+              "active_context_node_id": [
+                "5"
+              ],
+              "compatible_route_id": [
+                "route_b"
+              ],
+              "context_surface_digest": [
+                "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+              ]
+            }
+          }
+        },
+        "route_scores": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "score_tolerance": 1e-09,
+        "selected_candidate_score": 1.0,
+        "selected_route_id": "route_b",
+        "serialized_context_summary": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+      },
+      "context_state_id": "context_b",
+      "lane_id": "sc4_context_b_native_arbitration",
+      "passed": true,
+      "rejected_candidate_route_digests": [
+        "7085bb595cd67defdbbfd74cafec61158c5476097efed680111833e2f4cb3d9a"
+      ],
+      "route_arbitration_record": {
+        "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+        "arbitration_rule": "highest_score",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key",
+          "active_context_node_id:5",
+          "compatible_route_id:route_b",
+          "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "arbitration_score": 1.0,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "e721a542cde7652fd3ef6ef341a166575c96de5022bc34ba937923e1921ec218",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "930701b382f95f616a8481529826bae63f1188d34e57ce4dfed6aff4b9e1dc81",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_digest": "4c1991e478010d8a70b7ac5066c6f3e7e95d156639d714872bdc5e4c087b4a56",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "native-route-arbitration:ee8499c96e08c19a722e69c6209e3f4c",
+        "rejected_candidate_route_digests": [
+          "7085bb595cd67defdbbfd74cafec61158c5476097efed680111833e2f4cb3d9a"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": "43b70f9309c436d9a19073a197b3d6290133fe6f6cd0e2ddb637e1362acdbb3d",
+        "selected_candidate_route_id": "route_b",
+        "selected_topology_event_digest": "328c554f2a7810078bcb57e3e1d359be5a177614cf14e0035761d3a9ca0bff29",
+        "selected_topology_event_id": "lgrc9v3-topology-3703b44d1a949e41"
+      },
+      "selected_candidate_route_digest": "43b70f9309c436d9a19073a197b3d6290133fe6f6cd0e2ddb637e1362acdbb3d",
+      "selected_candidate_route_id": "route_b",
+      "selection_only_artifact_validation": {
+        "agency_claim_allowed": false,
+        "artifact_only": true,
+        "biological_claim_allowed": false,
+        "candidate_route_count": 2,
+        "candidate_set_count": 1,
+        "candidate_set_reconstructed": true,
+        "control_blockers": [],
+        "downstream_lineage_reabsorption_producer_chain_reconstructed": false,
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:ee8499c96e08c19a722e69c6209e3f4c:0"
+        ],
+        "failure_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:ee8499c96e08c19a722e69c6209e3f4c:0"
+        ],
+        "identity_acceptance_claim_allowed": false,
+        "lineage_replay_valid": null,
+        "locomotion_like_claim_allowed": false,
+        "native_lgrc_choice_selection_claim_allowed": false,
+        "native_lgrc_route_arbitration_supported": false,
+        "post_arbitration_linked_producer_count": 0,
+        "rc_identity_collapse_claim_allowed": false,
+        "route_arbitration_reconstructed": true,
+        "route_arbitration_record_count": 1,
+        "route_selection_reconstructed_from_artifacts": true,
+        "runtime_state_used": false,
+        "selected_route_arbitration_record_ids": [
+          "native-route-arbitration:ee8499c96e08c19a722e69c6209e3f4c"
+        ],
+        "selected_topology_event_count": 0,
+        "selected_topology_event_reconstructed": false,
+        "selection_contract_valid": true,
+        "semantic_choice_claim_allowed": false,
+        "unexpected_failure_reasons": [],
+        "unrestricted_movement_claim_allowed": false,
+        "valid": false,
+        "validator": "validate_lgrc9v3_native_route_arbitration_artifacts",
+        "validator_scope": "sc4_context_swap_pre_topology_commit"
+      },
+      "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+      "topology_event_authorization": {
+        "authorized_topology_event_matches_selected_candidate": true,
+        "candidate_lineage_transfer_map": {
+          "0": "3",
+          "1": "3",
+          "3": "3"
+        },
+        "candidate_selected_sink_id": 3,
+        "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+        "checks": {
+          "authorized_topology_event_digest_matches_candidate": true,
+          "authorized_topology_event_id_matches_candidate": true,
+          "candidate_lineage_targets_selected_sink": true,
+          "selected_candidate_found": true
+        },
+        "derived_topology_event_digest": "328c554f2a7810078bcb57e3e1d359be5a177614cf14e0035761d3a9ca0bff29",
+        "derived_topology_event_id": "lgrc9v3-topology-3703b44d1a949e41",
+        "recorded_topology_event_digest": "328c554f2a7810078bcb57e3e1d359be5a177614cf14e0035761d3a9ca0bff29",
+        "recorded_topology_event_id": "lgrc9v3-topology-3703b44d1a949e41",
+        "selected_candidate_found": true,
+        "selected_candidate_route_digest": "43b70f9309c436d9a19073a197b3d6290133fe6f6cd0e2ddb637e1362acdbb3d",
+        "selected_candidate_route_id": "route_b"
+      }
+    }
+  },
+  "manifest": {
+    "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/configs/n06_fixture_manifest_v1.json",
+    "sha256": "867a2bb464bbbdc0c782f334cf3bb9821b3d8f60d792dceab4644695b947363b"
+  },
+  "matched_settings": {
+    "arbitration_rule": "highest_score",
+    "budget_tolerance": 1e-09,
+    "candidate_set_order_key": "score_desc_then_candidate_id",
+    "checks": {
+      "same_arbitration_rule": true,
+      "same_budget_tolerance": true,
+      "same_candidate_set_order_key": true,
+      "same_fixture_id": true,
+      "same_policy_id": true,
+      "same_score_tolerance": true,
+      "same_source_surface_digest": true,
+      "same_unresolved_tie_policy": true,
+      "same_validator_scope": true
+    },
+    "context_a_budget_errors": [
+      0.0,
+      0.0
+    ],
+    "context_a_score_tolerance": 1e-09,
+    "context_b_budget_errors": [
+      0.0,
+      0.0
+    ],
+    "context_b_score_tolerance": 1e-09,
+    "fixture_id": "N06_S0_source_two_route_context_fork_v1",
+    "matched": true,
+    "policy_id": "score_ordered_topology_route_candidates",
+    "score_tolerance": 1e-09,
+    "unresolved_tie_policy": "fail_closed",
+    "validator_scope": "sc4_context_swap_pre_topology_commit"
+  },
+  "platform": {
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "schema": "semantic_route_choice_report_v1",
+  "scope_notes": {
+    "context_swap_scope": true,
+    "independent_polarity_surface_tested": false,
+    "reason": "The current N06 fixture serializes context A/B affordance, not a separate polarity surface.",
+    "stale_context_and_order_controls": "N06 artifact-level semantic replay controls until a future Phase 8 native semantic-context validator exists."
+  },
+  "source_iteration": {
+    "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_5_sc3_context_conditioned_selection.json",
+    "sha256": "086c637b161e22e3a8c828591722033efcd49557e17ed5c02f32860aeb6e9b77"
+  },
+  "status": "passed",
+  "swap_replay": {
+    "checks": {
+      "candidate_set_digests_distinct": true,
+      "context_a_rejected_route_b": true,
+      "context_a_relation_replayable": true,
+      "context_a_selected_route_a": true,
+      "context_b_rejected_route_a": true,
+      "context_b_relation_replayable": true,
+      "context_b_selected_route_b": true,
+      "no_direction_or_polarity_labels": true,
+      "no_forbidden_runtime_inputs": true,
+      "selected_candidate_digests_distinct": true,
+      "selection_swapped": true
+    },
+    "context_a_direction_labels": [],
+    "context_a_forbidden_runtime_inputs": [],
+    "context_a_rejected_candidate_digests": [
+      "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+    ],
+    "context_a_rejected_routes": [
+      "route_b"
+    ],
+    "context_a_selected_candidate_digest": "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+    "context_a_selected_route": "route_a",
+    "context_b_direction_labels": [],
+    "context_b_forbidden_runtime_inputs": [],
+    "context_b_rejected_candidate_digests": [
+      "7085bb595cd67defdbbfd74cafec61158c5476097efed680111833e2f4cb3d9a"
+    ],
+    "context_b_rejected_routes": [
+      "route_a"
+    ],
+    "context_b_selected_candidate_digest": "43b70f9309c436d9a19073a197b3d6290133fe6f6cd0e2ddb637e1362acdbb3d",
+    "context_b_selected_route": "route_b",
+    "swap_replayable": true
+  }
+}

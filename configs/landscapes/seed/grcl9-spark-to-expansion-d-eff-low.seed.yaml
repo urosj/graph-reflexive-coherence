@@ -1,0 +1,87 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Spark To Expansion D Eff Low
+  description: Seed-backed GRCL-9 refinement locus with low target effective degree.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-spark-to-expansion-d-eff-low
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: candidate
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [support_n, support_e, support_s]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: spark_to_expansion_d_eff_low_critical_region
+        motif_id: spark_to_expansion
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: saturated_identity_support
+          local_basin: single_candidate
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: columnwise
+        columnwise_near_cancellation:
+          target_column: 2
+          diagnostic_mode: near_epsilon
+          spark_threshold: 0.02
+        spark_gate_intent: saturation_column_proxy
+  - id: refinement
+    type: plateau
+    depth_hint: 0
+    coherence_prior: 0.6
+    chart_center_hint: [0.5, 0.42]
+    extensions:
+      grcl9:
+        term_kind: refinement_locus
+        term_id: spark_to_expansion_d_eff_low_refinement_locus
+        motif_id: spark_to_expansion
+        locus_id: refinement
+        region_id: candidate
+        target_effective_degree: 16
+        coherence_transfer_mode: equal
+  - id: support_n
+    type: basin
+    coherence_prior: 0.5
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.3]
+  - id: support_e
+    type: basin
+    coherence_prior: 0.5
+    depth_hint: 0
+    chart_center_hint: [0.68, 0.5]
+  - id: support_s
+    type: basin
+    coherence_prior: 0.5
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.7]
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: spark_to_expansion_d_eff_low
+    manifest_entry_id: grcl9_lowering_expansion_refinement_v1
+    notes: Seed-backed GRCL-9 expansion low-D-eff control.

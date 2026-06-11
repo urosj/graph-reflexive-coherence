@@ -1,0 +1,307 @@
+{
+  "artifacts": {
+    "json": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_lgrc_lane_f_surface_bridge.json",
+      "payload_sha256_without_artifacts": "c8196c047d811b16e87c4e44b065629727b999105ae581da81872d99e3e49485"
+    },
+    "markdown": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/reports/native_lgrc_lane_f_surface_bridge.md",
+      "sha256": "5dee60bd159b42e77a8b22314be874f3b3e3a19085aaf8c18c372c74d4e7ee37"
+    }
+  },
+  "budget_surface": "node_plus_packet",
+  "claim_ceiling": "native_lgrc_pulse_substrate_surface_supported",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_causal_pulse_substrate_surface_enabled": true,
+    "native_causal_pulse_substrate_surface_validated": true,
+    "native_lgrc_pulse_substrate_supported": true,
+    "native_m6": false
+  },
+  "controls": [
+    {
+      "lane_id": "F_lgrc0_lgrc1_inertness_control",
+      "outcomes": [
+        {
+          "constructed": false,
+          "error": "native causal pulse-substrate surface v1 requires packetized fixed-topology LGRC-2 execution",
+          "producer_records": 0,
+          "runtime_level": "lgrc0",
+          "scheduled_packets": 0,
+          "surface_rows": 0
+        },
+        {
+          "constructed": false,
+          "error": "native causal pulse-substrate surface v1 requires packetized fixed-topology LGRC-2 execution",
+          "producer_records": 0,
+          "runtime_level": "lgrc1",
+          "scheduled_packets": 0,
+          "surface_rows": 0
+        }
+      ],
+      "passed": true,
+      "primary_blocker": "lgrc_runtime_level_below_2"
+    },
+    {
+      "coupling_record_count": 0,
+      "feedback_record_count": 0,
+      "lane_id": "F_default_off_synchronous_noop_control",
+      "passed": true,
+      "primary_blocker": "surface_policy_disabled",
+      "surface_events_emitted": [],
+      "surface_rows": 0
+    },
+    {
+      "failure_reasons": [
+        "producer_mutation_boundary_violation:lgrc9v3-producer-record-c7c9dc027ac5d1cc83ed3ba6:direct_coherence_write"
+      ],
+      "lane_id": "F_producer_coherence_mutation_control",
+      "passed": true,
+      "primary_blocker": "producer_mutation_boundary_violation"
+    },
+    {
+      "failure_reasons": [
+        "corrupted_surface_row:surface:lgrc9v3-packet-event-6fc8195db1230ee3:route_local_pulse_contact:unsupported surface_budget_surface"
+      ],
+      "lane_id": "F_budget_surface_merging_control",
+      "passed": true,
+      "primary_blocker": "budget_surface_ambiguity"
+    },
+    {
+      "coupling_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+      "feedback_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+      "lane_id": "F_snapshot_continue_after_load_with_producers_control",
+      "passed": true,
+      "primary_blocker": null,
+      "queue_order_preserved": true,
+      "surface_row_count_after_load": 4
+    },
+    {
+      "lane_id": "F_coupling_disabled_control",
+      "passed": true,
+      "primary_blocker": "coupling_disabled",
+      "reason_code": "pulse_substrate_coupling_disabled",
+      "record_count": 1
+    },
+    {
+      "lane_id": "F_coupling_subthreshold_control",
+      "observed_value": 0.25,
+      "passed": true,
+      "primary_blocker": "subthreshold",
+      "reason_code": "pulse_substrate_coupling_subthreshold",
+      "threshold": 0.3
+    },
+    {
+      "lane_id": "F_feedback_disabled_control",
+      "passed": true,
+      "primary_blocker": "feedback_disabled",
+      "reason_code": "feedback_coupled_pulse_disabled",
+      "record_count": 1
+    },
+    {
+      "lane_id": "F_feedback_subthreshold_control",
+      "passed": true,
+      "primary_blocker": "subthreshold",
+      "reason_code": "feedback_coupled_pulse_subthreshold",
+      "signed_feedback": 2.25,
+      "threshold": 3.0
+    },
+    {
+      "expected_polarity": "negative",
+      "lane_id": "F_feedback_wrong_polarity_control",
+      "passed": true,
+      "primary_blocker": "wrong_polarity",
+      "reason_code": "feedback_coupled_pulse_wrong_polarity",
+      "signed_feedback": -2.25
+    },
+    {
+      "lane_id": "F_feedback_order_mismatch_control",
+      "passed": true,
+      "primary_blocker": "canonical_causal_order_failed",
+      "reason_code": "feedback_coupled_pulse_order_mismatch"
+    },
+    {
+      "error": "feedback-coupled pulse exceeds source-node coherence",
+      "lane_id": "F_feedback_budget_violation_control",
+      "passed": true,
+      "primary_blocker": "budget_surface_gate_failed"
+    },
+    {
+      "coupling_record_count": 0,
+      "feedback_record_count": 0,
+      "lane_id": "F_disabled_surface_policy_producer_control",
+      "passed": true,
+      "primary_blocker": "surface_policy_disabled",
+      "queue_unchanged": true
+    },
+    {
+      "error": "native causal pulse-substrate surface v1 requires packetized fixed-topology LGRC-2 execution",
+      "lane_id": "F_topology_lineage_deferred_control",
+      "lgrc3_lineage_transport_out_of_scope": true,
+      "native_lgrc_pulse_substrate_supported": false,
+      "passed": true,
+      "primary_blocker": "topology_lineage_deferred"
+    }
+  ],
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_native_lgrc_lane_f_surface_bridge.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "gate_map_readiness": {
+    "claim_boundaries_clean": true,
+    "controls_recorded": true,
+    "lane_f_handoff_artifacts_exist": true,
+    "native_support_flags_set": true,
+    "ready_for_iteration_57_gate_map_update": true
+  },
+  "git": {
+    "rev_parse_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "fe47313792c9a173451bb4a9383703f85bafec1f"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M implementation/ImplementationPhases.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M papers/2026-05-LGRC9V3-Causal-Pulse-Substrate-Surfaces.md\n M src/pygrc/models/__init__.py\n M src/pygrc/models/lgrc_9_v3_contract.py\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M src/pygrc/models/lgrc_9_v3_runtime_state.py\n M src/pygrc/telemetry/__init__.py\n M src/pygrc/telemetry/lgrc9v3_contract.py\n M tests/models/test_lgrc_9_v3_contract.py\n M tests/models/test_lgrc_9_v3_runtime.py\n M tests/telemetry/test_lgrc9v3_contract.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_f_native_surface_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_lgrc_lane_f_surface_bridge.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_f_native_surface_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/native_lgrc_lane_f_surface_bridge.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/close_native_lgrc_lane_f.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_native_lgrc_lane_f_surface_bridge.py\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.json\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.md\n?? implementation/Phase-8-LGRC9-CausalPulseSubstrateChecklist.md\n?? implementation/Phase-8-LGRC9-CausalPulseSubstratePlan.md"
+    }
+  },
+  "lane_f_bridge": {
+    "artifact_only_full_chain_reconstructed": true,
+    "n04_movement_claims_opened": false,
+    "native_m6_opened": false,
+    "regenerated_native_pulse_work_not_copied_from_original_e3_schedule": true,
+    "regenerated_pulse_source": "feedback_eligibility",
+    "validated_chain": [
+      "source_packet_event",
+      "surface_row",
+      "producer_record",
+      "scheduled_packet",
+      "processed_packet_event"
+    ]
+  },
+  "positive_fixture": {
+    "artifact_digests": {
+      "processed_packet_events_sha256": "2d2066301d19bcd2b3a5c9eecaceac3494391a7b2240432f3ffe5c058e213a52",
+      "producer_records_sha256": "7c2a2450bc8c7fb6b0f17fe1c06e8c9eff96d5e6cb1de84d36ab68d63fe39eff",
+      "scheduled_packets_sha256": "e48173b2e20947345bfd34afb879bbb9360b3448e741dfd62ea44310b391f627",
+      "surface_log_sha256": "158b555f04147c706eadceb483fdce99e12f82415e3b97dd7ff60aa9dca17faf"
+    },
+    "artifact_validation_on_lane_f_artifacts": true,
+    "artifact_validator": {
+      "failure_reasons": [],
+      "movement_claim_allowed": false,
+      "native_lgrc_pulse_substrate_supported": true,
+      "native_m6": false,
+      "surface_row_count": 6,
+      "valid": true,
+      "validated_surface_ids": [
+        "surface:lgrc9v3-packet-event-6fc8195db1230ee3:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-385a7a9d0def8893:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-4f373eb837c908a5:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-4f373eb837c908a5:feedback_eligibility",
+        "surface:lgrc9v3-packet-event-1346e465cb599535:route_local_pulse_contact",
+        "surface:lgrc9v3-packet-event-d864f1e5afbbdac0:route_local_pulse_contact"
+      ],
+      "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+    },
+    "coupling_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+    "coupling_scheduled": true,
+    "direct_write_audit": {
+      "coupling_direct_claim_write": false,
+      "coupling_direct_coherence_write": false,
+      "feedback_direct_claim_write": false,
+      "feedback_direct_coherence_write": false
+    },
+    "feedback_copied_from_original_schedule": false,
+    "feedback_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+    "feedback_regenerated_pulse_source": "feedback_eligibility",
+    "feedback_scheduled": true,
+    "feedback_surface_digest": "73fd29f019bffac319500617dbae41189d918ff808f19e90db05158007b70165",
+    "lane_id": "F_positive_native_surface_coupling_feedback",
+    "source_surface_digest": "5c4a48febe22d9357d5ec6aa51e42da13931d64b7319e5ac840f528cf4e0a94b",
+    "surface_row_count": 6,
+    "topology": {
+      "edge_count": 3,
+      "node_count": 3,
+      "topology_changed": false,
+      "topology_events_enabled": false
+    }
+  },
+  "producer_step_boundary_runtime_audit": {
+    "passed": true,
+    "producer_mutated_coherence": false,
+    "producer_record_reason_code": "pulse_substrate_coupling_packet_departure_scheduled",
+    "producer_scheduled_work": true,
+    "step_mutated_coherence_after_scheduled_work": true
+  },
+  "reason_code_coverage": {
+    "coupling": {
+      "all_exercised": true,
+      "expected": [
+        "pulse_substrate_coupling_disabled",
+        "pulse_substrate_coupling_packet_departure_scheduled",
+        "pulse_substrate_coupling_subthreshold"
+      ],
+      "observed": [
+        "pulse_substrate_coupling_disabled",
+        "pulse_substrate_coupling_packet_departure_scheduled",
+        "pulse_substrate_coupling_subthreshold"
+      ]
+    },
+    "feedback": {
+      "all_exercised": true,
+      "expected": [
+        "feedback_coupled_pulse_disabled",
+        "feedback_coupled_pulse_order_mismatch",
+        "feedback_coupled_pulse_packet_departure_scheduled",
+        "feedback_coupled_pulse_subthreshold",
+        "feedback_coupled_pulse_wrong_polarity"
+      ],
+      "observed": [
+        "feedback_coupled_pulse_disabled",
+        "feedback_coupled_pulse_order_mismatch",
+        "feedback_coupled_pulse_packet_departure_scheduled",
+        "feedback_coupled_pulse_subthreshold",
+        "feedback_coupled_pulse_wrong_polarity"
+      ]
+    }
+  },
+  "report_kind": "n04_lane_f_native_lgrc_surface_bridge_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "summary": "Lane F validates native LGRC causal pulse-substrate surface support as an artifact-validatable scheduling/evidence surface. Coupling and feedback producers schedule through LGRC queues only, feedback regeneration is sourced from feedback eligibility rather than copied from the original E3 schedule, controls pass, and movement/M6/agency/identity claims remain blocked.",
+  "test_count_regression": {
+    "baseline_iteration_50": {
+      "focused_lgrc_runtime_tests": 141,
+      "full_unittest_discovery_tests": 980,
+      "lgrc_sweep_tests": 185,
+      "native_packet_loop_tests": 42
+    },
+    "iteration_56": {
+      "focused_lgrc_runtime_tests": 190,
+      "full_unittest_discovery_tests": 1031,
+      "lgrc_sweep_tests": 236,
+      "native_packet_loop_tests": 42
+    },
+    "meets_or_exceeds_baseline": true
+  },
+  "validated_promotion_criteria": {
+    "all_controls_pass": true,
+    "lane_f_bridge_artifacts_pass_validator": true,
+    "negative_controls_fail_with_distinct_primary_blockers": true,
+    "positive_fixture_passes_artifact_validator": true,
+    "synchronous_limit_control_emits_no_rows_or_records": true,
+    "topology_changing_control_fails_closed": true
+  }
+}

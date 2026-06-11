@@ -1,0 +1,13 @@
+discriminator,control_id,status,evidence_label,source_artifact,notes
+d3_row_column_transpose,single_row_high,available,derived,outputs/experiment_a_row_mode_stress_rows.csv,A row-stress identities and transpose controls provide row-local geometry responses.
+d3_row_column_transpose,single_column_high,available_as_derived_proxy,derived,outputs/experiment_b_column_interface_cancellation_rows.csv,B column-cancellation identities and transpose controls provide derived interface responses.
+d3_row_column_transpose,diagonal_symmetric,available,derived,outputs/experiment_a_row_mode_stress_rows.csv,A balanced diagonal row-response control is transpose-stable and avoids a false positive.
+d3_row_column_transpose,anti_diagonal,blocked,blocked,not present in completed O-style rows,No anti-diagonal transpose fixture has been run; not inferred.
+d3_row_column_transpose,rank_1_row_x_column,blocked,blocked,not present in completed O-style rows,No explicit rank-1 row x column pattern has been run; not inferred.
+d3_row_column_transpose,symmetric_isotropic,available,derived,outputs/experiment_a_row_mode_stress_rows.csv,Balanced row-response rows have equal row scores before and after transpose.
+d3_row_column_transpose,pre_event_dynamics_phase,available,derived,Experiment A and B rows,D3 scoring is computed from pre-event row and derived column artifact rows.
+d3_row_column_transpose,event_capable_dynamics_phase,inconclusive,inconclusive,Experiments C and D event rows are not paired M/M^T D3 fixtures,No transpose-specific event-capable D3 fixture is available without new runtime work.
+d3_row_column_transpose,row_permutation,available,derived,Experiment A and B transform-control rows,Structured row permutations preserve the expected row/column semantic class.
+d3_row_column_transpose,column_permutation,available,derived,Experiment A and B transform-control rows,Structured column permutations preserve the expected row/column semantic class.
+d3_row_column_transpose,arbitrary_s9_relabel,available_sampled_proxy,derived,Experiment A/B random relabel rows and D1 controls,The control is sampled and non-factorized; it is not exhaustive over all 9! relabels.
+d3_row_column_transpose,random_triple_regrouping,available_sampled_proxy,derived,D1 non-factorized S9/random-triple proxy,Random triple regrouping is represented by the sampled non-factorized proxy.

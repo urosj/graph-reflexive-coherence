@@ -1,0 +1,37 @@
+{
+  "boundary": "D2 compares completed artifact scores by feature family. It supports role separation for row, column, and port-sensitive targets, while degree/adjacency remains competitive for Lane A saturation and edge-label path targets. Full fitted cross-validation remains limited by the small deterministic fixture set.",
+  "classification": "role_separation_supported_with_scorecard_cv_limitations",
+  "degree_adjacency_explains_all_targets": false,
+  "discriminator_id": "d2_predictive_role_separation_scoring",
+  "evidence_label": "partial",
+  "fitted_cross_validation_status": "inconclusive_small_deterministic_fixture_set",
+  "h0_competitive_targets": [
+    "d5_post_window_column_memory",
+    "d4_lane_a_saturation_gate",
+    "experiment_f_edge_label_path_disagreement"
+  ],
+  "lane_id": "current_hybrid_signed_hessian",
+  "random_control_row_count": 5,
+  "random_groupings_explain_all_targets": false,
+  "schema_version": "grc9v3_properties_iter2_v1",
+  "score_row_count": 11,
+  "scorecard_cross_validation_status": "proxy_by_fixture_family_or_transform_controls",
+  "separated_targets": [
+    "experiment_a_row_dominance",
+    "d3_row_geometry_transpose_delta",
+    "experiment_b_column_proxy_dominance",
+    "d5_immediate_refinement_column_memory",
+    "d5_post_window_column_memory",
+    "d7_multiscale_semantic_columns_immediate",
+    "d6_signed_edge_local_interaction",
+    "experiment_g_observer_local_motion",
+    "d8_configured_window_identity"
+  ],
+  "target_classes_scored": [
+    "edge_local",
+    "generic_activity",
+    "geometric_differential",
+    "identity_level_persistence",
+    "interface_routing_refinement"
+  ]
+}

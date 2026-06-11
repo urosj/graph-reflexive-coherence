@@ -1,0 +1,592 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 3 passes if N11 can replay the N10 composition under the declared route-context reference and route-context variant lanes, or else records a distinct blocker. The result must remain artifact-only, source-backed, budget-clean, and selection-only; it must not promote semantic choice, agency, identity acceptance, native support, A7, or GALI7.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "accepted_row_count": 2,
+  "baseline_inventory_digest": "c1cf29e08ac13fb0b6d42cf85cc70735229326a4be4dae936fdb2de12caa9b65",
+  "baseline_path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+  "blocked_row_count": 1,
+  "checks": {
+    "a7_not_supported": true,
+    "accepted_rows_artifact_only": true,
+    "all_claim_flags_false": true,
+    "all_controls_passed": true,
+    "all_required_fields_present": true,
+    "all_transfer_row_digests_valid": true,
+    "arbitration_policy_variant_blocked": true,
+    "baseline_passed": true,
+    "candidate_set_digests_distinct": true,
+    "gali7_not_supported": true,
+    "iteration_3_fixture_lanes_present": true,
+    "manifest_passed": true,
+    "native_arbitration_records_replayed": true,
+    "reference_replay_row_emitted": true,
+    "route_context_has_two_selected_routes": true,
+    "route_context_selection_only_preserved": true,
+    "route_context_variant_replay_accepted": true,
+    "source_artifact_digests_present": true,
+    "src_clean_for_iteration_3": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N11-lgrc-general-agentic-like-integration/scripts/run_n11_iteration_3_route_context_transfer_replay.py",
+  "controls": {
+    "arbitration_policy_variant_without_source": {
+      "control_passed": true,
+      "primary_blocker": "context_arbitration_policy_variant_missing_source",
+      "reason": "The alternate arbitration-policy lane is blocked because no source-backed alternate policy artifact exists."
+    },
+    "hidden_route_context_substitution": {
+      "control_passed": true,
+      "primary_blocker": "hidden_context_substitution_blocked",
+      "reason": "Accepted rows use serialized N06 context values and reject hidden context substitution."
+    },
+    "semantic_choice_relabeling": {
+      "control_passed": true,
+      "primary_blocker": "route_context_relabelled_as_semantic_choice",
+      "reason": "Route-context transfer rows keep semantic choice, agency, A7, and GALI7 claim flags false."
+    },
+    "stale_route_context": {
+      "control_passed": true,
+      "primary_blocker": "stale_context_blocked",
+      "reason": "Route context is consumed only under the source-current N06/N10 selection-only scope."
+    }
+  },
+  "experiment": "2026-05-N11-lgrc-general-agentic-like-integration",
+  "generated_at": "2026-06-10T20:58:33.931649+00:00",
+  "git": {
+    "head": "b63c53cb1ebccb3bbb3ed56abb1b57222db5f712",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 3,
+  "manifest_digest": "1ca7ab5eb6946a0e3eb00fc7dea974d8fcbc89439211b356282a0e02da303459",
+  "manifest_path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json",
+  "next_iteration": "4_proxy_condition_transfer_replay",
+  "non_claim_boundary": {
+    "a7_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "gali7_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_opened": false,
+    "semantic_choice_claim_allowed": false
+  },
+  "output_digest": "301d045090005aac333786d8bad83eae5aba0519522de2f33d89699f5432bfc9",
+  "purpose": "route_context_transfer_replay",
+  "route_evidence_summary": {
+    "candidate_set_digest_count": 4,
+    "candidate_set_digests_distinct": true,
+    "claim_flags_false": true,
+    "context_relations_replayed": true,
+    "context_states": [
+      "context_a",
+      "context_b",
+      "context_a",
+      "context_b"
+    ],
+    "controls_passed": true,
+    "distinct_selected_routes": [
+      "route_a",
+      "route_b"
+    ],
+    "n06_source_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+    "n06_source_sc_level": "SC6",
+    "n10_route_context_tag": "route_context_selection_only",
+    "n10_route_selection_scope": "selection_only_pre_topology_commit",
+    "native_arbitration_records_replayed": true,
+    "native_selection_replayable_under_selection_only_scope": true,
+    "scheduled_processed_packet_evidence_applicability": "not_applicable_pre_topology_selection_only_scope",
+    "selected_route_count": 4,
+    "selected_routes_from_n06": [
+      "route_a",
+      "route_b",
+      "route_a",
+      "route_b"
+    ],
+    "selected_routes_from_n10": [
+      "route_a",
+      "route_b",
+      "route_a",
+      "route_b"
+    ],
+    "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay"
+  },
+  "row_validation": {
+    "all_claim_flags_false": true,
+    "all_required_fields_present": true,
+    "all_transfer_row_digests_valid": true,
+    "row_validations": {
+      "n11_i3_context_arbitration_policy_variant_replay_row_v1": {
+        "accepted": false,
+        "claim_flags_false": true,
+        "missing_required_fields": [],
+        "primary_blocker": "context_arbitration_policy_variant_missing_source",
+        "transfer_row_digest_valid": true
+      },
+      "n11_i3_context_route_variant_replay_row_v1": {
+        "accepted": true,
+        "claim_flags_false": true,
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "transfer_row_digest_valid": true
+      },
+      "n11_i3_context_same_as_n10_reference_row_v1": {
+        "accepted": true,
+        "claim_flags_false": true,
+        "missing_required_fields": [],
+        "primary_blocker": null,
+        "transfer_row_digest_valid": true
+      }
+    }
+  },
+  "schema": "n11_iteration_3_route_context_transfer_replay_v1",
+  "status": "passed",
+  "strongest_claim_ceiling": "single_axis_route_context_transfer_candidate_selection_only",
+  "strongest_supported_gali_level": "GALI2",
+  "transfer_rows": [
+    {
+      "arc_of_becoming_classification": "local_observation_tag",
+      "artifact_only": true,
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "rc_identity_collapse",
+        "aco_like_behavior",
+        "ant_colony_behavior",
+        "locomotion_like_behavior",
+        "biological_behavior",
+        "personhood",
+        "unrestricted_identity",
+        "unrestricted_movement",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "A7_generalization_by_inheritance",
+        "GALI7_by_inheritance"
+      ],
+      "claim_flags": {
+        "a7_claim_allowed": false,
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "gali7_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "context_tag": "context_arbitration_policy_variant",
+      "fixture_lane": {
+        "context_tag": "context_arbitration_policy_variant",
+        "expected_role": "arbitration_policy_context_transfer_candidate_or_blocked",
+        "hypothesis": "A_artifact_only_generalization",
+        "lane_id": "context_arbitration_policy_variant_replay",
+        "planned_iteration": 3,
+        "proxy_condition_tag": "proxy_same_as_n10",
+        "support_state_tag": "support_intact_survives",
+        "transfer_axis": "context"
+      },
+      "gali_level": "GALI1",
+      "hidden_steering_used": false,
+      "interpretation": "The N06/N10 source uses the serialized score_ordered_topology_route_candidates policy. It does not include a source-backed alternate arbitration policy, so the policy-variant context lane fails closed.",
+      "memory_budget_surface": "n10_source_memory_budget_compatibility",
+      "native_policy_gap": [
+        "native_route_conductance_memory_policy_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_identity_acceptance_validator_missing",
+        "native_agentic_like_integration_policy_missing"
+      ],
+      "node_plus_packet_budget_after": null,
+      "node_plus_packet_budget_before": null,
+      "node_plus_packet_budget_error": 0.0,
+      "primary_blocker": "context_arbitration_policy_variant_missing_source",
+      "producer_mediation_classification": "native_policy_gap",
+      "producer_scaffold_used": true,
+      "proxy_budget_surface": "n10_source_proxy_budget_compatibility",
+      "proxy_condition_tag": "proxy_same_as_n10",
+      "route_context_scope_preserved": true,
+      "route_summary": {
+        "candidate_set_digest_count": 4,
+        "candidate_set_digests_distinct": true,
+        "claim_flags_false": true,
+        "context_relations_replayed": true,
+        "context_states": [
+          "context_a",
+          "context_b",
+          "context_a",
+          "context_b"
+        ],
+        "controls_passed": true,
+        "distinct_selected_routes": [
+          "route_a",
+          "route_b"
+        ],
+        "n06_source_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+        "n06_source_sc_level": "SC6",
+        "n10_route_context_tag": "route_context_selection_only",
+        "n10_route_selection_scope": "selection_only_pre_topology_commit",
+        "native_arbitration_records_replayed": true,
+        "native_selection_replayable_under_selection_only_scope": true,
+        "scheduled_processed_packet_evidence_applicability": "not_applicable_pre_topology_selection_only_scope",
+        "selected_route_count": 4,
+        "selected_routes_from_n06": [
+          "route_a",
+          "route_b",
+          "route_a",
+          "route_b"
+        ],
+        "selected_routes_from_n10": [
+          "route_a",
+          "route_b",
+          "route_a",
+          "route_b"
+        ],
+        "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay"
+      },
+      "runtime_state_used": false,
+      "source_artifact_digests": {
+        "n06_route_choice_closeout": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+        "n10_final_closeout": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+        "n10_hypothesis_a_closeout": "4e383df53f633e61e75070fd5f85174ce267d38a5120b6c06c153ba2c20c7c4c",
+        "n10_route_memory_regulation_composition": "11027db3a40f9a13358fde937579890a888f255fa6a4375f04169d63fe219ea2",
+        "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99"
+      },
+      "source_artifacts": {
+        "n06_route_choice_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+        "n10_final_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+        "n10_hypothesis_a_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_9_artifact_only_closeout.json",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_7_route_memory_regulation_composition.json",
+        "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json"
+      },
+      "source_boundary": "N10_iteration_15_closeout",
+      "source_reports": {
+        "n06_route_choice_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+        "n10_final_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md",
+        "n10_hypothesis_a_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_9_artifact_only_closeout.md",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_7_route_memory_regulation_composition.md"
+      },
+      "source_scope_tag": "n10_bounded_artifact_only_source",
+      "support_budget_surface": "n10_source_support_budget_compatibility",
+      "support_state_tag": "support_intact_survives",
+      "transfer_accepted": false,
+      "transfer_axis": "context",
+      "transfer_outcome_tag": "transfer_blocked",
+      "transfer_policy_digest": "cba8d2b5af612e8263d6b2d6fd3cc81a148afdd538a61c4424621248c82155bd",
+      "transfer_policy_id": "n11_artifact_only_generalization_transfer_policy_v1",
+      "transfer_row_digest": "72c944986d7bda4618341529e62050cf098e3eb9a6f097a793a52578e8e3a6fb",
+      "transfer_row_id": "n11_i3_context_arbitration_policy_variant_replay_row_v1",
+      "transfer_window_tag": "single_replay_window"
+    },
+    {
+      "arc_of_becoming_classification": "probe_supported_capacity",
+      "artifact_only": true,
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "rc_identity_collapse",
+        "aco_like_behavior",
+        "ant_colony_behavior",
+        "locomotion_like_behavior",
+        "biological_behavior",
+        "personhood",
+        "unrestricted_identity",
+        "unrestricted_movement",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "A7_generalization_by_inheritance",
+        "GALI7_by_inheritance"
+      ],
+      "claim_flags": {
+        "a7_claim_allowed": false,
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "gali7_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "context_tag": "context_route_variant",
+      "fixture_lane": {
+        "context_tag": "context_route_variant",
+        "expected_role": "single_axis_context_transfer_candidate_or_blocked",
+        "hypothesis": "A_artifact_only_generalization",
+        "lane_id": "context_route_variant_replay",
+        "planned_iteration": 3,
+        "proxy_condition_tag": "proxy_same_as_n10",
+        "support_state_tag": "support_intact_survives",
+        "transfer_axis": "context"
+      },
+      "gali_level": "GALI2",
+      "hidden_steering_used": false,
+      "interpretation": "N06/N10 source artifacts contain serialized native arbitration for alternating route_a/route_b contexts. This supports a scoped single-axis route-context transfer candidate under the original selection-only pre-topology scope.",
+      "memory_budget_surface": "n10_source_memory_budget_compatibility",
+      "native_policy_gap": [
+        "native_route_conductance_memory_policy_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_identity_acceptance_validator_missing",
+        "native_agentic_like_integration_policy_missing"
+      ],
+      "node_plus_packet_budget_after": null,
+      "node_plus_packet_budget_before": null,
+      "node_plus_packet_budget_error": 0.0,
+      "primary_blocker": null,
+      "producer_mediation_classification": "native_route_arbitrated",
+      "producer_scaffold_used": true,
+      "proxy_budget_surface": "n10_source_proxy_budget_compatibility",
+      "proxy_condition_tag": "proxy_same_as_n10",
+      "route_context_scope_preserved": true,
+      "route_summary": {
+        "candidate_set_digest_count": 4,
+        "candidate_set_digests_distinct": true,
+        "claim_flags_false": true,
+        "context_relations_replayed": true,
+        "context_states": [
+          "context_a",
+          "context_b",
+          "context_a",
+          "context_b"
+        ],
+        "controls_passed": true,
+        "distinct_selected_routes": [
+          "route_a",
+          "route_b"
+        ],
+        "n06_source_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+        "n06_source_sc_level": "SC6",
+        "n10_route_context_tag": "route_context_selection_only",
+        "n10_route_selection_scope": "selection_only_pre_topology_commit",
+        "native_arbitration_records_replayed": true,
+        "native_selection_replayable_under_selection_only_scope": true,
+        "scheduled_processed_packet_evidence_applicability": "not_applicable_pre_topology_selection_only_scope",
+        "selected_route_count": 4,
+        "selected_routes_from_n06": [
+          "route_a",
+          "route_b",
+          "route_a",
+          "route_b"
+        ],
+        "selected_routes_from_n10": [
+          "route_a",
+          "route_b",
+          "route_a",
+          "route_b"
+        ],
+        "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay"
+      },
+      "runtime_state_used": false,
+      "source_artifact_digests": {
+        "n06_route_choice_closeout": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+        "n10_final_closeout": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+        "n10_hypothesis_a_closeout": "4e383df53f633e61e75070fd5f85174ce267d38a5120b6c06c153ba2c20c7c4c",
+        "n10_route_memory_regulation_composition": "11027db3a40f9a13358fde937579890a888f255fa6a4375f04169d63fe219ea2",
+        "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99"
+      },
+      "source_artifacts": {
+        "n06_route_choice_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+        "n10_final_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+        "n10_hypothesis_a_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_9_artifact_only_closeout.json",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_7_route_memory_regulation_composition.json",
+        "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json"
+      },
+      "source_boundary": "N10_iteration_15_closeout",
+      "source_reports": {
+        "n06_route_choice_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+        "n10_final_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md",
+        "n10_hypothesis_a_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_9_artifact_only_closeout.md",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_7_route_memory_regulation_composition.md"
+      },
+      "source_scope_tag": "n10_bounded_artifact_only_source",
+      "support_budget_surface": "n10_source_support_budget_compatibility",
+      "support_state_tag": "support_intact_survives",
+      "transfer_accepted": true,
+      "transfer_axis": "context",
+      "transfer_outcome_tag": "single_axis_context_transfer_candidate",
+      "transfer_policy_digest": "cba8d2b5af612e8263d6b2d6fd3cc81a148afdd538a61c4424621248c82155bd",
+      "transfer_policy_id": "n11_artifact_only_generalization_transfer_policy_v1",
+      "transfer_row_digest": "790437f815a58e834770a68dc125785ef0c8293a6369dde23ce7456959c773d3",
+      "transfer_row_id": "n11_i3_context_route_variant_replay_row_v1",
+      "transfer_window_tag": "single_replay_window"
+    },
+    {
+      "arc_of_becoming_classification": "local_observation_tag",
+      "artifact_only": true,
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "rc_identity_collapse",
+        "aco_like_behavior",
+        "ant_colony_behavior",
+        "locomotion_like_behavior",
+        "biological_behavior",
+        "personhood",
+        "unrestricted_identity",
+        "unrestricted_movement",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "A7_generalization_by_inheritance",
+        "GALI7_by_inheritance"
+      ],
+      "claim_flags": {
+        "a7_claim_allowed": false,
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "agentic_like_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "gali7_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "locomotion_like_claim_allowed": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false,
+        "unrestricted_movement_claim_allowed": false
+      },
+      "context_tag": "context_same_as_n10",
+      "fixture_lane": {
+        "context_tag": "context_same_as_n10",
+        "expected_role": "reference_replay_before_context_variation",
+        "hypothesis": "A_artifact_only_generalization",
+        "lane_id": "context_same_as_n10_reference",
+        "planned_iteration": 3,
+        "proxy_condition_tag": "proxy_same_as_n10",
+        "support_state_tag": "support_intact_survives",
+        "transfer_axis": "context"
+      },
+      "gali_level": "GALI1",
+      "hidden_steering_used": false,
+      "interpretation": "Reference replay preserves the N10 route context exactly. It is source-backed inventory, not a new generalization.",
+      "memory_budget_surface": "n10_source_memory_budget_compatibility",
+      "native_policy_gap": [
+        "native_route_conductance_memory_policy_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_identity_acceptance_validator_missing",
+        "native_agentic_like_integration_policy_missing"
+      ],
+      "node_plus_packet_budget_after": null,
+      "node_plus_packet_budget_before": null,
+      "node_plus_packet_budget_error": 0.0,
+      "primary_blocker": null,
+      "producer_mediation_classification": "native_route_arbitrated",
+      "producer_scaffold_used": true,
+      "proxy_budget_surface": "n10_source_proxy_budget_compatibility",
+      "proxy_condition_tag": "proxy_same_as_n10",
+      "route_context_scope_preserved": true,
+      "route_summary": {
+        "candidate_set_digest_count": 4,
+        "candidate_set_digests_distinct": true,
+        "claim_flags_false": true,
+        "context_relations_replayed": true,
+        "context_states": [
+          "context_a",
+          "context_b",
+          "context_a",
+          "context_b"
+        ],
+        "controls_passed": true,
+        "distinct_selected_routes": [
+          "route_a",
+          "route_b"
+        ],
+        "n06_source_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+        "n06_source_sc_level": "SC6",
+        "n10_route_context_tag": "route_context_selection_only",
+        "n10_route_selection_scope": "selection_only_pre_topology_commit",
+        "native_arbitration_records_replayed": true,
+        "native_selection_replayable_under_selection_only_scope": true,
+        "scheduled_processed_packet_evidence_applicability": "not_applicable_pre_topology_selection_only_scope",
+        "selected_route_count": 4,
+        "selected_routes_from_n06": [
+          "route_a",
+          "route_b",
+          "route_a",
+          "route_b"
+        ],
+        "selected_routes_from_n10": [
+          "route_a",
+          "route_b",
+          "route_a",
+          "route_b"
+        ],
+        "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay"
+      },
+      "runtime_state_used": false,
+      "source_artifact_digests": {
+        "n06_route_choice_closeout": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+        "n10_final_closeout": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+        "n10_hypothesis_a_closeout": "4e383df53f633e61e75070fd5f85174ce267d38a5120b6c06c153ba2c20c7c4c",
+        "n10_route_memory_regulation_composition": "11027db3a40f9a13358fde937579890a888f255fa6a4375f04169d63fe219ea2",
+        "n11_baseline_inventory": "e736ae2b0c8a4475be7b053e5d278d14c4ddb8ab74aa14fd480d223b667b2b70",
+        "n11_fixture_manifest": "967faefd00559334e506d44976b2327594a165e8adbca796a0332f89609d3e99"
+      },
+      "source_artifacts": {
+        "n06_route_choice_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+        "n10_final_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+        "n10_hypothesis_a_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_9_artifact_only_closeout.json",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_7_route_memory_regulation_composition.json",
+        "n11_baseline_inventory": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_1_baseline_inventory.json",
+        "n11_fixture_manifest": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/configs/n11_generalization_fixture_manifest_v1.json"
+      },
+      "source_boundary": "N10_iteration_15_closeout",
+      "source_reports": {
+        "n06_route_choice_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+        "n10_final_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md",
+        "n10_hypothesis_a_closeout": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_9_artifact_only_closeout.md",
+        "n10_route_memory_regulation_composition": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_7_route_memory_regulation_composition.md"
+      },
+      "source_scope_tag": "n10_bounded_artifact_only_source",
+      "support_budget_surface": "n10_source_support_budget_compatibility",
+      "support_state_tag": "support_intact_survives",
+      "transfer_accepted": true,
+      "transfer_axis": "context",
+      "transfer_outcome_tag": "bookkeeping_only_transfer",
+      "transfer_policy_digest": "cba8d2b5af612e8263d6b2d6fd3cc81a148afdd538a61c4424621248c82155bd",
+      "transfer_policy_id": "n11_artifact_only_generalization_transfer_policy_v1",
+      "transfer_row_digest": "6cf0494587aca7db1011f604466298ef3f1709de916638079575d25031fdd579",
+      "transfer_row_id": "n11_i3_context_same_as_n10_reference_row_v1",
+      "transfer_window_tag": "single_replay_window"
+    }
+  ]
+}

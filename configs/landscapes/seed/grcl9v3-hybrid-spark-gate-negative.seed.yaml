@@ -1,0 +1,63 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Hybrid Spark Gate Negative
+  description: Seed-backed GRCL-9V3 no-saturation control for the hybrid spark gate.
+  source_kind: manual_seed
+  source_reference: outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, s0014, spark, negative_control]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: candidate
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [support_a, support_b]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: hybrid_spark_gate_negative_control_critical
+        region_id: candidate
+        source_role: negative_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 7
+            port_chart: below_saturation_control
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: support_a
+    type: basin
+    coherence_prior: 0.5
+  - id: support_b
+    type: basin
+    coherence_prior: 0.5
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: hybrid_spark_gate_negative_control
+    manifest_entry_id: future_vocabulary_hybrid_spark_gate_v1
+    motif_id: grc9v3-motif-s0006-hybrid-spark-gate-negative-control
+    expected_selector_ids: [no_lifecycle_events]
+    notes:
+      discovery_anchor: S0014 source-language handoff
+      boundary: source preconditions only

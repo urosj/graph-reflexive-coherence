@@ -1,0 +1,204 @@
+{
+  "adapter_trigger_used_as_execution_engine": false,
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "biology_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_grc9v3_proposal_flux_loop_evidence": false
+  },
+  "execution_engine": "native_lgrc9v3",
+  "experiment": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "manifest_id": "e3_native_lgrc9v3_packet_loop_route_manifest_v1",
+  "n_cycles_min": 3,
+  "packet_amount": 0.1,
+  "prototype_runner_used_as_execution_engine": false,
+  "reference_mass_policy": "S1 uses 2.15 after seed return; the route's final source pole uses 0.75 after seed debit; other poles use 1.0",
+  "route_aspects": {
+    "clockwise": {
+      "artifact_kind": "lgrc9v3_route_aspect",
+      "artifact_schema_version": "lgrc9v3_route_aspect_v1",
+      "channel_sequence": [
+        "S1_to_K2",
+        "K2_to_S2",
+        "S2_to_K1",
+        "K1_to_S1"
+      ],
+      "channel_sequence_digest": "46cc1dfa9c14a8a762573da3a7353271dcaec997a99f8a80660d54211c6efb39",
+      "channels": [
+        {
+          "channel_id": "S1_to_K2",
+          "expected_next_channel_id": "K2_to_S2",
+          "route_hops": [
+            {
+              "edge_id": 0,
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "source_pole_id": "S1",
+          "target_pole_id": "K2"
+        },
+        {
+          "channel_id": "K2_to_S2",
+          "expected_next_channel_id": "S2_to_K1",
+          "route_hops": [
+            {
+              "edge_id": 1,
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          ],
+          "source_pole_id": "K2",
+          "target_pole_id": "S2"
+        },
+        {
+          "channel_id": "S2_to_K1",
+          "expected_next_channel_id": "K1_to_S1",
+          "route_hops": [
+            {
+              "edge_id": 2,
+              "source_node_id": 2,
+              "target_node_id": 3
+            }
+          ],
+          "source_pole_id": "S2",
+          "target_pole_id": "K1"
+        },
+        {
+          "channel_id": "K1_to_S1",
+          "expected_next_channel_id": "S1_to_K2",
+          "route_hops": [
+            {
+              "edge_id": 3,
+              "source_node_id": 3,
+              "target_node_id": 0
+            }
+          ],
+          "source_pole_id": "K1",
+          "target_pole_id": "S1"
+        }
+      ],
+      "closed_loop": true,
+      "direction": "clockwise",
+      "evidence_class": "route_aspect_contract",
+      "expected_next_channel_by_channel": {
+        "K1_to_S1": "S1_to_K2",
+        "K2_to_S2": "S2_to_K1",
+        "S1_to_K2": "K2_to_S2",
+        "S2_to_K1": "K1_to_S1"
+      },
+      "pole_region_digest": "7571c6fa98f0fe9cbfb4ddc122aabdae17d19c607f80a8cba457e59d127ebf19",
+      "pole_regions": {
+        "K1": [
+          3
+        ],
+        "K2": [
+          1
+        ],
+        "S1": [
+          0
+        ],
+        "S2": [
+          2
+        ]
+      },
+      "route_aspect_digest": "25ce1cc1550c0a717d4c1bcaa7f4179789024b67c2c22893df1f0fa21d41cb57",
+      "route_aspect_id": "n03_e3_native_four_pole_packet_loop_cw",
+      "runtime_family": "LGRC9V3"
+    },
+    "counter_clockwise": {
+      "artifact_kind": "lgrc9v3_route_aspect",
+      "artifact_schema_version": "lgrc9v3_route_aspect_v1",
+      "channel_sequence": [
+        "S1_to_K1",
+        "K1_to_S2",
+        "S2_to_K2",
+        "K2_to_S1"
+      ],
+      "channel_sequence_digest": "5eb1e9f9490a455cf82b7a25b35fe1bb5b184c0e388a4b347683e1d0dce7d84c",
+      "channels": [
+        {
+          "channel_id": "S1_to_K1",
+          "expected_next_channel_id": "K1_to_S2",
+          "route_hops": [
+            {
+              "edge_id": 0,
+              "source_node_id": 0,
+              "target_node_id": 1
+            }
+          ],
+          "source_pole_id": "S1",
+          "target_pole_id": "K1"
+        },
+        {
+          "channel_id": "K1_to_S2",
+          "expected_next_channel_id": "S2_to_K2",
+          "route_hops": [
+            {
+              "edge_id": 1,
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          ],
+          "source_pole_id": "K1",
+          "target_pole_id": "S2"
+        },
+        {
+          "channel_id": "S2_to_K2",
+          "expected_next_channel_id": "K2_to_S1",
+          "route_hops": [
+            {
+              "edge_id": 2,
+              "source_node_id": 2,
+              "target_node_id": 3
+            }
+          ],
+          "source_pole_id": "S2",
+          "target_pole_id": "K2"
+        },
+        {
+          "channel_id": "K2_to_S1",
+          "expected_next_channel_id": "S1_to_K1",
+          "route_hops": [
+            {
+              "edge_id": 3,
+              "source_node_id": 3,
+              "target_node_id": 0
+            }
+          ],
+          "source_pole_id": "K2",
+          "target_pole_id": "S1"
+        }
+      ],
+      "closed_loop": true,
+      "direction": "counter_clockwise",
+      "evidence_class": "route_aspect_contract",
+      "expected_next_channel_by_channel": {
+        "K1_to_S2": "S2_to_K2",
+        "K2_to_S1": "S1_to_K1",
+        "S1_to_K1": "K1_to_S2",
+        "S2_to_K2": "K2_to_S1"
+      },
+      "pole_region_digest": "2d2b276bff3258858d334fc3283806ce5c0b8abbb6b13c9dcfff5058534c6faf",
+      "pole_regions": {
+        "K1": [
+          1
+        ],
+        "K2": [
+          3
+        ],
+        "S1": [
+          0
+        ],
+        "S2": [
+          2
+        ]
+      },
+      "route_aspect_digest": "a621e96cd477308e0365b1d06f2a80f4a1285c7c7f4680d24cd3715a878ef3c8",
+      "route_aspect_id": "n03_e3_native_four_pole_packet_loop_ccw",
+      "runtime_family": "LGRC9V3"
+    }
+  },
+  "seed_return_amount": 0.25,
+  "trigger_threshold": 0.049
+}

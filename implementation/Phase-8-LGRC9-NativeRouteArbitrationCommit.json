@@ -1,0 +1,97 @@
+{
+  "artifact": "Phase-8-LGRC9-NativeRouteArbitrationCommit",
+  "schema_version": "phase8_lgrc9_native_route_arbitration_commit_v1",
+  "date": "2026-05-22",
+  "status": "passed",
+  "iteration": 80,
+  "purpose": "commit_selected_native_route_topology_event_and_verify_producers",
+  "implementation_files": [
+    "src/pygrc/models/lgrc_9_v3_runtime.py",
+    "src/pygrc/models/lgrc_9_v3_topology.py",
+    "tests/models/test_lgrc_9_v3_runtime.py"
+  ],
+  "runtime_api": {
+    "method": "LGRC9V3.commit_native_route_arbitration_selection",
+    "requires_committed_route_arbitration_record": true,
+    "requires_selected_candidate_route_digest": true,
+    "requires_selected_candidate_in_committed_candidate_set": true,
+    "commits_selected_topology_event": true,
+    "does_not_select_route": true,
+    "selection_source": "native_route_arbitration_record"
+  },
+  "selected_topology_event": {
+    "references_route_arbitration_record_id": true,
+    "references_route_arbitration_digest": true,
+    "references_selected_candidate_route_id": true,
+    "references_selected_candidate_route_digest": true,
+    "references_candidate_set_digest": true,
+    "committed_topology_event_digest_matches_arbitration_record": true,
+    "selected_topology_event_count": 1,
+    "rejected_candidates_committed": false,
+    "surface_lineage_consumes_selected_event": true,
+    "topology_state_reabsorption_consumes_selected_event": true
+  },
+  "lineage_and_reabsorption": {
+    "candidate_lineage_map_matches_topology_event": true,
+    "candidate_lineage_map_matches_surface_lineage": true,
+    "candidate_lineage_map_matches_topology_state_reabsorption": true,
+    "candidate_source_nodes_match_reabsorption": true,
+    "candidate_target_nodes_match_reabsorption": true,
+    "candidate_retired_nodes_match_reabsorption": true
+  },
+  "producer_integration": {
+    "producer_reads_transported_surface_digest": true,
+    "producer_cites_selected_topology_event_digest": true,
+    "producer_requires_topology_state_reabsorption": true,
+    "producer_schedules_through_lgrc_scheduling": true,
+    "step_processes_scheduled_post_arbitration_packet": true,
+    "producer_mutated_coherence": false,
+    "producer_changed_topology": false,
+    "producer_emitted_claim_label": false
+  },
+  "budget": {
+    "topology_event_budget_error": 0.0,
+    "surface_lineage_node_plus_packet_budget_error": 0.0,
+    "topology_state_reabsorption_node_plus_packet_budget_error": 0.0,
+    "active_state_matches_packet_ledger_after_commit": true,
+    "conserved_budget_total_after_producer_scheduling": 6.0,
+    "active_state_matches_packet_ledger_after_step": true,
+    "node_plus_packet_budget_error": 0.0,
+    "conserved_budget_total": 6.0
+  },
+  "fail_closed_controls": {
+    "duplicate_commit_idempotent": true,
+    "stale_candidate_set_rejected": true,
+    "missing_selected_candidate_record_rejected": true,
+    "candidate_digest_drift_rejected": true,
+    "wrong_arbitration_record_rejected": true
+  },
+  "verification": {
+    "route_arbitration_tests": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route_arbitration\"",
+      "status": "passed",
+      "result": "15 passed, 125 deselected"
+    },
+    "focused_regression": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route or time_scopes_producer_reads or rejects_source_read_after_transport or topology_state_reabsorption_artifact_validator_reconstructs_chain\"",
+      "status": "passed",
+      "result": "41 passed, 222 deselected, 20 subtests passed"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  },
+  "claim_flags": {
+    "movement_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "next_iteration": "81_snapshot_telemetry_artifact_replay_controls"
+}

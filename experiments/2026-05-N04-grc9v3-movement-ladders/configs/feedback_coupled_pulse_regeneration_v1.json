@@ -1,0 +1,42 @@
+{
+  "budget": {
+    "budget_surface": "node_only",
+    "coupling_quantum": 0.25,
+    "mutation_owner": "feedback_adapter_simulated_event",
+    "mutation_policy": "budget_neutral_boundary_mass_transfer"
+  },
+  "claim_boundary": {
+    "adaptive_topology_entry_allowed": false,
+    "feedback_adapter_is_native_lgrc9v3_producer": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_lgrc9v3_e3_pulse_used": true
+  },
+  "direct_write_policy": {
+    "centroid": false,
+    "claim_flags": false,
+    "displacement": false,
+    "support_mask": false,
+    "topology": false
+  },
+  "feedback_surface": {
+    "formula": "(front_mass - rear_mass) - reference_front_rear_delta",
+    "name": "boundary_polarity_score",
+    "runtime_visible_inputs": [
+      "front_mass",
+      "rear_mass"
+    ],
+    "threshold": 0.45,
+    "units": "movement_fixture_node_coherence"
+  },
+  "pulse_generation_condition": {
+    "affected_surface": "feedback_pulse_eligibility",
+    "reference_update_policy": "rebase_reference_after_feedback_measurement",
+    "refractory_policy": "one_feedback_pulse_per_committed_boundary_response",
+    "scheduled_polarity": "sign(boundary_polarity_score)"
+  },
+  "runtime_family": "experiment_local_feedback_adapter",
+  "schema": "feedback_coupled_pulse_regeneration_v1",
+  "source_fixture": "Lane B locked S0 boundary-response fixture"
+}

@@ -1,0 +1,363 @@
+{
+  "arc_interpretation": {
+    "arc_interpretation_digest": "acf5b1a9fb7576fbe2be640cf719a05a465f35460d7a4e03a706ada3f51162ba",
+    "classification": {
+      "hypothesis_b_claim_ceiling": "static_positive_geometry_route_response_persistence_candidate",
+      "native_geometry_mediated_trail_supported": false,
+      "native_policy_gap_recorded": true,
+      "not_merely_true_false_endpoint": true,
+      "pure_flux_trail_memory_supported": false
+    },
+    "cultivation": {
+      "handoff": "N09-N11 may consume the Hypothesis A artifact-only memory candidate and may cite the Hypothesis B static geometry response as a bounded design direction, but must not consume native geometry-mediated trail support.",
+      "what_this_branch_teaches": [
+        "Do not use zero-coherence inserted nodes as reinforcement carriers.",
+        "Positive conserved geometry is the viable design direction for route-response scaffolding.",
+        "Static geometry persistence is useful but must not be renamed adaptive memory.",
+        "The next native absorption target is route-conductance update/relaxation policy, if later experiments need it."
+      ]
+    },
+    "interpretation_id": "n08_i13_arc_hypothesis_b_bounded_closeout_v1",
+    "naturalization": {
+      "constitutive_native_trail_memory": false,
+      "native_absorption_needed": true,
+      "naturalization_rung": "Nat3_static_geometry_response_design_target"
+    },
+    "observations": [
+      {
+        "interpretation": "The first topology trace crossed a useful boundary: zero coherence creates absorber behavior rather than trail reinforcement.",
+        "observation_id": "zero_trace_is_boundary_not_reinforcement",
+        "value": "zero_coherence_trace_behaves_as_absorber"
+      },
+      {
+        "interpretation": "A positive conserved geometry can be read by native route arbitration as runtime-visible evidence.",
+        "observation_id": "positive_geometry_shapes_arbitration",
+        "value": "route_b"
+      },
+      {
+        "interpretation": "The route response persists while geometry is fixed. This is lower than adaptive trail memory, but useful as a native-policy design target.",
+        "observation_id": "static_response_persists",
+        "value": [
+          "route_b",
+          "route_b",
+          "route_b",
+          "route_b"
+        ]
+      },
+      {
+        "interpretation": "The missing function is now specific: LGRC would need a native route-conductance update/relaxation policy to naturalize the scaffold.",
+        "observation_id": "native_policy_gap_is_the_result",
+        "value": "native_route_conductance_memory_policy_missing"
+      }
+    ],
+    "question": "What did the native geometry-mediated branch actually become after replaying the chain from artifacts?",
+    "source_papers": [
+      "Classification of Becoming",
+      "Interrogation of Becoming",
+      "Cultivation of Becoming",
+      "Naturalization of Becoming"
+    ],
+    "style": "question_observation_classification_cultivation_naturalization"
+  },
+  "artifact_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+  "artifact_kind": "n08_iteration_13_native_geometry_trail_closeout",
+  "artifact_only_validator_scope": {
+    "artifact_only": true,
+    "private_runtime_state_used": false,
+    "replay_boundary": "The validator reconstructs source links, digests, event order, control blockers, and claim boundaries from exported JSON only. It does not rerun flux dynamics or create new probes.",
+    "runtime_state_used": false,
+    "source_artifacts_replayed": [
+      "iteration_9_baseline",
+      "iteration_10_trace_formation",
+      "iteration_11_trace_response",
+      "iteration_11a_positive_response",
+      "iteration_12_persistence"
+    ],
+    "source_scripts_imported": false,
+    "validator_id": "n08_hypothesis_b_artifact_only_closeout_validator_v1",
+    "validator_scope_digest": "35ad341d0e30bf1ab2c7bd4293e844e9f1eb84278be325e120467203bd5ee713"
+  },
+  "artifact_schema_version": "n08_iteration_13_native_geometry_trail_closeout_v1",
+  "checks": {
+    "all_hypothesis_b_claim_flags_false": true,
+    "all_sources_passed": true,
+    "arc_interpretation_present": true,
+    "artifact_only_validator_scope": true,
+    "budget_error_zero": true,
+    "control_blockers_distinct": true,
+    "controls_passed": true,
+    "event_order_valid": true,
+    "hypothesis_a_closeout_scoped": true,
+    "hypothesis_b_ceiling_bounded": true,
+    "hypothesis_b_native_claims_blocked": true,
+    "iteration_9_entry_gate_passed": true,
+    "native_policy_blocker_recorded": true,
+    "no_memory_shaped_scores_used": true,
+    "no_memory_strength_used": true,
+    "positive_geometry_response_present": true,
+    "replay_chain_complete": true,
+    "route_use_causes_topology_trace": true,
+    "route_use_committed": true,
+    "source_digests_recompute": true,
+    "src_clean": true,
+    "static_persistence_present": true,
+    "topology_event_digest_recomputes": true,
+    "zero_trace_boundary_preserved": true
+  },
+  "claim_boundary": {
+    "all_stronger_claims_blocked": true,
+    "hypothesis_a_memory_or_trail_claim_allowed": true,
+    "hypothesis_a_memory_or_trail_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "hypothesis_b_native_geometry_mediated_trail_claim_allowed": false,
+    "hypothesis_b_pure_coherence_flux_trail_claim_allowed": false,
+    "native_geometry_mediated_trail_claim_allowed": false,
+    "pure_coherence_flux_trail_claim_allowed": false
+  },
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "hypothesis_b_native_geometry_mediated_trail_claim_allowed": false,
+    "hypothesis_b_pure_coherence_flux_trail_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_geometry_mediated_trail_claim_allowed": false,
+    "native_route_conductance_memory_policy_supported": false,
+    "personhood_claim_allowed": false,
+    "pure_coherence_flux_trail_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "closeout_summary": {
+    "closeout_interpretation": "Hypothesis B is a roadmap-aligned scaffold/native-policy-gap result: declared positive geometry can shape native route arbitration and persist as a static response, but current LGRC does not yet provide native conductance update, strengthening, or relaxation policy.",
+    "closeout_summary_digest": "973f85f96ad0b4f32d9cf4fd894d41c1ae5963f42057bd9a79838a41f1aa9eae",
+    "hypothesis_a_claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+    "hypothesis_a_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "hypothesis_a_scoped_memory_or_trail_claim_allowed": true,
+    "hypothesis_a_status": "closed",
+    "hypothesis_b_claim_ceiling": "static_positive_geometry_route_response_persistence_candidate",
+    "hypothesis_b_current_blocker": "native_route_conductance_memory_policy_missing",
+    "hypothesis_b_native_geometry_mediated_trail_claim_allowed": false,
+    "hypothesis_b_pure_coherence_flux_trail_claim_allowed": false,
+    "hypothesis_b_status": "closed_bounded_native_policy_gap_recorded",
+    "native_policy_absorption_needed": true,
+    "native_route_conductance_memory_policy_available": false,
+    "persistence_selected_route_sequence": [
+      "route_b",
+      "route_b",
+      "route_b",
+      "route_b"
+    ],
+    "phase_8_candidate_policy_surface": "native_route_conductance_memory_policy",
+    "positive_trace_selected_route": "route_b",
+    "route_use_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+    "static_positive_geometry_response_persisted": true,
+    "topology_event_digest": "151c581e905f3e30622ed9045daa73a35e6d196f6ac338a38182a55ade793368",
+    "zero_trace_observation": "zero_coherence_trace_behaves_as_absorber"
+  },
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/run_n08_iteration_13_native_geometry_trail_closeout.py",
+  "controls": [
+    {
+      "control_id": "missing_source_artifact",
+      "control_passed": true,
+      "control_row_digest": "f5fe12be53de2917658feb109beca77f8f06ebcbade34a5eba28ac1b84195898",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "source_artifact_missing",
+      "purpose": "Reject closeout if any Iteration 9-12 source artifact is absent."
+    },
+    {
+      "control_id": "digest_mismatch",
+      "control_passed": true,
+      "control_row_digest": "3b9cec6e4f2cd98a2863e9145fdc3420164f6f9c80b08aaec49466be58013cfa",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "source_artifact_digest_mismatch",
+      "purpose": "Reject closeout if source output or row digests do not recompute."
+    },
+    {
+      "control_id": "event_order_inversion",
+      "control_passed": true,
+      "control_row_digest": "c64309969d1bab18f8487d08b51629f1abf3b3199bbeec5e9dfec80a57a5ee4a",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "hypothesis_b_replay_order_invalid",
+      "purpose": "Reject topology/response/persistence chain with inverted order."
+    },
+    {
+      "control_id": "hidden_memory_strength",
+      "control_passed": true,
+      "control_row_digest": "4c18e8f2d75729cc13c5601b97d31cfb11545b123789484e4e2333787e7cf98a",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "memory_strength_input_blocked",
+      "purpose": "Reject Hypothesis B closeout if independent memory_strength is required."
+    },
+    {
+      "control_id": "zero_trace_overclaim",
+      "control_passed": true,
+      "control_row_digest": "7c9375820225001651e4ec22a3616671f4389551310dbfc11a46049bfefe48c9",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "zero_trace_reinforcement_blocked",
+      "purpose": "Reject treating zero-coherence absorber as reinforcement."
+    },
+    {
+      "control_id": "missing_positive_geometry_response",
+      "control_passed": true,
+      "control_row_digest": "a61be64d618a5feb27618070560bb554e094a2f1f0db7f4de4b22e6c5a2a87af",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "positive_geometry_route_response_missing",
+      "purpose": "Reject closeout without positive geometry route response evidence."
+    },
+    {
+      "control_id": "missing_static_persistence",
+      "control_passed": true,
+      "control_row_digest": "26b22b10c4503d292dbfa6301681742bb8440579003a3c271c46a97c1c68e60f",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "static_geometry_response_persistence_missing",
+      "purpose": "Reject closeout without repeated-window static persistence evidence."
+    },
+    {
+      "control_id": "budget_discontinuity",
+      "control_passed": true,
+      "control_row_digest": "78e91552a884269d011da6f93e0213a77ebded0c9023b4281925b229bb1b9f12",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "node_plus_packet_budget_discontinuity",
+      "purpose": "Reject any source chain with nonzero node-plus-packet budget error."
+    },
+    {
+      "control_id": "route_conductance_policy_overclaim",
+      "control_passed": true,
+      "control_row_digest": "f87f514207d8fc212b287fcc743d290dc526bc0d69ba7444b70cdddbdb4f4ca5",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "native_route_conductance_memory_policy_missing",
+      "purpose": "Reject stronger native trail closeout without route-conductance policy."
+    },
+    {
+      "control_id": "claim_promotion",
+      "control_passed": true,
+      "control_row_digest": "54ec25cb4899044206dab1bb9d1b79ab6f680ae740013d3f3ccbf8b444957ab6",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "claim_promotion",
+      "purpose": "Reject ACO, agency, identity acceptance, locomotion, biology, or unrestricted claims."
+    }
+  ],
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "generated_at": "2026-06-07T19:00:44.638734+00:00",
+  "git_head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+  "hypothesis": "B_native_geometry_mediated_trail_memory",
+  "iteration": 13,
+  "iteration_name": "Native Geometry-Mediated Trail Replay And Closeout",
+  "next_step": "N08 can close with Hypothesis A MEM6 plus Hypothesis B bounded static geometry response persistence. N09-N11 may consume only the scoped claims and must keep native trail-memory support blocked.",
+  "purpose": "Artifact-only closeout of the Hypothesis B branch with bounded static geometry response persistence and native policy blocker.",
+  "replay_chain": [
+    {
+      "artifact_digest": "ac57b1dd11a603ded02fe12446cb3826862d93b252a60358729da1c65346fd95",
+      "event_time_key": null,
+      "evidence_kind": "native_mechanism_inventory",
+      "iteration": 9,
+      "primary_blocker": null,
+      "replay_row_digest": "dd57aae230f27cd82984cb8b3006994891511cbff42404fedfa336124510966b",
+      "result": "edge_split_inserted_node_trace_entry_allowed",
+      "scheduler_event_index": null,
+      "status": "passed",
+      "step_id": "iteration_9_entry_gate"
+    },
+    {
+      "artifact_digest": "e44cdc336ccfc5adebf42618cfa9fc739f695a5f88c1f787724afb85c8f428ab",
+      "event_time_key": 4.1,
+      "evidence_kind": "committed_route_use_event",
+      "iteration": 10,
+      "primary_blocker": null,
+      "replay_row_digest": "1862cd8c15346ff0044ec2da9536c65c2b907d3cf016f38e32d9e2c26354a129",
+      "result": "route_b",
+      "scheduler_event_index": 5,
+      "status": "committed",
+      "step_id": "route_use_source_event"
+    },
+    {
+      "artifact_digest": "151c581e905f3e30622ed9045daa73a35e6d196f6ac338a38182a55ade793368",
+      "event_time_key": 4.3,
+      "evidence_kind": "edge_split_inserted_node_trace",
+      "iteration": 10,
+      "primary_blocker": null,
+      "replay_row_digest": "ced0087c1dbfceb2ed596c79a5c23994cf749b8fb298372325d819e86e2f5ae5",
+      "result": "edge_split_inserted_node_trace",
+      "scheduler_event_index": 15,
+      "status": "committed",
+      "step_id": "geometry_trace_topology_event"
+    },
+    {
+      "artifact_digest": "d01f5d3914bbdfa81b20f6ce7abcf07f9271e3157d4b6e8686f7e203e7bf0f3c",
+      "event_time_key": 11.0,
+      "evidence_kind": "future_flux_response",
+      "iteration": 11,
+      "primary_blocker": "zero_coherence_trace_absorber",
+      "replay_row_digest": "a8f4f04d74a67562a6c576905e9b0f76171ae2aca1573d4eccaff9b345b6af84",
+      "result": "zero_coherence_trace_behaves_as_absorber",
+      "scheduler_event_index": 1100,
+      "status": "classified",
+      "step_id": "zero_trace_response_classification"
+    },
+    {
+      "artifact_digest": "eef3ebad9e54c9b0cccb21d13edfc4ff39b4e8b33d51a46f90d3b9c68f84e4fa",
+      "event_time_key": 11.6,
+      "evidence_kind": "native_route_arbitration_reads_geometry_evidence",
+      "iteration": "11-A",
+      "primary_blocker": null,
+      "replay_row_digest": "63d9913366f7e2d6d8d3b06d979f8bf83c23fde06447d271f8a931795f350fcf",
+      "result": "route_b",
+      "scheduler_event_index": 1160,
+      "status": "selected",
+      "step_id": "positive_geometry_route_arbitration_response"
+    },
+    {
+      "artifact_digest": "5ae729d20fd1f42852f5e25ad3104f232a4cea6f39710f9ff6f3bacaabda96e5",
+      "event_time_key": 12.0,
+      "evidence_kind": "repeated_static_geometry_response_windows",
+      "iteration": 12,
+      "primary_blocker": "native_route_conductance_memory_policy_missing",
+      "replay_row_digest": "8c592fefb3979e0b7719a84fe9bca892f9c27c552e456212090a03429f167240",
+      "result": [
+        "route_b",
+        "route_b",
+        "route_b",
+        "route_b"
+      ],
+      "scheduler_event_index": 1200,
+      "status": "persisted",
+      "step_id": "static_positive_geometry_response_persistence"
+    }
+  ],
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_10_geometry_trail_formation.json": "667ffc61c5b59fdf061d82160657a8003bc661d2cf5b9b4cdf08e15fad79b857",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11_geometry_trace_flux_response.json": "26c446c8d3a21397fa0073c0451ba4dcd5330d269c6fe17d9660955feb8d50b9",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11a_positive_geometry_route_arbitration.json": "8e4c752625edc9607309f772f0aa229001550552cbaabc5b8b1641bf19e0b5da",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_12_geometry_trace_persistence_relaxation.json": "deffdf7ea8fa9da25ec20c04459eff48c85f36c4dd7fad8e370a1136123a218f",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_9_native_geometry_trail_baseline.json": "d95ed03bca9ad24a2932c711d985a56ee99e67d27dab55e22610047eeab5eeb1"
+  },
+  "source_reports": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_10_geometry_trail_formation.md": "4e6767348c735bf9468d69d2cda7211861ed6fa924cd3b57ebdcf967c0a85b72",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_11_geometry_trace_flux_response.md": "0b5acbfa4320340198851b896dd61462131d26cb8441a32dc48e3c752c66c72e",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_11a_positive_geometry_route_arbitration.md": "c5035ac0702521b1b6d2f60542969c96e4762dd84783ce5438a9a76f6cf53dce",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_12_geometry_trace_persistence_relaxation.md": "9c1e7bf1e19b02c4b53575b04dba019bb5353630789aad4fbf3aa0ed23ea3542",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_9_native_geometry_trail_baseline.md": "69fe21ea253d92f9d95f776e14bd08cd04ab41b768fc43a0a0bafb1f2b44d5d8"
+  },
+  "status": "passed"
+}

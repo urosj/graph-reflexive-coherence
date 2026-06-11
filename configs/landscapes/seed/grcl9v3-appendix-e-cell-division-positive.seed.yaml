@@ -1,0 +1,103 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Appendix E Cell Division Positive
+  description: Seed-backed GRCL-9V3 Appendix E cell-division declaration anchored in the reviewed GRC9V3 motif catalog.
+  source_kind: manual_seed
+  source_reference: outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, s0014, appendix_e, cell_division]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: parent
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: appendix_e_cell_division_positive_control_critical
+        region_id: parent
+        source_role: positive_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: refinement
+    type: junction
+    host_id: parent
+    branch_target_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: appendix_e_cell_division_positive_control_refinement
+        region_id: parent
+        source_role: positive_control
+        profile:
+          target_effective_degree: 51
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+  - id: division
+    type: junction
+    host_id: parent
+    branch_target_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: appendix_e_cell_division_region
+        term_id: appendix_e_cell_division_positive_control_appendix_e
+        region_id: parent
+        source_role: positive_control
+        profile:
+          daughter_region_a: daughter_a
+          daughter_region_b: daughter_b
+          module_basin_support:
+            support_mode: balanced_daughter_support
+  - id: daughter_separator
+    type: ridge
+    adjacent_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: separatrix
+        term_id: appendix_e_cell_division_positive_control_daughter_separatrix
+        region_id: daughter_separator
+        source_role: positive_control
+        profile:
+          separates: [daughter_a, daughter_b]
+  - id: daughter_a
+    type: basin
+    coherence_prior: 0.5
+  - id: daughter_b
+    type: basin
+    coherence_prior: 0.5
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: appendix_e_cell_division_positive_control
+    manifest_entry_id: grcl9v3_lowering_appendix_e_cell_division_v1
+    motif_id: grc9v3-motif-s0006-appendix-e-cell-division-positive-control
+    expected_selector_ids: [appendix_e_summary]
+    notes:
+      discovery_anchor: S0014 source-language handoff
+      boundary: source preconditions only

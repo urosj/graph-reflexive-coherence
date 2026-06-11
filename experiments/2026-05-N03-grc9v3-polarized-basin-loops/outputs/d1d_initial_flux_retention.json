@@ -1,0 +1,366 @@
+{
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_d1d_initial_flux_retention.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "interpretation": "D1d tests initialized flux as a native GRC9V3 state surface. If transport rebuild erases the initialized signed circulation, then `flux_uv` is behaving as a recomputed proposal rather than a persistent corridor-flow or momentum state. Any blood/vein-like closed-flow model would need explicit edge/corridor coherence, packet, accumulator, or momentum state outside plain native GRC9V3 fixed-topology continuity.",
+  "scenarios": [
+    {
+      "budget": {
+        "max_abs_error_post_correction": 0.0,
+        "passed": true
+      },
+      "flux_direction": 1,
+      "initial_flux": 0.01,
+      "profile": "uniform",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_uniform_clockwise_flux_0p01_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 0.0,
+        "final_abs_flux_sum": 0.0,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_sum": 0.0,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_abs_flux_sum": 0.12,
+        "initial_loop_circulation": 0.12,
+        "max_abs_normalized_circulation_after_rebuild": 0.0
+      },
+      "scenario_id": "d1d_uniform_clockwise_flux_0p01",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_uniform_clockwise_flux_0p01_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 0.0,
+        "passed": true
+      },
+      "flux_direction": 1,
+      "initial_flux": 0.05,
+      "profile": "uniform",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_uniform_clockwise_flux_0p05_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 0.0,
+        "final_abs_flux_sum": 0.0,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_sum": 0.0,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_abs_flux_sum": 0.6000000000000001,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 0.0
+      },
+      "scenario_id": "d1d_uniform_clockwise_flux_0p05",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_uniform_clockwise_flux_0p05_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 0.0,
+        "passed": true
+      },
+      "flux_direction": 1,
+      "initial_flux": 0.1,
+      "profile": "uniform",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_uniform_clockwise_flux_0p1_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 0.0,
+        "final_abs_flux_sum": 0.0,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_sum": 0.0,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_abs_flux_sum": 1.2000000000000002,
+        "initial_loop_circulation": 1.2000000000000002,
+        "max_abs_normalized_circulation_after_rebuild": 0.0
+      },
+      "scenario_id": "d1d_uniform_clockwise_flux_0p1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_uniform_clockwise_flux_0p1_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "flux_direction": 1,
+      "initial_flux": 0.05,
+      "profile": "single_bump",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_single_bump_clockwise_flux_0p05_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 1.7163055017665128,
+        "final_abs_flux_sum": 1.0297833010599078,
+        "final_loop_circulation": -1.0408340855860843e-16,
+        "final_signed_retention_ratio": 1.7347234759768068e-16,
+        "first_rebuild_abs_flux_retention_ratio": 0.4007870715516624,
+        "first_rebuild_abs_flux_sum": 0.24047224293099748,
+        "first_rebuild_loop_circulation": 8.673617379884035e-18,
+        "first_rebuild_signed_retention_ratio": 1.445602896647339e-17,
+        "initial_abs_flux_sum": 0.6000000000000001,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 1.3099125882590506e-16
+      },
+      "scenario_id": "d1d_single_bump_clockwise_flux_0p05",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_single_bump_clockwise_flux_0p05_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 4.440892098500626e-16,
+        "passed": true
+      },
+      "flux_direction": 1,
+      "initial_flux": 0.05,
+      "profile": "source_sink",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_source_sink_clockwise_flux_0p05_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 2.752474554872925,
+        "final_abs_flux_sum": 1.6514847329237552,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.09933619270504468,
+        "first_rebuild_abs_flux_sum": 0.05960171562302682,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_abs_flux_sum": 0.6000000000000001,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 0.0
+      },
+      "scenario_id": "d1d_source_sink_clockwise_flux_0p05",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_source_sink_clockwise_flux_0p05_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 4.440892098500626e-16,
+        "passed": true
+      },
+      "flux_direction": 1,
+      "initial_flux": 0.05,
+      "profile": "traveling_phase_seed",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_traveling_phase_seed_clockwise_flux_0p05_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 0.1896788898864273,
+        "final_abs_flux_sum": 0.11380733393185641,
+        "final_loop_circulation": -1.0905730991915183e-05,
+        "final_signed_retention_ratio": 1.8176218319858638e-05,
+        "first_rebuild_abs_flux_retention_ratio": 0.2933865757187918,
+        "first_rebuild_abs_flux_sum": 0.1760319454312751,
+        "first_rebuild_loop_circulation": 6.954434341799928e-07,
+        "first_rebuild_signed_retention_ratio": 1.1590723902999878e-06,
+        "initial_abs_flux_sum": 0.6000000000000001,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 9.582625842412871e-05
+      },
+      "scenario_id": "d1d_traveling_phase_seed_clockwise_flux_0p05",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_traveling_phase_seed_clockwise_flux_0p05_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 4.440892098500626e-16,
+        "passed": true
+      },
+      "flux_direction": -1,
+      "initial_flux": 0.05,
+      "profile": "source_sink",
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_raw_records/d1d_source_sink_counterclockwise_flux_0p05_raw_records.jsonl"
+      },
+      "retention": {
+        "final_abs_flux_retention_ratio": 2.752474554872925,
+        "final_abs_flux_sum": 1.6514847329237552,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.09933619270504468,
+        "first_rebuild_abs_flux_sum": 0.05960171562302682,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_abs_flux_sum": 0.6000000000000001,
+        "initial_loop_circulation": -0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 0.0
+      },
+      "scenario_id": "d1d_source_sink_counterclockwise_flux_0p05",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1d_initial_flux_timeseries/d1d_source_sink_counterclockwise_flux_0p05_retention.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    }
+  ],
+  "schema": "grc9v3_polarized_basin_loop_d1d_initial_flux_retention_v1",
+  "status": "pass",
+  "summary": {
+    "classification": "d1d_initial_flux_erased_by_transport_rebuild",
+    "compact_rows": [
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.0,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_flux": 0.01,
+        "initial_loop_circulation": 0.12,
+        "max_abs_normalized_circulation_after_rebuild": 0.0,
+        "scenario_id": "d1d_uniform_clockwise_flux_0p01",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.0,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_flux": 0.05,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 0.0,
+        "scenario_id": "d1d_uniform_clockwise_flux_0p05",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.0,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_flux": 0.1,
+        "initial_loop_circulation": 1.2000000000000002,
+        "max_abs_normalized_circulation_after_rebuild": 0.0,
+        "scenario_id": "d1d_uniform_clockwise_flux_0p1",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -1.0408340855860843e-16,
+        "final_signed_retention_ratio": 1.7347234759768068e-16,
+        "first_rebuild_abs_flux_retention_ratio": 0.4007870715516624,
+        "first_rebuild_loop_circulation": 8.673617379884035e-18,
+        "first_rebuild_signed_retention_ratio": 1.445602896647339e-17,
+        "initial_flux": 0.05,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 1.3099125882590506e-16,
+        "scenario_id": "d1d_single_bump_clockwise_flux_0p05",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.09933619270504468,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_flux": 0.05,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 0.0,
+        "scenario_id": "d1d_source_sink_clockwise_flux_0p05",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -1.0905730991915183e-05,
+        "final_signed_retention_ratio": 1.8176218319858638e-05,
+        "first_rebuild_abs_flux_retention_ratio": 0.2933865757187918,
+        "first_rebuild_loop_circulation": 6.954434341799928e-07,
+        "first_rebuild_signed_retention_ratio": 1.1590723902999878e-06,
+        "initial_flux": 0.05,
+        "initial_loop_circulation": 0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 9.582625842412871e-05,
+        "scenario_id": "d1d_traveling_phase_seed_clockwise_flux_0p05",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_signed_retention_ratio": 0.0,
+        "first_rebuild_abs_flux_retention_ratio": 0.09933619270504468,
+        "first_rebuild_loop_circulation": 0.0,
+        "first_rebuild_signed_retention_ratio": 0.0,
+        "initial_flux": 0.05,
+        "initial_loop_circulation": -0.6000000000000001,
+        "max_abs_normalized_circulation_after_rebuild": 0.0,
+        "scenario_id": "d1d_source_sink_counterclockwise_flux_0p05",
+        "topology_changed": false
+      }
+    ],
+    "material_rows": [],
+    "retained_rows": [],
+    "scenario_count": 7,
+    "thresholds": {
+      "material_normalized_circulation_min": 0.01,
+      "material_signed_retention_min": 0.1
+    }
+  },
+  "target": "closed-ring initialized flux retention under native GRC9V3 transport rebuild"
+}

@@ -1,0 +1,574 @@
+# N10 Iteration 13 Hypothesis C Native Policy Gap Inventory
+
+Status: `passed`.
+
+## Result
+
+Iteration 13 inventories the native-policy boundary for N10. It
+does not run a new mechanism and does not open native support. The
+result is a source-backed map of which A/B composition fields are
+bookkeeping, replay validation, or constitutive policy inputs.
+
+```text
+inventory_status = native_policy_gap_inventory_complete
+bounded_artifact_only_agentic_like_integration_supported = true
+support_sensitive_integration_supported = true
+fully_native_agentic_like_integration_supported = false
+native_support_flags_opened = false
+```
+
+## What Hypothesis C Can Show
+
+Hypothesis C shows the exact native absorption boundary. A and B
+proved bounded artifact-only composition and support sensitivity. C
+shows which pieces must become native policy surfaces before the same
+pattern can be treated as fully native LGRC substrate support.
+
+The conservative result is:
+
+```text
+bounded artifact-only agentic-like integration = supported
+support-sensitive integration = supported
+fully native agentic-like integration = blocked by named native gaps
+```
+
+## Phase 8 Boundary
+
+The recorded blockers are Phase 8-facing native absorption
+requirements, not Phase 8 work already opened or implemented. In
+this split, N10 Hypothesis C identifies what is missing natively;
+a later Phase 8 task would implement selected missing mechanisms in
+`src/*`.
+
+```text
+native_route_conductance_memory_policy_missing:
+    likely a concrete Phase 8 element for absorbing N08 memory/trail
+    into native route conductance or geometry-mediated route memory
+
+native_response_magnitude_policy_missing_for_unbounded_perturbations:
+    likely a concrete Phase 8 element for absorbing N09 response
+    sizing into native regulation policy
+
+native_identity_acceptance_validator_missing:
+    Phase 8-facing eventually, but claim-sensitive and theory-sensitive;
+    it should wait until identity acceptance is precisely defined
+
+native_agentic_like_integration_policy_missing:
+    a meta-gap, not one small mechanism; it should come after the
+    component native policies are defined
+```
+
+Iteration 14 should turn these into contract requirements. Iteration
+15 should decide which become future Phase 8 tasks and in what order.
+
+## Primary Native Blockers
+
+```json
+[
+  "native_route_conductance_memory_policy_missing",
+  "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+  "native_identity_acceptance_validator_missing",
+  "native_agentic_like_integration_policy_missing"
+]
+```
+
+## Inventory Rows
+
+```json
+[
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "constitutive_policy_input",
+    "component": "N06 route context / native route arbitration boundary",
+    "consumed_by_n10": "route_context_tag = route_context_selection_only",
+    "current_evidence": "N06 supplies SC6 selection-only route-choice evidence; N10 uses selected route context, not semantic choice or route execution ownership.",
+    "current_status": "native_route_arbitration_consumed_as_selection_only_artifact_context",
+    "gap_row_digest": "aa7cbfb5812f1f50657a8e19211ebf5e86048ad0682bdd333de5464afacb1019",
+    "iteration_14_contract_focus": [
+      "route_context_source_digest",
+      "selected_route_digest",
+      "native_arbitration_policy_id",
+      "stale_route_context_blocker",
+      "selection_only_scope_marker"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "If N11/N10 extends beyond selection-only context, the native route record must serialize context source, selected route digest, arbitration policy, stale-context blocker, and downstream consumption scope.",
+    "native_boundary": "Native route arbitration can support route selection, but N10 does not treat that as semantic choice, agency, or goal ownership.",
+    "native_policy_gap": null,
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "route_selection_relabelled_as_semantic_choice",
+    "row_id": "n10_c_gap_01_route_context_selection_boundary",
+    "source_artifact_keys": [
+      "n06_route_choice_closeout",
+      "n10_hypothesis_a_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "constitutive_policy_input",
+    "component": "N08 artifact-only memory / trail affordance",
+    "consumed_by_n10": "memory_scope_tag = artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "current_evidence": "N08 Hypothesis A provides MEM6 artifact-only route memory or trail affordance evidence via serialized producer policy.",
+    "current_status": "artifact_only_serialized_producer_policy",
+    "gap_row_digest": "e178093a6ffca2873f250667675015656274727282805801a74828f5a0ba02ee",
+    "iteration_14_contract_focus": [
+      "route_conductance_memory_policy_id",
+      "memory_update_rule",
+      "memory_relaxation_rule",
+      "route_scope_digest",
+      "memory_budget_surface"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "A native route-conductance memory policy with serialized update, decay/relaxation, reinforcement, budget surface, route-scope, and artifact replay contract.",
+    "native_boundary": "The memory/trail quantity is not yet a native coherence or geometry-conductance memory policy.",
+    "native_policy_gap": "native_route_conductance_memory_policy_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "producer_memory_policy_relabelled_as_native_memory",
+    "row_id": "n10_c_gap_02_serialized_memory_policy",
+    "source_artifact_keys": [
+      "n08_memory_trail_hypothesis_a",
+      "n10_hypothesis_a_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "constitutive_policy_input",
+    "component": "N08 native geometry trail design direction",
+    "consumed_by_n10": "recorded as native design direction, not consumed as native support in A/B composition",
+    "current_evidence": "N08 Hypothesis B records static positive geometry response persistence and native geometry trail direction, while native route-conductance memory policy remains unavailable.",
+    "current_status": "native_geometry_design_candidate_policy_gap_open",
+    "gap_row_digest": "dc2124c3cf21f7af66ae69edd54662b0b3500f01fe037665b0b4f026377d6287",
+    "iteration_14_contract_focus": [
+      "geometry_trace_source",
+      "conductance_update_policy",
+      "relaxation_persistence_window",
+      "native_budget_conservation_check"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "A native geometry/conductance policy that records how route use changes future route affordance without introducing non-coherence hidden state.",
+    "native_boundary": "Geometry can shape response, but persistent route memory is not yet a native policy surface.",
+    "native_policy_gap": "native_route_conductance_memory_policy_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "static_geometry_response_relabelled_as_native_trail_memory",
+    "row_id": "n10_c_gap_03_native_geometry_trail_design_direction",
+    "source_artifact_keys": [
+      "n08_native_geometry_trail_hypothesis_b"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "constitutive_policy_input",
+    "component": "N09 artifact-only goal-proxy regulation",
+    "consumed_by_n10": "regulation_scope = N09_GPR5_repeated_window_and_GPR6_closeout",
+    "current_evidence": "N09 Hypothesis A supports artifact-only goal-proxy regulation; N10 consumes this as proxy regulation, not goal ownership or intention.",
+    "current_status": "artifact_only_goal_proxy_regulation_candidate",
+    "gap_row_digest": "7fa54657246bc5cd04d28125ed420895767e521633a92c03850383b9726a7a58",
+    "iteration_14_contract_focus": [
+      "native_proxy_surface_policy_id",
+      "target_band_policy",
+      "proxy_error_policy",
+      "proxy_conditioned_response_policy",
+      "goal_proxy_budget_surface"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "Native proxy surface, target band, error, eligibility, response, and artifact replay policy records.",
+    "native_boundary": "Proxy measurement, error, eligibility, and correction are still artifact/producer policy surfaces for N10.",
+    "native_policy_gap": "native_goal_proxy_regulation_policy_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "goal_proxy_regulation_relabelled_as_goal_ownership",
+    "row_id": "n10_c_gap_04_goal_proxy_regulation_artifact_policy",
+    "source_artifact_keys": [
+      "n09_goal_proxy_hypothesis_a",
+      "n10_hypothesis_a_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "constitutive_policy_input",
+    "component": "N09 native-substrate response magnitude",
+    "consumed_by_n10": "recorded as native regulation design direction, not consumed as general native regulation support",
+    "current_evidence": "N09 Hypothesis B closes with a native-substrate-mediated goal-proxy regulation design candidate, but general native regulation remains blocked for unbounded perturbations.",
+    "current_status": "native_substrate_design_candidate_blocked_for_general_regulation",
+    "gap_row_digest": "d5a4d4b15fb7cf3e25f4033b4871101f8cdf15ffb78ea9648696817dd10f0f1d",
+    "iteration_14_contract_focus": [
+      "response_magnitude_policy_id",
+      "perturbation_envelope",
+      "saturation_blocker",
+      "unbounded_perturbation_failure_mode",
+      "proxy_response_budget_check"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "A native response magnitude policy that serializes response size, perturbation envelope, budget effect, saturation control, and failure mode.",
+    "native_boundary": "Native substrate response exists as a design candidate; general native regulation still needs a response magnitude policy.",
+    "native_policy_gap": "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "bounded_response_design_relabelled_as_general_native_regulation",
+    "row_id": "n10_c_gap_05_response_magnitude_policy",
+    "source_artifact_keys": [
+      "n09_native_substrate_hypothesis_b"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "constitutive_prerequisite_and_replay_validation",
+    "component": "N07 identity/support and withdrawal/restoration baseline",
+    "consumed_by_n10": "support_state_tag matrix: support_intact, mild_withdrawal, disrupted, explicit_restoration",
+    "current_evidence": "N07 supplies support/invariance, support-disruption, and explicit-restoration baselines used by N10 Hypothesis B.",
+    "current_status": "support_invariance_baseline_consumable_not_identity_acceptance",
+    "gap_row_digest": "e8eaa57739357ccefbaabc61c5b3d0e0812919adeddc62965aef846617688d0a",
+    "iteration_14_contract_focus": [
+      "support_area_digest",
+      "support_state_policy",
+      "withdrawal_restoration_ordering",
+      "identity_acceptance_validator",
+      "rc_identity_collapse_blocker"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "A native identity/support validator that separates support survival, restoration, identity acceptance, and RC identity collapse with explicit blockers.",
+    "native_boundary": "Support survival and restoration are not runtime identity acceptance, RC identity collapse, or identity ownership.",
+    "native_policy_gap": "native_identity_acceptance_validator_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "support_invariance_relabelled_as_identity_acceptance",
+    "row_id": "n10_c_gap_06_identity_support_not_acceptance",
+    "source_artifact_keys": [
+      "n07_identity_support_withdrawal",
+      "n10_hypothesis_b_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "replay_validation",
+    "component": "N10 Hypothesis A artifact-only integration validator",
+    "consumed_by_n10": "validates source-backed route-memory-support-regulation composition without private runtime state",
+    "current_evidence": "N10 Hypothesis A supports bounded artifact-only agentic-like integration candidate.",
+    "current_status": "artifact_only_integration_supported",
+    "gap_row_digest": "0fb30e9f2a24ba3ad24da54b57b77eb50b6c7a6bc31c616a4efae0d254fe3eef",
+    "iteration_14_contract_focus": [
+      "native_integration_policy_id",
+      "component_eligibility_records",
+      "source_current_ordering",
+      "artifact_replay_contract",
+      "claim_boundary_flags"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "A native integration policy that serializes component eligibility, source-current requirements, ordering, budget surfaces, stale-source blockers, and no-claim flags.",
+    "native_boundary": "Artifact-only replay is not the same as a live native agentic-like integration policy.",
+    "native_policy_gap": "native_agentic_like_integration_policy_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "artifact_only_closeout_relabelled_as_native_integration",
+    "row_id": "n10_c_gap_07_artifact_only_integration_validator",
+    "source_artifact_keys": [
+      "n10_hypothesis_a_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "replay_validation_and_constitutive_gate",
+    "component": "N10 Hypothesis B support-state matrix",
+    "consumed_by_n10": "intact/mild/restored support may allow composition; disrupted support must block",
+    "current_evidence": "N10 Hypothesis B supports bounded support-sensitive full composition and preserves disruption history.",
+    "current_status": "artifact_only_support_sensitive_integration_supported",
+    "gap_row_digest": "e621af04b4eb269867cd01562389a1f6ba6b1ccb61934fe12ead1989d6821f7c",
+    "iteration_14_contract_focus": [
+      "support_state_current_digest",
+      "disrupted_support_blocker",
+      "restoration_evidence_digest",
+      "support_history_preservation",
+      "support_state_ordering"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "A native support-state integration gate with explicit support-current, disruption, restoration, and history preservation blockers.",
+    "native_boundary": "The support-sensitive gate is artifact-only; a native integration policy would need to enforce it at runtime.",
+    "native_policy_gap": "native_agentic_like_integration_policy_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "support_sensitive_artifact_matrix_relabelled_as_native_gate",
+    "row_id": "n10_c_gap_08_support_sensitive_integration_gate",
+    "source_artifact_keys": [
+      "n10_hypothesis_b_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "bookkeeping_and_replay_validation",
+    "component": "N10 source-artifact budget compatibility",
+    "consumed_by_n10": "N10 checks each source artifact budget surface but does not claim one continuous packet ledger across N05-N09.",
+    "current_evidence": "A/B preserve exact per-artifact budget checks and keep node-plus-packet, memory, and proxy budget surfaces separate.",
+    "current_status": "source_artifact_budget_compatibility_not_single_live_ledger",
+    "gap_row_digest": "6052d46dc269ea24c94517e86c0dca46202a2494fc5334e1c32e5450a1253ff6",
+    "iteration_14_contract_focus": [
+      "node_plus_packet_budget_surface",
+      "memory_budget_surface",
+      "proxy_budget_surface",
+      "cross_artifact_budget_nonclaim"
+    ],
+    "load_bearing_for_native": false,
+    "minimal_native_surface_needed": "If later implemented natively, one live runtime must keep node-plus-packet, memory, proxy, and claim/economy accounting separate while preserving end-to-end conservation.",
+    "native_boundary": "Fully native integration would need same-runtime budget continuity; current N10 has source-artifact compatibility.",
+    "native_policy_gap": null,
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "source_artifact_budget_relabelled_as_live_packet_ledger",
+    "row_id": "n10_c_gap_09_budget_surfaces_and_source_continuity",
+    "source_artifact_keys": [
+      "n10_hypothesis_a_closeout",
+      "n10_hypothesis_b_closeout"
+    ]
+  },
+  {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "native_agentic_like_integration_supported": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "classification": "claim_boundary",
+    "component": "N10 claim boundary",
+    "consumed_by_n10": "claim flags remain false across A/B/C",
+    "current_evidence": "A/B closeouts leave agency, semantic goal ownership, identity acceptance, ACO, biology, personhood, A7, and fully native agentic-like integration blocked.",
+    "current_status": "all_native_agentic_and_agency_claims_blocked",
+    "gap_row_digest": "fbec120f18210162977356a2ba01adc3fead10fbb6ec874286f7e2b477230275",
+    "iteration_14_contract_focus": [
+      "claim_flag_immutability",
+      "native_support_flag_gate",
+      "producer_relabeling_blocker",
+      "hidden_policy_blocker"
+    ],
+    "load_bearing_for_native": true,
+    "minimal_native_surface_needed": "Claim boundary schema that rejects producer relabeling, hidden policy inputs, direct mutation, and native support claims without native contracts.",
+    "native_boundary": "No native support flag may open until the missing native policy surfaces have explicit implementations and controls.",
+    "native_policy_gap": "native_agentic_like_integration_policy_missing",
+    "native_support_opened_by_iteration_13": false,
+    "overread_blocker": "claim_promotion_blocked",
+    "row_id": "n10_c_gap_10_claim_boundary_flags",
+    "source_artifact_keys": [
+      "n10_hypothesis_a_closeout",
+      "n10_hypothesis_b_closeout"
+    ]
+  }
+]
+```
+
+## Controls
+
+```json
+{
+  "artifact_validator_relabelled_native": {
+    "control_passed": true,
+    "primary_blocker": "artifact_validator_relabelled_as_native_blocked",
+    "reason": "artifact-only replay rows remain replay validation, not native runtime support"
+  },
+  "goal_proxy_relabelled_goal_ownership": {
+    "control_passed": true,
+    "primary_blocker": "goal_proxy_regulation_relabelled_as_goal_ownership",
+    "reason": "N09 remains proxy regulation, not goal ownership"
+  },
+  "memory_policy_relabelled_native_memory": {
+    "control_passed": true,
+    "primary_blocker": "producer_memory_policy_relabelled_as_native_memory",
+    "reason": "N08 route memory remains artifact-only until native conductance memory exists"
+  },
+  "native_support_claim_promotion": {
+    "control_passed": true,
+    "primary_blocker": "native_support_claim_promotion_blocked",
+    "reason": "Iteration 13 opens no native support or agency-related claim flags"
+  },
+  "producer_scaffold_relabelled_native": {
+    "control_passed": true,
+    "primary_blocker": "producer_scaffold_relabelled_as_native_blocked",
+    "reason": "producer-mediated and artifact-local fields are explicitly classified"
+  },
+  "route_selection_relabelled_semantic_choice": {
+    "control_passed": true,
+    "primary_blocker": "route_selection_relabelled_as_semantic_choice",
+    "reason": "N06 route context remains selection-only in N10"
+  },
+  "support_relabelled_identity_acceptance": {
+    "control_passed": true,
+    "primary_blocker": "support_invariance_relabelled_as_identity_acceptance",
+    "reason": "N07 support/invariance remains distinct from identity acceptance"
+  }
+}
+```
+
+## Checks
+
+```json
+{
+  "all_gap_row_digests_valid": true,
+  "all_required_gap_rows_present": true,
+  "all_required_source_artifacts_passed": true,
+  "all_required_source_artifacts_present": true,
+  "bookkeeping_not_promoted_to_native": true,
+  "claim_flags_all_false": true,
+  "controls_passed": true,
+  "expected_native_blockers_recorded": true,
+  "fully_native_agentic_like_integration_blocked": true,
+  "load_bearing_constitutive_inputs_identified": true,
+  "source_embedded_output_digest_audit_completed": true,
+  "source_sha256_pins_recorded": true,
+  "src_clean_for_iteration_13": true
+}
+```
+
+## Claim Boundary
+
+Iteration 13 does not claim fully native agentic-like integration,
+agency, intention, semantic goal ownership, identity acceptance, RC
+identity collapse, ACO, biological behavior, personhood, locomotion,
+or unrestricted agency. It records gaps for Iteration 14 contracts.
+
+## Reproduction
+
+```text
+.venv/bin/python experiments/2026-05-N10-lgrc-agentic-like-integration/scripts/build_n10_iteration_13_hypothesis_c_native_policy_gap_inventory.py
+```
+
+Output digest:
+
+```text
+96ac54b9f1db55fcbe8c1d7e7fde7f9726d68db428ec9a2fbe50a1a42df30f89
+```

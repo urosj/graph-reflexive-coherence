@@ -1,0 +1,886 @@
+{
+  "claim_ceiling": "three_pole_diagnostic_surface_not_positive_loop_claim",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_c3_5_three_channel_accumulator.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "reports": [
+    {
+      "P_R1_R2_mean": 0.02218921581666984,
+      "P_R2_R3_mean": 0.021982972660139422,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008692044985485377,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P",
+        "policy_id": "parallel_delay_3",
+        "row_id": "c3_5_p_parallel_delay_3"
+      },
+      "lane_id": "P",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 3,
+        "mode": "parallel",
+        "policy_id": "parallel_delay_3",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_parallel_delay_3_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_parallel_delay_3_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.03413249401687226,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008668620061437034,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P_reversed",
+        "policy_id": "parallel_delay_3",
+        "row_id": "c3_5_p_reversed_parallel_delay_3"
+      },
+      "lane_id": "P_reversed",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 3,
+        "mode": "parallel",
+        "policy_id": "parallel_delay_3",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_reversed_parallel_delay_3_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_reversed_parallel_delay_3_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.022574386816564145,
+      "P_R2_R3_mean": 0.022192058514849622,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0017317768118880984,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P",
+        "policy_id": "parallel_delay_6",
+        "row_id": "c3_5_p_parallel_delay_6"
+      },
+      "lane_id": "P",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "parallel",
+        "policy_id": "parallel_delay_6",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_parallel_delay_6_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_parallel_delay_6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.03497552560332934,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0017206322353372347,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P_reversed",
+        "policy_id": "parallel_delay_6",
+        "row_id": "c3_5_p_reversed_parallel_delay_6"
+      },
+      "lane_id": "P_reversed",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "parallel",
+        "policy_id": "parallel_delay_6",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_reversed_parallel_delay_6_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_reversed_parallel_delay_6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.00014520436911178724,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0004357375095933921,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P",
+        "policy_id": "cyclic_phase_delay_3",
+        "row_id": "c3_5_p_cyclic_phase_delay_3"
+      },
+      "lane_id": "P",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 3,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_3",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_cyclic_phase_delay_3_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_cyclic_phase_delay_3_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P_reversed",
+        "policy_id": "cyclic_phase_delay_3",
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_3"
+      },
+      "lane_id": "P_reversed",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 3,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_3",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_reversed_cyclic_phase_delay_3_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_reversed_cyclic_phase_delay_3_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.00042701854008695946,
+      "P_R2_R3_mean": 0.001597119712599207,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008712188468549287,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P",
+        "policy_id": "cyclic_phase_delay_6",
+        "row_id": "c3_5_p_cyclic_phase_delay_6"
+      },
+      "lane_id": "P",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_6",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_cyclic_phase_delay_6_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_cyclic_phase_delay_6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P_reversed",
+        "policy_id": "cyclic_phase_delay_6",
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_6"
+      },
+      "lane_id": "P_reversed",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_6",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_reversed_cyclic_phase_delay_6_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_reversed_cyclic_phase_delay_6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.001704722297149424,
+      "P_R2_R3_mean": 0.0031935622761821102,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0014517247096872772,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P",
+        "policy_id": "cyclic_phase_delay_10",
+        "row_id": "c3_5_p_cyclic_phase_delay_10"
+      },
+      "lane_id": "P",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 10,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_10",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_cyclic_phase_delay_10_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_cyclic_phase_delay_10_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P_reversed",
+        "policy_id": "cyclic_phase_delay_10",
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_10"
+      },
+      "lane_id": "P_reversed",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 10,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_10",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_reversed_cyclic_phase_delay_10_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_reversed_cyclic_phase_delay_10_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.00042701854008695946,
+      "P_R2_R3_mean": 0.001597119712599207,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008712188468549287,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P",
+        "policy_id": "cyclic_phase_delay_6_refractory_10",
+        "row_id": "c3_5_p_cyclic_phase_delay_6_refractory_10"
+      },
+      "lane_id": "P",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_6_refractory_10",
+        "refractory_steps": 10
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_cyclic_phase_delay_6_refractory_10_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_cyclic_phase_delay_6_refractory_10_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "P_reversed",
+        "policy_id": "cyclic_phase_delay_6_refractory_10",
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_6_refractory_10"
+      },
+      "lane_id": "P_reversed",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_6_refractory_10",
+        "refractory_steps": 10
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_p_reversed_cyclic_phase_delay_6_refractory_10_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_p_reversed_cyclic_phase_delay_6_refractory_10_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "U0",
+        "policy_id": "cyclic_phase_delay_6",
+        "row_id": "c3_5_u0_cyclic_phase_delay_6"
+      },
+      "lane_id": "U0",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_6",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_u0_cyclic_phase_delay_6_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_u0_cyclic_phase_delay_6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    },
+    {
+      "P_R1_R2_mean": 0.0,
+      "P_R2_R3_mean": 0.0,
+      "P_R3_R1_mean": 0.0,
+      "accumulator_budget": {
+        "budget_surface": "node_coherence_plus_three_channel_accumulators",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "passed": true
+      },
+      "blocked_reasons": [
+        "role_gated_cycle_gate_failed",
+        "three_pole_diagnostic_claim_ceiling",
+        "three_pole_diagnostic_claim_ceiling"
+      ],
+      "budget_passed": true,
+      "cascades": [],
+      "diagnostic_row": {
+        "lane_id": "U3",
+        "policy_id": "cyclic_phase_delay_6",
+        "row_id": "c3_5_u3_cyclic_phase_delay_6"
+      },
+      "lane_id": "U3",
+      "n_cycles_min": 3,
+      "network_closure_score": 0.0,
+      "phase_pattern_target": "R1 -> R2 -> R3 -> R1",
+      "policy": {
+        "delay_steps": 6,
+        "mode": "cyclic",
+        "policy_id": "cyclic_phase_delay_6",
+        "refractory_steps": 0
+      },
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_raw_records/c3_5_u3_cyclic_phase_delay_6_raw_records.jsonl"
+      },
+      "raw_three_pole_cascade_count": 0,
+      "role_gated_three_pole_cascade_count": 0,
+      "runner_mode": "c3_5_three_channel_accumulator_runner",
+      "three_pole_candidate_claim_allowed": false,
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/c3_5_three_channel_accumulator_timeseries/c3_5_u3_cyclic_phase_delay_6_timeseries.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      },
+      "would_candidate_without_diagnostic_ceiling": false
+    }
+  ],
+  "schema": "grc9v3_polarized_basin_loop_c3_5_three_channel_accumulator_v1",
+  "status": "pass",
+  "summary": {
+    "classification": "c3_5_no_three_pole_candidate_conditions",
+    "compact_rows": [
+      {
+        "lane_id": "P",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008692044985485377,
+        "network_closure_score": 0.0,
+        "policy_id": "parallel_delay_3",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_parallel_delay_3",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P_reversed",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008668620061437034,
+        "network_closure_score": 0.0,
+        "policy_id": "parallel_delay_3",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_reversed_parallel_delay_3",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0017317768118880984,
+        "network_closure_score": 0.0,
+        "policy_id": "parallel_delay_6",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_parallel_delay_6",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P_reversed",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0017206322353372347,
+        "network_closure_score": 0.0,
+        "policy_id": "parallel_delay_6",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_reversed_parallel_delay_6",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0004357375095933921,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_3",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_cyclic_phase_delay_3",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P_reversed",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_3",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_3",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008712188468549287,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_6",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_cyclic_phase_delay_6",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P_reversed",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_6",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_6",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0014517247096872772,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_10",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_cyclic_phase_delay_10",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P_reversed",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_10",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_10",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P",
+        "max_abs_budget_error": 1.1102230246251565e-16,
+        "max_in_flight_total": 0.0008712188468549287,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_6_refractory_10",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_cyclic_phase_delay_6_refractory_10",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "P_reversed",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_6_refractory_10",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_p_reversed_cyclic_phase_delay_6_refractory_10",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "U0",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_6",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_u0_cyclic_phase_delay_6",
+        "would_candidate_without_diagnostic_ceiling": false
+      },
+      {
+        "lane_id": "U3",
+        "max_abs_budget_error": 0.0,
+        "max_in_flight_total": 0.0,
+        "network_closure_score": 0.0,
+        "policy_id": "cyclic_phase_delay_6",
+        "raw_three_pole_cascade_count": 0,
+        "role_gated_three_pole_cascade_count": 0,
+        "row_id": "c3_5_u3_cyclic_phase_delay_6",
+        "would_candidate_without_diagnostic_ceiling": false
+      }
+    ],
+    "promising_row_count": 0,
+    "promising_rows": [],
+    "row_count": 14
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "command": "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_f_path_disagreement.py --write-defaults --seed 0",
+  "experiment_id": "experiment_f_path_disagreement",
+  "git_branch": "master",
+  "git_commit": "29a1df5b65a8f7eb5dafced29da3a1705be24c18",
+  "iteration": 8,
+  "lane_id": "current_hybrid_signed_hessian",
+  "output_paths": {
+    "blocked_observations_csv": "reports/experiment_f_path_disagreement_blocked_observations.csv",
+    "criteria_csv": "outputs/experiment_f_path_disagreement_criteria.csv",
+    "edges_csv": "outputs/experiment_f_path_disagreement_edges.csv",
+    "manifest_json": "outputs/experiment_f_path_disagreement_manifest.json",
+    "paths_csv": "outputs/experiment_f_path_disagreement_paths.csv",
+    "report_md": "reports/experiment_f_path_disagreement.md",
+    "summary_json": "outputs/experiment_f_path_disagreement_summary.json",
+    "variants_csv": "outputs/experiment_f_path_disagreement_variants.csv"
+  },
+  "reuse_notes": {
+    "d2": "Use path-label criteria as feature targets.",
+    "d7": "Use path rows only as edge-label evidence unless port grouping comparisons are added."
+  },
+  "runtime_params": {
+    "constitutive_semantic_modes": {
+      "boundary_mode": "prune",
+      "edge_label_selection": "all",
+      "hessian_backend": "row_basis_diagonal"
+    },
+    "dt": 0.1,
+    "evolution": {
+      "eps_tau": 1e-12,
+      "rho": 1.0,
+      "rng_seed": 0,
+      "site_potential_params": {
+        "mu": 0.0,
+        "scale": 0.0
+      },
+      "site_potential_selection": "quadratic",
+      "v0": 1.0
+    }
+  },
+  "scoring_conventions": {
+    "delay_path": "minimize sum temporal_delay(e)",
+    "metric_path": "minimize sum geometric_length(e)",
+    "primary_coupling_path": "maximize min_e flux_coupling(e)",
+    "primary_flux_path": "maximize min_e abs(signed_flux(e))",
+    "secondary_coupling_diagnostic": "maximize sum flux_coupling(e)",
+    "secondary_flux_diagnostic": "maximize sum abs(signed_flux(e))",
+    "tie_break": "prefer fewer edges, then lexicographic edge-id tuple"
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_f_path_disagreement.py",
+  "seed": 0,
+  "validation_commands": [
+    "PYTHONPATH=src .venv/bin/python -m py_compile experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_f_path_disagreement.py",
+    "PYTHONPATH=src .venv/bin/python -m ruff check experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_f_path_disagreement.py experiments/2026-05-N01-grc9v3-properties/scripts/grc9v3_fixture_harness.py",
+    ".venv/bin/python -m json.tool experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_summary.json"
+  ]
+}

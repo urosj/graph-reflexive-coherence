@@ -1,0 +1,141 @@
+seed_schema: pygrc.landscape_seed.v1
+seed_version: motion_seed_iter10_v1
+meta:
+  name: motion_composite_walk_frontier_refinement
+  source_kind: authored_motion_seed
+  source_reference: implementation/Motion-ImplementationPlan.md#iteration-10
+  source_schema_version: motion_seed.v1
+  source_domain: motion_inference
+  description: Authored preconditions for identity, boundary, topological motion review.
+  tags:
+  - motion
+  - iteration_10
+  - grc9v3
+  translator_name: motion_seed_examples
+  translator_version: motion_seed_examples_iter10_v1
+  translation_mode: semantic_enrichment
+  translation_notes:
+  - source_preconditions_only
+  - no_runtime_motion_claim
+  - no_motion_record_claim
+  - no_solved_checkpoint_claim
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.0
+  zeta_c: 1.0
+  kappa_c: 1.0
+  dt: 0.1
+  potential:
+    type: motion_source_precondition
+    params: {}
+  budget_b: null
+  notes: Authoring profile for runtime projection tests; not a solved motion outcome.
+  source_params: {}
+primitives:
+- id: walking_origin
+  type: basin
+  label: walking origin
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 2.0
+  chart_center_hint:
+  - 0.0
+  - 0.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: walking_successor
+  type: basin
+  label: walking successor
+  role: motion_source_region
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: precondition_region
+  parent_id: null
+  depth_hint: null
+  coherence_prior: 2.0
+  chart_center_hint:
+  - 1.0
+  - 0.0
+  chart_scale_hint: {}
+  shape_hint: {}
+  stability_class: null
+  boundary_ids: []
+  notes: null
+- id: frontier_refinement_locus
+  type: junction
+  label: frontier refinement locus
+  role: motion_source_junction
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: topology_precondition
+  host_id: walking_successor
+  branch_target_ids: []
+  junction_role: frontier_or_refinement_precondition
+  coherence_prior: null
+  chart_center_hint: null
+  notes: null
+- id: walking_channel
+  type: valley
+  label: walking channel
+  role: motion_source_channel
+  tags: []
+  hints: {}
+  extensions:
+    motion_seed:
+      source_role: flux_path_precondition
+  from_id: walking_origin
+  to_id: walking_successor
+  path_hint: null
+  width_hint: null
+  coherence_prior: null
+  channel_role: transport_precondition
+  waypoints: []
+  notes: null
+transport_intent:
+- id: walking_then_refinement_intent
+  mode: ordered_precondition_sequence
+  sources:
+  - walking_origin
+  targets:
+  - walking_successor
+  magnitude_hint: 1.0
+  priority: null
+  carrier_id: walking_channel
+  direction_hint: null
+  notes: null
+geometry_hints:
+  source_chart: motion_iter10_source_chart
+  periodicity: {}
+  scale_units: null
+  separation_hints: {}
+  coordinate_convention: null
+extensions:
+  motion_seed:
+    contract_version: motion_seed.v1
+    runtime_family: grc9v3
+    source_status: composite_projected_runtime_evidence
+    target_motion_modes:
+    - identity
+    - boundary
+    - topological
+    projected_example_names:
+    - motion_composite_walk_frontier_refinement
+    non_claims:
+    - source_preconditions_only
+    - no_runtime_motion_claim
+    - no_motion_record_claim
+    - no_solved_checkpoint_claim
+    notes: []

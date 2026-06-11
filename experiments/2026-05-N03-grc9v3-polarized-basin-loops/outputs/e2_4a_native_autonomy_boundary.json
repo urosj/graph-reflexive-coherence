@@ -1,0 +1,20 @@
+{
+  "branch": "E2.4-A",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/validate_e2_4_native_autonomy_boundary.py",
+  "errors": [],
+  "interpretation": "E2.4-A preserves the distinction between native static route autonomy and D2.3-equivalent autonomy. Existing LGRC9V3 can natively produce route-table packet work and arrival-triggered forwarding, but D2.3 pole-mask routing, surplus-threshold trigger, and self-rearm semantics still require experiment-local adapter evidence. No core task is requested by this experiment closeout.",
+  "required_boundary": {
+    "adapter_required_for_d2_3_semantics": true,
+    "core_task_requested": false,
+    "native_arrival_triggered_route_forwarding_exists": true,
+    "native_d2_3_equivalent": false,
+    "native_d2_3_self_rearm_label_exists": false,
+    "native_packet_route_production_exists": true,
+    "native_pole_mask_route_semantics_exists": false,
+    "native_source_pole_surplus_threshold_trigger_exists": false,
+    "native_static_route_autonomy_exists": true
+  },
+  "schema": "n03_e2_4a_native_autonomy_boundary_v1",
+  "source_artifact": "outputs/e2_4_native_autonomy_feasibility.json",
+  "status": "passed"
+}

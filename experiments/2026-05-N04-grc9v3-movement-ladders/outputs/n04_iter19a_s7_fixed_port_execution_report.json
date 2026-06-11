@@ -1,0 +1,815 @@
+{
+  "achieved_movement_level": "M6",
+  "blocked_claims": [
+    "adaptive_topology_movement",
+    "topology_mutating_movement",
+    "native_lgrc_choice_selection",
+    "rc_identity_collapse",
+    "semantic_choice",
+    "agency",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "all_recovery_pulses_feedback_authorized": true,
+    "artifact_validators_passed": true,
+    "broader_claims_blocked": true,
+    "budget_and_nonnegative_gates_passed": true,
+    "dominant_branch_overrides_local_preference": true,
+    "epsilon_does_not_force_strong_two_branch_choice": true,
+    "fixed_port_graph_used": true,
+    "identity_shape_gates_passed": true,
+    "iteration_19_contract_passed": true,
+    "mapping_id_matches_contract": true,
+    "native_branch_eligibility_selects_outputs": true,
+    "no_port_rewiring": true,
+    "no_preference_still_blocks_native_arbitration": true,
+    "no_topology_events": true,
+    "port_rewiring_disabled": true,
+    "s7_fixed_port_execution_passed": true,
+    "south_port_selects_east_output": true,
+    "topology_mutation_disabled": true,
+    "west_port_selects_north_output": true
+  },
+  "claim_ceiling": "s7_fixed_port_composed_gate_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "port_graph_transfer_claim_allowed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "topology_mutating_movement_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "controls": {
+    "dominant_branch_overrides_local_preference": {
+      "control_id": "dominant_branch_overrides_local_preference_control",
+      "outcome": "unique_branch_by_native_eligibility",
+      "passed_positive_control": true,
+      "primary_reason": "dominant_east_branch_remains_eligible_despite_north_local_preference",
+      "scheduled_branches": [
+        "east_branch"
+      ]
+    },
+    "epsilon_does_not_force_strong_two_branch_choice": {
+      "control_id": "epsilon_does_not_force_strong_two_branch_choice_control",
+      "outcome": "tie_no_native_arbitration",
+      "passed_negative_control": true,
+      "primary_blocker": "both_strong_branches_remain_eligible",
+      "scheduled_branches": [
+        "north_branch",
+        "east_branch"
+      ]
+    },
+    "global_preference_sum_zero": {
+      "control_id": "global_preference_sum_zero_control",
+      "global_preference_sum": {
+        "east_branch": 0.0,
+        "north_branch": 0.0
+      },
+      "outcome": "global_unbiased",
+      "passed_positive_control": true,
+      "primary_reason": "paired_local_preferences_cancel_globally",
+      "scheduled_branches": []
+    },
+    "no_preference_reproduces_18e_no_arbitration": {
+      "control_id": "no_preference_reproduces_18e_no_arbitration_control",
+      "outcome": "tie_no_native_arbitration",
+      "passed_negative_control": true,
+      "primary_blocker": "both_branches_eligible_no_native_arbitration",
+      "scheduled_branches": [
+        "north_branch",
+        "east_branch"
+      ]
+    },
+    "port_rewiring_disabled_control": {
+      "control_id": "port_rewiring_disabled_control",
+      "outcome": "no_port_rewiring_emitted",
+      "passed_negative_control": true,
+      "primary_blocker": "fixed_port_graph_rewiring_disabled",
+      "scheduled_branches": []
+    },
+    "topology_mutation_disabled_control": {
+      "control_id": "topology_mutation_disabled_control",
+      "outcome": "no_topology_events_emitted",
+      "passed_negative_control": true,
+      "primary_blocker": "runtime_topology_mutation_disabled_for_19a",
+      "scheduled_branches": []
+    }
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19a_s7_fixed_port_execution.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "geometry_scope": "transferred_geometry",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15e_large_shock_absorber_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16_corridor_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16b_corridor_perturbation_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16c_high_shock_corridor_resilience.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_unwrap_policy.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17b_circular_ring_motion_evidence_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17c_ring_geometry_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18_grid_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18b_grid_two_axis_turn_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18c_grid_state_gated_routing_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18d_grid_geometry_selection_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18e_grid_composed_1d_fork_competition_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18f_balanced_local_preference_fork_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18g_integrated_2d_composed_gate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18h_s3_grid_series_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19_s7_port_graph_mapping_contract.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15e_large_shock_absorber_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16_corridor_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16b_corridor_perturbation_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16c_high_shock_corridor_resilience.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17_ring_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17a_ring_unwrap_robustness_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17b_circular_ring_motion_evidence_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17c_ring_geometry_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18_grid_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18b_grid_two_axis_turn_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18c_grid_state_gated_routing_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18d_grid_geometry_selection_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18e_grid_composed_1d_fork_competition_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18f_balanced_local_preference_fork_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18g_integrated_2d_composed_gate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18h_s3_grid_series_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter19_s7_port_graph_mapping_contract.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter17c_ring_geometry_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter18h_s3_grid_series_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter19_s7_port_graph_mapping_contract.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15e_large_shock_absorber_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16_corridor_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16b_corridor_perturbation_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16c_high_shock_corridor_resilience.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17_ring_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17a_ring_unwrap_robustness.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18_grid_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18b_grid_two_axis_turn.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18c_grid_state_gated_routing.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18d_grid_geometry_selection.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18e_grid_composed_1d_fork_competition.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18f_balanced_local_preference_fork.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18g_integrated_2d_composed_gate.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter19a_s7_fixed_port_execution.py"
+    }
+  },
+  "go_no_go_for_iteration_19b": {
+    "adaptive_topology_ceiling_to_test": "s7_fixed_port_composed_gate_candidate",
+    "guidance": "A later 19-B may test topology-lineage/adaptive behavior. 19-A itself is fixed-port evidence only.",
+    "iteration_19b_allowed": true
+  },
+  "input_ceiling": "s3_grid_integrated_2d_composed_gate_candidate",
+  "iteration": "19-A",
+  "lanes": {
+    "south_in_to_east_out": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "artifact_validator": {
+        "failure_reasons": [],
+        "movement_claim_allowed": false,
+        "native_lgrc_pulse_substrate_supported": true,
+        "native_m6": false,
+        "surface_row_count": 14,
+        "valid": true,
+        "validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-fb2cf96f1b8c6c8c:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-583d742fe6ffbb2b:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-583d742fe6ffbb2b:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-db732f5401adc16f:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-35eb967363919f23:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-35eb967363919f23:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-12fb5cbc2ad96816:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-758fc007c902f417:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-17528ad29a4a74ae:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-17528ad29a4a74ae:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-2645f552d8172001:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-5d008c6029df270e:route_local_pulse_contact"
+        ],
+        "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+      },
+      "budget_abs_error": 0.0,
+      "budget_final": 25.0,
+      "budget_initial": 25.0,
+      "eligibility_scan": {
+        "branch_results": {
+          "east_branch": {
+            "boundary_polarity_score": 0.5,
+            "branch_id": "east_branch",
+            "copied_from_original_schedule": false,
+            "ingress_event_count": 6,
+            "local_preference_site": "mirror_fork_local_preference",
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": true,
+            "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+            "source_surface_digest": "f82091a7e9a612084fadf39156bc60b01d4e45788018272f564099a49cccb45b",
+            "surface_digest": "2842cbba2e93f77575a80357cbce5d55b7a5969c5184afad3b2341432d4797f9"
+          },
+          "north_branch": {
+            "boundary_polarity_score": 0.18999999999999995,
+            "branch_id": "north_branch",
+            "copied_from_original_schedule": false,
+            "ingress_event_count": 6,
+            "local_preference_site": "mirror_fork_local_preference",
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_subthreshold",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": false,
+            "scheduled_event_id": null,
+            "source_surface_digest": "f82091a7e9a612084fadf39156bc60b01d4e45788018272f564099a49cccb45b",
+            "surface_digest": "a9fc88b4ff65337b30520994706aeefa0fd943687433fc4894453e523eea6dbe"
+          }
+        },
+        "geometry_init": {
+          "branch_biases": {
+            "east_branch": 0.25,
+            "north_branch": -0.03
+          },
+          "budget_abs_error": 0.0,
+          "budget_after": 25.0,
+          "budget_before": 25.0,
+          "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+          "diagonal_edges_enabled": false,
+          "direct_branch_suppression_absent": true,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "disabled_branches": [],
+          "external_argmax_absent": true,
+          "external_geometry_scorer_absent": true,
+          "geometry_id": "s3_grid_composed_1d_fork_v1",
+          "nonnegative_after_geometry_init": true,
+          "preauthored_input_to_output_lookup_absent": true,
+          "route_edges_are_local_unit_edges": true,
+          "route_shortcuts_enabled": false,
+          "shared_fork_node": 12,
+          "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+          "topology_changed_by_fixture_definition": false,
+          "topology_fixed_during_run": true,
+          "topology_mutated_during_run": false
+        },
+        "outcome": "unique_branch_by_native_eligibility",
+        "production_artifacts_digest": "96bbd364b4217bbfe433b047855d8501c80a562618c0e6cdefcec450e38c77bb",
+        "scheduled_branches": [
+          "east_branch"
+        ],
+        "unique_selected_branch": "east_branch"
+      },
+      "expected_branch": "east_branch",
+      "final_branch_progress": 0.004761904761904745,
+      "final_centroid_delta": {
+        "x": 0.004761904761904745,
+        "y": -0.011904761904761862
+      },
+      "final_centroid_xy": {
+        "x": 1.9333333333333333,
+        "y": 1.61
+      },
+      "final_score": 0.6000000000000004,
+      "first_cycle": {
+        "boundary_polarity_score": 0.5,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "integrated_2d_gate_selected_branch_first_fire",
+        "processed_event_count": 6,
+        "processed_events_digest": "4be77854c4dd9d0ecbb3adc2779471e74527ccf5ae38a9fdd0598f15075c5589",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+        "source_surface_digest": "f82091a7e9a612084fadf39156bc60b01d4e45788018272f564099a49cccb45b",
+        "surface_digest": "2842cbba2e93f77575a80357cbce5d55b7a5969c5184afad3b2341432d4797f9"
+      },
+      "geometry_init": {
+        "branch_biases": {
+          "east_branch": 0.25,
+          "north_branch": -0.03
+        },
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+        "diagonal_edges_enabled": false,
+        "direct_branch_suppression_absent": true,
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "disabled_branches": [],
+        "external_argmax_absent": true,
+        "external_geometry_scorer_absent": true,
+        "geometry_id": "s3_grid_composed_1d_fork_v1",
+        "nonnegative_after_geometry_init": true,
+        "preauthored_input_to_output_lookup_absent": true,
+        "route_edges_are_local_unit_edges": true,
+        "route_shortcuts_enabled": false,
+        "shared_fork_node": 12,
+        "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+        "topology_changed_by_fixture_definition": false,
+        "topology_fixed_during_run": true,
+        "topology_mutated_during_run": false
+      },
+      "identity_shape_gates_passed": true,
+      "ingress_event_count": 6,
+      "initial_centroid_xy": {
+        "x": 1.9285714285714286,
+        "y": 1.621904761904762
+      },
+      "input_gate": {
+        "branch_biases": {
+          "east_branch": 0.25,
+          "north_branch": -0.03
+        },
+        "expected_branch": "east_branch",
+        "expected_output_axis": "x",
+        "ingress_source": 17,
+        "ingress_target": 12,
+        "input_port": "south_in",
+        "local_preference_site": "mirror_fork_local_preference",
+        "output_port": "east_out",
+        "port_lane_id": "south_in_to_east_out"
+      },
+      "input_port": "south_in",
+      "lane": "south_in_to_east_out",
+      "m4_boundary_response_passed": true,
+      "m5_direction_control_passed": true,
+      "m6_integrated_2d_gate_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "output_port": "east_out",
+      "perturbation": {
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "credit_nodes": [
+          11
+        ],
+        "debit_nodes": [
+          13
+        ],
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "nonnegative_after_perturbation": true,
+        "perturbation_kind": "budget_neutral_geometry_selected_output_polarity_damping",
+        "transfer_amount": 0.15
+      },
+      "port_lane_id": "south_in_to_east_out",
+      "port_rewired_during_run": false,
+      "post_perturbation_score": 0.30000000000000016,
+      "pre_perturbation_score": 0.6000000000000001,
+      "producer_records_digest": "823c2cbfbaeeaf5951ec67eebc7d6cf4088f3244c587b02e42082d3446ea0db4",
+      "profile_similarity": 0.9960077091793441,
+      "recovery_cycles": [
+        {
+          "boundary_polarity_score": 0.30000000000000016,
+          "copied_from_original_schedule": false,
+          "cycle_index": 0,
+          "phase": "post_perturbation_integrated_2d_gate_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "6212b0dd6548dbd7dd0769f9da1cc0876bbbc9093ec5a8b020589ff3498d928a",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-12fb5cbc2ad96816",
+          "source_surface_digest": "cb6b952b654d029cc1f0da2a79a87ba2d9e1fa78b68143d79fbc5ca8ddbe440a",
+          "surface_digest": "8fc3462fc8aaeeb5ad02b879fd42f4017e03b407304bf463af92cd1b151354b8"
+        },
+        {
+          "boundary_polarity_score": 0.40000000000000024,
+          "copied_from_original_schedule": false,
+          "cycle_index": 1,
+          "phase": "post_perturbation_integrated_2d_gate_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "9454dc067db4f98605a820f826c69a36b33033a67006c93af0a99b650ee471ae",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-758fc007c902f417",
+          "source_surface_digest": "1079cfd5be3ae7aee5c8628ce2ccc140b0b977db01c0591180dd5999e7ea9beb",
+          "surface_digest": "146875e69eccb44ccf9beff2ea1bcc55230ccd306a8653d4abf53d3618a8bbf0"
+        },
+        {
+          "boundary_polarity_score": 0.5000000000000003,
+          "copied_from_original_schedule": false,
+          "cycle_index": 2,
+          "phase": "post_perturbation_integrated_2d_gate_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "a0a1f44bbc23f811b66e35e5aef52e77cdcb31742545aca94287aa2ee2927c1a",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-2645f552d8172001",
+          "source_surface_digest": "da345321444a2d20b98e6a41b504fe6bddea5ffd82ce79ad543008d666b9f1bd",
+          "surface_digest": "ddb12330d92b6e6a108f95cf6dd72b903ba77304be61b8a3158b3ed5e255340c"
+        }
+      ],
+      "recovery_scheduled_cycle_count": 3,
+      "s7_fixed_port_execution_passed": true,
+      "selected_branch": "east_branch",
+      "selected_branch_config": {
+        "front_nodes": [
+          13
+        ],
+        "rear_nodes": [
+          11
+        ],
+        "route_vector": [
+          1.0,
+          0.0
+        ],
+        "target_node": 13
+      },
+      "selected_branch_matches_expected_port_role": true,
+      "surface_log_digest": "08cb90e1f43c445400cb1b810c5e802069fd53a9c985efdf7b3a8ed8c99d7bc3",
+      "surface_row_count": 14,
+      "topology_mutated_during_run": false,
+      "width_relative_change": 0.00018838729688987297
+    },
+    "west_in_to_north_out": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "artifact_validator": {
+        "failure_reasons": [],
+        "movement_claim_allowed": false,
+        "native_lgrc_pulse_substrate_supported": true,
+        "native_m6": false,
+        "surface_row_count": 14,
+        "valid": true,
+        "validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-b621a5f5663eca36:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-3ca5b0d52cc46c04:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-9a8756e1ea570b7c:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-9a8756e1ea570b7c:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-0699b558e3d1b6d8:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-6e77c7f61ecc77e2:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-6e77c7f61ecc77e2:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-c8a6ad8a8e249454:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-bbbfba32a2cc7bd5:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-bbbfba32a2cc7bd5:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-f6cf2062e804af39:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-8a007b5582e9d927:route_local_pulse_contact"
+        ],
+        "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+      },
+      "budget_abs_error": 0.0,
+      "budget_final": 25.0,
+      "budget_initial": 25.0,
+      "eligibility_scan": {
+        "branch_results": {
+          "east_branch": {
+            "boundary_polarity_score": 0.18999999999999995,
+            "branch_id": "east_branch",
+            "copied_from_original_schedule": false,
+            "ingress_event_count": 6,
+            "local_preference_site": "center_fork_local_preference",
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_subthreshold",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": false,
+            "scheduled_event_id": null,
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "dcdb49af2be015e45d3be5c80210f4827b5fe4acffa21b0b6e6c0d94dc6a530b"
+          },
+          "north_branch": {
+            "boundary_polarity_score": 0.5,
+            "branch_id": "north_branch",
+            "copied_from_original_schedule": false,
+            "ingress_event_count": 6,
+            "local_preference_site": "center_fork_local_preference",
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": true,
+            "scheduled_event_id": "lgrc9v3-packet-event-3ca5b0d52cc46c04",
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "82d2c6d21f89ca6946ec42d3bc57417356f640c366889db12a74c6f6adb54218"
+          }
+        },
+        "geometry_init": {
+          "branch_biases": {
+            "east_branch": -0.03,
+            "north_branch": 0.25
+          },
+          "budget_abs_error": 0.0,
+          "budget_after": 25.0,
+          "budget_before": 25.0,
+          "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+          "diagonal_edges_enabled": false,
+          "direct_branch_suppression_absent": true,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "disabled_branches": [],
+          "external_argmax_absent": true,
+          "external_geometry_scorer_absent": true,
+          "geometry_id": "s3_grid_composed_1d_fork_v1",
+          "nonnegative_after_geometry_init": true,
+          "preauthored_input_to_output_lookup_absent": true,
+          "route_edges_are_local_unit_edges": true,
+          "route_shortcuts_enabled": false,
+          "shared_fork_node": 12,
+          "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+          "topology_changed_by_fixture_definition": false,
+          "topology_fixed_during_run": true,
+          "topology_mutated_during_run": false
+        },
+        "outcome": "unique_branch_by_native_eligibility",
+        "production_artifacts_digest": "af907382a6baf81424b4bbcb7f5ced2feb43e55f1dae7602696d1afa37521184",
+        "scheduled_branches": [
+          "north_branch"
+        ],
+        "unique_selected_branch": "north_branch"
+      },
+      "expected_branch": "north_branch",
+      "final_branch_progress": 0.004761904761904967,
+      "final_centroid_delta": {
+        "x": 0.011904761904761862,
+        "y": -0.004761904761904967
+      },
+      "final_centroid_xy": {
+        "x": 1.9138095238095236,
+        "y": 1.5904761904761904
+      },
+      "final_score": 0.6000000000000004,
+      "first_cycle": {
+        "boundary_polarity_score": 0.5,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "integrated_2d_gate_selected_branch_first_fire",
+        "processed_event_count": 6,
+        "processed_events_digest": "1336b1ec8fc2538c5ec36f979b9b70e2282435620edafbbe9baffd84b8ad9fbd",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-3ca5b0d52cc46c04",
+        "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+        "surface_digest": "82d2c6d21f89ca6946ec42d3bc57417356f640c366889db12a74c6f6adb54218"
+      },
+      "geometry_init": {
+        "branch_biases": {
+          "east_branch": -0.03,
+          "north_branch": 0.25
+        },
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+        "diagonal_edges_enabled": false,
+        "direct_branch_suppression_absent": true,
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "disabled_branches": [],
+        "external_argmax_absent": true,
+        "external_geometry_scorer_absent": true,
+        "geometry_id": "s3_grid_composed_1d_fork_v1",
+        "nonnegative_after_geometry_init": true,
+        "preauthored_input_to_output_lookup_absent": true,
+        "route_edges_are_local_unit_edges": true,
+        "route_shortcuts_enabled": false,
+        "shared_fork_node": 12,
+        "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+        "topology_changed_by_fixture_definition": false,
+        "topology_fixed_during_run": true,
+        "topology_mutated_during_run": false
+      },
+      "identity_shape_gates_passed": true,
+      "ingress_event_count": 6,
+      "initial_centroid_xy": {
+        "x": 1.9019047619047618,
+        "y": 1.5952380952380953
+      },
+      "input_gate": {
+        "branch_biases": {
+          "east_branch": -0.03,
+          "north_branch": 0.25
+        },
+        "expected_branch": "north_branch",
+        "expected_output_axis": "y",
+        "ingress_source": 11,
+        "ingress_target": 12,
+        "input_port": "west_in",
+        "local_preference_site": "center_fork_local_preference",
+        "output_port": "north_out",
+        "port_lane_id": "west_in_to_north_out"
+      },
+      "input_port": "west_in",
+      "lane": "west_in_to_north_out",
+      "m4_boundary_response_passed": true,
+      "m5_direction_control_passed": true,
+      "m6_integrated_2d_gate_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "output_port": "north_out",
+      "perturbation": {
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "credit_nodes": [
+          17
+        ],
+        "debit_nodes": [
+          7
+        ],
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "nonnegative_after_perturbation": true,
+        "perturbation_kind": "budget_neutral_geometry_selected_output_polarity_damping",
+        "transfer_amount": 0.15
+      },
+      "port_lane_id": "west_in_to_north_out",
+      "port_rewired_during_run": false,
+      "post_perturbation_score": 0.30000000000000016,
+      "pre_perturbation_score": 0.6000000000000001,
+      "producer_records_digest": "afd3ef86ae7cd29491775780deeed8882060821f2b1105f90400cc0b06a3cb32",
+      "profile_similarity": 0.9960077091793441,
+      "recovery_cycles": [
+        {
+          "boundary_polarity_score": 0.30000000000000016,
+          "copied_from_original_schedule": false,
+          "cycle_index": 0,
+          "phase": "post_perturbation_integrated_2d_gate_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "a1db7fb02f4ca74b0455e8d602f54d221c094415d429d7c8e7c04fc850f99285",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-0699b558e3d1b6d8",
+          "source_surface_digest": "5d7533905d89e08b43c03b4d2da795fd392dc703a462cca47e47d33eb407b5d6",
+          "surface_digest": "a0873a5016e1cbd6a6340e50f390b649ceea2f31f255fcc527cd861e140892fd"
+        },
+        {
+          "boundary_polarity_score": 0.40000000000000024,
+          "copied_from_original_schedule": false,
+          "cycle_index": 1,
+          "phase": "post_perturbation_integrated_2d_gate_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "744086df3e93fa27760764343b9c72d272435131ca97b5de59992d59d8748d56",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-c8a6ad8a8e249454",
+          "source_surface_digest": "53ca26777de5c003a936a09accf2cb1245eaa6020fab06678e48d65d388d4350",
+          "surface_digest": "517f5adb0235636b5cda1018e7270958722a6eab77da760c052fd4de06543201"
+        },
+        {
+          "boundary_polarity_score": 0.5000000000000003,
+          "copied_from_original_schedule": false,
+          "cycle_index": 2,
+          "phase": "post_perturbation_integrated_2d_gate_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "9ce576f1b27fcfd19e58a54af9ed2992e91861d35d613c7556923879ab8eab28",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-f6cf2062e804af39",
+          "source_surface_digest": "5e2df34a18c36ab5e3576bda04f8566421682625d84b45ab1a57bd572e7cfc39",
+          "surface_digest": "3dd6ae5b7f11666f15cc7602d17747e664361c2a2b20bd875ce121a82cc219c6"
+        }
+      ],
+      "recovery_scheduled_cycle_count": 3,
+      "s7_fixed_port_execution_passed": true,
+      "selected_branch": "north_branch",
+      "selected_branch_config": {
+        "front_nodes": [
+          7
+        ],
+        "rear_nodes": [
+          17
+        ],
+        "route_vector": [
+          0.0,
+          -1.0
+        ],
+        "target_node": 7
+      },
+      "selected_branch_matches_expected_port_role": true,
+      "surface_log_digest": "44f34923bdb0a6608ee3c8744fae53510722f9cf200710ac755491ef2d05e459",
+      "surface_row_count": 14,
+      "topology_mutated_during_run": false,
+      "width_relative_change": 0.000770593305148358
+    }
+  },
+  "movement_substrate": "S7_port_graph_fixed_composed_gate_v1",
+  "native_support_boundary": {
+    "adaptive_topology_supported": false,
+    "external_argmax_used": false,
+    "external_scorer_used": false,
+    "fixed_port_graph_used": true,
+    "native_artifact_validator_used": true,
+    "native_causal_pulse_substrate_surface_used": true,
+    "native_feedback_producer_used": true,
+    "native_lgrc_choice_selection_supported": false,
+    "native_lgrc_packet_work_used": true,
+    "port_rewiring_used": false,
+    "runtime_topology_mutation_used": false
+  },
+  "next_iteration": "19b_s7_topology_lineage_or_adaptive_gate",
+  "persistence_axis": {
+    "persistence_basis": "s7_fixed_port_composed_gate_recovers_0_15",
+    "persistence_level": "T6_candidate",
+    "recovery_passed": true,
+    "recovery_perturbation": 0.15,
+    "recovery_status": "recovers_0_15_on_selected_fixed_port_branch",
+    "recovery_tested": true,
+    "repeatability_status": "west_in_and_south_in_select_distinct_fixed_ports_and_recover",
+    "self_renewed_cycle_count": 3,
+    "t6_full_claim_allowed": false,
+    "t6_full_claim_blocker": "fixed_port_graph_not_topology_mutating_or_adaptive_topology"
+  },
+  "report_kind": "n04_iter19a_s7_fixed_port_execution_v1",
+  "runtime_family": "LGRC9V3",
+  "s7_execution_policy": {
+    "declared_before_run": true,
+    "edge_rewiring_enabled": false,
+    "external_argmax_used": false,
+    "external_scorer_used": false,
+    "fixed_port_graph": {
+      "declared_edges": [
+        [
+          "west_in",
+          "junction_center"
+        ],
+        [
+          "south_in",
+          "junction_center"
+        ],
+        [
+          "junction_center",
+          "north_out"
+        ],
+        [
+          "junction_center",
+          "east_out"
+        ]
+      ],
+      "edge_rewiring_enabled": false,
+      "modules": [
+        "west_input_module",
+        "south_input_module",
+        "junction_module",
+        "north_branch_module",
+        "east_branch_module"
+      ],
+      "port_creation_enabled": false,
+      "port_deletion_enabled": false,
+      "ports": {
+        "east_branch_module": [
+          "east_out"
+        ],
+        "junction_module": [
+          "junction_center",
+          "north_branch_edge",
+          "east_branch_edge"
+        ],
+        "north_branch_module": [
+          "north_out"
+        ],
+        "south_input_module": [
+          "south_in",
+          "south_balance"
+        ],
+        "west_input_module": [
+          "west_in",
+          "west_balance"
+        ]
+      },
+      "topology_mutation_enabled": false
+    },
+    "lineage_policy": {
+      "adaptive_topology_lineage_deferred": true,
+      "runtime_topology_events_allowed": false,
+      "source_to_target_lineage_recorded": true,
+      "topology_lineage_mode": "fixed_topology_lineage_only"
+    },
+    "mapping_id": "s3_integrated_2d_gate_to_s7_fixed_port_graph_v1",
+    "native_branch_eligibility_used": true,
+    "policy_id": "s7_fixed_port_composed_gate_execution_policy_v1",
+    "port_creation_enabled": false,
+    "port_deletion_enabled": false,
+    "port_lanes": {
+      "south_in_to_east_out": {
+        "branch_biases": {
+          "east_branch": 0.25,
+          "north_branch": -0.03
+        },
+        "expected_branch": "east_branch",
+        "expected_output_axis": "x",
+        "ingress_source": 17,
+        "ingress_target": 12,
+        "input_port": "south_in",
+        "local_preference_site": "mirror_fork_local_preference",
+        "output_port": "east_out",
+        "port_lane_id": "south_in_to_east_out"
+      },
+      "west_in_to_north_out": {
+        "branch_biases": {
+          "east_branch": -0.03,
+          "north_branch": 0.25
+        },
+        "expected_branch": "north_branch",
+        "expected_output_axis": "y",
+        "ingress_source": 11,
+        "ingress_target": 12,
+        "input_port": "west_in",
+        "local_preference_site": "center_fork_local_preference",
+        "output_port": "north_out",
+        "port_lane_id": "west_in_to_north_out"
+      }
+    },
+    "target_fixture": "S7_port_graph_fixed_composed_gate_v1",
+    "topology_mutation_enabled": false
+  },
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_19_contract": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19_s7_port_graph_mapping_contract.json",
+      "sha256": "f4148554ae76e7091ab1e2d581cc3fdd1d01ed75ea696fac313150e743db80a4"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "port_graph"
+}

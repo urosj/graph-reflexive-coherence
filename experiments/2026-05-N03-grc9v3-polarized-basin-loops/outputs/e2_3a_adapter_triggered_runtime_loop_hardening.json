@@ -1,0 +1,272 @@
+{
+  "adapter_state_visibility": {
+    "E2.3-C-broken-return": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-C-forward-only": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-C-scrambled-order": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-C-subthreshold": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-C-wrong-direction": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-P-adapter-triggered-cw": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-R-adapter-triggered-ccw": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    },
+    "E2.3-U0-no-surplus": {
+      "adapter_events_marked_non_native": true,
+      "passed": true,
+      "trigger_values_measured": true,
+      "unexpected_adapter_fields": [],
+      "unexpected_runtime_fields": []
+    }
+  },
+  "adapter_state_visibility_passed": true,
+  "branch": "E2.3-A",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/validate_e2_3_adapter_triggered_runtime_loop.py",
+  "direction_symmetry": {
+    "budget_error_delta": 0.0,
+    "ccw_trigger_to_departure_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "cw_trigger_to_departure_deltas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "deltas": {
+      "arrival_count": 0,
+      "cycle_count": 0,
+      "departure_count": 0,
+      "rearm_count": 0,
+      "route_continuation_count": 0,
+      "runtime_event_count": 0,
+      "trigger_count": 0
+    },
+    "max_event_budget_error_delta": 0.0,
+    "passed": true,
+    "trigger_to_departure_timing_matches": true
+  },
+  "errors": [],
+  "interpretation": "E2.3-A hardens the adapter-triggered runtime result using only the E2.3 artifact. It confirms that adapter triggers expose measured runtime-state fields, self-rearm labels follow returned-packet arrival and threshold crossing, ledger-only event records reproduce positive/control classifications, direction reversal symmetry holds across event counts and timing, and per-event budget errors remain within tolerance.",
+  "ledger_only_lane_summaries": [
+    {
+      "cycle_count": 0,
+      "lane_id": "E2.3-U0-no-surplus",
+      "ledger_only_positive": false,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 0.0,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 0,
+      "rearm_count": 0,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 10,
+      "lane_id": "E2.3-P-adapter-triggered-cw",
+      "ledger_only_positive": true,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 2.220446049250313e-16,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 80,
+      "rearm_count": 9,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 10,
+      "lane_id": "E2.3-R-adapter-triggered-ccw",
+      "ledger_only_positive": true,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 2.220446049250313e-16,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 80,
+      "rearm_count": 9,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 0,
+      "lane_id": "E2.3-C-subthreshold",
+      "ledger_only_positive": false,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 0.0,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 0,
+      "rearm_count": 0,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 0,
+      "lane_id": "E2.3-C-wrong-direction",
+      "ledger_only_positive": false,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 2.220446049250313e-16,
+      "opposite_cycle_count": 10,
+      "paired_packet_count": 80,
+      "rearm_count": 0,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 0,
+      "lane_id": "E2.3-C-forward-only",
+      "ledger_only_positive": false,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 2.220446049250313e-16,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 2,
+      "rearm_count": 0,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 0,
+      "lane_id": "E2.3-C-broken-return",
+      "ledger_only_positive": false,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 2.220446049250313e-16,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 6,
+      "rearm_count": 0,
+      "topology_mutation_count": 0
+    },
+    {
+      "cycle_count": 0,
+      "lane_id": "E2.3-C-scrambled-order",
+      "ledger_only_positive": false,
+      "matches_runner_positive": true,
+      "max_event_budget_error": 2.220446049250313e-16,
+      "opposite_cycle_count": 0,
+      "paired_packet_count": 2,
+      "rearm_count": 0,
+      "topology_mutation_count": 0
+    }
+  ],
+  "ledger_only_validation_passed": true,
+  "per_event_budget_preserved": true,
+  "schema": "n03_e2_3a_adapter_triggered_runtime_loop_hardening_v1",
+  "self_rearm_causality": {
+    "E2.3-P-adapter-triggered-cw": {
+      "checked_rearm_count": 9,
+      "failures": [],
+      "passed": true
+    },
+    "E2.3-R-adapter-triggered-ccw": {
+      "checked_rearm_count": 9,
+      "failures": [],
+      "passed": true
+    }
+  },
+  "self_rearm_causality_passed": true,
+  "source_artifact": "outputs/e2_3_adapter_triggered_runtime_loop.json",
+  "status": "passed"
+}

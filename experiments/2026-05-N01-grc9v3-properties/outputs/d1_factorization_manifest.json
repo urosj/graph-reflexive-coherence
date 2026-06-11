@@ -1,0 +1,104 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "artifact_source_map": {
+    "a_rows": "outputs/experiment_a_row_mode_stress_rows.csv",
+    "b_rows": "outputs/experiment_b_column_interface_cancellation_rows.csv",
+    "c_rows": "outputs/experiment_c_saturation_rows.csv",
+    "d_reassignments": "outputs/experiment_d_refinement_identity_reassignments.csv",
+    "harness_schema": "outputs/discriminator_harness_schema.json"
+  },
+  "command": "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d1_factorization.py --write-defaults --seed 0",
+  "discriminator_id": "d1_factorization",
+  "evidence_labels": [
+    "direct",
+    "derived",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "fixture_ids": "recorded per d1_transform_pair_records.jsonl row",
+  "git_branch": "master",
+  "git_commit": "29a1df5b65a8f7eb5dafced29da3a1705be24c18",
+  "iteration": 2,
+  "lane_id": "current_hybrid_signed_hessian",
+  "output_paths": {
+    "artifact_distance_report_md": "reports/d1_artifact_distance_report.md",
+    "blocked_observations_md": "reports/d1_blocked_observations.md",
+    "equivariance_matrix_csv": "outputs/d1_equivariance_matrix.csv",
+    "manifest_json": "outputs/d1_factorization_manifest.json",
+    "summary_json": "outputs/d1_factorization_summary.json",
+    "transform_pair_records_jsonl": "outputs/d1_transform_pair_records.jsonl"
+  },
+  "port_mappings": {
+    "column_permutation_312": {
+      "1": 3,
+      "2": 1,
+      "3": 2,
+      "4": 6,
+      "5": 4,
+      "6": 5,
+      "7": 9,
+      "8": 7,
+      "9": 8
+    },
+    "degree_preserving_random_relabel": {
+      "1": 6,
+      "2": 8,
+      "3": 5,
+      "4": 9,
+      "5": 1,
+      "6": 3,
+      "7": 4,
+      "8": 2,
+      "9": 7
+    },
+    "identity": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    },
+    "row_column_transpose": {
+      "1": 1,
+      "2": 4,
+      "3": 7,
+      "4": 2,
+      "5": 5,
+      "6": 8,
+      "7": 3,
+      "8": 6,
+      "9": 9
+    },
+    "row_permutation_231": {
+      "1": 4,
+      "2": 5,
+      "3": 6,
+      "4": 7,
+      "5": 8,
+      "6": 9,
+      "7": 1,
+      "8": 2,
+      "9": 3
+    }
+  },
+  "runtime_params": "reused_completed_o_style_outputs",
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d1_factorization.py",
+  "seed": 0,
+  "transform_ids": [
+    "column_permutation_312",
+    "degree_preserving_random_relabel",
+    "identity",
+    "row_column_transpose",
+    "row_permutation_231"
+  ],
+  "validation_commands": [
+    "PYTHONPATH=src .venv/bin/python -m py_compile experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d1_factorization.py",
+    "PYTHONPATH=src .venv/bin/python -m ruff check experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d1_factorization.py experiments/2026-05-N01-grc9v3-properties/scripts/grc9v3_fixture_harness.py",
+    ".venv/bin/python -m json.tool experiments/2026-05-N01-grc9v3-properties/outputs/d1_factorization_summary.json"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "artifact_kind": "phase8_lgrc9_causal_pulse_substrate_surface_lineage_closeout",
+  "artifact_schema_version": "phase8_lgrc9_causal_pulse_substrate_surface_lineage_closeout_v1",
+  "phase": "Phase 8 LGRC9 causal pulse-substrate surface lineage continuation",
+  "iteration": 65,
+  "status": "passed",
+  "date": "2026-05-17",
+  "head_commit": "eb840a740fa972f78307611945a1960fbac2b39f",
+  "worktree_state": {
+    "status": "dirty",
+    "note": "Closeout is recorded in a working tree containing Phase 8 surface-lineage implementation, tests, plan/checklist docs, and N04 handoff updates. No unrelated changes were reverted."
+  },
+  "claim_ceiling": "native_causal_pulse_substrate_surface_lineage_transport_supported",
+  "supported": {
+    "native_causal_pulse_substrate_surface_lineage_transport": true,
+    "surface_rows_superseded_after_committed_topology_events": true,
+    "surface_rows_transported_through_explicit_lineage_maps": true,
+    "artifact_only_lineage_replay_validator": true,
+    "producer_stale_read_prevention": true,
+    "snapshot_round_trip": true,
+    "formal_pygrc_telemetry_extension": true,
+    "default_off_lineage_telemetry": true
+  },
+  "blocked_claims": {
+    "movement_claim_allowed": false,
+    "native_m6": false,
+    "adaptive_topology_entry_allowed": false,
+    "topology_mutating_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "source_artifacts": {
+    "baseline_freeze": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageBaselineFreeze.json",
+      "sha256": "1cd675071246a43368f76072497d1e0da730fd1ba8eebcf7f3c0e5d3ceb28933"
+    },
+    "plan": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineagePlan.md",
+      "sha256": "e1bf41fbaf2a5cfa4bcd8a44d32ee492b0e42fad9114153a55e2153bdfa83e42"
+    },
+    "n04_blocker_input": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19b_topology_lineage_adaptive_gate_report.json",
+      "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status"
+    }
+  },
+  "runtime_contract": {
+    "requires_lgrc_runtime_level": "lgrc3",
+    "requires_causal_layer_mode": "topology_changing_causal_history",
+    "lineage_transport_policy": "transport_supersede",
+    "lineage_actions": [
+      "transported",
+      "superseded"
+    ],
+    "lineage_statuses": [
+      "fixed_topology",
+      "topology_lineage_deferred",
+      "transported_topology_lineage",
+      "superseded_by_topology_event"
+    ],
+    "lineage_record_idempotency_key": [
+      "source_surface_digest",
+      "topology_event_digest",
+      "surface_lineage_policy_id",
+      "lineage_action",
+      "lineage_transfer_map_digest"
+    ],
+    "producer_read_policy": "lineage_current_surface_rows_only"
+  },
+  "audits": {
+    "schema_and_digest_policy_recorded": true,
+    "producer_step_boundary_audited": true,
+    "budget_surface_separation_audited": true,
+    "snapshot_round_trip_audited": true,
+    "formal_telemetry_round_trip_audited": true,
+    "artifact_only_validator_passed": true,
+    "producer_stale_read_boundary_audited": true,
+    "controls_passed_with_distinct_primary_blockers": true,
+    "claim_flags_recorded": true,
+    "n04_handoff_updated": true
+  },
+  "controls": {
+    "missing_topology_event_rejected": true,
+    "missing_lineage_map_rejected": true,
+    "partial_lineage_map_supersedes_or_fails_closed": true,
+    "budget_mismatch_rejected": true,
+    "stale_producer_read_blocked": true,
+    "direct_rewrite_rejected_by_digest_or_schema_gate": true,
+    "duplicate_transport_record_rejected": true,
+    "topology_only_claim_promotion_blocked": true,
+    "default_off_behavior_preserved": true,
+    "lgrc0_lgrc1_inertness_preserved": true
+  },
+  "telemetry": {
+    "src_pygrc_telemetry_updated": true,
+    "lineage_summary_emitted_under_enabled_policy": true,
+    "lineage_log_exported_under_enabled_policy": true,
+    "default_off_lineage_telemetry_absent": true
+  },
+  "producer_record_validation_scope": {
+    "producer_record_digest_available": false,
+    "producer_record_digest_validated": false,
+    "producer_linkage_validated": true,
+    "linkage_fields": [
+      "causal_surface_digest",
+      "reason_code",
+      "scheduler_event_index",
+      "scheduled_event_id",
+      "source_or_transported_surface_status"
+    ],
+    "scope_limitation": "Producer records are validated by linkage, not by canonical producer-record digest, because producer_record_digest is not part of the current producer record contract.",
+    "future_hardening": "Add canonical producer_record_digest and update artifact validators to verify producer records by digest as well as linkage."
+  },
+  "verification": [
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q",
+      "result": "passed",
+      "tests": 94
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/telemetry/test_lgrc9v3_contract.py -q",
+      "result": "passed",
+      "tests": 5
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q",
+      "result": "passed",
+      "tests": 106,
+      "subtests": 24
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py -q",
+      "result": "passed",
+      "tests": 9
+    },
+    {
+      "command": "uv run ruff check src/pygrc/telemetry/lgrc9v3_contract.py tests/telemetry/test_lgrc9v3_contract.py tests/models/test_lgrc_9_v3_runtime.py",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "full_test_sweep": {
+    "status": "deferred",
+    "reason": "User will run full suite later; focused Phase 8 lineage, telemetry, runtime, contract, and packet-loop compatibility suites passed."
+  },
+  "n04_return": {
+    "resume_iteration": "19-C",
+    "entry_ceiling": "s7_fixed_port_composed_gate_candidate",
+    "probe_goal": "Rerun the S7 topology-lineage/adaptive gate with native pulse-surface lineage transport enabled.",
+    "success_ceiling_to_test": "adaptive_topology_entry_candidate",
+    "claims_still_blocked_until_revalidated": [
+      "topology_mutating_movement",
+      "native_lgrc_choice_selection",
+      "rc_identity_collapse",
+      "semantic_choice",
+      "agency",
+      "locomotion_like_basin_dynamics",
+      "biological_behavior",
+      "identity_acceptance",
+      "unrestricted_movement"
+    ]
+  },
+  "closeout_statement": "LGRC9V3 supports default-off native causal pulse-substrate surface lineage transport. Committed topology events can supersede stale causal pulse-substrate surface rows or transport them through explicit complete lineage maps; artifact-only validators replay the packet/surface/topology/lineage/producer chain; producers are blocked from stale pre-topology surface reads and read transported successor rows when available. Existing fixed-topology pulse-substrate, packet-loop, topology, snapshot, telemetry, and GRC9V3 behavior remains compatible. This closes the runtime surface-lineage capability gap for N04, but does not itself emit movement, adaptive-topology, topology-mutating movement, choice, agency, locomotion-like, biological, or identity-acceptance claims."
+}

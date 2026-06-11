@@ -1,0 +1,104 @@
+{
+  "artifact_kind": "phase8_lgrc9_causal_pulse_substrate_closeout",
+  "artifact_schema_version": "phase8_lgrc9_causal_pulse_substrate_closeout_v1",
+  "phase": "Phase 8 LGRC9 causal pulse-substrate surface continuation",
+  "iteration": 57,
+  "status": "passed",
+  "date": "2026-05-16",
+  "head_commit": "fe47313792c9a173451bb4a9383703f85bafec1f",
+  "worktree_state": {
+    "status": "dirty",
+    "note": "Closeout is recorded in a working tree containing the Phase 8 causal pulse-substrate implementation, tests, plans, N04 Lane F artifacts, and generated closeout files. No unrelated reverts were performed."
+  },
+  "claim_ceiling": "native_lgrc_pulse_substrate_surface_supported",
+  "supported": {
+    "native_causal_pulse_substrate_surface": true,
+    "native_pulse_substrate_coupling_producer": true,
+    "native_feedback_coupled_pulse_producer": true,
+    "artifact_only_validation": true,
+    "formal_pygrc_telemetry_extension": true,
+    "default_off_surface_telemetry": true
+  },
+  "blocked_claims": {
+    "native_m6": false,
+    "movement_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "adaptive_topology_entry_allowed": false,
+    "biological_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false
+  },
+  "source_artifacts": {
+    "baseline_freeze": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.json",
+      "sha256": "0d0fadf5046f2b0927cb55a30eba12654e7193362cf7912682125e069bfa4b89"
+    },
+    "n04_lane_f_bridge": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_lgrc_lane_f_surface_bridge.json",
+      "sha256": "0c88c5e5696169bda153e2d5ed1735e0d7d1f3b3a06bbb54cff8d9e23b8f2655",
+      "native_lgrc_pulse_substrate_supported": true,
+      "control_count": 14,
+      "gate_map_readiness": true
+    },
+    "n04_lane_f_closeout": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_f_native_surface_closeout.json",
+      "sha256": "1641543e8132af1a474c30bd6f90bd669cbb666a88df2fce55fc6982b0fa5169",
+      "lane_f_status": "native_surface_support_complete",
+      "claim_ceiling": "native_lgrc_pulse_substrate_surface_supported"
+    }
+  },
+  "audits": {
+    "surface_schema_and_digest_policy_recorded": true,
+    "producer_step_boundary_audited": true,
+    "budget_surface_separation_audited": true,
+    "snapshot_round_trip_audited": true,
+    "formal_telemetry_round_trip_audited": true,
+    "artifact_only_validator_passed": true,
+    "controls_passed_with_primary_blockers": true,
+    "claim_flags_recorded": true,
+    "n04_lane_f_handoff_updated": true,
+    "phase8_gate_map_ready": true,
+    "runtime_producers_emit_evidence_not_claims": true
+  },
+  "topology_lineage": {
+    "lgrc3_lineage_transport_implemented": false,
+    "decision": "deferred_for_native_surface_v1",
+    "blocker": "topology_lineage_deferred",
+    "fixed_topology_native_surface_support_blocked": false
+  },
+  "verification": {
+    "latest_targeted_commands": [
+      {
+        "command": ".venv/bin/python -m unittest tests.telemetry.test_lgrc9v3_contract -q",
+        "result": "passed",
+        "tests": 4
+      },
+      {
+        "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_native_lgrc_lane_f_surface_bridge.py",
+        "result": "passed"
+      },
+      {
+        "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/close_native_lgrc_lane_f.py",
+        "result": "passed"
+      },
+      {
+        "command": ".venv/bin/ruff check src/pygrc/telemetry/lgrc9v3_contract.py src/pygrc/telemetry/__init__.py tests/telemetry/test_lgrc9v3_contract.py experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_native_lgrc_lane_f_surface_bridge.py experiments/2026-05-N04-grc9v3-movement-ladders/scripts/close_native_lgrc_lane_f.py",
+        "result": "passed"
+      },
+      {
+        "command": "git diff --check",
+        "result": "passed"
+      }
+    ],
+    "iteration_56_full_regression_reference": {
+      "focused_lgrc_runtime_tests": 190,
+      "native_packet_loop_tests": 42,
+      "lgrc_sweep_tests": 236,
+      "full_unittest_discovery_tests": 1031,
+      "meets_or_exceeds_iteration_50_baseline": true
+    }
+  },
+  "closeout_statement": "LGRC9V3 exposes a default-off native causal pulse-substrate surface that emits rows only from committed packet events, preserves producer/step mutation boundaries, separates node-plus-packet conservation from derived accounting surfaces, survives snapshot/telemetry replay, and supports policy-gated coupling and feedback producers as scheduling evidence only. Existing packet, route, packet-loop, snapshot, telemetry, topology, spark, and GRC9V3 behavior remain compatible. Native movement, M6, locomotion-like, adaptive-topology, biology, agency, and identity-acceptance claims remain blocked unless later experiment validators independently open them."
+}

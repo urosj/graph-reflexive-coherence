@@ -1,0 +1,1698 @@
+{
+  "arrival_records": [
+    {
+      "amount": 0.006,
+      "channel_id": "S1_to_K2",
+      "edge_id": 1,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 1.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-ed35e946b1c7c818",
+      "route_step_index": 0,
+      "scheduler_event_index": 2,
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S1_to_K2",
+      "edge_id": 2,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 3.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-93f761aee441862a",
+      "route_step_index": 1,
+      "scheduler_event_index": 4,
+      "source_node_id": 2,
+      "target_node_id": 3
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K2_to_S2",
+      "edge_id": 4,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 5.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-c7c7237ff64f9ee6",
+      "route_step_index": 2,
+      "scheduler_event_index": 6,
+      "source_node_id": 4,
+      "target_node_id": 5
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K2_to_S2",
+      "edge_id": 5,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 7.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-00dcdb2c33c12012",
+      "route_step_index": 3,
+      "scheduler_event_index": 8,
+      "source_node_id": 5,
+      "target_node_id": 6
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S2_to_K1",
+      "edge_id": 7,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 9.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-bb9c4f756be1752b",
+      "route_step_index": 4,
+      "scheduler_event_index": 10,
+      "source_node_id": 7,
+      "target_node_id": 8
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S2_to_K1",
+      "edge_id": 8,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 11.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-f122faeadb29bfe0",
+      "route_step_index": 5,
+      "scheduler_event_index": 12,
+      "source_node_id": 8,
+      "target_node_id": 9
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K1_to_S1",
+      "edge_id": 10,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 13.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-c2380ec7fff5d5ff",
+      "route_step_index": 6,
+      "scheduler_event_index": 14,
+      "source_node_id": 10,
+      "target_node_id": 11
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K1_to_S1",
+      "edge_id": 11,
+      "event_kind": "lgrc9v3_packet_arrival",
+      "event_time_key": 15.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-25b874a007618b28",
+      "route_step_index": 7,
+      "scheduler_event_index": 16,
+      "source_node_id": 11,
+      "target_node_id": 0
+    }
+  ],
+  "audit": {
+    "all_packet_events_have_budget_error": true,
+    "all_packet_events_mapped_to_route": true,
+    "all_touched_route_nodes_have_proper_time": true,
+    "arrival_count": 8,
+    "arrival_route_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "arrival_route_steps_match": true,
+    "arrival_sequence_matches_route": true,
+    "budget_error": 0.0,
+    "departure_count": 8,
+    "departure_route_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "departure_route_steps_match": true,
+    "departure_sequence_matches_route": true,
+    "each_departure_has_exactly_one_matching_arrival": true,
+    "event_time_keys": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0
+    ],
+    "event_time_keys_monotonic": true,
+    "expected_hop_count": 8,
+    "expected_route_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "in_flight_packet_total": 0.0,
+    "loop_claim_made": false,
+    "matched_packet_count": 8,
+    "max_packet_event_budget_error": 0.0,
+    "mismatch_packet_ids": [],
+    "native_self_rearm_claim_made": false,
+    "native_trigger_claim_made": false,
+    "node_plus_packet_budget": 1.0,
+    "packet_ids_unique": true,
+    "packet_topology_mutation_count": 0,
+    "processed_only_packet_events": true,
+    "proper_time_nodes_recorded_in_packet_events": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "queue_empty": true,
+    "route_id": "d2_3_cw_closed_loop",
+    "runtime_step_count": 16,
+    "scheduled_packet_count": 8,
+    "single_packet_continuity_claim_made": false,
+    "topology_unchanged": true,
+    "touched_route_nodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "unmatched_arrival_packet_ids": [],
+    "unmatched_departure_packet_ids": []
+  },
+  "branch": "E2.1",
+  "claim_boundary": {
+    "adapter_only": false,
+    "movement_claim_allowed": false,
+    "native_grc9v3_evidence": false,
+    "native_lgrc9v3_execution": true
+  },
+  "claim_ceiling": {
+    "loop_claim_allowed": false,
+    "native_autonomous_trigger": false,
+    "native_packet_execution": true,
+    "native_self_rearm": false,
+    "scheduled_route_replay": true
+  },
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_e2_1_scheduled_packet_route_replay.py",
+  "departure_records": [
+    {
+      "amount": 0.006,
+      "channel_id": "S1_to_K2",
+      "edge_id": 1,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 0.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-ed35e946b1c7c818",
+      "route_step_index": 0,
+      "scheduler_event_index": 1,
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S1_to_K2",
+      "edge_id": 2,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 2.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-93f761aee441862a",
+      "route_step_index": 1,
+      "scheduler_event_index": 3,
+      "source_node_id": 2,
+      "target_node_id": 3
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K2_to_S2",
+      "edge_id": 4,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 4.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-c7c7237ff64f9ee6",
+      "route_step_index": 2,
+      "scheduler_event_index": 5,
+      "source_node_id": 4,
+      "target_node_id": 5
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K2_to_S2",
+      "edge_id": 5,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 6.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-00dcdb2c33c12012",
+      "route_step_index": 3,
+      "scheduler_event_index": 7,
+      "source_node_id": 5,
+      "target_node_id": 6
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S2_to_K1",
+      "edge_id": 7,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 8.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-bb9c4f756be1752b",
+      "route_step_index": 4,
+      "scheduler_event_index": 9,
+      "source_node_id": 7,
+      "target_node_id": 8
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S2_to_K1",
+      "edge_id": 8,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 10.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-f122faeadb29bfe0",
+      "route_step_index": 5,
+      "scheduler_event_index": 11,
+      "source_node_id": 8,
+      "target_node_id": 9
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K1_to_S1",
+      "edge_id": 10,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 12.0,
+      "hop_index": 0,
+      "packet_id": "lgrc9v3-packet-c2380ec7fff5d5ff",
+      "route_step_index": 6,
+      "scheduler_event_index": 13,
+      "source_node_id": 10,
+      "target_node_id": 11
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K1_to_S1",
+      "edge_id": 11,
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 14.0,
+      "hop_index": 1,
+      "packet_id": "lgrc9v3-packet-25b874a007618b28",
+      "route_step_index": 7,
+      "scheduler_event_index": 15,
+      "source_node_id": 11,
+      "target_node_id": 0
+    }
+  ],
+  "expected_channel_sequence": [
+    "S1_to_K2",
+    "K2_to_S2",
+    "S2_to_K1",
+    "K1_to_S1"
+  ],
+  "expected_hop_sequence": [
+    {
+      "channel_id": "S1_to_K2",
+      "edge_id": 1,
+      "hop_index": 0,
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    {
+      "channel_id": "S1_to_K2",
+      "edge_id": 2,
+      "hop_index": 1,
+      "source_node_id": 2,
+      "target_node_id": 3
+    },
+    {
+      "channel_id": "K2_to_S2",
+      "edge_id": 4,
+      "hop_index": 0,
+      "source_node_id": 4,
+      "target_node_id": 5
+    },
+    {
+      "channel_id": "K2_to_S2",
+      "edge_id": 5,
+      "hop_index": 1,
+      "source_node_id": 5,
+      "target_node_id": 6
+    },
+    {
+      "channel_id": "S2_to_K1",
+      "edge_id": 7,
+      "hop_index": 0,
+      "source_node_id": 7,
+      "target_node_id": 8
+    },
+    {
+      "channel_id": "S2_to_K1",
+      "edge_id": 8,
+      "hop_index": 1,
+      "source_node_id": 8,
+      "target_node_id": 9
+    },
+    {
+      "channel_id": "K1_to_S1",
+      "edge_id": 10,
+      "hop_index": 0,
+      "source_node_id": 10,
+      "target_node_id": 11
+    },
+    {
+      "channel_id": "K1_to_S1",
+      "edge_id": 11,
+      "hop_index": 1,
+      "source_node_id": 11,
+      "target_node_id": 0
+    }
+  ],
+  "final_topology": {
+    "edge_count": 12,
+    "node_count": 12
+  },
+  "initial_topology": {
+    "edge_count": 12,
+    "node_count": 12
+  },
+  "interpretation": "Existing LGRC9V3 runtime methods can replay the declared D2.3 clockwise route as a scheduled sequence of packet departure and arrival events with conserved node-plus-packet budget and unchanged topology. This establishes native scheduled route-level packet execution only; native trigger production and self-rearm semantics remain unclaimed.",
+  "non_native_assumptions": [
+    "The pole/channel route manifest is experiment-local.",
+    "Each route hop is scheduled explicitly by the experiment.",
+    "The replay is channel-hop order evidence, not a native surplus trigger.",
+    "No self-rearm, autonomous producer, or loop claim is made in E2.1."
+  ],
+  "route_id": "d2_3_cw_closed_loop",
+  "route_manifest": "configs/e2_lgrc9v3_route_manifest.json",
+  "runtime_steps": [
+    {
+      "event_time_key": 0.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-ca6cca59ede1973d",
+            "arrival_event_time_key": 1.0,
+            "arrival_scheduler_event_index": 2,
+            "departure_event_id": "lgrc9v3-packet-event-685a597c8f4e3161",
+            "departure_event_time_key": 0.0,
+            "departure_scheduler_event_index": 1,
+            "edge_id": 1,
+            "packet_id": "lgrc9v3-packet-ed35e946b1c7c818",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 1,
+            "target_lineage_id": null,
+            "target_node_id": 2
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-685a597c8f4e3161",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 0.0,
+            "packet_id": "lgrc9v3-packet-ed35e946b1c7c818",
+            "scheduler_event_index": 1,
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 0.0,
+            "delta_tau": 0.0,
+            "event_time_key": 0.0,
+            "lapse": 1.0,
+            "node_id": 1,
+            "node_proper_time": 0.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S1_to_K2",
+            "hop_index": 0,
+            "route_step_index": 0
+          },
+          "step_index": 1,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 1
+    },
+    {
+      "event_time_key": 1.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-ca6cca59ede1973d",
+            "arrival_event_time_key": 1.0,
+            "arrival_scheduler_event_index": 2,
+            "departure_event_id": "lgrc9v3-packet-event-685a597c8f4e3161",
+            "departure_event_time_key": 0.0,
+            "departure_scheduler_event_index": 1,
+            "edge_id": 1,
+            "packet_id": "lgrc9v3-packet-ed35e946b1c7c818",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 1,
+            "target_lineage_id": null,
+            "target_node_id": 2
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-ca6cca59ede1973d",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 1.0,
+            "packet_id": "lgrc9v3-packet-ed35e946b1c7c818",
+            "scheduler_event_index": 2,
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 1.0,
+            "lapse": 1.0,
+            "node_id": 2,
+            "node_proper_time": 1.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S1_to_K2",
+            "hop_index": 0,
+            "route_step_index": 0
+          },
+          "step_index": 2,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 2,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 1.0,
+            "lapse": 1.0,
+            "node_id": 2,
+            "node_proper_time": 1.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 2,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 2
+    },
+    {
+      "event_time_key": 2.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-547b591246536f87",
+            "arrival_event_time_key": 3.0,
+            "arrival_scheduler_event_index": 4,
+            "departure_event_id": "lgrc9v3-packet-event-25f94e37a9c7e69c",
+            "departure_event_time_key": 2.0,
+            "departure_scheduler_event_index": 3,
+            "edge_id": 2,
+            "packet_id": "lgrc9v3-packet-93f761aee441862a",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 2,
+            "target_lineage_id": null,
+            "target_node_id": 3
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 2,
+            "event_id": "lgrc9v3-packet-event-25f94e37a9c7e69c",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-93f761aee441862a",
+            "scheduler_event_index": 3,
+            "source_node_id": 2,
+            "target_node_id": 3
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 2.0,
+            "lapse": 1.0,
+            "node_id": 2,
+            "node_proper_time": 2.0,
+            "previous_event_time_key": 1.0,
+            "previous_node_proper_time": 1.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S1_to_K2",
+            "hop_index": 1,
+            "route_step_index": 1
+          },
+          "step_index": 3,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 3
+    },
+    {
+      "event_time_key": 3.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-547b591246536f87",
+            "arrival_event_time_key": 3.0,
+            "arrival_scheduler_event_index": 4,
+            "departure_event_id": "lgrc9v3-packet-event-25f94e37a9c7e69c",
+            "departure_event_time_key": 2.0,
+            "departure_scheduler_event_index": 3,
+            "edge_id": 2,
+            "packet_id": "lgrc9v3-packet-93f761aee441862a",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 2,
+            "target_lineage_id": null,
+            "target_node_id": 3
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 2,
+            "event_id": "lgrc9v3-packet-event-547b591246536f87",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 3.0,
+            "packet_id": "lgrc9v3-packet-93f761aee441862a",
+            "scheduler_event_index": 4,
+            "source_node_id": 2,
+            "target_node_id": 3
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 3.0,
+            "delta_tau": 3.0,
+            "event_time_key": 3.0,
+            "lapse": 1.0,
+            "node_id": 3,
+            "node_proper_time": 3.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S1_to_K2",
+            "hop_index": 1,
+            "route_step_index": 1
+          },
+          "step_index": 4,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 4,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 3.0,
+            "delta_tau": 3.0,
+            "event_time_key": 3.0,
+            "lapse": 1.0,
+            "node_id": 3,
+            "node_proper_time": 3.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 4,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 4
+    },
+    {
+      "event_time_key": 4.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-fceba5e8c79646b1",
+            "arrival_event_time_key": 5.0,
+            "arrival_scheduler_event_index": 6,
+            "departure_event_id": "lgrc9v3-packet-event-80cb13dcdc013712",
+            "departure_event_time_key": 4.0,
+            "departure_scheduler_event_index": 5,
+            "edge_id": 4,
+            "packet_id": "lgrc9v3-packet-c7c7237ff64f9ee6",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 4,
+            "target_lineage_id": null,
+            "target_node_id": 5
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 4,
+            "event_id": "lgrc9v3-packet-event-80cb13dcdc013712",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 4.0,
+            "packet_id": "lgrc9v3-packet-c7c7237ff64f9ee6",
+            "scheduler_event_index": 5,
+            "source_node_id": 4,
+            "target_node_id": 5
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 4.0,
+            "delta_tau": 4.0,
+            "event_time_key": 4.0,
+            "lapse": 1.0,
+            "node_id": 4,
+            "node_proper_time": 4.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K2_to_S2",
+            "hop_index": 0,
+            "route_step_index": 2
+          },
+          "step_index": 5,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 5
+    },
+    {
+      "event_time_key": 5.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-fceba5e8c79646b1",
+            "arrival_event_time_key": 5.0,
+            "arrival_scheduler_event_index": 6,
+            "departure_event_id": "lgrc9v3-packet-event-80cb13dcdc013712",
+            "departure_event_time_key": 4.0,
+            "departure_scheduler_event_index": 5,
+            "edge_id": 4,
+            "packet_id": "lgrc9v3-packet-c7c7237ff64f9ee6",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 4,
+            "target_lineage_id": null,
+            "target_node_id": 5
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 4,
+            "event_id": "lgrc9v3-packet-event-fceba5e8c79646b1",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 5.0,
+            "packet_id": "lgrc9v3-packet-c7c7237ff64f9ee6",
+            "scheduler_event_index": 6,
+            "source_node_id": 4,
+            "target_node_id": 5
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 5.0,
+            "delta_tau": 5.0,
+            "event_time_key": 5.0,
+            "lapse": 1.0,
+            "node_id": 5,
+            "node_proper_time": 5.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K2_to_S2",
+            "hop_index": 0,
+            "route_step_index": 2
+          },
+          "step_index": 6,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 6,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 5.0,
+            "delta_tau": 5.0,
+            "event_time_key": 5.0,
+            "lapse": 1.0,
+            "node_id": 5,
+            "node_proper_time": 5.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 6,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 6
+    },
+    {
+      "event_time_key": 6.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-69c0431f2dfa2dd4",
+            "arrival_event_time_key": 7.0,
+            "arrival_scheduler_event_index": 8,
+            "departure_event_id": "lgrc9v3-packet-event-1ced3b4042fb8e18",
+            "departure_event_time_key": 6.0,
+            "departure_scheduler_event_index": 7,
+            "edge_id": 5,
+            "packet_id": "lgrc9v3-packet-00dcdb2c33c12012",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 5,
+            "target_lineage_id": null,
+            "target_node_id": 6
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 5,
+            "event_id": "lgrc9v3-packet-event-1ced3b4042fb8e18",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 6.0,
+            "packet_id": "lgrc9v3-packet-00dcdb2c33c12012",
+            "scheduler_event_index": 7,
+            "source_node_id": 5,
+            "target_node_id": 6
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 6.0,
+            "lapse": 1.0,
+            "node_id": 5,
+            "node_proper_time": 6.0,
+            "previous_event_time_key": 5.0,
+            "previous_node_proper_time": 5.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K2_to_S2",
+            "hop_index": 1,
+            "route_step_index": 3
+          },
+          "step_index": 7,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 7
+    },
+    {
+      "event_time_key": 7.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-69c0431f2dfa2dd4",
+            "arrival_event_time_key": 7.0,
+            "arrival_scheduler_event_index": 8,
+            "departure_event_id": "lgrc9v3-packet-event-1ced3b4042fb8e18",
+            "departure_event_time_key": 6.0,
+            "departure_scheduler_event_index": 7,
+            "edge_id": 5,
+            "packet_id": "lgrc9v3-packet-00dcdb2c33c12012",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 5,
+            "target_lineage_id": null,
+            "target_node_id": 6
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 5,
+            "event_id": "lgrc9v3-packet-event-69c0431f2dfa2dd4",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 7.0,
+            "packet_id": "lgrc9v3-packet-00dcdb2c33c12012",
+            "scheduler_event_index": 8,
+            "source_node_id": 5,
+            "target_node_id": 6
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 7.0,
+            "delta_tau": 7.0,
+            "event_time_key": 7.0,
+            "lapse": 1.0,
+            "node_id": 6,
+            "node_proper_time": 7.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K2_to_S2",
+            "hop_index": 1,
+            "route_step_index": 3
+          },
+          "step_index": 8,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 8,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 7.0,
+            "delta_tau": 7.0,
+            "event_time_key": 7.0,
+            "lapse": 1.0,
+            "node_id": 6,
+            "node_proper_time": 7.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 8,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 8
+    },
+    {
+      "event_time_key": 8.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-badf26a2a135520a",
+            "arrival_event_time_key": 9.0,
+            "arrival_scheduler_event_index": 10,
+            "departure_event_id": "lgrc9v3-packet-event-3930eaf0b560146a",
+            "departure_event_time_key": 8.0,
+            "departure_scheduler_event_index": 9,
+            "edge_id": 7,
+            "packet_id": "lgrc9v3-packet-bb9c4f756be1752b",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 7,
+            "target_lineage_id": null,
+            "target_node_id": 8
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 7,
+            "event_id": "lgrc9v3-packet-event-3930eaf0b560146a",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 8.0,
+            "packet_id": "lgrc9v3-packet-bb9c4f756be1752b",
+            "scheduler_event_index": 9,
+            "source_node_id": 7,
+            "target_node_id": 8
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 8.0,
+            "delta_tau": 8.0,
+            "event_time_key": 8.0,
+            "lapse": 1.0,
+            "node_id": 7,
+            "node_proper_time": 8.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S2_to_K1",
+            "hop_index": 0,
+            "route_step_index": 4
+          },
+          "step_index": 9,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 9
+    },
+    {
+      "event_time_key": 9.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-badf26a2a135520a",
+            "arrival_event_time_key": 9.0,
+            "arrival_scheduler_event_index": 10,
+            "departure_event_id": "lgrc9v3-packet-event-3930eaf0b560146a",
+            "departure_event_time_key": 8.0,
+            "departure_scheduler_event_index": 9,
+            "edge_id": 7,
+            "packet_id": "lgrc9v3-packet-bb9c4f756be1752b",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 7,
+            "target_lineage_id": null,
+            "target_node_id": 8
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 7,
+            "event_id": "lgrc9v3-packet-event-badf26a2a135520a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 9.0,
+            "packet_id": "lgrc9v3-packet-bb9c4f756be1752b",
+            "scheduler_event_index": 10,
+            "source_node_id": 7,
+            "target_node_id": 8
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 9.0,
+            "delta_tau": 9.0,
+            "event_time_key": 9.0,
+            "lapse": 1.0,
+            "node_id": 8,
+            "node_proper_time": 9.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S2_to_K1",
+            "hop_index": 0,
+            "route_step_index": 4
+          },
+          "step_index": 10,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 10,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 9.0,
+            "delta_tau": 9.0,
+            "event_time_key": 9.0,
+            "lapse": 1.0,
+            "node_id": 8,
+            "node_proper_time": 9.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 10,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 10
+    },
+    {
+      "event_time_key": 10.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-23ff13b69c8f4e3a",
+            "arrival_event_time_key": 11.0,
+            "arrival_scheduler_event_index": 12,
+            "departure_event_id": "lgrc9v3-packet-event-e34a03195a166667",
+            "departure_event_time_key": 10.0,
+            "departure_scheduler_event_index": 11,
+            "edge_id": 8,
+            "packet_id": "lgrc9v3-packet-f122faeadb29bfe0",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 8,
+            "target_lineage_id": null,
+            "target_node_id": 9
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 8,
+            "event_id": "lgrc9v3-packet-event-e34a03195a166667",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 10.0,
+            "packet_id": "lgrc9v3-packet-f122faeadb29bfe0",
+            "scheduler_event_index": 11,
+            "source_node_id": 8,
+            "target_node_id": 9
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 10.0,
+            "lapse": 1.0,
+            "node_id": 8,
+            "node_proper_time": 10.0,
+            "previous_event_time_key": 9.0,
+            "previous_node_proper_time": 9.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S2_to_K1",
+            "hop_index": 1,
+            "route_step_index": 5
+          },
+          "step_index": 11,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 11
+    },
+    {
+      "event_time_key": 11.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-23ff13b69c8f4e3a",
+            "arrival_event_time_key": 11.0,
+            "arrival_scheduler_event_index": 12,
+            "departure_event_id": "lgrc9v3-packet-event-e34a03195a166667",
+            "departure_event_time_key": 10.0,
+            "departure_scheduler_event_index": 11,
+            "edge_id": 8,
+            "packet_id": "lgrc9v3-packet-f122faeadb29bfe0",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 8,
+            "target_lineage_id": null,
+            "target_node_id": 9
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 8,
+            "event_id": "lgrc9v3-packet-event-23ff13b69c8f4e3a",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 11.0,
+            "packet_id": "lgrc9v3-packet-f122faeadb29bfe0",
+            "scheduler_event_index": 12,
+            "source_node_id": 8,
+            "target_node_id": 9
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 11.0,
+            "delta_tau": 11.0,
+            "event_time_key": 11.0,
+            "lapse": 1.0,
+            "node_id": 9,
+            "node_proper_time": 11.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "S2_to_K1",
+            "hop_index": 1,
+            "route_step_index": 5
+          },
+          "step_index": 12,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 12,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 11.0,
+            "delta_tau": 11.0,
+            "event_time_key": 11.0,
+            "lapse": 1.0,
+            "node_id": 9,
+            "node_proper_time": 11.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 12,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 12
+    },
+    {
+      "event_time_key": 12.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-a9721872d1e91f6f",
+            "arrival_event_time_key": 13.0,
+            "arrival_scheduler_event_index": 14,
+            "departure_event_id": "lgrc9v3-packet-event-3cfac11136f57f65",
+            "departure_event_time_key": 12.0,
+            "departure_scheduler_event_index": 13,
+            "edge_id": 10,
+            "packet_id": "lgrc9v3-packet-c2380ec7fff5d5ff",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 10,
+            "target_lineage_id": null,
+            "target_node_id": 11
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 10,
+            "event_id": "lgrc9v3-packet-event-3cfac11136f57f65",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 12.0,
+            "packet_id": "lgrc9v3-packet-c2380ec7fff5d5ff",
+            "scheduler_event_index": 13,
+            "source_node_id": 10,
+            "target_node_id": 11
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 12.0,
+            "delta_tau": 12.0,
+            "event_time_key": 12.0,
+            "lapse": 1.0,
+            "node_id": 10,
+            "node_proper_time": 12.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K1_to_S1",
+            "hop_index": 0,
+            "route_step_index": 6
+          },
+          "step_index": 13,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 13
+    },
+    {
+      "event_time_key": 13.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-a9721872d1e91f6f",
+            "arrival_event_time_key": 13.0,
+            "arrival_scheduler_event_index": 14,
+            "departure_event_id": "lgrc9v3-packet-event-3cfac11136f57f65",
+            "departure_event_time_key": 12.0,
+            "departure_scheduler_event_index": 13,
+            "edge_id": 10,
+            "packet_id": "lgrc9v3-packet-c2380ec7fff5d5ff",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 10,
+            "target_lineage_id": null,
+            "target_node_id": 11
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 10,
+            "event_id": "lgrc9v3-packet-event-a9721872d1e91f6f",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 13.0,
+            "packet_id": "lgrc9v3-packet-c2380ec7fff5d5ff",
+            "scheduler_event_index": 14,
+            "source_node_id": 10,
+            "target_node_id": 11
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 13.0,
+            "delta_tau": 13.0,
+            "event_time_key": 13.0,
+            "lapse": 1.0,
+            "node_id": 11,
+            "node_proper_time": 13.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K1_to_S1",
+            "hop_index": 0,
+            "route_step_index": 6
+          },
+          "step_index": 14,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 14,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 13.0,
+            "delta_tau": 13.0,
+            "event_time_key": 13.0,
+            "lapse": 1.0,
+            "node_id": 11,
+            "node_proper_time": 13.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 14,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 14
+    },
+    {
+      "event_time_key": 14.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_departure",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-e7ee88939d97b946",
+            "arrival_event_time_key": 15.0,
+            "arrival_scheduler_event_index": 16,
+            "departure_event_id": "lgrc9v3-packet-event-0fe2eab672d8adc1",
+            "departure_event_time_key": 14.0,
+            "departure_scheduler_event_index": 15,
+            "edge_id": 11,
+            "packet_id": "lgrc9v3-packet-25b874a007618b28",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 11,
+            "target_lineage_id": null,
+            "target_node_id": 0
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 11,
+            "event_id": "lgrc9v3-packet-event-0fe2eab672d8adc1",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 14.0,
+            "packet_id": "lgrc9v3-packet-25b874a007618b28",
+            "scheduler_event_index": 15,
+            "source_node_id": 11,
+            "target_node_id": 0
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 14.0,
+            "lapse": 1.0,
+            "node_id": 11,
+            "node_proper_time": 14.0,
+            "previous_event_time_key": 13.0,
+            "previous_node_proper_time": 13.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K1_to_S1",
+            "hop_index": 1,
+            "route_step_index": 7
+          },
+          "step_index": 15,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "scheduler_event_index": 15
+    },
+    {
+      "event_time_key": 15.0,
+      "events": [
+        {
+          "budget_error": 0.0,
+          "kind": "lgrc9v3_packet_arrival",
+          "packet_record": {
+            "amount": 0.006,
+            "arrival_event_id": "lgrc9v3-packet-event-e7ee88939d97b946",
+            "arrival_event_time_key": 15.0,
+            "arrival_scheduler_event_index": 16,
+            "departure_event_id": "lgrc9v3-packet-event-0fe2eab672d8adc1",
+            "departure_event_time_key": 14.0,
+            "departure_scheduler_event_index": 15,
+            "edge_id": 11,
+            "packet_id": "lgrc9v3-packet-25b874a007618b28",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 11,
+            "target_lineage_id": null,
+            "target_node_id": 0
+          },
+          "processed_event": {
+            "amount": 0.006,
+            "budget_after": 1.0,
+            "budget_before": 1.0,
+            "budget_error": 0.0,
+            "edge_id": 11,
+            "event_id": "lgrc9v3-packet-event-e7ee88939d97b946",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 15.0,
+            "packet_id": "lgrc9v3-packet-25b874a007618b28",
+            "scheduler_event_index": 16,
+            "source_node_id": 11,
+            "target_node_id": 0
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 15.0,
+            "delta_tau": 15.0,
+            "event_time_key": 15.0,
+            "lapse": 1.0,
+            "node_id": 0,
+            "node_proper_time": 15.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {
+            "channel_id": "K1_to_S1",
+            "hop_index": 1,
+            "route_step_index": 7
+          },
+          "step_index": 16,
+          "topology_mutated": false
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_packet_arrival_eligibility",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": null,
+          "route_fields": {},
+          "step_index": 16,
+          "topology_mutated": null
+        },
+        {
+          "budget_error": null,
+          "kind": "lgrc9v3_local_update",
+          "packet_record": null,
+          "processed_event": null,
+          "proper_time_update": {
+            "delta_event_time_key": 15.0,
+            "delta_tau": 15.0,
+            "event_time_key": 15.0,
+            "lapse": 1.0,
+            "node_id": 0,
+            "node_proper_time": 15.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "route_fields": {},
+          "step_index": 16,
+          "topology_mutated": false
+        }
+      ],
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "scheduler_event_index": 16
+    }
+  ],
+  "scheduled_packets": [
+    {
+      "amount": 0.006,
+      "channel_id": "S1_to_K2",
+      "departure_event_time_key": 0.0,
+      "edge_id": 1,
+      "hop_index": 0,
+      "route_step_index": 0,
+      "scheduler_event_index": 1,
+      "source_node_id": 1,
+      "target_node_id": 2
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S1_to_K2",
+      "departure_event_time_key": 2.0,
+      "edge_id": 2,
+      "hop_index": 1,
+      "route_step_index": 1,
+      "scheduler_event_index": 3,
+      "source_node_id": 2,
+      "target_node_id": 3
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K2_to_S2",
+      "departure_event_time_key": 4.0,
+      "edge_id": 4,
+      "hop_index": 0,
+      "route_step_index": 2,
+      "scheduler_event_index": 5,
+      "source_node_id": 4,
+      "target_node_id": 5
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K2_to_S2",
+      "departure_event_time_key": 6.0,
+      "edge_id": 5,
+      "hop_index": 1,
+      "route_step_index": 3,
+      "scheduler_event_index": 7,
+      "source_node_id": 5,
+      "target_node_id": 6
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S2_to_K1",
+      "departure_event_time_key": 8.0,
+      "edge_id": 7,
+      "hop_index": 0,
+      "route_step_index": 4,
+      "scheduler_event_index": 9,
+      "source_node_id": 7,
+      "target_node_id": 8
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "S2_to_K1",
+      "departure_event_time_key": 10.0,
+      "edge_id": 8,
+      "hop_index": 1,
+      "route_step_index": 5,
+      "scheduler_event_index": 11,
+      "source_node_id": 8,
+      "target_node_id": 9
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K1_to_S1",
+      "departure_event_time_key": 12.0,
+      "edge_id": 10,
+      "hop_index": 0,
+      "route_step_index": 6,
+      "scheduler_event_index": 13,
+      "source_node_id": 10,
+      "target_node_id": 11
+    },
+    {
+      "amount": 0.006,
+      "channel_id": "K1_to_S1",
+      "departure_event_time_key": 14.0,
+      "edge_id": 11,
+      "hop_index": 1,
+      "route_step_index": 7,
+      "scheduler_event_index": 15,
+      "source_node_id": 11,
+      "target_node_id": 0
+    }
+  ],
+  "schema": "n03_e2_1_lgrc9v3_scheduled_packet_route_replay_v1",
+  "status": "passed"
+}

@@ -1,0 +1,106 @@
+{
+  "candidate_summary": {
+    "lane_c_claim_ceiling": "m6_feedback_coupled_self_renewal_candidate",
+    "lane_c_forward_self_renewed_cycle_count": 3,
+    "lane_c_reversed_self_renewed_cycle_count": 3,
+    "lane_f_claim_ceiling": "native_lgrc_pulse_substrate_surface_supported",
+    "phase8_claim_ceiling": "native_lgrc_pulse_substrate_surface_supported"
+  },
+  "claim_ceiling": "native_m6_prerequisites_supported_validator_absent",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_m6": false
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/review_native_m6_evidence.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "evidence_cleared": [
+    "experiment_local_m6_feedback_candidate_available",
+    "lane_c_movement_restores_pulse_conditions",
+    "lane_c_polarity_regeneration_measured",
+    "lane_c_repeated_cycle_persistence_self_renewed",
+    "native_pulse_substrate_surface_supported",
+    "native_feedback_producer_schedules_from_feedback_eligibility",
+    "native_artifact_chain_reconstructed",
+    "native_controls_passed"
+  ],
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "git": {
+    "diff_check": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "rev_parse_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "be7ca4c09948e8571d7db51e31ff9d8477837d00"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/review_native_m6_evidence.py"
+    }
+  },
+  "interpretation": "The previous M6 blocker has moved. It is no longer absence of a native feedback producer: Phase 8/Lane F now supports the native causal pulse-substrate surface and feedback scheduling from feedback eligibility. The remaining blocker is that no native same-fixture M6 validator has replayed Lane C's self-renewal gate on the S0 movement substrate using native producer artifacts. Native M6 therefore remains blocked, but the prerequisites for a native M6 validator are now present.",
+  "native_m6_evidence_gates": {
+    "experiment_local_m6_feedback_candidate_available": true,
+    "lane_c_movement_restores_pulse_conditions": true,
+    "lane_c_polarity_regeneration_measured": true,
+    "lane_c_repeated_cycle_persistence_self_renewed": true,
+    "native_artifact_chain_reconstructed": true,
+    "native_controls_passed": true,
+    "native_feedback_producer_schedules_from_feedback_eligibility": true,
+    "native_m6_same_fixture_validator_available": false,
+    "native_movement_identity_shape_gates_integrated": false,
+    "native_pulse_substrate_surface_supported": true,
+    "native_repeated_self_renewed_cycles_measured": false
+  },
+  "next_step": "run_native_m6_same_fixture_validator",
+  "remaining_blockers": [
+    {
+      "blocker": "native_m6_same_fixture_validator_absent",
+      "description": "No artifact yet runs the Lane C M6 feedback gate on the native Lane F pulse-substrate surface using the same S0 movement fixture and native producer records."
+    },
+    {
+      "blocker": "native_repeated_self_renewed_cycles_not_measured",
+      "description": "Lane C measured three self-renewed cycles in an experiment-local adapter. Lane F proves native feedback scheduling, but does not yet measure repeated native cycles on the movement fixture."
+    },
+    {
+      "blocker": "native_identity_shape_movement_gates_not_integrated",
+      "description": "Native surface evidence has not yet been reclassified through a combined M0-M5/M6 movement validator on the same artifact chain."
+    }
+  ],
+  "report_kind": "native_m6_evidence_review_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "lane_c_m6": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reopened_m6_feedback_gate_report.json",
+      "sha256": "3f0533d700093976feb64cbd422ccc88c8bd16ef539c0ec552ae576d4c5bd6ee"
+    },
+    "lane_f_bridge": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/native_lgrc_lane_f_surface_bridge.json",
+      "sha256": "0c88c5e5696169bda153e2d5ed1735e0d7d1f3b3a06bbb54cff8d9e23b8f2655"
+    },
+    "lane_f_closeout": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_f_native_surface_closeout.json",
+      "sha256": "1641543e8132af1a474c30bd6f90bd669cbb666a88df2fce55fc6982b0fa5169"
+    },
+    "phase8_closeout": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateCloseout.json",
+      "sha256": "2c2b1171c31cc8ad4bcc4373d6a8a04f94865714707d7f9924066ce7e3feb2e2"
+    }
+  },
+  "status": "passed_fail_closed"
+}

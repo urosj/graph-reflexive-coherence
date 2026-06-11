@@ -1,0 +1,398 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 8 passes if the route-use -> memory surface -> decay/reinforcement -> memory-shaped route arbitration chain can be reconstructed from artifacts only, controls fail with distinct blockers, budgets remain exact, and the strongest N08 Hypothesis A memory/trail evidence ceiling is frozen without ACO, agency, intention, goal-regulation, identity-acceptance, locomotion, biological, or unrestricted claims.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "artifact_digests": {
+    "artifact_only_replay_digest": "de7d2d550abb384221a1d4e4f14721cb3d0303f4484bfd04c65aff3d12bd76e9",
+    "checks_digest": "425bde4579d431333d4f0d14ac85ebc90112d716b5ea5ae6df70c22927f130d6",
+    "closeout_digest": "2ef35b7ec6909ba6a1178a77d0741560df16a10126832fd88d8fb66a6a0e2472",
+    "corrupted_controls_digest": "6472f47b68ef1fe8354693319c35d0ee85d3baa2a644cc0e442f7121570ae5c4",
+    "source_control_replay_digest": "e2fcbe004b22a6189786412e6817b2d52d9628e1852e345810d57294f4d3aeda"
+  },
+  "artifact_only_replay": {
+    "artifact_only": true,
+    "candidate_route_records_replayed": 8,
+    "candidate_set_records_replayed": 4,
+    "chain_reconstructed": true,
+    "memory_surface_update_rows_replayed": 8,
+    "processed_packet_records_applicable": false,
+    "processed_packet_records_replayed": 0,
+    "replay_summary_digest": "de7d2d550abb384221a1d4e4f14721cb3d0303f4484bfd04c65aff3d12bd76e9",
+    "replayed_mem_level": "MEM6",
+    "route_a_strength_after_each_cycle": [
+      0.5895,
+      0.53055,
+      0.477495,
+      0.4297455
+    ],
+    "route_arbitration_records_replayed": 4,
+    "route_b_strength_after_each_cycle": [
+      0.88,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "route_use_events_replayed": 4,
+    "runtime_state_used": false,
+    "scheduled_packet_records_applicable": false,
+    "scheduled_packet_records_replayed": 0,
+    "selected_routes": [
+      "route_b",
+      "route_b",
+      "route_b",
+      "route_b"
+    ],
+    "serialized_state_replay_scope": "route-use events, memory surface rows, candidate records, candidate set records, native route-arbitration records, controls",
+    "source_iteration": 7,
+    "source_mem_level": "MEM5",
+    "trend_summary_replayed": {
+      "competing_memory_behavior": "route_b_converges_to_saturation_while_route_a_decays_without_reinforcement",
+      "oscillation_observed": false,
+      "route_a_extinction_trend_observed": true,
+      "route_a_floor_reached": false,
+      "route_a_strength_after_each_cycle": [
+        0.5895,
+        0.53055,
+        0.477495,
+        0.4297455
+      ],
+      "route_b_saturation_observed": true,
+      "route_b_strength_after_each_cycle": [
+        0.88,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "selected_routes": [
+        "route_b",
+        "route_b",
+        "route_b",
+        "route_b"
+      ],
+      "tie_observed": false
+    }
+  },
+  "checks": {
+    "arbitration_records_replayed": true,
+    "artifact_only_runtime_state_not_used": true,
+    "broader_claims_remain_blocked": true,
+    "candidate_scores_replayed": true,
+    "candidate_sets_replayed": true,
+    "corrupted_control_blockers_distinct": true,
+    "corrupted_controls_passed": true,
+    "hypothesis_a_ceiling_frozen": true,
+    "hypothesis_b_deferred_with_blocker": true,
+    "manifest_validation_passed": true,
+    "memory_claim_opened_only_at_closeout": true,
+    "memory_strength_not_physical_flux": true,
+    "memory_surface_updates_replayed": true,
+    "positive_replay_has_no_blockers": true,
+    "route_use_events_replayed": true,
+    "scheduled_packets_not_applicable_recorded": true,
+    "source_controls_replayed": true,
+    "source_mem5_passed": true,
+    "source_output_digest_recomputed": true,
+    "source_rows_claim_flags_false": true,
+    "src_clean": true
+  },
+  "claim_boundary": {
+    "all_broader_claims_blocked": true,
+    "hypothesis_b_remains_open": true,
+    "memory_or_trail_claim_allowed": true,
+    "memory_or_trail_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "source_runtime_claim_flags_remained_false": true
+  },
+  "claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+  "closeout": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "artifact_only_replay_passed": true,
+    "biological_claim_allowed": false,
+    "closeout_claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": true,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "closeout_row_digest": "2ef35b7ec6909ba6a1178a77d0741560df16a10126832fd88d8fb66a6a0e2472",
+    "corrupted_control_count": 9,
+    "corrupted_controls_passed": true,
+    "experiment": "N08",
+    "goal_proxy_regulation_claim_allowed": false,
+    "handoff": {
+      "hypothesis_a_closed": true,
+      "hypothesis_b_next_iteration": "9_native_geometry_trail_baseline",
+      "n09_dependency_status": "MEM6 Hypothesis A available as serialized producer/policy memory evidence only"
+    },
+    "hypothesis": "A_serialized_producer_policy_memory",
+    "hypothesis_b_primary_blocker": "native_geometry_mediated_trail_not_tested_in_iterations_1_8",
+    "hypothesis_b_status": "open_not_claimed",
+    "identity_acceptance_claim_allowed": false,
+    "independent_memory_strength_used_as_physical_flux": false,
+    "independent_memory_strength_used_as_score_evidence": true,
+    "intention_claim_allowed": false,
+    "iteration": 8,
+    "locomotion_like_claim_allowed": false,
+    "mem_level": "MEM6",
+    "mem_level_is_evidence_classification": true,
+    "memory_or_trail_claim_allowed": true,
+    "memory_or_trail_claim_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+    "movement_claim_allowed": false,
+    "native_geometry_mediated_trail_claim_allowed": false,
+    "native_policy_blockers": [
+      "native_geometry_mediated_trail_not_tested_in_iterations_1_8",
+      "pure_coherence_flux_trail_not_supported_by_independent_memory_strength"
+    ],
+    "native_support_status": "experiment_local_artifact_replay",
+    "personhood_claim_allowed": false,
+    "pure_coherence_flux_trail_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "replay_summary_digest": "de7d2d550abb384221a1d4e4f14721cb3d0303f4484bfd04c65aff3d12bd76e9",
+    "row_id": "n08_i8_mem6_hypothesis_a_closeout_row_v1",
+    "runtime_identity_acceptance_claim_allowed": false,
+    "schema": "n08_i8_mem6_hypothesis_a_closeout_row_v1",
+    "semantic_choice_claim_allowed": false,
+    "source_iteration": 7,
+    "source_output_digest": "a5b8673f705a67394f284808a780a5ec4e30af00eac003b7f411ec14ce2b135a",
+    "source_runtime_claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "memory_or_trail_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "source_trend_summary_digest": "ade130e57217d79ec7869dd33aeae5ff4965e678a149397fc012a94b2819ff76",
+    "strongest_claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+    "strongest_supported_mem_level": "MEM6",
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N08-lgrc-memory-trail-affordance/scripts/run_n08_iteration_8_mem6_closeout.py",
+  "corrupted_artifact_controls": [
+    {
+      "all_blockers": [
+        "missing_route_use_event"
+      ],
+      "control_id": "missing_route_use_event",
+      "control_passed": true,
+      "control_row_digest": "31acc98fa4ba702aa8760edb36d62f2a5e1b3c1712a4565c4a39c081a8a245be",
+      "expected_primary_blocker": "missing_route_use_event",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "missing_route_use_event",
+      "purpose": "Remove the committed route-use event from cycle 0."
+    },
+    {
+      "all_blockers": [
+        "memory_surface_digest_mismatch",
+        "memory_state_reconstruction_mismatch"
+      ],
+      "control_id": "memory_surface_digest_mismatch",
+      "control_passed": true,
+      "control_row_digest": "ca145abd13ebcc6f18592f0d0381c2335eedc9a6ccb6f4b1e3c3b80ef43dd011",
+      "expected_primary_blocker": "memory_surface_digest_mismatch",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "memory_surface_digest_mismatch",
+      "purpose": "Change a memory row strength without updating its digest."
+    },
+    {
+      "all_blockers": [
+        "memory_state_reconstruction_mismatch"
+      ],
+      "control_id": "memory_state_reconstruction_mismatch",
+      "control_passed": true,
+      "control_row_digest": "67e7199a8cb39108e64a3205f9f53150f59e3f4d32831caf656c28b1671e3f24",
+      "expected_primary_blocker": "memory_state_reconstruction_mismatch",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "memory_state_reconstruction_mismatch",
+      "purpose": "Corrupt reconstructed memory_state_after for route A."
+    },
+    {
+      "all_blockers": [
+        "candidate_route_digest_mismatch",
+        "score_component_mismatch",
+        "candidate_set_route_order_mismatch",
+        "native_route_arbitration_selection_mismatch"
+      ],
+      "control_id": "score_component_mismatch",
+      "control_passed": true,
+      "control_row_digest": "d0e85cb1e557aacb268a4ec76ebb1afcb1f382fdcbbe580f23ae0a446366ecdc",
+      "expected_primary_blocker": "score_component_mismatch",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "score_component_mismatch",
+      "purpose": "Alter a candidate route score away from its component sum."
+    },
+    {
+      "all_blockers": [
+        "route_use_digest_mismatch",
+        "event_order_inversion"
+      ],
+      "control_id": "event_order_inversion",
+      "control_passed": true,
+      "control_row_digest": "fd9d320f156ef3dcb7d2871e4e829cff45278793d53805f9c5282445efe55fcb",
+      "expected_primary_blocker": "event_order_inversion",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "event_order_inversion",
+      "purpose": "Move a route-use event before arbitration in scheduler order."
+    },
+    {
+      "all_blockers": [
+        "candidate_route_digest_mismatch",
+        "stale_memory_read"
+      ],
+      "control_id": "stale_memory_read",
+      "control_passed": true,
+      "control_row_digest": "2311ab5ec7695c028d508676f03f323683443b173d3a58e69cc3f1d61fa1269a",
+      "expected_primary_blocker": "stale_memory_read",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "stale_memory_read",
+      "purpose": "Make cycle 1 read route A memory from the pre-cycle-0 surface."
+    },
+    {
+      "all_blockers": [
+        "duplicate_update"
+      ],
+      "control_id": "duplicate_update",
+      "control_passed": true,
+      "control_row_digest": "f9f20c7f0863844e5580f1795dc1baf482151df16c775b044a44b163f394a79f",
+      "expected_primary_blocker": "duplicate_update",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "duplicate_update",
+      "purpose": "Duplicate a memory update row in cycle 0."
+    },
+    {
+      "all_blockers": [
+        "memory_surface_digest_mismatch",
+        "memory_budget_discontinuity"
+      ],
+      "control_id": "memory_budget_discontinuity",
+      "control_passed": true,
+      "control_row_digest": "60e1addfc2764d73c9020bacbf96c7a3eb52a960f109bedc4e8b5f068616ab00",
+      "expected_primary_blocker": "memory_budget_discontinuity",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "memory_budget_discontinuity",
+      "purpose": "Change a memory budget after value without matching the equation."
+    },
+    {
+      "all_blockers": [
+        "candidate_route_digest_mismatch",
+        "claim_promotion"
+      ],
+      "control_id": "claim_promotion",
+      "control_passed": true,
+      "control_row_digest": "a91e87af1653a23765e1b835434c81081ea3f80830acd40b6b727e22dcadcb6e",
+      "expected_primary_blocker": "claim_promotion",
+      "expected_status": "blocked",
+      "observed_status": "blocked",
+      "primary_blocker": "claim_promotion",
+      "purpose": "Inject an agency claim into a candidate row."
+    }
+  ],
+  "experiment": "2026-05-N08-lgrc-memory-trail-affordance",
+  "generated_at": "2026-06-07T16:23:13.220507+00:00",
+  "git": {
+    "head": "aac170a3574887864804cbb777ab89c30f8ba3c6",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 8,
+  "mem_level": "MEM6",
+  "output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+  "output_digest_scope": {
+    "excluded": [
+      "generated_at",
+      "output_digest"
+    ],
+    "included": "all output fields except generated_at and output_digest",
+    "stable_across_same_inputs": true
+  },
+  "schema": "n08_iteration_8_mem6_closeout_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_2_fixture_manifest_validation.json": "dae2805fc7bcb4cd85a8f6f204ceacf4b06196fa7790e7d447796d87c877ee70",
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_7_mem5_repeated_memory_selection.json": "2ea61b7024e6275b352ddbd1fabf76e2b92862f285739279dcf5f87b3b296772"
+  },
+  "source_control_replay": {
+    "claim_promotion": {
+      "expected_primary_blocker": "claim_promotion",
+      "observed_primary_blocker": "claim_promotion",
+      "replay_passed": true,
+      "source_control_passed": true
+    },
+    "cross_cycle_memory_leak": {
+      "expected_primary_blocker": "cross_cycle_memory_leak",
+      "observed_primary_blocker": "cross_cycle_memory_leak",
+      "replay_passed": true,
+      "source_control_passed": true
+    },
+    "duplicate_memory_update": {
+      "expected_primary_blocker": "duplicate_memory_update",
+      "observed_primary_blocker": "duplicate_memory_update",
+      "replay_passed": true,
+      "source_control_passed": true
+    },
+    "memory_budget_discontinuity": {
+      "expected_primary_blocker": "memory_budget_discontinuity",
+      "observed_primary_blocker": "memory_budget_discontinuity",
+      "replay_passed": true,
+      "source_control_passed": true
+    },
+    "node_plus_packet_budget_discontinuity": {
+      "expected_primary_blocker": "node_plus_packet_budget_discontinuity",
+      "observed_primary_blocker": "node_plus_packet_budget_discontinuity",
+      "replay_passed": true,
+      "source_control_passed": true
+    },
+    "repeated_hidden_route_preference": {
+      "expected_primary_blocker": "candidate_score_hidden_memory_input",
+      "observed_primary_blocker": "candidate_score_hidden_memory_input",
+      "replay_passed": true,
+      "source_control_passed": true
+    },
+    "stale_memory_surface_read": {
+      "expected_primary_blocker": "stale_memory_surface_read",
+      "observed_primary_blocker": "stale_memory_surface_read",
+      "replay_passed": true,
+      "source_control_passed": true
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_7_mem5_repeated_memory_selection.md": "97314510d3b2db24e6c28b01d0719237d733179e8442be0922d9c85121c21131"
+  },
+  "status": "passed"
+}

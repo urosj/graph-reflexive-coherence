@@ -1,0 +1,159 @@
+{
+  "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/render_m_taxonomy_visual_reference.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "gaps": [
+    {
+      "gap": "M0-M4 reference panels use N04 JSONL/reference SVGs; only M5 and M6 currently have generated native LGRC telemetry packs rendered through the standard pygrc visualization stack.",
+      "recommended_next": "Add native/standard telemetry-pack adapters for M0-M4 if the sharing pack needs uniform LGRC visualization provenance.",
+      "rung": "M0-M4"
+    }
+  ],
+  "git": {
+    "diff_check": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "rev_parse_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "856071614367b4805631b745679eaa4e20da7ad2"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/README.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m2_runtime_shape_blocked_fixture.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m2_runtime_shape_blocked_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/m2_runtime_shape_blocked_fixture.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/m_taxonomy_visual_reference.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/render_m_taxonomy_visual_reference.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_m2_runtime_shape_blocked_fixture.py"
+    }
+  },
+  "index_html": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/index.html",
+  "records": [
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "no_movement_response_candidates",
+      "evidence_status": "real_timeseries_existing_n04",
+      "implementation_surface": "experiment_local_fixed_substrate",
+      "label": "fixed_substrate_subthreshold_bias",
+      "rung": "M0",
+      "source_artifacts": [
+        "outputs/fixed_substrate_tranche_a_timeseries/S0_chain_v1_B1.jsonl",
+        "outputs/fixed_substrate_tranche_a_report.json"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M0_fixed_substrate_subthreshold_bias.svg",
+      "visual_sha256": "bb34e9587cbe8664571f42728cf11a2bfa700f628ef7bb09d617823f2ab89560"
+    },
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "M1_apparent_centroid_displacement_evidence_only",
+      "evidence_status": "real_timeseries_existing_n04",
+      "implementation_surface": "experiment_local_observable_fixture",
+      "label": "apparent_centroid_displacement_identity_blocked",
+      "rung": "M1",
+      "source_artifacts": [
+        "outputs/movement_observables_timeseries/S0_chain_v1_basin_replacement.jsonl",
+        "outputs/movement_classifier_m0_m3_validation.json"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M1_apparent_centroid_identity_blocked.svg",
+      "visual_sha256": "2544a6c2ba438738fc3b1cddcb76b75b4e540a8200f6e7c495e1d66f291c5257"
+    },
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "M2_identity_preserving_displacement_evidence_only",
+      "evidence_status": "runtime_timeseries_existing_n04",
+      "implementation_surface": "iteration_11b_runtime_shape_blocked_fixture",
+      "label": "boundary_reassignment_shape_blocked",
+      "rung": "M2",
+      "source_artifacts": [
+        "outputs/m2_runtime_shape_blocked_fixture.json",
+        "outputs/m2_runtime_shape_blocked_timeseries/M2_shape_degraded_boundary_handoff.jsonl",
+        "outputs/movement_classifier_m0_m3_validation.json"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M2_boundary_reassignment_shape_blocked.svg",
+      "visual_sha256": "c0ce74334212c65d8389c146043d5b4623f8026763e2f4fa1e296cb06a47efdd"
+    },
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "M3_shape_preserving_identity_displacement_evidence_only",
+      "evidence_status": "real_timeseries_existing_n04",
+      "implementation_surface": "experiment_local_observable_fixture",
+      "label": "shape_preserving_identity_displacement",
+      "rung": "M3",
+      "source_artifacts": [
+        "outputs/movement_observables_timeseries/S0_chain_v1_shape_preserving_shift.jsonl",
+        "outputs/movement_classifier_m0_m3_validation.json"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M3_shape_preserving_identity_displacement.svg",
+      "visual_sha256": "d3bd6916ee9bf85cd8e060a62c3537c3272e111213f0178cc693a7b4234a7023"
+    },
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "boundary_coupled_pulse_fixture_validation",
+      "evidence_status": "real_timeseries_existing_n04",
+      "implementation_surface": "boundary_coupled_pulse_fixture",
+      "label": "coordinated_front_rear_boundary_response",
+      "rung": "M4",
+      "source_artifacts": [
+        "outputs/boundary_coupled_pulse_timeseries/P2_asymmetric_boundary_coupling_forward.jsonl",
+        "outputs/boundary_coupled_pulse_report.json"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M4_boundary_coupled_response.svg",
+      "visual_sha256": "b282ede8e9d05854d0b6ba68d4b920b2cda5afab88be55d46a8ed42c9efdbfb1"
+    },
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "m5_direction_parity_supported_boundary_response",
+      "evidence_status": "native_lgrc9v3_telemetry_pack_plus_reference_svg",
+      "implementation_surface": "native_lgrc9v3_true_reversed_e3_boundary_response",
+      "label": "direction_parity_supported_boundary_response",
+      "native_event_timeline": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/native_lgrc_visualizations/n04_m5_true_reversed_e3_boundary_response/visualization/events.png",
+      "native_event_timeline_sha256": "dde14823e1fe880147ee83a0506e2b548d64c76404626c13eb934c6bc9fce2c8",
+      "native_report_panel": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/native_lgrc_visualizations/n04_m5_true_reversed_e3_boundary_response/visualization/report_panel.png",
+      "native_report_panel_sha256": "9cf4fc0a0e06269bc9d8d331d616f99c8d0cbcd0cda02519b54068231847ccb8",
+      "native_telemetry_run_dir": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m5_true_reversed_e3_boundary_response",
+      "native_trajectory_figure": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/native_lgrc_visualizations/n04_m5_true_reversed_e3_boundary_response/visualization/trajectories.png",
+      "native_trajectory_figure_sha256": "5e979fee0f0eae7c43b1d7dd98a98a18fbb96532f9aacc81c88379da79df9c54",
+      "rung": "M5",
+      "source_artifacts": [
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m5_true_reversed_e3_boundary_response/telemetry/steps.jsonl",
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m5_true_reversed_e3_boundary_response/telemetry/events.jsonl",
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m5_true_reversed_e3_boundary_response/telemetry/run_summary.json",
+        "outputs/reversed_e3_pulse_m4_m5_classification.json",
+        "outputs/reversed_e3_pulse_boundary_timeseries/P3_true_reversed_e3_pulse_boundary_coupling.jsonl"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M5_direction_parity_boundary_response.svg",
+      "visual_sha256": "e45546fb85bf1b3b9623ccf1d8c319cafd52ff765c16b7b34ab1d37dbf1135a5"
+    },
+    {
+      "claim_boundary": "visual_reference_only_claims_come_from_n04_reports_not_from_visuals",
+      "claim_ceiling": "native_m6_same_fixture_self_renewal_candidate",
+      "evidence_status": "native_lgrc9v3_telemetry_pack_plus_reference_svg",
+      "implementation_surface": "native_causal_pulse_substrate_surface",
+      "label": "native_same_fixture_self_renewal_candidate",
+      "native_event_timeline": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/native_lgrc_visualizations/n04_m6_native_same_fixture_self_renewal/visualization/events.png",
+      "native_event_timeline_sha256": "7dd5d97d7d0d80fce0f419fd5862ab3af527d75f462fe76637efd89cfa9645b7",
+      "native_report_panel": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/native_lgrc_visualizations/n04_m6_native_same_fixture_self_renewal/visualization/report_panel.png",
+      "native_report_panel_sha256": "ad18a999eb59ab2397cee06ba1054d85a4d5de772ff422f4cc09b378ae953a1f",
+      "native_telemetry_run_dir": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m6_native_same_fixture_self_renewal",
+      "native_trajectory_figure": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/native_lgrc_visualizations/n04_m6_native_same_fixture_self_renewal/visualization/trajectories.png",
+      "native_trajectory_figure_sha256": "65dfaec7af912a28385201fa1473cf6da6f2eb63e4935ba431e84a1d507f9717",
+      "rung": "M6",
+      "source_artifacts": [
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m6_native_same_fixture_self_renewal/telemetry/steps.jsonl",
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m6_native_same_fixture_self_renewal/telemetry/events.jsonl",
+        "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_native_lgrc_runs/n04_m6_native_same_fixture_self_renewal/telemetry/run_summary.json",
+        "outputs/native_m6_same_fixture_validator.json",
+        "outputs/native_m6_validation_checklist_audit.json"
+      ],
+      "visual_path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference/M6_native_same_fixture_self_renewal.svg",
+      "visual_sha256": "f10e11ab810760d14da30eecc1bd89c0df7e87a6b5cc42602961779f4bb6c7dd"
+    }
+  ],
+  "report_kind": "n04_m_taxonomy_visual_reference_v1",
+  "schema": "movement_ladder_visual_reference_v1",
+  "status": "passed",
+  "visual_root": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m_taxonomy_visual_reference"
+}

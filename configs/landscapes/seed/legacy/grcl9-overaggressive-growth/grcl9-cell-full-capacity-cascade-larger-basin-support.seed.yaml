@@ -1,0 +1,135 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Cell Full Capacity Cascade Larger Basin Support
+  description: S0020 robustness variant with larger developed basin support.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcl9-cell-full-capacity-cascade-larger-basin-support
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, composing_cells, cascade, robustness, larger_basin_support]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: multi_well
+    params: {basin_count: 3, saddle_bias: cascade}
+
+primitives:
+  - id: spark_saddle
+    type: saddle
+    branch_target_ids: [basin_a, basin_b]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: cell_full_capacity_cascade_larger_basin_support_critical_region
+        motif_id: cascade_refinement
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile: {critical_region: saturated_membrane_bounded_identity}
+        boundary_gradient_profile: {boundary_ports: all_nine, ridge_role: rupture_prone_membrane}
+        columnwise_near_cancellation: {target_column: 2, diagnostic_mode: near_epsilon, spark_threshold: 0.02}
+        spark_gate_intent: saturation_column_proxy
+  - id: refinement_locus
+    type: plateau
+    extensions:
+      grcl9:
+        term_kind: refinement_locus
+        term_id: cell_full_capacity_cascade_larger_basin_support_refinement_locus
+        motif_id: cascade_refinement
+        locus_id: refinement_locus
+        region_id: candidate
+        target_effective_degree: 44
+        coherence_transfer_mode: equal
+  - id: pressure_valley
+    type: valley
+    from_id: basin_a
+    to_id: growth_boundary
+    extensions:
+      grcl9:
+        term_kind: gradient_pressure
+        term_id: cell_full_capacity_cascade_larger_basin_support_gradient_pressure
+        motif_id: cascade_growth
+        pressure_id: outward_pressure
+        boundary_stratum_id: growth_boundary
+        pressure_class: high
+        lambda_birth: 0.05
+  - id: growth_boundary
+    type: ridge
+    owner_id: basin_a
+    adjacent_ids: [pressure_valley]
+    extensions:
+      grcl9:
+        term_kind: boundary_stratum
+        term_id: cell_full_capacity_cascade_larger_basin_support_boundary_stratum
+        motif_id: cascade_growth
+        stratum_id: growth_boundary
+        parent_region_id: parent
+        inactive_port: 5
+        boundary_role: growth_boundary
+  - id: post_refinement_plateau
+    type: plateau
+    extensions:
+      grcl9:
+        term_kind: post_refinement_two_sink_region
+        term_id: cell_full_capacity_cascade_larger_basin_support_two_sink_region
+        motif_id: cascade_fission
+        region_id: post_refinement_region
+        module_region_id: module
+        sink_region_a: sink_a
+        sink_region_b: sink_b
+        identity_fission_min_basin_mass: 0.10
+        identity_fission_persistence_delta: 6
+  - id: basin_a
+    type: basin
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_full_capacity_cascade_larger_basin_support_stable_basin_a
+        motif_id: cascade_fission
+        basin_id: sink_a
+        stability_class: stable
+        mass_hint: 0.90
+        support_node_count: 8
+        selection_policy: group_centroid
+  - id: basin_b
+    type: basin
+    extensions:
+      grcl9:
+        term_kind: stable_basin
+        term_id: cell_full_capacity_cascade_larger_basin_support_stable_basin_b
+        motif_id: cascade_fission
+        basin_id: sink_b
+        stability_class: collapsing
+        mass_hint: 0.04
+        support_node_count: 8
+        selection_policy: member_node
+  - id: merge_saddle
+    type: saddle
+    branch_target_ids: [basin_a, basin_b]
+    extensions:
+      grcl9:
+        term_kind: saddle_bridge
+        term_id: cell_full_capacity_cascade_larger_basin_support_saddle_bridge
+        motif_id: cascade_fission
+        bridge_id: cascade_merge_bridge
+        region_a: sink_a
+        region_b: sink_b
+        bridge_class: merge_saddle_bridge
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: cell_full_capacity_cascade_larger_basin_support
+    manifest_entry_id: grcl9_lowering_post_expansion_fission_v1
+    expected_selector_ids: [spark_column_proxy_count, expansion_module_size, growth_count, runtime_collapse_like_ambiguous]
+    notes: Full-capacity cascade robustness variant with larger developed basin support; expected to classify as ambiguous when both source sink anchors are lost.

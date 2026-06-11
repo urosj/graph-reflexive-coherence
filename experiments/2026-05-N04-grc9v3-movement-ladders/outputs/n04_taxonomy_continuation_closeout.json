@@ -1,0 +1,240 @@
+{
+  "blocked_boundary": {
+    "attempted_promotion": "adaptive_topology_entry_candidate",
+    "native_lgrc3_topology_lineage_replay_passed": true,
+    "primary_blocker": "causal_pulse_substrate_surface_v1_requires_fixed_topology_lineage_status",
+    "primary_blocker_current_status": "resolved_externally_by_phase8_lineage_closeout",
+    "promotion_result": "blocked",
+    "surface_v1_rejects_lineage_transport_rows": true
+  },
+  "blocked_claims": [
+    "agency",
+    "biological_behavior",
+    "identity_acceptance",
+    "locomotion_like_basin_dynamics",
+    "movement_inherited_from_n03",
+    "native_lgrc_choice_selection",
+    "native_lgrc_choice_selection_as_semantic_choice",
+    "rc_identity_collapse",
+    "rc_identity_through_native_route_arbitrated_topology",
+    "rc_identity_through_topology_mutation",
+    "semantic_choice",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "adaptive_topology_entry_candidate_supported": true,
+    "iteration_19a_passed": true,
+    "iteration_19b_adaptive_topology_blocked": true,
+    "iteration_19b_ceiling_preserved": true,
+    "iteration_19b_fail_closed_boundary_passed": true,
+    "iteration_19c_passed": true,
+    "iteration_19d_passed_fail_closed": true,
+    "iteration_19e_passed": true,
+    "iteration_20_passed_with_replay_closed": true,
+    "iteration_20_repeatability_reversal_perturbation_passed": true,
+    "iteration_21_candidate_routes_artifact_valid": true,
+    "iteration_21_choice_selection_blocked": true,
+    "iteration_21b_claim_boundary_preserved": true,
+    "iteration_21b_native_route_arbitration_supported": true,
+    "iteration_22_identity_boundary_blocked": true,
+    "iteration_22_lineage_continuity_artifact_valid": true,
+    "iteration_22b_artifact_validators_passed": true,
+    "iteration_22b_native_route_arbitrated_identity_boundary_blocked": true,
+    "phase8_blocker_identified": true,
+    "phase8_blocker_resolved": true,
+    "phase8_lineage_closeout_passed": true,
+    "phase8_native_route_arbitration_closeout_passed": true,
+    "phase8_time_scoped_lineage_replay_closeout_passed": true,
+    "phase8_topology_state_reabsorption_closeout_passed": true,
+    "taxonomy_inventory_passed": true,
+    "taxonomy_rows_include_19b": true,
+    "taxonomy_rows_include_19c": true,
+    "taxonomy_rows_include_19d": true,
+    "taxonomy_rows_include_19e": true,
+    "taxonomy_rows_include_20": true,
+    "taxonomy_rows_include_21": true,
+    "taxonomy_rows_include_21b": true,
+    "taxonomy_rows_include_22": true,
+    "taxonomy_rows_include_22b": true,
+    "taxonomy_schema_passed": true,
+    "topology_mutating_movement_candidate_supported_after_19e": true,
+    "topology_mutating_movement_still_blocked_after_19c": true,
+    "topology_mutating_movement_still_blocked_after_19d": true
+  },
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": true,
+    "agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_lgrc_route_arbitration_supported": true,
+    "native_m6": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "s7_fixed_port_composed_gate_candidate_passed": true,
+    "semantic_choice_claim_allowed": false,
+    "topology_mutating_movement_claim_allowed": true,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "current_claim_ceiling": "topology_mutating_movement_candidate",
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "9fb22cb4737b6f6f6c393491cd472b83911b1b8c"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M ../../../../Obsidian/SentientLife/Self/26-05/2026-05-22.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/README.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_continuation_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_continuation_closeout.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n M implementation/ImplementationPhases.md\n M implementation/Phase-8-LGRC9-Closeout.md\n M implementation/Phase-8-LGRC9-Handoff.md\n M implementation/Phase-8-LGRC9-ImplementationChecklist.md\n M implementation/Phase-8-LGRC9-ImplementationPlan.md\n M src/pygrc/models/__init__.py\n M src/pygrc/models/lgrc_9_v3_contract.py\n M src/pygrc/models/lgrc_9_v3_runtime.py\n M src/pygrc/models/lgrc_9_v3_runtime_state.py\n M src/pygrc/models/lgrc_9_v3_topology.py\n M src/pygrc/telemetry/lgrc9v3_contract.py\n M tests/models/test_lgrc_9_v3_contract.py\n M tests/models/test_lgrc_9_v3_runtime.py\n M tests/telemetry/test_lgrc9v3_contract.py\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-LGRC-Applications.md\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-22-RC-ACO.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21_native_lgrc_choice_selection_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21b_native_lgrc_route_arbitration_rerun.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22_identity_through_topology_mutation_boundary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22b_identity_through_native_route_arbitrated_topology.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter20_topology_mutating_repeatability_stress.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21_native_lgrc_choice_selection_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter21b_native_lgrc_route_arbitration_rerun.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter22_identity_through_topology_mutation_boundary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter22b_identity_through_native_route_arbitrated_topology.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter20_topology_mutating_repeatability_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21_native_lgrc_choice_selection_boundary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter21b_native_lgrc_route_arbitration_rerun.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter22_identity_through_topology_mutation_boundary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter22b_identity_through_native_route_arbitrated_topology.py\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationBaselineFreeze.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationBaselineFreeze.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCandidateEmission.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCandidateEmission.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationChecklist.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCommit.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationCommit.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationContractSchema.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationContractSchema.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationPlan.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationReplay.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationReplay.md\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationSelection.json\n?? implementation/Phase-8-LGRC9-NativeRouteArbitrationSelection.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayChecklist.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md\n?? implementation/Phase-8-LGRC9-TimeScopedLineageReplayPlan.md"
+    }
+  },
+  "next_work": "handoff_ready_for_new_tranche",
+  "phase8_native_route_arbitration": {
+    "closeout_doc": "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.md",
+    "native_lgrc_route_arbitration_supported": true,
+    "status": "closed",
+    "support_scope": "runtime route arbitration support only; not semantic choice, agency, RC identity collapse, identity acceptance, locomotion-like behavior, biological behavior, or unrestricted movement"
+  },
+  "phase8_next": {
+    "checklist_doc": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageChecklist.md",
+    "closeout_doc": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.md",
+    "goal": "implement native causal pulse-substrate surface lineage transport using LGRC-3 topology/lineage semantics",
+    "not_goal": "do not prove movement, adaptive topology, choice, agency, or locomotion inside Phase 8",
+    "plan_doc": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineagePlan.md",
+    "status": "passed",
+    "supported_claim_ceiling": "native_causal_pulse_substrate_surface_lineage_transport_supported"
+  },
+  "phase8_time_scoped_lineage_replay": {
+    "artifact_only_time_scoped_surface_lineage_replay_supported": true,
+    "closeout_doc": "implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md",
+    "status": "closed"
+  },
+  "phase8_topology_state_reabsorption": {
+    "closeout_doc": "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md",
+    "native_topology_state_reabsorption_supported": true,
+    "status": "closed"
+  },
+  "purpose": "iteration_23_topology_mutating_taxonomy_closeout",
+  "purpose_current_status": "topology_mutating_tranche_closed_after_iteration_22b",
+  "report_kind": "n04_taxonomy_continuation_closeout_v1",
+  "return_to_n04_after_phase8": {
+    "claims_still_blocked_until_revalidated": [
+      "native_lgrc_choice_selection_as_semantic_choice",
+      "rc_identity_collapse",
+      "semantic_choice",
+      "agency",
+      "locomotion_like_basin_dynamics",
+      "biological_behavior",
+      "identity_acceptance",
+      "unrestricted_movement"
+    ],
+    "closed_ceiling": "topology_mutating_movement_candidate",
+    "entry_ceiling": "adaptive_topology_entry_candidate",
+    "iteration_20_primary_blocker": null,
+    "iteration_20_stress_result": "repeatability_stress_supported",
+    "iteration_21_primary_blocker": "native_lgrc_topology_route_selection_not_exposed",
+    "iteration_21_promotion_result": "blocked",
+    "iteration_21b_native_route_arbitration_supported": true,
+    "iteration_21b_primary_blocker": null,
+    "iteration_21b_promotion_result": "runtime_route_arbitration_supported_choice_claim_blocked",
+    "iteration_22_primary_blocker": "rc_identity_basin_invariance_not_validated_across_topology_mutation",
+    "iteration_22_promotion_result": "blocked",
+    "iteration_22b_primary_blocker": "rc_identity_basin_invariance_not_validated_across_topology_mutation",
+    "iteration_22b_promotion_result": "blocked",
+    "next_probe": "topology_mutating_tranche_closed",
+    "probe_goal": "Iteration 23 freezes the topology-mutating movement candidate after stress, native route arbitration, and identity-boundary reruns",
+    "strict_probe_after_reabsorption_ceiling": "topology_mutating_movement_candidate",
+    "strict_probe_after_reabsorption_result": "supported_candidate",
+    "strict_probe_primary_blocker": "packet_ledger_state_reabsorption_mismatch_after_topology_event",
+    "strict_probe_result": "blocked"
+  },
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_19a": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19a_s7_fixed_port_execution_report.json",
+      "sha256": "1e49625d90d15bf13947db6b0c31de588f109dbcfabeabec2514be69b6ebece2"
+    },
+    "iteration_19b": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19b_topology_lineage_adaptive_gate_report.json",
+      "sha256": "000b0efe3c2ea5cd9adc7bc669364f96887f2c2afd4153ac1113c3c3c13040a4"
+    },
+    "iteration_19c": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19c_s7_adaptive_gate_with_native_surface_lineage.json",
+      "sha256": "2b0e7b4981f4e9b8ff372a24a5d5fb64562a48d29199ebbb426eff8bcc00ca43"
+    },
+    "iteration_19d": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19d_topology_mutating_movement_probe.json",
+      "sha256": "28df03d76ced295508d535848b4efee9bbcf782840d8688e442b4e7257b2b653"
+    },
+    "iteration_19e": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter19e_topology_mutating_movement_after_state_reabsorption.json",
+      "sha256": "a293e7efa74e92369d6fd59f0c73f25669ee385b224e0f3fb32d06a5204e8910"
+    },
+    "iteration_20": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter20_topology_mutating_repeatability_stress.json",
+      "sha256": "948c94441a6f98a355f228d763603b56280de6d5e3046135399ad810e4c2db04"
+    },
+    "iteration_21": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21_native_lgrc_choice_selection_boundary.json",
+      "sha256": "52610ebdeb4699ae78eb05d57f55f59e6d68f8305013ed7fdab2c138e446ef72"
+    },
+    "iteration_21b": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter21b_native_lgrc_route_arbitration_rerun.json",
+      "sha256": "4d28f1fa0d2822de374d09ae20927eac6c682c112b7434254010890c059694c1"
+    },
+    "iteration_22": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22_identity_through_topology_mutation_boundary.json",
+      "sha256": "3f30dfff12ab855ad0086b0f995de34a3dcb326445329fe0d45863ba9317648e"
+    },
+    "iteration_22b": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter22b_identity_through_native_route_arbitrated_topology.json",
+      "sha256": "65477fda0529097244fa7191df540721f8f148526619193007e639e7d4dc6714"
+    },
+    "phase8_lineage_closeout": {
+      "path": "implementation/Phase-8-LGRC9-CausalPulseSubstrateSurfaceLineageCloseout.json",
+      "sha256": "97ad2e56ba6f2b2b303070dcbc4eb16ee54a5267c4911269abb664f35571709f"
+    },
+    "phase8_native_route_arbitration_closeout": {
+      "path": "implementation/Phase-8-LGRC9-NativeRouteArbitrationCloseout.json",
+      "sha256": "cabc1f5b81fdb19154d778b04463f74f32e82653db6291daa62b1e5128d01b65"
+    },
+    "phase8_time_scoped_lineage_replay_closeout": {
+      "path": "implementation/Phase-8-LGRC9-TimeScopedLineageReplayCloseout.json",
+      "sha256": "26a291a3fe17432b55e5da1fea22db950508c71ad4effe83346c09e6ee050201"
+    },
+    "phase8_topology_state_reabsorption_closeout": {
+      "path": "implementation/Phase-8-LGRC9-TopologyStateReabsorptionCloseout.json",
+      "sha256": "7db33f5c04b34e3046ebbfda523a245c1b8dd80457e6fdf3a158dae1a6ecac31"
+    },
+    "taxonomy_inventory": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json",
+      "sha256": "40dcf56c001f25909c92e3b39e570889e6f52f8b44b425533ba6e31eb942c72a"
+    },
+    "taxonomy_tag_schema": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json",
+      "sha256": "403e5afc80e6354016c66e9bc91f3a11121ed71bdd4e2b21058953271134478e"
+    }
+  },
+  "status": "passed",
+  "strongest_supported_result": {
+    "achieved_movement_level": "M6",
+    "claim_ceiling": "topology_mutating_movement_candidate",
+    "geometry_scope": "topology_mutating",
+    "movement_substrate": "S7_port_graph_topology_lineage_probe_v1",
+    "persistence_level": "T5_candidate",
+    "substrate_class": "port_graph",
+    "supporting_evidence": [
+      "19-E_topology_mutating_packet_work_after_state_reabsorption",
+      "20_repeatability_reversal_perturbation_stress",
+      "21-B_native_route_arbitration_runtime_support",
+      "22-B_identity_boundary_rechecked_after_native_route_arbitration"
+    ]
+  }
+}

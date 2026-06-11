@@ -1,0 +1,61 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Choice Collapse Negative
+  description: Seed-backed GRCL-9V3 low-contrast choice/collapse control.
+  source_kind: manual_seed
+  source_reference: outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, s0014, choice, collapse, negative_control]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: choice
+    type: saddle
+    branch_target_ids: [basin_a, basin_b]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: choice_collapse_negative_control_choice
+        region_id: choice_region
+        source_role: negative_control
+        profile:
+          basin_region_a: basin_a
+          basin_region_b: basin_b
+          collapse_target_region: basin_a
+          compatibility_profile:
+            compatibility: low_contrast
+  - id: basin_a
+    type: basin
+    coherence_prior: 1.0
+  - id: basin_b
+    type: basin
+    coherence_prior: 1.0
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: choice_collapse_negative_control
+    manifest_entry_id: future_vocabulary_choice_collapse_v1
+    motif_id: grc9v3-motif-s0006-choice-collapse-negative-control
+    expected_selector_ids: [no_choice_collapse_events]
+    notes:
+      discovery_anchor: S0014 source-language handoff
+      boundary: source preconditions only

@@ -1,0 +1,122 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "command": "PYTHONPATH=src .venv/bin/python experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_d_refinement_identity.py --write-defaults --seed 0",
+  "condition_ids": [
+    "d_equal_transfer_refinement",
+    "d_column_1_skewed_transfer",
+    "d_column_2_skewed_transfer",
+    "d_column_3_skewed_transfer",
+    "d_degree_8_no_refinement_control"
+  ],
+  "experiment_id": "experiment_d_refinement_identity",
+  "git_branch": "master",
+  "git_commit": "29a1df5b65a8f7eb5dafced29da3a1705be24c18",
+  "iteration": 7,
+  "lane_id": "current_hybrid_signed_hessian",
+  "max_persistence_trace_steps": 5,
+  "min_basin_mass_threshold": 1.0,
+  "output_paths": {
+    "blocked_observations_csv": "reports/experiment_d_refinement_identity_blocked_observations.csv",
+    "conditions_csv": "outputs/experiment_d_refinement_identity_conditions.csv",
+    "manifest_json": "outputs/experiment_d_refinement_identity_manifest.json",
+    "persistence_csv": "outputs/experiment_d_refinement_identity_persistence.csv",
+    "reassignments_csv": "outputs/experiment_d_refinement_identity_reassignments.csv",
+    "report_md": "reports/experiment_d_refinement_identity.md",
+    "summary_json": "outputs/experiment_d_refinement_identity_summary.json",
+    "thresholds_csv": "outputs/experiment_d_refinement_identity_thresholds.csv"
+  },
+  "persistence_window_steps": 3,
+  "port_mappings": {
+    "column_permutation_312": {
+      "1": 3,
+      "2": 1,
+      "3": 2,
+      "4": 6,
+      "5": 4,
+      "6": 5,
+      "7": 9,
+      "8": 7,
+      "9": 8
+    },
+    "degree_preserving_random_relabel": {
+      "1": 6,
+      "2": 8,
+      "3": 5,
+      "4": 9,
+      "5": 1,
+      "6": 3,
+      "7": 4,
+      "8": 2,
+      "9": 7
+    },
+    "identity": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9
+    },
+    "row_column_transpose": {
+      "1": 1,
+      "2": 4,
+      "3": 7,
+      "4": 2,
+      "5": 5,
+      "6": 8,
+      "7": 3,
+      "8": 6,
+      "9": 9
+    },
+    "row_permutation_231": {
+      "1": 4,
+      "2": 5,
+      "3": 6,
+      "4": 7,
+      "5": 8,
+      "6": 9,
+      "7": 1,
+      "8": 2,
+      "9": 3
+    }
+  },
+  "reuse_notes": {
+    "d5": "Use reassignment rows and persistence rows for refinement-memory discriminator checks.",
+    "d8": "Use persistence sensitivity rows as identity-level evidence, with raw-fixture scope."
+  },
+  "runtime_params": {
+    "constitutive_semantic_modes": {
+      "boundary_mode": "prune",
+      "expansion_distribution_mode": "equal",
+      "hessian_backend": "row_basis_diagonal"
+    },
+    "dt": 0.1,
+    "evolution": {
+      "D_eff_target": 30,
+      "alpha": 1e-12,
+      "beta": 1e-12,
+      "eps_gradient": 0.01,
+      "eps_hessian": 0.01,
+      "eps_spark": 0.0,
+      "gamma": 1e-12,
+      "kappa_c": 1e-12,
+      "rng_seed": 0,
+      "site_potential_params": {
+        "mu": 0.0,
+        "scale": 0.0
+      },
+      "site_potential_selection": "quadratic",
+      "w_bond": 1.0
+    }
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_d_refinement_identity.py",
+  "seed": 0,
+  "validation_commands": [
+    "PYTHONPATH=src .venv/bin/python -m py_compile experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_d_refinement_identity.py",
+    "PYTHONPATH=src .venv/bin/python -m ruff check experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_d_refinement_identity.py experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_c_saturation.py experiments/2026-05-N01-grc9v3-properties/scripts/grc9v3_fixture_harness.py",
+    ".venv/bin/python -m json.tool experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_summary.json"
+  ]
+}

@@ -1,0 +1,194 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCV3 Rich Weak-Axis Basin Spark Probe
+  description: Basin-centered interior spindle probe that gives the core a four-support patch while keeping west-east transport and north-south clamp isolation.
+  source_kind: manual_seed
+  source_reference: implementation/manual/grcv3-rich-weak-axis-basin-spark-probe
+  source_schema_version: "0.1"
+  source_domain: "2d"
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+  translation_notes:
+    - This fixture is not derived from the PDE landscape corpus.
+    - It is a basin-centered variant of the weak-axis spark probe.
+    - The intent is to give the core a true four-support local stencil rather than a two-branch junction center.
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: left_reservoir
+    type: basin
+    coherence_prior: 0.52
+    depth_hint: 0
+    chart_center_hint: [0.18, 0.5]
+    chart_scale_hint:
+      radius: 0.085
+
+  - id: right_reservoir
+    type: basin
+    coherence_prior: 0.52
+    depth_hint: 0
+    chart_center_hint: [0.82, 0.5]
+    chart_scale_hint:
+      radius: 0.085
+
+  - id: upper_shell
+    type: basin
+    coherence_prior: 0.22
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.28]
+    chart_scale_hint:
+      radius: 0.07
+
+  - id: lower_shell
+    type: basin
+    coherence_prior: 0.22
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.72]
+    chart_scale_hint:
+      radius: 0.07
+
+  - id: spindle_core
+    type: basin
+    coherence_prior: 0.78
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.5]
+    chart_scale_hint:
+      radius: 0.12
+    notes: Basin-centered interior probe with explicit weak east-west axis and north-south clamp loading kept off the center.
+    extensions:
+      grcv3:
+        local_geometry:
+          frame_mode: axis_declared
+          axis_roles: [north, east, south, west]
+          weak_axis_role: east
+          symmetry_class: bilateral
+          center_role: interior_probe
+        curvature_intent:
+          class: near_degenerate
+          stable_axis_roles: [north, south]
+          weak_axis_role: east
+          ordering: weak << stable
+        interfaces:
+          boundary_roles: [clamp_north, clamp_south]
+          channel_roles: [inlet, outlet]
+          preferred_attachment_sites:
+            clamp_north: north
+            clamp_south: south
+            inlet: west
+            outlet: east
+
+  - id: upper_clamp
+    type: ridge
+    owner_id: spindle_core
+    ridge_kind: boundary
+    adjacent_ids: [upper_shell]
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.78
+    exterior_coherence_hint: 0.22
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcv3:
+        boundary_geometry:
+          realization_kind: support_arc
+          normal_role: north
+          tangent_role: east
+          arc_span: tight
+          support_distribution: uniform
+        interfaces:
+          boundary_roles: [clamp_north]
+          preferred_attachment_sites:
+            clamp_north: north
+
+  - id: lower_clamp
+    type: ridge
+    owner_id: spindle_core
+    ridge_kind: boundary
+    adjacent_ids: [lower_shell]
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.78
+    exterior_coherence_hint: 0.22
+    chart_principal_axis_hint: [1.0, 0.0]
+    extensions:
+      grcv3:
+        boundary_geometry:
+          realization_kind: support_arc
+          normal_role: south
+          tangent_role: east
+          arc_span: tight
+          support_distribution: uniform
+        interfaces:
+          boundary_roles: [clamp_south]
+          preferred_attachment_sites:
+            clamp_south: south
+
+  - id: left_inlet
+    type: valley
+    from_id: left_reservoir
+    to_id: spindle_core
+    width_hint: 0.022
+    coherence_prior: 0.18
+    path_hint: bezier
+    waypoints:
+      - [0.3, 0.5]
+      - [0.4, 0.5]
+    extensions:
+      grcv3:
+        channel_geometry:
+          realization_kind: single_channel
+          interior_count: 1
+          waypoint_policy: midpoint_only
+          entry_role: east
+          exit_role: west
+        interfaces:
+          channel_roles: [inlet]
+          preferred_attachment_sites:
+            inlet: west
+
+  - id: right_outlet
+    type: valley
+    from_id: spindle_core
+    to_id: right_reservoir
+    width_hint: 0.022
+    coherence_prior: 0.18
+    path_hint: bezier
+    waypoints:
+      - [0.6, 0.5]
+      - [0.7, 0.5]
+    extensions:
+      grcv3:
+        channel_geometry:
+          realization_kind: single_channel
+          interior_count: 1
+          waypoint_policy: midpoint_only
+          entry_role: east
+          exit_role: west
+        interfaces:
+          channel_roles: [outlet]
+          preferred_attachment_sites:
+            outlet: east
+
+extensions:
+  grcv3:
+    contract_version: grcv3.rich.v2
+    rich_required: true
+  source_probe:
+    purpose: grcv3_rich_v2_weak_axis_basin_spark_probe
+    intended_geometry:
+      - explicit four-support basin-centered interior probe
+      - strong north-south clamp supports
+      - weak west-east transport axis
+      - attachment isolation through role-directed channels and boundary arcs

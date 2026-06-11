@@ -1,0 +1,117 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Cell Boundary Membrane Spark
+  description: ComposingCells-aligned boundary membrane seed for a saturated hybrid spark region.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-84-composingcells-aligned-hybrid-seeds
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, composing_cells, membrane, spark]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: membrane_candidate
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [inner_basin, outer_basin, membrane_support]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: cell_boundary_membrane_spark_critical
+        region_id: membrane_candidate
+        source_role: composing_cell_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: membrane
+    type: ridge
+    owner_id: membrane_candidate
+    adjacent_ids: [inner_basin, outer_basin]
+    extensions:
+      grcl9v3:
+        term_kind: ridge_membrane
+        term_id: cell_boundary_membrane_spark_membrane
+        region_id: membrane_boundary
+        source_role: composing_cell_control
+        profile:
+          boundary: nine_port_membrane
+          membrane_role: active_identity_boundary
+  - id: membrane_hessian
+    type: ridge
+    owner_id: membrane_candidate
+    adjacent_ids: [inner_basin, outer_basin]
+    extensions:
+      grcl9v3:
+        term_kind: tensor_hessian_profile
+        term_id: cell_boundary_membrane_spark_hessian
+        region_id: membrane_candidate
+        source_role: composing_cell_control
+        profile:
+          hessian_backend: row_basis_diagonal
+          row_basis_profile:
+            hessian_mode: anisotropic
+            basis: row_basis_diagonal
+          signed_history_required: false
+          anisotropy_axis: row_2
+          tensor_profile:
+            tensor_mode: anisotropic
+            row_mismatch: high
+  - id: membrane_column
+    type: valley
+    from_id: inner_basin
+    to_id: membrane_candidate
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: cell_boundary_membrane_spark_column
+        region_id: membrane_candidate
+        source_role: composing_cell_control
+        profile:
+          target_column: 2
+          cancellation_mode: near_cancellation
+          column_profile:
+            column_2: near_cancellation
+  - id: inner_basin
+    type: basin
+    coherence_prior: 0.8
+  - id: outer_basin
+    type: basin
+    coherence_prior: 0.3
+  - id: membrane_support
+    type: plateau
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: cell_boundary_membrane_spark
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0019-cell-boundary-membrane-spark
+    expected_selector_ids: [hybrid_spark_events, hybrid_tensor_available]
+    notes:
+      composing_cells_anchor: boundary membrane around a critical identity region
+      boundary: source preconditions only
+      composed_source_ancestry:
+        - hybrid_spark_gate_positive_control
+        - quiescent_hybrid_control_no_event_control

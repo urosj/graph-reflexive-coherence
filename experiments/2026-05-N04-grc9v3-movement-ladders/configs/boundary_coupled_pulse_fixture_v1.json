@@ -1,0 +1,133 @@
+{
+  "schema": "boundary_coupled_pulse_fixture_v1",
+  "experiment": "2026-05-N04-grc9v3-movement-ladders",
+  "purpose": "Map the native N03/E3 four-pole packet pulse onto an N04 movement substrate through state-mediated boundary coherence coupling.",
+  "claim_ceiling": "boundary_coupled_pulse_fixture_validation",
+  "movement_claim_allowed": false,
+  "loop_driven_movement_claim_allowed": false,
+  "source_pulse": {
+    "source_experiment": "N03",
+    "source_result": "E3_native_LGRC9V3_D2_3_equivalent_packet_loop",
+    "source_fixture": "n03_e3_native_four_pole_packet_loop",
+    "route_poles": ["S1", "K2", "S2", "K1"],
+    "pulse_budget_surface": "node_plus_packet",
+    "pulse_telemetry_source": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_animation/e3-native-lgrc9v3-packet-loop-animation/telemetry/graph_checkpoints"
+  },
+  "route_to_movement_substrate_mapping": {
+    "mapping_id": "e3_four_pole_to_s0_chain_boundary_v1",
+    "mapping_type": "region_based",
+    "mapping_defined": true,
+    "node_id_preserving": false,
+    "source_fixture": "E3_four_pole_route",
+    "target_fixture_id": "S0_chain_v1",
+    "target_fixture_type": "chain",
+    "target_coordinate_frame": "linear",
+    "target_direction": "positive_x",
+    "positive_direction": "increasing_chain_index",
+    "target_direction_vector": [1.0],
+    "direction_source": "mapped_e3_route",
+    "direction_frozen_before_run": true,
+    "route_pole_to_target_region": {
+      "S1": {
+        "role": "source_core_pole",
+        "target_nodes": [10],
+        "interpretation": "mapped to the center of the tracked basin"
+      },
+      "K2": {
+        "role": "front_inner_pole",
+        "target_nodes": [11, 12],
+        "interpretation": "mapped to the front interior shoulder"
+      },
+      "S2": {
+        "role": "front_boundary_pole",
+        "target_nodes": [13, 14],
+        "interpretation": "mapped to the front boundary mask"
+      },
+      "K1": {
+        "role": "rear_boundary_pole",
+        "target_nodes": [6, 7],
+        "interpretation": "mapped to the rear boundary mask"
+      }
+    },
+    "front_boundary_mask": [13, 14],
+    "rear_boundary_mask": [6, 7],
+    "center_reservoir_mask": [9, 10, 11],
+    "support_reference_mask": [7, 8, 9, 10, 11, 12, 13],
+    "mapping_notes": [
+      "This is the first explicit N04 mapping from the four-pole E3 route to a movement substrate.",
+      "The mapping is region-based, not node-id preserving, because E3 has 4 nodes while S0_chain_v1 has 21 nodes.",
+      "Boundary coupling changes node coherence only; it does not write support masks, centroids, or displacement values."
+    ]
+  },
+  "deferred_mappings": {
+    "S1_ring_v1": {
+      "status": "deferred",
+      "reason": "Ring mapping requires a separate wrap/unwrap and front/rear convention for pulse-boundary coupling."
+    }
+  },
+  "coupling_policy": {
+    "policy_id": "state_mediated_boundary_coherence_coupling_v1",
+    "boundary_coupling_enabled": true,
+    "state_mediated": true,
+    "direct_boundary_write": false,
+    "direct_support_mask_write": false,
+    "direct_centroid_write": false,
+    "direct_displacement_write": false,
+    "coupling_signal": "max(0, (C_S1 - C_S1_initial) - (C_K1 - C_K1_initial))",
+    "coupling_signal_id": "coupling_signal_v1_S1_minus_K1_surplus",
+    "coupling_signal_scope": {
+      "uses_mapped_poles": ["S1", "K1"],
+      "unused_mapped_poles": ["K2", "S2"],
+      "note": "K2 and S2 are mapped for route completeness and future multi-pole coupling signals, but coupling_signal_v1 uses only S1 and K1."
+    },
+    "coupling_strength": 0.5,
+    "coupling_strength_rationale": "Chosen for the first fixture-validation run to produce a measurable but bounded boundary mass transfer from the E3 pulse signal without opening movement classification in Iteration 8.",
+    "coupling_strength_sensitivity_status": "deferred_to_iteration_9_or_later",
+    "application": {
+      "symmetric_null": "add equal coherence to front and rear boundary masks and remove the same total from the center reservoir",
+      "asymmetric_forward": "add coherence to front boundary mask and remove the same total from rear boundary mask",
+      "asymmetric_reversed": "add coherence to rear boundary mask and remove the same total from front boundary mask"
+    },
+    "projection_after_coupling": "conserved_nonnegative_guard_only",
+    "nonnegative_failure_policy": "fail_report"
+  },
+  "lanes": {
+    "P0_pulse_disabled_control": {
+      "pulse_active": false,
+      "boundary_coupling_mode": "disabled",
+      "expected": "no boundary coupling and no movement claim"
+    },
+    "P1_symmetric_boundary_coupling_null": {
+      "pulse_active": true,
+      "boundary_coupling_mode": "symmetric_null",
+      "expected": "pulse-mediated boundary activity with no net directed movement claim"
+    },
+    "P2_asymmetric_boundary_coupling_forward": {
+      "pulse_active": true,
+      "boundary_coupling_mode": "asymmetric_forward",
+      "expected": "measurable front gain and rear release, movement claim still blocked until M4/M5 classifier"
+    },
+    "P2_asymmetric_boundary_coupling_reversed": {
+      "pulse_active": true,
+      "boundary_coupling_mode": "asymmetric_reversed",
+      "reversal_scope": "coupling_direction_only",
+      "uses_reversed_e3_telemetry": false,
+      "expected": "reversed boundary coupling direction using the same positive E3 pulse telemetry; true reversed-E3-pulse control is deferred"
+    }
+  },
+  "deferred_controls": {
+    "true_reversed_e3_pulse_lane": {
+      "status": "deferred_to_iteration_9",
+      "reason": "Iteration 8 validates the boundary-coupling fixture only. A true pulse-direction reversal should use counter-clockwise or pole-reversed E3 telemetry and be classified in the M4/M5 gate."
+    }
+  },
+  "blocked_claims": [
+    "movement_response",
+    "boundary_coupled_movement",
+    "identity_preserving_displacement",
+    "loop_driven_movement",
+    "locomotion_like_basin_dynamics",
+    "adaptive_topology_movement",
+    "movement_inherited_from_n03"
+  ]
+}

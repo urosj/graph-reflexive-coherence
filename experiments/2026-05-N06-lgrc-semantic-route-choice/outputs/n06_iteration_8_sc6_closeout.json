@@ -1,0 +1,1304 @@
+{
+  "acceptance": {
+    "agency_claim_allowed": false,
+    "artifact_only_replay_passed": true,
+    "biological_claim_allowed": false,
+    "budget_conservation_passed": true,
+    "controls_passed": true,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "n07_handoff_ready": true,
+    "producer_boundary_passed": true,
+    "semantic_choice_claim_allowed": false,
+    "status": "passed",
+    "strongest_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+    "strongest_supported_sc_level": "SC6",
+    "unrestricted_movement_claim_allowed": false
+  },
+  "artifact_digests": {
+    "acceptance_digest": "e3207fdfea331cb8f6247969cc862832e4d0d5e189b4606d732efd4f621c18a8",
+    "artifact_only_closeout_digest": "2ddaa59790379e61a6ad4e8c1b9dfa8f6ec1497e99d579cfcafb5b0ea6ff1e49",
+    "claim_flags_digest": "9107d7c83c7cad6cf67508a0727b2ae7e6a1403c2ae889ecf04f35b885cb7fbd",
+    "closeout_digest": "4c1be1ca6e0f2789ca0ed31d1b612b502e41b1585faca7f941d58eda39f3f456",
+    "control_matrix_digest": "6be8ce15fe33797dbd739ab1194e2daf7a95ec095c5a09789365a7311778fe60",
+    "control_summary_digest": "7df542decb40be021f340a0cbbd57039d1fdb4e56e0314c4803e90d5334f2609",
+    "n07_handoff_digest": "379622e310655b53f2211437a145114a035a1963e41f7ee51d150405d1fe3514",
+    "positive_artifacts_digest": "bd5a9bfa5c34aa915d67404afc9848fa8dabc1871ec08cdff7b56231ec681f64",
+    "source_artifacts_digest": "af85abce7cc36b2a967f8f2beb75cac955edb6b69f41705a39e94959539889d0"
+  },
+  "artifact_only_closeout": {
+    "artifact_only": true,
+    "candidate_set_identity": {
+      "candidate_set_digests_distinct": true,
+      "candidate_set_id_behavior": "candidate_set_id is stable across equivalent source/policy shape; candidate_set_digest is the context-specific replay key",
+      "candidate_set_id_is_context_unique": true,
+      "candidate_set_ids": [
+        "native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39",
+        "native-route-candidate-set:4cdd988a298d9525dcae631890e292ad",
+        "native-route-candidate-set:64fa9d7e547e9e17c2be84140b7244e8",
+        "native-route-candidate-set:d22fa40e0d2d09309fd5128c700f5095"
+      ]
+    },
+    "checks": {
+      "all_cycles_replayed": true,
+      "artifact_only": true,
+      "candidate_set_digests_distinct_across_cycles": true,
+      "candidate_set_id_behavior_documented": true,
+      "candidate_sets_replayed": true,
+      "candidate_source_surface_provenance_replayed": true,
+      "context_field_consistency_replayed": true,
+      "context_relations_replayed": true,
+      "expected_pre_topology_validator_incomplete_only": true,
+      "native_arbitration_records_replayed": true,
+      "record_claim_flags_remain_false": true,
+      "runtime_state_not_used": true,
+      "scheduled_processed_packet_evidence_scoped": true,
+      "score_component_invariants_replayed": true,
+      "selected_and_rejected_digests_replayed": true
+    },
+    "per_cycle": [
+      {
+        "arbitration_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "arbitration_score": 1.0,
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "candidate_score_invariants": {
+          "route_a": true,
+          "route_b": true
+        },
+        "candidate_set_digest": "cc28d581e856d3782a840c63157f7b1d4d565387e8c00ed28b8365cba7b5f4a9",
+        "candidate_set_id": "native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "checks": {
+          "arbitration_candidate_context_fields_match": true,
+          "arbitration_score_equals_selected_candidate_score": true,
+          "candidate_route_records_replayed": true,
+          "candidate_route_scores_equal_component_sums": true,
+          "candidate_set_record_replayed": true,
+          "candidate_source_surface_digest_matches_lane": true,
+          "candidate_source_surface_digest_resolves_to_committed_source": true,
+          "candidate_source_surface_digest_single": true,
+          "candidate_source_surface_digests_non_null": true,
+          "context_surface_and_relation_replayed": true,
+          "native_route_arbitration_record_replayed": true,
+          "native_selection_replayable_under_selection_only_scope": true,
+          "native_validator_expected_pre_topology_incomplete": true,
+          "processed_packet_evidence_not_applicable": true,
+          "record_claim_flags_false": true,
+          "rejected_candidate_digests_match_candidate_set": true,
+          "runtime_state_not_used": true,
+          "scheduled_packet_evidence_not_applicable": true,
+          "selected_candidate_digest_in_candidate_set": true
+        },
+        "context_relation_replayable": true,
+        "context_state_id": "context_a",
+        "cycle_id": "cycle_0",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:0"
+        ],
+        "native_validator_valid": false,
+        "record_claim_flags_false": {
+          "candidate_records": true,
+          "candidate_set_record": true,
+          "route_arbitration_record": true
+        },
+        "rejected_candidate_route_digests": [
+          "56eba296ce0ae91bb1e0b9c44557be6b52dd2932cd0bd6453156608114f07b0a"
+        ],
+        "replay_ok": true,
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+        "selected_candidate_route_score": 1.0,
+        "selected_route": "route_a",
+        "selection_contract_valid_under_pre_topology_scope": true,
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        },
+        "unexpected_failure_reasons": []
+      },
+      {
+        "arbitration_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "arbitration_score": 1.0,
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "candidate_score_invariants": {
+          "route_a": true,
+          "route_b": true
+        },
+        "candidate_set_digest": "5c8918b0cdf07c3c5b303bf2c71d4c5c184370f5b875dc01af6b3aaff2506648",
+        "candidate_set_id": "native-route-candidate-set:d22fa40e0d2d09309fd5128c700f5095",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "checks": {
+          "arbitration_candidate_context_fields_match": true,
+          "arbitration_score_equals_selected_candidate_score": true,
+          "candidate_route_records_replayed": true,
+          "candidate_route_scores_equal_component_sums": true,
+          "candidate_set_record_replayed": true,
+          "candidate_source_surface_digest_matches_lane": true,
+          "candidate_source_surface_digest_resolves_to_committed_source": true,
+          "candidate_source_surface_digest_single": true,
+          "candidate_source_surface_digests_non_null": true,
+          "context_surface_and_relation_replayed": true,
+          "native_route_arbitration_record_replayed": true,
+          "native_selection_replayable_under_selection_only_scope": true,
+          "native_validator_expected_pre_topology_incomplete": true,
+          "processed_packet_evidence_not_applicable": true,
+          "record_claim_flags_false": true,
+          "rejected_candidate_digests_match_candidate_set": true,
+          "runtime_state_not_used": true,
+          "scheduled_packet_evidence_not_applicable": true,
+          "selected_candidate_digest_in_candidate_set": true
+        },
+        "context_relation_replayable": true,
+        "context_state_id": "context_b",
+        "cycle_id": "cycle_1",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410:0"
+        ],
+        "native_validator_valid": false,
+        "record_claim_flags_false": {
+          "candidate_records": true,
+          "candidate_set_record": true,
+          "route_arbitration_record": true
+        },
+        "rejected_candidate_route_digests": [
+          "6c56a159bc33d047f6017d8baec972244bff49ca3df60954c1bbf0a41b6cf707"
+        ],
+        "replay_ok": true,
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "21ff5096388e202c1c708be518b6966013049873a36fb34e9eedf245e9d79c63",
+        "selected_candidate_route_score": 1.0,
+        "selected_route": "route_b",
+        "selection_contract_valid_under_pre_topology_scope": true,
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        },
+        "unexpected_failure_reasons": []
+      },
+      {
+        "arbitration_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "arbitration_score": 1.0,
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "4"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_a"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 1.0,
+          "route_b": 0.4
+        },
+        "candidate_score_invariants": {
+          "route_a": true,
+          "route_b": true
+        },
+        "candidate_set_digest": "30217e1dcc8c533d3175131d2b2be0a265829a41714fe338a1330982b6c8e510",
+        "candidate_set_id": "native-route-candidate-set:64fa9d7e547e9e17c2be84140b7244e8",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "checks": {
+          "arbitration_candidate_context_fields_match": true,
+          "arbitration_score_equals_selected_candidate_score": true,
+          "candidate_route_records_replayed": true,
+          "candidate_route_scores_equal_component_sums": true,
+          "candidate_set_record_replayed": true,
+          "candidate_source_surface_digest_matches_lane": true,
+          "candidate_source_surface_digest_resolves_to_committed_source": true,
+          "candidate_source_surface_digest_single": true,
+          "candidate_source_surface_digests_non_null": true,
+          "context_surface_and_relation_replayed": true,
+          "native_route_arbitration_record_replayed": true,
+          "native_selection_replayable_under_selection_only_scope": true,
+          "native_validator_expected_pre_topology_incomplete": true,
+          "processed_packet_evidence_not_applicable": true,
+          "record_claim_flags_false": true,
+          "rejected_candidate_digests_match_candidate_set": true,
+          "runtime_state_not_used": true,
+          "scheduled_packet_evidence_not_applicable": true,
+          "selected_candidate_digest_in_candidate_set": true
+        },
+        "context_relation_replayable": true,
+        "context_state_id": "context_a",
+        "cycle_id": "cycle_2",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:ef3e9c9a4d37bb19f8b312c71b9989b5:0"
+        ],
+        "native_validator_valid": false,
+        "record_claim_flags_false": {
+          "candidate_records": true,
+          "candidate_set_record": true,
+          "route_arbitration_record": true
+        },
+        "rejected_candidate_route_digests": [
+          "a7e307a6e2a456fa2765169f936361f8591e9c382a79d7acffc18c89779c3f7b"
+        ],
+        "replay_ok": true,
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "56df5ea777c43a139b3d26d314b41affc82cedafd8dc54e7f1af615cb43d52a1",
+        "selected_candidate_route_score": 1.0,
+        "selected_route": "route_a",
+        "selection_contract_valid_under_pre_topology_scope": true,
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        },
+        "unexpected_failure_reasons": []
+      },
+      {
+        "arbitration_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "arbitration_score": 1.0,
+        "candidate_context_values": {
+          "active_context_node_id": [
+            "5"
+          ],
+          "candidate_route_id": [
+            "route_a",
+            "route_b"
+          ],
+          "compatible_route_id": [
+            "route_b"
+          ],
+          "context_surface_digest": [
+            "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ]
+        },
+        "candidate_score_component_sums": {
+          "route_a": 0.4,
+          "route_b": 1.0
+        },
+        "candidate_score_invariants": {
+          "route_a": true,
+          "route_b": true
+        },
+        "candidate_set_digest": "cc8603974788f12118e143fb8f6c96ae3ef6eb1c021e3a6c6c14aba8469db765",
+        "candidate_set_id": "native-route-candidate-set:4cdd988a298d9525dcae631890e292ad",
+        "candidate_source_surface_digests": [
+          "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+        ],
+        "checks": {
+          "arbitration_candidate_context_fields_match": true,
+          "arbitration_score_equals_selected_candidate_score": true,
+          "candidate_route_records_replayed": true,
+          "candidate_route_scores_equal_component_sums": true,
+          "candidate_set_record_replayed": true,
+          "candidate_source_surface_digest_matches_lane": true,
+          "candidate_source_surface_digest_resolves_to_committed_source": true,
+          "candidate_source_surface_digest_single": true,
+          "candidate_source_surface_digests_non_null": true,
+          "context_surface_and_relation_replayed": true,
+          "native_route_arbitration_record_replayed": true,
+          "native_selection_replayable_under_selection_only_scope": true,
+          "native_validator_expected_pre_topology_incomplete": true,
+          "processed_packet_evidence_not_applicable": true,
+          "record_claim_flags_false": true,
+          "rejected_candidate_digests_match_candidate_set": true,
+          "runtime_state_not_used": true,
+          "scheduled_packet_evidence_not_applicable": true,
+          "selected_candidate_digest_in_candidate_set": true
+        },
+        "context_relation_replayable": true,
+        "context_state_id": "context_b",
+        "cycle_id": "cycle_3",
+        "expected_incomplete_reasons": [
+          "selected_topology_event_count_mismatch:native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea:0"
+        ],
+        "native_validator_valid": false,
+        "record_claim_flags_false": {
+          "candidate_records": true,
+          "candidate_set_record": true,
+          "route_arbitration_record": true
+        },
+        "rejected_candidate_route_digests": [
+          "7bd9d0e3c92cc61ef267466ee39de3f53d5dfe4dacbd7c33b9d4b91583afb2b8"
+        ],
+        "replay_ok": true,
+        "scheduled_processed_packet_evidence": {
+          "applicability": "not_applicable_pre_topology_selection_only_scope",
+          "processed_packet_count": 0,
+          "scheduled_packet_count": 0
+        },
+        "selected_candidate_route_digest": "1732ca519398908214633ffb085a0c5d25b7c772891a025f5e7c1df0a5da7304",
+        "selected_candidate_route_score": 1.0,
+        "selected_route": "route_b",
+        "selection_contract_valid_under_pre_topology_scope": true,
+        "source_surface_provenance": {
+          "candidate_sources_committed": true,
+          "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+          "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+          "source_iteration": 3,
+          "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+          "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+          "source_surface_kind": "route_local_pulse_contact",
+          "unknown_source_digest_control_passed": true
+        },
+        "unexpected_failure_reasons": []
+      }
+    ],
+    "runtime_state_used": false,
+    "scope": "selection_only_pre_topology_commit",
+    "source_surface_provenance": {
+      "candidate_sources_committed": true,
+      "primary_blocker_for_unknown_source": "native_route_candidate_committed_source_surface_required",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+      "source_iteration": 3,
+      "source_surface_digest": "8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9",
+      "source_surface_id": "surface:lgrc9v3-packet-event-e4640f8f786889f0:route_local_pulse_contact",
+      "source_surface_kind": "route_local_pulse_contact",
+      "unknown_source_digest_control_passed": true
+    },
+    "valid_under_selection_only_scope": true,
+    "validator_scope_note": "Native validator valid=false is expected because N06 SC6 is pre-topology and selection-only. Replay passes when the selection contract is valid and the only incomplete native-validator reason is missing selected-topology-event evidence."
+  },
+  "checks": {
+    "artifact_only_closeout_passed": true,
+    "budget_conservation_passed": true,
+    "claim_flags_remain_false": true,
+    "controls_passed": true,
+    "n07_handoff_ready": true,
+    "producer_boundary_passed": true,
+    "source_artifacts_present": true,
+    "source_iterations_passed": true,
+    "source_reports_present": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "closeout": {
+    "native_policy_blockers": [],
+    "native_policy_limitations": [
+      {
+        "blocks_sc6_selection_only_closeout": false,
+        "effect": "stale-context, hidden-schedule, and context-order controls remain N06 artifact-level semantic replay checks",
+        "limitation": "no_dedicated_native_semantic_context_validator"
+      },
+      {
+        "blocks_sc6_selection_only_closeout": false,
+        "effect": "selected topology events and scheduled/processed packet evidence are intentionally not part of N06 closeout",
+        "limitation": "selection_only_pre_topology_scope"
+      },
+      {
+        "blocks_sc6_selection_only_closeout": false,
+        "effect": "SC5 repeatability does not test single-runtime persistence or cross-window accumulated budget drift",
+        "limitation": "independent_runtime_windows"
+      }
+    ],
+    "sc_level_is_evidence_classification": true,
+    "scheduled_processed_packet_evidence_applicability": "not_applicable_pre_topology_selection_only_scope",
+    "selection_causality_basis": "serialized_context_relation_replay_and_native_selection_replay",
+    "semantic_choice_claim_allowed": false,
+    "source_sc5_claim_ceiling": "repeated_context_conditioned_route_selection_candidate",
+    "source_sc5_level": "SC5",
+    "strongest_claim_ceiling": "artifact_only_semantic_route_choice_candidate",
+    "strongest_supported_sc_level": "SC6"
+  },
+  "command": ".venv/bin/python experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/run_n06_iteration_8_sc6_closeout.py",
+  "control_matrix": {
+    "budget_mismatch": {
+      "control_id": "budget_mismatch",
+      "detail": {
+        "budget_tolerance": 1e-09,
+        "mutated_budget_prediction": {
+          "node_plus_packet_budget_after": 5.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": -1.0
+        },
+        "route_arbitration_record": {
+          "arbitration_reason_code": "native_route_arbitration_budget_invalid",
+          "arbitration_rule": "highest_score",
+          "arbitration_runtime_visible_inputs": [
+            "candidate_route_score",
+            "candidate_order_key",
+            "candidate_set_order_key",
+            "active_context_node_id:4",
+            "compatible_route_id:route_a",
+            "context_surface_digest:8fb2e0da8e055fc382aa74fdfeccdbec50c53afcfa161cfb3a7ba9db0b96f5d9"
+          ],
+          "arbitration_score": 0.0,
+          "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+          "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+          "candidate_set_digest": "c8fcc81a44a1da681df7f6b283e30959fe4d44ca55d58684f5b6d020c4fdeb67",
+          "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "idempotency_key": "7b8fff308d50690c5ad2b1b5a1dee187d7a388c6f850ebfaf58107a4aa41329b",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_digest": "b50646a07b1b6cd0d764dc8da49968cfd8ad0d81409085f5dbd16636b4003628",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "native_route_arbitration_record_id": "native-route-arbitration:dba40dbdc5c8af5b496a8bc8cc1e200d",
+          "rejected_candidate_route_digests": [
+            "0d5d653624559d5f8a4c34f74de42215109e9730120f5705e53d720848ecd95a",
+            "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf"
+          ],
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+          "selected_candidate_route_digest": null,
+          "selected_candidate_route_id": null,
+          "selected_topology_event_digest": null,
+          "selected_topology_event_id": null
+        }
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_budget_invalid",
+      "scope": "native_arbitration_control",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_5_sc3_context_conditioned_selection.json",
+      "source_iteration": 5
+    },
+    "claim_promotion": {
+      "control_id": "claim_promotion",
+      "detail": {
+        "per_cycle": [
+          {
+            "cycle_id": "cycle_0",
+            "detail": [
+              "native_route_arbitration_claim_promotion_blocked:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8",
+              "corrupted_native_route_arbitration_record:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:native route arbitration cannot promote claim flag: semantic_choice_claim_allowed"
+            ],
+            "passed": true,
+            "primary_blocker": "native_route_arbitration_claim_promotion_blocked"
+          },
+          {
+            "cycle_id": "cycle_1",
+            "detail": [
+              "native_route_arbitration_claim_promotion_blocked:native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410",
+              "corrupted_native_route_arbitration_record:native-route-arbitration:cedb62d6f7288c3b80e66cae4d985410:native route arbitration cannot promote claim flag: semantic_choice_claim_allowed"
+            ],
+            "passed": true,
+            "primary_blocker": "native_route_arbitration_claim_promotion_blocked"
+          },
+          {
+            "cycle_id": "cycle_2",
+            "detail": [
+              "native_route_arbitration_claim_promotion_blocked:native-route-arbitration:ef3e9c9a4d37bb19f8b312c71b9989b5",
+              "corrupted_native_route_arbitration_record:native-route-arbitration:ef3e9c9a4d37bb19f8b312c71b9989b5:native route arbitration cannot promote claim flag: semantic_choice_claim_allowed"
+            ],
+            "passed": true,
+            "primary_blocker": "native_route_arbitration_claim_promotion_blocked"
+          },
+          {
+            "cycle_id": "cycle_3",
+            "detail": [
+              "native_route_arbitration_claim_promotion_blocked:native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea",
+              "corrupted_native_route_arbitration_record:native-route-arbitration:fcbf3151d9f779a74ca5d1a43cffaeea:native route arbitration cannot promote claim flag: semantic_choice_claim_allowed"
+            ],
+            "passed": true,
+            "primary_blocker": "native_route_arbitration_claim_promotion_blocked"
+          }
+        ]
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_claim_promotion_blocked",
+      "scope": "artifact_replay_control_all_cycles",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json",
+      "source_iteration": 7
+    },
+    "duplicate_arbitration": {
+      "control_id": "duplicate_arbitration",
+      "detail": {
+        "count_after_first": 1,
+        "count_after_second": 1,
+        "idempotency_key_reconstructable": true,
+        "reconstructed_idempotency_key": "e92bb157e29275dcaa11cd1c3bc70009a677d2b4864233f6f354e7531edb71fc",
+        "recorded_idempotency_key": "e92bb157e29275dcaa11cd1c3bc70009a677d2b4864233f6f354e7531edb71fc",
+        "same_arbitration_digest": true,
+        "same_idempotency_key": true,
+        "same_route_arbitration_artifact": true
+      },
+      "passed": true,
+      "primary_blocker": "duplicate_native_route_arbitration_suppressed",
+      "scope": "native_runtime_duplicate_suppression",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json",
+      "source_iteration": 7
+    },
+    "experiment_side_if_else": {
+      "control_id": "experiment_side_if_else",
+      "detail": {
+        "injected_field": "experiment_if_else",
+        "native_failure_reasons": [
+          "native_route_arbitration_hidden_input_rejected:route_a:['experiment_if_else']",
+          "corrupted_native_route_candidate_record:route_a:native route-arbitration inputs contain hidden inputs: ['experiment_if_else']",
+          "candidate_set_missing_candidate:native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39:7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+          "native_route_arbitration_missing_selected_candidate:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8"
+        ],
+        "native_hidden_input_blocker_present": true,
+        "target": "candidate"
+      },
+      "passed": true,
+      "primary_blocker": "n06_experiment_side_selection_rejected",
+      "scope": "sc6_artifact_level_hidden_input_control"
+    },
+    "hidden_context": {
+      "control_id": "hidden_context",
+      "detail": {
+        "artifact_replay_gate": {
+          "failure_reasons": [
+            "native_route_arbitration_hidden_input_rejected:route_a:['hidden_fixture_state']",
+            "corrupted_native_route_candidate_record:route_a:native route-arbitration inputs contain hidden inputs: ['hidden_fixture_state']",
+            "candidate_set_missing_candidate:native-route-candidate-set:a729de2d50f5c669f262616f7281e106:6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde",
+            "native_route_arbitration_missing_selected_candidate:native-route-arbitration:60c268a4a965f371a105666dd4e5da56"
+          ],
+          "passed": true
+        },
+        "candidate_emission_gate": {
+          "detail": "native_route_arbitration_hidden_input_rejected: ['hidden_fixture_state']",
+          "passed": true
+        }
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected",
+      "scope": "native_candidate_emission_and_artifact_replay",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_5_sc3_context_conditioned_selection.json",
+      "source_iteration": 5
+    },
+    "hidden_preference": {
+      "control_id": "hidden_preference",
+      "detail": {
+        "injected_field": "hidden_fixture_state",
+        "native_failure_reasons": [
+          "native_route_arbitration_hidden_input_rejected:route_a:['hidden_fixture_state']",
+          "corrupted_native_route_candidate_record:route_a:candidate_score_components contain hidden inputs: ['hidden_fixture_state']",
+          "candidate_set_missing_candidate:native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39:7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+          "native_route_arbitration_missing_selected_candidate:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8"
+        ],
+        "native_hidden_input_blocker_present": true,
+        "target": "candidate_score"
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected:hidden_route_preference",
+      "scope": "sc6_artifact_level_hidden_input_control"
+    },
+    "no_candidates": {
+      "control_id": "no_candidates",
+      "detail": {
+        "arbitration_reason_code": "native_route_arbitration_no_candidates",
+        "arbitration_rule": "highest_score",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key"
+        ],
+        "arbitration_score": 0.0,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "a0e4d6443b3f43e9de70f79dca7bf7b59b1e54347e7e14672c8ae81f70cd241a",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106:empty",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "1a1465be17decdd2b516c78e00095678e0562f8bb2de7eccaac3e349a6641478",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_digest": "c13bfe52ddd9fe69ae09439fc1f5ede8cc74b6200af90388ff44065b65abc913",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "native-route-arbitration:fb153efcada475b623fb26db095a9c9a",
+        "rejected_candidate_route_digests": [],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": null,
+        "selected_candidate_route_id": null,
+        "selected_topology_event_digest": null,
+        "selected_topology_event_id": null
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_no_candidates",
+      "scope": "native_runtime_with_experiment_injected_empty_candidate_set",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json",
+      "source_iteration": 4
+    },
+    "order_inversion": {
+      "control_id": "order_invalid",
+      "detail": {
+        "arbitration_reason_code": "native_route_arbitration_order_invalid",
+        "arbitration_rule": "highest_score",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key"
+        ],
+        "arbitration_score": 0.0,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "92028056090ceace704fe508bed9d83ea53851241f52e202881a5a873aaf5402",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106:order-invalid",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "a1655d78385a76e2ecabd8c0586a81f2eebe1397c6708826e4cca227b7f916c1",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_digest": "91517f2efaef94e4f22f7bfc85bd85b7a257b3287a1d63f4a10e65722706d9c1",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "native-route-arbitration:46eaf5c64243f3fc6a8ad44c15d80f53",
+        "rejected_candidate_route_digests": [
+          "a2242288597254149c8a2e49161cd5f94843d3e01ebdaac4d1237995993e7edf",
+          "6d04abb83cf639d1aca00ca27caaf8c00d0c95925075131966d588a6dc0c8bde"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": null,
+        "selected_candidate_route_id": null,
+        "selected_topology_event_digest": null,
+        "selected_topology_event_id": null
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_order_invalid",
+      "scope": "native_runtime_with_experiment_injected_order_invalid_candidate_set",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json",
+      "source_iteration": 4
+    },
+    "policy_disabled": {
+      "control_id": "policy_disabled",
+      "detail": {
+        "emitted": false,
+        "reason_code": "native_route_arbitration_policy_disabled",
+        "route_arbitration_record": null
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_policy_disabled",
+      "scope": "native_runtime",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json",
+      "source_iteration": 4
+    },
+    "posthoc_threshold_change": {
+      "control_id": "posthoc_threshold_change",
+      "detail": {
+        "injected_field": "posthoc_threshold",
+        "native_failure_reasons": [
+          "native_route_arbitration_hidden_input_rejected:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:['posthoc_threshold']",
+          "corrupted_native_route_arbitration_record:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:native route-arbitration inputs contain hidden inputs: ['posthoc_threshold']"
+        ],
+        "native_hidden_input_blocker_present": true,
+        "target": "arbitration"
+      },
+      "passed": true,
+      "primary_blocker": "n06_posthoc_threshold_change_rejected",
+      "scope": "sc6_artifact_level_hidden_input_control"
+    },
+    "preselected_sink": {
+      "control_id": "preselected_sink",
+      "detail": {
+        "injected_field": "preselected_sink_id",
+        "native_failure_reasons": [
+          "native_route_arbitration_hidden_input_rejected:route_a:['preselected_sink_id']",
+          "corrupted_native_route_candidate_record:route_a:native route-arbitration inputs contain hidden inputs: ['preselected_sink_id']",
+          "candidate_set_missing_candidate:native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39:7e94c09f12ba57b1a057b462d3e3f8931a65e399511ad5fd8255fdc97d5cdcd8",
+          "native_route_arbitration_missing_selected_candidate:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8"
+        ],
+        "native_hidden_input_blocker_present": true,
+        "target": "candidate"
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected:preselected_sink",
+      "scope": "sc6_artifact_level_hidden_input_control"
+    },
+    "producer_mutation": {
+      "control_id": "producer_mutation",
+      "detail": {
+        "per_cycle": [
+          {
+            "cycle_id": "cycle_0",
+            "detail": {
+              "attempted_forbidden_writes": [
+                "active_node_coherence",
+                "packet_ledger",
+                "topology",
+                "route_arbitration_record",
+                "claim_flags"
+              ],
+              "packet_scheduled": false,
+              "producer_invoked": false,
+              "rejected_by_boundary": true
+            },
+            "passed": true,
+            "primary_blocker": "n06_producer_mutation_boundary_violation"
+          },
+          {
+            "cycle_id": "cycle_1",
+            "detail": {
+              "attempted_forbidden_writes": [
+                "active_node_coherence",
+                "packet_ledger",
+                "topology",
+                "route_arbitration_record",
+                "claim_flags"
+              ],
+              "packet_scheduled": false,
+              "producer_invoked": false,
+              "rejected_by_boundary": true
+            },
+            "passed": true,
+            "primary_blocker": "n06_producer_mutation_boundary_violation"
+          },
+          {
+            "cycle_id": "cycle_2",
+            "detail": {
+              "attempted_forbidden_writes": [
+                "active_node_coherence",
+                "packet_ledger",
+                "topology",
+                "route_arbitration_record",
+                "claim_flags"
+              ],
+              "packet_scheduled": false,
+              "producer_invoked": false,
+              "rejected_by_boundary": true
+            },
+            "passed": true,
+            "primary_blocker": "n06_producer_mutation_boundary_violation"
+          },
+          {
+            "cycle_id": "cycle_3",
+            "detail": {
+              "attempted_forbidden_writes": [
+                "active_node_coherence",
+                "packet_ledger",
+                "topology",
+                "route_arbitration_record",
+                "claim_flags"
+              ],
+              "packet_scheduled": false,
+              "producer_invoked": false,
+              "rejected_by_boundary": true
+            },
+            "passed": true,
+            "primary_blocker": "n06_producer_mutation_boundary_violation"
+          }
+        ]
+      },
+      "passed": true,
+      "primary_blocker": "n06_producer_mutation_boundary_violation",
+      "scope": "boundary_control_all_cycles",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json",
+      "source_iteration": 7
+    },
+    "report_side_selection": {
+      "control_id": "report_side_selection",
+      "detail": {
+        "injected_field": "report_code",
+        "native_failure_reasons": [
+          "native_route_arbitration_hidden_input_rejected:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:['report_code']",
+          "corrupted_native_route_arbitration_record:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:native route-arbitration inputs contain hidden inputs: ['report_code']"
+        ],
+        "native_hidden_input_blocker_present": true,
+        "target": "arbitration"
+      },
+      "passed": true,
+      "primary_blocker": "n06_report_side_selection_rejected",
+      "scope": "sc6_artifact_level_hidden_input_control"
+    },
+    "stale_candidate": {
+      "control_id": "stale_candidate",
+      "detail": {
+        "current_candidate_set_digest": "cc28d581e856d3782a840c63157f7b1d4d565387e8c00ed28b8365cba7b5f4a9",
+        "current_cycle_id": "cycle_0",
+        "native_failure_reasons": [
+          "corrupted_native_route_arbitration_record:native-route-arbitration:eace620e6fcb858637b0c4665dedf6a8:idempotency_key does not match canonical route-arbitration key"
+        ],
+        "native_validator_rejected_corrupted_record": true,
+        "stale_candidate_digest": "21ff5096388e202c1c708be518b6966013049873a36fb34e9eedf245e9d79c63",
+        "stale_digest_in_current_candidate_set": false
+      },
+      "passed": true,
+      "primary_blocker": "n06_stale_candidate_route_blocked",
+      "scope": "sc6_artifact_semantic_replay_control"
+    },
+    "stale_context": {
+      "control_id": "stale_context",
+      "detail": {
+        "failure_reasons": [
+          "n06_stale_context_surface_blocked",
+          "n06_context_evidence_not_replayable"
+        ],
+        "valid": false
+      },
+      "passed": true,
+      "primary_blocker": "n06_stale_context_surface_blocked",
+      "scope": "n06_sc5_validator",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json",
+      "source_iteration": 7
+    },
+    "unresolved_tie": {
+      "control_id": "unresolved_tie",
+      "detail": {
+        "arbitration_reason_code": "native_route_arbitration_unresolved_tie",
+        "arbitration_rule": "highest_score",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key"
+        ],
+        "arbitration_score": 0.5,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "236dcd73947fc037ba841e334c82e3b0a1cc34df928312172703768b3394f752",
+        "candidate_set_id": "native-route-candidate-set:a729de2d50f5c669f262616f7281e106",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "68f0e9ae2a2ce58ee8a4e655f1f5cba972c6f23242751008a0c0bcea1fedd558",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_digest": "e40b612cec8074ec3b5532f5913b0875fa385497c692977b4e38919250e3dbfc",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "native-route-arbitration:d21a2cac9d25f28866bdae168226cf53",
+        "rejected_candidate_route_digests": [
+          "eba7ae0cf15cd63644eae79bff0060f034f56bbd87356f5e811ffddf8e6cea70",
+          "6d7e7710858465e0ca9dd5a4f71e3a10f300ad09c0e49b41c857b2c4467ba54a"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": null,
+        "selected_candidate_route_id": null,
+        "selected_topology_event_digest": null,
+        "selected_topology_event_id": null
+      },
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_unresolved_tie",
+      "scope": "native_runtime",
+      "source_artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json",
+      "source_iteration": 4
+    }
+  },
+  "control_summary": {
+    "budget_mismatch": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_budget_invalid",
+      "scope": "native_arbitration_control",
+      "source_iteration": 5
+    },
+    "claim_promotion": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_claim_promotion_blocked",
+      "scope": "artifact_replay_control_all_cycles",
+      "source_iteration": 7
+    },
+    "duplicate_arbitration": {
+      "passed": true,
+      "primary_blocker": "duplicate_native_route_arbitration_suppressed",
+      "scope": "native_runtime_duplicate_suppression",
+      "source_iteration": 7
+    },
+    "experiment_side_if_else": {
+      "passed": true,
+      "primary_blocker": "n06_experiment_side_selection_rejected",
+      "scope": "sc6_artifact_level_hidden_input_control",
+      "source_iteration": 8
+    },
+    "hidden_context": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected",
+      "scope": "native_candidate_emission_and_artifact_replay",
+      "source_iteration": 5
+    },
+    "hidden_preference": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected:hidden_route_preference",
+      "scope": "sc6_artifact_level_hidden_input_control",
+      "source_iteration": 8
+    },
+    "no_candidates": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_no_candidates",
+      "scope": "native_runtime_with_experiment_injected_empty_candidate_set",
+      "source_iteration": 4
+    },
+    "order_inversion": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_order_invalid",
+      "scope": "native_runtime_with_experiment_injected_order_invalid_candidate_set",
+      "source_iteration": 4
+    },
+    "policy_disabled": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_policy_disabled",
+      "scope": "native_runtime",
+      "source_iteration": 4
+    },
+    "posthoc_threshold_change": {
+      "passed": true,
+      "primary_blocker": "n06_posthoc_threshold_change_rejected",
+      "scope": "sc6_artifact_level_hidden_input_control",
+      "source_iteration": 8
+    },
+    "preselected_sink": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_hidden_input_rejected:preselected_sink",
+      "scope": "sc6_artifact_level_hidden_input_control",
+      "source_iteration": 8
+    },
+    "producer_mutation": {
+      "passed": true,
+      "primary_blocker": "n06_producer_mutation_boundary_violation",
+      "scope": "boundary_control_all_cycles",
+      "source_iteration": 7
+    },
+    "report_side_selection": {
+      "passed": true,
+      "primary_blocker": "n06_report_side_selection_rejected",
+      "scope": "sc6_artifact_level_hidden_input_control",
+      "source_iteration": 8
+    },
+    "stale_candidate": {
+      "passed": true,
+      "primary_blocker": "n06_stale_candidate_route_blocked",
+      "scope": "sc6_artifact_semantic_replay_control",
+      "source_iteration": 8
+    },
+    "stale_context": {
+      "passed": true,
+      "primary_blocker": "n06_stale_context_surface_blocked",
+      "scope": "n06_sc5_validator",
+      "source_iteration": 7
+    },
+    "unresolved_tie": {
+      "passed": true,
+      "primary_blocker": "native_route_arbitration_unresolved_tie",
+      "scope": "native_runtime",
+      "source_iteration": 4
+    }
+  },
+  "experiment": "2026-05-N06-lgrc-semantic-route-choice",
+  "generated_at": "2026-06-06T00:04:46.183716+00:00",
+  "git": {
+    "diff_check_experiment": {
+      "command": "git diff --check -- experiments/2026-05-N06-lgrc-semantic-route-choice",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "status_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 8,
+  "iteration_name": "SC6 Artifact-Only Replay And Closeout",
+  "n07_handoff": {
+    "artifact_replay_passed": true,
+    "artifact_replay_required": true,
+    "blocked_inheritance": [
+      "memory_or_trail_claim",
+      "agency_claim",
+      "agentic_like_claim",
+      "rc_identity_collapse_claim",
+      "identity_acceptance_claim",
+      "goal_proxy_regulation_claim",
+      "locomotion_like_claim",
+      "biological_claim",
+      "ant_colony_claim",
+      "unrestricted_movement_claim"
+    ],
+    "budget_conservation_passed": true,
+    "budget_conservation_required": true,
+    "claim_boundary_clean": true,
+    "handoff_scope": "N07 may use N06's artifact-only route-choice candidate as route selection background, but must independently validate RC identity and attractor invariance.",
+    "minimum_sc_level_met": "SC6",
+    "recommendation": "proceed_to_N07_rc_identity_attractor_invariance",
+    "required_controls_passed": true
+  },
+  "platform": {
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "positive_artifacts_sha256": {
+    "iteration_1_baseline_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_1_baseline_inventory.json",
+      "sha256": "b4e49ad42ac687b3e63254af727d166b27fab0f074b12e4ed92b3f2db56ef317"
+    },
+    "iteration_1_baseline_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_1_baseline_inventory.md",
+      "sha256": "d2117e25186949a2b61dfe13f9df2aefc8e5821eef766841489a08bbd1d49bb0"
+    },
+    "iteration_2_manifest_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_2_fixture_manifest_validation.json",
+      "sha256": "2e54ea5f149e92e7ef9fd31965eeb1070f36d73e23d4f3c25a014e69594dd70e"
+    },
+    "iteration_2_manifest_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_2_fixture_manifest_validation.md",
+      "sha256": "8ca7271eb57d59f26c0901a0286e56f5e54ddadd1337a0f5d89d43a23541ac20"
+    },
+    "iteration_3_sc1_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+      "sha256": "8d7d04722415265bdd80a59999216127183713b603c5c9a81527a913601977fc"
+    },
+    "iteration_3_sc1_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_3_sc1_candidate_alternatives.md",
+      "sha256": "b1bf9cdfa54294104aff3a7c19c724ce7cc6b1d4593d5ff952ae7dcdcf1f4e11"
+    },
+    "iteration_4_sc2_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json",
+      "sha256": "495e26f942e530dd53a94b4d3924b206dedea9277844a330b6ff27632d174c6f"
+    },
+    "iteration_4_sc2_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_4_sc2_native_arbitration.md",
+      "sha256": "7da12572aba79d13141d1803d68281d86201e78b3d7f0338dcd5637db87862ba"
+    },
+    "iteration_5_sc3_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_5_sc3_context_conditioned_selection.json",
+      "sha256": "086c637b161e22e3a8c828591722033efcd49557e17ed5c02f32860aeb6e9b77"
+    },
+    "iteration_5_sc3_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_5_sc3_context_conditioned_selection.md",
+      "sha256": "4f2fd63e3a329c84d0a605be42b1b09e0738d51edd89b6a124192b50c6b1bfe9"
+    },
+    "iteration_6_sc4_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_6_sc4_context_swap_controls.json",
+      "sha256": "63ce78f277f60ea4dd32716af208682eba40807a02f973675a77d45496ceea0f"
+    },
+    "iteration_6_sc4_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_6_sc4_context_swap_controls.md",
+      "sha256": "a40c0fa3f592a1380e3b36854e48155306770c968c2441ef9c78c94c3cd7546c"
+    },
+    "iteration_7_sc5_output": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json",
+      "sha256": "2f1ac9446f9095ee3b1d3a0b173a1336801846646c4a3ba4cc7b2a9db8bcfc24"
+    },
+    "iteration_7_sc5_report": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_7_sc5_repeated_context_selection.md",
+      "sha256": "8a6510a310bd1caef14bdc4bc17b60ab0334b127f6823c229e23e89d38d9e255"
+    },
+    "iteration_8_script": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/scripts/run_n06_iteration_8_sc6_closeout.py",
+      "sha256": "73281ccf6c7c4fa41611b1bb860ae18597665f8cc070a66b7b7c904415b7eb82"
+    }
+  },
+  "schema": "semantic_route_choice_closeout_v1",
+  "source_artifacts": {
+    "iteration_1_baseline": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_1_baseline_inventory.json",
+      "sha256": "b4e49ad42ac687b3e63254af727d166b27fab0f074b12e4ed92b3f2db56ef317"
+    },
+    "iteration_2_manifest": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_2_fixture_manifest_validation.json",
+      "sha256": "2e54ea5f149e92e7ef9fd31965eeb1070f36d73e23d4f3c25a014e69594dd70e"
+    },
+    "iteration_3_sc1": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_3_sc1_candidate_alternatives.json",
+      "sha256": "8d7d04722415265bdd80a59999216127183713b603c5c9a81527a913601977fc"
+    },
+    "iteration_4_sc2": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_4_sc2_native_arbitration.json",
+      "sha256": "495e26f942e530dd53a94b4d3924b206dedea9277844a330b6ff27632d174c6f"
+    },
+    "iteration_5_sc3": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_5_sc3_context_conditioned_selection.json",
+      "sha256": "086c637b161e22e3a8c828591722033efcd49557e17ed5c02f32860aeb6e9b77"
+    },
+    "iteration_6_sc4": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_6_sc4_context_swap_controls.json",
+      "sha256": "63ce78f277f60ea4dd32716af208682eba40807a02f973675a77d45496ceea0f"
+    },
+    "iteration_7_sc5": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_7_sc5_repeated_context_selection.json",
+      "sha256": "2f1ac9446f9095ee3b1d3a0b173a1336801846646c4a3ba4cc7b2a9db8bcfc24"
+    }
+  },
+  "status": "passed"
+}

@@ -1,0 +1,1780 @@
+{
+  "acceptance_state": "achieved",
+  "artifact_digest": "3a614aa68353396240b24975b4207993a2af6448c5c362baf7afe77925c9e2b9",
+  "blocked_claims": [
+    "intention",
+    "agency",
+    "semantic_goal_understanding",
+    "goal_ownership",
+    "identity_acceptance",
+    "rc_identity_collapse",
+    "aco_like_behavior",
+    "locomotion_like_behavior",
+    "biological_behavior",
+    "unrestricted_movement"
+  ],
+  "budget": {
+    "final_event_queue_count": 0,
+    "final_in_flight_packet_total": 0.0,
+    "final_node_coherence_total": 1.5,
+    "node_plus_packet_budget_after": 1.5,
+    "node_plus_packet_budget_before": 1.5,
+    "node_plus_packet_budget_error": 0.0
+  },
+  "claim_ceiling": "single_cycle_proxy_correction_candidate",
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_6_gpr4_single_cycle_correction.py",
+  "controls": {
+    "budget_discontinuity": {
+      "control_passed": true,
+      "primary_blocker": "node_plus_packet_budget_discontinuity",
+      "reason": "corrupted node-plus-packet budget cannot satisfy GPR4"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "single-cycle correction cannot emit agency or semantic-goal claims"
+    },
+    "direct_rewrite": {
+      "control_passed": true,
+      "primary_blocker": "direct_rewrite_blocked",
+      "reason": "proxy correction must be produced by scheduled packet work and step()"
+    },
+    "no_response_to_error": {
+      "control_passed": true,
+      "primary_blocker": "no_response_to_error",
+      "reason": "missing packet work leaves proxy error unchanged"
+    },
+    "positive_response_reduces_error": {
+      "control_passed": true,
+      "primary_blocker": "single_cycle_error_not_reduced",
+      "reason": "accepted response must reduce proxy error"
+    },
+    "processed_packet_missing": {
+      "control_passed": true,
+      "primary_blocker": "processed_packet_missing",
+      "reason": "GPR4 requires packet work processed by step()"
+    },
+    "scheduled_packet_missing": {
+      "control_passed": true,
+      "primary_blocker": "scheduled_packet_missing",
+      "reason": "GPR4 requires a scheduled packet"
+    },
+    "wrong_direction_response": {
+      "control_passed": true,
+      "primary_blocker": "wrong_direction_response",
+      "reason": "increase-proxy packet would move an above-band proxy away from target"
+    }
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "generated_at": "2026-06-09T20:11:02.784226+00:00",
+  "git": {
+    "head": "1621f65b01e82db6be31763ef1fc6f7eba517fe0",
+    "status_short_experiment": "M experiments/2026-05-N09-lgrc-goal-proxy-regulation/README.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationChecklist.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationPlan.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_1_baseline_inventory.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_4_gpr2_error_signal.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_1_baseline_inventory.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_3_gpr1_proxy_measurement.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_4_gpr2_error_signal.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_5_gpr3_proxy_conditioned_eligibility.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_6_gpr4_single_cycle_correction.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_1_baseline_inventory.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_2_fixture_manifest.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_3_gpr1_proxy_measurement.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_4_gpr2_error_signal.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_5_gpr3_proxy_conditioned_eligibility.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_6_gpr4_single_cycle_correction.py",
+    "status_short_src": ""
+  },
+  "gpr_level": "GPR4",
+  "iteration": 6,
+  "non_actions": {
+    "claim_promotion": false,
+    "direct_state_rewrite_used": false,
+    "producer_direct_mutation_used": false,
+    "route_arbitration_record_emitted": false,
+    "topology_event_committed": false
+  },
+  "packet_processing_log": [
+    {
+      "artifact_kind": "lgrc9v3_packet_processing_result",
+      "artifact_schema_version": "lgrc9v3_packet_processing_result_v1",
+      "budget_after": 1.5000000000000002,
+      "budget_before": 1.5,
+      "budget_error": 2.220446049250313e-16,
+      "causal_layer_mode": "packetized_fixed_topology",
+      "evidence_class": "packetized_causal_flux",
+      "identity_acceptance_emitted": false,
+      "ledger": {
+        "artifact_kind": "lgrc9v3_packet_ledger",
+        "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+        "budget_after": 1.5000000000000002,
+        "budget_before": 1.5,
+        "budget_error": 2.220446049250313e-16,
+        "causal_layer_mode": "packetized_fixed_topology",
+        "collapse_allowed": false,
+        "conserved_budget_total": 1.5000000000000002,
+        "event_queue_records": [
+          {
+            "amount": 0.07,
+            "budget_after": null,
+            "budget_before": null,
+            "budget_error": null,
+            "edge_id": 2,
+            "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+            "scheduler_event_index": 2,
+            "source_node_id": 0,
+            "target_node_id": 2
+          }
+        ],
+        "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+        "evidence_class": "packetized_causal_flux",
+        "fixed_topology": true,
+        "fixed_topology_signature": {
+          "edge_records": [
+            {
+              "edge_id": 0,
+              "endpoints": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 1,
+              "endpoints": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 2,
+              "endpoints": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ]
+              ]
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        "identity_acceptance_allowed": false,
+        "in_flight_packet_total": 0.07,
+        "lgrc_runtime_level": "lgrc2",
+        "mode_version": "lgrc2_packetized_fixed_topology_v1",
+        "node_coherence_total": 1.4300000000000002,
+        "packet_budget_invariant": "sum_node_coherence_plus_packets",
+        "packet_event_records": [
+          {
+            "amount": 0.07,
+            "budget_after": 1.5000000000000002,
+            "budget_before": 1.5,
+            "budget_error": 2.220446049250313e-16,
+            "edge_id": 2,
+            "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 1.0,
+            "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+            "scheduler_event_index": 1,
+            "source_node_id": 0,
+            "target_node_id": 2
+          }
+        ],
+        "packet_records": [
+          {
+            "amount": 0.07,
+            "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+            "arrival_event_time_key": 2.0,
+            "arrival_scheduler_event_index": 2,
+            "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+            "departure_event_time_key": 1.0,
+            "departure_scheduler_event_index": 1,
+            "edge_id": 2,
+            "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 0,
+            "target_lineage_id": null,
+            "target_node_id": 2
+          }
+        ],
+        "packet_transport_through_topology_change": false,
+        "packetized_flux": true,
+        "policies": {},
+        "runtime_family": "LGRC9V3",
+        "topology_change_allowed": false
+      },
+      "lgrc_runtime_level": "lgrc2",
+      "mechanical_expansion_emitted": false,
+      "mode_version": "lgrc2_packetized_fixed_topology_v1",
+      "packet_record": {
+        "amount": 0.07,
+        "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "arrival_event_time_key": 2.0,
+        "arrival_scheduler_event_index": 2,
+        "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+        "departure_event_time_key": 1.0,
+        "departure_scheduler_event_index": 1,
+        "edge_id": 2,
+        "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "packet_state": "in_flight",
+        "source_lineage_id": null,
+        "source_node_id": 0,
+        "target_lineage_id": null,
+        "target_node_id": 2
+      },
+      "processed_event": {
+        "amount": 0.07,
+        "budget_after": 1.5000000000000002,
+        "budget_before": 1.5,
+        "budget_error": 2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "scheduler_event_index": 1,
+        "source_node_id": 0,
+        "target_node_id": 2
+      },
+      "runtime_family": "LGRC9V3",
+      "spark_event_emitted": false,
+      "state_mutated": true,
+      "topology_mutated": false,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "artifact_kind": "lgrc9v3_packet_processing_result",
+      "artifact_schema_version": "lgrc9v3_packet_processing_result_v1",
+      "budget_after": 1.5,
+      "budget_before": 1.5000000000000002,
+      "budget_error": -2.220446049250313e-16,
+      "causal_layer_mode": "packetized_fixed_topology",
+      "evidence_class": "packetized_causal_flux",
+      "identity_acceptance_emitted": false,
+      "ledger": {
+        "artifact_kind": "lgrc9v3_packet_ledger",
+        "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+        "budget_after": 1.5,
+        "budget_before": 1.5000000000000002,
+        "budget_error": -2.220446049250313e-16,
+        "causal_layer_mode": "packetized_fixed_topology",
+        "collapse_allowed": false,
+        "conserved_budget_total": 1.5,
+        "event_queue_records": [],
+        "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+        "evidence_class": "packetized_causal_flux",
+        "fixed_topology": true,
+        "fixed_topology_signature": {
+          "edge_records": [
+            {
+              "edge_id": 0,
+              "endpoints": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 1,
+              "endpoints": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 2,
+              "endpoints": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ]
+              ]
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        "identity_acceptance_allowed": false,
+        "in_flight_packet_total": 0.0,
+        "lgrc_runtime_level": "lgrc2",
+        "mode_version": "lgrc2_packetized_fixed_topology_v1",
+        "node_coherence_total": 1.5,
+        "packet_budget_invariant": "sum_node_coherence_plus_packets",
+        "packet_event_records": [
+          {
+            "amount": 0.07,
+            "budget_after": 1.5000000000000002,
+            "budget_before": 1.5,
+            "budget_error": 2.220446049250313e-16,
+            "edge_id": 2,
+            "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 1.0,
+            "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+            "scheduler_event_index": 1,
+            "source_node_id": 0,
+            "target_node_id": 2
+          },
+          {
+            "amount": 0.07,
+            "budget_after": 1.5,
+            "budget_before": 1.5000000000000002,
+            "budget_error": -2.220446049250313e-16,
+            "edge_id": 2,
+            "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+            "event_kind": "lgrc9v3_packet_arrival",
+            "event_time_key": 2.0,
+            "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+            "scheduler_event_index": 2,
+            "source_node_id": 0,
+            "target_node_id": 2
+          }
+        ],
+        "packet_records": [
+          {
+            "amount": 0.07,
+            "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+            "arrival_event_time_key": 2.0,
+            "arrival_scheduler_event_index": 2,
+            "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+            "departure_event_time_key": 1.0,
+            "departure_scheduler_event_index": 1,
+            "edge_id": 2,
+            "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+            "packet_state": "arrived",
+            "source_lineage_id": null,
+            "source_node_id": 0,
+            "target_lineage_id": null,
+            "target_node_id": 2
+          }
+        ],
+        "packet_transport_through_topology_change": false,
+        "packetized_flux": true,
+        "policies": {},
+        "runtime_family": "LGRC9V3",
+        "topology_change_allowed": false
+      },
+      "lgrc_runtime_level": "lgrc2",
+      "mechanical_expansion_emitted": false,
+      "mode_version": "lgrc2_packetized_fixed_topology_v1",
+      "packet_record": {
+        "amount": 0.07,
+        "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "arrival_event_time_key": 2.0,
+        "arrival_scheduler_event_index": 2,
+        "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+        "departure_event_time_key": 1.0,
+        "departure_scheduler_event_index": 1,
+        "edge_id": 2,
+        "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "packet_state": "arrived",
+        "source_lineage_id": null,
+        "source_node_id": 0,
+        "target_lineage_id": null,
+        "target_node_id": 2
+      },
+      "processed_event": {
+        "amount": 0.07,
+        "budget_after": 1.5,
+        "budget_before": 1.5000000000000002,
+        "budget_error": -2.220446049250313e-16,
+        "edge_id": 2,
+        "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 2.0,
+        "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "scheduler_event_index": 2,
+        "source_node_id": 0,
+        "target_node_id": 2
+      },
+      "runtime_family": "LGRC9V3",
+      "spark_event_emitted": false,
+      "state_mutated": true,
+      "topology_mutated": false,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2
+        ]
+      }
+    }
+  ],
+  "packet_response_record": {
+    "arrival_state_mutated": true,
+    "artifact_kind": "n09_single_cycle_packet_response",
+    "artifact_schema_version": "n09_single_cycle_packet_response_v1",
+    "departure_state_mutated": true,
+    "edge_id": 2,
+    "packet_amount": 0.07,
+    "packet_response_digest": "3733406f9e3bb04765ee6844e5986d96532aec3bbc8430b9048ebba1e7f16ca0",
+    "post_response_in_band": true,
+    "post_response_proxy_surface_digest": "c3d14108fce03673d8a2740c2908a36f40992857f25a3a193695a69742171c5f",
+    "pre_response_proxy_surface_digest": "169aba65919b71f9698ab6865ea335558f8c8f4dccf2f8eafdd4360d78fec37b",
+    "processed_arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+    "processed_departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+    "processed_packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+    "processed_scheduler_event_index": 2,
+    "producer_direct_mutation_used": false,
+    "proxy_error_after": 0.0,
+    "proxy_error_before": 0.07,
+    "proxy_error_reduction": 0.07,
+    "route_id": "route_b",
+    "schedule_request_digest": "f9d727ade35f1dc466e2fbcaa204b7d574786bd559d93755fa4808a416e97cb9",
+    "schedule_request_id": "n09_i6_schedule_request_selected_memory_route_b_v1",
+    "scheduled_packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+    "scheduled_scheduler_event_index": 1,
+    "source_node_coherence_after": 0.55,
+    "source_node_coherence_before": 0.62,
+    "source_node_id": 0,
+    "step_count": 2,
+    "step_processed": true,
+    "target_node_id": 2
+  },
+  "post_proxy_surface_row": {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": 2.0,
+    "measurement_unit": "coherence",
+    "measurement_value": 0.55,
+    "node_plus_packet_budget_after": 1.5,
+    "node_plus_packet_budget_before": 1.5,
+    "node_plus_packet_budget_error": 0.0,
+    "proxy_kind": "active_node_coherence_band",
+    "proxy_policy_digest": "a58062c81a53fecb38857af4e0f2bee507faa93ace99d31feb6503e2cc6a3905",
+    "proxy_policy_id": "n09_active_node_coherence_proxy_policy_v1",
+    "proxy_surface_digest": "c3d14108fce03673d8a2740c2908a36f40992857f25a3a193695a69742171c5f",
+    "proxy_surface_id": "n09_i6_post_response_source_reservoir_proxy_surface_v1",
+    "regulated_variable_digest": "04e3f8e025500883f8f43c9288a97f8043b4af94448827ee5cbea59b76659ca0",
+    "regulated_variable_id": "source_reservoir_node_coherence",
+    "regulated_variable_surface": "active_node_state",
+    "scheduler_event_index": 2,
+    "source_artifacts": [
+      "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json",
+      "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json#post_runtime_state"
+    ],
+    "source_reports": [
+      "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_6_gpr4_single_cycle_correction.md"
+    ],
+    "target_band_digest": "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b",
+    "target_band_id": "n09_i3_source_reservoir_target_band_v1"
+  },
+  "post_runtime_state": {
+    "arrival_eligibility_log": [
+      {
+        "amount": 0.07,
+        "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "artifact_kind": "lgrc9v3_packet_arrival_eligibility",
+        "artifact_schema_version": "lgrc9v3_packet_arrival_eligibility_v1",
+        "causal_layer_mode": "packetized_fixed_topology",
+        "edge_id": 2,
+        "event_time_key": 2.0,
+        "evidence_class": "packet_arrival_eligibility",
+        "identity_acceptance_emitted": false,
+        "lgrc_runtime_level": "lgrc2",
+        "local_update_eligible": true,
+        "mechanical_expansion_emitted": false,
+        "mode_version": "lgrc2_packetized_fixed_topology_v1",
+        "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 2,
+        "source_node_id": 0,
+        "spark_diagnostic_eligible": true,
+        "spark_event_emitted": false,
+        "target_node_id": 2,
+        "topology_signature": {
+          "edge_records": [
+            {
+              "edge_id": 0,
+              "endpoints": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 1,
+              "endpoints": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 2,
+              "endpoints": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ]
+              ]
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    ],
+    "artifact_kind": "lgrc9v3_runtime_state",
+    "artifact_schema_version": "lgrc9v3_runtime_state_v1",
+    "boundary_birth_trial_queue": [],
+    "cached_quantities": {
+      "lgrc9v3_self_rearm_evidence_log": []
+    },
+    "causal_flux_routes": {},
+    "causal_layer_mode": "packetized_fixed_topology",
+    "causal_modes": {
+      "causal_basin_core_policy": "derived_annotation",
+      "causal_boundary_birth_allowed": false,
+      "causal_boundary_birth_coherence_source": "parent_debit",
+      "causal_boundary_birth_edge_delay_policy": "explicit_or_tau0",
+      "causal_boundary_birth_policy": "disabled",
+      "causal_collapse_reabsorption_allowed": false,
+      "causal_cone_policy": "bounded_shortest_path",
+      "causal_distance_policy": "edge_delay_shortest_path",
+      "causal_identity_acceptance_allowed": false,
+      "causal_layer_mode": "packetized_fixed_topology",
+      "causal_proper_time_inheritance_allowed": false,
+      "causal_pulse_substrate_surface_enabled": false,
+      "causal_pulse_substrate_surface_lineage_transport_enabled": false,
+      "causal_pulse_substrate_surface_lineage_transport_policy": "disabled",
+      "causal_pulse_substrate_surface_lineage_transport_supported": false,
+      "causal_pulse_substrate_surface_lineage_transport_validated": false,
+      "causal_pulse_substrate_surface_policy": "disabled",
+      "causal_pulse_substrate_surface_validated": false,
+      "causal_refinement_packet_transport_allowed": false,
+      "causal_spark_expansion_allowed": false,
+      "causal_topology_integration_allowed": false,
+      "causal_topology_state_reabsorption_enabled": false,
+      "causal_topology_state_reabsorption_policy": "disabled",
+      "causal_topology_state_reabsorption_supported": false,
+      "causal_topology_state_reabsorption_validated": false,
+      "edge_delay_policy": "constant_delay",
+      "event_time_policy": "explicit_event_time_key",
+      "lapse_policy": "unit",
+      "lgrc_runtime_level": "lgrc2",
+      "native_lgrc_route_arbitration_enabled": false,
+      "native_lgrc_route_arbitration_policy": "disabled",
+      "native_lgrc_route_arbitration_supported": false,
+      "native_lgrc_route_arbitration_validated": false,
+      "proper_time_accumulation_policy": "local_event_frontier",
+      "require_fixed_topology_for_lgrc1": true,
+      "require_fixed_topology_for_lgrc2": true
+    },
+    "causal_pulse_substrate_surface_lineage_log": [],
+    "causal_pulse_substrate_surface_log": [],
+    "causal_spark_diagnostic_log": [
+      {
+        "candidate_count": 0,
+        "candidate_event_ids": [],
+        "causal_spark_evaluation_index": 1,
+        "checkpoint_index": 2,
+        "diagnostic_event": "evaluate_causal_spark_diagnostics",
+        "event_time_key": 2.0,
+        "scheduler_event_index": 2,
+        "spark_lane": "current_hybrid_signed_hessian",
+        "topology_signature": {
+          "edge_count": 3,
+          "edge_ids": [
+            0,
+            1,
+            2
+          ],
+          "node_count": 3,
+          "node_ids": [
+            0,
+            1,
+            2
+          ]
+        },
+        "trigger_event_id": "lgrc9v3-local-update-2-2-lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "trigger_kind": "lgrc9v3_local_update",
+        "trigger_node_id": 2,
+        "trigger_source": "arrival_local_update_completion"
+      }
+    ],
+    "causal_spark_evaluation_index": 1,
+    "checkpoint_index": 2,
+    "edge_causal_delay": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "event_queue_records": [],
+    "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+    "event_time_key": 2.0,
+    "evidence_class": "packetized_causal_flux",
+    "lapse": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "lgrc_runtime_level": "lgrc2",
+    "local_update_log": [
+      {
+        "arrival_amount": 0.07,
+        "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "causal_availability_source": "packet_arrival_eligibility",
+        "checkpoint_index": 2,
+        "delayed_evaluation_applied": false,
+        "event_schema_version": "lgrc9v3_local_update_event_v1",
+        "event_time_key": 2.0,
+        "identity_acceptance_emitted": false,
+        "local_continuity_formula_applied": false,
+        "local_update_event_id": "lgrc9v3-local-update-2-2-lgrc9v3-packet-event-ca6f285e5ff0af94",
+        "mechanical_expansion_emitted": false,
+        "packetized_flux_applied": true,
+        "proper_time_update": {
+          "delta_event_time_key": 2.0,
+          "delta_tau": 2.0,
+          "event_time_key": 2.0,
+          "lapse": 1.0,
+          "node_id": 2,
+          "node_proper_time": 2.0,
+          "previous_event_time_key": 0.0,
+          "previous_node_proper_time": 0.0,
+          "proper_time_accumulation_policy": "local_event_frontier"
+        },
+        "route_count": 0,
+        "runtime_family": "LGRC9V3",
+        "scheduled_departure_event_ids": [],
+        "scheduled_packet_count": 0,
+        "scheduled_packet_ids": [],
+        "scheduler_event_index": 2,
+        "spark_event_emitted": false,
+        "state_mutated": true,
+        "target_node_id": 2,
+        "topology_mutated": false
+      }
+    ],
+    "mode_version": "lgrc2_packetized_fixed_topology_v1",
+    "native_route_arbitration_log": [],
+    "native_route_candidate_log": [],
+    "native_route_candidate_set_log": [],
+    "node_last_update_event_time_key": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 2.0
+    },
+    "node_last_update_proper_time": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 2.0
+    },
+    "node_proper_time": {
+      "0": 1.0,
+      "1": 0.0,
+      "2": 2.0
+    },
+    "packet_ledger": {
+      "artifact_kind": "lgrc9v3_packet_ledger",
+      "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+      "budget_after": 1.5,
+      "budget_before": 1.5000000000000002,
+      "budget_error": -2.220446049250313e-16,
+      "causal_layer_mode": "packetized_fixed_topology",
+      "collapse_allowed": false,
+      "conserved_budget_total": 1.5,
+      "event_queue_records": [],
+      "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+      "evidence_class": "packetized_causal_flux",
+      "fixed_topology": true,
+      "fixed_topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2
+        ]
+      },
+      "identity_acceptance_allowed": false,
+      "in_flight_packet_total": 0.0,
+      "lgrc_runtime_level": "lgrc2",
+      "mode_version": "lgrc2_packetized_fixed_topology_v1",
+      "node_coherence_total": 1.5,
+      "packet_budget_invariant": "sum_node_coherence_plus_packets",
+      "packet_event_records": [
+        {
+          "amount": 0.07,
+          "budget_after": 1.5000000000000002,
+          "budget_before": 1.5,
+          "budget_error": 2.220446049250313e-16,
+          "edge_id": 2,
+          "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+          "event_kind": "lgrc9v3_packet_departure",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "scheduler_event_index": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        },
+        {
+          "amount": 0.07,
+          "budget_after": 1.5,
+          "budget_before": 1.5000000000000002,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 2,
+          "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 2.0,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "scheduler_event_index": 2,
+          "source_node_id": 0,
+          "target_node_id": 2
+        }
+      ],
+      "packet_records": [
+        {
+          "amount": 0.07,
+          "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+          "arrival_event_time_key": 2.0,
+          "arrival_scheduler_event_index": 2,
+          "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+          "departure_event_time_key": 1.0,
+          "departure_scheduler_event_index": 1,
+          "edge_id": 2,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "packet_state": "arrived",
+          "source_lineage_id": null,
+          "source_node_id": 0,
+          "target_lineage_id": null,
+          "target_node_id": 2
+        }
+      ],
+      "packet_transport_through_topology_change": false,
+      "packetized_flux": true,
+      "policies": {},
+      "runtime_family": "LGRC9V3",
+      "topology_change_allowed": false
+    },
+    "packet_processing_log": [
+      {
+        "artifact_kind": "lgrc9v3_packet_processing_result",
+        "artifact_schema_version": "lgrc9v3_packet_processing_result_v1",
+        "budget_after": 1.5000000000000002,
+        "budget_before": 1.5,
+        "budget_error": 2.220446049250313e-16,
+        "causal_layer_mode": "packetized_fixed_topology",
+        "evidence_class": "packetized_causal_flux",
+        "identity_acceptance_emitted": false,
+        "ledger": {
+          "artifact_kind": "lgrc9v3_packet_ledger",
+          "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+          "budget_after": 1.5000000000000002,
+          "budget_before": 1.5,
+          "budget_error": 2.220446049250313e-16,
+          "causal_layer_mode": "packetized_fixed_topology",
+          "collapse_allowed": false,
+          "conserved_budget_total": 1.5000000000000002,
+          "event_queue_records": [
+            {
+              "amount": 0.07,
+              "budget_after": null,
+              "budget_before": null,
+              "budget_error": null,
+              "edge_id": 2,
+              "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 2.0,
+              "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+              "scheduler_event_index": 2,
+              "source_node_id": 0,
+              "target_node_id": 2
+            }
+          ],
+          "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+          "evidence_class": "packetized_causal_flux",
+          "fixed_topology": true,
+          "fixed_topology_signature": {
+            "edge_records": [
+              {
+                "edge_id": 0,
+                "endpoints": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ]
+              },
+              {
+                "edge_id": 1,
+                "endpoints": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    0
+                  ]
+                ]
+              },
+              {
+                "edge_id": 2,
+                "endpoints": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "node_ids": [
+              0,
+              1,
+              2
+            ]
+          },
+          "identity_acceptance_allowed": false,
+          "in_flight_packet_total": 0.07,
+          "lgrc_runtime_level": "lgrc2",
+          "mode_version": "lgrc2_packetized_fixed_topology_v1",
+          "node_coherence_total": 1.4300000000000002,
+          "packet_budget_invariant": "sum_node_coherence_plus_packets",
+          "packet_event_records": [
+            {
+              "amount": 0.07,
+              "budget_after": 1.5000000000000002,
+              "budget_before": 1.5,
+              "budget_error": 2.220446049250313e-16,
+              "edge_id": 2,
+              "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+              "event_kind": "lgrc9v3_packet_departure",
+              "event_time_key": 1.0,
+              "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+              "scheduler_event_index": 1,
+              "source_node_id": 0,
+              "target_node_id": 2
+            }
+          ],
+          "packet_records": [
+            {
+              "amount": 0.07,
+              "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+              "arrival_event_time_key": 2.0,
+              "arrival_scheduler_event_index": 2,
+              "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+              "departure_event_time_key": 1.0,
+              "departure_scheduler_event_index": 1,
+              "edge_id": 2,
+              "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+              "packet_state": "in_flight",
+              "source_lineage_id": null,
+              "source_node_id": 0,
+              "target_lineage_id": null,
+              "target_node_id": 2
+            }
+          ],
+          "packet_transport_through_topology_change": false,
+          "packetized_flux": true,
+          "policies": {},
+          "runtime_family": "LGRC9V3",
+          "topology_change_allowed": false
+        },
+        "lgrc_runtime_level": "lgrc2",
+        "mechanical_expansion_emitted": false,
+        "mode_version": "lgrc2_packetized_fixed_topology_v1",
+        "packet_record": {
+          "amount": 0.07,
+          "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+          "arrival_event_time_key": 2.0,
+          "arrival_scheduler_event_index": 2,
+          "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+          "departure_event_time_key": 1.0,
+          "departure_scheduler_event_index": 1,
+          "edge_id": 2,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "packet_state": "in_flight",
+          "source_lineage_id": null,
+          "source_node_id": 0,
+          "target_lineage_id": null,
+          "target_node_id": 2
+        },
+        "processed_event": {
+          "amount": 0.07,
+          "budget_after": 1.5000000000000002,
+          "budget_before": 1.5,
+          "budget_error": 2.220446049250313e-16,
+          "edge_id": 2,
+          "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+          "event_kind": "lgrc9v3_packet_departure",
+          "event_time_key": 1.0,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "scheduler_event_index": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        },
+        "runtime_family": "LGRC9V3",
+        "spark_event_emitted": false,
+        "state_mutated": true,
+        "topology_mutated": false,
+        "topology_signature": {
+          "edge_records": [
+            {
+              "edge_id": 0,
+              "endpoints": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 1,
+              "endpoints": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 2,
+              "endpoints": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ]
+              ]
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "artifact_kind": "lgrc9v3_packet_processing_result",
+        "artifact_schema_version": "lgrc9v3_packet_processing_result_v1",
+        "budget_after": 1.5,
+        "budget_before": 1.5000000000000002,
+        "budget_error": -2.220446049250313e-16,
+        "causal_layer_mode": "packetized_fixed_topology",
+        "evidence_class": "packetized_causal_flux",
+        "identity_acceptance_emitted": false,
+        "ledger": {
+          "artifact_kind": "lgrc9v3_packet_ledger",
+          "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+          "budget_after": 1.5,
+          "budget_before": 1.5000000000000002,
+          "budget_error": -2.220446049250313e-16,
+          "causal_layer_mode": "packetized_fixed_topology",
+          "collapse_allowed": false,
+          "conserved_budget_total": 1.5,
+          "event_queue_records": [],
+          "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+          "evidence_class": "packetized_causal_flux",
+          "fixed_topology": true,
+          "fixed_topology_signature": {
+            "edge_records": [
+              {
+                "edge_id": 0,
+                "endpoints": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ]
+              },
+              {
+                "edge_id": 1,
+                "endpoints": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    0
+                  ]
+                ]
+              },
+              {
+                "edge_id": 2,
+                "endpoints": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "node_ids": [
+              0,
+              1,
+              2
+            ]
+          },
+          "identity_acceptance_allowed": false,
+          "in_flight_packet_total": 0.0,
+          "lgrc_runtime_level": "lgrc2",
+          "mode_version": "lgrc2_packetized_fixed_topology_v1",
+          "node_coherence_total": 1.5,
+          "packet_budget_invariant": "sum_node_coherence_plus_packets",
+          "packet_event_records": [
+            {
+              "amount": 0.07,
+              "budget_after": 1.5000000000000002,
+              "budget_before": 1.5,
+              "budget_error": 2.220446049250313e-16,
+              "edge_id": 2,
+              "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+              "event_kind": "lgrc9v3_packet_departure",
+              "event_time_key": 1.0,
+              "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+              "scheduler_event_index": 1,
+              "source_node_id": 0,
+              "target_node_id": 2
+            },
+            {
+              "amount": 0.07,
+              "budget_after": 1.5,
+              "budget_before": 1.5000000000000002,
+              "budget_error": -2.220446049250313e-16,
+              "edge_id": 2,
+              "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+              "event_kind": "lgrc9v3_packet_arrival",
+              "event_time_key": 2.0,
+              "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+              "scheduler_event_index": 2,
+              "source_node_id": 0,
+              "target_node_id": 2
+            }
+          ],
+          "packet_records": [
+            {
+              "amount": 0.07,
+              "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+              "arrival_event_time_key": 2.0,
+              "arrival_scheduler_event_index": 2,
+              "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+              "departure_event_time_key": 1.0,
+              "departure_scheduler_event_index": 1,
+              "edge_id": 2,
+              "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+              "packet_state": "arrived",
+              "source_lineage_id": null,
+              "source_node_id": 0,
+              "target_lineage_id": null,
+              "target_node_id": 2
+            }
+          ],
+          "packet_transport_through_topology_change": false,
+          "packetized_flux": true,
+          "policies": {},
+          "runtime_family": "LGRC9V3",
+          "topology_change_allowed": false
+        },
+        "lgrc_runtime_level": "lgrc2",
+        "mechanical_expansion_emitted": false,
+        "mode_version": "lgrc2_packetized_fixed_topology_v1",
+        "packet_record": {
+          "amount": 0.07,
+          "arrival_event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+          "arrival_event_time_key": 2.0,
+          "arrival_scheduler_event_index": 2,
+          "departure_event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+          "departure_event_time_key": 1.0,
+          "departure_scheduler_event_index": 1,
+          "edge_id": 2,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "packet_state": "arrived",
+          "source_lineage_id": null,
+          "source_node_id": 0,
+          "target_lineage_id": null,
+          "target_node_id": 2
+        },
+        "processed_event": {
+          "amount": 0.07,
+          "budget_after": 1.5,
+          "budget_before": 1.5000000000000002,
+          "budget_error": -2.220446049250313e-16,
+          "edge_id": 2,
+          "event_id": "lgrc9v3-packet-event-ca6f285e5ff0af94",
+          "event_kind": "lgrc9v3_packet_arrival",
+          "event_time_key": 2.0,
+          "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+          "scheduler_event_index": 2,
+          "source_node_id": 0,
+          "target_node_id": 2
+        },
+        "runtime_family": "LGRC9V3",
+        "spark_event_emitted": false,
+        "state_mutated": true,
+        "topology_mutated": false,
+        "topology_signature": {
+          "edge_records": [
+            {
+              "edge_id": 0,
+              "endpoints": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 1,
+              "endpoints": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  0
+                ]
+              ]
+            },
+            {
+              "edge_id": 2,
+              "endpoints": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ]
+              ]
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    ],
+    "runtime_family": "LGRC9V3",
+    "scheduler_event_index": 2,
+    "topology_event_log": [],
+    "topology_state_reabsorption_log": []
+  },
+  "post_runtime_state_digest": "56d0458019527eed069973365340696760ec5d125b616de9a3612f51ba03130b",
+  "pre_proxy_surface_row": {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "event_time_key": 0.0,
+    "measurement_unit": "coherence",
+    "measurement_value": 0.62,
+    "node_plus_packet_budget_after": 1.5,
+    "node_plus_packet_budget_before": 1.5,
+    "node_plus_packet_budget_error": 0.0,
+    "proxy_kind": "active_node_coherence_band",
+    "proxy_policy_digest": "a58062c81a53fecb38857af4e0f2bee507faa93ace99d31feb6503e2cc6a3905",
+    "proxy_policy_id": "n09_active_node_coherence_proxy_policy_v1",
+    "proxy_surface_digest": "169aba65919b71f9698ab6865ea335558f8c8f4dccf2f8eafdd4360d78fec37b",
+    "proxy_surface_id": "n09_i6_pre_response_source_reservoir_proxy_surface_v1",
+    "regulated_variable_digest": "ba0c07db8285c471cbf5cc44b791f0ac01f42f562d5490409b446ba6160da9d9",
+    "regulated_variable_id": "source_reservoir_node_coherence",
+    "regulated_variable_surface": "active_node_state",
+    "scheduler_event_index": 0,
+    "source_artifacts": [
+      "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json",
+      "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json#pre_runtime_state"
+    ],
+    "source_reports": [
+      "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_6_gpr4_single_cycle_correction.md"
+    ],
+    "target_band_digest": "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b",
+    "target_band_id": "n09_i3_source_reservoir_target_band_v1"
+  },
+  "pre_runtime_state": {
+    "arrival_eligibility_log": [],
+    "artifact_kind": "lgrc9v3_runtime_state",
+    "artifact_schema_version": "lgrc9v3_runtime_state_v1",
+    "boundary_birth_trial_queue": [],
+    "cached_quantities": {},
+    "causal_flux_routes": {},
+    "causal_layer_mode": "packetized_fixed_topology",
+    "causal_modes": {
+      "causal_basin_core_policy": "derived_annotation",
+      "causal_boundary_birth_allowed": false,
+      "causal_boundary_birth_coherence_source": "parent_debit",
+      "causal_boundary_birth_edge_delay_policy": "explicit_or_tau0",
+      "causal_boundary_birth_policy": "disabled",
+      "causal_collapse_reabsorption_allowed": false,
+      "causal_cone_policy": "bounded_shortest_path",
+      "causal_distance_policy": "edge_delay_shortest_path",
+      "causal_identity_acceptance_allowed": false,
+      "causal_layer_mode": "packetized_fixed_topology",
+      "causal_proper_time_inheritance_allowed": false,
+      "causal_pulse_substrate_surface_enabled": false,
+      "causal_pulse_substrate_surface_lineage_transport_enabled": false,
+      "causal_pulse_substrate_surface_lineage_transport_policy": "disabled",
+      "causal_pulse_substrate_surface_lineage_transport_supported": false,
+      "causal_pulse_substrate_surface_lineage_transport_validated": false,
+      "causal_pulse_substrate_surface_policy": "disabled",
+      "causal_pulse_substrate_surface_validated": false,
+      "causal_refinement_packet_transport_allowed": false,
+      "causal_spark_expansion_allowed": false,
+      "causal_topology_integration_allowed": false,
+      "causal_topology_state_reabsorption_enabled": false,
+      "causal_topology_state_reabsorption_policy": "disabled",
+      "causal_topology_state_reabsorption_supported": false,
+      "causal_topology_state_reabsorption_validated": false,
+      "edge_delay_policy": "constant_delay",
+      "event_time_policy": "explicit_event_time_key",
+      "lapse_policy": "unit",
+      "lgrc_runtime_level": "lgrc2",
+      "native_lgrc_route_arbitration_enabled": false,
+      "native_lgrc_route_arbitration_policy": "disabled",
+      "native_lgrc_route_arbitration_supported": false,
+      "native_lgrc_route_arbitration_validated": false,
+      "proper_time_accumulation_policy": "local_event_frontier",
+      "require_fixed_topology_for_lgrc1": true,
+      "require_fixed_topology_for_lgrc2": true
+    },
+    "causal_pulse_substrate_surface_lineage_log": [],
+    "causal_pulse_substrate_surface_log": [],
+    "causal_spark_diagnostic_log": [],
+    "causal_spark_evaluation_index": 0,
+    "checkpoint_index": 0,
+    "edge_causal_delay": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "event_queue_records": [],
+    "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+    "event_time_key": 0.0,
+    "evidence_class": "packetized_causal_flux",
+    "lapse": {
+      "0": 1.0,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "lgrc_runtime_level": "lgrc2",
+    "local_update_log": [],
+    "mode_version": "lgrc2_packetized_fixed_topology_v1",
+    "native_route_arbitration_log": [],
+    "native_route_candidate_log": [],
+    "native_route_candidate_set_log": [],
+    "node_last_update_event_time_key": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "node_last_update_proper_time": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "node_proper_time": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "packet_ledger": {
+      "artifact_kind": "lgrc9v3_packet_ledger",
+      "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+      "budget_after": 1.5,
+      "budget_before": 1.5,
+      "budget_error": 0.0,
+      "causal_layer_mode": "packetized_fixed_topology",
+      "collapse_allowed": false,
+      "conserved_budget_total": 1.5,
+      "event_queue_records": [],
+      "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+      "evidence_class": "packetized_causal_flux",
+      "fixed_topology": true,
+      "fixed_topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2
+        ]
+      },
+      "identity_acceptance_allowed": false,
+      "in_flight_packet_total": 0.0,
+      "lgrc_runtime_level": "lgrc2",
+      "mode_version": "lgrc2_packetized_fixed_topology_v1",
+      "node_coherence_total": 1.5,
+      "packet_budget_invariant": "sum_node_coherence_plus_packets",
+      "packet_event_records": [],
+      "packet_records": [],
+      "packet_transport_through_topology_change": false,
+      "packetized_flux": true,
+      "policies": {},
+      "runtime_family": "LGRC9V3",
+      "topology_change_allowed": false
+    },
+    "packet_processing_log": [],
+    "runtime_family": "LGRC9V3",
+    "scheduler_event_index": 0,
+    "topology_event_log": [],
+    "topology_state_reabsorption_log": []
+  },
+  "pre_runtime_state_digest": "9995d3daaca6b3bb84f7fdaa187ddba96f2e1d39c97b86781b7907b7d081406d",
+  "proxy_response": {
+    "error_after": 0.0,
+    "error_before": 0.07,
+    "error_direction_after": "no_action_in_band",
+    "error_direction_before": "decrease_proxy",
+    "error_reduction": 0.07,
+    "in_band_after": true,
+    "in_band_before": false,
+    "measurement_after": 0.55,
+    "measurement_before": 0.62,
+    "regulation_outcome_tag": "single_cycle_band_return",
+    "response_direction_correct": true
+  },
+  "purpose": "gpr4_single_cycle_packet_correction_through_lgrc_step",
+  "queued_packet_before_step": [
+    {
+      "amount": 0.07,
+      "budget_after": null,
+      "budget_before": null,
+      "budget_error": null,
+      "edge_id": 2,
+      "event_id": "lgrc9v3-packet-event-5ff737c133d80b98",
+      "event_kind": "lgrc9v3_packet_departure",
+      "event_time_key": 1.0,
+      "packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+      "scheduler_event_index": 1,
+      "source_node_id": 0,
+      "target_node_id": 2
+    }
+  ],
+  "regulation_response": {
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "error_signal_digest": "a82a3a9c72aacfe7935c8f332d333aef0eb44d26982ced4040539403cfc09e48",
+    "identity_support_digest": null,
+    "identity_support_outcome_tag": "identity_not_tested_under_regulation",
+    "lane_id": "n09_memory_shaped_proxy_regulation_lane_v1",
+    "mechanism_status_tags": [
+      "producer_mediated",
+      "memory_shaped",
+      "single_cycle_packet_correction",
+      "native_policy_gap"
+    ],
+    "memory_budget_after": 0.7,
+    "memory_budget_before": 0.7,
+    "memory_budget_error": 0.0,
+    "memory_budget_surface": "trail_strength",
+    "memory_policy_digest": "bd003905a6c189a1c44babbeb80d931b2dd4d3ce27eb3b1788aefbaefb8198eb",
+    "memory_score_component": 0.7,
+    "memory_strength": 0.7,
+    "memory_surface_digest": "b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+    "memory_surface_key_digest": "3dca55df466ac3a1",
+    "node_plus_packet_budget_after": 1.5,
+    "node_plus_packet_budget_before": 1.5,
+    "node_plus_packet_budget_error": 0.0,
+    "post_response_proxy_surface_digest": "c3d14108fce03673d8a2740c2908a36f40992857f25a3a193695a69742171c5f",
+    "pre_response_proxy_surface_digest": "169aba65919b71f9698ab6865ea335558f8c8f4dccf2f8eafdd4360d78fec37b",
+    "processed_packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+    "producer_record_digest": "3a40547f7ec5d895b999bdd80560713d06b0193d9ad8388b2833ee400ead83f9",
+    "producer_record_linkage": {
+      "causal_surface_digest": "a82a3a9c72aacfe7935c8f332d333aef0eb44d26982ced4040539403cfc09e48",
+      "reason_code": "proxy_error_memory_shaped_eligibility_emitted",
+      "scheduled_packet_id": null,
+      "scheduler_event_index": 30
+    },
+    "proxy_budget_after": 0.55,
+    "proxy_budget_before": 0.62,
+    "proxy_budget_error": 0.0,
+    "proxy_budget_surface": "active_node_coherence_band",
+    "proxy_surface_digest": "4c0ed3d7a3a70607a1d8b4f175025d895cb7d190160dc0f1fc7cb9136157636f",
+    "regulation_outcome_tag": "single_cycle_band_return",
+    "regulation_policy_digest": "896133e8af4cdbb6cabb1436d9cb6f41a2ad1ad300f0ceca79f460d392358d40",
+    "regulation_policy_id": "n09_proxy_error_threshold_schedule_policy_v1",
+    "regulation_response_digest": "0fb4b387ee17274f1295070d8324cfcbd8c33550f7db66e1dfb874401994c24a",
+    "regulation_response_id": "n09_i6_single_cycle_memory_shaped_response_v1",
+    "scheduled_packet_id": "lgrc9v3-packet-9c24c0be8ffcfd9f",
+    "selected_candidate_route_digest": "c6901dc48bc5862977cc9d9da4607e0a763ffd378f35459e9b5800265646a74d",
+    "source_candidate_set_digest": "134e35907533c2da88e567dfcfa83db5e68b885f55c25f6c09e478395f328ffa",
+    "source_route_arbitration_record_digest": null,
+    "target_band_digest": "72ef4d4d3cc71289716af1cc8c1ad6ec176df92c37210dd58ea283d0589e8d8b"
+  },
+  "schedule_request": {
+    "arrival_event_time_key": 2.0,
+    "artifact_kind": "n09_single_cycle_schedule_request",
+    "artifact_schema_version": "n09_single_cycle_schedule_request_v1",
+    "departure_event_time_key": 1.0,
+    "edge_id": 2,
+    "error_direction": "decrease_proxy",
+    "packet_amount": 0.07,
+    "producer_direct_mutation_allowed": false,
+    "producer_record_digest": "3a40547f7ec5d895b999bdd80560713d06b0193d9ad8388b2833ee400ead83f9",
+    "producer_record_linkage": {
+      "causal_surface_digest": "a82a3a9c72aacfe7935c8f332d333aef0eb44d26982ced4040539403cfc09e48",
+      "reason_code": "proxy_error_memory_shaped_eligibility_emitted",
+      "scheduled_packet_id": null,
+      "scheduler_event_index": 30
+    },
+    "route_effect_on_proxy": "decrease_proxy",
+    "schedule_request_digest": "f9d727ade35f1dc466e2fbcaa204b7d574786bd559d93755fa4808a416e97cb9",
+    "schedule_request_id": "n09_i6_schedule_request_selected_memory_route_b_v1",
+    "scheduler_event_index": 1,
+    "selected_candidate_route_digest": "c6901dc48bc5862977cc9d9da4607e0a763ffd378f35459e9b5800265646a74d",
+    "selected_candidate_route_id": "n09_n09_memory_shaped_proxy_regulation_lane_v1_route_b",
+    "selected_candidate_route_source_id": "route_b",
+    "source_candidate_set_digest": "134e35907533c2da88e567dfcfa83db5e68b885f55c25f6c09e478395f328ffa",
+    "source_node_id": 0,
+    "step_required_for_mutation": true,
+    "target_node_id": 2
+  },
+  "schema": "n09_iteration_6_gpr4_single_cycle_correction_v1",
+  "selected_correction": {
+    "route_effect_on_proxy": "decrease_proxy",
+    "selected_candidate_route_digest": "c6901dc48bc5862977cc9d9da4607e0a763ffd378f35459e9b5800265646a74d",
+    "selected_candidate_route_score": 1.87,
+    "selected_candidate_route_source_id": "route_b",
+    "selection_policy": "highest_memory_shaped_candidate_score_from_iteration_5",
+    "semantic_choice_claimed": false
+  },
+  "source_gpr3_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json",
+  "source_gpr3_artifact_digest": "d8ee8a31d7fa739c91a0cdc30823af9b8a361c700066592cc353a5fe22633d29",
+  "source_gpr3_sha256": "7d31f6d593cc43ec15223292cb70e8981a503b17276a1f0f9a2823a1850b5242",
+  "source_manifest": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json",
+  "source_manifest_digest": "084925ff201f49c53db6040e22fa9970736ca9a5e7ad4d090165966bd8efab2a",
+  "source_manifest_sha256": "e8ac646605f8524e344f378ae060bb6c25420c6701024f8802a7972e77d59c45",
+  "status": "passed",
+  "validation_checks": {
+    "claim_flags_all_false": true,
+    "controls_all_passed": true,
+    "final_in_flight_zero": true,
+    "final_queue_empty": true,
+    "manifest_digest_recomputes": true,
+    "node_plus_packet_budget_within_tolerance": true,
+    "packet_response_digest_recomputes": true,
+    "packet_response_has_required_fields": true,
+    "post_proxy_digest_recomputes": true,
+    "pre_proxy_digest_recomputes": true,
+    "pre_response_matches_gpr2_proxy": true,
+    "producer_direct_mutation_not_used": true,
+    "proxy_error_reduced": true,
+    "regulation_response_digest_recomputes": true,
+    "regulation_response_has_required_fields": true,
+    "response_direction_correct": true,
+    "schedule_request_digest_recomputes": true,
+    "scheduled_packet_processed_by_step": true,
+    "selected_candidate_effect_matches_error_direction": true,
+    "selected_candidate_is_memory_lane_top_ranked": true,
+    "single_cycle_band_return": true,
+    "source_gpr3_artifact_digest_recomputes": true,
+    "source_gpr3_status_passed": true
+  }
+}

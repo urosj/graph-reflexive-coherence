@@ -1,0 +1,3 @@
+experiment,observation,status,artifact_source,reconstruction_attempt,notes
+experiment_e_coarse_graining_split,curvature_proxy_nonnegative_field,blocked,GRC9V3 coarse-grain field registry,Checked public coarse_grain_columns field names.,No nonnegative curvature proxy field is exposed for this experiment.
+experiment_e_coarse_graining_split,before_after_refinement_checkpoint,inconclusive,raw central-node fixture,No topology-change event is part of Iteration 5 fixture.,Before/after topology-change Split checks should be run after refinement fixtures exist.

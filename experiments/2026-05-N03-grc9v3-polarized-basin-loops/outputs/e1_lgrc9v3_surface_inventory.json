@@ -1,0 +1,395 @@
+{
+  "alignment": {
+    "adapter_only": true,
+    "classification": "adapter_compatible",
+    "movement_claim_allowed": false,
+    "native_grc9v3_evidence": false,
+    "native_lgrc9v3_execution": false,
+    "summary": "Existing LGRC9V3 surfaces are sufficient for packet records, event queue ordering, in-flight packet budgets, causal clocks, runtime state snapshots, telemetry/checkpoint overlays, and queued packet execution. D2.3 still needs an experiment-local adapter for pole/channel route semantics and measured pole-surplus state triggers."
+  },
+  "branch": "E1.0",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_e1_0_lgrc9v3_surface_inventory.py",
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "findings": {
+    "budget_reconstructable": true,
+    "event_time_key_distinct_from_node_proper_time": true,
+    "event_time_key_serialized": true,
+    "native_state_trigger_surface_exists": false,
+    "packet_arrival_records_exist": true,
+    "packet_departure_records_exist": true,
+    "packet_ledger_with_in_flight_amount_exists": true,
+    "proper_time_serialized": true,
+    "route_or_channel_surface_exists": true
+  },
+  "missing_surfaces": [
+    {
+      "reason": "LGRC9V3 supports node/edge causal flux routes, but D2.3 defines poles and ordered channels at experiment level.",
+      "status": "experiment_local_adapter_required",
+      "surface": "d2_3_pole_channel_route_manifest"
+    },
+    {
+      "reason": "LGRC9V3 does not expose a native trigger of the form source_pole_mass - reference_pole_mass >= threshold.",
+      "status": "experiment_local_adapter_required",
+      "surface": "source_pole_surplus_trigger_policy"
+    },
+    {
+      "reason": "LGRC9V3 can represent the packet arrival and next departure, but D2.3's semantic self_rearm label is experiment-level evidence.",
+      "status": "experiment_local_adapter_required",
+      "surface": "d2_3_self_rearm_event_kind"
+    }
+  ],
+  "required_questions": [
+    {
+      "answer": "yes",
+      "evidence": [
+        "LGRC9V3PacketQueueEventRecord",
+        "LGRC9V3_PACKET_EVENT_KIND_DEPARTURE",
+        "LGRC9V3_PACKET_EVENT_KIND_ARRIVAL",
+        "schedule_lgrc9v3_packet_departure",
+        "process_lgrc9v3_packet_arrival"
+      ],
+      "question": "Does LGRC9V3 already expose packet departure / arrival records?"
+    },
+    {
+      "answer": "yes",
+      "evidence": [
+        "LGRC9V3PacketLedger.in_flight_packet_total",
+        "LGRC9V3PacketLedger.packet_records",
+        "LGRC9V3PacketLedger.event_queue_records"
+      ],
+      "question": "Does LGRC9V3 already expose a packet ledger with in-flight amount?"
+    },
+    {
+      "answer": "yes",
+      "evidence": [
+        "LGRC9V3RuntimeState.event_time_key",
+        "LGRC9V3RuntimeState.node_proper_time",
+        "LGRC9V3RuntimeState.node_last_update_proper_time",
+        "LGRC9V3RuntimeState.node_last_update_event_time_key",
+        "classify_lgrc9v3_step_extension",
+        "build_lgrc9v3_graph_checkpoint"
+      ],
+      "question": "Does LGRC9V3 serialize event-time key, proper time, and node update timing?"
+    },
+    {
+      "answer": "yes",
+      "evidence": [
+        "LGRC9V3RuntimeState.event_time_key",
+        "LGRC9V3RuntimeState.node_proper_time",
+        "LGRC9V3.step advances a local node proper-time surface from processed packet events"
+      ],
+      "question": "Does LGRC9V3 distinguish event-time key from node proper time?"
+    },
+    {
+      "answer": "yes",
+      "evidence": [
+        "LGRC9V3PacketLedger.node_coherence_total",
+        "LGRC9V3PacketLedger.in_flight_packet_total",
+        "LGRC9V3PacketLedger.conserved_budget_total",
+        "LGRC9V3PacketLedger.budget_error"
+      ],
+      "question": "Does LGRC9V3 expose enough state to reconstruct budget: sum(C_i) + sum(packet_amount)?"
+    },
+    {
+      "answer": "partial",
+      "evidence": [
+        "LGRC9V3RuntimeState.causal_flux_routes",
+        "LGRC9V3.set_causal_flux_routes",
+        "LGRC9V3.produce_events can schedule packet departures from flux routes"
+      ],
+      "gap": "D2.3 pole/channel cycle semantics are not a native LGRC9V3 route manifest. E1 still needs an experiment-local route mapping from D2.3 poles/channels to LGRC9V3 node/edge packet routes.",
+      "question": "Does LGRC9V3 have a route/causal channel abstraction, or must E1 define an experiment-local route manifest?"
+    },
+    {
+      "answer": "experiment-local policy",
+      "evidence": [
+        "LGRC9V3 has autonomous packet production from configured flux routes",
+        "No native source-pole-mass-minus-reference threshold trigger was found"
+      ],
+      "gap": "D2.3's measured pole-surplus threshold trigger should be represented as an experiment-local policy in E1. A native trigger primitive would require a separate core task.",
+      "question": "Does LGRC9V3 have a native state-trigger surface, or is D2.3's trigger an experiment-local policy?"
+    }
+  ],
+  "schema": "n03_e1_lgrc9v3_surface_inventory_v1",
+  "src_modified": false,
+  "status": "complete",
+  "sufficient_surfaces": [
+    "LGRC9V3PacketRecord",
+    "LGRC9V3PacketQueueEventRecord",
+    "LGRC9V3PacketLedger",
+    "LGRC9V3RuntimeState",
+    "schedule_lgrc9v3_packet_departure",
+    "process_lgrc9v3_packet_departure",
+    "process_lgrc9v3_packet_arrival",
+    "process_lgrc9v3_next_packet_event",
+    "LGRC9V3.schedule_packet_departure",
+    "LGRC9V3.step",
+    "LGRC9V3.run_event_queue",
+    "LGRC9V3.set_causal_flux_routes",
+    "classify_lgrc9v3_step_extension",
+    "build_lgrc9v3_graph_checkpoint"
+  ],
+  "surfaces": {
+    "classes": {
+      "LGRC9V3": {
+        "fields": [],
+        "name": "LGRC9V3",
+        "source": {
+          "line": 173,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      },
+      "LGRC9V3PacketLedger": {
+        "fields": [
+          "packet_records",
+          "packet_event_records",
+          "event_queue_records",
+          "node_coherence_total",
+          "in_flight_packet_total",
+          "conserved_budget_total",
+          "budget_before",
+          "budget_after",
+          "budget_error",
+          "fixed_topology_signature",
+          "policies",
+          "event_queue_tie_break_policy",
+          "packet_budget_invariant",
+          "causal_layer_mode",
+          "lgrc_runtime_level",
+          "evidence_class",
+          "packetized_flux",
+          "fixed_topology",
+          "topology_change_allowed",
+          "packet_transport_through_topology_change",
+          "identity_acceptance_allowed",
+          "collapse_allowed"
+        ],
+        "name": "LGRC9V3PacketLedger",
+        "source": {
+          "line": 311,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "LGRC9V3PacketQueueEventRecord": {
+        "fields": [
+          "event_id",
+          "event_kind",
+          "event_time_key",
+          "scheduler_event_index",
+          "packet_id",
+          "source_node_id",
+          "target_node_id",
+          "edge_id",
+          "amount",
+          "budget_before",
+          "budget_after",
+          "budget_error"
+        ],
+        "name": "LGRC9V3PacketQueueEventRecord",
+        "source": {
+          "line": 113,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "LGRC9V3PacketRecord": {
+        "fields": [
+          "packet_id",
+          "packet_state",
+          "source_node_id",
+          "target_node_id",
+          "edge_id",
+          "amount",
+          "departure_event_time_key",
+          "arrival_event_time_key",
+          "departure_event_id",
+          "arrival_event_id",
+          "departure_scheduler_event_index",
+          "arrival_scheduler_event_index",
+          "source_lineage_id",
+          "target_lineage_id"
+        ],
+        "name": "LGRC9V3PacketRecord",
+        "source": {
+          "line": 37,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "LGRC9V3RuntimeState": {
+        "fields": [
+          "topology",
+          "node_values",
+          "edge_values",
+          "step_index",
+          "time",
+          "budget_target",
+          "remainder",
+          "cached_quantities",
+          "event_log",
+          "observables",
+          "rng_state",
+          "params_identity",
+          "base_state",
+          "scheduler_event_index",
+          "checkpoint_index",
+          "event_time_key",
+          "node_proper_time",
+          "node_last_update_proper_time",
+          "node_last_update_event_time_key",
+          "edge_causal_delay",
+          "lapse",
+          "packet_ledger",
+          "causal_flux_routes",
+          "boundary_birth_trial_queue",
+          "topology_event_log",
+          "arrival_eligibility_log",
+          "local_update_log",
+          "causal_spark_diagnostic_log",
+          "causal_spark_evaluation_index",
+          "packet_processing_log",
+          "causal_modes",
+          "causal_layer_mode",
+          "lgrc_runtime_level",
+          "edge_delay_policy",
+          "event_queue_tie_break_policy"
+        ],
+        "name": "LGRC9V3RuntimeState",
+        "source": {
+          "line": 482,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py"
+        }
+      }
+    },
+    "functions": {
+      "build_lgrc9v3_graph_checkpoint": {
+        "name": "build_lgrc9v3_graph_checkpoint",
+        "signature": "(model_or_state: 'LGRC9V3 | LGRC9V3RuntimeState', *, identity: 'RunTelemetryIdentity', checkpoint_id: 'str', checkpoint_label: 'str', checkpoint_reason: 'str | None' = None, event_count_window: 'int' = 0, event_counts_by_kind_window: 'Mapping[str, int] | None' = None) -> 'GraphCheckpointArtifact'",
+        "source": {
+          "line": 442,
+          "path": "src/pygrc/telemetry/lgrc9v3_contract.py"
+        }
+      },
+      "build_lgrc9v3_packet_ledger": {
+        "name": "build_lgrc9v3_packet_ledger",
+        "signature": "(*, packet_records: 'Sequence[LGRC9V3PacketRecord]' = (), packet_event_records: 'Sequence[LGRC9V3PacketQueueEventRecord]' = (), event_queue_records: 'Sequence[LGRC9V3PacketQueueEventRecord]' = (), state: 'GRC9V3State | None' = None, node_coherence_total: 'float | None' = None, fixed_topology_signature: 'Mapping[str, Any] | None' = None, policies: 'Mapping[str, Any] | None' = None, budget_before: 'float | None' = None, budget_after: 'float | None' = None) -> 'LGRC9V3PacketLedger'",
+        "source": {
+          "line": 950,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "classify_lgrc9v3_step_extension": {
+        "name": "classify_lgrc9v3_step_extension",
+        "signature": "(model_or_state: 'LGRC9V3 | LGRC9V3RuntimeState') -> 'Mapping[str, Any]'",
+        "source": {
+          "line": 291,
+          "path": "src/pygrc/telemetry/lgrc9v3_contract.py"
+        }
+      },
+      "derive_lgrc9v3_packet_arrival_event_time_key": {
+        "name": "derive_lgrc9v3_packet_arrival_event_time_key",
+        "signature": "(*, departure_event_time_key: 'float', edge_id: 'EdgeId', edge_causal_delay: 'Mapping[EdgeId, float]') -> 'float'",
+        "source": {
+          "line": 785,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "ordered_lgrc9v3_event_queue": {
+        "name": "ordered_lgrc9v3_event_queue",
+        "signature": "(records: 'tuple[LGRC9V3PacketQueueEventRecord, ...]') -> 'tuple[LGRC9V3PacketQueueEventRecord, ...]'",
+        "source": {
+          "line": 42,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py"
+        }
+      },
+      "process_lgrc9v3_next_packet_event": {
+        "name": "process_lgrc9v3_next_packet_event",
+        "signature": "(state: 'GRC9V3State', ledger: 'LGRC9V3PacketLedger') -> 'LGRC9V3PacketProcessingResult'",
+        "source": {
+          "line": 1759,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "process_lgrc9v3_packet_arrival": {
+        "name": "process_lgrc9v3_packet_arrival",
+        "signature": "(state: 'GRC9V3State', ledger: 'LGRC9V3PacketLedger', *, packet_id: 'str', event_time_key: 'float | None' = None, scheduler_event_index: 'int | None' = None, event_id: 'str | None' = None) -> 'LGRC9V3PacketProcessingResult'",
+        "source": {
+          "line": 1624,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "process_lgrc9v3_packet_departure": {
+        "name": "process_lgrc9v3_packet_departure",
+        "signature": "(state: 'GRC9V3State', ledger: 'LGRC9V3PacketLedger', *, source_node_id: 'NodeId', target_node_id: 'NodeId', edge_id: 'EdgeId', amount: 'float', departure_event_time_key: 'float', arrival_event_time_key: 'float', scheduler_event_index: 'int', packet_index: 'int' = 0, arrival_scheduler_event_index: 'int | None' = None, source_lineage_id: 'str | None' = None, target_lineage_id: 'str | None' = None) -> 'LGRC9V3PacketProcessingResult'",
+        "source": {
+          "line": 1353,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      },
+      "restore_lgrc9v3_runtime_state_artifact": {
+        "name": "restore_lgrc9v3_runtime_state_artifact",
+        "signature": "(artifact: 'Mapping[str, Any]', *, base_state: 'GRC9V3State') -> 'LGRC9V3RuntimeState'",
+        "source": {
+          "line": 339,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py"
+        }
+      },
+      "schedule_lgrc9v3_packet_departure": {
+        "name": "schedule_lgrc9v3_packet_departure",
+        "signature": "(state: 'GRC9V3State', ledger: 'LGRC9V3PacketLedger', *, source_node_id: 'NodeId', target_node_id: 'NodeId', edge_id: 'EdgeId', amount: 'float', departure_event_time_key: 'float', arrival_event_time_key: 'float', scheduler_event_index: 'int', packet_index: 'int' = 0, arrival_scheduler_event_index: 'int | None' = None, source_lineage_id: 'str | None' = None, target_lineage_id: 'str | None' = None) -> 'LGRC9V3PacketLedger'",
+        "source": {
+          "line": 1238,
+          "path": "src/pygrc/models/lgrc_9_v3_packets.py"
+        }
+      }
+    },
+    "runtime_methods": {
+      "LGRC9V3.produce_events": {
+        "name": "produce_events",
+        "signature": "(self, *, policy: 'str' = 'disabled') -> 'LGRC9V3AutonomousProductionResult'",
+        "source": {
+          "line": 1008,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      },
+      "LGRC9V3.run_autonomous": {
+        "name": "run_autonomous",
+        "signature": "(self, *, max_events: 'int', policy: 'str' = 'bounded_lgrc9v3_v1', producer_policies: 'Sequence[str] | None' = None) -> 'list[StepResult]'",
+        "source": {
+          "line": 2557,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      },
+      "LGRC9V3.run_event_queue": {
+        "name": "run_event_queue",
+        "signature": "(self, *, max_events: 'int') -> 'list[StepResult]'",
+        "source": {
+          "line": 2484,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      },
+      "LGRC9V3.schedule_packet_departure": {
+        "name": "schedule_packet_departure",
+        "signature": "(self, *, source_node_id: 'int', target_node_id: 'int', edge_id: 'int', amount: 'float', departure_event_time_key: 'float | None' = None, arrival_event_time_key: 'float | None' = None, scheduler_event_index: 'int | None' = None, packet_index: 'int' = 0, source_lineage_id: 'str | None' = None, target_lineage_id: 'str | None' = None) -> 'None'",
+        "source": {
+          "line": 1163,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      },
+      "LGRC9V3.set_causal_flux_routes": {
+        "name": "set_causal_flux_routes",
+        "signature": "(self, routes: 'Mapping[int, Sequence[Mapping[str, Any]]]') -> 'None'",
+        "source": {
+          "line": 1048,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      },
+      "LGRC9V3.step": {
+        "name": "step",
+        "signature": "(self) -> 'StepResult'",
+        "source": {
+          "line": 2245,
+          "path": "src/pygrc/models/lgrc_9_v3_runtime.py"
+        }
+      }
+    }
+  }
+}

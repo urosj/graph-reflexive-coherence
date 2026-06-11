@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "antipodal_tie_cannot_promote": true,
+    "centroid_policy_frozen": true,
+    "front_rear_policy_frozen": true,
+    "route_does_not_cross_unwrap_seam": true,
+    "unwrap_policy_declared_before_run": true,
+    "wrap_jump_promotion_blocked": true
+  },
+  "iteration": "17",
+  "report_kind": "n04_iter17_ring_unwrap_policy_v1",
+  "schema": "movement_ladder_report_v1",
+  "status": "passed",
+  "unwrap_policy": {
+    "antipodal_tie_possible": false,
+    "antipodal_tie_reason": "odd_node_count_21_no_exact_antipode",
+    "center_reservoir": [
+      10
+    ],
+    "centroid_policy": "linear_centroid_on_declared_unwrap",
+    "claim_boundary": "ring transfer may only claim evidence under this unwrap policy; wrap artifacts, antipodal ties, and circular locomotion claims remain blocked",
+    "coordinate_frame": "ring_unwrapped_linear",
+    "front_rear_policy_frozen_before_run": true,
+    "front_region": [
+      13,
+      14
+    ],
+    "node_count": 21,
+    "policy_id": "s1_ring_unwrap_policy_v1",
+    "positive_direction": "increasing_unwrapped_index",
+    "rear_region": [
+      7,
+      6
+    ],
+    "ring_claim_scope": "declared_unwrap_only",
+    "route_crosses_unwrap_seam": false,
+    "substrate_id": "S1_ring_absorber_corridor_v1",
+    "unwrap_origin_node": 0,
+    "unwrap_seam": [
+      20,
+      0
+    ],
+    "wrap_jump_promotion_allowed": false
+  }
+}

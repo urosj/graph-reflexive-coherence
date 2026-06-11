@@ -1,0 +1,731 @@
+{
+  "a_path_preservation": {
+    "artifact_only_validator_preserved": true,
+    "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+    "gpr_level": "GPR6",
+    "hypothesis_a_status": "closed",
+    "lower_gpr5_evidence_preserved": true,
+    "strongest_evidence": "artifact_only_goal_proxy_regulation_candidate"
+  },
+  "a_path_variable_inventory": [
+    {
+      "a_path_evidence": "serialized proxy surface digest chain ending at perturbation recovery surface",
+      "a_path_source_digest": "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af",
+      "a_path_variable": "proxy_surface",
+      "available_lgrc_or_substrate_mechanisms": [
+        "node_coherence_measurement",
+        "native_causal_surface_digest",
+        "packet_ledger_state_surface"
+      ],
+      "claim_boundary": "proxy surface evidence does not imply semantic goal or agency",
+      "inventory_row_digest": "825617e3b26a1ee721e43dc42b578302844f3bc4b682361c36a146215cd5001d",
+      "iteration_11_role": "candidate observable proxy can be measured, but proxy meaning remains serialized",
+      "missing_native_policy_surfaces": [
+        "native_proxy_surface_policy_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "partially_native_representable",
+      "row_id": "n09_b0_proxy_surface",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "declared serialized band consumed by GPR2-GPR8",
+      "a_path_source_digest": "61c34d66e9416772b40a8db54dff3cf7a34f5a6ece4a18428a590f8d9594b706",
+      "a_path_variable": "target_band",
+      "available_lgrc_or_substrate_mechanisms": [
+        "numeric coherence values",
+        "serialized policy rows"
+      ],
+      "claim_boundary": "declared band is a regulator scaffold, not a native intention",
+      "inventory_row_digest": "cc4bfc5eb2dc25e0ed649ef075968b9ad0acf281577700d9a19db32df83e5ba6",
+      "iteration_11_role": "band remains the comparison frame, not a native attractor target",
+      "missing_native_policy_surfaces": [
+        "native_target_band_policy_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "producer_policy_required",
+      "row_id": "n09_b0_target_band",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "signed distance from proxy surface to declared target band",
+      "a_path_source_digest": "61c34d66e9416772b40a8db54dff3cf7a34f5a6ece4a18428a590f8d9594b706",
+      "a_path_variable": "error_sign_and_magnitude",
+      "available_lgrc_or_substrate_mechanisms": [
+        "coherence_difference_observable",
+        "artifact_digest_replay"
+      ],
+      "claim_boundary": "error value is a serialized diagnostic, not felt goal error",
+      "inventory_row_digest": "556008b018cea8ba375a30fc1a7b1f8dac67942ffd58a721487371b3eaaa2eaa",
+      "iteration_11_role": "probe can compare measured drift, but error computation is not native",
+      "missing_native_policy_surfaces": [
+        "native_proxy_error_policy_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "producer_policy_required",
+      "row_id": "n09_b0_error_sign_and_magnitude",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "decrease-proxy route selected when proxy is above band",
+      "a_path_source_digest": "134e35907533c2da88e567dfcfa83db5e68b885f55c25f6c09e478395f328ffa",
+      "a_path_variable": "response_direction",
+      "available_lgrc_or_substrate_mechanisms": [
+        "native_route_arbitration_candidate_sets",
+        "native_route_arbitration_records",
+        "runtime_visible_candidate_scores"
+      ],
+      "claim_boundary": "route selection is not semantic choice or goal understanding",
+      "inventory_row_digest": "4e55009c4e2cbd499b8e3786e837b67ddc078c10a5f2c35883154ec0a64ecdd6",
+      "iteration_11_role": "candidate routes may exist natively, but response direction remains externally scored",
+      "missing_native_policy_surfaces": [
+        "native_proxy_conditioned_response_policy_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "partially_native_representable",
+      "row_id": "n09_b0_response_direction",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "scheduled LGRC packet amount restores proxy to band",
+      "a_path_source_digest": "7f33759d102c3eee102f4b32bb515b9d0cf8eecb40cd22057de7c475dcde9d34",
+      "a_path_variable": "packet_correction_amount",
+      "available_lgrc_or_substrate_mechanisms": [
+        "native_packet_scheduling",
+        "step_owned_packet_processing",
+        "node_plus_packet_budget_conservation"
+      ],
+      "claim_boundary": "packet correction is scheduling evidence only",
+      "inventory_row_digest": "a263a08181c4e2a87eb45b8e73217bef33a494d7638ffc4cc9746575b4e09b90",
+      "iteration_11_role": "LGRC can carry a packet; choosing correction magnitude remains policy-mediated",
+      "missing_native_policy_surfaces": [
+        "native_response_amount_policy_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "partially_native_representable",
+      "row_id": "n09_b0_packet_correction_amount",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "four repeated memory-shaped correction windows remain bounded",
+      "a_path_source_digest": "90bfb058c829f562aae12374ce24022469bfeefd66d402b5d66569530b2cbb1c",
+      "a_path_variable": "repeated_boundedness",
+      "available_lgrc_or_substrate_mechanisms": [
+        "native_packet_loop_execution",
+        "bounded_budget_accounting",
+        "N05_O5_self_sustained_oscillator_candidate"
+      ],
+      "claim_boundary": "bounded repetition does not imply autonomous regulation",
+      "inventory_row_digest": "d2410c0aba666dee992ab68f9c2062c21481fa9f2a477d5156e17bf7138db5a0",
+      "iteration_11_role": "look for bounded return tendency without replaying producer correction",
+      "missing_native_policy_surfaces": [
+        "missing_serialized_delayed_passive_response_policy",
+        "native_repeated_goal_proxy_regulation_policy_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "partially_native_representable",
+      "row_id": "n09_b0_repeated_boundedness",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "proxy perturbation recovered to band through scheduled packet and step",
+      "a_path_source_digest": "7f33759d102c3eee102f4b32bb515b9d0cf8eecb40cd22057de7c475dcde9d34",
+      "a_path_variable": "perturbation_recovery",
+      "available_lgrc_or_substrate_mechanisms": [
+        "packet_processing_after_perturbation",
+        "budget_conserved_recovery_evidence"
+      ],
+      "claim_boundary": "recovery remains regulation evidence only under serialized policy",
+      "inventory_row_digest": "1b02099eabd27705aba222378428e1d53f6d46e16429ef2a37470fd60f586d65",
+      "iteration_11_role": "perturb same proxy and observe passive return, wrong-direction response, saturation, or no-response",
+      "missing_native_policy_surfaces": [
+        "perturbation_recovery_policy_not_constitutive_native",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "producer_policy_required",
+      "row_id": "n09_b0_perturbation_recovery",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "N08 memory surface changes route ranking for N09 producer eligibility",
+      "a_path_source_digest": "b21c093d70245fab02088b8ebed42ac931629c41f6e45d618f5b5a67d9bea627",
+      "a_path_variable": "memory_shaped_route_evidence",
+      "available_lgrc_or_substrate_mechanisms": [
+        "native_route_arbitration_can_read_runtime_visible_candidates",
+        "N08_static_positive_geometry_route_response_persistence_candidate"
+      ],
+      "claim_boundary": "Hypothesis A memory claim is artifact-only; Hypothesis B native trail claim remains blocked",
+      "inventory_row_digest": "c94f8bbc6626ba6606bc0a725b09a88bb0871405fdfec1424beb518ecae43e1a",
+      "iteration_11_role": "use static geometry response as design direction, not adaptive trail memory",
+      "missing_native_policy_surfaces": [
+        "native_route_conductance_memory_policy_missing",
+        "native_memory_shaped_regulation_surface_missing",
+        "native_goal_proxy_regulation_policy_missing"
+      ],
+      "native_substrate_mapping": "partially_native_representable",
+      "row_id": "n09_b0_memory_shaped_route_evidence",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md"
+      ]
+    },
+    {
+      "a_path_evidence": "N07 support digest is available; withdrawal baseline remains unavailable for N09/N10 consumption",
+      "a_path_source_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "a_path_variable": "support_identity_anchor",
+      "available_lgrc_or_substrate_mechanisms": [
+        "runtime_coherence_basin_support_area_digest",
+        "N07_ID6_bounded_non_destructive_exchange_evidence"
+      ],
+      "claim_boundary": "support evidence does not imply runtime identity acceptance",
+      "inventory_row_digest": "8a57eb58f4ddb26bd8d45fc3514470bbed90aaeedb94594ae78da7072ccb4b5f",
+      "iteration_11_role": "support anchor constrains overclaiming; not required to prove B1 probe response",
+      "missing_native_policy_surfaces": [
+        "n07_identity_withdrawal_baseline_not_available",
+        "native_identity_preserving_regulation_validator_missing",
+        "native_neutral_absorber_reservoir_policy_missing",
+        "native_identity_acceptance_contract_missing",
+        "native_long_horizon_c3_replay_policy_missing"
+      ],
+      "native_substrate_mapping": "partially_native_representable",
+      "row_id": "n09_b0_identity_support_anchor",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json"
+      ],
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md"
+      ]
+    }
+  ],
+  "acceptance_state": "achieved",
+  "artifact_digest": "88612218d51d084af7cdba784ff2da2adf44d2b1cdd391866aeb9c109928dfa3",
+  "b_path_blocker_refinement": [
+    {
+      "blocker": "native_goal_proxy_regulation_policy_missing",
+      "blocker_row_digest": "e291eeb1b02e5dd3bc3d90b2e4fd944614f00c927ccbe5d6c3a11cadee6ec55b",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "primary_b_path_blocker",
+      "status": "open"
+    },
+    {
+      "blocker": "native_proxy_surface_policy_missing",
+      "blocker_row_digest": "e22e21c82fb143be6db12d5839e6e476d54b1f071a557469ed885cc3c740a7cf",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_target_band_policy_missing",
+      "blocker_row_digest": "4fcc88aed686c2406a793d20764b2e167dca37433887e0fb1098f12146546504",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_proxy_error_policy_missing",
+      "blocker_row_digest": "a7e8e1e3bd666d8af00e298467a9f711554cb7f788060892866aab5b50614975",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_proxy_conditioned_response_policy_missing",
+      "blocker_row_digest": "f7915fcd885f89d8f14c64865c3439a26529e40f3fbbfb1dc73f395f1a3fd4f6",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_response_amount_policy_missing",
+      "blocker_row_digest": "3953219f7725862e9e98a9977e72a466958d2e61349a0fa6ded807373d3a6014",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_repeated_goal_proxy_regulation_policy_missing",
+      "blocker_row_digest": "88d6e614f67f2dbd965aaf30ea7278da04c4c147a63b171e82aa63804ed009ab",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "refined_goal_proxy_policy_surface_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "perturbation_recovery_policy_not_constitutive_native",
+      "blocker_row_digest": "9e058ae8a817cdf27db640c06f8a7b9e2722a2e538a52aa77e607ed2acb629df",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "supporting_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_memory_shaped_regulation_surface_missing",
+      "blocker_row_digest": "5378d6a6b3ba550674b86d440b9badbcdbafc64734b6d494e6f90b7832c95b66",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "memory_or_route_response_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_route_conductance_memory_policy_missing",
+      "blocker_row_digest": "8206aaa015b0982983759a070cd0edd17435ceb5c163ac8731cbb198c719a578",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "memory_or_route_response_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_route_conductance_memory_policy",
+      "blocker_row_digest": "e9666f4c579b11868370b752f0b607db956ee8dbf97ea7e629498b07d44cf079",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "memory_or_route_response_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_serialized_delayed_passive_response_policy",
+      "blocker_row_digest": "07d97cff08ad9c186374d65a1f9822dc1a02f37a3f1e2dfd589c8609f56f5b68",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "oscillation_or_potential_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_serialized_custom_node_potentials_policy",
+      "blocker_row_digest": "698e6b69a89cd60393b611d891003fcd88f5411d583dc94bfd8bdddb8605dc8d",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "oscillation_or_potential_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_serialized_potential_inversion_policy",
+      "blocker_row_digest": "0c355278e180e3a84dc94a5c6b2b8fed7a5f9c12ef91353e5fc15c01b4967bb2",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "oscillation_or_potential_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "missing_flux_facilitated_metric_map_policy",
+      "blocker_row_digest": "f4501c1528f08e33ba2ea29cb57390c8869a6d44ab6fb47b82cb473cc22cea0e",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "oscillation_or_potential_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_identity_preserving_regulation_validator_missing",
+      "blocker_row_digest": "b0ac78d91bb6be667595e10e68560e41b86deeabd24139c2f2fa9ad545572e92",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "identity_support_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "n07_identity_withdrawal_baseline_not_available",
+      "blocker_row_digest": "92346e3a834d5062e6b7ce37959d5f6621b5ce70409bb1429761a7bb0e5fcd29",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "identity_support_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_neutral_absorber_reservoir_policy_missing",
+      "blocker_row_digest": "3fc3cf2ab1b39ab2239b5913758e29061867be06966220aa7ca1764dc2f5deb2",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "supporting_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_identity_acceptance_contract_missing",
+      "blocker_row_digest": "7787eaf9648c05a0d43b19285d3d75af0cad02f64298c3c19cd224ec7bf724da",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "identity_support_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_long_horizon_c3_replay_policy_missing",
+      "blocker_row_digest": "65dff82e2a9df01fd79681545c52c1772bcbd36446ac9272c37d0775ebdbe5cc",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "supporting_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_goal_proxy_regulation_artifact_replay_validator_missing",
+      "blocker_row_digest": "a0f1e0eab3f7f1b9b2b3094face8c9ac98cfaffef00d32588b83dcc26a10c5d4",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "supporting_native_gap",
+      "status": "open"
+    },
+    {
+      "blocker": "native_oscillator_return_regulation_policy_missing",
+      "blocker_row_digest": "5328f974c80b8c73eb2c2c8611e1779320c7e1cfeeaaae813be3989d78aa37b2",
+      "blocks_hypothesis_b_native_regulation_claim": true,
+      "blocks_iteration_11_probe_execution": false,
+      "claim_boundary": "record gap without promoting agency, semantic goal, or native regulation claim",
+      "role": "supporting_native_gap",
+      "status": "open"
+    }
+  ],
+  "blocked_claims": [
+    "aco_like_behavior",
+    "agency",
+    "ant_colony_behavior",
+    "biological_behavior",
+    "goal_ownership",
+    "identity_acceptance",
+    "intention",
+    "locomotion_like_behavior",
+    "native_memory_trail",
+    "native_substrate_goal_proxy_regulation",
+    "personhood",
+    "rc_identity_collapse",
+    "runtime_identity_acceptance",
+    "semantic_goal_understanding",
+    "unrestricted_movement"
+  ],
+  "claim_flags": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "native_substrate_mediated_goal_proxy_regulation_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_10_hypothesis_b0_native_substrate_inventory.py",
+  "controls": {
+    "a_path_ceiling_preserved": {
+      "control_passed": true,
+      "primary_blocker": "a_path_claim_ceiling_mutated",
+      "reason": "GPR6 ceiling is copied from Iteration 9 closeout"
+    },
+    "b_path_not_promoted": {
+      "control_passed": true,
+      "primary_blocker": "hypothesis_b_claim_promotion_blocked",
+      "reason": "B-path inventory records blockers and does not run a positive native regulation probe"
+    },
+    "claim_promotion": {
+      "control_passed": true,
+      "primary_blocker": "claim_promotion_blocked",
+      "reason": "N09 stronger claim flags remain false"
+    },
+    "no_new_probe": {
+      "control_passed": true,
+      "primary_blocker": "new_probe_run_in_inventory_iteration",
+      "reason": "Iteration 10 reads existing artifacts only and constructs no LGRC runtime"
+    },
+    "visual_or_report_not_source_of_truth": {
+      "control_passed": true,
+      "primary_blocker": "non_artifact_source_of_truth_rejected",
+      "reason": "Inventory rows cite output JSON artifacts; reports are supporting references"
+    }
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "generated_at": "2026-06-09T21:02:46.605010+00:00",
+  "git": {
+    "head": "1621f65b01e82db6be31763ef1fc6f7eba517fe0",
+    "status_short_experiment": "M experiments/2026-05-N09-lgrc-goal-proxy-regulation/README.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationChecklist.md\n M experiments/2026-05-N09-lgrc-goal-proxy-regulation/implementation/GoalProxyRegulationImplementationPlan.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/configs/n09_fixture_manifest_v1.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_1_baseline_inventory.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_3_gpr1_proxy_measurement.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_4_gpr2_error_signal.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_5_gpr3_proxy_conditioned_eligibility.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_6_gpr4_single_cycle_correction.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_7_gpr5_repeated_bounded_regulation.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_1_baseline_inventory.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_3_gpr1_proxy_measurement.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_4_gpr2_error_signal.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_5_gpr3_proxy_conditioned_eligibility.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_6_gpr4_single_cycle_correction.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_7_gpr5_repeated_bounded_regulation.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_8_perturbation_withdrawal_support.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_1_baseline_inventory.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/build_n09_iteration_2_fixture_manifest.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_10_hypothesis_b0_native_substrate_inventory.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_3_gpr1_proxy_measurement.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_4_gpr2_error_signal.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_5_gpr3_proxy_conditioned_eligibility.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_6_gpr4_single_cycle_correction.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_7_gpr5_repeated_bounded_regulation.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_8_perturbation_withdrawal_support.py\n?? experiments/2026-05-N09-lgrc-goal-proxy-regulation/scripts/run_n09_iteration_9_gpr6_closeout.py",
+    "status_short_src": ""
+  },
+  "hypothesis_b_inventory_status": {
+    "inventory_does_not_change_a_path_ceiling": true,
+    "native_substrate_mediated_goal_proxy_regulation_supported": false,
+    "primary_blocker": "native_goal_proxy_regulation_policy_missing",
+    "status": "reopened_for_inventory_only",
+    "strongest_possible_iteration_11_positive_ceiling": "native_substrate_mediated_goal_proxy_regulation_design_candidate"
+  },
+  "iteration": 10,
+  "iteration_11_probe_guidance": {
+    "probe_may_use": [
+      "measured proxy node/surface",
+      "declared target band as comparison frame",
+      "fixed geometry or positive conserved route-response geometry",
+      "native route arbitration evidence if serialized and runtime-visible",
+      "LGRC packet/flux/budget accounting"
+    ],
+    "probe_must_not_use": [
+      "A-path producer correction scheduler",
+      "hidden reward or goal labels",
+      "experiment-side if/else route selection",
+      "post-hoc policy threshold changes",
+      "claim promotion fields"
+    ],
+    "result_classes": [
+      "toward_band_passive_response",
+      "bounded_degradation",
+      "wrong_direction_response",
+      "saturation",
+      "no_response",
+      "blocked_missing_native_policy_surface"
+    ]
+  },
+  "next_iteration": "11_hypothesis_b1_geometry_substrate_mediated_probe",
+  "purpose": "hypothesis_b0_native_substrate_inventory_no_new_probe",
+  "schema": "n09_iteration_10_hypothesis_b0_native_substrate_inventory_v1",
+  "source_artifact_digests": {
+    "n05_o6_closeout": "6cf06b6e0342f965169c75f76e1ab014bdd903ff3deb4f76235fe502350ebf6d",
+    "n06_sc6_closeout": "6bff0e8e2af428e2b5aa2dba86d11c2620f749e3ba425e4ae62315043d641640",
+    "n07_id6_closeout": "f69ccb4e66b40acc2ed614ee3aa380e1efa0c737118f3eeb46e955b0fd0a14e9",
+    "n08_hypothesis_b_closeout": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+    "n09_gpr6_closeout": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88"
+  },
+  "source_artifact_sha256": {
+    "n05_o6_closeout": "38c9b37186d1139a3ce7d3cf324e8f9a2b649099aa8bddd79c11eb346a86f1c8",
+    "n06_sc6_closeout": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+    "n07_id6_closeout": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189",
+    "n08_hypothesis_b_closeout": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+    "n09_gpr6_closeout": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+  },
+  "source_artifacts": {
+    "n05_o6_closeout": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json",
+    "n06_sc6_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+    "n07_id6_closeout": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+    "n08_hypothesis_b_closeout": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+    "n09_gpr6_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+  },
+  "source_reports": {
+    "n05_o6_closeout": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_8_o6_closeout.md",
+    "n06_sc6_closeout": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+    "n07_id6_closeout": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+    "n08_hypothesis_b_closeout": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md",
+    "n09_gpr6_closeout": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+  },
+  "status": "passed",
+  "substrate_ingredient_inventory": [
+    {
+      "available_mechanisms": [
+        "route_aspect_surplus_trigger",
+        "native_self_rearm_evidence",
+        "bounded_autonomous_run_loop"
+      ],
+      "blockers": [
+        "missing_serialized_custom_node_potentials_policy",
+        "missing_serialized_potential_inversion_policy",
+        "missing_flux_facilitated_metric_map_policy",
+        "missing_serialized_delayed_passive_response_policy",
+        "missing_route_conductance_memory_policy"
+      ],
+      "claim_boundary": "oscillation/return channels are not route memory or goal regulation",
+      "evidence_ceiling": "self_sustained_oscillator_candidate",
+      "ingredient_id": "n05_oscillation_return_channels",
+      "inventory_row_digest": "bc6087109a2860b50379aed7c92b2e51ef3cd5b88eb7870f43873eaaaaef7a05",
+      "native_support_status": "route_aspect_serialized_self_rearm_available_o6_blocked",
+      "source_artifacts": [
+        "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_8_o6_closeout.json"
+      ],
+      "source_experiment": "N05",
+      "source_reports": [
+        "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_8_o6_closeout.md"
+      ],
+      "supported_level_or_class": "O5",
+      "usable_for_iteration_11": true
+    },
+    {
+      "available_mechanisms": [
+        "native_route_arbitration_records",
+        "runtime_visible_candidate_scores",
+        "selected_and_rejected_route_digests"
+      ],
+      "blockers": [
+        "no_dedicated_native_semantic_context_validator",
+        "selection_only_pre_topology_scope",
+        "independent_runtime_windows"
+      ],
+      "claim_boundary": "native route arbitration is selection evidence, not semantic choice",
+      "evidence_ceiling": "artifact_only_semantic_route_choice_candidate",
+      "ingredient_id": "n06_route_arbitration_context_selection",
+      "inventory_row_digest": "6619a403bd93cbbd2152ebad09e58dc0850fb51d04164781d6f35ea3d3652737",
+      "native_support_status": "serialized_context_relation_replay_and_native_selection_replay",
+      "source_artifacts": [
+        "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json"
+      ],
+      "source_experiment": "N06",
+      "source_reports": [
+        "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md"
+      ],
+      "supported_level_or_class": "SC6",
+      "usable_for_iteration_11": true
+    },
+    {
+      "available_mechanisms": [
+        "support_area_digest",
+        "coherence_basin_identity_surface",
+        "bounded_non_destructive_exchange_class"
+      ],
+      "blockers": [
+        "native_neutral_absorber_reservoir_policy_missing",
+        "native_identity_acceptance_contract_missing",
+        "native_long_horizon_c3_replay_policy_missing"
+      ],
+      "claim_boundary": "ID6 evidence is not runtime identity acceptance or RC identity collapse",
+      "evidence_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+      "ingredient_id": "n07_identity_support_and_bounded_exchange",
+      "inventory_row_digest": "2913ba8331f04d6c8d246c9f4ad926a22e2f2a41f2006572ee8afe23b68a66a2",
+      "native_support_status": "experiment_local_serialized_reservoir_policy",
+      "source_artifacts": [
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json"
+      ],
+      "source_experiment": "N07",
+      "source_reports": [
+        "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md"
+      ],
+      "supported_level_or_class": "ID6",
+      "usable_for_iteration_11": true
+    },
+    {
+      "available_mechanisms": [
+        "positive_conserved_geometry_shapes_native_arbitration",
+        "static_response_persistence"
+      ],
+      "blockers": [
+        "native_route_conductance_memory_policy_missing"
+      ],
+      "claim_boundary": "static geometry response is not adaptive trail memory",
+      "evidence_ceiling": "static_positive_geometry_route_response_persistence_candidate",
+      "ingredient_id": "n08_static_positive_geometry_route_response",
+      "inventory_row_digest": "07aecc3ca58edddfd250ebed357e01d318070d990f89d823603af6d65eb548a2",
+      "native_support_status": "static_geometry_response_persistence_without_native_conductance_memory",
+      "source_artifacts": [
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json"
+      ],
+      "source_experiment": "N08",
+      "source_reports": [
+        "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md"
+      ],
+      "supported_level_or_class": "closed_bounded_native_policy_gap_recorded",
+      "usable_for_iteration_11": true
+    },
+    {
+      "available_mechanisms": [
+        "packet_scheduling",
+        "step_owned_packet_processing",
+        "node_plus_packet_budget_accounting",
+        "native_route_arbitration",
+        "topology_commit_lineage",
+        "topology_state_reabsorption"
+      ],
+      "blockers": [
+        "native_goal_proxy_regulation_policy_missing",
+        "native_proxy_error_policy_missing",
+        "native_proxy_conditioned_response_policy_missing"
+      ],
+      "claim_boundary": "runtime mechanisms do not create semantic goal, agency, or native regulation claims by themselves",
+      "evidence_ceiling": "runtime_support_ingredient_inventory",
+      "ingredient_id": "current_lgrc_runtime_surfaces",
+      "inventory_row_digest": "2ee15c95019406943f836e7fc1be70b84e7439d04b873e7284e62dc7139c711f",
+      "native_support_status": "available_as_mechanisms_not_goal_proxy_policy",
+      "source_artifacts": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+      ],
+      "source_experiment": "LGRC/Phase8",
+      "source_reports": [
+        "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md"
+      ],
+      "supported_level_or_class": "packet_flux_budget_topology_route_arbitration_state_reabsorption_available",
+      "usable_for_iteration_11": true
+    }
+  ],
+  "validation_checks": {
+    "all_inventory_row_digests_present": true,
+    "all_inventory_rows_have_sources": true,
+    "all_source_artifacts_passed": true,
+    "claim_flags_all_false": true,
+    "controls_all_passed": true,
+    "hypothesis_a_closed": true,
+    "hypothesis_b_staged": true,
+    "n05_n08_ingredient_inventory_complete": true,
+    "n09_a_path_closeout_preserved": true,
+    "native_substrate_b_claim_not_supported": true,
+    "no_new_probe_run": true,
+    "primary_b_path_blocker_recorded": true,
+    "refined_proxy_policy_blockers_recorded": true,
+    "required_a_path_variables_inventory_complete": true,
+    "source_artifacts_present": true,
+    "source_reports_present": true
+  }
+}

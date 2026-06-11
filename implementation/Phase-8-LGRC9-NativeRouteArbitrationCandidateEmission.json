@@ -1,0 +1,100 @@
+{
+  "artifact": "Phase-8-LGRC9-NativeRouteArbitrationCandidateEmission",
+  "schema_version": "phase8_lgrc9_native_route_arbitration_candidate_emission_v1",
+  "date": "2026-05-22",
+  "status": "passed",
+  "iteration": 78,
+  "purpose": "runtime_visible_candidate_route_set_emission_without_arbitration",
+  "implementation_files": [
+    "src/pygrc/models/lgrc_9_v3_runtime.py",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+    "tests/models/test_lgrc_9_v3_runtime.py"
+  ],
+  "runtime_api": {
+    "method": "LGRC9V3.emit_native_route_candidate_set",
+    "default_off": true,
+    "emits_candidate_route_records": true,
+    "emits_candidate_set_records": true,
+    "selects_route": false,
+    "commits_topology_event": false,
+    "schedules_packets": false
+  },
+  "candidate_source_evidence": {
+    "requires_committed_source_surface_digest": true,
+    "source_producer_record_id_is_serialized_when_supplied": true,
+    "topology_state_reabsorption_digest_is_serialized_when_supplied": true,
+    "runtime_visible_policy_id_is_serialized": true,
+    "candidate_selected_sink_id_is_candidate_local_only": true,
+    "run_selection_requires_route_arbitration_record": true
+  },
+  "candidate_scoring": {
+    "score_components_serialized": true,
+    "candidate_route_score_equals_score_component_sum": true,
+    "hidden_fixture_inputs_rejected": true,
+    "hidden_input_blocker": "native_route_arbitration_hidden_input_rejected"
+  },
+  "candidate_set": {
+    "includes_unique_candidates_in_window": true,
+    "deterministic_order_keys": [
+      "score_desc_then_candidate_id",
+      "digest_ascending"
+    ],
+    "duplicate_candidate_routes_suppressed": true,
+    "candidate_set_idempotency_preserved": true
+  },
+  "guards": {
+    "unknown_source_surface_digest_rejected": true,
+    "missing_budget_prediction_rejected": true,
+    "malformed_lineage_map_rejected": true,
+    "hidden_fixture_route_selection_rejected": true,
+    "experiment_if_else_selection_rejected": true,
+    "preselected_sink_selection_rejected": true,
+    "hidden_input_blocker": "native_route_arbitration_hidden_input_rejected",
+    "budget_blocker": "native_route_arbitration_budget_invalid"
+  },
+  "non_actions": {
+    "route_arbitration_record_emitted": false,
+    "selected_topology_event_committed": false,
+    "packet_scheduled": false,
+    "state_mutated": false,
+    "claim_promoted": false
+  },
+  "scope_limitations": {
+    "producer_linkage_serialized_when_supplied": true,
+    "producer_record_digest_validated": false,
+    "producer_record_digest_reason": "producer_record_digest is not part of the current producer record contract"
+  },
+  "runtime_state_serialization": {
+    "native_route_candidate_log": true,
+    "native_route_candidate_set_log": true,
+    "snapshot_includes_candidate_logs": true
+  },
+  "verification": {
+    "candidate_emission_tests": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route_candidate\"",
+      "status": "passed",
+      "result": "12 passed, 112 deselected"
+    },
+    "focused_regression": {
+      "command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k \"native_route or time_scopes_producer_reads or rejects_source_read_after_transport or topology_state_reabsorption_artifact_validator_reconstructs_chain\"",
+      "status": "passed",
+      "result": "25 passed, 222 deselected, 20 subtests passed"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  },
+  "claim_flags": {
+    "movement_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "next_iteration": "79_native_route_arbitration"
+}

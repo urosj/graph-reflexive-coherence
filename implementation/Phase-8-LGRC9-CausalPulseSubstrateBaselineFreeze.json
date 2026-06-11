@@ -1,0 +1,189 @@
+{
+  "artifact_kind": "phase8_lgrc9_causal_pulse_substrate_baseline_freeze",
+  "artifact_schema_version": "phase8_lgrc9_causal_pulse_substrate_baseline_freeze_v1",
+  "phase": "Phase 8 LGRC9 causal pulse-substrate surface continuation",
+  "iteration": 50,
+  "status": "passed",
+  "date": "2026-05-16",
+  "purpose": "Freeze existing LGRC9V3 behavior and N04 Lane E hybrid evidence before native causal pulse-substrate surface implementation.",
+  "scope": {
+    "native_surface_v1_topology_scope": "fixed_topology_only",
+    "lgrc3_topology_lineage_transport": "deferred",
+    "topology_changing_surface_runs_blocker": "topology_lineage_deferred",
+    "src_changes_in_iteration_50": false
+  },
+  "runtime_level_baseline": {
+    "required_for_native_surface": "lgrc2_or_higher",
+    "lgrc2_available": true,
+    "validated_mode": "packetized_fixed_topology",
+    "validated_by": "tests.models.test_lgrc_9_v3_contract.test_lgrc2_packetized_fixed_topology_config_is_accepted"
+  },
+  "snapshot_telemetry_baseline": {
+    "snapshot_schema": "pygrc.snapshot",
+    "snapshot_version": 1,
+    "telemetry_family": "lgrc9v3",
+    "telemetry_contract_version": "phase8_lgrc9v3_iter29_v1",
+    "graph_checkpoint_schema_version": "lgrc9v3_graph_checkpoint_v1",
+    "native_surface_fields_present": false
+  },
+  "determinism_baseline": {
+    "default_rng_seed_policy": "runtime uses evolution.rng_seed when present, otherwise deterministic seed 0 in LGRC9V3 stochastic gates",
+    "surface_contract_randomness": "none",
+    "fixture_policy": "unit fixtures are deterministic; generated/discovery fixtures serialize seed parameters separately"
+  },
+  "prior_continuation": {
+    "phase8_gate_map_position": "after native packet-loop continuation Iterations 43-49",
+    "iteration_49_closeout_reference": "implementation/Phase-8-LGRC9-NativePacketLoopChecklist.md#iteration-49-native-packet-loop-closeout",
+    "native_packet_loop_baseline_reference": "implementation/Phase-8-LGRC9-NativePacketLoopBaselineFreeze.json"
+  },
+  "environment": {
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39"
+  },
+  "git": {
+    "head_commit": "fe47313792c9a173451bb4a9383703f85bafec1f",
+    "src_diff": "empty",
+    "src_status": "empty",
+    "status_scope": [
+      "modified: experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md",
+      "modified: experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md",
+      "modified: implementation/ImplementationPhases.md",
+      "modified: implementation/Phase-8-LGRC9-ImplementationPlan.md",
+      "modified: papers/2026-05-LGRC9V3-Causal-Pulse-Substrate-Surfaces.md",
+      "untracked: implementation/Phase-8-LGRC9-CausalPulseSubstrateChecklist.md",
+      "untracked: implementation/Phase-8-LGRC9-CausalPulseSubstratePlan.md",
+      "untracked: implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.json",
+      "untracked: implementation/Phase-8-LGRC9-CausalPulseSubstrateBaselineFreeze.md"
+    ]
+  },
+  "n04_lane_e_artifacts": {
+    "hybrid_surface_probe": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/hybrid_lgrc_pulse_substrate_surface_probe.json",
+      "sha256": "809ba5c96a598b60d8cea567a694de0121c261a3413303cadb813eed49f312ff",
+      "status": "passed",
+      "claim_ceiling": "hybrid_lgrc_causal_pulse_substrate_surface_contract_supported",
+      "native_lgrc_pulse_substrate_supported": false,
+      "movement_claim_allowed": false
+    },
+    "lane_c_feedback_compatibility": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/hybrid_lgrc_lane_c_feedback_surface_compatibility.json",
+      "sha256": "cc6cede94ae3839f9fdeb64b0b529baa394a91e0d92b7642b7149a073821588e",
+      "status": "passed",
+      "claim_ceiling": "lane_c_feedback_policy_compatible_with_causal_pulse_substrate_surface",
+      "native_lgrc_pulse_substrate_supported": false,
+      "movement_claim_allowed": false
+    }
+  },
+  "n03_packet_loop_artifacts": {
+    "e3_native_packet_loop_closeout": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_closeout.json",
+      "sha256": "75e02858f32484a8c4e9a24d9751c0ce98e4ef603fd6e550d8a47f7466e2288e",
+      "status": "passed",
+      "native_d2_3_equivalent": true
+    },
+    "e3_animation": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_animation.json",
+      "sha256": "3c7094198ad273369af49beb10e6916b4d2bf9a705ecaef6c421e4be39033b2f",
+      "status": "passed"
+    }
+  },
+  "baseline_claim_flags": {
+    "native_causal_pulse_substrate_surface_enabled": false,
+    "native_causal_pulse_substrate_surface_validated": false,
+    "native_pulse_substrate_coupling_producer_enabled": false,
+    "native_feedback_coupled_pulse_producer_enabled": false,
+    "native_lgrc_pulse_substrate_supported": false,
+    "native_m6": false,
+    "movement_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "adaptive_topology_entry_allowed": false,
+    "biological_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false
+  },
+  "test_count_baseline": {
+    "focused_lgrc_runtime_tests": 141,
+    "native_packet_loop_tests": 42,
+    "lgrc_sweep_tests": 185,
+    "grc9v3_sweep_tests": 123,
+    "full_unittest_discovery_tests": 980
+  },
+  "audits": {
+    "src_diff_empty_before_implementation": true,
+    "src_status_empty_before_implementation": true,
+    "no_native_pulse_substrate_symbols_in_src": true,
+    "no_native_pulse_substrate_surface_rows_in_current_runtime": true,
+    "no_native_pulse_substrate_support_claim_exists_yet": true,
+    "n04_lane_e_hybrid_evidence_present": true,
+    "n04_lane_c_feedback_compatibility_present": true,
+    "existing_packet_loop_closeout_supported": true,
+    "static_route_autonomy_preserved": true,
+    "fixed_topology_v1_scope_recorded": true,
+    "lgrc2_dependency_recorded": true,
+    "snapshot_telemetry_format_baseline_recorded": true,
+    "deterministic_fixture_policy_recorded": true,
+    "prior_continuation_reference_recorded": true
+  },
+  "commands": [
+    {
+      "command": "git rev-parse HEAD",
+      "result": "fe47313792c9a173451bb4a9383703f85bafec1f"
+    },
+    {
+      "command": "git status --short",
+      "result": "recorded",
+      "src_changes": false
+    },
+    {
+      "command": "git diff -- src",
+      "result": "empty"
+    },
+    {
+      "command": "git status --short src",
+      "result": "empty"
+    },
+    {
+      "command": "env PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_runtime tests.models.test_lgrc_9_v3_construction tests.models.test_lgrc_9_v3_contract tests.models.test_lgrc_9_v3_autonomy_contract -q",
+      "result": "passed",
+      "tests": 141
+    },
+    {
+      "command": "env PYTHONPATH=src .venv/bin/python -m unittest tests.models.test_lgrc_9_v3_native_packet_loop_baseline tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect tests.models.test_lgrc_9_v3_native_packet_loop_control_parity tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger -q",
+      "result": "passed",
+      "tests": 42
+    },
+    {
+      "command": "env PYTHONPATH=src .venv/bin/python -m unittest discover tests -p 'test_lgrc*.py' -q",
+      "result": "passed",
+      "tests": 185
+    },
+    {
+      "command": "env PYTHONPATH=src .venv/bin/python -m unittest discover tests/models -p 'test_grc_9_v3*.py' -q",
+      "result": "passed",
+      "tests": 123
+    },
+    {
+      "command": "env PYTHONPATH=src .venv/bin/python -m unittest discover tests -q",
+      "result": "passed",
+      "tests": 980,
+      "duration_seconds": 287.423
+    },
+    {
+      "command": ".venv/bin/python -m ruff check src tests experiments/2026-05-N04-grc9v3-movement-ladders/scripts experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts",
+      "result": "failed_baseline_preexisting",
+      "errors": 1146,
+      "note": "Broad Ruff baseline fails on pre-existing lint debt; Iteration 50 made no src changes."
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "rg -n \"native_causal_pulse_substrate|pulse_substrate_surface|native_lgrc_pulse_substrate_supported|native_pulse_substrate|causal_pulse_substrate\" src",
+      "result": "no_matches"
+    }
+  ],
+  "minimal_pass_statement": "Before adding native causal pulse-substrate surface support, existing LGRC9V3 tests, native packet-loop tests, LGRC sweep, GRC9V3 sweep, and full unittest discovery pass; src/* is unchanged; N04 Lane E and Lane C hybrid artifacts are present with native support flags false; existing E3 packet-loop closeout remains supported; no native pulse-substrate surface rows or claims exist in src/runtime baseline; and native surface v1 is fixed-topology with LGRC-3 lineage transport deferred."
+}

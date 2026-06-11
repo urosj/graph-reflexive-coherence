@@ -1,0 +1,114 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9 Corrected Front Growth Positive High
+  description: Corrected GRCL-9 front-growth positive control with explicit spark/refinement-created front capacity.
+  source_kind: manual_seed
+  source_reference: implementation/GRC9-GRCL9-GrowthCorrection-Checklist.md#iteration-51-elementary-corrected-grcl-9-examples
+  source_schema_version: "0.1"
+  source_domain: grcl9
+  tags: [grcl9, corrected_growth, front_capacity, positive_control]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: candidate
+    type: saddle
+    coherence_prior: 1.0
+    chart_center_hint: [0.5, 0.5]
+    branch_target_ids: [support_n, support_e, support_s, exposed_front]
+    extensions:
+      grcl9:
+        term_kind: critical_region
+        term_id: corrected_front_growth_positive_high_critical_region
+        motif_id: front_growth
+        region_id: candidate
+        stability_intent: critical
+        coherence_profile:
+          critical_region: front_growth_parent
+          local_basin: single_candidate
+        boundary_gradient_profile:
+          boundary_ports: all_nine
+          gradient_structure: columnwise_front
+        columnwise_near_cancellation:
+          target_column: 2
+          diagnostic_mode: near_epsilon
+          spark_threshold: 0.02
+        spark_gate_intent: saturation_column_proxy
+  - id: refinement
+    type: plateau
+    parent_id: candidate
+    coherence_prior: 0.6
+    extensions:
+      grcl9:
+        term_kind: refinement_locus
+        term_id: corrected_front_growth_positive_high_refinement_locus
+        motif_id: front_growth
+        locus_id: front_refinement
+        region_id: candidate
+        target_effective_degree: 16
+        coherence_transfer_mode: equal
+  - id: exposed_front
+    type: ridge
+    owner_id: candidate
+    adjacent_ids: [outside]
+    extensions:
+      grcl9:
+        term_kind: boundary_stratum
+        term_id: corrected_front_growth_positive_high_boundary_stratum
+        motif_id: front_growth
+        stratum_id: front_boundary
+        parent_region_id: candidate
+        boundary_role: spark_refinement_front
+        inactive_port: 5
+  - id: outward_front_pressure
+    type: valley
+    from_id: candidate
+    to_id: outside
+    extensions:
+      grcl9:
+        term_kind: gradient_pressure
+        term_id: corrected_front_growth_positive_high_gradient_pressure
+        motif_id: front_growth
+        pressure_id: front_pressure
+        boundary_stratum_id: front_boundary
+        pressure_class: controlled_high
+        lambda_birth: 100.0
+        growth_semantics: front_capacity
+        front_capacity_source: spark_expansion_front
+        front_source_construct_id: corrected_front_growth_positive_high_expansion_region
+  - id: outside
+    type: plateau
+    coherence_prior: 0.1
+  - id: support_n
+    type: basin
+    coherence_prior: 0.5
+  - id: support_e
+    type: basin
+    coherence_prior: 0.5
+  - id: support_s
+    type: basin
+    coherence_prior: 0.5
+
+extensions:
+  grcl9:
+    contract_version: grcl9.landscape_example.v1
+    grcl9_required: true
+    example_name: corrected_front_growth_positive_high
+    manifest_entry_id: grcl9_lowering_growth_pressure_v1
+    expected_selector_ids: [growth_count]
+    notes: Corrected elementary GRCL-9 front-growth positive control.

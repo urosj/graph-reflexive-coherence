@@ -1,0 +1,104 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: S6 Periodic Seam Ring
+  description: Canonical strict S6 substrate family with periodic seam-spanning support and wrapped channel coupling.
+  source_kind: pde_landscape_dsl
+  source_reference: rc-sim/configs/landscapes/s6-periodic-seam-ring.json
+  source_schema_version: "2.0.0"
+  source_domain: "2d"
+  translator_name: pde_landscape_to_seed
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: seam_left
+    type: basin
+    coherence_prior: 0.83
+    depth_hint: 0
+    chart_center_hint: [0.95, 0.5]
+    chart_scale_hint:
+      radius: 0.09
+
+  - id: seam_left_boundary
+    type: ridge
+    owner_id: seam_left
+    ridge_kind: boundary
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.83
+    exterior_coherence_hint: 0.25
+    hints:
+      inner_radius: 0.09
+      outer_radius: 0.11
+
+  - id: seam_right
+    type: basin
+    coherence_prior: 0.83
+    depth_hint: 0
+    chart_center_hint: [0.05, 0.5]
+    chart_scale_hint:
+      radius: 0.09
+
+  - id: seam_right_boundary
+    type: ridge
+    owner_id: seam_right
+    ridge_kind: boundary
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.83
+    exterior_coherence_hint: 0.25
+    hints:
+      inner_radius: 0.09
+      outer_radius: 0.11
+
+  - id: seam_channel
+    type: valley
+    from_id: seam_left
+    to_id: seam_right
+    width_hint: 0.05
+    coherence_prior: 0.32
+    path_hint: straight
+
+geometry_hints:
+  source_chart: planar_periodic_hint
+  periodicity:
+    x: true
+    y: true
+  scale_units: unit_box
+
+extensions:
+  source_pde:
+    meta:
+      author: RC Landscape Iteration 2
+      date: "2026-04-02"
+    geometry:
+      distance_mode: periodic_torus
+      period_x: 1.0
+      period_y: 1.0
+    compile:
+      composition_mode: blend
+      value_range:
+        mode: clamp
+        min: 0.0
+        max: 1.0
+      mass_normalization:
+        mode: none
+    potential_compile_policy:
+      profile_transform: none
+    initial_flux:
+      enabled: false
+      direction: none
+      magnitude: 0.0
+      channels: []

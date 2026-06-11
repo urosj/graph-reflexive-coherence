@@ -1,0 +1,64 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Quiescent Hybrid Control
+  description: Seed-backed GRCL-9V3 no-event control preserved from S0014 future vocabulary records.
+  source_kind: manual_seed
+  source_reference: outputs/grc9v3/phenomenology_discovery/sessions/S0014/source_language_handoff.json
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, s0014, quiescent, no_event_control]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: quiet
+    type: basin
+    coherence_prior: 0.5
+    extensions:
+      grcl9v3:
+        term_kind: quiescent_region
+        term_id: quiescent_hybrid_control_no_event_control_quiet
+        region_id: quiet
+        source_role: no_event_control
+        profile:
+          active_degree: 5
+          pressure: low
+  - id: plateau
+    type: plateau
+    coherence_prior: 0.2
+    hosted_primitive_ids: [quiet]
+    extensions:
+      grcl9v3:
+        term_kind: plateau_support
+        term_id: quiescent_hybrid_control_no_event_control_plateau
+        region_id: quiet
+        source_role: no_event_control
+        profile:
+          support: stable_plateau
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: quiescent_hybrid_control_no_event_control
+    manifest_entry_id: future_vocabulary_quiescent_hybrid_control_v1
+    motif_id: grc9v3-motif-s0006-quiescent-hybrid-control-no-event-control
+    expected_selector_ids: [no_lifecycle_events]
+    notes:
+      discovery_anchor: S0014 source-language handoff
+      boundary: source preconditions only

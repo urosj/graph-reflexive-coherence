@@ -1,0 +1,330 @@
+{
+  "artifact_digests": {
+    "artifact_replay_digest": "58c0885f672adba94fe0f0aed3238160adcaaac5a8bb7196836a23837044d72f",
+    "closeout_summary_digest": "01500714849337fd08ab1fd4da40590110dc1f3c118395bf16329c072af4d8b4",
+    "controls_digest": "06174541750d67a28ad21939b4e41f751008d9f7087f85d2c320bf5ec1c2dffb",
+    "o6_boundary_digest": "5ca3733c6ac1d4d5293afb0f26ce7937ea9981c8948a89b9bffc65f7c419cd85",
+    "source_artifact_index_digest": "f0e98294704ef8e38db878795eda7cb68c41c6b1860093a7ee30ca27c91f4517"
+  },
+  "artifact_replay": {
+    "artifact_only": true,
+    "budget_ok": true,
+    "o5_artifact_replay_passed": true,
+    "o5_cycle_count_reconstructed": 3,
+    "o5_self_rearm_validator": "validate_lgrc9v3_self_rearm_evidence_artifacts",
+    "passed": true,
+    "primary_blocker": "missing_route_conductance_memory_policy",
+    "route_aspect_reconstructed": true,
+    "route_coupled_oscillator_replay_status": "blocked_missing_route_memory_surface",
+    "route_coupled_oscillator_supported": false,
+    "route_memory_surface_reconstructed": false,
+    "runtime_state_used": false
+  },
+  "blocked_claims": [
+    "movement",
+    "semantic_choice",
+    "agency",
+    "rc_identity_collapse",
+    "identity_acceptance",
+    "memory_or_trail",
+    "goal_proxy_regulation",
+    "agentic_like_behavior",
+    "locomotion_like_behavior",
+    "biological_behavior",
+    "ant_colony_behavior",
+    "unrestricted_movement"
+  ],
+  "budget": {
+    "budget_exact": true,
+    "budget_surface": "node_plus_packet",
+    "node_plus_packet_budget_after": 3.0,
+    "node_plus_packet_budget_before": 3.0,
+    "node_plus_packet_budget_error": 0.0,
+    "o6_new_budget_mutation_performed": false,
+    "source_iteration": "iteration_7_o5_self_sustained_boundary"
+  },
+  "claim_boundary": {
+    "o_level_is_evidence_classification": true,
+    "producer_scheduling_does_not_imply_agency": true,
+    "route_arbitration_does_not_imply_semantic_choice": true,
+    "route_coupled_oscillator_does_not_imply_memory": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "agentic_like_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "goal_proxy_regulation_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "memory_or_trail_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_8_o6_closeout.py",
+  "controls": {
+    "all_controls_passed": true,
+    "budget_mismatch": {
+      "control_execution_mode": "artifact_budget_control",
+      "control_id": "budget_mismatch",
+      "passed": true,
+      "primary_blocker": "n05_o6_node_plus_packet_budget_mismatch"
+    },
+    "claim_promotion": {
+      "control_execution_mode": "artifact_claim_boundary_control",
+      "control_id": "claim_promotion_attempt",
+      "passed": true,
+      "primary_blocker": "n05_o6_claim_promotion_rejected"
+    },
+    "hidden_route_preference": {
+      "control_execution_mode": "artifact_route_surface_control",
+      "control_id": "hidden_route_preference",
+      "passed": true,
+      "primary_blocker": "n05_o6_hidden_route_preference_rejected"
+    },
+    "hidden_trail": {
+      "control_execution_mode": "artifact_route_memory_boundary_control",
+      "control_id": "hidden_trail",
+      "passed": true,
+      "primary_blocker": "n05_o6_hidden_trail_rejected"
+    },
+    "missing_route_memory_surface": {
+      "control_execution_mode": "native_policy_support_boundary_control",
+      "control_id": "missing_route_memory_surface",
+      "passed": true,
+      "primary_blocker": "n05_o6_route_memory_surface_missing"
+    },
+    "producer_mutation": {
+      "control_execution_mode": "artifact_producer_boundary_control",
+      "control_id": "producer_mutation_attempt",
+      "passed": true,
+      "primary_blocker": "n05_o6_producer_mutation_boundary_violation"
+    }
+  },
+  "environment": {
+    "generated_at": "2026-06-04T23:30:53.083981+00:00",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_stage": "artifact_only_closeout_boundary_no_new_runtime_probe",
+  "git": {
+    "head": {
+      "command": "git rev-parse HEAD",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "553f423d6c6f787e535450b983997890d28b5dd8"
+    },
+    "status_short": {
+      "command": "git status --short",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N05-lgrc-coherence-waves-oscillators/README.md\n M experiments/2026-05-N05-lgrc-coherence-waves-oscillators/implementation/CoherenceOscillatorsImplementationChecklist.md\n M experiments/2026-05-N05-lgrc-coherence-waves-oscillators/implementation/CoherenceOscillatorsImplementationPlan.md\n M experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/configs/n05_fixture_manifest_v1.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_1_baseline_inventory.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_2_fixture_manifest_validation.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_3_o1_delayed_outbound_pulse.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_4_o2_reflected_return_pulse.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_5_o3_amplified_return.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_6_o4_repeated_cycle.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_7_o5_self_sustained_boundary.json\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_1_baseline_inventory.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_2_fixture_manifest_validation.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_3_o1_delayed_outbound_pulse.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_4_o2_reflected_return_pulse.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_5_o3_amplified_return.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_6_o4_repeated_cycle.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_7_o5_self_sustained_boundary.md\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/build_n05_iteration_1_baseline_inventory.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_3_o1_delayed_outbound_pulse.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_4_o2_reflected_return_pulse.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_5_o3_amplified_return.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_6_o4_repeated_cycle.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_7_o5_self_sustained_boundary.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/run_n05_iteration_8_o6_closeout.py\n?? experiments/2026-05-N05-lgrc-coherence-waves-oscillators/scripts/validate_n05_fixture_manifest.py"
+    },
+    "status_short_src": {
+      "command": "git status --short src",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "iteration": 8,
+  "lgrc_runtime_level": "lgrc2",
+  "n05_closeout": {
+    "artifact_only_replay_passed": true,
+    "budget_exact": true,
+    "claim_flags_remain_false": true,
+    "controls_passed": true,
+    "o6_primary_blocker": "missing_route_conductance_memory_policy",
+    "o6_supported": false,
+    "source_artifacts_passed": true,
+    "src_changes_required": false,
+    "strongest_claim_ceiling": "self_sustained_oscillator_candidate",
+    "strongest_supported_o_level": "O5"
+  },
+  "n06_handoff_recommendation": {
+    "constraints": [
+      "do_not_inherit_memory_or_trail_claims_from_N05",
+      "do_not_treat_native_route_arbitration_as_semantic_choice",
+      "keep_producer_scaffolds_labeled_as_scheduling_evidence",
+      "keep_identity_invariance_and_agency_claims_blocked"
+    ],
+    "next_experiment": "N06_semantic_route_choice",
+    "rationale": "N05 has source-backed O5 self-rearm oscillator evidence and a fail-closed O6 route-memory blocker. Semantic route-choice should be opened as its own ladder rather than inferred from oscillator evidence.",
+    "ready": true,
+    "recommendation": "open_N06_with_N05_O5_as_oscillator_background"
+  },
+  "o6_boundary": {
+    "memory_or_trail_claim_allowed": false,
+    "o6_closeout_interpretation": "O5 self-rearm traffic is route-aspect serialized and replayable, but current artifacts do not include a runtime-visible route memory or trail-reinforcement surface. O6 therefore remains blocked.",
+    "o6_route_coupled_oscillator_supported": false,
+    "route_arbitration_boundary": "native route arbitration was not used in N05 O6 closeout; if used later, it is runtime route selection evidence only, not semantic choice",
+    "route_arbitration_used": false,
+    "route_coupled_oscillator_candidate_supported": false,
+    "route_coupling_fields": {
+      "channel_sequence": [
+        "S_to_K",
+        "K_to_S"
+      ],
+      "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+      "pole_region_digest": "575534f4368870e3688af2d96687103b88f43c7647c4b1b9b6e3faec14040404",
+      "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+      "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+      "route_conductance_memory_digest": null,
+      "route_conductance_memory_policy_id": null,
+      "route_edge_ids": [
+        0,
+        1
+      ],
+      "trail_reinforcement_surface_digest": null
+    },
+    "route_coupling_runtime_visible": true,
+    "route_coupling_surface": "serialized_lgrc9v3_route_aspect_without_route_conductance_memory",
+    "route_memory_runtime_visible": false,
+    "trail_memory_blocker": "missing_route_conductance_memory_policy"
+  },
+  "o_ladder": {
+    "o6_route_coupled_oscillator_supported": false,
+    "o_level_is_evidence_classification": true,
+    "strongest_claim_ceiling": "self_sustained_oscillator_candidate",
+    "strongest_supported_o_level": "O5"
+  },
+  "phase3_native_policy_support_audit": {
+    "constitutive_native_claim_allowed": false,
+    "current_native_supports": [
+      "route_aspect_surplus_trigger",
+      "native_self_rearm_evidence",
+      "bounded_autonomous_run_loop"
+    ],
+    "custom_node_potentials_support": false,
+    "delayed_passive_response_support": false,
+    "flux_facilitated_metric_map_support": false,
+    "native_constitutive_oscillator_supported": false,
+    "native_policy_blocker": "missing_serialized_delayed_passive_response_policy",
+    "native_policy_blockers": [
+      "missing_serialized_custom_node_potentials_policy",
+      "missing_serialized_potential_inversion_policy",
+      "missing_flux_facilitated_metric_map_policy",
+      "missing_serialized_delayed_passive_response_policy",
+      "missing_route_conductance_memory_policy"
+    ],
+    "passed": true,
+    "potential_inversion_support": false,
+    "route_conductance_memory_support": false
+  },
+  "producer_boundary": {
+    "producer_consumed_queued_work": false,
+    "producer_emitted_claim_label": false,
+    "producer_mutated_coherence": false,
+    "producer_mutated_topology": false,
+    "producer_scheduled_packet": true,
+    "step_processed_packet_work": true
+  },
+  "run_id": "n05_iteration_8_o6_closeout_v1",
+  "runtime_family": "LGRC9V3",
+  "schema": "coherence_oscillator_report_v1",
+  "source_artifacts": {
+    "iteration_1_baseline_inventory": {
+      "artifact_digests": {},
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_1_baseline_inventory.json",
+      "artifact_sha256": "aba595312288d6ee132cc1566ca6ca43aba04d429315c080f699f33e93ee772e",
+      "artifact_status": "passed",
+      "claim_ceiling": null,
+      "positive_o_level": null,
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_1_baseline_inventory.md",
+      "report_sha256": "4a81f54efe281529b7a706e3c1391b61ce15db942b68d53efa2b90eddd81f2bf"
+    },
+    "iteration_2_fixture_manifest_validation": {
+      "artifact_digests": {},
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_2_fixture_manifest_validation.json",
+      "artifact_sha256": "37a7d73fb08c461d3c24e567e2bc39c65028dbf74c85fc04524f845350b69963",
+      "artifact_status": "passed",
+      "claim_ceiling": null,
+      "positive_o_level": null,
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_2_fixture_manifest_validation.md",
+      "report_sha256": "94800c46541b29bd3306c5c47e2a5322439023b7c02b4e8c3ff5d6477991a01e"
+    },
+    "iteration_3_o1_delayed_outbound_pulse": {
+      "artifact_digests": {
+        "positive_lane_digest": "5905dd6d2f17abc59302255e19f3f6db21d7982caf452c128467b54f0c8db71e",
+        "processed_packet_events_digest": "9c53688f59634750f7fa8a7ac2297f12edde5d4e9e0f395cd3f25c3bd73686e2",
+        "producer_records_digest": "5c6f40564e82aeb03602b1f13d16bec8d54c303c093613af22351ddb1dd053d4"
+      },
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_3_o1_delayed_outbound_pulse.json",
+      "artifact_sha256": "6857dd0e6ba18e9e48a5dcc0c3069d7fec32ea73977311789c1c6adbe8a78375",
+      "artifact_status": "passed",
+      "claim_ceiling": "delayed_pulse_candidate",
+      "positive_o_level": "O1",
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_3_o1_delayed_outbound_pulse.md",
+      "report_sha256": "548184a700993761a30397e947fb328e9f6d10dd65a5b47314fa8bf0558b42ff"
+    },
+    "iteration_4_o2_reflected_return_pulse": {
+      "artifact_digests": {
+        "positive_lane_digest": "40813fb7acc824194f18a97d5e1cc0ff59f4b55a548df3411170daebf775d091",
+        "processed_packet_events_digest": "f34c46c0a073a197354ec7df18d3a0dfa3ac2a4623ec2ac7c781b7fe17776f85",
+        "producer_records_digest": "76bb453df37b112efc988a00303750814da69b968df93232de31344ea0db8d4a",
+        "return_eligibility_digest": "23adc9a6f98f2c4719ac8e4edf182f115c59899135298366a0e0d442f0cdd389"
+      },
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_4_o2_reflected_return_pulse.json",
+      "artifact_sha256": "0c2a3ead548dd600ab4d7a5a753c13abc0f3dd56466aa62dbd148d52bd88c4a4",
+      "artifact_status": "passed",
+      "claim_ceiling": "reflected_pulse_candidate",
+      "positive_o_level": "O2",
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_4_o2_reflected_return_pulse.md",
+      "report_sha256": "bfbe9ec3cf234225ef89a6a154fb5c5af1e560a99ac436d8f3f04870b54a4bb3"
+    },
+    "iteration_5_o3_amplified_return": {
+      "artifact_digests": {
+        "positive_lane_digest": "a81bac4111ec6061dde395104724a87195022d8b7d53665ef9c805a3c87b0878",
+        "processed_packet_events_digest": "4038e1e4639a7f6c2c03c570fa4c3644481374a0d9d974b8034bfea93f502b40",
+        "producer_records_digest": "f184f8827e482d69d1e64fb1945b0f9853777e3321ce264f65847f1aa4f7fb3c",
+        "reservoir_release_policy_digest": "18da358fddf64ac60f336f48b446833f74c96ea9629be87f2b8adebb84fd1bd6",
+        "return_eligibility_digest": "22502654d461a15fa8300fcfe00fd44d99aedad765321e390105f19d100c8e96"
+      },
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_5_o3_amplified_return.json",
+      "artifact_sha256": "ccacdbb03c0a815debe79f65c143fe3f41c2371212367ebc637989e1b6457dea",
+      "artifact_status": "passed",
+      "claim_ceiling": "amplified_return_candidate",
+      "positive_o_level": "O3",
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_5_o3_amplified_return.md",
+      "report_sha256": "e141eae482d486842f6bee42d4a85507eed8400695a192b7b44acd5cd2eab11c"
+    },
+    "iteration_6_o4_repeated_cycle": {
+      "artifact_digests": {
+        "artifact_replay_digest": "40e05090c9b95a7cdb941bcfb643c5ced296f2b807fc0247688e5a768363c0df",
+        "cycle_records_digest": "5790a041aeaa6dcca34e8f85eaafd5fb0fa75f01c657f3e32c4c93e0a3146a59",
+        "positive_lane_digest": "11cf7ff5b3350a351d17a0fbe2c5f2263305ac85d767333be61a7845f8a535a8",
+        "processed_packet_events_digest": "af581e62ec80324d6a9733d4901bb1e04b3f393e8239e767acd7c4c199df138e",
+        "producer_records_digest": "26f53748842c4371a09ee8fd0303fee13d855543bd6b88f626c1600921c1d901"
+      },
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_6_o4_repeated_cycle.json",
+      "artifact_sha256": "21d033bcb8abd19ca7cafe45db46f8245fc60bc64355abafe5f6ba5704575df3",
+      "artifact_status": "passed",
+      "claim_ceiling": "repeated_oscillator_cycle_candidate",
+      "positive_o_level": "O4",
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_6_o4_repeated_cycle.md",
+      "report_sha256": "dc1a5e7ed4b6f6b1ddd6ca56b019c266ff474778f27d7d4600e6763d35ad2520"
+    },
+    "iteration_7_o5_self_sustained_boundary": {
+      "artifact_digests": {
+        "artifact_replay_digest": "d2d06e240fd432b8131c169a0c0a9310d79a1545de6b54577f0e78320a6570a1",
+        "cycle_records_digest": "accd808bd7531750146999a0f68ea298fcd762b606f8766ac1e2653ad21528f1",
+        "phase3_native_policy_support_audit_digest": "fd6dbb8ff7694a5353d055c57101ab639f6e7bf29593341fef1637dd8cdfba8e",
+        "positive_lane_digest": "4074a7ea25e6f1a007d62b1191ac401f274fc0a4db02aa1007700fa06ee67098",
+        "processed_packet_events_digest": "58f8a47f61c7edbcc3accaf88a899db921f053d6793ec61e4fe614657cfa61d4",
+        "producer_records_digest": "837d6a0297b43a8d11dd424a55b942f9c5161952842af34319d4c8a1d7f5d127",
+        "self_rearm_events_digest": "1133eb5b03647cf8bcf21b7b142a17658310568f25718dbbecdc3e4f8f376c92",
+        "snapshot_events_digest": "7cf3716329f9d18ec20e266fc43ccbf3ada42ac64324cc4745d48da70a4abfb7"
+      },
+      "artifact_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/outputs/n05_iteration_7_o5_self_sustained_boundary.json",
+      "artifact_sha256": "822293c4c7eb06ebe7b50e9287d3cd3959f467b237de813b6ac022bded4f0911",
+      "artifact_status": "passed",
+      "claim_ceiling": "self_sustained_oscillator_candidate",
+      "positive_o_level": "O5",
+      "report_path": "experiments/2026-05-N05-lgrc-coherence-waves-oscillators/reports/n05_iteration_7_o5_self_sustained_boundary.md",
+      "report_sha256": "51d5a85290aee3c05e6686e97eb4f3eb5d3f3e33a92b83c737bffa7754e88c1c"
+    }
+  },
+  "status": "passed"
+}

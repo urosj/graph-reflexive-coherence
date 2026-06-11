@@ -1,0 +1,298 @@
+{
+  "schema": "movement_fixture_manifest_v1",
+  "experiment": "2026-05-N04-grc9v3-movement-ladders",
+  "topology_events_enabled": false,
+  "adaptive_topology_entry_allowed": false,
+  "topology_policy": {
+    "fixed_substrate_required": true,
+    "topology_changed_required": false,
+    "topology_changed_allowed": false
+  },
+  "metric_defaults": {
+    "epsilon_budget": 1e-9,
+    "configured_displacement_min": 0.05,
+    "null_calibration_k": 3.0,
+    "identity_mass_ratio_min": 0.95,
+    "width_relative_change_max": 0.15,
+    "profile_similarity_min": 0.8
+  },
+  "null_displacement_envelope": {
+    "calibration_status": "pending_iteration_5",
+    "calibrated": false,
+    "mean": 0.0,
+    "max": 0.0,
+    "std": 0.0,
+    "effective_displacement_min_rule": "max(configured_displacement_min, mean + null_calibration_k * std)",
+    "effective_displacement_min": 0.05
+  },
+  "default_edge_properties": {
+    "weight": 1.0,
+    "base_conductance": 1.0,
+    "temporal_delay": 1.0,
+    "proper_time_delay": 1.0,
+    "interpretation": "Unit coupling and unit edge delay for first fixed-substrate movement tranche unless an edge overrides these fields."
+  },
+  "initializer_defaults": {
+    "baseline_coherence": 1.0,
+    "bump_amplitude": 0.4,
+    "tilt_epsilon": 0.02,
+    "kick_mask_node_count": 1
+  },
+  "initializer_formulas": {
+    "uniform": {
+      "formula": "C_i = B / N",
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "symmetric_bump": {
+      "formula": "C_i = C0 + A * exp(-d(i, center)^2 / (2 * sigma^2))",
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "locally_tapered_asymmetric_bump": {
+      "formula": "C_i = C0 + A * exp(-d(i, center)^2 / (2 * sigma^2)) + epsilon * d_signed(i, center, direction) * exp(-d(i, center)^2 / (2 * sigma_tilt^2))",
+      "projection": "conserved_nonnegative_simplex",
+      "global_background_gradient_allowed": false
+    },
+    "zero_sum_kick": {
+      "formula": "C_front += delta, C_rear -= delta over equal-size local masks",
+      "projection": "conserved_nonnegative_simplex"
+    }
+  },
+  "drive_type_definitions": {
+    "none": "No active drive is applied after initialization.",
+    "none_after_initialization": "The lane is initialized with a structured asymmetry and then evolves with no active drive, kick, or pulse.",
+    "one_time_zero_sum_kick": "A single conserved zero-sum front/rear perturbation is applied at initialization and no repeated drive is applied afterward."
+  },
+  "fixtures": {
+    "S0_chain_v1": {
+      "substrate_level": "S0",
+      "type": "chain",
+      "node_count": 21,
+      "edge_count": 20,
+      "total_budget": 21.0,
+      "coordinate_policy": {
+        "node_coordinate_policy": "chain_index",
+        "centroid_coordinate_frame": "linear",
+        "coordinate_periodic": false,
+        "coordinate_mapping": "x_i = node_index",
+        "ring_unwrap_policy": "not_applicable"
+      },
+      "nodes": [
+        {"node_id": 0, "coord": [0.0]},
+        {"node_id": 1, "coord": [1.0]},
+        {"node_id": 2, "coord": [2.0]},
+        {"node_id": 3, "coord": [3.0]},
+        {"node_id": 4, "coord": [4.0]},
+        {"node_id": 5, "coord": [5.0]},
+        {"node_id": 6, "coord": [6.0]},
+        {"node_id": 7, "coord": [7.0]},
+        {"node_id": 8, "coord": [8.0]},
+        {"node_id": 9, "coord": [9.0]},
+        {"node_id": 10, "coord": [10.0]},
+        {"node_id": 11, "coord": [11.0]},
+        {"node_id": 12, "coord": [12.0]},
+        {"node_id": 13, "coord": [13.0]},
+        {"node_id": 14, "coord": [14.0]},
+        {"node_id": 15, "coord": [15.0]},
+        {"node_id": 16, "coord": [16.0]},
+        {"node_id": 17, "coord": [17.0]},
+        {"node_id": 18, "coord": [18.0]},
+        {"node_id": 19, "coord": [19.0]},
+        {"node_id": 20, "coord": [20.0]}
+      ],
+      "edges": [
+        {"edge_id": 0, "u": 0, "v": 1, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 1, "u": 1, "v": 2, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 2, "u": 2, "v": 3, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 3, "u": 3, "v": 4, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 4, "u": 4, "v": 5, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 5, "u": 5, "v": 6, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 6, "u": 6, "v": 7, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 7, "u": 7, "v": 8, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 8, "u": 8, "v": 9, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 9, "u": 9, "v": 10, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 10, "u": 10, "v": 11, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 11, "u": 11, "v": 12, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 12, "u": 12, "v": 13, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 13, "u": 13, "v": 14, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 14, "u": 14, "v": 15, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 15, "u": 15, "v": 16, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 16, "u": 16, "v": 17, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 17, "u": 17, "v": 18, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 18, "u": 18, "v": 19, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 19, "u": 19, "v": 20, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0}
+      ],
+      "basin_seed": {
+        "center_node_id": 10,
+        "sigma": 2.0,
+        "sigma_tilt": 3.0,
+        "initial_support_nodes": [7, 8, 9, 10, 11, 12, 13]
+      },
+      "front_rear_definition": {
+        "direction_source": "configured",
+        "direction_vector": [1.0]
+      }
+    },
+    "S1_ring_v1": {
+      "substrate_level": "S1",
+      "type": "ring",
+      "node_count": 24,
+      "edge_count": 24,
+      "total_budget": 24.0,
+      "coordinate_policy": {
+        "node_coordinate_policy": "ring_circular",
+        "centroid_coordinate_frame": "unwrapped",
+        "coordinate_periodic": true,
+        "coordinate_mapping": "coord[0] is ring index i; theta_i = 2*pi*i/N; clockwise direction is increasing unwrapped ring index modulo N",
+        "antipodal_tie_break": "negative_signed_distance_for_even_N",
+        "antipodal_tie_break_note": "For even-N rings, the antipodal node is assigned negative signed distance, so a uniform 24-node ring centered at 0 has unwrapped centroid -0.5. This is a deterministic convention and must be compared against the symmetric baseline.",
+        "ring_unwrap_policy": "tracked_basin_representative"
+      },
+      "nodes": [
+        {"node_id": 0, "coord": [0.0]},
+        {"node_id": 1, "coord": [1.0]},
+        {"node_id": 2, "coord": [2.0]},
+        {"node_id": 3, "coord": [3.0]},
+        {"node_id": 4, "coord": [4.0]},
+        {"node_id": 5, "coord": [5.0]},
+        {"node_id": 6, "coord": [6.0]},
+        {"node_id": 7, "coord": [7.0]},
+        {"node_id": 8, "coord": [8.0]},
+        {"node_id": 9, "coord": [9.0]},
+        {"node_id": 10, "coord": [10.0]},
+        {"node_id": 11, "coord": [11.0]},
+        {"node_id": 12, "coord": [12.0]},
+        {"node_id": 13, "coord": [13.0]},
+        {"node_id": 14, "coord": [14.0]},
+        {"node_id": 15, "coord": [15.0]},
+        {"node_id": 16, "coord": [16.0]},
+        {"node_id": 17, "coord": [17.0]},
+        {"node_id": 18, "coord": [18.0]},
+        {"node_id": 19, "coord": [19.0]},
+        {"node_id": 20, "coord": [20.0]},
+        {"node_id": 21, "coord": [21.0]},
+        {"node_id": 22, "coord": [22.0]},
+        {"node_id": 23, "coord": [23.0]}
+      ],
+      "edges": [
+        {"edge_id": 0, "u": 0, "v": 1, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 1, "u": 1, "v": 2, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 2, "u": 2, "v": 3, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 3, "u": 3, "v": 4, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 4, "u": 4, "v": 5, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 5, "u": 5, "v": 6, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 6, "u": 6, "v": 7, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 7, "u": 7, "v": 8, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 8, "u": 8, "v": 9, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 9, "u": 9, "v": 10, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 10, "u": 10, "v": 11, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 11, "u": 11, "v": 12, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 12, "u": 12, "v": 13, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 13, "u": 13, "v": 14, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 14, "u": 14, "v": 15, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 15, "u": 15, "v": 16, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 16, "u": 16, "v": 17, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 17, "u": 17, "v": 18, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 18, "u": 18, "v": 19, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 19, "u": 19, "v": 20, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 20, "u": 20, "v": 21, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 21, "u": 21, "v": 22, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 22, "u": 22, "v": 23, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0},
+        {"edge_id": 23, "u": 23, "v": 0, "weight": 1.0, "base_conductance": 1.0, "temporal_delay": 1.0, "proper_time_delay": 1.0}
+      ],
+      "basin_seed": {
+        "center_node_id": 0,
+        "sigma": 2.5,
+        "sigma_tilt": 3.5,
+        "initial_support_nodes": [21, 22, 23, 0, 1, 2, 3]
+      },
+      "front_rear_definition": {
+        "direction_source": "configured",
+        "direction_vector": [1.0]
+      }
+    },
+    "S3_grid_v1": {
+      "substrate_level": "S3",
+      "type": "grid",
+      "status": "deferred",
+      "reason": "Open after S0/S1 fixed-substrate observables and classifier are validated."
+    }
+  },
+  "lanes": {
+    "U0": {
+      "name": "uniform_null",
+      "initializer": "uniform",
+      "drive": "none",
+      "front_rear_definition": {
+        "direction_source": "none",
+        "direction_vector": []
+      },
+      "expected_claim_ceiling": "no_movement"
+    },
+    "B0": {
+      "name": "symmetric_basin_null",
+      "initializer": "symmetric_bump",
+      "drive": "none",
+      "front_rear_definition": {
+        "direction_source": "none",
+        "direction_vector": []
+      },
+      "expected_claim_ceiling": "no_directed_movement"
+    },
+    "B1": {
+      "name": "asymmetric_basin_response",
+      "initializer": "locally_tapered_asymmetric_bump",
+      "bump_amplitude": 0.4,
+      "tilt_epsilon": 0.02,
+      "tilt_sign": 1.0,
+      "drive": "none_after_initialization",
+      "front_rear_definition": {
+        "direction_source": "configured",
+        "direction_vector": [1.0]
+      },
+      "expected_claim_ceiling": "movement_response"
+    },
+    "B1_reversed": {
+      "name": "asymmetric_basin_response_reversed",
+      "initializer": "locally_tapered_asymmetric_bump",
+      "bump_amplitude": 0.4,
+      "tilt_epsilon": 0.02,
+      "tilt_sign": -1.0,
+      "drive": "none_after_initialization",
+      "front_rear_definition": {
+        "direction_source": "configured",
+        "direction_vector": [-1.0]
+      },
+      "reversal_of": "B1",
+      "expected_claim_ceiling": "movement_response_reversal_control"
+    },
+    "K1": {
+      "name": "one_time_zero_sum_kick",
+      "initializer": "symmetric_bump",
+      "kick": "zero_sum_kick",
+      "kick_delta": 0.02,
+      "kick_mask_node_count": 1,
+      "front_mask_offset": 1,
+      "rear_mask_offset": -1,
+      "front_rear_definition": {
+        "direction_source": "perturbation",
+        "direction_vector": [1.0]
+      },
+      "expected_claim_ceiling": "movement_response"
+    },
+    "K1_reversed": {
+      "name": "one_time_zero_sum_kick_reversed",
+      "initializer": "symmetric_bump",
+      "kick": "zero_sum_kick",
+      "kick_delta": 0.02,
+      "kick_mask_node_count": 1,
+      "front_mask_offset": -1,
+      "rear_mask_offset": 1,
+      "front_rear_definition": {
+        "direction_source": "perturbation",
+        "direction_vector": [-1.0]
+      },
+      "reversal_of": "K1",
+      "expected_claim_ceiling": "movement_response_reversal_control"
+    }
+  }
+}

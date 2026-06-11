@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Graph Reflexive Coherence"
+message: "If you use this repository, its papers, or PyGRC, please cite it as below and also cite the specific paper, spec, experiment lane, report, or artifact you used."
+abstract: "Mixed-license research repository: papers/ contains imported theory papers under CC-BY-SA-4.0; all other repository content, including source code, tests, examples, docs, specs, implementation notes, experiments, scripts, and generated evidence artifacts, is GPL-2.0-only unless a file states otherwise."
+authors:
+  - family-names: "Jovanovic"
+    given-names: "Uros"
+version: "0.1"
+date-released: "2026-06-11"
+license: GPL-2.0-only
+url: "https://github.com/urosj/graph-reflexive-coherence"

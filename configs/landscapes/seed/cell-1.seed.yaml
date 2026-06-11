@@ -1,0 +1,86 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: Cell-1
+  description: Cell-0 plus nucleus basin and nucleus ridge.
+  source_kind: pde_landscape_dsl
+  source_reference: rc-sim/configs/landscapes/cell-1.json
+  source_schema_version: "1.0.0"
+  source_domain: "2d"
+  translator_name: pde_landscape_to_seed
+  translator_version: "0.1"
+  translation_mode: lossless_source_normalization
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: cytoplasm
+    type: basin
+    coherence_prior: 0.85
+    depth_hint: 0
+    chart_center_hint: [0.5, 0.5]
+    chart_scale_hint:
+      radius: 0.33
+
+  - id: plasma_membrane
+    type: ridge
+    owner_id: cytoplasm
+    ridge_kind: boundary
+    thickness_hint: 0.03
+    interior_coherence_hint: 0.85
+    exterior_coherence_hint: 0.15
+    hints:
+      inner_radius: 0.33
+      outer_radius: 0.36
+
+  - id: nucleus
+    type: basin
+    parent_id: cytoplasm
+    coherence_prior: 0.94
+    depth_hint: 1
+    chart_center_hint: [0.46, 0.54]
+    chart_scale_hint:
+      radius: 0.12
+
+  - id: nuclear_envelope
+    type: ridge
+    owner_id: nucleus
+    ridge_kind: boundary
+    thickness_hint: 0.02
+    interior_coherence_hint: 0.94
+    exterior_coherence_hint: 0.85
+    hints:
+      inner_radius: 0.12
+      outer_radius: 0.14
+
+extensions:
+  source_pde:
+    meta:
+      author: RC Landscape Iteration 1
+      date: "2026-02-16"
+    compile:
+      composition_mode: blend
+      value_range:
+        mode: clamp
+        min: 0.0
+        max: 1.0
+      mass_normalization:
+        mode: none
+    potential_compile_policy:
+      profile_transform: none
+    initial_flux:
+      enabled: false
+      direction: none
+      magnitude: 0.0
+      channels: []

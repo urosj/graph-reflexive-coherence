@@ -1,0 +1,1045 @@
+{
+  "allowed_proxy_measurement_surfaces": {
+    "active_node_coherence_band": {
+      "budget_auditable": true,
+      "native": true,
+      "preferred_default_fixture": true,
+      "runtime_visible": true,
+      "source": "LGRC runtime active node state and packet ledger",
+      "surface_id": "active_node_coherence_band"
+    },
+    "n05_oscillator_return_amount": {
+      "budget_auditable": true,
+      "native": true,
+      "preferred_default_fixture": false,
+      "runtime_visible": true,
+      "secondary_fixture_fields": [
+        "return_amount",
+        "return_route_id",
+        "cycle_definition",
+        "cycle_ids",
+        "route_aspect_digest",
+        "channel_sequence_digest"
+      ],
+      "source": "N05 O5 self-rearm return amount",
+      "surface_id": "n05_oscillator_return_amount"
+    },
+    "n08_serialized_memory_surface_strength": {
+      "budget_auditable": "memory_budget_only_not_node_plus_packet",
+      "native": false,
+      "preferred_default_fixture": false,
+      "runtime_visible": true,
+      "source": "N08 Hypothesis A memory surface rows",
+      "surface_id": "n08_serialized_memory_surface_strength"
+    },
+    "route_arbitration_context_surface": {
+      "budget_auditable": false,
+      "native": true,
+      "preferred_default_fixture": false,
+      "regulation_constraint": "selection surface only; cannot supply GPR4+ packet execution without an N09 scheduling/processing lane",
+      "runtime_visible": true,
+      "source": "N06 candidate context values and source surface digests",
+      "surface_id": "route_arbitration_context_surface"
+    }
+  },
+  "artifact_only_replay_requirements": {
+    "artifact_only": true,
+    "control_blockers_distinct_required": true,
+    "digest_recomputation_required": true,
+    "ordered_chain": [
+      "fixture_manifest",
+      "proxy_surface_row",
+      "target_band",
+      "error_signal",
+      "regulation_policy",
+      "perturbation_if_tested",
+      "support_withdrawal_if_tested",
+      "route_or_producer_evidence",
+      "scheduled_packet",
+      "processed_packet",
+      "post_response_proxy_surface_row",
+      "regulation_response",
+      "identity_support_outcome_if_tested",
+      "n10_handoff_fields_if_closeout"
+    ],
+    "runtime_state_used": false,
+    "scheduler_order_monotonic_required": true
+  },
+  "available_proxy_conditioned_action_surfaces": {
+    "n08_memory_shaped_candidate_score_components": {
+      "allowed_boundary": "artifact-backed memory-shaped comparator",
+      "native": false,
+      "source": "N08 Hypothesis A memory score components",
+      "surface_id": "n08_memory_shaped_candidate_score_components"
+    },
+    "n08_static_positive_geometry_route_response": {
+      "allowed_boundary": "staged_hypothesis_b_design_direction",
+      "native": "partial_static_geometry_response_only",
+      "source": "N08 Hypothesis B positive geometry route response",
+      "surface_id": "n08_static_positive_geometry_route_response"
+    },
+    "native_route_candidate_score_components": {
+      "allowed_boundary": "serialized_runtime_visible_score_components",
+      "native": true,
+      "source": "LGRC9V3 route arbitration candidate records",
+      "surface_id": "native_route_candidate_score_components"
+    },
+    "producer_scheduling_eligibility_record": {
+      "allowed_boundary": "producer schedules_only_step_mutates",
+      "native": false,
+      "source": "committed runtime-visible state observed by producer",
+      "surface_id": "producer_scheduling_eligibility_record"
+    }
+  },
+  "available_proxy_measurement_surfaces": {
+    "active_node_coherence_band": {
+      "budget_auditable": true,
+      "native": true,
+      "preferred_default_fixture": true,
+      "runtime_visible": true,
+      "source": "LGRC runtime active node state and packet ledger",
+      "surface_id": "active_node_coherence_band"
+    },
+    "n05_oscillator_return_amount": {
+      "budget_auditable": true,
+      "native": true,
+      "preferred_default_fixture": false,
+      "runtime_visible": true,
+      "secondary_fixture_fields": [
+        "return_amount",
+        "return_route_id",
+        "cycle_definition",
+        "cycle_ids",
+        "route_aspect_digest",
+        "channel_sequence_digest"
+      ],
+      "source": "N05 O5 self-rearm return amount",
+      "surface_id": "n05_oscillator_return_amount"
+    },
+    "n07_identity_support_area": {
+      "budget_auditable": false,
+      "native": false,
+      "preferred_default_fixture": false,
+      "regulation_constraint": "identity/support anchor only; cannot be used directly as regulated_variable_surface",
+      "runtime_visible": false,
+      "source": "N07 ID6 support area and activity history digests",
+      "surface_id": "n07_identity_support_area"
+    },
+    "n08_serialized_memory_surface_strength": {
+      "budget_auditable": "memory_budget_only_not_node_plus_packet",
+      "native": false,
+      "preferred_default_fixture": false,
+      "runtime_visible": true,
+      "source": "N08 Hypothesis A memory surface rows",
+      "surface_id": "n08_serialized_memory_surface_strength"
+    },
+    "route_arbitration_context_surface": {
+      "budget_auditable": false,
+      "native": true,
+      "preferred_default_fixture": false,
+      "regulation_constraint": "selection surface only; cannot supply GPR4+ packet execution without an N09 scheduling/processing lane",
+      "runtime_visible": true,
+      "source": "N06 candidate context values and source surface digests",
+      "surface_id": "route_arbitration_context_surface"
+    }
+  },
+  "budget_contract": {
+    "memory_budget": {
+      "not_node_plus_packet_budget": true,
+      "required_when_memory_shaped": true,
+      "source": "N08 serialized memory budget when memory lane is active"
+    },
+    "node_plus_packet_budget": {
+      "fields": [
+        "node_plus_packet_budget_before",
+        "node_plus_packet_budget_after",
+        "node_plus_packet_budget_error"
+      ],
+      "must_remain_exact": true,
+      "semantics": "physical LGRC coherence and in-flight packet accounting; proxy or memory bookkeeping cannot repair drift",
+      "tolerance": 1e-09
+    },
+    "proxy_budget": {
+      "ambiguity_blocker": "proxy_budget_ambiguity",
+      "fields": [
+        "proxy_budget_surface",
+        "proxy_budget_before",
+        "proxy_budget_after",
+        "proxy_budget_error"
+      ],
+      "semantics": "derived measurement accounting for proxy surfaces; not a replacement for node-plus-packet conservation"
+    }
+  },
+  "ceiling_algorithm": {
+    "fallback_examples": {
+      "artifact_replay_fails_after_gpr5": {
+        "blocker": "artifact_only_goal_proxy_replay_failed",
+        "ceiling": "repeated_bounded_proxy_regulation_candidate"
+      },
+      "correction_absent_after_gpr3": {
+        "blocker": "no_response_to_error",
+        "ceiling": "proxy_conditioned_route_selection_candidate"
+      },
+      "repeated_windows_fail_after_gpr4": {
+        "blocker": "repeated_regulation_not_bounded",
+        "ceiling": "single_cycle_proxy_correction_candidate"
+      }
+    },
+    "identity_support_rule": "identity/support disruption blocks N10 consumption but does not automatically erase lower valid proxy-regulation evidence",
+    "rule": "ceiling equals highest GPR level whose required gates pass; later gate failure falls back to strongest passing level and records primary blocker"
+  },
+  "claim_boundary": {
+    "agency_intention_identity_aco_locomotion_claims_blocked": true,
+    "claim_flags": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "agentic_like_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "goal_proxy_regulation_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false,
+      "unrestricted_movement_claim_allowed": false
+    },
+    "claim_flags_must_remain_false": true,
+    "goal_proxy_regulation_claim_requires_gpr6_closeout": true
+  },
+  "control_contract": [
+    {
+      "control_id": "missing_proxy_surface",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "proxy_surface_missing"
+    },
+    {
+      "control_id": "proxy_surface_digest_mismatch",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "proxy_surface_digest_mismatch"
+    },
+    {
+      "control_id": "hidden_proxy_source",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "hidden_proxy_source_rejected"
+    },
+    {
+      "control_id": "target_band_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "target_band_missing"
+    },
+    {
+      "control_id": "hidden_proxy_target",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "hidden_proxy_target_rejected"
+    },
+    {
+      "control_id": "posthoc_target_change",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "posthoc_target_change_rejected"
+    },
+    {
+      "control_id": "error_policy_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "error_policy_missing"
+    },
+    {
+      "control_id": "error_signal_digest_mismatch",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "error_signal_digest_mismatch"
+    },
+    {
+      "control_id": "regulation_policy_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "regulation_policy_missing"
+    },
+    {
+      "control_id": "hidden_reward_or_goal_label",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "hidden_reward_or_goal_label_rejected"
+    },
+    {
+      "control_id": "n06_packet_execution_inherited",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "n06_selection_only_no_packet_execution_for_regulation"
+    },
+    {
+      "control_id": "unknown_candidate_source_surface",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "native_route_candidate_committed_source_surface_required"
+    },
+    {
+      "control_id": "candidate_budget_prediction_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "candidate_budget_prediction_missing"
+    },
+    {
+      "control_id": "memory_surface_missing_for_memory_lane",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "memory_surface_missing_for_memory_lane"
+    },
+    {
+      "control_id": "memory_surface_read_in_no_memory_lane",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "memory_surface_read_in_no_memory_lane"
+    },
+    {
+      "control_id": "producer_direct_mutation",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "producer_direct_mutation_blocked"
+    },
+    {
+      "control_id": "scheduled_packet_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "scheduled_packet_missing"
+    },
+    {
+      "control_id": "processed_packet_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "processed_packet_missing"
+    },
+    {
+      "control_id": "wrong_direction_response",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "wrong_direction_response"
+    },
+    {
+      "control_id": "node_plus_packet_budget_discontinuity",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "node_plus_packet_budget_discontinuity"
+    },
+    {
+      "control_id": "proxy_budget_ambiguity",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "proxy_budget_ambiguity"
+    },
+    {
+      "control_id": "perturbation_schema_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "perturbation_schema_missing"
+    },
+    {
+      "control_id": "support_withdrawal_baseline_missing",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "n07_identity_withdrawal_baseline_not_available"
+    },
+    {
+      "control_id": "identity_support_digest_mismatch",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "identity_support_digest_mismatch"
+    },
+    {
+      "control_id": "oscillator_fixture_without_explicit_opt_in",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "oscillator_regulation_fixture_requires_explicit_opt_in"
+    },
+    {
+      "control_id": "artifact_order_inversion",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "artifact_order_inversion"
+    },
+    {
+      "control_id": "duplicate_regulation_response",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "duplicate_regulation_response"
+    },
+    {
+      "control_id": "claim_promotion",
+      "distinct_primary_blocker_required": true,
+      "expected_status": "blocked",
+      "primary_blocker": "claim_promotion_blocked"
+    }
+  ],
+  "default_fixture_family": {
+    "fixture_family_id": "n09_default_active_node_band_regulation_v1",
+    "memory_shaped_lane_required_for_gpr3_plus": true,
+    "n06_selection_only_constraint": {
+      "iteration_2_requirement": "N09 must define its own packet scheduling/processing path for GPR4+; N06 supplies route-selection evidence only.",
+      "n06_selection_only_pre_topology_commit": true,
+      "packet_execution_inherited_from_n06": false,
+      "primary_blocker_if_packet_execution_inherited": "n06_selection_only_no_packet_execution_for_regulation",
+      "scheduled_processed_packet_scope": "not_applicable_pre_topology_selection_only_scope"
+    },
+    "n07_withdrawal_precondition_gap": {
+      "identity_withdrawal_stability_baseline_available": false,
+      "iteration_8_requirement": "N09 support-withdrawal lanes must include a baseline or control that distinguishes regulation disruption from pre-existing untested withdrawal stability.",
+      "primary_blocker_if_untreated": "n07_identity_withdrawal_baseline_not_available",
+      "withdrawal_test_status": "not_tested"
+    },
+    "n08_support_anchor_consistency": {
+      "all_source_support_digests_match_n07": true,
+      "all_target_support_digests_match_n07_11b": true,
+      "memory_row_count_checked": 4,
+      "n07_11b_target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1",
+      "n07_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "rows": [
+        {
+          "memory_surface_digest": "7530f78c0ddd3dea6ae37c4b32bc4e82f6be9ea23410c412db3621f38d647a87",
+          "memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:0175e7d7bf57f875",
+          "route_id": "route_a",
+          "source_matches_n07_support_area": true,
+          "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "target_matches_n07_11b_target_support_area": true,
+          "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        },
+        {
+          "memory_surface_digest": "12098eba4caf7dd4972a650442400e1c31727bc6c14ea509812f6d39d940ec1a",
+          "memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:82c11ea3789bc7ba",
+          "route_id": "route_b",
+          "source_matches_n07_support_area": true,
+          "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "target_matches_n07_11b_target_support_area": true,
+          "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        },
+        {
+          "memory_surface_digest": "f11487b6fbf0888a450543dd04859bb27ea04831573f3b26e281fc8c627f8074",
+          "memory_surface_id": "n08-memory-surface:c0a6fdca6c30cca1:04706f438525fecc",
+          "route_id": "route_a",
+          "source_matches_n07_support_area": true,
+          "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "target_matches_n07_11b_target_support_area": true,
+          "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        },
+        {
+          "memory_surface_digest": "82f3aba24f0e0093525dbe9c671dec8bbf88f8cd4b96f583e88de68a961a81d4",
+          "memory_surface_id": "n08-memory-surface:3dca55df466ac3a1:e44cdc336ccfc5ad",
+          "route_id": "route_b",
+          "source_matches_n07_support_area": true,
+          "source_support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+          "target_matches_n07_11b_target_support_area": true,
+          "target_support_area_digest": "b2ff898e08259e4fca68a1ec59bf1add32c1612a0d4c75d85af63a0bfa795af1"
+        }
+      ]
+    },
+    "no_memory_comparator_required_for_gpr3_plus": true,
+    "primary_reason": "directly budget-auditable runtime-visible node coherence before oscillator-return or multi-variable fixtures",
+    "regulated_proxy_surface": "active_node_coherence_band",
+    "regulated_variable_id": "source_reservoir_node_coherence"
+  },
+  "error_signal_schema": {
+    "artifact_kind": "n09_error_signal",
+    "default_error_policy": {
+      "above_band_direction": "decrease_proxy",
+      "above_band_formula": "measurement_value - upper_bound",
+      "below_band_direction": "increase_proxy",
+      "below_band_formula": "measurement_value - lower_bound",
+      "error_metric": "signed_distance_to_declared_band",
+      "error_policy_digest": "61c34d66e9416772b40a8db54dff3cf7a34f5a6ece4a18428a590f8d9594b706",
+      "error_policy_id": "n09_signed_band_error_policy_v1",
+      "hidden_error_input_allowed": false,
+      "in_band_error_value": 0.0,
+      "in_band_formula": "0.0",
+      "runtime_visible_inputs": [
+        "proxy_surface_digest",
+        "measurement_value",
+        "target_band_digest",
+        "lower_bound",
+        "upper_bound"
+      ]
+    },
+    "digest_field": "error_signal_digest",
+    "digest_rule": "sha256(canonical_json(error_signal_without_error_signal_digest))",
+    "hidden_error_input_allowed": false,
+    "required_fields": [
+      "error_signal_id",
+      "proxy_surface_digest",
+      "target_band_digest",
+      "error_metric",
+      "error_value",
+      "error_direction",
+      "in_band",
+      "event_time_key",
+      "scheduler_event_index",
+      "error_policy_id",
+      "error_policy_digest",
+      "error_signal_digest"
+    ],
+    "schema_version": "n09_error_signal_v1"
+  },
+  "excluded_proxy_measurement_surfaces": {
+    "n07_identity_support_area": {
+      "budget_auditable": false,
+      "native": false,
+      "preferred_default_fixture": false,
+      "proxy_exclusion_reason": "not_runtime_visible_or_declared_anchor_only_not_regulated_variable",
+      "regulation_constraint": "identity/support anchor only; cannot be used directly as regulated_variable_surface",
+      "runtime_visible": false,
+      "source": "N07 ID6 support area and activity history digests",
+      "surface_id": "n07_identity_support_area"
+    }
+  },
+  "experiment": "2026-05-N09-lgrc-goal-proxy-regulation",
+  "gpr_ladder": {
+    "GPR0": "no_regulation_label_only_or_unmeasured_proxy",
+    "GPR1": "proxy_measurement_serialized_with_digest_and_order",
+    "GPR2": "error_signal_from_serialized_runtime_visible_evidence",
+    "GPR3": "proxy_conditioned_action_eligibility_without_direct_mutation",
+    "GPR4": "single_cycle_proxy_error_reduction_or_band_return",
+    "GPR5": "repeated_bounded_proxy_regulation",
+    "GPR6": "artifact_only_goal_proxy_regulation_candidate"
+  },
+  "identity_support_outcome_tags": [
+    "identity_not_tested_under_regulation",
+    "identity_preserved_under_regulation",
+    "identity_disrupted_under_regulation",
+    "support_preserved_under_regulation",
+    "support_disrupted_under_regulation",
+    "identity_support_withdrawal_baseline_missing"
+  ],
+  "iteration": 2,
+  "lane_contract": {
+    "comparison_rule": "GPR3+ claims that cite N08 memory must compare the same proxy, target, and regulation policy with and without memory.",
+    "memory_shaped_lane": {
+      "lane_id": "n09_memory_shaped_proxy_regulation_lane_v1",
+      "legacy_aliases_not_preferred": {
+        "memory_surface_policy_digest": "memory_policy_digest",
+        "memory_surface_strength": "memory_strength"
+      },
+      "mechanism_status_tags": [
+        "producer_mediated",
+        "memory_shaped",
+        "native_policy_gap"
+      ],
+      "memory_source": "N08 Hypothesis A serialized memory surface",
+      "memory_surface_native": false,
+      "n08_field_mapping": {
+        "memory_policy_digest": "memory_policy_digest",
+        "memory_score_component": "candidate_score_components.memory_trail_strength",
+        "memory_strength": "memory_strength",
+        "memory_surface_digest": "memory_surface_digest",
+        "memory_surface_key_digest": "memory_surface_key_digest"
+      },
+      "required_fields": [
+        "memory_surface_digest",
+        "memory_policy_digest",
+        "memory_strength",
+        "memory_surface_key_digest",
+        "memory_score_component"
+      ],
+      "required_for_gpr3_plus": true
+    },
+    "no_memory_comparator_lane": {
+      "control_blocker_if_memory_read": "memory_surface_read_in_no_memory_lane",
+      "lane_id": "n09_no_memory_proxy_regulation_comparator_v1",
+      "memory_score_component_must_be_absent_or_zero": true,
+      "memory_surface_digest_must_be_null": true,
+      "required_for_gpr3_plus": true,
+      "same_proxy_target_and_policy_required": true
+    }
+  },
+  "manifest_digest": "084925ff201f49c53db6040e22fa9970736ca9a5e7ad4d090165966bd8efab2a",
+  "manifest_digest_scope": {
+    "excluded": [
+      "manifest_digest"
+    ],
+    "included": "manifest fields except manifest_digest",
+    "stable_across_same_inputs": true
+  },
+  "n10_handoff_fields": [
+    "goal_proxy_regulation_policy_digest",
+    "proxy_surface_digest",
+    "error_policy_digest",
+    "regulation_response_digest",
+    "memory_surface_digest",
+    "identity_support_digest",
+    "mechanism_status_tags",
+    "regulation_outcome_tag",
+    "identity_support_outcome_tag",
+    "native_policy_gap_records"
+  ],
+  "native_policy_gap_records": [
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_goal_proxy_regulation_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_proxy_surface_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_proxy_error_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_proxy_conditioned_response_policy_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_goal_proxy_regulation_artifact_replay_validator_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_memory_shaped_regulation_surface_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_identity_preserving_regulation_validator_missing",
+      "status": "missing"
+    },
+    {
+      "claim_boundary": "record_gap_do_not_promote_claim",
+      "gap_id": "native_oscillator_return_regulation_policy_missing",
+      "status": "missing"
+    }
+  ],
+  "packet_scheduling_response_contract": {
+    "gpr4_plus_requires_scheduled_and_processed_packet": true,
+    "n06_scheduled_processed_packet_scope": "not_applicable_pre_topology_selection_only_scope",
+    "processed_packet_must_be_consumed_by_step": true,
+    "required_fields": [
+      "schedule_request_id",
+      "scheduled_packet_id",
+      "processed_packet_id",
+      "route_id",
+      "packet_amount",
+      "source_node_id",
+      "target_node_id",
+      "scheduled_scheduler_event_index",
+      "processed_scheduler_event_index",
+      "step_processed",
+      "pre_response_proxy_surface_digest",
+      "post_response_proxy_surface_digest"
+    ],
+    "scheduled_packet_must_follow_producer_or_arbitration_record": true,
+    "step_remains_mutation_boundary": true
+  },
+  "perturbation_schema": {
+    "amplitude_units": [
+      "coherence",
+      "normalized_proxy_units"
+    ],
+    "artifact_kind": "n09_proxy_perturbation",
+    "duration_basis": "scheduler_steps",
+    "hidden_perturbation_allowed": false,
+    "required_fields": [
+      "perturbation_id",
+      "perturbation_kind",
+      "amplitude",
+      "duration_steps",
+      "start_event_time_key",
+      "affected_proxy_surface_id",
+      "pre_perturbation_proxy_surface_digest",
+      "post_perturbation_proxy_surface_digest",
+      "node_plus_packet_budget_before",
+      "node_plus_packet_budget_after",
+      "node_plus_packet_budget_error",
+      "expected_recovery_window_count",
+      "recovery_success_criterion",
+      "perturbation_digest"
+    ]
+  },
+  "positive_regulation_evidence_generated": false,
+  "proxy_surface_row_schema": {
+    "allowed_proxy_kinds": [
+      "active_node_coherence_band",
+      "n05_oscillator_return_amount",
+      "n08_serialized_memory_surface_strength",
+      "route_arbitration_context_surface"
+    ],
+    "artifact_kind": "n09_proxy_surface_row",
+    "claim_flags_must_remain_false": true,
+    "default_proxy_policy": {
+      "budget_auditable": true,
+      "hidden_proxy_source_allowed": false,
+      "posthoc_proxy_definition_allowed": false,
+      "proxy_policy_digest": "a58062c81a53fecb38857af4e0f2bee507faa93ace99d31feb6503e2cc6a3905",
+      "proxy_policy_id": "n09_active_node_coherence_proxy_policy_v1",
+      "proxy_surface": "active_node_coherence_band",
+      "regulated_variable_id": "source_reservoir_node_coherence",
+      "regulated_variable_surface": "active_node_state",
+      "runtime_visible_source_required": true
+    },
+    "digest_field": "proxy_surface_digest",
+    "digest_rule": "sha256(canonical_json(proxy_surface_row_without_proxy_surface_digest))",
+    "excluded_proxy_kinds": [
+      "n07_identity_support_area"
+    ],
+    "invalid_proxy_sources": [
+      "hidden_reward",
+      "fixture_food_or_danger_label_without_runtime_evidence",
+      "experiment_side_if_else",
+      "report_side_correction",
+      "posthoc_target_change",
+      "unserialized_python_state",
+      "agent_intention_or_desire_label"
+    ],
+    "proxy_kind_constraints": {
+      "n05_oscillator_return_amount": {
+        "fixture_constraint": "deferred secondary fixture; requires explicit opt-in"
+      },
+      "n08_serialized_memory_surface_strength": {
+        "budget_constraint": "memory budget only; cannot substitute for node-plus-packet budget"
+      },
+      "route_arbitration_context_surface": {
+        "gpr4_plus_constraint": "selection surface only; cannot supply scheduled or processed packet evidence without an N09 scheduling/processing lane"
+      }
+    },
+    "required_claim_flag_keys": [
+      "aco_like_claim_allowed",
+      "agency_claim_allowed",
+      "agentic_like_claim_allowed",
+      "ant_colony_claim_allowed",
+      "biological_claim_allowed",
+      "goal_proxy_regulation_claim_allowed",
+      "identity_acceptance_claim_allowed",
+      "intention_claim_allowed",
+      "locomotion_like_claim_allowed",
+      "movement_claim_allowed",
+      "personhood_claim_allowed",
+      "rc_identity_collapse_claim_allowed",
+      "runtime_identity_acceptance_claim_allowed",
+      "semantic_choice_claim_allowed",
+      "semantic_goal_understanding_claim_allowed",
+      "unrestricted_identity_claim_allowed",
+      "unrestricted_movement_claim_allowed"
+    ],
+    "required_fields": [
+      "proxy_surface_id",
+      "proxy_kind",
+      "regulated_variable_id",
+      "regulated_variable_surface",
+      "regulated_variable_digest",
+      "measurement_value",
+      "measurement_unit",
+      "target_band_id",
+      "target_band_digest",
+      "event_time_key",
+      "scheduler_event_index",
+      "proxy_policy_id",
+      "proxy_policy_digest",
+      "node_plus_packet_budget_before",
+      "node_plus_packet_budget_after",
+      "node_plus_packet_budget_error",
+      "source_artifacts",
+      "source_reports",
+      "claim_flags",
+      "proxy_surface_digest"
+    ],
+    "schema_version": "n09_proxy_surface_row_v1"
+  },
+  "purpose": "fixture_manifest_and_proxy_regulation_contract",
+  "regulation_outcome_taxonomy": [
+    "no_response_to_error",
+    "wrong_direction_response",
+    "single_cycle_error_reduction",
+    "single_cycle_band_return",
+    "bounded_repeated_regulation",
+    "overshoot_oscillation",
+    "saturation_no_recovery",
+    "policy_saturation",
+    "memory_poisoning",
+    "budget_violation",
+    "identity_disrupted_under_regulation",
+    "identity_preserved_under_regulation",
+    "native_policy_gap"
+  ],
+  "regulation_policy_schema": {
+    "artifact_kind": "n09_regulation_policy",
+    "default_regulation_policy": {
+      "error_threshold": 1e-09,
+      "hidden_reward_or_goal_label_allowed": false,
+      "native_support_status": "producer_scaffold_until_native_policy_exists",
+      "policy_surface": "experiment_local_serialized_policy",
+      "producer_direct_mutation_allowed": false,
+      "producer_scheduling_allowed": true,
+      "regulation_policy_digest": "896133e8af4cdbb6cabb1436d9cb6f41a2ad1ad300f0ceca79f460d392358d40",
+      "regulation_policy_id": "n09_proxy_error_threshold_schedule_policy_v1",
+      "response_if_above_band": "schedule_or_select_route_that_decreases_proxy",
+      "response_if_below_band": "schedule_or_select_route_that_increases_proxy",
+      "response_if_in_band": "no_action_or_maintenance_non_trigger",
+      "semantic_goal_understanding_claim_allowed": false,
+      "step_remains_mutation_boundary": true
+    },
+    "digest_field": "regulation_policy_digest",
+    "digest_rule": "sha256(canonical_json(regulation_policy_without_regulation_policy_digest))",
+    "error_threshold_design_note": "1e-9 is a strict contract tolerance for the baseline fixture; later probes may declare a different serialized threshold but cannot change it post hoc.",
+    "native_goal_proxy_regulation_policy_available": false,
+    "native_goal_proxy_regulation_policy_blocker": "native_goal_proxy_regulation_policy_missing",
+    "required_policy_fields": [
+      "error_threshold",
+      "hidden_reward_or_goal_label_allowed",
+      "native_support_status",
+      "policy_surface",
+      "producer_direct_mutation_allowed",
+      "producer_scheduling_allowed",
+      "regulation_policy_digest",
+      "regulation_policy_id",
+      "response_if_above_band",
+      "response_if_below_band",
+      "response_if_in_band",
+      "semantic_goal_understanding_claim_allowed",
+      "step_remains_mutation_boundary"
+    ],
+    "schema_version": "n09_regulation_policy_v1"
+  },
+  "regulation_probe_run": false,
+  "regulation_response_schema": {
+    "artifact_kind": "n09_regulation_response",
+    "claim_flags_must_remain_false": true,
+    "digest_field": "regulation_response_digest",
+    "digest_rule": "sha256(canonical_json(regulation_response_without_regulation_response_digest))",
+    "identity_support_attachment": {
+      "attachment_mode": "nullable_fields_on_regulation_response",
+      "fields": [
+        "identity_support_digest",
+        "identity_support_outcome_tag"
+      ],
+      "schema_evolution_note": "Iteration 1 froze a monolithic GPR row schema. Iteration 2 decomposes that row into proxy, target, error, response, and optional identity/support artifacts while retaining join fields on the regulation response."
+    },
+    "memory_lane_attachment": {
+      "attachment_mode": "nullable_fields_on_regulation_response",
+      "fields": [
+        "memory_surface_digest",
+        "memory_policy_digest",
+        "memory_strength",
+        "memory_surface_key_digest",
+        "memory_score_component",
+        "memory_budget_surface",
+        "memory_budget_before",
+        "memory_budget_after",
+        "memory_budget_error"
+      ],
+      "must_be_null_or_zero_when_lane_id": "n09_no_memory_proxy_regulation_comparator_v1",
+      "required_non_null_when_lane_id": "n09_memory_shaped_proxy_regulation_lane_v1"
+    },
+    "required_claim_flag_keys": [
+      "aco_like_claim_allowed",
+      "agency_claim_allowed",
+      "agentic_like_claim_allowed",
+      "ant_colony_claim_allowed",
+      "biological_claim_allowed",
+      "goal_proxy_regulation_claim_allowed",
+      "identity_acceptance_claim_allowed",
+      "intention_claim_allowed",
+      "locomotion_like_claim_allowed",
+      "movement_claim_allowed",
+      "personhood_claim_allowed",
+      "rc_identity_collapse_claim_allowed",
+      "runtime_identity_acceptance_claim_allowed",
+      "semantic_choice_claim_allowed",
+      "semantic_goal_understanding_claim_allowed",
+      "unrestricted_identity_claim_allowed",
+      "unrestricted_movement_claim_allowed"
+    ],
+    "required_fields": [
+      "regulation_response_id",
+      "proxy_surface_digest",
+      "target_band_digest",
+      "error_signal_digest",
+      "regulation_policy_id",
+      "regulation_policy_digest",
+      "lane_id",
+      "mechanism_status_tags",
+      "source_candidate_set_digest",
+      "source_route_arbitration_record_digest",
+      "selected_candidate_route_digest",
+      "producer_record_digest",
+      "producer_record_linkage",
+      "scheduled_packet_id",
+      "processed_packet_id",
+      "pre_response_proxy_surface_digest",
+      "post_response_proxy_surface_digest",
+      "regulation_outcome_tag",
+      "node_plus_packet_budget_before",
+      "node_plus_packet_budget_after",
+      "node_plus_packet_budget_error",
+      "proxy_budget_surface",
+      "proxy_budget_before",
+      "proxy_budget_after",
+      "proxy_budget_error",
+      "memory_surface_digest",
+      "memory_policy_digest",
+      "memory_strength",
+      "memory_surface_key_digest",
+      "memory_score_component",
+      "memory_budget_surface",
+      "memory_budget_before",
+      "memory_budget_after",
+      "memory_budget_error",
+      "identity_support_digest",
+      "identity_support_outcome_tag",
+      "claim_flags",
+      "regulation_response_digest"
+    ],
+    "schema_version": "n09_regulation_response_v1"
+  },
+  "route_and_producer_evidence_contract": {
+    "candidate_budget_prediction_requirement": {
+      "n06_closeout_rows_do_not_serialize_direct_candidate_budget_prediction": true,
+      "n06_selection_only_rows_alone_cannot_satisfy_gpr4_plus_budget_gate": true,
+      "primary_blocker_if_missing": "candidate_budget_prediction_missing",
+      "required_for_new_n09_route_or_producer_evidence": true
+    },
+    "n06_packet_execution_may_be_inherited": false,
+    "n06_route_arbitration_may_supply_selection_evidence": true,
+    "primary_blocker_if_packet_execution_inherited": "n06_selection_only_no_packet_execution_for_regulation",
+    "producer_may_mutate_claims": false,
+    "producer_may_mutate_state": false,
+    "producer_record_digest_policy": "N09 response artifacts may digest producer records when present; otherwise strict producer_record_linkage must include causal surface digest, reason code, scheduler order, and scheduled packet id.",
+    "producer_record_linkage_schema": {
+      "linkage_validation_required_without_digest": true,
+      "producer_record_digest_available": "optional",
+      "required_fields": [
+        "causal_surface_digest",
+        "reason_code",
+        "scheduler_event_index",
+        "scheduled_packet_id"
+      ]
+    },
+    "required_fields": [
+      "source_candidate_set_digest",
+      "source_route_arbitration_record_digest",
+      "selected_candidate_route_digest",
+      "rejected_candidate_route_digests",
+      "candidate_runtime_visible_inputs",
+      "candidate_score_components",
+      "candidate_budget_prediction",
+      "producer_record_digest",
+      "producer_record_linkage",
+      "scheduled_packet_id"
+    ],
+    "unknown_source_surface_blocker": "native_route_candidate_committed_source_surface_required"
+  },
+  "schema": "n09_fixture_manifest_v1",
+  "secondary_fixture_families": {
+    "oscillator_return_amount": {
+      "available_fields": {
+        "amplification_accounting_status": "available_in_n05_o3_source_but_not_default_n09_fixture",
+        "causal_delay_status": "not_frozen_as_n09_default_fixture",
+        "channel_sequence": [
+          "S_to_K",
+          "K_to_S"
+        ],
+        "channel_sequence_digest": "43b115bb981a7cbcadce8ad9025f5278a13f5e6993eb3af1ca3f99af93c866fc",
+        "cycle_count": 3,
+        "cycle_count_basis": "completed_native_self_rearm_pairs",
+        "cycle_definition": "seeded_parent_arrival_then_native_self_rearm_S_to_K_and_K_to_S",
+        "cycle_ids": [
+          "n05_o5_self_rearm_cycle_000",
+          "n05_o5_self_rearm_cycle_001",
+          "n05_o5_self_rearm_cycle_002"
+        ],
+        "proxy_surface_id": "n05_oscillator_return_amount",
+        "return_amount": 0.1,
+        "return_route_id": "K_to_S",
+        "route_aspect_digest": "4d10620cbdc9c7da9a1a1c5b510a5a03350f055d8139037876ce57524988e8d1",
+        "route_aspect_id": "n05_o5_two_pole_self_rearm_loop_v1",
+        "route_edge_ids": [
+          0,
+          1
+        ]
+      },
+      "explicit_opt_in_required": true,
+      "primary_blocker_without_opt_in": "oscillator_regulation_fixture_requires_explicit_opt_in",
+      "source": "N05 O5 return amount",
+      "status": "deferred_secondary_fixture"
+    }
+  },
+  "source_baseline_inventory": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_1_baseline_inventory.json",
+  "source_baseline_inventory_digest": "78865ce35a12e73d1071b6a124a262e0fb946f90a77e997e505f4245358fd7a3",
+  "support_withdrawal_schema": {
+    "artifact_kind": "n09_identity_support_withdrawal",
+    "must_not_infer_identity_acceptance": true,
+    "n07_withdrawal_baseline_available": false,
+    "n07_withdrawal_baseline_blocker": "n07_identity_withdrawal_baseline_not_available",
+    "required_fields": [
+      "withdrawal_id",
+      "support_withdrawal_kind",
+      "identity_support_digest",
+      "support_area_id",
+      "support_area_digest",
+      "withdrawal_depth",
+      "duration_steps",
+      "baseline_support_digest",
+      "post_withdrawal_support_digest",
+      "identity_support_outcome_tag",
+      "withdrawal_digest"
+    ],
+    "support_withdrawal_kind_values": [
+      "partial_support_weakening",
+      "source_support_reduction",
+      "target_support_reduction",
+      "full_support_withdrawal_control"
+    ],
+    "withdrawal_depth_range": [
+      0.0,
+      1.0
+    ]
+  },
+  "target_band_schema": {
+    "artifact_kind": "n09_target_band",
+    "default_target_band_policy": {
+      "hidden_target_allowed": false,
+      "lower_bound": 0.45,
+      "posthoc_target_change_allowed": false,
+      "regulated_variable_id": "source_reservoir_node_coherence",
+      "regulated_variable_surface": "active_node_state",
+      "target_band_policy_digest": "f8bedb4cd5680a9b2bc482f4260473fa0795ecc466409b82c4c8595eef4ce53a",
+      "target_band_policy_id": "n09_static_declared_band_policy_v1",
+      "target_kind": "closed_interval",
+      "target_value": 0.5,
+      "tolerance": 1e-09,
+      "unit": "coherence",
+      "upper_bound": 0.55
+    },
+    "digest_field": "target_band_digest",
+    "digest_rule": "sha256(canonical_json(target_band_without_target_band_digest))",
+    "hidden_target_allowed": false,
+    "posthoc_target_change_allowed": false,
+    "required_fields": [
+      "target_band_id",
+      "regulated_variable_id",
+      "regulated_variable_surface",
+      "target_kind",
+      "lower_bound",
+      "upper_bound",
+      "target_value",
+      "tolerance",
+      "unit",
+      "event_time_key",
+      "target_band_policy_id",
+      "target_band_policy_digest",
+      "target_band_digest"
+    ],
+    "schema_version": "n09_target_band_v1"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "achieved_movement_level": "M6",
+  "blocked_claims": [
+    "native_lgrc_choice_selection",
+    "rc_identity_collapse",
+    "semantic_choice",
+    "agency",
+    "port_graph_transfer",
+    "adaptive_topology_movement",
+    "topology_mutating_movement",
+    "broad_geometry_transfer",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "all_grid_results_m6_candidate": true,
+    "all_grid_results_t6_candidate": true,
+    "balanced_local_preference_passed": true,
+    "broader_claims_blocked": true,
+    "composed_fork_without_external_scorer_passed": true,
+    "external_scorer_blocker_recorded": true,
+    "integrated_2d_gate_passed": true,
+    "iteration_18_passed": true,
+    "iteration_18b_passed": true,
+    "iteration_18c_passed": true,
+    "iteration_18d_passed": true,
+    "iteration_18e_passed": true,
+    "iteration_18f_passed": true,
+    "iteration_18g_passed": true,
+    "route_defined_grid_survived": true,
+    "state_gated_routing_passed": true,
+    "summary_only_no_new_probe": true,
+    "two_axis_turn_passed": true
+  },
+  "claim_ceiling": "s3_grid_integrated_2d_composed_gate_candidate",
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "fixed_topology_2d_gate_candidate_passed": true,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "port_graph_transfer_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "environment": {
+    "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter18h_s3_grid_series_closeout.py",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "geometry_scope": "transferred_geometry",
+  "git": {
+    "head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15e_large_shock_absorber_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16_corridor_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16b_corridor_perturbation_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16c_high_shock_corridor_resilience.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_unwrap_policy.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17b_circular_ring_motion_evidence_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17c_ring_geometry_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18_grid_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18b_grid_two_axis_turn_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18c_grid_state_gated_routing_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18d_grid_geometry_selection_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18e_grid_composed_1d_fork_competition_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18f_balanced_local_preference_fork_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18g_integrated_2d_composed_gate_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15e_large_shock_absorber_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16_corridor_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16b_corridor_perturbation_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16c_high_shock_corridor_resilience.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17_ring_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17a_ring_unwrap_robustness_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17b_circular_ring_motion_evidence_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17c_ring_geometry_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18_grid_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18b_grid_two_axis_turn_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18c_grid_state_gated_routing_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18d_grid_geometry_selection_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18e_grid_composed_1d_fork_competition_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18f_balanced_local_preference_fork_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18g_integrated_2d_composed_gate_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter17c_ring_geometry_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter18h_s3_grid_series_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15e_large_shock_absorber_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16_corridor_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16b_corridor_perturbation_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16c_high_shock_corridor_resilience.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17_ring_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17a_ring_unwrap_robustness.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18_grid_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18b_grid_two_axis_turn.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18c_grid_state_gated_routing.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18d_grid_geometry_selection.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18e_grid_composed_1d_fork_competition.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18f_balanced_local_preference_fork.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18g_integrated_2d_composed_gate.py"
+    }
+  },
+  "go_no_go_for_iteration_19": {
+    "guidance": "Iteration 19 may test whether the fixed-topology 2D composed gate transfers to S7 port mechanics. Native LGRC choice selection, RC collapse, and adaptive topology remain blocked until explicit controls pass.",
+    "iteration_19_allowed": true,
+    "port_graph_ceiling_to_test": "s3_grid_integrated_2d_composed_gate_candidate"
+  },
+  "iteration": "18-H",
+  "next_iteration": "19_s7_port_graph_and_adaptive_topology_gate",
+  "persistence_axis": {
+    "persistence_basis": "s3_grid_integrated_2d_composed_gate_series",
+    "persistence_level": "T6_candidate",
+    "recovery_passed": true,
+    "recovery_perturbation": 0.15,
+    "recovery_status": "recovers_0_15_across_s3_grid_series",
+    "recovery_tested": true,
+    "repeatability_status": "s3_grid_route_turn_gate_selection_composition_and_integrated_gate_passed",
+    "self_renewed_cycle_count": 3,
+    "t6_full_claim_allowed": false,
+    "t6_full_claim_blocker": "fixed_topology_grid_series_not_port_graph_or_adaptive_topology"
+  },
+  "purpose": "s3_grid_series_closeout_no_new_probe",
+  "report_kind": "n04_iter18h_s3_grid_series_closeout_v1",
+  "runtime_family": "LGRC9V3",
+  "s3_grid_series_summary": {
+    "integration_path": [
+      "route_defined_grid_survival",
+      "two_axis_turn",
+      "two_input_two_output_design",
+      "geometry_flux_selection_prototype_external_scorer_blocked",
+      "composed_1d_fork_competition_without_external_scorer",
+      "balanced_local_preference_tie_breaking_without_global_bias",
+      "integrated_fixed_topology_2d_composed_gate"
+    ],
+    "interpretation": "The S3 grid series supports a scoped fixed-topology 2D composed-gate candidate. It integrates the two-input/two-output gate shape, native composed 1D branch competition, and balanced local preference tie-breaking. It remains below native LGRC choice selection, RC identity collapse, port-graph transfer, adaptive topology, and locomotion-like movement.",
+    "iteration_18_ceiling": "s3_grid_route_defined_m6_transfer_candidate",
+    "iteration_18b_ceiling": "s3_grid_two_axis_turn_m6_transfer_candidate",
+    "iteration_18c_ceiling": "s3_grid_state_gated_two_input_two_output_routing_candidate",
+    "iteration_18d_ceiling": "s3_grid_geometry_scored_selection_design_prototype",
+    "iteration_18e_ceiling": "s3_grid_composed_1d_fork_competition_candidate",
+    "iteration_18f_ceiling": "s3_grid_balanced_local_preference_fork_competition_candidate",
+    "iteration_18g_ceiling": "s3_grid_integrated_2d_composed_gate_candidate",
+    "strongest_scoped_ceiling": "s3_grid_integrated_2d_composed_gate_candidate"
+  },
+  "schema": "movement_ladder_report_v1",
+  "source_artifacts": {
+    "iteration_18": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18_grid_transfer_report.json",
+      "sha256": "fcb2fc76812e74dc6fb3f5986b8ff4df4b95aa6bc24fb16a262792a1ff8f806b"
+    },
+    "iteration_18b": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18b_grid_two_axis_turn_report.json",
+      "sha256": "a06d9c5c379695e97d6a292577c712348424ffe206a2819d6df0fb766cf96812"
+    },
+    "iteration_18c": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18c_grid_state_gated_routing_report.json",
+      "sha256": "8cec2b5479dc2b4ee56fb912e3e71bb47288bebbaf347ee9575b0c4824602c56"
+    },
+    "iteration_18d": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18d_grid_geometry_selection_report.json",
+      "sha256": "cf6a064401ebfbce1df84b8b1bc90be03be504928e349dfb257c07750e7c61fd"
+    },
+    "iteration_18e": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18e_grid_composed_1d_fork_competition_report.json",
+      "sha256": "9317af430e86b067fe8a26c514f2555c8db6bc8b32684d9925b16fe53f7d317b"
+    },
+    "iteration_18f": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18f_balanced_local_preference_fork_report.json",
+      "sha256": "d3f442ec0b91dcbf451c65e934179997f5c4f245853bf467ac2a6ff45446f727"
+    },
+    "iteration_18g": {
+      "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18g_integrated_2d_composed_gate_report.json",
+      "sha256": "640bac046671e544414be691c498d0f474a13d632400e675a2227ad3e5bf075f"
+    }
+  },
+  "status": "passed",
+  "substrate_class": "grid"
+}

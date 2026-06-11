@@ -1,0 +1,971 @@
+{
+  "achieved_movement_level": "M6",
+  "balanced_preference_summary": {
+    "entry_ceiling": "s3_grid_composed_1d_fork_competition_candidate",
+    "positive_result": "Balanced local preferences remove the 18-E no-arbitration tie for near-threshold local forks while keeping global preference sum zero.",
+    "remaining_blocker": "This is local symmetry breaking by declared epsilon, not native LGRC choice selection, RC identity collapse, or agency.",
+    "selected_branches": {
+      "east_dominant_overrides_north_preference": "east_branch",
+      "east_local_preference_tie_break": "east_branch",
+      "north_local_preference_tie_break": "north_branch"
+    }
+  },
+  "blocked_claims": [
+    "native_lgrc_choice_selection",
+    "rc_identity_collapse",
+    "semantic_choice",
+    "agency",
+    "port_graph_transfer",
+    "adaptive_topology_movement",
+    "topology_mutating_movement",
+    "broad_geometry_transfer",
+    "locomotion_like_basin_dynamics",
+    "biological_behavior",
+    "identity_acceptance",
+    "movement_inherited_from_n03",
+    "unrestricted_movement"
+  ],
+  "checks": {
+    "all_recovery_pulses_feedback_authorized": true,
+    "artifact_validators_passed": true,
+    "balanced_local_preference_policy_declared": true,
+    "broader_claims_blocked": true,
+    "budget_and_nonnegative_gates_passed": true,
+    "dominant_signal_overrides_local_preference": true,
+    "epsilon_declared_before_run": true,
+    "epsilon_does_not_force_global_choice": true,
+    "external_argmax_absent": true,
+    "external_scorer_absent": true,
+    "global_preference_sum_zero": true,
+    "identity_shape_gates_passed": true,
+    "iteration_18e_available": true,
+    "m6_balanced_preference_candidate_passed": true,
+    "north_and_east_preferences_resolve_local_ties": true,
+    "unbiased_tie_still_exposes_18e_blocker": true
+  },
+  "claim_ceiling": "s3_grid_balanced_local_preference_fork_competition_candidate",
+  "claim_flags": {
+    "adaptive_topology_claim_allowed": false,
+    "adaptive_topology_entry_allowed": false,
+    "agency_claim_allowed": false,
+    "balanced_local_preference_claim_allowed": true,
+    "balanced_local_preference_fork_candidate_passed": true,
+    "biological_claim_allowed": false,
+    "broad_geometry_transfer_claim_allowed": false,
+    "choice_or_agency_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_branch_arbitration_claim_allowed": false,
+    "native_branch_competition_claim_allowed": true,
+    "native_lgrc_choice_selection_claim_allowed": false,
+    "native_m6": true,
+    "native_m6_candidate_gate_passed": true,
+    "rc_identity_collapse_claim_allowed": false,
+    "unrestricted_movement_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18f_balanced_local_preference_fork.py",
+  "controls": {
+    "east_local_preference_resolves_tie": {
+      "control_id": "east_local_preference_resolves_tie_control",
+      "outcome": "unique_branch_by_native_eligibility",
+      "passed_positive_control": true,
+      "primary_reason": "north_branch_damped_below_threshold_by_local_epsilon",
+      "scheduled_branches": [
+        "east_branch"
+      ]
+    },
+    "epsilon_not_global_override": {
+      "control_id": "epsilon_not_global_override_control",
+      "outcome": "tie_no_native_arbitration",
+      "passed_negative_control": true,
+      "primary_blocker": "both_strong_branches_remain_eligible_epsilon_does_not_force_choice",
+      "scheduled_branches": [
+        "north_branch",
+        "east_branch"
+      ]
+    },
+    "no_preference_remains_no_arbitration": {
+      "control_id": "no_preference_remains_no_arbitration_control",
+      "outcome": "tie_no_native_arbitration",
+      "passed_negative_control": true,
+      "primary_blocker": "both_branches_eligible_no_native_arbitration",
+      "scheduled_branches": [
+        "north_branch",
+        "east_branch"
+      ]
+    },
+    "north_local_preference_resolves_tie": {
+      "control_id": "north_local_preference_resolves_tie_control",
+      "outcome": "unique_branch_by_native_eligibility",
+      "passed_positive_control": true,
+      "primary_reason": "east_branch_damped_below_threshold_by_local_epsilon",
+      "scheduled_branches": [
+        "north_branch"
+      ]
+    }
+  },
+  "environment": {
+    "git_head": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "d766cb5fd4a7838277fbc3161f1566961a0ec748"
+    },
+    "git_status_short": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersHandoff.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_initial_tranche_closeout.json\n M experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_initial_tranche_closeout.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_initial_tranche_closeout.py\n?? ../../../../Obsidian/SentientLife/Self/26-05/2026-05-17.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15_s0_chain_stress_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15b_s0_perturbation_recovery_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15c_s0_perturbation_tolerance_profile.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15d_shock_resistant_recovery_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter15e_large_shock_absorber_geometry_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16_corridor_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16b_corridor_perturbation_probe.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter16c_high_shock_corridor_resilience.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17_ring_unwrap_policy.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17a_ring_unwrap_robustness_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17b_circular_ring_motion_evidence_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter17c_ring_geometry_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18_grid_transfer_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18b_grid_two_axis_turn_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18c_grid_state_gated_routing_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18d_grid_geometry_selection_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18e_grid_composed_1d_fork_competition_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_tag_schema_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15_s0_chain_stress_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15b_s0_perturbation_recovery_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15c_s0_perturbation_tolerance_profile.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15d_shock_resistant_recovery_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter15e_large_shock_absorber_geometry_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16_corridor_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16b_corridor_perturbation_probe.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter16c_high_shock_corridor_resilience.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17_ring_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17a_ring_unwrap_robustness_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17b_circular_ring_motion_evidence_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter17c_ring_geometry_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18_grid_transfer_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18b_grid_two_axis_turn_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18c_grid_state_gated_routing_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18d_grid_geometry_selection_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iter18e_grid_composed_1d_fork_competition_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_class_separation_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iter17c_ring_geometry_closeout.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_inventory_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_taxonomy_tag_schema_v1.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15_s0_chain_stress.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15b_s0_perturbation_recovery.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15c_s0_perturbation_tolerance.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15d_shock_resistant_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter15e_large_shock_absorber_geometry.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16_corridor_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16b_corridor_perturbation_probe.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter16c_high_shock_corridor_resilience.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17_ring_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17a_ring_unwrap_robustness.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter17b_circular_ring_motion.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18_grid_transfer.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18b_grid_two_axis_turn.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18c_grid_state_gated_routing.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18d_grid_geometry_selection.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18e_grid_composed_1d_fork_competition.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_n04_iter18f_balanced_local_preference_fork.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "execution_surface": "native_causal_pulse_substrate_surface",
+  "geometry_scope": "transferred_geometry",
+  "go_no_go_for_iteration_19": {
+    "guidance": "Iteration 19 may test whether balanced local preference and composed-branch competition transfer to S7 port mechanics. Native choice/collapse claims remain blocked.",
+    "iteration_19_allowed": true,
+    "port_graph_ceiling_to_test": "s3_grid_balanced_local_preference_fork_competition_candidate"
+  },
+  "input_iteration_18e": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iter18e_grid_composed_1d_fork_competition_report.json",
+    "sha256": "9317af430e86b067fe8a26c514f2555c8db6bc8b32684d9925b16fe53f7d317b"
+  },
+  "iteration": "18-F",
+  "lane_summaries": {
+    "east_dominant_overrides_north_preference": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "budget_abs_error": 0.0,
+      "final_branch_progress": 0.016666666666666385,
+      "lane": "east_dominant_overrides_north_preference",
+      "m6_composed_fork_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "profile_similarity": 0.9977798714685445,
+      "recovery_scheduled_cycle_count": 3,
+      "selected_branch": "east_branch",
+      "width_relative_change": 0.0013116619627745619
+    },
+    "east_local_preference_tie_break": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "budget_abs_error": 0.0,
+      "final_branch_progress": 0.016666666666666607,
+      "lane": "east_local_preference_tie_break",
+      "m6_composed_fork_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "profile_similarity": 0.997786884714081,
+      "recovery_scheduled_cycle_count": 3,
+      "selected_branch": "east_branch",
+      "width_relative_change": 0.0012981459210332901
+    },
+    "north_local_preference_tie_break": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "budget_abs_error": 0.0,
+      "final_branch_progress": 0.004761904761904967,
+      "lane": "north_local_preference_tie_break",
+      "m6_composed_fork_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "profile_similarity": 0.9960077091793441,
+      "recovery_scheduled_cycle_count": 3,
+      "selected_branch": "north_branch",
+      "width_relative_change": 0.000770593305148358
+    }
+  },
+  "lanes": {
+    "east_dominant_overrides_north_preference": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "artifact_validator": {
+        "failure_reasons": [],
+        "movement_claim_allowed": false,
+        "native_lgrc_pulse_substrate_supported": true,
+        "native_m6": false,
+        "surface_row_count": 14,
+        "valid": true,
+        "validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-b621a5f5663eca36:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-db732f5401adc16f:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-35eb967363919f23:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-35eb967363919f23:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-12fb5cbc2ad96816:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-758fc007c902f417:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-17528ad29a4a74ae:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-17528ad29a4a74ae:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-2645f552d8172001:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-5d008c6029df270e:route_local_pulse_contact"
+        ],
+        "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+      },
+      "budget_abs_error": 0.0,
+      "budget_final": 25.0,
+      "budget_initial": 25.0,
+      "eligibility_scan": {
+        "branch_results": {
+          "east_branch": {
+            "boundary_polarity_score": 0.69,
+            "branch_id": "east_branch",
+            "copied_from_original_schedule": false,
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": true,
+            "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "e12295a522b2ff1cec037174e17bfea1bdaee978d2360d7ef1126fa026b6df9b"
+          },
+          "north_branch": {
+            "boundary_polarity_score": 0.14000000000000012,
+            "branch_id": "north_branch",
+            "copied_from_original_schedule": false,
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_subthreshold",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": false,
+            "scheduled_event_id": null,
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "96f79f8f1c84b218cadb2330a4d22c3a7bfcde632ce3f9172cfeb12baf3f1017"
+          }
+        },
+        "geometry_init": {
+          "branch_biases": {
+            "east_branch": 0.22,
+            "north_branch": 0.07
+          },
+          "budget_abs_error": 0.0,
+          "budget_after": 25.0,
+          "budget_before": 25.0,
+          "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+          "diagonal_edges_enabled": false,
+          "direct_branch_suppression_absent": true,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "disabled_branches": [],
+          "external_argmax_absent": true,
+          "external_geometry_scorer_absent": true,
+          "geometry_id": "s3_grid_composed_1d_fork_v1",
+          "nonnegative_after_geometry_init": true,
+          "preauthored_input_to_output_lookup_absent": true,
+          "route_edges_are_local_unit_edges": true,
+          "route_shortcuts_enabled": false,
+          "shared_fork_node": 12,
+          "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+          "topology_changed_by_fixture_definition": false,
+          "topology_fixed_during_run": true,
+          "topology_mutated_during_run": false
+        },
+        "native_branch_arbitration_observed": false,
+        "native_branch_competition_observed": true,
+        "outcome": "unique_branch_by_native_eligibility",
+        "production_artifacts_digest": "173e8c9edbb8f69016cc2711795db6e6a61cb46c02cbc6ba3043e4dc2903ffad",
+        "scheduled_branches": [
+          "east_branch"
+        ],
+        "unique_selected_branch": "east_branch"
+      },
+      "final_branch_progress": 0.016666666666666385,
+      "final_centroid_delta": {
+        "x": 0.016666666666666385,
+        "y": 0.0
+      },
+      "final_centroid_xy": {
+        "x": 1.9423809523809523,
+        "y": 1.6123809523809522
+      },
+      "final_score": 0.7900000000000004,
+      "first_cycle": {
+        "boundary_polarity_score": 0.69,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "composed_fork_selected_branch_first_fire",
+        "processed_event_count": 6,
+        "processed_events_digest": "93dc4bc83ac9406723f9b0c311ab7362100e4fa0d11a464036acea85cfcd4b5d",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+        "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+        "surface_digest": "e12295a522b2ff1cec037174e17bfea1bdaee978d2360d7ef1126fa026b6df9b"
+      },
+      "geometry_init": {
+        "branch_biases": {
+          "east_branch": 0.22,
+          "north_branch": 0.07
+        },
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+        "diagonal_edges_enabled": false,
+        "direct_branch_suppression_absent": true,
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "disabled_branches": [],
+        "external_argmax_absent": true,
+        "external_geometry_scorer_absent": true,
+        "geometry_id": "s3_grid_composed_1d_fork_v1",
+        "nonnegative_after_geometry_init": true,
+        "preauthored_input_to_output_lookup_absent": true,
+        "route_edges_are_local_unit_edges": true,
+        "route_shortcuts_enabled": false,
+        "shared_fork_node": 12,
+        "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+        "topology_changed_by_fixture_definition": false,
+        "topology_fixed_during_run": true,
+        "topology_mutated_during_run": false
+      },
+      "identity_shape_gates_passed": true,
+      "initial_centroid_xy": {
+        "x": 1.925714285714286,
+        "y": 1.6123809523809522
+      },
+      "lane": "east_dominant_overrides_north_preference",
+      "m4_boundary_response_passed": true,
+      "m5_direction_control_passed": true,
+      "m6_composed_fork_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "perturbation": {
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "credit_nodes": [
+          11
+        ],
+        "debit_nodes": [
+          13
+        ],
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "nonnegative_after_perturbation": true,
+        "perturbation_kind": "budget_neutral_geometry_selected_output_polarity_damping",
+        "transfer_amount": 0.15
+      },
+      "post_perturbation_score": 0.4900000000000001,
+      "pre_perturbation_score": 0.79,
+      "producer_records_digest": "9bf7bf50025f13fc3fc6f80e987583fa286c5a8451efd092c0dcdaccddee06bf",
+      "profile_similarity": 0.9977798714685445,
+      "recovery_cycles": [
+        {
+          "boundary_polarity_score": 0.4900000000000001,
+          "copied_from_original_schedule": false,
+          "cycle_index": 0,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "4d6495b10acb5fb9977dc6723c14aff0548393af7e901d94ca3e86f23322f306",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-12fb5cbc2ad96816",
+          "source_surface_digest": "a692772ec98125412315d92f2bfc5c0796a2bc7b0aa3eee0ef113521c29c086f",
+          "surface_digest": "98c04f409cc77a43b0afaf61e3b310a7db96bbb9341e43db4e79275a304cda39"
+        },
+        {
+          "boundary_polarity_score": 0.5900000000000002,
+          "copied_from_original_schedule": false,
+          "cycle_index": 1,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "b042a403391ea6e759999bb03efb50d11b13044fffc3a7652d856170f6cc9865",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-758fc007c902f417",
+          "source_surface_digest": "3e0897e0cab39e39ca4537be9cb5bc41cf3a4c7a2b7a2b9643dff7a455946d61",
+          "surface_digest": "cd958aca12f0c9fe6818d6cbd9ec299bd8318f0441688fe600a2d6390f43c7ac"
+        },
+        {
+          "boundary_polarity_score": 0.6900000000000003,
+          "copied_from_original_schedule": false,
+          "cycle_index": 2,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "72d27581ecf2ca55f2f343998da97419883ca96703f3746fbb7a0db6b4bd2f65",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-2645f552d8172001",
+          "source_surface_digest": "e175935b8438db63883308e969d09e6c2e2171f41a610db7978826394e59be75",
+          "surface_digest": "e3a21fa635c83c15834c52fb2ff8844d0cf8e008a18dc74ed2e5e6be5a0b89df"
+        }
+      ],
+      "recovery_scheduled_cycle_count": 3,
+      "selected_branch": "east_branch",
+      "selected_branch_config": {
+        "front_nodes": [
+          13
+        ],
+        "rear_nodes": [
+          11
+        ],
+        "route_vector": [
+          1.0,
+          0.0
+        ],
+        "target_node": 13
+      },
+      "surface_log_digest": "60d0d47c2b083be939b064bd59c5bcc7fe2a288f848cd7d9cf46795489ed5a96",
+      "surface_row_count": 14,
+      "width_relative_change": 0.0013116619627745619
+    },
+    "east_local_preference_tie_break": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "artifact_validator": {
+        "failure_reasons": [],
+        "movement_claim_allowed": false,
+        "native_lgrc_pulse_substrate_supported": true,
+        "native_m6": false,
+        "surface_row_count": 14,
+        "valid": true,
+        "validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-b621a5f5663eca36:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-db732f5401adc16f:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-35eb967363919f23:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-35eb967363919f23:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-12fb5cbc2ad96816:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-c2c3e5a1c210bd47:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-758fc007c902f417:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-17528ad29a4a74ae:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-17528ad29a4a74ae:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-2645f552d8172001:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-5d008c6029df270e:route_local_pulse_contact"
+        ],
+        "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+      },
+      "budget_abs_error": 0.0,
+      "budget_final": 25.0,
+      "budget_initial": 25.0,
+      "eligibility_scan": {
+        "branch_results": {
+          "east_branch": {
+            "boundary_polarity_score": 0.75,
+            "branch_id": "east_branch",
+            "copied_from_original_schedule": false,
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": true,
+            "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "9ba28dc46bb03e9c1724ef2fc24c2d3ad8c463ae051907763df359675bcc89c6"
+          },
+          "north_branch": {
+            "boundary_polarity_score": 0.14000000000000012,
+            "branch_id": "north_branch",
+            "copied_from_original_schedule": false,
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_subthreshold",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": false,
+            "scheduled_event_id": null,
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "96f79f8f1c84b218cadb2330a4d22c3a7bfcde632ce3f9172cfeb12baf3f1017"
+          }
+        },
+        "geometry_init": {
+          "branch_biases": {
+            "east_branch": 0.25,
+            "north_branch": 0.07
+          },
+          "budget_abs_error": 0.0,
+          "budget_after": 25.0,
+          "budget_before": 25.0,
+          "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+          "diagonal_edges_enabled": false,
+          "direct_branch_suppression_absent": true,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "disabled_branches": [],
+          "external_argmax_absent": true,
+          "external_geometry_scorer_absent": true,
+          "geometry_id": "s3_grid_composed_1d_fork_v1",
+          "nonnegative_after_geometry_init": true,
+          "preauthored_input_to_output_lookup_absent": true,
+          "route_edges_are_local_unit_edges": true,
+          "route_shortcuts_enabled": false,
+          "shared_fork_node": 12,
+          "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+          "topology_changed_by_fixture_definition": false,
+          "topology_fixed_during_run": true,
+          "topology_mutated_during_run": false
+        },
+        "native_branch_arbitration_observed": false,
+        "native_branch_competition_observed": true,
+        "outcome": "unique_branch_by_native_eligibility",
+        "production_artifacts_digest": "65257d1b56a2bc57c34b96223b38bd89df100b3f11b0bfda46533f7f3c51caa4",
+        "scheduled_branches": [
+          "east_branch"
+        ],
+        "unique_selected_branch": "east_branch"
+      },
+      "final_branch_progress": 0.016666666666666607,
+      "final_centroid_delta": {
+        "x": 0.016666666666666607,
+        "y": 0.0
+      },
+      "final_centroid_xy": {
+        "x": 1.9452380952380952,
+        "y": 1.6123809523809522
+      },
+      "final_score": 0.8500000000000004,
+      "first_cycle": {
+        "boundary_polarity_score": 0.75,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "composed_fork_selected_branch_first_fire",
+        "processed_event_count": 6,
+        "processed_events_digest": "93dc4bc83ac9406723f9b0c311ab7362100e4fa0d11a464036acea85cfcd4b5d",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-db732f5401adc16f",
+        "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+        "surface_digest": "9ba28dc46bb03e9c1724ef2fc24c2d3ad8c463ae051907763df359675bcc89c6"
+      },
+      "geometry_init": {
+        "branch_biases": {
+          "east_branch": 0.25,
+          "north_branch": 0.07
+        },
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+        "diagonal_edges_enabled": false,
+        "direct_branch_suppression_absent": true,
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "disabled_branches": [],
+        "external_argmax_absent": true,
+        "external_geometry_scorer_absent": true,
+        "geometry_id": "s3_grid_composed_1d_fork_v1",
+        "nonnegative_after_geometry_init": true,
+        "preauthored_input_to_output_lookup_absent": true,
+        "route_edges_are_local_unit_edges": true,
+        "route_shortcuts_enabled": false,
+        "shared_fork_node": 12,
+        "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+        "topology_changed_by_fixture_definition": false,
+        "topology_fixed_during_run": true,
+        "topology_mutated_during_run": false
+      },
+      "identity_shape_gates_passed": true,
+      "initial_centroid_xy": {
+        "x": 1.9285714285714286,
+        "y": 1.6123809523809522
+      },
+      "lane": "east_local_preference_tie_break",
+      "m4_boundary_response_passed": true,
+      "m5_direction_control_passed": true,
+      "m6_composed_fork_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "perturbation": {
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "credit_nodes": [
+          11
+        ],
+        "debit_nodes": [
+          13
+        ],
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "nonnegative_after_perturbation": true,
+        "perturbation_kind": "budget_neutral_geometry_selected_output_polarity_damping",
+        "transfer_amount": 0.15
+      },
+      "post_perturbation_score": 0.5500000000000002,
+      "pre_perturbation_score": 0.8500000000000001,
+      "producer_records_digest": "33198271f365933b44b93ed27a4aaf64d0da5675b3650c91cb2ea85f665b0720",
+      "profile_similarity": 0.997786884714081,
+      "recovery_cycles": [
+        {
+          "boundary_polarity_score": 0.5500000000000002,
+          "copied_from_original_schedule": false,
+          "cycle_index": 0,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "4d6495b10acb5fb9977dc6723c14aff0548393af7e901d94ca3e86f23322f306",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-12fb5cbc2ad96816",
+          "source_surface_digest": "a692772ec98125412315d92f2bfc5c0796a2bc7b0aa3eee0ef113521c29c086f",
+          "surface_digest": "82685a07731d9f7d8be4ca1816f823a777699010bb5902e0472c85f836560257"
+        },
+        {
+          "boundary_polarity_score": 0.6500000000000002,
+          "copied_from_original_schedule": false,
+          "cycle_index": 1,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "b042a403391ea6e759999bb03efb50d11b13044fffc3a7652d856170f6cc9865",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-758fc007c902f417",
+          "source_surface_digest": "3e0897e0cab39e39ca4537be9cb5bc41cf3a4c7a2b7a2b9643dff7a455946d61",
+          "surface_digest": "7afcd399d0f6ccdb5d971ac8907587f4015566c0bf5681a5a5054effb3466025"
+        },
+        {
+          "boundary_polarity_score": 0.7500000000000003,
+          "copied_from_original_schedule": false,
+          "cycle_index": 2,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "72d27581ecf2ca55f2f343998da97419883ca96703f3746fbb7a0db6b4bd2f65",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-2645f552d8172001",
+          "source_surface_digest": "e175935b8438db63883308e969d09e6c2e2171f41a610db7978826394e59be75",
+          "surface_digest": "52371a587067928a5b8b57678c146350b3c6a584cc3a7ae1162d752e4dd2d8db"
+        }
+      ],
+      "recovery_scheduled_cycle_count": 3,
+      "selected_branch": "east_branch",
+      "selected_branch_config": {
+        "front_nodes": [
+          13
+        ],
+        "rear_nodes": [
+          11
+        ],
+        "route_vector": [
+          1.0,
+          0.0
+        ],
+        "target_node": 13
+      },
+      "surface_log_digest": "02dfe83dd31e304280d23ec566d79aedc7dd2c51e353375e1ce62d94901b8caf",
+      "surface_row_count": 14,
+      "width_relative_change": 0.0012981459210332901
+    },
+    "north_local_preference_tie_break": {
+      "all_recovery_pulses_feedback_authorized": true,
+      "artifact_validator": {
+        "failure_reasons": [],
+        "movement_claim_allowed": false,
+        "native_lgrc_pulse_substrate_supported": true,
+        "native_m6": false,
+        "surface_row_count": 14,
+        "valid": true,
+        "validated_surface_ids": [
+          "surface:lgrc9v3-packet-event-b621a5f5663eca36:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-e5547ce948360585:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-3ca5b0d52cc46c04:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-9a8756e1ea570b7c:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-9a8756e1ea570b7c:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-0699b558e3d1b6d8:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-6e77c7f61ecc77e2:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-6e77c7f61ecc77e2:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-c8a6ad8a8e249454:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-bbbfba32a2cc7bd5:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-bbbfba32a2cc7bd5:feedback_eligibility",
+          "surface:lgrc9v3-packet-event-f6cf2062e804af39:route_local_pulse_contact",
+          "surface:lgrc9v3-packet-event-8a007b5582e9d927:route_local_pulse_contact"
+        ],
+        "validator": "validate_lgrc9v3_causal_pulse_substrate_surface_artifacts"
+      },
+      "budget_abs_error": 0.0,
+      "budget_final": 25.0,
+      "budget_initial": 25.0,
+      "eligibility_scan": {
+        "branch_results": {
+          "east_branch": {
+            "boundary_polarity_score": 0.18999999999999995,
+            "branch_id": "east_branch",
+            "copied_from_original_schedule": false,
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_subthreshold",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": false,
+            "scheduled_event_id": null,
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "dcdb49af2be015e45d3be5c80210f4827b5fe4acffa21b0b6e6c0d94dc6a530b"
+          },
+          "north_branch": {
+            "boundary_polarity_score": 0.5,
+            "branch_id": "north_branch",
+            "copied_from_original_schedule": false,
+            "producer_enabled": true,
+            "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+            "regenerated_pulse_source": "feedback_eligibility",
+            "scheduled": true,
+            "scheduled_event_id": "lgrc9v3-packet-event-3ca5b0d52cc46c04",
+            "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+            "surface_digest": "82d2c6d21f89ca6946ec42d3bc57417356f640c366889db12a74c6f6adb54218"
+          }
+        },
+        "geometry_init": {
+          "branch_biases": {
+            "east_branch": -0.03,
+            "north_branch": 0.25
+          },
+          "budget_abs_error": 0.0,
+          "budget_after": 25.0,
+          "budget_before": 25.0,
+          "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+          "diagonal_edges_enabled": false,
+          "direct_branch_suppression_absent": true,
+          "direct_centroid_write": false,
+          "direct_claim_flag_write": false,
+          "direct_displacement_write": false,
+          "direct_support_mask_write": false,
+          "direct_topology_write": false,
+          "disabled_branches": [],
+          "external_argmax_absent": true,
+          "external_geometry_scorer_absent": true,
+          "geometry_id": "s3_grid_composed_1d_fork_v1",
+          "nonnegative_after_geometry_init": true,
+          "preauthored_input_to_output_lookup_absent": true,
+          "route_edges_are_local_unit_edges": true,
+          "route_shortcuts_enabled": false,
+          "shared_fork_node": 12,
+          "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+          "topology_changed_by_fixture_definition": false,
+          "topology_fixed_during_run": true,
+          "topology_mutated_during_run": false
+        },
+        "native_branch_arbitration_observed": false,
+        "native_branch_competition_observed": true,
+        "outcome": "unique_branch_by_native_eligibility",
+        "production_artifacts_digest": "af907382a6baf81424b4bbcb7f5ced2feb43e55f1dae7602696d1afa37521184",
+        "scheduled_branches": [
+          "north_branch"
+        ],
+        "unique_selected_branch": "north_branch"
+      },
+      "final_branch_progress": 0.004761904761904967,
+      "final_centroid_delta": {
+        "x": 0.011904761904761862,
+        "y": -0.004761904761904967
+      },
+      "final_centroid_xy": {
+        "x": 1.9138095238095236,
+        "y": 1.5904761904761904
+      },
+      "final_score": 0.6000000000000004,
+      "first_cycle": {
+        "boundary_polarity_score": 0.5,
+        "copied_from_original_schedule": false,
+        "cycle_index": 0,
+        "phase": "composed_fork_selected_branch_first_fire",
+        "processed_event_count": 6,
+        "processed_events_digest": "1336b1ec8fc2538c5ec36f979b9b70e2282435620edafbbe9baffd84b8ad9fbd",
+        "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+        "regenerated_pulse_source": "feedback_eligibility",
+        "scheduled_event_id": "lgrc9v3-packet-event-3ca5b0d52cc46c04",
+        "source_surface_digest": "11b715703250f64ba4078f337d190753cbfa93f55cb306889008b136dacc61a7",
+        "surface_digest": "82d2c6d21f89ca6946ec42d3bc57417356f640c366889db12a74c6f6adb54218"
+      },
+      "geometry_init": {
+        "branch_biases": {
+          "east_branch": -0.03,
+          "north_branch": 0.25
+        },
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "composition_kind": "two_1d_lgrc_route_elements_shared_fork",
+        "diagonal_edges_enabled": false,
+        "direct_branch_suppression_absent": true,
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "disabled_branches": [],
+        "external_argmax_absent": true,
+        "external_geometry_scorer_absent": true,
+        "geometry_id": "s3_grid_composed_1d_fork_v1",
+        "nonnegative_after_geometry_init": true,
+        "preauthored_input_to_output_lookup_absent": true,
+        "route_edges_are_local_unit_edges": true,
+        "route_shortcuts_enabled": false,
+        "shared_fork_node": 12,
+        "source_geometry": "s3_grid_geometry_scored_competing_output_basins_v1",
+        "topology_changed_by_fixture_definition": false,
+        "topology_fixed_during_run": true,
+        "topology_mutated_during_run": false
+      },
+      "identity_shape_gates_passed": true,
+      "initial_centroid_xy": {
+        "x": 1.9019047619047618,
+        "y": 1.5952380952380953
+      },
+      "lane": "north_local_preference_tie_break",
+      "m4_boundary_response_passed": true,
+      "m5_direction_control_passed": true,
+      "m6_composed_fork_candidate_passed": true,
+      "nonnegative_gate_passed": true,
+      "perturbation": {
+        "budget_abs_error": 0.0,
+        "budget_after": 25.0,
+        "budget_before": 25.0,
+        "credit_nodes": [
+          17
+        ],
+        "debit_nodes": [
+          7
+        ],
+        "direct_centroid_write": false,
+        "direct_claim_flag_write": false,
+        "direct_displacement_write": false,
+        "direct_support_mask_write": false,
+        "direct_topology_write": false,
+        "nonnegative_after_perturbation": true,
+        "perturbation_kind": "budget_neutral_geometry_selected_output_polarity_damping",
+        "transfer_amount": 0.15
+      },
+      "post_perturbation_score": 0.30000000000000016,
+      "pre_perturbation_score": 0.6000000000000001,
+      "producer_records_digest": "afd3ef86ae7cd29491775780deeed8882060821f2b1105f90400cc0b06a3cb32",
+      "profile_similarity": 0.9960077091793441,
+      "recovery_cycles": [
+        {
+          "boundary_polarity_score": 0.30000000000000016,
+          "copied_from_original_schedule": false,
+          "cycle_index": 0,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "a1db7fb02f4ca74b0455e8d602f54d221c094415d429d7c8e7c04fc850f99285",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-0699b558e3d1b6d8",
+          "source_surface_digest": "5d7533905d89e08b43c03b4d2da795fd392dc703a462cca47e47d33eb407b5d6",
+          "surface_digest": "a0873a5016e1cbd6a6340e50f390b649ceea2f31f255fcc527cd861e140892fd"
+        },
+        {
+          "boundary_polarity_score": 0.40000000000000024,
+          "copied_from_original_schedule": false,
+          "cycle_index": 1,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "744086df3e93fa27760764343b9c72d272435131ca97b5de59992d59d8748d56",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-c8a6ad8a8e249454",
+          "source_surface_digest": "53ca26777de5c003a936a09accf2cb1245eaa6020fab06678e48d65d388d4350",
+          "surface_digest": "517f5adb0235636b5cda1018e7270958722a6eab77da760c052fd4de06543201"
+        },
+        {
+          "boundary_polarity_score": 0.5000000000000003,
+          "copied_from_original_schedule": false,
+          "cycle_index": 2,
+          "phase": "post_perturbation_composed_fork_recovery",
+          "processed_event_count": 6,
+          "processed_events_digest": "9ce576f1b27fcfd19e58a54af9ed2992e91861d35d613c7556923879ab8eab28",
+          "producer_reason_code": "feedback_coupled_pulse_packet_departure_scheduled",
+          "regenerated_pulse_source": "feedback_eligibility",
+          "scheduled_event_id": "lgrc9v3-packet-event-f6cf2062e804af39",
+          "source_surface_digest": "5e2df34a18c36ab5e3576bda04f8566421682625d84b45ab1a57bd572e7cfc39",
+          "surface_digest": "3dd6ae5b7f11666f15cc7602d17747e664361c2a2b20bd875ce121a82cc219c6"
+        }
+      ],
+      "recovery_scheduled_cycle_count": 3,
+      "selected_branch": "north_branch",
+      "selected_branch_config": {
+        "front_nodes": [
+          7
+        ],
+        "rear_nodes": [
+          17
+        ],
+        "route_vector": [
+          0.0,
+          -1.0
+        ],
+        "target_node": 7
+      },
+      "surface_log_digest": "44f34923bdb0a6608ee3c8744fae53510722f9cf200710ac755491ef2d05e459",
+      "surface_row_count": 14,
+      "width_relative_change": 0.000770593305148358
+    }
+  },
+  "movement_substrate": "S3_grid_balanced_local_preference_composed_fork_v1",
+  "native_support_boundary": {
+    "balanced_local_preference_used": true,
+    "external_argmax_used": false,
+    "external_scorer_used": false,
+    "global_directional_preference": "none",
+    "native_artifact_validator_used": true,
+    "native_branch_arbitration_supported": false,
+    "native_causal_pulse_substrate_surface_used": true,
+    "native_feedback_eligibility_surface_used": true,
+    "native_feedback_producer_used": true,
+    "native_lgrc_packet_work_used": true,
+    "selection_mechanism": "local_preference_breaks_near_tie_by_native_branch_eligibility"
+  },
+  "persistence_axis": {
+    "persistence_basis": "s3_grid_balanced_local_preference_fork_recovers_0_15",
+    "persistence_level": "T6_candidate",
+    "recovery_passed": true,
+    "recovery_perturbation": 0.15,
+    "recovery_status": "recovers_0_15_after_local_tie_break",
+    "recovery_tested": true,
+    "repeatability_status": "paired_local_preferences_resolve_distinct_branch_ties",
+    "self_renewed_cycle_count": 3,
+    "t6_full_claim_allowed": false,
+    "t6_full_claim_blocker": "local_preference_tie_breaking_not_native_choice_or_rc_collapse"
+  },
+  "preference_policy": {
+    "declared_before_run": true,
+    "dominant_signal_must_override_local_preference": true,
+    "epsilon": 0.03,
+    "epsilon_role": "local_near_tie_symmetry_breaker_only",
+    "external_argmax_used": false,
+    "external_scorer_used": false,
+    "global_directional_preference": "none",
+    "global_preference_sum": {
+      "east_branch": 0.0,
+      "north_branch": 0.0
+    },
+    "local_preference_sites": [
+      {
+        "damped_branch": "east_branch",
+        "epsilon": 0.03,
+        "preference_vector": {
+          "east_branch": -0.03,
+          "north_branch": 0.03
+        },
+        "preferred_branch": "north_branch",
+        "site_id": "center_fork_local_preference",
+        "site_node": 12
+      },
+      {
+        "damped_branch": "north_branch",
+        "epsilon": 0.03,
+        "preference_vector": {
+          "east_branch": 0.03,
+          "north_branch": -0.03
+        },
+        "preferred_branch": "east_branch",
+        "site_id": "mirror_fork_local_preference",
+        "site_node": 8
+      }
+    ],
+    "policy_id": "s3_grid_balanced_local_preference_fork_policy_v1"
+  },
+  "report_kind": "n04_iter18f_balanced_local_preference_fork_v1",
+  "result_role": "balanced_local_preference_composed_fork_probe",
+  "runtime_family": "LGRC9V3",
+  "status": "passed",
+  "substrate_class": "grid"
+}

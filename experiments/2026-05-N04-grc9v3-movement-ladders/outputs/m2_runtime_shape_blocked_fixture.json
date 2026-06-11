@@ -1,0 +1,273 @@
+{
+  "checks": {
+    "boundary_reassignment_gate_passed": true,
+    "budget_gate_passed": true,
+    "classified_as_m2": true,
+    "displacement_gate_passed": true,
+    "identity_gate_passed": true,
+    "movement_claims_blocked": true,
+    "primary_blocker_shape": true,
+    "profile_gate_is_shape_blocker": true,
+    "shape_gate_failed": true,
+    "timeseries_emitted": true
+  },
+  "claim_ceiling": "M2_identity_preserving_displacement_evidence_only",
+  "classification": {
+    "all_gate_failures": [
+      "shape_gate_failed"
+    ],
+    "blocked_claims": [
+      "loop_driven_movement",
+      "locomotion_like_basin_dynamics",
+      "adaptive_topology_movement",
+      "movement_inherited_from_n03",
+      "shape_preserving_displacement"
+    ],
+    "blocked_reasons": [
+      "shape_gate_failed"
+    ],
+    "claim_flags": {
+      "adaptive_topology_entry_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_claim_inherited_from_n03": false
+    },
+    "classification": "identity_displacement_shape_blocked",
+    "classifier": "movement_m0_m3_classifier_v1",
+    "diagnostic_subtype": "M2_boundary_reassignment_shape_blocked",
+    "gates_failed": [
+      "shape_gate_failed"
+    ],
+    "movement_claim_allowed": false,
+    "movement_level": "M2_identity_preserving_displacement",
+    "movement_level_index": 2,
+    "primary_blocked_reason": "shape_gate_failed",
+    "secondary_gate_failures": []
+  },
+  "classifier_input": {
+    "boundary_flip_count": 4,
+    "boundary_reassignment_passed": true,
+    "budget_passed": true,
+    "budget_surface": "node_only",
+    "centroid_displacement": 0.17167957557684588,
+    "centroid_displacement_abs": 0.17167957557684588,
+    "claim_flags": {
+      "adaptive_topology_entry_allowed": false,
+      "agency_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "locomotion_like_claim_allowed": false,
+      "loop_driven_movement_claim_allowed": false,
+      "movement_claim_allowed": false,
+      "movement_claim_inherited_from_n03": false,
+      "native_grc9v3_proposal_flux_control_used": false,
+      "native_lgrc9v3_e3_pulse_used": false,
+      "native_m6": false
+    },
+    "diagnostic_signal": "runtime_shape_failure_after_boundary_handoff",
+    "displacement_passed": true,
+    "fixture_id": "S0_chain_v1",
+    "front_entered_mass": 3.3150981035444347,
+    "identity_level_input": "I2_gate_passed",
+    "identity_passed": true,
+    "lane_or_case_id": "M2_shape_degraded_boundary_handoff",
+    "m0_subtype_hint": null,
+    "nonnegative_passed": true,
+    "profile_similarity": 0.7614634487196019,
+    "rear_left_mass": 1.034370396895702,
+    "run_id": "S0_chain_v1_M2_shape_degraded_boundary_handoff",
+    "shape_passed": false,
+    "source": "iteration_11b_runtime_shape_blocked_fixture",
+    "topology_passed": true,
+    "width_relative_change_max": 0.008893340751886612
+  },
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_m2_runtime_shape_blocked_fixture.py",
+  "environment": {
+    "git_diff_check": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "fixture_id": "S0_chain_v1",
+  "lane_id": "M2_shape_degraded_boundary_handoff",
+  "metric_thresholds": {
+    "effective_displacement_min": 0.05,
+    "epsilon_budget": 1e-09,
+    "identity_mass_ratio_min": 0.95,
+    "profile_similarity_min": 0.8,
+    "width_relative_change_max": 0.15
+  },
+  "metrics": {
+    "budget_abs_error_max": 0.0,
+    "centroid_displacement": 0.17167957557684588,
+    "centroid_displacement_abs": 0.17167957557684588,
+    "front_entered_mass": 3.3150981035444347,
+    "identity_mass_ratio_min": 1.0,
+    "nonnegative_min": 0.9045109006136312,
+    "profile_similarity_aligned": 0.7614634487196019,
+    "rear_left_mass": 1.034370396895702,
+    "width_relative_change_max": 0.008893340751886612
+  },
+  "native_grc9v3_proposal_flux_control_used": false,
+  "native_lgrc9v3_e3_pulse_used": false,
+  "notes": [
+    "Iteration 11-B unblocks M2 as a runtime timeseries visual reference.",
+    "The lane is intentionally shape-blocked by profile similarity, so it does not promote to M3.",
+    "This is experiment-local N04 evidence, not native LGRC telemetry.",
+    "Movement and broader claim flags remain blocked."
+  ],
+  "observables": {
+    "boundary_flip_count": 4,
+    "boundary_flips": {
+      "entered_support_count": 3,
+      "entered_support_nodes": [
+        14,
+        15,
+        16
+      ],
+      "front_entered_mass": 3.3150981035444347,
+      "front_entered_nodes": [
+        14,
+        15,
+        16
+      ],
+      "front_left_mass": 0,
+      "front_left_nodes": [],
+      "left_support_count": 1,
+      "left_support_nodes": [
+        7
+      ],
+      "rear_entered_mass": 0,
+      "rear_entered_nodes": [],
+      "rear_left_mass": 1.034370396895702,
+      "rear_left_nodes": [
+        7
+      ]
+    },
+    "centroid": {
+      "coordinate_frame": "linear",
+      "delta_x_abs": 0.17167957557684588,
+      "delta_x_total": 0.17167957557684588,
+      "max_step_delta": 0.17167957557684588,
+      "x_t": [
+        10.0,
+        10.171679575576846
+      ]
+    },
+    "conservation": {
+      "budget_abs_error_max": 0.0,
+      "budget_final": 21.0,
+      "budget_initial": 21.0,
+      "budget_surface": "node_only",
+      "budget_t": [
+        21.0,
+        21.0
+      ]
+    },
+    "curvature_proxy": {
+      "front_rear_trace_delta": 0.21359623828180285,
+      "front_trace": -0.17657183498878393,
+      "rear_trace": 0.037024403293018926
+    },
+    "front_rear_definition": {
+      "claim_eligible": true,
+      "direction_source": "configured",
+      "direction_vector": [
+        1.0
+      ],
+      "posthoc": false
+    },
+    "front_rear_masks": {
+      "front": [
+        16
+      ],
+      "rear": [
+        8
+      ]
+    },
+    "movement_cost": {
+      "displacement_too_small_for_cost_ratio": false,
+      "redistribution_load_per_displacement": 7.4861645139161475,
+      "redistribution_load_total": 1.285221546447569
+    },
+    "profile_similarity": {
+      "aligned": 0.7614634487196019,
+      "alignment_max_shift": 6,
+      "alignment_policy": "centroid_aligned_discrete_shift",
+      "raw": 0.7206788977815158,
+      "similarity_metric": "pearson_correlation"
+    },
+    "shape": {
+      "mass_ratio_min": 1.0,
+      "mass_t": [
+        21.0,
+        21.0
+      ],
+      "width_relative_change_max": 0.008893340751886612,
+      "width_t": [
+        5.792003634575088,
+        5.84351389653353
+      ]
+    },
+    "support_tracking": {
+      "alignment_max_shift": 3,
+      "identity_candidate_min": 0.5,
+      "identity_continuity_level": "I2_gate_passed",
+      "identity_gate_min": 0.95,
+      "identity_mass_ratio_min": 1.0,
+      "mutual_best_match": true,
+      "overlap_t": [
+        1.0,
+        1.0
+      ],
+      "support_mask_t": [
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      ],
+      "threshold_policy": "mean_plus_0.10_of_peak_excess",
+      "tie_breaking_policy": "node_id_order"
+    },
+    "topology": {
+      "final_edge_count": 20,
+      "final_node_count": 21,
+      "initial_edge_count": 20,
+      "initial_node_count": 21,
+      "topology_changed": false,
+      "topology_event_count": 0,
+      "topology_events_enabled": false
+    }
+  },
+  "report_kind": "m2_runtime_shape_blocked_fixture",
+  "run_id": "S0_chain_v1_M2_shape_degraded_boundary_handoff",
+  "runtime_family": "experiment_local",
+  "schema": "n04_iteration_11b_m2_runtime_shape_blocked_fixture_v1",
+  "status": "passed",
+  "timeseries": {
+    "path": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/m2_runtime_shape_blocked_timeseries/M2_shape_degraded_boundary_handoff.jsonl",
+    "row_count": 2,
+    "sha256": "fb8c282906de2b064e0229edf597a7e955f37e809edf22026020706db20ec1d1"
+  }
+}

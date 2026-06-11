@@ -1,0 +1,215 @@
+seed_schema: pygrc.landscape_seed
+seed_version: "0.1"
+
+meta:
+  name: GRCL9V3 Corrected Hybrid Full Composition
+  description: Full corrected composition with spark/expansion, Appendix E structure, front-capacity growth, choice/collapse, and transport.
+  source_kind: manual_seed
+  source_reference: implementation/GRCL-9V3-ImplementationChecklist.md#iteration-922-corrected-hybrid-growth-compositions
+  source_schema_version: "0.1"
+  source_domain: grcl9v3
+  tags: [grcl9v3, corrected_growth, front_capacity, hybrid, appendix_e, growth, choice, collapse, transport]
+  translator_name: manual_seed_authoring
+  translator_version: "0.1"
+  translation_mode: semantic_enrichment
+
+constitutive_profile:
+  lambda_c: 1.0
+  xi_c: 1.5
+  zeta_c: 0.8
+  kappa_c: 1.0
+  dt: 0.001
+  potential:
+    type: double_well
+    params:
+      a: 1.0
+      b: 1.2
+
+primitives:
+  - id: parent
+    type: saddle
+    coherence_prior: 1.0
+    branch_target_ids: [support_a, support_b, support_c]
+    extensions:
+      grcl9v3:
+        term_kind: critical_region
+        term_id: corrected_hybrid_full_composition_critical
+        region_id: parent
+        source_role: composition_control
+        profile:
+          criticality: hybrid_spark_gate
+          saturation:
+            active_degree: 9
+            port_chart: nine_port_candidate
+          spark_gate_intent: hybrid_hessian_tensor
+          spark_threshold: 0.05
+  - id: refinement
+    type: junction
+    host_id: parent
+    branch_target_ids: [support_a, support_b, support_c]
+    extensions:
+      grcl9v3:
+        term_kind: refinement_locus
+        term_id: corrected_hybrid_full_composition_refinement
+        region_id: parent
+        source_role: composition_control
+        profile:
+          target_effective_degree: 51
+          expansion_distribution_mode: equal
+          coherence_transfer_ratios: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+  - id: appendix_e
+    type: junction
+    host_id: parent
+    branch_target_ids: [daughter_a, daughter_b]
+    extensions:
+      grcl9v3:
+        term_kind: appendix_e_cell_division_region
+        term_id: corrected_hybrid_full_composition_appendix_e
+        region_id: parent
+        source_role: composition_control
+        profile:
+          daughter_region_a: daughter_a
+          daughter_region_b: daughter_b
+          module_basin_support:
+            support_mode: balanced_daughter_support
+  - id: choice_region
+    type: saddle
+    branch_target_ids: [basin_a, basin_b]
+    extensions:
+      grcl9v3:
+        term_kind: choice_collapse_region
+        term_id: corrected_hybrid_full_composition_choice
+        region_id: choice_region
+        source_role: composition_control
+        profile:
+          basin_region_a: basin_a
+          basin_region_b: basin_b
+          collapse_target_region: basin_a
+          compatibility_profile:
+            compatibility: high_contrast
+  - id: front_parent
+    type: basin
+    coherence_prior: 1.0
+  - id: exposed_front_boundary
+    type: ridge
+    owner_id: front_parent
+    adjacent_ids: [outside]
+    extensions:
+      grcl9v3:
+        term_kind: boundary_stratum
+        term_id: corrected_hybrid_full_composition_boundary
+        region_id: front_parent
+        source_role: composition_control
+        profile:
+          inactive_parent_port: 5
+          front_capacity_source: spark_expansion_front
+          front_source_construct_id: corrected_hybrid_full_composition_expansion_region
+  - id: front_growth
+    type: valley
+    from_id: front_parent
+    to_id: outside
+    extensions:
+      grcl9v3:
+        term_kind: growth_locus
+        term_id: corrected_hybrid_full_composition_growth
+        region_id: front_parent
+        source_role: composition_control
+        profile:
+          outward_pressure_profile:
+            pressure: corrected_front_high_outward_pressure
+          lambda_birth: 100.0
+          growth_semantics: front_capacity
+          front_capacity_source: spark_expansion_front
+          front_source_construct_id: corrected_hybrid_full_composition_expansion_region
+  - id: transport_route
+    type: valley
+    from_id: transport_source
+    to_id: transport_sink
+    extensions:
+      grcl9v3:
+        term_kind: transport_rerouting_region
+        term_id: corrected_hybrid_full_composition_transport
+        region_id: route
+        source_role: composition_control
+        profile:
+          source_region_id: transport_source
+          sink_region_id: transport_sink
+          route_preference_profile:
+            corridor: preferred
+  - id: transport_valley
+    type: valley
+    from_id: transport_source
+    to_id: transport_route
+    extensions:
+      grcl9v3:
+        term_kind: valley_channel
+        term_id: corrected_hybrid_full_composition_valley
+        region_id: route
+        source_role: composition_control
+        profile:
+          channel: transport_corridor
+  - id: support_a
+    type: basin
+    coherence_prior: 0.5
+  - id: support_b
+    type: basin
+    coherence_prior: 0.5
+  - id: support_c
+    type: basin
+    coherence_prior: 0.5
+  - id: daughter_a
+    type: basin
+    coherence_prior: 0.9
+  - id: daughter_b
+    type: basin
+    coherence_prior: 0.9
+  - id: basin_a
+    type: basin
+    coherence_prior: 1.0
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: corrected_hybrid_full_composition_basin_a
+        region_id: basin_a
+        source_role: composition_control
+        profile:
+          basin: choice_branch_a
+  - id: basin_b
+    type: basin
+    coherence_prior: 0.4
+    extensions:
+      grcl9v3:
+        term_kind: stable_basin
+        term_id: corrected_hybrid_full_composition_basin_b
+        region_id: basin_b
+        source_role: composition_control
+        profile:
+          basin: choice_branch_b
+  - id: outside
+    type: plateau
+    coherence_prior: 0.1
+  - id: transport_source
+    type: basin
+    coherence_prior: 1.0
+  - id: transport_sink
+    type: basin
+    coherence_prior: 0.2
+
+extensions:
+  grcl9v3:
+    contract_version: grcl9v3.landscape_example.v1
+    grcl9v3_required: true
+    example_name: corrected_hybrid_full_composition
+    manifest_entry_id: composed_grcl9v3_hybrid_composition_v1
+    motif_id: grc9v3-motif-s0046-corrected-hybrid-full-composition
+    expected_selector_ids: [hybrid_expansion_events, growth_events, front_growth_provenance, choice_collapse_events, transport_rerouting_signature]
+    notes:
+      iteration: 9.2.2
+      corrected_growth_semantics: front_capacity
+      boundary: source preconditions only
+      corrected_from_legacy_seed: hybrid_full_composition
+      composed_source_ancestry:
+        - appendix_e_cell_division_positive_control
+        - corrected_front_growth_positive_control
+        - choice_collapse_positive_control
+        - transport_basin_rerouting_positive_control

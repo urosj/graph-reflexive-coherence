@@ -1,0 +1,8 @@
+surface_or_suite,status,reason,must_not_be_inferred_from
+grc9v3_column_h_assisted Lane B / Lane C,completed post-pass comparison,Direct column-H proxy-branch spark evidence is blocked under Lane A but observed in explicit Lane B rows.,Do not reinterpret Experiment B Lane A rows as direct gate evidence.
+near-saturation degree-8 policy,future implementation candidate,Lane A has no active-degree-8 near-saturation policy.,Degree-9 saturation support.
+inflow-weighted transfer lane,future implementation candidate,"GRC9V3 exposes equal/custom expansion weights, not a true inflow-weighted transfer lane.",Custom column-skewed runtime weights.
+checkpoint-window identity persistence,small addendum or D8 prep,Experiment D uses experiment-local runtime-state windows.,Expansion event alone.
+reusable motion-loader full port histories,future implementation candidate,Experiment G uses checkpoint-overlay analysis because current motion loader does not normalize full port histories.,Observer-local clean fixture support.
+landscape/seed robustness suite,future experiment suite,"A-G are clean controlled fixtures, not landscape-general studies.",Any single clean fixture witness.
+D-style discriminator pass D1-D8,next experiment layer,O-style pass provides witnesses but not all falsification baselines.,O-style fixture support alone.

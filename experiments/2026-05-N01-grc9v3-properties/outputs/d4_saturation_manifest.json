@@ -1,0 +1,65 @@
+{
+  "artifact_schema_version": "grc9v3_properties_iter2_v1",
+  "artifact_source_map": {
+    "c_rows": "outputs/experiment_c_saturation_rows.csv",
+    "c_summary": "outputs/experiment_c_saturation_summary.json",
+    "d2_schema": "outputs/d2_predictive_role_schema.json",
+    "harness_schema": "outputs/discriminator_harness_schema.json"
+  },
+  "command": "python experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d4_saturation.py --write-defaults",
+  "discriminator_id": "d4_saturation",
+  "evidence_labels": [
+    "direct",
+    "derived",
+    "partial",
+    "blocked",
+    "inconclusive"
+  ],
+  "fixture_id": [
+    "C1_degree_7_stressed",
+    "C2_degree_8_stressed",
+    "C3_degree_9_stressed",
+    "C5_degree_9_stable_hessian"
+  ],
+  "git_commit": "29a1df5b65a8f7eb5dafced29da3a1705be24c18",
+  "git_status_short": "M ../../../../Obsidian/SentientLife/.obsidian/workspace.json\n M ../../../../Obsidian/SentientLife/Progress/2026-ROM-Diary.md\n M experiments/2026-05-N01-grc9v3-properties/implementation/DiscriminatorExperimentSpecificationChecklist.md\n M experiments/2026-05-N01-grc9v3-properties/implementation/ExperimentHandoff.md\n M experiments/2026-05-N01-grc9v3-properties/implementation/ExperimentSpecificationChecklist.md\n?? ../../../../Obsidian/SentientLife/V3/Experiments/2026-05-05-GRC-9-V3-Highlights.md\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d1_equivariance_matrix.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d1_factorization_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d1_factorization_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d1_transform_pair_records.jsonl\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d2_predictive_role_schema.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d3_control_patterns.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d3_transpose_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d3_transpose_pair_scores.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d3_transpose_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d4_saturation_gate_table.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/d4_saturation_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/discriminator_harness_schema.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_c_saturation_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_c_saturation_rows.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_c_saturation_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_conditions.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_persistence.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_reassignments.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_d_refinement_identity_thresholds.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_criteria.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_edges.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_paths.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_f_path_disagreement_variants.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_g_mixed_motion_conditions.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_g_mixed_motion_edge_history.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_g_mixed_motion_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_g_mixed_motion_port_history.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_g_mixed_motion_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/experiment_g_mixed_motion_transitions.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/family_level_experiment_status.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/family_level_followup_surfaces.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/family_level_hypothesis_status.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/family_level_prediction_check.csv\n?? experiments/2026-05-N01-grc9v3-properties/outputs/family_level_synthesis_manifest.json\n?? experiments/2026-05-N01-grc9v3-properties/outputs/family_level_synthesis_summary.json\n?? experiments/2026-05-N01-grc9v3-properties/reports/d1_artifact_distance_report.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d1_blocked_observations.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d2_blocked_observations.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d2_target_definitions.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d3_blocked_observations.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d3_role_separation_report.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d4_blocked_observations.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/d4_saturation_report.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/discriminator_harness.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_c_saturation.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_c_saturation_blocked_observations.csv\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_d_refinement_identity.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_d_refinement_identity_blocked_observations.csv\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_f_path_disagreement.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_f_path_disagreement_blocked_observations.csv\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_g_mixed_motion.md\n?? experiments/2026-05-N01-grc9v3-properties/reports/experiment_g_mixed_motion_blocked_observations.csv\n?? experiments/2026-05-N01-grc9v3-properties/reports/family_level_synthesis.md\n?? experiments/2026-05-N01-grc9v3-properties/scripts/discriminator_harness.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d1_factorization.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d2_schema.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d3_transpose.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d4_saturation.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_c_saturation.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_d_refinement_identity.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_f_path_disagreement.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_experiment_g_mixed_motion.py\n?? experiments/2026-05-N01-grc9v3-properties/scripts/run_family_level_synthesis.py",
+  "iteration": "5",
+  "lane_id": "current_hybrid_signed_hessian",
+  "manifest_required_fields": [
+    "discriminator_id",
+    "iteration",
+    "script_path",
+    "command",
+    "git_commit",
+    "lane_id",
+    "fixture_id",
+    "transform_id",
+    "seed",
+    "runtime_params",
+    "artifact_schema_version",
+    "artifact_source_map",
+    "output_paths"
+  ],
+  "output_paths": {
+    "blocked": "reports/d4_blocked_observations.md",
+    "gate_table": "outputs/d4_saturation_gate_table.csv",
+    "manifest": "outputs/d4_saturation_manifest.json",
+    "report": "reports/d4_saturation_report.md",
+    "summary": "outputs/d4_saturation_summary.json"
+  },
+  "runtime_params": {
+    "canonical_gate_formula": "active_degree == 9 AND gradient_norm < eps_gradient AND min_signed_hessian < eps_spark",
+    "mode": "reuse_completed_experiment_c_outputs",
+    "near_saturation_policy": "not_implemented_in_lane_a",
+    "runtime_mutation": "none"
+  },
+  "script_path": "experiments/2026-05-N01-grc9v3-properties/scripts/run_discriminator_d4_saturation.py",
+  "seed": 0,
+  "transform_id": [
+    "identity",
+    "row_permutation_231",
+    "column_permutation_312",
+    "row_column_transpose",
+    "degree_preserving_random_relabel"
+  ]
+}

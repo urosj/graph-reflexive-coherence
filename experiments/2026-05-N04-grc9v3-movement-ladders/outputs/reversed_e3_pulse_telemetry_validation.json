@@ -1,0 +1,103 @@
+{
+  "cycle_count": 3,
+  "direction": "counter_clockwise",
+  "environment": {
+    "git_diff_check": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "git_status_short_src_and_n04": {
+      "available": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationChecklist.md\n M experiments/2026-05-N04-grc9v3-movement-ladders/implementation/MovementLaddersImplementationPlan.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/boundary_coupled_pulse_fixture_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/hypotheses/movement_ladders_hypothesis_v1.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/e3_pulse_import_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/fixed_substrate_tranche_a_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/loop_driven_movement_m4_m5_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_classifier_m0_m3_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_observables_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_evidence_ladder_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_iteration_1_3_lock_summary.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_lane_b_direction_parity_closeout.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/packet_loop_geometry_coupling_audit.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_coupling_report.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_boundary_timeseries/\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_m4_m5_classification.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/outputs/reversed_e3_pulse_telemetry_validation.json\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/e3_pulse_import_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/fixed_substrate_tranche_a_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/loop_driven_movement_m4_m5_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_classifier_m0_m3_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_fixture_manifest_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_initializer_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/movement_observables_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_baseline_inventory.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_evidence_ladder_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_iteration_1_3_lock_summary.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_lane_b_direction_parity_closeout.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/packet_loop_geometry_coupling_audit.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_boundary_coupling_report.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_m4_m5_classification.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/reports/reversed_e3_pulse_telemetry_validation.md\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_baseline_inventory.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_evidence_ladder_audit.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/classify_loop_driven_movement_m4_m5.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_boundary_coupled_pulse_fixture.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_fixed_substrate_tranche_a.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/run_lane_b_reversed_e3_direction_parity.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_e3_pulse_import.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_classifier.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_fixture_manifest.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_initializers.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_movement_observables.py\n?? experiments/2026-05-N04-grc9v3-movement-ladders/scripts/validate_packet_loop_geometry_coupling.py"
+    },
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "python_executable": ".venv/bin/python",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+  },
+  "event_count": 76,
+  "lane_id": "N04-LaneB-native-true-reversed-E3-telemetry",
+  "max_checkpoint_budget_error": 0.0,
+  "max_event_budget_error": 0.0,
+  "movement_claim_allowed": false,
+  "native_d2_3_equivalent": true,
+  "native_grc9v3_loop_evidence": false,
+  "native_lgrc9v3_execution": true,
+  "native_packet_execution": true,
+  "native_self_rearm_evidence": true,
+  "native_surplus_trigger": true,
+  "report_kind": "lane_b_reversed_e3_pulse_telemetry_validation_v1",
+  "route_aspect_digest": "a621e96cd477308e0365b1d06f2a80f4a1285c7c7f4680d24cd3715a878ef3c8",
+  "route_order": [
+    "S1_to_K1",
+    "K1_to_S2",
+    "S2_to_K2",
+    "K2_to_S1"
+  ],
+  "schema": "movement_ladder_report_v1",
+  "self_rearm_count": 12,
+  "source_artifacts": {
+    "n03_e3_closeout": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_closeout.json",
+      "sha256": "75e02858f32484a8c4e9a24d9751c0ce98e4ef603fd6e550d8a47f7466e2288e"
+    },
+    "n03_e3_positive_reproduction": {
+      "path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_1_native_positive_reproduction.json",
+      "sha256": "e421e11a15fba7c7df6c7483b5a026b3afe1b3a83f2d948060ba357f24c14dc7"
+    }
+  },
+  "status": "passed",
+  "structural_reversal": {
+    "clockwise_order": [
+      "S1_to_K2",
+      "K2_to_S2",
+      "S2_to_K1",
+      "K1_to_S1"
+    ],
+    "count_symmetry_only": false,
+    "counter_clockwise_order": [
+      "S1_to_K1",
+      "K1_to_S2",
+      "S2_to_K2",
+      "K2_to_S1"
+    ],
+    "expected_counter_clockwise_order": [
+      "S1_to_K1",
+      "K1_to_S2",
+      "S2_to_K2",
+      "K2_to_S1"
+    ],
+    "passed": true
+  },
+  "telemetry_row_count": 38,
+  "telemetry_rows_digest": "6ecc5d948d783ee4763ca2c41e9ab9623e664b79173c8aeaeb65f8991fadcb63",
+  "topology_changed": false,
+  "trigger_count": 12,
+  "validation": {
+    "candidate_count": 12,
+    "completed_count": 12,
+    "failure_reasons": [],
+    "movement_claim_allowed": false,
+    "native_d2_3_equivalent": false,
+    "native_grc9v3_loop_evidence": false,
+    "valid": true,
+    "validated_self_rearm_evidence_ids": [
+      "a041f9fe4b6f9689547b08f4e4ee89e701fe1868570248d92bacdcf7fd9d855b",
+      "0b469913ee3d1780c5082e7caae11f9dac921767939ad59ca76c960caaed8053",
+      "ad9fee80292162e52c26cb42a2499ab9dce1aecaf0a9d82f698322791eed2359",
+      "000c0e434a48b6df668939eaed07ca526fb8fb3d19b1761004b62048a58536a3",
+      "2f593922f59e893a0c1140c1f8fba03bb08e458ad2a1d1e352cf076d7a3fb1f8",
+      "c76d5ac2be06cbe6d215f333a839e5241d4f9f25d9ebce570251b16b25f69312",
+      "c68fcba08e7bd6d394d4472de90fb1c0ca2b60602f994032450b3c019592010c",
+      "59294f47c1e983bc67b38d65b164e5572d6f358e480c3b10ddd6462c00952f97",
+      "d60b3b906fbdd1725bf3a75b39fdee8e2fb257308e962a787fb2aa8e7cd771c7",
+      "9c88b3cc3a0e5424aed6782c8528aa15d7e7ef00417b60ae8e022a4c68ed55e4",
+      "484ee693518cc7acfecd18feaad802953a36af0ace0875b6f09d8b987a4be7d1",
+      "639b03de9fad248d7219ea273f45c715c51f97cc18b3337c08384a5c8a4f8083"
+    ],
+    "validator": "validate_lgrc9v3_self_rearm_evidence_artifacts"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "classification": "d1f_phase_and_closed_flow_positive_lanes_observed",
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_d1f_minimal_handoff_mechanisms.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "interpretation": "D1f isolates missing mechanisms after D1e. Positive lanes show that a specific added mechanism can generate ordered closed-loop event cycles under budget conservation, but because the mechanism is experiment-local the result is sufficiency evidence for a future prototype, not native GRC9V3 loop evidence.",
+  "lane_names": {
+    "D1f1": "explicit phase handoff",
+    "D1f2": "edge/corridor storage",
+    "D1f3": "momentum retention",
+    "D1f4": "causal packet delay",
+    "D1f5": "adaptive role handoff"
+  },
+  "lane_summaries": [
+    {
+      "budget_passed": true,
+      "channel_coverage": {
+        "K1_to_S1": 8,
+        "K2_to_S2": 9,
+        "S1_to_K2": 9,
+        "S2_to_K1": 9
+      },
+      "closed_flow_positive": false,
+      "event_count": 35,
+      "lane_id": "D1f1",
+      "material_circulation": true,
+      "max_abs_loop_circulation": 0.006,
+      "max_abs_normalized_circulation": 1.0,
+      "max_budget_error": 0.0,
+      "mean_abs_normalized_circulation": 0.25,
+      "mechanism_positive": true,
+      "ordered_event_cycle_count": 8,
+      "phase_cycle_count": 8,
+      "phase_cycle_positive": true,
+      "simultaneous_closed_flow_steps": 0,
+      "timeseries_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1f_minimal_handoff_timeseries/d1f1_timeseries.jsonl"
+    },
+    {
+      "budget_passed": true,
+      "channel_coverage": {
+        "K1_to_S1": 0,
+        "K2_to_S2": 0,
+        "S1_to_K2": 140,
+        "S2_to_K1": 140
+      },
+      "closed_flow_positive": false,
+      "event_count": 280,
+      "lane_id": "D1f2",
+      "material_circulation": true,
+      "max_abs_loop_circulation": 0.0078000000000000005,
+      "max_abs_normalized_circulation": 1.0,
+      "max_budget_error": 7.771561172376096e-16,
+      "mean_abs_normalized_circulation": 1.0,
+      "mechanism_positive": false,
+      "ordered_event_cycle_count": 0,
+      "phase_cycle_count": 0,
+      "phase_cycle_positive": false,
+      "simultaneous_closed_flow_steps": 0,
+      "timeseries_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1f_minimal_handoff_timeseries/d1f2_timeseries.jsonl"
+    },
+    {
+      "budget_passed": true,
+      "channel_coverage": {
+        "K1_to_S1": 140,
+        "K2_to_S2": 140,
+        "S1_to_K2": 140,
+        "S2_to_K1": 140
+      },
+      "closed_flow_positive": true,
+      "event_count": 560,
+      "lane_id": "D1f3",
+      "material_circulation": true,
+      "max_abs_loop_circulation": 0.016,
+      "max_abs_normalized_circulation": 1.0,
+      "max_budget_error": 0.0,
+      "mean_abs_normalized_circulation": 1.0,
+      "mechanism_positive": true,
+      "ordered_event_cycle_count": 140,
+      "phase_cycle_count": 0,
+      "phase_cycle_positive": false,
+      "simultaneous_closed_flow_steps": 140,
+      "timeseries_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1f_minimal_handoff_timeseries/d1f3_timeseries.jsonl"
+    },
+    {
+      "budget_passed": true,
+      "channel_coverage": {
+        "K1_to_S1": 11,
+        "K2_to_S2": 12,
+        "S1_to_K2": 12,
+        "S2_to_K1": 11
+      },
+      "closed_flow_positive": false,
+      "event_count": 46,
+      "lane_id": "D1f4",
+      "material_circulation": true,
+      "max_abs_loop_circulation": 0.006,
+      "max_abs_normalized_circulation": 1.0,
+      "max_budget_error": 0.0,
+      "mean_abs_normalized_circulation": 0.32857142857142857,
+      "mechanism_positive": true,
+      "ordered_event_cycle_count": 11,
+      "phase_cycle_count": 11,
+      "phase_cycle_positive": true,
+      "simultaneous_closed_flow_steps": 0,
+      "timeseries_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1f_minimal_handoff_timeseries/d1f4_timeseries.jsonl"
+    },
+    {
+      "budget_passed": true,
+      "channel_coverage": {
+        "K1_to_S1": 11,
+        "K2_to_S2": 12,
+        "S1_to_K2": 12,
+        "S2_to_K1": 12
+      },
+      "closed_flow_positive": false,
+      "event_count": 47,
+      "lane_id": "D1f5",
+      "material_circulation": true,
+      "max_abs_loop_circulation": 0.006,
+      "max_abs_normalized_circulation": 1.0,
+      "max_budget_error": 0.0,
+      "mean_abs_normalized_circulation": 0.3357142857142857,
+      "mechanism_positive": true,
+      "ordered_event_cycle_count": 11,
+      "phase_cycle_count": 11,
+      "phase_cycle_positive": true,
+      "simultaneous_closed_flow_steps": 0,
+      "timeseries_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1f_minimal_handoff_timeseries/d1f5_timeseries.jsonl"
+    }
+  ],
+  "native_evidence": false,
+  "positive_loop_claim_allowed": false,
+  "schema": "grc9v3_polarized_basin_loop_d1f_minimal_handoff_mechanisms_v1",
+  "status": "pass"
+}

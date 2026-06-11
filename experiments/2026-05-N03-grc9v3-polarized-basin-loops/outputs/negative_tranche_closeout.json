@@ -1,0 +1,218 @@
+{
+  "blocked_observations": [
+    {
+      "cascade_count": 21,
+      "claim_allowed": false,
+      "interpretation": "shape-only cascade evidence is insufficient; null lane remains blocked because measured source/sink role evidence fails",
+      "lane_id": "U1",
+      "observation": "null_lane_shape_cascade_without_role_gate",
+      "role_gate_passed": false
+    },
+    {
+      "blocked_reasons": [
+        "role_gate_failed",
+        "flux_closure_gate_failed",
+        "phase_cascade_gate_failed",
+        "cycle_gate_failed",
+        "same_parent_basin_evidence_configured_only"
+      ],
+      "interpretation": "the first fixed-topology structured initialization did not produce candidate loop evidence above null controls",
+      "lane_id": "S",
+      "observation": "structured_lane_no_candidate_loop_claim"
+    }
+  ],
+  "branch_b_diagnostic_sweeps": {
+    "axes": [
+      "S_modulation_amplitude",
+      "K_kick_strength",
+      "source_sink_mask_width",
+      "ring_size",
+      "conductance_asymmetry_or_channel_structure",
+      "source_sink_spacing",
+      "forward_return_asymmetry",
+      "budget_correction_magnitude",
+      "transport_rebuild_behavior"
+    ],
+    "claim_ceiling": "diagnostic_sensitivity_map_not_positive_loop_claim",
+    "status": "not_started"
+  },
+  "branch_c_fixture_theory_redesign": {
+    "requires_new_claim_ceiling": true,
+    "requires_new_fixture_manifest": true,
+    "status": "not_started"
+  },
+  "classification": "negative_fixed_topology_first_tranche",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "gate_policy": {
+    "full_positive_claim_requires_single_parent_basin_evidence": true,
+    "positive_claim_requires_budget_gate": true,
+    "positive_claim_requires_fixed_topology_gate": true,
+    "positive_claim_requires_flux_closure": true,
+    "positive_claim_requires_measured_source_sink_roles": true,
+    "positive_claim_requires_role_gated_cascades": true,
+    "raw_cascades_are_shape_evidence_only": true
+  },
+  "input_reports": {
+    "fixture_manifest_validation": {
+      "path": "outputs/fixture_manifest_validation.json",
+      "sha256": "4f1d38ab7d392b467cb209a6f0a174fc6ff3075f4724610e963e545f574e4314"
+    },
+    "kick_lanes": {
+      "path": "outputs/kick_lanes_report.json",
+      "sha256": "1ea4e2d22325439b767a11cf4d95ae3edcb193ee97c9a2a1f4e6aced722e6f40"
+    },
+    "null_structured_lanes": {
+      "path": "outputs/null_structured_lanes_report.json",
+      "sha256": "ca9cc70d57d30a2dea64506ef3e0d68774c217dc87f3045dd9b0b44ee73fdb4d"
+    },
+    "observable_smoke": {
+      "path": "outputs/loop_observables_smoke_report.json",
+      "sha256": "f25826fb7f9421ae0566cfebfbd6ed99ef3d24a8244a036da4826a893c8d756b"
+    }
+  },
+  "lane_summaries": {
+    "kick": {
+      "K": {
+        "blocked_reasons": [
+          "role_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_passed": true,
+        "candidate_claim_allowed": false,
+        "ladder_level": "L1",
+        "primary_scientific_blocker": "role_gate_failed",
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "sink_role": false,
+        "source_role": false,
+        "topology_changed": false
+      },
+      "K_reversed": {
+        "blocked_reasons": [
+          "role_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_passed": true,
+        "candidate_claim_allowed": false,
+        "ladder_level": "L1",
+        "primary_scientific_blocker": "role_gate_failed",
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "sink_role": false,
+        "source_role": false,
+        "topology_changed": false
+      }
+    },
+    "null_structured": {
+      "S": {
+        "blocked_reasons": [
+          "role_gate_failed",
+          "flux_closure_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_passed": true,
+        "candidate_claim_allowed": false,
+        "ladder_level": "L1",
+        "primary_scientific_blocker": "role_gate_failed",
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "sink_role": false,
+        "source_role": false,
+        "topology_changed": false
+      },
+      "U0": {
+        "blocked_reasons": [
+          "role_gate_failed",
+          "flux_closure_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_passed": true,
+        "candidate_claim_allowed": false,
+        "ladder_level": "L1",
+        "primary_scientific_blocker": "role_gate_failed",
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "sink_role": false,
+        "source_role": false,
+        "topology_changed": false
+      },
+      "U1": {
+        "blocked_reasons": [
+          "role_gate_failed",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_passed": true,
+        "candidate_claim_allowed": false,
+        "ladder_level": "L1",
+        "primary_scientific_blocker": "role_gate_failed",
+        "raw_cycle_count": 21,
+        "role_gated_cycle_count": 0,
+        "sink_role": false,
+        "source_role": true,
+        "topology_changed": false
+      },
+      "U2": {
+        "blocked_reasons": [
+          "role_gate_failed",
+          "flux_closure_gate_failed",
+          "phase_cascade_gate_failed",
+          "cycle_gate_failed",
+          "same_parent_basin_evidence_configured_only"
+        ],
+        "budget_passed": true,
+        "candidate_claim_allowed": false,
+        "ladder_level": "L1",
+        "primary_scientific_blocker": "role_gate_failed",
+        "raw_cycle_count": 0,
+        "role_gated_cycle_count": 0,
+        "sink_role": false,
+        "source_role": false,
+        "topology_changed": false
+      }
+    }
+  },
+  "later_surfaces": {
+    "L5_self_regulation": "unopened_l4_not_established",
+    "L6_boundary_coupling": "unopened_l5_not_established",
+    "movement_ladders_handoff": "blocked_no_l4_loop_evidence",
+    "multi_pole_appendix_a": "deferred_two_aspect_l4_not_established"
+  },
+  "not_an_implementation_failure": true,
+  "not_validated_surfaces": [
+    "L4_conserved_internal_loop",
+    "L5_self_regulating_pulse_generator",
+    "L6_boundary_couplable_loop",
+    "movement_or_locomotion_precursor_evidence"
+  ],
+  "positive_claim_promoted": false,
+  "result": "No polarized basin loop was observed on the first 12-node fixed-topology GRC9V3 ported-ring fixture under S/K lanes.",
+  "reversal": {
+    "forward_claim_allowed": false,
+    "forward_role_gate": false,
+    "forward_role_gated_cycles": 0,
+    "outcome": "failure",
+    "reason": "neither kick direction produced paired role-gated loop evidence",
+    "reversed_claim_allowed": false,
+    "reversed_role_gate": false,
+    "reversed_role_gated_cycles": 0
+  },
+  "schema": "grc9v3_polarized_basin_loop_negative_tranche_closeout_v1",
+  "status": "pass",
+  "threshold_or_classifier_tuning_performed": false,
+  "validated_surfaces": [
+    "fixed_topology_grc9v3_runtime_bridge",
+    "observable_library_on_real_traces",
+    "budget_topology_provenance_reporting",
+    "null_rejection_behavior",
+    "role_gated_blocking_of_shape_only_cascades"
+  ]
+}

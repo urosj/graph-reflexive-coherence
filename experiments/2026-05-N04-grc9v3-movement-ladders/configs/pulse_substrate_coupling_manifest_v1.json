@@ -1,0 +1,218 @@
+{
+  "budget": {
+    "budget_surface": "node_only",
+    "geometry_budget_mutated": false,
+    "pulse_budget": 1.0
+  },
+  "claim_boundary": {
+    "adaptive_topology_entry_allowed": false,
+    "boundary_coupled_movement_claim_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false,
+    "native_grc9v3_proposal_flux_control_used": false,
+    "native_grc9v3_proposal_flux_loop_claim": false,
+    "native_lgrc9v3_e3_pulse_used": false,
+    "pulse_local_geometry_coupling_claim_allowed": false,
+    "traveling_deformation_claim_allowed": false
+  },
+  "geometry_state": {
+    "enabled": false,
+    "status": "unchanged_or_not_enabled"
+  },
+  "pulse_state": {
+    "direction": "positive",
+    "direction_vector": [
+      1.0
+    ],
+    "initial_mass": 1.0,
+    "initial_node": 4,
+    "initial_width": 1,
+    "state_surface": "separate_pulse_field"
+  },
+  "runtime_family": "experiment_local",
+  "schema": "pulse_substrate_coupling_manifest_v1",
+  "substrate": {
+    "base_fixture": "S0_chain_v1",
+    "coordinate_periodic": false,
+    "coordinate_policy": "chain_index",
+    "edges": [
+      {
+        "edge_id": 0,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 0,
+        "v": 1,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 1,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 1,
+        "v": 2,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 2,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 2,
+        "v": 3,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 3,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 3,
+        "v": 4,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 4,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 4,
+        "v": 5,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 5,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 5,
+        "v": 6,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 6,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 6,
+        "v": 7,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 7,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 7,
+        "v": 8,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 8,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 8,
+        "v": 9,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 9,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 9,
+        "v": 10,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 10,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 10,
+        "v": 11,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 11,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 11,
+        "v": 12,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 12,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 12,
+        "v": 13,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 13,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 13,
+        "v": 14,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 14,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 14,
+        "v": 15,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 15,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 15,
+        "v": 16,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 16,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 16,
+        "v": 17,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 17,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 17,
+        "v": 18,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 18,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 18,
+        "v": 19,
+        "weight": 1.0
+      },
+      {
+        "edge_id": 19,
+        "proper_time_delay": 1.0,
+        "temporal_delay": 1.0,
+        "u": 19,
+        "v": 20,
+        "weight": 1.0
+      }
+    ],
+    "fixture_id": "D1_s0_chain_pulse_transport_v1",
+    "node_count": 21,
+    "type": "chain"
+  },
+  "support_state": {
+    "enabled": false,
+    "status": "unchanged_or_not_enabled"
+  },
+  "transport_rule": {
+    "description": "At each step, pulse mass transfers from node i to i+1 through the local edge if present and unblocked.",
+    "max_hop_distance": 1,
+    "peak_source": "argmax_post_transfer_pulse_field",
+    "rule_id": "deterministic_local_neighbor_shift_v1",
+    "transfer_fraction": 1.0,
+    "uses_preauthored_itinerary": false
+  }
+}

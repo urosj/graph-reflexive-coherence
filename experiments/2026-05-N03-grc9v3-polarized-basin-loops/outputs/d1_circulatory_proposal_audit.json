@@ -1,0 +1,649 @@
+{
+  "command": ".venv/bin/python experiments/2026-05-N03-grc9v3-polarized-basin-loops/scripts/run_d1_circulatory_proposal_audit.py",
+  "errors": [],
+  "experiment_id": "2026-05-N03-grc9v3-polarized-basin-loops",
+  "scenarios": [
+    {
+      "budget": {
+        "max_abs_error_post_correction": 0.0,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "mean_abs_normalized_circulation": 0.0,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_u0_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_u0",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_u0_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 2.42861286636753e-17,
+        "final_mean_abs_flux": 0.09479298447022759,
+        "initial_loop_circulation": -3.469446951953614e-18,
+        "initial_mean_abs_flux": 0.035820833658850255,
+        "max_abs_loop_circulation": 6.288372600415926e-17,
+        "max_abs_normalized_circulation": 8.946690119161131e-17,
+        "mean_abs_loop_circulation": 7.430076209549322e-18,
+        "mean_abs_normalized_circulation": 1.6244936661771876e-17,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_u1_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_u1",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_u1_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -0.0005844291224432318,
+        "final_mean_abs_flux": 0.13848901659629223,
+        "initial_loop_circulation": -1.850882017419308e-05,
+        "initial_mean_abs_flux": 0.043718878040582755,
+        "max_abs_loop_circulation": 0.0070727893817062425,
+        "max_abs_normalized_circulation": 0.006041388204739038,
+        "mean_abs_loop_circulation": 0.0024265037154406937,
+        "mean_abs_normalized_circulation": 0.0021872230291446163,
+        "persistence_ratio_final_over_initial_abs": 31.575709145313517
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_s_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_s",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_s_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.13749738124930608,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.006623336076584184,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "mean_abs_normalized_circulation": 0.0,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_kick_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_kick",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_kick_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 4.336808689942018e-19,
+        "final_mean_abs_flux": 0.007361822874148245,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.013443362358740467,
+        "max_abs_loop_circulation": 6.071532165918825e-18,
+        "max_abs_normalized_circulation": 4.4954413983766334e-17,
+        "mean_abs_loop_circulation": 1.6944531095702026e-18,
+        "mean_abs_normalized_circulation": 1.4103518088543673e-17,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_profile_sinusoid_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_profile_sinusoid",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_profile_sinusoid_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -8.957555237398135e-07,
+        "final_mean_abs_flux": 0.005496545790951965,
+        "initial_loop_circulation": 2.8837148982908674e-07,
+        "initial_mean_abs_flux": 0.010744146545809153,
+        "max_abs_loop_circulation": 6.228565798139564e-06,
+        "max_abs_normalized_circulation": 4.857125669678812e-05,
+        "mean_abs_loop_circulation": 2.183869884641348e-06,
+        "mean_abs_normalized_circulation": 2.1264262266618655e-05,
+        "persistence_ratio_final_over_initial_abs": 3.1062554910359332
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_profile_traveling_phase_seed_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_profile_traveling_phase_seed",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_profile_traveling_phase_seed_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -3.387255805648026e-06,
+        "final_mean_abs_flux": 0.19142097177752992,
+        "initial_loop_circulation": -5.460038810372063e-07,
+        "initial_mean_abs_flux": 0.00503965487418784,
+        "max_abs_loop_circulation": 0.001269984378599029,
+        "max_abs_normalized_circulation": 0.0008265306613318212,
+        "mean_abs_loop_circulation": 0.00022338491973058236,
+        "mean_abs_normalized_circulation": 0.00023486069452502675,
+        "persistence_ratio_final_over_initial_abs": 6.203721114973556
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_ring_profile_sawtooth_raw_records.jsonl"
+      },
+      "scenario_id": "d1_ring_profile_sawtooth",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_ring_profile_sawtooth_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 0.0,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "mean_abs_normalized_circulation": 0.0,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_three_pole_u0_raw_records.jsonl"
+      },
+      "scenario_id": "d1_three_pole_u0",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_three_pole_u0_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 2.220446049250313e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0004607792217454912,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0006943120948751578,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "mean_abs_normalized_circulation": 0.0,
+        "persistence_ratio_final_over_initial_abs": null
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_three_pole_u3_raw_records.jsonl"
+      },
+      "scenario_id": "d1_three_pole_u3",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_three_pole_u3_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": -0.005105466901942152,
+        "final_mean_abs_flux": 0.14229455849109118,
+        "initial_loop_circulation": 1.9604745805749946e-06,
+        "initial_mean_abs_flux": 0.004960251334267733,
+        "max_abs_loop_circulation": 0.005226337122835996,
+        "max_abs_normalized_circulation": 0.003058654627651635,
+        "mean_abs_loop_circulation": 0.0014559726378756722,
+        "mean_abs_normalized_circulation": 0.0009569591857384807,
+        "persistence_ratio_final_over_initial_abs": 2604.199489515825
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_three_pole_p_raw_records.jsonl"
+      },
+      "scenario_id": "d1_three_pole_p",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_three_pole_p_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    },
+    {
+      "budget": {
+        "max_abs_error_post_correction": 3.3306690738754696e-16,
+        "passed": true
+      },
+      "circulation": {
+        "final_loop_circulation": 0.005105466901942152,
+        "final_mean_abs_flux": 0.14229455849109118,
+        "initial_loop_circulation": -1.9604745805749946e-06,
+        "initial_mean_abs_flux": 0.004960251334267733,
+        "max_abs_loop_circulation": 0.005226337122835996,
+        "max_abs_normalized_circulation": 0.003058654627651635,
+        "mean_abs_loop_circulation": 0.0014559726378756722,
+        "mean_abs_normalized_circulation": 0.0009569591857384807,
+        "persistence_ratio_final_over_initial_abs": 2604.199489515825
+      },
+      "cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "raw_records": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_raw_records/d1_three_pole_p_reversed_raw_records.jsonl"
+      },
+      "scenario_id": "d1_three_pole_p_reversed",
+      "timeseries": {
+        "artifact_path": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/d1_circulation_timeseries/d1_three_pole_p_reversed_circulation.jsonl"
+      },
+      "topology": {
+        "changed": false,
+        "final_edge_count": 12,
+        "final_node_count": 12,
+        "initial_edge_count": 12,
+        "initial_node_count": 12
+      }
+    }
+  ],
+  "schema": "grc9v3_polarized_basin_loop_d1_circulatory_proposal_audit_v1",
+  "status": "pass",
+  "summary": {
+    "classification": "d1_weak_residual_loop_circulation_observed",
+    "classification_thresholds": {
+      "material_normalized_min": 0.01,
+      "none_abs_max": 1e-12
+    },
+    "compact_rows": [
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "scenario_id": "d1_ring_u0",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 2.42861286636753e-17,
+        "final_mean_abs_flux": 0.09479298447022759,
+        "initial_loop_circulation": -3.469446951953614e-18,
+        "initial_mean_abs_flux": 0.035820833658850255,
+        "max_abs_loop_circulation": 6.288372600415926e-17,
+        "max_abs_normalized_circulation": 8.946690119161131e-17,
+        "mean_abs_loop_circulation": 7.430076209549322e-18,
+        "scenario_id": "d1_ring_u1",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -0.0005844291224432318,
+        "final_mean_abs_flux": 0.13848901659629223,
+        "initial_loop_circulation": -1.850882017419308e-05,
+        "initial_mean_abs_flux": 0.043718878040582755,
+        "max_abs_loop_circulation": 0.0070727893817062425,
+        "max_abs_normalized_circulation": 0.006041388204739038,
+        "mean_abs_loop_circulation": 0.0024265037154406937,
+        "scenario_id": "d1_ring_s",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.13749738124930608,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.006623336076584184,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "scenario_id": "d1_ring_kick",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 4.336808689942018e-19,
+        "final_mean_abs_flux": 0.007361822874148245,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.013443362358740467,
+        "max_abs_loop_circulation": 6.071532165918825e-18,
+        "max_abs_normalized_circulation": 4.4954413983766334e-17,
+        "mean_abs_loop_circulation": 1.6944531095702026e-18,
+        "scenario_id": "d1_ring_profile_sinusoid",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -8.957555237398135e-07,
+        "final_mean_abs_flux": 0.005496545790951965,
+        "initial_loop_circulation": 2.8837148982908674e-07,
+        "initial_mean_abs_flux": 0.010744146545809153,
+        "max_abs_loop_circulation": 6.228565798139564e-06,
+        "max_abs_normalized_circulation": 4.857125669678812e-05,
+        "mean_abs_loop_circulation": 2.183869884641348e-06,
+        "scenario_id": "d1_ring_profile_traveling_phase_seed",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -3.387255805648026e-06,
+        "final_mean_abs_flux": 0.19142097177752992,
+        "initial_loop_circulation": -5.460038810372063e-07,
+        "initial_mean_abs_flux": 0.00503965487418784,
+        "max_abs_loop_circulation": 0.001269984378599029,
+        "max_abs_normalized_circulation": 0.0008265306613318212,
+        "mean_abs_loop_circulation": 0.00022338491973058236,
+        "scenario_id": "d1_ring_profile_sawtooth",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "scenario_id": "d1_three_pole_u0",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.0,
+        "final_mean_abs_flux": 0.0004607792217454912,
+        "initial_loop_circulation": 0.0,
+        "initial_mean_abs_flux": 0.0006943120948751578,
+        "max_abs_loop_circulation": 0.0,
+        "max_abs_normalized_circulation": 0.0,
+        "mean_abs_loop_circulation": 0.0,
+        "scenario_id": "d1_three_pole_u3",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": -0.005105466901942152,
+        "final_mean_abs_flux": 0.14229455849109118,
+        "initial_loop_circulation": 1.9604745805749946e-06,
+        "initial_mean_abs_flux": 0.004960251334267733,
+        "max_abs_loop_circulation": 0.005226337122835996,
+        "max_abs_normalized_circulation": 0.003058654627651635,
+        "mean_abs_loop_circulation": 0.0014559726378756722,
+        "scenario_id": "d1_three_pole_p",
+        "topology_changed": false
+      },
+      {
+        "budget_passed": true,
+        "final_loop_circulation": 0.005105466901942152,
+        "final_mean_abs_flux": 0.14229455849109118,
+        "initial_loop_circulation": -1.9604745805749946e-06,
+        "initial_mean_abs_flux": 0.004960251334267733,
+        "max_abs_loop_circulation": 0.005226337122835996,
+        "max_abs_normalized_circulation": 0.003058654627651635,
+        "mean_abs_loop_circulation": 0.0014559726378756722,
+        "scenario_id": "d1_three_pole_p_reversed",
+        "topology_changed": false
+      }
+    ],
+    "max_abs_loop_circulation": 0.0070727893817062425,
+    "max_abs_normalized_circulation": 0.006041388204739038,
+    "scenario_count": 11
+  },
+  "target_metric": "loop_circulation(t) = signed sum of flux_uv around a declared closed cycle"
+}

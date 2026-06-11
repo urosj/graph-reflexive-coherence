@@ -1,0 +1,119 @@
+{
+  "active_fixtures": [
+    "S0_chain_v1",
+    "S1_ring_v1"
+  ],
+  "claim_flags": {
+    "adaptive_topology_entry_allowed": false,
+    "locomotion_like_claim_allowed": false,
+    "loop_driven_movement_claim_allowed": false,
+    "movement_claim_allowed": false,
+    "movement_claim_inherited_from_n03": false
+  },
+  "command": ".venv/bin/python experiments/2026-05-N04-grc9v3-movement-ladders/scripts/build_n04_iteration_1_3_lock_summary.py",
+  "coordinate_policies": {
+    "S0_chain_v1": {
+      "centroid_coordinate_frame": "linear",
+      "coordinate_mapping": "x_i = node_index",
+      "coordinate_periodic": false,
+      "node_coordinate_policy": "chain_index",
+      "ring_unwrap_policy": "not_applicable"
+    },
+    "S1_ring_v1": {
+      "antipodal_tie_break": "negative_signed_distance_for_even_N",
+      "antipodal_tie_break_note": "For even-N rings, the antipodal node is assigned negative signed distance, so a uniform 24-node ring centered at 0 has unwrapped centroid -0.5. This is a deterministic convention and must be compared against the symmetric baseline.",
+      "centroid_coordinate_frame": "unwrapped",
+      "coordinate_mapping": "coord[0] is ring index i; theta_i = 2*pi*i/N; clockwise direction is increasing unwrapped ring index modulo N",
+      "coordinate_periodic": true,
+      "node_coordinate_policy": "ring_circular",
+      "ring_unwrap_policy": "tracked_basin_representative"
+    }
+  },
+  "deferred_fixtures": [
+    "S3_grid_v1"
+  ],
+  "generated_at_utc": "2026-05-16T08:39:12.977553+00:00",
+  "initializer_defaults": {
+    "baseline_coherence": 1.0,
+    "bump_amplitude": 0.4,
+    "kick_mask_node_count": 1,
+    "tilt_epsilon": 0.02
+  },
+  "initializer_formulas": {
+    "locally_tapered_asymmetric_bump": {
+      "formula": "C_i = C0 + A * exp(-d(i, center)^2 / (2 * sigma^2)) + epsilon * d_signed(i, center, direction) * exp(-d(i, center)^2 / (2 * sigma_tilt^2))",
+      "global_background_gradient_allowed": false,
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "symmetric_bump": {
+      "formula": "C_i = C0 + A * exp(-d(i, center)^2 / (2 * sigma^2))",
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "uniform": {
+      "formula": "C_i = B / N",
+      "projection": "conserved_nonnegative_simplex"
+    },
+    "zero_sum_kick": {
+      "formula": "C_front += delta, C_rear -= delta over equal-size local masks",
+      "projection": "conserved_nonnegative_simplex"
+    }
+  },
+  "input_artifacts": {
+    "baseline_inventory": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_baseline_inventory.json",
+    "fixture_manifest": "experiments/2026-05-N04-grc9v3-movement-ladders/configs/movement_fixture_manifest_v1.json",
+    "fixture_validation": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_fixture_manifest_validation.json",
+    "initializer_validation": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/movement_initializer_validation.json"
+  },
+  "lane_names": [
+    "B0",
+    "B1",
+    "B1_reversed",
+    "K1",
+    "K1_reversed",
+    "U0"
+  ],
+  "lock_flags": {
+    "claim_flags_frozen": true,
+    "coordinate_policy_frozen": true,
+    "fixtures_frozen": true,
+    "handoff_frozen": true,
+    "initializer_formulas_frozen": true,
+    "lanes_frozen": true,
+    "metric_defaults_frozen": true,
+    "projection_policy_frozen": true,
+    "src_unchanged": true,
+    "topology_disabled": true,
+    "topology_policy_frozen": true
+  },
+  "metric_defaults": {
+    "configured_displacement_min": 0.05,
+    "epsilon_budget": 1e-09,
+    "identity_mass_ratio_min": 0.95,
+    "null_calibration_k": 3.0,
+    "profile_similarity_min": 0.8,
+    "width_relative_change_max": 0.15
+  },
+  "null_displacement_envelope": {
+    "calibrated": false,
+    "calibration_status": "pending_iteration_5",
+    "effective_displacement_min": 0.05,
+    "effective_displacement_min_rule": "max(configured_displacement_min, mean + null_calibration_k * std)",
+    "max": 0.0,
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "projection_policy": "conserved_nonnegative_simplex",
+  "schema": "n04_iteration_1_3_lock_summary_v1",
+  "src_status": {
+    "command": "git status --short src",
+    "returncode": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "status": "passed",
+  "topology_policy": {
+    "fixed_substrate_required": true,
+    "topology_changed_allowed": false,
+    "topology_changed_required": false
+  }
+}
