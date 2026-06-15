@@ -343,6 +343,19 @@ budget-invalid route blocked
 semantic intention relabel blocked
 ```
 
+N14 setup status:
+
+```text
+experiment_skeleton_created = true
+iteration_1_source_inventory_closed = true
+iteration_1_acceptance_state = accepted_source_inventory_only_no_ap4
+iteration_2_schema_closed = true
+iteration_2_acceptance_state = accepted_schema_freeze_no_row_validation
+ap4_supported = false
+phase8_opened = false
+native_support_opened = false
+```
+
 ## N15. Endogenous Proxy Formation
 
 Question:

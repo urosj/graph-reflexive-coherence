@@ -62,6 +62,29 @@ N13 is now closed as a claim-clean agency-prerequisite experiment:
   personhood, biological behavior, fully native integration, and unrestricted
   agency claims: still blocked.
 
+N14 is now opened and Iterations 1-2 are closed:
+
+- Experiment title: `N14 - LGRC Consequence-Sensitive Route Selection`.
+- Planned target: artifact-level `AP4` consequence-sensitive route selection
+  candidate.
+- Iteration 1 source inventory status: passed.
+- Iteration 1 acceptance state:
+  `accepted_source_inventory_only_no_ap4`.
+- Iteration 1 output digest:
+  `7e8013464efdb35805bc9aa9b765a5c81afaa2a1f0d7210706d43ddd06a41513`.
+- Iteration 2 AP4 schema/gate status: passed.
+- Iteration 2 acceptance state:
+  `accepted_schema_freeze_no_row_validation`.
+- Iteration 2 output digest:
+  `56a2080a76f941e77e7a822874fa62e292f34452c06f02cbb8e971bccc540217`.
+- Current AP4 evidence status: not supported; no route consequence records or
+  consequence-sensitive selection candidate are built yet.
+- Phase 8 implementation opened: false.
+- Native support opened: false.
+- Intention, agency, semantic goal ownership, identity acceptance, selfhood,
+  personhood, biological behavior, fully native integration, and unrestricted
+  agency claims: still blocked.
+
 ## Primary Source Artifacts
 
 Start future review from these files:
@@ -124,15 +147,15 @@ after their theory and component entry gates are explicit.
 
 ## Recommended Next Start
 
-The clean next experiment, if continuing the experiment roadmap without opening
-Phase 8 implementation, is N14:
+The clean next work, if continuing the experiment roadmap without opening
+Phase 8 implementation, is N14 Iteration 1:
 
 `N14 - LGRC Consequence-Sensitive Route Selection`
 
-Recommended first actions:
+The N14 skeleton and Iterations 1-2 already exist. Recommended next actions:
 
-1. Create the N14 experiment root, README, implementation plan, checklist,
-   outputs/reports/scripts directories, and initial stubs.
+1. Run Iteration 3 and build pre-selection route consequence records from the
+   pinned N06, N08, N09, N12, and N13 sources.
 2. Start from route selection by expected downstream support, memory, or
    regulation effects, not semantic intention or agency.
 3. Consume N06 route arbitration evidence, N08 route memory/affordance
@@ -216,9 +239,11 @@ before closing any N14 setup or Phase 8 planning turn.
 
 ## Remaining Questions
 
-- Should the next branch be N13 artifact-level self-maintenance/support-seeking
-  regulation, or targeted Phase 8 native implementation?
+- Should the current N14 branch continue through artifact-level AP4
+  consequence-sensitive route selection before opening targeted Phase 8?
+- After N14, should the next roadmap branch be N15 endogenous proxy formation
+  or targeted Phase 8 native implementation?
 - If Phase 8 opens, should route conductance memory or response magnitude policy
   be implemented first?
 - What explicit theory gates would be sufficient to reconsider identity
-  acceptance after N13/N14 evidence accumulates?
+  acceptance after N14/N15 evidence accumulates?

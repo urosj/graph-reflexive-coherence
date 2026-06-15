@@ -38,6 +38,7 @@ machine-local state.
 | [N11 general agentic-like integration](2026-05-N11-lgrc-general-agentic-like-integration/README.md) | Transfer across context, support state, proxy condition, and horizon while preserving claim boundaries. | README, then final closeout script/output and reports. |
 | [N12 native naturalization and producer dissolution](2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/README.md) | Bridge experiment classifying N05-N11 producer mechanisms into native absorption candidates, scaffolds, and theory-sensitive blockers. | README, then implementation plan/checklist, naturalization artifacts, Phase 8 readiness matrix, and closeout handoff. |
 | [N13 self-maintenance and support-seeking regulation](2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/README.md) | Artifact-level AP3 support-seeking regulation candidate derived from source-current support state, with controls and claim boundaries. | README, then implementation plan/checklist, support schema, control/stress artifacts, and closeout handoff. |
+| [N14 consequence-sensitive route selection](2026-06-N14-lgrc-consequence-sensitive-route-selection/README.md) | Planned AP4 experiment for route selection by source-backed downstream support, memory, or regulation consequences. | README, then implementation plan/checklist and N14-specific hypotheses. |
 
 ## Current Roadmap State
 
@@ -75,7 +76,11 @@ support-seeking regulation evidence. It does not support agency, intention,
 semantic goal ownership, identity acceptance, selfhood, personhood, biological
 behavior, native support, or fully native agentic-like integration.
 
-The next planned experiment is N14, consequence-sensitive route selection.
+N14 is opened as the next planned experiment. Iterations 1 and 2 have closed
+the source inventory and AP4 schema/gate. No AP4 result is supported yet. The
+maximum planned target is artifact-level `AP4` consequence-sensitive route
+selection candidate evidence, not intention, agency, semantic goal ownership,
+identity acceptance, native support, or fully native integration.
 
 Roadmap-level context:
 
