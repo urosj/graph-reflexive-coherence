@@ -36,6 +36,46 @@ machine-local state.
 | [N09 goal-proxy regulation](2026-05-N09-lgrc-goal-proxy-regulation/README.md) | Runtime-visible proxy measurement, bounded correction, support dependence, and native-substrate blockers. | README, then iteration scripts, output artifacts, and reports. |
 | [N10 agentic-like integration](2026-05-N10-lgrc-agentic-like-integration/README.md) | Bounded composition of route choice, memory-shaped affordance, identity/support baseline, and proxy regulation. | README, then hypothesis closeouts in `outputs/` and matching reports. |
 | [N11 general agentic-like integration](2026-05-N11-lgrc-general-agentic-like-integration/README.md) | Transfer across context, support state, proxy condition, and horizon while preserving claim boundaries. | README, then final closeout script/output and reports. |
+| [N12 native naturalization and producer dissolution](2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/README.md) | Bridge experiment classifying N05-N11 producer mechanisms into native absorption candidates, scaffolds, and theory-sensitive blockers. | README, then implementation plan/checklist, naturalization artifacts, Phase 8 readiness matrix, and closeout handoff. |
+| [N13 self-maintenance and support-seeking regulation](2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/README.md) | Artifact-level AP3 support-seeking regulation candidate derived from source-current support state, with controls and claim boundaries. | README, then implementation plan/checklist, support schema, control/stress artifacts, and closeout handoff. |
+
+## Current Roadmap State
+
+N05-N11 closed as an artifact-level foundation for agentic-like LGRC
+composition:
+
+```text
+N11 final_supported_gali_ceiling = GALI7
+N11 final_claim_ceiling = broader_general_artifact_only_agentic_like_integration_candidate
+artifact_only = true
+fully_native = false
+```
+
+N12 closed as a bridge experiment, not a native implementation. It identified
+`native_route_conductance_memory_policy` and `native_response_magnitude_policy`
+as Phase 8-ready native policy candidates while keeping identity acceptance and
+full native agentic-like integration blocked.
+
+N13 closed at:
+
+```text
+final_supported_ap_level = AP3
+final_claim_ceiling = artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation
+artifact_only = true
+fully_native = false
+phase8_opened = false
+native_support_opened = false
+agency_claim_opened = false
+identity_acceptance_opened = false
+semantic_goal_ownership_opened = false
+```
+
+N13 supports only artifact-level self-maintenance candidate /
+support-seeking regulation evidence. It does not support agency, intention,
+semantic goal ownership, identity acceptance, selfhood, personhood, biological
+behavior, native support, or fully native agentic-like integration.
+
+The next planned experiment is N14, consequence-sensitive route selection.
 
 Roadmap-level context:
 
