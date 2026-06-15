@@ -10,15 +10,15 @@ Generated scripts:
   tags, claim flags, native-readiness criteria, rejection rules, and
   RC-compatibility fields, including non-RC quantity audit fields and NAT3/NAT4
   gates.
-
-Planned scripts:
-
 - `build_n12_route_conductance_memory_candidate.py`: evaluates the route memory
   candidate, geometry-vs-bookkeeping split, mutation boundary, non-RC audit,
-  controls, and supported NAT level.
+  controls, NAT4 gates, and supported NAT level.
 - `build_n12_response_magnitude_candidate.py`: evaluates the response
   magnitude candidate, trend/stability fields, mutation boundary, non-RC audit,
   controls, and supported NAT level.
+
+Planned scripts:
+
 - `build_n12_identity_acceptance_boundary.py`: records blocked identity
   acceptance theory gates and rationale.
 - `build_n12_agentic_like_integration_boundary.py`: records blocked native

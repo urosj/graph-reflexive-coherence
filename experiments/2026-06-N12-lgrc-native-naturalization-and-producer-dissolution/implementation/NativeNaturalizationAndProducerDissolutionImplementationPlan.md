@@ -440,6 +440,34 @@ thresholds, geometry-vs-bookkeeping split, mutation boundary, non-RC audit,
 controls, and no native support claim.
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_route_conductance_memory_candidate.json
+Report: reports/n12_route_conductance_memory_candidate.md
+Output digest: c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1
+```
+
+Iteration 3 classifies `native_route_conductance_memory_policy` as a `NAT4`
+Phase 8-ready native policy candidate with no implementation and no native
+support claim. Producer-side N08 `memory_strength` remains an artifact-only
+scaffold. The native candidate is limited to route geometry/conductance state
+updated by committed route-use/topology events, with default-off flags,
+idempotent digests, telemetry requirements, snapshot/replay gates, negative
+controls, compatibility tests, non-RC quantity audit, mutation boundary, and
+claim flags forced false. The generated NAT4 gate audit records `present`,
+`validated`, and `source` for each gate. The candidate also names
+`src/pygrc/telemetry` as the native telemetry namespace, keeps telemetry
+default-off and backward-compatible while disabled, and types the relaxation
+destination as a reversible baseline relaxation account inside route-conductance
+accounting. Post-review tightening adds row-level `native_support_opened =
+false`, documents all candidate-specific extension fields beyond the Iteration
+2 final row schema, records a source digest policy for upstream artifacts with
+mixed digest conventions, and fixes `generated_at` to the experiment timestamp
+so file SHA values are reproducible across reruns with unchanged sources and
+git HEAD.
+
 ### Iteration 4. Response Magnitude Candidate
 
 Evaluate N09-N11 regulation sizing as a native response-magnitude policy
@@ -490,6 +518,31 @@ NAT level with source links, RC-compatible policy surfaces, serialized
 thresholds, trend/stability fields, mutation boundary, non-RC audit, controls,
 and no native support claim.
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_response_magnitude_candidate.json
+Report: reports/n12_response_magnitude_candidate.md
+Output digest: 347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4
+```
+
+Iteration 4 classifies `native_response_magnitude_policy` as a
+bounded/envelope-gated `NAT4` Phase 8-ready response magnitude policy candidate
+with no implementation and no native support claim. The candidate is limited to
+runtime-visible proxy measurement, serialized target-band and gain policy,
+bounded packet scheduling, and node-plus-packet budget debits. N09-N11 producer
+regulation remains artifact-only evidence for a policy surface and opens no
+native support claim for regulation, semantic goal ownership, intention, or
+agency. The generated NAT4 gate audit records `present`, `validated`, and
+`source` for each gate; trend and stability fields preserve bounded-error,
+saturation, overcorrection, and out-of-envelope blocker evidence. The candidate
+names `src/pygrc/telemetry` as the native telemetry namespace, keeps telemetry
+default-off and backward-compatible while disabled, records the mutation
+boundary as schedule-only policy with state mutation owned by `step()` or
+topology events, and forces all native support and agency-related claim flags
+false.
 
 ### Iteration 5. Identity Acceptance Boundary
 

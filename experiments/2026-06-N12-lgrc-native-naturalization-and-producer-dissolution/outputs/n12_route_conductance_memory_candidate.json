@@ -1,0 +1,817 @@
+{
+  "artifact_reproducibility": {
+    "file_sha_reproducible_for_fixed_sources_and_git_head": true,
+    "generated_at": "2026-06-15T00:00:00+00:00",
+    "generated_at_policy": "fixed experiment timestamp for reproducible file SHA across reruns with unchanged source files and git HEAD",
+    "output_digest_excludes": [
+      "generated_at",
+      "output_digest",
+      "git"
+    ],
+    "wall_clock_timestamp_in_file": false
+  },
+  "candidate_result": {
+    "claim_ceiling": "phase8_ready_native_policy_candidate_no_native_support",
+    "nat_level": "NAT4",
+    "native_policy_name": "native_route_conductance_memory_policy",
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "phase8_ready": true,
+    "primary_disposition": "native_absorption_candidate",
+    "supported_interpretation": "Phase 8-ready native route-conductance memory policy candidate with no implementation and no native support claim."
+  },
+  "checks": {
+    "all_nat4_gates_present": true,
+    "all_nat4_gates_validated": true,
+    "budget_semantics_typed": true,
+    "claim_flags_forced_false": true,
+    "generated_at_reproducible": true,
+    "iteration_1_route_memory_row_present": true,
+    "iteration_2_nat4_gates_loaded": true,
+    "mutation_boundary_recorded": true,
+    "n08_hypothesis_a_artifact_only_scope": true,
+    "n08_hypothesis_a_memory_strength_not_physical_flux": true,
+    "n08_hypothesis_b_native_claims_blocked": true,
+    "n08_native_policy_blocker_recorded": true,
+    "n08_positive_geometry_response_present": true,
+    "n08_static_persistence_present": true,
+    "n10_contract_present": true,
+    "n11_gap_present": true,
+    "no_extra_unaccounted_quantity": true,
+    "no_native_support_claim": true,
+    "non_rc_quantity_audit_passed": true,
+    "phase8_ready_derived_from_nat4": true,
+    "producer_geometry_bookkeeping_split_recorded": true,
+    "row_level_native_support_opened_false": true,
+    "schema_extension_fields_documented": true,
+    "source_file_sha256_all_present": true,
+    "src_clean": true,
+    "telemetry_default_off_backward_compatible": true,
+    "telemetry_namespace_explicit": true
+  },
+  "claim_boundary": {
+    "native_absorption_candidate_is_native_support": false,
+    "native_support_is_agency": false,
+    "phase8_ready_is_implementation": false,
+    "producer_memory_strength_is_native_state": false,
+    "pure_flux_trail_memory_supported": false,
+    "route_conductance_memory_is_aco_or_ant_colony": false,
+    "route_conductance_memory_is_intention": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_route_conductance_memory_candidate.py",
+  "experiment": "N12",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "b7310973dfa445799332600efceb8fdaf81fb80e",
+    "src_status_short": ""
+  },
+  "iteration": 3,
+  "nat4_gate_status": {
+    "budget_surfaces": {
+      "present": true,
+      "source": "N10 contract plus N12 typed budget semantics",
+      "validated": true
+    },
+    "claim_flags_forced_false": {
+      "present": true,
+      "source": "N12 Iteration 2 claim flags",
+      "validated": true
+    },
+    "compatibility_tests": {
+      "present": true,
+      "source": "N12 Iteration 3 compatibility test list",
+      "validated": true
+    },
+    "default_off_flags": {
+      "present": true,
+      "source": "N12 Iteration 3 default-off policy flags",
+      "validated": true
+    },
+    "enabled_validated_supported_separation": {
+      "present": true,
+      "source": "N12 Iteration 3 claim boundary fields",
+      "validated": true
+    },
+    "idempotency_digest_plan": {
+      "present": true,
+      "source": "N12 Iteration 3 digest plan",
+      "validated": true
+    },
+    "mutation_boundary": {
+      "present": true,
+      "source": "N12 Iteration 3 mutation boundary",
+      "validated": true
+    },
+    "native_policy_name": {
+      "present": true,
+      "source": "N08 closeout, N10 contract, N11 gap, N12 candidate row",
+      "validated": true
+    },
+    "native_supported_flags_false": {
+      "present": true,
+      "source": "N12 Iteration 3 no-native-support flags",
+      "validated": true
+    },
+    "negative_controls": {
+      "present": true,
+      "source": "N08 controls, N10 contract controls, N12 claim controls",
+      "validated": true
+    },
+    "non_rc_quantity_audit": {
+      "present": true,
+      "source": "N12 Iteration 3 non-RC audit",
+      "validated": true
+    },
+    "phase8_opened_false": {
+      "present": true,
+      "source": "N12 Iteration 3 no-implementation flags",
+      "validated": true
+    },
+    "producer_or_policy_may_schedule_only": {
+      "present": true,
+      "source": "N12 Iteration 3 mutation boundary",
+      "validated": true
+    },
+    "record_schema_sketch": {
+      "present": true,
+      "source": "N12 Iteration 3 record schema sketch",
+      "validated": true
+    },
+    "runtime_visible_inputs": {
+      "present": true,
+      "source": "N10 contract plus N12 topology/budget extensions",
+      "validated": true
+    },
+    "snapshot_replay_requirements": {
+      "present": true,
+      "source": "N10 replay requirements plus N12 replay extensions",
+      "validated": true
+    },
+    "src_diff_empty": {
+      "present": true,
+      "source": "git status --short src",
+      "validated": true
+    },
+    "step_or_topology_event_owns_state_mutation": {
+      "present": true,
+      "source": "N12 Iteration 3 mutation boundary",
+      "validated": true
+    },
+    "telemetry_requirements": {
+      "present": true,
+      "source": "N12 telemetry namespace and export behavior",
+      "validated": true
+    }
+  },
+  "output_digest": "c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1",
+  "purpose": "route_conductance_memory_candidate_nat4_readiness",
+  "route_conductance_memory_candidate": {
+    "artifact_replay_requirements": [
+      "replay reconstructs memory update and relaxation from serialized policy",
+      "replay reconstructs route-use-linked update scheduling",
+      "replay rejects hidden memory strength as native state",
+      "replay rejects hidden memory strength or report-side scoring",
+      "replay rejects stale geometry reads and order inversion",
+      "replay verifies conductance before/after digests",
+      "replay verifies relaxation destination accounting"
+    ],
+    "blocked_claims": [
+      "aco like",
+      "aco like behavior",
+      "agency",
+      "agentic like",
+      "ant colony",
+      "ant colony behavior",
+      "biological",
+      "fully native agentic like integration",
+      "identity acceptance",
+      "intention",
+      "locomotion like",
+      "native geometry mediated trail support",
+      "native memory trail support",
+      "native route conductance memory support",
+      "native support opened",
+      "personhood",
+      "pheromone like policy",
+      "producer memory relabelled native",
+      "pure coherence flux trail memory",
+      "rc identity collapse",
+      "runtime identity acceptance",
+      "semantic goal ownership",
+      "semantic goal understanding",
+      "unrestricted agency",
+      "unrestricted identity",
+      "unrestricted movement"
+    ],
+    "bookkeeping_fields": [
+      "memory_budget_surface",
+      "memory_policy_id",
+      "route_scope_digest"
+    ],
+    "budget_semantics": {
+      "node_plus_packet_budget_surface_separate": {
+        "phase8_rule": "conductance memory must not hide node-plus-packet budget drift",
+        "role": "kept separate from route conductance memory accounting",
+        "surface_type": "existing_conservation_surface"
+      },
+      "relaxation_destination_surface": {
+        "destination": "baseline route conductance or neutral geometry reservoir within the route-conductance accounting surface",
+        "forbidden_interpretation": "silent deletion, hidden scalar decay, or unbudgeted leakage",
+        "phase8_rule": "relaxation must debit and credit named surfaces through replayable digests",
+        "role": "receives relaxation or decay back toward baseline conductance/neutral geometry",
+        "surface_type": "reversible_baseline_relaxation_account"
+      },
+      "route_conductance_memory_budget_surface": {
+        "phase8_rule": "every update has before/after state and budget digests",
+        "role": "accounts route-local conductance or geometry deltas derived from committed route use",
+        "surface_type": "derived_geometry_conductance_accounting_surface",
+        "unit_boundary": "digest-accounted conductance or geometry delta, not an independent scalar"
+      }
+    },
+    "budget_surfaces": [
+      "node_plus_packet_budget_surface_separate",
+      "relaxation_destination_surface",
+      "route_conductance_memory_budget_surface"
+    ],
+    "claim_boundary_controls": [
+      "aco_like_claim_promotion_blocked",
+      "agency_claim_promotion_blocked",
+      "ant_colony_claim_promotion_blocked",
+      "native_absorption_candidate_not_native_support",
+      "route_conductance_memory_not_aco_or_ant_colony",
+      "route_conductance_memory_not_intention"
+    ],
+    "claim_ceiling": "phase8_ready_native_policy_candidate_no_native_support",
+    "claim_flags_forced_false": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "native_support_opened": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "compatibility_tests": [
+      "route_use_without_policy_enabled_records_no_mutation",
+      "committed_route_use_schedules_single_conductance_update",
+      "zero_coherence_trace_does_not_reinforce",
+      "hidden_memory_strength_rejected",
+      "stale_geometry_read_rejected",
+      "unbudgeted_relaxation_rejected",
+      "duplicate_relaxation_rejected",
+      "node_plus_packet_budget_conserved",
+      "artifact_replay_recomputes_policy_record_digest",
+      "claim_flags_remain_false",
+      "telemetry_default_off_exports_no_new_records",
+      "existing_telemetry_exports_backward_compatible_when_disabled"
+    ],
+    "conductance_eligibility_threshold": {
+      "status": "specified_for_phase8_entry",
+      "thresholds_to_serialize": [
+        "minimum_positive_coherence_carrier",
+        "max_update_delta_per_route_use",
+        "conductance_eligibility_threshold",
+        "relaxation_destination_threshold"
+      ],
+      "zero_coherence_boundary": "zero-coherence trace remains absorber, not reinforcement"
+    },
+    "contract_runtime_visible_inputs": [
+      "conductance_state_after_digest",
+      "conductance_state_before_digest",
+      "memory_relaxation_rule_id",
+      "memory_update_rule_id",
+      "route_scope_digest",
+      "route_use_digest"
+    ],
+    "covered_policy_records": [
+      "native_geometry_conductance_update_policy_record",
+      "native_route_conductance_memory_policy_record"
+    ],
+    "default_off_flags": {
+      "native_geometry_conductance_update_policy_enabled": false,
+      "native_route_conductance_memory_policy_enabled": false,
+      "native_route_memory_relaxation_policy_enabled": false,
+      "telemetry_emission_enabled": false
+    },
+    "enabled_validated_supported_separation": {
+      "enabled": false,
+      "native_support_opened": false,
+      "phase8_ready_candidate": true,
+      "supported": false,
+      "validated": false
+    },
+    "idempotency_digest_plan": {
+      "duplicate_update_rejection": "same route_use_digest and topology_event_digest cannot mutate twice",
+      "policy_record_digest_inputs": [
+        "policy_id",
+        "route_scope_digest",
+        "route_use_digest",
+        "topology_event_digest",
+        "conductance_state_before_digest",
+        "memory_update_rule_id",
+        "memory_relaxation_rule_id",
+        "budget_before_digest",
+        "budget_after_digest"
+      ],
+      "replay_digest_rule": "canonical JSON digest with sorted keys and explicit before/after state"
+    },
+    "mechanism_name": "native_route_conductance_memory_policy",
+    "mechanism_role": "route_use_linked_conductance_memory_phase8_candidate",
+    "memory_relaxation_or_decay_rule": {
+      "blocked_without": [
+        "memory_relaxation_rule_id",
+        "relaxation_destination_surface_id",
+        "budget_after_digest"
+      ],
+      "destination_surface_meaning": "baseline route conductance or neutral geometry reservoir inside route-conductance accounting",
+      "destination_surface_type": "reversible_baseline_relaxation_account",
+      "rule": "Relaxation or decay must be serialized, event-ordered, idempotent, and budget-accounted through a named destination surface; silent deletion or hidden decay is rejected.",
+      "status": "specified_for_phase8_entry"
+    },
+    "missing_gates": [],
+    "mutation_boundary": {
+      "allowed_policy_actions_before_commit": [
+        "validate route_use_digest",
+        "select serialized update_rule_id",
+        "schedule update or relaxation record",
+        "emit policy digest for replay"
+      ],
+      "forbidden_policy_actions_before_commit": [
+        "mutate conductance_state_after_digest directly",
+        "invent hidden memory state",
+        "apply relaxation without event ordering",
+        "delete budget without destination surface"
+      ],
+      "producer_or_policy_may_schedule_only": true,
+      "state_mutation_owner": "LGRC step or committed topology event boundary",
+      "status": "specified_for_phase8_entry",
+      "step_or_topology_event_owns_state_mutation": true
+    },
+    "n11_native_support_scope": "not_native",
+    "n11_native_supported": false,
+    "nat_level": "NAT4",
+    "native_gap": "native_route_conductance_memory_policy_missing",
+    "native_policy_name": "native_route_conductance_memory_policy",
+    "native_support_opened": false,
+    "native_supported_flags_false": true,
+    "negative_controls": [
+      "conductance_update_without_route_use_rejected",
+      "duplicate_relaxation_rejected",
+      "hidden_memory_policy_rejected",
+      "memory_budget_surface_ambiguity_rejected",
+      "native_geometry_mediated_trail_support_rejected_until_phase8",
+      "producer_memory_relabelled_native_rejected",
+      "pure_flux_trail_memory_rejected",
+      "score_only_memory_input_rejected",
+      "stale_geometry_read_rejected",
+      "unbudgeted_relaxation_rejected",
+      "zero_coherence_trace_reinforcement_rejected"
+    ],
+    "non_rc_quantity_audit": {
+      "audit_status": "passed_for_nat4_readiness",
+      "blocked_if_extra_quantity_required": "unaccounted_non_rc_quantity_required",
+      "does_candidate_require_new_scalar_outside_rc_accounting": false,
+      "does_decay_or_relaxation_conserve_accounted_quantity": "required; relaxation must debit/transfer through a named budget or destination surface",
+      "extra_unaccounted_quantity_allowed": false,
+      "forbidden_non_rc_quantities": [
+        "hidden_memory_strength",
+        "pheromone_scalar",
+        "agent_intention",
+        "unbudgeted_decay"
+      ],
+      "is_expressible_as_rc_causality_coherence_geometry_flux_scheduling_lineage_budget": true,
+      "is_memory_coherence_geometry_or_flux_effect": "yes_if_encoded_as_route_conductance_or_geometry_state_after_committed_event",
+      "is_memory_only_producer_bookkeeping": "producer_memory_strength_is_bookkeeping; native candidate excludes it"
+    },
+    "ordering_requirements": [
+      "conductance state must be current before route arbitration consumes it",
+      "relaxation must be event-ordered and replayable",
+      "relaxation must follow update or explicit no-update event",
+      "route use must precede conductance update",
+      "topology event digest must be committed before state mutation",
+      "update record digest must be idempotent within replay window"
+    ],
+    "phase8_decision_source": "phase8_ready_candidate_no_implementation",
+    "phase8_opened_false": true,
+    "phase8_order_source": {
+      "contract_rows": [
+        "n10_i14_contract_02_route_conductance_memory"
+      ],
+      "order": 2,
+      "phase": "route_conductance_memory_absorption",
+      "reason": "N08 memory/trail is a concrete missing constitutive policy."
+    },
+    "phase8_readiness_source": "n12_iteration_3_nat4_gate_evaluation",
+    "phase8_ready": true,
+    "primary_disposition": "native_absorption_candidate",
+    "producer_decision_fields": [
+      "route-use-linked memory update",
+      "memory relaxation/decay rule",
+      "route-scope digest selection"
+    ],
+    "producer_native_split": {
+      "native_coherence_flux_mechanism": {
+        "allowed_in_candidate": "budget-accounted conductance or geometry update only",
+        "blocked_interpretations": [
+          "pure coherence flux trail memory",
+          "zero-coherence absorber as reinforcement",
+          "hidden scalar memory strength as native state"
+        ],
+        "source": "N08 Iterations 10-13 controls",
+        "status": "not_independently_supported"
+      },
+      "native_geometry_conductance_policy_candidate": {
+        "allowed_carrier": "route geometry or conductance state after committed route use",
+        "policy_surface": "native_route_conductance_memory_policy",
+        "source": "N08 Hypothesis B bounded closeout plus N10 contract row",
+        "status": "phase8_ready_candidate_not_implemented",
+        "update_owner": "step_or_topology_event"
+      },
+      "producer_side_route_memory_pattern": {
+        "not_native_because": [
+          "N08 memory strength is not physical flux",
+          "N10 consumes it only as artifact-only producer-policy evidence",
+          "native_route_conductance_memory_policy_missing remains open"
+        ],
+        "source": "N08 Hypothesis A MEM6 and N10 ALI4 consumption",
+        "status": "experiment_local_scaffold_only",
+        "uses": [
+          "serialized memory_strength as score evidence",
+          "producer policy update and decay",
+          "artifact-only replay and controls"
+        ]
+      }
+    },
+    "producer_or_policy_may_schedule_only": true,
+    "record_schema_sketch": {
+      "forbidden_fields": [
+        "hidden_memory_strength",
+        "pheromone_scalar",
+        "agent_intention",
+        "unbudgeted_decay",
+        "report_side_score_override"
+      ],
+      "record_type": "native_route_conductance_memory_policy_record",
+      "required_fields": [
+        "policy_id",
+        "enabled",
+        "validated",
+        "supported",
+        "route_scope_digest",
+        "route_use_digest",
+        "topology_event_digest",
+        "conductance_state_before_digest",
+        "memory_update_rule_id",
+        "memory_update_delta_digest",
+        "memory_relaxation_rule_id",
+        "relaxation_destination_surface_id",
+        "conductance_state_after_digest",
+        "route_conductance_memory_budget_before_digest",
+        "route_conductance_memory_budget_after_digest",
+        "node_plus_packet_budget_delta_digest",
+        "policy_record_digest"
+      ],
+      "state_carrier": "route_geometry_or_conductance_state",
+      "version": "v1"
+    },
+    "route_scope_runtime_policy": {
+      "rule": "Memory scope is route-local or route-set-local by digest; global hidden route preference is rejected.",
+      "runtime_visible_inputs": [
+        "route_scope_digest",
+        "route_use_digest",
+        "policy_record_digest"
+      ],
+      "status": "specified_for_phase8_entry"
+    },
+    "route_use_linked_memory_update_rule": {
+      "blocked_without": [
+        "route_use_digest",
+        "route_scope_digest",
+        "topology_event_digest",
+        "conductance_state_before_digest",
+        "budget_before_digest"
+      ],
+      "rule": "A conductance-memory update may be scheduled only from a committed route_use_digest and topology_event_digest, then applied by the LGRC step/topology event owner with explicit before/after conductance and budget digests.",
+      "status": "specified_for_phase8_entry"
+    },
+    "row_digest": "6d418578e6e03594f2437d3e20a6fc4faa97092b4a1eaf654035b204b9c27d0e",
+    "row_id": "n12_i3_route_conductance_memory_candidate_v1",
+    "runtime_visible_inputs": [
+      "conductance_state_after_digest",
+      "conductance_state_before_digest",
+      "memory_relaxation_rule_id",
+      "memory_update_rule_id",
+      "policy_record_digest",
+      "route_conductance_memory_budget_after_digest",
+      "route_conductance_memory_budget_before_digest",
+      "route_scope_digest",
+      "route_use_digest",
+      "topology_event_digest"
+    ],
+    "runtime_visible_surfaces": [
+      "native_geometry_conductance_update_policy_record",
+      "native_route_conductance_memory_policy_record",
+      "route_conductance_memory_budget_surface",
+      "route_conductance_memory_telemetry_record"
+    ],
+    "secondary_tags": [
+      "native_policy_gap",
+      "producer_mediated_source_split",
+      "route_geometry_conductance_candidate",
+      "phase8_ready_no_implementation"
+    ],
+    "snapshot_replay_requirements": [
+      "snapshot includes policy flags and disabled-by-default state",
+      "snapshot includes conductance before/after digests",
+      "snapshot includes route scope and route use digests",
+      "snapshot includes budget surface before/after digests",
+      "replay rejects missing route use, stale geometry, and duplicate updates",
+      "replay preserves no native support flags"
+    ],
+    "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+    "source_contract_rows": [
+      "n10_i14_contract_02_route_conductance_memory"
+    ],
+    "source_evidence_summary": {
+      "n08_hypothesis_a_memory_strength_physical_flux": false,
+      "n08_hypothesis_a_scope": "artifact_only_serialized_producer_policy_route_memory_or_trail",
+      "n08_hypothesis_b_current_blocker": "native_route_conductance_memory_policy_missing",
+      "n08_hypothesis_b_status": "closed_bounded_native_policy_gap_recorded",
+      "n08_iteration_10_route_use_causes_trace": true,
+      "n08_iteration_11_native_policy_blocker_recorded": true,
+      "n08_iteration_11a_positive_response_supported": true,
+      "n08_iteration_12_relaxation_boundary_audited": true,
+      "n08_iteration_12_relaxation_not_applied": true,
+      "n08_phase8_candidate_policy_surface": "native_route_conductance_memory_policy",
+      "n08_positive_geometry_response_present": true,
+      "n08_static_persistence_present": true,
+      "n10_contract_status": "required_before_native_memory_trail_support",
+      "n11_gap_native_supported": false
+    },
+    "source_experiment": "N08_N10_N11_N12",
+    "source_gap_row_summaries": [
+      {
+        "classification": "constitutive_policy_input",
+        "component": "N08 artifact-only memory / trail affordance",
+        "native_policy_gap": "native_route_conductance_memory_policy_missing",
+        "overread_blocker": "producer_memory_policy_relabelled_as_native_memory",
+        "row_id": "n10_c_gap_02_serialized_memory_policy"
+      },
+      {
+        "classification": "constitutive_policy_input",
+        "component": "N08 native geometry trail design direction",
+        "native_policy_gap": "native_route_conductance_memory_policy_missing",
+        "overread_blocker": "static_geometry_response_relabelled_as_native_trail_memory",
+        "row_id": "n10_c_gap_03_native_geometry_trail_design_direction"
+      }
+    ],
+    "source_gap_rows": [
+      "n10_c_gap_02_serialized_memory_policy",
+      "n10_c_gap_03_native_geometry_trail_design_direction"
+    ],
+    "source_iteration": "N12_iteration_3",
+    "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+    "source_report_sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+    "source_row_digest": "a74b8a5a5248e9bd4a154e428afca943010f39269b2c3683976c43eebbb11bea",
+    "source_sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+    "src_diff_empty": true,
+    "stale_context_blockers": [
+      "conductance_memory_order_inversion_blocked",
+      "missing_route_use_digest_blocked",
+      "stale_budget_surface_blocked",
+      "stale_geometry_read_blocked",
+      "stale_policy_digest_blocked",
+      "stale_route_conductance_memory_blocked"
+    ],
+    "step_or_topology_event_owns_state_mutation": true,
+    "telemetry_export_behavior": {
+      "backward_compatible_when_disabled": true,
+      "default_off": true,
+      "legacy_exports_unchanged_until_enabled": true,
+      "native_support_flags_exported_false": true,
+      "new_records_require_explicit_flag": true
+    },
+    "telemetry_namespaces": {
+      "backward_compatibility_rule": "existing telemetry exports remain byte-compatible when the native route conductance memory policy is disabled",
+      "candidate_records": [
+        "RouteConductanceMemoryPolicyRecord",
+        "RouteConductanceMemoryBudgetRecord",
+        "RouteConductanceMemoryControlRecord"
+      ],
+      "default_off_namespace_rule": "new native telemetry is disabled unless the Phase 8 policy flag is explicitly enabled",
+      "primary_native_namespace": "src/pygrc/telemetry"
+    },
+    "telemetry_requirements": [
+      "route_conductance_memory_policy_record_emitted_default_off",
+      "route_use_digest_and_route_scope_digest",
+      "topology_event_digest",
+      "conductance_state_before_after_digests",
+      "memory_update_rule_id_and_delta_digest",
+      "memory_relaxation_rule_id_and_destination_surface",
+      "route_conductance_memory_budget_before_after_digests",
+      "node_plus_packet_budget_delta_digest",
+      "negative_control_blocker_id",
+      "claim_flags_forced_false_snapshot"
+    ],
+    "thresholds_to_serialize": [
+      "conductance eligibility threshold",
+      "duplicate_update_idempotency_window",
+      "max_update_delta_per_route_use",
+      "memory update magnitude",
+      "minimum_positive_coherence_carrier",
+      "relaxation schedule",
+      "relaxation_destination_threshold"
+    ]
+  },
+  "schema": "n12_route_conductance_memory_candidate_v1",
+  "schema_alignment": {
+    "all_extra_fields_documented": true,
+    "candidate_row_fields_count": 66,
+    "candidate_specific_extension_fields": {
+      "budget_semantics": "Iteration 3 typed budget semantics for conductance memory and relaxation destination.",
+      "conductance_eligibility_threshold": "Iteration 3 route conductance eligibility thresholds.",
+      "memory_relaxation_or_decay_rule": "Iteration 3 relaxation/decay entry gate.",
+      "native_support_opened": "Row-level no-native-support flag added to remove placement ambiguity.",
+      "producer_native_split": "Iteration 3 geometry-vs-bookkeeping split.",
+      "route_scope_runtime_policy": "Iteration 3 route-scope runtime-visible policy requirement.",
+      "route_use_linked_memory_update_rule": "Iteration 3 update rule boundary.",
+      "source_evidence_summary": "Iteration 3 compact source-backed evidence summary.",
+      "telemetry_export_behavior": "Iteration 3 default-off/backward-compatible telemetry export behavior.",
+      "telemetry_namespaces": "Iteration 3 telemetry namespace declaration, including src/pygrc/telemetry."
+    },
+    "extension_policy": "Iteration 3 may add candidate-specific extension fields when they are explicitly documented and do not promote native support or Phase 8 implementation.",
+    "extra_row_fields": [
+      "budget_semantics",
+      "conductance_eligibility_threshold",
+      "memory_relaxation_or_decay_rule",
+      "native_support_opened",
+      "producer_native_split",
+      "route_scope_runtime_policy",
+      "route_use_linked_memory_update_rule",
+      "source_evidence_summary",
+      "telemetry_export_behavior",
+      "telemetry_namespaces"
+    ],
+    "iteration_2_final_row_fields_count": 56,
+    "missing_final_row_fields": [],
+    "native_support_opened_field_in_iteration_2_schema": false,
+    "native_support_opened_field_present_in_candidate_row": true
+  },
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_10_geometry_trail_formation.json": {
+      "artifact_digest": null,
+      "output_digest": "07e03b829759a9df228a651eb77efc3616a5309c33eec6a5ea47fb75568373b9",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_10_geometry_trail_formation.json",
+      "sha256": "667ffc61c5b59fdf061d82160657a8003bc661d2cf5b9b4cdf08e15fad79b857",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11_geometry_trace_flux_response.json": {
+      "artifact_digest": null,
+      "output_digest": "09d76bed44960151fe9ca0a01321dfb6f17bdb83bb5cd0d86074d4f7ba5fe7a1",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11_geometry_trace_flux_response.json",
+      "sha256": "26c446c8d3a21397fa0073c0451ba4dcd5330d269c6fe17d9660955feb8d50b9",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11a_positive_geometry_route_arbitration.json": {
+      "artifact_digest": null,
+      "output_digest": "2907ea12a71f12f25c60ea13fb0a53053aceca3b070480a84f88871606d1e759",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11a_positive_geometry_route_arbitration.json",
+      "sha256": "8e4c752625edc9607309f772f0aa229001550552cbaabc5b8b1641bf19e0b5da",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_12_geometry_trace_persistence_relaxation.json": {
+      "artifact_digest": "0fc4a8a98509068a7926d562d2999289aaa8a934a144229195221b9ed68813f6",
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_12_geometry_trace_persistence_relaxation.json",
+      "sha256": "deffdf7ea8fa9da25ec20c04459eff48c85f36c4dd7fad8e370a1136123a218f",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json": {
+      "artifact_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+      "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": {
+      "artifact_digest": null,
+      "output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_10_geometry_trail_formation.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_10_geometry_trail_formation.md",
+      "sha256": "4e6767348c735bf9468d69d2cda7211861ed6fa924cd3b57ebdcf967c0a85b72",
+      "status": null
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_11_geometry_trace_flux_response.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_11_geometry_trace_flux_response.md",
+      "sha256": "0b5acbfa4320340198851b896dd61462131d26cb8441a32dc48e3c752c66c72e",
+      "status": null
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_11a_positive_geometry_route_arbitration.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_11a_positive_geometry_route_arbitration.md",
+      "sha256": "c5035ac0702521b1b6d2f60542969c96e4762dd84783ce5438a9a76f6cf53dce",
+      "status": null
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_12_geometry_trace_persistence_relaxation.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_12_geometry_trace_persistence_relaxation.md",
+      "sha256": "9c1e7bf1e19b02c4b53575b04dba019bb5353630789aad4fbf3aa0ed23ea3542",
+      "status": null
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md",
+      "sha256": "d8916078bf5b7ea5016514641b53436f2a1695071c27aa2c14a4aafe2445a4f1",
+      "status": null
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+      "status": null
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json": {
+      "artifact_digest": null,
+      "output_digest": "0ec283968d91de44d2960bcc15fbdce740658ba356c5603dc8183108b8069a7f",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json",
+      "sha256": "044d7fd2f0fef213f0ec61ea67bbc07d098099560c264e4c403e464e6b590451",
+      "status": "passed"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md",
+      "sha256": "9aa9940afb0f51104176e9ead58f7b86682845f8e557117e2fbc40193b3bb844",
+      "status": null
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json": {
+      "artifact_digest": null,
+      "output_digest": "82d1a3eedc0aebacdceae79e2be37bb96b7fff4cbfacbae00da912f3975c3e52",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json",
+      "sha256": "876455ec8b5cdd084c8b3a247d33a0313dd11d5421a693e9ebe5bef63600d8d6",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_11_hypothesis_c_native_generalization_gap.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_11_hypothesis_c_native_generalization_gap.md",
+      "sha256": "5df6517d5b5717fe1acb111c85292803682d4084ce8b94ce885acc50d03440f9",
+      "status": null
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json": {
+      "artifact_digest": null,
+      "output_digest": "cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+      "sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json": {
+      "artifact_digest": null,
+      "output_digest": "f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json",
+      "sha256": "1054be3cc71946e00be6e4d78a08111ec9d2d75c19fd535fd9b4898f86e4df80",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+      "sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+      "status": null
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md",
+      "sha256": "e3a3d0c126f71f150930f402d2c41b6a78b650d90047ba9dd846a728393c8a8c",
+      "status": null
+    }
+  },
+  "source_digest_policy": {
+    "all_source_file_sha256_present": true,
+    "controlling_provenance_pin": "source_artifacts[*].sha256",
+    "file_sha256_is_required_for_every_source": true,
+    "null_digest_reason": "Upstream N08/N10/N11 artifacts use mixed output_digest and artifact_digest conventions. N12 pins every source by file SHA-256 and records upstream digest fields opportunistically.",
+    "upstream_output_digest_or_artifact_digest_may_be_null": true
+  },
+  "status": "passed"
+}

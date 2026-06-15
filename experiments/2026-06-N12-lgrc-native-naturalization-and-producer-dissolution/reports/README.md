@@ -10,13 +10,13 @@ Generated reports:
   quantity audits.
 - `n12_naturalization_schema_v1.md`: human-readable NAT ladder, schema,
   NAT3/NAT4 gate, rejection-rule, and claim-boundary report.
-
-Planned reports:
-
 - `n12_route_conductance_memory_candidate.md`: human-readable route conductance
   memory candidate report.
 - `n12_response_magnitude_candidate.md`: human-readable response magnitude
   candidate report.
+
+Planned reports:
+
 - `n12_identity_acceptance_boundary.md`: human-readable identity acceptance
   boundary report.
 - `n12_agentic_like_integration_boundary.md`: human-readable agentic-like

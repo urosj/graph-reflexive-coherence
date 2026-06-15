@@ -13,15 +13,15 @@ Generated artifacts:
   native-readiness criteria, RC-compatibility fields, rejection rules, budget
   fields, non-RC quantity audit fields, NAT3/NAT4 gates, derived
   `phase8_ready` semantics, and fail-closed blocker tags.
-
-Planned artifacts:
-
 - `n12_route_conductance_memory_candidate.json`: route-memory
   geometry/conductance/coherence-vs-bookkeeping evaluation, mutation boundary,
-  non-RC audit, controls, and supported NAT level.
+  non-RC audit, controls, NAT4 gates, and supported NAT level.
 - `n12_response_magnitude_candidate.json`: response sizing trend/stability
   evaluation, mutation boundary, non-RC audit, controls, and supported NAT
   level.
+
+Planned artifacts:
+
 - `n12_identity_acceptance_boundary.json`: blocked identity-acceptance boundary,
   theory gates, support-vs-acceptance separation, and rationale.
 - `n12_agentic_like_integration_boundary.json`: blocked native integration

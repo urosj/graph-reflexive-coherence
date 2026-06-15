@@ -183,10 +183,10 @@ phase8_opened = false
 Current N12 state:
 
 ```text
-status = iteration_2_schema_frozen
+status = iteration_4_response_magnitude_candidate_complete
 target_naturalization_level = NAT4
-strongest_recorded_level = NAT3
-phase8_ready_rows = 0
+strongest_recorded_level = NAT4
+phase8_ready_rows = 2
 phase8_implementation_opened = false
 native_support_opened = false
 ```

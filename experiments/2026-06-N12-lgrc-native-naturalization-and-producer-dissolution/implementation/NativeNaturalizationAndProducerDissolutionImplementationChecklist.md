@@ -264,34 +264,34 @@ scripts/build_n12_naturalization_schema_v1.py d6dd3ba0803a91c540ab4209b3a9bf14ed
 
 ## Iteration 3. Route Conductance Memory Candidate
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Evaluate N08 memory trail / affordance source rows.
-- [ ] Record route-use-linked memory update rule.
-- [ ] Record memory relaxation or decay rule.
-- [ ] Record route-scope runtime-visible policy requirement.
-- [ ] Record conductance eligibility threshold.
-- [ ] Record route conductance memory budget surface.
-- [ ] Split producer-side route memory pattern from native geometry/conductance
+- [x] Evaluate N08 memory trail / affordance source rows.
+- [x] Record route-use-linked memory update rule.
+- [x] Record memory relaxation or decay rule.
+- [x] Record route-scope runtime-visible policy requirement.
+- [x] Record conductance eligibility threshold.
+- [x] Record route conductance memory budget surface.
+- [x] Split producer-side route memory pattern from native geometry/conductance
       policy candidate.
-- [ ] Split native geometry/conductance policy candidate from native
+- [x] Split native geometry/conductance policy candidate from native
       coherence/flux mechanism.
-- [ ] Record geometry-vs-bookkeeping decision.
-- [ ] Record mutation boundary.
-- [ ] Record producer-or-policy may schedule only.
-- [ ] Record `step()` or topology event ownership of state mutation.
-- [ ] Record route memory `non_rc_quantity_audit`.
-- [ ] Check RC causality/coherence/geometry compatibility.
-- [ ] Define controls against ACO and ant-colony relabeling.
-- [ ] Define controls against intention, agency, and native support relabeling.
-- [ ] If assigning `NAT4`, require every NAT4 gate frozen in Iteration 2.
-- [ ] Assign supported NAT level for route conductance memory.
+- [x] Record geometry-vs-bookkeeping decision.
+- [x] Record mutation boundary.
+- [x] Record producer-or-policy may schedule only.
+- [x] Record `step()` or topology event ownership of state mutation.
+- [x] Record route memory `non_rc_quantity_audit`.
+- [x] Check RC causality/coherence/geometry compatibility.
+- [x] Define controls against ACO and ant-colony relabeling.
+- [x] Define controls against intention, agency, and native support relabeling.
+- [x] If assigning `NAT4`, require every NAT4 gate frozen in Iteration 2.
+- [x] Assign supported NAT level for route conductance memory.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_route_conductance_memory_candidate.json`
-- [ ] `reports/n12_route_conductance_memory_candidate.md`
-- [ ] `scripts/build_n12_route_conductance_memory_candidate.py`
+- [x] `outputs/n12_route_conductance_memory_candidate.json`
+- [x] `reports/n12_route_conductance_memory_candidate.md`
+- [x] `scripts/build_n12_route_conductance_memory_candidate.py`
 
 Acceptance statement:
 
@@ -302,43 +302,85 @@ thresholds, geometry-vs-bookkeeping split, mutation boundary, non-RC audit,
 controls, and no native support claim.
 ```
 
+Acceptance state:
+
+```text
+Achieved. Iteration 3 classifies native_route_conductance_memory_policy as a
+NAT4 Phase 8-ready native policy candidate with no implementation and no native
+support claim. Producer-side N08 memory_strength remains artifact-only
+bookkeeping. The native candidate is limited to route geometry/conductance
+state updated by committed route-use/topology events, with all NAT4 gates
+semantically validated, explicit `src/pygrc/telemetry` namespace requirements,
+typed relaxation budget semantics, and claim flags forced false.
+Post-review tightening adds row-level native_support_opened = false, documents
+candidate-specific extension fields, records the source digest policy for
+upstream mixed digest conventions, and removes wall-clock timestamp
+nondeterminism from generated file SHAs.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_route_conductance_memory_candidate.py`.
+- Generated `outputs/n12_route_conductance_memory_candidate.json`.
+- Generated `reports/n12_route_conductance_memory_candidate.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_route_conductance_memory_candidate.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_route_conductance_memory_candidate.json d690bd0619b8742b343c596976cc15cfd9ca76acdd71be55853c32ac2aa59747
+reports/n12_route_conductance_memory_candidate.md acaa6a7cc84b2d57548e27cea8495ae042faf84246c13d238feaaf1b68992ed7
+scripts/build_n12_route_conductance_memory_candidate.py c7ac2272bdca74e82332e2e579846c442981cd66477a61102c25db794be7df4f
+```
+
 ## Iteration 4. Response Magnitude Candidate
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Evaluate N09-N11 regulation sizing source rows.
-- [ ] Record proxy measurement surface.
-- [ ] Record target band.
-- [ ] Record response gain.
-- [ ] Record max correction per window.
-- [ ] Record error trend.
-- [ ] Record saturation status.
-- [ ] Record overcorrection status.
-- [ ] Record bounded window.
-- [ ] Record out-of-envelope blocker threshold.
-- [ ] Record response packet scheduling boundary.
-- [ ] Record mutation boundary.
-- [ ] Record producer-or-policy may schedule only.
-- [ ] Record `step()` or topology event ownership of state mutation.
-- [ ] Record proxy and node-plus-packet budget surfaces.
-- [ ] Record response magnitude `non_rc_quantity_audit`.
-- [ ] Audit whether proxy measurement is a derived observable or new state.
-- [ ] Audit whether target band is exogenous or runtime-visible policy.
-- [ ] Audit whether response gain is serialized and replayable.
-- [ ] Audit whether correction debits node-plus-packet budget.
-- [ ] Audit whether response sizing requires hidden optimization or external
+- [x] Evaluate N09-N11 regulation sizing source rows.
+- [x] Record proxy measurement surface.
+- [x] Record target band.
+- [x] Record response gain.
+- [x] Record max correction per window.
+- [x] Record error trend.
+- [x] Record saturation status.
+- [x] Record overcorrection status.
+- [x] Record bounded window.
+- [x] Record out-of-envelope blocker threshold.
+- [x] Record response packet scheduling boundary.
+- [x] Record mutation boundary.
+- [x] Record producer-or-policy may schedule only.
+- [x] Record `step()` or topology event ownership of state mutation.
+- [x] Record proxy and node-plus-packet budget surfaces.
+- [x] Record response magnitude `non_rc_quantity_audit`.
+- [x] Audit whether proxy measurement is a derived observable or new state.
+- [x] Audit whether target band is exogenous or runtime-visible policy.
+- [x] Audit whether response gain is serialized and replayable.
+- [x] Audit whether correction debits node-plus-packet budget.
+- [x] Audit whether response sizing requires hidden optimization or external
       controller state.
-- [ ] Check RC causality/coherence/scheduling compatibility.
-- [ ] Define controls against goal ownership, intention, and agency relabeling.
-- [ ] Define controls against unbounded response and native support relabeling.
-- [ ] If assigning `NAT4`, require every NAT4 gate frozen in Iteration 2.
-- [ ] Assign supported NAT level for response magnitude policy.
+- [x] Check RC causality/coherence/scheduling compatibility.
+- [x] Define controls against goal ownership, intention, and agency relabeling.
+- [x] Define controls against unbounded response and native support relabeling.
+- [x] If assigning `NAT4`, require every NAT4 gate frozen in Iteration 2.
+- [x] Assign supported NAT level for response magnitude policy.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_response_magnitude_candidate.json`
-- [ ] `reports/n12_response_magnitude_candidate.md`
-- [ ] `scripts/build_n12_response_magnitude_candidate.py`
+- [x] `outputs/n12_response_magnitude_candidate.json`
+- [x] `reports/n12_response_magnitude_candidate.md`
+- [x] `scripts/build_n12_response_magnitude_candidate.py`
 
 Acceptance statement:
 
@@ -347,6 +389,49 @@ Iteration 4 passes if response magnitude policy is classified at its supported
 NAT level with source links, RC-compatible policy surfaces, serialized
 thresholds, trend/stability fields, mutation boundary, non-RC audit, controls,
 and no native support claim.
+```
+
+Acceptance state:
+
+```text
+Achieved. Iteration 4 classifies native_response_magnitude_policy as a
+bounded/envelope-gated NAT4 Phase 8-ready response magnitude policy candidate
+with no implementation and no native support claim. The candidate is limited to
+runtime-visible proxy measurement, serialized target-band and gain policy,
+bounded packet scheduling, and node-plus-packet budget debits. N09-N11 producer
+regulation remains artifact-only evidence for a policy surface and opens no
+native support claim for regulation, semantic goal ownership, intention, or
+agency.
+Trend/stability fields record bounded error elimination, no-memory saturation
+comparison, wrong-direction and fixed-return controls, and an out-of-envelope
+unbounded-perturbation blocker. All NAT4 gates are present and semantically
+validated.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_response_magnitude_candidate.py`.
+- Generated `outputs/n12_response_magnitude_candidate.json`.
+- Generated `reports/n12_response_magnitude_candidate.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_response_magnitude_candidate.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_response_magnitude_candidate.json 3748728f2fe36246f1655f53241e5719f875c8f6a68edeffea9f5f0a88a9b234
+reports/n12_response_magnitude_candidate.md ba3e0e3f4b2f6cb2919d781b6dbd93c2c88f744c0e2aefbd7d53d8c0e88d9b1f
+scripts/build_n12_response_magnitude_candidate.py ba5793fb21db95d2e2064df202602197d934fa10cbc4bfe022fbc843ac6d776e
 ```
 
 ## Iteration 5. Identity Acceptance Boundary
