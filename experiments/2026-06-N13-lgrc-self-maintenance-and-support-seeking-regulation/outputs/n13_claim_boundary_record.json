@@ -1,0 +1,387 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "checks": {
+    "all_boundary_claims_blocked": true,
+    "all_unsafe_claim_flags_false": true,
+    "bounded_response_not_intention_recorded": true,
+    "control_source_passed": true,
+    "final_ap3_not_frozen_until_iteration8": true,
+    "fully_native_integration_blocked": true,
+    "interpretation_record_present": true,
+    "inventory_source_passed": true,
+    "n12_closeout_source_passed": true,
+    "n13_not_agency_recorded": true,
+    "native_support_not_opened": true,
+    "native_support_without_phase8_blocked": true,
+    "phase8_not_opened": true,
+    "regulation_source_passed": true,
+    "schema_source_passed": true,
+    "self_maintenance_candidate_not_selfhood_recorded": true,
+    "self_maintenance_not_supported_yet": true,
+    "src_diff_empty": true,
+    "stress_clean_candidate_carried_forward": true,
+    "stress_source_passed": true,
+    "support_survival_not_identity_acceptance_recorded": true,
+    "support_target_not_semantic_goal_ownership_recorded": true,
+    "target_source_passed": true
+  },
+  "claim_boundary_record": {
+    "ap_state_after_claim_boundary": {
+      "candidate_ap_level": "AP3",
+      "claim_boundary_record_passed": true,
+      "final_ap3_supported": false,
+      "final_ap_freeze_pending_iteration8": true,
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "provisional_ap_level": "AP3_candidate_boundary_clean_pending_closeout",
+      "self_maintenance_candidate_supported": false,
+      "stress_matrix_passed": true
+    },
+    "boundary_rows": [
+      {
+        "blocked_claim": "identity_acceptance",
+        "boundary_reason": "Support survival and restoration are source-current support state observations; they do not define a runtime acceptance event or identity acceptance validator.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "n13_i5_interpretation_external_proxy_controls_v1",
+          "n13_i6_interpretation_stress_matrix_v1",
+          "n12_native_identity_acceptance_validator_nat2_blocker"
+        ],
+        "positive_evidence_retained": [
+          "N07 support survival/disruption/restoration lanes",
+          "N13 source-current support target",
+          "N13 stress-clean support-seeking regulation candidate"
+        ],
+        "required_future_gate": [
+          "formal_identity_acceptance_semantics",
+          "runtime_acceptance_event_schema",
+          "native_identity_acceptance_validator"
+        ],
+        "row_id": "n13_i7_boundary_01_support_survival_not_identity_acceptance"
+      },
+      {
+        "blocked_claim": "semantic_goal_ownership",
+        "boundary_reason": "The support target is a threshold condition over recorded support state, not a semantic goal owned or understood by an agent.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "semantic_goal_ownership_relabel_control",
+          "n13_i5_interpretation_external_proxy_controls_v1"
+        ],
+        "positive_evidence_retained": [
+          "support_retention_above_threshold_source_current target",
+          "support_retention_threshold_deficit error signal"
+        ],
+        "required_future_gate": [
+          "formal_semantic_goal_ownership_semantics",
+          "runtime_goal_ownership_event_schema",
+          "negative_controls_for_goal_ownership_relabeling"
+        ],
+        "row_id": "n13_i7_boundary_02_support_target_not_semantic_goal_ownership"
+      },
+      {
+        "blocked_claim": "intention",
+        "boundary_reason": "Bounded response is serialized packet scheduling against a source-current error; it is not intention, choice semantics, or goal ownership.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "agency_relabel_control",
+          "n13_i6_interpretation_stress_matrix_v1"
+        ],
+        "positive_evidence_retained": [
+          "bounded response magnitude surface",
+          "budgeted response packet schedule for support deficit"
+        ],
+        "required_future_gate": [
+          "formal_intention_semantics",
+          "choice_or_intention_event_schema",
+          "negative_controls_for_intention_relabeling"
+        ],
+        "row_id": "n13_i7_boundary_03_bounded_response_not_intention"
+      },
+      {
+        "blocked_claim": "selfhood",
+        "boundary_reason": "A self-maintenance candidate is an agency-prerequisite support regulation pattern; it does not establish selfhood, self-model, personhood, or biological behavior.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "n13_i6_interpretation_stress_matrix_v1"
+        ],
+        "positive_evidence_retained": [
+          "artifact-level AP3 stress-clean support-seeking regulation candidate",
+          "support-disruption/restoration stress matrix passed"
+        ],
+        "required_future_gate": [
+          "selfhood_theory_not_in_n13_scope",
+          "personhood_and_biological_behavior_out_of_scope"
+        ],
+        "row_id": "n13_i7_boundary_04_self_maintenance_candidate_not_selfhood"
+      },
+      {
+        "blocked_claim": "agency",
+        "boundary_reason": "N13 is an agency-prerequisite experiment. It does not include consequence-sensitive route selection, endogenous proxy formation, self/environment boundary, closed action-perception loop, long-horizon closure, or agency semantics.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "agency_relabel_control",
+          "n13_i5_interpretation_external_proxy_controls_v1",
+          "n13_i6_interpretation_stress_matrix_v1"
+        ],
+        "positive_evidence_retained": [
+          "control-clean support-seeking regulation candidate",
+          "stress-clean source-current support response"
+        ],
+        "required_future_gate": [
+          "N14_consequence_sensitive_route_selection",
+          "N15_endogenous_proxy_formation",
+          "N16_self_environment_boundary",
+          "N17_closed_action_perception_loop",
+          "N18_long_horizon_agentic_like_closure"
+        ],
+        "row_id": "n13_i7_boundary_05_n13_not_agency"
+      },
+      {
+        "blocked_claim": "native_support_without_phase8",
+        "boundary_reason": "N13 consumes N12 readiness records and artifact-level response scheduling. It does not implement Phase 8 and does not add native support in src/.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "native_support_without_phase8_control",
+          "n12_phase8_ready_but_not_implemented_boundary"
+        ],
+        "positive_evidence_retained": [
+          "N12 NAT4 response magnitude readiness input",
+          "artifact-level bounded support response schedule"
+        ],
+        "required_future_gate": [
+          "Phase_8_native_implementation_explicitly_opened",
+          "native_response_magnitude_policy_implemented_and_validated",
+          "telemetry_under_src_pygrc_telemetry_when_phase8_opens"
+        ],
+        "row_id": "n13_i7_boundary_06_artifact_candidate_not_native_support"
+      },
+      {
+        "blocked_claim": "fully_native_agentic_like_integration",
+        "boundary_reason": "Fully native agentic-like integration requires a native integration meta-policy and component native policy records. N13 remains artifact-level.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "n12_native_agentic_like_integration_policy_nat2_blocker",
+          "n12_final_nat_level_native_agentic_like_integration_policy=NAT2"
+        ],
+        "positive_evidence_retained": [
+          "N11 artifact-only GALI7 handoff",
+          "N12 native agentic-like integration policy remains NAT2",
+          "N13 artifact-level support-seeking regulation candidate"
+        ],
+        "required_future_gate": [
+          "native_route_conductance_memory_policy_implemented",
+          "native_response_magnitude_policy_implemented",
+          "native_agentic_like_integration_meta_policy_formalized",
+          "component_native_policy_composition_replay"
+        ],
+        "row_id": "n13_i7_boundary_07_not_fully_native_integration"
+      },
+      {
+        "blocked_claim": "personhood_or_biological_behavior",
+        "boundary_reason": "No N13 artifact concerns personhood, subjective status, or biological behavior. Those claims are outside the experiment.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "control_sources": [
+          "n13_i6_interpretation_stress_matrix_v1"
+        ],
+        "positive_evidence_retained": [
+          "artifact-level support-seeking regulation candidate"
+        ],
+        "required_future_gate": [
+          "not_part_of_lgrc_experiment_scope"
+        ],
+        "row_id": "n13_i7_boundary_08_not_personhood_or_biological_behavior"
+      }
+    ],
+    "boundary_summary": {
+      "agency_blocked": true,
+      "all_boundary_claims_blocked": true,
+      "boundary_row_count": 8,
+      "fully_native_integration_blocked": true,
+      "identity_acceptance_blocked": true,
+      "intention_blocked": true,
+      "native_support_without_phase8_blocked": true,
+      "personhood_and_biological_behavior_blocked": true,
+      "selfhood_blocked": true,
+      "semantic_goal_ownership_blocked": true
+    },
+    "candidate_output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+    "candidate_source": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+    "claim_flags_forced_false": {
+      "agency_claim_allowed": false,
+      "biological_behavior_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "native_support_opened": false,
+      "personhood_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "record_name": "n13_identity_goal_ownership_agency_boundary_record",
+    "remaining_theory_sensitive_blockers": [
+      "formal_identity_acceptance_semantics_missing",
+      "semantic_goal_ownership_semantics_missing",
+      "intention_semantics_missing",
+      "agency_semantics_not_part_of_n13",
+      "selfhood_personhood_biological_behavior_out_of_scope",
+      "native_support_requires_explicit_phase8_implementation",
+      "fully_native_agentic_like_integration_requires_native_meta_policy"
+    ]
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/scripts/build_n13_claim_boundary_record.py",
+  "experiment": "N13",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "95559c5165e4d4b0a35956499256cd306a52960f",
+    "src_status_short": ""
+  },
+  "interpretation_record": {
+    "ap_state_after_claim_boundary": {
+      "candidate_ap_level": "AP3",
+      "claim_boundary_record_passed": true,
+      "final_ap3_supported": false,
+      "final_ap_freeze_pending_iteration8": true,
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "provisional_ap_level": "AP3_candidate_boundary_clean_pending_closeout",
+      "self_maintenance_candidate_supported": false,
+      "stress_matrix_passed": true
+    },
+    "plain_language_meaning": "Iteration 7 makes the N13 stress-clean AP3 candidate claim-clean: the positive result may be interpreted as artifact-level support-seeking regulation, but not as identity acceptance, semantic goal ownership, intention, agency, selfhood, native support, or fully native integration.",
+    "record_id": "n13_i7_interpretation_claim_boundary_v1",
+    "record_type": "n13_iteration_7_claim_boundary_interpretation",
+    "remaining_required_work": [
+      "n13_closeout_handoff_iteration_8"
+    ],
+    "supported_interpretation": "Artifact-level AP3 boundary-clean support-seeking regulation candidate, pending Iteration 8 closeout and supported AP freeze.",
+    "unsupported_interpretations": [
+      "identity_acceptance",
+      "semantic_goal_ownership",
+      "intention",
+      "selfhood",
+      "agency",
+      "native_support_without_phase8",
+      "fully_native_agentic_like_integration",
+      "personhood_or_biological_behavior"
+    ]
+  },
+  "iteration": 7,
+  "iteration_result": {
+    "candidate_ap_level": "AP3",
+    "claim_boundary_record_passed": true,
+    "final_ap3_supported": false,
+    "final_ap_freeze_pending_iteration8": true,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP3_candidate_boundary_clean_pending_closeout",
+    "self_maintenance_candidate_supported": false
+  },
+  "output_digest": "5a4aae36a54f566533270028ae62943490f75ef0fd210d821ab234193a8983db",
+  "purpose": "claim_boundary_record",
+  "schema": "n13_claim_boundary_record_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json": {
+      "output_digest": "e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json",
+      "sha256": "fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": {
+      "output_digest": "4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json",
+      "sha256": "40b50b7df537c908af28d0dbb352bf154dea3e023979928aa89fe8f3444a028d",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_condition_inventory.json": {
+      "output_digest": "4c8cd0a1ea074d27ff1a7cd5cdd176b789ef57da808223c1fa08750355732e23",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_condition_inventory.json",
+      "sha256": "d5aa30e8257769729ada1ecd4c7adf59342ae41b2d2b68b3ff06ce83105849d2",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json": {
+      "output_digest": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+      "sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json": {
+      "output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+      "sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json": {
+      "output_digest": "7691834eb654dc15ee8aabf8ce732a10a72c375d95f3fa97290a8b6cf6984a4f",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json",
+      "sha256": "55d9105ca829d5ca23467906390ddeebdd35b72a09dfa688ae01ff1804bd8e6f",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json": {
+      "output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md",
+      "sha256": "f9ff0af85e98a586d9a48568ca4148bc6e8a38f16d7cba64d1b84abfe26580c4"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_external_proxy_control_matrix.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_external_proxy_control_matrix.md",
+      "sha256": "d3d97e379004ed49de812c6d516e20ed99bcfa2c0203ce896017e899faaf382a"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_condition_inventory.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_condition_inventory.md",
+      "sha256": "575c7e518f1af9c8b485f63ecbf9b962072ff49ebe54d6c17780ec90fd130435"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md",
+      "sha256": "ff494f48a5d29cc6ef4a72acace91108c02e976cee31c186dff604009767ccbd"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+      "sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_schema_v1.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_schema_v1.md",
+      "sha256": "123d58e36e57a4e760ad5b13d59682ba237b3cf18ba74e15a4e4984535e26a73"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+      "sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449"
+    }
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP3"
+}

@@ -1,0 +1,776 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "blocked_inputs": [
+    "identity acceptance",
+    "runtime identity acceptance",
+    "semantic goal ownership",
+    "agency",
+    "fully native agentic-like integration"
+  ],
+  "checks": {
+    "boundary_rows_present": true,
+    "claim_flags_all_false": true,
+    "every_row_has_source_report_sha256": true,
+    "every_row_has_source_sha256": true,
+    "every_row_has_support_state_fields": true,
+    "external_proxy_rows_present": true,
+    "identity_acceptance_not_consumed": true,
+    "n10_support_matrix_present": true,
+    "n12_handoff_boundary_present": true,
+    "native_support_not_opened": true,
+    "no_ap3_claimed_in_iteration_1": true,
+    "phase8_not_opened": true,
+    "source_artifacts_all_present": true,
+    "source_reports_all_present": true,
+    "src_diff_empty": true,
+    "support_condition_rows_present": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/scripts/build_n13_support_condition_inventory.py",
+  "experiment": "N13",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "4eeda709fd10c002726b33e53c4fbb7293e71a7a",
+    "src_status_short": ""
+  },
+  "inventory_summary": {
+    "boundary_rows": [
+      "n13_i1_row_05_n11_gali7_artifact_envelope",
+      "n13_i1_row_07_n12_closeout_boundary"
+    ],
+    "external_proxy_rows": [
+      "n13_i1_row_02_n09_bounded_external_proxy_regulation"
+    ],
+    "phase8_ready_contract_inputs": [
+      "native_route_conductance_memory_policy",
+      "native_response_magnitude_policy"
+    ],
+    "provisional_ap_counts": {
+      "AP0": 2,
+      "AP1": 2,
+      "AP2": 3,
+      "AP3": 0
+    },
+    "row_count": 7,
+    "support_condition_rows": [
+      "n13_i1_row_01_n07_support_withdrawal_baseline",
+      "n13_i1_row_03_n10_support_sensitive_matrix",
+      "n13_i1_row_04_n10_final_handoff"
+    ],
+    "theory_sensitive_blockers": [
+      "native_identity_acceptance_validator",
+      "native_agentic_like_integration_policy"
+    ]
+  },
+  "iteration": 1,
+  "iteration_ceiling": "AP2_inventory_only",
+  "n13_inventory_rows": [
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "lane_digest",
+        "n09_withdrawal_digest",
+        "n10_consumption_role"
+      ],
+      "budget_surfaces": [
+        "final_budget_error"
+      ],
+      "claim_ceiling": "support_condition_inventory_only",
+      "control_requirements": [
+        "support_survival_relabel_as_identity_acceptance_blocked",
+        "hidden_restoration_blocked",
+        "budget_exact_required",
+        "source_current_replay_required"
+      ],
+      "external_proxy_fields": [],
+      "mechanism_name": "n07_support_survival_disruption_restoration_baseline",
+      "mechanism_role": "support_state_baseline",
+      "missing_gates": [
+        "n13_support_schema_not_frozen",
+        "support_derived_target_not_evaluated",
+        "support_seeking_regulation_not_evaluated",
+        "external_proxy_controls_not_run"
+      ],
+      "producer_decision_fields": [
+        "withdrawal_depth",
+        "restoration_fraction"
+      ],
+      "provisional_ap_level": "AP2",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [],
+      "row_id": "n13_i1_row_01_n07_support_withdrawal_baseline",
+      "runtime_visible_surfaces": [
+        "final_A_support_retention",
+        "support_survival_threshold",
+        "support_survival_passed",
+        "withdrawal_depth",
+        "restoration_fraction"
+      ],
+      "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "source_experiment": "N07",
+      "source_iteration": 13,
+      "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "source_report_sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc",
+      "source_sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "support_condition_name": "support_retention_above_threshold",
+      "support_state_fields": {
+        "lanes": [
+          {
+            "final_A_support_retention": 0.9731535762447039,
+            "identity_support_outcome_tag": "support_intact_bounded_exchange_reference",
+            "lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+            "lane_id": "support_intact_reference",
+            "restoration_fraction": 0.0,
+            "support_survival_passed": true,
+            "support_survival_threshold": 0.85,
+            "withdrawal_depth": 0.0
+          },
+          {
+            "final_A_support_retention": 0.8758382186202335,
+            "identity_support_outcome_tag": "support_withdrawal_survival_baseline",
+            "lane_digest": "d5fae1cee95b0650287173c3e0456f1df42464771336b4e6e02cfb4e095bff69",
+            "lane_id": "mild_support_weakening",
+            "restoration_fraction": 0.0,
+            "support_survival_passed": true,
+            "support_survival_threshold": 0.85,
+            "withdrawal_depth": 0.1
+          },
+          {
+            "final_A_support_retention": 0.7298651821835279,
+            "identity_support_outcome_tag": "support_disrupted_by_withdrawal_without_restoration",
+            "lane_digest": "987651daaf122f47d3e26d3fd9d7611ceebb3149879b0326e6ca2775a18e4387",
+            "lane_id": "n09_matched_partial_support_withdrawal",
+            "restoration_fraction": 0.0,
+            "support_survival_passed": false,
+            "support_survival_threshold": 0.85,
+            "withdrawal_depth": 0.25
+          },
+          {
+            "final_A_support_retention": 0.9244958974324687,
+            "identity_support_outcome_tag": "explicit_restoration_recovers_support_survival_baseline",
+            "lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+            "lane_id": "restored_after_n09_partial_withdrawal",
+            "restoration_fraction": 0.8,
+            "support_survival_passed": true,
+            "support_survival_threshold": 0.85,
+            "withdrawal_depth": 0.25
+          }
+        ],
+        "source_c3_class": "bounded_non_destructive_exchange",
+        "source_n07_ceiling": "ID6",
+        "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "support_area_id": "n07_support_area_A_v1"
+      },
+      "target_derivation": "candidate source rule: final_A_support_retention >= support_survival_threshold"
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "proxy_surface_digest_chain",
+        "repeated_regulation_response_digests",
+        "source_candidate_set_digest"
+      ],
+      "budget_surfaces": [
+        "node_plus_packet_budget_error"
+      ],
+      "claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+      "control_requirements": [
+        "external_proxy_relabel_blocked",
+        "semantic_goal_ownership_relabel_blocked",
+        "agency_relabel_blocked",
+        "budget_ambiguity_blocked"
+      ],
+      "external_proxy_fields": {
+        "error_policy_digest": "61c34d66e9416772b40a8db54dff3cf7a34f5a6ece4a18428a590f8d9594b706",
+        "proxy_surface_digest": "e16abbd31147af9312ff37e4de308c6199ed385a3bbe9d8e441ed275fa82f7af",
+        "regulation_policy_digest": "896133e8af4cdbb6cabb1436d9cb6f41a2ad1ad300f0ceca79f460d392358d40",
+        "regulation_response_digest": "7f33759d102c3eee102f4b32bb515b9d0cf8eecb40cd22057de7c475dcde9d34"
+      },
+      "mechanism_name": "n09_bounded_goal_proxy_regulation",
+      "mechanism_role": "external_proxy_regulation_baseline",
+      "missing_gates": [
+        "support_condition_not_derived_from_source_current_support_state",
+        "identity_support_baseline_missing_in_original_n09_closeout",
+        "external_proxy_control_required"
+      ],
+      "producer_decision_fields": [
+        "goal_proxy_target_band",
+        "response_thresholds",
+        "producer_authorized_policy"
+      ],
+      "provisional_ap_level": "AP1",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [
+        "gpr5_cycle_count",
+        "bounded_repeated_regulation",
+        "perturbation_recovered_to_band"
+      ],
+      "row_id": "n13_i1_row_02_n09_bounded_external_proxy_regulation",
+      "runtime_visible_surfaces": [
+        "proxy_measurement",
+        "proxy_error",
+        "bounded_response",
+        "perturbation_recovery_to_band"
+      ],
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_experiment": "N09",
+      "source_iteration": 9,
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "source_report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "support_condition_name": "none_external_proxy_only",
+      "support_state_fields": {
+        "identity_support_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "identity_support_outcome_tag": "identity_support_withdrawal_baseline_missing",
+        "primary_blocker": "n07_identity_withdrawal_baseline_not_available",
+        "support_baseline_available": false
+      },
+      "target_derivation": "external proxy target declared by N09 fixtures"
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "matrix_row_digest",
+        "source_row_digest",
+        "hypothesis_b_closeout_digest"
+      ],
+      "budget_surfaces": [
+        "budget_error_zero"
+      ],
+      "claim_ceiling": "bounded_artifact_only_support_sensitive_full_composition",
+      "control_requirements": [
+        "disrupted_support_blocks",
+        "explicit_restoration_required",
+        "artifact_only_replay",
+        "claim_promotion_blocked"
+      ],
+      "external_proxy_fields": [
+        "N09 bounded proxy regulation consumed as source artifact"
+      ],
+      "mechanism_name": "n10_support_sensitive_full_composition_matrix",
+      "mechanism_role": "support_sensitive_integration_baseline",
+      "missing_gates": [
+        "n13_support_derived_target_not_isolated",
+        "external_proxy_and_hidden_target_controls_not_run",
+        "support_seeking_response_not_evaluated"
+      ],
+      "producer_decision_fields": [
+        "support-state matrix row selection",
+        "integration allowance by support state"
+      ],
+      "provisional_ap_level": "AP2",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [
+        "composition_preserved",
+        "composition_blocked_or_downgraded",
+        "composition_restoration_gated_resume"
+      ],
+      "row_id": "n13_i1_row_03_n10_support_sensitive_matrix",
+      "runtime_visible_surfaces": [
+        "support_state_tag",
+        "integration_allowed",
+        "integration_outcome_tag",
+        "primary_blocker"
+      ],
+      "source_artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json",
+      "source_experiment": "N10",
+      "source_iteration": 12,
+      "source_report": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md",
+      "source_report_sha256": "78de216677b04cc9cf7dee2de8859b6f8d63f63f98f5207bf81598261beaaa33",
+      "source_sha256": "bbeeeca3f094ce5771304f174d1866ab34708719d3f0a86c2671f0022d9b17c1",
+      "support_condition_name": "support_state_valid_for_composition",
+      "support_state_fields": {
+        "matrix_states": [
+          "support_intact_survives",
+          "mild_withdrawal_survives",
+          "n09_matched_withdrawal_disrupts_support",
+          "explicit_restoration_recovers_support"
+        ],
+        "support_sensitive_rule": "intact, mild-withdrawal, and explicit-restoration support states may preserve or resume bounded composition; disrupted support must block or downgrade the full composition unless explicit restoration is present",
+        "support_state_matrix": [
+          {
+            "accepted_integration_level": "A5",
+            "accepted_n10_category_level": "ALI5",
+            "artifact_only": true,
+            "budget_error_zero": true,
+            "claim_flags_false": true,
+            "expected_outcome": "composition_preserved",
+            "integration_allowed": true,
+            "integration_outcome_tag": "bounded_artifact_only_agentic_like_integration_candidate",
+            "matrix_row_digest": "b2a0a61cfa78c3a8d1ca7c7a42258605aa9756a2918afb6f1232ca881b291c2e",
+            "matrix_state": "support_intact_survives",
+            "outcome_matches_expectation": true,
+            "row_digest_valid": true,
+            "runtime_state_used": false,
+            "source_iteration": 8,
+            "source_row_digest": "8ad9934bc4cef846dfbc510661dc70f1bef1fa34b354a8c7087a70d25722559e",
+            "support_state_tag": "support_intact_survives"
+          },
+          {
+            "accepted_integration_level": "A5",
+            "accepted_n10_category_level": "ALI5",
+            "artifact_only": true,
+            "budget_error_zero": true,
+            "claim_flags_false": true,
+            "expected_outcome": "composition_preserved_under_bounded_companion_scope",
+            "integration_allowed": true,
+            "integration_outcome_tag": "route_memory_regulation_composition_candidate",
+            "matrix_row_digest": "3d386c98bc1f66d4250b7af0c761d39ffe8e99a5df90f1c1deb598c97d31ca38",
+            "matrix_state": "mild_withdrawal_survives",
+            "outcome_matches_expectation": true,
+            "row_digest_valid": true,
+            "runtime_state_used": false,
+            "source_iteration": 8,
+            "source_row_digest": "d56e47861c728bcd694e4601bb9fde17919373a7374306e1995acc33931f6bf3",
+            "support_state_tag": "mild_withdrawal_survives"
+          },
+          {
+            "accepted_integration_level": null,
+            "accepted_n10_category_level": null,
+            "artifact_only": true,
+            "attempted_integration_level": "A6",
+            "attempted_n10_category_level": "ALI6",
+            "budget_error_zero": true,
+            "claim_flags_false": true,
+            "expected_outcome": "composition_blocked_or_downgraded",
+            "integration_allowed": false,
+            "matrix_row_digest": "56f4e1c524bc4bd6ea2712963e6476e15686c639861e56677feca3e7534ccafe",
+            "matrix_state": "n09_matched_withdrawal_disrupts_support",
+            "outcome_matches_expectation": true,
+            "primary_blocker": "support_disrupted_but_integration_allowed",
+            "row_digest_valid": true,
+            "runtime_state_used": false,
+            "source_iteration": 10,
+            "source_row_digest": "22b6166b43401ea2ceab6577f6ad6748771663995a8163ac803b55716836ebec",
+            "support_state_tag": "n09_matched_withdrawal_disrupts_support"
+          },
+          {
+            "accepted_integration_level": "A6",
+            "accepted_n10_category_level": "ALI6",
+            "artifact_only": true,
+            "budget_error_zero": true,
+            "claim_flags_false": true,
+            "expected_outcome": "composition_restoration_gated_resume",
+            "integration_allowed": true,
+            "integration_outcome_tag": "restoration_gated_integration_candidate",
+            "matrix_row_digest": "fa7dd2ba177e34efca3558a0504743c1ade39046aedfec80deee83eea202c56a",
+            "matrix_state": "explicit_restoration_recovers_support",
+            "outcome_matches_expectation": true,
+            "prior_disruption_history_preserved": true,
+            "row_digest_valid": true,
+            "runtime_state_used": false,
+            "source_iteration": 11,
+            "source_row_digest": "34986a49e5be51dbd83fb90c8587de37000255ab1f74c91c23ccc41bff97c1cc",
+            "support_state_tag": "explicit_restoration_recovers_support"
+          }
+        ]
+      },
+      "target_derivation": "support-sensitive rule from N10 matrix: intact, mild, and explicit-restoration states may compose; disrupted support blocks or downgrades"
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "n11_consumption_handoff",
+        "phase8_native_absorption_handoff"
+      ],
+      "budget_surfaces": [
+        "cross-cutting budget and replay contract"
+      ],
+      "claim_ceiling": "bounded_artifact_only_agentic_like_integration_candidate",
+      "control_requirements": [
+        "artifact_only_replay",
+        "native_support_relabel_blocked",
+        "agency_relabel_blocked"
+      ],
+      "external_proxy_fields": [
+        "N09 goal-proxy regulation remains producer/artifact mediated"
+      ],
+      "mechanism_name": "n10_bounded_artifact_only_support_sensitive_handoff",
+      "mechanism_role": "bounded_artifact_only_integration_handoff",
+      "missing_gates": [
+        "n13_schema_not_frozen",
+        "support_derived_target_not_evaluated",
+        "native_support_not_opened"
+      ],
+      "producer_decision_fields": [
+        "N10 artifact-only integration handoff",
+        "native contract handoff ordering"
+      ],
+      "provisional_ap_level": "AP2",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [
+        "bounded artifact-only composition"
+      ],
+      "row_id": "n13_i1_row_04_n10_final_handoff",
+      "runtime_visible_surfaces": [
+        "support-sensitive integration supported",
+        "native support flags false"
+      ],
+      "source_artifact": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+      "source_experiment": "N10",
+      "source_iteration": 15,
+      "source_report": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md",
+      "source_report_sha256": "4603752309ace1a77d5ee6c4f486b8ac0ff723d185742617a43a086254524a61",
+      "source_sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+      "support_condition_name": "support_sensitive_integration_handoff",
+      "support_state_fields": {
+        "bounded_artifact_only_agentic_like_integration_supported": true,
+        "support_sensitive_integration_supported": true
+      },
+      "target_derivation": "handoff record only; no N13 target derived yet"
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "output_digest",
+        "source_artifacts"
+      ],
+      "budget_surfaces": [
+        "artifact replay budget gates"
+      ],
+      "claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+      "control_requirements": [
+        "artifact_only_replay_not_native_support",
+        "agentic_like_integration_not_agency"
+      ],
+      "external_proxy_fields": [],
+      "mechanism_name": "n11_gali7_artifact_only_generalization_envelope",
+      "mechanism_role": "generalization_envelope",
+      "missing_gates": [
+        "support_condition_not_defined",
+        "support_seeking_regulation_not_evaluated"
+      ],
+      "producer_decision_fields": [
+        "artifact-only GALI7 closeout"
+      ],
+      "provisional_ap_level": "AP0",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [
+        "generalization envelope only"
+      ],
+      "row_id": "n13_i1_row_05_n11_gali7_artifact_envelope",
+      "runtime_visible_surfaces": [
+        "artifact replay envelope"
+      ],
+      "source_artifact": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+      "source_experiment": "N11",
+      "source_iteration": 12,
+      "source_report": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md",
+      "source_report_sha256": "59b4623a7e46506e6dd33d88c42dfb40614f019b8841842c08f280e4681e8cbd",
+      "source_sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+      "support_condition_name": "none_generalization_envelope_only",
+      "support_state_fields": {
+        "artifact_only": true,
+        "final_claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+        "final_supported_gali_ceiling": "GALI7",
+        "fully_native": false
+      },
+      "target_derivation": "no support target; envelope source boundary"
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "controls_summary",
+        "telemetry_summary",
+        "test_gate_summary"
+      ],
+      "budget_surfaces": [
+        "route conductance memory budget surface",
+        "node-plus-packet response budget surface"
+      ],
+      "claim_ceiling": "phase8_ready_contract_input_only",
+      "control_requirements": [
+        "phase8_readiness_not_phase8_implementation",
+        "native_support_relabel_blocked",
+        "intention_relabel_blocked",
+        "goal_ownership_relabel_blocked"
+      ],
+      "external_proxy_fields": [
+        "response magnitude is bounded/envelope-gated, not goal ownership"
+      ],
+      "mechanism_name": "n12_route_memory_and_response_magnitude_readiness_inputs",
+      "mechanism_role": "phase8_ready_input_records",
+      "missing_gates": [
+        "phase8_not_opened",
+        "support_condition_not_derived",
+        "support_seeking_controls_not_run"
+      ],
+      "producer_decision_fields": [
+        "N12 readiness matrix contract selection",
+        "default-off native policy planning"
+      ],
+      "provisional_ap_level": "AP1",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [
+        "bounded response magnitude policy readiness"
+      ],
+      "row_id": "n13_i1_row_06_n12_phase8_readiness_inputs",
+      "runtime_visible_surfaces": [
+        "route conductance memory contract",
+        "response magnitude policy contract"
+      ],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "source_experiment": "N12",
+      "source_iteration": 7,
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "source_report_sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5",
+      "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "support_condition_name": "none_phase8_readiness_input_only",
+      "support_state_fields": {
+        "deferred_blockers": [
+          "native_identity_acceptance_validator",
+          "native_agentic_like_integration_policy"
+        ],
+        "phase8_ready_contracts": [
+          "native_route_conductance_memory_policy",
+          "native_response_magnitude_policy"
+        ]
+      },
+      "target_derivation": "N12 readiness input only; no N13 support target derived yet"
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_goal_ownership",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bookkeeping_fields": [
+        "final_claim_boundary",
+        "checks"
+      ],
+      "budget_surfaces": [
+        "no implementation checks"
+      ],
+      "claim_ceiling": "handoff_boundary_only",
+      "control_requirements": [
+        "identity_acceptance_input_blocked",
+        "agency_input_blocked",
+        "fully_native_integration_input_blocked"
+      ],
+      "external_proxy_fields": [],
+      "mechanism_name": "n12_closeout_n13_boundary",
+      "mechanism_role": "handoff_and_claim_boundary",
+      "missing_gates": [
+        "n13_inventory_not_closed",
+        "support_derived_target_not_evaluated"
+      ],
+      "producer_decision_fields": [
+        "N13 starts support-seeking, not identity-seeking"
+      ],
+      "provisional_ap_level": "AP0",
+      "provisional_self_maintenance_candidate": false,
+      "response_surfaces": [],
+      "row_id": "n13_i1_row_07_n12_closeout_boundary",
+      "runtime_visible_surfaces": [
+        "handoff boundary"
+      ],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json",
+      "source_experiment": "N12",
+      "source_iteration": 8,
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md",
+      "source_report_sha256": "f9ff0af85e98a586d9a48568ca4148bc6e8a38f16d7cba64d1b84abfe26580c4",
+      "source_sha256": "fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e",
+      "support_condition_name": "n13_handoff_boundary",
+      "support_state_fields": {
+        "final_nat_levels": {
+          "native_agentic_like_integration_policy": "NAT2",
+          "native_identity_acceptance_validator": "NAT2",
+          "native_response_magnitude_policy": "NAT4",
+          "native_route_conductance_memory_policy": "NAT4",
+          "route_context_and_native_route_arbitration_boundary": "NAT2"
+        },
+        "n13_allowed_inputs": [
+          "N07 support survival/disruption/restoration evidence",
+          "N09 bounded proxy regulation evidence",
+          "N10 support-sensitive integration matrix",
+          "N11 artifact-only GALI7 generalization envelope",
+          "N12 Phase 8 readiness matrix and blocker boundaries"
+        ],
+        "n13_blocked_inputs": [
+          "identity acceptance",
+          "runtime identity acceptance",
+          "semantic goal ownership",
+          "agency",
+          "fully native agentic-like integration"
+        ]
+      },
+      "target_derivation": "N13 may consume support-survival evidence but not identity acceptance"
+    }
+  ],
+  "output_digest": "4c8cd0a1ea074d27ff1a7cd5cdd176b789ef57da808223c1fa08750355732e23",
+  "purpose": "support_condition_inventory",
+  "schema": "n13_support_condition_inventory_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "status": "passed"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": "passed"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json": {
+      "output_digest": "9d85c7dc9d77a969680a2ed0b67283f4411cf3dca715aa27191529ceeb59aa18",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json",
+      "sha256": "bbeeeca3f094ce5771304f174d1866ab34708719d3f0a86c2671f0022d9b17c1",
+      "status": "passed"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json": {
+      "output_digest": "661e495be891f404854ec8d0a391c4f0f2883fbc5b2aba8d89ce598d37d3be0f",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_15_hypothesis_c_closeout_and_handoff.json",
+      "sha256": "80e8230eee1cc608866276401f5c6e28c5450af2bfa6f7529d43fac4bb832167",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json": {
+      "output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+      "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json": {
+      "output_digest": "e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json",
+      "sha256": "fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": {
+      "output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md",
+      "sha256": "78de216677b04cc9cf7dee2de8859b6f8d63f63f98f5207bf81598261beaaa33"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_15_hypothesis_c_closeout_and_handoff.md",
+      "sha256": "4603752309ace1a77d5ee6c4f486b8ac0ff723d185742617a43a086254524a61"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md": {
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md",
+      "sha256": "59b4623a7e46506e6dd33d88c42dfb40614f019b8841842c08f280e4681e8cbd"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md",
+      "sha256": "f9ff0af85e98a586d9a48568ca4148bc6e8a38f16d7cba64d1b84abfe26580c4"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5"
+    }
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP3"
+}

@@ -1,0 +1,314 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "checks": {
+    "claim_flags_all_false": true,
+    "explicit_restoration_case_present": true,
+    "final_ap3_not_assigned": true,
+    "inventory_source_passed": true,
+    "n07_support_row_present": true,
+    "n09_external_proxy_row_present": true,
+    "n10_disrupted_support_blocks": true,
+    "n10_explicit_restoration_resumes": true,
+    "n10_support_matrix_row_present": true,
+    "provisional_ap_level_ap2": true,
+    "schema_source_passed": true,
+    "self_maintenance_not_supported_yet": true,
+    "source_current_lane_digests_present": true,
+    "src_diff_empty": true,
+    "support_valid_and_disrupted_cases_present": true,
+    "target_derivation_not_external_proxy_label": true,
+    "target_derivation_not_post_hoc_label": true,
+    "target_rule_matches_all_lanes": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/scripts/build_n13_support_derived_target_candidate.py",
+  "experiment": "N13",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "823d8adf8ffb4a93dccb36f60f5056141957c1ce",
+    "src_status_short": ""
+  },
+  "iteration": 3,
+  "iteration_result": {
+    "final_ap3_supported": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP2",
+    "self_maintenance_candidate_supported": false,
+    "support_derived_target_candidate": true
+  },
+  "output_digest": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+  "purpose": "support_derived_target_candidate",
+  "schema": "n13_support_derived_target_candidate_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "status": null
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": null
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json",
+      "sha256": "bbeeeca3f094ce5771304f174d1866ab34708719d3f0a86c2671f0022d9b17c1",
+      "status": null
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_condition_inventory.json": {
+      "output_digest": "4c8cd0a1ea074d27ff1a7cd5cdd176b789ef57da808223c1fa08750355732e23",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_condition_inventory.json",
+      "sha256": "d5aa30e8257769729ada1ecd4c7adf59342ae41b2d2b68b3ff06ce83105849d2",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json": {
+      "output_digest": "7691834eb654dc15ee8aabf8ce732a10a72c375d95f3fa97290a8b6cf6984a4f",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json",
+      "sha256": "55d9105ca829d5ca23467906390ddeebdd35b72a09dfa688ae01ff1804bd8e6f",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md",
+      "sha256": "78de216677b04cc9cf7dee2de8859b6f8d63f63f98f5207bf81598261beaaa33"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_condition_inventory.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_condition_inventory.md",
+      "sha256": "575c7e518f1af9c8b485f63ecbf9b962072ff49ebe54d6c17780ec90fd130435"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_schema_v1.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_schema_v1.md",
+      "sha256": "123d58e36e57a4e760ad5b13d59682ba237b3cf18ba74e15a4e4984535e26a73"
+    }
+  },
+  "status": "passed",
+  "support_derived_target_candidate": {
+    "ap3_candidate_pending_controls": true,
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "selfhood",
+      "personhood",
+      "biological_behavior",
+      "unrestricted_agency",
+      "fully_native_agentic_like_integration",
+      "native_support_without_phase8"
+    ],
+    "budget_surfaces": [
+      "final_budget_error"
+    ],
+    "external_proxy_separation": {
+      "external_proxy_fields_available_but_excluded": [
+        "error_policy_digest",
+        "proxy_surface_digest",
+        "regulation_policy_digest",
+        "regulation_response_digest"
+      ],
+      "n09_proxy_row_role": "external_proxy_regulation_baseline_only",
+      "n09_withdrawal_digest_is_lane_link_only": true,
+      "target_uses_external_proxy_fields": false
+    },
+    "final_ap3_supported": false,
+    "hidden_target_audit": {
+      "full_hidden_target_control_pending_iteration_5": true,
+      "hidden_support_target_required": false,
+      "target_fields_declared": true
+    },
+    "n10_support_matrix_alignment": [
+      {
+        "budget_error_zero": true,
+        "claim_flags_false": true,
+        "expected_outcome": "composition_preserved",
+        "integration_allowed": true,
+        "matrix_state": "support_intact_survives",
+        "outcome_matches_expectation": true,
+        "primary_blocker": null,
+        "row_digest_valid": true,
+        "support_state_tag": "support_intact_survives"
+      },
+      {
+        "budget_error_zero": true,
+        "claim_flags_false": true,
+        "expected_outcome": "composition_preserved_under_bounded_companion_scope",
+        "integration_allowed": true,
+        "matrix_state": "mild_withdrawal_survives",
+        "outcome_matches_expectation": true,
+        "primary_blocker": null,
+        "row_digest_valid": true,
+        "support_state_tag": "mild_withdrawal_survives"
+      },
+      {
+        "budget_error_zero": true,
+        "claim_flags_false": true,
+        "expected_outcome": "composition_blocked_or_downgraded",
+        "integration_allowed": false,
+        "matrix_state": "n09_matched_withdrawal_disrupts_support",
+        "outcome_matches_expectation": true,
+        "primary_blocker": "support_disrupted_but_integration_allowed",
+        "row_digest_valid": true,
+        "support_state_tag": "n09_matched_withdrawal_disrupts_support"
+      },
+      {
+        "budget_error_zero": true,
+        "claim_flags_false": true,
+        "expected_outcome": "composition_restoration_gated_resume",
+        "integration_allowed": true,
+        "matrix_state": "explicit_restoration_recovers_support",
+        "outcome_matches_expectation": true,
+        "primary_blocker": null,
+        "row_digest_valid": true,
+        "support_state_tag": "explicit_restoration_recovers_support"
+      }
+    ],
+    "pending_gates": [
+      "support_error_signal_not_evaluated_until_iteration_4",
+      "bounded_response_magnitude_not_evaluated_until_iteration_4",
+      "external_proxy_controls_not_run_until_iteration_5",
+      "hidden_target_controls_not_run_until_iteration_5",
+      "post_hoc_label_controls_not_run_until_iteration_5",
+      "support_disruption_restoration_stress_not_run_until_iteration_6",
+      "claim_boundary_record_not_frozen_until_iteration_7"
+    ],
+    "post_hoc_label_audit": {
+      "full_post_hoc_label_control_pending_iteration_5": true,
+      "lane_digests_preexist_n13": true,
+      "n13_did_not_choose_threshold": true,
+      "target_rule_matches_all_source_lanes": true,
+      "threshold_preexists_n13": true
+    },
+    "producer_decision_split": {
+      "bookkeeping_fields": [
+        "lane_digest",
+        "n09_withdrawal_digest",
+        "n10_consumption_role"
+      ],
+      "n13_added_producer_decisions": [],
+      "producer_decision_fields": [
+        "withdrawal_depth",
+        "restoration_fraction"
+      ]
+    },
+    "provisional_ap_level": "AP2",
+    "runtime_visible_surfaces": [
+      "final_A_support_retention",
+      "support_survival_threshold",
+      "support_survival_passed",
+      "withdrawal_depth",
+      "restoration_fraction"
+    ],
+    "self_maintenance_candidate_supported": false,
+    "source_current_requirement": {
+      "lane_digests_required": true,
+      "source_artifacts_pinned": true,
+      "stale_source_replay_blocked": true,
+      "support_area_digest_required": true
+    },
+    "support_derived_target_candidate": true,
+    "target_derivation_rule": {
+      "expression": "final_A_support_retention >= support_survival_threshold",
+      "input_fields": [
+        "final_A_support_retention",
+        "support_survival_threshold"
+      ],
+      "runtime_visible_inputs": [
+        "final_A_support_retention",
+        "support_survival_threshold",
+        "withdrawal_depth",
+        "restoration_fraction"
+      ],
+      "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+      "support_area_id": "n07_support_area_A_v1",
+      "threshold_source": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json"
+    },
+    "target_kind": "support_state_derived_target_candidate",
+    "target_lane_records": [
+      {
+        "computed_support_survival_passed": true,
+        "final_A_support_retention": 0.9731535762447039,
+        "identity_support_outcome_tag": "support_intact_bounded_exchange_reference",
+        "lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+        "lane_id": "support_intact_reference",
+        "restoration_fraction": 0.0,
+        "rule_matches_source": true,
+        "source_support_survival_passed": true,
+        "support_survival_threshold": 0.85,
+        "target_state": "support_valid",
+        "withdrawal_depth": 0.0
+      },
+      {
+        "computed_support_survival_passed": true,
+        "final_A_support_retention": 0.8758382186202335,
+        "identity_support_outcome_tag": "support_withdrawal_survival_baseline",
+        "lane_digest": "d5fae1cee95b0650287173c3e0456f1df42464771336b4e6e02cfb4e095bff69",
+        "lane_id": "mild_support_weakening",
+        "restoration_fraction": 0.0,
+        "rule_matches_source": true,
+        "source_support_survival_passed": true,
+        "support_survival_threshold": 0.85,
+        "target_state": "support_valid",
+        "withdrawal_depth": 0.1
+      },
+      {
+        "computed_support_survival_passed": false,
+        "final_A_support_retention": 0.7298651821835279,
+        "identity_support_outcome_tag": "support_disrupted_by_withdrawal_without_restoration",
+        "lane_digest": "987651daaf122f47d3e26d3fd9d7611ceebb3149879b0326e6ca2775a18e4387",
+        "lane_id": "n09_matched_partial_support_withdrawal",
+        "restoration_fraction": 0.0,
+        "rule_matches_source": true,
+        "source_support_survival_passed": false,
+        "support_survival_threshold": 0.85,
+        "target_state": "support_disrupted",
+        "withdrawal_depth": 0.25
+      },
+      {
+        "computed_support_survival_passed": true,
+        "final_A_support_retention": 0.9244958974324687,
+        "identity_support_outcome_tag": "explicit_restoration_recovers_support_survival_baseline",
+        "lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+        "lane_id": "restored_after_n09_partial_withdrawal",
+        "restoration_fraction": 0.8,
+        "rule_matches_source": true,
+        "source_support_survival_passed": true,
+        "support_survival_threshold": 0.85,
+        "target_state": "support_valid",
+        "withdrawal_depth": 0.25
+      }
+    ],
+    "target_name": "support_retention_above_threshold_source_current"
+  },
+  "target_ap_ceiling": "AP3"
+}
