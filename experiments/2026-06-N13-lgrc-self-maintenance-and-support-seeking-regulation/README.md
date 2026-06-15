@@ -143,16 +143,27 @@ identity acceptance, semantic ownership, or selfhood.
 Current N13 state:
 
 ```text
-status = iteration_4_support_seeking_regulation_candidate_complete
+status = iteration_6_support_disruption_restoration_stress_matrix_complete
 target_agency_prerequisite_level = AP3
-iteration_ceiling = AP3_candidate_pending_controls_only
+iteration_ceiling = AP3_candidate_stress_clean_pending_claim_boundary
 inventory_rows = 7
 ap3_candidate_rows = 1
 final_ap3_supported = false
 support_derived_target_candidate = support_retention_above_threshold_source_current
 support_seeking_regulation_candidate = support_error_bounded_response_candidate
 candidate_ap_level = AP3
-provisional_ap_level = AP3_candidate_pending_controls
+provisional_ap_level = AP3_candidate_stress_clean_pending_claim_boundary
+external_proxy_controls_passed = true
+hidden_target_controls_passed = true
+post_hoc_label_controls_passed = true
+support_disrupted_pre_stress_control_passed = true
+budget_control_passed = true
+claim_relabel_controls_passed = true
+interpretation_record = n13_i5_interpretation_external_proxy_controls_v1
+support_disruption_restoration_stress_matrix_passed = true
+support_seeking_regulation_survives_controls = true
+stress_interpretation_record = n13_i6_interpretation_stress_matrix_v1
+claim_boundary_record_pending = true
 self_maintenance_candidate_supported = false
 phase8_implementation_opened = false
 native_support_opened = false

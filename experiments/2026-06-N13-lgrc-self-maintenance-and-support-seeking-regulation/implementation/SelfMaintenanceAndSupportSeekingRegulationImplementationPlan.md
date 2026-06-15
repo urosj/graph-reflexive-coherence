@@ -400,6 +400,59 @@ reports/n13_external_proxy_control_matrix.md
 scripts/build_n13_external_proxy_control_matrix.py
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n13_external_proxy_control_matrix.json
+Report: reports/n13_external_proxy_control_matrix.md
+Output digest: 4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16
+```
+
+Iteration 5 runs ten fail-closed controls around the Iteration 4
+`support_error_bounded_response_candidate`: the nine planned controls plus an
+explicit `native_support_without_phase8_control`. All controls reject their
+adversarial interpretation:
+
+```text
+external_proxy_only_control = rejected
+hidden_support_target_control = rejected
+post_hoc_support_label_control = rejected
+support_disrupted_regulation_control = rejected
+stale_source_replay_control = rejected
+budget_ambiguous_correction_control = rejected
+identity_acceptance_relabel_control = rejected
+semantic_goal_ownership_relabel_control = rejected
+agency_relabel_control = rejected
+native_support_without_phase8_control = rejected
+```
+
+Iteration 5 does not freeze final AP3 support. It updates the candidate state
+only to:
+
+```text
+provisional_ap_level = AP3_candidate_control_clean_pending_stress_and_boundary
+final_ap3_supported = false
+self_maintenance_candidate_supported = false
+phase8_opened = false
+native_support_opened = false
+```
+
+Support-disruption/restoration stress remains pending for Iteration 6, and the
+final identity, goal-ownership, agency, native-support, and integration claim
+boundary record remains pending for Iteration 7.
+
+Interpretation record:
+
+```text
+record_id = n13_i5_interpretation_external_proxy_controls_v1
+meaning = Iteration 5 makes the Iteration 4 candidate control-clean against
+external-proxy, hidden-target, post-hoc-label, stale-source, budget-ambiguity,
+and unsafe claim-relabel explanations. It does not make final AP3 support.
+supported_interpretation = artifact-level source-current support-error
+bounded-response candidate, pending stress and boundary closure.
+```
+
 ### Iteration 6. Support Disruption And Restoration Stress Matrix
 
 Test whether the support-seeking candidate behaves differently under support
@@ -411,6 +464,49 @@ Expected artifacts:
 outputs/n13_support_disruption_restoration_matrix.json
 reports/n13_support_disruption_restoration_matrix.md
 scripts/build_n13_support_disruption_restoration_matrix.py
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n13_support_disruption_restoration_matrix.json
+Report: reports/n13_support_disruption_restoration_matrix.md
+Output digest: f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100
+```
+
+Iteration 6 stress-tests the candidate across five regimes:
+
+```text
+support_present_baseline = passed
+support_disrupted_regime = passed
+explicit_restoration_regime = passed
+neutral_or_non_disruptive_perturbation_regime = passed
+no_support_control_regime = passed
+```
+
+The candidate schedules a bounded budgeted response only for the source-current
+support deficit. It avoids false-positive responses when support remains valid,
+and it blocks response when no source-current support target is available.
+
+Iteration 6 updates the candidate state to:
+
+```text
+support_disruption_restoration_stress_matrix_passed = true
+support_seeking_regulation_survives_controls = true
+provisional_ap_level = AP3_candidate_stress_clean_pending_claim_boundary
+final_ap3_supported = false
+self_maintenance_candidate_supported = false
+phase8_opened = false
+native_support_opened = false
+```
+
+Interpretation record:
+
+```text
+record_id = n13_i6_interpretation_stress_matrix_v1
+meaning = stress-clean artifact-level AP3 support-seeking regulation candidate,
+pending the Iteration 7 claim-boundary record.
 ```
 
 ### Iteration 7. Identity, Goal-Ownership, And Agency Boundary Record

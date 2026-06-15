@@ -13,13 +13,13 @@ Generated scripts:
   derived target candidate.
 - `build_n13_support_seeking_regulation_candidate.py`: evaluates the bounded
   support-seeking regulation candidate.
-
-Planned scripts:
-
 - `build_n13_external_proxy_control_matrix.py`: builds external proxy, hidden
   target, post-hoc label, stale source, budget, and claim relabel controls.
 - `build_n13_support_disruption_restoration_matrix.py`: builds the support
   disruption and restoration stress matrix.
+
+Planned scripts:
+
 - `build_n13_claim_boundary_record.py`: records identity, goal-ownership,
   intention, agency, native-support, and integration blockers.
 - `build_n13_closeout_and_handoff.py`: closes N13, freezes the supported AP

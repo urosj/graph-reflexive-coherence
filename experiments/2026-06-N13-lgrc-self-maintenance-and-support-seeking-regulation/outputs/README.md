@@ -15,14 +15,14 @@ Generated artifacts:
 - `n13_support_seeking_regulation_candidate.json`: support-seeking regulation
   candidate with bounded response, budget debit, trend/stability fields, and
   pending controls.
-
-Planned artifacts:
-
 - `n13_external_proxy_control_matrix.json`: external proxy, hidden target,
   post-hoc label, stale source, budget, and claim relabel controls.
 - `n13_support_disruption_restoration_matrix.json`: support-present,
   support-disrupted, restoration, neutral perturbation, and no-support-control
   stress matrix.
+
+Planned artifacts:
+
 - `n13_claim_boundary_record.json`: blocked identity, goal-ownership,
   intention, agency, native-support, and fully native integration claims.
 - `n13_closeout_and_handoff.json`: final N13 AP ceiling, hypothesis

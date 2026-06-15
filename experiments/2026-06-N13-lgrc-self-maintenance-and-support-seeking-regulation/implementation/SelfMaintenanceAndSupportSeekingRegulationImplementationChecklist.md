@@ -390,44 +390,127 @@ phase8_opened = false
 
 ## Iteration 5. External Proxy And Hidden Target Controls
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Build external-proxy-only control.
-- [ ] Build hidden-support-target control.
-- [ ] Build post-hoc support label control.
-- [ ] Build support-disrupted regulation control.
-- [ ] Build stale-source replay control.
-- [ ] Build budget-ambiguous correction control.
-- [ ] Build identity-acceptance relabel control.
-- [ ] Build semantic-goal-ownership relabel control.
-- [ ] Build agency relabel control.
-- [ ] Confirm controls fail closed.
+- [x] Build external-proxy-only control.
+- [x] Build hidden-support-target control.
+- [x] Build post-hoc support label control.
+- [x] Build support-disrupted regulation control.
+- [x] Build stale-source replay control.
+- [x] Build budget-ambiguous correction control.
+- [x] Build identity-acceptance relabel control.
+- [x] Build semantic-goal-ownership relabel control.
+- [x] Build agency relabel control.
+- [x] Build native-support-without-Phase-8 relabel control.
+- [x] Confirm controls fail closed.
+- [x] Record Iteration 5 interpretation.
 
 Expected artifacts:
 
-- [ ] `outputs/n13_external_proxy_control_matrix.json`
-- [ ] `reports/n13_external_proxy_control_matrix.md`
-- [ ] `scripts/build_n13_external_proxy_control_matrix.py`
+- [x] `outputs/n13_external_proxy_control_matrix.json`
+- [x] `reports/n13_external_proxy_control_matrix.md`
+- [x] `scripts/build_n13_external_proxy_control_matrix.py`
+
+- Output digest:
+
+```text
+4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n13_external_proxy_control_matrix.json 40b50b7df537c908af28d0dbb352bf154dea3e023979928aa89fe8f3444a028d
+reports/n13_external_proxy_control_matrix.md d3d97e379004ed49de812c6d516e20ed99bcfa2c0203ce896017e899faaf382a
+scripts/build_n13_external_proxy_control_matrix.py cce2592dd8236f3e4e0b357a86887019d6b989da4e3a4973413264716bdd22d8
+```
+
+- Acceptance state:
+
+```text
+external_proxy_controls_passed = true
+hidden_target_controls_passed = true
+post_hoc_label_controls_passed = true
+support_disrupted_pre_stress_control_passed = true
+budget_control_passed = true
+claim_relabel_controls_passed = true
+interpretation_record = n13_i5_interpretation_external_proxy_controls_v1
+provisional_ap_level = AP3_candidate_control_clean_pending_stress_and_boundary
+final_ap3_supported = false
+self_maintenance_candidate_supported = false
+native_support_opened = false
+phase8_opened = false
+```
 
 ## Iteration 6. Support Disruption And Restoration Stress Matrix
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Evaluate support-present baseline.
-- [ ] Evaluate support-disrupted regime.
-- [ ] Evaluate explicit restoration regime.
-- [ ] Evaluate neutral perturbation regime.
-- [ ] Evaluate no-support-control regime.
-- [ ] Record source-current replay requirements.
-- [ ] Record budget and response surfaces.
-- [ ] Record whether support-seeking regulation survives controls.
-- [ ] Record AP ceiling after stress matrix.
+- [x] Evaluate support-present baseline.
+- [x] Evaluate support-disrupted regime.
+- [x] Evaluate explicit restoration regime.
+- [x] Evaluate neutral perturbation regime.
+- [x] Evaluate no-support-control regime.
+- [x] Record source-current replay requirements.
+- [x] Record budget and response surfaces.
+- [x] Record whether support-seeking regulation survives controls.
+- [x] Record AP ceiling after stress matrix.
+- [x] Record Iteration 6 interpretation.
 
 Expected artifacts:
 
-- [ ] `outputs/n13_support_disruption_restoration_matrix.json`
-- [ ] `reports/n13_support_disruption_restoration_matrix.md`
-- [ ] `scripts/build_n13_support_disruption_restoration_matrix.py`
+- [x] `outputs/n13_support_disruption_restoration_matrix.json`
+- [x] `reports/n13_support_disruption_restoration_matrix.md`
+- [x] `scripts/build_n13_support_disruption_restoration_matrix.py`
+
+- Output digest:
+
+```text
+f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n13_support_disruption_restoration_matrix.json 35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363
+reports/n13_support_disruption_restoration_matrix.md 3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b
+scripts/build_n13_support_disruption_restoration_matrix.py 4288116fe4f547fc5115b26fb827b7100da8f01332a6ad4ac9c70439697b0731
+```
+
+- Acceptance state:
+
+```text
+support_disruption_restoration_stress_matrix_passed = true
+support_seeking_regulation_survives_controls = true
+interpretation_record = n13_i6_interpretation_stress_matrix_v1
+provisional_ap_level = AP3_candidate_stress_clean_pending_claim_boundary
+final_ap3_supported = false
+self_maintenance_candidate_supported = false
+native_support_opened = false
+phase8_opened = false
+```
+
+- Interpretation:
+
+```text
+The system has an artifact-level AP3 stress-clean support-seeking regulation
+candidate: it derives a support error from source-current support state,
+schedules a bounded budgeted response only when that support error is positive,
+avoids false-positive response when support remains valid, and blocks response
+when no support target exists.
+
+support present -> no response needed
+mild/non-disruptive support weakening -> no false-positive response
+support disrupted -> bounded response scheduled
+explicit restoration -> no extra response needed
+no support target -> response blocked
+
+stress-clean candidate != final supported AP3
+support-seeking regulation != agency
+support survival != identity acceptance
+bounded response != intention
+artifact-level stress behavior != native support
+```
 
 ## Iteration 7. Identity, Goal-Ownership, And Agency Boundary Record
 
