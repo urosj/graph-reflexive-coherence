@@ -9,13 +9,13 @@ Generated reports:
   support-condition inventory report.
 - `n13_support_schema_v1.md`: human-readable support schema, AP mapping,
   control, and claim-boundary report.
-
-Planned reports:
-
 - `n13_support_derived_target_candidate.md`: human-readable support-derived
   target candidate report.
 - `n13_support_seeking_regulation_candidate.md`: human-readable
   support-seeking regulation candidate report.
+
+Planned reports:
+
 - `n13_external_proxy_control_matrix.md`: human-readable external proxy and
   hidden target control matrix.
 - `n13_support_disruption_restoration_matrix.md`: human-readable support

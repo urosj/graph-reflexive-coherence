@@ -297,6 +297,25 @@ reports/n13_support_derived_target_candidate.md
 scripts/build_n13_support_derived_target_candidate.py
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n13_support_derived_target_candidate.json
+Report: reports/n13_support_derived_target_candidate.md
+Output digest: 917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e
+```
+
+Iteration 3 isolates `support_retention_above_threshold_source_current` as a
+source-current support-derived target candidate. The derivation rule is
+`final_A_support_retention >= support_survival_threshold`, using N07 support
+lane fields and threshold records. The target excludes N09 external proxy
+fields, matches all N07 source lanes, cross-checks against the N10 support
+matrix, and records post-hoc-label and hidden-target audits. It assigns only
+provisional `AP2` target-candidate status: final `AP3`, self-maintenance
+support, support-seeking regulation, native support, Phase 8 implementation,
+identity acceptance, semantic goal ownership, and agency remain unopened.
+
 ### Iteration 4. Support-Seeking Regulation Candidate
 
 Evaluate whether bounded regulation responses preserve or restore the derived
@@ -327,6 +346,45 @@ outputs/n13_support_seeking_regulation_candidate.json
 reports/n13_support_seeking_regulation_candidate.md
 scripts/build_n13_support_seeking_regulation_candidate.py
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n13_support_seeking_regulation_candidate.json
+Report: reports/n13_support_seeking_regulation_candidate.md
+Output digest: a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b
+```
+
+Iteration 4 records `support_error_bounded_response_candidate` as a bounded
+support-error response candidate against the Iteration 3 source-current support
+target. The support error signal is
+`max(0, support_survival_threshold - final_A_support_retention)`, and the
+response magnitude surface uses the N12/N09 bounded response readiness input:
+`max_correction_per_window = 0.07`, `bounded_window_count = 4`,
+`total_bounded_correction_capacity = 0.28`, and
+`out_of_envelope_blocker = unbounded_perturbation_envelope_blocked`.
+
+The disrupted N07 lane has support error `0.120134817816`, requiring two
+bounded scheduled response packets under the policy-envelope estimate:
+`[0.07, 0.050134817816]`. This is recorded as a candidate response schedule
+with explicit budget debit and packet scheduling boundary. It does not mutate
+native state and does not count the raw disrupted lane as supported before
+response.
+
+Iteration 4 assigns only candidate `AP3` status:
+
+```text
+candidate_ap_level = AP3
+provisional_ap_level = AP3_candidate_pending_controls
+final_ap3_supported = false
+self_maintenance_candidate_supported = false
+phase8_opened = false
+native_support_opened = false
+```
+
+External-proxy, hidden-target, post-hoc-label, support-disruption/restoration,
+and claim-boundary controls remain pending for Iterations 5-7.
 
 ### Iteration 5. External Proxy And Hidden Target Controls
 

@@ -143,11 +143,17 @@ identity acceptance, semantic ownership, or selfhood.
 Current N13 state:
 
 ```text
-status = iteration_2_support_schema_complete
+status = iteration_4_support_seeking_regulation_candidate_complete
 target_agency_prerequisite_level = AP3
-iteration_ceiling = AP2_inventory_and_schema_only
+iteration_ceiling = AP3_candidate_pending_controls_only
 inventory_rows = 7
-ap3_rows = 0
+ap3_candidate_rows = 1
+final_ap3_supported = false
+support_derived_target_candidate = support_retention_above_threshold_source_current
+support_seeking_regulation_candidate = support_error_bounded_response_candidate
+candidate_ap_level = AP3
+provisional_ap_level = AP3_candidate_pending_controls
+self_maintenance_candidate_supported = false
 phase8_implementation_opened = false
 native_support_opened = false
 identity_acceptance_opened = false

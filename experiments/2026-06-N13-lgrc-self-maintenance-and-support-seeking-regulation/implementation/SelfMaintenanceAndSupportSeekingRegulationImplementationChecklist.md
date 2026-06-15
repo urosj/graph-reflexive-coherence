@@ -268,49 +268,125 @@ scripts/build_n13_support_schema_v1.py 36b85fc1f6021501f0b92a4afc10a8c1b199d847f
 
 ## Iteration 3. Support-State Derived Target Candidate
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Evaluate source-current support-state fields.
-- [ ] Define candidate support condition.
-- [ ] Define target derivation rule.
-- [ ] Confirm target derivation is not an external fixture label.
-- [ ] Confirm target derivation is not post-hoc support labeling.
-- [ ] Record runtime-visible surfaces.
-- [ ] Record source-current replay requirement.
-- [ ] Record producer decision vs bookkeeping split.
-- [ ] Record identity acceptance relabel blocker.
-- [ ] Record semantic goal ownership relabel blocker.
-- [ ] Assign provisional AP level for the derived target row.
+- [x] Evaluate source-current support-state fields.
+- [x] Define candidate support condition.
+- [x] Define target derivation rule.
+- [x] Confirm target derivation is not an external fixture label.
+- [x] Confirm target derivation is not post-hoc support labeling.
+- [x] Record runtime-visible surfaces.
+- [x] Record source-current replay requirement.
+- [x] Record producer decision vs bookkeeping split.
+- [x] Record identity acceptance relabel blocker.
+- [x] Record semantic goal ownership relabel blocker.
+- [x] Assign provisional AP level for the derived target row.
 
 Expected artifacts:
 
-- [ ] `outputs/n13_support_derived_target_candidate.json`
-- [ ] `reports/n13_support_derived_target_candidate.md`
-- [ ] `scripts/build_n13_support_derived_target_candidate.py`
+- [x] `outputs/n13_support_derived_target_candidate.json`
+- [x] `reports/n13_support_derived_target_candidate.md`
+- [x] `scripts/build_n13_support_derived_target_candidate.py`
+
+Acceptance statement:
+
+```text
+Iteration 3 passes if N13 isolates a source-current support-derived target
+candidate with explicit input fields, target derivation, replay/source
+requirements, producer/bookkeeping split, external-proxy separation,
+post-hoc-label and hidden-target audits, and no final AP3, identity
+acceptance, semantic goal ownership, agency, native support, or Phase 8 claim.
+```
+
+Acceptance state:
+
+```text
+Achieved. Iteration 3 isolates
+support_retention_above_threshold_source_current as a source-current
+support-derived target candidate. The derivation rule is
+final_A_support_retention >= support_survival_threshold, sourced from N07
+support lane fields. The target excludes N09 external proxy fields, matches
+all N07 source lane classifications, cross-checks against the N10 support
+matrix, and records post-hoc-label and hidden-target audits. It assigns only
+provisional AP2 target-candidate status. Final AP3, self-maintenance support,
+support-seeking regulation, native support, Phase 8 implementation, identity
+acceptance, semantic goal ownership, and agency remain unopened.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n13_support_derived_target_candidate.py`.
+- Generated `outputs/n13_support_derived_target_candidate.json`.
+- Generated `reports/n13_support_derived_target_candidate.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/scripts/build_n13_support_derived_target_candidate.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n13_support_derived_target_candidate.json 59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb
+reports/n13_support_derived_target_candidate.md ff494f48a5d29cc6ef4a72acace91108c02e976cee31c186dff604009767ccbd
+scripts/build_n13_support_derived_target_candidate.py 6927fe7a0392755c33f79887ac0c2a733a5e4de5b8a2a9c5a17608f0059e0187
+```
 
 ## Iteration 4. Support-Seeking Regulation Candidate
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Evaluate bounded regulation responses against the derived support target.
-- [ ] Record support error signal.
-- [ ] Record response magnitude surface.
-- [ ] Record bounded window.
-- [ ] Record budget debit surface.
-- [ ] Record support trend.
-- [ ] Record saturation status.
-- [ ] Record overcorrection status.
-- [ ] Record out-of-envelope blocker.
-- [ ] Record response packet scheduling boundary.
-- [ ] Record support-disrupted negative control.
-- [ ] Assign candidate/provisional AP level for support-seeking regulation.
-- [ ] Defer final AP3 support until Iterations 5-7 controls pass.
+- [x] Evaluate bounded regulation responses against the derived support target.
+- [x] Record support error signal.
+- [x] Record response magnitude surface.
+- [x] Record bounded window.
+- [x] Record budget debit surface.
+- [x] Record support trend.
+- [x] Record saturation status.
+- [x] Record overcorrection status.
+- [x] Record out-of-envelope blocker.
+- [x] Record response packet scheduling boundary.
+- [x] Record support-disrupted negative control.
+- [x] Assign candidate/provisional AP level for support-seeking regulation.
+- [x] Defer final AP3 support until Iterations 5-7 controls pass.
 
 Expected artifacts:
 
-- [ ] `outputs/n13_support_seeking_regulation_candidate.json`
-- [ ] `reports/n13_support_seeking_regulation_candidate.md`
-- [ ] `scripts/build_n13_support_seeking_regulation_candidate.py`
+- [x] `outputs/n13_support_seeking_regulation_candidate.json`
+- [x] `reports/n13_support_seeking_regulation_candidate.md`
+- [x] `scripts/build_n13_support_seeking_regulation_candidate.py`
+
+- Output digest:
+
+```text
+a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n13_support_seeking_regulation_candidate.json 890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea
+reports/n13_support_seeking_regulation_candidate.md 912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449
+scripts/build_n13_support_seeking_regulation_candidate.py d3638305010e349c9c704f1915b82c7c1d3ea255d2b20701979c274849864c76
+```
+
+- Acceptance state:
+
+```text
+candidate_ap_level = AP3
+provisional_ap_level = AP3_candidate_pending_controls
+final_ap3_supported = false
+self_maintenance_candidate_supported = false
+native_support_opened = false
+phase8_opened = false
+```
 
 ## Iteration 5. External Proxy And Hidden Target Controls
 

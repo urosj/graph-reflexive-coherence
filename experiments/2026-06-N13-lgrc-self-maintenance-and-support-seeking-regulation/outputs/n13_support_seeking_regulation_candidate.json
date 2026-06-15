@@ -1,0 +1,460 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "checks": {
+    "all_source_lanes_within_bounded_window": true,
+    "bounded_window_recorded": true,
+    "budget_debit_surface_recorded": true,
+    "candidate_ap3_recorded_without_final_support": true,
+    "claim_boundary_controls_false": true,
+    "claim_flags_all_false": true,
+    "external_proxy_fields_excluded_from_support_error": true,
+    "inventory_source_passed": true,
+    "n12_phase8_source_passed": true,
+    "n12_response_source_passed": true,
+    "native_support_not_opened": true,
+    "out_of_envelope_blocker_recorded": true,
+    "overcorrection_status_recorded": true,
+    "pending_controls_recorded": true,
+    "phase8_not_opened": true,
+    "response_magnitude_surface_recorded": true,
+    "response_needed_case_present": true,
+    "response_packet_scheduling_boundary_recorded": true,
+    "saturation_status_recorded": true,
+    "scheduled_response_does_not_overcorrect": true,
+    "schema_source_passed": true,
+    "self_maintenance_not_supported_yet": true,
+    "src_diff_empty": true,
+    "support_disrupted_negative_control_recorded": true,
+    "support_error_signal_recorded": true,
+    "support_trend_recorded": true,
+    "target_source_passed": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/scripts/build_n13_support_seeking_regulation_candidate.py",
+  "experiment": "N13",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "823d8adf8ffb4a93dccb36f60f5056141957c1ce",
+    "src_status_short": ""
+  },
+  "iteration": 4,
+  "iteration_result": {
+    "candidate_ap_level": "AP3",
+    "final_ap3_supported": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP3_candidate_pending_controls",
+    "self_maintenance_candidate_supported": false,
+    "support_seeking_regulation_candidate": true
+  },
+  "output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+  "purpose": "support_seeking_regulation_candidate",
+  "schema": "n13_support_seeking_regulation_candidate_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": {
+      "output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json": {
+      "output_digest": "347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "sha256": "3748728f2fe36246f1655f53241e5719f875c8f6a68edeffea9f5f0a88a9b234",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_condition_inventory.json": {
+      "output_digest": "4c8cd0a1ea074d27ff1a7cd5cdd176b789ef57da808223c1fa08750355732e23",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_condition_inventory.json",
+      "sha256": "d5aa30e8257769729ada1ecd4c7adf59342ae41b2d2b68b3ff06ce83105849d2",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json": {
+      "output_digest": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+      "sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json": {
+      "output_digest": "7691834eb654dc15ee8aabf8ce732a10a72c375d95f3fa97290a8b6cf6984a4f",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json",
+      "sha256": "55d9105ca829d5ca23467906390ddeebdd35b72a09dfa688ae01ff1804bd8e6f",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md",
+      "sha256": "ba3e0e3f4b2f6cb2919d781b6dbd93c2c88f744c0e2aefbd7d53d8c0e88d9b1f"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_condition_inventory.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_condition_inventory.md",
+      "sha256": "575c7e518f1af9c8b485f63ecbf9b962072ff49ebe54d6c17780ec90fd130435"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md",
+      "sha256": "ff494f48a5d29cc6ef4a72acace91108c02e976cee31c186dff604009767ccbd"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_schema_v1.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_schema_v1.md",
+      "sha256": "123d58e36e57a4e760ad5b13d59682ba237b3cf18ba74e15a4e4984535e26a73"
+    }
+  },
+  "status": "passed",
+  "support_seeking_regulation_candidate": {
+    "ap3_candidate_pending_controls": true,
+    "bounded_window": {
+      "all_source_lanes_within_window": true,
+      "max_correction_per_window": 0.07,
+      "source": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "window_count": 4
+    },
+    "budget_debit_surface": {
+      "all_scheduled_responses_have_budget_debit": true,
+      "budget_surfaces": [
+        "support_response_packet_budget_debit",
+        "response_packet_budget_surface",
+        "node_plus_packet_budget_error",
+        "final_budget_error"
+      ],
+      "debit_rule": "scheduled bounded response amount must debit node-plus-packet or explicit response packet budget before commit",
+      "mutation_boundary": {
+        "phase8_implementation_opened": false,
+        "producer_direct_mutation_allowed": false,
+        "producer_or_policy_may_schedule_only": true,
+        "step_or_topology_event_owns_state_mutation": true
+      }
+    },
+    "candidate_ap_level": "AP3",
+    "candidate_kind": "bounded_support_error_response_candidate",
+    "candidate_name": "support_error_bounded_response_candidate",
+    "claim_boundary": {
+      "artifact_level_candidate_is_native_support": false,
+      "bounded_response_is_intention": false,
+      "candidate_ap3_is_final_ap3_support": false,
+      "native_response_magnitude_readiness_is_phase8_implementation": false,
+      "support_error_is_semantic_goal_ownership": false,
+      "support_regulation_candidate_is_agency": false
+    },
+    "external_proxy_separation": {
+      "n09_external_proxy_fields_available_but_excluded": [
+        "error_policy_digest",
+        "proxy_surface_digest",
+        "regulation_policy_digest",
+        "regulation_response_digest"
+      ],
+      "n09_role": "bounded_external_proxy_regulation_baseline_only",
+      "response_magnitude_uses_n12_readiness_input": true,
+      "support_error_uses_n09_external_proxy_fields": false,
+      "target_is_source_current_support_state": true
+    },
+    "final_ap3_supported": false,
+    "lane_response_records": [
+      {
+        "bounded_window": {
+          "window_count": 4,
+          "windows_used": 0,
+          "within_bounded_window": true
+        },
+        "budget_debit_surface": {
+          "budget_debit_amount": 0,
+          "budget_debit_unit": "bounded_response_packet_amount",
+          "budget_mutation_owner": "LGRC step or committed packet scheduling event boundary",
+          "node_plus_packet_budget_debit_required": false,
+          "surface_name": "support_response_packet_budget_debit"
+        },
+        "final_A_support_retention": 0.9731535762447039,
+        "lane_digest": "359d248493fc4ce8ee57f5f682d043cc745762671ab1a67fb8c779e38ed67bdb",
+        "lane_id": "support_intact_reference",
+        "overcorrection_status": "not_applicable_no_response",
+        "post_response_estimate": {
+          "estimate_scope": "policy-envelope estimate only; not native state mutation",
+          "post_response_error": 0.0,
+          "post_response_meets_target": true,
+          "post_response_support_retention": 0.973153576245
+        },
+        "response_magnitude_surface": {
+          "bounded_window_count": 4,
+          "max_correction_per_window": 0.07,
+          "out_of_envelope_blocked": false,
+          "out_of_envelope_blocker": "unbounded_perturbation_envelope_blocked",
+          "scheduled_response_amounts": [],
+          "scheduled_response_total": 0,
+          "total_bounded_correction_capacity": 0.28
+        },
+        "saturation_status": "not_applicable_no_response",
+        "support_error_signal": {
+          "error_direction": "raise_support_retention_toward_threshold",
+          "error_expression": "max(0, support_survival_threshold - final_A_support_retention)",
+          "source_current_fields": [
+            "final_A_support_retention",
+            "support_survival_threshold"
+          ],
+          "support_error": 0.0,
+          "uses_external_proxy_fields": false
+        },
+        "support_margin": 0.123153576245,
+        "support_survival_threshold": 0.85,
+        "support_trend": "stable_above_threshold_no_response",
+        "target_state_before_response": "support_valid"
+      },
+      {
+        "bounded_window": {
+          "window_count": 4,
+          "windows_used": 0,
+          "within_bounded_window": true
+        },
+        "budget_debit_surface": {
+          "budget_debit_amount": 0,
+          "budget_debit_unit": "bounded_response_packet_amount",
+          "budget_mutation_owner": "LGRC step or committed packet scheduling event boundary",
+          "node_plus_packet_budget_debit_required": false,
+          "surface_name": "support_response_packet_budget_debit"
+        },
+        "final_A_support_retention": 0.8758382186202335,
+        "lane_digest": "d5fae1cee95b0650287173c3e0456f1df42464771336b4e6e02cfb4e095bff69",
+        "lane_id": "mild_support_weakening",
+        "overcorrection_status": "not_applicable_no_response",
+        "post_response_estimate": {
+          "estimate_scope": "policy-envelope estimate only; not native state mutation",
+          "post_response_error": 0.0,
+          "post_response_meets_target": true,
+          "post_response_support_retention": 0.87583821862
+        },
+        "response_magnitude_surface": {
+          "bounded_window_count": 4,
+          "max_correction_per_window": 0.07,
+          "out_of_envelope_blocked": false,
+          "out_of_envelope_blocker": "unbounded_perturbation_envelope_blocked",
+          "scheduled_response_amounts": [],
+          "scheduled_response_total": 0,
+          "total_bounded_correction_capacity": 0.28
+        },
+        "saturation_status": "not_applicable_no_response",
+        "support_error_signal": {
+          "error_direction": "raise_support_retention_toward_threshold",
+          "error_expression": "max(0, support_survival_threshold - final_A_support_retention)",
+          "source_current_fields": [
+            "final_A_support_retention",
+            "support_survival_threshold"
+          ],
+          "support_error": 0.0,
+          "uses_external_proxy_fields": false
+        },
+        "support_margin": 0.02583821862,
+        "support_survival_threshold": 0.85,
+        "support_trend": "mild_support_above_threshold_no_response",
+        "target_state_before_response": "support_valid"
+      },
+      {
+        "bounded_window": {
+          "window_count": 4,
+          "windows_used": 2,
+          "within_bounded_window": true
+        },
+        "budget_debit_surface": {
+          "budget_debit_amount": 0.120134817816,
+          "budget_debit_unit": "bounded_response_packet_amount",
+          "budget_mutation_owner": "LGRC step or committed packet scheduling event boundary",
+          "node_plus_packet_budget_debit_required": true,
+          "surface_name": "support_response_packet_budget_debit"
+        },
+        "final_A_support_retention": 0.7298651821835279,
+        "lane_digest": "987651daaf122f47d3e26d3fd9d7611ceebb3149879b0326e6ca2775a18e4387",
+        "lane_id": "n09_matched_partial_support_withdrawal",
+        "overcorrection_status": "capped_at_support_threshold",
+        "post_response_estimate": {
+          "estimate_scope": "policy-envelope estimate only; not native state mutation",
+          "post_response_error": 0.0,
+          "post_response_meets_target": true,
+          "post_response_support_retention": 0.85
+        },
+        "response_magnitude_surface": {
+          "bounded_window_count": 4,
+          "max_correction_per_window": 0.07,
+          "out_of_envelope_blocked": false,
+          "out_of_envelope_blocker": "unbounded_perturbation_envelope_blocked",
+          "scheduled_response_amounts": [
+            0.07,
+            0.050134817816
+          ],
+          "scheduled_response_total": 0.120134817816,
+          "total_bounded_correction_capacity": 0.28
+        },
+        "saturation_status": "not_saturated_within_bounded_window",
+        "support_error_signal": {
+          "error_direction": "raise_support_retention_toward_threshold",
+          "error_expression": "max(0, support_survival_threshold - final_A_support_retention)",
+          "source_current_fields": [
+            "final_A_support_retention",
+            "support_survival_threshold"
+          ],
+          "support_error": 0.120134817816,
+          "uses_external_proxy_fields": false
+        },
+        "support_margin": -0.120134817816,
+        "support_survival_threshold": 0.85,
+        "support_trend": "bounded_correction_needed",
+        "target_state_before_response": "support_disrupted"
+      },
+      {
+        "bounded_window": {
+          "window_count": 4,
+          "windows_used": 0,
+          "within_bounded_window": true
+        },
+        "budget_debit_surface": {
+          "budget_debit_amount": 0,
+          "budget_debit_unit": "bounded_response_packet_amount",
+          "budget_mutation_owner": "LGRC step or committed packet scheduling event boundary",
+          "node_plus_packet_budget_debit_required": false,
+          "surface_name": "support_response_packet_budget_debit"
+        },
+        "final_A_support_retention": 0.9244958974324687,
+        "lane_digest": "0a7c864269cbf0ffb1d1b2d02f95b5b3bd5a9e9c3fbc1b45b2a4d751902b5f5f",
+        "lane_id": "restored_after_n09_partial_withdrawal",
+        "overcorrection_status": "not_applicable_no_response",
+        "post_response_estimate": {
+          "estimate_scope": "policy-envelope estimate only; not native state mutation",
+          "post_response_error": 0.0,
+          "post_response_meets_target": true,
+          "post_response_support_retention": 0.924495897432
+        },
+        "response_magnitude_surface": {
+          "bounded_window_count": 4,
+          "max_correction_per_window": 0.07,
+          "out_of_envelope_blocked": false,
+          "out_of_envelope_blocker": "unbounded_perturbation_envelope_blocked",
+          "scheduled_response_amounts": [],
+          "scheduled_response_total": 0,
+          "total_bounded_correction_capacity": 0.28
+        },
+        "saturation_status": "not_applicable_no_response",
+        "support_error_signal": {
+          "error_direction": "raise_support_retention_toward_threshold",
+          "error_expression": "max(0, support_survival_threshold - final_A_support_retention)",
+          "source_current_fields": [
+            "final_A_support_retention",
+            "support_survival_threshold"
+          ],
+          "support_error": 0.0,
+          "uses_external_proxy_fields": false
+        },
+        "support_margin": 0.074495897432,
+        "support_survival_threshold": 0.85,
+        "support_trend": "source_restored_above_threshold_no_new_response",
+        "target_state_before_response": "support_valid"
+      }
+    ],
+    "pending_controls": [
+      "external_proxy_controls_not_run_until_iteration_5",
+      "hidden_target_controls_not_run_until_iteration_5",
+      "post_hoc_label_controls_not_run_until_iteration_5",
+      "support_disruption_restoration_stress_not_run_until_iteration_6",
+      "claim_boundary_record_not_frozen_until_iteration_7"
+    ],
+    "provisional_ap_level": "AP3_candidate_pending_controls",
+    "response_magnitude_surface": {
+      "bounded_window_count": 4,
+      "max_correction_per_window": 0.07,
+      "native_policy_enabled": false,
+      "native_policy_name": "native_response_magnitude_policy",
+      "native_policy_supported": false,
+      "out_of_envelope_blocker": "unbounded_perturbation_envelope_blocked",
+      "phase8_ready_input_only": true,
+      "response_gain_source": "serialized response gain and max correction per window",
+      "source": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "total_bounded_correction_capacity": 0.28
+    },
+    "self_maintenance_candidate_supported": false,
+    "source_rows": {
+      "external_proxy_baseline": "n13_i1_row_02_n09_bounded_external_proxy_regulation",
+      "n12_phase8_ready_contract_row": "n12_i7_phase8_ready_02_native_response_magnitude_policy",
+      "n12_response_readiness_input": "n13_i1_row_06_n12_phase8_readiness_inputs",
+      "support_source": "n13_i1_row_01_n07_support_withdrawal_baseline"
+    },
+    "support_disrupted_negative_control": {
+      "bounded_response_is_schedule_candidate_not_raw_support_pass": true,
+      "full_stress_control_pending_iteration_6": true,
+      "raw_disrupted_lane_count": 1,
+      "raw_disrupted_lanes": [
+        "n09_matched_partial_support_withdrawal"
+      ],
+      "raw_disrupted_lanes_not_counted_as_supported_before_response": true
+    },
+    "support_error_signal": {
+      "error_expression": "max(0, support_survival_threshold - final_A_support_retention)",
+      "error_is_external_proxy": false,
+      "error_is_source_current_support_state_derived": true,
+      "error_name": "support_retention_threshold_deficit",
+      "runtime_visible_inputs": [
+        "final_A_support_retention",
+        "support_survival_threshold",
+        "lane_digest",
+        "support_area_digest"
+      ]
+    },
+    "support_seeking_regulation_candidate": true,
+    "support_target": {
+      "target_derivation_rule": {
+        "expression": "final_A_support_retention >= support_survival_threshold",
+        "input_fields": [
+          "final_A_support_retention",
+          "support_survival_threshold"
+        ],
+        "runtime_visible_inputs": [
+          "final_A_support_retention",
+          "support_survival_threshold",
+          "withdrawal_depth",
+          "restoration_fraction"
+        ],
+        "support_area_digest": "c0136786bd5288984d19152ff5a201ba91f5102a0f044879fb5be83f0367a3cb",
+        "support_area_id": "n07_support_area_A_v1",
+        "threshold_source": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json"
+      },
+      "target_kind": "support_state_derived_target_candidate",
+      "target_name": "support_retention_above_threshold_source_current",
+      "target_output_digest": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+      "target_source": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json"
+    },
+    "trend_stability_fields": {
+      "out_of_envelope_blocker": "unbounded_perturbation_envelope_blocked",
+      "overcorrection_status": [
+        "capped_at_support_threshold",
+        "not_applicable_no_response"
+      ],
+      "saturation_status": [
+        "not_applicable_no_response",
+        "not_saturated_within_bounded_window"
+      ],
+      "support_trend": [
+        "bounded_correction_needed",
+        "mild_support_above_threshold_no_response",
+        "source_restored_above_threshold_no_new_response",
+        "stable_above_threshold_no_response"
+      ]
+    }
+  },
+  "target_ap_ceiling": "AP3"
+}

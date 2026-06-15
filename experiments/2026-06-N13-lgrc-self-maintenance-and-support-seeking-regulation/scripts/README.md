@@ -9,13 +9,13 @@ Generated scripts:
 - `build_n13_support_schema_v1.py`: builds the support-condition schema, AP
   mapping, control flags, claim flags, budget/replay fields, and fail-closed
   blockers.
-
-Planned scripts:
-
 - `build_n13_support_derived_target_candidate.py`: evaluates the support-state
   derived target candidate.
 - `build_n13_support_seeking_regulation_candidate.py`: evaluates the bounded
   support-seeking regulation candidate.
+
+Planned scripts:
+
 - `build_n13_external_proxy_control_matrix.py`: builds external proxy, hidden
   target, post-hoc label, stale source, budget, and claim relabel controls.
 - `build_n13_support_disruption_restoration_matrix.py`: builds the support

@@ -10,14 +10,14 @@ Generated artifacts:
 - `n13_support_schema_v1.json`: frozen support-condition row schema, AP
   mapping, control flags, claim flags, budget/replay fields, and fail-closed
   blockers.
-
-Planned artifacts:
-
 - `n13_support_derived_target_candidate.json`: support-state derived target
   candidate with source-current fields, derivation rule, and claim controls.
 - `n13_support_seeking_regulation_candidate.json`: support-seeking regulation
   candidate with bounded response, budget debit, trend/stability fields, and
-  controls.
+  pending controls.
+
+Planned artifacts:
+
 - `n13_external_proxy_control_matrix.json`: external proxy, hidden target,
   post-hoc label, stale source, budget, and claim relabel controls.
 - `n13_support_disruption_restoration_matrix.json`: support-present,
