@@ -15,45 +15,45 @@ Deferred    intentionally postponed
 
 ## Global Constraints
 
-- [ ] Keep N12 as a bridge experiment, not an agency claim experiment.
-- [ ] Keep N12 experiment-local unless a separate Phase 8/core task is opened.
-- [ ] Stop before changing `src/*`.
-- [ ] If Phase 8 is opened later, inspect `src/pygrc/telemetry` as a first-class
+- [x] Keep N12 as a bridge experiment, not an agency claim experiment.
+- [x] Keep N12 experiment-local unless a separate Phase 8/core task is opened.
+- [x] Stop before changing `src/*`.
+- [x] If Phase 8 is opened later, inspect `src/pygrc/telemetry` as a first-class
       native surface namespace.
-- [ ] Treat N11 GALI7 as artifact-only source evidence, not native support.
-- [ ] Treat N05-N11 producer-layer evidence as scaffolding until Phase 8
+- [x] Treat N11 GALI7 as artifact-only source evidence, not native support.
+- [x] Treat N05-N11 producer-layer evidence as scaffolding until Phase 8
       implements and validates native support.
-- [ ] Preserve compatibility with RC causality, coherence, LGRC geometry,
+- [x] Preserve compatibility with RC causality, coherence, LGRC geometry,
       packet scheduling, topology lineage, and budget conservation.
-- [ ] Reject candidate rows that require non-RC quantities.
-- [ ] Require `non_rc_quantity_audit` for every candidate row.
-- [ ] Treat `phase8_ready` as derived from `nat_level = NAT4`, not as a
+- [x] Reject candidate rows that require non-RC quantities.
+- [x] Require `non_rc_quantity_audit` for every candidate row.
+- [x] Treat `phase8_ready` as derived from `nat_level = NAT4`, not as a
       competing primary class.
-- [ ] Keep `NAT` levels as naturalization/readiness classifications, not agency
+- [x] Keep `NAT` levels as naturalization/readiness classifications, not agency
       or native support flags.
-- [ ] Record source artifacts, source reports, and SHA-256 digests for every
+- [x] Record source artifacts, source reports, and SHA-256 digests for every
       accepted N12 inventory row.
-- [ ] Split essential producer decisions from bookkeeping fields for every
+- [x] Split essential producer decisions from bookkeeping fields for every
       candidate row.
-- [ ] Preserve separated memory, proxy, support, route, artifact replay, and
+- [x] Preserve separated memory, proxy, support, route, artifact replay, and
       node-plus-packet budget surfaces.
-- [ ] Require artifact-only replay or source-current reconstruction gates where
+- [x] Require artifact-only replay or source-current reconstruction gates where
       applicable.
-- [ ] Block hidden producer mutation, stale source use, native relabeling,
+- [x] Block hidden producer mutation, stale source use, native relabeling,
       budget ambiguity, and claim promotion with distinct blockers.
-- [ ] Keep route conductance memory distinct from intention, ACO, or ant-colony
+- [x] Keep route conductance memory distinct from intention, ACO, or ant-colony
       behavior.
-- [ ] Keep response magnitude policy distinct from intention or semantic goal
+- [x] Keep response magnitude policy distinct from intention or semantic goal
       ownership.
-- [ ] Keep support survival distinct from identity acceptance.
-- [ ] Keep native integration meta-policy deferred until component native
+- [x] Keep support survival distinct from identity acceptance.
+- [x] Keep native integration meta-policy deferred until component native
       policies exist and pass validators.
-- [ ] Do not promote agency, intention, semantic goal ownership, identity
+- [x] Do not promote agency, intention, semantic goal ownership, identity
       acceptance, biological behavior, personhood, unrestricted agency, or
       fully native agentic-like integration claims.
-- [ ] Record exact replay commands for every generated artifact.
-- [ ] Before closing any file-editing turn, run `git diff --check`.
-- [ ] Before closing any file-editing turn, run `git diff -- src`.
+- [x] Record exact replay commands for every generated artifact.
+- [x] Before closing any file-editing turn, run `git diff --check`.
+- [x] Before closing any file-editing turn, run `git diff -- src`.
 
 ## Iteration 0. Planning And Stubs
 
@@ -568,27 +568,27 @@ scripts/build_n12_agentic_like_integration_boundary.py 90e38e45959678427b798c287
 
 ## Iteration 7. Phase 8 Readiness Package, No Implementation
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Produce Phase 8-ready contract list.
-- [ ] Produce blocker list.
-- [ ] Produce fail-closed control list.
-- [ ] Produce telemetry requirements, including `src/pygrc/telemetry` surfaces.
-- [ ] Produce test gates.
-- [ ] Produce route conductance memory readiness row.
-- [ ] Produce response magnitude policy readiness row.
-- [ ] Produce identity acceptance blocked row.
-- [ ] Produce native integration meta-policy blocked row.
-- [ ] Decide which rows, if any, reach `NAT4`.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
+- [x] Produce Phase 8-ready contract list.
+- [x] Produce blocker list.
+- [x] Produce fail-closed control list.
+- [x] Produce telemetry requirements, including `src/pygrc/telemetry` surfaces.
+- [x] Produce test gates.
+- [x] Produce route conductance memory readiness row.
+- [x] Produce response magnitude policy readiness row.
+- [x] Produce identity acceptance blocked row.
+- [x] Produce native integration meta-policy blocked row.
+- [x] Decide which rows, if any, reach `NAT4`.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_phase8_readiness_matrix.json`
-- [ ] `reports/n12_phase8_readiness_matrix.md`
-- [ ] `scripts/build_n12_phase8_readiness_matrix.py`
+- [x] `outputs/n12_phase8_readiness_matrix.json`
+- [x] `reports/n12_phase8_readiness_matrix.md`
+- [x] `scripts/build_n12_phase8_readiness_matrix.py`
 
 Acceptance statement:
 
@@ -599,37 +599,77 @@ missing-gate blockers, while identity acceptance and full native integration
 remain blocked and no implementation has been opened.
 ```
 
+Acceptance state:
+
+```text
+Achieved. Iteration 7 produces the Phase 8 readiness package without opening
+Phase 8. Only native_route_conductance_memory_policy and
+native_response_magnitude_policy enter the Phase 8-ready contract list.
+native_identity_acceptance_validator and native_agentic_like_integration_policy
+remain blocked/deferred rows at NAT2. The matrix records controls, telemetry
+requirements, test gates, default-off/no-implementation flags, and explicit
+future-policy-record wording so required future records cannot be misread as
+native records opened by N12. src_diff_empty = true, native_supported_flags =
+false, and phase8_opened = false are recorded.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_phase8_readiness_matrix.py`.
+- Generated `outputs/n12_phase8_readiness_matrix.json`.
+- Generated `reports/n12_phase8_readiness_matrix.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_phase8_readiness_matrix.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_phase8_readiness_matrix.json c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14
+reports/n12_phase8_readiness_matrix.md 7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5
+scripts/build_n12_phase8_readiness_matrix.py 7fe741ce1c21b4bd7f76ddd9f8dab15c24c7ae85b26305124b0fcb0a7f5782df
+```
+
 ## Iteration 8. N12 Closeout And Handoff
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Close Hypothesis A.
-- [ ] Close Hypothesis B.
-- [ ] Close Hypothesis C.
-- [ ] Freeze final NAT levels.
-- [ ] Confirm every seed row is classified.
-- [ ] Record final native absorption candidates.
-- [ ] Record final Phase 8-ready contracts.
-- [ ] Record final experiment-local scaffolds.
-- [ ] Record final theory-sensitive blockers.
-- [ ] Confirm every Phase 8-ready row has controls, telemetry requirements,
+- [x] Close Hypothesis A.
+- [x] Close Hypothesis B.
+- [x] Close Hypothesis C.
+- [x] Freeze final NAT levels.
+- [x] Confirm every seed row is classified.
+- [x] Record final native absorption candidates.
+- [x] Record final Phase 8-ready contracts.
+- [x] Record final experiment-local scaffolds.
+- [x] Record final theory-sensitive blockers.
+- [x] Confirm every Phase 8-ready row has controls, telemetry requirements,
       and tests.
-- [ ] Confirm every deferred row has a blocker and rationale.
-- [ ] Record final native support flags as false unless separate Phase 8 source
+- [x] Confirm every deferred row has a blocker and rationale.
+- [x] Record final native support flags as false unless separate Phase 8 source
       exists.
-- [ ] Record final claim flags as false for unsafe claims.
-- [ ] Update roadmap if needed.
-- [ ] Decide whether next work is targeted Phase 8 or N13.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `src/*` remains clean for N12.
+- [x] Record final claim flags as false for unsafe claims.
+- [x] Update roadmap if needed.
+- [x] Decide whether next work is targeted Phase 8 or N13.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `src/*` remains clean for N12.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_closeout_and_handoff.json`
-- [ ] `reports/n12_closeout_and_handoff.md`
-- [ ] `scripts/build_n12_closeout_and_handoff.py`
+- [x] `outputs/n12_closeout_and_handoff.json`
+- [x] `reports/n12_closeout_and_handoff.md`
+- [x] `scripts/build_n12_closeout_and_handoff.py`
 
 Acceptance statement:
 
@@ -637,4 +677,53 @@ Acceptance statement:
 Iteration 8 passes if N12 closes with source-backed naturalization gates and a
 claim-clean handoff, without implementing Phase 8 or promoting N11 artifact-only
 evidence into native LGRC support.
+```
+
+Acceptance state:
+
+```text
+Achieved. Iteration 8 closes N12 as a claim-clean bridge experiment. Every
+seed row is classified and every NAT level is frozen. The only Phase 8-ready
+contracts are native_route_conductance_memory_policy and
+native_response_magnitude_policy at NAT4. native_identity_acceptance_validator
+and native_agentic_like_integration_policy remain theory-sensitive NAT2
+blockers. The route context/native route arbitration boundary remains NAT2
+scaffold evidence with inherited selection-only native route arbitration.
+Hypothesis A is supported as a scaffold boundary: some N05-N11 mechanisms are
+valid artifact/producer scaffolds but remain non-native. Hypothesis B is
+supported at NAT4 readiness only: route conductance memory and bounded
+response magnitude can be specified as Phase 8-ready native policy candidates
+without adding non-RC quantities, but this is not native support. Hypothesis C
+is supported as a theory-sensitive blocker result: identity acceptance and
+full native agentic-like integration remain blocked until theory and component
+gates are explicit.
+N12 opens no Phase 8 implementation, no native support, and no agency,
+intention, identity acceptance, semantic goal ownership, or fully native
+agentic-like integration claim.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_closeout_and_handoff.py`.
+- Generated `outputs/n12_closeout_and_handoff.json`.
+- Generated `reports/n12_closeout_and_handoff.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_closeout_and_handoff.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_closeout_and_handoff.json fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e
+reports/n12_closeout_and_handoff.md f9ff0af85e98a586d9a48568ca4148bc6e8a38f16d7cba64d1b84abfe26580c4
+scripts/build_n12_closeout_and_handoff.py ff2a3edfc8dfcb0a9baa674b47270434fc838fb9a5ebaac4cb22ab18e5eeb3b2
 ```

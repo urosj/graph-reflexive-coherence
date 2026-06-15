@@ -23,9 +23,6 @@ Generated artifacts:
   theory gates, support-vs-acceptance separation, and rationale.
 - `n12_agentic_like_integration_boundary.json`: blocked native integration
   meta-policy boundary, composition prerequisites, and rationale.
-
-Planned artifacts:
-
 - `n12_phase8_readiness_matrix.json`: Phase 8-ready contracts, blockers,
   controls, telemetry requirements, test gates, and explicit no-implementation
   flags.

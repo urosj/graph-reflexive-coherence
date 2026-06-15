@@ -18,9 +18,6 @@ Generated reports:
   boundary report.
 - `n12_agentic_like_integration_boundary.md`: human-readable agentic-like
   integration boundary report.
-
-Planned reports:
-
 - `n12_phase8_readiness_matrix.md`: human-readable Phase 8 readiness matrix
   covering contracts, blockers, controls, telemetry requirements, and test
   gates, with no-implementation flags.

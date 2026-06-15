@@ -670,6 +670,25 @@ missing-gate blockers, while identity acceptance and full native integration
 remain blocked and no implementation has been opened.
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_phase8_readiness_matrix.json
+Report: reports/n12_phase8_readiness_matrix.md
+Output digest: 949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b
+```
+
+Iteration 7 produces the Phase 8 readiness package without opening Phase 8.
+Only `native_route_conductance_memory_policy` and `native_response_magnitude_policy`
+enter the Phase 8-ready contract list. `native_identity_acceptance_validator`
+and `native_agentic_like_integration_policy` remain blocked/deferred rows at
+`NAT2`. The matrix records controls, telemetry requirements, test gates,
+default-off/no-implementation flags, and explicit future-policy-record wording
+so required future records cannot be misread as native records opened by N12.
+`src_diff_empty = true`, `native_supported_flags = false`, and
+`phase8_opened = false` are recorded.
+
 ### Iteration 8. N12 Closeout And Handoff
 
 Freeze NAT levels, update the roadmap if needed, and decide whether next work
@@ -703,3 +722,23 @@ native absorption candidates, Phase 8-ready contracts derived from `NAT4`,
 experiment-local scaffolds, and theory-sensitive blockers without implementing
 Phase 8 or promoting artifact-only evidence into native LGRC support.
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_closeout_and_handoff.json
+Report: reports/n12_closeout_and_handoff.md
+Output digest: e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e
+```
+
+Iteration 8 closes N12 as a claim-clean bridge experiment. Final NAT levels
+are frozen across all five seed rows: `native_route_conductance_memory_policy`
+and `native_response_magnitude_policy` reach `NAT4` as Phase 8-ready contracts,
+while `native_identity_acceptance_validator` and
+`native_agentic_like_integration_policy` remain theory-sensitive `NAT2`
+blockers. The route context/native route arbitration boundary remains `NAT2`
+scaffold evidence with inherited selection-only native route arbitration. The
+closeout records no roadmap reorder requirement, leaves both targeted Phase 8
+and N13 as valid next work paths, and keeps `src_diff_empty = true`,
+`native_supported_flags = false`, and `phase8_opened = false`.

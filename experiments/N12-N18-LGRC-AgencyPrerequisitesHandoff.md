@@ -1,8 +1,9 @@
 # N12-N18 LGRC Agency Prerequisites Handoff
 
-This handoff is the pickup note for continuing after the N05-N11 foundation arc.
-It is meant to let a future conversation restart without rediscovering the claim
-boundary, source artifacts, or next branch options.
+This handoff is the pickup note for continuing after the N05-N11 foundation arc
+and the completed N12 bridge experiment. It is meant to let a future
+conversation restart without rediscovering the claim boundary, source
+artifacts, or next branch options.
 
 ## Current Position
 
@@ -24,12 +25,32 @@ The current roadmap continuation is:
 That roadmap treats N12-N18 as agency-prerequisite experiments, not agency
 claims.
 
+N12 is now closed as a claim-clean bridge experiment:
+
+- Final N12 status: `closed_claim_clean_bridge_experiment`.
+- Strongest recorded naturalization level: `NAT4`.
+- Phase 8-ready contracts:
+  - `native_route_conductance_memory_policy`
+  - `native_response_magnitude_policy`
+- Theory-sensitive blockers:
+  - `native_identity_acceptance_validator`
+  - `native_agentic_like_integration_policy`
+- Phase 8 implementation opened: false.
+- Native support opened: false.
+- Agency, intention, semantic goal ownership, identity acceptance, fully native
+  agentic-like integration, biological behavior, personhood, and unrestricted
+  agency claims: still blocked.
+
 ## Primary Source Artifacts
 
 Start future review from these files:
 
 - `experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md`
 - `experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md`
+- `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md`
+- `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json`
+- `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md`
+- `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_final_interpretation_and_roadmap_significance.md`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md`
@@ -47,7 +68,7 @@ Known recent output digests:
 - N11 Iteration 12:
   `86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6`
 
-## Native Gaps Carried Forward
+## Native Gaps Carried Forward After N12
 
 N11 Hypothesis C identified these native blockers:
 
@@ -56,46 +77,57 @@ N11 Hypothesis C identified these native blockers:
 - `native_identity_acceptance_validator_missing`
 - `native_agentic_like_integration_policy_missing`
 
-The first two are the most concrete Phase 8 candidates. The identity and
-integration validators are theory-sensitive and should follow only after their
-entry gates are clearer.
+N12 resolved them as follows:
+
+- `native_route_conductance_memory_policy_missing` is now represented by the
+  `NAT4` Phase 8-ready contract `native_route_conductance_memory_policy`.
+- `native_response_magnitude_policy_missing_for_unbounded_perturbations` is now
+  represented by the `NAT4` bounded/envelope-gated Phase 8-ready contract
+  `native_response_magnitude_policy`.
+- `native_identity_acceptance_validator_missing` remains a `NAT2`
+  theory-sensitive blocker.
+- `native_agentic_like_integration_policy_missing` remains a `NAT2`
+  theory-sensitive blocker.
+
+The first two are ready only as targeted Phase 8 contract entries. They are not
+native support. The identity and integration validators should follow only
+after their theory and component entry gates are explicit.
 
 ## Recommended Next Start
 
-The clean next experiment is N12:
+The clean next experiment, if continuing the experiment roadmap without opening
+Phase 8 implementation, is N13:
 
-`N12 - LGRC Native Naturalization And Producer Dissolution`
+`N13 - LGRC Self-Maintenance / Support-Seeking Regulation`
 
 Recommended first actions:
 
-1. Create the N12 experiment root, README, implementation plan, checklist,
+1. Create the N13 experiment root, README, implementation plan, checklist,
    outputs/reports/scripts directories, and initial stubs.
-2. Inventory which N05-N11 producer-layer mechanisms are candidates for native
-   absorption.
-3. Split candidates into:
-   - ready for Phase 8 contract work,
-   - experiment-local only,
-   - theory-sensitive/deferred.
-4. Start with the two concrete native candidates:
-   - route conductance memory,
-   - response magnitude policy.
+2. Start from support-seeking regulation, not identity-seeking regulation.
+3. Consume N07 support survival/disruption/restoration evidence, N09 bounded
+   proxy regulation evidence, N10 support-sensitive integration evidence, N11
+   artifact-only GALI7 evidence, and N12 blocker/readiness records.
+4. Do not consume identity acceptance, runtime identity acceptance, semantic
+   goal ownership, agency, or fully native integration as supported inputs.
 5. Preserve the existing rule: producer-layer evidence may motivate native
    support, but it does not become a native claim until Phase 8 implements and
    validates it.
 
 ## Branch Options
 
-There are three reasonable next branches:
+There are three reasonable next branches after N12:
 
-- N12 first, no `src/*`: define naturalization inventory, contracts, and
-  acceptance gates before opening Phase 8.
+- N13 first, no `src/*`: continue the agency-prerequisite roadmap with
+  support-seeking/self-maintenance as artifact-level experiment work.
 - Phase 8 route-conductance memory first: native absorption of the N08 memory
-  trail / route affordance mechanism.
-- Phase 8 response-magnitude policy first: native absorption of bounded
-  regulation response sizing from N09/N10/N11.
+  trail / route affordance mechanism from the N12 NAT4 contract.
+- Phase 8 response-magnitude policy first: native absorption of bounded,
+  envelope-gated regulation response sizing from the N12 NAT4 contract.
 
-The most conservative route is N12 first, then open targeted Phase 8 work from
-N12 results.
+The most conservative route is N13 first if the goal is to continue the
+artifact-level roadmap. Open targeted Phase 8 only when the goal is native
+implementation of one of the two N12 NAT4 contracts.
 
 ## Claim Boundary
 
@@ -122,13 +154,14 @@ Current blocked language:
 
 ## Verification Notes
 
-Before this handoff was added, the last checks run were:
+Before closing a handoff update, rerun:
 
 - `git diff --check`
 - `git diff -- src`
 
-`src/*` was unchanged by the N12-N18 roadmap addition. The new work is
-documentation/experiment artifact work only.
+The post-N12 handoff update and N12 closeout refresh are
+documentation/experiment artifact work only. They should leave `src/*`
+unchanged.
 
 Future sessions should rerun:
 
@@ -137,18 +170,23 @@ git diff --check
 git diff -- src
 ```
 
-before closing any N12 setup or Phase 8 planning turn.
+before closing any N13 setup or Phase 8 planning turn.
 
-## Open Questions
+## Resolved N12 Questions
 
-- Should N12 define its own naturalization ladder, or use the AP0-AP8 ladder
-  from the N12-N18 roadmap as the primary continuation axis?
-- Should route conductance memory and response magnitude policy be naturalized
-  together or split into separate Phase 8 continuations?
-- Should identity acceptance remain deferred until after N12-N14, or should N12
-  create only a negative/blocked contract for it?
+- N12 defined a local `NAT0-NAT6` naturalization ladder separate from the
+  AP0-AP8 agency-prerequisite ladder.
+- Route conductance memory and response magnitude policy are separate `NAT4`
+  Phase 8-ready contracts.
+- Identity acceptance remains deferred as a `NAT2` theory-sensitive blocker.
+- Full native agentic-like integration remains deferred as a `NAT2`
+  theory-sensitive blocker.
 
-The current recommended answer is: use AP0-AP8 for the roadmap, define a local
-N12 native-absorption ladder if needed, split Phase 8 mechanisms if their
-contract surfaces diverge, and keep identity acceptance blocked until the theory
-entry gates are explicit.
+## Remaining Questions
+
+- Should the next branch be N13 artifact-level self-maintenance/support-seeking
+  regulation, or targeted Phase 8 native implementation?
+- If Phase 8 opens, should route conductance memory or response magnitude policy
+  be implemented first?
+- What explicit theory gates would be sufficient to reconsider identity
+  acceptance after N13/N14 evidence accumulates?

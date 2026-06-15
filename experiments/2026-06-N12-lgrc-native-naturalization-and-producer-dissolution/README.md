@@ -183,14 +183,16 @@ phase8_opened = false
 Current N12 state:
 
 ```text
-status = iteration_6_agentic_like_integration_boundary_complete
+status = n12_closed
 target_naturalization_level = NAT4
 strongest_recorded_level = NAT4
 phase8_ready_rows = 2
 identity_acceptance_boundary_nat_level = NAT2
 agentic_like_integration_boundary_nat_level = NAT2
+phase8_ready_contracts = native_route_conductance_memory_policy, native_response_magnitude_policy
 phase8_implementation_opened = false
 native_support_opened = false
+n12_closeout_status = closed_claim_clean_bridge_experiment
 ```
 
 ## Initial Candidate Partition
@@ -325,6 +327,7 @@ reports/n12_naturalization_schema_v1.md
 outputs/n12_phase8_readiness_matrix.json
 reports/n12_phase8_readiness_matrix.md
 
+outputs/n12_closeout_and_handoff.json
 reports/n12_closeout_and_handoff.md
 ```
 
@@ -367,3 +370,15 @@ and full agentic-like integration blocked.
 N12 closes only when every seed row is classified, every NAT level is frozen,
 every Phase 8-ready row has controls, telemetry requirements, and tests, and
 every deferred row has a blocker and rationale.
+
+N12 closeout status:
+
+```text
+n12_closed = true
+final_status = closed_claim_clean_bridge_experiment
+phase8_ready_contracts = native_route_conductance_memory_policy, native_response_magnitude_policy
+deferred_blockers = native_identity_acceptance_validator, native_agentic_like_integration_policy
+native_supported_flags = false
+phase8_opened = false
+phase8_implementation_opened = false
+```
