@@ -330,7 +330,7 @@ experiment unless a separate Phase 8 implementation task is explicitly opened.
 
 ## Current N14 State
 
-Iterations 1 and 2 are closed:
+Iterations 1 through 4 are closed:
 
 ```text
 iteration_1_status = passed
@@ -339,6 +339,15 @@ iteration_1_output_digest = 7e8013464efdb35805bc9aa9b765a5c81afaa2a1f0d7210706d4
 iteration_2_status = passed
 iteration_2_acceptance_state = accepted_schema_freeze_no_row_validation
 iteration_2_output_digest = 56a2080a76f941e77e7a822874fa62e292f34452c06f02cbb8e971bccc540217
+iteration_3_status = passed
+iteration_3_acceptance_state = accepted_route_consequence_records_no_selection
+iteration_3_output_digest = 9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253
+iteration_4_status = passed
+iteration_4_acceptance_state = accepted_consequence_sensitive_selection_candidate_pending_controls
+iteration_4_output_digest = d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd
+iteration_4_selected_route = route_b
+iteration_4_rejected_route = route_a
+iteration_4_provisional_ap_level = AP4_candidate
 final_ap4_supported = false
 phase8_opened = false
 native_support_opened = false
@@ -346,14 +355,19 @@ native_support_opened = false
 
 Iteration 1 pins seven source rows for route, memory, regulation, support,
 Phase 8 readiness, and N13 handoff evidence. Iteration 2 freezes the AP4 schema
-and gate. No route consequence records or AP4 selection candidate have been
-built yet.
+and gate. Iteration 3 builds pre-selection consequence records for the
+`route_a`/`route_b` candidate set and records an affordance/consequence
+conflict. It derives consequence ranks from serialized memory-dominant score
+components; support and regulation sources are compatible but not
+route-specific yet. Iteration 4 applies the deterministic consequence-sensitive
+selection rule and selects `route_b` by derived consequence rank while
+rejecting the immediate-affordance winner `route_a`. This is only a provisional
+`AP4_candidate`; final AP4 still requires adversarial controls,
+replay/snapshot checks, and claim-boundary classification.
 
 Remaining iteration acceptance states:
 
 ```text
-iteration_3_acceptance_state = pending_not_run
-iteration_4_acceptance_state = pending_not_run
 iteration_5_acceptance_state = pending_not_run
 iteration_6_acceptance_state = pending_not_run
 iteration_7_acceptance_state = pending_not_run

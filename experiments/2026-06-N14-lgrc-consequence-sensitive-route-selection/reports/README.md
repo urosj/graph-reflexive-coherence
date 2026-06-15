@@ -6,11 +6,11 @@ Generated reports:
 
 - `n14_consequence_source_inventory.md`
 - `n14_consequence_selection_schema_v1.md`
+- `n14_route_consequence_records.md`
+- `n14_consequence_sensitive_selection_candidate.md`
 
 Planned reports:
 
-- `n14_route_consequence_records.md`
-- `n14_consequence_sensitive_selection_candidate.md`
 - `n14_consequence_control_matrix.md`
 - `n14_consequence_perturbation_matrix.md`
 - `n14_claim_boundary_record.md`

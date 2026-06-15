@@ -1,0 +1,537 @@
+{
+  "acceptance_state": "accepted_route_consequence_records_no_selection",
+  "candidate_set_completeness_record": {
+    "affordance_consequence_conflict_present": true,
+    "affordance_consequence_conflict_resolved": false,
+    "candidate_set_digest": "cc28d581e856d3782a840c63157f7b1d4d565387e8c00ed28b8365cba7b5f4a9",
+    "consequence_score_policy": {
+      "claim_boundary": "artifact-local consequence ordering only; not utility, intention, semantic choice, goal ownership, agency, or native support",
+      "components": {
+        "budget_penalty_component": "0.0 when pinned budget surfaces are present; budget-invalid variants are deferred to Iteration 5 controls",
+        "memory_delta_component": "N08 memory_strength_end - memory_strength_start from the pinned MEM6 replay window",
+        "route_specific_regulation_component": "0.0 unless a route-specific regulation effect is source-backed; Iteration 3 has source-compatible regulation evidence but no route-specific regulation consequence",
+        "route_specific_support_component": "0.0 unless a route-specific support effect is source-backed; Iteration 3 has source-compatible support evidence but no route-specific support consequence"
+      },
+      "policy_id": "n14_i3_memory_dominant_consequence_score_v1",
+      "score_direction": "higher_is_better"
+    },
+    "consequence_signal_scope": "memory_dominant_provisional_candidate; support and regulation sources are compatible but not route-specific in Iteration 3",
+    "consequence_top_route": "route_b",
+    "eligible_candidate_set_id": "native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39",
+    "eligible_routes": [
+      "route_a",
+      "route_b"
+    ],
+    "immediate_affordance_top_route": "route_a",
+    "missing_consequence_records": [],
+    "records_present_for_all_eligible_routes": true,
+    "selection_deferred_to_iteration_4": true
+  },
+  "checks": {
+    "affordance_consequence_conflict_not_resolved_yet": true,
+    "affordance_consequence_conflict_present": true,
+    "bounded_consequence_horizon_present": true,
+    "budget_cost_surface_present": true,
+    "candidate_set_complete": true,
+    "claim_flags_forced_false": true,
+    "consequence_rank_derived_from_score_components": true,
+    "consequence_rank_recorded": true,
+    "consequence_score_components_serialized": true,
+    "derivation_policy_declared": true,
+    "hidden_outcome_table_not_used": true,
+    "immediate_affordance_rank_recorded": true,
+    "inventory_source_passed": true,
+    "memory_dominant_scope_recorded": true,
+    "native_supported_flags_false": true,
+    "no_final_ap4_supported": true,
+    "no_selected_route_claim": true,
+    "observed_downstream_effect_present": true,
+    "phase8_opened_false": true,
+    "post_hoc_scoring_not_used": true,
+    "prediction_basis_declared": true,
+    "prediction_match_status_present": true,
+    "records_pre_selection": true,
+    "records_satisfy_schema": true,
+    "route_consequence_record_count": true,
+    "runtime_state_used_false": true,
+    "schema_source_passed": true,
+    "source_references_pinned": true,
+    "source_window_declared": true,
+    "src_diff_empty": true,
+    "support_memory_regulation_descriptors_present": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/scripts/build_n14_route_consequence_records.py",
+  "consequence_score_policy": {
+    "claim_boundary": "artifact-local consequence ordering only; not utility, intention, semantic choice, goal ownership, agency, or native support",
+    "components": {
+      "budget_penalty_component": "0.0 when pinned budget surfaces are present; budget-invalid variants are deferred to Iteration 5 controls",
+      "memory_delta_component": "N08 memory_strength_end - memory_strength_start from the pinned MEM6 replay window",
+      "route_specific_regulation_component": "0.0 unless a route-specific regulation effect is source-backed; Iteration 3 has source-compatible regulation evidence but no route-specific regulation consequence",
+      "route_specific_support_component": "0.0 unless a route-specific support effect is source-backed; Iteration 3 has source-compatible support evidence but no route-specific support consequence"
+    },
+    "policy_id": "n14_i3_memory_dominant_consequence_score_v1",
+    "score_direction": "higher_is_better"
+  },
+  "experiment": "N14",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "bca241d691c9b681ebb077559f694ac60e1e7d1c",
+    "src_status_short": ""
+  },
+  "interpretation_record": {
+    "acceptance_state": "accepted_route_consequence_records_no_selection",
+    "next_required_step": "Apply a deterministic selection rule in Iteration 4 and test whether the recorded consequence vector, not immediate affordance alone, determines the selected route.",
+    "plain_language_interpretation": "Iteration 3 builds the consequence records that Iteration 4 can use for route selection. N06 immediate affordance favors route_a, while a serialized, memory-dominant consequence score derived from N08 memory deltas ranks route_b higher. N09/N13 support and regulation evidence is source-compatible but not route-specific in this iteration. The conflict is recorded, but it is not resolved by a selection rule yet.",
+    "record_id": "n14_i3_interpretation_route_consequence_records_v1",
+    "supported_interpretation": "N14 now has source-backed, pre-selection consequence records for the route_a/route_b candidate set, including an explicit affordance-versus-consequence conflict.",
+    "unsupported_interpretations": [
+      "selected route by consequence",
+      "AP4 consequence-sensitive selection support",
+      "intention",
+      "agency",
+      "semantic choice",
+      "semantic goal ownership",
+      "identity acceptance",
+      "native support",
+      "fully native integration"
+    ]
+  },
+  "iteration": 3,
+  "iteration_result": {
+    "acceptance_state": "accepted_route_consequence_records_no_selection",
+    "affordance_consequence_conflict_present": true,
+    "affordance_consequence_conflict_resolved": false,
+    "candidate_set_complete": true,
+    "final_ap4_supported": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "pre_selection_records_built": true,
+    "route_consequence_records_passed": true,
+    "selected_route_assigned": false
+  },
+  "output_digest": "9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253",
+  "purpose": "route_consequence_record_candidate",
+  "route_consequence_records": [
+    {
+      "affordance_consequence_conflict_resolved_by_consequence": false,
+      "artifact_only_replay_status": "source_artifact_replay_fields_present",
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_choice",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bounded_consequence_horizon": {
+        "n06_route_window": "cycle_0",
+        "n08_memory_window": "four_cycle_MEM6_replay",
+        "n09_regulation_window": "GPR5_repeated_and_GPR8_perturbation_closeout",
+        "n13_support_window": "stress_02_four_window_support_response"
+      },
+      "budget_cost_surface": {
+        "n06_budget": "budget_conservation_passed",
+        "n08_budget": "memory_budget_and_node_plus_packet_budget_controls_passed",
+        "n09_budget": {
+          "node_plus_packet_budget_error": 0.0
+        },
+        "n13_budget": {
+          "support_response_budget_debit": 0.120134817816,
+          "within_bounded_window": true
+        }
+      },
+      "budget_validity": "source_budget_surfaces_present_not_selection_validated",
+      "candidate_set_completeness_status": "complete_for_n06_cycle_0_route_a_route_b",
+      "consequence_rank": 2,
+      "consequence_rank_source": "derived_from_serialized_consequence_score_components",
+      "consequence_record_source": "N06_cycle_0_N08_MEM6_N09_GPR6_N13_AP3_stress",
+      "consequence_record_timing": "pre_selection",
+      "consequence_score_components": {
+        "components": {
+          "budget_penalty_component": 0.0,
+          "memory_delta_component": -0.1597545,
+          "route_specific_regulation_component": 0.0,
+          "route_specific_support_component": 0.0
+        },
+        "consequence_score": -0.1597545,
+        "score_direction": "higher_is_better",
+        "score_policy_id": "n14_i3_memory_dominant_consequence_score_v1",
+        "score_scope": "memory_dominant_route_consequence",
+        "support_regulation_specificity": "support_and_regulation_sources_are_compatible_but_not_route_specific_in_iteration_3"
+      },
+      "derivation_policy": "artifact_only_pre_selection_projection_from_pinned_source_windows; no hidden outcome table; no post-hoc selected-route scoring",
+      "eligible_candidate_set_id": "native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39",
+      "expected_memory_effect": "route_a memory strength decays without reinforcement over the N08 MEM6 window",
+      "expected_regulation_effect": "no route-specific bounded regulation recovery evidence attached to route_a in the pinned sources",
+      "expected_support_effect": "no route-specific support restoration evidence; N13 support correction remains separate bounded response evidence",
+      "hidden_outcome_table_control": "not_used_source_artifact_projection_only",
+      "immediate_affordance_rank": 1,
+      "immediate_affordance_surface": {
+        "n06_cycle_0_score": 1.0,
+        "n06_selected_route_under_immediate_affordance": "route_a"
+      },
+      "mechanism_name": "pre_selection_route_consequence_record",
+      "mechanism_role": "route_consequence_record_candidate",
+      "missing_consequence_record_rejection": "schema_policy_reject_or_mark_unsupported; no missing records in iteration_3_candidate_set",
+      "missing_gates": [
+        "selection_rule_not_applied",
+        "affordance_consequence_conflict_not_resolved",
+        "controls_not_run",
+        "replay_matrix_not_run",
+        "final_ap4_not_supported"
+      ],
+      "observed_downstream_effect": {
+        "memory_strength_end": 0.4297455,
+        "memory_strength_start": 0.5895,
+        "memory_trend": "decay_without_reinforcement",
+        "regulation_source": "bounded_repeated_regulation",
+        "support_response_source": "bounded_response_to_support_error"
+      },
+      "order_inversion_replay_status": "not_run_until_iteration_6",
+      "post_hoc_scoring_control": "not_used_records_constructed_before_n14_selection",
+      "prediction_basis": [
+        "N06 immediate route score component sums",
+        "N08 observed route memory trend",
+        "N09 bounded regulation and perturbation recovery summary",
+        "N13 support-disrupted bounded response stress record"
+      ],
+      "prediction_match_status": "source_window_observed_for_memory_and_support; not_yet_n14_selection_validated",
+      "provisional_ap_level": "AP3_consequence_record_candidate",
+      "provisional_claim_ceiling": "artifact_level_pre_selection_route_consequence_record_candidate",
+      "rejected_candidate_record": "not_rejected_until_iteration_4_selection",
+      "route_alternative_surface": "N06 cycle_0 candidate route_a",
+      "route_candidate_id": "route_a",
+      "row_id": "n14_i3_record_01_route_a_affordance_preferred",
+      "runtime_state_used": false,
+      "selected_rank": "not_selected_until_iteration_4",
+      "selection_rationale_surface": "not_constructed_until_iteration_4",
+      "snapshot_load_status": "not_run_until_iteration_6",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_consequence_records.json",
+      "source_experiment": "N14",
+      "source_iteration": "iteration_3_route_consequence_records",
+      "source_references": [
+        {
+          "artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "artifact_output_digest": null,
+          "artifact_sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "evidence_fields": [
+            "artifact_only_closeout.per_cycle[0].candidate_score_component_sums",
+            "artifact_only_closeout.per_cycle[0].candidate_set_id",
+            "artifact_only_closeout.per_cycle[0].selected_route"
+          ],
+          "ref_id": "n06_route_affordance",
+          "report": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+          "report_sha256": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f"
+        },
+        {
+          "artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+          "artifact_output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+          "artifact_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+          "evidence_fields": [
+            "artifact_only_replay.route_a_strength_after_each_cycle",
+            "artifact_only_replay.route_b_strength_after_each_cycle",
+            "artifact_only_replay.selected_routes"
+          ],
+          "ref_id": "n08_memory_trend",
+          "report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+          "report_sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+        },
+        {
+          "artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+          "artifact_output_digest": null,
+          "artifact_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+          "evidence_fields": [
+            "regulation_summary.gpr5_regulation_outcome_tag",
+            "regulation_summary.gpr8_perturbation_classification",
+            "regulation_summary.node_plus_packet_budget_error"
+          ],
+          "ref_id": "n09_bounded_regulation",
+          "report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+          "report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+        },
+        {
+          "artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+          "artifact_output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+          "artifact_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+          "evidence_fields": [
+            "stress_matrix.stress_records.stress_02_support_disrupted_regime",
+            "stress_matrix.stress_summary"
+          ],
+          "ref_id": "n13_support_disruption",
+          "report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+          "report_sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b"
+        }
+      ],
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_consequence_records.md",
+      "source_report_sha256": "self_digest_assigned_after_write_not_used_as_source",
+      "source_sha256": "self_digest_assigned_after_write_not_used_as_source",
+      "source_window": {
+        "n06": "iteration_8_cycle_0",
+        "n08": "iteration_8_MEM6_four_cycle_replay",
+        "n09": "iteration_9_GPR6_closeout",
+        "n13": "iteration_6_stress_02_support_disrupted_regime"
+      },
+      "stale_record_policy": "source_window_pinned_for_each_projection",
+      "tie_policy": "schema_policy_present_no_tie_observed_in_i3_candidate_set"
+    },
+    {
+      "affordance_consequence_conflict_resolved_by_consequence": false,
+      "artifact_only_replay_status": "source_artifact_replay_fields_present",
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_choice",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "bounded_consequence_horizon": {
+        "n06_route_window": "cycle_0",
+        "n08_memory_window": "four_cycle_MEM6_replay",
+        "n09_regulation_window": "GPR5_repeated_and_GPR8_perturbation_closeout",
+        "n13_support_window": "stress_02_four_window_support_response"
+      },
+      "budget_cost_surface": {
+        "n06_budget": "budget_conservation_passed",
+        "n08_budget": "memory_budget_and_node_plus_packet_budget_controls_passed",
+        "n09_budget": {
+          "node_plus_packet_budget_error": 0.0
+        },
+        "n13_budget": {
+          "support_response_budget_debit": 0.120134817816,
+          "within_bounded_window": true
+        }
+      },
+      "budget_validity": "source_budget_surfaces_present_not_selection_validated",
+      "candidate_set_completeness_status": "complete_for_n06_cycle_0_route_a_route_b",
+      "consequence_rank": 1,
+      "consequence_rank_source": "derived_from_serialized_consequence_score_components",
+      "consequence_record_source": "N06_cycle_0_N08_MEM6_N09_GPR6_N13_AP3_stress",
+      "consequence_record_timing": "pre_selection",
+      "consequence_score_components": {
+        "components": {
+          "budget_penalty_component": 0.0,
+          "memory_delta_component": 0.12,
+          "route_specific_regulation_component": 0.0,
+          "route_specific_support_component": 0.0
+        },
+        "consequence_score": 0.12,
+        "score_direction": "higher_is_better",
+        "score_policy_id": "n14_i3_memory_dominant_consequence_score_v1",
+        "score_scope": "memory_dominant_route_consequence",
+        "support_regulation_specificity": "support_and_regulation_sources_are_compatible_but_not_route_specific_in_iteration_3"
+      },
+      "derivation_policy": "artifact_only_pre_selection_projection_from_pinned_source_windows; no hidden outcome table; no post-hoc selected-route scoring",
+      "eligible_candidate_set_id": "native-route-candidate-set:2eb3d1248ced33eb4f89aa22ad208b39",
+      "expected_memory_effect": "route_b memory strength rises to saturation over the N08 MEM6 window",
+      "expected_regulation_effect": "compatible with N09 bounded repeated regulation and perturbation recovery",
+      "expected_support_effect": "compatible with N13 bounded support-error response source; route specific support selection remains unvalidated until Iteration 4",
+      "hidden_outcome_table_control": "not_used_source_artifact_projection_only",
+      "immediate_affordance_rank": 2,
+      "immediate_affordance_surface": {
+        "n06_cycle_0_score": 0.4,
+        "n06_selected_route_under_immediate_affordance": "route_a"
+      },
+      "mechanism_name": "pre_selection_route_consequence_record",
+      "mechanism_role": "route_consequence_record_candidate",
+      "missing_consequence_record_rejection": "schema_policy_reject_or_mark_unsupported; no missing records in iteration_3_candidate_set",
+      "missing_gates": [
+        "selection_rule_not_applied",
+        "affordance_consequence_conflict_not_resolved",
+        "controls_not_run",
+        "replay_matrix_not_run",
+        "final_ap4_not_supported"
+      ],
+      "observed_downstream_effect": {
+        "memory_strength_end": 1.0,
+        "memory_strength_start": 0.88,
+        "memory_trend": "reinforced_saturation",
+        "regulation_source": "perturbation_recovered_to_band",
+        "support_response_source": "bounded_response_to_support_error",
+        "support_scheduled_response_total": 0.120134817816
+      },
+      "order_inversion_replay_status": "not_run_until_iteration_6",
+      "post_hoc_scoring_control": "not_used_records_constructed_before_n14_selection",
+      "prediction_basis": [
+        "N06 immediate route score component sums",
+        "N08 observed route memory trend",
+        "N09 bounded regulation and perturbation recovery summary",
+        "N13 support-disrupted bounded response stress record"
+      ],
+      "prediction_match_status": "source_window_observed_for_memory_regulation_and_support; not_yet_n14_selection_validated",
+      "provisional_ap_level": "AP3_consequence_record_candidate",
+      "provisional_claim_ceiling": "artifact_level_pre_selection_route_consequence_record_candidate",
+      "rejected_candidate_record": "not_rejected_until_iteration_4_selection",
+      "route_alternative_surface": "N06 cycle_0 candidate route_b",
+      "route_candidate_id": "route_b",
+      "row_id": "n14_i3_record_02_route_b_consequence_preferred",
+      "runtime_state_used": false,
+      "selected_rank": "not_selected_until_iteration_4",
+      "selection_rationale_surface": "not_constructed_until_iteration_4",
+      "snapshot_load_status": "not_run_until_iteration_6",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_consequence_records.json",
+      "source_experiment": "N14",
+      "source_iteration": "iteration_3_route_consequence_records",
+      "source_references": [
+        {
+          "artifact": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+          "artifact_output_digest": null,
+          "artifact_sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+          "evidence_fields": [
+            "artifact_only_closeout.per_cycle[0].candidate_score_component_sums",
+            "artifact_only_closeout.per_cycle[0].candidate_set_id",
+            "artifact_only_closeout.per_cycle[0].selected_route"
+          ],
+          "ref_id": "n06_route_affordance",
+          "report": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+          "report_sha256": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f"
+        },
+        {
+          "artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+          "artifact_output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+          "artifact_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+          "evidence_fields": [
+            "artifact_only_replay.route_a_strength_after_each_cycle",
+            "artifact_only_replay.route_b_strength_after_each_cycle",
+            "artifact_only_replay.selected_routes"
+          ],
+          "ref_id": "n08_memory_trend",
+          "report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+          "report_sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+        },
+        {
+          "artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+          "artifact_output_digest": null,
+          "artifact_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+          "evidence_fields": [
+            "regulation_summary.gpr5_regulation_outcome_tag",
+            "regulation_summary.gpr8_perturbation_classification",
+            "regulation_summary.node_plus_packet_budget_error"
+          ],
+          "ref_id": "n09_bounded_regulation",
+          "report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+          "report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+        },
+        {
+          "artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+          "artifact_output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+          "artifact_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+          "evidence_fields": [
+            "stress_matrix.stress_records.stress_02_support_disrupted_regime",
+            "stress_matrix.stress_summary"
+          ],
+          "ref_id": "n13_support_disruption",
+          "report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+          "report_sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b"
+        }
+      ],
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_consequence_records.md",
+      "source_report_sha256": "self_digest_assigned_after_write_not_used_as_source",
+      "source_sha256": "self_digest_assigned_after_write_not_used_as_source",
+      "source_window": {
+        "n06": "iteration_8_cycle_0",
+        "n08": "iteration_8_MEM6_four_cycle_replay",
+        "n09": "iteration_9_GPR6_closeout",
+        "n13": "iteration_6_stress_02_support_disrupted_regime"
+      },
+      "stale_record_policy": "source_window_pinned_for_each_projection",
+      "tie_policy": "schema_policy_present_no_tie_observed_in_i3_candidate_set"
+    }
+  ],
+  "schema": "n14_route_consequence_records_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/outputs/n06_iteration_8_sc6_closeout.json",
+      "sha256": "c020d954bdf5bfc53da9d550cd313f660af07f4b47e70b4c5102637500cc30bf",
+      "status": "passed"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": {
+      "output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "status": "passed"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json": {
+      "output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+      "sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_selection_schema_v1.json": {
+      "output_digest": "56a2080a76f941e77e7a822874fa62e292f34452c06f02cbb8e971bccc540217",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_selection_schema_v1.json",
+      "sha256": "543533cfc4a8c505828393896f32edc76226c0ad9c2983c0bba1246574086dc4",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_source_inventory.json": {
+      "output_digest": "7e8013464efdb35805bc9aa9b765a5c81afaa2a1f0d7210706d43ddd06a41513",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_source_inventory.json",
+      "sha256": "b0cc190a75ac571614966778557b5af3f02f844a79da43602c26e59256f3d8f8",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md": {
+      "path": "experiments/2026-05-N06-lgrc-semantic-route-choice/reports/n06_iteration_8_sc6_closeout.md",
+      "sha256": "994a49ee0727a10b28f974bb08dbf6573ee0e3e104c861238b1c5f0594aece1f"
+    },
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+      "sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_selection_schema_v1.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_selection_schema_v1.md",
+      "sha256": "07b83caf31195ac7924fe66066b6d7b784ce940717f5540672d6f02f9e6e7430"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_source_inventory.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_source_inventory.md",
+      "sha256": "49d9ee46ad6be542da973b75d573fd0af51b117388912c5d4ca005114fd97d28"
+    }
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP4"
+}

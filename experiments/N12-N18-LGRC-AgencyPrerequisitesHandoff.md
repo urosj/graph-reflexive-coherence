@@ -62,7 +62,7 @@ N13 is now closed as a claim-clean agency-prerequisite experiment:
   personhood, biological behavior, fully native integration, and unrestricted
   agency claims: still blocked.
 
-N14 is now opened and Iterations 1-2 are closed:
+N14 is now opened and Iterations 1-4 are closed:
 
 - Experiment title: `N14 - LGRC Consequence-Sensitive Route Selection`.
 - Planned target: artifact-level `AP4` consequence-sensitive route selection
@@ -77,8 +77,26 @@ N14 is now opened and Iterations 1-2 are closed:
   `accepted_schema_freeze_no_row_validation`.
 - Iteration 2 output digest:
   `56a2080a76f941e77e7a822874fa62e292f34452c06f02cbb8e971bccc540217`.
-- Current AP4 evidence status: not supported; no route consequence records or
-  consequence-sensitive selection candidate are built yet.
+- Iteration 3 route consequence record status: passed.
+- Iteration 3 acceptance state:
+  `accepted_route_consequence_records_no_selection`.
+- Iteration 3 output digest:
+  `9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253`.
+- Iteration 3 consequence rank source:
+  serialized memory-dominant score components; support and regulation sources
+  are compatible but not route-specific in this iteration.
+- Iteration 4 consequence-sensitive selection candidate status: passed.
+- Iteration 4 acceptance state:
+  `accepted_consequence_sensitive_selection_candidate_pending_controls`.
+- Iteration 4 output digest:
+  `d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd`.
+- Iteration 4 selected route: `route_b`; rejected route: `route_a`.
+- Iteration 4 candidate scope: memory-dominant provisional `AP4_candidate`;
+  missing/stale/budget handling is policy-only until Iteration 5 adversarial
+  controls.
+- Current AP4 evidence status: provisional `AP4_candidate` only; final AP4 is
+  not supported until controls, replay/snapshot checks, and claim-boundary
+  classification pass.
 - Phase 8 implementation opened: false.
 - Native support opened: false.
 - Intention, agency, semantic goal ownership, identity acceptance, selfhood,
@@ -148,14 +166,15 @@ after their theory and component entry gates are explicit.
 ## Recommended Next Start
 
 The clean next work, if continuing the experiment roadmap without opening
-Phase 8 implementation, is N14 Iteration 1:
+Phase 8 implementation, is N14 Iteration 5:
 
 `N14 - LGRC Consequence-Sensitive Route Selection`
 
-The N14 skeleton and Iterations 1-2 already exist. Recommended next actions:
+The N14 skeleton and Iterations 1-4 already exist. Recommended next actions:
 
-1. Run Iteration 3 and build pre-selection route consequence records from the
-   pinned N06, N08, N09, N12, and N13 sources.
+1. Run Iteration 5 controls against hidden outcomes, post-hoc labels, stale
+   records, invalid budgets, missing records, fixture labels, and claim
+   relabels.
 2. Start from route selection by expected downstream support, memory, or
    regulation effects, not semantic intention or agency.
 3. Consume N06 route arbitration evidence, N08 route memory/affordance

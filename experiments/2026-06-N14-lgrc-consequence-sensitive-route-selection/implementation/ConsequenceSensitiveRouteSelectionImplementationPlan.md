@@ -251,7 +251,27 @@ scripts/build_n14_route_consequence_records.py
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_route_consequence_records_no_selection
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_route_consequence_records.json
+Report: reports/n14_route_consequence_records.md
+Output digest: 9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253
+```
+
+Interpretation:
+
+```text
+N14 now has source-backed pre-selection route consequence records for the
+route_a/route_b candidate set. Immediate affordance favors route_a, while the
+serialized memory-dominant consequence score ranks route_b higher. Support and
+regulation sources are compatible but not route-specific in this iteration. No
+selected route, AP4 support, intention, agency, or native support claim is
+opened.
 ```
 
 Required checks:
@@ -263,6 +283,9 @@ prediction basis pinned
 derivation policy pinned
 source window pinned
 support/memory/regulation descriptors explicit
+consequence score components serialized
+consequence rank derived from score components
+memory-dominant scope recorded
 bounded horizon present
 observed downstream effect recorded when horizon is evaluated
 prediction match status recorded
@@ -287,7 +310,30 @@ scripts/build_n14_consequence_sensitive_selection_candidate.py
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_consequence_sensitive_selection_candidate_pending_controls
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_consequence_sensitive_selection_candidate.json
+Report: reports/n14_consequence_sensitive_selection_candidate.md
+Selected route: route_b
+Rejected route: route_a
+Provisional AP level: AP4_candidate
+Output digest: d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd
+```
+
+Interpretation:
+
+```text
+N14 now has a provisional AP4 candidate selection. The deterministic
+artifact-only rule selects route_b by derived, memory-dominant pre-selection
+consequence rank even though immediate affordance favors route_a. Current
+missing/stale/budget handling is recorded as policy only; final AP4 remains
+unsupported until adversarial controls, replay/snapshot checks, and
+claim-boundary classification pass.
 ```
 
 Required checks:
@@ -298,10 +344,13 @@ rejected candidate records are present
 candidates missing consequence records are rejected
 immediate_affordance_rank is recorded
 consequence_rank is recorded
+consequence_score_components are serialized
+consequence_rank is derived from serialized score components
 selected_rank is recorded
 matched or conflicting affordance case is present
 affordance_consequence_conflict_resolved_by_consequence = true
 tie policy is explicit and replayable
+control handling is recorded as policy only until Iteration 5
 ```
 
 Iteration 4 may assign only `provisional_ap_level = AP4_candidate`. Final AP4

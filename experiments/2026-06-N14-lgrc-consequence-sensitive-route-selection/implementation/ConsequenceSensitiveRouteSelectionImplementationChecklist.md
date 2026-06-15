@@ -136,64 +136,126 @@ start only in Iterations 3-7.
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_route_consequence_records_no_selection
 ```
 
-- [ ] Build route consequence records before selection.
-- [ ] Record source artifact and report digests for each record.
-- [ ] Record prediction basis.
-- [ ] Record derivation policy.
-- [ ] Record source window.
-- [ ] Record support effect descriptor.
-- [ ] Record memory effect descriptor.
-- [ ] Record regulation effect descriptor.
-- [ ] Record observed downstream effect when the bounded horizon is evaluated.
-- [ ] Record prediction match status.
-- [ ] Record bounded consequence horizon.
-- [ ] Record budget cost surface.
-- [ ] Confirm no hidden outcome table is used.
-- [ ] Confirm no post-hoc consequence scoring is used.
-- [ ] Keep AP level provisional.
+- [x] Build route consequence records before selection.
+- [x] Record source artifact and report digests for each record.
+- [x] Record prediction basis.
+- [x] Record derivation policy.
+- [x] Record source window.
+- [x] Record support effect descriptor.
+- [x] Record memory effect descriptor.
+- [x] Record regulation effect descriptor.
+- [x] Record observed downstream effect when the bounded horizon is evaluated.
+- [x] Record prediction match status.
+- [x] Record bounded consequence horizon.
+- [x] Record budget cost surface.
+- [x] Serialize consequence score components.
+- [x] Derive consequence rank from serialized score components.
+- [x] Record memory-dominant scope and support/regulation route-specific limits.
+- [x] Confirm no hidden outcome table is used.
+- [x] Confirm no post-hoc consequence scoring is used.
+- [x] Keep AP level provisional.
 
 Expected artifacts:
 
-- [ ] `outputs/n14_route_consequence_records.json`
-- [ ] `reports/n14_route_consequence_records.md`
-- [ ] `scripts/build_n14_route_consequence_records.py`
+- [x] `outputs/n14_route_consequence_records.json`
+- [x] `reports/n14_route_consequence_records.md`
+- [x] `scripts/build_n14_route_consequence_records.py`
+
+Output digest:
+
+```text
+9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n14_route_consequence_records.json 59efc5980f1dce63438f1c5f054ce8feab9cf818fb63ee718b07b7934933470d
+reports/n14_route_consequence_records.md 82a7ed080b89b1228eb42fe93e6289c48d49a5f426dad46caea9fe7f03847bca
+scripts/build_n14_route_consequence_records.py 74f0ddfb9a852f48bd1d8b1e7e112b6c3e210409d1c0b3e5db1da9b342d7b81d
+```
+
+Interpretation:
+
+```text
+N14 has pre-selection consequence records and an explicit
+affordance/consequence conflict. Consequence ranks are derived from serialized
+memory-dominant score components. Support and regulation sources are compatible
+but not route-specific in this iteration. It does not yet have a selected route
+or AP4 support.
+```
 
 ## Iteration 4. Consequence-Sensitive Selection Candidate
 
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_consequence_sensitive_selection_candidate_pending_controls
 ```
 
-- [ ] Apply deterministic selection rule.
-- [ ] Record candidate routes.
-- [ ] Record all eligible candidates in the bounded selection window.
-- [ ] Record rejected candidate records.
-- [ ] Reject missing consequence records.
-- [ ] Record selected route.
-- [ ] Record selection rationale surface.
-- [ ] Record immediate affordance rank.
-- [ ] Record consequence rank.
-- [ ] Record selected rank.
-- [ ] Include a case where immediate affordance is equal or favors a rejected
+- [x] Apply deterministic selection rule.
+- [x] Record candidate routes.
+- [x] Record all eligible candidates in the bounded selection window.
+- [x] Record rejected candidate records.
+- [x] Reject missing consequence records.
+- [x] Record selected route.
+- [x] Record selection rationale surface.
+- [x] Record immediate affordance rank.
+- [x] Record consequence rank.
+- [x] Confirm consequence rank is derived from serialized score components.
+- [x] Record selected rank.
+- [x] Record explicit `selection_status_record`.
+- [x] Include a case where immediate affordance is equal or favors a rejected
       route while the consequence vector selects another route.
-- [ ] Confirm
+- [x] Confirm
       `affordance_consequence_conflict_resolved_by_consequence = true`.
-- [ ] Apply explicit tie policy.
-- [ ] Record budget validity.
-- [ ] Show whether selection depends on downstream consequence vector.
-- [ ] Assign only `provisional_ap_level = AP4_candidate`.
-- [ ] Do not freeze final AP4 before controls pass.
+- [x] Apply explicit tie policy.
+- [x] Record budget validity.
+- [x] Show whether selection depends on downstream consequence vector.
+- [x] Record that missing/stale/budget controls are policy-only until
+      Iteration 5 adversarial controls.
+- [x] Assign only `provisional_ap_level = AP4_candidate`.
+- [x] Do not freeze final AP4 before controls pass.
 
 Expected artifacts:
 
-- [ ] `outputs/n14_consequence_sensitive_selection_candidate.json`
-- [ ] `reports/n14_consequence_sensitive_selection_candidate.md`
-- [ ] `scripts/build_n14_consequence_sensitive_selection_candidate.py`
+- [x] `outputs/n14_consequence_sensitive_selection_candidate.json`
+- [x] `reports/n14_consequence_sensitive_selection_candidate.md`
+- [x] `scripts/build_n14_consequence_sensitive_selection_candidate.py`
+
+Result:
+
+```text
+Status: passed.
+Output digest: d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd
+Selected route: route_b
+Rejected route: route_a
+Provisional AP level: AP4_candidate
+Final AP4 supported: false
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n14_consequence_sensitive_selection_candidate.json da0d2e070fa34098d14673714f2d23ea3f3041821c2a203798c206786e07cde3
+reports/n14_consequence_sensitive_selection_candidate.md 45d32f1ca30cbe95b262e650ca9c627e9c6dc858b2f06e202d60490036070cca
+scripts/build_n14_consequence_sensitive_selection_candidate.py 8421a376d2f46f7a897a81aa13aa75cb63afa82304458420900dc23c9d94399f
+```
+
+Interpretation:
+
+```text
+N14 now has a provisional consequence-sensitive selection candidate: the
+deterministic artifact-only rule selects route_b by derived, memory-dominant
+consequence rank while immediate affordance favors the rejected route_a. This
+closes only the selection-candidate layer. Missing/stale/budget controls are
+recorded as policies only until Iteration 5 adversarial controls. Final AP4
+remains pending until controls, replay/snapshot checks, and claim-boundary
+classification pass.
+```
 
 ## Iteration 5. Hidden Outcome, Post-Hoc, Stale, And Budget Controls
 
