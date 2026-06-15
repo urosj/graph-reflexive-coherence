@@ -50,3 +50,14 @@ identity acceptance and agency remain blocked
 native support remains false unless separate Phase 8 implementation exists
 ```
 
+## Closeout Resolution
+
+```text
+acceptance_state = supported
+source = outputs/n13_closeout_and_handoff.json
+output_digest = e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b
+```
+
+The support-seeking regulation candidate was distinguished from external proxy
+regulation by source-current target derivation, bounded response magnitude,
+budget debit, fail-closed controls, and stress-regime separation.

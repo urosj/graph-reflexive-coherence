@@ -143,16 +143,18 @@ identity acceptance, semantic ownership, or selfhood.
 Current N13 state:
 
 ```text
-status = iteration_6_support_disruption_restoration_stress_matrix_complete
+status = closed_claim_clean_ap3_artifact_level_support_seeking_regulation
 target_agency_prerequisite_level = AP3
-iteration_ceiling = AP3_candidate_stress_clean_pending_claim_boundary
+final_supported_ap_level = AP3
+final_ap3_supported = true
+final_claim_ceiling = artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation
 inventory_rows = 7
 ap3_candidate_rows = 1
-final_ap3_supported = false
 support_derived_target_candidate = support_retention_above_threshold_source_current
 support_seeking_regulation_candidate = support_error_bounded_response_candidate
 candidate_ap_level = AP3
-provisional_ap_level = AP3_candidate_stress_clean_pending_claim_boundary
+self_maintenance_candidate_supported = true
+self_maintenance_candidate_scope = artifact-level support-seeking regulation candidate; not selfhood
 external_proxy_controls_passed = true
 hidden_target_controls_passed = true
 post_hoc_label_controls_passed = true
@@ -163,12 +165,20 @@ interpretation_record = n13_i5_interpretation_external_proxy_controls_v1
 support_disruption_restoration_stress_matrix_passed = true
 support_seeking_regulation_survives_controls = true
 stress_interpretation_record = n13_i6_interpretation_stress_matrix_v1
-claim_boundary_record_pending = true
-self_maintenance_candidate_supported = false
+claim_boundary_record_passed = true
+claim_boundary_interpretation_record = n13_i7_interpretation_claim_boundary_v1
+identity_acceptance_blocked = true
+semantic_goal_ownership_blocked = true
+intention_blocked = true
+agency_blocked = true
+selfhood_blocked = true
+native_support_without_phase8_blocked = true
+fully_native_integration_blocked = true
 phase8_implementation_opened = false
 native_support_opened = false
 identity_acceptance_opened = false
 agency_claim_opened = false
+n14_handoff_recommended = true
 ```
 
 ## Required Distinctions

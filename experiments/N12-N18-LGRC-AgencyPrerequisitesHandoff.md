@@ -1,9 +1,10 @@
 # N12-N18 LGRC Agency Prerequisites Handoff
 
-This handoff is the pickup note for continuing after the N05-N11 foundation arc
-and the completed N12 bridge experiment. It is meant to let a future
-conversation restart without rediscovering the claim boundary, source
-artifacts, or next branch options.
+This handoff is the pickup note for continuing after the N05-N11 foundation
+arc, the completed N12 bridge experiment, and the completed N13
+support-seeking regulation experiment. It is meant to let a future conversation
+restart without rediscovering the claim boundary, source artifacts, or next
+branch options.
 
 ## Current Position
 
@@ -41,6 +42,26 @@ N12 is now closed as a claim-clean bridge experiment:
   agentic-like integration, biological behavior, personhood, and unrestricted
   agency claims: still blocked.
 
+N13 is now closed as a claim-clean agency-prerequisite experiment:
+
+- Final supported AP level: `AP3`.
+- Final AP3 supported: true.
+- Final claim ceiling:
+  `artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation`.
+- Self-maintenance candidate scope:
+  artifact-level support-seeking regulation candidate, not selfhood.
+- Source-current support target:
+  `support_retention_above_threshold_source_current`.
+- Support-seeking regulation candidate:
+  `support_error_bounded_response_candidate`.
+- All external-proxy, hidden-target, post-hoc-label, stale-source,
+  support-disruption, budget, stress, and claim-boundary controls: passed.
+- Phase 8 implementation opened: false.
+- Native support opened: false.
+- Agency, intention, semantic goal ownership, identity acceptance, selfhood,
+  personhood, biological behavior, fully native integration, and unrestricted
+  agency claims: still blocked.
+
 ## Primary Source Artifacts
 
 Start future review from these files:
@@ -51,6 +72,12 @@ Start future review from these files:
 - `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json`
 - `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md`
 - `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json`
+- `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md`
+- `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json`
+- `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_claim_boundary_record.md`
+- `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_claim_boundary_record.json`
+- `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md`
+- `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_final_interpretation_and_roadmap_significance.md`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md`
@@ -67,6 +94,8 @@ Known recent output digests:
   `82d1a3eedc0aebacdceae79e2be37bb96b7fff4cbfacbae00da912f3975c3e52`
 - N11 Iteration 12:
   `86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6`
+- N13 Iteration 8:
+  `e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b`
 
 ## Native Gaps Carried Forward After N12
 
@@ -96,36 +125,39 @@ after their theory and component entry gates are explicit.
 ## Recommended Next Start
 
 The clean next experiment, if continuing the experiment roadmap without opening
-Phase 8 implementation, is N13:
+Phase 8 implementation, is N14:
 
-`N13 - LGRC Self-Maintenance / Support-Seeking Regulation`
+`N14 - LGRC Consequence-Sensitive Route Selection`
 
 Recommended first actions:
 
-1. Create the N13 experiment root, README, implementation plan, checklist,
+1. Create the N14 experiment root, README, implementation plan, checklist,
    outputs/reports/scripts directories, and initial stubs.
-2. Start from support-seeking regulation, not identity-seeking regulation.
-3. Consume N07 support survival/disruption/restoration evidence, N09 bounded
-   proxy regulation evidence, N10 support-sensitive integration evidence, N11
-   artifact-only GALI7 evidence, and N12 blocker/readiness records.
+2. Start from route selection by expected downstream support, memory, or
+   regulation effects, not semantic intention or agency.
+3. Consume N06 route arbitration evidence, N08 route memory/affordance
+   evidence, N09 bounded response regulation evidence, the N13 final AP3
+   artifact-level support-seeking regulation candidate, and N12 NAT4 readiness
+   records.
 4. Do not consume identity acceptance, runtime identity acceptance, semantic
-   goal ownership, agency, or fully native integration as supported inputs.
+   goal ownership, intention, agency, selfhood, native support, or fully native
+   integration as supported inputs.
 5. Preserve the existing rule: producer-layer evidence may motivate native
    support, but it does not become a native claim until Phase 8 implements and
    validates it.
 
 ## Branch Options
 
-There are three reasonable next branches after N12:
+There are three reasonable next branches after N13:
 
-- N13 first, no `src/*`: continue the agency-prerequisite roadmap with
-  support-seeking/self-maintenance as artifact-level experiment work.
+- N14 first, no `src/*`: continue the agency-prerequisite roadmap with
+  consequence-sensitive route selection as artifact-level experiment work.
 - Phase 8 route-conductance memory first: native absorption of the N08 memory
   trail / route affordance mechanism from the N12 NAT4 contract.
 - Phase 8 response-magnitude policy first: native absorption of bounded,
   envelope-gated regulation response sizing from the N12 NAT4 contract.
 
-The most conservative route is N13 first if the goal is to continue the
+The most conservative route is N14 first if the goal is to continue the
 artifact-level roadmap. Open targeted Phase 8 only when the goal is native
 implementation of one of the two N12 NAT4 contracts.
 
@@ -159,7 +191,7 @@ Before closing a handoff update, rerun:
 - `git diff --check`
 - `git diff -- src`
 
-The post-N12 handoff update and N12 closeout refresh are
+The post-N13 handoff update and N13 closeout refresh are
 documentation/experiment artifact work only. They should leave `src/*`
 unchanged.
 
@@ -170,7 +202,7 @@ git diff --check
 git diff -- src
 ```
 
-before closing any N13 setup or Phase 8 planning turn.
+before closing any N14 setup or Phase 8 planning turn.
 
 ## Resolved N12 Questions
 

@@ -514,51 +514,149 @@ artifact-level stress behavior != native support
 
 ## Iteration 7. Identity, Goal-Ownership, And Agency Boundary Record
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Record why support survival is not identity acceptance.
-- [ ] Record why support-derived target is not semantic goal ownership.
-- [ ] Record why bounded response is not intention.
-- [ ] Record why self-maintenance candidate is not selfhood.
-- [ ] Record why N13 is not agency.
-- [ ] Record why N13 is not native support unless Phase 8 exists.
-- [ ] Record remaining theory-sensitive blockers.
-- [ ] Confirm all unsafe claim flags remain false.
+- [x] Record why support survival is not identity acceptance.
+- [x] Record why support-derived target is not semantic goal ownership.
+- [x] Record why bounded response is not intention.
+- [x] Record why self-maintenance candidate is not selfhood.
+- [x] Record why N13 is not agency.
+- [x] Record why N13 is not native support unless Phase 8 exists.
+- [x] Record why N13 is not fully native integration.
+- [x] Record why N13 is not personhood or biological behavior.
+- [x] Record remaining theory-sensitive blockers.
+- [x] Confirm all unsafe claim flags remain false.
+- [x] Record Iteration 7 interpretation.
 
 Expected artifacts:
 
-- [ ] `outputs/n13_claim_boundary_record.json`
-- [ ] `reports/n13_claim_boundary_record.md`
-- [ ] `scripts/build_n13_claim_boundary_record.py`
+- [x] `outputs/n13_claim_boundary_record.json`
+- [x] `reports/n13_claim_boundary_record.md`
+- [x] `scripts/build_n13_claim_boundary_record.py`
+
+- Output digest:
+
+```text
+5a4aae36a54f566533270028ae62943490f75ef0fd210d821ab234193a8983db
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n13_claim_boundary_record.json c50564556c1ea6f71547826f13214ee1cfb6154f51f1b2affb21ea075485327b
+reports/n13_claim_boundary_record.md f23186194c8a8a5372bb4f693830a00ad623d1b85deda3802b8a7daf92063edc
+scripts/build_n13_claim_boundary_record.py 20707e041e7c9cc9c4baf54e7a2ae591a7bc68dfa968f266bd97dc4aba5e5e70
+```
+
+- Acceptance state:
+
+```text
+claim_boundary_record_passed = true
+interpretation_record = n13_i7_interpretation_claim_boundary_v1
+candidate_ap_level = AP3
+provisional_ap_level = AP3_candidate_boundary_clean_pending_closeout
+final_ap3_supported = false
+final_ap_freeze_pending_iteration8 = true
+self_maintenance_candidate_supported = false
+native_support_opened = false
+phase8_opened = false
+```
+
+- Interpretation:
+
+```text
+The N13 stress-clean AP3 candidate is claim-clean: the positive result may be
+interpreted as artifact-level support-seeking regulation, but not as identity
+acceptance, semantic goal ownership, intention, agency, selfhood, personhood,
+biological behavior, native support, or fully native integration.
+```
 
 ## Iteration 8. N13 Closeout And Handoff
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Close Hypothesis A.
-- [ ] Close Hypothesis B.
-- [ ] Close Hypothesis C.
-- [ ] Freeze supported AP level.
-- [ ] Confirm every seed row is classified.
-- [ ] Record final support-condition candidates.
-- [ ] Record final support-seeking regulation result.
-- [ ] Record external proxy and hidden target controls.
-- [ ] Record final blockers.
-- [ ] Record final native support flags as false unless separate Phase 8 source
+- [x] Close Hypothesis A.
+- [x] Close Hypothesis B.
+- [x] Close Hypothesis C.
+- [x] Freeze supported AP level.
+- [x] Confirm every seed row is classified.
+- [x] Record final support-condition candidates.
+- [x] Record final support-seeking regulation result.
+- [x] Record external proxy and hidden target controls.
+- [x] Record final blockers.
+- [x] Record whole-experiment interpretation.
+- [x] Record final native support flags as false unless separate Phase 8 source
       exists.
-- [ ] Record final claim flags as false for unsafe claims.
-- [ ] Update handoff if needed.
-- [ ] Decide whether next work is N14 or targeted Phase 8.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `src/*` remains clean for N13.
+- [x] Record final claim flags as false for unsafe claims.
+- [x] Update handoff if needed.
+- [x] Decide whether next work is N14 or targeted Phase 8.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `src/*` remains clean for N13.
 
 Expected artifacts:
 
-- [ ] `outputs/n13_closeout_and_handoff.json`
-- [ ] `reports/n13_closeout_and_handoff.md`
-- [ ] `scripts/build_n13_closeout_and_handoff.py`
+- [x] `outputs/n13_closeout_and_handoff.json`
+- [x] `reports/n13_closeout_and_handoff.md`
+- [x] `scripts/build_n13_closeout_and_handoff.py`
+
+- Output digest:
+
+```text
+e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n13_closeout_and_handoff.json 4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806
+reports/n13_closeout_and_handoff.md e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45
+scripts/build_n13_closeout_and_handoff.py 3aa8b874e4eeaa01b3efee2b4824d24c99a83a3b2cc6576302cdbb9b36d9e89f
+```
+
+- Hypothesis acceptance states:
+
+```text
+Hypothesis A = supported
+Hypothesis B = supported
+Hypothesis C = supported
+```
+
+- Whole-experiment interpretation:
+
+```text
+N13 supports artifact-level AP3 self-maintenance candidate /
+support-seeking regulation candidate evidence only. It does not support
+agency, identity acceptance, semantic goal ownership, selfhood, native support,
+or fully native integration.
+```
+
+- Closeout state:
+
+```text
+final_supported_ap_level = AP3
+final_ap3_supported = true
+self_maintenance_candidate_supported = true
+final_claim_ceiling = artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation
+artifact_only = true
+fully_native = false
+native_supported_flags = false
+native_support_opened = false
+phase8_opened = false
+agency_claim_opened = false
+identity_acceptance_opened = false
+semantic_goal_ownership_opened = false
+```
+
+- Handoff state:
+
+```text
+recommended_next = N14_consequence_sensitive_route_selection
+recommended_branch = continue_artifact_roadmap_no_src
+targeted_phase8_required_before_n14 = false
+targeted_phase8_optional_parallel_branch = true
+```
 
 Acceptance statement:
 

@@ -17,11 +17,10 @@ Generated scripts:
   target, post-hoc label, stale source, budget, and claim relabel controls.
 - `build_n13_support_disruption_restoration_matrix.py`: builds the support
   disruption and restoration stress matrix.
-
-Planned scripts:
-
 - `build_n13_claim_boundary_record.py`: records identity, goal-ownership,
   intention, agency, native-support, and integration blockers.
 - `build_n13_closeout_and_handoff.py`: closes N13, freezes the supported AP
   level, records blockers, and decides whether the next step is N14 or
   targeted Phase 8.
+
+Planned scripts: none.

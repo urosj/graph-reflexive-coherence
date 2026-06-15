@@ -49,3 +49,15 @@ identity acceptance, semantic goal ownership, intention, agency, personhood,
 biological behavior, and fully native integration remain blocked
 ```
 
+## Closeout Resolution
+
+```text
+acceptance_state = supported
+source = outputs/n13_closeout_and_handoff.json
+output_digest = e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b
+```
+
+Positive N13 evidence remains claim-clean: identity acceptance, semantic goal
+ownership, intention, agency, selfhood, personhood, biological behavior, native
+support, and fully native integration are blocked unless separate theory or
+Phase 8 implementation gates are satisfied.

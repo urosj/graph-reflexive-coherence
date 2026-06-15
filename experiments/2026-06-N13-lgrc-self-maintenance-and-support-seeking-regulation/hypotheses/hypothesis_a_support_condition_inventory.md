@@ -43,3 +43,14 @@ native support remains unopened
 agency remains blocked
 ```
 
+## Closeout Resolution
+
+```text
+acceptance_state = supported
+source = outputs/n13_closeout_and_handoff.json
+output_digest = e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b
+```
+
+Source-backed support-state evidence was inventoried and converted into the
+`support_retention_above_threshold_source_current` target without promoting
+support survival into identity acceptance.

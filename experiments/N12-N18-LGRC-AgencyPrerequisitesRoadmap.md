@@ -282,6 +282,26 @@ hidden support target blocked
 N13 is probably the most important agency-facing experiment in this tranche.
 Without self-maintenance, later agency-like claims are weak.
 
+N13 closeout:
+
+```text
+final_supported_ap_level = AP3
+final_claim_ceiling = artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation
+artifact_only = true
+fully_native = false
+phase8_opened = false
+native_support_opened = false
+agency_claim_opened = false
+identity_acceptance_opened = false
+semantic_goal_ownership_opened = false
+```
+
+N13 supports an artifact-level self-maintenance candidate in the narrow AP3
+sense: source-current support-seeking regulation distinguished from external
+proxy regulation, stress-clean, budgeted, replayable, and claim-clean. It does
+not prove agency, identity acceptance, intention, selfhood, personhood,
+biological behavior, native support, or fully native integration.
+
 ## N14. Consequence-Sensitive Route Selection
 
 Question:
@@ -297,7 +317,7 @@ Primary inputs:
 N06 native route arbitration
 N08 memory / affordance
 N09 regulation
-N13 self-maintenance candidate, if available
+N13 final AP3 artifact-level support-seeking regulation candidate
 ```
 
 The key target is:
@@ -511,4 +531,3 @@ agency/personhood/biology/unrestricted claims remain blocked
 
 The intended progression is toward native agentic-like dynamics candidates, not
 toward premature agency labels.
-

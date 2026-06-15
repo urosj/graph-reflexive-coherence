@@ -17,10 +17,9 @@ Generated reports:
   hidden target control matrix.
 - `n13_support_disruption_restoration_matrix.md`: human-readable support
   disruption and restoration stress matrix.
-
-Planned reports:
-
 - `n13_claim_boundary_record.md`: human-readable identity, goal-ownership,
   intention, agency, native-support, and integration boundary report.
 - `n13_closeout_and_handoff.md`: final N13 closeout, AP-level freeze, roadmap
   update decision, and handoff report.
+
+Planned reports: none.

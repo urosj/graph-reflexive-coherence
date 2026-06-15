@@ -523,6 +523,49 @@ reports/n13_claim_boundary_record.md
 scripts/build_n13_claim_boundary_record.py
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n13_claim_boundary_record.json
+Report: reports/n13_claim_boundary_record.md
+Output digest: 5a4aae36a54f566533270028ae62943490f75ef0fd210d821ab234193a8983db
+```
+
+Iteration 7 records eight blocked claim rows:
+
+```text
+support survival != identity acceptance
+support target/error != semantic goal ownership
+bounded response != intention
+self-maintenance candidate != selfhood
+N13 != agency
+artifact-level candidate != native support
+stress-clean candidate != fully native integration
+N13 evidence != personhood or biological behavior
+```
+
+The candidate state after Iteration 7 is:
+
+```text
+claim_boundary_record_passed = true
+candidate_ap_level = AP3
+provisional_ap_level = AP3_candidate_boundary_clean_pending_closeout
+final_ap3_supported = false
+final_ap_freeze_pending_iteration8 = true
+self_maintenance_candidate_supported = false
+phase8_opened = false
+native_support_opened = false
+```
+
+Interpretation record:
+
+```text
+record_id = n13_i7_interpretation_claim_boundary_v1
+meaning = artifact-level AP3 boundary-clean support-seeking regulation
+candidate, pending Iteration 8 closeout and supported AP freeze.
+```
+
 ### Iteration 8. N13 Closeout And Handoff
 
 Freeze supported AP level, close hypotheses, list blockers, and decide whether
@@ -534,6 +577,60 @@ Expected artifacts:
 outputs/n13_closeout_and_handoff.json
 reports/n13_closeout_and_handoff.md
 scripts/build_n13_closeout_and_handoff.py
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n13_closeout_and_handoff.json
+Report: reports/n13_closeout_and_handoff.md
+Output digest: e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b
+```
+
+N13 closes at:
+
+```text
+final_supported_ap_level = AP3
+final_ap3_supported = true
+self_maintenance_candidate_supported = true
+final_claim_ceiling = artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation
+artifact_only = true
+fully_native = false
+phase8_opened = false
+native_support_opened = false
+agency_claim_opened = false
+identity_acceptance_opened = false
+semantic_goal_ownership_opened = false
+```
+
+Whole-experiment interpretation:
+
+```text
+N13 shows artifact-level AP3 support-seeking regulation: source-backed
+support state can be converted into a source-current support target, a support
+error can be computed from that target, and bounded budgeted response can be
+scheduled only when that error is present. This supports only an artifact-level
+self-maintenance candidate / support-seeking regulation candidate, not agency,
+identity acceptance, semantic goal ownership, selfhood, native support, or
+fully native integration.
+```
+
+All three hypotheses are supported:
+
+```text
+Hypothesis A = supported
+Hypothesis B = supported
+Hypothesis C = supported
+```
+
+Recommended next work:
+
+```text
+recommended_next = N14_consequence_sensitive_route_selection
+recommended_branch = continue_artifact_roadmap_no_src
+targeted_phase8_required_before_n14 = false
+targeted_phase8_optional_parallel_branch = true
 ```
 
 Acceptance statement:
