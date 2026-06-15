@@ -16,13 +16,13 @@ Generated scripts:
 - `build_n12_response_magnitude_candidate.py`: evaluates the response
   magnitude candidate, trend/stability fields, mutation boundary, non-RC audit,
   controls, and supported NAT level.
-
-Planned scripts:
-
 - `build_n12_identity_acceptance_boundary.py`: records blocked identity
   acceptance theory gates and rationale.
 - `build_n12_agentic_like_integration_boundary.py`: records blocked native
   agentic-like integration meta-policy gates and rationale.
+
+Planned scripts:
+
 - `build_n12_phase8_readiness_matrix.py`: builds the Phase 8 readiness matrix
   for native route conductance memory, response magnitude policy, blocked
   theory-sensitive rows, controls, telemetry requirements, test gates, and

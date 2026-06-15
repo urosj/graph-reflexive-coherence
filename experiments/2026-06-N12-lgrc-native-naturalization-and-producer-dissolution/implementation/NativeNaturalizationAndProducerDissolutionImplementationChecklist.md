@@ -436,22 +436,22 @@ scripts/build_n12_response_magnitude_candidate.py ba5793fb21db95d2e2064df2026021
 
 ## Iteration 5. Identity Acceptance Boundary
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Record why identity acceptance is not Phase 8-ready yet.
-- [ ] Separate support survival from identity acceptance.
-- [ ] Separate identity continuity from runtime acceptance.
-- [ ] Block RC identity collapse claims.
-- [ ] Identify validator-local support fields.
-- [ ] Record missing formal acceptance semantics.
-- [ ] Record theory gates required before Phase 8 entry.
-- [ ] Confirm no identity acceptance claim opens.
+- [x] Record why identity acceptance is not Phase 8-ready yet.
+- [x] Separate support survival from identity acceptance.
+- [x] Separate identity continuity from runtime acceptance.
+- [x] Block RC identity collapse claims.
+- [x] Identify validator-local support fields.
+- [x] Record missing formal acceptance semantics.
+- [x] Record theory gates required before Phase 8 entry.
+- [x] Confirm no identity acceptance claim opens.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_identity_acceptance_boundary.json`
-- [ ] `reports/n12_identity_acceptance_boundary.md`
-- [ ] `scripts/build_n12_identity_acceptance_boundary.py`
+- [x] `outputs/n12_identity_acceptance_boundary.json`
+- [x] `reports/n12_identity_acceptance_boundary.md`
+- [x] `scripts/build_n12_identity_acceptance_boundary.py`
 
 Acceptance statement:
 
@@ -460,29 +460,110 @@ Iteration 5 passes if identity acceptance remains blocked with explicit theory
 entry gates and no identity acceptance claim.
 ```
 
+Acceptance state:
+
+```text
+Achieved. Iteration 5 classifies native_identity_acceptance_validator as a
+theory-sensitive blocked boundary at NAT2, not a Phase 8-ready native policy
+candidate. N07/N10/N11 support-survival evidence remains source-backed and
+replayable, but support survival, identity continuity, and explicit restoration
+are not promoted into identity acceptance, runtime acceptance, RC identity
+collapse, native support, or agency. The row records missing theory entry gates,
+keeps phase8_ready = false, preserves native_supported_flags_false, and forces
+identity acceptance, runtime identity acceptance, RC identity collapse, native
+support, and agency-related claim flags false.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_identity_acceptance_boundary.py`.
+- Generated `outputs/n12_identity_acceptance_boundary.json`.
+- Generated `reports/n12_identity_acceptance_boundary.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_identity_acceptance_boundary.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_identity_acceptance_boundary.json 0048a06de4e204c4c3ad7f9c7d720ecfdb8b68b06eaff50e099aea168c1d27da
+reports/n12_identity_acceptance_boundary.md 85f2768a8b916b95f2d796e4d6f52f409fb02556779252e622edf66685a80226
+scripts/build_n12_identity_acceptance_boundary.py f21c6ab171e58889ca1149db6013b8d10877d447c901cc6ddefc443c192b4861
+```
+
 ## Iteration 6. Agentic-Like Integration Boundary
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Record why full native agentic-like integration is a meta-gap.
-- [ ] Keep component native policies separate from integration meta-policy.
-- [ ] Keep artifact-only replay separate from fully native integration.
-- [ ] Block semantic agency claims.
-- [ ] Separate budget/replay contract from agency semantics.
-- [ ] Record missing composition replay prerequisites.
-- [ ] Confirm no fully native agentic-like integration claim opens.
+- [x] Record why full native agentic-like integration is a meta-gap.
+- [x] Keep component native policies separate from integration meta-policy.
+- [x] Keep artifact-only replay separate from fully native integration.
+- [x] Block semantic agency claims.
+- [x] Separate budget/replay contract from agency semantics.
+- [x] Record missing composition replay prerequisites.
+- [x] Confirm no fully native agentic-like integration claim opens.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_agentic_like_integration_boundary.json`
-- [ ] `reports/n12_agentic_like_integration_boundary.md`
-- [ ] `scripts/build_n12_agentic_like_integration_boundary.py`
+- [x] `outputs/n12_agentic_like_integration_boundary.json`
+- [x] `reports/n12_agentic_like_integration_boundary.md`
+- [x] `scripts/build_n12_agentic_like_integration_boundary.py`
 
 Acceptance statement:
 
 ```text
 Iteration 6 passes if full native agentic-like integration remains blocked
 until component native policies exist and composition replay validates them.
+```
+
+Acceptance state:
+
+```text
+Achieved. Iteration 6 classifies native_agentic_like_integration_policy as a
+blocked meta-policy boundary at NAT2, not a Phase 8-ready native policy
+candidate. Route conductance memory and response magnitude remain NAT4
+component candidates, while identity acceptance remains a NAT2 blocked
+boundary; those component results do not constitute native integration support.
+N11 GALI7 stays artifact-only replay evidence, not fully native integration,
+native support, or agency. The row records the missing cross-cutting
+budget/replay contract, component native policy records, native composition
+replay, and integration meta-policy gates, with all native support, fully native
+integration, and agency claim flags forced false.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_agentic_like_integration_boundary.py`.
+- Generated `outputs/n12_agentic_like_integration_boundary.json`.
+- Generated `reports/n12_agentic_like_integration_boundary.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_agentic_like_integration_boundary.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+2ed8ae9f591a7c435f012c70502c0871275a755d5355e7c95efa6d46a10c2601
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_agentic_like_integration_boundary.json bd3df3c33b4736e972f3109b4282608d1f9f6019508fb071d43cbc555eb8c219
+reports/n12_agentic_like_integration_boundary.md 02d4df92b9260d4b6f85bbb01bbde9092055e00bb5e0444a9f122bba0ef4fc24
+scripts/build_n12_agentic_like_integration_boundary.py 90e38e45959678427b798c287089b1b2395e2f101d916d803cb6c8fa37021900
 ```
 
 ## Iteration 7. Phase 8 Readiness Package, No Implementation

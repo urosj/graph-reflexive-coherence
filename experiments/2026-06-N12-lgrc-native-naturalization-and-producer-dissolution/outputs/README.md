@@ -19,13 +19,13 @@ Generated artifacts:
 - `n12_response_magnitude_candidate.json`: response sizing trend/stability
   evaluation, mutation boundary, non-RC audit, controls, and supported NAT
   level.
-
-Planned artifacts:
-
 - `n12_identity_acceptance_boundary.json`: blocked identity-acceptance boundary,
   theory gates, support-vs-acceptance separation, and rationale.
 - `n12_agentic_like_integration_boundary.json`: blocked native integration
   meta-policy boundary, composition prerequisites, and rationale.
+
+Planned artifacts:
+
 - `n12_phase8_readiness_matrix.json`: Phase 8-ready contracts, blockers,
   controls, telemetry requirements, test gates, and explicit no-implementation
   flags.

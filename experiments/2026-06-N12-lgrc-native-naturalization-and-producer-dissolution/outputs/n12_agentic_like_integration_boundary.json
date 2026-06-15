@@ -1,0 +1,623 @@
+{
+  "agentic_like_integration_boundary": {
+    "artifact_replay_requirements": [
+      "replay reconstructs N11 artifact-only GALI7 chain",
+      "replay verifies each component policy record separately",
+      "replay verifies separated budget surfaces before integration gate",
+      "replay rejects missing or stale component records",
+      "replay rejects artifact-only replay relabelled fully native",
+      "replay rejects direct native support flag writes"
+    ],
+    "blocked_claims": [
+      "aco like",
+      "agency",
+      "agentic like",
+      "ant colony",
+      "biological",
+      "biological behavior",
+      "fully native agentic like integration",
+      "identity acceptance",
+      "intention",
+      "locomotion like",
+      "native agentic like integration support",
+      "native support opened",
+      "personhood",
+      "rc identity collapse",
+      "runtime identity acceptance",
+      "semantic goal ownership",
+      "semantic goal understanding",
+      "unrestricted agency",
+      "unrestricted identity",
+      "unrestricted movement"
+    ],
+    "bookkeeping_fields": [
+      "source_artifact_digest",
+      "row_digest",
+      "event_window_order",
+      "budget_surface_id"
+    ],
+    "budget_surfaces": [
+      "claim_economy_budget_surface_if_declared",
+      "goal_proxy_budget_surface",
+      "identity_support_budget_surface_if_native",
+      "node_plus_packet_budget_surface",
+      "route_conductance_memory_budget_surface"
+    ],
+    "claim_boundary_controls": [
+      "agency_claim_promotion_blocked",
+      "artifact_gali7_relabelled_fully_native_blocked",
+      "biological_claim_promotion_blocked",
+      "budget_evidence_relabelled_claim_support_blocked",
+      "component_readiness_relabelled_integration_support_blocked",
+      "fully_native_agentic_like_claim_promotion_blocked",
+      "integration_relabelled_agency_blocked",
+      "personhood_claim_promotion_blocked"
+    ],
+    "claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+    "claim_flags_forced_false": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "native_support_opened": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false
+    },
+    "compatibility_tests": [
+      "component_candidates_not_integration_meta_policy",
+      "artifact_only_gali7_not_fully_native",
+      "missing_component_record_rejected",
+      "stale_component_record_rejected",
+      "budget_surface_merge_rejected",
+      "hidden_integration_policy_rejected",
+      "direct_native_support_flag_write_rejected",
+      "fully_native_integration_claim_flags_false",
+      "agency_claim_flags_false",
+      "phase8_ready_false_for_integration_boundary"
+    ],
+    "contract_runtime_visible_inputs": [
+      "claim_boundary_contract_digest",
+      "goal_proxy_budget_before_after",
+      "goal_proxy_regulation_record_digest",
+      "identity_support_state_digest",
+      "node_plus_packet_budget_before_after",
+      "route_conductance_memory_record_digest",
+      "route_context_record_digest",
+      "route_memory_budget_before_after",
+      "support_state_gate_digest",
+      "surface_or_claim_budget_before_after_if_declared"
+    ],
+    "covered_policy_records": [
+      "native_agentic_like_integration_policy_record",
+      "native_budget_surface_contract_record",
+      "native_claim_boundary_contract_record",
+      "native_support_state_integration_gate_record"
+    ],
+    "default_off_flags": {
+      "agency_claim_flags_default": false,
+      "native_agentic_like_integration_policy_enabled_default": false,
+      "native_claim_boundary_contract_enabled_default": false,
+      "native_integration_gate_enabled_default": false,
+      "native_support_flags_default": false
+    },
+    "deferred_phase8_requirements": {
+      "minimum_before_nat4": [
+        "native integration meta-policy record schema",
+        "default-off integration gate flags",
+        "idempotent digest over all component native records",
+        "snapshot/replay validator over native composition",
+        "negative controls for artifact-only and agency relabeling",
+        "telemetry contract under src/pygrc/telemetry"
+      ],
+      "minimum_before_reconsidering_nat3": [
+        "cross-cutting native budget/replay contract implemented",
+        "native route conductance memory policy implemented and validated",
+        "native response magnitude policy implemented and validated",
+        "identity support/acceptance gate resolved or explicitly scoped",
+        "component record digest schema frozen"
+      ],
+      "status": "blocked"
+    },
+    "enabled_validated_supported_separation": {
+      "agency_supported": false,
+      "artifact_gali7_native_supported": false,
+      "artifact_gali7_supported": true,
+      "component_candidates_native_implemented_count": 0,
+      "component_candidates_phase8_ready_count": 2,
+      "fully_native_agentic_like_integration_supported": false,
+      "integration_meta_policy_enabled": false,
+      "integration_meta_policy_supported": false,
+      "integration_meta_policy_validated": false
+    },
+    "idempotency_digest_plan": {
+      "available_digests": [
+        "artifact_gali7_validator_digest",
+        "n12_route_candidate_digest",
+        "n12_response_candidate_digest",
+        "n12_identity_boundary_digest"
+      ],
+      "missing_digests": [
+        "native_budget_surface_contract_digest",
+        "native_component_policy_record_digests",
+        "native_agentic_like_integration_policy_digest"
+      ],
+      "status": "blocked_until_component_native_records_exist"
+    },
+    "integration_boundary": {
+      "artifact_replay_is_not_fully_native_integration": true,
+      "boundary_status": "native_agentic_like_integration_meta_policy_blocked",
+      "component_candidates_are_not_meta_policy": true,
+      "component_policy_status": {
+        "identity_acceptance": {
+          "identity_acceptance_claim_opened": false,
+          "integration_role": "blocked_theory_boundary_not_component_policy",
+          "nat_level": "NAT2",
+          "phase8_ready": false,
+          "source": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json"
+        },
+        "response_magnitude": {
+          "integration_role": "component_candidate_not_integration_meta_policy",
+          "nat_level": "NAT4",
+          "native_support_opened": false,
+          "phase8_ready": true,
+          "source": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json"
+        },
+        "route_conductance_memory": {
+          "integration_role": "component_candidate_not_integration_meta_policy",
+          "nat_level": "NAT4",
+          "native_support_opened": false,
+          "phase8_ready": true,
+          "source": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json"
+        }
+      },
+      "fully_native_integration_claim_opened": false,
+      "meta_policy_blockers": [
+        "component_native_policies_missing",
+        "cross_cutting_budget_replay_contract_not_implemented",
+        "identity_acceptance_or_support_gate_not_phase8_ready",
+        "native_integration_meta_policy_requires_component_policy_records",
+        "fully_native_integration_replay_not_available",
+        "artifact_only_replay_not_fully_native_integration",
+        "agentic_like_integration_not_agency"
+      ],
+      "n10_support_matrix_scope": "bounded_artifact_only_support_sensitive_full_composition",
+      "n11_claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+      "n11_gali_ceiling": "GALI7",
+      "n11_iteration_9_artifact_only": true,
+      "n11_iteration_9_runtime_state_used": false,
+      "n11_result_artifact_only": true,
+      "n11_result_fully_native": false,
+      "semantic_agency_claim_opened": false
+    },
+    "mechanism_name": "native_agentic_like_integration_policy_boundary",
+    "mechanism_role": "native_integration_meta_policy_blocker",
+    "missing_gates": [
+      "native_budget_surface_contract_not_implemented",
+      "native_route_conductance_memory_policy_not_implemented",
+      "native_response_magnitude_policy_not_implemented",
+      "identity_acceptance_or_native_support_gate_not_ready",
+      "native_component_policy_composition_replay_missing",
+      "native_agentic_like_integration_meta_policy_missing",
+      "agency_semantics_not_part_of_n12",
+      "fully_native_integration_validation_missing"
+    ],
+    "mutation_boundary": {
+      "producer_or_policy_may_schedule_only": null,
+      "reason": "no native integration meta-policy may schedule or mutate state until component native records and budget/replay contracts exist",
+      "status": "blocked_until_component_native_policies_and_budget_contract_exist",
+      "step_or_topology_event_owns_state_mutation": null
+    },
+    "n11_native_support_scope": "artifact_replay_only",
+    "n11_native_supported": false,
+    "nat_level": "NAT2",
+    "native_gap": "native_agentic_like_integration_policy_missing",
+    "native_policy_name": "native_agentic_like_integration_policy",
+    "native_supported_flags_false": true,
+    "negative_controls": [
+      "artifact_only_replay_relabelled_fully_native_rejected",
+      "budget_discontinuity_rejected",
+      "budget_surface_merge_rejected",
+      "component_candidate_relabelled_native_support_rejected",
+      "cross_artifact_live_ledger_claim_rejected",
+      "direct_native_support_flag_write_rejected",
+      "hidden_integration_policy_rejected",
+      "integration_relabelled_agency_rejected",
+      "missing_component_record_rejected",
+      "stale_component_record_rejected"
+    ],
+    "non_rc_quantity_audit": {
+      "audit_status": "blocked_meta_gap_not_nat4",
+      "candidate_specific_questions": {
+        "are_nat4_component_candidates_native_support": false,
+        "can_component_policy_readiness_substitute_for_meta_policy": false,
+        "can_native_support_flag_be_written_directly": false,
+        "does_integration_meta_policy_define_agency": false,
+        "is_artifact_only_gali7_fully_native_integration": false
+      },
+      "does_agentic_like_integration_imply_agency": false,
+      "does_meta_policy_require_component_native_records": true,
+      "extra_unaccounted_quantity_allowed": false,
+      "field_required": true,
+      "is_artifact_replay_rc_observable": true,
+      "is_fully_native_integration_derived_from_artifact_replay": false,
+      "nat4_blocker_if_extra_quantity_required": "component_native_policy_records_missing",
+      "would_meta_policy_require_hidden_state_without_component_records": true
+    },
+    "ordering_requirements": [
+      "budget before/after must be serialized for each native policy action",
+      "budget surface must be declared before policy execution",
+      "component records must be committed before integration eligibility",
+      "integration record must not precede component policy records",
+      "support state must be current at integration time"
+    ],
+    "phase8_decision_source": "budget_contract_cross_cutting_first_meta_policy_last",
+    "phase8_opened_false": true,
+    "phase8_order_source": {
+      "budget_contract": {
+        "contract_rows": [
+          "n10_i14_contract_06_budget_surface_separation"
+        ],
+        "order": 1,
+        "phase": "cross_cutting_budget_and_replay_contract",
+        "reason": "All later native policies need separated budget surfaces and replay rules."
+      },
+      "native_integration_gate": {
+        "contract_rows": [
+          "n10_i14_contract_05_native_integration_gate"
+        ],
+        "order": 6,
+        "phase": "native_agentic_like_integration_meta_policy",
+        "reason": "The meta-policy should only follow component policy contracts."
+      }
+    },
+    "phase8_readiness_source": "meta_gap_after_component_policies",
+    "phase8_ready": false,
+    "primary_disposition": "theory_sensitive_blocker",
+    "producer_decision_fields": [],
+    "producer_or_policy_may_schedule_only": null,
+    "record_schema_sketch": {
+      "forbidden_fields": [
+        "agency_state",
+        "semantic_intention",
+        "semantic_goal_ownership",
+        "personhood_state",
+        "biological_behavior_label",
+        "hidden_integration_policy",
+        "report_side_native_support_override"
+      ],
+      "record_type": "agentic_like_integration_boundary_record",
+      "records_available": [
+        "native_route_conductance_memory_policy_candidate_record",
+        "native_response_magnitude_policy_candidate_record",
+        "identity_acceptance_boundary_record",
+        "artifact_only_generalization_validator_record"
+      ],
+      "records_missing_before_phase8_entry": [
+        "native_budget_surface_contract_record",
+        "native_route_conductance_memory_policy_record",
+        "native_response_magnitude_policy_record",
+        "native_identity_acceptance_or_support_gate_record",
+        "native_agentic_like_integration_policy_record"
+      ],
+      "status": "blocked_meta_policy_boundary_not_native_integration",
+      "version": "v1"
+    },
+    "row_digest": "c06065a4f6ecb55928424c7664d7c3aa9a6eb92ae3d67720653a6e2dac1ef0c3",
+    "row_id": "n12_i6_agentic_like_integration_boundary_v1",
+    "runtime_visible_inputs": [
+      "claim_boundary_contract_digest",
+      "goal_proxy_budget_before_after",
+      "goal_proxy_regulation_record_digest",
+      "identity_support_state_digest",
+      "node_plus_packet_budget_before_after",
+      "route_conductance_memory_record_digest",
+      "route_context_record_digest",
+      "route_memory_budget_before_after",
+      "support_state_gate_digest",
+      "surface_or_claim_budget_before_after_if_declared"
+    ],
+    "runtime_visible_surfaces": [
+      "component_policy_digest_surface",
+      "native_agentic_like_integration_policy_record",
+      "native_budget_surface_contract_record",
+      "native_claim_boundary_contract_record",
+      "native_integration_gate_rejection_record"
+    ],
+    "secondary_tags": [
+      "theory_sensitive_meta_gap",
+      "cross_cutting_contract",
+      "artifact_replay_boundary",
+      "phase8_not_ready"
+    ],
+    "snapshot_replay_requirements": [
+      "replay reconstructs N11 artifact-only GALI7 chain",
+      "replay verifies each component policy record separately",
+      "replay verifies separated budget surfaces before integration gate",
+      "replay rejects missing or stale component records",
+      "replay rejects artifact-only replay relabelled fully native",
+      "replay rejects direct native support flag writes"
+    ],
+    "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+    "source_contract_rows": [
+      "n10_i14_contract_05_native_integration_gate",
+      "n10_i14_contract_06_budget_surface_separation"
+    ],
+    "source_evidence_summary": {
+      "n10_budget_contract_readiness": "required_cross_cutting_contract",
+      "n10_integration_contract_readiness": "meta_gap_after_component_policies",
+      "n11_final_claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+      "n11_final_supported_gali_ceiling": "GALI7",
+      "n11_iteration_9_artifact_only": true,
+      "n11_iteration_9_runtime_state_used": false,
+      "n11_native_blocker_set": [
+        "native_agentic_like_integration_policy_missing",
+        "native_identity_acceptance_validator_missing",
+        "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+        "native_route_conductance_memory_policy_missing"
+      ],
+      "n11_result_fully_native": false,
+      "n12_identity_boundary_nat_level": "NAT2",
+      "n12_response_candidate_nat_level": "NAT4",
+      "n12_route_candidate_nat_level": "NAT4"
+    },
+    "source_experiment": "N10_N11_N12",
+    "source_gap_row_summaries": [
+      {
+        "classification": "replay_validation",
+        "component": "N10 Hypothesis A artifact-only integration validator",
+        "native_policy_gap": "native_agentic_like_integration_policy_missing",
+        "overread_blocker": "artifact_only_closeout_relabelled_as_native_integration",
+        "row_id": "n10_c_gap_07_artifact_only_integration_validator"
+      },
+      {
+        "classification": "replay_validation_and_constitutive_gate",
+        "component": "N10 Hypothesis B support-state matrix",
+        "native_policy_gap": "native_agentic_like_integration_policy_missing",
+        "overread_blocker": "support_sensitive_artifact_matrix_relabelled_as_native_gate",
+        "row_id": "n10_c_gap_08_support_sensitive_integration_gate"
+      },
+      {
+        "classification": "bookkeeping_and_replay_validation",
+        "component": "N10 source-artifact budget compatibility",
+        "native_policy_gap": null,
+        "overread_blocker": "source_artifact_budget_relabelled_as_live_packet_ledger",
+        "row_id": "n10_c_gap_09_budget_surfaces_and_source_continuity"
+      }
+    ],
+    "source_gap_rows": [
+      "n10_c_gap_07_artifact_only_integration_validator",
+      "n10_c_gap_08_support_sensitive_integration_gate",
+      "n10_c_gap_09_budget_surfaces_and_source_continuity"
+    ],
+    "source_iteration": "N12_iteration_6",
+    "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+    "source_report_sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+    "source_row_digest": "38c1be5b659f253c98db0b85be2f0ab052d067a52719cbd91373db75dde64ba7",
+    "source_sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+    "src_diff_empty": true,
+    "stale_context_blockers": [
+      "budget_surface_ambiguity_blocked",
+      "cross_artifact_budget_relabelled_live_ledger_blocked",
+      "missing_component_policy_blocked",
+      "native_agentic_like_integration_policy_missing",
+      "stale_component_record_blocked",
+      "support_disrupted_but_integration_allowed"
+    ],
+    "step_or_topology_event_owns_state_mutation": null,
+    "telemetry_requirements": [
+      "future_native_integration_telemetry_must_live_under_src_pygrc_telemetry",
+      "native_integration_records_default_off",
+      "component_policy_record_digests",
+      "component_policy_enabled_validated_supported_snapshot",
+      "budget_surface_contract_digest",
+      "claim_boundary_contract_digest",
+      "integration_gate_rejection_reason",
+      "native_support_flags_exported_false_until_phase8_validation",
+      "agency_claim_flags_forced_false_snapshot"
+    ],
+    "thresholds_to_serialize": [
+      "source-current validity window",
+      "budget continuity epsilon",
+      "claim-promotion rejection policy"
+    ]
+  },
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "boundary_result": {
+    "agency_claim_opened": false,
+    "fully_native_agentic_like_integration_claim_opened": false,
+    "nat_level": "NAT2",
+    "native_policy_name": "native_agentic_like_integration_policy",
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "phase8_ready": false,
+    "primary_disposition": "theory_sensitive_blocker",
+    "supported_interpretation": "Full native agentic-like integration remains a blocked meta-policy boundary. NAT4 component candidates and artifact-only GALI7 replay do not constitute native integration, native support, or agency."
+  },
+  "checks": {
+    "agency_claims_blocked": true,
+    "artifact_replay_separate_from_fully_native": true,
+    "claim_flags_all_false": true,
+    "component_candidates_separate_from_meta_policy": true,
+    "composition_prerequisites_recorded": true,
+    "n10_budget_contract_found": true,
+    "n10_integration_contract_found": true,
+    "n11_artifact_only_replay_preserved": true,
+    "n11_artifact_validator_passed": true,
+    "n11_closeout_gali7_artifact_only": true,
+    "n11_runtime_state_not_used": true,
+    "nat_level_is_nat2_not_nat4": true,
+    "native_supported_flags_false": true,
+    "phase8_opened_false": true,
+    "phase8_ready_false": true,
+    "primary_disposition_theory_sensitive_blocker": true,
+    "schema_alignment_complete": true,
+    "source_file_sha256_all_present": true,
+    "src_clean": true
+  },
+  "claim_boundary": {
+    "agency_claim_opened": false,
+    "agentic_like_integration_is_agency": false,
+    "artifact_only_gali7_is_fully_native_integration": false,
+    "component_nat4_candidate_is_integration_meta_policy": false,
+    "fully_native_agentic_like_integration_claim_opened": false,
+    "native_support_is_agency": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_agentic_like_integration_boundary.py",
+  "experiment": "N12",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "645e040a8944eb48f65b8cf70ee3b05edc1f7263",
+    "src_status_short": ""
+  },
+  "iteration": 6,
+  "output_digest": "2ed8ae9f591a7c435f012c70502c0871275a755d5355e7c95efa6d46a10c2601",
+  "purpose": "agentic_like_integration_boundary_meta_gap",
+  "schema": "n12_agentic_like_integration_boundary_v1",
+  "schema_alignment": {
+    "candidate_extension_field_meaning": {
+      "deferred_phase8_requirements": "Minimum future requirements before reconsidering NAT3/NAT4.",
+      "integration_boundary": "Iteration 6 component-vs-meta-policy, artifact-vs-native, and agency-claim boundary.",
+      "source_evidence_summary": "Short source-backed integration boundary summary."
+    },
+    "candidate_extension_fields": [
+      "deferred_phase8_requirements",
+      "integration_boundary",
+      "source_evidence_summary"
+    ],
+    "final_row_field_count": 56,
+    "missing_final_row_fields": []
+  },
+  "source_artifacts": {
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json": {
+      "artifact_digest": null,
+      "output_digest": "9d85c7dc9d77a969680a2ed0b67283f4411cf3dca715aa27191529ceeb59aa18",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json",
+      "sha256": "bbeeeca3f094ce5771304f174d1866ab34708719d3f0a86c2671f0022d9b17c1",
+      "status": "passed"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json": {
+      "artifact_digest": null,
+      "output_digest": "0ec283968d91de44d2960bcc15fbdce740658ba356c5603dc8183108b8069a7f",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json",
+      "sha256": "044d7fd2f0fef213f0ec61ea67bbc07d098099560c264e4c403e464e6b590451",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json": {
+      "artifact_digest": null,
+      "output_digest": "82d1a3eedc0aebacdceae79e2be37bb96b7fff4cbfacbae00da912f3975c3e52",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json",
+      "sha256": "876455ec8b5cdd084c8b3a247d33a0313dd11d5421a693e9ebe5bef63600d8d6",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json": {
+      "artifact_digest": null,
+      "output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+      "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_9_artifact_only_generalization_validator.json": {
+      "artifact_digest": null,
+      "output_digest": "a44607c05a90c9d3169bce2e9fbb4bd560e9811180420631a7ccd1faaf8aa481",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_9_artifact_only_generalization_validator.json",
+      "sha256": "01a9ea8b36b4767306c0e8ea5787ed4fc2f2aed866b3efb62024cd6622e44fb9",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json": {
+      "artifact_digest": null,
+      "output_digest": "22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json",
+      "sha256": "0048a06de4e204c4c3ad7f9c7d720ecfdb8b68b06eaff50e099aea168c1d27da",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json": {
+      "artifact_digest": null,
+      "output_digest": "cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+      "sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json": {
+      "artifact_digest": null,
+      "output_digest": "f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json",
+      "sha256": "1054be3cc71946e00be6e4d78a08111ec9d2d75c19fd535fd9b4898f86e4df80",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json": {
+      "artifact_digest": null,
+      "output_digest": "347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "sha256": "3748728f2fe36246f1655f53241e5719f875c8f6a68edeffea9f5f0a88a9b234",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json": {
+      "artifact_digest": null,
+      "output_digest": "c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json",
+      "sha256": "d690bd0619b8742b343c596976cc15cfd9ca76acdd71be55853c32ac2aa59747",
+      "status": "passed"
+    }
+  },
+  "source_digest_policy": {
+    "all_source_file_sha256_present": true,
+    "output_digest_used_when_source_exposes_it": true,
+    "row_source_report_sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+    "row_source_sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01"
+  },
+  "source_reports": {
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md",
+      "sha256": "78de216677b04cc9cf7dee2de8859b6f8d63f63f98f5207bf81598261beaaa33"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md",
+      "sha256": "9aa9940afb0f51104176e9ead58f7b86682845f8e557117e2fbc40193b3bb844"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_11_hypothesis_c_native_generalization_gap.md": {
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_11_hypothesis_c_native_generalization_gap.md",
+      "sha256": "5df6517d5b5717fe1acb111c85292803682d4084ce8b94ce885acc50d03440f9"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md": {
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md",
+      "sha256": "59b4623a7e46506e6dd33d88c42dfb40614f019b8841842c08f280e4681e8cbd"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_9_artifact_only_generalization_validator.md": {
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_9_artifact_only_generalization_validator.md",
+      "sha256": "e88d35678aff0e621d052056f8c60cd4381955c2b943830ce7c4aba93be953fe"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_identity_acceptance_boundary.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_identity_acceptance_boundary.md",
+      "sha256": "85f2768a8b916b95f2d796e4d6f52f409fb02556779252e622edf66685a80226"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+      "sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md",
+      "sha256": "e3a3d0c126f71f150930f402d2c41b6a78b650d90047ba9dd846a728393c8a8c"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md",
+      "sha256": "ba3e0e3f4b2f6cb2919d781b6dbd93c2c88f744c0e2aefbd7d53d8c0e88d9b1f"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_route_conductance_memory_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_route_conductance_memory_candidate.md",
+      "sha256": "acaa6a7cc84b2d57548e27cea8495ae042faf84246c13d238feaaf1b68992ed7"
+    }
+  },
+  "status": "passed"
+}

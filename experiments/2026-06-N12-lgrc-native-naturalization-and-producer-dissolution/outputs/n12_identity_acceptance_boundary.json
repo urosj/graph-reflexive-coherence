@@ -1,0 +1,542 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "boundary_result": {
+    "identity_acceptance_claim_opened": false,
+    "nat_level": "NAT2",
+    "native_policy_name": "native_identity_acceptance_validator",
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "phase8_ready": false,
+    "primary_disposition": "theory_sensitive_blocker",
+    "supported_interpretation": "Identity acceptance remains a theory-sensitive blocked boundary. Support survival evidence is source-backed but does not become identity acceptance or native support."
+  },
+  "checks": {
+    "claim_flags_all_false": true,
+    "identity_continuity_separated_from_runtime_acceptance": true,
+    "missing_formal_acceptance_semantics_recorded": true,
+    "n07_support_baseline_passed": true,
+    "n10_contract_identity_support_validator_found": true,
+    "n10_support_matrix_passed": true,
+    "n11_identity_gap_found": true,
+    "nat_level_is_nat2_not_nat4": true,
+    "native_supported_flags_false": true,
+    "no_identity_acceptance_claim_opens": true,
+    "phase8_opened_false": true,
+    "phase8_ready_false": true,
+    "primary_disposition_theory_sensitive_blocker": true,
+    "rc_identity_collapse_claims_blocked": true,
+    "schema_alignment_complete": true,
+    "source_file_sha256_all_present": true,
+    "src_clean": true,
+    "support_survival_separated_from_identity_acceptance": true,
+    "validator_local_support_fields_identified": true
+  },
+  "claim_boundary": {
+    "identity_acceptance_is_native_support": false,
+    "identity_continuity_is_runtime_acceptance": false,
+    "identity_validator_candidate_is_identity_acceptance": false,
+    "native_support_is_agency": false,
+    "rc_identity_collapse_claim_opened": false,
+    "restoration_history_is_identity_acceptance": false,
+    "support_survival_is_identity_acceptance": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_identity_acceptance_boundary.py",
+  "experiment": "N12",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "645e040a8944eb48f65b8cf70ee3b05edc1f7263",
+    "src_status_short": ""
+  },
+  "identity_acceptance_boundary": {
+    "artifact_replay_requirements": [
+      "replay reconstructs support lanes and support survival outcomes",
+      "replay preserves disruption and explicit restoration history",
+      "replay keeps support survival distinct from identity acceptance",
+      "replay rejects hidden restoration",
+      "replay rejects report-side identity acceptance labels"
+    ],
+    "blocked_claims": [
+      "aco like",
+      "agency",
+      "agentic like",
+      "ant colony",
+      "biological",
+      "fully native agentic like integration",
+      "identity acceptance",
+      "intention",
+      "locomotion like",
+      "native identity acceptance support",
+      "native support opened",
+      "personhood",
+      "rc identity collapse",
+      "runtime identity acceptance",
+      "semantic goal ownership",
+      "semantic goal understanding",
+      "unrestricted agency",
+      "unrestricted identity",
+      "unrestricted movement"
+    ],
+    "bookkeeping_fields": [
+      "explicit_restoration_digest",
+      "restoration_history_digest",
+      "support_lane_digest",
+      "support_state_digest",
+      "support_survival_threshold",
+      "withdrawal_event_digest"
+    ],
+    "budget_surfaces": [
+      "support_validation_budget_surface_if_native_runtime_measured"
+    ],
+    "claim_boundary_controls": [
+      "identity_acceptance_claim_promotion_blocked",
+      "identity_continuity_relabelled_runtime_acceptance_blocked",
+      "rc_identity_collapse_claim_promotion_blocked",
+      "restoration_relabelled_acceptance_blocked",
+      "runtime_identity_acceptance_claim_promotion_blocked",
+      "support_survival_relabelled_identity_acceptance_blocked"
+    ],
+    "claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+    "claim_flags_forced_false": {
+      "aco_like_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_colony_claim_allowed": false,
+      "biological_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "native_support_opened": false,
+      "personhood_claim_allowed": false,
+      "rc_identity_collapse_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false,
+      "unrestricted_identity_claim_allowed": false
+    },
+    "compatibility_tests": [
+      "support_survival_not_identity_acceptance",
+      "identity_continuity_not_runtime_acceptance",
+      "restoration_history_not_acceptance",
+      "rc_identity_collapse_claim_blocked",
+      "identity_acceptance_claim_flags_false",
+      "phase8_ready_false_for_identity_boundary",
+      "native_supported_flags_false",
+      "hidden_restoration_rejected",
+      "support_history_erasure_rejected"
+    ],
+    "contract_runtime_visible_inputs": [
+      "identity_acceptance_gate_id",
+      "restoration_event_digest",
+      "support_area_digest",
+      "support_state_policy_id",
+      "withdrawal_event_digest"
+    ],
+    "covered_policy_records": [
+      "native_identity_support_validator_record"
+    ],
+    "default_off_flags": {
+      "identity_acceptance_validator_enabled_default": false,
+      "native_support_flags_default": false,
+      "rc_identity_collapse_validator_enabled_default": false,
+      "runtime_acceptance_validator_enabled_default": false
+    },
+    "deferred_phase8_requirements": {
+      "minimum_before_nat4": [
+        "native policy name with accepted semantics",
+        "record schema for acceptance event and validator result",
+        "idempotent digest over support, continuity, event, and budget",
+        "snapshot/replay validator that rejects report-side acceptance",
+        "compatibility tests preserving forced-false agency claims"
+      ],
+      "minimum_before_reconsidering_nat3": [
+        "formal semantics for identity acceptance",
+        "runtime-visible acceptance event schema",
+        "acceptance-vs-continuity separation rule",
+        "negative controls for acceptance relabeling",
+        "default-off telemetry contract under src/pygrc/telemetry"
+      ],
+      "status": "blocked"
+    },
+    "enabled_validated_supported_separation": {
+      "identity_acceptance_enabled": false,
+      "identity_acceptance_supported": false,
+      "identity_acceptance_validated": false,
+      "rc_identity_collapse_supported": false,
+      "runtime_acceptance_supported": false,
+      "support_survival_evidence_available": true,
+      "support_survival_evidence_native_supported": false
+    },
+    "idempotency_digest_plan": {
+      "available_digests": [
+        "support_state_digest",
+        "restoration_history_digest",
+        "withdrawal_event_digest"
+      ],
+      "missing_digest": "identity_acceptance_event_digest",
+      "status": "support_history_digest_only_acceptance_digest_blocked"
+    },
+    "mechanism_name": "native_identity_acceptance_validator_boundary",
+    "mechanism_role": "theory_sensitive_identity_acceptance_blocker",
+    "missing_gates": [
+      "formal_identity_acceptance_semantics_missing",
+      "runtime_acceptance_validator_missing",
+      "identity_acceptance_event_schema_missing",
+      "identity_continuity_vs_acceptance_theory_gate_missing",
+      "rc_identity_collapse_theory_not_formalized",
+      "support_survival_not_identity_acceptance",
+      "native_acceptance_mutation_boundary_not_formalized",
+      "native_acceptance_telemetry_contract_missing"
+    ],
+    "mutation_boundary": {
+      "producer_or_policy_may_schedule_only": null,
+      "reason": "support history replay can be recorded, but no native acceptance state mutation or validator semantics are defined",
+      "status": "blocked_until_identity_acceptance_theory_is_formalized",
+      "step_or_topology_event_owns_state_mutation": null
+    },
+    "n11_native_support_scope": "support_survival_only_not_identity_acceptance",
+    "n11_native_supported": false,
+    "nat_level": "NAT2",
+    "native_gap": "native_identity_acceptance_validator_missing",
+    "native_policy_name": "native_identity_acceptance_validator",
+    "native_supported_flags_false": true,
+    "negative_controls": [
+      "hidden_restoration_rejected",
+      "identity_acceptance_without_semantics_rejected",
+      "rc_identity_collapse_relabel_rejected",
+      "runtime_acceptance_without_event_schema_rejected",
+      "support_history_erasure_rejected",
+      "support_invariance_relabelled_identity_acceptance_rejected"
+    ],
+    "non_rc_quantity_audit": {
+      "audit_status": "blocked_theory_sensitive_not_nat4",
+      "candidate_specific_questions": {
+        "can_acceptance_be_added_as_report_side_label": false,
+        "does_rc_identity_collapse_have_formal_validator": false,
+        "is_identity_continuity_runtime_acceptance": false,
+        "is_restoration_history_identity_acceptance": false,
+        "is_support_survival_identity_acceptance": false
+      },
+      "does_identity_acceptance_require_semantics_not_yet_formalized": true,
+      "extra_unaccounted_quantity_allowed": false,
+      "field_required": true,
+      "is_identity_acceptance_derived_observable": false,
+      "is_support_survival_rc_observable": true,
+      "nat4_blocker_if_extra_quantity_required": "identity_acceptance_semantics_not_formalized",
+      "would_acceptance_require_new_unaccounted_quantity_without_theory": true
+    },
+    "ordering_requirements": [
+      "support baseline precedes withdrawal",
+      "withdrawal precedes disruption classification",
+      "restoration evidence must follow disruption before resumption"
+    ],
+    "phase8_decision_source": "defer_until_identity_acceptance_theory_is_precise",
+    "phase8_opened_false": true,
+    "phase8_order_source": {
+      "contract_rows": [
+        "n10_i14_contract_04_identity_support_validator"
+      ],
+      "order": 4,
+      "phase": "identity_support_validator_hardening",
+      "reason": "Identity acceptance is theory-sensitive and must remain distinct from support survival."
+    },
+    "phase8_readiness_source": "defer_until_identity_acceptance_theory_is_precise",
+    "phase8_ready": false,
+    "primary_disposition": "theory_sensitive_blocker",
+    "producer_decision_fields": [],
+    "producer_or_policy_may_schedule_only": null,
+    "record_schema_sketch": {
+      "forbidden_fields": [
+        "semantic_identity_acceptance",
+        "runtime_self_acceptance",
+        "rc_identity_collapse_flag",
+        "identity_personhood_state",
+        "hidden_restoration_state",
+        "report_side_acceptance_override"
+      ],
+      "record_type": "identity_acceptance_boundary_record",
+      "records_available": [
+        "native_identity_support_validator_record",
+        "support_state_history_record",
+        "withdrawal_restoration_history_record"
+      ],
+      "records_missing_before_phase8_entry": [
+        "identity_acceptance_event_record",
+        "runtime_acceptance_validator_record",
+        "rc_identity_collapse_validator_record"
+      ],
+      "status": "blocked_theory_boundary_not_native_policy",
+      "version": "v1"
+    },
+    "row_digest": "12895af7615afa87860d3c38435c53eeba7228219a25831eff1c9411cdcbb481",
+    "row_id": "n12_i5_identity_acceptance_boundary_v1",
+    "runtime_visible_inputs": [
+      "support_area_digest",
+      "support_state_policy_id",
+      "withdrawal_event_digest",
+      "restoration_event_digest",
+      "identity_acceptance_gate_id"
+    ],
+    "runtime_visible_surfaces": [
+      "disruption/restoration history surface",
+      "lineage-current support state surface",
+      "native_identity_support_validator_record",
+      "support_state_history_surface",
+      "withdrawal_restoration_history_surface"
+    ],
+    "secondary_tags": [
+      "theory_sensitive_blocker",
+      "identity_support_boundary",
+      "support_survival_not_identity_acceptance",
+      "phase8_not_ready"
+    ],
+    "snapshot_replay_requirements": [
+      "replay reconstructs support lanes and support survival outcomes",
+      "replay preserves disruption and explicit restoration history",
+      "replay keeps support survival distinct from identity acceptance",
+      "replay rejects hidden restoration",
+      "replay rejects report-side identity acceptance labels"
+    ],
+    "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+    "source_contract_rows": [
+      "n10_i14_contract_04_identity_support_validator"
+    ],
+    "source_evidence_summary": {
+      "n07_claim_boundary_identity_acceptance_allowed": false,
+      "n07_general_identity_acceptance_supported": false,
+      "n07_status": "passed",
+      "n10_contract_phase8_readiness": "defer_until_identity_acceptance_theory_is_precise",
+      "n10_hypothesis_b_positive_scope": "bounded_artifact_only_support_sensitive_full_composition",
+      "n10_hypothesis_b_runtime_state_used": false,
+      "n11_gap_native_support_scope": "support_survival_only_not_identity_acceptance",
+      "n11_gap_phase8_readiness": "defer_until_identity_acceptance_theory_is_precise"
+    },
+    "source_experiment": "N07_N10_N11_N12",
+    "source_gap_row_summaries": [
+      {
+        "classification": "constitutive_prerequisite_and_replay_validation",
+        "component": "N07 identity/support and withdrawal/restoration baseline",
+        "native_policy_gap": "native_identity_acceptance_validator_missing",
+        "overread_blocker": "support_invariance_relabelled_as_identity_acceptance",
+        "row_id": "n10_c_gap_06_identity_support_not_acceptance"
+      }
+    ],
+    "source_gap_rows": [
+      "n10_c_gap_06_identity_support_not_acceptance"
+    ],
+    "source_iteration": "N12_iteration_5",
+    "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+    "source_report_sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+    "source_row_digest": "cd3fcf19b27b3e968fdb00f48481c6feca184ce985f17fd6d866a35c4188a4bd",
+    "source_sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+    "src_diff_empty": true,
+    "stale_context_blockers": [
+      "stale_support_baseline_blocked",
+      "restoration_without_prior_disruption_blocked",
+      "identity_acceptance_validator_missing"
+    ],
+    "step_or_topology_event_owns_state_mutation": null,
+    "support_acceptance_boundary": {
+      "boundary_status": "identity_acceptance_blocked",
+      "identity_acceptance_meaning": "not formalized in N05-N11 or N12",
+      "identity_continuity_meaning": "lineage-current support history can be replayed but does not imply runtime acceptance",
+      "n10_support_matrix_states": [
+        "support_intact_survives",
+        "mild_withdrawal_survives",
+        "n09_matched_withdrawal_disrupts_support",
+        "explicit_restoration_recovers_support"
+      ],
+      "rc_identity_collapse_meaning": "blocked theory claim, not a validator result",
+      "runtime_acceptance_meaning": "blocked until acceptance event semantics exist",
+      "support_lanes": [
+        {
+          "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+          "identity_support_outcome_tag": "support_intact_bounded_exchange_reference",
+          "lane_id": "support_intact_reference",
+          "restoration_fraction": 0.0,
+          "support_survival_passed": true,
+          "support_survival_threshold": 0.85,
+          "withdrawal_depth": 0.0
+        },
+        {
+          "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+          "identity_support_outcome_tag": "support_withdrawal_survival_baseline",
+          "lane_id": "mild_support_weakening",
+          "restoration_fraction": 0.0,
+          "support_survival_passed": true,
+          "support_survival_threshold": 0.85,
+          "withdrawal_depth": 0.1
+        },
+        {
+          "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+          "identity_support_outcome_tag": "support_disrupted_by_withdrawal_without_restoration",
+          "lane_id": "n09_matched_partial_support_withdrawal",
+          "restoration_fraction": 0.0,
+          "support_survival_passed": false,
+          "support_survival_threshold": 0.85,
+          "withdrawal_depth": 0.25
+        },
+        {
+          "claim_boundary": "support retention/disruption classification only; no runtime identity acceptance or agency claim",
+          "identity_support_outcome_tag": "explicit_restoration_recovers_support_survival_baseline",
+          "lane_id": "restored_after_n09_partial_withdrawal",
+          "restoration_fraction": 0.8,
+          "support_survival_passed": true,
+          "support_survival_threshold": 0.85,
+          "withdrawal_depth": 0.25
+        }
+      ],
+      "support_survival_evidence_available": true,
+      "support_survival_evidence_source": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "support_survival_meaning": "support retention/disruption/restoration classification under serialized withdrawal lanes",
+      "support_survival_threshold": 0.85
+    },
+    "telemetry_requirements": [
+      "future_identity_support_telemetry_must_remain_separate_from_acceptance",
+      "identity_acceptance_flags_exported_false_until_theory_gate_passes",
+      "support_state_digest_and_restoration_history_digest",
+      "withdrawal_event_digest_and_restoration_event_digest",
+      "claim_flags_forced_false_snapshot",
+      "default_off_native_identity_acceptance_records",
+      "src_pygrc_telemetry_namespace_required_if_phase8_later_opens"
+    ],
+    "theory_entry_gates": [
+      {
+        "gate_id": "identity_acceptance_semantics_formalized",
+        "required_before": "NAT3_or_NAT4_for_identity_acceptance",
+        "status": "missing"
+      },
+      {
+        "gate_id": "runtime_acceptance_event_schema",
+        "required_before": "native_identity_acceptance_validator_design",
+        "status": "missing"
+      },
+      {
+        "gate_id": "identity_continuity_acceptance_split",
+        "required_before": "support_evidence_can_feed_acceptance_validator",
+        "status": "missing"
+      },
+      {
+        "gate_id": "rc_identity_collapse_claim_boundary",
+        "required_before": "any_rc_identity_collapse_validator",
+        "status": "missing"
+      }
+    ],
+    "thresholds_to_serialize": [
+      "support survival threshold",
+      "withdrawal disruption threshold",
+      "restoration eligibility threshold"
+    ]
+  },
+  "iteration": 5,
+  "output_digest": "22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295",
+  "purpose": "identity_acceptance_boundary_theory_sensitive_blocker",
+  "schema": "n12_identity_acceptance_boundary_v1",
+  "schema_alignment": {
+    "candidate_extension_field_meaning": {
+      "deferred_phase8_requirements": "Minimum future requirements before reconsidering NAT3/NAT4.",
+      "source_evidence_summary": "Short source-backed boundary summary.",
+      "support_acceptance_boundary": "Iteration 5 support survival, identity continuity, runtime acceptance, and RC identity collapse separation.",
+      "theory_entry_gates": "Theory gates required before identity acceptance can move beyond a blocked boundary."
+    },
+    "candidate_extension_fields": [
+      "deferred_phase8_requirements",
+      "source_evidence_summary",
+      "support_acceptance_boundary",
+      "theory_entry_gates"
+    ],
+    "final_row_field_count": 56,
+    "missing_final_row_fields": []
+  },
+  "source_artifacts": {
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json": {
+      "artifact_digest": null,
+      "output_digest": null,
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b",
+      "status": "passed"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json": {
+      "artifact_digest": null,
+      "output_digest": "9d85c7dc9d77a969680a2ed0b67283f4411cf3dca715aa27191529ceeb59aa18",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.json",
+      "sha256": "bbeeeca3f094ce5771304f174d1866ab34708719d3f0a86c2671f0022d9b17c1",
+      "status": "passed"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json": {
+      "artifact_digest": null,
+      "output_digest": "0ec283968d91de44d2960bcc15fbdce740658ba356c5603dc8183108b8069a7f",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_14_hypothesis_c_native_contract_requirements.json",
+      "sha256": "044d7fd2f0fef213f0ec61ea67bbc07d098099560c264e4c403e464e6b590451",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json": {
+      "artifact_digest": null,
+      "output_digest": "82d1a3eedc0aebacdceae79e2be37bb96b7fff4cbfacbae00da912f3975c3e52",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json",
+      "sha256": "876455ec8b5cdd084c8b3a247d33a0313dd11d5421a693e9ebe5bef63600d8d6",
+      "status": "passed"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json": {
+      "artifact_digest": null,
+      "output_digest": "86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json",
+      "sha256": "c88f2cb0f6f23b1befb0d121f8a71b0e468700b06f92ea7bf0a78048507b391a",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json": {
+      "artifact_digest": null,
+      "output_digest": "cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+      "sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json": {
+      "artifact_digest": null,
+      "output_digest": "f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json",
+      "sha256": "1054be3cc71946e00be6e4d78a08111ec9d2d75c19fd535fd9b4898f86e4df80",
+      "status": "passed"
+    }
+  },
+  "source_digest_policy": {
+    "all_source_file_sha256_present": true,
+    "output_digest_used_when_source_exposes_it": true,
+    "row_source_report_sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+    "row_source_sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01"
+  },
+  "source_reports": {
+    "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md": {
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_12_hypothesis_b_support_state_matrix_closeout.md",
+      "sha256": "78de216677b04cc9cf7dee2de8859b6f8d63f63f98f5207bf81598261beaaa33"
+    },
+    "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md": {
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/reports/n10_iteration_14_hypothesis_c_native_contract_requirements.md",
+      "sha256": "9aa9940afb0f51104176e9ead58f7b86682845f8e557117e2fbc40193b3bb844"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_11_hypothesis_c_native_generalization_gap.md": {
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_11_hypothesis_c_native_generalization_gap.md",
+      "sha256": "5df6517d5b5717fe1acb111c85292803682d4084ce8b94ce885acc50d03440f9"
+    },
+    "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md": {
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md",
+      "sha256": "59b4623a7e46506e6dd33d88c42dfb40614f019b8841842c08f280e4681e8cbd"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+      "sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md",
+      "sha256": "e3a3d0c126f71f150930f402d2c41b6a78b650d90047ba9dd846a728393c8a8c"
+    }
+  },
+  "status": "passed"
+}

@@ -574,6 +574,25 @@ Iteration 5 passes if identity acceptance remains blocked with explicit theory
 entry gates and no identity acceptance claim.
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_identity_acceptance_boundary.json
+Report: reports/n12_identity_acceptance_boundary.md
+Output digest: 22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295
+```
+
+Iteration 5 classifies `native_identity_acceptance_validator` as a
+theory-sensitive blocked boundary at `NAT2`, not a Phase 8-ready native policy
+candidate. N07/N10/N11 support-survival evidence remains source-backed and
+replayable, but support survival, identity continuity, and explicit restoration
+are not promoted into identity acceptance, runtime acceptance, RC identity
+collapse, native support, or agency. The row records missing theory entry gates,
+keeps `phase8_ready = false`, preserves `native_supported_flags_false`, and
+forces identity acceptance, runtime identity acceptance, RC identity collapse,
+native support, and agency-related claim flags false.
+
 ### Iteration 6. Agentic-Like Integration Boundary
 
 Record why full native agentic-like integration is a meta-gap, not one small
@@ -602,6 +621,26 @@ Acceptance statement:
 Iteration 6 passes if full native agentic-like integration remains blocked
 until component native policies exist and composition replay validates them.
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_agentic_like_integration_boundary.json
+Report: reports/n12_agentic_like_integration_boundary.md
+Output digest: 2ed8ae9f591a7c435f012c70502c0871275a755d5355e7c95efa6d46a10c2601
+```
+
+Iteration 6 classifies `native_agentic_like_integration_policy` as a blocked
+meta-policy boundary at `NAT2`, not a Phase 8-ready native policy candidate.
+Route conductance memory and response magnitude remain `NAT4` component
+candidates, while identity acceptance remains a `NAT2` blocked boundary; those
+component results do not constitute native integration support. N11 GALI7 stays
+artifact-only replay evidence, not fully native integration, native support, or
+agency. The row records the missing cross-cutting budget/replay contract,
+component native policy records, native composition replay, and integration
+meta-policy gates, with all native support, fully native integration, and agency
+claim flags forced false.
 
 ### Iteration 7. Phase 8 Readiness Package, No Implementation
 

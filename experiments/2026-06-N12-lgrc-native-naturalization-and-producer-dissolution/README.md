@@ -183,10 +183,12 @@ phase8_opened = false
 Current N12 state:
 
 ```text
-status = iteration_4_response_magnitude_candidate_complete
+status = iteration_6_agentic_like_integration_boundary_complete
 target_naturalization_level = NAT4
 strongest_recorded_level = NAT4
 phase8_ready_rows = 2
+identity_acceptance_boundary_nat_level = NAT2
+agentic_like_integration_boundary_nat_level = NAT2
 phase8_implementation_opened = false
 native_support_opened = false
 ```

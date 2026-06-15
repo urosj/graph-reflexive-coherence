@@ -14,13 +14,13 @@ Generated reports:
   memory candidate report.
 - `n12_response_magnitude_candidate.md`: human-readable response magnitude
   candidate report.
-
-Planned reports:
-
 - `n12_identity_acceptance_boundary.md`: human-readable identity acceptance
   boundary report.
 - `n12_agentic_like_integration_boundary.md`: human-readable agentic-like
   integration boundary report.
+
+Planned reports:
+
 - `n12_phase8_readiness_matrix.md`: human-readable Phase 8 readiness matrix
   covering contracts, blockers, controls, telemetry requirements, and test
   gates, with no-implementation flags.
