@@ -1,0 +1,544 @@
+{
+  "acceptance": {
+    "acceptance_statement": "Iteration 2 passes if the N12 schema and ladder are frozen before candidate evaluation or Phase 8 implementation work.",
+    "achieved": true,
+    "status": "passed"
+  },
+  "checks": {
+    "claim_flags_forced_false": true,
+    "final_row_fields_declared": true,
+    "iteration_1_passed": true,
+    "iteration_1_traceability_fields_preserved": true,
+    "nat4_gates_represented_in_field_schema": true,
+    "nat4_has_mutation_boundary": true,
+    "nat4_has_no_implementation_flags": true,
+    "non_rc_quantity_audit_required": true,
+    "phase8_ready_is_derived_from_nat4": true,
+    "primary_disposition_non_overlapping": true,
+    "src_clean": true
+  },
+  "claim_flags_forced_false": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_naturalization_schema_v1.py",
+  "experiment": "2026-06-N12-lgrc-native-naturalization-and-producer-dissolution",
+  "field_schema": {
+    "artifact_replay_requirements": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "blocked_claims": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "bookkeeping_fields": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "budget_surfaces": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "claim_boundary_controls": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "claim_ceiling": {
+      "required": "true",
+      "type": "string"
+    },
+    "claim_flags_forced_false": {
+      "required": "true",
+      "type": "object"
+    },
+    "compatibility_tests": {
+      "required": "for_NAT4",
+      "type": "list[string]"
+    },
+    "contract_runtime_visible_inputs": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "covered_policy_records": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "default_off_flags": {
+      "required": "for_NAT4",
+      "type": "object"
+    },
+    "enabled_validated_supported_separation": {
+      "required": "for_NAT4",
+      "type": "object"
+    },
+    "idempotency_digest_plan": {
+      "required": "for_NAT4",
+      "type": "object"
+    },
+    "mechanism_name": {
+      "required": "true",
+      "type": "string"
+    },
+    "mechanism_role": {
+      "required": "true",
+      "type": "string"
+    },
+    "missing_gates": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "mutation_boundary": {
+      "required": "for_NAT4",
+      "type": "object"
+    },
+    "n11_native_support_scope": {
+      "required": "true",
+      "type": "string|null"
+    },
+    "n11_native_supported": {
+      "required": "true",
+      "type": "boolean|null"
+    },
+    "nat_level": {
+      "required": "true",
+      "type": "NAT0..NAT6"
+    },
+    "native_gap": {
+      "required": "true",
+      "type": "string|null"
+    },
+    "native_policy_name": {
+      "required": "for_NAT4",
+      "type": "string|null"
+    },
+    "native_supported_flags_false": {
+      "required": "for_NAT4",
+      "type": "boolean"
+    },
+    "negative_controls": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "non_rc_quantity_audit": {
+      "required": "true",
+      "type": "object"
+    },
+    "ordering_requirements": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "phase8_decision_source": {
+      "required": "true",
+      "type": "string|null"
+    },
+    "phase8_opened_false": {
+      "required": "for_NAT4",
+      "type": "boolean"
+    },
+    "phase8_order_source": {
+      "required": "true",
+      "type": "object|null"
+    },
+    "phase8_readiness_source": {
+      "required": "true",
+      "type": "string|null"
+    },
+    "phase8_ready": {
+      "required": "true",
+      "type": "boolean"
+    },
+    "primary_disposition": {
+      "required": "true",
+      "type": "enum"
+    },
+    "producer_decision_fields": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "producer_or_policy_may_schedule_only": {
+      "required": "for_NAT4",
+      "type": "boolean|null"
+    },
+    "record_schema_sketch": {
+      "required": "for_NAT4",
+      "type": "object|null"
+    },
+    "row_digest": {
+      "required": "true",
+      "type": "sha256"
+    },
+    "row_id": {
+      "required": "true",
+      "type": "string"
+    },
+    "runtime_visible_inputs": {
+      "required": "for_NAT4",
+      "type": "list[string]"
+    },
+    "runtime_visible_surfaces": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "secondary_tags": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "snapshot_replay_requirements": {
+      "required": "for_NAT4",
+      "type": "list[string]"
+    },
+    "source_artifact": {
+      "required": "true",
+      "type": "path"
+    },
+    "source_contract_rows": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "source_experiment": {
+      "required": "true",
+      "type": "string"
+    },
+    "source_gap_row_summaries": {
+      "required": "true",
+      "type": "list[object]"
+    },
+    "source_gap_rows": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "source_iteration": {
+      "required": "true",
+      "type": "integer|string"
+    },
+    "source_report": {
+      "required": "true",
+      "type": "path"
+    },
+    "source_report_sha256": {
+      "required": "true",
+      "type": "sha256"
+    },
+    "source_row_digest": {
+      "required": "true",
+      "type": "sha256|null"
+    },
+    "source_sha256": {
+      "required": "true",
+      "type": "sha256"
+    },
+    "src_diff_empty": {
+      "required": "for_NAT4",
+      "type": "boolean"
+    },
+    "stale_context_blockers": {
+      "required": "true",
+      "type": "list[string]"
+    },
+    "step_or_topology_event_owns_state_mutation": {
+      "required": "for_NAT4",
+      "type": "boolean|null"
+    },
+    "telemetry_requirements": {
+      "required": "for_NAT4",
+      "type": "list[string]"
+    },
+    "thresholds_to_serialize": {
+      "required": "true",
+      "type": "list[string]"
+    }
+  },
+  "final_row_fields": [
+    "row_id",
+    "source_experiment",
+    "source_iteration",
+    "source_artifact",
+    "source_report",
+    "source_sha256",
+    "source_report_sha256",
+    "source_gap_rows",
+    "source_contract_rows",
+    "source_gap_row_summaries",
+    "source_row_digest",
+    "mechanism_name",
+    "mechanism_role",
+    "secondary_tags",
+    "producer_decision_fields",
+    "bookkeeping_fields",
+    "runtime_visible_surfaces",
+    "runtime_visible_inputs",
+    "contract_runtime_visible_inputs",
+    "budget_surfaces",
+    "thresholds_to_serialize",
+    "native_gap",
+    "native_policy_name",
+    "record_schema_sketch",
+    "covered_policy_records",
+    "primary_disposition",
+    "nat_level",
+    "phase8_ready",
+    "phase8_readiness_source",
+    "phase8_decision_source",
+    "phase8_order_source",
+    "claim_ceiling",
+    "blocked_claims",
+    "missing_gates",
+    "non_rc_quantity_audit",
+    "artifact_replay_requirements",
+    "claim_boundary_controls",
+    "ordering_requirements",
+    "stale_context_blockers",
+    "n11_native_supported",
+    "n11_native_support_scope",
+    "mutation_boundary",
+    "producer_or_policy_may_schedule_only",
+    "step_or_topology_event_owns_state_mutation",
+    "default_off_flags",
+    "enabled_validated_supported_separation",
+    "idempotency_digest_plan",
+    "telemetry_requirements",
+    "snapshot_replay_requirements",
+    "negative_controls",
+    "compatibility_tests",
+    "claim_flags_forced_false",
+    "src_diff_empty",
+    "native_supported_flags_false",
+    "phase8_opened_false",
+    "row_digest"
+  ],
+  "generated_at": "2026-06-15T13:57:45.293285+00:00",
+  "git": {
+    "head": "045eae5faff1677c023028d5951cd7d728fb3b9d",
+    "src_clean": true,
+    "src_status_short": ""
+  },
+  "iteration": 2,
+  "iteration_1_fields_preserved_in_final_schema": [
+    "secondary_tags",
+    "thresholds_to_serialize",
+    "source_gap_rows",
+    "source_contract_rows",
+    "source_gap_row_summaries",
+    "source_row_digest",
+    "n11_native_supported",
+    "n11_native_support_scope",
+    "phase8_decision_source",
+    "phase8_order_source",
+    "phase8_readiness_source",
+    "artifact_replay_requirements",
+    "claim_boundary_controls",
+    "contract_runtime_visible_inputs",
+    "covered_policy_records",
+    "ordering_requirements",
+    "stale_context_blockers"
+  ],
+  "mutation_boundary_schema": {
+    "fields": [
+      "mutation_boundary",
+      "producer_or_policy_may_schedule_only",
+      "step_or_topology_event_owns_state_mutation"
+    ],
+    "required_for_nat4": true,
+    "rule": "Native policy may schedule or record only unless the committed step/topology event boundary owns the state mutation."
+  },
+  "nat3_gates": {
+    "meaning": "Plausible native contract target, but not Phase 8-ready until all NAT4 gates are explicit.",
+    "required": [
+      "source_backed_mechanism",
+      "native_policy_name_or_candidate_name",
+      "native_gap_named",
+      "missing_gates_recorded",
+      "claim_flags_forced_false"
+    ]
+  },
+  "nat4_gates": {
+    "meaning": "Phase 8-ready native policy candidate, no implementation.",
+    "required": [
+      "native_policy_name",
+      "record_schema_sketch",
+      "default_off_flags",
+      "enabled_validated_supported_separation",
+      "idempotency_digest_plan",
+      "runtime_visible_inputs",
+      "budget_surfaces",
+      "telemetry_requirements",
+      "snapshot_replay_requirements",
+      "negative_controls",
+      "compatibility_tests",
+      "claim_flags_forced_false",
+      "non_rc_quantity_audit",
+      "mutation_boundary",
+      "producer_or_policy_may_schedule_only",
+      "step_or_topology_event_owns_state_mutation",
+      "src_diff_empty",
+      "native_supported_flags_false",
+      "phase8_opened_false"
+    ]
+  },
+  "nat_ladder": {
+    "NAT0": {
+      "definition": "producer-only artifact scaffold",
+      "name": "producer_only_artifact_scaffold",
+      "native_support": false,
+      "phase8_ready": false
+    },
+    "NAT1": {
+      "definition": "source-backed producer pattern",
+      "name": "source_backed_producer_pattern",
+      "native_support": false,
+      "phase8_ready": false
+    },
+    "NAT2": {
+      "definition": "replayable producer pattern with controls",
+      "name": "replayable_producer_pattern_with_controls",
+      "native_support": false,
+      "phase8_ready": false
+    },
+    "NAT3": {
+      "definition": "native contract candidate; policy surface is named and plausible but one or more readiness gates remain missing",
+      "name": "native_contract_candidate",
+      "native_support": false,
+      "phase8_ready": false
+    },
+    "NAT4": {
+      "definition": "Phase 8-ready native policy candidate with all readiness gates explicit, no implementation, and no native support claim",
+      "name": "phase8_ready_native_policy_candidate",
+      "native_support": false,
+      "phase8_ready": true
+    },
+    "NAT5": {
+      "definition": "native implementation exists but is not integrated into agentic-like composition",
+      "name": "native_implementation_not_integrated",
+      "native_support": "requires_separate_phase8_source",
+      "phase8_ready": null
+    },
+    "NAT6": {
+      "definition": "native implementation validates within composition replay",
+      "name": "native_implementation_validates_in_composition",
+      "native_support": "requires_separate_phase8_source",
+      "phase8_ready": null
+    }
+  },
+  "non_rc_quantity_audit_schema": {
+    "candidate_specific_questions": {
+      "response_magnitude": [
+        "is proxy measurement a derived observable or new state?",
+        "is target band exogenous or runtime-visible policy?",
+        "is response gain serialized and replayable?",
+        "does correction debit node-plus-packet budget?",
+        "does response sizing require hidden optimization or external controller state?"
+      ],
+      "route_conductance_memory": [
+        "is memory a coherence, geometry, or flux effect?",
+        "is it only producer bookkeeping?",
+        "does decay or relaxation conserve an accounted quantity?",
+        "does it require a new scalar state outside RC accounting?"
+      ]
+    },
+    "nat4_rejection_rule": "unaccounted_non_rc_quantity_required",
+    "questions": [
+      "is mechanism expressible as RC causality/coherence/geometry/flux/scheduling/lineage/budget?",
+      "is mechanism only producer bookkeeping?",
+      "does decay, relaxation, or response sizing conserve or debit an accounted quantity?",
+      "does candidate require a new scalar state outside RC accounting?",
+      "if extra quantity is required, what NAT4 blocker prevents readiness?"
+    ],
+    "required": true
+  },
+  "output_digest": "f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327",
+  "phase8_ready_derivation": {
+    "not_primary_disposition": true,
+    "rule": "phase8_ready is true only when nat_level = NAT4"
+  },
+  "planned_iteration_artifacts": {
+    "iteration_3_route_memory": [
+      "outputs/n12_route_conductance_memory_candidate.json",
+      "reports/n12_route_conductance_memory_candidate.md",
+      "scripts/build_n12_route_conductance_memory_candidate.py"
+    ],
+    "iteration_4_response_magnitude": [
+      "outputs/n12_response_magnitude_candidate.json",
+      "reports/n12_response_magnitude_candidate.md",
+      "scripts/build_n12_response_magnitude_candidate.py"
+    ],
+    "iteration_5_identity_boundary": [
+      "outputs/n12_identity_acceptance_boundary.json",
+      "reports/n12_identity_acceptance_boundary.md",
+      "scripts/build_n12_identity_acceptance_boundary.py"
+    ],
+    "iteration_6_integration_boundary": [
+      "outputs/n12_agentic_like_integration_boundary.json",
+      "reports/n12_agentic_like_integration_boundary.md",
+      "scripts/build_n12_agentic_like_integration_boundary.py"
+    ],
+    "iteration_7_readiness": [
+      "outputs/n12_phase8_readiness_matrix.json",
+      "reports/n12_phase8_readiness_matrix.md",
+      "scripts/build_n12_phase8_readiness_matrix.py"
+    ]
+  },
+  "primary_dispositions": [
+    "scaffold",
+    "native_absorption_candidate",
+    "theory_sensitive_blocker",
+    "blocked_missing_source_or_gate"
+  ],
+  "provisional_to_final_field_mapping": {
+    "provisional_nat_level": "nat_level",
+    "provisional_phase8_ready": "phase8_ready",
+    "provisional_primary_disposition": "primary_disposition"
+  },
+  "purpose": "naturalization_schema_and_ladder",
+  "rejection_rules": {
+    "artifact_only_replay_relabelled_native": "blocked",
+    "budget_surface_ambiguity": "blocked",
+    "claim_promotion": "blocked",
+    "hidden_producer_mutation": "blocked",
+    "native_absorption_candidate_relabelled_native_support": "blocked",
+    "non_rc_quantity_required": "blocked",
+    "phase8_opened_inside_n12": "blocked",
+    "producer_scaffold_relabelled_native": "blocked"
+  },
+  "schema": "n12_naturalization_schema_v1",
+  "schema_validation_scope": {
+    "candidate_row_validation_starts_in_iterations_3_to_7": true,
+    "iteration_2_freezes_schema_only": true,
+    "note": "Iteration 2 validates that schema fields, gates, and rejection rules are declared. It does not yet validate candidate rows against the final schema."
+  },
+  "secondary_tags": [
+    "producer_mediated",
+    "validator_local",
+    "bookkeeping_only",
+    "native_supported_selection_only",
+    "native_policy_gap",
+    "cross_cutting_contract"
+  ],
+  "source_artifacts": {
+    "iteration_1_inventory": {
+      "output_digest": "cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+      "sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+      "status": "passed"
+    },
+    "iteration_1_report": {
+      "output_digest": null,
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+      "sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1",
+      "status": null
+    }
+  },
+  "status": "passed"
+}

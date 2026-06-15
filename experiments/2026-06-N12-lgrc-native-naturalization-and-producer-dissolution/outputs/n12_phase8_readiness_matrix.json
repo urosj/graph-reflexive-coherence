@@ -1,0 +1,1133 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "checks": {
+    "all_deferred_rows_have_blockers_and_rationale": true,
+    "all_deferred_rows_nat2": true,
+    "all_deferred_rows_phase8_ready_false": true,
+    "all_ready_contracts_have_controls_telemetry_tests": true,
+    "all_ready_contracts_nat4": true,
+    "all_ready_contracts_phase8_ready": true,
+    "claim_boundary_controls_present": true,
+    "exactly_two_phase8_ready_contracts": true,
+    "identity_and_integration_deferred": true,
+    "integration_required_future_records_explicit": true,
+    "native_supported_flags_false": true,
+    "phase8_opened_false": true,
+    "ready_contracts_are_route_and_response": true,
+    "source_file_sha256_all_present": true,
+    "src_diff_empty": true
+  },
+  "command": ".venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_phase8_readiness_matrix.py",
+  "controls_summary": {
+    "claim_boundary_controls": {
+      "agentic_like_integration_is_agency": false,
+      "component_nat4_candidate_is_integration_meta_policy": false,
+      "identity_validator_candidate_is_identity_acceptance": false,
+      "native_absorption_candidate_is_native_support": false,
+      "phase8_ready_is_phase8_implementation": false,
+      "response_magnitude_policy_is_goal_ownership": false,
+      "route_conductance_memory_is_intention": false
+    },
+    "fail_closed_controls": [
+      "artifact_only_replay_relabelled_fully_native_rejected",
+      "budget_discontinuity_rejected",
+      "budget_surface_merge_rejected",
+      "component_candidate_relabelled_native_support_rejected",
+      "conductance_update_without_route_use_rejected",
+      "cross_artifact_live_ledger_claim_rejected",
+      "direct_native_support_flag_write_rejected",
+      "duplicate_relaxation_rejected",
+      "hidden_integration_policy_rejected",
+      "hidden_memory_policy_rejected",
+      "hidden_optimizer_state_rejected",
+      "hidden_proxy_target_rejected",
+      "hidden_response_magnitude_rejected",
+      "hidden_restoration_rejected",
+      "identity_acceptance_without_semantics_rejected",
+      "integration_relabelled_agency_rejected",
+      "memory_budget_surface_ambiguity_rejected",
+      "missing_component_record_rejected",
+      "native_geometry_mediated_trail_support_rejected_until_phase8",
+      "out_of_envelope_response_rejected",
+      "overcorrection_beyond_band_rejected",
+      "posthoc_target_band_change_rejected",
+      "producer_memory_relabelled_native_rejected",
+      "proxy_budget_ambiguity_rejected",
+      "pure_flux_trail_memory_rejected",
+      "rc_identity_collapse_relabel_rejected",
+      "runtime_acceptance_without_event_schema_rejected",
+      "score_only_memory_input_rejected",
+      "stale_component_record_rejected",
+      "stale_geometry_read_rejected",
+      "support_history_erasure_rejected",
+      "support_invariance_relabelled_identity_acceptance_rejected",
+      "telemetry_default_off_exports_no_new_records",
+      "unbounded_perturbation_without_policy_rejected",
+      "unbudgeted_relaxation_rejected",
+      "unbudgeted_response_packet_rejected",
+      "wrong_direction_response_rejected",
+      "zero_coherence_trace_reinforcement_rejected"
+    ]
+  },
+  "deferred_blockers": [
+    {
+      "blocked_claims": [
+        "aco like",
+        "agency",
+        "agentic like",
+        "ant colony",
+        "biological",
+        "fully native agentic like integration",
+        "identity acceptance",
+        "intention",
+        "locomotion like",
+        "native identity acceptance support",
+        "native support opened",
+        "personhood",
+        "rc identity collapse",
+        "runtime identity acceptance",
+        "semantic goal ownership",
+        "semantic goal understanding",
+        "unrestricted agency",
+        "unrestricted identity",
+        "unrestricted movement"
+      ],
+      "blocker_gates": {
+        "claim_flags_all_false": true,
+        "deferred_requirements_present": true,
+        "missing_gates_present": true,
+        "native_supported_flags_false": true,
+        "phase8_opened_false": true,
+        "phase8_ready_false": true,
+        "src_diff_empty": true
+      },
+      "blocker_label": "identity_acceptance_theory_boundary",
+      "claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+      "claim_flags_forced_false": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false
+      },
+      "compatibility_tests": [
+        "support_survival_not_identity_acceptance",
+        "identity_continuity_not_runtime_acceptance",
+        "restoration_history_not_acceptance",
+        "rc_identity_collapse_claim_blocked",
+        "identity_acceptance_claim_flags_false",
+        "phase8_ready_false_for_identity_boundary",
+        "native_supported_flags_false",
+        "hidden_restoration_rejected",
+        "support_history_erasure_rejected"
+      ],
+      "current_scope_records": [
+        "native_identity_support_validator_record"
+      ],
+      "deferred_phase8_requirements": {
+        "minimum_before_nat4": [
+          "native policy name with accepted semantics",
+          "record schema for acceptance event and validator result",
+          "idempotent digest over support, continuity, event, and budget",
+          "snapshot/replay validator that rejects report-side acceptance",
+          "compatibility tests preserving forced-false agency claims"
+        ],
+        "minimum_before_reconsidering_nat3": [
+          "formal semantics for identity acceptance",
+          "runtime-visible acceptance event schema",
+          "acceptance-vs-continuity separation rule",
+          "negative controls for acceptance relabeling",
+          "default-off telemetry contract under src/pygrc/telemetry"
+        ],
+        "status": "blocked"
+      },
+      "disposition": "theory_sensitive_blocker",
+      "missing_gates": [
+        "formal_identity_acceptance_semantics_missing",
+        "runtime_acceptance_validator_missing",
+        "identity_acceptance_event_schema_missing",
+        "identity_continuity_vs_acceptance_theory_gate_missing",
+        "rc_identity_collapse_theory_not_formalized",
+        "support_survival_not_identity_acceptance",
+        "native_acceptance_mutation_boundary_not_formalized",
+        "native_acceptance_telemetry_contract_missing"
+      ],
+      "mutation_boundary": {
+        "producer_or_policy_may_schedule_only": null,
+        "reason": "support history replay can be recorded, but no native acceptance state mutation or validator semantics are defined",
+        "status": "blocked_until_identity_acceptance_theory_is_formalized",
+        "step_or_topology_event_owns_state_mutation": null
+      },
+      "nat_level": "NAT2",
+      "native_policy_name": "native_identity_acceptance_validator",
+      "native_support_opened": false,
+      "negative_controls": [
+        "hidden_restoration_rejected",
+        "identity_acceptance_without_semantics_rejected",
+        "rc_identity_collapse_relabel_rejected",
+        "runtime_acceptance_without_event_schema_rejected",
+        "support_history_erasure_rejected",
+        "support_invariance_relabelled_identity_acceptance_rejected"
+      ],
+      "non_rc_quantity_audit": {
+        "audit_status": "blocked_theory_sensitive_not_nat4",
+        "candidate_specific_questions": {
+          "can_acceptance_be_added_as_report_side_label": false,
+          "does_rc_identity_collapse_have_formal_validator": false,
+          "is_identity_continuity_runtime_acceptance": false,
+          "is_restoration_history_identity_acceptance": false,
+          "is_support_survival_identity_acceptance": false
+        },
+        "does_identity_acceptance_require_semantics_not_yet_formalized": true,
+        "extra_unaccounted_quantity_allowed": false,
+        "field_required": true,
+        "is_identity_acceptance_derived_observable": false,
+        "is_support_survival_rc_observable": true,
+        "nat4_blocker_if_extra_quantity_required": "identity_acceptance_semantics_not_formalized",
+        "would_acceptance_require_new_unaccounted_quantity_without_theory": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "required_future_policy_records": [
+        "identity_acceptance_event_record",
+        "runtime_acceptance_validator_record",
+        "rc_identity_collapse_validator_record"
+      ],
+      "required_future_policy_records_note": "Records listed here are required before future Phase 8 entry; they are not native support records opened by N12.",
+      "row_id": "n12_i7_deferred_01_native_identity_acceptance_validator",
+      "snapshot_replay_requirements": [
+        "replay reconstructs support lanes and support survival outcomes",
+        "replay preserves disruption and explicit restoration history",
+        "replay keeps support survival distinct from identity acceptance",
+        "replay rejects hidden restoration",
+        "replay rejects report-side identity acceptance labels"
+      ],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json",
+      "source_output_digest": "22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295",
+      "source_row_digest": "12895af7615afa87860d3c38435c53eeba7228219a25831eff1c9411cdcbb481",
+      "telemetry_requirements": [
+        "future_identity_support_telemetry_must_remain_separate_from_acceptance",
+        "identity_acceptance_flags_exported_false_until_theory_gate_passes",
+        "support_state_digest_and_restoration_history_digest",
+        "withdrawal_event_digest_and_restoration_event_digest",
+        "claim_flags_forced_false_snapshot",
+        "default_off_native_identity_acceptance_records",
+        "src_pygrc_telemetry_namespace_required_if_phase8_later_opens"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "aco like",
+        "agency",
+        "agentic like",
+        "ant colony",
+        "biological",
+        "biological behavior",
+        "fully native agentic like integration",
+        "identity acceptance",
+        "intention",
+        "locomotion like",
+        "native agentic like integration support",
+        "native support opened",
+        "personhood",
+        "rc identity collapse",
+        "runtime identity acceptance",
+        "semantic goal ownership",
+        "semantic goal understanding",
+        "unrestricted agency",
+        "unrestricted identity",
+        "unrestricted movement"
+      ],
+      "blocker_gates": {
+        "claim_flags_all_false": true,
+        "deferred_requirements_present": true,
+        "missing_gates_present": true,
+        "native_supported_flags_false": true,
+        "phase8_opened_false": true,
+        "phase8_ready_false": true,
+        "src_diff_empty": true
+      },
+      "blocker_label": "native_agentic_like_integration_meta_gap",
+      "claim_ceiling": "broader_general_artifact_only_agentic_like_integration_candidate",
+      "claim_flags_forced_false": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false,
+        "unrestricted_identity_claim_allowed": false
+      },
+      "compatibility_tests": [
+        "component_candidates_not_integration_meta_policy",
+        "artifact_only_gali7_not_fully_native",
+        "missing_component_record_rejected",
+        "stale_component_record_rejected",
+        "budget_surface_merge_rejected",
+        "hidden_integration_policy_rejected",
+        "direct_native_support_flag_write_rejected",
+        "fully_native_integration_claim_flags_false",
+        "agency_claim_flags_false",
+        "phase8_ready_false_for_integration_boundary"
+      ],
+      "current_scope_records": [
+        "native_agentic_like_integration_policy_record",
+        "native_budget_surface_contract_record",
+        "native_claim_boundary_contract_record",
+        "native_support_state_integration_gate_record"
+      ],
+      "deferred_phase8_requirements": {
+        "minimum_before_nat4": [
+          "native integration meta-policy record schema",
+          "default-off integration gate flags",
+          "idempotent digest over all component native records",
+          "snapshot/replay validator over native composition",
+          "negative controls for artifact-only and agency relabeling",
+          "telemetry contract under src/pygrc/telemetry"
+        ],
+        "minimum_before_reconsidering_nat3": [
+          "cross-cutting native budget/replay contract implemented",
+          "native route conductance memory policy implemented and validated",
+          "native response magnitude policy implemented and validated",
+          "identity support/acceptance gate resolved or explicitly scoped",
+          "component record digest schema frozen"
+        ],
+        "status": "blocked"
+      },
+      "disposition": "theory_sensitive_blocker",
+      "missing_gates": [
+        "native_budget_surface_contract_not_implemented",
+        "native_route_conductance_memory_policy_not_implemented",
+        "native_response_magnitude_policy_not_implemented",
+        "identity_acceptance_or_native_support_gate_not_ready",
+        "native_component_policy_composition_replay_missing",
+        "native_agentic_like_integration_meta_policy_missing",
+        "agency_semantics_not_part_of_n12",
+        "fully_native_integration_validation_missing"
+      ],
+      "mutation_boundary": {
+        "producer_or_policy_may_schedule_only": null,
+        "reason": "no native integration meta-policy may schedule or mutate state until component native records and budget/replay contracts exist",
+        "status": "blocked_until_component_native_policies_and_budget_contract_exist",
+        "step_or_topology_event_owns_state_mutation": null
+      },
+      "nat_level": "NAT2",
+      "native_policy_name": "native_agentic_like_integration_policy",
+      "native_support_opened": false,
+      "negative_controls": [
+        "artifact_only_replay_relabelled_fully_native_rejected",
+        "budget_discontinuity_rejected",
+        "budget_surface_merge_rejected",
+        "component_candidate_relabelled_native_support_rejected",
+        "cross_artifact_live_ledger_claim_rejected",
+        "direct_native_support_flag_write_rejected",
+        "hidden_integration_policy_rejected",
+        "integration_relabelled_agency_rejected",
+        "missing_component_record_rejected",
+        "stale_component_record_rejected"
+      ],
+      "non_rc_quantity_audit": {
+        "audit_status": "blocked_meta_gap_not_nat4",
+        "candidate_specific_questions": {
+          "are_nat4_component_candidates_native_support": false,
+          "can_component_policy_readiness_substitute_for_meta_policy": false,
+          "can_native_support_flag_be_written_directly": false,
+          "does_integration_meta_policy_define_agency": false,
+          "is_artifact_only_gali7_fully_native_integration": false
+        },
+        "does_agentic_like_integration_imply_agency": false,
+        "does_meta_policy_require_component_native_records": true,
+        "extra_unaccounted_quantity_allowed": false,
+        "field_required": true,
+        "is_artifact_replay_rc_observable": true,
+        "is_fully_native_integration_derived_from_artifact_replay": false,
+        "nat4_blocker_if_extra_quantity_required": "component_native_policy_records_missing",
+        "would_meta_policy_require_hidden_state_without_component_records": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "required_future_policy_records": [
+        "native_budget_surface_contract_record",
+        "native_route_conductance_memory_policy_record",
+        "native_response_magnitude_policy_record",
+        "native_identity_acceptance_or_support_gate_record",
+        "native_agentic_like_integration_policy_record"
+      ],
+      "required_future_policy_records_note": "Records listed here are required before future Phase 8 entry; they are not native support records opened by N12.",
+      "row_id": "n12_i7_deferred_02_native_agentic_like_integration_policy",
+      "snapshot_replay_requirements": [
+        "replay reconstructs N11 artifact-only GALI7 chain",
+        "replay verifies each component policy record separately",
+        "replay verifies separated budget surfaces before integration gate",
+        "replay rejects missing or stale component records",
+        "replay rejects artifact-only replay relabelled fully native",
+        "replay rejects direct native support flag writes"
+      ],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_agentic_like_integration_boundary.json",
+      "source_output_digest": "2ed8ae9f591a7c435f012c70502c0871275a755d5355e7c95efa6d46a10c2601",
+      "source_row_digest": "c06065a4f6ecb55928424c7664d7c3aa9a6eb92ae3d67720653a6e2dac1ef0c3",
+      "telemetry_requirements": [
+        "future_native_integration_telemetry_must_live_under_src_pygrc_telemetry",
+        "native_integration_records_default_off",
+        "component_policy_record_digests",
+        "component_policy_enabled_validated_supported_snapshot",
+        "budget_surface_contract_digest",
+        "claim_boundary_contract_digest",
+        "integration_gate_rejection_reason",
+        "native_support_flags_exported_false_until_phase8_validation",
+        "agency_claim_flags_forced_false_snapshot"
+      ]
+    }
+  ],
+  "experiment": "N12",
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "2399c459e6736ebef71d2fd95922a9007f122a1c",
+    "src_status_short": ""
+  },
+  "iteration": 7,
+  "matrix_result": {
+    "deferred_blocker_count": 2,
+    "deferred_blockers": [
+      "native_identity_acceptance_validator",
+      "native_agentic_like_integration_policy"
+    ],
+    "native_supported_flags": false,
+    "phase8_implementation_opened": false,
+    "phase8_opened": false,
+    "phase8_ready_contract_count": 2,
+    "phase8_ready_contracts": [
+      "native_route_conductance_memory_policy",
+      "native_response_magnitude_policy"
+    ],
+    "src_diff_empty": true,
+    "supported_interpretation": "Only route conductance memory and bounded/envelope-gated response magnitude are Phase 8-ready contracts. Identity acceptance and native agentic-like integration remain blocked."
+  },
+  "no_implementation_checks": {
+    "native_supported_flags_false": true,
+    "phase8_implementation_files_changed": false,
+    "phase8_opened": false,
+    "phase8_opened_false": true,
+    "src_diff_empty": true
+  },
+  "output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+  "phase8_ready_contracts": [
+    {
+      "acceptance_gates": {
+        "claim_flags_all_false": true,
+        "compatibility_tests_present": true,
+        "default_off_flags_present": true,
+        "mutation_boundary_specified": true,
+        "native_supported_flags_false": true,
+        "negative_controls_present": true,
+        "phase8_opened_false": true,
+        "src_diff_empty": true,
+        "telemetry_requirements_present": true
+      },
+      "blocked_claims": [
+        "aco like",
+        "aco like behavior",
+        "agency",
+        "agentic like",
+        "ant colony",
+        "ant colony behavior",
+        "biological",
+        "fully native agentic like integration",
+        "identity acceptance",
+        "intention",
+        "locomotion like",
+        "native geometry mediated trail support",
+        "native memory trail support",
+        "native route conductance memory support",
+        "native support opened",
+        "personhood",
+        "pheromone like policy",
+        "producer memory relabelled native",
+        "pure coherence flux trail memory",
+        "rc identity collapse",
+        "runtime identity acceptance",
+        "semantic goal ownership",
+        "semantic goal understanding",
+        "unrestricted agency",
+        "unrestricted identity",
+        "unrestricted movement"
+      ],
+      "budget_semantics": {
+        "node_plus_packet_budget_surface_separate": {
+          "phase8_rule": "conductance memory must not hide node-plus-packet budget drift",
+          "role": "kept separate from route conductance memory accounting",
+          "surface_type": "existing_conservation_surface"
+        },
+        "relaxation_destination_surface": {
+          "destination": "baseline route conductance or neutral geometry reservoir within the route-conductance accounting surface",
+          "forbidden_interpretation": "silent deletion, hidden scalar decay, or unbudgeted leakage",
+          "phase8_rule": "relaxation must debit and credit named surfaces through replayable digests",
+          "role": "receives relaxation or decay back toward baseline conductance/neutral geometry",
+          "surface_type": "reversible_baseline_relaxation_account"
+        },
+        "route_conductance_memory_budget_surface": {
+          "phase8_rule": "every update has before/after state and budget digests",
+          "role": "accounts route-local conductance or geometry deltas derived from committed route use",
+          "surface_type": "derived_geometry_conductance_accounting_surface",
+          "unit_boundary": "digest-accounted conductance or geometry delta, not an independent scalar"
+        }
+      },
+      "budget_surfaces": [
+        "node_plus_packet_budget_surface_separate",
+        "relaxation_destination_surface",
+        "route_conductance_memory_budget_surface"
+      ],
+      "claim_ceiling": "phase8_ready_native_policy_candidate_no_native_support",
+      "claim_flags_forced_false": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "compatibility_tests": [
+        "route_use_without_policy_enabled_records_no_mutation",
+        "committed_route_use_schedules_single_conductance_update",
+        "zero_coherence_trace_does_not_reinforce",
+        "hidden_memory_strength_rejected",
+        "stale_geometry_read_rejected",
+        "unbudgeted_relaxation_rejected",
+        "duplicate_relaxation_rejected",
+        "node_plus_packet_budget_conserved",
+        "artifact_replay_recomputes_policy_record_digest",
+        "claim_flags_remain_false",
+        "telemetry_default_off_exports_no_new_records",
+        "existing_telemetry_exports_backward_compatible_when_disabled"
+      ],
+      "contract_label": "route_conductance_memory",
+      "contract_type": "phase8_ready_native_policy_candidate_contract",
+      "default_off_flags": {
+        "native_geometry_conductance_update_policy_enabled": false,
+        "native_route_conductance_memory_policy_enabled": false,
+        "native_route_memory_relaxation_policy_enabled": false,
+        "telemetry_emission_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "native_support_opened": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "idempotency_digest_plan": {
+        "duplicate_update_rejection": "same route_use_digest and topology_event_digest cannot mutate twice",
+        "policy_record_digest_inputs": [
+          "policy_id",
+          "route_scope_digest",
+          "route_use_digest",
+          "topology_event_digest",
+          "conductance_state_before_digest",
+          "memory_update_rule_id",
+          "memory_relaxation_rule_id",
+          "budget_before_digest",
+          "budget_after_digest"
+        ],
+        "replay_digest_rule": "canonical JSON digest with sorted keys and explicit before/after state"
+      },
+      "mutation_boundary": {
+        "allowed_policy_actions_before_commit": [
+          "validate route_use_digest",
+          "select serialized update_rule_id",
+          "schedule update or relaxation record",
+          "emit policy digest for replay"
+        ],
+        "forbidden_policy_actions_before_commit": [
+          "mutate conductance_state_after_digest directly",
+          "invent hidden memory state",
+          "apply relaxation without event ordering",
+          "delete budget without destination surface"
+        ],
+        "producer_or_policy_may_schedule_only": true,
+        "state_mutation_owner": "LGRC step or committed topology event boundary",
+        "status": "specified_for_phase8_entry",
+        "step_or_topology_event_owns_state_mutation": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_name": "native_route_conductance_memory_policy",
+      "native_support_opened": false,
+      "negative_controls": [
+        "conductance_update_without_route_use_rejected",
+        "duplicate_relaxation_rejected",
+        "hidden_memory_policy_rejected",
+        "memory_budget_surface_ambiguity_rejected",
+        "native_geometry_mediated_trail_support_rejected_until_phase8",
+        "producer_memory_relabelled_native_rejected",
+        "pure_flux_trail_memory_rejected",
+        "score_only_memory_input_rejected",
+        "stale_geometry_read_rejected",
+        "unbudgeted_relaxation_rejected",
+        "zero_coherence_trace_reinforcement_rejected"
+      ],
+      "non_rc_quantity_audit": {
+        "audit_status": "passed_for_nat4_readiness",
+        "blocked_if_extra_quantity_required": "unaccounted_non_rc_quantity_required",
+        "does_candidate_require_new_scalar_outside_rc_accounting": false,
+        "does_decay_or_relaxation_conserve_accounted_quantity": "required; relaxation must debit/transfer through a named budget or destination surface",
+        "extra_unaccounted_quantity_allowed": false,
+        "forbidden_non_rc_quantities": [
+          "hidden_memory_strength",
+          "pheromone_scalar",
+          "agent_intention",
+          "unbudgeted_decay"
+        ],
+        "is_expressible_as_rc_causality_coherence_geometry_flux_scheduling_lineage_budget": true,
+        "is_memory_coherence_geometry_or_flux_effect": "yes_if_encoded_as_route_conductance_or_geometry_state_after_committed_event",
+        "is_memory_only_producer_bookkeeping": "producer_memory_strength_is_bookkeeping; native candidate excludes it"
+      },
+      "phase8_implementation_allowed_in_n12": false,
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "primary_disposition": "native_absorption_candidate",
+      "record_schema_sketch": {
+        "forbidden_fields": [
+          "hidden_memory_strength",
+          "pheromone_scalar",
+          "agent_intention",
+          "unbudgeted_decay",
+          "report_side_score_override"
+        ],
+        "record_type": "native_route_conductance_memory_policy_record",
+        "required_fields": [
+          "policy_id",
+          "enabled",
+          "validated",
+          "supported",
+          "route_scope_digest",
+          "route_use_digest",
+          "topology_event_digest",
+          "conductance_state_before_digest",
+          "memory_update_rule_id",
+          "memory_update_delta_digest",
+          "memory_relaxation_rule_id",
+          "relaxation_destination_surface_id",
+          "conductance_state_after_digest",
+          "route_conductance_memory_budget_before_digest",
+          "route_conductance_memory_budget_after_digest",
+          "node_plus_packet_budget_delta_digest",
+          "policy_record_digest"
+        ],
+        "state_carrier": "route_geometry_or_conductance_state",
+        "version": "v1"
+      },
+      "row_id": "n12_i7_phase8_ready_01_native_route_conductance_memory_policy",
+      "runtime_visible_inputs": [
+        "conductance_state_after_digest",
+        "conductance_state_before_digest",
+        "memory_relaxation_rule_id",
+        "memory_update_rule_id",
+        "policy_record_digest",
+        "route_conductance_memory_budget_after_digest",
+        "route_conductance_memory_budget_before_digest",
+        "route_scope_digest",
+        "route_use_digest",
+        "topology_event_digest"
+      ],
+      "snapshot_replay_requirements": [
+        "snapshot includes policy flags and disabled-by-default state",
+        "snapshot includes conductance before/after digests",
+        "snapshot includes route scope and route use digests",
+        "snapshot includes budget surface before/after digests",
+        "replay rejects missing route use, stale geometry, and duplicate updates",
+        "replay preserves no native support flags"
+      ],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json",
+      "source_output_digest": "c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1",
+      "source_row_digest": "6d418578e6e03594f2437d3e20a6fc4faa97092b4a1eaf654035b204b9c27d0e",
+      "telemetry_namespace": "src/pygrc/telemetry",
+      "telemetry_requirements": [
+        "route_conductance_memory_policy_record_emitted_default_off",
+        "route_use_digest_and_route_scope_digest",
+        "topology_event_digest",
+        "conductance_state_before_after_digests",
+        "memory_update_rule_id_and_delta_digest",
+        "memory_relaxation_rule_id_and_destination_surface",
+        "route_conductance_memory_budget_before_after_digests",
+        "node_plus_packet_budget_delta_digest",
+        "negative_control_blocker_id",
+        "claim_flags_forced_false_snapshot"
+      ]
+    },
+    {
+      "acceptance_gates": {
+        "claim_flags_all_false": true,
+        "compatibility_tests_present": true,
+        "default_off_flags_present": true,
+        "mutation_boundary_specified": true,
+        "native_supported_flags_false": true,
+        "negative_controls_present": true,
+        "phase8_opened_false": true,
+        "src_diff_empty": true,
+        "telemetry_requirements_present": true
+      },
+      "blocked_claims": [
+        "aco like",
+        "agency",
+        "agentic like",
+        "ant colony",
+        "biological",
+        "fully native agentic like integration",
+        "general native regulation",
+        "goal ownership",
+        "hidden optimization",
+        "identity acceptance",
+        "intention",
+        "locomotion like",
+        "native goal proxy regulation support",
+        "native response magnitude support",
+        "native support opened",
+        "personhood",
+        "rc identity collapse",
+        "runtime identity acceptance",
+        "semantic goal ownership",
+        "semantic goal understanding",
+        "unbounded native regulation",
+        "unrestricted agency",
+        "unrestricted identity",
+        "unrestricted movement"
+      ],
+      "budget_semantics": {
+        "goal_proxy_budget_surface": {
+          "phase8_rule": "proxy measurement remains derived observable, not new hidden state",
+          "role": "tracks proxy measurement and target-band error from runtime-visible state",
+          "surface_type": "derived_proxy_observable_surface"
+        },
+        "node_plus_packet_budget_surface_separate": {
+          "phase8_rule": "response correction must conserve node-plus-packet budget",
+          "role": "ensures correction is expressed as scheduled packet work and step-owned mutation",
+          "surface_type": "existing_conservation_surface"
+        },
+        "response_magnitude_budget_surface": {
+          "phase8_rule": "response size must be replayable from policy, error, envelope, and budget digests",
+          "role": "accounts response gain, max correction per window, and envelope limits",
+          "surface_type": "serialized_policy_sizing_surface",
+          "unit_boundary": "response packet amount and error reduction, not semantic goal value"
+        }
+      },
+      "budget_surfaces": [
+        "goal_proxy_budget_surface",
+        "node_plus_packet_budget_surface_separate",
+        "proxy_error_budget_surface",
+        "response_magnitude_budget_surface",
+        "response_packet_budget_surface"
+      ],
+      "claim_ceiling": "phase8_ready_native_policy_candidate_no_native_support",
+      "claim_flags_forced_false": {
+        "aco_like_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_colony_claim_allowed": false,
+        "biological_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "rc_identity_collapse_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "compatibility_tests": [
+        "policy_disabled_records_no_response_mutation",
+        "proxy_measurement_is_derived_observable",
+        "target_band_digest_precedes_error_digest",
+        "response_gain_serialized_and_replayable",
+        "max_correction_per_window_enforced",
+        "wrong_direction_response_rejected",
+        "hidden_optimizer_state_rejected",
+        "out_of_envelope_perturbation_blocked",
+        "node_plus_packet_budget_conserved",
+        "artifact_replay_recomputes_policy_record_digest",
+        "telemetry_default_off_exports_no_new_records",
+        "existing_telemetry_exports_backward_compatible_when_disabled",
+        "claim_flags_remain_false"
+      ],
+      "contract_label": "bounded_envelope_gated_response_magnitude",
+      "contract_type": "phase8_ready_native_policy_candidate_contract",
+      "default_off_flags": {
+        "native_goal_proxy_regulation_policy_enabled": false,
+        "native_response_magnitude_policy_enabled": false,
+        "native_response_magnitude_telemetry_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "native_support_opened": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "idempotency_digest_plan": {
+        "duplicate_response_rejection": "same proxy_error_digest and bounded_window_id cannot schedule two corrections",
+        "policy_record_digest_inputs": [
+          "policy_id",
+          "proxy_surface_digest",
+          "target_band_digest",
+          "proxy_error_digest",
+          "eligibility_record_digest",
+          "perturbation_envelope_digest",
+          "response_gain_policy_id",
+          "max_correction_per_window",
+          "response_packet_schedule_digest",
+          "budget_before_digest",
+          "budget_after_digest"
+        ],
+        "replay_digest_rule": "canonical JSON digest with sorted keys and explicit policy, proxy, response, and budget state"
+      },
+      "mutation_boundary": {
+        "allowed_policy_actions_before_commit": [
+          "read proxy_surface_digest",
+          "read target_band_policy_id and target_band_digest",
+          "compute proxy_error_digest",
+          "select serialized response_gain_policy_id",
+          "schedule bounded response packet",
+          "emit replayable policy record digest"
+        ],
+        "forbidden_policy_actions_before_commit": [
+          "mutate proxy state directly",
+          "change target band after measurement",
+          "invent hidden optimizer state",
+          "increase response beyond declared envelope",
+          "claim goal ownership or intention"
+        ],
+        "producer_or_policy_may_schedule_only": true,
+        "state_mutation_owner": "LGRC step or committed packet scheduling event boundary",
+        "status": "specified_for_phase8_entry",
+        "step_or_topology_event_owns_state_mutation": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_name": "native_response_magnitude_policy",
+      "native_support_opened": false,
+      "negative_controls": [
+        "hidden_optimizer_state_rejected",
+        "hidden_proxy_target_rejected",
+        "hidden_response_magnitude_rejected",
+        "out_of_envelope_response_rejected",
+        "overcorrection_beyond_band_rejected",
+        "posthoc_target_band_change_rejected",
+        "proxy_budget_ambiguity_rejected",
+        "telemetry_default_off_exports_no_new_records",
+        "unbounded_perturbation_without_policy_rejected",
+        "unbudgeted_response_packet_rejected",
+        "wrong_direction_response_rejected"
+      ],
+      "non_rc_quantity_audit": {
+        "audit_status": "passed_for_nat4_readiness",
+        "blocked_if_extra_quantity_required": "unaccounted_non_rc_quantity_required",
+        "does_correction_debit_node_plus_packet_budget": true,
+        "does_response_sizing_require_hidden_optimization_or_external_controller_state": false,
+        "extra_unaccounted_quantity_allowed": false,
+        "forbidden_non_rc_quantities": [
+          "hidden_goal_state",
+          "semantic_goal_ownership",
+          "agent_intention",
+          "hidden_optimizer_state",
+          "unbounded_response_gain"
+        ],
+        "is_expressible_as_rc_causality_coherence_scheduling_lineage_budget": true,
+        "is_proxy_measurement_derived_observable_or_new_state": "derived_observable_from_runtime_visible_active_node_state",
+        "is_response_gain_serialized_and_replayable": true,
+        "is_target_band_exogenous_or_runtime_visible_policy": "runtime_visible_serialized_policy_record_not_semantic_goal"
+      },
+      "phase8_implementation_allowed_in_n12": false,
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "primary_disposition": "native_absorption_candidate",
+      "record_schema_sketch": {
+        "forbidden_fields": [
+          "hidden_goal_state",
+          "semantic_goal_ownership",
+          "agent_intention",
+          "hidden_optimizer_state",
+          "unbounded_response_gain",
+          "report_side_response_override"
+        ],
+        "record_type": "native_response_magnitude_policy_record",
+        "required_fields": [
+          "policy_id",
+          "enabled",
+          "validated",
+          "supported",
+          "proxy_surface_digest",
+          "target_band_policy_id",
+          "target_band_digest",
+          "proxy_error_digest",
+          "eligibility_record_digest",
+          "perturbation_envelope_digest",
+          "response_gain_policy_id",
+          "max_correction_per_window",
+          "bounded_window_id",
+          "response_packet_schedule_digest",
+          "node_plus_packet_budget_before_digest",
+          "node_plus_packet_budget_after_digest",
+          "proxy_budget_before_digest",
+          "proxy_budget_after_digest",
+          "error_trend_digest",
+          "saturation_status",
+          "overcorrection_status",
+          "policy_record_digest"
+        ],
+        "state_carrier": "proxy_error_and_packet_scheduling_policy",
+        "version": "v1"
+      },
+      "row_id": "n12_i7_phase8_ready_02_native_response_magnitude_policy",
+      "runtime_visible_inputs": [
+        "bounded_window_id",
+        "eligibility_record_digest",
+        "error_trend_digest",
+        "max_correction_per_window",
+        "node_plus_packet_budget_after_digest",
+        "node_plus_packet_budget_before_digest",
+        "perturbation_envelope_digest",
+        "proxy_budget_after_digest",
+        "proxy_budget_before_digest",
+        "proxy_error_digest",
+        "proxy_surface_digest",
+        "response_gain_policy_id",
+        "response_magnitude_policy_id",
+        "response_packet_schedule_digest",
+        "target_band_digest",
+        "target_band_policy_id"
+      ],
+      "snapshot_replay_requirements": [
+        "snapshot includes policy flags and disabled-by-default state",
+        "snapshot includes proxy surface and target band digests",
+        "snapshot includes error trend, saturation, and overcorrection fields",
+        "snapshot includes response packet schedule and processing digests",
+        "snapshot includes node-plus-packet and proxy budget before/after digests",
+        "replay rejects hidden optimizer state and out-of-envelope response",
+        "replay preserves no native support flags"
+      ],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "source_output_digest": "347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4",
+      "source_row_digest": "06ac0e386501595fb0995b81f036bdf4d95cecea17c9376e76b9983f19779c29",
+      "telemetry_namespace": "src/pygrc/telemetry",
+      "telemetry_requirements": [
+        "response_magnitude_policy_record_emitted_default_off",
+        "proxy_surface_digest_and_target_band_digest",
+        "proxy_error_digest_and_error_trend_digest",
+        "eligibility_record_digest",
+        "response_gain_policy_id_and_max_correction_per_window",
+        "perturbation_envelope_digest",
+        "response_packet_schedule_digest",
+        "node_plus_packet_budget_before_after_digests",
+        "proxy_budget_before_after_digests",
+        "negative_control_blocker_id",
+        "claim_flags_forced_false_snapshot"
+      ]
+    }
+  ],
+  "purpose": "phase8_readiness_package_no_implementation",
+  "schema": "n12_phase8_readiness_matrix_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_agentic_like_integration_boundary.json": {
+      "output_digest": "2ed8ae9f591a7c435f012c70502c0871275a755d5355e7c95efa6d46a10c2601",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_agentic_like_integration_boundary.json",
+      "sha256": "bd3df3c33b4736e972f3109b4282608d1f9f6019508fb071d43cbc555eb8c219",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json": {
+      "output_digest": "22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json",
+      "sha256": "0048a06de4e204c4c3ad7f9c7d720ecfdb8b68b06eaff50e099aea168c1d27da",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json": {
+      "output_digest": "cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+      "sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json": {
+      "output_digest": "f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json",
+      "sha256": "1054be3cc71946e00be6e4d78a08111ec9d2d75c19fd535fd9b4898f86e4df80",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json": {
+      "output_digest": "347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "sha256": "3748728f2fe36246f1655f53241e5719f875c8f6a68edeffea9f5f0a88a9b234",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json": {
+      "output_digest": "c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json",
+      "sha256": "d690bd0619b8742b343c596976cc15cfd9ca76acdd71be55853c32ac2aa59747",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_agentic_like_integration_boundary.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_agentic_like_integration_boundary.md",
+      "sha256": "02d4df92b9260d4b6f85bbb01bbde9092055e00bb5e0444a9f122bba0ef4fc24"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_identity_acceptance_boundary.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_identity_acceptance_boundary.md",
+      "sha256": "85f2768a8b916b95f2d796e4d6f52f409fb02556779252e622edf66685a80226"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+      "sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md",
+      "sha256": "e3a3d0c126f71f150930f402d2c41b6a78b650d90047ba9dd846a728393c8a8c"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md",
+      "sha256": "ba3e0e3f4b2f6cb2919d781b6dbd93c2c88f744c0e2aefbd7d53d8c0e88d9b1f"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_route_conductance_memory_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_route_conductance_memory_candidate.md",
+      "sha256": "acaa6a7cc84b2d57548e27cea8495ae042faf84246c13d238feaaf1b68992ed7"
+    }
+  },
+  "status": "passed",
+  "telemetry_summary": {
+    "default_off_required": true,
+    "deferred_blocker_telemetry_requirements": {
+      "native_agentic_like_integration_policy": [
+        "future_native_integration_telemetry_must_live_under_src_pygrc_telemetry",
+        "native_integration_records_default_off",
+        "component_policy_record_digests",
+        "component_policy_enabled_validated_supported_snapshot",
+        "budget_surface_contract_digest",
+        "claim_boundary_contract_digest",
+        "integration_gate_rejection_reason",
+        "native_support_flags_exported_false_until_phase8_validation",
+        "agency_claim_flags_forced_false_snapshot"
+      ],
+      "native_identity_acceptance_validator": [
+        "future_identity_support_telemetry_must_remain_separate_from_acceptance",
+        "identity_acceptance_flags_exported_false_until_theory_gate_passes",
+        "support_state_digest_and_restoration_history_digest",
+        "withdrawal_event_digest_and_restoration_event_digest",
+        "claim_flags_forced_false_snapshot",
+        "default_off_native_identity_acceptance_records",
+        "src_pygrc_telemetry_namespace_required_if_phase8_later_opens"
+      ]
+    },
+    "primary_native_namespace_required_if_phase8_opens": "src/pygrc/telemetry",
+    "ready_contract_telemetry_requirements": {
+      "native_response_magnitude_policy": [
+        "response_magnitude_policy_record_emitted_default_off",
+        "proxy_surface_digest_and_target_band_digest",
+        "proxy_error_digest_and_error_trend_digest",
+        "eligibility_record_digest",
+        "response_gain_policy_id_and_max_correction_per_window",
+        "perturbation_envelope_digest",
+        "response_packet_schedule_digest",
+        "node_plus_packet_budget_before_after_digests",
+        "proxy_budget_before_after_digests",
+        "negative_control_blocker_id",
+        "claim_flags_forced_false_snapshot"
+      ],
+      "native_route_conductance_memory_policy": [
+        "route_conductance_memory_policy_record_emitted_default_off",
+        "route_use_digest_and_route_scope_digest",
+        "topology_event_digest",
+        "conductance_state_before_after_digests",
+        "memory_update_rule_id_and_delta_digest",
+        "memory_relaxation_rule_id_and_destination_surface",
+        "route_conductance_memory_budget_before_after_digests",
+        "node_plus_packet_budget_delta_digest",
+        "negative_control_blocker_id",
+        "claim_flags_forced_false_snapshot"
+      ]
+    }
+  },
+  "test_gate_summary": {
+    "deferred_blocker_test_gates": {
+      "native_agentic_like_integration_policy": [
+        "component_candidates_not_integration_meta_policy",
+        "artifact_only_gali7_not_fully_native",
+        "missing_component_record_rejected",
+        "stale_component_record_rejected",
+        "budget_surface_merge_rejected",
+        "hidden_integration_policy_rejected",
+        "direct_native_support_flag_write_rejected",
+        "fully_native_integration_claim_flags_false",
+        "agency_claim_flags_false",
+        "phase8_ready_false_for_integration_boundary"
+      ],
+      "native_identity_acceptance_validator": [
+        "support_survival_not_identity_acceptance",
+        "identity_continuity_not_runtime_acceptance",
+        "restoration_history_not_acceptance",
+        "rc_identity_collapse_claim_blocked",
+        "identity_acceptance_claim_flags_false",
+        "phase8_ready_false_for_identity_boundary",
+        "native_supported_flags_false",
+        "hidden_restoration_rejected",
+        "support_history_erasure_rejected"
+      ]
+    },
+    "ready_contract_test_gates": {
+      "native_response_magnitude_policy": [
+        "policy_disabled_records_no_response_mutation",
+        "proxy_measurement_is_derived_observable",
+        "target_band_digest_precedes_error_digest",
+        "response_gain_serialized_and_replayable",
+        "max_correction_per_window_enforced",
+        "wrong_direction_response_rejected",
+        "hidden_optimizer_state_rejected",
+        "out_of_envelope_perturbation_blocked",
+        "node_plus_packet_budget_conserved",
+        "artifact_replay_recomputes_policy_record_digest",
+        "telemetry_default_off_exports_no_new_records",
+        "existing_telemetry_exports_backward_compatible_when_disabled",
+        "claim_flags_remain_false"
+      ],
+      "native_route_conductance_memory_policy": [
+        "route_use_without_policy_enabled_records_no_mutation",
+        "committed_route_use_schedules_single_conductance_update",
+        "zero_coherence_trace_does_not_reinforce",
+        "hidden_memory_strength_rejected",
+        "stale_geometry_read_rejected",
+        "unbudgeted_relaxation_rejected",
+        "duplicate_relaxation_rejected",
+        "node_plus_packet_budget_conserved",
+        "artifact_replay_recomputes_policy_record_digest",
+        "claim_flags_remain_false",
+        "telemetry_default_off_exports_no_new_records",
+        "existing_telemetry_exports_backward_compatible_when_disabled"
+      ]
+    }
+  }
+}

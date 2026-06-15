@@ -1,0 +1,346 @@
+{
+  "artifact_reproducibility": {
+    "generated_at_fixed": "2026-06-15T00:00:00+00:00",
+    "output_digest_excludes_generated_at_and_git": true,
+    "wall_clock_timestamp_in_file": false
+  },
+  "checks": {
+    "claim_flags_all_false": true,
+    "every_deferred_row_has_blocker_and_rationale": true,
+    "every_nat_level_frozen": true,
+    "every_phase8_ready_row_has_controls_telemetry_tests": true,
+    "every_seed_row_classified": true,
+    "hypotheses_closed": true,
+    "identity_and_integration_blocked": true,
+    "native_supported_flags_false": true,
+    "next_handoff_recorded": true,
+    "phase8_opened_false": true,
+    "phase8_ready_contracts_match_iteration_7": true,
+    "roadmap_decision_recorded": true,
+    "source_file_sha256_all_present": true,
+    "src_diff_empty": true
+  },
+  "claim_flags_forced_false": {
+    "aco_like_claim_allowed": false,
+    "agency_claim_allowed": false,
+    "ant_colony_claim_allowed": false,
+    "biological_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "rc_identity_collapse_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false,
+    "unrestricted_identity_claim_allowed": false
+  },
+  "closeout_result": {
+    "deferred_blockers": [
+      "native_identity_acceptance_validator",
+      "native_agentic_like_integration_policy"
+    ],
+    "final_status": "closed_claim_clean_bridge_experiment",
+    "n12_closed": true,
+    "native_supported_flags": false,
+    "phase8_implementation_opened": false,
+    "phase8_opened": false,
+    "phase8_ready_contracts": [
+      "native_route_conductance_memory_policy",
+      "native_response_magnitude_policy"
+    ],
+    "strongest_recorded_level": "NAT4",
+    "supported_interpretation": "N12 classifies N05-N11 producer mechanisms into one scaffold, two Phase 8-ready contracts, and two theory-sensitive blockers without implementing Phase 8 or opening native support claims.",
+    "target_naturalization_level": "NAT4"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_closeout_and_handoff.py",
+  "experiment": "N12",
+  "final_claim_boundary": {
+    "agentic_like_integration_is_agency": false,
+    "component_nat4_candidate_is_integration_meta_policy": false,
+    "native_absorption_candidate_is_native_support": false,
+    "native_support_is_agency": false,
+    "phase8_readiness_is_phase8_implementation": false,
+    "response_magnitude_policy_is_goal_ownership": false,
+    "route_conductance_memory_is_intention": false,
+    "support_survival_is_identity_acceptance": false
+  },
+  "final_classification_rows": [
+    {
+      "blockers": [
+        "scope_extends_beyond_selection_not_opened",
+        "no_phase8_route_context_hardening_requested"
+      ],
+      "deferred": false,
+      "final_nat_level": "NAT2",
+      "final_primary_disposition": "scaffold",
+      "mechanism_name": "route_context_and_native_route_arbitration_boundary",
+      "native_gap": "native_route_context_contract_hardening_if_scope_extends",
+      "phase8_ready": false,
+      "phase8_ready_contract": false,
+      "rationale": "Inherited route context support remains selection-only. Contract hardening is experiment-local unless future scope extends beyond native route arbitration selection.",
+      "seed_row_id": "n12_i1_inventory_01_n11_i11_gap_01_route_context_contract_hardening",
+      "source_artifact": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json"
+    },
+    {
+      "blockers": [],
+      "deferred": false,
+      "final_nat_level": "NAT4",
+      "final_primary_disposition": "native_absorption_candidate",
+      "mechanism_name": "native_route_conductance_memory_policy",
+      "native_gap": "native_route_conductance_memory_policy_missing",
+      "phase8_ready": true,
+      "phase8_ready_contract": true,
+      "rationale": "Route conductance memory has explicit NAT4 gates, default-off flags, idempotency, telemetry, budget surfaces, replay, controls, and mutation boundary.",
+      "seed_row_id": "n10_c_gap_02_serialized_memory_policy",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json"
+    },
+    {
+      "blockers": [],
+      "deferred": false,
+      "final_nat_level": "NAT4",
+      "final_primary_disposition": "native_absorption_candidate",
+      "mechanism_name": "native_response_magnitude_policy",
+      "native_gap": "native_response_magnitude_policy_missing_for_unbounded_perturbations",
+      "phase8_ready": true,
+      "phase8_ready_contract": true,
+      "rationale": "Bounded/envelope-gated response magnitude has explicit NAT4 gates, default-off flags, idempotency, telemetry, trend/stability fields, budget surfaces, replay, controls, and mutation boundary.",
+      "seed_row_id": "n10_c_gap_04_goal_proxy_regulation_artifact_policy",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json"
+    },
+    {
+      "blockers": [
+        "formal_identity_acceptance_semantics_missing",
+        "runtime_acceptance_validator_missing",
+        "identity_acceptance_event_schema_missing",
+        "identity_continuity_vs_acceptance_theory_gate_missing",
+        "rc_identity_collapse_theory_not_formalized",
+        "support_survival_not_identity_acceptance",
+        "native_acceptance_mutation_boundary_not_formalized",
+        "native_acceptance_telemetry_contract_missing"
+      ],
+      "deferred": true,
+      "final_nat_level": "NAT2",
+      "final_primary_disposition": "theory_sensitive_blocker",
+      "mechanism_name": "native_identity_acceptance_validator",
+      "native_gap": "native_identity_acceptance_validator_missing",
+      "phase8_ready": false,
+      "phase8_ready_contract": false,
+      "rationale": "Support survival and restoration evidence is source-backed, but identity acceptance, runtime acceptance, and RC identity collapse semantics are not formalized.",
+      "seed_row_id": "n10_c_gap_06_identity_support_not_acceptance",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json"
+    },
+    {
+      "blockers": [
+        "native_budget_surface_contract_not_implemented",
+        "native_route_conductance_memory_policy_not_implemented",
+        "native_response_magnitude_policy_not_implemented",
+        "identity_acceptance_or_native_support_gate_not_ready",
+        "native_component_policy_composition_replay_missing",
+        "native_agentic_like_integration_meta_policy_missing",
+        "agency_semantics_not_part_of_n12",
+        "fully_native_integration_validation_missing"
+      ],
+      "deferred": true,
+      "final_nat_level": "NAT2",
+      "final_primary_disposition": "theory_sensitive_blocker",
+      "mechanism_name": "native_agentic_like_integration_policy",
+      "native_gap": "native_agentic_like_integration_policy_missing",
+      "phase8_ready": false,
+      "phase8_ready_contract": false,
+      "rationale": "Native agentic-like integration is a meta-policy gap. NAT4 component candidates and artifact-only GALI7 replay do not constitute native integration support.",
+      "seed_row_id": "n10_c_gap_07_artifact_only_integration_validator",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_agentic_like_integration_boundary.json"
+    }
+  ],
+  "final_nat_levels": {
+    "native_agentic_like_integration_policy": "NAT2",
+    "native_identity_acceptance_validator": "NAT2",
+    "native_response_magnitude_policy": "NAT4",
+    "native_route_conductance_memory_policy": "NAT4",
+    "route_context_and_native_route_arbitration_boundary": "NAT2"
+  },
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "2399c459e6736ebef71d2fd95922a9007f122a1c",
+    "src_status_short": ""
+  },
+  "hypotheses_closeout": {
+    "hypothesis_a": {
+      "meaning": "Some N05-N11 producer mechanisms remain valid scaffolds or artifact-local validators only.",
+      "status": "supported_as_scaffold_boundary",
+      "supporting_rows": [
+        "route_context_and_native_route_arbitration_boundary"
+      ]
+    },
+    "hypothesis_b": {
+      "meaning": "Route conductance memory and bounded/envelope-gated response magnitude can be specified as native LGRC policy surfaces without adding non-RC quantities, but this is not native support.",
+      "status": "supported_at_nat4_readiness_only",
+      "supporting_rows": [
+        "native_route_conductance_memory_policy",
+        "native_response_magnitude_policy"
+      ]
+    },
+    "hypothesis_c": {
+      "meaning": "Identity acceptance and full native agentic-like integration remain blocked until theory and component gates are explicit.",
+      "status": "supported_as_theory_sensitive_blockers",
+      "supporting_rows": [
+        "native_identity_acceptance_validator",
+        "native_agentic_like_integration_policy"
+      ]
+    }
+  },
+  "iteration": 8,
+  "n13_handoff": {
+    "allowed_inputs": [
+      "N07 support survival/disruption/restoration evidence",
+      "N09 bounded proxy regulation evidence",
+      "N10 support-sensitive integration matrix",
+      "N11 artifact-only GALI7 generalization envelope",
+      "N12 Phase 8 readiness matrix and blocker boundaries"
+    ],
+    "blocked_inputs": [
+      "identity acceptance",
+      "runtime identity acceptance",
+      "semantic goal ownership",
+      "agency",
+      "fully native agentic-like integration"
+    ],
+    "entry_note": "N13 may consume support-survival, support-disruption, explicit restoration, route-memory, and bounded response evidence, but it must not consume identity acceptance. It should begin as support-seeking regulation, not identity-seeking regulation.",
+    "status": "available_as_next_experiment_if_phase8_is_not_opened"
+  },
+  "no_implementation_checks": {
+    "native_supported_flags": false,
+    "phase8_implementation_opened": false,
+    "phase8_opened": false,
+    "src_changes_required_for_n12": false,
+    "src_diff_empty": true
+  },
+  "output_digest": "e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e",
+  "phase8_handoff": {
+    "implementation_fork": [
+      {
+        "path": "targeted_phase8_route_conductance_memory",
+        "source_contract": "native_route_conductance_memory_policy",
+        "status": "available_after_n12_closeout"
+      },
+      {
+        "path": "targeted_phase8_response_magnitude",
+        "source_contract": "native_response_magnitude_policy",
+        "status": "available_after_n12_closeout"
+      }
+    ],
+    "not_phase8_ready": [
+      "native_identity_acceptance_validator",
+      "native_agentic_like_integration_policy"
+    ],
+    "phase8_ready_contracts": [
+      "native_route_conductance_memory_policy",
+      "native_response_magnitude_policy"
+    ],
+    "shared_prerequisites": [
+      "open Phase 8 explicitly before editing src/*",
+      "start native surfaces default-off",
+      "include telemetry under src/pygrc/telemetry",
+      "preserve enabled/validated/supported separation",
+      "preserve separated budget and replay contracts",
+      "record idempotent digests and snapshot/replay gates",
+      "keep native support flags false until native validation passes",
+      "keep agency, intention, goal ownership, identity acceptance, and fully native integration claims false"
+    ],
+    "status": "ready_to_open_targeted_phase8_if_requested"
+  },
+  "purpose": "closeout_and_handoff",
+  "roadmap_update_decision": {
+    "handoff_source": "experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md",
+    "reason": "The existing N12-N18 roadmap already places N12 as naturalization and N13 as support-seeking/self-maintenance. N12 closeout records the handoff without changing roadmap order.",
+    "roadmap_file_update_required": false,
+    "roadmap_source": "experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md"
+  },
+  "schema": "n12_closeout_and_handoff_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_agentic_like_integration_boundary.json": {
+      "output_digest": "2ed8ae9f591a7c435f012c70502c0871275a755d5355e7c95efa6d46a10c2601",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_agentic_like_integration_boundary.json",
+      "sha256": "bd3df3c33b4736e972f3109b4282608d1f9f6019508fb071d43cbc555eb8c219",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json": {
+      "output_digest": "22637fb4210725ac87cd5be283294d1f252ee4584058fe83acb68ad9270c9295",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_identity_acceptance_boundary.json",
+      "sha256": "0048a06de4e204c4c3ad7f9c7d720ecfdb8b68b06eaff50e099aea168c1d27da",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json": {
+      "output_digest": "cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_native_naturalization_inventory.json",
+      "sha256": "22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json": {
+      "output_digest": "f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_naturalization_schema_v1.json",
+      "sha256": "1054be3cc71946e00be6e4d78a08111ec9d2d75c19fd535fd9b4898f86e4df80",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": {
+      "output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json": {
+      "output_digest": "347a66e30fb532899664a475f6240239de70229573dc09f5947a2033e45614b4",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_response_magnitude_candidate.json",
+      "sha256": "3748728f2fe36246f1655f53241e5719f875c8f6a68edeffea9f5f0a88a9b234",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json": {
+      "output_digest": "c41482f5fbefc2af7572139daa60f73bb06ab29e83fbf03a1b61f5e4a6b7afe1",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_route_conductance_memory_candidate.json",
+      "sha256": "d690bd0619b8742b343c596976cc15cfd9ca76acdd71be55853c32ac2aa59747",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_agentic_like_integration_boundary.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_agentic_like_integration_boundary.md",
+      "sha256": "02d4df92b9260d4b6f85bbb01bbde9092055e00bb5e0444a9f122bba0ef4fc24"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_identity_acceptance_boundary.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_identity_acceptance_boundary.md",
+      "sha256": "85f2768a8b916b95f2d796e4d6f52f409fb02556779252e622edf66685a80226"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_native_naturalization_inventory.md",
+      "sha256": "784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_naturalization_schema_v1.md",
+      "sha256": "e3a3d0c126f71f150930f402d2c41b6a78b650d90047ba9dd846a728393c8a8c"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_response_magnitude_candidate.md",
+      "sha256": "ba3e0e3f4b2f6cb2919d781b6dbd93c2c88f744c0e2aefbd7d53d8c0e88d9b1f"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_route_conductance_memory_candidate.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_route_conductance_memory_candidate.md",
+      "sha256": "acaa6a7cc84b2d57548e27cea8495ae042faf84246c13d238feaaf1b68992ed7"
+    },
+    "experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md": {
+      "path": "experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md",
+      "sha256": "6fc5f8677e2e587bc1a26c7bc9ab1a699d73dd214985af3a7e5b60233ee8857e"
+    },
+    "experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md": {
+      "path": "experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md",
+      "sha256": "0dec375d1a8133ed4fdcb01bc7ab204246efe437dadee7d1de714814acb4055c"
+    }
+  },
+  "status": "passed"
+}
