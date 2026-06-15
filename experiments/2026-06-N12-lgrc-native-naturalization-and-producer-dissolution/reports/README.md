@@ -1,15 +1,18 @@
 # N12 Reports
 
-This directory will hold human-readable N12 reports. Each output JSON should
-have a matching report when possible.
+This directory holds human-readable N12 reports. Each output JSON should have a
+matching report when possible.
 
-Minimum planned reports:
+Generated reports:
 
 - `n12_native_naturalization_inventory.md`: human-readable baseline and
   mechanism inventory report, including provisional row shape and non-RC
   quantity audits.
 - `n12_naturalization_schema_v1.md`: human-readable NAT ladder, schema,
   NAT3/NAT4 gate, rejection-rule, and claim-boundary report.
+
+Planned reports:
+
 - `n12_route_conductance_memory_candidate.md`: human-readable route conductance
   memory candidate report.
 - `n12_response_magnitude_candidate.md`: human-readable response magnitude
@@ -23,5 +26,3 @@ Minimum planned reports:
   gates, with no-implementation flags.
 - `n12_closeout_and_handoff.md`: final N12 closeout, NAT-level freeze, roadmap
   update decision, and handoff report.
-
-No reports have been generated yet.

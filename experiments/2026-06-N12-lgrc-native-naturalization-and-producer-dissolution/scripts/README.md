@@ -1,9 +1,8 @@
 # N12 Scripts
 
-This directory will hold N12 artifact builders, validators, and closeout
-helpers.
+This directory holds N12 artifact builders, validators, and closeout helpers.
 
-Planned scripts:
+Generated scripts:
 
 - `build_n12_native_naturalization_inventory.py`: builds the source-backed
   N05-N11 mechanism inventory using the provisional Iteration 1 row shape.
@@ -11,6 +10,9 @@ Planned scripts:
   tags, claim flags, native-readiness criteria, rejection rules, and
   RC-compatibility fields, including non-RC quantity audit fields and NAT3/NAT4
   gates.
+
+Planned scripts:
+
 - `build_n12_route_conductance_memory_candidate.py`: evaluates the route memory
   candidate, geometry-vs-bookkeeping split, mutation boundary, non-RC audit,
   controls, and supported NAT level.
@@ -28,5 +30,3 @@ Planned scripts:
 - `build_n12_closeout_and_handoff.py`: closes N12, freezes NAT levels, records
   roadmap update decisions, and decides whether the next step is targeted
   Phase 8 or N13.
-
-No scripts have been implemented or run yet.

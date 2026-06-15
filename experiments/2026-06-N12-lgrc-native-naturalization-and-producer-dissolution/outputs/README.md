@@ -1,8 +1,8 @@
 # N12 Outputs
 
-This directory will hold machine-readable N12 output artifacts.
+This directory holds machine-readable N12 output artifacts.
 
-Minimum planned artifacts:
+Generated artifacts:
 
 - `n12_native_naturalization_inventory.json`: source-backed inventory of
   N05-N11 mechanisms, source artifacts, claim ceilings, native blockers,
@@ -13,6 +13,9 @@ Minimum planned artifacts:
   native-readiness criteria, RC-compatibility fields, rejection rules, budget
   fields, non-RC quantity audit fields, NAT3/NAT4 gates, derived
   `phase8_ready` semantics, and fail-closed blocker tags.
+
+Planned artifacts:
+
 - `n12_route_conductance_memory_candidate.json`: route-memory
   geometry/conductance/coherence-vs-bookkeeping evaluation, mutation boundary,
   non-RC audit, controls, and supported NAT level.
@@ -28,5 +31,3 @@ Minimum planned artifacts:
   flags.
 - `n12_closeout_and_handoff.json`: final N12 NAT levels, candidate partition,
   blocked theory-sensitive rows, roadmap update decision, and handoff target.
-
-No output artifacts have been generated yet.

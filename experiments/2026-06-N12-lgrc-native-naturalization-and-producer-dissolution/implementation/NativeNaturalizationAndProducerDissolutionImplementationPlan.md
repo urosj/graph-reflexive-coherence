@@ -167,6 +167,7 @@ source_iteration
 source_artifact
 source_report
 source_sha256
+source_report_sha256
 mechanism_name
 mechanism_role
 producer_decision_fields
@@ -227,29 +228,29 @@ source artifacts.
 
 ```text
 route_context_and_native_route_arbitration_boundary:
-    provisional class =
+    provisional disposition =
         scaffold unless future scope exceeds selection-only
 
 N08_memory_trail_affordance_consumed_by_N10_N11:
-    provisional class =
+    provisional disposition =
         native_absorption_candidate
     native gap =
         native_route_conductance_memory_policy_missing
 
 N09_goal_proxy_regulation_and_response_sizing:
-    provisional class =
+    provisional disposition =
         native_absorption_candidate
     native gap =
         native_response_magnitude_policy_missing_for_unbounded_perturbations
 
 N07_support_invariance_and_identity_acceptance_boundary:
-    provisional class =
+    provisional disposition =
         theory_sensitive_blocker
     native gap =
         native_identity_acceptance_validator_missing
 
 artifact_only_generalization_validator:
-    provisional class =
+    provisional disposition =
         scaffold for budget/replay contract fields,
         theory_sensitive_blocker for native integration meta-policy
     secondary tag =
@@ -337,6 +338,22 @@ and uses the provisional row shape, includes a non_rc_quantity_audit, and no
 producer-mediated result is promoted into native support.
 ```
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_native_naturalization_inventory.json
+Report: reports/n12_native_naturalization_inventory.md
+Output digest: cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a
+```
+
+Iteration 1 records five source-backed rows: two `NAT3`
+native-absorption candidates for route conductance memory and response
+magnitude policy, three `NAT2` scaffold/blocker rows, zero `NAT4` rows, and
+zero Phase 8-ready rows. All rows include the provisional row shape and
+`non_rc_quantity_audit`; N12 opens no new native support. Inherited N11 native
+route-arbitration support remains selection-only.
+
 ### Iteration 2. Naturalization Schema And Ladder
 
 Define the NAT ladder, row schema, tags, claim flags, native-readiness
@@ -359,6 +376,22 @@ Iteration 2 passes if the NAT ladder and schema reject native support,
 non-RC quantities, claim promotion, stale source use, hidden producer mutation,
 and budget ambiguity without opening Phase 8 implementation.
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n12_naturalization_schema_v1.json
+Report: reports/n12_naturalization_schema_v1.md
+Output digest: f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327
+```
+
+Iteration 2 freezes the `NAT0-NAT6` ladder, final row fields,
+non-overlapping `primary_disposition` values, derived `phase8_ready` rule,
+NAT3/NAT4 gates, non-RC quantity audit schema, mutation boundary schema,
+forced-false claim flags, rejection rules, and planned artifacts for
+Iterations 3-7. Iteration 2 freezes declarations only; candidate-row
+validation against the final schema starts in Iterations 3-7.
 
 ### Iteration 3. Route Conductance Memory Candidate
 
@@ -387,6 +420,7 @@ non_rc_quantity_audit:
     does it require a new scalar state outside RC accounting?
 controls against ACO, ant-colony behavior, intention, agency, and native
 support relabeling
+if assigning NAT4, every NAT4 gate frozen in Iteration 2 must be present
 ```
 
 Expected artifacts:
@@ -437,6 +471,7 @@ non_rc_quantity_audit:
     state?
 controls against goal ownership, intention, agency, unbounded response, and
 native support relabeling
+if assigning NAT4, every NAT4 gate frozen in Iteration 2 must be present
 ```
 
 Expected artifacts:

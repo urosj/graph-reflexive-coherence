@@ -114,31 +114,31 @@ Implementation record:
 
 ## Iteration 1. Baseline And Mechanism Inventory
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Inventory N11 Iteration 11 native gap rows.
-- [ ] Inventory N11 Iteration 12 final blocker set and handoff.
-- [ ] Inventory N10 native contract rows referenced by N11.
-- [ ] Inventory N05-N11 producer/artifact scaffolds consumed by N11.
-- [ ] Record source artifact paths, report paths, and SHA-256 digests.
-- [ ] Record claim ceilings and blocked claims.
-- [ ] Record native blockers.
-- [ ] Record producer-mediated, validator-local, artifact-local, and native
+- [x] Inventory N11 Iteration 11 native gap rows.
+- [x] Inventory N11 Iteration 12 final blocker set and handoff.
+- [x] Inventory N10 native contract rows referenced by N11.
+- [x] Inventory N05-N11 producer/artifact scaffolds consumed by N11.
+- [x] Record source artifact paths, report paths, and SHA-256 digests.
+- [x] Record claim ceilings and blocked claims.
+- [x] Record native blockers.
+- [x] Record producer-mediated, validator-local, artifact-local, and native
       selection-only classifications.
-- [ ] Record essential producer decisions.
-- [ ] Record bookkeeping-only fields.
-- [ ] Record thresholds to serialize.
-- [ ] Record runtime-visible surfaces needed.
-- [ ] Record the provisional Iteration 1 row shape for every row.
-- [ ] Record `non_rc_quantity_audit` for every row.
-- [ ] Confirm no Phase 8 contract acceptance occurs in Iteration 1.
-- [ ] Confirm `src/*` remains clean for Iteration 1.
+- [x] Record essential producer decisions.
+- [x] Record bookkeeping-only fields.
+- [x] Record thresholds to serialize.
+- [x] Record runtime-visible surfaces needed.
+- [x] Record the provisional Iteration 1 row shape for every row.
+- [x] Record `non_rc_quantity_audit` for every row.
+- [x] Confirm no Phase 8 contract acceptance occurs in Iteration 1.
+- [x] Confirm `src/*` remains clean for Iteration 1.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_native_naturalization_inventory.json`
-- [ ] `reports/n12_native_naturalization_inventory.md`
-- [ ] `scripts/build_n12_native_naturalization_inventory.py`
+- [x] `outputs/n12_native_naturalization_inventory.json`
+- [x] `reports/n12_native_naturalization_inventory.md`
+- [x] `scripts/build_n12_native_naturalization_inventory.py`
 
 Acceptance statement:
 
@@ -148,46 +148,118 @@ inherited native gaps using the provisional row shape, with non-RC audits and
 without promoting them into native support.
 ```
 
+Acceptance state:
+
+```text
+Achieved. Iteration 1 built a five-row source-backed inventory from N11
+Iteration 11, N11 Iteration 12, and N10 Iterations 13-15. The inventory records
+two NAT3 native absorption candidates, three NAT2 scaffold/blocker rows, zero
+NAT4 rows, zero Phase 8-ready rows, required non-RC audits, and no new N12
+native support. Inherited N11 route-arbitration support remains selection-only.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_native_naturalization_inventory.py`.
+- Generated `outputs/n12_native_naturalization_inventory.json`.
+- Generated `reports/n12_native_naturalization_inventory.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_native_naturalization_inventory.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+cd58000592e06cb4a48f3059b9c8e8538f93b2589d37c242137eec2aed8dfb9a
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_native_naturalization_inventory.json 22c5ba0797cbbea75d06e138c6e570a3a446e31381fe4d0c4716093868de4f01
+reports/n12_native_naturalization_inventory.md 784e6a10654058e3e367957dc9910e61a14cbfdebd5d0403629712abf7418ef1
+scripts/build_n12_native_naturalization_inventory.py 93fcea26cdd64479c50a4705ee2ff68671d008f902a12e42fd0419a1e375eeba
+```
+
 ## Iteration 2. Naturalization Schema And Ladder
 
-Status: Pending.
+Status: Complete.
 
-- [ ] Freeze the `NAT0-NAT6` ladder.
-- [ ] Freeze candidate row schema.
-- [ ] Freeze primary disposition fields.
-- [ ] Freeze `primary_disposition` values:
+- [x] Freeze the `NAT0-NAT6` ladder.
+- [x] Freeze candidate row schema.
+- [x] Freeze primary disposition fields.
+- [x] Freeze `primary_disposition` values:
       `scaffold`, `native_absorption_candidate`, `theory_sensitive_blocker`,
       and `blocked_missing_source_or_gate`.
-- [ ] Freeze `phase8_ready` as derived from `nat_level = NAT4`.
-- [ ] Freeze secondary classification tags.
-- [ ] Freeze claim flags.
-- [ ] Freeze native-readiness criteria.
-- [ ] Freeze RC-compatibility fields.
-- [ ] Freeze rejection rules for non-RC quantities.
-- [ ] Freeze `non_rc_quantity_audit` fields.
-- [ ] Freeze mutation/scheduling boundary fields.
-- [ ] Freeze NAT3 gates.
-- [ ] Freeze NAT4 hard criteria.
-- [ ] Freeze blocked-claim fields.
-- [ ] Freeze runtime-visible surface fields.
-- [ ] Freeze serialized-threshold fields.
-- [ ] Freeze budget/replay fields.
-- [ ] Freeze fail-closed blocker tags.
-- [ ] Reject native support flags without Phase 8 source.
-- [ ] Reject claim-promotion fields.
-- [ ] Declare no-native-implementation boundary.
+- [x] Freeze `phase8_ready` as derived from `nat_level = NAT4`.
+- [x] Freeze secondary classification tags.
+- [x] Freeze claim flags.
+- [x] Freeze native-readiness criteria.
+- [x] Freeze RC-compatibility fields.
+- [x] Freeze rejection rules for non-RC quantities.
+- [x] Freeze `non_rc_quantity_audit` fields.
+- [x] Freeze mutation/scheduling boundary fields.
+- [x] Freeze NAT3 gates.
+- [x] Freeze NAT4 hard criteria.
+- [x] Freeze blocked-claim fields.
+- [x] Freeze runtime-visible surface fields.
+- [x] Freeze serialized-threshold fields.
+- [x] Freeze budget/replay fields.
+- [x] Freeze fail-closed blocker tags.
+- [x] Reject native support flags without Phase 8 source.
+- [x] Reject claim-promotion fields.
+- [x] Declare no-native-implementation boundary.
 
 Expected artifacts:
 
-- [ ] `outputs/n12_naturalization_schema_v1.json`
-- [ ] `reports/n12_naturalization_schema_v1.md`
-- [ ] `scripts/build_n12_naturalization_schema_v1.py`
+- [x] `outputs/n12_naturalization_schema_v1.json`
+- [x] `reports/n12_naturalization_schema_v1.md`
+- [x] `scripts/build_n12_naturalization_schema_v1.py`
 
 Acceptance statement:
 
 ```text
 Iteration 2 passes if the N12 schema and ladder are frozen before candidate
 evaluation or Phase 8 implementation work.
+```
+
+Acceptance state:
+
+```text
+Achieved. Iteration 2 froze the NAT0-NAT6 ladder, final row fields,
+non-overlapping primary disposition model, derived phase8_ready rule, NAT3 and
+NAT4 gates, non-RC quantity audit schema, mutation boundary schema, forced-false
+claim flags, rejection rules, validation-scope note, and planned artifacts for
+Iterations 3-7.
+```
+
+Implementation record:
+
+- Added and ran `scripts/build_n12_naturalization_schema_v1.py`.
+- Generated `outputs/n12_naturalization_schema_v1.json`.
+- Generated `reports/n12_naturalization_schema_v1.md`.
+- Command:
+
+```text
+.venv/bin/python experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/scripts/build_n12_naturalization_schema_v1.py
+```
+
+- Status: `passed`.
+- Output digest:
+
+```text
+f6e025deff124593dee73891fa15a196338d0c05351119556e905ebf6e525327
+```
+
+- Artifact SHA-256:
+
+```text
+outputs/n12_naturalization_schema_v1.json 1054be3cc71946e00be6e4d78a08111ec9d2d75c19fd535fd9b4898f86e4df80
+reports/n12_naturalization_schema_v1.md e3a3d0c126f71f150930f402d2c41b6a78b650d90047ba9dd846a728393c8a8c
+scripts/build_n12_naturalization_schema_v1.py d6dd3ba0803a91c540ab4209b3a9bf14ede115b52bce2be1da921e65c91a5db4
 ```
 
 ## Iteration 3. Route Conductance Memory Candidate
@@ -212,6 +284,7 @@ Status: Pending.
 - [ ] Check RC causality/coherence/geometry compatibility.
 - [ ] Define controls against ACO and ant-colony relabeling.
 - [ ] Define controls against intention, agency, and native support relabeling.
+- [ ] If assigning `NAT4`, require every NAT4 gate frozen in Iteration 2.
 - [ ] Assign supported NAT level for route conductance memory.
 
 Expected artifacts:
@@ -258,6 +331,7 @@ Status: Pending.
 - [ ] Check RC causality/coherence/scheduling compatibility.
 - [ ] Define controls against goal ownership, intention, and agency relabeling.
 - [ ] Define controls against unbounded response and native support relabeling.
+- [ ] If assigning `NAT4`, require every NAT4 gate frozen in Iteration 2.
 - [ ] Assign supported NAT level for response magnitude policy.
 
 Expected artifacts:
