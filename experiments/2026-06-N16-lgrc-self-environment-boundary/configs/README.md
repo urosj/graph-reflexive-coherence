@@ -1,8 +1,8 @@
 # N16 Configs
 
-Frozen configuration artifacts for N16 will belong here.
+Frozen configuration artifacts for N16 belong here.
 
-Planned configs:
+Generated configs:
 
 - `n16_source_registry.json`
 - `n16_boundary_policy_v1.json`
@@ -10,4 +10,9 @@ Planned configs:
 - `n16_control_variants_v1.json`
 - `n16_replay_policy_v1.json`
 
-No configs have been generated yet.
+Planned configs:
+
+- None.
+
+Generated configs are schema-freeze artifacts. They do not assign final `AP6`
+or open native support.

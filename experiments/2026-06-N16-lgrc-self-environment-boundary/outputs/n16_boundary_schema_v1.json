@@ -1,0 +1,1216 @@
+{
+  "acceptance_state": "accepted_boundary_schema_freeze_no_row_validation",
+  "ap6_required_gates": [
+    "source_inventory_accepted",
+    "source_artifact_report_digest_for_each_row",
+    "direct_historic_ap6_support_status_recorded",
+    "old_best_claims_construction_inputs_recorded",
+    "boundary_state_axis_lineage_frozen",
+    "challenge_class_axis_operational_not_environment_taxonomy",
+    "row_schema_has_internal_support_state_descriptor",
+    "row_schema_has_external_resource_state_descriptor",
+    "row_schema_has_external_perturbation_state_descriptor",
+    "row_schema_has_external_structured_state_descriptor",
+    "external_state_role_enum_frozen",
+    "row_decision_enum_frozen",
+    "row_decision_boundary_claim_relation_frozen",
+    "boundary_side_assignments_present",
+    "boundary_crossing_trace_present",
+    "dependency_trace_present",
+    "budget_validity_present",
+    "replay_digest_scope_frozen",
+    "artifact_only_replay_requirement_present",
+    "snapshot_load_equivalence_requirement_present",
+    "order_inversion_replay_requirement_present",
+    "structured_external_coherence_rejection_control_present",
+    "b0_c3_active_null_rejects_false_boundary",
+    "b2_c0_c1_c2_unlock_required_before_b3_repair",
+    "b4_c5_shared_medium_separability_required",
+    "externally_supplied_boundary_control_fails_closed",
+    "post_hoc_boundary_label_control_fails_closed",
+    "hidden_external_state_injection_control_fails_closed",
+    "resource_relabel_as_self_control_fails_closed",
+    "self_support_relabel_as_external_control_fails_closed",
+    "untracked_boundary_crossing_control_fails_closed",
+    "identity_acceptance_relabel_control_fails_closed",
+    "selfhood_personhood_relabel_control_fails_closed",
+    "semantic_goal_ownership_relabel_control_fails_closed",
+    "native_support_relabel_control_fails_closed",
+    "claim_flags_forced_false",
+    "native_support_not_opened",
+    "phase8_opened_false",
+    "src_diff_empty_true"
+  ],
+  "ap_ladder": {
+    "AP0": {
+      "label": "passive integrated replay",
+      "n16_interpretation": "source, null, or boundary blocker row with no AP6 claim"
+    },
+    "AP1": {
+      "label": "runtime-visible trigger produces bounded response",
+      "n16_interpretation": "boundary-relevant response context only"
+    },
+    "AP2": {
+      "label": "support-sensitive regulation preserves a declared support condition",
+      "n16_interpretation": "support/perturbation context only"
+    },
+    "AP3": {
+      "label": "self-maintenance candidate",
+      "n16_interpretation": "N13 support-seeking regulation usable as internal support axis"
+    },
+    "AP4": {
+      "label": "consequence-sensitive selection",
+      "n16_interpretation": "N14 route/resource context usable as external state axis"
+    },
+    "AP5": {
+      "label": "endogenous proxy candidate",
+      "n16_interpretation": "N15 source-current proxy formation usable as construction substrate"
+    },
+    "AP6": {
+      "label": "self/environment boundary candidate",
+      "n16_interpretation": "internal support-relevant state and external resource, perturbation, structured state, or shared medium are separately represented, traceable, controlled, and replayable"
+    },
+    "AP7": {
+      "label": "closed action-perception loop candidate",
+      "n16_interpretation": "reserved for N17"
+    },
+    "AP8": {
+      "label": "long-horizon agentic-like closure candidate",
+      "n16_interpretation": "reserved for N18"
+    }
+  },
+  "artifact_id": "n16_boundary_schema_v1",
+  "audit_invariants": [
+    {
+      "audit_id": "n16_i2_audit_01_freeze_rules_before_evidence",
+      "frozen_contracts": [
+        "row_schema_fields",
+        "ap6_required_gates",
+        "boundary_policy",
+        "control_requirements",
+        "replay_digest_policy"
+      ],
+      "reason": "prevents post-hoc AP6 interpretation",
+      "rule": "Freeze rules before evidence.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_02_require_internal_external_separation",
+      "frozen_contracts": [
+        "internal_state_descriptor",
+        "external_resource_descriptor",
+        "external_perturbation_descriptor",
+        "external_structured_state_descriptor",
+        "external_state_role",
+        "boundary_side_assignments",
+        "boundary_crossing_trace"
+      ],
+      "reason": "AP6 is boundary separability, not basin existence",
+      "rule": "Require internal/external separation in every future evidence row.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_03_prevent_prior_claim_promotion",
+      "frozen_contracts": [
+        "old_best_claims_composition",
+        "claim_ceiling",
+        "claim_ceiling_preserved",
+        "claim_promotion_allowed",
+        "blocked_claims"
+      ],
+      "reason": "N16 must add new boundary evidence, not relabel prior claims",
+      "rule": "Prevent AP5/AP4/AP3/NAT4 promotion.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_04_c3_structured_external_default",
+      "frozen_contracts": [
+        "external_state_role_policy",
+        "challenge_class_axis.C3",
+        "structured_external_coherence_rejection_control"
+      ],
+      "reason": "coherent outside structure is a false-positive pressure, not a self",
+      "rule": "Treat C3 as structured external state by default.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_05_b0_active_null",
+      "frozen_contracts": [
+        "boundary_state_axis.B0",
+        "selected_interaction_cells.B0_C3",
+        "b0_c3_active_null_rejects_false_boundary"
+      ],
+      "reason": "external coherence alone must never become boundary support",
+      "rule": "Keep B0 as an active null.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_06_gate_b3_behind_b2",
+      "frozen_contracts": [
+        "boundary_policy.b3_unlock_rule",
+        "b2_c0_c1_c2_unlock_required_before_b3_repair"
+      ],
+      "reason": "repair/reabsorption must not hide an unsupported persistent boundary",
+      "rule": "Gate B3 behind B2 evidence.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_07_keep_b4_provisional",
+      "frozen_contracts": [
+        "boundary_policy.b4_primary_target",
+        "boundary_policy.b4_c2_rule",
+        "b4_c5_shared_medium_separability_required"
+      ],
+      "reason": "multi-basin shared-medium cases are high-risk for overclaiming",
+      "rule": "Keep B4 provisional until N16 produces separability evidence.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_08_row_decisions_independent_from_ap6",
+      "frozen_contracts": [
+        "row_decision_policy",
+        "boundary_claim_allowed",
+        "final_ap6_supported"
+      ],
+      "reason": "a supported null/control is not a supported boundary claim",
+      "rule": "Define row decisions independently from AP6 support.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_09_distinct_fail_closed_blockers",
+      "frozen_contracts": [
+        "control_requirements",
+        "fail_closed_error_labels"
+      ],
+      "reason": "blocked relabels must be auditable, not vague",
+      "rule": "Make controls fail closed with distinct blockers.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_10_replay_digest_admissibility",
+      "frozen_contracts": [
+        "replay_digest_policy",
+        "artifact_only_replay_status",
+        "snapshot_load_status",
+        "order_inversion_replay_status",
+        "idempotency_digest_plan"
+      ],
+      "reason": "artifact-level AP6 requires reproducible source-backed evidence",
+      "rule": "Make replay/digest part of admissibility.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_11_partial_mvp_synthesis",
+      "frozen_contracts": [
+        "synthesis_mode",
+        "included_iterations",
+        "deferred_iterations",
+        "final_ap6_closeout_allowed",
+        "native_requirements_synthesis_contract"
+      ],
+      "reason": "useful early result must not become premature closeout",
+      "rule": "Mark MVP synthesis as partial if Iterations 5-6 are deferred.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_12_force_unsafe_claim_flags_false",
+      "frozen_contracts": [
+        "claim_flags",
+        "blocked_claims",
+        "claim_boundary"
+      ],
+      "reason": "AP6 boundary candidate is not selfhood, agency, native support, or life",
+      "rule": "Force unsafe claim flags false.",
+      "status": "frozen"
+    }
+  ],
+  "boundary_policy": {
+    "b3_unlock_rule": "B3 repair/reabsorption rows require prior B2 evaluation under C0, C1, and C2, or explicit blockers for those cells",
+    "b4_c2_rule": "B4 x C2 is a flux stress row and remains partial or not_applicable unless multi-basin substrate evidence is source-backed",
+    "b4_primary_target": "B4 x C5 shared-medium multi-basin separability",
+    "boundary_claim_allowed_rule": {
+      "blocked": "forces boundary_claim_allowed = false",
+      "not_applicable": "forces boundary_claim_allowed = false",
+      "partial": "keeps final AP6 provisional unless later synthesis closes missing gates",
+      "rejected": "forces boundary_claim_allowed = false",
+      "supported": "does not automatically imply boundary_claim_allowed = true; all AP6 gates, controls, budget, replay, and claim-boundary checks must also pass"
+    },
+    "boundary_state_values": [
+      "B0",
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "challenge_class_values": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "external_state_role_values": [
+      "background",
+      "resource",
+      "perturbation",
+      "structured_external_state",
+      "shared_medium",
+      "coupling_channel",
+      "mixed",
+      "not_applicable"
+    ],
+    "policy_id": "n16_boundary_policy_v1",
+    "row_decision_values": [
+      "supported",
+      "blocked",
+      "partial",
+      "rejected",
+      "not_applicable"
+    ],
+    "structured_external_coherence_rule": "C3 is an active null for coherent outside structure and must reject false self-boundary classification"
+  },
+  "boundary_state_axis": [
+    {
+      "boundary_state": "B0",
+      "claim_ceiling": "active_null_control_no_boundary_claim",
+      "constructed_support": [
+        "use B0 as active null for coherent-looking outside structure"
+      ],
+      "inherited_closed_claims": [
+        "negative-control discipline blocks unsafe relabels",
+        "structured external coherence cannot be promoted without source-backed boundary side assignment"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_04_n15_claim_boundary"
+      ],
+      "name": "null / external coherence only",
+      "required_N16_evidence": [
+        "B0 x C3 must reject structured external coherence as self-boundary"
+      ],
+      "unsupported_extension": [
+        "no positive basin-boundary claim",
+        "no internal support-relevant state claim"
+      ]
+    },
+    {
+      "boundary_state": "B1",
+      "claim_ceiling": "localized_basin_partition_candidate_pending_n16_schema",
+      "constructed_support": [
+        "inside/outside partition and boundary edges can be proposed from pinned surfaces"
+      ],
+      "inherited_closed_claims": [
+        "artifact-visible basin, sink, parent, and edge/flux surfaces exist",
+        "localized boundary coupling can be measured in fixtures"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_10_n03_artifact_surface_inventory",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_13_n04_boundary_coupled_pulse"
+      ],
+      "name": "localized basin partition",
+      "required_N16_evidence": [
+        "quiet B1 row must extract boundary edges without supplied labels",
+        "B1 x C2 must expose failure threshold under flux"
+      ],
+      "unsupported_extension": [
+        "detectable partition is not persistence",
+        "boundary coupling is not AP6 boundary stability"
+      ]
+    },
+    {
+      "boundary_state": "B2",
+      "claim_ceiling": "support_persistent_basin_candidate_pending_n16_matrix",
+      "constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "name": "support-persistent basin",
+      "required_N16_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ]
+    },
+    {
+      "boundary_state": "B3",
+      "claim_ceiling": "regulated_repair_candidate_locked_until_b2_calibration",
+      "constructed_support": [
+        "B3 can test whether a boundary breach is repaired or fail-closed without post-hoc relabeling"
+      ],
+      "inherited_closed_claims": [
+        "bounded regulation and support restoration contexts exist at artifact level",
+        "explicit support withdrawal/restoration baselines are source-backed"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_02_n15_runtime_derived_target_candidate",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_08_n13_support_disruption_restoration",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline",
+        "n16_i1_row_18_n09_goal_proxy_regulation_closeout",
+        "n16_i1_row_19_n09_perturbation_withdrawal_support"
+      ],
+      "name": "regulated repair / reabsorption boundary",
+      "required_N16_evidence": [
+        "B3 remains locked until B2 C0-C2 evaluations are present or explicitly blocked",
+        "B3 x C4 must distinguish reclosure from relabeling"
+      ],
+      "unsupported_extension": [
+        "bounded correction is not native boundary repair",
+        "explicit restoration is not autonomous reabsorption"
+      ]
+    },
+    {
+      "boundary_state": "B4",
+      "claim_ceiling": "multi_basin_separability_candidate_new_n16_evidence_required",
+      "constructed_support": [
+        "B4 can be included as the weakest candidate state for shared-medium separability"
+      ],
+      "inherited_closed_claims": [
+        "route alternatives, constructed consequence followout, and dual-basin exchange analogs exist",
+        "N07 records source-specific dual-basin separability under bounded exchange"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_05_n14_closeout_ap4",
+        "n16_i1_row_06_n14_constructed_followout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_14_n04_taxonomy_continuation_closeout",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_17_n08_memory_trail_closeout"
+      ],
+      "name": "coupled multi-basin separability candidate",
+      "required_N16_evidence": [
+        "B4 x C5 must test shared-medium multi-basin exclusivity",
+        "B4 x C2 must remain partial or not_applicable if shared substrate support is insufficient"
+      ],
+      "unsupported_extension": [
+        "prior route alternatives are not multi-basin boundary exclusivity",
+        "B4 x C2 is only a flux stress row"
+      ]
+    }
+  ],
+  "budget_limits": {
+    "limits": {
+      "canonical_json_input_bytes": 524288,
+      "canonical_json_output_bytes": 524288,
+      "matrix_cell_count": 16,
+      "replay_count": 8,
+      "source_row_count": 32,
+      "transform_count": 64,
+      "validation_count": 128,
+      "wall_clock_seconds": 90
+    },
+    "policy_id": "n16_budget_limits_v1",
+    "units": [
+      "source_row_count",
+      "matrix_cell_count",
+      "transform_count",
+      "canonical_json_input_bytes",
+      "canonical_json_output_bytes",
+      "replay_count",
+      "validation_count",
+      "wall_clock_seconds"
+    ],
+    "validity_rule": "budget is checked before AP6 row acceptance; missing or exceeded limits fail closed"
+  },
+  "challenge_class_axis": [
+    {
+      "challenge_class": "C0",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "quiet reference",
+      "operational_role": "calibration condition with no intended boundary stress",
+      "source_analogs": [
+        "N03 configured basin surfaces",
+        "N04 fixed-substrate baselines"
+      ]
+    },
+    {
+      "challenge_class": "C1",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "unstructured perturbation",
+      "operational_role": "random or noisy disturbance around or across the boundary",
+      "source_analogs": [
+        "N07 support weakening",
+        "N09 perturbation recovery",
+        "N15 bounded drift"
+      ]
+    },
+    {
+      "challenge_class": "C2",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "directional flux",
+      "operational_role": "one-sided pressure, drift, or flow across the boundary",
+      "source_analogs": [
+        "N04 boundary-coupled pulse",
+        "N14 route-conditioned consequence context"
+      ]
+    },
+    {
+      "challenge_class": "C3",
+      "claim_boundary": "false_positive_pressure_not_perturbation_unless_crossing_or_disruption_recorded",
+      "external_state_role": "structured_external_state",
+      "name": "structured external coherence",
+      "operational_role": "active null for coherent outside pattern that must not be mistaken for self-boundary",
+      "perturbation_by_default": false,
+      "source_analogs": [
+        "N14/N15 fail-closed relabel controls"
+      ]
+    },
+    {
+      "challenge_class": "C4",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "breach and repair",
+      "operational_role": "local boundary disruption followed by reclosure, reabsorption, or fail-closed classification",
+      "source_analogs": [
+        "N07 restoration baseline",
+        "N09 perturbation recovery",
+        "N13 stress restoration"
+      ]
+    },
+    {
+      "challenge_class": "C5",
+      "claim_boundary": "new_n16_shared_medium_evidence_required",
+      "name": "coupled neighbor / shared medium",
+      "operational_role": "more than one candidate basin interacting through a shared substrate",
+      "source_analogs": [
+        "N07 dual-basin exchange",
+        "N08 route alternatives",
+        "N14 route alternatives"
+      ]
+    }
+  ],
+  "checks": {
+    "ap6_gate_contains_b3_unlock": true,
+    "ap6_gate_contains_b4_c5_shared_medium": true,
+    "ap6_gate_contains_hidden_external_injection_control": true,
+    "ap6_gate_contains_structured_external_rejection": true,
+    "audit_invariants_cover_user_list": true,
+    "audit_invariants_recorded": true,
+    "b3_unlock_rule_frozen": true,
+    "b4_shared_medium_target_frozen": true,
+    "boundary_state_axis_values_frozen": true,
+    "budget_units_and_limits_frozen": true,
+    "c3_structured_external_not_perturbation_by_default": true,
+    "challenge_class_axis_values_frozen": true,
+    "claim_flags_forced_false": true,
+    "config_file_contracts_content_valid": true,
+    "config_file_contracts_materialized": true,
+    "control_requirements_count_matches_expected": true,
+    "dependency_trace_format_frozen": true,
+    "direct_historic_ap6_absent": true,
+    "external_state_role_values_frozen": true,
+    "inventory_acceptance_state_valid": true,
+    "inventory_source_passed": true,
+    "native_support_not_opened": true,
+    "no_absolute_paths_recorded": true,
+    "no_final_ap6_assigned": true,
+    "phase8_opened_false": true,
+    "replay_digest_policy_frozen": true,
+    "row_decision_boundary_claim_rules_frozen": true,
+    "row_decision_values_frozen": true,
+    "row_schema_covers_inventory_rows": true,
+    "row_schema_has_common_matrix_fields": true,
+    "schema_validator_script_present": true,
+    "source_registry_row_count_matches_inventory": true,
+    "source_registry_row_ids_match_inventory": true,
+    "src_diff_empty": true,
+    "synthesis_mode_fields_frozen": true,
+    "top_level_runtime_output_shape_frozen": true,
+    "top_level_schema_freeze_shape_matches_output": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "artifact_level_ap6_supported": false,
+    "biological_behavior_claim_allowed": false,
+    "final_ap6_supported": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "phase8_opened": false,
+    "resource_assimilation_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selective_uptake_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/build_n16_boundary_schema_v1.py",
+  "config_file_contracts": {
+    "configs/n16_boundary_policy_v1.json": {
+      "content_valid": true,
+      "materialized": true,
+      "missing_required_keys": [],
+      "path": "configs/n16_boundary_policy_v1.json",
+      "required_content": [
+        "BOUNDARY_POLICY",
+        "ROW_DECISION_POLICY",
+        "AUDIT_INVARIANTS",
+        "axis values"
+      ],
+      "sha256": "e1f4e35441801224f0d2fbea39c26cb2228eeb2c4c2b284909cf276b0d4c06d8",
+      "status": "materialized_in_iteration2"
+    },
+    "configs/n16_budget_limits_v1.json": {
+      "content_valid": true,
+      "materialized": true,
+      "missing_required_keys": [],
+      "path": "configs/n16_budget_limits_v1.json",
+      "required_content": [
+        "BUDGET_LIMITS"
+      ],
+      "sha256": "47319a6391156d3ea2123ce0629dc00d7362c011d37cfa2b6953e1f818656bc5",
+      "status": "materialized_in_iteration2"
+    },
+    "configs/n16_control_variants_v1.json": {
+      "content_valid": true,
+      "materialized": true,
+      "missing_required_keys": [],
+      "path": "configs/n16_control_variants_v1.json",
+      "required_content": [
+        "CONTROL_REQUIREMENTS",
+        "claim flags",
+        "fail-closed labels"
+      ],
+      "sha256": "8dac9bce347f840e3522d0a19449b2e6714c2ff23e864c835fe9083e4a04ac7e",
+      "status": "materialized_in_iteration2"
+    },
+    "configs/n16_replay_policy_v1.json": {
+      "content_valid": true,
+      "materialized": true,
+      "missing_required_keys": [],
+      "path": "configs/n16_replay_policy_v1.json",
+      "required_content": [
+        "REPLAY_DIGEST_POLICY",
+        "DEPENDENCY_TRACE_FORMAT"
+      ],
+      "sha256": "d2486aec713045128550b42d7a0b8ac8dba8a278873a96833caecab90b09bae1",
+      "status": "materialized_in_iteration2"
+    },
+    "configs/n16_source_registry.json": {
+      "content_valid": true,
+      "materialized": true,
+      "missing_required_keys": [],
+      "path": "configs/n16_source_registry.json",
+      "required_content": [
+        "portable source paths",
+        "expected sha256 values"
+      ],
+      "sha256": "16277a9681f90a6a0393616160602573dd8e2441faf6fd7cdfb49480de95d538",
+      "status": "materialized_in_iteration2"
+    }
+  },
+  "control_requirements": [
+    {
+      "control_id": "externally_supplied_boundary_control",
+      "expected_blocker": "externally_supplied_boundary_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "post_hoc_boundary_label_control",
+      "expected_blocker": "post_hoc_boundary_label_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "hidden_external_state_injection_control",
+      "expected_blocker": "hidden_external_state_injection_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "resource_relabel_as_self_control",
+      "expected_blocker": "resource_relabel_as_self_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "self_support_relabel_as_external_control",
+      "expected_blocker": "self_support_relabel_as_external_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "untracked_boundary_crossing_control",
+      "expected_blocker": "untracked_boundary_crossing_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "structured_external_coherence_rejection_control",
+      "expected_blocker": "structured_external_coherence_false_boundary_blocked",
+      "expected_status": "blocked_or_rejected"
+    },
+    {
+      "control_id": "multi_basin_merge_control",
+      "expected_blocker": "multi_basin_merge_or_leakage_recorded",
+      "expected_status": "blocked_or_recorded_failure"
+    },
+    {
+      "control_id": "identity_acceptance_relabel_control",
+      "expected_blocker": "identity_acceptance_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "selfhood_personhood_relabel_control",
+      "expected_blocker": "selfhood_personhood_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "semantic_goal_ownership_relabel_control",
+      "expected_blocker": "semantic_goal_ownership_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "native_support_relabel_control",
+      "expected_blocker": "native_support_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "stale_internal_state_control",
+      "expected_blocker": "stale_internal_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "stale_external_state_control",
+      "expected_blocker": "stale_external_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "missing_boundary_side_state_control",
+      "expected_blocker": "missing_boundary_side_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "boundary_drift_outside_policy_control",
+      "expected_blocker": "boundary_drift_outside_policy_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "artifact_only_replay_control",
+      "expected_blocker": "artifact_replay_instability_blocks_ap6",
+      "expected_status": "stable"
+    },
+    {
+      "control_id": "snapshot_load_replay_control",
+      "expected_blocker": "snapshot_load_instability_blocks_ap6",
+      "expected_status": "stable"
+    },
+    {
+      "control_id": "order_inversion_replay_control",
+      "expected_blocker": "order_inversion_instability_blocks_ap6",
+      "expected_status": "stable"
+    }
+  ],
+  "controls": {
+    "artifact_only_replay_control": "required_before_ap6",
+    "boundary_drift_outside_policy_control": "required_before_ap6",
+    "externally_supplied_boundary_control": "required_before_ap6",
+    "hidden_external_state_injection_control": "required_before_ap6",
+    "identity_acceptance_relabel_control": "required_before_ap6",
+    "missing_boundary_side_state_control": "required_before_ap6",
+    "multi_basin_merge_control": "required_before_ap6",
+    "native_support_relabel_control": "required_before_ap6",
+    "order_inversion_replay_control": "required_before_ap6",
+    "post_hoc_boundary_label_control": "required_before_ap6",
+    "resource_relabel_as_self_control": "required_before_ap6",
+    "self_support_relabel_as_external_control": "required_before_ap6",
+    "selfhood_personhood_relabel_control": "required_before_ap6",
+    "semantic_goal_ownership_relabel_control": "required_before_ap6",
+    "snapshot_load_replay_control": "required_before_ap6",
+    "stale_external_state_control": "required_before_ap6",
+    "stale_internal_state_control": "required_before_ap6",
+    "structured_external_coherence_rejection_control": "required_before_ap6",
+    "untracked_boundary_crossing_control": "required_before_ap6"
+  },
+  "deferred_iterations": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7_partial",
+    "7_full",
+    "8",
+    "9"
+  ],
+  "dependency_trace_format": {
+    "completeness_rule": "every emitted boundary descriptor, side assignment, crossing trace, metric, decision, and requirement requires at least one source row or case transform with a preserved claim ceiling",
+    "container": "list",
+    "format_id": "n16_dependency_trace_v1",
+    "required_fields": [
+      "row_field",
+      "source_row_id",
+      "source_artifact",
+      "source_sha256",
+      "source_field",
+      "transform_id",
+      "transform_parameters",
+      "claim_ceiling_of_source",
+      "boundary_side"
+    ]
+  },
+  "errors": [],
+  "experiment": "N16",
+  "external_state_role_policy": {
+    "c3_default_role": "structured_external_state",
+    "c3_perturbation_rule": "C3 becomes perturbation only when crossing or disruption is explicitly recorded in boundary_crossing_trace or failure_mode",
+    "values": [
+      "background",
+      "resource",
+      "perturbation",
+      "structured_external_state",
+      "shared_medium",
+      "coupling_channel",
+      "mixed",
+      "not_applicable"
+    ]
+  },
+  "fail_closed_error_labels": [
+    "source_artifact_missing",
+    "sha256_mismatch",
+    "stale_internal_state",
+    "stale_external_state",
+    "missing_boundary_side_state",
+    "missing_boundary_crossing_trace",
+    "trace_incomplete",
+    "budget_exceeded",
+    "boundary_drift_outside_policy",
+    "control_unexpectedly_passed",
+    "unsafe_claim_flag_true",
+    "absolute_path_recorded",
+    "invalid_external_state_role",
+    "invalid_row_decision",
+    "boundary_claim_allowed_rule_violation",
+    "b3_unlock_missing",
+    "b4_shared_medium_evidence_missing"
+  ],
+  "final_ap6_closeout_allowed": false,
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "git": {
+    "head": "2d1b82439cc52511f6c9409047f828fb03cff833",
+    "src_status_short": ""
+  },
+  "hypothesis_decision_rubric": {
+    "blocked": "required source, unlock, budget, or replay condition prevents interpretation",
+    "not_applicable": "cell is intentionally outside the supported source or unlock scope",
+    "partial": "source coverage or row evidence exists but one or more gates remain open",
+    "rejected": "a required gate fails or a negative control passes without a valid blocker",
+    "supported": "all required gates validated and associated controls/replays pass"
+  },
+  "included_iterations": [
+    "1",
+    "2"
+  ],
+  "iteration": 2,
+  "iteration_result": {
+    "acceptance_state": "accepted_boundary_schema_freeze_no_row_validation",
+    "agency_claim_opened": false,
+    "artifact_level_ap6_supported": false,
+    "final_ap6_supported": false,
+    "matrix_rows_generated": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "row_validation_started": false,
+    "schema_freeze_passed": true,
+    "selfhood_claim_opened": false,
+    "semantic_goal_ownership_opened": false
+  },
+  "native_requirements_synthesis_contract": {
+    "claim_boundary": "requirements synthesis may report satisfied and failed artifact boundary requirements, but final AP6 requires controls and claim classification in later iterations",
+    "partial_mvp_defaults": {
+      "deferred_iterations": [
+        "5",
+        "6",
+        "7_full",
+        "8",
+        "9"
+      ],
+      "final_ap6_closeout_allowed": false,
+      "included_iterations": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "7_partial"
+      ],
+      "synthesis_mode": "partial_mvp"
+    },
+    "required_synthesis_fields": [
+      "native_boundary_requirements_observed",
+      "minimum_coherence_margin",
+      "minimum_internal_support",
+      "maximum_leakage_ratio",
+      "repair_reabsorption_requirement",
+      "flux_balance_requirement",
+      "structured_external_coherence_rejection_requirement",
+      "inter_basin_separation_requirement"
+    ],
+    "synthesis_mode_values": [
+      "partial_mvp",
+      "full"
+    ],
+    "top_level_fields": [
+      "synthesis_mode",
+      "included_iterations",
+      "deferred_iterations",
+      "final_ap6_closeout_allowed"
+    ]
+  },
+  "old_best_claims_composition": {
+    "operator_id": "n16_trace_preserving_old_best_claims_composition_v1",
+    "rules": [
+      "source rows are consumed only at closed claim ceilings",
+      "AP5 proxy formation is not AP6 boundary separability",
+      "AP6 rows must add internal/external side assignment and crossing trace",
+      "N12 readiness cannot contribute native support",
+      "constructed N14 followout remains constructed followout",
+      "result remains AP6_candidate until matrix rows, controls, replay, and claim classification pass"
+    ],
+    "source_axes": {
+      "N08": "route memory / shared-medium analog context",
+      "N09": "bounded perturbation/recovery context",
+      "N12_NAT4": "readiness-only context with zero native-support promotion",
+      "N13_AP3": "internal support-seeking regulation context",
+      "N14_AP4": "route/resource and consequence-sensitive selection context",
+      "N15_AP5": "endogenous target/proxy formation substrate"
+    }
+  },
+  "output_digest": "10f603a58f816f588c2a3f60a2f0b54df0386a8ce86324aace18dfd40a6950d8",
+  "purpose": "boundary_schema_and_ap6_gate",
+  "replay_digest_policy": {
+    "algorithm": "sha256",
+    "encoding": "canonical_json_sorted_keys_ascii",
+    "exclude": [
+      "generated_at",
+      "local_filesystem_paths",
+      "git_working_tree_metadata",
+      "wall_clock_timestamps"
+    ],
+    "include": [
+      "source_artifact_digests",
+      "selected_source_rows",
+      "boundary_policy",
+      "old_best_claim_inputs",
+      "runtime_state_vector",
+      "internal_state_descriptor",
+      "external_resource_descriptor",
+      "external_perturbation_descriptor",
+      "external_structured_state_descriptor",
+      "external_state_role",
+      "boundary_side_assignments",
+      "boundary_crossing_trace",
+      "case_id",
+      "cell_id",
+      "boundary_state",
+      "challenge_class",
+      "basin_count",
+      "boundary_edges",
+      "internal_coherence",
+      "external_coherence",
+      "coherence_margin",
+      "inbound_flux",
+      "outbound_flux",
+      "retained_flux",
+      "leakage_ratio",
+      "boundary_stability_score",
+      "repair_score",
+      "noise_resilience_score",
+      "flux_tolerance_score",
+      "basin_separation_score",
+      "row_decision",
+      "budget_cost_surface",
+      "dependency_trace",
+      "claim_flags"
+    ],
+    "policy_id": "n16_replay_digest_policy_v1"
+  },
+  "row_decision_policy": {
+    "boundary_claim_allowed_rules": {
+      "blocked": "forces boundary_claim_allowed = false",
+      "not_applicable": "forces boundary_claim_allowed = false",
+      "partial": "keeps final AP6 provisional unless later synthesis closes missing gates",
+      "rejected": "forces boundary_claim_allowed = false",
+      "supported": "does not automatically imply boundary_claim_allowed = true; all AP6 gates, controls, budget, replay, and claim-boundary checks must also pass"
+    },
+    "final_ap6_rule": "final AP6 closeout is impossible in Iteration 2",
+    "values": [
+      "supported",
+      "blocked",
+      "partial",
+      "rejected",
+      "not_applicable"
+    ]
+  },
+  "row_schema_fields": [
+    "row_id",
+    "cell_id",
+    "boundary_state",
+    "case_id",
+    "challenge_class",
+    "basin_count",
+    "row_decision",
+    "boundary_state_lineage_sources",
+    "boundary_state_inherited_closed_claims",
+    "boundary_state_constructed_support",
+    "boundary_state_unsupported_extension",
+    "required_n16_boundary_evidence",
+    "source_experiment",
+    "source_iteration",
+    "source_artifact",
+    "source_report",
+    "source_sha256",
+    "source_report_sha256",
+    "source_status",
+    "mechanism_name",
+    "mechanism_role",
+    "source_role_classification",
+    "role_classification_audit",
+    "evidence_strategy",
+    "evidence_strategy_class",
+    "old_best_claim_inputs",
+    "direct_historic_ap6_support_status",
+    "direct_historic_support_status",
+    "ap5_contribution_status",
+    "boundary_state_relevance",
+    "challenge_class_relevance",
+    "arc_method_mapping",
+    "runtime_state_surface_id",
+    "state_source_window",
+    "source_current",
+    "internal_state_descriptor",
+    "external_resource_descriptor",
+    "external_perturbation_descriptor",
+    "external_structured_state_descriptor",
+    "external_state_role",
+    "basin_descriptor",
+    "boundary_policy",
+    "case_policy",
+    "boundary_condition_evaluated_at",
+    "boundary_surface",
+    "boundary_side_assignments",
+    "self_region_nodes",
+    "external_region_nodes",
+    "boundary_edges",
+    "boundary_crossing_trace",
+    "dependency_trace",
+    "internal_coherence",
+    "external_coherence",
+    "coherence_margin",
+    "inbound_flux",
+    "outbound_flux",
+    "retained_flux",
+    "leakage_ratio",
+    "boundary_stability_score",
+    "repair_score",
+    "noise_resilience_score",
+    "flux_tolerance_score",
+    "basin_separation_score",
+    "native_boundary_requirements_observed",
+    "requirements_satisfied",
+    "requirements_failed",
+    "budget_cost_surface",
+    "budget_units",
+    "budget_validity",
+    "replay_digest_inputs",
+    "replay_digest_algorithm",
+    "idempotency_digest_plan",
+    "artifact_only_replay_status",
+    "snapshot_load_status",
+    "order_inversion_replay_status",
+    "boundary_claim_allowed",
+    "boundary_classification",
+    "failure_mode",
+    "externally_supplied_boundary_control",
+    "post_hoc_boundary_label_control",
+    "hidden_external_state_injection_control",
+    "resource_relabel_as_self_control",
+    "self_support_relabel_as_external_control",
+    "untracked_boundary_crossing_control",
+    "structured_external_coherence_rejection_control",
+    "multi_basin_merge_control",
+    "identity_acceptance_relabel_control",
+    "selfhood_personhood_relabel_control",
+    "semantic_goal_ownership_relabel_control",
+    "native_support_relabel_control",
+    "provisional_ap_level",
+    "provisional_claim_ceiling",
+    "claim_ceiling",
+    "claim_ceiling_preserved",
+    "claim_promotion_allowed",
+    "blocked_claims",
+    "missing_gates",
+    "ap6_required_evidence_still_missing",
+    "final_ap6_supported"
+  ],
+  "rows": [],
+  "schema_summary": {
+    "ap6_required_gate_count": 39,
+    "audit_invariant_count": 12,
+    "boundary_state_count": 5,
+    "challenge_class_count": 6,
+    "control_requirement_count": 19,
+    "fail_closed_error_label_count": 17,
+    "final_ap6_rows": 0,
+    "materialized_config_file_count": 5,
+    "row_schema_field_count": 99
+  },
+  "schema_validation_contract": {
+    "required_checks": [
+      "required_fields_present",
+      "enum_values_valid",
+      "c3_external_state_role",
+      "b3_unlock_rule",
+      "b4_provisional_rule",
+      "row_decision_boundary_claim_relation",
+      "claim_ceiling_preservation",
+      "boundary_crossing_trace_presence",
+      "budget_validity",
+      "dependency_trace_format",
+      "claim_flags_forced_false",
+      "control_outcomes_present",
+      "source_digest_presence",
+      "digest_reproducibility",
+      "absolute_path_absence"
+    ],
+    "validator_kind": "project_local_python_validator",
+    "validator_script": "experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/validate_n16_row.py"
+  },
+  "schema_version": "n16_boundary_schema_v1",
+  "selected_interaction_cells": [
+    {
+      "boundary_state": "B0",
+      "cell_id": "B0_C3",
+      "challenge_class": "C3",
+      "purpose": "structured external coherence active null; must reject false boundary"
+    },
+    {
+      "boundary_state": "B1",
+      "cell_id": "B1_C2",
+      "challenge_class": "C2",
+      "purpose": "weak detectable boundary under directional flux"
+    },
+    {
+      "boundary_state": "B2",
+      "cell_id": "B2_C1",
+      "challenge_class": "C1",
+      "purpose": "persistent boundary under unstructured perturbation"
+    },
+    {
+      "boundary_state": "B3",
+      "cell_id": "B3_C4",
+      "challenge_class": "C4",
+      "purpose": "breach and repair / reclosure probe after B2 unlock"
+    },
+    {
+      "boundary_state": "B4",
+      "cell_id": "B4_C5",
+      "challenge_class": "C5",
+      "purpose": "multi-basin exclusivity in shared medium"
+    }
+  ],
+  "source_artifacts": {
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json": {
+      "output_digest": "5c8972426df7b4d1b28e6de4f1fd19d093e3ac6f3b70f40f790207175ebc3b65",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json",
+      "sha256": "ccb038bbe82b9ed6b8ff491e477a6dfdf9eec9467372961ee3784206ad4d0ed1",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md",
+      "sha256": "da507d17f38eae5321d20fd467909bf5a37c5093a1d85806c37b0a44a632a020"
+    }
+  },
+  "status": "passed",
+  "synthesis_mode": "partial_mvp",
+  "target_ap_ceiling": "AP6",
+  "top_level_output_fields": [
+    "experiment",
+    "iteration",
+    "artifact_id",
+    "purpose",
+    "schema_version",
+    "generated_at",
+    "command",
+    "status",
+    "acceptance_state",
+    "synthesis_mode",
+    "included_iterations",
+    "deferred_iterations",
+    "final_ap6_closeout_allowed",
+    "source_artifacts",
+    "source_reports",
+    "rows",
+    "controls",
+    "checks",
+    "claim_flags",
+    "errors",
+    "output_digest"
+  ],
+  "top_level_schema_freeze_fields": [
+    "experiment",
+    "iteration",
+    "artifact_id",
+    "purpose",
+    "schema_version",
+    "generated_at",
+    "command",
+    "status",
+    "acceptance_state",
+    "target_ap_ceiling",
+    "synthesis_mode",
+    "included_iterations",
+    "deferred_iterations",
+    "final_ap6_closeout_allowed",
+    "iteration_result",
+    "schema_summary",
+    "ap_ladder",
+    "row_schema_fields",
+    "top_level_output_fields",
+    "top_level_schema_freeze_fields",
+    "ap6_required_gates",
+    "boundary_state_axis",
+    "challenge_class_axis",
+    "selected_interaction_cells",
+    "row_decision_policy",
+    "external_state_role_policy",
+    "boundary_policy",
+    "audit_invariants",
+    "old_best_claims_composition",
+    "budget_limits",
+    "dependency_trace_format",
+    "replay_digest_policy",
+    "native_requirements_synthesis_contract",
+    "hypothesis_decision_rubric",
+    "control_requirements",
+    "config_file_contracts",
+    "schema_validation_contract",
+    "fail_closed_error_labels",
+    "rows",
+    "controls",
+    "claim_flags",
+    "checks",
+    "source_artifacts",
+    "source_reports",
+    "errors",
+    "git",
+    "output_digest"
+  ]
+}

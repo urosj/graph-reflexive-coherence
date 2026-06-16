@@ -1,0 +1,73 @@
+{
+  "config_id": "n16_replay_policy_v1",
+  "dependency_trace_format": {
+    "completeness_rule": "every emitted boundary descriptor, side assignment, crossing trace, metric, decision, and requirement requires at least one source row or case transform with a preserved claim ceiling",
+    "container": "list",
+    "format_id": "n16_dependency_trace_v1",
+    "required_fields": [
+      "row_field",
+      "source_row_id",
+      "source_artifact",
+      "source_sha256",
+      "source_field",
+      "transform_id",
+      "transform_parameters",
+      "claim_ceiling_of_source",
+      "boundary_side"
+    ]
+  },
+  "experiment": "N16",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "idempotency_digest_plan": {
+    "algorithm": "sha256",
+    "encoding": "canonical_json_sorted_keys_ascii",
+    "same_inputs_same_digest_required": true
+  },
+  "replay_digest_policy": {
+    "algorithm": "sha256",
+    "encoding": "canonical_json_sorted_keys_ascii",
+    "exclude": [
+      "generated_at",
+      "local_filesystem_paths",
+      "git_working_tree_metadata",
+      "wall_clock_timestamps"
+    ],
+    "include": [
+      "source_artifact_digests",
+      "selected_source_rows",
+      "boundary_policy",
+      "old_best_claim_inputs",
+      "runtime_state_vector",
+      "internal_state_descriptor",
+      "external_resource_descriptor",
+      "external_perturbation_descriptor",
+      "external_structured_state_descriptor",
+      "external_state_role",
+      "boundary_side_assignments",
+      "boundary_crossing_trace",
+      "case_id",
+      "cell_id",
+      "boundary_state",
+      "challenge_class",
+      "basin_count",
+      "boundary_edges",
+      "internal_coherence",
+      "external_coherence",
+      "coherence_margin",
+      "inbound_flux",
+      "outbound_flux",
+      "retained_flux",
+      "leakage_ratio",
+      "boundary_stability_score",
+      "repair_score",
+      "noise_resilience_score",
+      "flux_tolerance_score",
+      "basin_separation_score",
+      "row_decision",
+      "budget_cost_surface",
+      "dependency_trace",
+      "claim_flags"
+    ],
+    "policy_id": "n16_replay_digest_policy_v1"
+  }
+}

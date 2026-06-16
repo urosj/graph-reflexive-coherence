@@ -2,10 +2,14 @@
 
 Reconstruction scripts for N16 belong here.
 
-Planned scripts:
+Generated scripts:
 
 - `build_n16_boundary_source_inventory.py`
 - `build_n16_boundary_schema_v1.py`
+- `validate_n16_row.py`
+
+Planned scripts:
+
 - `build_n16_quiet_boundary_calibration.py`
 - `build_n16_challenge_sweep_matrix.py`
 - `build_n16_boundary_state_sweep_matrix.py`
@@ -13,10 +17,6 @@ Planned scripts:
 - `build_n16_basin_boundary_requirements_matrix.py`
 - `build_n16_claim_boundary_record.py`
 - `build_n16_closeout_and_handoff.py`
-- `validate_n16_row.py`
-
-Generated scripts:
-None.
 
 Use `.venv/bin/python` for local runs.
 

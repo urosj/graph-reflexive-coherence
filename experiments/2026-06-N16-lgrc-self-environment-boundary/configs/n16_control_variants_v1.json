@@ -1,0 +1,162 @@
+{
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "artifact_level_ap6_supported": false,
+    "biological_behavior_claim_allowed": false,
+    "final_ap6_supported": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "phase8_opened": false,
+    "resource_assimilation_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selective_uptake_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "config_id": "n16_control_variants_v1",
+  "control_requirements": [
+    {
+      "control_id": "externally_supplied_boundary_control",
+      "expected_blocker": "externally_supplied_boundary_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "post_hoc_boundary_label_control",
+      "expected_blocker": "post_hoc_boundary_label_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "hidden_external_state_injection_control",
+      "expected_blocker": "hidden_external_state_injection_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "resource_relabel_as_self_control",
+      "expected_blocker": "resource_relabel_as_self_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "self_support_relabel_as_external_control",
+      "expected_blocker": "self_support_relabel_as_external_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "untracked_boundary_crossing_control",
+      "expected_blocker": "untracked_boundary_crossing_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "structured_external_coherence_rejection_control",
+      "expected_blocker": "structured_external_coherence_false_boundary_blocked",
+      "expected_status": "blocked_or_rejected"
+    },
+    {
+      "control_id": "multi_basin_merge_control",
+      "expected_blocker": "multi_basin_merge_or_leakage_recorded",
+      "expected_status": "blocked_or_recorded_failure"
+    },
+    {
+      "control_id": "identity_acceptance_relabel_control",
+      "expected_blocker": "identity_acceptance_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "selfhood_personhood_relabel_control",
+      "expected_blocker": "selfhood_personhood_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "semantic_goal_ownership_relabel_control",
+      "expected_blocker": "semantic_goal_ownership_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "native_support_relabel_control",
+      "expected_blocker": "native_support_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "stale_internal_state_control",
+      "expected_blocker": "stale_internal_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "stale_external_state_control",
+      "expected_blocker": "stale_external_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "missing_boundary_side_state_control",
+      "expected_blocker": "missing_boundary_side_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "boundary_drift_outside_policy_control",
+      "expected_blocker": "boundary_drift_outside_policy_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "artifact_only_replay_control",
+      "expected_blocker": "artifact_replay_instability_blocks_ap6",
+      "expected_status": "stable"
+    },
+    {
+      "control_id": "snapshot_load_replay_control",
+      "expected_blocker": "snapshot_load_instability_blocks_ap6",
+      "expected_status": "stable"
+    },
+    {
+      "control_id": "order_inversion_replay_control",
+      "expected_blocker": "order_inversion_instability_blocks_ap6",
+      "expected_status": "stable"
+    }
+  ],
+  "experiment": "N16",
+  "fail_closed_error_labels": [
+    "source_artifact_missing",
+    "sha256_mismatch",
+    "stale_internal_state",
+    "stale_external_state",
+    "missing_boundary_side_state",
+    "missing_boundary_crossing_trace",
+    "trace_incomplete",
+    "budget_exceeded",
+    "boundary_drift_outside_policy",
+    "control_unexpectedly_passed",
+    "unsafe_claim_flag_true",
+    "absolute_path_recorded",
+    "invalid_external_state_role",
+    "invalid_row_decision",
+    "boundary_claim_allowed_rule_violation",
+    "b3_unlock_missing",
+    "b4_shared_medium_evidence_missing"
+  ],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "required_controls": {
+    "artifact_only_replay_control": "required_before_ap6",
+    "boundary_drift_outside_policy_control": "required_before_ap6",
+    "externally_supplied_boundary_control": "required_before_ap6",
+    "hidden_external_state_injection_control": "required_before_ap6",
+    "identity_acceptance_relabel_control": "required_before_ap6",
+    "missing_boundary_side_state_control": "required_before_ap6",
+    "multi_basin_merge_control": "required_before_ap6",
+    "native_support_relabel_control": "required_before_ap6",
+    "order_inversion_replay_control": "required_before_ap6",
+    "post_hoc_boundary_label_control": "required_before_ap6",
+    "resource_relabel_as_self_control": "required_before_ap6",
+    "self_support_relabel_as_external_control": "required_before_ap6",
+    "selfhood_personhood_relabel_control": "required_before_ap6",
+    "semantic_goal_ownership_relabel_control": "required_before_ap6",
+    "snapshot_load_replay_control": "required_before_ap6",
+    "stale_external_state_control": "required_before_ap6",
+    "stale_internal_state_control": "required_before_ap6",
+    "structured_external_coherence_rejection_control": "required_before_ap6",
+    "untracked_boundary_crossing_control": "required_before_ap6"
+  }
+}

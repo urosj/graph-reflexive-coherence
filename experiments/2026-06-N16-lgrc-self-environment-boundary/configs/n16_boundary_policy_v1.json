@@ -1,0 +1,562 @@
+{
+  "ap6_required_gates": [
+    "source_inventory_accepted",
+    "source_artifact_report_digest_for_each_row",
+    "direct_historic_ap6_support_status_recorded",
+    "old_best_claims_construction_inputs_recorded",
+    "boundary_state_axis_lineage_frozen",
+    "challenge_class_axis_operational_not_environment_taxonomy",
+    "row_schema_has_internal_support_state_descriptor",
+    "row_schema_has_external_resource_state_descriptor",
+    "row_schema_has_external_perturbation_state_descriptor",
+    "row_schema_has_external_structured_state_descriptor",
+    "external_state_role_enum_frozen",
+    "row_decision_enum_frozen",
+    "row_decision_boundary_claim_relation_frozen",
+    "boundary_side_assignments_present",
+    "boundary_crossing_trace_present",
+    "dependency_trace_present",
+    "budget_validity_present",
+    "replay_digest_scope_frozen",
+    "artifact_only_replay_requirement_present",
+    "snapshot_load_equivalence_requirement_present",
+    "order_inversion_replay_requirement_present",
+    "structured_external_coherence_rejection_control_present",
+    "b0_c3_active_null_rejects_false_boundary",
+    "b2_c0_c1_c2_unlock_required_before_b3_repair",
+    "b4_c5_shared_medium_separability_required",
+    "externally_supplied_boundary_control_fails_closed",
+    "post_hoc_boundary_label_control_fails_closed",
+    "hidden_external_state_injection_control_fails_closed",
+    "resource_relabel_as_self_control_fails_closed",
+    "self_support_relabel_as_external_control_fails_closed",
+    "untracked_boundary_crossing_control_fails_closed",
+    "identity_acceptance_relabel_control_fails_closed",
+    "selfhood_personhood_relabel_control_fails_closed",
+    "semantic_goal_ownership_relabel_control_fails_closed",
+    "native_support_relabel_control_fails_closed",
+    "claim_flags_forced_false",
+    "native_support_not_opened",
+    "phase8_opened_false",
+    "src_diff_empty_true"
+  ],
+  "audit_invariants": [
+    {
+      "audit_id": "n16_i2_audit_01_freeze_rules_before_evidence",
+      "frozen_contracts": [
+        "row_schema_fields",
+        "ap6_required_gates",
+        "boundary_policy",
+        "control_requirements",
+        "replay_digest_policy"
+      ],
+      "reason": "prevents post-hoc AP6 interpretation",
+      "rule": "Freeze rules before evidence.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_02_require_internal_external_separation",
+      "frozen_contracts": [
+        "internal_state_descriptor",
+        "external_resource_descriptor",
+        "external_perturbation_descriptor",
+        "external_structured_state_descriptor",
+        "external_state_role",
+        "boundary_side_assignments",
+        "boundary_crossing_trace"
+      ],
+      "reason": "AP6 is boundary separability, not basin existence",
+      "rule": "Require internal/external separation in every future evidence row.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_03_prevent_prior_claim_promotion",
+      "frozen_contracts": [
+        "old_best_claims_composition",
+        "claim_ceiling",
+        "claim_ceiling_preserved",
+        "claim_promotion_allowed",
+        "blocked_claims"
+      ],
+      "reason": "N16 must add new boundary evidence, not relabel prior claims",
+      "rule": "Prevent AP5/AP4/AP3/NAT4 promotion.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_04_c3_structured_external_default",
+      "frozen_contracts": [
+        "external_state_role_policy",
+        "challenge_class_axis.C3",
+        "structured_external_coherence_rejection_control"
+      ],
+      "reason": "coherent outside structure is a false-positive pressure, not a self",
+      "rule": "Treat C3 as structured external state by default.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_05_b0_active_null",
+      "frozen_contracts": [
+        "boundary_state_axis.B0",
+        "selected_interaction_cells.B0_C3",
+        "b0_c3_active_null_rejects_false_boundary"
+      ],
+      "reason": "external coherence alone must never become boundary support",
+      "rule": "Keep B0 as an active null.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_06_gate_b3_behind_b2",
+      "frozen_contracts": [
+        "boundary_policy.b3_unlock_rule",
+        "b2_c0_c1_c2_unlock_required_before_b3_repair"
+      ],
+      "reason": "repair/reabsorption must not hide an unsupported persistent boundary",
+      "rule": "Gate B3 behind B2 evidence.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_07_keep_b4_provisional",
+      "frozen_contracts": [
+        "boundary_policy.b4_primary_target",
+        "boundary_policy.b4_c2_rule",
+        "b4_c5_shared_medium_separability_required"
+      ],
+      "reason": "multi-basin shared-medium cases are high-risk for overclaiming",
+      "rule": "Keep B4 provisional until N16 produces separability evidence.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_08_row_decisions_independent_from_ap6",
+      "frozen_contracts": [
+        "row_decision_policy",
+        "boundary_claim_allowed",
+        "final_ap6_supported"
+      ],
+      "reason": "a supported null/control is not a supported boundary claim",
+      "rule": "Define row decisions independently from AP6 support.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_09_distinct_fail_closed_blockers",
+      "frozen_contracts": [
+        "control_requirements",
+        "fail_closed_error_labels"
+      ],
+      "reason": "blocked relabels must be auditable, not vague",
+      "rule": "Make controls fail closed with distinct blockers.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_10_replay_digest_admissibility",
+      "frozen_contracts": [
+        "replay_digest_policy",
+        "artifact_only_replay_status",
+        "snapshot_load_status",
+        "order_inversion_replay_status",
+        "idempotency_digest_plan"
+      ],
+      "reason": "artifact-level AP6 requires reproducible source-backed evidence",
+      "rule": "Make replay/digest part of admissibility.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_11_partial_mvp_synthesis",
+      "frozen_contracts": [
+        "synthesis_mode",
+        "included_iterations",
+        "deferred_iterations",
+        "final_ap6_closeout_allowed",
+        "native_requirements_synthesis_contract"
+      ],
+      "reason": "useful early result must not become premature closeout",
+      "rule": "Mark MVP synthesis as partial if Iterations 5-6 are deferred.",
+      "status": "frozen"
+    },
+    {
+      "audit_id": "n16_i2_audit_12_force_unsafe_claim_flags_false",
+      "frozen_contracts": [
+        "claim_flags",
+        "blocked_claims",
+        "claim_boundary"
+      ],
+      "reason": "AP6 boundary candidate is not selfhood, agency, native support, or life",
+      "rule": "Force unsafe claim flags false.",
+      "status": "frozen"
+    }
+  ],
+  "boundary_policy": {
+    "b3_unlock_rule": "B3 repair/reabsorption rows require prior B2 evaluation under C0, C1, and C2, or explicit blockers for those cells",
+    "b4_c2_rule": "B4 x C2 is a flux stress row and remains partial or not_applicable unless multi-basin substrate evidence is source-backed",
+    "b4_primary_target": "B4 x C5 shared-medium multi-basin separability",
+    "boundary_claim_allowed_rule": {
+      "blocked": "forces boundary_claim_allowed = false",
+      "not_applicable": "forces boundary_claim_allowed = false",
+      "partial": "keeps final AP6 provisional unless later synthesis closes missing gates",
+      "rejected": "forces boundary_claim_allowed = false",
+      "supported": "does not automatically imply boundary_claim_allowed = true; all AP6 gates, controls, budget, replay, and claim-boundary checks must also pass"
+    },
+    "boundary_state_values": [
+      "B0",
+      "B1",
+      "B2",
+      "B3",
+      "B4"
+    ],
+    "challenge_class_values": [
+      "C0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "external_state_role_values": [
+      "background",
+      "resource",
+      "perturbation",
+      "structured_external_state",
+      "shared_medium",
+      "coupling_channel",
+      "mixed",
+      "not_applicable"
+    ],
+    "policy_id": "n16_boundary_policy_v1",
+    "row_decision_values": [
+      "supported",
+      "blocked",
+      "partial",
+      "rejected",
+      "not_applicable"
+    ],
+    "structured_external_coherence_rule": "C3 is an active null for coherent outside structure and must reject false self-boundary classification"
+  },
+  "boundary_state_axis": [
+    {
+      "boundary_state": "B0",
+      "claim_ceiling": "active_null_control_no_boundary_claim",
+      "constructed_support": [
+        "use B0 as active null for coherent-looking outside structure"
+      ],
+      "inherited_closed_claims": [
+        "negative-control discipline blocks unsafe relabels",
+        "structured external coherence cannot be promoted without source-backed boundary side assignment"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_04_n15_claim_boundary"
+      ],
+      "name": "null / external coherence only",
+      "required_N16_evidence": [
+        "B0 x C3 must reject structured external coherence as self-boundary"
+      ],
+      "unsupported_extension": [
+        "no positive basin-boundary claim",
+        "no internal support-relevant state claim"
+      ]
+    },
+    {
+      "boundary_state": "B1",
+      "claim_ceiling": "localized_basin_partition_candidate_pending_n16_schema",
+      "constructed_support": [
+        "inside/outside partition and boundary edges can be proposed from pinned surfaces"
+      ],
+      "inherited_closed_claims": [
+        "artifact-visible basin, sink, parent, and edge/flux surfaces exist",
+        "localized boundary coupling can be measured in fixtures"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_10_n03_artifact_surface_inventory",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_13_n04_boundary_coupled_pulse"
+      ],
+      "name": "localized basin partition",
+      "required_N16_evidence": [
+        "quiet B1 row must extract boundary edges without supplied labels",
+        "B1 x C2 must expose failure threshold under flux"
+      ],
+      "unsupported_extension": [
+        "detectable partition is not persistence",
+        "boundary coupling is not AP6 boundary stability"
+      ]
+    },
+    {
+      "boundary_state": "B2",
+      "claim_ceiling": "support_persistent_basin_candidate_pending_n16_matrix",
+      "constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "name": "support-persistent basin",
+      "required_N16_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ]
+    },
+    {
+      "boundary_state": "B3",
+      "claim_ceiling": "regulated_repair_candidate_locked_until_b2_calibration",
+      "constructed_support": [
+        "B3 can test whether a boundary breach is repaired or fail-closed without post-hoc relabeling"
+      ],
+      "inherited_closed_claims": [
+        "bounded regulation and support restoration contexts exist at artifact level",
+        "explicit support withdrawal/restoration baselines are source-backed"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_02_n15_runtime_derived_target_candidate",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_08_n13_support_disruption_restoration",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline",
+        "n16_i1_row_18_n09_goal_proxy_regulation_closeout",
+        "n16_i1_row_19_n09_perturbation_withdrawal_support"
+      ],
+      "name": "regulated repair / reabsorption boundary",
+      "required_N16_evidence": [
+        "B3 remains locked until B2 C0-C2 evaluations are present or explicitly blocked",
+        "B3 x C4 must distinguish reclosure from relabeling"
+      ],
+      "unsupported_extension": [
+        "bounded correction is not native boundary repair",
+        "explicit restoration is not autonomous reabsorption"
+      ]
+    },
+    {
+      "boundary_state": "B4",
+      "claim_ceiling": "multi_basin_separability_candidate_new_n16_evidence_required",
+      "constructed_support": [
+        "B4 can be included as the weakest candidate state for shared-medium separability"
+      ],
+      "inherited_closed_claims": [
+        "route alternatives, constructed consequence followout, and dual-basin exchange analogs exist",
+        "N07 records source-specific dual-basin separability under bounded exchange"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_05_n14_closeout_ap4",
+        "n16_i1_row_06_n14_constructed_followout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_14_n04_taxonomy_continuation_closeout",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_17_n08_memory_trail_closeout"
+      ],
+      "name": "coupled multi-basin separability candidate",
+      "required_N16_evidence": [
+        "B4 x C5 must test shared-medium multi-basin exclusivity",
+        "B4 x C2 must remain partial or not_applicable if shared substrate support is insufficient"
+      ],
+      "unsupported_extension": [
+        "prior route alternatives are not multi-basin boundary exclusivity",
+        "B4 x C2 is only a flux stress row"
+      ]
+    }
+  ],
+  "challenge_class_axis": [
+    {
+      "challenge_class": "C0",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "quiet reference",
+      "operational_role": "calibration condition with no intended boundary stress",
+      "source_analogs": [
+        "N03 configured basin surfaces",
+        "N04 fixed-substrate baselines"
+      ]
+    },
+    {
+      "challenge_class": "C1",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "unstructured perturbation",
+      "operational_role": "random or noisy disturbance around or across the boundary",
+      "source_analogs": [
+        "N07 support weakening",
+        "N09 perturbation recovery",
+        "N15 bounded drift"
+      ]
+    },
+    {
+      "challenge_class": "C2",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "directional flux",
+      "operational_role": "one-sided pressure, drift, or flow across the boundary",
+      "source_analogs": [
+        "N04 boundary-coupled pulse",
+        "N14 route-conditioned consequence context"
+      ]
+    },
+    {
+      "challenge_class": "C3",
+      "claim_boundary": "false_positive_pressure_not_perturbation_unless_crossing_or_disruption_recorded",
+      "external_state_role": "structured_external_state",
+      "name": "structured external coherence",
+      "operational_role": "active null for coherent outside pattern that must not be mistaken for self-boundary",
+      "perturbation_by_default": false,
+      "source_analogs": [
+        "N14/N15 fail-closed relabel controls"
+      ]
+    },
+    {
+      "challenge_class": "C4",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "breach and repair",
+      "operational_role": "local boundary disruption followed by reclosure, reabsorption, or fail-closed classification",
+      "source_analogs": [
+        "N07 restoration baseline",
+        "N09 perturbation recovery",
+        "N13 stress restoration"
+      ]
+    },
+    {
+      "challenge_class": "C5",
+      "claim_boundary": "new_n16_shared_medium_evidence_required",
+      "name": "coupled neighbor / shared medium",
+      "operational_role": "more than one candidate basin interacting through a shared substrate",
+      "source_analogs": [
+        "N07 dual-basin exchange",
+        "N08 route alternatives",
+        "N14 route alternatives"
+      ]
+    }
+  ],
+  "config_id": "n16_boundary_policy_v1",
+  "experiment": "N16",
+  "external_state_role_policy": {
+    "c3_default_role": "structured_external_state",
+    "c3_perturbation_rule": "C3 becomes perturbation only when crossing or disruption is explicitly recorded in boundary_crossing_trace or failure_mode",
+    "values": [
+      "background",
+      "resource",
+      "perturbation",
+      "structured_external_state",
+      "shared_medium",
+      "coupling_channel",
+      "mixed",
+      "not_applicable"
+    ]
+  },
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "native_requirements_synthesis_contract": {
+    "claim_boundary": "requirements synthesis may report satisfied and failed artifact boundary requirements, but final AP6 requires controls and claim classification in later iterations",
+    "partial_mvp_defaults": {
+      "deferred_iterations": [
+        "5",
+        "6",
+        "7_full",
+        "8",
+        "9"
+      ],
+      "final_ap6_closeout_allowed": false,
+      "included_iterations": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "7_partial"
+      ],
+      "synthesis_mode": "partial_mvp"
+    },
+    "required_synthesis_fields": [
+      "native_boundary_requirements_observed",
+      "minimum_coherence_margin",
+      "minimum_internal_support",
+      "maximum_leakage_ratio",
+      "repair_reabsorption_requirement",
+      "flux_balance_requirement",
+      "structured_external_coherence_rejection_requirement",
+      "inter_basin_separation_requirement"
+    ],
+    "synthesis_mode_values": [
+      "partial_mvp",
+      "full"
+    ],
+    "top_level_fields": [
+      "synthesis_mode",
+      "included_iterations",
+      "deferred_iterations",
+      "final_ap6_closeout_allowed"
+    ]
+  },
+  "old_best_claims_composition": {
+    "operator_id": "n16_trace_preserving_old_best_claims_composition_v1",
+    "rules": [
+      "source rows are consumed only at closed claim ceilings",
+      "AP5 proxy formation is not AP6 boundary separability",
+      "AP6 rows must add internal/external side assignment and crossing trace",
+      "N12 readiness cannot contribute native support",
+      "constructed N14 followout remains constructed followout",
+      "result remains AP6_candidate until matrix rows, controls, replay, and claim classification pass"
+    ],
+    "source_axes": {
+      "N08": "route memory / shared-medium analog context",
+      "N09": "bounded perturbation/recovery context",
+      "N12_NAT4": "readiness-only context with zero native-support promotion",
+      "N13_AP3": "internal support-seeking regulation context",
+      "N14_AP4": "route/resource and consequence-sensitive selection context",
+      "N15_AP5": "endogenous target/proxy formation substrate"
+    }
+  },
+  "row_decision_policy": {
+    "boundary_claim_allowed_rules": {
+      "blocked": "forces boundary_claim_allowed = false",
+      "not_applicable": "forces boundary_claim_allowed = false",
+      "partial": "keeps final AP6 provisional unless later synthesis closes missing gates",
+      "rejected": "forces boundary_claim_allowed = false",
+      "supported": "does not automatically imply boundary_claim_allowed = true; all AP6 gates, controls, budget, replay, and claim-boundary checks must also pass"
+    },
+    "final_ap6_rule": "final AP6 closeout is impossible in Iteration 2",
+    "values": [
+      "supported",
+      "blocked",
+      "partial",
+      "rejected",
+      "not_applicable"
+    ]
+  },
+  "selected_interaction_cells": [
+    {
+      "boundary_state": "B0",
+      "cell_id": "B0_C3",
+      "challenge_class": "C3",
+      "purpose": "structured external coherence active null; must reject false boundary"
+    },
+    {
+      "boundary_state": "B1",
+      "cell_id": "B1_C2",
+      "challenge_class": "C2",
+      "purpose": "weak detectable boundary under directional flux"
+    },
+    {
+      "boundary_state": "B2",
+      "cell_id": "B2_C1",
+      "challenge_class": "C1",
+      "purpose": "persistent boundary under unstructured perturbation"
+    },
+    {
+      "boundary_state": "B3",
+      "cell_id": "B3_C4",
+      "challenge_class": "C4",
+      "purpose": "breach and repair / reclosure probe after B2 unlock"
+    },
+    {
+      "boundary_state": "B4",
+      "cell_id": "B4_C5",
+      "challenge_class": "C5",
+      "purpose": "multi-basin exclusivity in shared medium"
+    }
+  ]
+}

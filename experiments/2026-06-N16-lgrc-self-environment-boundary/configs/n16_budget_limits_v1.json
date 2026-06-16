@@ -1,0 +1,29 @@
+{
+  "budget_limits": {
+    "limits": {
+      "canonical_json_input_bytes": 524288,
+      "canonical_json_output_bytes": 524288,
+      "matrix_cell_count": 16,
+      "replay_count": 8,
+      "source_row_count": 32,
+      "transform_count": 64,
+      "validation_count": 128,
+      "wall_clock_seconds": 90
+    },
+    "policy_id": "n16_budget_limits_v1",
+    "units": [
+      "source_row_count",
+      "matrix_cell_count",
+      "transform_count",
+      "canonical_json_input_bytes",
+      "canonical_json_output_bytes",
+      "replay_count",
+      "validation_count",
+      "wall_clock_seconds"
+    ],
+    "validity_rule": "budget is checked before AP6 row acceptance; missing or exceeded limits fail closed"
+  },
+  "config_id": "n16_budget_limits_v1",
+  "experiment": "N16",
+  "generated_at": "2026-06-16T00:00:00+00:00"
+}

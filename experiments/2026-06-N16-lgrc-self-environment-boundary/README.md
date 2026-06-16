@@ -547,8 +547,32 @@ status = initialized
 acceptance_state = scaffold_only_no_ap6
 ```
 
-No source inventory, schema, candidate row, control matrix, replay matrix, or
-challenge-class matrix has been generated yet.
+Iteration 1 - Baseline And Boundary Source Inventory:
+
+```text
+status = passed
+acceptance_state = accepted_boundary_source_inventory_only_no_ap6
+source_inventory = outputs/n16_boundary_source_inventory.json
+source_inventory_report = reports/n16_boundary_source_inventory.md
+```
+
+Iteration 2 - Boundary Schema And AP6 Gate:
+
+```text
+status = passed
+acceptance_state = accepted_boundary_schema_freeze_no_row_validation
+boundary_schema = outputs/n16_boundary_schema_v1.json
+boundary_schema_report = reports/n16_boundary_schema_v1.md
+source_registry = configs/n16_source_registry.json
+boundary_policy = configs/n16_boundary_policy_v1.json
+budget_limits = configs/n16_budget_limits_v1.json
+control_variants = configs/n16_control_variants_v1.json
+replay_policy = configs/n16_replay_policy_v1.json
+audit_invariants = 12 frozen safeguards
+```
+
+No candidate row, control matrix, replay matrix, or challenge-class matrix has
+been generated yet. Final `AP6` remains unassigned.
 
 ## Directory Structure
 

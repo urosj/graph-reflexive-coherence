@@ -1,0 +1,696 @@
+{
+  "boundary_state_axis": [
+    {
+      "boundary_state": "B0",
+      "claim_ceiling": "active_null_control_no_boundary_claim",
+      "constructed_support": [
+        "use B0 as active null for coherent-looking outside structure"
+      ],
+      "inherited_closed_claims": [
+        "negative-control discipline blocks unsafe relabels",
+        "structured external coherence cannot be promoted without source-backed boundary side assignment"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_04_n15_claim_boundary"
+      ],
+      "name": "null / external coherence only",
+      "required_N16_evidence": [
+        "B0 x C3 must reject structured external coherence as self-boundary"
+      ],
+      "unsupported_extension": [
+        "no positive basin-boundary claim",
+        "no internal support-relevant state claim"
+      ]
+    },
+    {
+      "boundary_state": "B1",
+      "claim_ceiling": "localized_basin_partition_candidate_pending_n16_schema",
+      "constructed_support": [
+        "inside/outside partition and boundary edges can be proposed from pinned surfaces"
+      ],
+      "inherited_closed_claims": [
+        "artifact-visible basin, sink, parent, and edge/flux surfaces exist",
+        "localized boundary coupling can be measured in fixtures"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_10_n03_artifact_surface_inventory",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_13_n04_boundary_coupled_pulse"
+      ],
+      "name": "localized basin partition",
+      "required_N16_evidence": [
+        "quiet B1 row must extract boundary edges without supplied labels",
+        "B1 x C2 must expose failure threshold under flux"
+      ],
+      "unsupported_extension": [
+        "detectable partition is not persistence",
+        "boundary coupling is not AP6 boundary stability"
+      ]
+    },
+    {
+      "boundary_state": "B2",
+      "claim_ceiling": "support_persistent_basin_candidate_pending_n16_matrix",
+      "constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "name": "support-persistent basin",
+      "required_N16_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ]
+    },
+    {
+      "boundary_state": "B3",
+      "claim_ceiling": "regulated_repair_candidate_locked_until_b2_calibration",
+      "constructed_support": [
+        "B3 can test whether a boundary breach is repaired or fail-closed without post-hoc relabeling"
+      ],
+      "inherited_closed_claims": [
+        "bounded regulation and support restoration contexts exist at artifact level",
+        "explicit support withdrawal/restoration baselines are source-backed"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_02_n15_runtime_derived_target_candidate",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_08_n13_support_disruption_restoration",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline",
+        "n16_i1_row_18_n09_goal_proxy_regulation_closeout",
+        "n16_i1_row_19_n09_perturbation_withdrawal_support"
+      ],
+      "name": "regulated repair / reabsorption boundary",
+      "required_N16_evidence": [
+        "B3 remains locked until B2 C0-C2 evaluations are present or explicitly blocked",
+        "B3 x C4 must distinguish reclosure from relabeling"
+      ],
+      "unsupported_extension": [
+        "bounded correction is not native boundary repair",
+        "explicit restoration is not autonomous reabsorption"
+      ]
+    },
+    {
+      "boundary_state": "B4",
+      "claim_ceiling": "multi_basin_separability_candidate_new_n16_evidence_required",
+      "constructed_support": [
+        "B4 can be included as the weakest candidate state for shared-medium separability"
+      ],
+      "inherited_closed_claims": [
+        "route alternatives, constructed consequence followout, and dual-basin exchange analogs exist",
+        "N07 records source-specific dual-basin separability under bounded exchange"
+      ],
+      "lineage_sources": [
+        "n16_i1_row_05_n14_closeout_ap4",
+        "n16_i1_row_06_n14_constructed_followout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_14_n04_taxonomy_continuation_closeout",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_17_n08_memory_trail_closeout"
+      ],
+      "name": "coupled multi-basin separability candidate",
+      "required_N16_evidence": [
+        "B4 x C5 must test shared-medium multi-basin exclusivity",
+        "B4 x C2 must remain partial or not_applicable if shared substrate support is insufficient"
+      ],
+      "unsupported_extension": [
+        "prior route alternatives are not multi-basin boundary exclusivity",
+        "B4 x C2 is only a flux stress row"
+      ]
+    }
+  ],
+  "challenge_class_axis": [
+    {
+      "challenge_class": "C0",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "quiet reference",
+      "operational_role": "calibration condition with no intended boundary stress",
+      "source_analogs": [
+        "N03 configured basin surfaces",
+        "N04 fixed-substrate baselines"
+      ]
+    },
+    {
+      "challenge_class": "C1",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "unstructured perturbation",
+      "operational_role": "random or noisy disturbance around or across the boundary",
+      "source_analogs": [
+        "N07 support weakening",
+        "N09 perturbation recovery",
+        "N15 bounded drift"
+      ]
+    },
+    {
+      "challenge_class": "C2",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "directional flux",
+      "operational_role": "one-sided pressure, drift, or flow across the boundary",
+      "source_analogs": [
+        "N04 boundary-coupled pulse",
+        "N14 route-conditioned consequence context"
+      ]
+    },
+    {
+      "challenge_class": "C3",
+      "claim_boundary": "false_positive_pressure_not_perturbation_unless_crossing_or_disruption_recorded",
+      "external_state_role": "structured_external_state",
+      "name": "structured external coherence",
+      "operational_role": "active null for coherent outside pattern that must not be mistaken for self-boundary",
+      "perturbation_by_default": false,
+      "source_analogs": [
+        "N14/N15 fail-closed relabel controls"
+      ]
+    },
+    {
+      "challenge_class": "C4",
+      "claim_boundary": "operational_challenge_class_not_environment_taxonomy",
+      "name": "breach and repair",
+      "operational_role": "local boundary disruption followed by reclosure, reabsorption, or fail-closed classification",
+      "source_analogs": [
+        "N07 restoration baseline",
+        "N09 perturbation recovery",
+        "N13 stress restoration"
+      ]
+    },
+    {
+      "challenge_class": "C5",
+      "claim_boundary": "new_n16_shared_medium_evidence_required",
+      "name": "coupled neighbor / shared medium",
+      "operational_role": "more than one candidate basin interacting through a shared substrate",
+      "source_analogs": [
+        "N07 dual-basin exchange",
+        "N08 route alternatives",
+        "N14 route alternatives"
+      ]
+    }
+  ],
+  "claim_boundary": {
+    "artifact_level_ap6_supported": false,
+    "final_ap6_supported": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "config_id": "n16_source_registry",
+  "experiment": "N16",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "rows": [
+    {
+      "boundary_state_relevance": [
+        "B2",
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "old_best_claims_construction_input",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP5",
+      "provisional_claim_ceiling": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+      "row_id": "n16_i1_row_01_n15_closeout_ap5",
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+      "source_experiment": "N15",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md",
+      "source_report_sha256": "7fd4773de2bb4cce79799caf287f22b13e056b567a44da562d22665d07fda4ee",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+    },
+    {
+      "boundary_state_relevance": [
+        "B2",
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "constructed_ap6_context_from_old_best_claims",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP5_candidate_at_iteration_3_scope",
+      "provisional_claim_ceiling": "provisional_runtime_derived_target_candidate_pending_controls",
+      "row_id": "n16_i1_row_02_n15_runtime_derived_target_candidate",
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+      "source_experiment": "N15",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+      "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+    },
+    {
+      "boundary_state_relevance": [
+        "B2",
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "control_context_for_ap6_replay_requirements",
+      "evidence_strategy_class": "control_context",
+      "provisional_ap_level": "AP5_control_context",
+      "provisional_claim_ceiling": "bounded_drift_replay_context_only",
+      "row_id": "n16_i1_row_03_n15_bounded_drift_replay",
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json",
+      "source_experiment": "N15",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md",
+      "source_report_sha256": "8766f392358f7aa675a591c076e3cec5a97f91af5ed5f382bc306a9809a13728",
+      "source_role_classification": [
+        "internal_support_state",
+        "external_perturbation_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0"
+    },
+    {
+      "boundary_state_relevance": [
+        "B0"
+      ],
+      "challenge_class_relevance": [
+        "C3"
+      ],
+      "direct_historic_support_status": "rejected",
+      "evidence_strategy": "boundary_and_blocked_input_audit",
+      "evidence_strategy_class": "rejected",
+      "provisional_ap_level": "AP0_boundary",
+      "provisional_claim_ceiling": "claim_boundary_context_only",
+      "row_id": "n16_i1_row_04_n15_claim_boundary",
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json",
+      "source_experiment": "N15",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_claim_boundary_record.md",
+      "source_report_sha256": "9a7f9558adeda1449f5b728cf330bea1a4906a99094d9a8fa5c8a310284845fe",
+      "source_role_classification": [
+        "external_structured_state",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87"
+    },
+    {
+      "boundary_state_relevance": [
+        "B4"
+      ],
+      "challenge_class_relevance": [
+        "C2",
+        "C5"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "old_best_claims_construction_input",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP4",
+      "provisional_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate",
+      "row_id": "n16_i1_row_05_n14_closeout_ap4",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "source_experiment": "N14",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+      "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+      "source_role_classification": [
+        "external_resource_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+    },
+    {
+      "boundary_state_relevance": [
+        "B4"
+      ],
+      "challenge_class_relevance": [
+        "C2",
+        "C5"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "constructed_context_with_upstream_observation_caveat",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP4_context",
+      "provisional_claim_ceiling": "constructed_route_conditioned_followout_context_only",
+      "row_id": "n16_i1_row_06_n14_constructed_followout",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+      "source_experiment": "N14",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+      "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+      "source_role_classification": [
+        "external_resource_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+    },
+    {
+      "boundary_state_relevance": [
+        "B2",
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "old_best_claims_construction_input",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP3",
+      "provisional_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "row_id": "n16_i1_row_07_n13_closeout_ap3",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+      "source_experiment": "N13",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+      "source_report_sha256": "e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+    },
+    {
+      "boundary_state_relevance": [
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "repair_context_for_b3_but_not_ap6",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "AP3_stress_context",
+      "provisional_claim_ceiling": "support_disruption_restoration_context_only",
+      "row_id": "n16_i1_row_08_n13_support_disruption_restoration",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+      "source_experiment": "N13",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+      "source_report_sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b",
+      "source_role_classification": [
+        "internal_support_state",
+        "external_perturbation_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363"
+    },
+    {
+      "boundary_state_relevance": [],
+      "challenge_class_relevance": [],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "readiness_only_context",
+      "evidence_strategy_class": "readiness_only",
+      "provisional_ap_level": "AP0_readiness",
+      "provisional_claim_ceiling": "readiness_only_not_native_support",
+      "row_id": "n16_i1_row_09_n12_phase8_readiness",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "source_experiment": "N12",
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "source_report_sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5",
+      "source_role_classification": [
+        "readiness"
+      ],
+      "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14"
+    },
+    {
+      "boundary_state_relevance": [
+        "B1"
+      ],
+      "challenge_class_relevance": [
+        "C0"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "b_axis_lineage_source",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "pre_AP_boundary_lineage",
+      "provisional_claim_ceiling": "artifact_surface_inventory_only",
+      "row_id": "n16_i1_row_10_n03_artifact_surface_inventory",
+      "source_artifact": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/artifact_surface_inventory.json",
+      "source_experiment": "N03",
+      "source_report": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/reports/artifact_surface_inventory.md",
+      "source_report_sha256": "d4a91a89f39ed1b2343d7e51f438752bf8f7d2b28b331cd0830e38094ab91d9e",
+      "source_role_classification": [
+        "boundary_role"
+      ],
+      "source_sha256": "a2d5cc1ba7656287a5fc3a2ae269ef0771200b85202b90799fb023c166226283"
+    },
+    {
+      "boundary_state_relevance": [
+        "B1",
+        "B2"
+      ],
+      "challenge_class_relevance": [
+        "C0",
+        "C2"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "b_axis_lineage_source",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "pre_AP_boundary_lineage",
+      "provisional_claim_ceiling": "native_lgrc9v3_packet_loop_reproduced",
+      "row_id": "n16_i1_row_11_n03_native_packet_loop_closeout",
+      "source_artifact": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/outputs/e3_native_lgrc9v3_packet_loop_closeout.json",
+      "source_experiment": "N03",
+      "source_report": "experiments/2026-05-N03-grc9v3-polarized-basin-loops/reports/e3_native_lgrc9v3_packet_loop_closeout.md",
+      "source_report_sha256": "92c697eb444168ae1182b481ed0fbe10671892b341dc078f57d2f2944aa15c8d",
+      "source_role_classification": [
+        "boundary_role",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "75e02858f32484a8c4e9a24d9751c0ce98e4ef603fd6e550d8a47f7466e2288e"
+    },
+    {
+      "boundary_state_relevance": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C0",
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "b_axis_lineage_source_and_c_axis_analog",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "pre_AP_boundary_lineage",
+      "provisional_claim_ceiling": "taxonomy_inventory_only",
+      "row_id": "n16_i1_row_12_n04_taxonomy_inventory",
+      "source_artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_inventory_v1.json",
+      "source_experiment": "N04",
+      "source_report": "experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_inventory_v1.md",
+      "source_report_sha256": "827336ad46f1d6319dd4a2ec538b9d6e23a19b2d0aa969e5b5a964e85eb5998b",
+      "source_role_classification": [
+        "boundary_role",
+        "external_resource_state"
+      ],
+      "source_sha256": "40dcf56c001f25909c92e3b39e570889e6f52f8b44b425533ba6e31eb942c72a"
+    },
+    {
+      "boundary_state_relevance": [
+        "B1"
+      ],
+      "challenge_class_relevance": [
+        "C2"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "b_axis_lineage_source_and_c2_analog",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "pre_AP_boundary_lineage",
+      "provisional_claim_ceiling": "boundary_coupled_pulse_fixture_validation",
+      "row_id": "n16_i1_row_13_n04_boundary_coupled_pulse",
+      "source_artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/boundary_coupled_pulse_report.json",
+      "source_experiment": "N04",
+      "source_report": "experiments/2026-05-N04-grc9v3-movement-ladders/reports/boundary_coupled_pulse_report.md",
+      "source_report_sha256": "6a1174c6756c3e34d378abe202f05c2bf15cc5a5ef5a36188d32343b6db0aa1a",
+      "source_role_classification": [
+        "external_resource_state",
+        "boundary_crossing_trace",
+        "boundary_role"
+      ],
+      "source_sha256": "c1ff70f62955be6120a59665753073c2f409a7f0e2c15ea879dbec850d6a8abd"
+    },
+    {
+      "boundary_state_relevance": [
+        "B1",
+        "B2"
+      ],
+      "challenge_class_relevance": [
+        "C2",
+        "C5"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "lineage_caveat_and_blocked_identity_boundary",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "pre_AP_boundary_lineage",
+      "provisional_claim_ceiling": "topology_mutating_movement_candidate",
+      "row_id": "n16_i1_row_14_n04_taxonomy_continuation_closeout",
+      "source_artifact": "experiments/2026-05-N04-grc9v3-movement-ladders/outputs/n04_taxonomy_continuation_closeout.json",
+      "source_experiment": "N04",
+      "source_report": "experiments/2026-05-N04-grc9v3-movement-ladders/reports/n04_taxonomy_continuation_closeout.md",
+      "source_report_sha256": "8b48f9b68b2314e40c0a52279101d922adb152d405515c5f70e7ae65956a3841",
+      "source_role_classification": [
+        "boundary_role",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "36a96f188b2d0d32ee7d8840305bec34554b54de68f46c433f96271c2c53d780"
+    },
+    {
+      "boundary_state_relevance": [
+        "B2",
+        "B4"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C5"
+      ],
+      "direct_historic_support_status": "partial",
+      "evidence_strategy": "b_axis_lineage_source",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "ID6_context_not_AP",
+      "provisional_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange",
+      "row_id": "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+      "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+      "source_experiment": "N07",
+      "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+      "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_role"
+      ],
+      "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+    },
+    {
+      "boundary_state_relevance": [
+        "B2",
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C4"
+      ],
+      "direct_historic_support_status": "partial",
+      "evidence_strategy": "b_axis_lineage_source_for_b2_b3",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "ID6_context_not_AP",
+      "provisional_claim_ceiling": "identity_support_withdrawal_baseline_only",
+      "row_id": "n16_i1_row_16_n07_identity_support_withdrawal_baseline",
+      "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_13_identity_support_withdrawal_baseline.json",
+      "source_experiment": "N07",
+      "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_13_identity_support_withdrawal_baseline.md",
+      "source_report_sha256": "b56bfe04e4249eb16500d87b5d1911979153298d99efe3417b9d6c354faac0bc",
+      "source_role_classification": [
+        "internal_support_state",
+        "external_perturbation_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "a33659fe4d755a696f506b543c41be9578c4c4d1fa4076502bcca9aac1fadc5b"
+    },
+    {
+      "boundary_state_relevance": [
+        "B4"
+      ],
+      "challenge_class_relevance": [
+        "C2",
+        "C5"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "old_best_claims_construction_context",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP2_context",
+      "provisional_claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+      "row_id": "n16_i1_row_17_n08_memory_trail_closeout",
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "source_experiment": "N08",
+      "source_report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "source_report_sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+      "source_role_classification": [
+        "external_resource_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e"
+    },
+    {
+      "boundary_state_relevance": [
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "old_best_claims_construction_input",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "provisional_ap_level": "AP2_context",
+      "provisional_claim_ceiling": "repeated_bounded_proxy_regulation_candidate",
+      "row_id": "n16_i1_row_18_n09_goal_proxy_regulation_closeout",
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_experiment": "N09",
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "source_report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+      "source_role_classification": [
+        "internal_support_state",
+        "external_perturbation_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+    },
+    {
+      "boundary_state_relevance": [
+        "B3"
+      ],
+      "challenge_class_relevance": [
+        "C1",
+        "C4"
+      ],
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "repair_context_with_identity_support_caveat",
+      "evidence_strategy_class": "lineage_derivation",
+      "provisional_ap_level": "AP2_context",
+      "provisional_claim_ceiling": "perturbation_recovery_context_only",
+      "row_id": "n16_i1_row_19_n09_perturbation_withdrawal_support",
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+      "source_experiment": "N09",
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_8_perturbation_withdrawal_support.md",
+      "source_report_sha256": "9d72834521f0b4f30bc83747992c41acb3eada9661e0d04d0c5a51302e6a710b",
+      "source_role_classification": [
+        "internal_support_state",
+        "external_perturbation_state",
+        "boundary_crossing_trace"
+      ],
+      "source_sha256": "873114340bf655becf39f47dbbd4758f46204eee05a1fb93a0a7457db3caa472"
+    }
+  ],
+  "source_inventory": {
+    "output_digest": "5c8972426df7b4d1b28e6de4f1fd19d093e3ac6f3b70f40f790207175ebc3b65",
+    "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json",
+    "sha256": "ccb038bbe82b9ed6b8ff491e477a6dfdf9eec9467372961ee3784206ad4d0ed1",
+    "status": "passed"
+  },
+  "source_inventory_report": {
+    "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md",
+    "sha256": "da507d17f38eae5321d20fd467909bf5a37c5093a1d85806c37b0a44a632a020"
+  }
+}
