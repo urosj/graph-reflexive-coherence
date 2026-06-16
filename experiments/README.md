@@ -76,11 +76,28 @@ support-seeking regulation evidence. It does not support agency, intention,
 semantic goal ownership, identity acceptance, selfhood, personhood, biological
 behavior, native support, or fully native agentic-like integration.
 
-N14 is opened as the next planned experiment. Iterations 1-4 have closed
-the source inventory, AP4 schema/gate, route consequence records, and a
-provisional consequence-sensitive selection candidate. Iteration 4 selects
-`route_b` by derived, memory-dominant consequence rank while immediate
-affordance favors rejected `route_a`; final AP4 is not supported yet. The
+N14 is opened as the next planned experiment. Iterations 1-6 plus 6-A, 6-B, and
+6-C have closed the source inventory, AP4 schema/gate, route consequence
+records, and a provisional consequence-sensitive selection candidate, plus
+adversarial controls. Iteration 4 selects `route_b` by derived, memory-dominant
+consequence rank while immediate affordance favors rejected `route_a`;
+Iteration 5 blocks hidden outcomes, post-hoc scores, fabricated
+consequence-rank sources, stale records, invalid budgets, missing records,
+cherry-picking, ambiguous ties, fixture labels, immediate-affordance relabels,
+and unsafe claim relabels; it also checks budget validity and rank-source
+validity before ranking. Iteration 6 passes source-sensitive support, memory,
+and regulation perturbation variants plus duplicate, artifact-only,
+snapshot/load, and order-inverted replay checks; artifact-only and snapshot/load
+cases include filesystem JSON roundtrips. Iteration 6-A supports observed
+route-specific memory consequences while leaving observed route-specific
+support/regulation unsupported as generic source lanes, using N08 MEM3 for the
+required memory-surface key snapshot. Iteration 6-B confirms current N09/N13
+support/regulation evidence is not upstream route-conditioned and blocks
+generic source reuse through executed controls. Iteration 6-C adds a guarded
+positive constructed N14 followout: route IDs are serialized before
+support/regulation scoring, support/regulation components differ by route, and
+split equal-effect null controls block either undifferentiated axis. Final AP4 is not
+supported yet. The
 maximum planned target is artifact-level `AP4` consequence-sensitive route
 selection candidate evidence, not intention, agency, semantic goal ownership,
 identity acceptance, native support, or fully native integration.

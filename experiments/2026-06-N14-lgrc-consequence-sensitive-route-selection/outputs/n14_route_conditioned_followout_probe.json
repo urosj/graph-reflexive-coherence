@@ -1,0 +1,477 @@
+{
+  "acceptance_state": "accepted_constructed_route_conditioned_support_regulation_followout",
+  "checks": {
+    "both_routes_have_followout_rows": true,
+    "budget_invalid_followout_blocked": true,
+    "claim_flags_forced_false": true,
+    "controls_passed": true,
+    "equal_effect_null_blocked": true,
+    "final_ap4_not_supported": true,
+    "fixture_label_assignment_blocked": true,
+    "followout_policy_serialized": true,
+    "followout_rank_derived_from_components": true,
+    "generic_source_reuse_blocked": true,
+    "iteration_6b_not_contradicted": true,
+    "iteration_6b_source_passed": true,
+    "missing_route_followout_blocked": true,
+    "n09_regulation_source_passed": true,
+    "n13_stress_source_passed": true,
+    "native_support_opened_false": true,
+    "no_generic_source_reuse": true,
+    "no_post_hoc_rank_assignment": true,
+    "no_producer_direct_mutation": true,
+    "phase8_opened_false": true,
+    "positive_followout_validation_accepted": true,
+    "post_hoc_route_conditioning_blocked": true,
+    "regulation_components_differ_by_route": true,
+    "regulation_equal_effect_null_blocked": true,
+    "regulation_followout_route_conditioned": true,
+    "route_ids_serialized_before_axis_scoring": true,
+    "route_label_swap_blocked": true,
+    "runtime_state_used_false": true,
+    "selection_source_passed": true,
+    "src_diff_empty": true,
+    "stale_source_window_blocked": true,
+    "support_components_differ_by_route": true,
+    "support_equal_effect_null_blocked": true,
+    "support_followout_route_conditioned": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/scripts/build_n14_route_conditioned_followout_probe.py",
+  "control_records": [
+    {
+      "control_id": "route_label_swap_control",
+      "control_name": "Route label swap",
+      "expected_blocker": "route_label_swap_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "route_label_swap_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "ac4ae3cd1d11f7dbaaba4a162c85c6a509394bc65b3cebd0fda53963de66db77"
+    },
+    {
+      "control_id": "generic_source_reuse_control",
+      "control_name": "Generic source reuse",
+      "expected_blocker": "generic_source_reuse_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "generic_source_reuse_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "29500c8046da3c19a80ce4761668271464df704c5c9902a0631f2b3cfbce594c"
+    },
+    {
+      "control_id": "missing_route_followout_control",
+      "control_name": "Missing route followout",
+      "expected_blocker": "missing_route_followout_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "missing_route_followout_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "05fbac70e9ecbbbe5b132e0273191c451cc47efe1d5ff2f3578bbceb053b10ce"
+    },
+    {
+      "control_id": "stale_source_window_control",
+      "control_name": "Stale source window",
+      "expected_blocker": "stale_source_window_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "stale_source_window_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "91975935a779f29fa8b732ed3745f1e39ea30a52c3fd5498fdc59665f2aa6b1a"
+    },
+    {
+      "control_id": "budget_invalid_followout_control",
+      "control_name": "Budget-invalid followout",
+      "expected_blocker": "budget_invalid_followout_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "budget_invalid_followout_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "a0a0255dce9b69d8a67be15f1870ccb66f8240d4cfefe73e8ff98880a6bb49a6"
+    },
+    {
+      "control_id": "post_hoc_route_conditioning_control",
+      "control_name": "Post-hoc route conditioning",
+      "expected_blocker": "post_hoc_route_conditioning_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "post_hoc_route_conditioning_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "90b8644c6f913501731bf8feae1efcf7d74bb6650cb0f9fa11feb602779aa8ea"
+    },
+    {
+      "control_id": "fixture_label_assignment_control",
+      "control_name": "Fixture label assignment",
+      "expected_blocker": "fixture_label_assignment_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "fixture_label_assignment_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "a0404071ddd662be06d2af923277e0e7e239e189b6078da846f8e00aa6369641"
+    },
+    {
+      "control_id": "support_equal_effect_null_control",
+      "control_name": "Support equal-effect null control",
+      "expected_blocker": "equal_effect_followout_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "equal_effect_followout_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "9bddd442aea94a8d9dffb6532ec6fc8b8652c0faf1f130e1f20f73a2c0fe8513"
+    },
+    {
+      "control_id": "regulation_equal_effect_null_control",
+      "control_name": "Regulation equal-effect null control",
+      "expected_blocker": "equal_effect_followout_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "equal_effect_followout_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "de84caa81128c2d6a7f1429eda21ba0a23bc422e627499045f91591bde39e015"
+    },
+    {
+      "control_id": "equal_effect_null_control",
+      "control_name": "Support and regulation equal-effect null control",
+      "expected_blocker": "equal_effect_followout_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "equal_effect_followout_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "e2c615aea364ca70c932c8792550e5a85047058319cd102c8dc9a188cf2b3606"
+    }
+  ],
+  "experiment": "N14",
+  "followout_policy": {
+    "claim_boundary": "route-conditioned followout evidence is artifact-level only; it is not intention, semantic choice, agency, or native support",
+    "policy_id": "n14_i6c_route_conditioned_followout_policy_v1",
+    "policy_scope": "experiment-local artifact followout; not native support and not upstream N09/N13 observed route-conditioned evidence",
+    "regulation_axis_rule": "memory-negative route receives a bounded regulation-deficit burden calibrated from N09 GPR5 cycle count; memory-nonnegative route receives a recovery-in-band credit calibrated from N09 GPR8",
+    "route_conditioning_basis": "pre-selection N14 route memory_delta_component sign from the selection candidate record",
+    "route_id_serialized_before_axis_scoring": true,
+    "score_direction": "higher_is_better",
+    "support_axis_rule": "memory-negative route follows the N13 support-disrupted regime; memory-nonnegative route follows the N13 explicit-restoration regime"
+  },
+  "followout_summary": {
+    "accepted_validation_status": {
+      "blocker": null,
+      "status": "accepted"
+    },
+    "constructed_route_conditioned_regulation_followout_supported": true,
+    "constructed_route_conditioned_support_followout_supported": true,
+    "observed_upstream_route_conditioned_support_regulation_from_6b": false,
+    "regulation_components_by_route": {
+      "route_a": -0.32,
+      "route_b": 0.08
+    },
+    "scope_caveat": "support/regulation positivity is constructed N14 followout evidence; it is not upstream N09/N13 observed route-conditioned evidence and it is not native support",
+    "support_components_by_route": {
+      "route_a": -0.240269635632,
+      "route_b": 0.0
+    },
+    "supported_closeout_scope": "artifact_level_ap4_support_memory_regulation_consequence_sensitive_route_selection_candidate",
+    "top_followout_route": "route_b"
+  },
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "git": {
+    "head": "02a01304a6270c2827d4ceb3c5fafedf6dc7f39d",
+    "src_status_short": ""
+  },
+  "interpretation_record": {
+    "acceptance_state": "accepted_constructed_route_conditioned_support_regulation_followout",
+    "boundary_interpretation": "This does not overturn Iteration 6-B. N09/N13 still do not contain upstream observed route-conditioned support/regulation rows. 6-C adds an experiment-local route-conditioned followout artifact calibrated from those sources.",
+    "next_required_step": "Run Iteration 7 classification and distinguish constructed followout support/regulation evidence from upstream observed route-conditioned support/regulation evidence.",
+    "plain_language_interpretation": "The attempt got a guarded positive: N14 can construct route-ID-bound support/regulation followout rows before scoring and pass the main relabeling controls. The positive is artifact-local and policy-mediated, so Iteration 7 must decide how much it broadens the final AP4 wording.",
+    "record_id": "n14_i6c_interpretation_route_conditioned_followout_probe_v1",
+    "supported_interpretation": "N14 Iteration 6-C obtains a positive artifact-level constructed followout result: route_a and route_b each receive serialized route IDs before support/regulation axis scoring, and the resulting support and regulation components differ by route under one frozen followout policy.",
+    "unsupported_interpretations": [
+      "native support",
+      "upstream N09/N13 observed route-conditioned support evidence",
+      "upstream N09/N13 observed route-conditioned regulation evidence",
+      "final AP4 before Iteration 7",
+      "intention",
+      "agency",
+      "semantic choice",
+      "semantic goal ownership",
+      "identity acceptance",
+      "selfhood",
+      "personhood",
+      "biological behavior",
+      "fully native integration"
+    ]
+  },
+  "iteration": "6-C",
+  "iteration_result": {
+    "acceptance_state": "accepted_constructed_route_conditioned_support_regulation_followout",
+    "constructed_route_conditioned_regulation_followout_supported": true,
+    "constructed_route_conditioned_support_followout_supported": true,
+    "final_ap4_supported": false,
+    "native_support_opened": false,
+    "observed_upstream_route_conditioned_support_regulation_supported": false,
+    "phase8_opened": false,
+    "supported_closeout_scope": "artifact_level_ap4_support_memory_regulation_consequence_sensitive_route_selection_candidate",
+    "top_followout_route": "route_b"
+  },
+  "output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+  "purpose": "route_conditioned_followout_support_regulation_probe",
+  "route_conditioned_followout_records": [
+    {
+      "bounded_horizon": {
+        "regulation_window": "N09_GPR6_closeout",
+        "same_window_policy_for_all_routes": true,
+        "support_window": "N13_support_disruption_restoration_four_window"
+      },
+      "claim_flags_forced_false": {
+        "agency_claim_allowed": false,
+        "biological_behavior_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "followout_policy_id": "n14_i6c_route_conditioned_followout_policy_v1",
+      "followout_rank": 2,
+      "followout_rank_source": "derived_from_serialized_route_conditioned_followout_score_components",
+      "followout_score": -0.720024135632,
+      "followout_score_components": {
+        "memory_delta_component": -0.1597545,
+        "route_conditioned_regulation_component": -0.32,
+        "route_conditioned_support_component": -0.240269635632
+      },
+      "generic_source_reuse": false,
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "post_hoc_rank_assigned": false,
+      "producer_direct_mutation": false,
+      "regulation_followout_observation": {
+        "component_basis": {
+          "component_expression": "-gpr5_cycle_count * 0.08",
+          "gpr5_cycle_count": 4
+        },
+        "component_value": -0.32,
+        "regulation_summary": {
+          "gpr5_cycle_count": 4,
+          "gpr5_regulation_outcome_tag": "bounded_repeated_regulation",
+          "gpr8_perturbation_classification": "perturbation_recovered_to_band",
+          "gpr8_perturbation_recovery_in_band": true,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "route_conditioned": true,
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+        "source_report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+        "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+        "status": "route_conditioned_regulation_deficit_burden"
+      },
+      "route_candidate_id": "route_a",
+      "route_conditioning_basis": {
+        "memory_delta_component": -0.1597545,
+        "memory_negative": true,
+        "regulation_mode": "route_conditioned_regulation_deficit_burden",
+        "route_candidate_id": "route_a",
+        "selection_record_digest": "1fabf50cf0838f5d46e76ed616230780b848fbd094f5d924f74a89d099df2625",
+        "support_regime_id": "stress_02_support_disrupted_regime"
+      },
+      "route_conditioning_digest": "5b2bf52be788df9e693a4f7b7195abcb8b1e3ce7278437be984b77fe3a9292fb",
+      "route_id_serialized_before_axis_scoring": true,
+      "row_id": "n14_i6c_route_conditioned_followout_route_a",
+      "runtime_state_used": false,
+      "selection_rule": "rank route-conditioned followout rows by serialized memory, support, and regulation components; higher score is better",
+      "source_experiment": "N14",
+      "source_iteration": "iteration_6c_route_conditioned_followout_probe",
+      "support_followout_observation": {
+        "bounded_window": {
+          "window_count": 4,
+          "windows_used": 2,
+          "within_bounded_window": true
+        },
+        "budget_debit_amount": 0.120134817816,
+        "component_expression": "-support_error - budget_debit_amount",
+        "component_value": -0.240269635632,
+        "post_response_estimate": {
+          "estimate_scope": "policy-envelope estimate only; not native state mutation",
+          "post_response_error": 0.0,
+          "post_response_meets_target": true,
+          "post_response_support_retention": 0.85
+        },
+        "route_conditioned": true,
+        "scheduled_response_total": 0.120134817816,
+        "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+        "source_lane_id": "n09_matched_partial_support_withdrawal",
+        "source_regime_id": "stress_02_support_disrupted_regime",
+        "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+        "source_report_sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b",
+        "source_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+        "status": "supported_constructed_route_conditioned_followout",
+        "support_error": 0.120134817816,
+        "support_trend": "bounded_correction_needed"
+      }
+    },
+    {
+      "bounded_horizon": {
+        "regulation_window": "N09_GPR6_closeout",
+        "same_window_policy_for_all_routes": true,
+        "support_window": "N13_support_disruption_restoration_four_window"
+      },
+      "claim_flags_forced_false": {
+        "agency_claim_allowed": false,
+        "biological_behavior_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "followout_policy_id": "n14_i6c_route_conditioned_followout_policy_v1",
+      "followout_rank": 1,
+      "followout_rank_source": "derived_from_serialized_route_conditioned_followout_score_components",
+      "followout_score": 0.2,
+      "followout_score_components": {
+        "memory_delta_component": 0.12,
+        "route_conditioned_regulation_component": 0.08,
+        "route_conditioned_support_component": 0.0
+      },
+      "generic_source_reuse": false,
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "post_hoc_rank_assigned": false,
+      "producer_direct_mutation": false,
+      "regulation_followout_observation": {
+        "component_basis": {
+          "component_expression": "0.08 when recovered in band else 0.0",
+          "gpr8_perturbation_recovery_in_band": true
+        },
+        "component_value": 0.08,
+        "regulation_summary": {
+          "gpr5_cycle_count": 4,
+          "gpr5_regulation_outcome_tag": "bounded_repeated_regulation",
+          "gpr8_perturbation_classification": "perturbation_recovered_to_band",
+          "gpr8_perturbation_recovery_in_band": true,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "route_conditioned": true,
+        "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+        "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+        "source_report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+        "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+        "status": "route_conditioned_regulation_recovery_credit"
+      },
+      "route_candidate_id": "route_b",
+      "route_conditioning_basis": {
+        "memory_delta_component": 0.12,
+        "memory_negative": false,
+        "regulation_mode": "route_conditioned_regulation_recovery_credit",
+        "route_candidate_id": "route_b",
+        "selection_record_digest": "eee7d5f917028dd52c08ee43a4de656afd0c32a66b246fe7f7c11d272192afc1",
+        "support_regime_id": "stress_03_explicit_restoration_regime"
+      },
+      "route_conditioning_digest": "17e546ffe47f2b413f6f5b18a7eb5a037a713c8339c244d868fe70e318bd63a6",
+      "route_id_serialized_before_axis_scoring": true,
+      "row_id": "n14_i6c_route_conditioned_followout_route_b",
+      "runtime_state_used": false,
+      "selection_rule": "rank route-conditioned followout rows by serialized memory, support, and regulation components; higher score is better",
+      "source_experiment": "N14",
+      "source_iteration": "iteration_6c_route_conditioned_followout_probe",
+      "support_followout_observation": {
+        "bounded_window": {
+          "window_count": 4,
+          "windows_used": 0,
+          "within_bounded_window": true
+        },
+        "budget_debit_amount": 0,
+        "component_expression": "-support_error - budget_debit_amount",
+        "component_value": 0.0,
+        "post_response_estimate": {
+          "estimate_scope": "policy-envelope estimate only; not native state mutation",
+          "post_response_error": 0.0,
+          "post_response_meets_target": true,
+          "post_response_support_retention": 0.924495897432
+        },
+        "route_conditioned": true,
+        "scheduled_response_total": 0,
+        "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+        "source_lane_id": "restored_after_n09_partial_withdrawal",
+        "source_regime_id": "stress_03_explicit_restoration_regime",
+        "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+        "source_report_sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b",
+        "source_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+        "status": "supported_constructed_route_conditioned_followout",
+        "support_error": 0.0,
+        "support_trend": "source_restored_above_threshold_no_new_response"
+      }
+    }
+  ],
+  "schema": "n14_route_conditioned_followout_probe_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json": {
+      "output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+      "sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json": {
+      "output_digest": "d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json",
+      "sha256": "da0d2e070fa34098d14673714f2d23ea3f3041821c2a203798c206786e07cde3",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_support_regulation_probe.json": {
+      "output_digest": "e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_support_regulation_probe.json",
+      "sha256": "2f5c6176e09a02eb2afb83dc9d83a98de743587609f9cf6c010cf3e8ef91ffc2",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+      "sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_sensitive_selection_candidate.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_sensitive_selection_candidate.md",
+      "sha256": "45d32f1ca30cbe95b262e650ca9c627e9c6dc858b2f06e202d60490036070cca"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_support_regulation_probe.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_support_regulation_probe.md",
+      "sha256": "9ab0be6d6fa90e179aebffd8f185249c0d50ab7c805f50f702e89da98f3ec4cf"
+    }
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP4"
+}

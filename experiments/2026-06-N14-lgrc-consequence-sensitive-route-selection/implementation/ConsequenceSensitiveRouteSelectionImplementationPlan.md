@@ -363,6 +363,7 @@ Run the core N14 controls:
 ```text
 hidden outcome table blocked
 post-hoc consequence scoring blocked
+fabricated consequence rank source blocked
 stale consequence record blocked
 budget-invalid route blocked
 missing consequence record blocked
@@ -393,7 +394,35 @@ scripts/build_n14_consequence_control_matrix.py
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_adversarial_control_matrix_pending_replay
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_consequence_control_matrix.json
+Report: reports/n14_consequence_control_matrix.md
+Control records: 21
+Negative controls blocked: 20
+Matched conflict selected route: route_b
+Output digest: d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7
+```
+
+Interpretation:
+
+```text
+N14 no longer relies only on declared control policies for the Iteration 4
+candidate. Iteration 5 constructs adversarial variants and confirms hidden
+outcomes, post-hoc scores, fabricated consequence-rank sources, stale records,
+budget-invalid routes, missing records, cherry-picked candidate sets, ambiguous
+ties, fixture labels, immediate-affordance relabels, and unsafe claim relabels
+fail closed. It also hardens the Iteration 4 selection contract by checking
+budget validity before ranking, validating `consequence_rank_source` before
+ranking, and treating tie-policy removal as explicit metadata only. The clean
+matched conflict case still selects route_b by consequence evidence. Final AP4
+remains unsupported until replay/perturbation and claim-boundary iterations
+pass.
 ```
 
 ### Iteration 6. Consequence Perturbation And Replay Matrix
@@ -414,7 +443,38 @@ scripts/build_n14_consequence_perturbation_matrix.py
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_perturbation_replay_matrix_pending_claim_classification
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_consequence_perturbation_matrix.json
+Report: reports/n14_consequence_perturbation_matrix.md
+Baseline selected route: route_b
+Support-risk selected route: route_a
+Memory-effect selected route: route_a
+Regulation-deficit selected route: route_a
+Budget-invalid blocker: budget_invalid_route_blocked
+Stale-record blocker: stale_consequence_record_blocked
+Replay stable: true
+Artifact-only filesystem replay: true
+Snapshot/load filesystem replay: true
+Output digest: 3d207f963e6d3ed049c01bfcf75235c2cb8780d79e0cbe14d8ab349d7b6674e9
+```
+
+Interpretation:
+
+```text
+N14 Iteration 6 shows that the provisional AP4 candidate is source-sensitive
+and replay-stable at artifact level. Support, memory, and regulation
+perturbation variants alter route selection only through serialized
+source-backed consequence inputs; stale and budget-invalid cases fail closed;
+duplicate, artifact-only, snapshot/load, and order-inverted replays remain
+stable. Artifact-only and snapshot/load replay now roundtrip through filesystem
+JSON artifacts before validation. Final AP4 remains unsupported until Iteration
+7 claim-boundary classification.
 ```
 
 Required regimes:
@@ -427,9 +487,217 @@ budget-invalid high-consequence route rejected
 stale consequence record rejected
 duplicate replay stable
 artifact-only replay stable
+artifact-only replay filesystem roundtrip
 snapshot/load replay stable
+snapshot/load replay filesystem roundtrip
 order inversion replay stable
 runtime_state_used = false
+budget validity checked before ranking
+consequence-rank source validated before ranking
+```
+
+### Iteration 6-A. Observed Route-Specific Consequence Probe
+
+Probe whether `route_a` and `route_b` have observed route-specific downstream
+memory, support, and regulation consequence records under the same bounded
+horizon and source-window policy.
+
+Iteration 6-A intentionally uses the N08 MEM3 decay/reinforcement source window
+instead of the N08 MEM6 closeout used by Iterations 3-6. MEM3 contains the
+memory-surface key snapshot needed to validate observed route-specific memory
+rows by route ID and memory-surface digest.
+
+Expected artifacts:
+
+```text
+outputs/n14_observed_route_specific_consequence_probe.json
+reports/n14_observed_route_specific_consequence_probe.md
+scripts/build_n14_observed_route_specific_consequence_probe.py
+```
+
+Acceptance state:
+
+```text
+accepted_observed_route_specific_memory_probe_support_regulation_generic
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_observed_route_specific_consequence_probe.json
+Report: reports/n14_observed_route_specific_consequence_probe.md
+Observed memory top route: route_b
+Observed route-specific memory supported: true
+Observed route-specific support supported: false
+Observed route-specific regulation supported: false
+Supported closeout scope: artifact_level_ap4_memory_dominant_consequence_sensitive_route_selection_candidate
+Output digest: 7f75ab3c2601a483938ba333676ef0435412ea7d5681910edcdc31c39c5a5a70
+```
+
+Interpretation:
+
+```text
+N14 Iteration 6-A supports observed route-specific memory consequence evidence
+for both route_a and route_b under the same N08 MEM3 update-window policy.
+Support and regulation remain generic N09/N13 source lanes and are blocked
+from route-specific closeout language. Iteration 7 should classify AP4, if
+supported, as memory-dominant unless new route-specific support/regulation
+sources are added.
+```
+
+Required checks:
+
+```text
+route_a observed downstream memory consequence record present
+route_b observed downstream memory consequence record present
+same source window policy
+same budget accounting
+same bounded horizon
+same selection rule
+route-specific consequence components derived from observed route-contingent records
+no post-hoc rank assignment
+route label swap blocked against memory-surface digest mapping
+generic support/regulation reuse blocked
+missing route observation blocked
+stale route-specific consequence blocked
+budget-invalid observed route blocked
+post-hoc score/rank blocked
+```
+
+### Iteration 6-B. Route-Conditioned Support And Regulation Consequence Probe
+
+Probe whether support and/or regulation consequences can be observed under
+route IDs, not merely imported as generic N09/N13 source compatibility.
+
+Expected artifacts:
+
+```text
+outputs/n14_route_conditioned_support_regulation_probe.json
+reports/n14_route_conditioned_support_regulation_probe.md
+scripts/build_n14_route_conditioned_support_regulation_probe.py
+```
+
+Acceptance state:
+
+```text
+accepted_route_conditioned_support_regulation_probe_no_route_specific_support_regulation
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_route_conditioned_support_regulation_probe.json
+Report: reports/n14_route_conditioned_support_regulation_probe.md
+Observed route-conditioned support supported: false
+Observed route-conditioned regulation supported: false
+Stronger support/regulation closeout available: false
+Supported closeout scope: artifact_level_ap4_memory_dominant_consequence_sensitive_route_selection_candidate
+Output digest: e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e
+```
+
+Interpretation:
+
+```text
+N14 Iteration 6-B attempts to obtain route-conditioned support and regulation
+consequence records for route_a and route_b. The current N13 support lanes and
+N09 regulation summaries do not bind observed support or regulation
+consequences to route IDs. Generic source reuse, route-label swapping, missing
+route observations, stale route observations, budget-invalid consequences, and
+post-hoc route conditioning are blocked by executed adversarial variants, not
+declared control rows. N14 therefore keeps a memory-dominant closeout ceiling
+unless new route-conditioned support/regulation sources are created.
+```
+
+Required checks:
+
+```text
+route_a observed support consequence row required
+route_b observed support consequence row required
+route_a observed regulation consequence row required
+route_b observed regulation consequence row required
+same source-window policy required
+same budget accounting required
+same selection rule required
+route IDs required in observed rows
+route label swap blocked
+generic support/regulation source reuse blocked
+missing route observation blocked
+stale route observation blocked
+budget-invalid route-conditioned consequence blocked
+post-hoc route conditioning blocked
+controls executed through route-conditioned probe validator
+```
+
+### Iteration 6-C. Route-Conditioned Followout Probe
+
+Try to construct artifact-level followouts for `route_a` and `route_b` where
+route IDs are serialized before support/regulation axis scoring. This probes
+whether N14 can create route-conditioned support/regulation evidence locally
+without relabeling generic N09/N13 summaries.
+
+Expected artifacts:
+
+```text
+outputs/n14_route_conditioned_followout_probe.json
+reports/n14_route_conditioned_followout_probe.md
+scripts/build_n14_route_conditioned_followout_probe.py
+```
+
+Acceptance state:
+
+```text
+accepted_constructed_route_conditioned_support_regulation_followout
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_route_conditioned_followout_probe.json
+Report: reports/n14_route_conditioned_followout_probe.md
+Constructed route-conditioned support followout supported: true
+Constructed route-conditioned regulation followout supported: true
+Observed upstream route-conditioned support/regulation supported: false
+Top followout route: route_b
+Supported closeout scope: artifact_level_ap4_support_memory_regulation_consequence_sensitive_route_selection_candidate
+Output digest: 387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29
+```
+
+Interpretation:
+
+```text
+N14 Iteration 6-C obtains a guarded positive. It constructs route-ID-bound
+support/regulation followout rows before scoring and shows that support and
+regulation components differ by route under one frozen followout policy.
+This broadens the available N14 evidence beyond memory-only followout, but it
+does not contradict Iteration 6-B: N09/N13 still do not contain upstream
+observed route-conditioned support/regulation rows. The positive result is
+experiment-local, artifact-level, policy-mediated followout evidence and must
+not be promoted into native support, intention, semantic choice, or agency.
+```
+
+Required checks:
+
+```text
+route IDs serialized before support/regulation scoring
+same followout policy applied to route_a and route_b
+support components differ by route
+regulation components differ by route
+followout rank derived from serialized components
+generic source reuse blocked
+route label swap blocked
+missing route followout blocked
+stale source window blocked
+budget-invalid followout blocked
+post-hoc route conditioning blocked
+fixture-label assignment blocked
+equal-effect null control blocked
+support equal-effect null control blocked
+regulation equal-effect null control blocked
+equal-effect null blocks either undifferentiated support or undifferentiated regulation
+Iteration 6-B upstream-source boundary preserved
 ```
 
 ### Iteration 7. Claim Boundary And AP4 Classification

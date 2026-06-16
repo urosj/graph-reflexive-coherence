@@ -291,6 +291,9 @@ Iteration 3 - Route Consequence Record Candidate
 Iteration 4 - Consequence-Sensitive Selection Candidate
 Iteration 5 - Hidden Outcome, Post-Hoc, Stale, And Budget Controls
 Iteration 6 - Consequence Perturbation And Replay Matrix
+Iteration 6-A - Observed Route-Specific Consequence Probe
+Iteration 6-B - Route-Conditioned Support And Regulation Consequence Probe
+Iteration 6-C - Route-Conditioned Followout Probe
 Iteration 7 - Claim Boundary And AP4 Classification
 Iteration 8 - N14 Closeout And N15 Handoff
 ```
@@ -316,6 +319,15 @@ reports/n14_consequence_control_matrix.md
 outputs/n14_consequence_perturbation_matrix.json
 reports/n14_consequence_perturbation_matrix.md
 
+outputs/n14_observed_route_specific_consequence_probe.json
+reports/n14_observed_route_specific_consequence_probe.md
+
+outputs/n14_route_conditioned_support_regulation_probe.json
+reports/n14_route_conditioned_support_regulation_probe.md
+
+outputs/n14_route_conditioned_followout_probe.json
+reports/n14_route_conditioned_followout_probe.md
+
 outputs/n14_claim_boundary_record.json
 reports/n14_claim_boundary_record.md
 
@@ -330,7 +342,7 @@ experiment unless a separate Phase 8 implementation task is explicitly opened.
 
 ## Current N14 State
 
-Iterations 1 through 4 are closed:
+Iterations 1 through 6 plus 6-A, 6-B, and 6-C are closed:
 
 ```text
 iteration_1_status = passed
@@ -348,6 +360,47 @@ iteration_4_output_digest = d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d05
 iteration_4_selected_route = route_b
 iteration_4_rejected_route = route_a
 iteration_4_provisional_ap_level = AP4_candidate
+iteration_5_status = passed
+iteration_5_acceptance_state = accepted_adversarial_control_matrix_pending_replay
+iteration_5_output_digest = d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7
+iteration_5_control_record_count = 21
+iteration_5_negative_control_count = 20
+iteration_5_negative_controls_blocked = true
+iteration_6_status = passed
+iteration_6_acceptance_state = accepted_perturbation_replay_matrix_pending_claim_classification
+iteration_6_output_digest = 3d207f963e6d3ed049c01bfcf75235c2cb8780d79e0cbe14d8ab349d7b6674e9
+iteration_6_baseline_selected_route = route_b
+iteration_6_support_risk_selected_route = route_a
+iteration_6_memory_effect_selected_route = route_a
+iteration_6_regulation_deficit_selected_route = route_a
+iteration_6_replay_stable = true
+iteration_6_artifact_only_replay_filesystem_roundtrip = true
+iteration_6_snapshot_load_replay_filesystem_roundtrip = true
+iteration_6a_status = passed
+iteration_6a_acceptance_state = accepted_observed_route_specific_memory_probe_support_regulation_generic
+iteration_6a_output_digest = 7f75ab3c2601a483938ba333676ef0435412ea7d5681910edcdc31c39c5a5a70
+iteration_6a_observed_route_specific_memory_supported = true
+iteration_6a_observed_route_specific_support_supported = false
+iteration_6a_observed_route_specific_regulation_supported = false
+iteration_6a_supported_closeout_scope = artifact_level_ap4_memory_dominant_consequence_sensitive_route_selection_candidate
+iteration_6b_status = passed
+iteration_6b_acceptance_state = accepted_route_conditioned_support_regulation_probe_no_route_specific_support_regulation
+iteration_6b_output_digest = e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e
+iteration_6b_observed_route_conditioned_support_supported = false
+iteration_6b_observed_route_conditioned_regulation_supported = false
+iteration_6b_stronger_support_or_regulation_closeout_available = false
+iteration_6b_supported_closeout_scope = artifact_level_ap4_memory_dominant_consequence_sensitive_route_selection_candidate
+iteration_6b_controls_executed = true
+iteration_6c_status = passed
+iteration_6c_acceptance_state = accepted_constructed_route_conditioned_support_regulation_followout
+iteration_6c_output_digest = 387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29
+iteration_6c_constructed_route_conditioned_support_followout_supported = true
+iteration_6c_constructed_route_conditioned_regulation_followout_supported = true
+iteration_6c_observed_upstream_route_conditioned_support_regulation_supported = false
+iteration_6c_supported_closeout_scope = artifact_level_ap4_support_memory_regulation_consequence_sensitive_route_selection_candidate
+iteration_6c_scope_caveat = constructed_followout_evidence_not_upstream_observed_route_conditioned_evidence
+iteration_6c_equal_effect_null_blocks_either_undifferentiated_axis = true
+iteration_6c_equal_effect_null_split_controls = true
 final_ap4_supported = false
 phase8_opened = false
 native_support_opened = false
@@ -362,14 +415,43 @@ components; support and regulation sources are compatible but not
 route-specific yet. Iteration 4 applies the deterministic consequence-sensitive
 selection rule and selects `route_b` by derived consequence rank while
 rejecting the immediate-affordance winner `route_a`. This is only a provisional
-`AP4_candidate`; final AP4 still requires adversarial controls,
-replay/snapshot checks, and claim-boundary classification.
+`AP4_candidate`. Iteration 5 executes adversarial controls and blocks hidden
+outcomes, post-hoc scores, fabricated consequence-rank sources, stale records,
+budget-invalid routes, missing records, cherry-picked candidate sets, ambiguous
+ties, fixture labels, immediate-affordance relabels, and unsafe claim relabels.
+It also records the selection-contract hardening: budget validity is checked
+before ranking, consequence-rank source is validated before ranking, and tie
+policy removal must be explicit. Final AP4 still required replay/snapshot
+checks and claim-boundary classification at that point. Iteration 6 passes the
+perturbation and replay matrix: source-backed
+support, memory, and regulation perturbation inputs alter route ranking through
+their serialized components; stale and budget-invalid variants fail closed;
+duplicate, artifact-only, snapshot/load, and order-inverted replays are stable.
+Artifact-only and snapshot/load replay include filesystem JSON roundtrips.
+Iteration 6-A probes observed route-specific consequences and supports only
+route-specific memory: `route_b` has the stronger observed memory consequence
+under the same N08 MEM3 window policy. This intentionally switches from the
+MEM6 source used by Iterations 3-6 because MEM3 contains the memory-surface key
+snapshot needed for observed route-specific memory rows. Support and regulation
+remain generic N09/N13 source lanes and are not promoted into route-specific
+evidence.
+Iteration 6-B then attempts to obtain route-conditioned support and regulation
+consequence evidence and finds none in the current sources: N13 support lanes
+and N09 regulation summaries remain generic, not bound to `route_a` or
+`route_b`. Generic support/regulation reuse is blocked through executed
+adversarial controls. Iteration 6-C then
+constructs an experiment-local route-conditioned followout artifact with route
+IDs serialized before support/regulation scoring. That followout yields positive
+constructed support and regulation components by route, with `route_b` ranked
+highest. Its split equal-effect null controls block either undifferentiated
+support or undifferentiated regulation, but it does not convert N09/N13 into upstream
+observed route-conditioned sources and it does not open native support. Final
+AP4 now remains pending on claim-boundary classification with the 6-B/6-C
+distinction preserved.
 
 Remaining iteration acceptance states:
 
 ```text
-iteration_5_acceptance_state = pending_not_run
-iteration_6_acceptance_state = pending_not_run
 iteration_7_acceptance_state = pending_not_run
 iteration_8_acceptance_state = pending_not_run
 ```

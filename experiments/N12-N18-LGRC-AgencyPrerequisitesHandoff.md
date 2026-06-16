@@ -62,7 +62,7 @@ N13 is now closed as a claim-clean agency-prerequisite experiment:
   personhood, biological behavior, fully native integration, and unrestricted
   agency claims: still blocked.
 
-N14 is now opened and Iterations 1-4 are closed:
+N14 is now opened and Iterations 1-6 plus 6-A, 6-B, and 6-C are closed:
 
 - Experiment title: `N14 - LGRC Consequence-Sensitive Route Selection`.
 - Planned target: artifact-level `AP4` consequence-sensitive route selection
@@ -92,11 +92,65 @@ N14 is now opened and Iterations 1-4 are closed:
   `d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd`.
 - Iteration 4 selected route: `route_b`; rejected route: `route_a`.
 - Iteration 4 candidate scope: memory-dominant provisional `AP4_candidate`;
-  missing/stale/budget handling is policy-only until Iteration 5 adversarial
-  controls.
+  missing/stale/budget handling was policy-only before Iteration 5 adversarial
+  controls executed.
+- Iteration 5 adversarial control matrix status: passed.
+- Iteration 5 acceptance state:
+  `accepted_adversarial_control_matrix_pending_replay`.
+- Iteration 5 output digest:
+  `d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7`.
+- Iteration 5 control result: 21 controls executed; 20 negative controls
+  blocked; fabricated consequence-rank source is blocked; budget validity and
+  consequence-rank source are checked before ranking; explicit tie-policy
+  removal is required; matched affordance/consequence conflict selects
+  `route_b`.
+- Iteration 6 consequence perturbation and replay matrix status: passed.
+- Iteration 6 acceptance state:
+  `accepted_perturbation_replay_matrix_pending_claim_classification`.
+- Iteration 6 output digest:
+  `3d207f963e6d3ed049c01bfcf75235c2cb8780d79e0cbe14d8ab349d7b6674e9`.
+- Iteration 6 perturbation result: baseline selects `route_b`; support-risk,
+  memory-effect, and regulation-deficit variants select `route_a` through
+  serialized source-backed consequence inputs; budget-invalid and stale variants
+  fail closed; duplicate, artifact-only, snapshot/load, and order-inverted
+  replays are stable. Artifact-only and snapshot/load replay use filesystem
+  JSON roundtrips, and budget/rank-source validation is checked before ranking.
+- Iteration 6-A observed route-specific consequence probe status: passed.
+- Iteration 6-A acceptance state:
+  `accepted_observed_route_specific_memory_probe_support_regulation_generic`.
+- Iteration 6-A output digest:
+  `7f75ab3c2601a483938ba333676ef0435412ea7d5681910edcdc31c39c5a5a70`.
+- Iteration 6-A result: observed route-specific memory consequence is supported
+  for both routes and ranks `route_b` higher; observed route-specific support
+  and regulation consequences remain unsupported/generic. Iteration 6-A
+  intentionally uses N08 MEM3 rather than MEM6 because MEM3 contains the
+  memory-surface key snapshot needed for observed route-specific memory rows.
+- Iteration 6-B route-conditioned support/regulation probe status: passed.
+- Iteration 6-B acceptance state:
+  `accepted_route_conditioned_support_regulation_probe_no_route_specific_support_regulation`.
+- Iteration 6-B output digest:
+  `e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e`.
+- Iteration 6-B result: route-conditioned support and regulation consequence
+  evidence is not found in the current N09/N13 sources; generic source reuse,
+  route-label swapping, missing route observations, stale route observations,
+  budget-invalid consequences, and post-hoc route conditioning are blocked by
+  executed adversarial variants.
+- Iteration 6-C route-conditioned followout probe status: passed.
+- Iteration 6-C acceptance state:
+  `accepted_constructed_route_conditioned_support_regulation_followout`.
+- Iteration 6-C output digest:
+  `387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29`.
+- Iteration 6-C result: N14 constructs route-ID-bound support and regulation
+  followout rows before scoring; support and regulation components differ by
+  route and rank `route_b` highest. This is constructed N14 followout evidence,
+  not upstream observed N09/N13 route-conditioned evidence and not native
+  support. Split equal-effect null validation blocks either undifferentiated
+  support or undifferentiated regulation.
 - Current AP4 evidence status: provisional `AP4_candidate` only; final AP4 is
-  not supported until controls, replay/snapshot checks, and claim-boundary
-  classification pass.
+  not supported until claim-boundary classification passes. Expected N14
+  closeout scope can broaden to support/memory/regulation only if Iteration 7
+  preserves the distinction between constructed followout evidence and upstream
+  observed route-conditioned evidence.
 - Phase 8 implementation opened: false.
 - Native support opened: false.
 - Intention, agency, semantic goal ownership, identity acceptance, selfhood,
@@ -166,15 +220,17 @@ after their theory and component entry gates are explicit.
 ## Recommended Next Start
 
 The clean next work, if continuing the experiment roadmap without opening
-Phase 8 implementation, is N14 Iteration 5:
+Phase 8 implementation, is N14 Iteration 7:
 
 `N14 - LGRC Consequence-Sensitive Route Selection`
 
-The N14 skeleton and Iterations 1-4 already exist. Recommended next actions:
+The N14 skeleton and Iterations 1-6 plus 6-A, 6-B, and 6-C already exist.
+Recommended next actions:
 
-1. Run Iteration 5 controls against hidden outcomes, post-hoc labels, stale
-   records, invalid budgets, missing records, fixture labels, and claim
-   relabels.
+1. Run Iteration 7 claim-boundary and AP4 classification against the Iteration
+   6/6-A/6-B/6-C perturbation, replay, route-specific memory,
+   route-conditioned support/regulation boundary records, and constructed
+   followout evidence.
 2. Start from route selection by expected downstream support, memory, or
    regulation effects, not semantic intention or agency.
 3. Consume N06 route arbitration evidence, N08 route memory/affordance
