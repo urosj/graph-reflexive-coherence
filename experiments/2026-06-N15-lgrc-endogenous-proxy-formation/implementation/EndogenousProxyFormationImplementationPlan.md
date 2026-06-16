@@ -886,7 +886,34 @@ Expected artifacts:
 outputs/n15_claim_boundary_record.json
 reports/n15_claim_boundary_record.md
 scripts/build_n15_claim_boundary_record.py
+scripts/validate_n15_claim_boundary_record.py
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n15_claim_boundary_record.json
+Report: reports/n15_claim_boundary_record.md
+Acceptance state: accepted_ap5_classification_claim_boundary_clean_pending_closeout
+Classified AP level: AP5
+AP5 classification supported: true
+Final AP5 supported: false
+Output digest: 76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266
+```
+
+Iteration 7 validates all 36 AP5 gates, classifies Hypotheses A, B, and C as
+supported, audits blocked inputs, preserves the N14 constructed followout
+caveat, and records the claim boundary rows needed before closeout. The result
+is an artifact-level AP5 endogenous proxy formation candidate, boundary-clean
+pending Iteration 8 closeout.
+
+Post-review hardening records the I7 output-shape evolution from the I2 schema
+contract, the intentional empty `rows` scope, flat/nested boundary-record
+identity, canonical interpretation-record ownership, dedicated versus
+claim-flag/I4 blocked-claim control coverage, exact I4 blocked-claim set
+validation, exact I6 iteration-result key validation, and an independent I7
+validator.
 
 Iteration 7 must not close the experiment until all source rows, controls, and
 claim flags are resolved.
@@ -903,6 +930,24 @@ outputs/n15_closeout_and_handoff.json
 reports/n15_closeout_and_handoff.md
 scripts/build_n15_closeout_and_handoff.py
 ```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n15_closeout_and_handoff.json
+Report: reports/n15_closeout_and_handoff.md
+Acceptance state: closed_claim_clean_ap5_artifact_level_endogenous_proxy_formation
+Final supported AP level: AP5
+Final AP5 supported: true
+Final claim ceiling: artifact_level_ap5_endogenous_proxy_formation_candidate
+Output digest: 715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9
+```
+
+Iteration 8 freezes final N15 support at artifact-level AP5, records the final
+claim ceiling, final controls, final blockers, final source-row roles, and the
+N16 handoff. Targeted Phase 8 remains optional/deferred and not required before
+N16; native support and fully native integration remain unopened.
 
 N15 closes only when every source row is classified, every AP5 gate is either
 validated or recorded as a blocker, every control has a pass/fail result, and

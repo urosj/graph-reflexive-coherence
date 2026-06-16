@@ -1,0 +1,3744 @@
+{
+  "acceptance_state": "accepted_ap5_classification_claim_boundary_clean_pending_closeout",
+  "ap5_gate_resolution": [
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "inventory_source_passed": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+      ],
+      "gate_id": "runtime_visible_source_state_inventory_present",
+      "notes": "Iteration 1 pins the runtime-visible source surface.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "every_row_has_source_report_sha256": true,
+        "every_row_has_source_sha256": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+      ],
+      "gate_id": "source_artifact_report_digest_for_each_state_input",
+      "notes": "Source artifacts and reports are digest-pinned.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "source_current": true,
+        "stale_control_blocked": true,
+        "stale_perturbation_blocked": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "source_current_freshness_record_present",
+      "notes": "Current source state is recorded and stale variants fail closed.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "support_state_descriptor_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "support_state_descriptor_present",
+      "notes": "Support margin, threshold, retention, and error are present.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "memory_state_descriptor_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "memory_state_descriptor_or_explicit_absence_present",
+      "notes": "Memory context is explicit through route_b memory delta.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "regulation_state_descriptor_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "regulation_state_descriptor_or_explicit_absence_present",
+      "notes": "Regulation context is explicit through bounded response and recovery score.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "identity_condition_descriptor_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "support_identity_condition_descriptor_or_explicit_absence_present",
+      "notes": "Descriptor remains support/identity-condition context only.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "declared_fixture_distinguished": true,
+        "declared_proxy_absent": true,
+        "external_target_input_absent": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json"
+      ],
+      "gate_id": "declared_external_proxy_absent",
+      "notes": "Declared fixtures are excluded from the endogenous source surface.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "control_requirement_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      ],
+      "gate_id": "externally_injected_target_rejection_policy_present",
+      "notes": "The frozen control matrix includes external target rejection.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "control_requirement_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      ],
+      "gate_id": "hidden_target_derivation_rejection_policy_present",
+      "notes": "The frozen control matrix includes hidden derivation rejection.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "hidden_target_derivation_control_passed": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      ],
+      "gate_id": "hidden_target_derivation_control_fails_closed",
+      "notes": "Hidden target derivation is blocked with the frozen blocker.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "derivation_policy_loaded": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "endogenous_derivation_policy_present",
+      "notes": "The frozen derivation policy is present and used by I3/I6.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "target_generated_before_bridge_use": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "target_condition_generated_before_downstream_use",
+      "notes": "The target is generated before bridge ranking.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "target_condition_surface_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "target_condition_surface_present",
+      "notes": "The target surface is explicit.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "target_center_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "target_center_present",
+      "notes": "A numeric target center is emitted.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "target_band_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "target_band_or_threshold_present",
+      "notes": "The target band is emitted and ordered.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "target_tolerance_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "target_tolerance_present",
+      "notes": "A numeric target tolerance is emitted.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "bounded_perturbations_change_target_within_drift": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "bounded_drift_policy_present",
+      "notes": "The frozen bounded drift policy is present and exercised.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "unbounded_drift_null_blocked": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "drift_clamp_policy_present",
+      "notes": "Clamp policy exists and unbounded drift variants fail closed.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "budget_cost_surface_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "budget_cost_surface_present",
+      "notes": "Budget cost surface is recorded before target use.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "budget_units_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+      ],
+      "gate_id": "budget_units_present",
+      "notes": "Frozen budget units are present.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "budget_invalid_perturbation_blocked": true,
+        "checked_before_target_use": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "budget_validity_policy_present",
+      "notes": "Budget validity is checked before target use and invalid budgets fail closed.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "dependency_trace_complete": true,
+        "trace_omission_blocked": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      ],
+      "gate_id": "dependency_trace_from_source_state_to_target_condition_present",
+      "notes": "Dependency trace covers target fields and omissions are blocked.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "i5_idempotency_reproducible": true,
+        "i6_idempotency_reproducible": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "idempotency_digest_plan_present",
+      "notes": "Idempotency scopes are recorded and reproducible for control and replay matrices.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "bridge_consumes_target": true,
+        "goal_ownership_relabel_blocked": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      ],
+      "gate_id": "generated_target_consumable_by_rank_or_regulation_without_goal_ownership_relabel",
+      "notes": "The target affects ranking while semantic goal ownership remains blocked.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "artifact_only_filesystem_replay_passed": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "artifact_only_replay_requirement_present",
+      "notes": "Artifact-only replay rebuilds the runtime vector and target.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "snapshot_load_replay_passed": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "snapshot_load_equivalence_requirement_present",
+      "notes": "Snapshot/load replay reproduces the target.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "order_inversion_replay_passed": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "order_inversion_replay_requirement_present",
+      "notes": "Order inversion replay preserves target equality.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "post_hoc_proxy_formation_control_passed": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      ],
+      "gate_id": "post_hoc_proxy_formation_rejection_policy_present",
+      "notes": "Post-hoc proxy formation is blocked.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "all_controls_fail_closed": true,
+        "all_required_controls_present": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "negative_controls_present",
+      "notes": "All twelve frozen controls are present and fail closed.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "i5_shape_match": true,
+        "i6_shape_match": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "compatibility_checks_present",
+      "notes": "I5/I6 output-shape compatibility checks are present.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "i5_claim_flags_false": true,
+        "i6_claim_flags_false": true,
+        "schema_claim_flags_false": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "claim_flags_forced_false",
+      "notes": "All unsafe claim flags remain false.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "src_diff_empty": true
+      },
+      "evidence_sources": [],
+      "gate_id": "src_diff_empty_true",
+      "notes": "No src changes are present.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "i5_native_support_opened_false": true,
+        "i6_native_support_opened_false": true,
+        "schema_native_support_opened_false": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "native_supported_flags_false",
+      "notes": "Native support remains unopened.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "i5_phase8_opened_false": true,
+        "i6_phase8_opened_false": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "phase8_opened_false",
+      "notes": "Phase 8 remains closed.",
+      "resolution": "validated",
+      "validated": true
+    },
+    {
+      "blocker": null,
+      "evidence_checks": {
+        "i5_fully_native_false": true,
+        "i6_fully_native_false": true
+      },
+      "evidence_sources": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "gate_id": "fully_native_integration_opened_false",
+      "notes": "Fully native integration remains unopened.",
+      "resolution": "validated",
+      "validated": true
+    }
+  ],
+  "ap5_gate_summary": {
+    "all_ap5_gates_validated": true,
+    "blocked_gate_count": 0,
+    "blocked_gates": [],
+    "gate_count": 36,
+    "validated_gate_count": 36
+  },
+  "artifact_id": "n15_claim_boundary_record",
+  "blocked_input_audit": {
+    "audit_complete": true,
+    "blocked_boundary_claims": [
+      {
+        "blocked_claim": "semantic_goal_ownership",
+        "row_id": "n15_i7_boundary_01_runtime_target_not_goal_ownership",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "intention_semantic_choice",
+        "row_id": "n15_i7_boundary_02_runtime_target_not_intention_or_choice",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "identity_acceptance",
+        "row_id": "n15_i7_boundary_03_support_identity_descriptor_not_identity_acceptance",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "agency",
+        "row_id": "n15_i7_boundary_04_support_maintenance_not_agency",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "native_support_without_phase8",
+        "row_id": "n15_i7_boundary_05_artifact_ap5_not_native_support",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "fully_native_agentic_like_integration",
+        "row_id": "n15_i7_boundary_06_artifact_ap5_not_fully_native_integration",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "selfhood_personhood_biological_behavior",
+        "row_id": "n15_i7_boundary_07_not_selfhood_personhood_biology",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "unrestricted_agency",
+        "row_id": "n15_i7_boundary_08_not_unrestricted_agency",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "upstream_observed_route_conditioned_support_regulation",
+        "row_id": "n15_i7_boundary_09_constructed_followout_not_upstream_observation",
+        "source": "n15_i7_boundary_rows"
+      },
+      {
+        "blocked_claim": "direct_historic_target_existence_as_final_ap5",
+        "row_id": "n15_i7_boundary_10_direct_ap2_target_not_ap5",
+        "source": "n15_i7_boundary_rows"
+      }
+    ],
+    "blocked_control_inputs": [
+      {
+        "control_id": "externally_injected_target_control",
+        "observed_blocker": "externally_injected_target_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "hidden_target_derivation_control",
+        "observed_blocker": "hidden_target_derivation_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "semantic_goal_ownership_relabel_control",
+        "observed_blocker": "semantic_goal_ownership_relabel_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "post_hoc_proxy_formation_control",
+        "observed_blocker": "post_hoc_proxy_formation_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "unbounded_target_drift_control",
+        "observed_blocker": "unbounded_target_drift_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "budget_surface_ambiguity_control",
+        "observed_blocker": "budget_surface_ambiguity_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "identity_acceptance_relabel_control",
+        "observed_blocker": "identity_acceptance_relabel_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "native_support_relabel_control",
+        "observed_blocker": "native_support_relabel_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "fixture_label_proxy_control",
+        "observed_blocker": "fixture_label_proxy_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "stale_source_state_control",
+        "observed_blocker": "stale_source_state_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "missing_source_state_control",
+        "observed_blocker": "missing_source_state_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      {
+        "control_id": "dependency_trace_omission_control",
+        "observed_blocker": "dependency_trace_omission_blocked",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      }
+    ],
+    "blocked_replay_inputs": [
+      {
+        "observed_blocker": "stale_source_state_blocked",
+        "record_id": "stale_state_perturbation",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      },
+      {
+        "observed_blocker": "budget_exceeded",
+        "record_id": "budget_invalid_perturbation",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      },
+      {
+        "observed_blocker": "unbounded_target_drift_blocked",
+        "record_id": "unbounded_drift_null",
+        "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      }
+    ],
+    "direct_historic_support_boundary": {
+      "direct_historic_support_status": "target_condition_exists_at_N13_AP2_scope_only",
+      "reason_not_promoted": "N13 direct target evidence lacks N15 pre-use derivation from the old-best source vector plus bridge consumption by rank/regulation",
+      "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+    },
+    "i4_blocked_claims": {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_choice",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json"
+    },
+    "readiness_only_boundary": {
+      "n12_readiness_only_not_native_support": true,
+      "native_support_relabel_blocked": true,
+      "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+    },
+    "record_id": "n15_i7_blocked_input_audit_v1"
+  },
+  "boundary_rows": [
+    {
+      "blocked_claim": "semantic_goal_ownership",
+      "boundary_reason": "The target is a deterministic artifact condition generated from serialized source state. It is not an owned semantic goal or evidence of goal understanding.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [
+          "semantic_goal_ownership_relabel_control_passed"
+        ],
+        "claim_flag_ids": [
+          "semantic_goal_ownership_claim_allowed",
+          "semantic_goal_understanding_claim_allowed"
+        ],
+        "control_ids": [
+          "semantic_goal_ownership_relabel_control"
+        ],
+        "interpretation_record_ids": [
+          "n15_i3_interpretation_runtime_derived_target_candidate_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "runtime-derived target band",
+        "generated target consumed by bridge ranking"
+      ],
+      "required_future_gate": [
+        "formal_semantic_goal_ownership_semantics",
+        "runtime_goal_ownership_event_schema",
+        "goal_ownership_relabel_controls_beyond_artifact_flags"
+      ],
+      "row_id": "n15_i7_boundary_01_runtime_target_not_goal_ownership"
+    },
+    {
+      "blocked_claim": "intention_semantic_choice",
+      "boundary_reason": "Pre-use target formation and deterministic candidate ranking do not contain intention semantics, choice awareness, commitment, or deliberative selection.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [],
+        "claim_flag_ids": [
+          "intention_claim_allowed",
+          "semantic_choice_claim_allowed"
+        ],
+        "control_ids": [],
+        "interpretation_record_ids": [
+          "n15_i4_interpretation_external_proxy_contrast_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "pre-use target generation",
+        "bounded regulation response selection"
+      ],
+      "required_future_gate": [
+        "formal_intention_semantics",
+        "choice_event_schema",
+        "negative_controls_for_intention_and_semantic_choice_relabeling"
+      ],
+      "row_id": "n15_i7_boundary_02_runtime_target_not_intention_or_choice"
+    },
+    {
+      "blocked_claim": "identity_acceptance",
+      "boundary_reason": "The descriptor is support-relevant context only. It is not a runtime identity acceptance event or identity validator.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [
+          "identity_acceptance_relabel_control_passed"
+        ],
+        "claim_flag_ids": [
+          "identity_acceptance_claim_allowed",
+          "runtime_identity_acceptance_claim_allowed"
+        ],
+        "control_ids": [
+          "identity_acceptance_relabel_control"
+        ],
+        "interpretation_record_ids": [
+          "n15_i5_interpretation_proxy_control_matrix_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "support/identity-condition descriptor",
+        "identity acceptance relabel control blocked"
+      ],
+      "required_future_gate": [
+        "formal_identity_acceptance_semantics",
+        "runtime_identity_acceptance_event_schema",
+        "identity_acceptance_validator"
+      ],
+      "row_id": "n15_i7_boundary_03_support_identity_descriptor_not_identity_acceptance"
+    },
+    {
+      "blocked_claim": "agency",
+      "boundary_reason": "Support-seeking regulation plus proxy formation is an agency-prerequisite chain, not agency. It lacks the later self/environment boundary, closed action-perception loop, long-horizon closure, and formal agency semantics.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [],
+        "claim_flag_ids": [
+          "agency_claim_allowed"
+        ],
+        "control_ids": [],
+        "interpretation_record_ids": [
+          "n15_i4_interpretation_external_proxy_contrast_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "AP3 support-seeking regulation input",
+        "AP5 target formation candidate"
+      ],
+      "required_future_gate": [
+        "N16_self_environment_boundary",
+        "N17_closed_action_perception_loop",
+        "N18_long_horizon_agentic_like_closure",
+        "formal_agency_semantics"
+      ],
+      "row_id": "n15_i7_boundary_04_support_maintenance_not_agency"
+    },
+    {
+      "blocked_claim": "native_support_without_phase8",
+      "boundary_reason": "N12 readiness is validation context only. N15 does not open Phase 8, does not implement native policy surfaces, and does not edit src/.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [
+          "native_support_relabel_control_passed",
+          "src_diff_empty"
+        ],
+        "claim_flag_ids": [
+          "native_support_opened"
+        ],
+        "control_ids": [
+          "native_support_relabel_control"
+        ],
+        "interpretation_record_ids": [
+          "n15_i5_interpretation_proxy_control_matrix_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "N12 readiness-only context",
+        "readiness weight fixed at 0.0"
+      ],
+      "required_future_gate": [
+        "Phase_8_explicitly_opened",
+        "native_route_conductance_memory_policy_validated",
+        "native_response_magnitude_policy_validated"
+      ],
+      "row_id": "n15_i7_boundary_05_artifact_ap5_not_native_support"
+    },
+    {
+      "blocked_claim": "fully_native_agentic_like_integration",
+      "boundary_reason": "Fully native agentic-like integration requires native component policies and composition replay. N15 remains artifact-level and Phase 8 remains closed.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [
+          "fully_native_integration_not_opened"
+        ],
+        "claim_flag_ids": [
+          "fully_native_agentic_like_integration_claim_allowed"
+        ],
+        "control_ids": [],
+        "interpretation_record_ids": []
+      },
+      "positive_evidence_retained": [
+        "artifact-level AP5 candidate",
+        "Phase 8 readiness lineage"
+      ],
+      "required_future_gate": [
+        "native_policy_component_validation",
+        "native_integration_meta_policy",
+        "component_native_policy_composition_replay"
+      ],
+      "row_id": "n15_i7_boundary_06_artifact_ap5_not_fully_native_integration"
+    },
+    {
+      "blocked_claim": "selfhood_personhood_biological_behavior",
+      "boundary_reason": "No N15 artifact concerns subjective status, selfhood, personhood, or biological behavior. Those claims are outside the experiment.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [],
+        "claim_flag_ids": [
+          "selfhood_claim_allowed",
+          "personhood_claim_allowed",
+          "biological_behavior_claim_allowed"
+        ],
+        "control_ids": [],
+        "interpretation_record_ids": []
+      },
+      "positive_evidence_retained": [
+        "artifact-level target-formation candidate"
+      ],
+      "required_future_gate": [
+        "not_part_of_lgrc_experiment_scope"
+      ],
+      "row_id": "n15_i7_boundary_07_not_selfhood_personhood_biology"
+    },
+    {
+      "blocked_claim": "unrestricted_agency",
+      "boundary_reason": "The AP5 candidate is bounded to serialized source state, frozen drift, budget, replay, and control records. It is not open-ended action, unrestricted autonomy, or unrestricted agency.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [],
+        "claim_flag_ids": [
+          "unrestricted_agency_claim_allowed"
+        ],
+        "control_ids": [],
+        "interpretation_record_ids": []
+      },
+      "positive_evidence_retained": [
+        "bounded artifact-level AP5 candidate"
+      ],
+      "required_future_gate": [
+        "long_horizon_closure_controls",
+        "closed_action_perception_loop_controls",
+        "unrestricted_agency_claims_remain_out_of_scope"
+      ],
+      "row_id": "n15_i7_boundary_08_not_unrestricted_agency"
+    },
+    {
+      "blocked_claim": "upstream_observed_route_conditioned_support_regulation",
+      "boundary_reason": "N14 constructed followout remains constructed context. It is not upstream observed N09/N13 route-conditioned support or regulation evidence.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [
+          "n14_constructed_followout_in_candidate_path"
+        ],
+        "claim_flag_ids": [],
+        "control_ids": [],
+        "interpretation_record_ids": [
+          "n15_i3_interpretation_runtime_derived_target_candidate_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "N14 constructed route-conditioned support/regulation followout"
+      ],
+      "required_future_gate": [
+        "fresh_route_conditioned_support_observation_rows",
+        "fresh_route_conditioned_regulation_observation_rows",
+        "same_horizon_same_budget_same_selection_rule_controls"
+      ],
+      "row_id": "n15_i7_boundary_09_constructed_followout_not_upstream_observation"
+    },
+    {
+      "blocked_claim": "direct_historic_target_existence_as_final_ap5",
+      "boundary_reason": "Direct historic target evidence shows target existence at AP2 scope. It does not show target generation from old-best source-current state or target-as-input behavior.",
+      "boundary_status": "blocked",
+      "claim_allowed": false,
+      "evidence_references": {
+        "check_ids": [
+          "direct_historic_ap2_gap_recorded"
+        ],
+        "claim_flag_ids": [],
+        "control_ids": [],
+        "interpretation_record_ids": [
+          "n15_i3_direct_historic_gap_record_v1"
+        ]
+      },
+      "positive_evidence_retained": [
+        "N13 AP2 support-derived target candidate"
+      ],
+      "required_future_gate": [
+        "old_best_claims_source_current_derivation",
+        "bridge_consumption_by_rank_or_regulation",
+        "controls_and_replay"
+      ],
+      "row_id": "n15_i7_boundary_10_direct_ap2_target_not_ap5"
+    }
+  ],
+  "boundary_summary": {
+    "agency_blocked": true,
+    "all_boundary_claims_blocked": true,
+    "blocked_claims": [
+      "semantic_goal_ownership",
+      "intention_semantic_choice",
+      "identity_acceptance",
+      "agency",
+      "native_support_without_phase8",
+      "fully_native_agentic_like_integration",
+      "selfhood_personhood_biological_behavior",
+      "unrestricted_agency",
+      "upstream_observed_route_conditioned_support_regulation",
+      "direct_historic_target_existence_as_final_ap5"
+    ],
+    "boundary_row_count": 10,
+    "constructed_followout_caveat_preserved": true,
+    "direct_ap2_not_promoted_to_ap5": true,
+    "fully_native_integration_blocked": true,
+    "identity_acceptance_blocked": true,
+    "intention_semantic_choice_blocked": true,
+    "native_support_without_phase8_blocked": true,
+    "semantic_goal_ownership_blocked": true
+  },
+  "checks": {
+    "absolute_path_absence": true,
+    "all_ap5_gates_resolved": true,
+    "all_ap5_gates_validated": true,
+    "all_boundary_claims_blocked": true,
+    "all_controls_fail_closed": true,
+    "blocked_input_audit_complete": true,
+    "boundary_rows_match_claim_boundary_record": true,
+    "boundary_summary_match_claim_boundary_record": true,
+    "claim_boundary_control_coverage_recorded": true,
+    "claim_flags_forced_false": true,
+    "constructed_followout_caveat_preserved": true,
+    "control_outcomes_present": true,
+    "digest_reproducibility": true,
+    "final_ap5_not_frozen_until_iteration8": true,
+    "fully_native_integration_opened_false": true,
+    "hypothesis_a_supported": true,
+    "hypothesis_b_supported": true,
+    "hypothesis_c_supported": true,
+    "i4_blocked_claim_set_matches_expected": true,
+    "i6_iteration_result_keys_match_expected": true,
+    "idempotency_digest_plan_reproducible": true,
+    "idempotency_digest_scope_note_recorded": true,
+    "interpretation_scope_recorded": true,
+    "inventory_source_passed": true,
+    "iteration_3_source_passed": true,
+    "iteration_4_source_passed": true,
+    "iteration_5_source_passed": true,
+    "iteration_6_acceptance_state_valid": true,
+    "iteration_6_source_passed": true,
+    "iteration_7_top_level_output_fields_match": true,
+    "iteration_7_top_level_output_shape_declared": true,
+    "native_supported_flags_false": true,
+    "phase8_opened_false": true,
+    "required_false_flags_false": true,
+    "review_gap_closure_recorded": true,
+    "rows_scope_note_recorded": true,
+    "schema_evolution_recorded": true,
+    "schema_source_passed": true,
+    "source_digest_presence": true,
+    "src_diff_empty": true
+  },
+  "claim_boundary_control_coverage": {
+    "all_expected_claims_covered": true,
+    "claim_flag_and_i4_blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_choice",
+      "semantic_goal_understanding",
+      "selfhood",
+      "personhood",
+      "biological_behavior",
+      "unrestricted_agency",
+      "fully_native_agentic_like_integration"
+    ],
+    "coverage_asymmetry_recorded": true,
+    "coverage_boundary": "Dedicated relabel controls exist for semantic goal ownership, identity acceptance/runtime identity acceptance, and native support. Other unsafe claims are blocked by I4 blocked-claim records plus forced-false claim flags.",
+    "coverage_rows": [
+      {
+        "claim": "agency",
+        "claim_flag": "agency_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "intention",
+        "claim_flag": "intention_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "semantic_choice",
+        "claim_flag": "semantic_choice_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "semantic_goal_ownership",
+        "claim_flag": "semantic_goal_ownership_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+        "dedicated_i5_control": "semantic_goal_ownership_relabel_control",
+        "dedicated_i5_control_present": true,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "semantic_goal_understanding",
+        "claim_flag": "semantic_goal_understanding_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "identity_acceptance",
+        "claim_flag": "identity_acceptance_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+        "dedicated_i5_control": "identity_acceptance_relabel_control",
+        "dedicated_i5_control_present": true,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "runtime_identity_acceptance",
+        "claim_flag": "runtime_identity_acceptance_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+        "dedicated_i5_control": "identity_acceptance_relabel_control",
+        "dedicated_i5_control_present": true,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "selfhood",
+        "claim_flag": "selfhood_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "personhood",
+        "claim_flag": "personhood_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "biological_behavior",
+        "claim_flag": "biological_behavior_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "unrestricted_agency",
+        "claim_flag": "unrestricted_agency_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "fully_native_agentic_like_integration",
+        "claim_flag": "fully_native_agentic_like_integration_claim_allowed",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+        "dedicated_i5_control": null,
+        "dedicated_i5_control_present": false,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      },
+      {
+        "claim": "native_support_without_phase8",
+        "claim_flag": "native_support_opened",
+        "claim_flag_forced_false": true,
+        "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+        "dedicated_i5_control": "native_support_relabel_control",
+        "dedicated_i5_control_present": true,
+        "i4_blocked_claim_recorded": true,
+        "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+      }
+    ],
+    "dedicated_control_claims": [
+      "semantic_goal_ownership",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "native_support_without_phase8"
+    ],
+    "expected_blocked_claims": [
+      "agency",
+      "biological_behavior",
+      "fully_native_agentic_like_integration",
+      "identity_acceptance",
+      "intention",
+      "native_support_without_phase8",
+      "personhood",
+      "runtime_identity_acceptance",
+      "selfhood",
+      "semantic_choice",
+      "semantic_goal_ownership",
+      "semantic_goal_understanding",
+      "unrestricted_agency"
+    ],
+    "future_control_candidates": [
+      "agency",
+      "intention",
+      "unrestricted_agency"
+    ],
+    "observed_blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_choice",
+      "semantic_goal_ownership",
+      "semantic_goal_understanding",
+      "identity_acceptance",
+      "runtime_identity_acceptance",
+      "selfhood",
+      "personhood",
+      "biological_behavior",
+      "unrestricted_agency",
+      "fully_native_agentic_like_integration",
+      "native_support_without_phase8"
+    ],
+    "record_id": "n15_i7_claim_boundary_control_coverage_v1",
+    "source_i4": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+    "source_i5": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+  },
+  "claim_boundary_record": {
+    "ap5_scope": "Runtime-derived target/proxy condition generated from source-current support, memory, regulation, and AP4 consequence context, control-clean and replay-clean at artifact level.",
+    "boundary_rows": [
+      {
+        "blocked_claim": "semantic_goal_ownership",
+        "boundary_reason": "The target is a deterministic artifact condition generated from serialized source state. It is not an owned semantic goal or evidence of goal understanding.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [
+            "semantic_goal_ownership_relabel_control_passed"
+          ],
+          "claim_flag_ids": [
+            "semantic_goal_ownership_claim_allowed",
+            "semantic_goal_understanding_claim_allowed"
+          ],
+          "control_ids": [
+            "semantic_goal_ownership_relabel_control"
+          ],
+          "interpretation_record_ids": [
+            "n15_i3_interpretation_runtime_derived_target_candidate_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "runtime-derived target band",
+          "generated target consumed by bridge ranking"
+        ],
+        "required_future_gate": [
+          "formal_semantic_goal_ownership_semantics",
+          "runtime_goal_ownership_event_schema",
+          "goal_ownership_relabel_controls_beyond_artifact_flags"
+        ],
+        "row_id": "n15_i7_boundary_01_runtime_target_not_goal_ownership"
+      },
+      {
+        "blocked_claim": "intention_semantic_choice",
+        "boundary_reason": "Pre-use target formation and deterministic candidate ranking do not contain intention semantics, choice awareness, commitment, or deliberative selection.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [],
+          "claim_flag_ids": [
+            "intention_claim_allowed",
+            "semantic_choice_claim_allowed"
+          ],
+          "control_ids": [],
+          "interpretation_record_ids": [
+            "n15_i4_interpretation_external_proxy_contrast_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "pre-use target generation",
+          "bounded regulation response selection"
+        ],
+        "required_future_gate": [
+          "formal_intention_semantics",
+          "choice_event_schema",
+          "negative_controls_for_intention_and_semantic_choice_relabeling"
+        ],
+        "row_id": "n15_i7_boundary_02_runtime_target_not_intention_or_choice"
+      },
+      {
+        "blocked_claim": "identity_acceptance",
+        "boundary_reason": "The descriptor is support-relevant context only. It is not a runtime identity acceptance event or identity validator.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [
+            "identity_acceptance_relabel_control_passed"
+          ],
+          "claim_flag_ids": [
+            "identity_acceptance_claim_allowed",
+            "runtime_identity_acceptance_claim_allowed"
+          ],
+          "control_ids": [
+            "identity_acceptance_relabel_control"
+          ],
+          "interpretation_record_ids": [
+            "n15_i5_interpretation_proxy_control_matrix_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "support/identity-condition descriptor",
+          "identity acceptance relabel control blocked"
+        ],
+        "required_future_gate": [
+          "formal_identity_acceptance_semantics",
+          "runtime_identity_acceptance_event_schema",
+          "identity_acceptance_validator"
+        ],
+        "row_id": "n15_i7_boundary_03_support_identity_descriptor_not_identity_acceptance"
+      },
+      {
+        "blocked_claim": "agency",
+        "boundary_reason": "Support-seeking regulation plus proxy formation is an agency-prerequisite chain, not agency. It lacks the later self/environment boundary, closed action-perception loop, long-horizon closure, and formal agency semantics.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [],
+          "claim_flag_ids": [
+            "agency_claim_allowed"
+          ],
+          "control_ids": [],
+          "interpretation_record_ids": [
+            "n15_i4_interpretation_external_proxy_contrast_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "AP3 support-seeking regulation input",
+          "AP5 target formation candidate"
+        ],
+        "required_future_gate": [
+          "N16_self_environment_boundary",
+          "N17_closed_action_perception_loop",
+          "N18_long_horizon_agentic_like_closure",
+          "formal_agency_semantics"
+        ],
+        "row_id": "n15_i7_boundary_04_support_maintenance_not_agency"
+      },
+      {
+        "blocked_claim": "native_support_without_phase8",
+        "boundary_reason": "N12 readiness is validation context only. N15 does not open Phase 8, does not implement native policy surfaces, and does not edit src/.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [
+            "native_support_relabel_control_passed",
+            "src_diff_empty"
+          ],
+          "claim_flag_ids": [
+            "native_support_opened"
+          ],
+          "control_ids": [
+            "native_support_relabel_control"
+          ],
+          "interpretation_record_ids": [
+            "n15_i5_interpretation_proxy_control_matrix_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "N12 readiness-only context",
+          "readiness weight fixed at 0.0"
+        ],
+        "required_future_gate": [
+          "Phase_8_explicitly_opened",
+          "native_route_conductance_memory_policy_validated",
+          "native_response_magnitude_policy_validated"
+        ],
+        "row_id": "n15_i7_boundary_05_artifact_ap5_not_native_support"
+      },
+      {
+        "blocked_claim": "fully_native_agentic_like_integration",
+        "boundary_reason": "Fully native agentic-like integration requires native component policies and composition replay. N15 remains artifact-level and Phase 8 remains closed.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [
+            "fully_native_integration_not_opened"
+          ],
+          "claim_flag_ids": [
+            "fully_native_agentic_like_integration_claim_allowed"
+          ],
+          "control_ids": [],
+          "interpretation_record_ids": []
+        },
+        "positive_evidence_retained": [
+          "artifact-level AP5 candidate",
+          "Phase 8 readiness lineage"
+        ],
+        "required_future_gate": [
+          "native_policy_component_validation",
+          "native_integration_meta_policy",
+          "component_native_policy_composition_replay"
+        ],
+        "row_id": "n15_i7_boundary_06_artifact_ap5_not_fully_native_integration"
+      },
+      {
+        "blocked_claim": "selfhood_personhood_biological_behavior",
+        "boundary_reason": "No N15 artifact concerns subjective status, selfhood, personhood, or biological behavior. Those claims are outside the experiment.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [],
+          "claim_flag_ids": [
+            "selfhood_claim_allowed",
+            "personhood_claim_allowed",
+            "biological_behavior_claim_allowed"
+          ],
+          "control_ids": [],
+          "interpretation_record_ids": []
+        },
+        "positive_evidence_retained": [
+          "artifact-level target-formation candidate"
+        ],
+        "required_future_gate": [
+          "not_part_of_lgrc_experiment_scope"
+        ],
+        "row_id": "n15_i7_boundary_07_not_selfhood_personhood_biology"
+      },
+      {
+        "blocked_claim": "unrestricted_agency",
+        "boundary_reason": "The AP5 candidate is bounded to serialized source state, frozen drift, budget, replay, and control records. It is not open-ended action, unrestricted autonomy, or unrestricted agency.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [],
+          "claim_flag_ids": [
+            "unrestricted_agency_claim_allowed"
+          ],
+          "control_ids": [],
+          "interpretation_record_ids": []
+        },
+        "positive_evidence_retained": [
+          "bounded artifact-level AP5 candidate"
+        ],
+        "required_future_gate": [
+          "long_horizon_closure_controls",
+          "closed_action_perception_loop_controls",
+          "unrestricted_agency_claims_remain_out_of_scope"
+        ],
+        "row_id": "n15_i7_boundary_08_not_unrestricted_agency"
+      },
+      {
+        "blocked_claim": "upstream_observed_route_conditioned_support_regulation",
+        "boundary_reason": "N14 constructed followout remains constructed context. It is not upstream observed N09/N13 route-conditioned support or regulation evidence.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [
+            "n14_constructed_followout_in_candidate_path"
+          ],
+          "claim_flag_ids": [],
+          "control_ids": [],
+          "interpretation_record_ids": [
+            "n15_i3_interpretation_runtime_derived_target_candidate_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "N14 constructed route-conditioned support/regulation followout"
+        ],
+        "required_future_gate": [
+          "fresh_route_conditioned_support_observation_rows",
+          "fresh_route_conditioned_regulation_observation_rows",
+          "same_horizon_same_budget_same_selection_rule_controls"
+        ],
+        "row_id": "n15_i7_boundary_09_constructed_followout_not_upstream_observation"
+      },
+      {
+        "blocked_claim": "direct_historic_target_existence_as_final_ap5",
+        "boundary_reason": "Direct historic target evidence shows target existence at AP2 scope. It does not show target generation from old-best source-current state or target-as-input behavior.",
+        "boundary_status": "blocked",
+        "claim_allowed": false,
+        "evidence_references": {
+          "check_ids": [
+            "direct_historic_ap2_gap_recorded"
+          ],
+          "claim_flag_ids": [],
+          "control_ids": [],
+          "interpretation_record_ids": [
+            "n15_i3_direct_historic_gap_record_v1"
+          ]
+        },
+        "positive_evidence_retained": [
+          "N13 AP2 support-derived target candidate"
+        ],
+        "required_future_gate": [
+          "old_best_claims_source_current_derivation",
+          "bridge_consumption_by_rank_or_regulation",
+          "controls_and_replay"
+        ],
+        "row_id": "n15_i7_boundary_10_direct_ap2_target_not_ap5"
+      }
+    ],
+    "boundary_summary": {
+      "agency_blocked": true,
+      "all_boundary_claims_blocked": true,
+      "blocked_claims": [
+        "semantic_goal_ownership",
+        "intention_semantic_choice",
+        "identity_acceptance",
+        "agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selfhood_personhood_biological_behavior",
+        "unrestricted_agency",
+        "upstream_observed_route_conditioned_support_regulation",
+        "direct_historic_target_existence_as_final_ap5"
+      ],
+      "boundary_row_count": 10,
+      "constructed_followout_caveat_preserved": true,
+      "direct_ap2_not_promoted_to_ap5": true,
+      "fully_native_integration_blocked": true,
+      "identity_acceptance_blocked": true,
+      "intention_semantic_choice_blocked": true,
+      "native_support_without_phase8_blocked": true,
+      "semantic_goal_ownership_blocked": true
+    },
+    "claim_ceiling_candidate": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+    "classified_ap_level": "AP5",
+    "final_ap5_supported": false,
+    "final_ap_freeze_pending_iteration8": true,
+    "record_id": "n15_i7_claim_boundary_record_v1"
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N15-lgrc-endogenous-proxy-formation/scripts/build_n15_claim_boundary_record.py",
+  "constructed_followout_caveat_audit": {
+    "caveat_preserved": true,
+    "constructed_route_conditioned_regulation_followout_supported": true,
+    "constructed_route_conditioned_support_followout_supported": true,
+    "n14_constructed_followout_caveat_preserved": true,
+    "n14_constructed_followout_in_candidate_path": true,
+    "observed_upstream_route_conditioned_support_regulation_supported": false,
+    "record_id": "n15_i7_constructed_followout_caveat_audit_v1",
+    "scope_caveat": "support/regulation positivity is constructed N14 followout evidence; it is not upstream N09/N13 observed route-conditioned evidence and it is not native support",
+    "source_context": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+    "source_inventory": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+  },
+  "controls": {
+    "budget_surface_ambiguity_control": "blocked_in_iteration_5",
+    "dependency_trace_omission_control": "blocked_in_iteration_5",
+    "externally_injected_target_control": "blocked_in_iteration_5",
+    "fixture_label_proxy_control": "blocked_in_iteration_5",
+    "hidden_target_derivation_control": "blocked_in_iteration_5",
+    "identity_acceptance_relabel_control": "blocked_in_iteration_5",
+    "missing_source_state_control": "blocked_in_iteration_5",
+    "native_support_relabel_control": "blocked_in_iteration_5",
+    "post_hoc_proxy_formation_control": "blocked_in_iteration_5",
+    "semantic_goal_ownership_relabel_control": "blocked_in_iteration_5",
+    "stale_source_state_control": "blocked_in_iteration_5",
+    "unbounded_target_drift_control": "blocked_in_iteration_5"
+  },
+  "errors": [],
+  "experiment": "N15",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "git": {
+    "head": "d55ea4d74ab5469c31a0cd6b1615083bbccef93a",
+    "src_status_short": ""
+  },
+  "hypothesis_classification": {
+    "hypothesis_a_runtime_state_proxy_sources": {
+      "acceptance_state": "supported",
+      "boundary": "runtime-visible source state remains artifact state, not semantic ownership, agency, identity acceptance, or native support",
+      "evidence": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json"
+      ],
+      "scope": "source-backed runtime-visible support, memory, regulation, and support/identity-condition source surface for proxy formation",
+      "supported": true,
+      "supporting_checks": {
+        "declared_external_proxy_absent": true,
+        "direct_historic_support_not_promoted": true,
+        "hidden_derivation_blocked": true,
+        "old_best_claim_inputs_recorded": true,
+        "runtime_source_inventory_passed": true,
+        "source_current_state_present": true
+      }
+    },
+    "hypothesis_b_bounded_endogenous_proxy_formation": {
+      "acceptance_state": "supported",
+      "boundary": "bounded endogenous proxy formation is artifact-level AP5, not semantic goal ownership, intention, agency, or native support",
+      "evidence": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "scope": "deterministic source-current target generation with bridge consumption, external-proxy contrast, fail-closed controls, bounded drift, and replay",
+      "supported": true,
+      "supporting_checks": {
+        "all_controls_fail_closed": true,
+        "artifact_replay_passed": true,
+        "bounded_drift_replay_passed": true,
+        "bridge_consumes_target": true,
+        "external_proxy_contrast_passed": true,
+        "order_inversion_replay_passed": true,
+        "snapshot_load_replay_passed": true,
+        "target_generated_before_use": true
+      }
+    },
+    "hypothesis_c_goal_ownership_and_agency_boundary": {
+      "acceptance_state": "supported",
+      "boundary": "AP5 target formation does not open goal ownership, intention, semantic choice, agency, identity acceptance, native support, fully native integration, or unrestricted agency",
+      "evidence": [
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+      ],
+      "scope": "unsafe claim promotions remain blocked by claim flags, I4 blocked-claim records, and I5 dedicated relabel controls",
+      "scope_note": "N15 has dedicated I5 relabel controls for semantic goal ownership, identity acceptance, and native support. Intention, semantic choice, agency, selfhood, personhood, biological behavior, unrestricted agency, and fully native integration remain blocked through the frozen claim flags and I4 blocked claim records, not separate semantic rejection engines.",
+      "supported": true,
+      "supporting_checks": {
+        "claim_flags_forced_false": true,
+        "fully_native_integration_opened_false": true,
+        "i4_unsafe_claim_set_matches_expected": true,
+        "identity_acceptance_relabel_blocked": true,
+        "native_support_opened_false": true,
+        "native_support_relabel_blocked": true,
+        "phase8_opened_false": true,
+        "semantic_goal_ownership_relabel_blocked": true,
+        "src_diff_empty": true
+      }
+    }
+  },
+  "idempotency_digest_plan": {
+    "algorithm": "sha256_canonical_json_sorted_keys",
+    "digest": "6edc0f39730d64598c21006ecba8a730db88f006674453fc41c3326916d2bce2",
+    "excluded_top_level_fields": [
+      "generated_at",
+      "git",
+      "output_digest"
+    ],
+    "record_id": "n15_i7_idempotency_digest_plan_v1",
+    "scope": {
+      "ap5_gate_resolution": [
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "inventory_source_passed": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+          ],
+          "gate_id": "runtime_visible_source_state_inventory_present",
+          "notes": "Iteration 1 pins the runtime-visible source surface.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "every_row_has_source_report_sha256": true,
+            "every_row_has_source_sha256": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+          ],
+          "gate_id": "source_artifact_report_digest_for_each_state_input",
+          "notes": "Source artifacts and reports are digest-pinned.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "source_current": true,
+            "stale_control_blocked": true,
+            "stale_perturbation_blocked": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "source_current_freshness_record_present",
+          "notes": "Current source state is recorded and stale variants fail closed.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "support_state_descriptor_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "support_state_descriptor_present",
+          "notes": "Support margin, threshold, retention, and error are present.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "memory_state_descriptor_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "memory_state_descriptor_or_explicit_absence_present",
+          "notes": "Memory context is explicit through route_b memory delta.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "regulation_state_descriptor_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "regulation_state_descriptor_or_explicit_absence_present",
+          "notes": "Regulation context is explicit through bounded response and recovery score.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "identity_condition_descriptor_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "support_identity_condition_descriptor_or_explicit_absence_present",
+          "notes": "Descriptor remains support/identity-condition context only.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "declared_fixture_distinguished": true,
+            "declared_proxy_absent": true,
+            "external_target_input_absent": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json"
+          ],
+          "gate_id": "declared_external_proxy_absent",
+          "notes": "Declared fixtures are excluded from the endogenous source surface.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "control_requirement_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          ],
+          "gate_id": "externally_injected_target_rejection_policy_present",
+          "notes": "The frozen control matrix includes external target rejection.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "control_requirement_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          ],
+          "gate_id": "hidden_target_derivation_rejection_policy_present",
+          "notes": "The frozen control matrix includes hidden derivation rejection.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "hidden_target_derivation_control_passed": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          ],
+          "gate_id": "hidden_target_derivation_control_fails_closed",
+          "notes": "Hidden target derivation is blocked with the frozen blocker.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "derivation_policy_loaded": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "endogenous_derivation_policy_present",
+          "notes": "The frozen derivation policy is present and used by I3/I6.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "target_generated_before_bridge_use": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "target_condition_generated_before_downstream_use",
+          "notes": "The target is generated before bridge ranking.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "target_condition_surface_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "target_condition_surface_present",
+          "notes": "The target surface is explicit.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "target_center_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "target_center_present",
+          "notes": "A numeric target center is emitted.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "target_band_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "target_band_or_threshold_present",
+          "notes": "The target band is emitted and ordered.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "target_tolerance_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "target_tolerance_present",
+          "notes": "A numeric target tolerance is emitted.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "bounded_perturbations_change_target_within_drift": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "bounded_drift_policy_present",
+          "notes": "The frozen bounded drift policy is present and exercised.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "unbounded_drift_null_blocked": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "drift_clamp_policy_present",
+          "notes": "Clamp policy exists and unbounded drift variants fail closed.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "budget_cost_surface_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "budget_cost_surface_present",
+          "notes": "Budget cost surface is recorded before target use.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "budget_units_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+          ],
+          "gate_id": "budget_units_present",
+          "notes": "Frozen budget units are present.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "budget_invalid_perturbation_blocked": true,
+            "checked_before_target_use": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "budget_validity_policy_present",
+          "notes": "Budget validity is checked before target use and invalid budgets fail closed.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "dependency_trace_complete": true,
+            "trace_omission_blocked": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          ],
+          "gate_id": "dependency_trace_from_source_state_to_target_condition_present",
+          "notes": "Dependency trace covers target fields and omissions are blocked.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "i5_idempotency_reproducible": true,
+            "i6_idempotency_reproducible": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "idempotency_digest_plan_present",
+          "notes": "Idempotency scopes are recorded and reproducible for control and replay matrices.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "bridge_consumes_target": true,
+            "goal_ownership_relabel_blocked": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          ],
+          "gate_id": "generated_target_consumable_by_rank_or_regulation_without_goal_ownership_relabel",
+          "notes": "The target affects ranking while semantic goal ownership remains blocked.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "artifact_only_filesystem_replay_passed": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "artifact_only_replay_requirement_present",
+          "notes": "Artifact-only replay rebuilds the runtime vector and target.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "snapshot_load_replay_passed": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "snapshot_load_equivalence_requirement_present",
+          "notes": "Snapshot/load replay reproduces the target.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "order_inversion_replay_passed": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "order_inversion_replay_requirement_present",
+          "notes": "Order inversion replay preserves target equality.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "post_hoc_proxy_formation_control_passed": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          ],
+          "gate_id": "post_hoc_proxy_formation_rejection_policy_present",
+          "notes": "Post-hoc proxy formation is blocked.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "all_controls_fail_closed": true,
+            "all_required_controls_present": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "negative_controls_present",
+          "notes": "All twelve frozen controls are present and fail closed.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "i5_shape_match": true,
+            "i6_shape_match": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "compatibility_checks_present",
+          "notes": "I5/I6 output-shape compatibility checks are present.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "i5_claim_flags_false": true,
+            "i6_claim_flags_false": true,
+            "schema_claim_flags_false": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "claim_flags_forced_false",
+          "notes": "All unsafe claim flags remain false.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "src_diff_empty": true
+          },
+          "evidence_sources": [],
+          "gate_id": "src_diff_empty_true",
+          "notes": "No src changes are present.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "i5_native_support_opened_false": true,
+            "i6_native_support_opened_false": true,
+            "schema_native_support_opened_false": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "native_supported_flags_false",
+          "notes": "Native support remains unopened.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "i5_phase8_opened_false": true,
+            "i6_phase8_opened_false": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "phase8_opened_false",
+          "notes": "Phase 8 remains closed.",
+          "resolution": "validated",
+          "validated": true
+        },
+        {
+          "blocker": null,
+          "evidence_checks": {
+            "i5_fully_native_false": true,
+            "i6_fully_native_false": true
+          },
+          "evidence_sources": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "gate_id": "fully_native_integration_opened_false",
+          "notes": "Fully native integration remains unopened.",
+          "resolution": "validated",
+          "validated": true
+        }
+      ],
+      "blocked_input_audit": {
+        "audit_complete": true,
+        "blocked_boundary_claims": [
+          {
+            "blocked_claim": "semantic_goal_ownership",
+            "row_id": "n15_i7_boundary_01_runtime_target_not_goal_ownership",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "intention_semantic_choice",
+            "row_id": "n15_i7_boundary_02_runtime_target_not_intention_or_choice",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "identity_acceptance",
+            "row_id": "n15_i7_boundary_03_support_identity_descriptor_not_identity_acceptance",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "agency",
+            "row_id": "n15_i7_boundary_04_support_maintenance_not_agency",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "native_support_without_phase8",
+            "row_id": "n15_i7_boundary_05_artifact_ap5_not_native_support",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "fully_native_agentic_like_integration",
+            "row_id": "n15_i7_boundary_06_artifact_ap5_not_fully_native_integration",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "selfhood_personhood_biological_behavior",
+            "row_id": "n15_i7_boundary_07_not_selfhood_personhood_biology",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "unrestricted_agency",
+            "row_id": "n15_i7_boundary_08_not_unrestricted_agency",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "upstream_observed_route_conditioned_support_regulation",
+            "row_id": "n15_i7_boundary_09_constructed_followout_not_upstream_observation",
+            "source": "n15_i7_boundary_rows"
+          },
+          {
+            "blocked_claim": "direct_historic_target_existence_as_final_ap5",
+            "row_id": "n15_i7_boundary_10_direct_ap2_target_not_ap5",
+            "source": "n15_i7_boundary_rows"
+          }
+        ],
+        "blocked_control_inputs": [
+          {
+            "control_id": "externally_injected_target_control",
+            "observed_blocker": "externally_injected_target_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "hidden_target_derivation_control",
+            "observed_blocker": "hidden_target_derivation_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "semantic_goal_ownership_relabel_control",
+            "observed_blocker": "semantic_goal_ownership_relabel_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "post_hoc_proxy_formation_control",
+            "observed_blocker": "post_hoc_proxy_formation_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "unbounded_target_drift_control",
+            "observed_blocker": "unbounded_target_drift_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "budget_surface_ambiguity_control",
+            "observed_blocker": "budget_surface_ambiguity_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "identity_acceptance_relabel_control",
+            "observed_blocker": "identity_acceptance_relabel_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "native_support_relabel_control",
+            "observed_blocker": "native_support_relabel_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "fixture_label_proxy_control",
+            "observed_blocker": "fixture_label_proxy_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "stale_source_state_control",
+            "observed_blocker": "stale_source_state_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "missing_source_state_control",
+            "observed_blocker": "missing_source_state_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          },
+          {
+            "control_id": "dependency_trace_omission_control",
+            "observed_blocker": "dependency_trace_omission_blocked",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+          }
+        ],
+        "blocked_replay_inputs": [
+          {
+            "observed_blocker": "stale_source_state_blocked",
+            "record_id": "stale_state_perturbation",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          },
+          {
+            "observed_blocker": "budget_exceeded",
+            "record_id": "budget_invalid_perturbation",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          },
+          {
+            "observed_blocker": "unbounded_target_drift_blocked",
+            "record_id": "unbounded_drift_null",
+            "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          }
+        ],
+        "direct_historic_support_boundary": {
+          "direct_historic_support_status": "target_condition_exists_at_N13_AP2_scope_only",
+          "reason_not_promoted": "N13 direct target evidence lacks N15 pre-use derivation from the old-best source vector plus bridge consumption by rank/regulation",
+          "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json"
+        },
+        "i4_blocked_claims": {
+          "blocked_claims": [
+            "agency",
+            "intention",
+            "semantic_choice",
+            "semantic_goal_ownership",
+            "semantic_goal_understanding",
+            "identity_acceptance",
+            "runtime_identity_acceptance",
+            "selfhood",
+            "personhood",
+            "biological_behavior",
+            "unrestricted_agency",
+            "fully_native_agentic_like_integration",
+            "native_support_without_phase8"
+          ],
+          "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json"
+        },
+        "readiness_only_boundary": {
+          "n12_readiness_only_not_native_support": true,
+          "native_support_relabel_blocked": true,
+          "source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+        },
+        "record_id": "n15_i7_blocked_input_audit_v1"
+      },
+      "boundary_rows": [
+        {
+          "blocked_claim": "semantic_goal_ownership",
+          "boundary_reason": "The target is a deterministic artifact condition generated from serialized source state. It is not an owned semantic goal or evidence of goal understanding.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [
+              "semantic_goal_ownership_relabel_control_passed"
+            ],
+            "claim_flag_ids": [
+              "semantic_goal_ownership_claim_allowed",
+              "semantic_goal_understanding_claim_allowed"
+            ],
+            "control_ids": [
+              "semantic_goal_ownership_relabel_control"
+            ],
+            "interpretation_record_ids": [
+              "n15_i3_interpretation_runtime_derived_target_candidate_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "runtime-derived target band",
+            "generated target consumed by bridge ranking"
+          ],
+          "required_future_gate": [
+            "formal_semantic_goal_ownership_semantics",
+            "runtime_goal_ownership_event_schema",
+            "goal_ownership_relabel_controls_beyond_artifact_flags"
+          ],
+          "row_id": "n15_i7_boundary_01_runtime_target_not_goal_ownership"
+        },
+        {
+          "blocked_claim": "intention_semantic_choice",
+          "boundary_reason": "Pre-use target formation and deterministic candidate ranking do not contain intention semantics, choice awareness, commitment, or deliberative selection.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [],
+            "claim_flag_ids": [
+              "intention_claim_allowed",
+              "semantic_choice_claim_allowed"
+            ],
+            "control_ids": [],
+            "interpretation_record_ids": [
+              "n15_i4_interpretation_external_proxy_contrast_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "pre-use target generation",
+            "bounded regulation response selection"
+          ],
+          "required_future_gate": [
+            "formal_intention_semantics",
+            "choice_event_schema",
+            "negative_controls_for_intention_and_semantic_choice_relabeling"
+          ],
+          "row_id": "n15_i7_boundary_02_runtime_target_not_intention_or_choice"
+        },
+        {
+          "blocked_claim": "identity_acceptance",
+          "boundary_reason": "The descriptor is support-relevant context only. It is not a runtime identity acceptance event or identity validator.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [
+              "identity_acceptance_relabel_control_passed"
+            ],
+            "claim_flag_ids": [
+              "identity_acceptance_claim_allowed",
+              "runtime_identity_acceptance_claim_allowed"
+            ],
+            "control_ids": [
+              "identity_acceptance_relabel_control"
+            ],
+            "interpretation_record_ids": [
+              "n15_i5_interpretation_proxy_control_matrix_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "support/identity-condition descriptor",
+            "identity acceptance relabel control blocked"
+          ],
+          "required_future_gate": [
+            "formal_identity_acceptance_semantics",
+            "runtime_identity_acceptance_event_schema",
+            "identity_acceptance_validator"
+          ],
+          "row_id": "n15_i7_boundary_03_support_identity_descriptor_not_identity_acceptance"
+        },
+        {
+          "blocked_claim": "agency",
+          "boundary_reason": "Support-seeking regulation plus proxy formation is an agency-prerequisite chain, not agency. It lacks the later self/environment boundary, closed action-perception loop, long-horizon closure, and formal agency semantics.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [],
+            "claim_flag_ids": [
+              "agency_claim_allowed"
+            ],
+            "control_ids": [],
+            "interpretation_record_ids": [
+              "n15_i4_interpretation_external_proxy_contrast_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "AP3 support-seeking regulation input",
+            "AP5 target formation candidate"
+          ],
+          "required_future_gate": [
+            "N16_self_environment_boundary",
+            "N17_closed_action_perception_loop",
+            "N18_long_horizon_agentic_like_closure",
+            "formal_agency_semantics"
+          ],
+          "row_id": "n15_i7_boundary_04_support_maintenance_not_agency"
+        },
+        {
+          "blocked_claim": "native_support_without_phase8",
+          "boundary_reason": "N12 readiness is validation context only. N15 does not open Phase 8, does not implement native policy surfaces, and does not edit src/.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [
+              "native_support_relabel_control_passed",
+              "src_diff_empty"
+            ],
+            "claim_flag_ids": [
+              "native_support_opened"
+            ],
+            "control_ids": [
+              "native_support_relabel_control"
+            ],
+            "interpretation_record_ids": [
+              "n15_i5_interpretation_proxy_control_matrix_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "N12 readiness-only context",
+            "readiness weight fixed at 0.0"
+          ],
+          "required_future_gate": [
+            "Phase_8_explicitly_opened",
+            "native_route_conductance_memory_policy_validated",
+            "native_response_magnitude_policy_validated"
+          ],
+          "row_id": "n15_i7_boundary_05_artifact_ap5_not_native_support"
+        },
+        {
+          "blocked_claim": "fully_native_agentic_like_integration",
+          "boundary_reason": "Fully native agentic-like integration requires native component policies and composition replay. N15 remains artifact-level and Phase 8 remains closed.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [
+              "fully_native_integration_not_opened"
+            ],
+            "claim_flag_ids": [
+              "fully_native_agentic_like_integration_claim_allowed"
+            ],
+            "control_ids": [],
+            "interpretation_record_ids": []
+          },
+          "positive_evidence_retained": [
+            "artifact-level AP5 candidate",
+            "Phase 8 readiness lineage"
+          ],
+          "required_future_gate": [
+            "native_policy_component_validation",
+            "native_integration_meta_policy",
+            "component_native_policy_composition_replay"
+          ],
+          "row_id": "n15_i7_boundary_06_artifact_ap5_not_fully_native_integration"
+        },
+        {
+          "blocked_claim": "selfhood_personhood_biological_behavior",
+          "boundary_reason": "No N15 artifact concerns subjective status, selfhood, personhood, or biological behavior. Those claims are outside the experiment.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [],
+            "claim_flag_ids": [
+              "selfhood_claim_allowed",
+              "personhood_claim_allowed",
+              "biological_behavior_claim_allowed"
+            ],
+            "control_ids": [],
+            "interpretation_record_ids": []
+          },
+          "positive_evidence_retained": [
+            "artifact-level target-formation candidate"
+          ],
+          "required_future_gate": [
+            "not_part_of_lgrc_experiment_scope"
+          ],
+          "row_id": "n15_i7_boundary_07_not_selfhood_personhood_biology"
+        },
+        {
+          "blocked_claim": "unrestricted_agency",
+          "boundary_reason": "The AP5 candidate is bounded to serialized source state, frozen drift, budget, replay, and control records. It is not open-ended action, unrestricted autonomy, or unrestricted agency.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [],
+            "claim_flag_ids": [
+              "unrestricted_agency_claim_allowed"
+            ],
+            "control_ids": [],
+            "interpretation_record_ids": []
+          },
+          "positive_evidence_retained": [
+            "bounded artifact-level AP5 candidate"
+          ],
+          "required_future_gate": [
+            "long_horizon_closure_controls",
+            "closed_action_perception_loop_controls",
+            "unrestricted_agency_claims_remain_out_of_scope"
+          ],
+          "row_id": "n15_i7_boundary_08_not_unrestricted_agency"
+        },
+        {
+          "blocked_claim": "upstream_observed_route_conditioned_support_regulation",
+          "boundary_reason": "N14 constructed followout remains constructed context. It is not upstream observed N09/N13 route-conditioned support or regulation evidence.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [
+              "n14_constructed_followout_in_candidate_path"
+            ],
+            "claim_flag_ids": [],
+            "control_ids": [],
+            "interpretation_record_ids": [
+              "n15_i3_interpretation_runtime_derived_target_candidate_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "N14 constructed route-conditioned support/regulation followout"
+          ],
+          "required_future_gate": [
+            "fresh_route_conditioned_support_observation_rows",
+            "fresh_route_conditioned_regulation_observation_rows",
+            "same_horizon_same_budget_same_selection_rule_controls"
+          ],
+          "row_id": "n15_i7_boundary_09_constructed_followout_not_upstream_observation"
+        },
+        {
+          "blocked_claim": "direct_historic_target_existence_as_final_ap5",
+          "boundary_reason": "Direct historic target evidence shows target existence at AP2 scope. It does not show target generation from old-best source-current state or target-as-input behavior.",
+          "boundary_status": "blocked",
+          "claim_allowed": false,
+          "evidence_references": {
+            "check_ids": [
+              "direct_historic_ap2_gap_recorded"
+            ],
+            "claim_flag_ids": [],
+            "control_ids": [],
+            "interpretation_record_ids": [
+              "n15_i3_direct_historic_gap_record_v1"
+            ]
+          },
+          "positive_evidence_retained": [
+            "N13 AP2 support-derived target candidate"
+          ],
+          "required_future_gate": [
+            "old_best_claims_source_current_derivation",
+            "bridge_consumption_by_rank_or_regulation",
+            "controls_and_replay"
+          ],
+          "row_id": "n15_i7_boundary_10_direct_ap2_target_not_ap5"
+        }
+      ],
+      "boundary_summary": {
+        "agency_blocked": true,
+        "all_boundary_claims_blocked": true,
+        "blocked_claims": [
+          "semantic_goal_ownership",
+          "intention_semantic_choice",
+          "identity_acceptance",
+          "agency",
+          "native_support_without_phase8",
+          "fully_native_agentic_like_integration",
+          "selfhood_personhood_biological_behavior",
+          "unrestricted_agency",
+          "upstream_observed_route_conditioned_support_regulation",
+          "direct_historic_target_existence_as_final_ap5"
+        ],
+        "boundary_row_count": 10,
+        "constructed_followout_caveat_preserved": true,
+        "direct_ap2_not_promoted_to_ap5": true,
+        "fully_native_integration_blocked": true,
+        "identity_acceptance_blocked": true,
+        "intention_semantic_choice_blocked": true,
+        "native_support_without_phase8_blocked": true,
+        "semantic_goal_ownership_blocked": true
+      },
+      "claim_boundary_control_coverage": {
+        "all_expected_claims_covered": true,
+        "claim_flag_and_i4_blocked_claims": [
+          "agency",
+          "intention",
+          "semantic_choice",
+          "semantic_goal_understanding",
+          "selfhood",
+          "personhood",
+          "biological_behavior",
+          "unrestricted_agency",
+          "fully_native_agentic_like_integration"
+        ],
+        "coverage_asymmetry_recorded": true,
+        "coverage_boundary": "Dedicated relabel controls exist for semantic goal ownership, identity acceptance/runtime identity acceptance, and native support. Other unsafe claims are blocked by I4 blocked-claim records plus forced-false claim flags.",
+        "coverage_rows": [
+          {
+            "claim": "agency",
+            "claim_flag": "agency_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "intention",
+            "claim_flag": "intention_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "semantic_choice",
+            "claim_flag": "semantic_choice_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "semantic_goal_ownership",
+            "claim_flag": "semantic_goal_ownership_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+            "dedicated_i5_control": "semantic_goal_ownership_relabel_control",
+            "dedicated_i5_control_present": true,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "semantic_goal_understanding",
+            "claim_flag": "semantic_goal_understanding_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "identity_acceptance",
+            "claim_flag": "identity_acceptance_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+            "dedicated_i5_control": "identity_acceptance_relabel_control",
+            "dedicated_i5_control_present": true,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "runtime_identity_acceptance",
+            "claim_flag": "runtime_identity_acceptance_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+            "dedicated_i5_control": "identity_acceptance_relabel_control",
+            "dedicated_i5_control_present": true,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "selfhood",
+            "claim_flag": "selfhood_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "personhood",
+            "claim_flag": "personhood_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "biological_behavior",
+            "claim_flag": "biological_behavior_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "unrestricted_agency",
+            "claim_flag": "unrestricted_agency_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "fully_native_agentic_like_integration",
+            "claim_flag": "fully_native_agentic_like_integration_claim_allowed",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "i4_blocked_claim_plus_forced_false_claim_flag",
+            "dedicated_i5_control": null,
+            "dedicated_i5_control_present": false,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          },
+          {
+            "claim": "native_support_without_phase8",
+            "claim_flag": "native_support_opened",
+            "claim_flag_forced_false": true,
+            "coverage_mode": "dedicated_i5_relabel_control_plus_i4_blocked_claim_and_claim_flag",
+            "dedicated_i5_control": "native_support_relabel_control",
+            "dedicated_i5_control_present": true,
+            "i4_blocked_claim_recorded": true,
+            "scope_limit": "This is a claim-boundary blocker at artifact level, not a separate semantic rejection engine."
+          }
+        ],
+        "dedicated_control_claims": [
+          "semantic_goal_ownership",
+          "identity_acceptance",
+          "runtime_identity_acceptance",
+          "native_support_without_phase8"
+        ],
+        "expected_blocked_claims": [
+          "agency",
+          "biological_behavior",
+          "fully_native_agentic_like_integration",
+          "identity_acceptance",
+          "intention",
+          "native_support_without_phase8",
+          "personhood",
+          "runtime_identity_acceptance",
+          "selfhood",
+          "semantic_choice",
+          "semantic_goal_ownership",
+          "semantic_goal_understanding",
+          "unrestricted_agency"
+        ],
+        "future_control_candidates": [
+          "agency",
+          "intention",
+          "unrestricted_agency"
+        ],
+        "observed_blocked_claims": [
+          "agency",
+          "intention",
+          "semantic_choice",
+          "semantic_goal_ownership",
+          "semantic_goal_understanding",
+          "identity_acceptance",
+          "runtime_identity_acceptance",
+          "selfhood",
+          "personhood",
+          "biological_behavior",
+          "unrestricted_agency",
+          "fully_native_agentic_like_integration",
+          "native_support_without_phase8"
+        ],
+        "record_id": "n15_i7_claim_boundary_control_coverage_v1",
+        "source_i4": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+        "source_i5": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json"
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "biological_behavior_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "constructed_followout_caveat_audit": {
+        "caveat_preserved": true,
+        "constructed_route_conditioned_regulation_followout_supported": true,
+        "constructed_route_conditioned_support_followout_supported": true,
+        "n14_constructed_followout_caveat_preserved": true,
+        "n14_constructed_followout_in_candidate_path": true,
+        "observed_upstream_route_conditioned_support_regulation_supported": false,
+        "record_id": "n15_i7_constructed_followout_caveat_audit_v1",
+        "scope_caveat": "support/regulation positivity is constructed N14 followout evidence; it is not upstream N09/N13 observed route-conditioned evidence and it is not native support",
+        "source_context": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "source_inventory": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json"
+      },
+      "controls": {
+        "budget_surface_ambiguity_control": "blocked_in_iteration_5",
+        "dependency_trace_omission_control": "blocked_in_iteration_5",
+        "externally_injected_target_control": "blocked_in_iteration_5",
+        "fixture_label_proxy_control": "blocked_in_iteration_5",
+        "hidden_target_derivation_control": "blocked_in_iteration_5",
+        "identity_acceptance_relabel_control": "blocked_in_iteration_5",
+        "missing_source_state_control": "blocked_in_iteration_5",
+        "native_support_relabel_control": "blocked_in_iteration_5",
+        "post_hoc_proxy_formation_control": "blocked_in_iteration_5",
+        "semantic_goal_ownership_relabel_control": "blocked_in_iteration_5",
+        "stale_source_state_control": "blocked_in_iteration_5",
+        "unbounded_target_drift_control": "blocked_in_iteration_5"
+      },
+      "hypothesis_classification": {
+        "hypothesis_a_runtime_state_proxy_sources": {
+          "acceptance_state": "supported",
+          "boundary": "runtime-visible source state remains artifact state, not semantic ownership, agency, identity acceptance, or native support",
+          "evidence": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json"
+          ],
+          "scope": "source-backed runtime-visible support, memory, regulation, and support/identity-condition source surface for proxy formation",
+          "supported": true,
+          "supporting_checks": {
+            "declared_external_proxy_absent": true,
+            "direct_historic_support_not_promoted": true,
+            "hidden_derivation_blocked": true,
+            "old_best_claim_inputs_recorded": true,
+            "runtime_source_inventory_passed": true,
+            "source_current_state_present": true
+          }
+        },
+        "hypothesis_b_bounded_endogenous_proxy_formation": {
+          "acceptance_state": "supported",
+          "boundary": "bounded endogenous proxy formation is artifact-level AP5, not semantic goal ownership, intention, agency, or native support",
+          "evidence": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "scope": "deterministic source-current target generation with bridge consumption, external-proxy contrast, fail-closed controls, bounded drift, and replay",
+          "supported": true,
+          "supporting_checks": {
+            "all_controls_fail_closed": true,
+            "artifact_replay_passed": true,
+            "bounded_drift_replay_passed": true,
+            "bridge_consumes_target": true,
+            "external_proxy_contrast_passed": true,
+            "order_inversion_replay_passed": true,
+            "snapshot_load_replay_passed": true,
+            "target_generated_before_use": true
+          }
+        },
+        "hypothesis_c_goal_ownership_and_agency_boundary": {
+          "acceptance_state": "supported",
+          "boundary": "AP5 target formation does not open goal ownership, intention, semantic choice, agency, identity acceptance, native support, fully native integration, or unrestricted agency",
+          "evidence": [
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+            "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json"
+          ],
+          "scope": "unsafe claim promotions remain blocked by claim flags, I4 blocked-claim records, and I5 dedicated relabel controls",
+          "scope_note": "N15 has dedicated I5 relabel controls for semantic goal ownership, identity acceptance, and native support. Intention, semantic choice, agency, selfhood, personhood, biological behavior, unrestricted agency, and fully native integration remain blocked through the frozen claim flags and I4 blocked claim records, not separate semantic rejection engines.",
+          "supported": true,
+          "supporting_checks": {
+            "claim_flags_forced_false": true,
+            "fully_native_integration_opened_false": true,
+            "i4_unsafe_claim_set_matches_expected": true,
+            "identity_acceptance_relabel_blocked": true,
+            "native_support_opened_false": true,
+            "native_support_relabel_blocked": true,
+            "phase8_opened_false": true,
+            "semantic_goal_ownership_relabel_blocked": true,
+            "src_diff_empty": true
+          }
+        }
+      },
+      "interpretation_scope": {
+        "canonical_sources": {
+          "claim_boundary_record": "canonical AP5 scope, claim ceiling candidate, final-freeze state, boundary rows, and boundary summary",
+          "interpretation_record": "canonical AP state, hypothesis acceptance states, unsupported interpretations, and remaining work",
+          "whole_experiment_interpretation": "narrative summary only; not the canonical claim-boundary source"
+        },
+        "compatibility_mirrors": {
+          "boundary_rows": "compatibility mirror of claim_boundary_record.boundary_rows",
+          "boundary_summary": "compatibility mirror of claim_boundary_record.boundary_summary"
+        },
+        "consistency_checks": {
+          "claim_ceiling_consistent": true,
+          "classified_ap_level_consistent": true,
+          "final_ap5_pending_consistent": true,
+          "remaining_work_consistent": true
+        },
+        "overlap_resolution": "I7 keeps overlapping records for downstream readers but assigns canonical responsibility to each record so duplicated narrative does not change the claim boundary.",
+        "record_id": "n15_i7_interpretation_scope_v1"
+      },
+      "review_gap_closure": {
+        "closures": [
+          {
+            "gap_id": "i7_1_boundary_record_duplication",
+            "resolution": "Top-level boundary rows and summary are retained as compatibility mirrors and guarded by identity checks.",
+            "status": "closed_as_compatibility_shape"
+          },
+          {
+            "gap_id": "i7_2_interpretation_overlap",
+            "resolution": "interpretation_scope assigns canonical responsibility to whole-experiment, interpretation, and claim-boundary records.",
+            "status": "closed"
+          },
+          {
+            "gap_id": "i7_3_magic_blocked_claim_count",
+            "resolution": "I4 blocked claims are validated against a frozen expected claim set instead of a raw count.",
+            "status": "closed"
+          },
+          {
+            "gap_id": "i7_4_pending_closeout_language_after_i8",
+            "resolution": "I7 remains a historical pre-closeout classification snapshot. I8 is the final closeout source after I7; I7 does not embed an I8 digest to avoid circular provenance.",
+            "status": "not_gap_current"
+          },
+          {
+            "gap_id": "i7_5_idempotency_digest_scope",
+            "resolution": "idempotency_digest_plan now documents semantic-core scope versus the full artifact output_digest scope.",
+            "status": "closed"
+          },
+          {
+            "gap_id": "i7_6_output_shape_evolution",
+            "resolution": "schema_evolution records inherited runtime fields, schema-freeze fields, and I7-specific additions.",
+            "status": "closed"
+          },
+          {
+            "gap_id": "i7_7_empty_rows_array",
+            "resolution": "rows_scope_note records that empty rows are intentional for I7 classification scope.",
+            "status": "closed"
+          },
+          {
+            "gap_id": "i7_8_asymmetric_claim_controls",
+            "resolution": "claim_boundary_control_coverage records which claims have dedicated I5 relabel controls and which rely on I4 blocked claims plus forced-false flags.",
+            "status": "closed_as_boundary_record"
+          },
+          {
+            "gap_id": "i7_9_i6_iteration_result_key_coupling",
+            "resolution": "I7 checks the exact expected I6 iteration_result key set.",
+            "status": "closed"
+          },
+          {
+            "gap_id": "i7_10_independent_i7_validator",
+            "resolution": "scripts/validate_n15_claim_boundary_record.py validates the generated I7 artifact independently.",
+            "status": "closed"
+          }
+        ],
+        "record_id": "n15_i7_review_gap_closure_v1",
+        "review_gap_closure_recorded": true,
+        "review_source": "iteration_7_gap_analysis_and_improvement_proposals"
+      },
+      "rows_scope_note": {
+        "canonical_i7_row_like_surfaces": [
+          "ap5_gate_resolution",
+          "boundary_rows",
+          "hypothesis_classification",
+          "claim_boundary_record.boundary_rows"
+        ],
+        "inherited_shape_source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "not_evidence_gap": true,
+        "reason_rows_empty": "The row-bearing candidate is Iteration 3. I7 preserves the standard top-level `rows` field for schema compatibility while placing classification evidence in AP5 gates, boundary rows, hypothesis classification, and claim-boundary records.",
+        "record_id": "n15_i7_rows_scope_note_v1",
+        "rows_empty": true,
+        "rows_value": [],
+        "scope": "Iteration 7 is a claim-boundary and classification record, not a new candidate-row derivation."
+      },
+      "schema_evolution": {
+        "evolution_rationale": {
+          "classification_fields": "I7 adds AP5 gate resolution, hypothesis classification, claim-boundary, interpretation, and review-closure records.",
+          "runtime_core_fields": "I7 keeps the standard runtime output envelope for portable validation and digest checks.",
+          "schema_freeze_fields": "I7 consumes the I2 schema-freeze artifact instead of re-emitting every frozen policy body."
+        },
+        "inherited_runtime_output_fields": [
+          "experiment",
+          "iteration",
+          "artifact_id",
+          "purpose",
+          "schema_version",
+          "generated_at",
+          "command",
+          "status",
+          "acceptance_state",
+          "source_artifacts",
+          "source_reports",
+          "rows",
+          "controls",
+          "checks",
+          "claim_flags",
+          "errors",
+          "output_digest"
+        ],
+        "inherited_schema_freeze_fields": [
+          "experiment",
+          "iteration",
+          "artifact_id",
+          "purpose",
+          "schema_version",
+          "generated_at",
+          "command",
+          "status",
+          "acceptance_state",
+          "target_ap_ceiling",
+          "iteration_result",
+          "schema_summary",
+          "ap_ladder",
+          "row_schema_fields",
+          "top_level_output_fields",
+          "top_level_schema_freeze_fields",
+          "ap5_required_gates",
+          "endogenous_derivation_policy",
+          "old_best_claims_composition",
+          "bounded_drift_policy",
+          "budget_limits",
+          "dependency_trace_format",
+          "replay_digest_policy",
+          "perturbation_policy",
+          "hypothesis_decision_rubric",
+          "control_requirements",
+          "config_file_contracts",
+          "schema_validation_contract",
+          "fail_closed_error_labels",
+          "rows",
+          "controls",
+          "claim_flags",
+          "checks",
+          "source_artifacts",
+          "source_reports",
+          "errors",
+          "git",
+          "output_digest"
+        ],
+        "iteration_7_output_fields": [
+          "experiment",
+          "iteration",
+          "artifact_id",
+          "purpose",
+          "schema_version",
+          "generated_at",
+          "command",
+          "status",
+          "acceptance_state",
+          "source_artifacts",
+          "source_reports",
+          "rows",
+          "controls",
+          "checks",
+          "claim_flags",
+          "errors",
+          "iteration_result",
+          "ap5_gate_resolution",
+          "ap5_gate_summary",
+          "hypothesis_classification",
+          "boundary_rows",
+          "boundary_summary",
+          "blocked_input_audit",
+          "constructed_followout_caveat_audit",
+          "whole_experiment_interpretation",
+          "interpretation_record",
+          "claim_boundary_record",
+          "rows_scope_note",
+          "schema_evolution",
+          "claim_boundary_control_coverage",
+          "interpretation_scope",
+          "review_gap_closure",
+          "idempotency_digest_plan",
+          "iteration_7_top_level_output_fields",
+          "git",
+          "output_digest"
+        ],
+        "iteration_7_specific_fields": [
+          "iteration_result",
+          "ap5_gate_resolution",
+          "ap5_gate_summary",
+          "hypothesis_classification",
+          "boundary_rows",
+          "boundary_summary",
+          "blocked_input_audit",
+          "constructed_followout_caveat_audit",
+          "whole_experiment_interpretation",
+          "interpretation_record",
+          "claim_boundary_record",
+          "rows_scope_note",
+          "schema_evolution",
+          "claim_boundary_control_coverage",
+          "interpretation_scope",
+          "review_gap_closure",
+          "idempotency_digest_plan",
+          "iteration_7_top_level_output_fields",
+          "git"
+        ],
+        "output_digest_field_retained": true,
+        "record_id": "n15_i7_schema_evolution_v1",
+        "runtime_output_fields_preserved": true,
+        "schema_evolution_recorded": true,
+        "schema_freeze_fields_not_reemitted_by_i7": [
+          "target_ap_ceiling",
+          "schema_summary",
+          "ap_ladder",
+          "row_schema_fields",
+          "top_level_output_fields",
+          "top_level_schema_freeze_fields",
+          "ap5_required_gates",
+          "endogenous_derivation_policy",
+          "old_best_claims_composition",
+          "bounded_drift_policy",
+          "budget_limits",
+          "dependency_trace_format",
+          "replay_digest_policy",
+          "perturbation_policy",
+          "hypothesis_decision_rubric",
+          "control_requirements",
+          "config_file_contracts",
+          "schema_validation_contract",
+          "fail_closed_error_labels"
+        ],
+        "shared_with_runtime_output_shape": [
+          "experiment",
+          "iteration",
+          "artifact_id",
+          "purpose",
+          "schema_version",
+          "generated_at",
+          "command",
+          "status",
+          "acceptance_state",
+          "source_artifacts",
+          "source_reports",
+          "rows",
+          "controls",
+          "checks",
+          "claim_flags",
+          "errors",
+          "output_digest"
+        ],
+        "shared_with_schema_freeze_shape": [
+          "experiment",
+          "iteration",
+          "artifact_id",
+          "purpose",
+          "schema_version",
+          "generated_at",
+          "command",
+          "status",
+          "acceptance_state",
+          "source_artifacts",
+          "source_reports",
+          "rows",
+          "controls",
+          "checks",
+          "claim_flags",
+          "errors",
+          "iteration_result",
+          "git",
+          "output_digest"
+        ],
+        "source_schema": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json"
+      },
+      "source_artifacts": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json": {
+          "acceptance_state": "accepted_bounded_drift_replay_matrix_pending_claim_boundary_classification",
+          "output_digest": "b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json",
+          "sha256": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0",
+          "status": "passed"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json": {
+          "acceptance_state": "accepted_external_proxy_contrast_matrix_pending_adversarial_controls_replay_and_claim_boundary",
+          "output_digest": "bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+          "sha256": "f7201b82f0071e26f05b62111d88396072d669d815153971f93f967e503c0ee8",
+          "status": "passed"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": {
+          "acceptance_state": "accepted_proxy_control_matrix_pending_bounded_drift_replay_and_claim_boundary",
+          "output_digest": "251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+          "sha256": "35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf",
+          "status": "passed"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": {
+          "acceptance_state": "accepted_schema_freeze_no_row_validation",
+          "output_digest": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+          "sha256": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+          "status": "passed"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json": {
+          "acceptance_state": "accepted_proxy_source_inventory_only_no_ap5",
+          "output_digest": "66ebd8bf90e31d3aa1a59d9de46e85bf581f44c3c70e5cf1a3a76d8f535aa4c1",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json",
+          "sha256": "67fe966ec46525059eef61d0e38cad73e4e561c1d258a86802f6b82012f9dada",
+          "status": "passed"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json": {
+          "acceptance_state": "accepted_runtime_derived_target_candidate_with_bridge_pending_controls",
+          "output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873",
+          "status": "passed"
+        }
+      },
+      "source_reports": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_a_runtime_state_proxy_sources.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_a_runtime_state_proxy_sources.md",
+          "sha256": "91f3e7f62a8054b586b889a4eacd07b8ab7bd64c2d04ca39746a3f7656be0faa"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_b_bounded_endogenous_proxy_formation.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_b_bounded_endogenous_proxy_formation.md",
+          "sha256": "19a80a9f414dd78573d4ab7a5203cced03f2290d229f4f57bd4d1c0848075d78"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_c_goal_ownership_and_agency_boundary.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_c_goal_ownership_and_agency_boundary.md",
+          "sha256": "c02ef099cdb57d1f372d5690544ddb8b4074bfcc5e23652c502a160107d697ad"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md",
+          "sha256": "8766f392358f7aa675a591c076e3cec5a97f91af5ed5f382bc306a9809a13728"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_external_proxy_contrast_matrix.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_external_proxy_contrast_matrix.md",
+          "sha256": "3c679397b75bd033df352995265c8cceee71612944729a6991805801509aad8c"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_control_matrix.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_control_matrix.md",
+          "sha256": "e25c2b6b50bd6c50934963de8d2c93fc4045ac632f713f778f8c1733d006fa69"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md",
+          "sha256": "040582e46c1542a30c28aa4cda661fc5752e2529d93a0c14fc2f2c3b5e26eba6"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md",
+          "sha256": "12797a85760e37372413ec0dc5b8542cfbe5038faf8970b54430f644fa0955b5"
+        },
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md": {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c"
+        }
+      }
+    },
+    "scope_note": "This digest covers the semantic-core I7 evidence scope. The top-level output_digest covers the full artifact after excluding generated_at, git, and output_digest."
+  },
+  "interpretation_record": {
+    "ap_state_after_claim_boundary": {
+      "ap5_classification_supported": true,
+      "classified_ap_level": "AP5",
+      "final_ap5_supported": false,
+      "final_ap_freeze_pending_iteration8": true,
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "provisional_ap_level": "AP5_candidate_boundary_clean_pending_closeout"
+    },
+    "hypothesis_acceptance_states": {
+      "hypothesis_a_runtime_state_proxy_sources": "supported",
+      "hypothesis_b_bounded_endogenous_proxy_formation": "supported",
+      "hypothesis_c_goal_ownership_and_agency_boundary": "supported"
+    },
+    "plain_language_meaning": "The target condition is generated from source-current support, memory, regulation, and AP4 consequence context before use; it is distinguishable from fixtures and hidden/post-hoc derivations; all frozen controls fail closed; replay and bounded drift pass. The result remains artifact-level and does not open semantic goal ownership, intention, agency, identity acceptance, native support, or fully native integration.",
+    "record_id": "n15_i7_interpretation_claim_boundary_ap5_classification_v1",
+    "record_type": "n15_iteration_7_claim_boundary_and_ap5_classification",
+    "remaining_required_work": [
+      "n15_closeout_handoff_iteration_8"
+    ],
+    "supported_interpretation": "Artifact-level AP5 endogenous proxy formation candidate, boundary-clean pending Iteration 8 closeout.",
+    "unsupported_interpretations": [
+      "semantic_goal_ownership",
+      "intention_semantic_choice",
+      "identity_acceptance",
+      "agency",
+      "native_support_without_phase8",
+      "fully_native_agentic_like_integration",
+      "selfhood_personhood_biological_behavior",
+      "unrestricted_agency",
+      "upstream_observed_route_conditioned_support_regulation",
+      "direct_historic_target_existence_as_final_ap5"
+    ]
+  },
+  "interpretation_scope": {
+    "canonical_sources": {
+      "claim_boundary_record": "canonical AP5 scope, claim ceiling candidate, final-freeze state, boundary rows, and boundary summary",
+      "interpretation_record": "canonical AP state, hypothesis acceptance states, unsupported interpretations, and remaining work",
+      "whole_experiment_interpretation": "narrative summary only; not the canonical claim-boundary source"
+    },
+    "compatibility_mirrors": {
+      "boundary_rows": "compatibility mirror of claim_boundary_record.boundary_rows",
+      "boundary_summary": "compatibility mirror of claim_boundary_record.boundary_summary"
+    },
+    "consistency_checks": {
+      "claim_ceiling_consistent": true,
+      "classified_ap_level_consistent": true,
+      "final_ap5_pending_consistent": true,
+      "remaining_work_consistent": true
+    },
+    "overlap_resolution": "I7 keeps overlapping records for downstream readers but assigns canonical responsibility to each record so duplicated narrative does not change the claim boundary.",
+    "record_id": "n15_i7_interpretation_scope_v1"
+  },
+  "iteration": 7,
+  "iteration_7_top_level_output_fields": [
+    "experiment",
+    "iteration",
+    "artifact_id",
+    "purpose",
+    "schema_version",
+    "generated_at",
+    "command",
+    "status",
+    "acceptance_state",
+    "source_artifacts",
+    "source_reports",
+    "rows",
+    "controls",
+    "checks",
+    "claim_flags",
+    "errors",
+    "iteration_result",
+    "ap5_gate_resolution",
+    "ap5_gate_summary",
+    "hypothesis_classification",
+    "boundary_rows",
+    "boundary_summary",
+    "blocked_input_audit",
+    "constructed_followout_caveat_audit",
+    "whole_experiment_interpretation",
+    "interpretation_record",
+    "claim_boundary_record",
+    "rows_scope_note",
+    "schema_evolution",
+    "claim_boundary_control_coverage",
+    "interpretation_scope",
+    "review_gap_closure",
+    "idempotency_digest_plan",
+    "iteration_7_top_level_output_fields",
+    "git",
+    "output_digest"
+  ],
+  "iteration_result": {
+    "acceptance_state": "accepted_ap5_classification_claim_boundary_clean_pending_closeout",
+    "agency_claim_opened": false,
+    "ap5_classification_supported": true,
+    "claim_boundary_classification_passed": true,
+    "classified_ap_level": "AP5",
+    "final_ap5_supported": false,
+    "final_ap_freeze_pending_iteration8": true,
+    "fully_native_integration_opened": false,
+    "hypothesis_a_acceptance_state": "supported",
+    "hypothesis_b_acceptance_state": "supported",
+    "hypothesis_c_acceptance_state": "supported",
+    "identity_acceptance_opened": false,
+    "native_support_opened": false,
+    "native_supported_flags": false,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP5_candidate_boundary_clean_pending_closeout",
+    "semantic_goal_ownership_opened": false
+  },
+  "output_digest": "76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266",
+  "purpose": "claim_boundary_and_ap5_classification",
+  "review_gap_closure": {
+    "closures": [
+      {
+        "gap_id": "i7_1_boundary_record_duplication",
+        "resolution": "Top-level boundary rows and summary are retained as compatibility mirrors and guarded by identity checks.",
+        "status": "closed_as_compatibility_shape"
+      },
+      {
+        "gap_id": "i7_2_interpretation_overlap",
+        "resolution": "interpretation_scope assigns canonical responsibility to whole-experiment, interpretation, and claim-boundary records.",
+        "status": "closed"
+      },
+      {
+        "gap_id": "i7_3_magic_blocked_claim_count",
+        "resolution": "I4 blocked claims are validated against a frozen expected claim set instead of a raw count.",
+        "status": "closed"
+      },
+      {
+        "gap_id": "i7_4_pending_closeout_language_after_i8",
+        "resolution": "I7 remains a historical pre-closeout classification snapshot. I8 is the final closeout source after I7; I7 does not embed an I8 digest to avoid circular provenance.",
+        "status": "not_gap_current"
+      },
+      {
+        "gap_id": "i7_5_idempotency_digest_scope",
+        "resolution": "idempotency_digest_plan now documents semantic-core scope versus the full artifact output_digest scope.",
+        "status": "closed"
+      },
+      {
+        "gap_id": "i7_6_output_shape_evolution",
+        "resolution": "schema_evolution records inherited runtime fields, schema-freeze fields, and I7-specific additions.",
+        "status": "closed"
+      },
+      {
+        "gap_id": "i7_7_empty_rows_array",
+        "resolution": "rows_scope_note records that empty rows are intentional for I7 classification scope.",
+        "status": "closed"
+      },
+      {
+        "gap_id": "i7_8_asymmetric_claim_controls",
+        "resolution": "claim_boundary_control_coverage records which claims have dedicated I5 relabel controls and which rely on I4 blocked claims plus forced-false flags.",
+        "status": "closed_as_boundary_record"
+      },
+      {
+        "gap_id": "i7_9_i6_iteration_result_key_coupling",
+        "resolution": "I7 checks the exact expected I6 iteration_result key set.",
+        "status": "closed"
+      },
+      {
+        "gap_id": "i7_10_independent_i7_validator",
+        "resolution": "scripts/validate_n15_claim_boundary_record.py validates the generated I7 artifact independently.",
+        "status": "closed"
+      }
+    ],
+    "record_id": "n15_i7_review_gap_closure_v1",
+    "review_gap_closure_recorded": true,
+    "review_source": "iteration_7_gap_analysis_and_improvement_proposals"
+  },
+  "rows": [],
+  "rows_scope_note": {
+    "canonical_i7_row_like_surfaces": [
+      "ap5_gate_resolution",
+      "boundary_rows",
+      "hypothesis_classification",
+      "claim_boundary_record.boundary_rows"
+    ],
+    "inherited_shape_source": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+    "not_evidence_gap": true,
+    "reason_rows_empty": "The row-bearing candidate is Iteration 3. I7 preserves the standard top-level `rows` field for schema compatibility while placing classification evidence in AP5 gates, boundary rows, hypothesis classification, and claim-boundary records.",
+    "record_id": "n15_i7_rows_scope_note_v1",
+    "rows_empty": true,
+    "rows_value": [],
+    "scope": "Iteration 7 is a claim-boundary and classification record, not a new candidate-row derivation."
+  },
+  "schema_evolution": {
+    "evolution_rationale": {
+      "classification_fields": "I7 adds AP5 gate resolution, hypothesis classification, claim-boundary, interpretation, and review-closure records.",
+      "runtime_core_fields": "I7 keeps the standard runtime output envelope for portable validation and digest checks.",
+      "schema_freeze_fields": "I7 consumes the I2 schema-freeze artifact instead of re-emitting every frozen policy body."
+    },
+    "inherited_runtime_output_fields": [
+      "experiment",
+      "iteration",
+      "artifact_id",
+      "purpose",
+      "schema_version",
+      "generated_at",
+      "command",
+      "status",
+      "acceptance_state",
+      "source_artifacts",
+      "source_reports",
+      "rows",
+      "controls",
+      "checks",
+      "claim_flags",
+      "errors",
+      "output_digest"
+    ],
+    "inherited_schema_freeze_fields": [
+      "experiment",
+      "iteration",
+      "artifact_id",
+      "purpose",
+      "schema_version",
+      "generated_at",
+      "command",
+      "status",
+      "acceptance_state",
+      "target_ap_ceiling",
+      "iteration_result",
+      "schema_summary",
+      "ap_ladder",
+      "row_schema_fields",
+      "top_level_output_fields",
+      "top_level_schema_freeze_fields",
+      "ap5_required_gates",
+      "endogenous_derivation_policy",
+      "old_best_claims_composition",
+      "bounded_drift_policy",
+      "budget_limits",
+      "dependency_trace_format",
+      "replay_digest_policy",
+      "perturbation_policy",
+      "hypothesis_decision_rubric",
+      "control_requirements",
+      "config_file_contracts",
+      "schema_validation_contract",
+      "fail_closed_error_labels",
+      "rows",
+      "controls",
+      "claim_flags",
+      "checks",
+      "source_artifacts",
+      "source_reports",
+      "errors",
+      "git",
+      "output_digest"
+    ],
+    "iteration_7_output_fields": [
+      "experiment",
+      "iteration",
+      "artifact_id",
+      "purpose",
+      "schema_version",
+      "generated_at",
+      "command",
+      "status",
+      "acceptance_state",
+      "source_artifacts",
+      "source_reports",
+      "rows",
+      "controls",
+      "checks",
+      "claim_flags",
+      "errors",
+      "iteration_result",
+      "ap5_gate_resolution",
+      "ap5_gate_summary",
+      "hypothesis_classification",
+      "boundary_rows",
+      "boundary_summary",
+      "blocked_input_audit",
+      "constructed_followout_caveat_audit",
+      "whole_experiment_interpretation",
+      "interpretation_record",
+      "claim_boundary_record",
+      "rows_scope_note",
+      "schema_evolution",
+      "claim_boundary_control_coverage",
+      "interpretation_scope",
+      "review_gap_closure",
+      "idempotency_digest_plan",
+      "iteration_7_top_level_output_fields",
+      "git",
+      "output_digest"
+    ],
+    "iteration_7_specific_fields": [
+      "iteration_result",
+      "ap5_gate_resolution",
+      "ap5_gate_summary",
+      "hypothesis_classification",
+      "boundary_rows",
+      "boundary_summary",
+      "blocked_input_audit",
+      "constructed_followout_caveat_audit",
+      "whole_experiment_interpretation",
+      "interpretation_record",
+      "claim_boundary_record",
+      "rows_scope_note",
+      "schema_evolution",
+      "claim_boundary_control_coverage",
+      "interpretation_scope",
+      "review_gap_closure",
+      "idempotency_digest_plan",
+      "iteration_7_top_level_output_fields",
+      "git"
+    ],
+    "output_digest_field_retained": true,
+    "record_id": "n15_i7_schema_evolution_v1",
+    "runtime_output_fields_preserved": true,
+    "schema_evolution_recorded": true,
+    "schema_freeze_fields_not_reemitted_by_i7": [
+      "target_ap_ceiling",
+      "schema_summary",
+      "ap_ladder",
+      "row_schema_fields",
+      "top_level_output_fields",
+      "top_level_schema_freeze_fields",
+      "ap5_required_gates",
+      "endogenous_derivation_policy",
+      "old_best_claims_composition",
+      "bounded_drift_policy",
+      "budget_limits",
+      "dependency_trace_format",
+      "replay_digest_policy",
+      "perturbation_policy",
+      "hypothesis_decision_rubric",
+      "control_requirements",
+      "config_file_contracts",
+      "schema_validation_contract",
+      "fail_closed_error_labels"
+    ],
+    "shared_with_runtime_output_shape": [
+      "experiment",
+      "iteration",
+      "artifact_id",
+      "purpose",
+      "schema_version",
+      "generated_at",
+      "command",
+      "status",
+      "acceptance_state",
+      "source_artifacts",
+      "source_reports",
+      "rows",
+      "controls",
+      "checks",
+      "claim_flags",
+      "errors",
+      "output_digest"
+    ],
+    "shared_with_schema_freeze_shape": [
+      "experiment",
+      "iteration",
+      "artifact_id",
+      "purpose",
+      "schema_version",
+      "generated_at",
+      "command",
+      "status",
+      "acceptance_state",
+      "source_artifacts",
+      "source_reports",
+      "rows",
+      "controls",
+      "checks",
+      "claim_flags",
+      "errors",
+      "iteration_result",
+      "git",
+      "output_digest"
+    ],
+    "source_schema": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json"
+  },
+  "schema_version": "n15_claim_boundary_record_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json": {
+      "acceptance_state": "accepted_bounded_drift_replay_matrix_pending_claim_boundary_classification",
+      "output_digest": "b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json",
+      "sha256": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json": {
+      "acceptance_state": "accepted_external_proxy_contrast_matrix_pending_adversarial_controls_replay_and_claim_boundary",
+      "output_digest": "bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+      "sha256": "f7201b82f0071e26f05b62111d88396072d669d815153971f93f967e503c0ee8",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": {
+      "acceptance_state": "accepted_proxy_control_matrix_pending_bounded_drift_replay_and_claim_boundary",
+      "output_digest": "251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+      "sha256": "35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": {
+      "acceptance_state": "accepted_schema_freeze_no_row_validation",
+      "output_digest": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+      "sha256": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json": {
+      "acceptance_state": "accepted_proxy_source_inventory_only_no_ap5",
+      "output_digest": "66ebd8bf90e31d3aa1a59d9de46e85bf581f44c3c70e5cf1a3a76d8f535aa4c1",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json",
+      "sha256": "67fe966ec46525059eef61d0e38cad73e4e561c1d258a86802f6b82012f9dada",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json": {
+      "acceptance_state": "accepted_runtime_derived_target_candidate_with_bridge_pending_controls",
+      "output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+      "sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_a_runtime_state_proxy_sources.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_a_runtime_state_proxy_sources.md",
+      "sha256": "91f3e7f62a8054b586b889a4eacd07b8ab7bd64c2d04ca39746a3f7656be0faa"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_b_bounded_endogenous_proxy_formation.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_b_bounded_endogenous_proxy_formation.md",
+      "sha256": "19a80a9f414dd78573d4ab7a5203cced03f2290d229f4f57bd4d1c0848075d78"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_c_goal_ownership_and_agency_boundary.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/hypotheses/hypothesis_c_goal_ownership_and_agency_boundary.md",
+      "sha256": "c02ef099cdb57d1f372d5690544ddb8b4074bfcc5e23652c502a160107d697ad"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md",
+      "sha256": "8766f392358f7aa675a591c076e3cec5a97f91af5ed5f382bc306a9809a13728"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_external_proxy_contrast_matrix.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_external_proxy_contrast_matrix.md",
+      "sha256": "3c679397b75bd033df352995265c8cceee71612944729a6991805801509aad8c"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_control_matrix.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_control_matrix.md",
+      "sha256": "e25c2b6b50bd6c50934963de8d2c93fc4045ac632f713f778f8c1733d006fa69"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md",
+      "sha256": "040582e46c1542a30c28aa4cda661fc5752e2529d93a0c14fc2f2c3b5e26eba6"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md",
+      "sha256": "12797a85760e37372413ec0dc5b8542cfbe5038faf8970b54430f644fa0955b5"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+      "sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c"
+    }
+  },
+  "status": "passed",
+  "whole_experiment_interpretation": {
+    "claim_ceiling_candidate": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+    "plain_language_interpretation": "The target condition is generated from source-current support, memory, regulation, and AP4 consequence context before use; it is distinguishable from fixtures and hidden/post-hoc derivations; all frozen controls fail closed; replay and bounded drift pass. The result remains artifact-level and does not open semantic goal ownership, intention, agency, identity acceptance, native support, or fully native integration.",
+    "record_id": "n15_i7_whole_experiment_interpretation_v1",
+    "remaining_required_work": [
+      "n15_closeout_handoff_iteration_8"
+    ],
+    "supported_interpretation": "N15 supports an artifact-level AP5 endogenous proxy formation candidate, boundary-clean pending Iteration 8 closeout."
+  }
+}

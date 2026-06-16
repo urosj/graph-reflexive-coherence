@@ -530,44 +530,152 @@ not_gap: fail-closed records are policy-gated blockers before target
 
 ## Iteration 7. Claim Boundary And AP5 Classification
 
-- [ ] Resolve every AP5 gate as validated or blocked.
-- [ ] Classify Hypothesis A.
-- [ ] Classify Hypothesis B.
-- [ ] Classify Hypothesis C.
-- [ ] Apply supported/deferred/rejected/partial decision rubric.
-- [ ] Force unsafe claim flags false.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `fully_native_integration_opened = false`.
-- [ ] Audit blocked inputs.
-- [ ] Audit N14 constructed followout caveat.
-- [ ] Draft whole-experiment interpretation.
+- [x] Resolve every AP5 gate as validated or blocked.
+- [x] Classify Hypothesis A.
+- [x] Classify Hypothesis B.
+- [x] Classify Hypothesis C.
+- [x] Apply supported/deferred/rejected/partial decision rubric.
+- [x] Force unsafe claim flags false.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
+- [x] Audit blocked inputs.
+- [x] Audit N14 constructed followout caveat.
+- [x] Draft whole-experiment interpretation.
+- [x] Record schema evolution and intentional empty-row scope.
+- [x] Record claim-boundary control coverage asymmetry.
+- [x] Add independent I7 validator.
 
 Expected artifacts:
 
-- [ ] `outputs/n15_claim_boundary_record.json`
-- [ ] `reports/n15_claim_boundary_record.md`
-- [ ] `scripts/build_n15_claim_boundary_record.py`
+- [x] `outputs/n15_claim_boundary_record.json`
+- [x] `reports/n15_claim_boundary_record.md`
+- [x] `scripts/build_n15_claim_boundary_record.py`
+- [x] `scripts/validate_n15_claim_boundary_record.py`
+
+Output digest:
+
+```text
+76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n15_claim_boundary_record.json 99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87
+reports/n15_claim_boundary_record.md 9a7f9558adeda1449f5b728cf330bea1a4906a99094d9a8fa5c8a310284845fe
+scripts/build_n15_claim_boundary_record.py 7d9b231312134cb63ff56a5457da4eabde07bdeeffdb5f054e639354602a2fd2
+scripts/validate_n15_claim_boundary_record.py 4890f79da9b352b23dbc39ecd0f64ab7ac333d57854776af596b7821ceeceb0d
+```
+
+Acceptance state:
+
+```text
+accepted_ap5_classification_claim_boundary_clean_pending_closeout
+```
+
+Interpretation:
+
+```text
+Iteration 7 classifies the N15 candidate as artifact-level AP5 with claim
+boundaries intact. All 36 AP5 gates are validated, Hypotheses A, B, and C are
+supported, blocked inputs are audited, the N14 constructed followout caveat is
+preserved, and final AP5 remains pending Iteration 8 closeout.
+```
+
+Post-review gap closure:
+
+```text
+closed: retained flat/nested boundary duplication is guarded by identity
+        checks.
+closed: interpretation_scope assigns canonical responsibility to the
+        whole-experiment, interpretation, and claim-boundary records.
+closed: I4 unsafe claims are validated by frozen expected claim set, not
+        by count.
+closed: idempotency_digest_plan documents semantic-core scope versus the
+        full artifact output_digest scope.
+closed: schema_evolution records inherited runtime fields, schema-freeze
+        fields, and I7-specific additions.
+closed: rows_scope_note records that empty rows are intentional for I7
+        classification scope.
+closed: claim_boundary_control_coverage records dedicated relabel controls
+        and claim-flag/I4-blocked-claim coverage.
+closed: I6 iteration_result keys are validated against the expected set.
+closed: scripts/validate_n15_claim_boundary_record.py independently validates
+        the I7 artifact.
+not_gap: I7 pending-closeout language remains a historical pre-closeout
+         snapshot; I8 is the final closeout source and is not embedded in I7
+         to avoid circular provenance.
+```
+
+Scope boundary:
+
+```text
+I7 AP5 classification != final AP5 closeout.
+Artifact-level AP5 != semantic goal ownership.
+Artifact-level AP5 != native support or fully native integration.
+```
 
 ## Iteration 8. N15 Closeout And N16 Handoff
 
-- [ ] Freeze final supported AP level.
-- [ ] Record final claim ceiling.
-- [ ] Record final controls.
-- [ ] Record final blockers.
-- [ ] Record final N16 handoff.
-- [ ] Record whether targeted Phase 8 is optional, required, or deferred.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `fully_native_integration_opened = false`.
-- [ ] Confirm all source rows receive specific final roles.
+- [x] Freeze final supported AP level.
+- [x] Record final claim ceiling.
+- [x] Record final controls.
+- [x] Record final blockers.
+- [x] Record final N16 handoff.
+- [x] Record whether targeted Phase 8 is optional, required, or deferred.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
+- [x] Confirm all source rows receive specific final roles.
 
 Expected artifacts:
 
-- [ ] `outputs/n15_closeout_and_handoff.json`
-- [ ] `reports/n15_closeout_and_handoff.md`
-- [ ] `scripts/build_n15_closeout_and_handoff.py`
+- [x] `outputs/n15_closeout_and_handoff.json`
+- [x] `reports/n15_closeout_and_handoff.md`
+- [x] `scripts/build_n15_closeout_and_handoff.py`
+
+Output digest:
+
+```text
+715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n15_closeout_and_handoff.json 9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5
+reports/n15_closeout_and_handoff.md 7fd4773de2bb4cce79799caf287f22b13e056b567a44da562d22665d07fda4ee
+scripts/build_n15_closeout_and_handoff.py 8ab0aa731902c6215b1009184f2483644565f9e9f76367ce192ca61b799e7070
+```
+
+Acceptance state:
+
+```text
+closed_claim_clean_ap5_artifact_level_endogenous_proxy_formation
+```
+
+Interpretation:
+
+```text
+Iteration 8 closes N15 with final supported AP level AP5 and final claim
+ceiling artifact_level_ap5_endogenous_proxy_formation_candidate. The result is
+artifact-level endogenous proxy formation under source-current derivation,
+contrast, adversarial controls, bounded drift, replay, and claim-boundary
+classification. Semantic goal ownership, intention, agency, identity
+acceptance, native support, fully native integration, and unrestricted agency
+remain blocked.
+```
+
+N16 handoff:
+
+```text
+recommended_next = N16_self_environment_boundary
+target_ap_level = AP6
+targeted_phase8_required_before_n16 = false
+targeted_phase8_status = optional_deferred_not_required_for_n16
+```
 
 ## Setup Verification
 

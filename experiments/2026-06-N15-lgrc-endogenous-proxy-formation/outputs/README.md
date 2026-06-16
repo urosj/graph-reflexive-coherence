@@ -10,11 +10,11 @@ Generated artifacts:
 - `n15_external_proxy_contrast_matrix.json`
 - `n15_proxy_control_matrix.json`
 - `n15_bounded_drift_replay_matrix.json`
-
-Planned artifacts:
-
 - `n15_claim_boundary_record.json`
 - `n15_closeout_and_handoff.json`
+
+Planned artifacts:
+None.
 
 Generated outputs must use relative paths, include source digests, and keep
 claim flags explicit.

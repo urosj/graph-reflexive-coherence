@@ -526,10 +526,50 @@ idempotency digest plan, explicit record execution-scope record, AP4
 consequence-context perturbation, split target-change direction checks, and
 identity checks for retained flat/nested matrix records.
 
+Iteration 7 - Claim Boundary And AP5 Classification:
+
+```text
+status = passed
+acceptance_state = accepted_ap5_classification_claim_boundary_clean_pending_closeout
+classified_ap_level = AP5
+ap5_classification_supported = true
+final_ap5_supported = false
+output_digest = 76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266
+```
+
+Iteration 7 resolves all 36 AP5 gates as validated, classifies Hypotheses A,
+B, and C as supported, audits blocked inputs, preserves the N14 constructed
+followout caveat, and records boundary rows for unsafe claim promotions. The
+classification supports only an artifact-level AP5 endogenous proxy formation
+candidate pending Iteration 8 closeout; final AP5 remains unfrozen.
+
+Post-review hardening records I7 schema evolution, the intentional empty
+`rows` scope, boundary-record mirror identity, interpretation-scope ownership,
+claim-control coverage asymmetry, I4 blocked-claim set validation, I6
+iteration-result key validation, and an independent I7 validator.
+
+Iteration 8 - N15 Closeout And N16 Handoff:
+
+```text
+status = passed
+acceptance_state = closed_claim_clean_ap5_artifact_level_endogenous_proxy_formation
+final_supported_ap_level = AP5
+final_ap5_supported = true
+final_claim_ceiling = artifact_level_ap5_endogenous_proxy_formation_candidate
+output_digest = 715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9
+```
+
+Iteration 8 closes N15 as a claim-clean, artifact-level AP5 endogenous proxy
+formation experiment. The final result supports runtime-derived target/proxy
+formation from source-current support, memory, regulation, and AP4 consequence
+context under contrast, controls, bounded drift, replay, and claim-boundary
+classification. The final handoff recommends N16 self/environment boundary;
+targeted Phase 8 remains optional/deferred and not required before N16.
+
 Next step:
 
 ```text
-Iteration 7 - Claim Boundary And AP5 Classification
+N16 - Self / Environment Boundary
 ```
 
 ## Directory Structure
