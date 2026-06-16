@@ -1,0 +1,87 @@
+{
+  "bounded_drift_policy": {
+    "clamp_status_field": "drift_clamped",
+    "numeric_scale": "0_to_1_source_scale",
+    "numeric_target_center_max_update": 0.1,
+    "numeric_target_tolerance_max_update": 0.05,
+    "ordinal_max_update": "one_adjacent_category_per_derivation_step",
+    "policy_id": "n15_bounded_drift_policy_v1",
+    "unconfigured_or_unbounded_drift": "fail_closed"
+  },
+  "config_id": "n15_derivation_policy_v1",
+  "dependency_trace_format": {
+    "completeness_rule": "every emitted target field requires at least one trace entry with a source row, transform, and claim ceiling",
+    "container": "list",
+    "format_id": "n15_dependency_trace_v1",
+    "required_fields": [
+      "target_field",
+      "source_row_id",
+      "source_artifact",
+      "source_sha256",
+      "source_field",
+      "transform_id",
+      "transform_parameters",
+      "claim_ceiling_of_source"
+    ]
+  },
+  "endogenous_derivation_policy": {
+    "budget_rule": "use budget_limits_v1 before any downstream target use",
+    "clamp_rule": "clamp out-of-bound updates and mark drift_clamped = true",
+    "composition_rule": "weighted sum over normalized support, regulation, memory, and AP4 consequence context; N12 readiness contributes only validation context and never changes the target value",
+    "composition_weights": {
+      "ap4_consequence_context_score": 0.15,
+      "memory_context_score": 0.2,
+      "readiness_context_flag": 0.0,
+      "regulation_recovery_score": 0.25,
+      "support_margin": 0.4
+    },
+    "digest_scope": "use replay_digest_policy_v1",
+    "drift_bound_rule": "use bounded_drift_policy_v1",
+    "input_fields": [
+      "support_margin",
+      "regulation_recovery_score",
+      "memory_context_score",
+      "ap4_consequence_context_score",
+      "readiness_context_flag"
+    ],
+    "input_normalization": {
+      "missing_input_policy": "fail_closed",
+      "numeric_support_fields": "normalize to [-1.0, 1.0] around the frozen support threshold",
+      "ordinal_fields": "map by the frozen ordinal codebook",
+      "stale_input_policy": "fail_closed"
+    },
+    "ordinal_codebook": {
+      "absent": 0.0,
+      "blocked": -1.0,
+      "present": 0.5,
+      "supported": 1.0
+    },
+    "policy_id": "n15_endogenous_proxy_derivation_policy_v1",
+    "policy_kind": "trace_preserving_old_best_claims_construction",
+    "policy_version": "1.0",
+    "target_band_rule": "numeric target_band = [target_center - target_tolerance, target_center + target_tolerance]; ordinal target_band uses the codebook category plus one adjacent category only when the drift policy allows it",
+    "target_center_rule": "target_center = clamp(support_threshold + 0.10 * weighted_sum, support_threshold - 0.10, support_threshold + 0.10)",
+    "target_tolerance_rule": "target_tolerance = clamp(0.05 + 0.02 * max(regulation_recovery_score, 0), 0.03, 0.08)"
+  },
+  "experiment": "N15",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "old_best_claims_composition": {
+    "operator_id": "n15_trace_preserving_old_best_claims_composition_v1",
+    "rules": [
+      "source rows are consumed only at closed claim ceilings",
+      "every source contribution is recorded in old_best_claim_inputs",
+      "every target field has a dependency-trace entry",
+      "N12 readiness cannot contribute native-support evidence",
+      "constructed N14 followout remains constructed followout",
+      "result remains AP5_candidate until controls and replay pass"
+    ],
+    "source_axes": {
+      "N08": "memory/context axis",
+      "N09": "bounded-regulation context axis",
+      "N12_NAT4": "readiness-only context",
+      "N13_AP3": "support-seeking regulation axis",
+      "N14_AP4": "consequence-sensitive selection axis"
+    }
+  },
+  "target_ap_ceiling": "AP5"
+}

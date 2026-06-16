@@ -1,0 +1,108 @@
+{
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "config_id": "n15_control_variants_v1",
+  "control_requirements": [
+    {
+      "control_id": "externally_injected_target_control",
+      "expected_blocker": "externally_injected_target_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "hidden_target_derivation_control",
+      "expected_blocker": "hidden_target_derivation_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "semantic_goal_ownership_relabel_control",
+      "expected_blocker": "semantic_goal_ownership_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "post_hoc_proxy_formation_control",
+      "expected_blocker": "post_hoc_proxy_formation_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "unbounded_target_drift_control",
+      "expected_blocker": "unbounded_target_drift_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "budget_surface_ambiguity_control",
+      "expected_blocker": "budget_surface_ambiguity_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "identity_acceptance_relabel_control",
+      "expected_blocker": "identity_acceptance_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "native_support_relabel_control",
+      "expected_blocker": "native_support_relabel_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "fixture_label_proxy_control",
+      "expected_blocker": "fixture_label_proxy_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "stale_source_state_control",
+      "expected_blocker": "stale_source_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "missing_source_state_control",
+      "expected_blocker": "missing_source_state_blocked",
+      "expected_status": "blocked"
+    },
+    {
+      "control_id": "dependency_trace_omission_control",
+      "expected_blocker": "dependency_trace_omission_blocked",
+      "expected_status": "blocked"
+    }
+  ],
+  "experiment": "N15",
+  "fail_closed_error_labels": [
+    "source_artifact_missing",
+    "sha256_mismatch",
+    "stale_source_state",
+    "missing_derivation_policy",
+    "trace_incomplete",
+    "budget_exceeded",
+    "derivation_non_deterministic",
+    "control_unexpectedly_passed",
+    "unsafe_claim_flag_true",
+    "absolute_path_recorded"
+  ],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "required_controls": {
+    "budget_surface_ambiguity_control": "required_before_ap5",
+    "dependency_trace_omission_control": "required_before_ap5",
+    "externally_injected_target_control": "required_before_ap5",
+    "fixture_label_proxy_control": "required_before_ap5",
+    "hidden_target_derivation_control": "required_before_ap5",
+    "identity_acceptance_relabel_control": "required_before_ap5",
+    "missing_source_state_control": "required_before_ap5",
+    "native_support_relabel_control": "required_before_ap5",
+    "post_hoc_proxy_formation_control": "required_before_ap5",
+    "semantic_goal_ownership_relabel_control": "required_before_ap5",
+    "stale_source_state_control": "required_before_ap5",
+    "unbounded_target_drift_control": "required_before_ap5"
+  }
+}

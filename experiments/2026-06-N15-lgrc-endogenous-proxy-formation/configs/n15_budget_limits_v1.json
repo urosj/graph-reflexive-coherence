@@ -1,0 +1,36 @@
+{
+  "bounded_drift_policy": {
+    "clamp_status_field": "drift_clamped",
+    "numeric_scale": "0_to_1_source_scale",
+    "numeric_target_center_max_update": 0.1,
+    "numeric_target_tolerance_max_update": 0.05,
+    "ordinal_max_update": "one_adjacent_category_per_derivation_step",
+    "policy_id": "n15_bounded_drift_policy_v1",
+    "unconfigured_or_unbounded_drift": "fail_closed"
+  },
+  "budget_limits": {
+    "limits": {
+      "canonical_json_input_bytes": 262144,
+      "canonical_json_output_bytes": 262144,
+      "replay_count": 6,
+      "source_row_count": 12,
+      "transform_count": 24,
+      "validation_count": 64,
+      "wall_clock_seconds": 60
+    },
+    "policy_id": "n15_budget_limits_v1",
+    "units": [
+      "source_row_count",
+      "transform_count",
+      "canonical_json_input_bytes",
+      "canonical_json_output_bytes",
+      "replay_count",
+      "validation_count",
+      "wall_clock_seconds"
+    ],
+    "validity_rule": "budget is checked before target use; missing or exceeded limits fail closed"
+  },
+  "config_id": "n15_budget_limits_v1",
+  "experiment": "N15",
+  "generated_at": "2026-06-16T00:00:00+00:00"
+}

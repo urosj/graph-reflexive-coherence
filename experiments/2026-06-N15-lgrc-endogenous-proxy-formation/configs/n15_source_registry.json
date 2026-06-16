@@ -1,0 +1,131 @@
+{
+  "claim_boundary": {
+    "final_ap5_supported": false,
+    "fully_native_integration_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "config_id": "n15_source_registry",
+  "experiment": "N15",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "rows": [
+    {
+      "evidence_strategy": "direct_historic_evidence_allowed_but_not_ap5",
+      "provisional_ap_level": "AP2",
+      "provisional_claim_ceiling": "support_derived_target_candidate_only",
+      "row_id": "n15_i1_row_01_n13_support_derived_target_candidate",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+      "source_experiment": "N13",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md",
+      "source_report_sha256": "ff494f48a5d29cc6ef4a72acace91108c02e976cee31c186dff604009767ccbd",
+      "source_role_classification": "direct_historic_support",
+      "source_sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb"
+    },
+    {
+      "evidence_strategy": "old_best_claims_construction_input",
+      "provisional_ap_level": "AP3_candidate",
+      "provisional_claim_ceiling": "artifact_level_ap3_candidate_pending_controls",
+      "row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_experiment": "N13",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+      "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+      "source_role_classification": "old_best_claim_input",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+    },
+    {
+      "evidence_strategy": "old_best_claims_construction_input",
+      "provisional_ap_level": "AP3",
+      "provisional_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "row_id": "n15_i1_row_03_n13_closeout_ap3",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+      "source_experiment": "N13",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+      "source_report_sha256": "e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45",
+      "source_role_classification": "old_best_claim_input",
+      "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+    },
+    {
+      "evidence_strategy": "old_best_claims_construction_input",
+      "provisional_ap_level": "AP4",
+      "provisional_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+      "row_id": "n15_i1_row_04_n14_closeout_ap4",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "source_experiment": "N14",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+      "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+      "source_role_classification": "old_best_claim_input",
+      "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+    },
+    {
+      "evidence_strategy": "old_best_claims_construction_context",
+      "provisional_ap_level": "AP4_context",
+      "provisional_claim_ceiling": "constructed_followout_context_not_upstream_observed_evidence",
+      "row_id": "n15_i1_row_05_n14_constructed_followout",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+      "source_experiment": "N14",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+      "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+      "source_role_classification": "constructed_context",
+      "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+    },
+    {
+      "evidence_strategy": "boundary_and_blocked_input_audit",
+      "provisional_ap_level": "AP0_boundary",
+      "provisional_claim_ceiling": "claim_boundary_record_only",
+      "row_id": "n15_i1_row_06_n14_claim_boundary",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_claim_boundary_record.json",
+      "source_experiment": "N14",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_claim_boundary_record.md",
+      "source_report_sha256": "f17e03d0563c8881a29065a31c3a1ddcde57fb1ea15cb8dcf8bd104390c79767",
+      "source_role_classification": "boundary_source",
+      "source_sha256": "156e76ffd0186dbf613f6754eb84d4b06dc7cc7f6512075989502d70194e8371"
+    },
+    {
+      "evidence_strategy": "old_best_claims_construction_input",
+      "provisional_ap_level": "AP2",
+      "provisional_claim_ceiling": "artifact_only_route_memory_or_trail_affordance_candidate",
+      "row_id": "n15_i1_row_07_n08_memory_context",
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "source_experiment": "N08",
+      "source_report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "source_report_sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+      "source_role_classification": "old_best_claim_input",
+      "source_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e"
+    },
+    {
+      "evidence_strategy": "old_best_claims_construction_input",
+      "provisional_ap_level": "AP2",
+      "provisional_claim_ceiling": "artifact_only_goal_proxy_regulation_candidate",
+      "row_id": "n15_i1_row_08_n09_bounded_regulation_context",
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_experiment": "N09",
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "source_report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+      "source_role_classification": "old_best_claim_input",
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+    },
+    {
+      "evidence_strategy": "readiness_only_context",
+      "provisional_ap_level": "AP0_readiness",
+      "provisional_claim_ceiling": "phase8_ready_contracts_not_native_support",
+      "row_id": "n15_i1_row_09_n12_phase8_readiness",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "source_experiment": "N12",
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "source_report_sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5",
+      "source_role_classification": "readiness_only",
+      "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14"
+    }
+  ],
+  "source_inventory": {
+    "output_digest": "66ebd8bf90e31d3aa1a59d9de46e85bf581f44c3c70e5cf1a3a76d8f535aa4c1",
+    "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json",
+    "sha256": "67fe966ec46525059eef61d0e38cad73e4e561c1d258a86802f6b82012f9dada",
+    "status": "passed"
+  },
+  "source_inventory_report": {
+    "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md",
+    "sha256": "12797a85760e37372413ec0dc5b8542cfbe5038faf8970b54430f644fa0955b5"
+  }
+}

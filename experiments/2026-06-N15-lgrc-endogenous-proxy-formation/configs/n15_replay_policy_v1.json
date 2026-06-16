@@ -1,0 +1,37 @@
+{
+  "config_id": "n15_replay_policy_v1",
+  "experiment": "N15",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "perturbation_policy": {
+    "budget_invalid": "exceed one frozen budget limit before target use",
+    "memory_state": "one bounded step across memory/context codebook",
+    "order_inversion": "reverse and shuffle source rows while preserving row ids and digests; canonical replay must reproduce the same target",
+    "policy_id": "n15_iteration6_perturbation_defaults_v1",
+    "regulation_state": "one bounded step across regulation recovery codebook",
+    "stale_state": "source_current = false or outside freshness window",
+    "support_state": "one bounded step lower and higher relative to support threshold"
+  },
+  "replay_digest_policy": {
+    "algorithm": "sha256",
+    "encoding": "canonical_json_sorted_keys_ascii",
+    "exclude": [
+      "generated_at",
+      "local_filesystem_paths",
+      "git_working_tree_metadata",
+      "wall_clock_timestamps"
+    ],
+    "include": [
+      "source_artifact_digests",
+      "selected_source_rows",
+      "endogenous_derivation_policy",
+      "old_best_claim_inputs",
+      "runtime_state_vector",
+      "drift_policy",
+      "budget_surface",
+      "dependency_trace",
+      "target_condition",
+      "claim_flags"
+    ],
+    "policy_id": "n15_replay_digest_policy_v1"
+  }
+}
