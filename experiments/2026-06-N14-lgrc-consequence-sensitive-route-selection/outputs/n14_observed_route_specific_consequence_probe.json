@@ -1,0 +1,374 @@
+{
+  "acceptance_state": "accepted_observed_route_specific_memory_probe_support_regulation_generic",
+  "checks": {
+    "both_routes_observed_for_memory": true,
+    "budget_invalid_observed_route_blocked": true,
+    "claim_flags_forced_false": true,
+    "controls_passed": true,
+    "final_ap4_not_supported": true,
+    "generic_support_regulation_reuse_blocked": true,
+    "missing_route_observation_blocked": true,
+    "n08_memory_source_passed": true,
+    "n09_regulation_source_passed": true,
+    "n13_support_source_passed": true,
+    "native_support_opened_false": true,
+    "observed_memory_rank_selects_route_b": true,
+    "perturbation_source_passed": true,
+    "phase8_opened_false": true,
+    "post_hoc_score_rank_blocked": true,
+    "route_label_swap_blocked": true,
+    "route_specific_components_derived_from_observed_records": true,
+    "route_specific_memory_supported": true,
+    "route_specific_regulation_remains_unsupported_generic": true,
+    "route_specific_support_remains_unsupported_generic": true,
+    "same_budget_accounting": true,
+    "same_selection_rule": true,
+    "same_source_window_policy": true,
+    "src_diff_empty": true,
+    "stale_route_specific_consequence_blocked": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/scripts/build_n14_observed_route_specific_consequence_probe.py",
+  "control_records": [
+    {
+      "control_id": "route_label_swap_control",
+      "control_name": "Route label swap",
+      "expected_blocker": "route_label_swap_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "route_label_swap_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "9f94e90474817a84b1a2c77519256fcbf0457fdd16b82e967741e29d19744d0a"
+    },
+    {
+      "control_id": "generic_support_regulation_reuse_control",
+      "control_name": "Generic support/regulation reuse",
+      "expected_blocker": "generic_support_regulation_reuse_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "generic_support_regulation_reuse_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "3fd4faf770c9afd4154efa968a0d35c9934f314e240a4a0eaff4059720d7645a"
+    },
+    {
+      "control_id": "missing_route_observation_control",
+      "control_name": "Missing route observation",
+      "expected_blocker": "missing_route_observation_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "missing_route_observation_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "adfdaf493f532f3f76e5a33e1d3c057ea234c482b1189ba56ee65668c60a72f3"
+    },
+    {
+      "control_id": "stale_route_specific_consequence_control",
+      "control_name": "Stale route-specific consequence",
+      "expected_blocker": "stale_route_specific_consequence_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "stale_route_specific_consequence_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "6033eb1e3fc33db875fc6aa38d292c479c948060ea23327b28add963ca73bb6e"
+    },
+    {
+      "control_id": "budget_invalid_observed_route_control",
+      "control_name": "Budget-invalid observed route",
+      "expected_blocker": "budget_invalid_observed_route_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "budget_invalid_observed_route_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "c6a451f8ba09fab48be4bbd4d8d811a2af1f5eec11c9d0e113d2be87b12a6f50"
+    },
+    {
+      "control_id": "post_hoc_score_rank_control",
+      "control_name": "Post-hoc score/rank",
+      "expected_blocker": "post_hoc_score_rank_blocked",
+      "expected_status": "blocked",
+      "observed_blocker": "post_hoc_score_rank_blocked",
+      "observed_status": "blocked",
+      "passed": true,
+      "variant_digest": "432ce6d52c88d43b752ecffe71455aa9d1057df9826fe05870875a538229c8b0"
+    }
+  ],
+  "experiment": "N14",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "git": {
+    "head": "02a01304a6270c2827d4ceb3c5fafedf6dc7f39d",
+    "src_status_short": ""
+  },
+  "interpretation_record": {
+    "acceptance_state": "accepted_observed_route_specific_memory_probe_support_regulation_generic",
+    "next_required_step": "Use Iteration 7 to classify AP4 with the narrowed memory-dominant claim ceiling unless new route-specific support/regulation sources are added.",
+    "plain_language_interpretation": "The source-backed observed route-specific part of N14 is memory-dominant. Route_b has the stronger observed memory consequence under the same N08 window policy. Support and regulation remain generic source lanes, so they are blocked from route-specific closeout language unless future artifacts bind them to route IDs.",
+    "record_id": "n14_i6a_interpretation_observed_route_specific_probe_v1",
+    "supported_interpretation": "N14 Iteration 6-A finds observed route-specific memory consequences for both route_a and route_b under the same N08 MEM3 update-window policy. It does not find observed route-specific support or regulation consequences in the available N09/N13 sources.",
+    "unsupported_interpretations": [
+      "observed route-specific support consequence support",
+      "observed route-specific regulation consequence support",
+      "final AP4 support before Iteration 7 classification",
+      "intention",
+      "agency",
+      "semantic choice",
+      "semantic goal ownership",
+      "identity acceptance",
+      "selfhood",
+      "personhood",
+      "biological behavior",
+      "native support",
+      "fully native integration"
+    ]
+  },
+  "iteration": "6-A",
+  "iteration_result": {
+    "acceptance_state": "accepted_observed_route_specific_memory_probe_support_regulation_generic",
+    "final_ap4_supported": false,
+    "native_support_opened": false,
+    "observed_memory_top_route": "route_b",
+    "observed_route_specific_memory_supported": true,
+    "observed_route_specific_regulation_supported": false,
+    "observed_route_specific_support_supported": false,
+    "phase8_opened": false,
+    "supported_closeout_scope": "artifact_level_ap4_memory_dominant_consequence_sensitive_route_selection_candidate"
+  },
+  "observed_route_specific_consequence_records": [
+    {
+      "bounded_horizon": {
+        "memory_source_window": "N08_MEM3_decay_reinforcement_update_window",
+        "route_specific_recency_visible": true,
+        "same_decay_policy": "n08_exponential_decay_v1",
+        "same_memory_policy": "n08_memory_policy_v1",
+        "same_reinforcement_policy": "n08_saturating_additive_reinforcement_v1",
+        "same_window_policy": true
+      },
+      "budget_accounting": {
+        "memory_budget_equations_hold": true,
+        "node_plus_packet_budget_separate_and_exact": true
+      },
+      "claim_flags_forced_false": {
+        "agency_claim_allowed": false,
+        "biological_behavior_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "observed_memory_consequence": {
+        "budget_status": {
+          "memory_budget_equations_hold": true,
+          "node_plus_packet_budget_separate_and_exact": true
+        },
+        "claim_flags_all_false": true,
+        "component_used_for_rank": true,
+        "decay_policy_id": "n08_exponential_decay_v1",
+        "elapsed_memory_window_count": 2,
+        "mem3_update_window_id": "n08_mem3_decay_reinforcement_window_0",
+        "memory_delta_component": 0.155,
+        "memory_policy_id": "n08_memory_policy_v1",
+        "memory_strength_after": 0.655,
+        "memory_strength_before": 0.5,
+        "memory_surface_key_digest": "c0a6fdca6c30cca1bbb900de543844c70ea23af922e6a4d8ddca16f7e5d4458d",
+        "rank": 2,
+        "reinforcement_input": 0.25,
+        "reinforcement_policy_id": "n08_saturating_additive_reinforcement_v1",
+        "route_candidate_id": "route_a",
+        "route_specific": true,
+        "route_use_count_for_key": 2,
+        "source_memory_surface_key_route_id": "route_a",
+        "strength_after_decay": 0.405
+      },
+      "observed_regulation_consequence": {
+        "gpr5_cycle_count": 4,
+        "gpr8_perturbation_recovery_in_band": true,
+        "reason": "N09 GPR6 closeout has bounded regulation summary, not route_candidate_id observations",
+        "route_specific": false,
+        "status": "unsupported_generic_source_only"
+      },
+      "observed_support_consequence": {
+        "generic_lane_count": 4,
+        "reason": "N13 support response lanes carry lane_id/support state, not route_candidate_id",
+        "route_specific": false,
+        "status": "unsupported_generic_source_only"
+      },
+      "post_hoc_rank_assigned": false,
+      "rank_source": "derived_from_observed_route_specific_memory_component",
+      "route_candidate_id": "route_a",
+      "route_specific_consequence_components": {
+        "memory_delta_component": 0.155,
+        "regulation_component": "unsupported_not_route_specific",
+        "support_component": "unsupported_not_route_specific"
+      },
+      "route_specific_consequence_rank": 2,
+      "route_specific_consequence_score": 0.155,
+      "row_id": "n14_i6a_observed_route_specific_route_a",
+      "selection_rule": "rank observed route-specific consequence components; higher memory_delta_component is better; support and regulation components excluded unless route-specific",
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_5_mem3_decay_reinforcement.json",
+      "source_experiment": "N14",
+      "source_iteration": "iteration_6a_observed_route_specific_consequence_probe",
+      "source_report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_5_mem3_decay_reinforcement.md",
+      "source_report_sha256": "19b9ca7b7fc810405bdb6dcc8703c0e3e5afe2d34abaaa60b6d86af1f055bd62",
+      "source_sha256": "21383fe9661e98ebaf0b0956c35e5bc0268b85adbe936843b7b5147f3b5ba45f"
+    },
+    {
+      "bounded_horizon": {
+        "memory_source_window": "N08_MEM3_decay_reinforcement_update_window",
+        "route_specific_recency_visible": true,
+        "same_decay_policy": "n08_exponential_decay_v1",
+        "same_memory_policy": "n08_memory_policy_v1",
+        "same_reinforcement_policy": "n08_saturating_additive_reinforcement_v1",
+        "same_window_policy": true
+      },
+      "budget_accounting": {
+        "memory_budget_equations_hold": true,
+        "node_plus_packet_budget_separate_and_exact": true
+      },
+      "claim_flags_forced_false": {
+        "agency_claim_allowed": false,
+        "biological_behavior_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "personhood_claim_allowed": false,
+        "runtime_identity_acceptance_claim_allowed": false,
+        "selfhood_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_goal_understanding_claim_allowed": false,
+        "unrestricted_agency_claim_allowed": false
+      },
+      "observed_memory_consequence": {
+        "budget_status": {
+          "memory_budget_equations_hold": true,
+          "node_plus_packet_budget_separate_and_exact": true
+        },
+        "claim_flags_all_false": true,
+        "component_used_for_rank": true,
+        "decay_policy_id": "n08_exponential_decay_v1",
+        "elapsed_memory_window_count": 1,
+        "mem3_update_window_id": "n08_mem3_decay_reinforcement_window_0",
+        "memory_delta_component": 0.2,
+        "memory_policy_id": "n08_memory_policy_v1",
+        "memory_strength_after": 0.7,
+        "memory_strength_before": 0.5,
+        "memory_surface_key_digest": "3dca55df466ac3a101798884520a2ec1142994f03728aa4dd47aebcf4893de11",
+        "rank": 1,
+        "reinforcement_input": 0.25,
+        "reinforcement_policy_id": "n08_saturating_additive_reinforcement_v1",
+        "route_candidate_id": "route_b",
+        "route_specific": true,
+        "route_use_count_for_key": 2,
+        "source_memory_surface_key_route_id": "route_b",
+        "strength_after_decay": 0.45
+      },
+      "observed_regulation_consequence": {
+        "gpr5_cycle_count": 4,
+        "gpr8_perturbation_recovery_in_band": true,
+        "reason": "N09 GPR6 closeout has bounded regulation summary, not route_candidate_id observations",
+        "route_specific": false,
+        "status": "unsupported_generic_source_only"
+      },
+      "observed_support_consequence": {
+        "generic_lane_count": 4,
+        "reason": "N13 support response lanes carry lane_id/support state, not route_candidate_id",
+        "route_specific": false,
+        "status": "unsupported_generic_source_only"
+      },
+      "post_hoc_rank_assigned": false,
+      "rank_source": "derived_from_observed_route_specific_memory_component",
+      "route_candidate_id": "route_b",
+      "route_specific_consequence_components": {
+        "memory_delta_component": 0.2,
+        "regulation_component": "unsupported_not_route_specific",
+        "support_component": "unsupported_not_route_specific"
+      },
+      "route_specific_consequence_rank": 1,
+      "route_specific_consequence_score": 0.2,
+      "row_id": "n14_i6a_observed_route_specific_route_b",
+      "selection_rule": "rank observed route-specific consequence components; higher memory_delta_component is better; support and regulation components excluded unless route-specific",
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_5_mem3_decay_reinforcement.json",
+      "source_experiment": "N14",
+      "source_iteration": "iteration_6a_observed_route_specific_consequence_probe",
+      "source_report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_5_mem3_decay_reinforcement.md",
+      "source_report_sha256": "19b9ca7b7fc810405bdb6dcc8703c0e3e5afe2d34abaaa60b6d86af1f055bd62",
+      "source_sha256": "21383fe9661e98ebaf0b0956c35e5bc0268b85adbe936843b7b5147f3b5ba45f"
+    }
+  ],
+  "output_digest": "7f75ab3c2601a483938ba333676ef0435412ea7d5681910edcdc31c39c5a5a70",
+  "probe_summary": {
+    "route_specific_memory_supported": true,
+    "route_specific_regulation_supported": false,
+    "route_specific_support_supported": false,
+    "stronger_support_or_regulation_closeout_available": false,
+    "supported_closeout_scope": "artifact_level_ap4_memory_dominant_consequence_sensitive_route_selection_candidate"
+  },
+  "purpose": "observed_route_specific_consequence_probe",
+  "schema": "n14_observed_route_specific_consequence_probe_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_5_mem3_decay_reinforcement.json": {
+      "output_digest": "e9b752b1bf5df9e4d58aa5da15c0a741df53b0e1237c9d5124390986ca8b89be",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_5_mem3_decay_reinforcement.json",
+      "sha256": "21383fe9661e98ebaf0b0956c35e5bc0268b85adbe936843b7b5147f3b5ba45f",
+      "status": "passed"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json": {
+      "output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_perturbation_matrix.json": {
+      "output_digest": "3d207f963e6d3ed049c01bfcf75235c2cb8780d79e0cbe14d8ab349d7b6674e9",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_perturbation_matrix.json",
+      "sha256": "0405d0da3ca05889b3adbc12b8c6055b224155de8dd04f7bf9c48a7f18f6adcf",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_5_mem3_decay_reinforcement.md": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_5_mem3_decay_reinforcement.md",
+      "sha256": "19b9ca7b7fc810405bdb6dcc8703c0e3e5afe2d34abaaa60b6d86af1f055bd62"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+      "sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_perturbation_matrix.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_perturbation_matrix.md",
+      "sha256": "3520680e9eb00d0d18510b1db6a49c527dd22047141bdcb05a79af8713b5687e"
+    }
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP4"
+}

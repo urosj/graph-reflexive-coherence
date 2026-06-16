@@ -1,0 +1,316 @@
+{
+  "acceptance_state": "accepted_schema_freeze_no_row_validation",
+  "ap4_required_gates": [
+    "candidate_route_set_present",
+    "eligible_candidate_completeness_record_present",
+    "pre_selection_consequence_record_for_each_candidate",
+    "source_artifact_report_digest_for_each_consequence_record",
+    "prediction_basis_declared",
+    "derivation_policy_declared",
+    "source_window_declared",
+    "downstream_support_effect_descriptor_present",
+    "downstream_memory_effect_descriptor_present",
+    "downstream_regulation_effect_descriptor_present",
+    "observed_downstream_effect_descriptor_present_when_horizon_evaluated",
+    "prediction_match_status_present",
+    "immediate_affordance_rank_present",
+    "consequence_rank_present",
+    "selected_rank_present",
+    "affordance_consequence_conflict_case_present",
+    "affordance_consequence_conflict_resolved_by_consequence_true",
+    "budget_cost_surface_present",
+    "bounded_consequence_horizon_present",
+    "deterministic_selection_rule_present",
+    "tie_policy_present",
+    "missing_consequence_record_rejection_present",
+    "idempotency_digest_plan_present",
+    "artifact_only_replay_requirement_present",
+    "snapshot_load_equivalence_requirement_present",
+    "order_inversion_replay_requirement_present",
+    "runtime_state_used_false",
+    "stale_record_policy_present",
+    "negative_controls_present",
+    "compatibility_checks_present",
+    "claim_flags_forced_false",
+    "src_diff_empty_true",
+    "native_supported_flags_false",
+    "phase8_opened_false"
+  ],
+  "ap_ladder": {
+    "AP0": {
+      "label": "passive integrated replay",
+      "n14_interpretation": "source or boundary input with no N14 selection claim"
+    },
+    "AP1": {
+      "label": "runtime-visible trigger produces bounded response",
+      "n14_interpretation": "route alternatives or immediate arbitration evidence exists, but no downstream consequence-sensitive selection is supported"
+    },
+    "AP2": {
+      "label": "support-sensitive regulation preserves declared support condition",
+      "n14_interpretation": "memory, support, or regulation effects are source-backed, but selection does not yet depend on consequence ranking"
+    },
+    "AP3": {
+      "label": "self-maintenance candidate",
+      "n14_interpretation": "N13 source-current support-seeking regulation evidence is usable as an input only"
+    },
+    "AP4": {
+      "label": "consequence-sensitive selection candidate",
+      "n14_interpretation": "route selection depends on source-backed, pre-selection downstream support, memory, or regulation effects under controls"
+    },
+    "AP5": {
+      "label": "endogenous proxy candidate",
+      "n14_interpretation": "reserved for N15"
+    },
+    "AP6": {
+      "label": "self/environment boundary candidate",
+      "n14_interpretation": "reserved for N16"
+    },
+    "AP7": {
+      "label": "closed action-perception loop candidate",
+      "n14_interpretation": "reserved for N17"
+    },
+    "AP8": {
+      "label": "long-horizon agentic-like closure candidate",
+      "n14_interpretation": "reserved for N18"
+    }
+  },
+  "budget_schema": {
+    "budget_cost_surface_required": true,
+    "budget_invalid_route_policy": "reject_or_mark_unsupported"
+  },
+  "checks": {
+    "all_required_fields_declared": true,
+    "ap4_gate_contains_affordance_conflict": true,
+    "candidate_set_completeness_declared": true,
+    "derivation_projection_fields_declared": true,
+    "final_ap4_requires_later_controls": true,
+    "full_claim_flags_declared_false": true,
+    "inventory_rows_available": true,
+    "inventory_rows_satisfy_schema": true,
+    "inventory_schema_not_extra_only": true,
+    "inventory_source_passed": true,
+    "native_supported_flags_false": true,
+    "phase8_opened_false": true,
+    "replay_snapshot_fields_declared": true,
+    "required_controls_declared": true,
+    "src_diff_empty": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/scripts/build_n14_consequence_selection_schema_v1.py",
+  "consequence_record_schema": {
+    "projection_fields": [
+      "prediction_basis",
+      "derivation_policy",
+      "source_window",
+      "bounded_consequence_horizon",
+      "expected_support_effect",
+      "expected_memory_effect",
+      "expected_regulation_effect",
+      "observed_downstream_effect",
+      "prediction_match_status"
+    ],
+    "source_requirements": [
+      "source_artifact",
+      "source_report",
+      "source_sha256",
+      "source_report_sha256",
+      "output_digest_when_available"
+    ],
+    "timing": {
+      "post_hoc_records_supported": false,
+      "required": "pre_selection"
+    }
+  },
+  "control_requirements": [
+    "hidden_outcome_table_blocked",
+    "post_hoc_consequence_scoring_blocked",
+    "stale_consequence_record_blocked",
+    "budget_invalid_route_blocked",
+    "missing_consequence_record_blocked",
+    "candidate_set_cherry_picking_blocked",
+    "tie_policy_ambiguity_blocked",
+    "immediate_affordance_only_relabel_blocked",
+    "matched_affordance_conflict_resolved_by_consequence",
+    "fixture_label_preference_blocked",
+    "semantic_intention_relabel_blocked",
+    "agency_relabel_blocked",
+    "native_support_relabel_blocked",
+    "identity_acceptance_relabel_blocked",
+    "selfhood_relabel_blocked",
+    "personhood_relabel_blocked",
+    "biological_behavior_relabel_blocked",
+    "semantic_choice_relabel_blocked",
+    "unrestricted_agency_relabel_blocked"
+  ],
+  "experiment": "N14",
+  "final_ap4_freeze_requirements": {
+    "final_ap4_requires_claim_boundary": true,
+    "final_ap4_requires_controls": true,
+    "final_ap4_requires_replay_matrix": true,
+    "iteration_4_can_assign_only": "provisional_ap_level = AP4_candidate",
+    "minimum_iterations_required": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "generated_at": "2026-06-15T00:00:00+00:00",
+  "git": {
+    "head": "f2419b51b0ebb6271a710ea33af56c2de03622d7",
+    "src_status_short": ""
+  },
+  "iteration": 2,
+  "iteration_interpretation": {
+    "acceptance_state": "accepted_schema_freeze_no_row_validation",
+    "next_required_step": "Build pre-selection route consequence records in Iteration 3 and validate them against this schema before route selection is classified.",
+    "plain_language_interpretation": "Iteration 2 converts the N14 definition into a strict validation contract. It says what later rows must contain, including candidate-set completeness, derivation basis, immediate-affordance versus consequence rank conflict, replay/snapshot controls, and claim-boundary flags. It does not validate any AP4 candidate row.",
+    "record_id": "n14_i2_interpretation_schema_gate_v1",
+    "supported_interpretation": "N14 has a frozen AP4 row schema, AP4 gate, replay requirements, control list, and false claim flags for later candidate rows.",
+    "unsupported_interpretations": [
+      "AP4 consequence-sensitive selection support",
+      "validated route consequence records",
+      "validated consequence-sensitive selected route",
+      "intention",
+      "agency",
+      "semantic goal ownership",
+      "identity acceptance",
+      "native support",
+      "fully native integration"
+    ]
+  },
+  "iteration_result": {
+    "acceptance_state": "accepted_schema_freeze_no_row_validation",
+    "final_ap4_supported": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "row_validation_starts_in_iterations_3_to_7": true,
+    "schema_frozen": true
+  },
+  "output_digest": "56a2080a76f941e77e7a822874fa62e292f34452c06f02cbb8e971bccc540217",
+  "purpose": "consequence_selection_schema_and_ap4_gate",
+  "replay_requirements": {
+    "artifact_only_replay_required": true,
+    "duplicate_replay_required": true,
+    "order_inversion_replay_required": true,
+    "runtime_state_used_required_value": false,
+    "snapshot_load_equivalence_required": true
+  },
+  "route_candidate_schema": {
+    "candidate_set_fields": [
+      "route_candidate_id",
+      "eligible_candidate_set_id",
+      "candidate_set_completeness_status",
+      "rejected_candidate_record",
+      "missing_consequence_record_rejection"
+    ],
+    "missing_record_policy": "reject_or_mark_unsupported",
+    "ranking_fields": [
+      "immediate_affordance_rank",
+      "consequence_rank",
+      "selected_rank",
+      "affordance_consequence_conflict_resolved_by_consequence"
+    ],
+    "tie_policy_required": true
+  },
+  "row_schema_fields": [
+    "row_id",
+    "source_experiment",
+    "source_iteration",
+    "source_artifact",
+    "source_report",
+    "source_sha256",
+    "source_report_sha256",
+    "mechanism_name",
+    "mechanism_role",
+    "route_candidate_id",
+    "route_alternative_surface",
+    "eligible_candidate_set_id",
+    "candidate_set_completeness_status",
+    "rejected_candidate_record",
+    "immediate_affordance_surface",
+    "immediate_affordance_rank",
+    "consequence_record_source",
+    "consequence_record_timing",
+    "bounded_consequence_horizon",
+    "prediction_basis",
+    "derivation_policy",
+    "source_window",
+    "expected_support_effect",
+    "expected_memory_effect",
+    "expected_regulation_effect",
+    "observed_downstream_effect",
+    "prediction_match_status",
+    "consequence_rank",
+    "selected_rank",
+    "affordance_consequence_conflict_resolved_by_consequence",
+    "budget_cost_surface",
+    "budget_validity",
+    "selection_rationale_surface",
+    "tie_policy",
+    "missing_consequence_record_rejection",
+    "hidden_outcome_table_control",
+    "post_hoc_scoring_control",
+    "stale_record_policy",
+    "artifact_only_replay_status",
+    "snapshot_load_status",
+    "order_inversion_replay_status",
+    "runtime_state_used",
+    "provisional_ap_level",
+    "provisional_claim_ceiling",
+    "blocked_claims",
+    "missing_gates"
+  ],
+  "schema": "n14_consequence_selection_schema_v1",
+  "selection_rule_schema": {
+    "deterministic": true,
+    "forbidden_inputs": [
+      "hidden_outcome_table",
+      "post_hoc_consequence_score",
+      "runtime_state_not_serialized_in_artifact",
+      "semantic_intention_label",
+      "agency_label"
+    ],
+    "inputs": [
+      "candidate_route_set",
+      "pre_selection_consequence_records",
+      "budget_validity",
+      "tie_policy"
+    ]
+  },
+  "source_artifacts": {
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_source_inventory.json": {
+      "output_digest": "7e8013464efdb35805bc9aa9b765a5c81afaa2a1f0d7210706d43ddd06a41513",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_source_inventory.json",
+      "sha256": "b0cc190a75ac571614966778557b5af3f02f844a79da43602c26e59256f3d8f8",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_source_inventory.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_source_inventory.md",
+      "sha256": "49d9ee46ad6be542da973b75d573fd0af51b117388912c5d4ca005114fd97d28"
+    }
+  },
+  "stale_record_policy": {
+    "source_window_required": true,
+    "stale_consequence_record_policy": "reject_or_mark_unsupported"
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP4"
+}

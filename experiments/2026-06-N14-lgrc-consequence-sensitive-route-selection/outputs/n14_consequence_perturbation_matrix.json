@@ -1,0 +1,453 @@
+{
+  "acceptance_state": "accepted_perturbation_replay_matrix_pending_claim_classification",
+  "checks": {
+    "all_perturbation_records_passed": true,
+    "artifact_only_replay_stable": true,
+    "artifact_only_replay_uses_filesystem_roundtrip": true,
+    "budget_invalid_high_consequence_route_rejected": true,
+    "budget_validity_checked_before_ranking": true,
+    "claim_flags_forced_false": true,
+    "consequence_rank_source_validated_before_ranking": true,
+    "control_matrix_source_passed": true,
+    "duplicate_replay_stable": true,
+    "final_ap4_not_supported": true,
+    "memory_effect_variant_changes_route_ranking_only_through_source_backed_memory_input": true,
+    "native_support_opened_false": true,
+    "no_producer_direct_mutation_recorded": true,
+    "order_inversion_replay_stable": true,
+    "phase8_opened_false": true,
+    "regulation_deficit_variant_changes_route_ranking_only_through_source_backed_regulation_input": true,
+    "runtime_state_used_false": true,
+    "selection_source_passed": true,
+    "snapshot_load_replay_stable": true,
+    "snapshot_load_replay_uses_filesystem_roundtrip": true,
+    "src_diff_empty": true,
+    "stale_consequence_record_rejected": true,
+    "support_risk_variant_changes_route_ranking_only_through_source_backed_support_input": true
+  },
+  "claim_flags_forced_false": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/scripts/build_n14_consequence_perturbation_matrix.py",
+  "experiment": "N14",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "git": {
+    "head": "02a01304a6270c2827d4ceb3c5fafedf6dc7f39d",
+    "src_status_short": ""
+  },
+  "interpretation_record": {
+    "acceptance_state": "accepted_perturbation_replay_matrix_pending_claim_classification",
+    "next_required_step": "Run Iteration 7 claim boundary and AP4 classification.",
+    "plain_language_interpretation": "Iteration 6 handles the Iteration 5 control-clean candidate by testing whether route choice changes only when serialized source-backed consequence inputs change, and whether replay is stable for unchanged inputs. The positive variants select the route favored by the active support, memory, or regulation component; stale and budget-invalid cases fail closed. Final AP4 remains pending until Iteration 7 freezes the claim boundary.",
+    "record_id": "n14_i6_interpretation_perturbation_replay_v1",
+    "supported_interpretation": "N14 Iteration 6 shows that the provisional AP4 candidate is source-sensitive and replay-stable at artifact level: support, memory, and regulation perturbation variants alter the selected route only through serialized source-backed consequence inputs, while duplicate, artifact-only, snapshot/load, and order-inverted replays remain stable.",
+    "unsupported_interpretations": [
+      "final AP4 support before claim classification",
+      "native support",
+      "intention",
+      "agency",
+      "semantic choice",
+      "semantic goal ownership",
+      "identity acceptance",
+      "selfhood",
+      "personhood",
+      "biological behavior",
+      "fully native integration"
+    ]
+  },
+  "iteration": 6,
+  "iteration_result": {
+    "acceptance_state": "accepted_perturbation_replay_matrix_pending_claim_classification",
+    "baseline_selected_route": "route_b",
+    "budget_invalid_blocker": "budget_invalid_route_blocked",
+    "final_ap4_supported": false,
+    "memory_effect_selected_route": "route_a",
+    "native_support_opened": false,
+    "perturbation_records_passed": true,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP4_candidate",
+    "regulation_deficit_selected_route": "route_a",
+    "replay_records_passed": true,
+    "stale_record_blocker": "stale_consequence_record_blocked",
+    "support_risk_selected_route": "route_a"
+  },
+  "output_digest": "3d207f963e6d3ed049c01bfcf75235c2cb8780d79e0cbe14d8ab349d7b6674e9",
+  "perturbation_records": [
+    {
+      "changed_components": [],
+      "expected_blocker_code": null,
+      "expected_selected_route": "route_b",
+      "final_ap4_supported": false,
+      "native_support_opened": false,
+      "observed_blocker_code": null,
+      "observed_outcome": "selected",
+      "observed_selected_route": "route_b",
+      "passed": true,
+      "phase8_opened": false,
+      "producer_direct_mutation": false,
+      "route_summary": [
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 2,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": -0.1597545,
+          "route_candidate_id": "route_a"
+        },
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 1,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.12,
+          "route_candidate_id": "route_b"
+        }
+      ],
+      "runtime_state_used": false,
+      "selection_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "source_backed_inputs": [],
+      "variant_digest": "cf6898a82f35d8dd0fea46cb818bda6902b2ac30a66b783b1f27f0a92019f5c6",
+      "variant_id": "baseline_memory_dominant_replay",
+      "variant_name": "Baseline memory-dominant replay"
+    },
+    {
+      "changed_components": [
+        "route_specific_support_component"
+      ],
+      "expected_blocker_code": null,
+      "expected_selected_route": "route_a",
+      "final_ap4_supported": false,
+      "native_support_opened": false,
+      "observed_blocker_code": null,
+      "observed_outcome": "selected",
+      "observed_selected_route": "route_a",
+      "passed": true,
+      "phase8_opened": false,
+      "producer_direct_mutation": false,
+      "route_summary": [
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 1,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.200649953448,
+          "route_candidate_id": "route_a"
+        },
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 2,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.12,
+          "route_candidate_id": "route_b"
+        }
+      ],
+      "runtime_state_used": false,
+      "selection_digest": "68e7d77e4b35df0b169d3d4dde3a21d10e764b9abc63e0166cd2d0aefdb04e40",
+      "source_backed_inputs": [
+        {
+          "artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+          "artifact_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+          "component": "route_specific_support_component",
+          "field": "stress_matrix.stress_records[1].support_error",
+          "interpretation": "source-backed support-risk perturbation input",
+          "source_id": "n13_support_error",
+          "value": 0.120134817816
+        }
+      ],
+      "variant_digest": "9b3aa387a33a4e89ed86bb121ed0c140485e41c3775c0a4162e078e907ad316a",
+      "variant_id": "support_risk_active_variant",
+      "variant_name": "Support-risk active variant"
+    },
+    {
+      "changed_components": [
+        "memory_delta_component"
+      ],
+      "expected_blocker_code": null,
+      "expected_selected_route": "route_a",
+      "final_ap4_supported": false,
+      "native_support_opened": false,
+      "observed_blocker_code": null,
+      "observed_outcome": "selected",
+      "observed_selected_route": "route_a",
+      "passed": true,
+      "phase8_opened": false,
+      "producer_direct_mutation": false,
+      "route_summary": [
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 1,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.12,
+          "route_candidate_id": "route_a"
+        },
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 2,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": -0.1597545,
+          "route_candidate_id": "route_b"
+        }
+      ],
+      "runtime_state_used": false,
+      "selection_digest": "e081341f63014bdd19d6b93cd52dd214be9392a6e3ab6912dcb18c461f78186f",
+      "source_backed_inputs": [
+        {
+          "artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+          "artifact_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+          "component": "memory_delta_component",
+          "field": "artifact_only_replay.route_a_strength_after_each_cycle + route_b_strength_after_each_cycle",
+          "interpretation": "source-backed memory-effect perturbation input",
+          "source_id": "n08_memory_delta_swap",
+          "value": {
+            "route_a_component": 0.12,
+            "route_b_component": -0.1597545
+          }
+        }
+      ],
+      "variant_digest": "2c044529dd6926a6e6d95bb60e9f0b1b49b25462c92fe172039bc9d08a989509",
+      "variant_id": "memory_effect_variant",
+      "variant_name": "Memory-effect variant"
+    },
+    {
+      "changed_components": [
+        "route_specific_regulation_component"
+      ],
+      "expected_blocker_code": null,
+      "expected_selected_route": "route_a",
+      "final_ap4_supported": false,
+      "native_support_opened": false,
+      "observed_blocker_code": null,
+      "observed_outcome": "selected",
+      "observed_selected_route": "route_a",
+      "passed": true,
+      "phase8_opened": false,
+      "producer_direct_mutation": false,
+      "route_summary": [
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 1,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.1602455,
+          "route_candidate_id": "route_a"
+        },
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 2,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.12,
+          "route_candidate_id": "route_b"
+        }
+      ],
+      "runtime_state_used": false,
+      "selection_digest": "acc9536f8556a93cb5fe60ed92d6aab086278bf7772809e839ee0c64328bab61",
+      "source_backed_inputs": [
+        {
+          "artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+          "artifact_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+          "component": "route_specific_regulation_component",
+          "field": "regulation_summary.gpr5_cycle_count",
+          "interpretation": "source-backed regulation-deficit perturbation input",
+          "source_id": "n09_regulation_cycle_count",
+          "value": 4
+        }
+      ],
+      "variant_digest": "661f237629f3e6ee3b800140a2eefa89b3f36eeec78f5a2fead733b02bd04966",
+      "variant_id": "regulation_deficit_variant",
+      "variant_name": "Regulation-deficit variant"
+    },
+    {
+      "changed_components": [
+        "budget_validity"
+      ],
+      "expected_blocker_code": "budget_invalid_route_blocked",
+      "expected_selected_route": null,
+      "final_ap4_supported": false,
+      "native_support_opened": false,
+      "observed_blocker_code": "budget_invalid_route_blocked",
+      "observed_outcome": "blocked",
+      "observed_selected_route": null,
+      "passed": true,
+      "phase8_opened": false,
+      "producer_direct_mutation": false,
+      "route_summary": [
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 2,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": -0.1597545,
+          "route_candidate_id": "route_a"
+        },
+        {
+          "budget_validity": "budget_invalid_source_surface",
+          "consequence_rank": 1,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.12,
+          "route_candidate_id": "route_b"
+        }
+      ],
+      "runtime_state_used": false,
+      "selection_digest": "7773c4fe1fd22e0416aacc0da5f91cd81418bf75fa7859b18fd76edd68993440",
+      "source_backed_inputs": [],
+      "variant_digest": "3b19277cf22134026578bc6d97c50e2594e350512d6ce054b8cf12f193e3bd73",
+      "variant_id": "budget_invalid_high_consequence_variant",
+      "variant_name": "Budget-invalid high-consequence variant"
+    },
+    {
+      "changed_components": [
+        "source_window"
+      ],
+      "expected_blocker_code": "stale_consequence_record_blocked",
+      "expected_selected_route": null,
+      "final_ap4_supported": false,
+      "native_support_opened": false,
+      "observed_blocker_code": "stale_consequence_record_blocked",
+      "observed_outcome": "blocked",
+      "observed_selected_route": null,
+      "passed": true,
+      "phase8_opened": false,
+      "producer_direct_mutation": false,
+      "route_summary": [
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 2,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": -0.1597545,
+          "route_candidate_id": "route_a"
+        },
+        {
+          "budget_validity": "source_budget_surfaces_present_for_selection_candidate",
+          "consequence_rank": 1,
+          "consequence_rank_source": "derived_from_serialized_perturbation_score_components",
+          "consequence_score": 0.12,
+          "route_candidate_id": "route_b"
+        }
+      ],
+      "runtime_state_used": false,
+      "selection_digest": "897a824b52f68d48dfce11c2e19eecc7573bc231b809e325023b26bc58d57fea",
+      "source_backed_inputs": [],
+      "variant_digest": "f0a7f311c38abbc4b4e5158287c863ad1e16178436f620c71e09a9c05f8dce7f",
+      "variant_id": "stale_record_replay_variant",
+      "variant_name": "Stale record replay variant"
+    }
+  ],
+  "purpose": "consequence_perturbation_and_replay_matrix",
+  "replay_records": [
+    {
+      "filesystem_roundtrip": false,
+      "first_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "first_selected_route": "route_b",
+      "producer_direct_mutation": false,
+      "replay_id": "duplicate_replay_stability",
+      "replay_kind": "duplicate_replay",
+      "runtime_state_used": false,
+      "second_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "second_selected_route": "route_b",
+      "stable": true
+    },
+    {
+      "filesystem_roundtrip": true,
+      "first_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "first_selected_route": "route_b",
+      "producer_direct_mutation": false,
+      "replay_id": "artifact_only_replay_stability",
+      "replay_kind": "artifact_only_replay",
+      "runtime_state_used": false,
+      "second_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "second_selected_route": "route_b",
+      "serialized_artifact_sha256": "6603bf1538ba6606769a5718f6ff5530713d2ca66906b897e78bf8a35a82fd51",
+      "stable": true
+    },
+    {
+      "filesystem_roundtrip": true,
+      "first_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "first_selected_route": "route_b",
+      "producer_direct_mutation": false,
+      "replay_id": "snapshot_load_replay_stability",
+      "replay_kind": "snapshot_load_replay",
+      "runtime_state_used": false,
+      "second_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "second_selected_route": "route_b",
+      "serialized_snapshot_sha256": "558b35da42b4d8e51bcd4e6be94b3e10b7f03d7833620b9aba83f4f0d94d22b5",
+      "snapshot_digest": "1a1d16672bf7b0071bd8c6ada6cac76ed074ecfd76e3b0cdb74f5be1b700afef",
+      "stable": true
+    },
+    {
+      "filesystem_roundtrip": false,
+      "first_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "first_selected_route": "route_b",
+      "producer_direct_mutation": false,
+      "replay_id": "order_inversion_replay_stability",
+      "replay_kind": "order_inversion_replay",
+      "runtime_state_used": false,
+      "second_digest": "10f0a1508b13a8a9612dfcee19dddc9f91eb3aa79878b665c7b14f6df839ad5b",
+      "second_selected_route": "route_b",
+      "stable": true
+    }
+  ],
+  "schema": "n14_consequence_perturbation_matrix_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": {
+      "output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "status": "passed"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "output_digest": null,
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json": {
+      "output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+      "sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_control_matrix.json": {
+      "output_digest": "d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_control_matrix.json",
+      "sha256": "9d7153c031665f8325502ee9241048f8a2ac43cecf1b47ecefa67d715d1d59c0",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json": {
+      "output_digest": "d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json",
+      "sha256": "da0d2e070fa34098d14673714f2d23ea3f3041821c2a203798c206786e07cde3",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+      "sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_control_matrix.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_control_matrix.md",
+      "sha256": "0797b2731145e88db360e9cd8cbcc817e0bf89fc6795be14848658a68e285a18"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_sensitive_selection_candidate.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_sensitive_selection_candidate.md",
+      "sha256": "45d32f1ca30cbe95b262e650ca9c627e9c6dc858b2f06e202d60490036070cca"
+    }
+  },
+  "status": "passed",
+  "target_ap_ceiling": "AP4"
+}

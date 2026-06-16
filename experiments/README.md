@@ -38,6 +38,7 @@ machine-local state.
 | [N11 general agentic-like integration](2026-05-N11-lgrc-general-agentic-like-integration/README.md) | Transfer across context, support state, proxy condition, and horizon while preserving claim boundaries. | README, then final closeout script/output and reports. |
 | [N12 native naturalization and producer dissolution](2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/README.md) | Bridge experiment classifying N05-N11 producer mechanisms into native absorption candidates, scaffolds, and theory-sensitive blockers. | README, then implementation plan/checklist, naturalization artifacts, Phase 8 readiness matrix, and closeout handoff. |
 | [N13 self-maintenance and support-seeking regulation](2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/README.md) | Artifact-level AP3 support-seeking regulation candidate derived from source-current support state, with controls and claim boundaries. | README, then implementation plan/checklist, support schema, control/stress artifacts, and closeout handoff. |
+| [N14 consequence-sensitive route selection](2026-06-N14-lgrc-consequence-sensitive-route-selection/README.md) | AP4-prerequisite experiment for route selection by source-backed downstream support, memory, or regulation consequences. | README, then implementation plan/checklist, consequence records, selection candidate, and N14-specific hypotheses. |
 
 ## Current Roadmap State
 
@@ -75,7 +76,36 @@ support-seeking regulation evidence. It does not support agency, intention,
 semantic goal ownership, identity acceptance, selfhood, personhood, biological
 behavior, native support, or fully native agentic-like integration.
 
-The next planned experiment is N14, consequence-sensitive route selection.
+N14 is closed as a claim-clean artifact-level `AP4` experiment. Iterations 1-6
+plus 6-A, 6-B, and 6-C closed the source inventory, AP4 schema/gate, route
+consequence records, and a provisional consequence-sensitive selection
+candidate, plus adversarial controls. Iteration 4 selects `route_b` by derived, memory-dominant
+consequence rank while immediate affordance favors rejected `route_a`;
+Iteration 5 blocks hidden outcomes, post-hoc scores, fabricated
+consequence-rank sources, stale records, invalid budgets, missing records,
+cherry-picking, ambiguous ties, fixture labels, immediate-affordance relabels,
+and unsafe claim relabels; it also checks budget validity and rank-source
+validity before ranking. Iteration 6 passes source-sensitive support, memory,
+and regulation perturbation variants plus duplicate, artifact-only,
+snapshot/load, and order-inverted replay checks; artifact-only and snapshot/load
+cases include filesystem JSON roundtrips. Iteration 6-A supports observed
+route-specific memory consequences while leaving observed route-specific
+support/regulation unsupported as generic source lanes, using N08 MEM3 for the
+required memory-surface key snapshot. Iteration 6-B confirms current N09/N13
+support/regulation evidence is not upstream route-conditioned and blocks
+generic source reuse through executed controls. Iteration 6-C adds a guarded
+positive constructed N14 followout: route IDs are serialized before
+support/regulation scoring, support/regulation components differ by route, and
+split equal-effect null controls block either undifferentiated axis. At that
+point, final AP4 had not been frozen. Iteration 7 classifies the candidate as
+boundary-clean artifact-level `AP4`, with all three hypotheses supported and
+final AP4 freeze pending Iteration 8. Iteration 8 freezes final supported AP level `AP4` with
+claim ceiling
+`artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout`.
+The result is not intention, agency, semantic goal ownership, identity
+acceptance, native support, or fully native integration. N15 endogenous proxy
+formation is the next roadmap experiment; targeted Phase 8 remains optional
+and deferred, not required before N15.
 
 Roadmap-level context:
 
