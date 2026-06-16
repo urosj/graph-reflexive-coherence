@@ -13,11 +13,12 @@ Generated reports:
 - `n14_observed_route_specific_consequence_probe.md`
 - `n14_route_conditioned_support_regulation_probe.md`
 - `n14_route_conditioned_followout_probe.md`
+- `n14_claim_boundary_record.md`
+- `n14_closeout_and_handoff.md`
 
 Planned reports:
 
-- `n14_claim_boundary_record.md`
-- `n14_closeout_and_handoff.md`
+None.
 
 Reports should summarize generated JSON artifacts without weakening source
 traceability or claim boundaries.

@@ -146,11 +146,26 @@ N14 is now opened and Iterations 1-6 plus 6-A, 6-B, and 6-C are closed:
   not upstream observed N09/N13 route-conditioned evidence and not native
   support. Split equal-effect null validation blocks either undifferentiated
   support or undifferentiated regulation.
-- Current AP4 evidence status: provisional `AP4_candidate` only; final AP4 is
-  not supported until claim-boundary classification passes. Expected N14
-  closeout scope can broaden to support/memory/regulation only if Iteration 7
-  preserves the distinction between constructed followout evidence and upstream
-  observed route-conditioned evidence.
+- Iteration 7 claim-boundary and AP4 classification status: passed.
+- Iteration 7 acceptance state:
+  `accepted_ap4_classification_claim_boundary_clean_pending_closeout`.
+- Iteration 7 output digest:
+  `828a553f428245c7fff758c519014fe22c4a1fe924b441f0c066dcf09747b2ea`.
+- Iteration 7 result: N14 classifies as boundary-clean artifact-level `AP4`,
+  with Hypotheses A, B, and C supported.
+- Iteration 8 closeout and N15 handoff status: passed.
+- Iteration 8 acceptance state:
+  `closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection`.
+- Iteration 8 output digest:
+  `494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a`.
+- N14 final supported AP level: `AP4`.
+- N14 final claim ceiling:
+  `artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout`.
+- N14 final scope: observed route-specific memory plus constructed
+  route-conditioned support/regulation followout; upstream observed N09/N13
+  route-conditioned support/regulation remains unsupported.
+- Recommended next experiment: N15 endogenous proxy formation.
+- Targeted Phase 8 required before N15: false.
 - Phase 8 implementation opened: false.
 - Native support opened: false.
 - Intention, agency, semantic goal ownership, identity acceptance, selfhood,
@@ -173,6 +188,10 @@ Start future review from these files:
 - `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_claim_boundary_record.json`
 - `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md`
 - `experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json`
+- `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md`
+- `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json`
+- `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_claim_boundary_record.md`
+- `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_claim_boundary_record.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_final_interpretation_and_roadmap_significance.md`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md`
@@ -191,6 +210,8 @@ Known recent output digests:
   `86d90dbf1cb594ab541440c481fe1a501c0f13d16ccf46a044bd962bca134aa6`
 - N13 Iteration 8:
   `e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b`
+- N14 Iteration 8:
+  `494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a`
 
 ## Native Gaps Carried Forward After N12
 

@@ -13,11 +13,12 @@ Generated artifacts:
 - `n14_observed_route_specific_consequence_probe.json`
 - `n14_route_conditioned_support_regulation_probe.json`
 - `n14_route_conditioned_followout_probe.json`
+- `n14_claim_boundary_record.json`
+- `n14_closeout_and_handoff.json`
 
 Planned artifacts:
 
-- `n14_claim_boundary_record.json`
-- `n14_closeout_and_handoff.json`
+None.
 
 Generated outputs must use relative paths, include source digests, and keep
 claim flags explicit.

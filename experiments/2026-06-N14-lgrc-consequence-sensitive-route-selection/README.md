@@ -401,9 +401,29 @@ iteration_6c_supported_closeout_scope = artifact_level_ap4_support_memory_regula
 iteration_6c_scope_caveat = constructed_followout_evidence_not_upstream_observed_route_conditioned_evidence
 iteration_6c_equal_effect_null_blocks_either_undifferentiated_axis = true
 iteration_6c_equal_effect_null_split_controls = true
-final_ap4_supported = false
+iteration_7_status = passed
+iteration_7_acceptance_state = accepted_ap4_classification_claim_boundary_clean_pending_closeout
+iteration_7_output_digest = 828a553f428245c7fff758c519014fe22c4a1fe924b441f0c066dcf09747b2ea
+iteration_7_classified_ap_level = AP4
+iteration_7_ap4_classification_supported = true
+iteration_7_provisional_ap_level = AP4_candidate_boundary_clean_pending_closeout
+iteration_7_hypothesis_a_acceptance_state = supported
+iteration_7_hypothesis_b_acceptance_state = supported
+iteration_7_hypothesis_c_acceptance_state = supported
+iteration_7_claim_ceiling_candidate = artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout
+iteration_8_status = passed
+iteration_8_acceptance_state = closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection
+iteration_8_output_digest = 494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a
+final_supported_ap_level = AP4
+final_ap4_supported = true
+final_claim_ceiling = artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout
+final_scope = observed_route_specific_memory_plus_constructed_route_conditioned_support_regulation_followout
+upstream_observed_route_conditioned_support_regulation_supported = false
+fully_native_integration_opened = false
+no_generic_source_row_classifications = true
 phase8_opened = false
 native_support_opened = false
+targeted_phase8_required_before_n15 = false
 ```
 
 Iteration 1 pins seven source rows for route, memory, regulation, support,
@@ -444,14 +464,23 @@ constructs an experiment-local route-conditioned followout artifact with route
 IDs serialized before support/regulation scoring. That followout yields positive
 constructed support and regulation components by route, with `route_b` ranked
 highest. Its split equal-effect null controls block either undifferentiated
-support or undifferentiated regulation, but it does not convert N09/N13 into upstream
-observed route-conditioned sources and it does not open native support. Final
-AP4 now remains pending on claim-boundary classification with the 6-B/6-C
-distinction preserved.
+support or undifferentiated regulation, but it does not convert N09/N13 into
+upstream observed route-conditioned sources and it does not open native
+support. Final AP4 then remained pending on claim-boundary classification with
+the 6-B/6-C distinction preserved. Iteration 7 classifies the candidate as boundary-clean
+artifact-level `AP4`: Hypotheses A, B, and C are supported, the provisional
+level is `AP4_candidate_boundary_clean_pending_closeout`, all unsafe and native
+claim flags remain false, and final AP4 freeze is deferred to Iteration 8.
+Iteration 8 closes N14 with final supported level `AP4` and final claim ceiling
+`artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout`.
+The upstream observed route-conditioned support/regulation gap remains a final
+blocker, targeted Phase 8 is optional/deferred rather than required before N15,
+and all agency/native/intention/identity/selfhood/personhood/biological claim
+boundaries remain closed.
 
 Remaining iteration acceptance states:
 
 ```text
-iteration_7_acceptance_state = pending_not_run
-iteration_8_acceptance_state = pending_not_run
+iteration_7_acceptance_state = accepted_ap4_classification_claim_boundary_clean_pending_closeout
+iteration_8_acceptance_state = closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection
 ```

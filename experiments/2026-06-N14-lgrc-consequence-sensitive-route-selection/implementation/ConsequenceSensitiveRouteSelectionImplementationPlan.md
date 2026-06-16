@@ -715,7 +715,40 @@ scripts/build_n14_claim_boundary_record.py
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_ap4_classification_claim_boundary_clean_pending_closeout
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_claim_boundary_record.json
+Report: reports/n14_claim_boundary_record.md
+Classified AP level: AP4
+AP4 classification supported: true
+Provisional AP level: AP4_candidate_boundary_clean_pending_closeout
+Final AP4 supported: false
+Final AP freeze pending Iteration 8: true
+Hypothesis A acceptance state: supported
+Hypothesis B acceptance state: supported
+Hypothesis C acceptance state: supported
+Output digest: 828a553f428245c7fff758c519014fe22c4a1fe924b441f0c066dcf09747b2ea
+```
+
+Interpretation:
+
+```text
+N14 Iteration 7 classifies the candidate as boundary-clean artifact-level AP4
+pending Iteration 8 final freeze. The supported AP4 scope is observed
+route-specific memory evidence plus constructed route-conditioned
+support/regulation followout evidence. Upstream observed N09/N13
+route-conditioned support/regulation remains unsupported. The result is not
+intention, semantic choice, semantic goal ownership, identity acceptance,
+selfhood, personhood, biological behavior, native support, fully native
+integration, unrestricted agency, or Phase 8 implementation.
+Boundary evidence references are typed: canonical control IDs are separated
+from interpretation record IDs, check IDs, claim-flag IDs, and schema
+requirement IDs.
 ```
 
 Required false flags:
@@ -750,7 +783,35 @@ scripts/build_n14_closeout_and_handoff.py
 Acceptance state:
 
 ```text
-pending_not_run
+closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection
+```
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n14_closeout_and_handoff.json
+Report: reports/n14_closeout_and_handoff.md
+Final supported AP level: AP4
+Final AP4 supported: true
+Final claim ceiling: artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout
+Final scope: observed route-specific memory plus constructed route-conditioned support/regulation followout
+Upstream observed route-conditioned support/regulation supported: false
+Targeted Phase 8 required before N15: false
+Output digest: 494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a
+```
+
+Interpretation:
+
+```text
+N14 closes as a claim-clean artifact-level AP4 consequence-sensitive route
+selection experiment. The result supports route selection by source-backed
+downstream consequence records rather than immediate affordance alone. The
+final scope includes observed route-specific memory and constructed
+route-conditioned support/regulation followout, while upstream observed
+N09/N13 route-conditioned support/regulation remains unsupported. N15 should
+start from this artifact-level AP4 substrate; targeted Phase 8 remains optional
+and deferred, not required before N15.
 ```
 
 N14 closes only when every source row is classified, every AP4 gate is either

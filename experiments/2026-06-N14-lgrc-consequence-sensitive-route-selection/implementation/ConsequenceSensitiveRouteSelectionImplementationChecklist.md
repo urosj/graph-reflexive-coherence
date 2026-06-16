@@ -616,55 +616,136 @@ are recomputed before validation.
 Acceptance state:
 
 ```text
-pending_not_run
+accepted_ap4_classification_claim_boundary_clean_pending_closeout
 ```
 
-- [ ] Close Hypothesis A.
-- [ ] Close Hypothesis B.
-- [ ] Close Hypothesis C.
-- [ ] Determine supported AP level.
-- [ ] Confirm `agency_claim_opened = false`.
-- [ ] Confirm `intention_claim_opened = false`.
-- [ ] Confirm `semantic_goal_ownership_opened = false`.
-- [ ] Confirm `identity_acceptance_opened = false`.
-- [ ] Confirm `semantic_choice_opened = false`.
-- [ ] Confirm `selfhood_opened = false`.
-- [ ] Confirm `personhood_or_biological_behavior_opened = false`.
-- [ ] Confirm `unrestricted_agency_opened = false`.
-- [ ] Confirm `native_support_opened = false`.
-- [ ] Confirm `fully_native_integration_opened = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `src_diff_empty = true`.
+- [x] Close Hypothesis A.
+- [x] Close Hypothesis B.
+- [x] Close Hypothesis C.
+- [x] Determine supported AP level.
+- [x] Confirm `agency_claim_opened = false`.
+- [x] Confirm `intention_claim_opened = false`.
+- [x] Confirm `semantic_goal_ownership_opened = false`.
+- [x] Confirm `identity_acceptance_opened = false`.
+- [x] Confirm `semantic_choice_opened = false`.
+- [x] Confirm `selfhood_opened = false`.
+- [x] Confirm `personhood_or_biological_behavior_opened = false`.
+- [x] Confirm `unrestricted_agency_opened = false`.
+- [x] Confirm `native_support_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm boundary evidence references are typed.
+- [x] Confirm boundary control references use canonical control IDs.
+- [x] Confirm legacy mixed `source_controls` field is absent.
 
 Expected artifacts:
 
-- [ ] `outputs/n14_claim_boundary_record.json`
-- [ ] `reports/n14_claim_boundary_record.md`
-- [ ] `scripts/build_n14_claim_boundary_record.py`
+- [x] `outputs/n14_claim_boundary_record.json`
+- [x] `reports/n14_claim_boundary_record.md`
+- [x] `scripts/build_n14_claim_boundary_record.py`
+
+Result:
+
+```text
+Status: passed.
+Output digest: 828a553f428245c7fff758c519014fe22c4a1fe924b441f0c066dcf09747b2ea
+Classified AP level: AP4
+AP4 classification supported: true
+Provisional AP level: AP4_candidate_boundary_clean_pending_closeout
+Final AP4 supported: false
+Final AP freeze pending Iteration 8: true
+Hypothesis A acceptance state: supported
+Hypothesis B acceptance state: supported
+Hypothesis C acceptance state: supported
+Phase 8 opened: false
+Native support opened: false
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n14_claim_boundary_record.json 156e76ffd0186dbf613f6754eb84d4b06dc7cc7f6512075989502d70194e8371
+reports/n14_claim_boundary_record.md f17e03d0563c8881a29065a31c3a1ddcde57fb1ea15cb8dcf8bd104390c79767
+scripts/build_n14_claim_boundary_record.py 31ad2b7480f808630967f483bdbefac611f4171f4178287f51da91bc7825416b
+```
+
+Interpretation:
+
+```text
+Iteration 7 supports all three hypotheses and classifies N14 as
+boundary-clean artifact-level AP4, pending Iteration 8 final freeze. The AP4
+scope is observed route-specific memory plus constructed route-conditioned
+support/regulation followout. The upstream N09/N13 route-conditioned
+support/regulation gap remains explicit, and all intention, semantic choice,
+semantic goal ownership, identity acceptance, selfhood, personhood, biological
+behavior, agency, unrestricted agency, native support, fully native
+integration, and Phase 8 claims remain blocked.
+```
 
 ## Iteration 8. N14 Closeout And N15 Handoff
 
 Acceptance state:
 
 ```text
-pending_not_run
+closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection
 ```
 
-- [ ] Freeze final supported AP level.
-- [ ] Record final claim ceiling.
-- [ ] Record final controls.
-- [ ] Record final blockers.
-- [ ] Record final N15 handoff.
-- [ ] Record whether targeted Phase 8 is optional, required, or deferred.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
+- [x] Freeze final supported AP level.
+- [x] Record final claim ceiling.
+- [x] Record final controls.
+- [x] Record final blockers.
+- [x] Record final N15 handoff.
+- [x] Record whether targeted Phase 8 is optional, required, or deferred.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
+- [x] Confirm all source rows receive specific final roles.
 
 Expected artifacts:
 
-- [ ] `outputs/n14_closeout_and_handoff.json`
-- [ ] `reports/n14_closeout_and_handoff.md`
-- [ ] `scripts/build_n14_closeout_and_handoff.py`
+- [x] `outputs/n14_closeout_and_handoff.json`
+- [x] `reports/n14_closeout_and_handoff.md`
+- [x] `scripts/build_n14_closeout_and_handoff.py`
+
+Result:
+
+```text
+Status: passed.
+Output digest: 494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a
+Final supported AP level: AP4
+Final AP4 supported: true
+Final claim ceiling: artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout
+Final scope: observed route-specific memory plus constructed route-conditioned support/regulation followout
+Upstream observed route-conditioned support/regulation supported: false
+Targeted Phase 8 required before N15: false
+Native support opened: false
+Phase 8 opened: false
+Fully native integration opened: false
+Generic source row classifications: false
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n14_closeout_and_handoff.json 47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1
+reports/n14_closeout_and_handoff.md 5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a
+scripts/build_n14_closeout_and_handoff.py 6e7258e00e6ff762c53bfd41ddeb4c8161fa7a3df7860ffb1baf3a114939840d
+```
+
+Interpretation:
+
+```text
+Iteration 8 closes N14 as a claim-clean artifact-level AP4 consequence-
+sensitive route selection experiment. It freezes the final supported AP level
+at AP4, records all three hypotheses as supported, preserves the constructed
+followout versus upstream observed support/regulation distinction, and hands
+off to N15 endogenous proxy formation. Targeted Phase 8 remains optional and
+deferred, not required before N15. It carries forward
+`fully_native_integration_opened = false` and assigns a specific final role to
+every Iteration 1 source row.
+```
 
 ## Setup Verification
 
