@@ -1,10 +1,9 @@
 # N12-N18 LGRC Agency Prerequisites Handoff
 
 This handoff is the pickup note for continuing after the N05-N11 foundation
-arc, the completed N12 bridge experiment, and the completed N13
-support-seeking regulation experiment. It is meant to let a future conversation
-restart without rediscovering the claim boundary, source artifacts, or next
-branch options.
+arc and the completed N12-N15 agency-prerequisite experiments. It is meant to
+let a future conversation restart without rediscovering the claim boundary,
+source artifacts, or next branch options.
 
 ## Current Position
 
@@ -62,115 +61,44 @@ N13 is now closed as a claim-clean agency-prerequisite experiment:
   personhood, biological behavior, fully native integration, and unrestricted
   agency claims: still blocked.
 
-N14 is now opened and Iterations 1-6 plus 6-A, 6-B, and 6-C are closed:
+N14 is closed as a claim-clean agency-prerequisite experiment:
 
-- Experiment title: `N14 - LGRC Consequence-Sensitive Route Selection`.
-- Planned target: artifact-level `AP4` consequence-sensitive route selection
-  candidate.
-- Iteration 1 source inventory status: passed.
-- Iteration 1 acceptance state:
-  `accepted_source_inventory_only_no_ap4`.
-- Iteration 1 output digest:
-  `7e8013464efdb35805bc9aa9b765a5c81afaa2a1f0d7210706d43ddd06a41513`.
-- Iteration 2 AP4 schema/gate status: passed.
-- Iteration 2 acceptance state:
-  `accepted_schema_freeze_no_row_validation`.
-- Iteration 2 output digest:
-  `56a2080a76f941e77e7a822874fa62e292f34452c06f02cbb8e971bccc540217`.
-- Iteration 3 route consequence record status: passed.
-- Iteration 3 acceptance state:
-  `accepted_route_consequence_records_no_selection`.
-- Iteration 3 output digest:
-  `9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253`.
-- Iteration 3 consequence rank source:
-  serialized memory-dominant score components; support and regulation sources
-  are compatible but not route-specific in this iteration.
-- Iteration 4 consequence-sensitive selection candidate status: passed.
-- Iteration 4 acceptance state:
-  `accepted_consequence_sensitive_selection_candidate_pending_controls`.
-- Iteration 4 output digest:
-  `d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd`.
-- Iteration 4 selected route: `route_b`; rejected route: `route_a`.
-- Iteration 4 candidate scope: memory-dominant provisional `AP4_candidate`;
-  missing/stale/budget handling was policy-only before Iteration 5 adversarial
-  controls executed.
-- Iteration 5 adversarial control matrix status: passed.
-- Iteration 5 acceptance state:
-  `accepted_adversarial_control_matrix_pending_replay`.
-- Iteration 5 output digest:
-  `d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7`.
-- Iteration 5 control result: 21 controls executed; 20 negative controls
-  blocked; fabricated consequence-rank source is blocked; budget validity and
-  consequence-rank source are checked before ranking; explicit tie-policy
-  removal is required; matched affordance/consequence conflict selects
-  `route_b`.
-- Iteration 6 consequence perturbation and replay matrix status: passed.
-- Iteration 6 acceptance state:
-  `accepted_perturbation_replay_matrix_pending_claim_classification`.
-- Iteration 6 output digest:
-  `3d207f963e6d3ed049c01bfcf75235c2cb8780d79e0cbe14d8ab349d7b6674e9`.
-- Iteration 6 perturbation result: baseline selects `route_b`; support-risk,
-  memory-effect, and regulation-deficit variants select `route_a` through
-  serialized source-backed consequence inputs; budget-invalid and stale variants
-  fail closed; duplicate, artifact-only, snapshot/load, and order-inverted
-  replays are stable. Artifact-only and snapshot/load replay use filesystem
-  JSON roundtrips, and budget/rank-source validation is checked before ranking.
-- Iteration 6-A observed route-specific consequence probe status: passed.
-- Iteration 6-A acceptance state:
-  `accepted_observed_route_specific_memory_probe_support_regulation_generic`.
-- Iteration 6-A output digest:
-  `7f75ab3c2601a483938ba333676ef0435412ea7d5681910edcdc31c39c5a5a70`.
-- Iteration 6-A result: observed route-specific memory consequence is supported
-  for both routes and ranks `route_b` higher; observed route-specific support
-  and regulation consequences remain unsupported/generic. Iteration 6-A
-  intentionally uses N08 MEM3 rather than MEM6 because MEM3 contains the
-  memory-surface key snapshot needed for observed route-specific memory rows.
-- Iteration 6-B route-conditioned support/regulation probe status: passed.
-- Iteration 6-B acceptance state:
-  `accepted_route_conditioned_support_regulation_probe_no_route_specific_support_regulation`.
-- Iteration 6-B output digest:
-  `e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e`.
-- Iteration 6-B result: route-conditioned support and regulation consequence
-  evidence is not found in the current N09/N13 sources; generic source reuse,
-  route-label swapping, missing route observations, stale route observations,
-  budget-invalid consequences, and post-hoc route conditioning are blocked by
-  executed adversarial variants.
-- Iteration 6-C route-conditioned followout probe status: passed.
-- Iteration 6-C acceptance state:
-  `accepted_constructed_route_conditioned_support_regulation_followout`.
-- Iteration 6-C output digest:
-  `387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29`.
-- Iteration 6-C result: N14 constructs route-ID-bound support and regulation
-  followout rows before scoring; support and regulation components differ by
-  route and rank `route_b` highest. This is constructed N14 followout evidence,
-  not upstream observed N09/N13 route-conditioned evidence and not native
-  support. Split equal-effect null validation blocks either undifferentiated
-  support or undifferentiated regulation.
-- Iteration 7 claim-boundary and AP4 classification status: passed.
-- Iteration 7 acceptance state:
-  `accepted_ap4_classification_claim_boundary_clean_pending_closeout`.
-- Iteration 7 output digest:
-  `828a553f428245c7fff758c519014fe22c4a1fe924b441f0c066dcf09747b2ea`.
-- Iteration 7 result: N14 classifies as boundary-clean artifact-level `AP4`,
-  with Hypotheses A, B, and C supported.
-- Iteration 8 closeout and N15 handoff status: passed.
-- Iteration 8 acceptance state:
-  `closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection`.
-- Iteration 8 output digest:
-  `494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a`.
-- N14 final supported AP level: `AP4`.
-- N14 final claim ceiling:
+- Final supported AP level: `AP4`.
+- Final AP4 supported: true.
+- Final claim ceiling:
   `artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout`.
-- N14 final scope: observed route-specific memory plus constructed
-  route-conditioned support/regulation followout; upstream observed N09/N13
-  route-conditioned support/regulation remains unsupported.
-- Recommended next experiment: N15 endogenous proxy formation.
-- Targeted Phase 8 required before N15: false.
+- Final scope:
+  observed route-specific memory plus constructed route-conditioned
+  support/regulation followout.
+- Upstream observed N09/N13 route-conditioned support/regulation: unsupported.
+- All consequence-source, ranking, adversarial control, perturbation, replay,
+  constructed-followout, and claim-boundary checks: passed.
 - Phase 8 implementation opened: false.
 - Native support opened: false.
-- Intention, agency, semantic goal ownership, identity acceptance, selfhood,
-  personhood, biological behavior, fully native integration, and unrestricted
-  agency claims: still blocked.
+- Intention, semantic choice, agency, semantic goal ownership, identity
+  acceptance, selfhood, personhood, biological behavior, fully native
+  integration, and unrestricted agency claims: still blocked.
+
+N15 is closed as a claim-clean agency-prerequisite experiment:
+
+- Final supported AP level: `AP5`.
+- Final AP5 supported: true.
+- Final claim ceiling:
+  `artifact_level_ap5_endogenous_proxy_formation_candidate`.
+- Final scope:
+  runtime-derived target/proxy condition generated from source-current support,
+  memory, regulation, and AP4 consequence context.
+- Final controls:
+  external-proxy contrast passed, twelve adversarial controls fail closed,
+  bounded drift and replay passed, all 36 AP5 gates validated, and all unsafe
+  claim promotions remain blocked.
+- Recommended next experiment: `N16_self_environment_boundary`.
+- Targeted Phase 8 required before N16: false.
+- Phase 8 implementation opened: false.
+- Native support opened: false.
+- Semantic goal ownership, intention, semantic choice, agency, identity
+  acceptance, selfhood, personhood, biological behavior, fully native
+  integration, and unrestricted agency claims: still blocked.
 
 ## Primary Source Artifacts
 
@@ -192,6 +120,10 @@ Start future review from these files:
 - `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json`
 - `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_claim_boundary_record.md`
 - `experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_claim_boundary_record.json`
+- `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md`
+- `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json`
+- `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_claim_boundary_record.md`
+- `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_final_interpretation_and_roadmap_significance.md`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md`
@@ -212,6 +144,8 @@ Known recent output digests:
   `e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b`
 - N14 Iteration 8:
   `494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a`
+- N15 Iteration 8:
+  `715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9`
 
 ## Native Gaps Carried Forward After N12
 
@@ -241,42 +175,39 @@ after their theory and component entry gates are explicit.
 ## Recommended Next Start
 
 The clean next work, if continuing the experiment roadmap without opening
-Phase 8 implementation, is N14 Iteration 7:
+Phase 8 implementation, is:
 
-`N14 - LGRC Consequence-Sensitive Route Selection`
+`N16 - LGRC Self / Environment Boundary`
 
-The N14 skeleton and Iterations 1-6 plus 6-A, 6-B, and 6-C already exist.
 Recommended next actions:
 
-1. Run Iteration 7 claim-boundary and AP4 classification against the Iteration
-   6/6-A/6-B/6-C perturbation, replay, route-specific memory,
-   route-conditioned support/regulation boundary records, and constructed
-   followout evidence.
-2. Start from route selection by expected downstream support, memory, or
-   regulation effects, not semantic intention or agency.
-3. Consume N06 route arbitration evidence, N08 route memory/affordance
-   evidence, N09 bounded response regulation evidence, the N13 final AP3
-   artifact-level support-seeking regulation candidate, and N12 NAT4 readiness
-   records.
-4. Do not consume identity acceptance, runtime identity acceptance, semantic
-   goal ownership, intention, agency, selfhood, native support, or fully native
-   integration as supported inputs.
-5. Preserve the existing rule: producer-layer evidence may motivate native
-   support, but it does not become a native claim until Phase 8 implements and
-   validates it.
+1. Create the `experiment-N16` branch from `main`.
+2. Start from N15 only as artifact-level `AP5` endogenous proxy formation
+   evidence, not as goal ownership, identity acceptance, agency, or native
+   support.
+3. Use N14 only as artifact-level `AP4` consequence-sensitive route selection
+   context, preserving the constructed-followout caveat.
+4. Use N13 only as artifact-level `AP3` support-seeking regulation context.
+5. Use N12 NAT4 records only as readiness context; do not promote them into
+   native support.
+6. Test whether internal support-relevant state and external resource or
+   perturbation state can be separated in artifacts and controls without
+   promoting the boundary into selfhood or identity acceptance.
+7. Keep Phase 8 optional/deferred unless the explicit goal is native
+   implementation of a NAT4 contract.
 
 ## Branch Options
 
-There are three reasonable next branches after N13:
+There are three reasonable next branches after N15:
 
-- N14 first, no `src/*`: continue the agency-prerequisite roadmap with
-  consequence-sensitive route selection as artifact-level experiment work.
+- N16 first, no `src/*`: continue the agency-prerequisite roadmap with
+  self/environment boundary as artifact-level experiment work.
 - Phase 8 route-conductance memory first: native absorption of the N08 memory
   trail / route affordance mechanism from the N12 NAT4 contract.
 - Phase 8 response-magnitude policy first: native absorption of bounded,
   envelope-gated regulation response sizing from the N12 NAT4 contract.
 
-The most conservative route is N14 first if the goal is to continue the
+The most conservative route is N16 first if the goal is to continue the
 artifact-level roadmap. Open targeted Phase 8 only when the goal is native
 implementation of one of the two N12 NAT4 contracts.
 
@@ -289,6 +220,9 @@ Current supported language:
 - `agentic_like_integration_candidate`
 - `artifact_only_agentic_like_integration_candidate`
 - `agency_prerequisite_foundation`
+- `artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation`
+- `artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout`
+- `artifact_level_ap5_endogenous_proxy_formation_candidate`
 - `native_absorption_candidate`
 
 Current blocked language:
@@ -296,10 +230,12 @@ Current blocked language:
 - agency
 - intention
 - semantic choice
+- semantic goal ownership
 - selfhood
 - personhood
 - biological behavior
 - identity acceptance
+- native support without explicit Phase 8 implementation
 - unrestricted agency
 - fully native agentic integration
 
@@ -310,9 +246,8 @@ Before closing a handoff update, rerun:
 - `git diff --check`
 - `git diff -- src`
 
-The post-N13 handoff update and N13 closeout refresh are
-documentation/experiment artifact work only. They should leave `src/*`
-unchanged.
+The post-N15 handoff update and experiment-index refresh are documentation
+work only. They should leave `src/*` unchanged.
 
 Future sessions should rerun:
 
@@ -321,7 +256,7 @@ git diff --check
 git diff -- src
 ```
 
-before closing any N14 setup or Phase 8 planning turn.
+before closing any N16 setup or Phase 8 planning turn.
 
 ## Resolved N12 Questions
 
@@ -335,11 +270,13 @@ before closing any N14 setup or Phase 8 planning turn.
 
 ## Remaining Questions
 
-- Should the current N14 branch continue through artifact-level AP4
-  consequence-sensitive route selection before opening targeted Phase 8?
-- After N14, should the next roadmap branch be N15 endogenous proxy formation
-  or targeted Phase 8 native implementation?
+- What exact N16 artifact schema separates internal support-relevant state from
+  external resource or perturbation state without introducing selfhood or
+  identity acceptance?
+- Which negative controls are required to block externally supplied boundaries,
+  post-hoc boundary labels, hidden environment-state injection, and native
+  support relabels?
 - If Phase 8 opens, should route conductance memory or response magnitude policy
   be implemented first?
 - What explicit theory gates would be sufficient to reconsider identity
-  acceptance after N14/N15 evidence accumulates?
+  acceptance after N16 evidence accumulates?
