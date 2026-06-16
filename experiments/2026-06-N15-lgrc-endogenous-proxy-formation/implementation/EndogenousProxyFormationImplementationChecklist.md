@@ -208,41 +208,148 @@ not_gap: Iteration 6 perturbation defaults and Iteration 7 hypothesis rubric
 
 ## Iteration 3. Runtime-Derived Target Candidate
 
-- [ ] Select source-current state inputs.
-- [ ] Prefer old-best-claims construction unless direct historic support is
+- [x] Select source-current state inputs.
+- [x] Prefer old-best-claims construction unless direct historic support is
       stronger and claim-clean.
-- [ ] Derive target band or threshold using the frozen policy.
-- [ ] Record target formation timing before downstream use.
-- [ ] Record dependency trace for every target field.
-- [ ] Record budget validity before target use.
-- [ ] Record source digests and replay digest inputs.
-- [ ] Record target consumability by rank or regulation behavior without
+- [x] Derive target band or threshold using the frozen policy.
+- [x] Record target formation timing before downstream use.
+- [x] Record dependency trace for every target field.
+- [x] Record budget validity before target use.
+- [x] Record source digests and replay digest inputs.
+- [x] Record target consumability by rank or regulation behavior without
       semantic goal ownership relabel.
-- [ ] Confirm no externally declared target is used.
-- [ ] Keep AP level provisional.
+- [x] Confirm no externally declared target is used.
+- [x] Keep AP level provisional.
+- [x] Record the direct historic AP2 target-evidence gap.
+- [x] Run local row/schema validator.
 
 Expected artifacts:
 
-- [ ] `outputs/n15_runtime_derived_target_candidate.json`
-- [ ] `reports/n15_runtime_derived_target_candidate.md`
-- [ ] `scripts/build_n15_runtime_derived_target_candidate.py`
+- [x] `outputs/n15_runtime_derived_target_candidate.json`
+- [x] `reports/n15_runtime_derived_target_candidate.md`
+- [x] `scripts/build_n15_runtime_derived_target_candidate.py`
+
+Output digest:
+
+```text
+7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n15_runtime_derived_target_candidate.json 30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873
+reports/n15_runtime_derived_target_candidate.md c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c
+scripts/build_n15_runtime_derived_target_candidate.py 4c6aae71ffaa390ff7ca96e5d90ecfe09ad33e83559bfd0762ec01ceaeae18be
+```
+
+Acceptance state:
+
+```text
+accepted_runtime_derived_target_candidate_with_bridge_pending_controls
+```
+
+Interpretation:
+
+```text
+Iteration 3 generates a provisional runtime-derived target candidate and
+bridges the gap between target existence and target-as-input. Direct historic
+support remains AP2 context only. The constructed target comes from N13 AP3 +
+N14 AP4 + N08/N09/N12 context, and the bridge probe shows the generated target
+band is consumed before ranking a bounded regulation response. Final AP5,
+external proxy contrast, adversarial controls, bounded drift replay, and
+claim-boundary classification remain pending.
+```
+
+Explanation section:
+
+```text
+reports/n15_runtime_derived_target_candidate.md records the full Iteration 3
+Explanation section for the composition, inputs, bridge result, and claim
+boundary.
+```
+
+Post-review gap closure:
+
+```text
+closed: iteration_3_top_level_output_fields declares every I3 top-level key.
+closed: idempotency_digest_plan scope matches replay_digest_inputs including
+        claim_flags.
+closed: n14_constructed_followout is included in candidate_path_used.
+closed: dependency_trace covers direct AP2 gap context, N12 readiness,
+        N13 AP3 closeout, N14 constructed followout, and bounded bridge
+        response fields.
+closed: I2 validator required check names are emitted in I3 checks.
+closed: control value convention and replay digest design note are recorded.
+not_gap: full runtime_state_vector and target_condition objects in
+         replay_digest_inputs are intentional; Iteration 6 must rederive
+         and compare the full objects.
+```
 
 ## Iteration 4. External Proxy Contrast Matrix
 
-- [ ] Build declared target fixture contrast.
-- [ ] Block externally injected target variants.
-- [ ] Block hidden target derivation variants.
-- [ ] Block post-hoc proxy formation variants.
-- [ ] Confirm source-current runtime derivation replays.
-- [ ] Confirm budget validity is checked before target use.
-- [ ] Record whether the candidate is distinguishable from declared proxy
+- [x] Build declared target fixture contrast.
+- [x] Block externally injected target variants.
+- [x] Block hidden target derivation variants.
+- [x] Block post-hoc proxy formation variants.
+- [x] Confirm source-current runtime derivation replays.
+- [x] Confirm budget validity is checked before target use.
+- [x] Record whether the candidate is distinguishable from declared proxy
       regulation.
 
 Expected artifacts:
 
-- [ ] `outputs/n15_external_proxy_contrast_matrix.json`
-- [ ] `reports/n15_external_proxy_contrast_matrix.md`
-- [ ] `scripts/build_n15_external_proxy_contrast_matrix.py`
+- [x] `outputs/n15_external_proxy_contrast_matrix.json`
+- [x] `reports/n15_external_proxy_contrast_matrix.md`
+- [x] `scripts/build_n15_external_proxy_contrast_matrix.py`
+
+Output digest:
+
+```text
+bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n15_external_proxy_contrast_matrix.json f7201b82f0071e26f05b62111d88396072d669d815153971f93f967e503c0ee8
+reports/n15_external_proxy_contrast_matrix.md 3c679397b75bd033df352995265c8cceee71612944729a6991805801509aad8c
+scripts/build_n15_external_proxy_contrast_matrix.py 9fc6119581bb5f7ffee968389dbc96ce42940d90169ec3ca84d6fe0c096f97d7
+```
+
+Acceptance state:
+
+```text
+accepted_external_proxy_contrast_matrix_pending_adversarial_controls_replay_and_claim_boundary
+```
+
+Interpretation:
+
+```text
+Iteration 4 accepts the external proxy contrast matrix. The I3 candidate is
+distinguishable from a declared target fixture, externally injected target,
+hidden target derivation, and post-hoc proxy formation. The source-current
+target derivation replays from the serialized I3 runtime state vector, and
+budget validity is checked before target use. Final AP5, full adversarial
+controls, bounded drift replay, and claim-boundary classification remain
+pending.
+```
+
+Explanation section:
+
+```text
+reports/n15_external_proxy_contrast_matrix.md records the full Iteration 4
+Explanation section for the contrast inputs, contrast rule, same-band fixture
+result, end result, and claim boundary.
+```
+
+Scope boundary:
+
+```text
+I4 contrast clean != final AP5.
+I4 budget-before-use check != full I5 budget ambiguity control.
+I4 source-current replay != full I6 artifact-only/snapshot/order replay.
+```
 
 ## Iteration 5. Adversarial Control Matrix
 

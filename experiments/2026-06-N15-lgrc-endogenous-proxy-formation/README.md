@@ -434,10 +434,52 @@ local row validator, and fail-closed error labels. It does not validate
 candidate rows, generate a target, run controls, assign final `AP5`, open Phase
 8, open native support, or license semantic goal ownership.
 
+Iteration 3 - Runtime-Derived Target Candidate:
+
+```text
+status = passed
+acceptance_state = accepted_runtime_derived_target_candidate_with_bridge_pending_controls
+output_digest = 7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc
+```
+
+Iteration 3 records the direct-historic gap: N13 AP2 support-derived target
+evidence shows that a target condition can exist, but does not itself show that
+the target functions as an AP5-relevant proxy-formation input. The stronger
+candidate is constructed from N13 AP3, N14 AP4, N08 memory, N09 bounded
+regulation, and N12 readiness-only context. It derives a target band before
+bridge ranking and shows a bounded N13 regulation response entering that
+generated band while no-response remains outside it. This is provisional
+bridge evidence only; external proxy contrast, adversarial controls, bounded
+drift replay, and final claim-boundary classification remain pending.
+
+Post-review closure records the I3 top-level output contract, the control
+value convention, the replay digest design note, context-row trace coverage,
+and bounded bridge response trace coverage.
+
+Iteration 4 - External Proxy Contrast Matrix:
+
+```text
+status = passed
+acceptance_state = accepted_external_proxy_contrast_matrix_pending_adversarial_controls_replay_and_claim_boundary
+output_digest = bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59
+```
+
+Iteration 4 contrasts the I3 runtime-derived target candidate against declared
+target fixture, externally injected target, hidden target derivation, and
+post-hoc proxy formation variants. The same-band declared fixture can match
+the selected bounded response, but it is blocked as a fixture because the
+target is not generated from source-current runtime state. The source-current
+derivation replays from the serialized I3 runtime state vector, and budget
+validity is checked before target use. Final `AP5`, adversarial controls,
+bounded drift replay, and claim-boundary classification remain pending.
+The generated report records the full `Iteration 4 Explanation` section for
+the contrast inputs, contrast rule, same-band fixture result, and claim
+boundary.
+
 Next step:
 
 ```text
-Iteration 3 - Runtime-Derived Target Candidate
+Iteration 5 - Adversarial Control Matrix
 ```
 
 ## Directory Structure

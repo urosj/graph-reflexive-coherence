@@ -610,6 +610,42 @@ scripts/build_n15_runtime_derived_target_candidate.py
 Iteration 3 may support only a provisional candidate pending contrast and
 controls.
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n15_runtime_derived_target_candidate.json
+Report: reports/n15_runtime_derived_target_candidate.md
+Acceptance state: accepted_runtime_derived_target_candidate_with_bridge_pending_controls
+Output digest: 7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc
+```
+
+Iteration 3 follows the stronger construction path from N13 AP3, N14 AP4,
+N08, N09, and N12 readiness-only context. It records the direct historic N13
+AP2 target evidence as a gap record rather than promoting it to AP5. The
+generated target center is `0.887594607287`, tolerance is `0.07`, and target
+band is `[0.817594607287, 0.957594607287]`.
+
+Bridge interpretation:
+
+```text
+target condition exists != target condition functions as AP5-relevant proxy input
+```
+
+The bridge probe consumes the generated target band before ranking regulation
+candidates: the bounded N13 support response enters the generated band at
+`0.85`, while no-response remains outside the band at `0.729865182184`. This
+supports only a provisional AP5 candidate pending Iterations 4-7.
+
+The generated report records the full `Iteration 3 Explanation` section for
+the composition, inputs, bridge result, and claim boundary.
+
+Post-review closure records the I3 top-level output contract, aligns the
+idempotency digest scope with the replay inputs, includes the constructed N14
+followout in the candidate path, traces context rows and bounded bridge
+response fields, emits the I2 validator check names, and records the control
+value convention plus the Iteration 6 replay design note.
+
 ### Iteration 4. External Proxy Contrast Matrix
 
 Compare runtime-derived target formation against declared-proxy baselines:
@@ -633,6 +669,36 @@ scripts/build_n15_external_proxy_contrast_matrix.py
 
 Iteration 4 should establish whether the candidate is distinguishable from
 declared proxy regulation.
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n15_external_proxy_contrast_matrix.json
+Report: reports/n15_external_proxy_contrast_matrix.md
+Acceptance state: accepted_external_proxy_contrast_matrix_pending_adversarial_controls_replay_and_claim_boundary
+Output digest: bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59
+```
+
+Iteration 4 establishes that the I3 candidate is distinguishable from declared
+proxy regulation at artifact level. The same-band declared fixture is blocked
+by fixture provenance, externally injected target variants are blocked, hidden
+target derivation variants are blocked, and post-hoc proxy formation variants
+are blocked. The source-current derivation replays from the serialized I3
+runtime state vector, and the I3 budget validity record is confirmed before
+target use.
+
+The generated report records the full `Iteration 4 Explanation` section for
+the contrast inputs, contrast rule, same-band fixture result, end result, and
+claim boundary.
+
+Scope boundary:
+
+```text
+I4 contrast clean != final AP5
+I4 budget-before-use check != full I5 budget ambiguity control
+I4 source-current replay != full I6 artifact-only/snapshot/order replay
+```
 
 ### Iteration 5. Adversarial Control Matrix
 

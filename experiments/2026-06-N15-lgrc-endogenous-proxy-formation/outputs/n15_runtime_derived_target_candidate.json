@@ -1,0 +1,1268 @@
+{
+  "acceptance_state": "accepted_runtime_derived_target_candidate_with_bridge_pending_controls",
+  "artifact_id": "n15_runtime_derived_target_candidate",
+  "bridge_probe": {
+    "bridge_candidates": [
+      {
+        "budget_valid": true,
+        "candidate_id": "n13_bounded_support_response",
+        "candidate_kind": "bounded_regulation_candidate",
+        "post_response_support_retention": 0.85,
+        "rank": 1,
+        "response_amount": 0.120134817816,
+        "selection_status": "selected_enters_generated_target_band",
+        "target_band_membership": true
+      },
+      {
+        "budget_valid": true,
+        "candidate_id": "no_response_baseline",
+        "candidate_kind": "null_regulation_candidate",
+        "post_response_support_retention": 0.729865182184,
+        "rank": 2,
+        "response_amount": 0.0,
+        "selection_status": "rejected_outside_generated_target_band",
+        "target_band_membership": false
+      }
+    ],
+    "bridge_probe_id": "n15_i3_bridge_generated_target_as_regulation_input_v1",
+    "bridge_scope": "pre_contrast_pre_control_candidate_bridge",
+    "gap_addressed": "distinguish target condition exists from target condition functions as an AP5-relevant proxy-formation input",
+    "ranking_rule": "rank budget-valid regulation candidates by generated target-band membership before response cost; no semantic goal ownership relabel",
+    "selected_bridge_candidate": "n13_bounded_support_response",
+    "target_condition_consumed_before_rank": true,
+    "target_condition_digest": "a624441448e30eb3e5867a152575f820c92438d3543625df079f8abb1e012117",
+    "target_condition_functions_as_proxy_input": "provisional_yes_bridge_probe_only_pending_external_proxy_contrast_controls_replay_and_claim_boundary",
+    "target_exists_without_bridge_is_insufficient": true,
+    "unsupported_interpretations": [
+      "final AP5 support",
+      "semantic goal ownership",
+      "intention",
+      "semantic choice",
+      "agency",
+      "identity acceptance",
+      "native support",
+      "fully native integration"
+    ]
+  },
+  "budget_cost_surface": {
+    "budget_limits": {
+      "canonical_json_input_bytes": 262144,
+      "canonical_json_output_bytes": 262144,
+      "replay_count": 6,
+      "source_row_count": 12,
+      "transform_count": 24,
+      "validation_count": 64,
+      "wall_clock_seconds": 60
+    },
+    "canonical_json_input_bytes": 20474,
+    "canonical_json_output_bytes": 2403,
+    "replay_count": 1,
+    "source_row_count": 8,
+    "transform_count": 15,
+    "validation_count": 18,
+    "wall_clock_seconds": 0
+  },
+  "budget_validity": {
+    "checked_before_target_use": true,
+    "unit_checks": {
+      "canonical_json_input_bytes": true,
+      "canonical_json_output_bytes": true,
+      "replay_count": true,
+      "source_row_count": true,
+      "transform_count": true,
+      "validation_count": true,
+      "wall_clock_seconds": true
+    },
+    "valid": true
+  },
+  "checks": {
+    "absolute_path_absence": true,
+    "bridge_probe_consumes_target_condition": true,
+    "bridge_response_surface_trace_present": true,
+    "bridge_selects_bounded_response_over_no_response": true,
+    "budget_limits_loaded": true,
+    "budget_valid_before_target_use": true,
+    "claim_flags_forced_false": true,
+    "control_outcomes_present": true,
+    "control_value_convention_recorded": true,
+    "control_variants_loaded": true,
+    "declared_external_proxy_absent": true,
+    "dependency_trace_complete_for_target_fields": true,
+    "dependency_trace_covers_selected_context_rows": true,
+    "derivation_policy_loaded": true,
+    "digest_reproducibility": true,
+    "direct_historic_ap2_gap_recorded": true,
+    "external_target_input_absent": true,
+    "fully_native_integration_not_opened": true,
+    "inventory_source_passed": true,
+    "iteration_3_top_level_output_shape_declared": true,
+    "iteration_3_top_level_output_shape_matches_output": true,
+    "n14_constructed_followout_in_candidate_path": true,
+    "native_support_not_opened": true,
+    "no_absolute_paths_recorded": true,
+    "no_final_ap5_supported": true,
+    "old_best_claim_inputs_present": true,
+    "phase8_opened_false": true,
+    "replay_digest_inputs_design_note_recorded": true,
+    "replay_policy_loaded": true,
+    "required_fields_present": true,
+    "schema_source_passed": true,
+    "selected_source_digests_match_registry": true,
+    "source_digest_presence": true,
+    "source_registry_loaded": true,
+    "src_diff_empty": true,
+    "target_band_numeric_and_ordered": true,
+    "target_center_within_drift_bound": true,
+    "target_condition_functions_as_proxy_input_provisionally": true,
+    "target_generated_before_bridge_use": true,
+    "target_tolerance_within_policy": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "biological_behavior_claim_allowed": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N15-lgrc-endogenous-proxy-formation/scripts/build_n15_runtime_derived_target_candidate.py",
+  "control_value_convention": {
+    "reason": "Iteration 3 builds the bridge candidate only; Iterations 4 and 5 execute the contrast and adversarial control matrices.",
+    "record_id": "n15_i3_control_value_convention_v1",
+    "row_level_control_fields": "requirement status plus planned execution iteration where the Iteration 2 row schema has a corresponding control field",
+    "top_level_controls": "requirement-only status for every control required before AP5"
+  },
+  "controls": {
+    "budget_surface_ambiguity_control": "required_before_ap5",
+    "dependency_trace_omission_control": "required_before_ap5",
+    "externally_injected_target_control": "required_before_ap5",
+    "fixture_label_proxy_control": "required_before_ap5",
+    "hidden_target_derivation_control": "required_before_ap5",
+    "identity_acceptance_relabel_control": "required_before_ap5",
+    "missing_source_state_control": "required_before_ap5",
+    "native_support_relabel_control": "required_before_ap5",
+    "post_hoc_proxy_formation_control": "required_before_ap5",
+    "semantic_goal_ownership_relabel_control": "required_before_ap5",
+    "stale_source_state_control": "required_before_ap5",
+    "unbounded_target_drift_control": "required_before_ap5"
+  },
+  "dependency_trace": [
+    {
+      "claim_ceiling_of_source": "support_derived_target_candidate_only",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+      "source_field": "support_derived_target_candidate",
+      "source_row_id": "n15_i1_row_01_n13_support_derived_target_candidate",
+      "source_sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+      "target_field": "direct_historic_gap_record.reason_not_promoted",
+      "transform_id": "n15_i3_direct_historic_gap_record_v1",
+      "transform_parameters": {
+        "role": "gap_context_only_not_ap5_derivation_input"
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].support_margin",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "target_center",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.support_margin",
+      "transform_parameters": {
+        "value": -0.120134817816,
+        "weight": 0.4
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_only_goal_proxy_regulation_candidate",
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_field": "regulation_summary.gpr8_perturbation_recovery_in_band",
+      "source_row_id": "n15_i1_row_08_n09_bounded_regulation_context",
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "target_field": "target_center",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.regulation_recovery_score",
+      "transform_parameters": {
+        "value": 1.0,
+        "weight": 0.25
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_only_route_memory_or_trail_affordance_candidate",
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "source_field": "artifact_only_replay.route_b_strength_after_each_cycle",
+      "source_row_id": "n15_i1_row_07_n08_memory_context",
+      "source_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "target_field": "target_center",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.memory_context_score",
+      "transform_parameters": {
+        "value": 0.12,
+        "weight": 0.2
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "source_field": "closeout_result.final_ap4_supported",
+      "source_row_id": "n15_i1_row_04_n14_closeout_ap4",
+      "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "target_field": "target_center",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.ap4_consequence_context_score",
+      "transform_parameters": {
+        "value": 1.0,
+        "weight": 0.15
+      }
+    },
+    {
+      "claim_ceiling_of_source": "phase8_ready_contracts_not_native_support",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "source_field": "matrix_result.phase8_ready_contract_count",
+      "source_row_id": "n15_i1_row_09_n12_phase8_readiness",
+      "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "target_field": "target_center",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.readiness_context_flag",
+      "transform_parameters": {
+        "role": "readiness_only_context_no_target_value_change",
+        "value": 1.0,
+        "weight": 0.0
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+      "source_field": "closeout_result.final_supported_ap_level + closeout_result.final_claim_ceiling",
+      "source_row_id": "n15_i1_row_03_n13_closeout_ap3",
+      "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "target_field": "runtime_state_vector.n13_ap3_closed_claim_ceiling",
+      "transform_id": "n15_i3_claim_ceiling_context_record_v1",
+      "transform_parameters": {
+        "role": "source_claim_ceiling_context_not_target_value_input"
+      }
+    },
+    {
+      "claim_ceiling_of_source": "constructed_followout_context_not_upstream_observed_evidence",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+      "source_field": "followout_summary",
+      "source_row_id": "n15_i1_row_05_n14_constructed_followout",
+      "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4",
+      "target_field": "runtime_state_vector.constructed_followout_context",
+      "transform_id": "n15_i3_constructed_followout_context_record_v1",
+      "transform_parameters": {
+        "role": "constructed_followout_context_with_scope_caveat"
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_only_goal_proxy_regulation_candidate",
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_field": "regulation_summary.gpr8_perturbation_recovery_in_band",
+      "source_row_id": "n15_i1_row_08_n09_bounded_regulation_context",
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "target_field": "target_tolerance",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.target_tolerance_rule",
+      "transform_parameters": {
+        "base": 0.05,
+        "clamp": [
+          0.03,
+          0.08
+        ],
+        "scale": 0.02
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].support_survival_threshold",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "target_band",
+      "transform_id": "n15_endogenous_proxy_derivation_policy_v1.target_band_rule",
+      "transform_parameters": {
+        "band_rule": "target_center +/- target_tolerance"
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].response_magnitude_surface.scheduled_response_total",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "bridge_probe.selected_bridge_candidate",
+      "transform_id": "n15_i3_bridge_generated_target_as_regulation_input_v1",
+      "transform_parameters": {
+        "rank_rule": "budget_valid_target_band_membership_before_response_cost"
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].response_magnitude_surface.scheduled_response_total",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].response_amount",
+      "transform_id": "n15_i3_bridge_response_surface_v1.response_amount",
+      "transform_parameters": {
+        "value": 0.120134817816
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].final_A_support_retention + response_magnitude_surface.scheduled_response_total",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].post_response_support_retention",
+      "transform_id": "n15_i3_bridge_response_surface_v1.post_response_support_retention",
+      "transform_parameters": {
+        "computed_value": 0.85,
+        "current_support_retention": 0.729865182184,
+        "response_amount": 0.120134817816
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].response_magnitude_surface.scheduled_response_total",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].target_band_membership",
+      "transform_id": "n15_i3_bridge_response_surface_v1.target_band_membership",
+      "transform_parameters": {
+        "computed_value": true,
+        "post_response_support_retention": 0.85,
+        "target_band": [
+          0.817594607287,
+          0.957594607287
+        ],
+        "target_condition_digest": "a624441448e30eb3e5867a152575f820c92438d3543625df079f8abb1e012117"
+      }
+    },
+    {
+      "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].budget_debit_surface",
+      "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].budget_valid",
+      "transform_id": "n15_i3_bridge_response_surface_v1.budget_valid",
+      "transform_parameters": {
+        "budget_debit_amount": 0.120134817816,
+        "budget_debit_required": true,
+        "computed_value": true
+      }
+    }
+  ],
+  "direct_historic_gap_record": {
+    "candidate_path_used": [
+      "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+      "n15_i1_row_03_n13_closeout_ap3",
+      "n15_i1_row_04_n14_closeout_ap4",
+      "n15_i1_row_05_n14_constructed_followout",
+      "n15_i1_row_07_n08_memory_context",
+      "n15_i1_row_08_n09_bounded_regulation_context",
+      "n15_i1_row_09_n12_phase8_readiness"
+    ],
+    "direct_historic_source_row_id": "n15_i1_row_01_n13_support_derived_target_candidate",
+    "direct_historic_support_status": "target_condition_exists_at_N13_AP2_scope_only",
+    "gap": "target_condition_exists != AP5_relevant_proxy_formation_input",
+    "reason_not_promoted": "N13 direct target evidence lacks N15 pre-use derivation from the old-best source vector plus bridge consumption by rank/regulation",
+    "record_id": "n15_i3_direct_historic_gap_record_v1"
+  },
+  "errors": [],
+  "experiment": "N15",
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "git": {
+    "head": "0d89d588c80468c24aaf6ae978416756788c4a4b",
+    "src_status_short": ""
+  },
+  "interpretation_record": {
+    "next_required_step": "Run Iteration 4 external proxy contrast matrix against declared, hidden, and post-hoc proxy variants.",
+    "plain_language_interpretation": "Direct historic target evidence remains AP2 context only. The stronger candidate constructs a target from N13 AP3 support regulation, N14 AP4 consequence selection, N08 memory, N09 bounded regulation, and N12 readiness-only context. The bridge probe shows the generated target band can select a bounded regulation response over no response, but contrast, adversarial controls, replay, and claim-boundary classification are still pending.",
+    "record_id": "n15_i3_interpretation_runtime_derived_target_candidate_v1",
+    "supported_interpretation": "N15 now has a provisional runtime-derived target candidate. The target band is generated before bridge ranking from the old-best source-current vector and is consumed by a bounded regulation ranking probe.",
+    "unsupported_interpretations": [
+      "final AP5 support",
+      "semantic goal ownership",
+      "intention",
+      "semantic choice",
+      "agency",
+      "identity acceptance",
+      "native support",
+      "fully native integration"
+    ]
+  },
+  "iteration": 3,
+  "iteration_3_explanation": {
+    "format": "markdown_lines",
+    "lines": [
+      "Iteration 3 composes a provisional AP5 candidate by taking the strongest closed claims from prior experiments and making them do one specific job: generate a target condition before use, then show that target can function as an input to bounded regulation.",
+      "",
+      "The composition is not \"N13 + N14 = AP5\". It is more constrained than that.",
+      "",
+      "**Inputs**",
+      "",
+      "`N13 AP3` supplies the support/regulation axis.",
+      "",
+      "The selected lane is the disrupted support case:",
+      "",
+      "```text",
+      "support_margin = -0.120134817816",
+      "current_support_retention = 0.729865182184",
+      "support_threshold = 0.85",
+      "scheduled bounded response = 0.120134817816",
+      "```",
+      "",
+      "This is the concrete pressure that makes target formation meaningful. There is support below threshold, and N13 has a bounded response candidate that can recover it. N13 contributes regulation, not selfhood, agency, or goal ownership.",
+      "",
+      "`N14 AP4` supplies consequence-sensitive selection context.",
+      "",
+      "N14's closed claim is that route/consequence evidence can guide selection at artifact level. In I3, this contributes:",
+      "",
+      "```text",
+      "ap4_consequence_context_score = 1.0",
+      "selected_route_context = route_b",
+      "```",
+      "",
+      "It gives the composition a consequence-sensitive axis, but not intention or semantic choice.",
+      "",
+      "`N08` supplies memory context.",
+      "",
+      "N08 contributes the route memory trend where route_b is reinforced:",
+      "",
+      "```text",
+      "route_b memory delta = 0.12",
+      "memory_context_score = 0.12",
+      "```",
+      "",
+      "This makes the generated target depend partly on prior route-memory context, not just instantaneous support error.",
+      "",
+      "`N09` supplies bounded regulation context.",
+      "",
+      "N09 contributes that perturbation recovery is in band:",
+      "",
+      "```text",
+      "regulation_recovery_score = 1.0",
+      "```",
+      "",
+      "This says the system has artifact-level bounded regulation context. It does not make the target native or goal-owned.",
+      "",
+      "`N12` supplies readiness-only context.",
+      "",
+      "N12 contributes:",
+      "",
+      "```text",
+      "readiness_context_flag = 1.0",
+      "```",
+      "",
+      "But I2 froze its weight at `0.0`, so it validates context without changing the target value. That is deliberate: N12 readiness must not become native support by relabeling.",
+      "",
+      "**Composition Rule**",
+      "",
+      "I3 uses the I2 frozen derivation policy:",
+      "",
+      "```text",
+      "weighted_sum =",
+      "  0.40 * support_margin",
+      "+ 0.25 * regulation_recovery_score",
+      "+ 0.20 * memory_context_score",
+      "+ 0.15 * ap4_consequence_context_score",
+      "+ 0.00 * readiness_context_flag",
+      "```",
+      "",
+      "With the I3 values:",
+      "",
+      "```text",
+      "weighted_sum = 0.375946072874",
+      "```",
+      "",
+      "Then:",
+      "",
+      "```text",
+      "target_center =",
+      "  support_threshold + 0.10 * weighted_sum",
+      "",
+      "target_center = 0.887594607287",
+      "target_tolerance = 0.07",
+      "target_band = [0.817594607287, 0.957594607287]",
+      "```",
+      "",
+      "So the target is not externally declared. It is generated from serialized source-current state under a frozen policy.",
+      "",
+      "**What The Composed Result Brings**",
+      "",
+      "The composed result brings something stronger than historic target existence.",
+      "",
+      "Direct historic evidence from N13 only showed:",
+      "",
+      "```text",
+      "target condition exists at AP2 support-derived target scope",
+      "```",
+      "",
+      "Iteration 3 adds:",
+      "",
+      "```text",
+      "a target condition is generated before use from old-best runtime-visible inputs",
+      "```",
+      "",
+      "Then the bridge probe tests whether the generated target functions as an input:",
+      "",
+      "```text",
+      "no-response support = 0.729865182184",
+      "bounded-response support = 0.85",
+      "generated target band = [0.817594607287, 0.957594607287]",
+      "```",
+      "",
+      "Result:",
+      "",
+      "```text",
+      "no-response: outside band, rejected",
+      "bounded N13 response: inside band, selected",
+      "```",
+      "",
+      "That is the important bridge. The generated target is not just written down; it changes the ranking of candidate regulation behavior.",
+      "",
+      "**Claim Boundary**",
+      "",
+      "The composed result supports only:",
+      "",
+      "```text",
+      "provisional AP5 candidate pending contrast, controls, replay, and claim classification",
+      "```",
+      "",
+      "It does not yet support final AP5 because I4-I7 still need to show:",
+      "",
+      "```text",
+      "not externally injected",
+      "not hidden target derivation",
+      "not post-hoc proxy formation",
+      "negative controls fail closed",
+      "bounded drift and replay hold",
+      "claim boundary remains clean",
+      "```",
+      "",
+      "So the end result is: a constructed, traceable, runtime-derived target candidate that can function as a bounded regulation input, but still not final AP5."
+    ],
+    "section_title": "Iteration 3 Explanation"
+  },
+  "iteration_3_top_level_output_fields": [
+    "experiment",
+    "iteration",
+    "artifact_id",
+    "purpose",
+    "schema_version",
+    "generated_at",
+    "command",
+    "status",
+    "acceptance_state",
+    "source_artifacts",
+    "source_reports",
+    "rows",
+    "controls",
+    "checks",
+    "claim_flags",
+    "errors",
+    "iteration_result",
+    "direct_historic_gap_record",
+    "iteration_3_explanation",
+    "iteration_3_top_level_output_fields",
+    "control_value_convention",
+    "replay_digest_inputs_design_note",
+    "runtime_state_vector",
+    "target_condition",
+    "bridge_probe",
+    "dependency_trace",
+    "budget_cost_surface",
+    "budget_validity",
+    "replay_digest_policy",
+    "interpretation_record",
+    "git",
+    "output_digest"
+  ],
+  "iteration_result": {
+    "acceptance_state": "accepted_runtime_derived_target_candidate_with_bridge_pending_controls",
+    "agency_claim_opened": false,
+    "bridge_probe_passed": true,
+    "final_ap5_supported": false,
+    "fully_native_integration_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP5_candidate_pending_contrast_controls_replay",
+    "runtime_derived_target_generated": true,
+    "semantic_goal_ownership_opened": false,
+    "target_condition_functions_as_proxy_input": true
+  },
+  "output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+  "purpose": "runtime_derived_target_candidate_with_bridge_probe",
+  "replay_digest_inputs_design_note": {
+    "design_choice": "replay_digest_inputs intentionally embeds full runtime_state_vector and target_condition objects, while dependency_trace and bridge_probe are represented by canonical digests",
+    "iteration_6_replay_requirement": "rederive full runtime_state_vector and target_condition objects from source-current rows and compare objects before accepting digest agreement",
+    "not_gap": "full object copies are the replay surface, not hidden target derivation or post-hoc proxy formation",
+    "record_id": "n15_i3_replay_digest_inputs_design_note_v1"
+  },
+  "replay_digest_policy": {
+    "algorithm": "sha256",
+    "encoding": "canonical_json_sorted_keys_ascii",
+    "exclude": [
+      "generated_at",
+      "local_filesystem_paths",
+      "git_working_tree_metadata",
+      "wall_clock_timestamps"
+    ],
+    "include": [
+      "source_artifact_digests",
+      "selected_source_rows",
+      "endogenous_derivation_policy",
+      "old_best_claim_inputs",
+      "runtime_state_vector",
+      "drift_policy",
+      "budget_surface",
+      "dependency_trace",
+      "target_condition",
+      "claim_flags"
+    ],
+    "policy_id": "n15_replay_digest_policy_v1"
+  },
+  "rows": [
+    {
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify as provisional AP5 candidate, not final AP5",
+        "cultivation_of_becoming": "cultivate target formation from old best claims rather than optimize a declared fixture",
+        "interrogation_of_becoming": "bridge target existence to target-as-input before contrast controls",
+        "naturalization_of_becoming": "keep readiness and constructed evidence separate from native support"
+      },
+      "artifact_only_replay_status": "validator_passed_for_schema_shape; full artifact-only replay deferred_to_iteration_6",
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic_choice",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "selfhood",
+        "personhood",
+        "biological_behavior",
+        "unrestricted_agency",
+        "fully_native_agentic_like_integration",
+        "native_support_without_phase8"
+      ],
+      "budget_cost_surface": {
+        "budget_limits": {
+          "canonical_json_input_bytes": 262144,
+          "canonical_json_output_bytes": 262144,
+          "replay_count": 6,
+          "source_row_count": 12,
+          "transform_count": 24,
+          "validation_count": 64,
+          "wall_clock_seconds": 60
+        },
+        "canonical_json_input_bytes": 20474,
+        "canonical_json_output_bytes": 2403,
+        "replay_count": 1,
+        "source_row_count": 8,
+        "transform_count": 15,
+        "validation_count": 18,
+        "wall_clock_seconds": 0
+      },
+      "budget_surface_ambiguity_control": "required_before_ap5_not_run_until_iteration_5",
+      "budget_units": [
+        "source_row_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": {
+        "checked_before_target_use": true,
+        "unit_checks": {
+          "canonical_json_input_bytes": true,
+          "canonical_json_output_bytes": true,
+          "replay_count": true,
+          "source_row_count": true,
+          "transform_count": true,
+          "validation_count": true,
+          "wall_clock_seconds": true
+        },
+        "valid": true
+      },
+      "declared_proxy_absent": true,
+      "dependency_trace": [
+        {
+          "claim_ceiling_of_source": "support_derived_target_candidate_only",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+          "source_field": "support_derived_target_candidate",
+          "source_row_id": "n15_i1_row_01_n13_support_derived_target_candidate",
+          "source_sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+          "target_field": "direct_historic_gap_record.reason_not_promoted",
+          "transform_id": "n15_i3_direct_historic_gap_record_v1",
+          "transform_parameters": {
+            "role": "gap_context_only_not_ap5_derivation_input"
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].support_margin",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "target_center",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.support_margin",
+          "transform_parameters": {
+            "value": -0.120134817816,
+            "weight": 0.4
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_only_goal_proxy_regulation_candidate",
+          "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+          "source_field": "regulation_summary.gpr8_perturbation_recovery_in_band",
+          "source_row_id": "n15_i1_row_08_n09_bounded_regulation_context",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+          "target_field": "target_center",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.regulation_recovery_score",
+          "transform_parameters": {
+            "value": 1.0,
+            "weight": 0.25
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_only_route_memory_or_trail_affordance_candidate",
+          "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+          "source_field": "artifact_only_replay.route_b_strength_after_each_cycle",
+          "source_row_id": "n15_i1_row_07_n08_memory_context",
+          "source_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+          "target_field": "target_center",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.memory_context_score",
+          "transform_parameters": {
+            "value": 0.12,
+            "weight": 0.2
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "source_field": "closeout_result.final_ap4_supported",
+          "source_row_id": "n15_i1_row_04_n14_closeout_ap4",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "target_field": "target_center",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.ap4_consequence_context_score",
+          "transform_parameters": {
+            "value": 1.0,
+            "weight": 0.15
+          }
+        },
+        {
+          "claim_ceiling_of_source": "phase8_ready_contracts_not_native_support",
+          "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+          "source_field": "matrix_result.phase8_ready_contract_count",
+          "source_row_id": "n15_i1_row_09_n12_phase8_readiness",
+          "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+          "target_field": "target_center",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.weighted_sum.readiness_context_flag",
+          "transform_parameters": {
+            "role": "readiness_only_context_no_target_value_change",
+            "value": 1.0,
+            "weight": 0.0
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+          "source_field": "closeout_result.final_supported_ap_level + closeout_result.final_claim_ceiling",
+          "source_row_id": "n15_i1_row_03_n13_closeout_ap3",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+          "target_field": "runtime_state_vector.n13_ap3_closed_claim_ceiling",
+          "transform_id": "n15_i3_claim_ceiling_context_record_v1",
+          "transform_parameters": {
+            "role": "source_claim_ceiling_context_not_target_value_input"
+          }
+        },
+        {
+          "claim_ceiling_of_source": "constructed_followout_context_not_upstream_observed_evidence",
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "source_field": "followout_summary",
+          "source_row_id": "n15_i1_row_05_n14_constructed_followout",
+          "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4",
+          "target_field": "runtime_state_vector.constructed_followout_context",
+          "transform_id": "n15_i3_constructed_followout_context_record_v1",
+          "transform_parameters": {
+            "role": "constructed_followout_context_with_scope_caveat"
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_only_goal_proxy_regulation_candidate",
+          "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+          "source_field": "regulation_summary.gpr8_perturbation_recovery_in_band",
+          "source_row_id": "n15_i1_row_08_n09_bounded_regulation_context",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+          "target_field": "target_tolerance",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.target_tolerance_rule",
+          "transform_parameters": {
+            "base": 0.05,
+            "clamp": [
+              0.03,
+              0.08
+            ],
+            "scale": 0.02
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].support_survival_threshold",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "target_band",
+          "transform_id": "n15_endogenous_proxy_derivation_policy_v1.target_band_rule",
+          "transform_parameters": {
+            "band_rule": "target_center +/- target_tolerance"
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].response_magnitude_surface.scheduled_response_total",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "bridge_probe.selected_bridge_candidate",
+          "transform_id": "n15_i3_bridge_generated_target_as_regulation_input_v1",
+          "transform_parameters": {
+            "rank_rule": "budget_valid_target_band_membership_before_response_cost"
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].response_magnitude_surface.scheduled_response_total",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].response_amount",
+          "transform_id": "n15_i3_bridge_response_surface_v1.response_amount",
+          "transform_parameters": {
+            "value": 0.120134817816
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].final_A_support_retention + response_magnitude_surface.scheduled_response_total",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].post_response_support_retention",
+          "transform_id": "n15_i3_bridge_response_surface_v1.post_response_support_retention",
+          "transform_parameters": {
+            "computed_value": 0.85,
+            "current_support_retention": 0.729865182184,
+            "response_amount": 0.120134817816
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].response_magnitude_surface.scheduled_response_total",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].target_band_membership",
+          "transform_id": "n15_i3_bridge_response_surface_v1.target_band_membership",
+          "transform_parameters": {
+            "computed_value": true,
+            "post_response_support_retention": 0.85,
+            "target_band": [
+              0.817594607287,
+              0.957594607287
+            ],
+            "target_condition_digest": "a624441448e30eb3e5867a152575f820c92438d3543625df079f8abb1e012117"
+          }
+        },
+        {
+          "claim_ceiling_of_source": "artifact_level_ap3_candidate_pending_controls",
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_field": "support_seeking_regulation_candidate.lane_response_records[n09_matched_partial_support_withdrawal].budget_debit_surface",
+          "source_row_id": "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "target_field": "bridge_probe.bridge_candidates[n13_bounded_support_response].budget_valid",
+          "transform_id": "n15_i3_bridge_response_surface_v1.budget_valid",
+          "transform_parameters": {
+            "budget_debit_amount": 0.120134817816,
+            "budget_debit_required": true,
+            "computed_value": true
+          }
+        }
+      ],
+      "direct_historic_support_status": "direct N13 AP2 support-derived target exists, but is used only as gap context; AP5 candidate uses N13 AP3 + N14 AP4 + N08/N09/N12",
+      "drift_bound": {
+        "clamp_status_field": "drift_clamped",
+        "numeric_scale": "0_to_1_source_scale",
+        "numeric_target_center_max_update": 0.1,
+        "numeric_target_tolerance_max_update": 0.05,
+        "ordinal_max_update": "one_adjacent_category_per_derivation_step",
+        "policy_id": "n15_bounded_drift_policy_v1",
+        "unconfigured_or_unbounded_drift": "fail_closed"
+      },
+      "drift_clamp_policy": {
+        "drift_clamped": false,
+        "policy_id": "n15_bounded_drift_policy_v1"
+      },
+      "drift_update_rule": "target_center within support_threshold +/- 0.10",
+      "endogenous_derivation_policy": "n15_endogenous_proxy_derivation_policy_v1",
+      "evidence_strategy": "old_best_claims_construction_with_bridge_probe",
+      "external_target_input_absent": true,
+      "externally_injected_target_control": "required_before_ap5_not_run_until_iteration_4",
+      "fully_native_integration_opened": false,
+      "hidden_target_derivation_control": "required_before_ap5_not_run_until_iteration_4",
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "c7571253df9a5451a546f849b2bd372567c2784091d049f6f6e4193cf504a8f2",
+        "scope": "source_artifact_digests + selected_source_rows + runtime_state_vector + target_condition + dependency_trace_digest + bridge_probe_digest + claim_flags"
+      },
+      "identity_acceptance_relabel_control": "required_before_ap5_not_run_until_iteration_5",
+      "identity_condition_descriptor": "support/identity-condition descriptor only; no identity acceptance",
+      "mechanism_name": "runtime_derived_support_recovery_target_candidate",
+      "mechanism_role": "constructed_ap5_candidate_pending_contrast_controls_replay",
+      "memory_state_descriptor": {
+        "route_b_memory_delta": 0.12,
+        "selected_route_context": "route_b"
+      },
+      "missing_gates": [
+        "external_proxy_contrast_not_run_until_iteration_4",
+        "adversarial_controls_not_run_until_iteration_5",
+        "bounded_drift_and_replay_not_run_until_iteration_6",
+        "claim_boundary_classification_not_run_until_iteration_7",
+        "final_ap5_not_supported"
+      ],
+      "native_support_relabel_control": "required_before_ap5_not_run_until_iteration_5",
+      "old_best_claim_inputs": [
+        "n15_i1_row_01_n13_support_derived_target_candidate",
+        "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+        "n15_i1_row_03_n13_closeout_ap3",
+        "n15_i1_row_04_n14_closeout_ap4",
+        "n15_i1_row_05_n14_constructed_followout",
+        "n15_i1_row_07_n08_memory_context",
+        "n15_i1_row_08_n09_bounded_regulation_context",
+        "n15_i1_row_09_n12_phase8_readiness"
+      ],
+      "order_inversion_replay_status": "not_run_until_iteration_6",
+      "post_hoc_proxy_formation_control": "required_before_ap5_not_run_until_iteration_4",
+      "provisional_ap_level": "AP5_candidate_pending_contrast_controls_replay",
+      "provisional_claim_ceiling": "runtime_derived_target_candidate_with_bridge_probe_pending_contrast_controls_replay_and_claim_boundary",
+      "regulation_state_descriptor": {
+        "bounded_response_total": 0.120134817816,
+        "regulation_recovery_score": 1.0
+      },
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "bridge_probe_digest": "677b5bb18b3597ce160ddbe6275d6fa630fcb4ab27eeb113adfe5ef28bb38820",
+        "claim_flags": {
+          "agency_claim_allowed": false,
+          "biological_behavior_claim_allowed": false,
+          "fully_native_agentic_like_integration_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "intention_claim_allowed": false,
+          "native_support_opened": false,
+          "personhood_claim_allowed": false,
+          "runtime_identity_acceptance_claim_allowed": false,
+          "selfhood_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_goal_ownership_claim_allowed": false,
+          "semantic_goal_understanding_claim_allowed": false,
+          "unrestricted_agency_claim_allowed": false
+        },
+        "dependency_trace_digest": "31b6eca51b563674d6552584c2c671ae749d445879b9e83991a64004136fa9ce",
+        "runtime_state_vector": {
+          "ap4_consequence_context_score": 1.0,
+          "constructed_followout_context": {
+            "constructed_route_conditioned_regulation_followout_supported": true,
+            "constructed_route_conditioned_support_followout_supported": true,
+            "observed_upstream_route_conditioned_support_regulation_supported": false,
+            "scope_caveat": "support/regulation positivity is constructed N14 followout evidence; it is not upstream N09/N13 observed route-conditioned evidence and it is not native support"
+          },
+          "current_support_retention": 0.729865182184,
+          "memory_context_score": 0.12,
+          "n13_ap3_closed_claim_ceiling": {
+            "agency_claim_opened": false,
+            "final_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+            "final_supported_ap_level": "AP3",
+            "native_support_opened": false,
+            "semantic_goal_ownership_opened": false
+          },
+          "n13_bounded_response": {
+            "bounded_window_count": 4,
+            "budget_debit_amount": 0.120134817816,
+            "budget_debit_required": true,
+            "scheduled_response_amounts": [
+              0.07,
+              0.050134817816
+            ],
+            "scheduled_response_total": 0.120134817816
+          },
+          "readiness_context_flag": 1.0,
+          "regulation_recovery_score": 1.0,
+          "selected_route_context": "route_b",
+          "source_current": true,
+          "source_window": "N13 disrupted-support lane + N14 AP4 closeout + N08 MEM6 + N09 GPR6 + N12 readiness",
+          "support_error": 0.120134817816,
+          "support_margin": -0.120134817816,
+          "support_threshold": 0.85,
+          "vector_id": "n15_i3_old_best_source_current_state_vector_v1"
+        },
+        "selected_source_rows": [
+          "n15_i1_row_01_n13_support_derived_target_candidate",
+          "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+          "n15_i1_row_03_n13_closeout_ap3",
+          "n15_i1_row_04_n14_closeout_ap4",
+          "n15_i1_row_05_n14_constructed_followout",
+          "n15_i1_row_07_n08_memory_context",
+          "n15_i1_row_08_n09_bounded_regulation_context",
+          "n15_i1_row_09_n12_phase8_readiness"
+        ],
+        "source_artifact_digests": {
+          "direct_ap2": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+          "n08_memory": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+          "n09_regulation": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+          "n12_readiness": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+          "n13_ap3_candidate": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "n13_ap3_closeout": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+          "n14_ap4_closeout": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "n14_constructed_followout": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+        },
+        "target_condition": {
+          "claim_boundary": "runtime-derived target candidate only; not semantic goal ownership, intention, agency, identity acceptance, native support, or final AP5",
+          "derivation_policy_id": "n15_endogenous_proxy_derivation_policy_v1",
+          "derivation_policy_version": "1.0",
+          "drift_clamped": false,
+          "input_vector_digest": "3c05e2dc62c87c6ad0a91e7ad26fdb420f61be9c25e555198fc4dccb0af43c02",
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_center": 0.887594607287,
+          "target_center_unclamped": 0.887594607287,
+          "target_condition_generated_at": "before_bridge_probe_regulation_candidate_ranking",
+          "target_condition_id": "n15_i3_runtime_derived_support_recovery_target_v1",
+          "target_condition_surface": "support_recovery_target_band_from_source_current_old_best_claims",
+          "target_tolerance": 0.07,
+          "weighted_sum": 0.375946072874
+        }
+      },
+      "row_id": "n15_i3_row_01_constructed_runtime_derived_target_candidate",
+      "runtime_state_surface_id": "n15_i3_old_best_source_current_state_vector_v1",
+      "semantic_goal_ownership_relabel_control": "required_before_ap5_not_run_until_iteration_5",
+      "snapshot_load_status": "not_run_until_iteration_6",
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+      "source_current": true,
+      "source_experiment": "N15",
+      "source_iteration": "iteration_2_proxy_formation_schema_and_ap5_gate",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md",
+      "source_report_sha256": "040582e46c1542a30c28aa4cda661fc5752e2529d93a0c14fc2f2c3b5e26eba6",
+      "source_role_classification": "old_best_claims_constructed_candidate",
+      "source_sha256": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+      "state_source_window": "N13 disrupted-support lane + N14 AP4 closeout + N08 MEM6 + N09 GPR6 + N12 readiness",
+      "support_state_descriptor": {
+        "current_support_retention": 0.729865182184,
+        "support_error": 0.120134817816,
+        "support_margin": -0.120134817816,
+        "support_threshold": 0.85
+      },
+      "target_band": [
+        0.817594607287,
+        0.957594607287
+      ],
+      "target_center": 0.887594607287,
+      "target_condition_generated_at": "before_bridge_probe_regulation_candidate_ranking",
+      "target_condition_surface": "support_recovery_target_band_from_source_current_old_best_claims",
+      "target_tolerance": 0.07,
+      "unbounded_target_drift_control": "required_before_ap5_not_run_until_iteration_5"
+    }
+  ],
+  "runtime_state_vector": {
+    "ap4_consequence_context_score": 1.0,
+    "constructed_followout_context": {
+      "constructed_route_conditioned_regulation_followout_supported": true,
+      "constructed_route_conditioned_support_followout_supported": true,
+      "observed_upstream_route_conditioned_support_regulation_supported": false,
+      "scope_caveat": "support/regulation positivity is constructed N14 followout evidence; it is not upstream N09/N13 observed route-conditioned evidence and it is not native support"
+    },
+    "current_support_retention": 0.729865182184,
+    "memory_context_score": 0.12,
+    "n13_ap3_closed_claim_ceiling": {
+      "agency_claim_opened": false,
+      "final_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "final_supported_ap_level": "AP3",
+      "native_support_opened": false,
+      "semantic_goal_ownership_opened": false
+    },
+    "n13_bounded_response": {
+      "bounded_window_count": 4,
+      "budget_debit_amount": 0.120134817816,
+      "budget_debit_required": true,
+      "scheduled_response_amounts": [
+        0.07,
+        0.050134817816
+      ],
+      "scheduled_response_total": 0.120134817816
+    },
+    "readiness_context_flag": 1.0,
+    "regulation_recovery_score": 1.0,
+    "selected_route_context": "route_b",
+    "source_current": true,
+    "source_window": "N13 disrupted-support lane + N14 AP4 closeout + N08 MEM6 + N09 GPR6 + N12 readiness",
+    "support_error": 0.120134817816,
+    "support_margin": -0.120134817816,
+    "support_threshold": 0.85,
+    "vector_id": "n15_i3_old_best_source_current_state_vector_v1"
+  },
+  "schema_version": "n15_runtime_derived_target_candidate_v1",
+  "source_artifacts": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json": {
+      "output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "status": "passed"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json": {
+      "acceptance_state": "achieved",
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "status": "passed"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": {
+      "output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": {
+      "output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+      "sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json": {
+      "output_digest": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+      "sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+      "status": "passed"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json": {
+      "output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": {
+      "acceptance_state": "closed_claim_clean_ap4_artifact_level_consequence_sensitive_route_selection",
+      "output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "status": "passed"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json": {
+      "acceptance_state": "accepted_constructed_route_conditioned_support_regulation_followout",
+      "output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+      "sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_budget_limits_v1.json": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_budget_limits_v1.json",
+      "sha256": "8b1314a9d229d70cd48e12bfc5fa4aa978877f78a4880db9e8a3faa867fbe62e"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_control_variants_v1.json": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_control_variants_v1.json",
+      "sha256": "bf4a17c7168c74a21e85c6893ce174b4d76fb159340710e261c16b5ef45984e9"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_derivation_policy_v1.json": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_derivation_policy_v1.json",
+      "sha256": "9de32ee9717fd813e2a20ded18cde3cc384307c92586212a07f7105d72041c7b"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_replay_policy_v1.json": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_replay_policy_v1.json",
+      "sha256": "356589601130ec5a9edacf3c900b57758768cc6fa73b9e1e09880a2fbab7c7f3"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_source_registry.json": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_source_registry.json",
+      "sha256": "361457bb559a4e4255824ee72415ae9c77b661e1ec95f657ea3d65bff4a36e71"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": {
+      "acceptance_state": "accepted_schema_freeze_no_row_validation",
+      "output_digest": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+      "sha256": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+      "status": "passed"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json": {
+      "acceptance_state": "accepted_proxy_source_inventory_only_no_ap5",
+      "output_digest": "66ebd8bf90e31d3aa1a59d9de46e85bf581f44c3c70e5cf1a3a76d8f535aa4c1",
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_source_inventory.json",
+      "sha256": "67fe966ec46525059eef61d0e38cad73e4e561c1d258a86802f6b82012f9dada",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md": {
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81"
+    },
+    "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md": {
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0"
+    },
+    "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md": {
+      "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+      "sha256": "e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_derived_target_candidate.md",
+      "sha256": "ff494f48a5d29cc6ef4a72acace91108c02e976cee31c186dff604009767ccbd"
+    },
+    "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md": {
+      "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+      "sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+      "sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a"
+    },
+    "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md": {
+      "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+      "sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md",
+      "sha256": "040582e46c1542a30c28aa4cda661fc5752e2529d93a0c14fc2f2c3b5e26eba6"
+    },
+    "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md": {
+      "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_source_inventory.md",
+      "sha256": "12797a85760e37372413ec0dc5b8542cfbe5038faf8970b54430f644fa0955b5"
+    }
+  },
+  "status": "passed",
+  "target_condition": {
+    "claim_boundary": "runtime-derived target candidate only; not semantic goal ownership, intention, agency, identity acceptance, native support, or final AP5",
+    "derivation_policy_id": "n15_endogenous_proxy_derivation_policy_v1",
+    "derivation_policy_version": "1.0",
+    "drift_clamped": false,
+    "input_vector_digest": "3c05e2dc62c87c6ad0a91e7ad26fdb420f61be9c25e555198fc4dccb0af43c02",
+    "target_band": [
+      0.817594607287,
+      0.957594607287
+    ],
+    "target_center": 0.887594607287,
+    "target_center_unclamped": 0.887594607287,
+    "target_condition_generated_at": "before_bridge_probe_regulation_candidate_ranking",
+    "target_condition_id": "n15_i3_runtime_derived_support_recovery_target_v1",
+    "target_condition_surface": "support_recovery_target_band_from_source_current_old_best_claims",
+    "target_tolerance": 0.07,
+    "weighted_sum": 0.375946072874
+  }
+}

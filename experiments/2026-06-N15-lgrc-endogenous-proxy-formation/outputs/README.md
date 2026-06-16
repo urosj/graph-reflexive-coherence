@@ -6,11 +6,11 @@ Generated artifacts:
 
 - `n15_proxy_source_inventory.json`
 - `n15_proxy_formation_schema_v1.json`
+- `n15_runtime_derived_target_candidate.json`
+- `n15_external_proxy_contrast_matrix.json`
 
 Planned artifacts:
 
-- `n15_runtime_derived_target_candidate.json`
-- `n15_external_proxy_contrast_matrix.json`
 - `n15_proxy_control_matrix.json`
 - `n15_bounded_drift_replay_matrix.json`
 - `n15_claim_boundary_record.json`
