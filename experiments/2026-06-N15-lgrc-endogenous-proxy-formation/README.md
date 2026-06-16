@@ -472,14 +472,64 @@ target is not generated from source-current runtime state. The source-current
 derivation replays from the serialized I3 runtime state vector, and budget
 validity is checked before target use. Final `AP5`, adversarial controls,
 bounded drift replay, and claim-boundary classification remain pending.
+
 The generated report records the full `Iteration 4 Explanation` section for
 the contrast inputs, contrast rule, same-band fixture result, and claim
 boundary.
 
+Iteration 5 - Adversarial Control Matrix:
+
+```text
+status = passed
+acceptance_state = accepted_proxy_control_matrix_pending_bounded_drift_replay_and_claim_boundary
+output_digest = 251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f
+```
+
+Iteration 5 executes all twelve frozen adversarial controls and records a
+distinct blocker for each. The matrix blocks external target injection, hidden
+target derivation, semantic goal ownership relabeling, post-hoc proxy
+formation, unbounded target drift, budget-surface ambiguity, identity
+acceptance relabeling, native support relabeling, fixture-label proxy use,
+stale source state, missing source state, and dependency trace omission. Final
+`AP5`, bounded drift replay, artifact replay, and claim-boundary
+classification remain pending.
+
+The generated report records the full `Iteration 5 Explanation` section for
+the control inputs, control rule, deferred controls closed in I5, end result,
+and claim boundary.
+
+Post-review hardening adds the I5 top-level output-field declaration,
+idempotency digest plan, explicit control execution-scope record, and a
+duplicate-record identity check for the flat and structured control records.
+
+Iteration 6 - Bounded Drift And Replay Matrix:
+
+```text
+status = passed
+acceptance_state = accepted_bounded_drift_replay_matrix_pending_claim_boundary_classification
+output_digest = b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a
+```
+
+Iteration 6 tests whether the I5 control-clean candidate remains stable under
+replay and bounded under source-state perturbation. Support, memory,
+regulation, and AP4 consequence-context perturbations change the generated
+target only within the frozen bounded drift policy. Stale source state,
+budget-invalid input, and unbounded-drift variants fail closed. Duplicate
+replay, artifact-only filesystem replay, snapshot/load replay, and
+order-inversion replay reproduce the target.
+
+The generated report records the full `Iteration 6 Explanation` section for
+the replay rule, bounded drift rule, end result, and claim boundary.
+
+Post-review hardening adds the I6 top-level output-field declaration,
+idempotency digest plan, explicit record execution-scope record, AP4
+consequence-context perturbation, split target-change direction checks, and
+identity checks for retained flat/nested matrix records.
+
 Next step:
 
 ```text
-Iteration 5 - Adversarial Control Matrix
+Iteration 7 - Claim Boundary And AP5 Classification
 ```
 
 ## Directory Structure

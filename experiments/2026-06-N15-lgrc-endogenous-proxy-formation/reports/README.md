@@ -8,11 +8,11 @@ Generated reports:
 - `n15_proxy_formation_schema_v1.md`
 - `n15_runtime_derived_target_candidate.md`
 - `n15_external_proxy_contrast_matrix.md`
+- `n15_proxy_control_matrix.md`
+- `n15_bounded_drift_replay_matrix.md`
 
 Planned reports:
 
-- `n15_proxy_control_matrix.md`
-- `n15_bounded_drift_replay_matrix.md`
 - `n15_claim_boundary_record.md`
 - `n15_closeout_and_handoff.md`
 

@@ -729,6 +729,39 @@ scripts/build_n15_proxy_control_matrix.py
 
 Iteration 5 must produce distinct blockers for negative controls.
 
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n15_proxy_control_matrix.json
+Report: reports/n15_proxy_control_matrix.md
+Acceptance state: accepted_proxy_control_matrix_pending_bounded_drift_replay_and_claim_boundary
+Output digest: 251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f
+```
+
+Iteration 5 executes all twelve frozen adversarial controls and records
+distinct blockers for every negative control. It carries forward I4's external
+proxy blockers, then closes the deferred semantic goal ownership relabel,
+identity acceptance relabel, native support relabel, unbounded drift,
+budget-surface ambiguity, stale source state, missing source state, and
+dependency-trace omission controls.
+
+The generated report records the full `Iteration 5 Explanation` section for
+the control inputs, control rule, deferred controls closed in I5, end result,
+and claim boundary.
+
+Post-review hardening records the I5 top-level output-field declaration,
+idempotency digest plan, explicit control execution-scope record, and duplicate
+record identity check for the flat and structured control records.
+
+Scope boundary:
+
+```text
+I5 control-clean candidate != final AP5
+I5 stale/missing source controls != full I6 artifact replay
+I5 unbounded drift control != full I6 bounded perturbation matrix
+```
+
 ### Iteration 6. Bounded Drift And Replay Matrix
 
 Test bounded target formation under perturbation and replay:
@@ -779,6 +812,40 @@ scripts/build_n15_bounded_drift_replay_matrix.py
 
 Iteration 6 should show whether target formation changes only when serialized
 source-current state changes within the bounded drift policy.
+
+Result:
+
+```text
+Status: passed.
+Artifact: outputs/n15_bounded_drift_replay_matrix.json
+Report: reports/n15_bounded_drift_replay_matrix.md
+Acceptance state: accepted_bounded_drift_replay_matrix_pending_claim_boundary_classification
+Output digest: b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a
+```
+
+Iteration 6 accepts the bounded drift and replay matrix. Support, memory,
+regulation, and AP4 consequence-context perturbations produce target changes
+only within the frozen bounded drift policy. Stale source state,
+budget-invalid input, and unbounded-drift variants fail closed. Duplicate
+replay, artifact-only filesystem replay, snapshot/load replay, and
+order-inversion replay reproduce the target.
+
+The generated report records the full `Iteration 6 Explanation` section for
+the I5 candidate input, replay rule, bounded drift rule, end result, and claim
+boundary.
+
+Post-review hardening records the I6 top-level output-field declaration,
+idempotency digest plan, explicit record execution-scope record, AP4
+consequence-context perturbation, split target-change direction checks, and
+identity checks for retained flat/nested matrix records.
+
+Scope boundary:
+
+```text
+I6 replay-clean candidate != final AP5
+I6 bounded target drift != semantic goal ownership
+I6 artifact replay equality != native support
+```
 
 ### Iteration 7. Claim Boundary And AP5 Classification
 

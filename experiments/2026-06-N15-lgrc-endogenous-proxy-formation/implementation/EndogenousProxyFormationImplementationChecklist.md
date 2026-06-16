@@ -353,47 +353,180 @@ I4 source-current replay != full I6 artifact-only/snapshot/order replay.
 
 ## Iteration 5. Adversarial Control Matrix
 
-- [ ] Externally injected target control fails closed.
-- [ ] Hidden target derivation control fails closed.
-- [ ] Semantic goal ownership relabel control fails closed.
-- [ ] Post-hoc proxy formation control fails closed.
-- [ ] Unbounded target drift control fails closed.
-- [ ] Budget-surface ambiguity control fails closed.
-- [ ] Identity acceptance relabel control fails closed.
-- [ ] Native support relabel control fails closed.
-- [ ] Fixture-label proxy control fails closed.
-- [ ] Stale source state control fails closed.
-- [ ] Missing source state control fails closed.
-- [ ] Dependency trace omission control fails closed.
-- [ ] Record distinct blockers for negative controls.
+- [x] Externally injected target control fails closed.
+- [x] Hidden target derivation control fails closed.
+- [x] Semantic goal ownership relabel control fails closed.
+- [x] Post-hoc proxy formation control fails closed.
+- [x] Unbounded target drift control fails closed.
+- [x] Budget-surface ambiguity control fails closed.
+- [x] Identity acceptance relabel control fails closed.
+- [x] Native support relabel control fails closed.
+- [x] Fixture-label proxy control fails closed.
+- [x] Stale source state control fails closed.
+- [x] Missing source state control fails closed.
+- [x] Dependency trace omission control fails closed.
+- [x] Record distinct blockers for negative controls.
 
 Expected artifacts:
 
-- [ ] `outputs/n15_proxy_control_matrix.json`
-- [ ] `reports/n15_proxy_control_matrix.md`
-- [ ] `scripts/build_n15_proxy_control_matrix.py`
+- [x] `outputs/n15_proxy_control_matrix.json`
+- [x] `reports/n15_proxy_control_matrix.md`
+- [x] `scripts/build_n15_proxy_control_matrix.py`
+
+Output digest:
+
+```text
+251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n15_proxy_control_matrix.json 35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf
+reports/n15_proxy_control_matrix.md e25c2b6b50bd6c50934963de8d2c93fc4045ac632f713f778f8c1733d006fa69
+scripts/build_n15_proxy_control_matrix.py 1c7df4ae63adaf2fe6eeb3b4971872d88bbd1ca8054920351a2f5fda02f8809e
+```
+
+Acceptance state:
+
+```text
+accepted_proxy_control_matrix_pending_bounded_drift_replay_and_claim_boundary
+```
+
+Interpretation:
+
+```text
+Iteration 5 accepts the adversarial proxy control matrix. All twelve frozen
+controls fail closed with distinct blocker labels. Final AP5, bounded drift
+replay, artifact replay, and claim-boundary classification remain pending.
+```
+
+Explanation section:
+
+```text
+reports/n15_proxy_control_matrix.md records the full Iteration 5 Explanation
+section for the control inputs, control rule, deferred controls closed in I5,
+end result, and claim boundary.
+```
+
+Scope boundary:
+
+```text
+I5 control-clean candidate != final AP5.
+I5 stale/missing source controls != full I6 artifact replay.
+I5 unbounded drift control != full I6 bounded perturbation matrix.
+```
+
+Post-review gap closure:
+
+```text
+closed: iteration_5_top_level_output_fields declares every I5 top-level key.
+closed: idempotency_digest_plan records the I5 replay/idempotency source
+        scope.
+closed: control_execution_scope distinguishes carried-forward contrasts,
+        claim-boundary state checks, policy variants, and replay-deferred
+        work.
+closed: control_records_match_control_matrix_records prevents flat and
+        structured control records from silently diverging.
+not_gap: I5 git head differing from I4 is expected because I5 consumes I4's
+         artifact state after I4 was committed.
+scope: I5 budget ambiguity remains a contract-level blocker; I6 separately
+       covers exceeded-budget perturbation.
+scope: claim relabel controls are forced-false claim-boundary state checks,
+       not semantic rejection engines.
+```
 
 ## Iteration 6. Bounded Drift And Replay Matrix
 
-- [ ] Run support-state perturbation.
-- [ ] Run memory-state perturbation.
-- [ ] Run regulation-state perturbation.
-- [ ] Run stale-state perturbation.
-- [ ] Run budget-invalid perturbation.
-- [ ] Run unbounded-drift null.
-- [ ] Run duplicate replay.
-- [ ] Run artifact-only filesystem replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run order-inversion replay.
-- [ ] Use frozen perturbation magnitudes or recorded replacement magnitudes.
-- [ ] Confirm target changes only when serialized source-current state changes
+- [x] Run support-state perturbation.
+- [x] Run memory-state perturbation.
+- [x] Run regulation-state perturbation.
+- [x] Run stale-state perturbation.
+- [x] Run budget-invalid perturbation.
+- [x] Run unbounded-drift null.
+- [x] Run duplicate replay.
+- [x] Run artifact-only filesystem replay.
+- [x] Run snapshot/load replay.
+- [x] Run order-inversion replay.
+- [x] Use frozen perturbation magnitudes or recorded replacement magnitudes.
+- [x] Confirm target changes only when serialized source-current state changes
       within bounded drift policy.
 
 Expected artifacts:
 
-- [ ] `outputs/n15_bounded_drift_replay_matrix.json`
-- [ ] `reports/n15_bounded_drift_replay_matrix.md`
-- [ ] `scripts/build_n15_bounded_drift_replay_matrix.py`
+- [x] `outputs/n15_bounded_drift_replay_matrix.json`
+- [x] `reports/n15_bounded_drift_replay_matrix.md`
+- [x] `scripts/build_n15_bounded_drift_replay_matrix.py`
+
+Output digest:
+
+```text
+b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n15_bounded_drift_replay_matrix.json c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0
+reports/n15_bounded_drift_replay_matrix.md 8766f392358f7aa675a591c076e3cec5a97f91af5ed5f382bc306a9809a13728
+scripts/build_n15_bounded_drift_replay_matrix.py 8c37fafec7c11e369362a55666b330abda2f2097979657cdf337983b3e439ce8
+```
+
+Acceptance state:
+
+```text
+accepted_bounded_drift_replay_matrix_pending_claim_boundary_classification
+```
+
+Interpretation:
+
+```text
+Iteration 6 accepts the bounded drift and replay matrix. Support, memory,
+regulation, and AP4 consequence-context perturbations change the generated
+target only within the frozen bounded drift policy. Stale source state,
+budget-invalid input, and unbounded-drift variants fail closed. Duplicate
+replay, artifact-only filesystem replay, snapshot/load replay, and
+order-inversion replay reproduce the target. Final AP5 and claim-boundary
+classification remain pending.
+```
+
+Explanation section:
+
+```text
+reports/n15_bounded_drift_replay_matrix.md records the full Iteration 6
+Explanation section for the I5 candidate input, replay rule, bounded drift
+rule, end result, and claim boundary.
+```
+
+Scope boundary:
+
+```text
+I6 replay-clean candidate != final AP5.
+I6 bounded target drift != semantic goal ownership.
+I6 artifact replay equality != native support.
+```
+
+Post-review gap closure:
+
+```text
+closed: iteration_6_top_level_output_fields declares every I6 top-level key.
+closed: idempotency_digest_plan records the I6 replay/idempotency source
+        scope.
+closed: ap4_consequence_context_perturbation covers the remaining nonzero
+        composition-weight axis.
+closed: target_changes_match_state_change_direction splits the previous
+        target-change implication into explicit bidirectional checks.
+closed: record_execution_scope distinguishes recomputed perturbation/replay
+        rows from policy-gated fail-closed rows.
+closed: retained flat/nested matrix duplication is guarded by identity checks.
+not_gap: readiness_context_flag remains unperturbed because its frozen
+         composition weight is 0.0.
+not_gap: symmetric perturbation directions are not required by the frozen I6
+         replay policy; all nonzero composition-weight axes now have bounded
+         source-current perturbation coverage.
+not_gap: fail-closed records are policy-gated blockers before target
+         acceptance, not credited target rederivations.
+```
 
 ## Iteration 7. Claim Boundary And AP5 Classification
 

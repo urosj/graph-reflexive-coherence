@@ -1,0 +1,921 @@
+# N15 Proxy Control Matrix
+
+Status: `passed`.
+
+## Acceptance State
+
+```text
+accepted_proxy_control_matrix_pending_bounded_drift_replay_and_claim_boundary
+```
+
+Iteration 5 runs the full frozen adversarial control matrix. It does
+not run bounded drift replay, artifact-only replay, snapshot/load
+replay, order-inversion replay, or final claim-boundary classification.
+
+## Iteration 5 Explanation
+
+Iteration 5 turns the Iteration 4 contrast-clean candidate into a full adversarial-control record. The job is not to strengthen the positive mechanism directly; it is to show that each required negative explanation fails closed with a distinct blocker.
+
+**Inputs**
+
+`Iteration 4` supplies the contrast-clean AP5 candidate:
+
+```text
+candidate_distinguishable_from_declared_proxy_regulation = true
+externally_injected_target_blocked = true
+hidden_target_derivation_blocked = true
+post_hoc_proxy_formation_blocked = true
+source_current_runtime_derivation_replays = true
+```
+
+`Iteration 3` supplies the target, bridge, trace, and budget surfaces that the controls try to attack.
+
+`I2 control variants` supply the required twelve blocker labels. I5 does not invent new labels; it materializes every frozen requirement.
+
+**Control Rule**
+
+A control passes only when its adversarial variant is rejected with the expected frozen blocker:
+
+```text
+observed_status = blocked
+observed_blocker = expected_blocker
+control_passed = true
+```
+
+The blockers must also be distinct across the matrix, so a broad failure label cannot hide which gate actually closed.
+
+**What I5 Adds**
+
+I4 already blocked the external-proxy family. I5 keeps those blockers and adds the deferred controls:
+
+```text
+semantic goal ownership relabel
+identity acceptance relabel
+native support relabel
+unbounded target drift
+budget-surface ambiguity
+stale source state
+missing source state
+dependency trace omission
+```
+
+The strongest new pressure is that the positive target can no longer be accepted if its drift is unbounded, if its budget check is ambiguous, if source-current state is stale or missing, or if trace fields are omitted.
+
+**End Result**
+
+The composed I5 result is:
+
+```text
+I4 contrast-clean AP5 candidate
++ twelve distinct fail-closed controls
++ unsafe claim flags forced false
+= adversarial-control-clean AP5 candidate pending I6-I7
+```
+
+**Claim Boundary**
+
+The result supports only:
+
+```text
+AP5_candidate_control_clean_pending_bounded_drift_replay_and_claim_boundary
+```
+
+It does not support final AP5 because Iteration 6 still needs bounded drift and replay, and Iteration 7 still needs claim-boundary classification.
+
+## Result
+
+```text
+all_controls_fail_closed = true
+distinct_blockers_recorded = true
+final_ap5_supported = false
+```
+
+## Control Summary
+
+```json
+{
+  "all_controls_fail_closed": true,
+  "blocker_labels_distinct": true,
+  "control_count": 12,
+  "distinct_blocker_count": 12,
+  "failed_controls": [],
+  "observed_blockers": [
+    "externally_injected_target_blocked",
+    "hidden_target_derivation_blocked",
+    "semantic_goal_ownership_relabel_blocked",
+    "post_hoc_proxy_formation_blocked",
+    "unbounded_target_drift_blocked",
+    "budget_surface_ambiguity_blocked",
+    "identity_acceptance_relabel_blocked",
+    "native_support_relabel_blocked",
+    "fixture_label_proxy_blocked",
+    "stale_source_state_blocked",
+    "missing_source_state_blocked",
+    "dependency_trace_omission_blocked"
+  ],
+  "passed_control_count": 12
+}
+```
+
+## Control Execution Scope
+
+```json
+{
+  "control_scope_records": [
+    {
+      "control_id": "externally_injected_target_control",
+      "control_kind": "external_target_injection_control",
+      "execution_scope": "carried_forward_executed_contrast",
+      "observed_blocker": "externally_injected_target_blocked",
+      "scope_note": "Iteration 4 executed the contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+    },
+    {
+      "control_id": "hidden_target_derivation_control",
+      "control_kind": "hidden_target_derivation_control",
+      "execution_scope": "carried_forward_executed_contrast",
+      "observed_blocker": "hidden_target_derivation_blocked",
+      "scope_note": "Iteration 4 executed the contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+    },
+    {
+      "control_id": "semantic_goal_ownership_relabel_control",
+      "control_kind": "claim_relabel_control",
+      "execution_scope": "claim_boundary_state_verification",
+      "observed_blocker": "semantic_goal_ownership_relabel_blocked",
+      "scope_note": "The attempted relabel is blocked by forced-false claim flags and the target claim boundary; this is not a semantic rejection engine."
+    },
+    {
+      "control_id": "post_hoc_proxy_formation_control",
+      "control_kind": "post_hoc_proxy_formation_control",
+      "execution_scope": "carried_forward_executed_contrast",
+      "observed_blocker": "post_hoc_proxy_formation_blocked",
+      "scope_note": "Iteration 4 executed the post-hoc contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+    },
+    {
+      "control_id": "unbounded_target_drift_control",
+      "control_kind": "bounded_drift_control",
+      "execution_scope": "static_policy_bound_variant",
+      "observed_blocker": "unbounded_target_drift_blocked",
+      "scope_note": "Iteration 5 blocks the unbounded variant against the frozen drift bound; full perturbation replay belongs to Iteration 6."
+    },
+    {
+      "control_id": "budget_surface_ambiguity_control",
+      "control_kind": "budget_surface_control",
+      "execution_scope": "budget_contract_ambiguity_variant",
+      "observed_blocker": "budget_surface_ambiguity_blocked",
+      "scope_note": "Iteration 5 blocks absent or ambiguous budget validity before target use; exceeded-budget perturbation belongs to Iteration 6."
+    },
+    {
+      "control_id": "identity_acceptance_relabel_control",
+      "control_kind": "claim_relabel_control",
+      "execution_scope": "claim_boundary_state_verification",
+      "observed_blocker": "identity_acceptance_relabel_blocked",
+      "scope_note": "The attempted relabel is blocked by forced-false claim flags and the support/identity-condition descriptor boundary."
+    },
+    {
+      "control_id": "native_support_relabel_control",
+      "control_kind": "claim_relabel_control",
+      "execution_scope": "claim_boundary_state_verification",
+      "observed_blocker": "native_support_relabel_blocked",
+      "scope_note": "The attempted relabel is blocked by Phase 8 remaining closed, native support remaining unopened, and readiness weight fixed at zero."
+    },
+    {
+      "control_id": "fixture_label_proxy_control",
+      "control_kind": "fixture_label_proxy_control",
+      "execution_scope": "carried_forward_executed_contrast",
+      "observed_blocker": "fixture_label_proxy_blocked",
+      "scope_note": "Iteration 4 executed the same-band fixture contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+    },
+    {
+      "control_id": "stale_source_state_control",
+      "control_kind": "source_current_control",
+      "execution_scope": "source_current_variant_pending_full_artifact_replay",
+      "observed_blocker": "stale_source_state_blocked",
+      "scope_note": "Iteration 5 blocks stale source-current state as an adversarial variant; full artifact replay belongs to Iteration 6."
+    },
+    {
+      "control_id": "missing_source_state_control",
+      "control_kind": "source_presence_control",
+      "execution_scope": "missing_required_source_state_variant",
+      "observed_blocker": "missing_source_state_blocked",
+      "scope_note": "Iteration 5 blocks omission of required runtime fields and source rows from the frozen derivation surface."
+    },
+    {
+      "control_id": "dependency_trace_omission_control",
+      "control_kind": "dependency_trace_control",
+      "execution_scope": "trace_completeness_variant",
+      "observed_blocker": "dependency_trace_omission_blocked",
+      "scope_note": "Iteration 5 blocks omitted target fields from the dependency trace against the Iteration 3 trace surface."
+    }
+  ],
+  "i5_completion_definition": "complete_for_iteration_5 means every frozen control has a distinct blocked variant and blocker label; it does not mean bounded drift and replay have already run.",
+  "record_id": "n15_i5_control_execution_scope_v1",
+  "scope_counts": {
+    "budget_contract_ambiguity_variant": 1,
+    "carried_forward_executed_contrast": 4,
+    "claim_boundary_state_verification": 3,
+    "missing_required_source_state_variant": 1,
+    "source_current_variant_pending_full_artifact_replay": 1,
+    "static_policy_bound_variant": 1,
+    "trace_completeness_variant": 1
+  },
+  "scope_statement": "Iteration 5 is an adversarial control matrix. Some controls are carried forward from Iteration 4 contrasts, some are claim-boundary state checks, and some are policy/variant blockers whose replay or perturbation stress tests belong to Iteration 6."
+}
+```
+
+## Idempotency Digest Plan
+
+```json
+{
+  "algorithm": "sha256_canonical_json_sorted_keys",
+  "digest": "986ea89ab9a6f2339af2a135733181fc065b34d2c3d9469f2ab0621b3e7919af",
+  "excluded_top_level_fields": [
+    "generated_at",
+    "git",
+    "output_digest"
+  ],
+  "record_id": "n15_i5_idempotency_digest_plan_v1",
+  "scope": {
+    "budget_limits_config_id": "n15_budget_limits_v1",
+    "claim_flags": {
+      "agency_claim_allowed": false,
+      "biological_behavior_claim_allowed": false,
+      "fully_native_agentic_like_integration_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "intention_claim_allowed": false,
+      "native_support_opened": false,
+      "personhood_claim_allowed": false,
+      "runtime_identity_acceptance_claim_allowed": false,
+      "selfhood_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_goal_ownership_claim_allowed": false,
+      "semantic_goal_understanding_claim_allowed": false,
+      "unrestricted_agency_claim_allowed": false
+    },
+    "control_execution_scope": {
+      "control_scope_records": [
+        {
+          "control_id": "externally_injected_target_control",
+          "control_kind": "external_target_injection_control",
+          "execution_scope": "carried_forward_executed_contrast",
+          "observed_blocker": "externally_injected_target_blocked",
+          "scope_note": "Iteration 4 executed the contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+        },
+        {
+          "control_id": "hidden_target_derivation_control",
+          "control_kind": "hidden_target_derivation_control",
+          "execution_scope": "carried_forward_executed_contrast",
+          "observed_blocker": "hidden_target_derivation_blocked",
+          "scope_note": "Iteration 4 executed the contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+        },
+        {
+          "control_id": "semantic_goal_ownership_relabel_control",
+          "control_kind": "claim_relabel_control",
+          "execution_scope": "claim_boundary_state_verification",
+          "observed_blocker": "semantic_goal_ownership_relabel_blocked",
+          "scope_note": "The attempted relabel is blocked by forced-false claim flags and the target claim boundary; this is not a semantic rejection engine."
+        },
+        {
+          "control_id": "post_hoc_proxy_formation_control",
+          "control_kind": "post_hoc_proxy_formation_control",
+          "execution_scope": "carried_forward_executed_contrast",
+          "observed_blocker": "post_hoc_proxy_formation_blocked",
+          "scope_note": "Iteration 4 executed the post-hoc contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+        },
+        {
+          "control_id": "unbounded_target_drift_control",
+          "control_kind": "bounded_drift_control",
+          "execution_scope": "static_policy_bound_variant",
+          "observed_blocker": "unbounded_target_drift_blocked",
+          "scope_note": "Iteration 5 blocks the unbounded variant against the frozen drift bound; full perturbation replay belongs to Iteration 6."
+        },
+        {
+          "control_id": "budget_surface_ambiguity_control",
+          "control_kind": "budget_surface_control",
+          "execution_scope": "budget_contract_ambiguity_variant",
+          "observed_blocker": "budget_surface_ambiguity_blocked",
+          "scope_note": "Iteration 5 blocks absent or ambiguous budget validity before target use; exceeded-budget perturbation belongs to Iteration 6."
+        },
+        {
+          "control_id": "identity_acceptance_relabel_control",
+          "control_kind": "claim_relabel_control",
+          "execution_scope": "claim_boundary_state_verification",
+          "observed_blocker": "identity_acceptance_relabel_blocked",
+          "scope_note": "The attempted relabel is blocked by forced-false claim flags and the support/identity-condition descriptor boundary."
+        },
+        {
+          "control_id": "native_support_relabel_control",
+          "control_kind": "claim_relabel_control",
+          "execution_scope": "claim_boundary_state_verification",
+          "observed_blocker": "native_support_relabel_blocked",
+          "scope_note": "The attempted relabel is blocked by Phase 8 remaining closed, native support remaining unopened, and readiness weight fixed at zero."
+        },
+        {
+          "control_id": "fixture_label_proxy_control",
+          "control_kind": "fixture_label_proxy_control",
+          "execution_scope": "carried_forward_executed_contrast",
+          "observed_blocker": "fixture_label_proxy_blocked",
+          "scope_note": "Iteration 4 executed the same-band fixture contrast; Iteration 5 preserves the frozen blocker in the full adversarial matrix."
+        },
+        {
+          "control_id": "stale_source_state_control",
+          "control_kind": "source_current_control",
+          "execution_scope": "source_current_variant_pending_full_artifact_replay",
+          "observed_blocker": "stale_source_state_blocked",
+          "scope_note": "Iteration 5 blocks stale source-current state as an adversarial variant; full artifact replay belongs to Iteration 6."
+        },
+        {
+          "control_id": "missing_source_state_control",
+          "control_kind": "source_presence_control",
+          "execution_scope": "missing_required_source_state_variant",
+          "observed_blocker": "missing_source_state_blocked",
+          "scope_note": "Iteration 5 blocks omission of required runtime fields and source rows from the frozen derivation surface."
+        },
+        {
+          "control_id": "dependency_trace_omission_control",
+          "control_kind": "dependency_trace_control",
+          "execution_scope": "trace_completeness_variant",
+          "observed_blocker": "dependency_trace_omission_blocked",
+          "scope_note": "Iteration 5 blocks omitted target fields from the dependency trace against the Iteration 3 trace surface."
+        }
+      ],
+      "i5_completion_definition": "complete_for_iteration_5 means every frozen control has a distinct blocked variant and blocker label; it does not mean bounded drift and replay have already run.",
+      "record_id": "n15_i5_control_execution_scope_v1",
+      "scope_counts": {
+        "budget_contract_ambiguity_variant": 1,
+        "carried_forward_executed_contrast": 4,
+        "claim_boundary_state_verification": 3,
+        "missing_required_source_state_variant": 1,
+        "source_current_variant_pending_full_artifact_replay": 1,
+        "static_policy_bound_variant": 1,
+        "trace_completeness_variant": 1
+      },
+      "scope_statement": "Iteration 5 is an adversarial control matrix. Some controls are carried forward from Iteration 4 contrasts, some are claim-boundary state checks, and some are policy/variant blockers whose replay or perturbation stress tests belong to Iteration 6."
+    },
+    "control_records": [
+      {
+        "adversarial_variant": {
+          "dependency_trace_present": false,
+          "external_target_input_present": true,
+          "target_source": "external_target_input_after_runtime_state_selection",
+          "variant_id": "i5_external_target_injected_after_state_selection"
+        },
+        "control_id": "externally_injected_target_control",
+        "control_kind": "external_target_injection_control",
+        "control_passed": true,
+        "evidence": {
+          "iteration_4_contrast_id": "externally_injected_target_variant",
+          "iteration_4_observed_blocker": "externally_injected_target_blocked",
+          "reference_external_target_input_absent": true
+        },
+        "expected_blocker": "externally_injected_target_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "externally_injected_target_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_4_contrast_matrix",
+        "variant_digest": "696b427fffa2f8226bcaa42c948ceb7296f3ea99f4308a9eb3218bc3e311e7df"
+      },
+      {
+        "adversarial_variant": {
+          "dependency_trace_present": false,
+          "hidden_target_derivation_present": true,
+          "trace_target_fields_present": [],
+          "variant_id": "i5_hidden_target_derivation_without_serialized_trace"
+        },
+        "control_id": "hidden_target_derivation_control",
+        "control_kind": "hidden_target_derivation_control",
+        "control_passed": true,
+        "evidence": {
+          "iteration_4_contrast_id": "hidden_target_derivation_variant",
+          "iteration_4_observed_blocker": "hidden_target_derivation_blocked",
+          "reference_trace_target_field_count": 11
+        },
+        "expected_blocker": "hidden_target_derivation_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "hidden_target_derivation_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_4_contrast_matrix",
+        "variant_digest": "7d23576a33fec20125f96a9122ce72bc1073873fcc9c190bbec9219a3a2c4c51"
+      },
+      {
+        "adversarial_variant": {
+          "attempted_claim": "semantic_goal_ownership",
+          "relabel_source": "runtime_derived_target_condition",
+          "variant_id": "i5_semantic_goal_ownership_relabel"
+        },
+        "control_id": "semantic_goal_ownership_relabel_control",
+        "control_kind": "claim_relabel_control",
+        "control_passed": true,
+        "evidence": {
+          "i4_unsupported_interpretations": [
+            "final AP5 support",
+            "semantic goal ownership",
+            "intention",
+            "semantic choice",
+            "agency",
+            "identity acceptance",
+            "native support",
+            "fully native integration"
+          ],
+          "semantic_goal_ownership_claim_allowed": false,
+          "semantic_goal_understanding_claim_allowed": false,
+          "target_claim_boundary": "runtime-derived target candidate only; not semantic goal ownership, intention, agency, identity acceptance, native support, or final AP5"
+        },
+        "expected_blocker": "semantic_goal_ownership_relabel_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "semantic_goal_ownership_relabel_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "a17ce1498ab7c02f9e5652bb1ba09312bfb31a69e983243fc1436482e50eb17f"
+      },
+      {
+        "adversarial_variant": {
+          "post_hoc_proxy_formation_present": true,
+          "target_condition_consumed_before_rank": false,
+          "target_condition_generated_at": "after_bridge_probe_candidate_selection",
+          "variant_id": "i5_post_hoc_proxy_from_selected_response"
+        },
+        "control_id": "post_hoc_proxy_formation_control",
+        "control_kind": "post_hoc_proxy_formation_control",
+        "control_passed": true,
+        "evidence": {
+          "iteration_4_contrast_id": "post_hoc_proxy_formation_variant",
+          "iteration_4_observed_blocker": "post_hoc_proxy_formation_blocked",
+          "reference_target_generated_at": "before_bridge_probe_regulation_candidate_ranking"
+        },
+        "expected_blocker": "post_hoc_proxy_formation_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "post_hoc_proxy_formation_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_4_contrast_matrix",
+        "variant_digest": "4c21866472e1aced2e5bc91404cad7b0e6b95e8ba6c33066fb5566f08200874a"
+      },
+      {
+        "adversarial_variant": {
+          "allowed_max_update": 0.1,
+          "drift_clamped": false,
+          "drift_delta": 0.15,
+          "support_threshold": 0.85,
+          "variant_id": "i5_unbounded_target_drift",
+          "variant_target_center": 1.0
+        },
+        "control_id": "unbounded_target_drift_control",
+        "control_kind": "bounded_drift_control",
+        "control_passed": true,
+        "evidence": {
+          "allowed_max_update": 0.1,
+          "reference_target_delta": 0.037594607287,
+          "reference_within_bound": true,
+          "variant_exceeds_bound": true
+        },
+        "expected_blocker": "unbounded_target_drift_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "unbounded_target_drift_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "4c8c0bc983feefa4d7006f2c06d894a0c4c2f4861e43b89c4078c4b707ec7a99"
+      },
+      {
+        "adversarial_variant": {
+          "budget_valid": null,
+          "checked_before_target_use": false,
+          "missing_units": [
+            "canonical_json_input_bytes",
+            "canonical_json_output_bytes",
+            "replay_count",
+            "source_row_count",
+            "transform_count",
+            "validation_count",
+            "wall_clock_seconds"
+          ],
+          "variant_id": "i5_budget_surface_ambiguous_before_use"
+        },
+        "control_id": "budget_surface_ambiguity_control",
+        "control_kind": "budget_surface_control",
+        "control_passed": true,
+        "evidence": {
+          "i3_budget_checked_before_target_use": true,
+          "i3_budget_valid": true,
+          "i4_budget_before_use_record": "n15_i4_budget_validity_before_target_use_v1",
+          "required_budget_units": [
+            "canonical_json_input_bytes",
+            "canonical_json_output_bytes",
+            "replay_count",
+            "source_row_count",
+            "transform_count",
+            "validation_count",
+            "wall_clock_seconds"
+          ]
+        },
+        "expected_blocker": "budget_surface_ambiguity_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "budget_surface_ambiguity_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "da91dddb32670945b3725ccec7126940a834db1f80ab2311d53b444b0d9e4765"
+      },
+      {
+        "adversarial_variant": {
+          "attempted_claim": "identity_acceptance",
+          "relabel_source": "support_identity_condition_descriptor",
+          "variant_id": "i5_identity_acceptance_relabel"
+        },
+        "control_id": "identity_acceptance_relabel_control",
+        "control_kind": "claim_relabel_control",
+        "control_passed": true,
+        "evidence": {
+          "identity_acceptance_claim_allowed": false,
+          "identity_condition_descriptor": "support/identity-condition descriptor only; no identity acceptance",
+          "runtime_identity_acceptance_claim_allowed": false
+        },
+        "expected_blocker": "identity_acceptance_relabel_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "identity_acceptance_relabel_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "6320f26587bbf87aff209e2bc8681a81783bcd160aee931a45754d78d1eec3e6"
+      },
+      {
+        "adversarial_variant": {
+          "attempted_claim": "native_support",
+          "native_support_opened": true,
+          "phase8_opened": false,
+          "variant_id": "i5_native_support_relabel_without_phase8"
+        },
+        "control_id": "native_support_relabel_control",
+        "control_kind": "claim_relabel_control",
+        "control_passed": true,
+        "evidence": {
+          "native_support_opened_flag": false,
+          "phase8_opened": false,
+          "readiness_context_flag": 1.0,
+          "readiness_weight": 0.0
+        },
+        "expected_blocker": "native_support_relabel_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "native_support_relabel_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "0f51e1ef648a2e38e061a4bc6f2a10040e68d4dc5347d2900b76a5ad6eeb91f6"
+      },
+      {
+        "adversarial_variant": {
+          "selected_candidate_matches_reference": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_source": "experiment_declared_fixture_same_target_band",
+          "variant_id": "i5_same_band_declared_fixture"
+        },
+        "control_id": "fixture_label_proxy_control",
+        "control_kind": "fixture_label_proxy_control",
+        "control_passed": true,
+        "evidence": {
+          "behavioral_equivalence_not_sufficient": true,
+          "iteration_4_contrast_id": "declared_target_fixture_same_band_contrast",
+          "iteration_4_observed_blocker": "fixture_label_proxy_blocked"
+        },
+        "expected_blocker": "fixture_label_proxy_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "fixture_label_proxy_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_4_contrast_matrix",
+        "variant_digest": "c9dd1a81ccf0fea09a30a698e99e76ac03d886c18115b13741f118a9fdf70c65"
+      },
+      {
+        "adversarial_variant": {
+          "runtime_state_vector_digest_matches_reference": false,
+          "source_current": false,
+          "source_window": "stale_or_replayed_without_current_digest_match",
+          "variant_id": "i5_stale_source_state"
+        },
+        "control_id": "stale_source_state_control",
+        "control_kind": "source_current_control",
+        "control_passed": true,
+        "evidence": {
+          "full_artifact_replay_deferred_to_iteration_6": true,
+          "i4_local_source_current_replay": true,
+          "reference_input_vector_digest": "3c05e2dc62c87c6ad0a91e7ad26fdb420f61be9c25e555198fc4dccb0af43c02",
+          "reference_source_current": true
+        },
+        "expected_blocker": "stale_source_state_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "stale_source_state_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "055bc0281fd5249c970ab29310b73d13a9a77b1ddb74653f1c458017a530edd1"
+      },
+      {
+        "adversarial_variant": {
+          "missing_runtime_state_fields": [
+            "support_margin",
+            "regulation_recovery_score",
+            "memory_context_score",
+            "ap4_consequence_context_score"
+          ],
+          "missing_source_rows": [
+            "n15_i1_row_02_n13_support_seeking_regulation_candidate"
+          ],
+          "variant_id": "i5_missing_source_state"
+        },
+        "control_id": "missing_source_state_control",
+        "control_kind": "source_presence_control",
+        "control_passed": true,
+        "evidence": {
+          "reference_runtime_state_fields": [
+            "ap4_consequence_context_score",
+            "constructed_followout_context",
+            "current_support_retention",
+            "memory_context_score",
+            "n13_ap3_closed_claim_ceiling",
+            "n13_bounded_response",
+            "readiness_context_flag",
+            "regulation_recovery_score",
+            "selected_route_context",
+            "source_current",
+            "source_window",
+            "support_error",
+            "support_margin",
+            "support_threshold",
+            "vector_id"
+          ],
+          "reference_selected_source_rows": [
+            "n15_i1_row_01_n13_support_derived_target_candidate",
+            "n15_i1_row_02_n13_support_seeking_regulation_candidate",
+            "n15_i1_row_03_n13_closeout_ap3",
+            "n15_i1_row_04_n14_closeout_ap4",
+            "n15_i1_row_05_n14_constructed_followout",
+            "n15_i1_row_07_n08_memory_context",
+            "n15_i1_row_08_n09_bounded_regulation_context",
+            "n15_i1_row_09_n12_phase8_readiness"
+          ]
+        },
+        "expected_blocker": "missing_source_state_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "missing_source_state_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "41404708d96dcbf1df4a7ff524bf264283b791f115603a496ec717bc71a2f0a5"
+      },
+      {
+        "adversarial_variant": {
+          "dependency_trace_present": false,
+          "omitted_trace_target_fields": [
+            "target_center",
+            "target_tolerance",
+            "target_band",
+            "bridge_probe.selected_bridge_candidate"
+          ],
+          "variant_id": "i5_dependency_trace_omission"
+        },
+        "control_id": "dependency_trace_omission_control",
+        "control_kind": "dependency_trace_control",
+        "control_passed": true,
+        "evidence": {
+          "i4_hidden_derivation_trace_control_passed": true,
+          "reference_trace_entry_count": 15,
+          "reference_trace_target_fields": [
+            "bridge_probe.bridge_candidates[n13_bounded_support_response].budget_valid",
+            "bridge_probe.bridge_candidates[n13_bounded_support_response].post_response_support_retention",
+            "bridge_probe.bridge_candidates[n13_bounded_support_response].response_amount",
+            "bridge_probe.bridge_candidates[n13_bounded_support_response].target_band_membership",
+            "bridge_probe.selected_bridge_candidate",
+            "direct_historic_gap_record.reason_not_promoted",
+            "runtime_state_vector.constructed_followout_context",
+            "runtime_state_vector.n13_ap3_closed_claim_ceiling",
+            "target_band",
+            "target_center",
+            "target_tolerance"
+          ]
+        },
+        "expected_blocker": "dependency_trace_omission_blocked",
+        "expected_status": "blocked",
+        "observed_blocker": "dependency_trace_omission_blocked",
+        "observed_status": "blocked",
+        "source_iteration": "iteration_5_adversarial_control_matrix",
+        "variant_digest": "b0aa63c000a6bf196f76e9eb2d5c27c12e3561450f7dd696aa2f9f24d969ff3c"
+      }
+    ],
+    "control_summary": {
+      "all_controls_fail_closed": true,
+      "blocker_labels_distinct": true,
+      "control_count": 12,
+      "distinct_blocker_count": 12,
+      "failed_controls": [],
+      "observed_blockers": [
+        "externally_injected_target_blocked",
+        "hidden_target_derivation_blocked",
+        "semantic_goal_ownership_relabel_blocked",
+        "post_hoc_proxy_formation_blocked",
+        "unbounded_target_drift_blocked",
+        "budget_surface_ambiguity_blocked",
+        "identity_acceptance_relabel_blocked",
+        "native_support_relabel_blocked",
+        "fixture_label_proxy_blocked",
+        "stale_source_state_blocked",
+        "missing_source_state_blocked",
+        "dependency_trace_omission_blocked"
+      ],
+      "passed_control_count": 12
+    },
+    "control_variants_config_id": "n15_control_variants_v1",
+    "iteration_3_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+    "iteration_4_output_digest": "bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59",
+    "schema_output_digest": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+    "source_artifacts": {
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_budget_limits_v1.json": {
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_budget_limits_v1.json",
+        "sha256": "8b1314a9d229d70cd48e12bfc5fa4aa978877f78a4880db9e8a3faa867fbe62e"
+      },
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_control_variants_v1.json": {
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/configs/n15_control_variants_v1.json",
+        "sha256": "bf4a17c7168c74a21e85c6893ce174b4d76fb159340710e261c16b5ef45984e9"
+      },
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json": {
+        "acceptance_state": "accepted_external_proxy_contrast_matrix_pending_adversarial_controls_replay_and_claim_boundary",
+        "output_digest": "bc97c3125ffdc83c0e97a02c7a6534fadfb95e0141f7082af3d1439c974fea59",
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_external_proxy_contrast_matrix.json",
+        "sha256": "f7201b82f0071e26f05b62111d88396072d669d815153971f93f967e503c0ee8",
+        "status": "passed"
+      },
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": {
+        "acceptance_state": "accepted_schema_freeze_no_row_validation",
+        "output_digest": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+        "sha256": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+        "status": "passed"
+      },
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json": {
+        "acceptance_state": "accepted_runtime_derived_target_candidate_with_bridge_pending_controls",
+        "output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873",
+        "status": "passed"
+      }
+    },
+    "source_reports": {
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_external_proxy_contrast_matrix.md": {
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_external_proxy_contrast_matrix.md",
+        "sha256": "3c679397b75bd033df352995265c8cceee71612944729a6991805801509aad8c"
+      },
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md": {
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_formation_schema_v1.md",
+        "sha256": "040582e46c1542a30c28aa4cda661fc5752e2529d93a0c14fc2f2c3b5e26eba6"
+      },
+      "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md": {
+        "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+        "sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c"
+      }
+    }
+  }
+}
+```
+
+## Top-Level Output Fields
+
+```json
+[
+  "experiment",
+  "iteration",
+  "artifact_id",
+  "purpose",
+  "schema_version",
+  "generated_at",
+  "command",
+  "status",
+  "acceptance_state",
+  "source_artifacts",
+  "source_reports",
+  "rows",
+  "controls",
+  "checks",
+  "claim_flags",
+  "errors",
+  "iteration_result",
+  "control_matrix",
+  "control_records",
+  "control_summary",
+  "control_execution_scope",
+  "idempotency_digest_plan",
+  "iteration_5_explanation",
+  "iteration_5_top_level_output_fields",
+  "interpretation_record",
+  "git",
+  "output_digest"
+]
+```
+
+## Post-Review Gap Closure
+
+```text
+closed: iteration_5_top_level_output_fields declares every I5 top-level key.
+closed: idempotency_digest_plan records the I5 replay/idempotency source scope.
+closed: control_execution_scope distinguishes carried-forward contrasts, claim-boundary state checks, policy variants, and replay-deferred work.
+closed: control_records_match_control_matrix_records prevents flat and structured control records from silently diverging.
+scope: I5 budget ambiguity is a contract-level blocker; exceeded-budget perturbation belongs to I6.
+scope: I5 unbounded drift is a static policy-bound variant; full perturbation replay belongs to I6.
+scope: claim relabel controls are forced-false claim-boundary state checks, not semantic rejection engines.
+```
+
+## Controls
+
+| Control | Blocker | Passed |
+| --- | --- | --- |
+| `externally_injected_target_control` | `externally_injected_target_blocked` | `True` |
+| `hidden_target_derivation_control` | `hidden_target_derivation_blocked` | `True` |
+| `semantic_goal_ownership_relabel_control` | `semantic_goal_ownership_relabel_blocked` | `True` |
+| `post_hoc_proxy_formation_control` | `post_hoc_proxy_formation_blocked` | `True` |
+| `unbounded_target_drift_control` | `unbounded_target_drift_blocked` | `True` |
+| `budget_surface_ambiguity_control` | `budget_surface_ambiguity_blocked` | `True` |
+| `identity_acceptance_relabel_control` | `identity_acceptance_relabel_blocked` | `True` |
+| `native_support_relabel_control` | `native_support_relabel_blocked` | `True` |
+| `fixture_label_proxy_control` | `fixture_label_proxy_blocked` | `True` |
+| `stale_source_state_control` | `stale_source_state_blocked` | `True` |
+| `missing_source_state_control` | `missing_source_state_blocked` | `True` |
+| `dependency_trace_omission_control` | `dependency_trace_omission_blocked` | `True` |
+
+## Interpretation Record
+
+```json
+{
+  "plain_language_interpretation": "Iteration 5 blocks the external, hidden, post-hoc, fixture, claim-relabel, drift, budget, stale-source, missing-source, and dependency-trace omission explanations with distinct blockers. The result remains provisional until bounded drift and replay plus final claim-boundary classification run.",
+  "record_id": "n15_i5_interpretation_proxy_control_matrix_v1",
+  "remaining_required_work": [
+    "iteration_6_bounded_drift_and_replay_matrix",
+    "iteration_7_claim_boundary_and_ap5_classification",
+    "iteration_8_closeout_and_handoff"
+  ],
+  "supported_interpretation": "The N15 AP5 candidate is control-clean against the twelve frozen adversarial proxy/control variants.",
+  "unsupported_interpretations": [
+    "final AP5 support",
+    "semantic goal ownership",
+    "identity acceptance",
+    "intention",
+    "semantic choice",
+    "agency",
+    "native support",
+    "fully native integration"
+  ]
+}
+```
+
+## Checks
+
+```json
+{
+  "absolute_path_absence": true,
+  "all_controls_fail_closed": true,
+  "all_required_controls_present": true,
+  "budget_limits_loaded": true,
+  "budget_surface_ambiguity_control_passed": true,
+  "claim_flags_forced_false": true,
+  "control_execution_scope_recorded": true,
+  "control_outcomes_present": true,
+  "control_records_match_control_matrix_records": true,
+  "control_variants_loaded": true,
+  "dependency_trace_omission_control_passed": true,
+  "digest_reproducibility": true,
+  "distinct_blockers_recorded": true,
+  "expected_blockers_observed": true,
+  "externally_injected_target_control_passed": true,
+  "final_ap5_not_supported": true,
+  "fixture_label_proxy_control_passed": true,
+  "fully_native_integration_not_opened": true,
+  "hidden_target_derivation_control_passed": true,
+  "idempotency_digest_plan_reproducible": true,
+  "identity_acceptance_relabel_control_passed": true,
+  "iteration_3_source_passed": true,
+  "iteration_4_acceptance_state_valid": true,
+  "iteration_4_source_passed": true,
+  "iteration_5_explanation_recorded": true,
+  "iteration_5_top_level_output_fields_match": true,
+  "iteration_5_top_level_output_shape_declared": true,
+  "missing_source_state_control_passed": true,
+  "native_support_not_opened": true,
+  "native_support_relabel_control_passed": true,
+  "phase8_opened_false": true,
+  "post_hoc_proxy_formation_control_passed": true,
+  "schema_source_passed": true,
+  "semantic_goal_ownership_relabel_control_passed": true,
+  "source_digest_presence": true,
+  "src_diff_empty": true,
+  "stale_source_state_control_passed": true,
+  "unbounded_target_drift_control_passed": true
+}
+```
+
+## Claim Boundary
+
+```text
+control-clean candidate != final AP5 support
+claim relabel controls blocked != semantic goal ownership
+native support relabel blocked != native support opened
+stale and missing source controls blocked != Iteration 6 replay complete
+N15 Iteration 5 != agency, intention, identity acceptance, native support, or fully native integration
+```
+
+## Output Digest
+
+```text
+251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f
+```

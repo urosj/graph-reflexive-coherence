@@ -8,12 +8,12 @@ Generated scripts:
 - `build_n15_proxy_formation_schema_v1.py`
 - `build_n15_runtime_derived_target_candidate.py`
 - `build_n15_external_proxy_contrast_matrix.py`
+- `build_n15_proxy_control_matrix.py`
+- `build_n15_bounded_drift_replay_matrix.py`
 - `validate_n15_row.py`
 
 Planned scripts:
 
-- `build_n15_proxy_control_matrix.py`
-- `build_n15_bounded_drift_replay_matrix.py`
 - `build_n15_claim_boundary_record.py`
 - `build_n15_closeout_and_handoff.py`
 
