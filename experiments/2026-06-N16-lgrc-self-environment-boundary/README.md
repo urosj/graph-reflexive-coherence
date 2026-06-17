@@ -606,9 +606,72 @@ final_ap6_supported = false
 
 Iteration 4 is the first N16 MVP scientific result. It holds the Iteration 3
 `B2` basin fixed across `C0-C5` and emits a partial MVP requirement summary.
-The boundary-state sweep, selected interaction probes, full control matrix,
-and final claim classification are still pending. Final `AP6` remains
-unassigned.
+
+Iteration 5 - Boundary-State Sweep:
+
+```text
+status = passed
+acceptance_state = accepted_boundary_state_flux_sweep_no_ap6
+boundary_state_sweep_matrix = outputs/n16_boundary_state_sweep_matrix.json
+boundary_state_sweep_report = reports/n16_boundary_state_sweep_matrix.md
+B0_C2 = rejected active null under flux
+B1_C2 = partial localized partition under flux
+B2_C2 = partial reproduction of Iteration 4 directional flux pressure
+B3_C2 = supported artifact-level repair candidate under flux
+B4_C2 = partial coupled/multi-basin flux stress row, not B4 x C5 separability
+final_ap6_supported = false
+```
+
+Iteration 5 holds the hard Iteration 4 `C2` directional-flux challenge fixed
+and sweeps `B0-B4`. It reproduces `B2 x C2` exactly, records that `B3` reduces
+the same B2 leakage/support/coherence-margin failures, and keeps `B4 x C2`
+provisional because retained flux remains distinguishable from coupling,
+neighbor leakage, and merge pressure. Final `AP6` remains unassigned.
+
+Iteration 6 - Selected Interaction Probes:
+
+```text
+status = passed
+acceptance_state = accepted_selected_interaction_probes_no_ap6
+selected_interaction_probe_matrix = outputs/n16_selected_interaction_probe_matrix.json
+selected_interaction_probe_report = reports/n16_selected_interaction_probe_matrix.md
+B0_C3 = supported active-null structured-external false-positive rejection
+B1_C2 = partial weak-boundary flux replay
+B2_C1 = supported bounded-noise replay only
+B3_C4 = supported artifact-level breach/reclosure candidate
+B4_C5 = supported artifact-level shared-medium separability candidate
+final_ap6_supported = false
+```
+
+Iteration 6 is selective, not a full Cartesian sweep. It preserves the
+Iteration 5 weak-boundary and noise replays, confirms that `B3 x C4` answers
+the breach/reclosure question at artifact-candidate scope, and confirms that
+`B4 x C5` answers the shared-medium separability question by measuring basin
+separation, neighbor leakage, merge pressure, shared-medium leakage, coupling
+attribution, and boundary exclusivity. The full control matrix, replay
+closeout, and final claim classification are still pending.
+
+Iteration 7 - Comparative Requirements And Control Matrix:
+
+```text
+status = passed
+acceptance_state = accepted_full_control_matrix_no_ap6_closeout
+basin_boundary_requirements_matrix = outputs/n16_basin_boundary_requirements_matrix.json
+basin_boundary_requirements_report = reports/n16_basin_boundary_requirements_matrix.md
+synthesis_mode = full
+control_matrix_mode = full_control_matrix
+included_iterations = [1, 2, 3, 4, 5, 6, 7]
+deferred_iterations = [8, 9]
+ready_for_iteration_8_classification = true
+final_ap6_supported = false
+```
+
+Iteration 7 converts the I3-I6 evidence matrix into controlled requirements.
+It introduces no new B/C behavior cells. Supported null rows remain
+false-positive rejections, supported B3/B4 rows remain artifact-level
+candidates, and partial or rejected rows remain requirement blockers. Negative
+controls fail closed, replay checks are stable, unsafe claim flags are forced
+false, and final AP6 remains blocked until Iteration 8 classification.
 
 ## Directory Structure
 

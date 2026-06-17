@@ -215,7 +215,7 @@ Artifact SHA-256:
 outputs/n16_boundary_schema_v1.json 5233806d2f004c65c33c0048ada798d062eecb7939c773f2486d613c58ff2df2
 reports/n16_boundary_schema_v1.md ffcabb791576bd16e7d1696e1dc52af07b09bd991798b726d49c12b6fcfb77e3
 scripts/build_n16_boundary_schema_v1.py 516aa8350de16c5fd2f4d9b5afc4d26ab1dd8431da87502350591b041dc368f1
-scripts/validate_n16_row.py 64662fdc1f4bbec40b8ff54653408e2cc20613c469225858a61d6d84f53c121e
+scripts/validate_n16_row.py 5175f08bbf70a2379fba3d25c4f4c0137cce74ce15d45ef5eeaa48279ef813a3
 configs/n16_source_registry.json 16277a9681f90a6a0393616160602573dd8e2441faf6fd7cdfb49480de95d538
 configs/n16_boundary_policy_v1.json e1f4e35441801224f0d2fbea39c26cb2228eeb2c4c2b284909cf276b0d4c06d8
 configs/n16_budget_limits_v1.json 47319a6391156d3ea2123ce0629dc00d7362c011d37cfa2b6953e1f818656bc5
@@ -282,7 +282,7 @@ Artifact SHA-256:
 outputs/n16_quiet_boundary_calibration.json 625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297
 reports/n16_quiet_boundary_calibration.md 659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554
 scripts/build_n16_quiet_boundary_calibration.py 366642c3585d6450685aec8e52209ff8ac172c2e157943a74519ef5d9aff80d9
-scripts/validate_n16_row.py 64662fdc1f4bbec40b8ff54653408e2cc20613c469225858a61d6d84f53c121e
+scripts/validate_n16_row.py 5175f08bbf70a2379fba3d25c4f4c0137cce74ce15d45ef5eeaa48279ef813a3
 ```
 
 Acceptance state:
@@ -354,7 +354,7 @@ outputs/n16_challenge_sweep_matrix.json b2e7f8b37966ccc781e26f294cec89a5fc5a21d9
 reports/n16_challenge_sweep_matrix.md e8a399461c76d4fa54fc95d2cc8998c123e6faa1c1180ebd8539b3e68d3295b7
 reports/n16_challenge_sweep_interpretation.md dac629e0d86f835b9187a7b5d31c6a39097c20c35bcba1b39ecf5e3b77e0fe76
 scripts/build_n16_challenge_sweep_matrix.py f26b6dd64581f28628c2bd94c478a5f58704461a7e5987d7a091f41b69d9a04c
-scripts/validate_n16_row.py 64662fdc1f4bbec40b8ff54653408e2cc20613c469225858a61d6d84f53c121e
+scripts/validate_n16_row.py 5175f08bbf70a2379fba3d25c4f4c0137cce74ce15d45ef5eeaa48279ef813a3
 ```
 
 Acceptance state:
@@ -394,97 +394,257 @@ pending.
 
 ## Iteration 5. Boundary-State Sweep
 
-- [ ] Confirm B2 has already been evaluated under C0, C1, and C2, or record
+- [x] Confirm B2 has already been evaluated under C0, C1, and C2, or record
       explicit blockers before unlocking B3 repair/reabsorption rows.
-- [ ] Run B0 x C2 null under flux.
-- [ ] Run B1 x C2 localized weak boundary under flux.
-- [ ] Run B2 x C2 persistent boundary under flux.
-- [ ] Run B3 x C2 repair-capable boundary under flux.
-- [ ] Run B4 x C2 multi-basin candidate under flux.
-- [ ] Treat B4 x C2 as a flux stress row; keep B4 separability targeted at
+- [x] Run B0 x C2 null under flux.
+- [x] Run B1 x C2 localized weak boundary under flux.
+- [x] Run B2 x C2 persistent boundary under flux.
+- [x] Run B3 x C2 repair-capable boundary under flux.
+- [x] Run B4 x C2 multi-basin candidate under flux.
+- [x] Treat B4 x C2 as a flux stress row; keep B4 separability targeted at
       B4 x C5 in Iteration 6.
-- [ ] Mark B4 rows `partial` or `not_applicable` if the multi-basin substrate
+- [x] Mark B4 rows `partial` or `not_applicable` if the multi-basin substrate
       is not sufficiently source-backed.
-- [ ] Measure inbound/outbound flux balance.
-- [ ] Measure retention capacity.
-- [ ] Measure repair/reabsorption.
-- [ ] Measure upstream/downstream boundary asymmetry.
-- [ ] Populate the common matrix-cell report schema.
-- [ ] Mark B3 rows `not_applicable` or `blocked` if the B2 unlock condition is
-      not satisfied.
+- [x] Measure inbound/outbound flux balance.
+- [x] Measure retention capacity.
+- [x] Measure repair/reabsorption.
+- [x] Measure upstream/downstream boundary asymmetry.
+- [x] Populate the common matrix-cell report schema.
+- [x] Record B3 unlock audit; block B3 rows if the B2 unlock condition is not
+      satisfied.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_boundary_state_sweep_matrix.json`
-- [ ] `reports/n16_boundary_state_sweep_matrix.md`
-- [ ] `scripts/build_n16_boundary_state_sweep_matrix.py`
+- [x] `outputs/n16_boundary_state_sweep_matrix.json`
+- [x] `reports/n16_boundary_state_sweep_matrix.md`
+- [x] `scripts/build_n16_boundary_state_sweep_matrix.py`
+
+Output digest:
+
+```text
+a24c1db84cefbfcb3e99a26373ef5a12f21c795e0574c91fbb06ce72435e2620
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_boundary_state_sweep_matrix.json 013725b03aa3dab3bacdddeb1255f061d381cbbbc7951237bff76d5d9f3d84ad
+reports/n16_boundary_state_sweep_matrix.md e7fdd00abdd6ffdf524cf6b7033dcaea9e76a8ed5e71c2eb5804e9c391ce9c4c
+scripts/build_n16_boundary_state_sweep_matrix.py 9029d3d598b7c2b32d85aea226933bb43d34d0f4ef0f9769c0dfeefa34f999a6
+scripts/validate_n16_row.py 5175f08bbf70a2379fba3d25c4f4c0137cce74ce15d45ef5eeaa48279ef813a3
+```
+
+Acceptance state:
+
+```text
+accepted_boundary_state_flux_sweep_no_ap6
+```
+
+Interpretation:
+
+```text
+Iteration 5 holds the hard Iteration 4 C2 directional-flux challenge fixed
+and sweeps B0-B4 without per-state retuning. B0 rejects externally organized
+flux as boundary support. B1 remains a weak localized partition under flux
+with high leakage and no persistence promotion. B2 exactly reproduces the
+Iteration 4 B2 x C2 partial result: leakage 0.186, stability 0.62, and the
+same directional-flux failure vocabulary. B3 is unlocked by the prior B2
+C0/C1/C2 evaluations and improves the same B2 C2 failure modes: leakage drops
+by 0.074, retained flux rises by 0.11, stability rises by 0.16, and support
+and coherence-margin floors are preserved. B3 remains artifact-level repair
+candidate evidence only, not agency, intention, selfhood, native support, or
+final AP6. B4 improves retained flux but remains partial because retained
+flux is separated from redirected coupling flux, neighbor leakage, and merge
+pressure; B4 x C5 remains required for shared-medium separability. All
+boundary claims and final AP6 flags remain false. Review hardening records
+metric construction formulas and explicit construction anchors, formula-derived
+upstream/downstream asymmetry scores, extended B3 deltas for coherence,
+support, outbound flux, and asymmetry, content-quality checks in the B3 unlock
+audit, a boundary-specific B3 failure mode, expanded gradient metrics, direct
+B3-vs-B4 comparison, and Iteration 6 guardrails: B3_C2 is C2 flux repair only,
+B3_C4 must still test breach/reclosure, B4_C2 is partial rather than nearly
+supported, and B4_C5 must directly test neighbor leakage, redirected coupling
+flux, merge pressure, and basin separation.
+```
 
 ## Iteration 6. Selected Interaction Probes
 
-- [ ] Confirm B2 has already been evaluated under C0, C1, and C2, or record
+- [x] Confirm B2 has already been evaluated under C0, C1, and C2, or record
       explicit blockers before unlocking B3 x C4 breach/reclosure.
-- [ ] Run B0 x C3 structured external coherence active null.
-- [ ] Run B1 x C2 weak detectable boundary under flux.
-- [ ] Run B2 x C1 persistent boundary under unstructured perturbation.
-- [ ] Run B3 x C4 breach and repair / reclosure.
-- [ ] Run B4 x C5 multi-basin exclusivity in shared medium.
-- [ ] Record `requirements_satisfied`.
-- [ ] Record `requirements_failed`.
-- [ ] Populate the common matrix-cell report schema.
-- [ ] Mark B3 x C4 `not_applicable` or `blocked` if the B2 unlock condition is
+- [x] Run B0 x C3 structured external coherence active null.
+- [x] Run B1 x C2 weak detectable boundary under flux.
+- [x] Run B2 x C1 persistent boundary under unstructured perturbation.
+- [x] Run B3 x C4 breach and repair / reclosure.
+- [x] Run B4 x C5 multi-basin exclusivity in shared medium.
+- [x] Record `requirements_satisfied`.
+- [x] Record `requirements_failed`.
+- [x] Populate the common matrix-cell report schema.
+- [x] Mark B3 x C4 `not_applicable` or `blocked` if the B2 unlock condition is
       not satisfied.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_selected_interaction_probe_matrix.json`
-- [ ] `reports/n16_selected_interaction_probe_matrix.md`
-- [ ] `scripts/build_n16_selected_interaction_probe_matrix.py`
+- [x] `outputs/n16_selected_interaction_probe_matrix.json`
+- [x] `reports/n16_selected_interaction_probe_matrix.md`
+- [x] `scripts/build_n16_selected_interaction_probe_matrix.py`
+
+Output digest:
+
+```text
+20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_selected_interaction_probe_matrix.json 3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0
+reports/n16_selected_interaction_probe_matrix.md 263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801
+scripts/build_n16_selected_interaction_probe_matrix.py 020b97c9cf6e5d2a37f9f3bb994b2070fbbcd21bb7209721ffa534afc8f3d4ec
+scripts/validate_n16_row.py 5175f08bbf70a2379fba3d25c4f4c0137cce74ce15d45ef5eeaa48279ef813a3
+```
+
+Acceptance state:
+
+```text
+accepted_selected_interaction_probes_no_ap6
+```
+
+Interpretation:
+
+```text
+Iteration 6 runs only the five selected interaction probes exposed by
+Iterations 4-5, not a full B x C sweep. B0_C3 supports active-null
+false-positive rejection of structured external coherence while keeping
+boundary claims false. B1_C2 preserves the weak localized partition replay
+under flux as partial. B2_C1 preserves bounded noise tolerance only and does
+not promote noise tolerance into flux, repair, shared-medium, or AP6 support.
+B3_C4 is unlocked because B2_C0, B2_C1, and B2_C2 were already evaluated;
+it supports artifact-level breach/reclosure candidate evidence with reclosure
+score above the floor, quiet leakage preserved, and claim boundaries still
+blocked against autonomous repair or native reabsorption. B4_C5 supports an
+artifact-level shared-medium separability candidate by measuring basin
+separation, boundary exclusivity, neighbor leakage, shared-medium leakage,
+redirected coupling flux, and merge pressure rather than inheriting
+separability from the B4 label. Both open extension questions are answered
+at artifact-candidate scope, but final AP6 remains false pending the full
+control matrix, duplicate and order-inversion replay, and claim
+classification.
+The generated report records the result interpretation that I6 is a strong
+selected-probe result: the row pattern is role-specific, B3_C4 and B4_C5
+answer the two extension questions at artifact-candidate scope, and I7 should
+test whether controls, relabeling checks, replay, and claim classification can
+break any supported I6 row before AP6 closeout.
+Review hardening records metric construction formulas, a retained-flux
+projection audit, replay consistency checks for B1_C2 and B2_C1, inline
+B3_C2/B2_C4 comparison for B3_C4, explicit B4_C5 decomposition and one-sided
+basin-role notes, noise-specific B2_C1 decomposition, numeric reclosure
+latency grounding, explicit boundary-trace event typing, and a
+cross-iteration metric comparison table.
+Implementation interpretation: LGRC/GRC9 runtime flux is not normalized to
+`[0, 1]`. Runtime `flux_uv` is computed as
+`-eta * conductance * (potential_u - potential_v)`, `flux_coupling` is
+`abs(flux_uv)`, and LGRC outward flux pressure sums positive oriented flux.
+These implementation quantities can exceed `1.0`; only probabilities or
+explicit normalized fractions are bounded to `[0, 1]`. Therefore I6
+`retained_flux > 1.0` is admissible only as a retained signal / flux index,
+not as a normalized retained-flux fraction.
+```
 
 ## Iteration 7. Comparative Requirements And Control Matrix
 
-- [ ] Support partial MVP mode after Iteration 4.
-- [ ] In partial MVP mode, summarize only Iterations 1-4, mark Iterations 5-6
+- [x] Support partial MVP mode after Iteration 4.
+- [x] In partial MVP mode, summarize only Iterations 1-4, mark Iterations 5-6
       deferred, and avoid final AP6 closeout language.
-- [ ] Emit `synthesis_mode = partial_mvp | full`.
-- [ ] Emit `included_iterations`.
-- [ ] Emit `deferred_iterations`.
-- [ ] Emit `final_ap6_closeout_allowed`.
-- [ ] Compare quiet calibration, challenge sweep, boundary-state sweep, and
+- [x] Emit `synthesis_mode = partial_mvp | full`.
+- [x] Emit `included_iterations`.
+- [x] Emit `deferred_iterations`.
+- [x] Emit `final_ap6_closeout_allowed`.
+- [x] Compare quiet calibration, challenge sweep, boundary-state sweep, and
       selected interaction probes using the common schema.
-- [ ] Record `native_boundary_requirements_observed`.
-- [ ] Record minimum coherence margin.
-- [ ] Record minimum internal support.
-- [ ] Record maximum leakage ratio.
-- [ ] Record repair/reabsorption requirement.
-- [ ] Record flux balance requirement.
-- [ ] Record structured-external-coherence rejection requirement.
-- [ ] Record inter-basin separation requirement.
-- [ ] Externally supplied boundary label control fails closed.
-- [ ] Post-hoc boundary labeling control fails closed.
-- [ ] Hidden external-state injection control fails closed.
-- [ ] Resource relabel as self control fails closed.
-- [ ] Self-support relabel as external state control fails closed.
-- [ ] Untracked boundary crossing control fails closed.
-- [ ] Structured external coherence relabel control fails closed.
-- [ ] Multi-basin merge or leakage relabel control fails closed.
-- [ ] Identity acceptance relabel control fails closed.
-- [ ] Selfhood/personhood relabel control fails closed.
-- [ ] Semantic goal ownership relabel control fails closed.
-- [ ] Native support relabel control fails closed.
-- [ ] Stale internal or external state control fails closed.
-- [ ] Missing boundary-side state control fails closed.
-- [ ] Boundary drift outside frozen policy control fails closed.
-- [ ] Run duplicate replay.
-- [ ] Run artifact-only filesystem replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run order-inversion replay.
-- [ ] Record distinct blockers for negative controls.
+- [x] Record `native_boundary_requirements_observed`.
+- [x] Record minimum coherence margin.
+- [x] Record minimum internal support.
+- [x] Record maximum leakage ratio.
+- [x] Record repair/reabsorption requirement.
+- [x] Record flux balance requirement.
+- [x] Record structured-external-coherence rejection requirement.
+- [x] Record inter-basin separation requirement.
+- [x] Externally supplied boundary label control fails closed.
+- [x] Post-hoc boundary labeling control fails closed.
+- [x] Hidden external-state injection control fails closed.
+- [x] Resource relabel as self control fails closed.
+- [x] Self-support relabel as external state control fails closed.
+- [x] Untracked boundary crossing control fails closed.
+- [x] Structured external coherence relabel control fails closed.
+- [x] Multi-basin merge or leakage relabel control fails closed.
+- [x] Identity acceptance relabel control fails closed.
+- [x] Selfhood/personhood relabel control fails closed.
+- [x] Semantic goal ownership relabel control fails closed.
+- [x] Native support relabel control fails closed.
+- [x] Stale internal or external state control fails closed.
+- [x] Missing boundary-side state control fails closed.
+- [x] Boundary drift outside frozen policy control fails closed.
+- [x] Run duplicate replay.
+- [x] Run artifact-only filesystem replay.
+- [x] Run snapshot/load replay.
+- [x] Run order-inversion replay.
+- [x] Record distinct blockers for negative controls.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_basin_boundary_requirements_matrix.json`
-- [ ] `reports/n16_basin_boundary_requirements_matrix.md`
-- [ ] `scripts/build_n16_basin_boundary_requirements_matrix.py`
+- [x] `outputs/n16_basin_boundary_requirements_matrix.json`
+- [x] `reports/n16_basin_boundary_requirements_matrix.md`
+- [x] `scripts/build_n16_basin_boundary_requirements_matrix.py`
+
+Output digest:
+
+```text
+383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_basin_boundary_requirements_matrix.json cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83
+reports/n16_basin_boundary_requirements_matrix.md 05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605
+scripts/build_n16_basin_boundary_requirements_matrix.py f3e409f12cc83c0a7d8ad4b6facbe448de1c1ff6f2cf47b489c51a058007672c
+scripts/validate_n16_row.py 66d694a94f439ed1e5228d7871e77fe7fe38bfdb46fe1e28d333c175f4fca1cf
+```
+
+Acceptance state:
+
+```text
+accepted_full_control_matrix_no_ap6_closeout
+```
+
+Interpretation:
+
+```text
+Iteration 7 uses full-control synthesis because Iterations 5-6 are now
+complete; partial MVP remains supported by schema but is not the active I7
+mode. I7 reuses the existing I3-I6 evidence rows and marks every row as
+`iteration_7_no_new_scientific_cell = true`. It converts the evidence into
+seven native boundary requirement records: minimum coherence margin, minimum
+internal support, maximum leakage, flux balance, repair/reabsorption,
+structured-external-coherence rejection, and inter-basin separation. Each
+requirement has supporting evidence and failure or limitation evidence.
+Negative controls fail closed with distinct blockers, with high-stress
+coverage for structured external coherence relabeling and multi-basin
+merge/leakage relabeling. Duplicate, artifact-only, snapshot/load, and
+order-inversion replay are stable. The output is ready for Iteration 8 claim
+classification, but final AP6, native support, selfhood/personhood, semantic
+goal ownership, closed action-perception loop, autonomous repair, and native
+multi-basin selfhood remain blocked.
+Review hardening adds duplicate replay to the visible full control matrix as
+an I7 replay extension, removes the misleading B0_C0 entry from the
+structured-external coherence requirement, records aggregate metric scope and
+supported-boundary-candidate metrics separately, diversifies standard control
+evidence cells, verifies I1-I2 contract provenance digests, and adds a compact
+cross-iteration metric summary.
+The I8 handoff also records that `duplicate_replay_control` is intentionally
+`schema_backed = false`: it is an I7 run-level replay extension and must be
+treated as replay admissibility evidence, not as an I2 schema control.
+```
 
 ## Iteration 8. Claim Boundary And AP6 Classification
 
