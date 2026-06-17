@@ -6,12 +6,12 @@ Generated scripts:
 
 - `build_n16_boundary_source_inventory.py`
 - `build_n16_boundary_schema_v1.py`
+- `build_n16_quiet_boundary_calibration.py`
+- `build_n16_challenge_sweep_matrix.py`
 - `validate_n16_row.py`
 
 Planned scripts:
 
-- `build_n16_quiet_boundary_calibration.py`
-- `build_n16_challenge_sweep_matrix.py`
 - `build_n16_boundary_state_sweep_matrix.py`
 - `build_n16_selected_interaction_probe_matrix.py`
 - `build_n16_basin_boundary_requirements_matrix.py`

@@ -416,6 +416,388 @@ def validate_absolute_path_absence(artifact: dict[str, Any], errors: list[str]) 
         errors.append("absolute_path_absence:absolute_path_recorded")
 
 
+def validate_quiet_calibration(artifact: dict[str, Any], errors: list[str]) -> None:
+    if artifact.get("artifact_id") != "n16_quiet_boundary_calibration":
+        return
+
+    rows = artifact.get("rows")
+    if not isinstance(rows, list):
+        errors.append("quiet_calibration_contract:rows_missing_or_not_list")
+        return
+
+    if artifact.get("final_ap6_closeout_allowed") is not False:
+        errors.append("quiet_calibration_contract:final_ap6_closeout_must_be_false")
+
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            continue
+        if row.get("challenge_class") != "C0":
+            errors.append(
+                "quiet_calibration_contract:"
+                f"row_{index}:challenge_class_must_be_C0"
+            )
+        case_policy = row.get("case_policy")
+        if not isinstance(case_policy, dict) or case_policy.get(
+            "calibration_only"
+        ) is not True:
+            errors.append(
+                "quiet_calibration_contract:"
+                f"row_{index}:case_policy_calibration_only_must_be_true"
+            )
+        if row.get("final_ap6_supported") is not False:
+            errors.append(
+                "quiet_calibration_contract:"
+                f"row_{index}:final_ap6_supported_must_be_false"
+            )
+        descriptor = row.get("internal_state_descriptor")
+        classification_path = (
+            descriptor.get("classification_path")
+            if isinstance(descriptor, dict)
+            else None
+        )
+        if classification_path not in {
+            "primary_floor",
+            "fallback_basin_signal_only",
+            "none",
+        }:
+            errors.append(
+                "quiet_calibration_contract:"
+                f"row_{index}:classification_path_missing_or_invalid"
+            )
+
+    by_cell = {
+        row.get("cell_id"): row
+        for row in rows
+        if isinstance(row, dict) and row.get("cell_id") is not None
+    }
+    b0 = by_cell.get("B0_C0")
+    if not isinstance(b0, dict):
+        errors.append("quiet_calibration_contract:B0_C0_missing")
+    elif b0.get("row_decision") != "rejected" or b0.get(
+        "boundary_claim_allowed"
+    ) is not False:
+        errors.append(
+            "quiet_calibration_contract:B0_C0_must_reject_boundary_support"
+        )
+
+    b1 = by_cell.get("B1_C0")
+    b2 = by_cell.get("B2_C0")
+    if isinstance(b1, dict) and isinstance(b2, dict):
+        b1_score = b1.get("boundary_stability_score")
+        b2_score = b2.get("boundary_stability_score")
+        if not isinstance(b1_score, (int, float)) or not isinstance(
+            b2_score, (int, float)
+        ) or b2_score <= b1_score:
+            errors.append(
+                "quiet_calibration_contract:"
+                "B2_C0_stability_must_exceed_B1_C0_stability"
+            )
+    else:
+        errors.append("quiet_calibration_contract:B1_C0_or_B2_C0_missing")
+
+    if isinstance(b2, dict):
+        source_current = b2.get("source_current")
+        snapshots = (
+            source_current.get("case_snapshots")
+            if isinstance(source_current, dict)
+            else None
+        )
+        if not isinstance(snapshots, list) or len(snapshots) <= 1:
+            errors.append(
+                "quiet_calibration_contract:"
+                "B2_C0_requires_multi_snapshot_quiet_window"
+            )
+        basin_descriptor = b2.get("basin_descriptor")
+        if not isinstance(basin_descriptor, dict) or basin_descriptor.get(
+            "stable_side_assignments"
+        ) is not True or basin_descriptor.get("stable_boundary_edges") is not True:
+            errors.append(
+                "quiet_calibration_contract:"
+                "B2_C0_requires_recorded_stable_side_and_boundary_edges"
+            )
+        elif basin_descriptor.get("all_snapshots_meet_persistence_floors") is not True:
+            errors.append(
+                "quiet_calibration_contract:"
+                "B2_C0_requires_all_snapshots_to_meet_persistence_floors"
+            )
+
+
+def validate_challenge_sweep(artifact: dict[str, Any], errors: list[str]) -> None:
+    if artifact.get("artifact_id") != "n16_challenge_sweep_matrix":
+        return
+
+    rows = artifact.get("rows")
+    if not isinstance(rows, list):
+        errors.append("challenge_sweep_contract:rows_missing_or_not_list")
+        return
+
+    if artifact.get("final_ap6_closeout_allowed") is not False:
+        errors.append("challenge_sweep_contract:final_ap6_closeout_must_be_false")
+
+    provenance = artifact.get("quiet_calibration_source_provenance")
+    if not isinstance(provenance, dict):
+        errors.append("challenge_sweep_contract:quiet_calibration_provenance_missing")
+    else:
+        if provenance.get("output_digest_matches_acceptance") is not True:
+            errors.append(
+                "challenge_sweep_contract:"
+                "quiet_calibration_output_digest_must_match_acceptance"
+            )
+        for field in (
+            "accepted_output_digest",
+            "current_output_digest",
+            "current_file_sha256",
+        ):
+            if not valid_sha(provenance.get(field)):
+                errors.append(
+                    "challenge_sweep_contract:"
+                    f"quiet_calibration_provenance_{field}_invalid"
+                )
+
+    thresholds = artifact.get("challenge_thresholds")
+    required_threshold_fields = {
+        "internal_support_floor",
+        "internal_coherence_floor",
+        "minimum_coherence_margin_floor",
+        "quiet_leakage_ceiling",
+        "flux_leakage_warning",
+        "breach_reclosure_floor",
+        "shared_medium_basin_separation_floor",
+    }
+    if not isinstance(thresholds, dict):
+        errors.append("challenge_sweep_contract:challenge_thresholds_missing")
+        thresholds = {}
+    else:
+        missing_thresholds = sorted(required_threshold_fields - set(thresholds))
+        if missing_thresholds:
+            errors.append(
+                "challenge_sweep_contract:"
+                f"challenge_thresholds_missing={missing_thresholds}"
+            )
+        for field in required_threshold_fields & set(thresholds):
+            if not isinstance(thresholds.get(field), (int, float)):
+                errors.append(
+                    "challenge_sweep_contract:"
+                    f"challenge_threshold_{field}_must_be_numeric"
+                )
+
+    expected_classes = {"C0", "C1", "C2", "C3", "C4", "C5"}
+    observed_classes = {
+        row.get("challenge_class") for row in rows if isinstance(row, dict)
+    }
+    if observed_classes != expected_classes:
+        errors.append(
+            "challenge_sweep_contract:"
+            f"challenge_classes_must_be_C0_to_C5={sorted(observed_classes)}"
+        )
+
+    canonical_digests = set()
+    by_class = {}
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            continue
+        by_class[row.get("challenge_class")] = row
+        if row.get("boundary_state") != "B2":
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:boundary_state_must_be_B2"
+            )
+        source_current = row.get("source_current")
+        digest = (
+            source_current.get("canonical_b2_definition_digest")
+            if isinstance(source_current, dict)
+            else None
+        )
+        if not valid_sha(digest):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:canonical_b2_definition_digest_missing"
+            )
+        else:
+            canonical_digests.add(digest)
+        case_policy = row.get("case_policy")
+        if not isinstance(case_policy, dict) or case_policy.get(
+            "canonical_b2_held_fixed"
+        ) is not True:
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:canonical_b2_held_fixed_must_be_true"
+            )
+        if row.get("boundary_claim_allowed") is not False or row.get(
+            "final_ap6_supported"
+        ) is not False:
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:boundary_and_final_ap6_claims_must_be_false"
+            )
+        if not row.get("requirements_failed"):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:requirements_failed_must_be_recorded"
+            )
+        case_policy = row.get("case_policy")
+        if isinstance(case_policy, dict) and case_policy.get(
+            "challenge_thresholds"
+        ) != thresholds:
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:case_policy_thresholds_must_match_top_level"
+            )
+        if not isinstance(source_current, dict) or missing_or_placeholder(
+            source_current.get("metric_construction_rationale")
+        ):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:metric_construction_rationale_missing"
+            )
+        if not isinstance(source_current, dict) or missing_or_placeholder(
+            source_current.get("challenge_pressure_rationale")
+        ):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:challenge_pressure_rationale_missing"
+            )
+        budget_surface = row.get("budget_cost_surface")
+        if not isinstance(budget_surface, dict) or budget_surface.get(
+            "transform_count"
+        ) != 1:
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:transform_count_must_be_one_per_row"
+            )
+
+        failed_requirements = row.get("requirements_failed")
+        metrics = (
+            source_current.get("challenge_transform", {}).get("metrics", {})
+            if isinstance(source_current, dict)
+            else {}
+        )
+        leakage = row.get("leakage_ratio")
+        if isinstance(leakage, (int, float)) and isinstance(
+            thresholds.get("quiet_leakage_ceiling"), (int, float)
+        ) and leakage > thresholds["quiet_leakage_ceiling"] and not text_contains(
+            failed_requirements, {"quiet_leakage"}
+        ):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:quiet_leakage_threshold_failure_not_recorded"
+            )
+        minimum_internal_support = metrics.get("minimum_internal_support")
+        if isinstance(minimum_internal_support, (int, float)) and isinstance(
+            thresholds.get("internal_support_floor"), (int, float)
+        ) and minimum_internal_support < thresholds[
+            "internal_support_floor"
+        ] and not text_contains(
+            failed_requirements, {"minimum_internal_support_floor"}
+        ):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:minimum_internal_support_failure_not_recorded"
+            )
+        internal_coherence = row.get("internal_coherence")
+        if isinstance(internal_coherence, (int, float)) and isinstance(
+            thresholds.get("internal_coherence_floor"), (int, float)
+        ) and internal_coherence < thresholds[
+            "internal_coherence_floor"
+        ] and not text_contains(
+            failed_requirements, {"minimum_internal_coherence_floor"}
+        ):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:minimum_internal_coherence_failure_not_recorded"
+            )
+        coherence_margin = row.get("coherence_margin")
+        if isinstance(coherence_margin, (int, float)) and isinstance(
+            thresholds.get("minimum_coherence_margin_floor"), (int, float)
+        ) and coherence_margin < thresholds[
+            "minimum_coherence_margin_floor"
+        ] and not text_contains(
+            failed_requirements, {"minimum_coherence_margin_floor"}
+        ):
+            errors.append(
+                "challenge_sweep_contract:"
+                f"row_{index}:minimum_coherence_margin_failure_not_recorded"
+            )
+
+    if len(canonical_digests) != 1:
+        errors.append("challenge_sweep_contract:B2_digest_must_be_identical")
+
+    fixed_b2_audit = artifact.get("fixed_b2_audit")
+    reference_metrics = (
+        fixed_b2_audit.get("canonical_b2_reference_metrics")
+        if isinstance(fixed_b2_audit, dict)
+        else None
+    )
+    c0 = by_class.get("C0")
+    if not isinstance(reference_metrics, dict) or not isinstance(c0, dict):
+        errors.append("challenge_sweep_contract:C0_reference_metrics_missing")
+    else:
+        c0_metrics = (
+            c0.get("source_current", {})
+            .get("challenge_transform", {})
+            .get("metrics", {})
+        )
+        for field, expected_value in reference_metrics.items():
+            if field == "minimum_internal_support":
+                actual_value = c0_metrics.get(field)
+            else:
+                actual_value = c0.get(field)
+            if actual_value != expected_value:
+                errors.append(
+                    "challenge_sweep_contract:"
+                    f"C0_metric_{field}_must_match_i3_B2_reference"
+                )
+
+    c2 = by_class.get("C2")
+    if not isinstance(c2, dict):
+        errors.append("challenge_sweep_contract:C2_missing")
+    else:
+        if c2.get("external_state_role") != "coupling_channel":
+            errors.append(
+                "challenge_sweep_contract:C2_external_role_must_be_coupling_channel"
+            )
+        c2_perturbation = c2.get("external_perturbation_descriptor")
+        if not isinstance(c2_perturbation, dict) or c2_perturbation.get(
+            "perturbation_present"
+        ) is not False:
+            errors.append(
+                "challenge_sweep_contract:"
+                "C2_perturbation_present_must_remain_false_for_directional_flux"
+            )
+
+    c3 = by_class.get("C3")
+    if not isinstance(c3, dict) or c3.get(
+        "external_state_role"
+    ) != "structured_external_state":
+        errors.append("challenge_sweep_contract:C3_must_remain_structured_external")
+
+    c4 = by_class.get("C4")
+    if isinstance(c4, dict) and text_contains(
+        c4.get("boundary_classification"), {"b3"}
+    ) and not text_contains(c4.get("requirements_failed"), {"b3"}):
+        errors.append(
+            "challenge_sweep_contract:C4_b3_reference_requires_extension_blocker"
+        )
+
+    c5 = by_class.get("C5")
+    if isinstance(c5, dict) and c5.get("row_decision") == "supported":
+        errors.append("challenge_sweep_contract:C5_must_not_close_B4_separability")
+    if isinstance(c5, dict):
+        c5_source_current = c5.get("source_current")
+        synthetic_neighbor = (
+            c5_source_current.get("synthetic_neighbor_basin")
+            if isinstance(c5_source_current, dict)
+            else None
+        )
+        if not isinstance(synthetic_neighbor, dict) or synthetic_neighbor.get(
+            "status"
+        ) != "synthetic_shared_medium_stressor":
+            errors.append(
+                "challenge_sweep_contract:"
+                "C5_synthetic_neighbor_must_be_documented_as_stressor"
+            )
+
+
 def validate(artifact: dict[str, Any], schema: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     validate_required_fields(artifact, schema, errors)
@@ -433,6 +815,8 @@ def validate(artifact: dict[str, Any], schema: dict[str, Any]) -> list[str]:
     validate_source_digest_presence(artifact, errors)
     validate_digest_reproducibility(artifact, errors)
     validate_absolute_path_absence(artifact, errors)
+    validate_quiet_calibration(artifact, errors)
+    validate_challenge_sweep(artifact, errors)
     return errors
 
 

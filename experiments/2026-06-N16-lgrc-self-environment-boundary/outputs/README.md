@@ -6,11 +6,11 @@ Generated artifacts:
 
 - `n16_boundary_source_inventory.json`
 - `n16_boundary_schema_v1.json`
+- `n16_quiet_boundary_calibration.json`
+- `n16_challenge_sweep_matrix.json`
 
 Planned artifacts:
 
-- `n16_quiet_boundary_calibration.json`
-- `n16_challenge_sweep_matrix.json`
 - `n16_boundary_state_sweep_matrix.json`
 - `n16_selected_interaction_probe_matrix.json`
 - `n16_basin_boundary_requirements_matrix.json`

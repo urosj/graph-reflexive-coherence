@@ -215,7 +215,7 @@ Artifact SHA-256:
 outputs/n16_boundary_schema_v1.json 5233806d2f004c65c33c0048ada798d062eecb7939c773f2486d613c58ff2df2
 reports/n16_boundary_schema_v1.md ffcabb791576bd16e7d1696e1dc52af07b09bd991798b726d49c12b6fcfb77e3
 scripts/build_n16_boundary_schema_v1.py 516aa8350de16c5fd2f4d9b5afc4d26ab1dd8431da87502350591b041dc368f1
-scripts/validate_n16_row.py 907bb12b0851b004a33c37bda6f3ecf8d41a1132a2411cfbf9d27a6f3bcb96e6
+scripts/validate_n16_row.py 64662fdc1f4bbec40b8ff54653408e2cc20613c469225858a61d6d84f53c121e
 configs/n16_source_registry.json 16277a9681f90a6a0393616160602573dd8e2441faf6fd7cdfb49480de95d538
 configs/n16_boundary_policy_v1.json e1f4e35441801224f0d2fbea39c26cb2228eeb2c4c2b284909cf276b0d4c06d8
 configs/n16_budget_limits_v1.json 47319a6391156d3ea2123ce0629dc00d7362c011d37cfa2b6953e1f818656bc5
@@ -253,45 +253,144 @@ resource assimilation claims.
 
 ## Iteration 3. Quiet Boundary Calibration
 
-- [ ] Run B0 null / external coherence only under C0 quiet reference.
-- [ ] Run B1 localized basin partition under C0 quiet reference.
-- [ ] Run B2 support-persistent basin under C0 quiet reference.
-- [ ] Confirm boundary edge extraction for B1/B2.
-- [ ] Confirm inside/outside partition for B1/B2.
-- [ ] Measure minimum basin coherence/support needed for detectable
+- [x] Run B0 null / external coherence only under C0 quiet reference.
+- [x] Run B1 localized basin partition under C0 quiet reference.
+- [x] Run B2 support-persistent basin under C0 quiet reference.
+- [x] Confirm boundary edge extraction for B1/B2.
+- [x] Confirm inside/outside partition for B1/B2.
+- [x] Measure minimum basin coherence/support needed for detectable
       persistence.
-- [ ] Populate the common matrix-cell report schema.
-- [ ] Confirm no externally supplied boundary label is used.
-- [ ] Keep AP level provisional.
+- [x] Populate the common matrix-cell report schema.
+- [x] Confirm no externally supplied boundary label is used.
+- [x] Keep AP level provisional.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_quiet_boundary_calibration.json`
-- [ ] `reports/n16_quiet_boundary_calibration.md`
-- [ ] `scripts/build_n16_quiet_boundary_calibration.py`
+- [x] `outputs/n16_quiet_boundary_calibration.json`
+- [x] `reports/n16_quiet_boundary_calibration.md`
+- [x] `scripts/build_n16_quiet_boundary_calibration.py`
+
+Output digest:
+
+```text
+863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_quiet_boundary_calibration.json 625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297
+reports/n16_quiet_boundary_calibration.md 659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554
+scripts/build_n16_quiet_boundary_calibration.py 366642c3585d6450685aec8e52209ff8ac172c2e157943a74519ef5d9aff80d9
+scripts/validate_n16_row.py 64662fdc1f4bbec40b8ff54653408e2cc20613c469225858a61d6d84f53c121e
+```
+
+Acceptance state:
+
+```text
+accepted_quiet_boundary_calibration_no_ap6
+```
+
+Interpretation:
+
+```text
+Iteration 3 is a quiet calibration artifact, not AP6 proof. It populates B0,
+B1, and B2 under C0 using the frozen common row schema. B0 is rejected as
+boundary support because external coherence alone produces no derived
+internal side, no partition, and no boundary edge. B1 extracts a derived
+inside/outside partition and cross-side boundary edge, but remains only a
+localized partition candidate and does not claim persistence; its leakage
+ratio and coherence-margin threshold breaches are recorded explicitly. B2
+adds quiet window stability beyond B1 by preserving derived side assignments
+and boundary edges across the configured C0 window, while recording minimum
+internal support, coherence, coherence-margin, and leakage baselines for
+later challenge interpretation. Review hardening adds a single coherence-
+margin floor constant, primary/fallback/none classification-path recording,
+uniform crossing-trace and retained-flux typing, non-null source-artifact
+status, B2 cross-snapshot stability reporting, idempotency digest
+self-verification, and Iteration 3-specific validator checks for C0-only
+calibration, B0 rejection, B2 multi-snapshot persistence, and final AP6
+closure blocking. All boundary-side assignments are derived from support,
+coherence, and basin-signal thresholds; no trusted external boundary label
+is supplied. All boundary claims and final AP6 flags remain false, and
+challenge robustness, full negative controls, replay matrix, and claim
+classification remain missing.
+```
 
 ## Iteration 4. Challenge-Class Sweep
 
-- [ ] Treat Iteration 4 as the N16-MVP core result.
-- [ ] Run B2 x C0 quiet reference.
-- [ ] Run B2 x C1 unstructured perturbation.
-- [ ] Run B2 x C2 directional flux.
-- [ ] Run B2 x C3 structured external coherence.
-- [ ] Run B2 x C4 breach and repair.
-- [ ] Run B2 x C5 coupled neighbor / shared medium.
-- [ ] Measure noise tolerance.
-- [ ] Measure flux tolerance.
-- [ ] Measure structured-external-coherence rejection pressure.
-- [ ] Measure breach/reclosure pressure.
-- [ ] Measure shared-medium leakage pressure.
-- [ ] Emit MVP requirement summary even if Iterations 5-6 are deferred.
-- [ ] Populate the common matrix-cell report schema.
+- [x] Treat Iteration 4 as the N16-MVP core result.
+- [x] Run B2 x C0 quiet reference.
+- [x] Run B2 x C1 unstructured perturbation.
+- [x] Run B2 x C2 directional flux.
+- [x] Run B2 x C3 structured external coherence.
+- [x] Run B2 x C4 breach and repair.
+- [x] Run B2 x C5 coupled neighbor / shared medium.
+- [x] Measure noise tolerance.
+- [x] Measure flux tolerance.
+- [x] Measure structured-external-coherence rejection pressure.
+- [x] Measure breach/reclosure pressure.
+- [x] Measure shared-medium leakage pressure.
+- [x] Emit MVP requirement summary even if Iterations 5-6 are deferred.
+- [x] Populate the common matrix-cell report schema.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_challenge_sweep_matrix.json`
-- [ ] `reports/n16_challenge_sweep_matrix.md`
-- [ ] `scripts/build_n16_challenge_sweep_matrix.py`
+- [x] `outputs/n16_challenge_sweep_matrix.json`
+- [x] `reports/n16_challenge_sweep_matrix.md`
+- [x] `reports/n16_challenge_sweep_interpretation.md`
+- [x] `scripts/build_n16_challenge_sweep_matrix.py`
+
+Output digest:
+
+```text
+b91d7bb77fd0053d9995a05a11571471a9338c0ce6b63909ca5021d429ce9d77
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_challenge_sweep_matrix.json b2e7f8b37966ccc781e26f294cec89a5fc5a21d902fbe52afb7b7cfaf6699834
+reports/n16_challenge_sweep_matrix.md e8a399461c76d4fa54fc95d2cc8998c123e6faa1c1180ebd8539b3e68d3295b7
+reports/n16_challenge_sweep_interpretation.md dac629e0d86f835b9187a7b5d31c6a39097c20c35bcba1b39ecf5e3b77e0fe76
+scripts/build_n16_challenge_sweep_matrix.py f26b6dd64581f28628c2bd94c478a5f58704461a7e5987d7a091f41b69d9a04c
+scripts/validate_n16_row.py 64662fdc1f4bbec40b8ff54653408e2cc20613c469225858a61d6d84f53c121e
+```
+
+Acceptance state:
+
+```text
+accepted_b2_challenge_sweep_partial_mvp_no_ap6
+```
+
+Interpretation:
+
+```text
+Iteration 4 is the first N16 MVP scientific result. It holds the Iteration 3
+B2 support-persistent basin fixed across C0-C5 and changes only the challenge
+class. C0 is the within-sweep quiet anchor. C1 supports bounded unstructured
+noise tolerance only. C2 is partial because directional flux keeps the
+boundary measurable but exceeds leakage and support/coherence floors. C3
+supports structured external false-positive rejection while preserving
+structured_external_state as external, not self-region or perturbation by
+default. C4 is partial breach/reclosure pressure and explicitly does not
+promote B2 into B3 repair/reabsorption. C5 rejects B2 sufficiency under
+shared-medium pressure and points to later B4 x C5 separability evidence.
+The artifact emits a partial MVP requirement summary with failed
+requirements as first-class results and records the numeric challenge
+thresholds in JSON. The separate interpretation report records the important
+requirements split: B2 is sufficient for C0/C1/C3, partial for C2/C4, and
+rejected for C5. It also records the double checks: B2 digest recomputation
+matches the fixed audit, side assignments are intentionally fixed for
+Iteration 4, thresholds are JSON-recorded, and C5 is preserved as a reference
+negative result. Review hardening records metric construction rationale,
+challenge pressure rationale, stable Iteration 3 output-digest provenance,
+C2 coupling-channel semantics, C4/C5 general threshold failures, the synthetic
+C5 neighbor-basin stressor boundary, and validator coverage for those checks.
+Iteration 4 keeps all boundary claims and final AP6 flags false, and leaves
+Iterations 5-6, full controls, replay closeout, and claim classification
+pending.
+```
 
 ## Iteration 5. Boundary-State Sweep
 

@@ -571,8 +571,44 @@ replay_policy = configs/n16_replay_policy_v1.json
 audit_invariants = 12 frozen safeguards
 ```
 
-No candidate row, control matrix, replay matrix, or challenge-class matrix has
-been generated yet. Final `AP6` remains unassigned.
+Iteration 3 - Quiet Boundary Calibration:
+
+```text
+status = passed
+acceptance_state = accepted_quiet_boundary_calibration_no_ap6
+quiet_boundary_calibration = outputs/n16_quiet_boundary_calibration.json
+quiet_boundary_calibration_report = reports/n16_quiet_boundary_calibration.md
+B0_C0 = rejected active null
+B1_C0 = localized partition candidate only
+B2_C0 = support-persistent basin under C0 only
+final_ap6_supported = false
+```
+
+The first row-bearing artifact has been generated. It calibrates the frozen
+boundary machinery under `C0` quiet reference only.
+
+Iteration 4 - Challenge-Class Sweep:
+
+```text
+status = passed
+acceptance_state = accepted_b2_challenge_sweep_partial_mvp_no_ap6
+challenge_sweep_matrix = outputs/n16_challenge_sweep_matrix.json
+challenge_sweep_report = reports/n16_challenge_sweep_matrix.md
+challenge_sweep_interpretation = reports/n16_challenge_sweep_interpretation.md
+B2_C0 = supported within-sweep quiet anchor
+B2_C1 = supported noise tolerance only
+B2_C2 = partial directional flux pressure
+B2_C3 = supported structured external false-positive rejection
+B2_C4 = partial breach/reclosure pressure, not B3 repair
+B2_C5 = rejected shared-medium pressure, not B4 separability
+final_ap6_supported = false
+```
+
+Iteration 4 is the first N16 MVP scientific result. It holds the Iteration 3
+`B2` basin fixed across `C0-C5` and emits a partial MVP requirement summary.
+The boundary-state sweep, selected interaction probes, full control matrix,
+and final claim classification are still pending. Final `AP6` remains
+unassigned.
 
 ## Directory Structure
 

@@ -6,11 +6,12 @@ Generated reports:
 
 - `n16_boundary_source_inventory.md`
 - `n16_boundary_schema_v1.md`
+- `n16_quiet_boundary_calibration.md`
+- `n16_challenge_sweep_matrix.md`
+- `n16_challenge_sweep_interpretation.md`
 
 Planned reports:
 
-- `n16_quiet_boundary_calibration.md`
-- `n16_challenge_sweep_matrix.md`
 - `n16_boundary_state_sweep_matrix.md`
 - `n16_selected_interaction_probe_matrix.md`
 - `n16_basin_boundary_requirements_matrix.md`

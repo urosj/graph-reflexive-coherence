@@ -1,0 +1,4094 @@
+{
+  "acceptance_state": "accepted_b2_challenge_sweep_partial_mvp_no_ap6",
+  "artifact_id": "n16_challenge_sweep_matrix",
+  "audit_list": [
+    "B2 held fixed across C0-C5",
+    "C0 included as within-sweep anchor",
+    "C1 limited to unstructured perturbation",
+    "C2 records directional flux pressure",
+    "C3 records structured external false-positive rejection",
+    "C4 records breach/reclosure pressure without B3 promotion",
+    "C5 records shared-medium pressure without B4 promotion",
+    "requirements_failed recorded as first-class results",
+    "row decisions independent from final AP6 support",
+    "challenge-class boundaries preserved",
+    "final AP6 remains blocked",
+    "partial MVP summary emitted"
+  ],
+  "c2_external_role_rationale": {
+    "external_state_role": "coupling_channel",
+    "perturbation_present_semantics": "the field marks unstructured or localized perturbation pressure; C2 records directional_flux_pressure separately",
+    "reason": "C2 is directed flow across/against the boundary, so the external state role is a coupling channel rather than unstructured perturbation"
+  },
+  "challenge_pressure_rationale": {
+    "C0": "zero pressure anchor used for within-sweep comparison",
+    "C1": "noise_amplitude 0.08 is a bounded MVP perturbation point that should not substitute for flux, breach, or shared-medium evidence",
+    "C2": "directional_flux_pressure 0.34 is the fixed hard C2 stressor for Iteration 4 and Iteration 5 comparison; it is high enough to expose leakage while leaving the boundary measurable",
+    "C3": "structured_external_coherence_pressure 0.92 creates strong coherent outside false-positive pressure without crossing or disruption",
+    "C4": "breach_pressure 0.38 creates partial reclosure pressure below the B3 repair/reabsorption claim boundary",
+    "C5": "shared_medium_pressure 0.44 creates a reference shared-medium failure for B2 and motivates the later B4 x C5 probe"
+  },
+  "challenge_thresholds": {
+    "breach_reclosure_floor": 0.7,
+    "flux_leakage_warning": 0.12,
+    "internal_coherence_floor": 0.84,
+    "internal_support_floor": 0.85,
+    "minimum_coherence_margin_floor": 0.52,
+    "quiet_leakage_ceiling": 0.12,
+    "shared_medium_basin_separation_floor": 0.7
+  },
+  "checks": {
+    "all_boundary_claims_false": true,
+    "all_rows_hold_b2_fixed": true,
+    "c0_metrics_match_i3_b2_reference": true,
+    "c0_within_sweep_anchor_present": true,
+    "c1_limited_to_noise_tolerance": true,
+    "c2_external_state_role_is_coupling_channel": true,
+    "c2_flux_pressure_measured": true,
+    "c3_structured_false_positive_rejected": true,
+    "c4_breach_not_promoted_to_b3": true,
+    "c4_general_threshold_failures_recorded": true,
+    "c5_general_threshold_failures_recorded": true,
+    "c5_shared_medium_not_promoted_to_b4": true,
+    "challenge_classes_c0_to_c5_present": true,
+    "i3_output_digest_matches_acceptance": true,
+    "mvp_keeps_ap6_provisional": true,
+    "requirements_failed_recorded_for_every_row": true,
+    "row_count_is_six": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "artifact_level_ap6_supported": false,
+    "biological_behavior_claim_allowed": false,
+    "final_ap6_supported": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "personhood_claim_allowed": false,
+    "phase8_opened": false,
+    "resource_assimilation_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selective_uptake_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/build_n16_challenge_sweep_matrix.py",
+  "controls": {
+    "artifact_only_replay_control": {
+      "expected_blocker": "artifact_replay_instability_blocks_ap6",
+      "expected_status": "stable",
+      "status": "deterministic_builder_replay_ready"
+    },
+    "boundary_drift_outside_policy_control": {
+      "expected_blocker": "boundary_drift_outside_policy_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "externally_supplied_boundary_control": {
+      "expected_blocker": "externally_supplied_boundary_blocked",
+      "expected_status": "blocked",
+      "status": "checked_i4_passed"
+    },
+    "hidden_external_state_injection_control": {
+      "expected_blocker": "hidden_external_state_injection_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "identity_acceptance_relabel_control": {
+      "expected_blocker": "identity_acceptance_relabel_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "missing_boundary_side_state_control": {
+      "expected_blocker": "missing_boundary_side_state_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "multi_basin_merge_control": {
+      "expected_blocker": "multi_basin_merge_or_leakage_recorded",
+      "expected_status": "blocked_or_recorded_failure",
+      "observed": "C5 records B2 shared-medium merge/leakage pressure",
+      "status": "recorded_failure_i4"
+    },
+    "native_support_relabel_control": {
+      "expected_blocker": "native_support_relabel_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "order_inversion_replay_control": {
+      "expected_blocker": "order_inversion_instability_blocks_ap6",
+      "expected_status": "stable",
+      "status": "deferred_before_final_ap6"
+    },
+    "post_hoc_boundary_label_control": {
+      "expected_blocker": "post_hoc_boundary_label_blocked",
+      "expected_status": "blocked",
+      "status": "checked_i4_passed"
+    },
+    "resource_relabel_as_self_control": {
+      "expected_blocker": "resource_relabel_as_self_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "self_support_relabel_as_external_control": {
+      "expected_blocker": "self_support_relabel_as_external_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "selfhood_personhood_relabel_control": {
+      "expected_blocker": "selfhood_personhood_relabel_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "semantic_goal_ownership_relabel_control": {
+      "expected_blocker": "semantic_goal_ownership_relabel_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "snapshot_load_replay_control": {
+      "expected_blocker": "snapshot_load_instability_blocks_ap6",
+      "expected_status": "stable",
+      "status": "deferred_before_final_ap6"
+    },
+    "stale_external_state_control": {
+      "expected_blocker": "stale_external_state_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "stale_internal_state_control": {
+      "expected_blocker": "stale_internal_state_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    },
+    "structured_external_coherence_rejection_control": {
+      "expected_blocker": "structured_external_coherence_false_boundary_blocked",
+      "expected_status": "blocked_or_rejected",
+      "observed": "C3 rejected false-positive structured external coherence",
+      "status": "checked_i4_passed"
+    },
+    "untracked_boundary_crossing_control": {
+      "expected_blocker": "untracked_boundary_crossing_blocked",
+      "expected_status": "blocked",
+      "status": "deferred_before_final_ap6"
+    }
+  },
+  "deferred_iterations": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+  ],
+  "errors": [],
+  "experiment": "N16",
+  "final_ap6_closeout_allowed": false,
+  "fixed_b2_audit": {
+    "B2_fixed_across_challenges": true,
+    "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+    "canonical_b2_reference_metrics": {
+      "boundary_stability_score": 1.0,
+      "coherence_margin": 0.53,
+      "external_coherence": 0.35,
+      "internal_coherence": 0.88,
+      "leakage_ratio": 0.061644,
+      "minimum_internal_support": 0.86,
+      "retained_flux": 1.46
+    },
+    "canonical_b2_source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+    "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+    "only_challenge_class_changes": true,
+    "post_challenge_drift_surface_deferred_to": [
+      "5",
+      "6"
+    ],
+    "same_admissibility_rules": true,
+    "same_boundary_policy": true,
+    "same_boundary_side_assignments": true,
+    "same_boundary_side_assignments_intent": "Iteration 4 tests challenge response against the initial fixed B2 boundary-side assignment; post-challenge drift, leakage, and merge pressure are measured as effects rather than by silently changing the canonical assignment"
+  },
+  "generated_at": "2026-06-17T00:00:00+00:00",
+  "git": {
+    "head": "32a77fcbfb4790a861f06c7c8ce1f9b21772c086",
+    "status_short": "M experiments/2026-06-N16-lgrc-self-environment-boundary/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/implementation/SelfEnvironmentBoundaryImplementationChecklist.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/reports/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/validate_n16_row.py\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_challenge_sweep_matrix.json\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_challenge_sweep_interpretation.md\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_challenge_sweep_matrix.md\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/build_n16_challenge_sweep_matrix.py\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/build_n16_quiet_boundary_calibration.py"
+  },
+  "included_iterations": [
+    "1",
+    "2",
+    "3",
+    "4"
+  ],
+  "iteration": "4",
+  "iteration_result": {
+    "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+    "challenge_sweep_passed": true,
+    "final_ap6_supported": false,
+    "matrix_rows_generated": true,
+    "partial_mvp_summary_available": true,
+    "row_count": 6
+  },
+  "metric_construction_rationale": {
+    "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+    "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+    "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+    "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+    "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+    "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+    "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+    "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+    "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+  },
+  "mvp_requirement_summary": {
+    "challenge_status": {
+      "C0": {
+        "boundary_classification": "within_sweep_quiet_b2_anchor",
+        "failure_mode": "not_applicable",
+        "requirements_failed": [
+          "challenge_classes_not_tested_by_c0_anchor"
+        ],
+        "row_decision": "supported"
+      },
+      "C1": {
+        "boundary_classification": "b2_noise_tolerance_supported",
+        "failure_mode": "not_applicable",
+        "requirements_failed": [
+          "noise_tolerance_does_not_substitute_for_flux_tolerance",
+          "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+        ],
+        "row_decision": "supported"
+      },
+      "C2": {
+        "boundary_classification": "b2_flux_pressure_partial",
+        "failure_mode": "directional_flux_leakage_exceeds_quiet_ceiling",
+        "requirements_failed": [
+          "quiet_leakage_ceiling_exceeded_under_directional_flux",
+          "minimum_internal_support_floor_not_preserved_under_flux",
+          "minimum_coherence_margin_floor_not_preserved_under_flux"
+        ],
+        "row_decision": "partial"
+      },
+      "C3": {
+        "boundary_classification": "structured_external_false_positive_rejected",
+        "failure_mode": "not_applicable",
+        "requirements_failed": [
+          "C3_success_is_not_flux_tolerance",
+          "C3_success_is_not_resource_assimilation"
+        ],
+        "row_decision": "supported"
+      },
+      "C4": {
+        "boundary_classification": "b2_breach_reclosure_partial_not_b3",
+        "failure_mode": "breach_pressure_exposes_need_for_b3_repair_probe",
+        "requirements_failed": [
+          "regulated_repair_not_supported_for_B2",
+          "reclosure_score_below_breach_reclosure_floor",
+          "B3_repair_reabsorption_probe_required",
+          "quiet_leakage_ceiling_exceeded_under_breach_pressure",
+          "minimum_internal_support_floor_not_preserved_under_breach_pressure",
+          "minimum_coherence_margin_floor_not_preserved_under_breach_pressure"
+        ],
+        "row_decision": "partial"
+      },
+      "C5": {
+        "boundary_classification": "b2_shared_medium_pressure_rejected",
+        "failure_mode": "shared_medium_leakage_and_merge_pressure_exceed_B2_policy",
+        "requirements_failed": [
+          "basin_separation_score_below_shared_medium_floor",
+          "shared_medium_leakage_exceeds_B2_policy",
+          "B2_insufficient_for_multi_basin_shared_medium",
+          "quiet_leakage_ceiling_exceeded_under_shared_medium",
+          "minimum_internal_support_floor_not_preserved_under_shared_medium",
+          "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+          "minimum_coherence_margin_floor_not_preserved_under_shared_medium"
+        ],
+        "row_decision": "rejected"
+      }
+    },
+    "claim_boundary": "Iteration 4 is the first N16 MVP challenge result but not final AP6 closeout; Iterations 5-6 and final controls remain deferred",
+    "extension_recommendations": [
+      "B3 x C4 needed for regulated repair/reabsorption evidence",
+      "B4 x C5 needed for shared-medium multi-basin separability"
+    ],
+    "final_ap6_closeout_allowed": false,
+    "noise_amplitude_scope": "C1 tests a single MVP noise point at amplitude 0.08; it does not map the full noise tolerance boundary",
+    "requirements_failed": [
+      "B2_insufficient_for_multi_basin_shared_medium",
+      "B3_repair_reabsorption_probe_required",
+      "C3_success_is_not_flux_tolerance",
+      "C3_success_is_not_resource_assimilation",
+      "basin_separation_score_below_shared_medium_floor",
+      "challenge_classes_not_tested_by_c0_anchor",
+      "minimum_coherence_margin_floor_not_preserved_under_breach_pressure",
+      "minimum_coherence_margin_floor_not_preserved_under_flux",
+      "minimum_coherence_margin_floor_not_preserved_under_shared_medium",
+      "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+      "minimum_internal_support_floor_not_preserved_under_breach_pressure",
+      "minimum_internal_support_floor_not_preserved_under_flux",
+      "minimum_internal_support_floor_not_preserved_under_shared_medium",
+      "noise_tolerance_does_not_substitute_for_flux_tolerance",
+      "noise_tolerance_does_not_substitute_for_repair_or_shared_medium",
+      "quiet_leakage_ceiling_exceeded_under_breach_pressure",
+      "quiet_leakage_ceiling_exceeded_under_directional_flux",
+      "quiet_leakage_ceiling_exceeded_under_shared_medium",
+      "reclosure_score_below_breach_reclosure_floor",
+      "regulated_repair_not_supported_for_B2",
+      "shared_medium_leakage_exceeds_B2_policy"
+    ],
+    "requirements_failed_by_challenge": {
+      "C0": [
+        "challenge_classes_not_tested_by_c0_anchor"
+      ],
+      "C1": [
+        "noise_tolerance_does_not_substitute_for_flux_tolerance",
+        "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+      ],
+      "C2": [
+        "quiet_leakage_ceiling_exceeded_under_directional_flux",
+        "minimum_internal_support_floor_not_preserved_under_flux",
+        "minimum_coherence_margin_floor_not_preserved_under_flux"
+      ],
+      "C3": [
+        "C3_success_is_not_flux_tolerance",
+        "C3_success_is_not_resource_assimilation"
+      ],
+      "C4": [
+        "regulated_repair_not_supported_for_B2",
+        "reclosure_score_below_breach_reclosure_floor",
+        "B3_repair_reabsorption_probe_required",
+        "quiet_leakage_ceiling_exceeded_under_breach_pressure",
+        "minimum_internal_support_floor_not_preserved_under_breach_pressure",
+        "minimum_coherence_margin_floor_not_preserved_under_breach_pressure"
+      ],
+      "C5": [
+        "basin_separation_score_below_shared_medium_floor",
+        "shared_medium_leakage_exceeds_B2_policy",
+        "B2_insufficient_for_multi_basin_shared_medium",
+        "quiet_leakage_ceiling_exceeded_under_shared_medium",
+        "minimum_internal_support_floor_not_preserved_under_shared_medium",
+        "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+        "minimum_coherence_margin_floor_not_preserved_under_shared_medium"
+      ]
+    },
+    "requirements_observed": [
+      "B2 can record breach pressure but does not yet support B3 repair/reabsorption",
+      "B2 is insufficient for C5 shared-medium pressure without B4-style separability evidence",
+      "B2 needs stronger retention or lower leakage to survive C2 cleanly",
+      "B2 tolerates bounded unstructured perturbation at noise_amplitude_0.08",
+      "C0 baseline supports comparison but does not prove robustness",
+      "directional flux is the first hard boundary-pressure requirement",
+      "structured external coherence must remain external unless crossing or disruption is recorded"
+    ],
+    "requirements_observed_by_challenge": {
+      "C0": [
+        "C0 baseline supports comparison but does not prove robustness"
+      ],
+      "C1": [
+        "B2 tolerates bounded unstructured perturbation at noise_amplitude_0.08"
+      ],
+      "C2": [
+        "B2 needs stronger retention or lower leakage to survive C2 cleanly",
+        "directional flux is the first hard boundary-pressure requirement"
+      ],
+      "C3": [
+        "structured external coherence must remain external unless crossing or disruption is recorded"
+      ],
+      "C4": [
+        "B2 can record breach pressure but does not yet support B3 repair/reabsorption"
+      ],
+      "C5": [
+        "B2 is insufficient for C5 shared-medium pressure without B4-style separability evidence"
+      ]
+    },
+    "synthesis_mode": "partial_mvp",
+    "where_b2_is_partial": [
+      "C2",
+      "C4"
+    ],
+    "where_b2_is_rejected": [
+      "C5"
+    ],
+    "where_b2_remains_bounded": [
+      "C0",
+      "C1",
+      "C3"
+    ]
+  },
+  "output_digest": "b91d7bb77fd0053d9995a05a11571471a9338c0ce6b63909ca5021d429ce9d77",
+  "purpose": "fixed_b2_challenge_class_sweep",
+  "quiet_calibration_source_provenance": {
+    "accepted_output_digest": "863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1",
+    "current_file_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+    "current_output_digest": "863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1",
+    "file_sha_policy": "file SHA-256 is recorded for the current artifact bytes; semantic provenance uses output_digest because generated_at and git metadata are excluded from the stable digest",
+    "output_digest_matches_acceptance": true
+  },
+  "rows": [
+    {
+      "ap5_contribution_status": "context_only_not_promoted",
+      "ap6_required_evidence_still_missing": [
+        "B0_B4_boundary_state_sweep",
+        "B3_repair_reabsorption_probe",
+        "B4_shared_medium_separability_probe",
+        "final_control_matrix",
+        "final_claim_classification"
+      ],
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify each B2 challenge row by the narrow C-class pressure it actually tests; do not let a row substitute for another challenge",
+        "cultivation_of_becoming": "cultivate reusable requirement rows and fail-closed extension blockers before B3/B4 maturity probes",
+        "interrogation_of_becoming": "hold canonical B2 fixed and ask bounded questions about noise, flux, structured external coherence, breach pressure, and shared-medium pressure",
+        "naturalization_of_becoming": "treat observed requirements as artifact-level boundary requirements, not native support or self/environment understanding"
+      },
+      "artifact_only_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "artifact_only_replay_status": "deterministic_builder_replay_ready",
+      "basin_count": 1,
+      "basin_descriptor": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C0",
+        "challenge_name": "quiet reference",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "extension_target": "not_applicable"
+      },
+      "basin_separation_score": 1.0,
+      "blocked_claims": [
+        "final_ap6",
+        "selfhood",
+        "personhood",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "intention",
+        "semantic_choice",
+        "agency",
+        "unrestricted_agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selective_uptake_or_resource_assimilation",
+        "organism_or_life_claim",
+        "B3_repair_capability",
+        "B4_multi_basin_separability"
+      ],
+      "boundary_claim_allowed": false,
+      "boundary_classification": "within_sweep_quiet_b2_anchor",
+      "boundary_condition_evaluated_at": "B2_C0_challenge_sweep",
+      "boundary_crossing_trace": [
+        {
+          "challenge_class": "C0",
+          "event": "fixed_b2_boundary_edge",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_drift_outside_policy_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "boundary_edges": [
+        {
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_policy": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_sweep_policy": "same_B2_policy_only_challenge_class_changes",
+        "inherits": "n16_boundary_policy_v1",
+        "policy_id": "n16_i3_quiet_boundary_calibration_policy",
+        "quiet_leakage_ceiling": 0.12,
+        "quiet_stability_floor": 0.9,
+        "side_derivation": "derived_from_support_coherence_and_basin_signal_thresholds;no externally supplied self or external labels"
+      },
+      "boundary_side_assignments": {
+        "b2_q0": "derived_internal_side",
+        "b2_q1": "derived_internal_side",
+        "b2_q2": "derived_internal_side",
+        "b2_q3": "derived_external_side",
+        "b2_q4": "derived_external_side"
+      },
+      "boundary_stability_score": 1.0,
+      "boundary_state": "B2",
+      "boundary_state_constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "boundary_state_inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "boundary_state_lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "boundary_state_relevance": [
+        "B2"
+      ],
+      "boundary_state_unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ],
+      "boundary_surface": {
+        "canonical_b2_boundary_surface": {
+          "classification_path": "primary_floor",
+          "external_edges": [
+            {
+              "left": "b2_q3",
+              "left_side": "derived_external_side",
+              "right": "b2_q4",
+              "right_side": "derived_external_side",
+              "weight": 0.37
+            }
+          ],
+          "internal_edges": [
+            {
+              "left": "b2_q0",
+              "left_side": "derived_internal_side",
+              "right": "b2_q1",
+              "right_side": "derived_internal_side",
+              "weight": 0.74
+            },
+            {
+              "left": "b2_q1",
+              "left_side": "derived_internal_side",
+              "right": "b2_q2",
+              "right_side": "derived_internal_side",
+              "weight": 0.72
+            }
+          ],
+          "side_derivation": {
+            "b2_q0": "derived_internal_side",
+            "b2_q1": "derived_internal_side",
+            "b2_q2": "derived_internal_side",
+            "b2_q3": "derived_external_side",
+            "b2_q4": "derived_external_side"
+          },
+          "snapshot_id": "q0"
+        },
+        "challenge_boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "challenge_class": "C0"
+      },
+      "budget_cost_surface": {
+        "canonical_json_input_bytes": 2498,
+        "canonical_json_output_bytes": 972,
+        "matrix_cell_count": 1,
+        "replay_count": 1,
+        "source_row_count": 1,
+        "transform_count": 1,
+        "validation_count": 1,
+        "wall_clock_seconds": 0
+      },
+      "budget_units": [
+        "source_row_count",
+        "matrix_cell_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": "valid",
+      "case_id": "n16_i4_b2_c0_challenge_sweep",
+      "case_policy": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C0",
+        "challenge_name": "quiet reference",
+        "challenge_pressure_rationale": "zero pressure anchor used for within-sweep comparison",
+        "challenge_sweep_only": true,
+        "challenge_thresholds": {
+          "breach_reclosure_floor": 0.7,
+          "flux_leakage_warning": 0.12,
+          "internal_coherence_floor": 0.84,
+          "internal_support_floor": 0.85,
+          "minimum_coherence_margin_floor": 0.52,
+          "quiet_leakage_ceiling": 0.12,
+          "shared_medium_basin_separation_floor": 0.7
+        },
+        "external_boundary_labels_supplied": false,
+        "post_hoc_labels_allowed": false
+      },
+      "cell_id": "B2_C0",
+      "challenge_class": "C0",
+      "challenge_class_relevance": [
+        "C0"
+      ],
+      "claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "claim_ceiling_preserved": true,
+      "claim_promotion_allowed": false,
+      "coherence_margin": 0.53,
+      "dependency_trace": [
+        {
+          "boundary_side": "derived_internal_and_external_sides",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_side_assignments",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_side_assignments",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_fixed_b2_inheritance",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0"
+          }
+        },
+        {
+          "boundary_side": "boundary_side",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_edges",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_edges",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_edge_projection",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+            "challenge_class": "C0"
+          }
+        },
+        {
+          "boundary_side": "background",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "challenge_class",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "calibration_policy",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_transform",
+          "transform_parameters": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          }
+        }
+      ],
+      "direct_historic_ap6_support_status": "not_direct_ap6_support",
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "fixed_b2_challenge_sweep_from_i3_calibration",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "external_coherence": 0.35,
+      "external_perturbation_descriptor": {
+        "breach_pressure": 0.0,
+        "challenge_class": "C0",
+        "directional_flux_pressure": 0.0,
+        "noise_amplitude": 0.0,
+        "perturbation_present": false,
+        "shared_medium_pressure": 0.0
+      },
+      "external_region_nodes": [
+        "b2_q3",
+        "b2_q4"
+      ],
+      "external_resource_descriptor": {
+        "challenge_class": "C0",
+        "resource_role": "not_resource_assimilation",
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "external_state_role": "background",
+      "external_structured_state_descriptor": {
+        "crossing_or_disruption_recorded": false,
+        "structured_external_challenge_present": false,
+        "structured_external_pattern_coherence": 0.0,
+        "treated_as_perturbation": false
+      },
+      "externally_supplied_boundary_control": {
+        "result": "canonical B2 side assignments inherited from derived I3 row",
+        "status": "checked_i4_passed"
+      },
+      "failure_mode": "not_applicable",
+      "final_ap6_supported": false,
+      "flux_tolerance_score": 1.0,
+      "hidden_external_state_injection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "e9dd267e555bd335bccdd84f94dc6c75cf70ad1bc75b43c17397dd0a4980be38",
+        "same_inputs_same_digest_required": true,
+        "self_verified": true
+      },
+      "identity_acceptance_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "inbound_flux": 0.0,
+      "internal_coherence": 0.88,
+      "internal_state_descriptor": {
+        "basin_signal_floor": 0.7,
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_observed_minimum_internal_support": 0.86,
+        "classification_path": "primary_floor",
+        "coherence_floor": 0.84,
+        "coherence_margin_floor": 0.52,
+        "derived_internal_side_nodes": [
+          "b2_q0",
+          "b2_q1",
+          "b2_q2"
+        ],
+        "minimum_observed_internal_support": 0.86,
+        "support_floor": 0.85
+      },
+      "leakage_ratio": 0.061644,
+      "mechanism_name": "fixed_B2_challenge_sweep",
+      "mechanism_role": "challenge_response_requirements_discovery",
+      "missing_boundary_side_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "missing_gates": [
+        "boundary_state_sweep_missing",
+        "selected_interaction_probe_missing",
+        "full_negative_control_matrix_missing",
+        "duplicate_and_order_inversion_replay_missing",
+        "claim_boundary_classification_missing"
+      ],
+      "multi_basin_merge_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "native_boundary_requirements_observed": [
+        "C0 baseline supports comparison but does not prove robustness"
+      ],
+      "native_support_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "noise_resilience_score": 1.0,
+      "old_best_claim_inputs": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "order_inversion_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "order_inversion_replay_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "outbound_flux": 0.0,
+      "post_hoc_boundary_label_control": {
+        "result": "challenge decision follows fixed B2 definition and transform metrics",
+        "status": "checked_i4_passed"
+      },
+      "provisional_ap_level": "AP6_candidate_input_only",
+      "provisional_claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "repair_score": 0.0,
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "artifact_id": "n16_challenge_sweep_matrix",
+        "boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "boundary_side_assignments": {
+          "b2_q0": "derived_internal_side",
+          "b2_q1": "derived_internal_side",
+          "b2_q2": "derived_internal_side",
+          "b2_q3": "derived_external_side",
+          "b2_q4": "derived_external_side"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_class": "C0",
+        "challenge_pressure_rationale": "zero pressure anchor used for within-sweep comparison",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "metrics": {
+          "basin_separation_score": 1.0,
+          "boundary_stability_score": 1.0,
+          "coherence_margin": 0.53,
+          "external_coherence": 0.35,
+          "flux_tolerance_score": 1.0,
+          "inbound_flux": 0.0,
+          "internal_coherence": 0.88,
+          "leakage_ratio": 0.061644,
+          "minimum_internal_support": 0.86,
+          "noise_resilience_score": 1.0,
+          "outbound_flux": 0.0,
+          "repair_score": 0.0,
+          "retained_flux": 1.46
+        },
+        "policy_id": "n16_replay_digest_policy_v1",
+        "row_decision": "supported"
+      },
+      "required_n16_boundary_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "requirements_failed": [
+        "challenge_classes_not_tested_by_c0_anchor"
+      ],
+      "requirements_satisfied": [
+        "within_sweep_c0_anchor_present",
+        "canonical_b2_definition_held_fixed",
+        "quiet_baseline_reproduced"
+      ],
+      "resource_relabel_as_self_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "retained_flux": 1.46,
+      "role_classification_audit": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class_only_changed": true,
+        "claim_ceiling_preserved": true,
+        "status": "passed"
+      },
+      "row_decision": "supported",
+      "row_id": "n16_i4_row_b2_c0",
+      "runtime_state_surface_id": "n16_i4_fixed_b2_c0_surface",
+      "self_region_nodes": [
+        "b2_q0",
+        "b2_q1",
+        "b2_q2"
+      ],
+      "self_support_relabel_as_external_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "selfhood_personhood_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "semantic_goal_ownership_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "source_current": {
+        "B2_fixed": true,
+        "C2_external_role_rationale": "not_applicable",
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+        "challenge_pressure_rationale": "zero pressure anchor used for within-sweep comparison",
+        "challenge_transform": {
+          "boundary_classification": "within_sweep_quiet_b2_anchor",
+          "challenge_profile": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          },
+          "external_state_role": "background",
+          "failure_mode": "not_applicable",
+          "metrics": {
+            "basin_separation_score": 1.0,
+            "boundary_stability_score": 1.0,
+            "coherence_margin": 0.53,
+            "external_coherence": 0.35,
+            "flux_tolerance_score": 1.0,
+            "inbound_flux": 0.0,
+            "internal_coherence": 0.88,
+            "leakage_ratio": 0.061644,
+            "minimum_internal_support": 0.86,
+            "noise_resilience_score": 1.0,
+            "outbound_flux": 0.0,
+            "repair_score": 0.0,
+            "retained_flux": 1.46
+          },
+          "name": "quiet reference",
+          "requirements_failed": [
+            "challenge_classes_not_tested_by_c0_anchor"
+          ],
+          "requirements_observed": [
+            "C0 baseline supports comparison but does not prove robustness"
+          ],
+          "requirements_satisfied": [
+            "within_sweep_c0_anchor_present",
+            "canonical_b2_definition_held_fixed",
+            "quiet_baseline_reproduced"
+          ],
+          "row_decision": "supported"
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "source_experiment": "N16",
+      "source_iteration": "iteration_3_quiet_boundary_calibration",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "source_report_sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "source_status": "passed",
+      "stale_external_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "stale_internal_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "state_source_window": {
+        "challenge_pressure": "quiet reference",
+        "freshness": "source_current_for_iteration_4",
+        "snapshot_count": 3,
+        "window_id": "challenge_sweep_window"
+      },
+      "structured_external_coherence_rejection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "untracked_boundary_crossing_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      }
+    },
+    {
+      "ap5_contribution_status": "context_only_not_promoted",
+      "ap6_required_evidence_still_missing": [
+        "B0_B4_boundary_state_sweep",
+        "B3_repair_reabsorption_probe",
+        "B4_shared_medium_separability_probe",
+        "final_control_matrix",
+        "final_claim_classification"
+      ],
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify each B2 challenge row by the narrow C-class pressure it actually tests; do not let a row substitute for another challenge",
+        "cultivation_of_becoming": "cultivate reusable requirement rows and fail-closed extension blockers before B3/B4 maturity probes",
+        "interrogation_of_becoming": "hold canonical B2 fixed and ask bounded questions about noise, flux, structured external coherence, breach pressure, and shared-medium pressure",
+        "naturalization_of_becoming": "treat observed requirements as artifact-level boundary requirements, not native support or self/environment understanding"
+      },
+      "artifact_only_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "artifact_only_replay_status": "deterministic_builder_replay_ready",
+      "basin_count": 1,
+      "basin_descriptor": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C1",
+        "challenge_name": "unstructured perturbation",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.08,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "extension_target": "not_applicable"
+      },
+      "basin_separation_score": "not_evaluated_by_c1",
+      "blocked_claims": [
+        "final_ap6",
+        "selfhood",
+        "personhood",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "intention",
+        "semantic_choice",
+        "agency",
+        "unrestricted_agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selective_uptake_or_resource_assimilation",
+        "organism_or_life_claim",
+        "B3_repair_capability",
+        "B4_multi_basin_separability"
+      ],
+      "boundary_claim_allowed": false,
+      "boundary_classification": "b2_noise_tolerance_supported",
+      "boundary_condition_evaluated_at": "B2_C1_challenge_sweep",
+      "boundary_crossing_trace": [
+        {
+          "challenge_class": "C1",
+          "event": "fixed_b2_boundary_edge",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_drift_outside_policy_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "boundary_edges": [
+        {
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_policy": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_sweep_policy": "same_B2_policy_only_challenge_class_changes",
+        "inherits": "n16_boundary_policy_v1",
+        "policy_id": "n16_i3_quiet_boundary_calibration_policy",
+        "quiet_leakage_ceiling": 0.12,
+        "quiet_stability_floor": 0.9,
+        "side_derivation": "derived_from_support_coherence_and_basin_signal_thresholds;no externally supplied self or external labels"
+      },
+      "boundary_side_assignments": {
+        "b2_q0": "derived_internal_side",
+        "b2_q1": "derived_internal_side",
+        "b2_q2": "derived_internal_side",
+        "b2_q3": "derived_external_side",
+        "b2_q4": "derived_external_side"
+      },
+      "boundary_stability_score": 0.9,
+      "boundary_state": "B2",
+      "boundary_state_constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "boundary_state_inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "boundary_state_lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "boundary_state_relevance": [
+        "B2"
+      ],
+      "boundary_state_unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ],
+      "boundary_surface": {
+        "canonical_b2_boundary_surface": {
+          "classification_path": "primary_floor",
+          "external_edges": [
+            {
+              "left": "b2_q3",
+              "left_side": "derived_external_side",
+              "right": "b2_q4",
+              "right_side": "derived_external_side",
+              "weight": 0.37
+            }
+          ],
+          "internal_edges": [
+            {
+              "left": "b2_q0",
+              "left_side": "derived_internal_side",
+              "right": "b2_q1",
+              "right_side": "derived_internal_side",
+              "weight": 0.74
+            },
+            {
+              "left": "b2_q1",
+              "left_side": "derived_internal_side",
+              "right": "b2_q2",
+              "right_side": "derived_internal_side",
+              "weight": 0.72
+            }
+          ],
+          "side_derivation": {
+            "b2_q0": "derived_internal_side",
+            "b2_q1": "derived_internal_side",
+            "b2_q2": "derived_internal_side",
+            "b2_q3": "derived_external_side",
+            "b2_q4": "derived_external_side"
+          },
+          "snapshot_id": "q0"
+        },
+        "challenge_boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "challenge_class": "C1"
+      },
+      "budget_cost_surface": {
+        "canonical_json_input_bytes": 2629,
+        "canonical_json_output_bytes": 1173,
+        "matrix_cell_count": 1,
+        "replay_count": 1,
+        "source_row_count": 1,
+        "transform_count": 1,
+        "validation_count": 1,
+        "wall_clock_seconds": 0
+      },
+      "budget_units": [
+        "source_row_count",
+        "matrix_cell_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": "valid",
+      "case_id": "n16_i4_b2_c1_challenge_sweep",
+      "case_policy": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C1",
+        "challenge_name": "unstructured perturbation",
+        "challenge_pressure_rationale": "noise_amplitude 0.08 is a bounded MVP perturbation point that should not substitute for flux, breach, or shared-medium evidence",
+        "challenge_sweep_only": true,
+        "challenge_thresholds": {
+          "breach_reclosure_floor": 0.7,
+          "flux_leakage_warning": 0.12,
+          "internal_coherence_floor": 0.84,
+          "internal_support_floor": 0.85,
+          "minimum_coherence_margin_floor": 0.52,
+          "quiet_leakage_ceiling": 0.12,
+          "shared_medium_basin_separation_floor": 0.7
+        },
+        "external_boundary_labels_supplied": false,
+        "post_hoc_labels_allowed": false
+      },
+      "cell_id": "B2_C1",
+      "challenge_class": "C1",
+      "challenge_class_relevance": [
+        "C1"
+      ],
+      "claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "claim_ceiling_preserved": true,
+      "claim_promotion_allowed": false,
+      "coherence_margin": 0.532,
+      "dependency_trace": [
+        {
+          "boundary_side": "derived_internal_and_external_sides",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_side_assignments",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_side_assignments",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_fixed_b2_inheritance",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0"
+          }
+        },
+        {
+          "boundary_side": "boundary_side",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_edges",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_edges",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_edge_projection",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+            "challenge_class": "C1"
+          }
+        },
+        {
+          "boundary_side": "perturbation",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "challenge_class",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "calibration_policy",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_transform",
+          "transform_parameters": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.08,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          }
+        }
+      ],
+      "direct_historic_ap6_support_status": "not_direct_ap6_support",
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "fixed_b2_challenge_sweep_from_i3_calibration",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "external_coherence": 0.34,
+      "external_perturbation_descriptor": {
+        "breach_pressure": 0.0,
+        "challenge_class": "C1",
+        "directional_flux_pressure": 0.0,
+        "noise_amplitude": 0.08,
+        "perturbation_present": true,
+        "shared_medium_pressure": 0.0
+      },
+      "external_region_nodes": [
+        "b2_q3",
+        "b2_q4"
+      ],
+      "external_resource_descriptor": {
+        "challenge_class": "C1",
+        "resource_role": "not_resource_assimilation",
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "external_state_role": "perturbation",
+      "external_structured_state_descriptor": {
+        "crossing_or_disruption_recorded": false,
+        "structured_external_challenge_present": false,
+        "structured_external_pattern_coherence": 0.0,
+        "treated_as_perturbation": false
+      },
+      "externally_supplied_boundary_control": {
+        "result": "canonical B2 side assignments inherited from derived I3 row",
+        "status": "checked_i4_passed"
+      },
+      "failure_mode": "not_applicable",
+      "final_ap6_supported": false,
+      "flux_tolerance_score": "not_evaluated_by_c1",
+      "hidden_external_state_injection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "8294a0f6aa32656635d2fafec15af5b85cdbd7dd942046569babc8fd150aafea",
+        "same_inputs_same_digest_required": true,
+        "self_verified": true
+      },
+      "identity_acceptance_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "inbound_flux": 0.03,
+      "internal_coherence": 0.872,
+      "internal_state_descriptor": {
+        "basin_signal_floor": 0.7,
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_observed_minimum_internal_support": 0.85,
+        "classification_path": "primary_floor",
+        "coherence_floor": 0.84,
+        "coherence_margin_floor": 0.52,
+        "derived_internal_side_nodes": [
+          "b2_q0",
+          "b2_q1",
+          "b2_q2"
+        ],
+        "minimum_observed_internal_support": 0.86,
+        "support_floor": 0.85
+      },
+      "leakage_ratio": 0.078,
+      "mechanism_name": "fixed_B2_challenge_sweep",
+      "mechanism_role": "challenge_response_requirements_discovery",
+      "missing_boundary_side_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "missing_gates": [
+        "boundary_state_sweep_missing",
+        "selected_interaction_probe_missing",
+        "full_negative_control_matrix_missing",
+        "duplicate_and_order_inversion_replay_missing",
+        "claim_boundary_classification_missing"
+      ],
+      "multi_basin_merge_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "native_boundary_requirements_observed": [
+        "B2 tolerates bounded unstructured perturbation at noise_amplitude_0.08"
+      ],
+      "native_support_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "noise_resilience_score": 0.88,
+      "old_best_claim_inputs": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "order_inversion_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "order_inversion_replay_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "outbound_flux": 0.02,
+      "post_hoc_boundary_label_control": {
+        "result": "challenge decision follows fixed B2 definition and transform metrics",
+        "status": "checked_i4_passed"
+      },
+      "provisional_ap_level": "AP6_candidate_input_only",
+      "provisional_claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "repair_score": "not_evaluated_by_c1",
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "artifact_id": "n16_challenge_sweep_matrix",
+        "boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "boundary_side_assignments": {
+          "b2_q0": "derived_internal_side",
+          "b2_q1": "derived_internal_side",
+          "b2_q2": "derived_internal_side",
+          "b2_q3": "derived_external_side",
+          "b2_q4": "derived_external_side"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_class": "C1",
+        "challenge_pressure_rationale": "noise_amplitude 0.08 is a bounded MVP perturbation point that should not substitute for flux, breach, or shared-medium evidence",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.08,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "metrics": {
+          "basin_separation_score": "not_evaluated_by_c1",
+          "boundary_stability_score": 0.9,
+          "coherence_margin": 0.532,
+          "external_coherence": 0.34,
+          "flux_tolerance_score": "not_evaluated_by_c1",
+          "inbound_flux": 0.03,
+          "internal_coherence": 0.872,
+          "leakage_ratio": 0.078,
+          "minimum_internal_support": 0.85,
+          "noise_resilience_score": 0.88,
+          "outbound_flux": 0.02,
+          "repair_score": "not_evaluated_by_c1",
+          "retained_flux": 1.41
+        },
+        "policy_id": "n16_replay_digest_policy_v1",
+        "row_decision": "supported"
+      },
+      "required_n16_boundary_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "requirements_failed": [
+        "noise_tolerance_does_not_substitute_for_flux_tolerance",
+        "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+      ],
+      "requirements_satisfied": [
+        "noise_resilience_score_recorded",
+        "derived_boundary_edges_remain_incident_to_both_sides",
+        "leakage_ratio_remains_below_c0_ceiling_under_noise"
+      ],
+      "resource_relabel_as_self_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "retained_flux": 1.41,
+      "role_classification_audit": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class_only_changed": true,
+        "claim_ceiling_preserved": true,
+        "status": "passed"
+      },
+      "row_decision": "supported",
+      "row_id": "n16_i4_row_b2_c1",
+      "runtime_state_surface_id": "n16_i4_fixed_b2_c1_surface",
+      "self_region_nodes": [
+        "b2_q0",
+        "b2_q1",
+        "b2_q2"
+      ],
+      "self_support_relabel_as_external_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "selfhood_personhood_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "semantic_goal_ownership_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "source_current": {
+        "B2_fixed": true,
+        "C2_external_role_rationale": "not_applicable",
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+        "challenge_pressure_rationale": "noise_amplitude 0.08 is a bounded MVP perturbation point that should not substitute for flux, breach, or shared-medium evidence",
+        "challenge_transform": {
+          "boundary_classification": "b2_noise_tolerance_supported",
+          "challenge_profile": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.08,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          },
+          "external_state_role": "perturbation",
+          "failure_mode": "not_applicable",
+          "metrics": {
+            "basin_separation_score": "not_evaluated_by_c1",
+            "boundary_stability_score": 0.9,
+            "coherence_margin": 0.532,
+            "external_coherence": 0.34,
+            "flux_tolerance_score": "not_evaluated_by_c1",
+            "inbound_flux": 0.03,
+            "internal_coherence": 0.872,
+            "leakage_ratio": 0.078,
+            "minimum_internal_support": 0.85,
+            "noise_resilience_score": 0.88,
+            "outbound_flux": 0.02,
+            "repair_score": "not_evaluated_by_c1",
+            "retained_flux": 1.41
+          },
+          "name": "unstructured perturbation",
+          "requirements_failed": [
+            "noise_tolerance_does_not_substitute_for_flux_tolerance",
+            "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+          ],
+          "requirements_observed": [
+            "B2 tolerates bounded unstructured perturbation at noise_amplitude_0.08"
+          ],
+          "requirements_satisfied": [
+            "noise_resilience_score_recorded",
+            "derived_boundary_edges_remain_incident_to_both_sides",
+            "leakage_ratio_remains_below_c0_ceiling_under_noise"
+          ],
+          "row_decision": "supported"
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "source_experiment": "N16",
+      "source_iteration": "iteration_3_quiet_boundary_calibration",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "source_report_sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "source_status": "passed",
+      "stale_external_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "stale_internal_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "state_source_window": {
+        "challenge_pressure": "unstructured perturbation",
+        "freshness": "source_current_for_iteration_4",
+        "snapshot_count": 3,
+        "window_id": "challenge_sweep_window"
+      },
+      "structured_external_coherence_rejection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "untracked_boundary_crossing_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      }
+    },
+    {
+      "ap5_contribution_status": "context_only_not_promoted",
+      "ap6_required_evidence_still_missing": [
+        "B0_B4_boundary_state_sweep",
+        "B3_repair_reabsorption_probe",
+        "B4_shared_medium_separability_probe",
+        "final_control_matrix",
+        "final_claim_classification"
+      ],
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify each B2 challenge row by the narrow C-class pressure it actually tests; do not let a row substitute for another challenge",
+        "cultivation_of_becoming": "cultivate reusable requirement rows and fail-closed extension blockers before B3/B4 maturity probes",
+        "interrogation_of_becoming": "hold canonical B2 fixed and ask bounded questions about noise, flux, structured external coherence, breach pressure, and shared-medium pressure",
+        "naturalization_of_becoming": "treat observed requirements as artifact-level boundary requirements, not native support or self/environment understanding"
+      },
+      "artifact_only_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "artifact_only_replay_status": "deterministic_builder_replay_ready",
+      "basin_count": 1,
+      "basin_descriptor": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C2",
+        "challenge_name": "directional flux",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.34,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "extension_target": "not_applicable"
+      },
+      "basin_separation_score": "not_evaluated_by_c2",
+      "blocked_claims": [
+        "final_ap6",
+        "selfhood",
+        "personhood",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "intention",
+        "semantic_choice",
+        "agency",
+        "unrestricted_agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selective_uptake_or_resource_assimilation",
+        "organism_or_life_claim",
+        "B3_repair_capability",
+        "B4_multi_basin_separability"
+      ],
+      "boundary_claim_allowed": false,
+      "boundary_classification": "b2_flux_pressure_partial",
+      "boundary_condition_evaluated_at": "B2_C2_challenge_sweep",
+      "boundary_crossing_trace": [
+        {
+          "challenge_class": "C2",
+          "event": "fixed_b2_boundary_edge",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        },
+        {
+          "event": "directional_flux_crossing_pressure",
+          "inbound_flux": 0.34,
+          "leakage_ratio": 0.186,
+          "outbound_flux": 0.22
+        }
+      ],
+      "boundary_drift_outside_policy_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "boundary_edges": [
+        {
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_policy": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_sweep_policy": "same_B2_policy_only_challenge_class_changes",
+        "inherits": "n16_boundary_policy_v1",
+        "policy_id": "n16_i3_quiet_boundary_calibration_policy",
+        "quiet_leakage_ceiling": 0.12,
+        "quiet_stability_floor": 0.9,
+        "side_derivation": "derived_from_support_coherence_and_basin_signal_thresholds;no externally supplied self or external labels"
+      },
+      "boundary_side_assignments": {
+        "b2_q0": "derived_internal_side",
+        "b2_q1": "derived_internal_side",
+        "b2_q2": "derived_internal_side",
+        "b2_q3": "derived_external_side",
+        "b2_q4": "derived_external_side"
+      },
+      "boundary_stability_score": 0.62,
+      "boundary_state": "B2",
+      "boundary_state_constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "boundary_state_inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "boundary_state_lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "boundary_state_relevance": [
+        "B2"
+      ],
+      "boundary_state_unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ],
+      "boundary_surface": {
+        "canonical_b2_boundary_surface": {
+          "classification_path": "primary_floor",
+          "external_edges": [
+            {
+              "left": "b2_q3",
+              "left_side": "derived_external_side",
+              "right": "b2_q4",
+              "right_side": "derived_external_side",
+              "weight": 0.37
+            }
+          ],
+          "internal_edges": [
+            {
+              "left": "b2_q0",
+              "left_side": "derived_internal_side",
+              "right": "b2_q1",
+              "right_side": "derived_internal_side",
+              "weight": 0.74
+            },
+            {
+              "left": "b2_q1",
+              "left_side": "derived_internal_side",
+              "right": "b2_q2",
+              "right_side": "derived_internal_side",
+              "weight": 0.72
+            }
+          ],
+          "side_derivation": {
+            "b2_q0": "derived_internal_side",
+            "b2_q1": "derived_internal_side",
+            "b2_q2": "derived_internal_side",
+            "b2_q3": "derived_external_side",
+            "b2_q4": "derived_external_side"
+          },
+          "snapshot_id": "q0"
+        },
+        "challenge_boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "challenge_class": "C2"
+      },
+      "budget_cost_surface": {
+        "canonical_json_input_bytes": 2679,
+        "canonical_json_output_bytes": 1330,
+        "matrix_cell_count": 1,
+        "replay_count": 1,
+        "source_row_count": 1,
+        "transform_count": 1,
+        "validation_count": 1,
+        "wall_clock_seconds": 0
+      },
+      "budget_units": [
+        "source_row_count",
+        "matrix_cell_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": "valid",
+      "case_id": "n16_i4_b2_c2_challenge_sweep",
+      "case_policy": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C2",
+        "challenge_name": "directional flux",
+        "challenge_pressure_rationale": "directional_flux_pressure 0.34 is the fixed hard C2 stressor for Iteration 4 and Iteration 5 comparison; it is high enough to expose leakage while leaving the boundary measurable",
+        "challenge_sweep_only": true,
+        "challenge_thresholds": {
+          "breach_reclosure_floor": 0.7,
+          "flux_leakage_warning": 0.12,
+          "internal_coherence_floor": 0.84,
+          "internal_support_floor": 0.85,
+          "minimum_coherence_margin_floor": 0.52,
+          "quiet_leakage_ceiling": 0.12,
+          "shared_medium_basin_separation_floor": 0.7
+        },
+        "external_boundary_labels_supplied": false,
+        "post_hoc_labels_allowed": false
+      },
+      "cell_id": "B2_C2",
+      "challenge_class": "C2",
+      "challenge_class_relevance": [
+        "C2"
+      ],
+      "claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "claim_ceiling_preserved": true,
+      "claim_promotion_allowed": false,
+      "coherence_margin": 0.488,
+      "dependency_trace": [
+        {
+          "boundary_side": "derived_internal_and_external_sides",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_side_assignments",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_side_assignments",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_fixed_b2_inheritance",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0"
+          }
+        },
+        {
+          "boundary_side": "boundary_side",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_edges",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_edges",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_edge_projection",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+            "challenge_class": "C2"
+          }
+        },
+        {
+          "boundary_side": "coupling_channel",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "challenge_class",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "calibration_policy",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_transform",
+          "transform_parameters": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.34,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          }
+        }
+      ],
+      "direct_historic_ap6_support_status": "not_direct_ap6_support",
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "fixed_b2_challenge_sweep_from_i3_calibration",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "external_coherence": 0.36,
+      "external_perturbation_descriptor": {
+        "breach_pressure": 0.0,
+        "challenge_class": "C2",
+        "directional_flux_pressure": 0.34,
+        "noise_amplitude": 0.0,
+        "perturbation_present": false,
+        "shared_medium_pressure": 0.0
+      },
+      "external_region_nodes": [
+        "b2_q3",
+        "b2_q4"
+      ],
+      "external_resource_descriptor": {
+        "challenge_class": "C2",
+        "resource_role": "not_resource_assimilation",
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "external_state_role": "coupling_channel",
+      "external_structured_state_descriptor": {
+        "crossing_or_disruption_recorded": false,
+        "structured_external_challenge_present": false,
+        "structured_external_pattern_coherence": 0.0,
+        "treated_as_perturbation": false
+      },
+      "externally_supplied_boundary_control": {
+        "result": "canonical B2 side assignments inherited from derived I3 row",
+        "status": "checked_i4_passed"
+      },
+      "failure_mode": "directional_flux_leakage_exceeds_quiet_ceiling",
+      "final_ap6_supported": false,
+      "flux_tolerance_score": 0.46,
+      "hidden_external_state_injection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "306ad8da4430f3867c899a086dbe383a69f0243f3049c5dfd5cb4bf4e5a5d79b",
+        "same_inputs_same_digest_required": true,
+        "self_verified": true
+      },
+      "identity_acceptance_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "inbound_flux": 0.34,
+      "internal_coherence": 0.848,
+      "internal_state_descriptor": {
+        "basin_signal_floor": 0.7,
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_observed_minimum_internal_support": 0.84,
+        "classification_path": "primary_floor",
+        "coherence_floor": 0.84,
+        "coherence_margin_floor": 0.52,
+        "derived_internal_side_nodes": [
+          "b2_q0",
+          "b2_q1",
+          "b2_q2"
+        ],
+        "minimum_observed_internal_support": 0.86,
+        "support_floor": 0.85
+      },
+      "leakage_ratio": 0.186,
+      "mechanism_name": "fixed_B2_challenge_sweep",
+      "mechanism_role": "challenge_response_requirements_discovery",
+      "missing_boundary_side_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "missing_gates": [
+        "boundary_state_sweep_missing",
+        "selected_interaction_probe_missing",
+        "full_negative_control_matrix_missing",
+        "duplicate_and_order_inversion_replay_missing",
+        "claim_boundary_classification_missing"
+      ],
+      "multi_basin_merge_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "native_boundary_requirements_observed": [
+        "B2 needs stronger retention or lower leakage to survive C2 cleanly",
+        "directional flux is the first hard boundary-pressure requirement"
+      ],
+      "native_support_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "noise_resilience_score": "not_evaluated_by_c2",
+      "old_best_claim_inputs": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "order_inversion_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "order_inversion_replay_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "outbound_flux": 0.22,
+      "post_hoc_boundary_label_control": {
+        "result": "challenge decision follows fixed B2 definition and transform metrics",
+        "status": "checked_i4_passed"
+      },
+      "provisional_ap_level": "AP6_candidate_input_only",
+      "provisional_claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "repair_score": "not_evaluated_by_c2",
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "artifact_id": "n16_challenge_sweep_matrix",
+        "boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "boundary_side_assignments": {
+          "b2_q0": "derived_internal_side",
+          "b2_q1": "derived_internal_side",
+          "b2_q2": "derived_internal_side",
+          "b2_q3": "derived_external_side",
+          "b2_q4": "derived_external_side"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_class": "C2",
+        "challenge_pressure_rationale": "directional_flux_pressure 0.34 is the fixed hard C2 stressor for Iteration 4 and Iteration 5 comparison; it is high enough to expose leakage while leaving the boundary measurable",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.34,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "metrics": {
+          "basin_separation_score": "not_evaluated_by_c2",
+          "boundary_stability_score": 0.62,
+          "coherence_margin": 0.488,
+          "external_coherence": 0.36,
+          "flux_tolerance_score": 0.46,
+          "inbound_flux": 0.34,
+          "internal_coherence": 0.848,
+          "leakage_ratio": 0.186,
+          "minimum_internal_support": 0.84,
+          "noise_resilience_score": "not_evaluated_by_c2",
+          "outbound_flux": 0.22,
+          "repair_score": "not_evaluated_by_c2",
+          "retained_flux": 1.18
+        },
+        "policy_id": "n16_replay_digest_policy_v1",
+        "row_decision": "partial"
+      },
+      "required_n16_boundary_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "requirements_failed": [
+        "quiet_leakage_ceiling_exceeded_under_directional_flux",
+        "minimum_internal_support_floor_not_preserved_under_flux",
+        "minimum_coherence_margin_floor_not_preserved_under_flux"
+      ],
+      "requirements_satisfied": [
+        "directional_flux_measured",
+        "inbound_outbound_retained_flux_recorded",
+        "boundary_remains_measurable_under_flux",
+        "C2_external_state_role_recorded_as_coupling_channel"
+      ],
+      "resource_relabel_as_self_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "retained_flux": 1.18,
+      "role_classification_audit": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class_only_changed": true,
+        "claim_ceiling_preserved": true,
+        "status": "passed"
+      },
+      "row_decision": "partial",
+      "row_id": "n16_i4_row_b2_c2",
+      "runtime_state_surface_id": "n16_i4_fixed_b2_c2_surface",
+      "self_region_nodes": [
+        "b2_q0",
+        "b2_q1",
+        "b2_q2"
+      ],
+      "self_support_relabel_as_external_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "selfhood_personhood_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "semantic_goal_ownership_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "source_current": {
+        "B2_fixed": true,
+        "C2_external_role_rationale": {
+          "external_state_role": "coupling_channel",
+          "perturbation_present_semantics": "the field marks unstructured or localized perturbation pressure; C2 records directional_flux_pressure separately",
+          "reason": "C2 is directed flow across/against the boundary, so the external state role is a coupling channel rather than unstructured perturbation"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+        "challenge_pressure_rationale": "directional_flux_pressure 0.34 is the fixed hard C2 stressor for Iteration 4 and Iteration 5 comparison; it is high enough to expose leakage while leaving the boundary measurable",
+        "challenge_transform": {
+          "boundary_classification": "b2_flux_pressure_partial",
+          "challenge_profile": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.34,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          },
+          "external_state_role": "coupling_channel",
+          "failure_mode": "directional_flux_leakage_exceeds_quiet_ceiling",
+          "metrics": {
+            "basin_separation_score": "not_evaluated_by_c2",
+            "boundary_stability_score": 0.62,
+            "coherence_margin": 0.488,
+            "external_coherence": 0.36,
+            "flux_tolerance_score": 0.46,
+            "inbound_flux": 0.34,
+            "internal_coherence": 0.848,
+            "leakage_ratio": 0.186,
+            "minimum_internal_support": 0.84,
+            "noise_resilience_score": "not_evaluated_by_c2",
+            "outbound_flux": 0.22,
+            "repair_score": "not_evaluated_by_c2",
+            "retained_flux": 1.18
+          },
+          "name": "directional flux",
+          "requirements_failed": [
+            "quiet_leakage_ceiling_exceeded_under_directional_flux",
+            "minimum_internal_support_floor_not_preserved_under_flux",
+            "minimum_coherence_margin_floor_not_preserved_under_flux"
+          ],
+          "requirements_observed": [
+            "B2 needs stronger retention or lower leakage to survive C2 cleanly",
+            "directional flux is the first hard boundary-pressure requirement"
+          ],
+          "requirements_satisfied": [
+            "directional_flux_measured",
+            "inbound_outbound_retained_flux_recorded",
+            "boundary_remains_measurable_under_flux",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "partial"
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "source_experiment": "N16",
+      "source_iteration": "iteration_3_quiet_boundary_calibration",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "source_report_sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "source_status": "passed",
+      "stale_external_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "stale_internal_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "state_source_window": {
+        "challenge_pressure": "directional flux",
+        "freshness": "source_current_for_iteration_4",
+        "snapshot_count": 3,
+        "window_id": "challenge_sweep_window"
+      },
+      "structured_external_coherence_rejection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "untracked_boundary_crossing_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      }
+    },
+    {
+      "ap5_contribution_status": "context_only_not_promoted",
+      "ap6_required_evidence_still_missing": [
+        "B0_B4_boundary_state_sweep",
+        "B3_repair_reabsorption_probe",
+        "B4_shared_medium_separability_probe",
+        "final_control_matrix",
+        "final_claim_classification"
+      ],
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify each B2 challenge row by the narrow C-class pressure it actually tests; do not let a row substitute for another challenge",
+        "cultivation_of_becoming": "cultivate reusable requirement rows and fail-closed extension blockers before B3/B4 maturity probes",
+        "interrogation_of_becoming": "hold canonical B2 fixed and ask bounded questions about noise, flux, structured external coherence, breach pressure, and shared-medium pressure",
+        "naturalization_of_becoming": "treat observed requirements as artifact-level boundary requirements, not native support or self/environment understanding"
+      },
+      "artifact_only_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "artifact_only_replay_status": "deterministic_builder_replay_ready",
+      "basin_count": 1,
+      "basin_descriptor": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C3",
+        "challenge_name": "structured external coherence",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.92
+        },
+        "extension_target": "not_applicable"
+      },
+      "basin_separation_score": "not_evaluated_by_c3",
+      "blocked_claims": [
+        "final_ap6",
+        "selfhood",
+        "personhood",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "intention",
+        "semantic_choice",
+        "agency",
+        "unrestricted_agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selective_uptake_or_resource_assimilation",
+        "organism_or_life_claim",
+        "B3_repair_capability",
+        "B4_multi_basin_separability"
+      ],
+      "boundary_claim_allowed": false,
+      "boundary_classification": "structured_external_false_positive_rejected",
+      "boundary_condition_evaluated_at": "B2_C3_challenge_sweep",
+      "boundary_crossing_trace": [
+        {
+          "challenge_class": "C3",
+          "event": "fixed_b2_boundary_edge",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_drift_outside_policy_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "boundary_edges": [
+        {
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        }
+      ],
+      "boundary_policy": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_sweep_policy": "same_B2_policy_only_challenge_class_changes",
+        "inherits": "n16_boundary_policy_v1",
+        "policy_id": "n16_i3_quiet_boundary_calibration_policy",
+        "quiet_leakage_ceiling": 0.12,
+        "quiet_stability_floor": 0.9,
+        "side_derivation": "derived_from_support_coherence_and_basin_signal_thresholds;no externally supplied self or external labels"
+      },
+      "boundary_side_assignments": {
+        "b2_q0": "derived_internal_side",
+        "b2_q1": "derived_internal_side",
+        "b2_q2": "derived_internal_side",
+        "b2_q3": "derived_external_side",
+        "b2_q4": "derived_external_side"
+      },
+      "boundary_stability_score": 0.91,
+      "boundary_state": "B2",
+      "boundary_state_constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "boundary_state_inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "boundary_state_lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "boundary_state_relevance": [
+        "B2"
+      ],
+      "boundary_state_unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ],
+      "boundary_surface": {
+        "canonical_b2_boundary_surface": {
+          "classification_path": "primary_floor",
+          "external_edges": [
+            {
+              "left": "b2_q3",
+              "left_side": "derived_external_side",
+              "right": "b2_q4",
+              "right_side": "derived_external_side",
+              "weight": 0.37
+            }
+          ],
+          "internal_edges": [
+            {
+              "left": "b2_q0",
+              "left_side": "derived_internal_side",
+              "right": "b2_q1",
+              "right_side": "derived_internal_side",
+              "weight": 0.74
+            },
+            {
+              "left": "b2_q1",
+              "left_side": "derived_internal_side",
+              "right": "b2_q2",
+              "right_side": "derived_internal_side",
+              "weight": 0.72
+            }
+          ],
+          "side_derivation": {
+            "b2_q0": "derived_internal_side",
+            "b2_q1": "derived_internal_side",
+            "b2_q2": "derived_internal_side",
+            "b2_q3": "derived_external_side",
+            "b2_q4": "derived_external_side"
+          },
+          "snapshot_id": "q0"
+        },
+        "challenge_boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "challenge_class": "C3"
+      },
+      "budget_cost_surface": {
+        "canonical_json_input_bytes": 2649,
+        "canonical_json_output_bytes": 1209,
+        "matrix_cell_count": 1,
+        "replay_count": 1,
+        "source_row_count": 1,
+        "transform_count": 1,
+        "validation_count": 1,
+        "wall_clock_seconds": 0
+      },
+      "budget_units": [
+        "source_row_count",
+        "matrix_cell_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": "valid",
+      "case_id": "n16_i4_b2_c3_challenge_sweep",
+      "case_policy": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C3",
+        "challenge_name": "structured external coherence",
+        "challenge_pressure_rationale": "structured_external_coherence_pressure 0.92 creates strong coherent outside false-positive pressure without crossing or disruption",
+        "challenge_sweep_only": true,
+        "challenge_thresholds": {
+          "breach_reclosure_floor": 0.7,
+          "flux_leakage_warning": 0.12,
+          "internal_coherence_floor": 0.84,
+          "internal_support_floor": 0.85,
+          "minimum_coherence_margin_floor": 0.52,
+          "quiet_leakage_ceiling": 0.12,
+          "shared_medium_basin_separation_floor": 0.7
+        },
+        "external_boundary_labels_supplied": false,
+        "post_hoc_labels_allowed": false
+      },
+      "cell_id": "B2_C3",
+      "challenge_class": "C3",
+      "challenge_class_relevance": [
+        "C3"
+      ],
+      "claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "claim_ceiling_preserved": true,
+      "claim_promotion_allowed": false,
+      "coherence_margin": 0.531,
+      "dependency_trace": [
+        {
+          "boundary_side": "derived_internal_and_external_sides",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_side_assignments",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_side_assignments",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_fixed_b2_inheritance",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0"
+          }
+        },
+        {
+          "boundary_side": "boundary_side",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_edges",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_edges",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_edge_projection",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+            "challenge_class": "C3"
+          }
+        },
+        {
+          "boundary_side": "structured_external_state",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "challenge_class",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "calibration_policy",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_transform",
+          "transform_parameters": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.92
+          }
+        }
+      ],
+      "direct_historic_ap6_support_status": "not_direct_ap6_support",
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "fixed_b2_challenge_sweep_from_i3_calibration",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "external_coherence": 0.345,
+      "external_perturbation_descriptor": {
+        "breach_pressure": 0.0,
+        "challenge_class": "C3",
+        "directional_flux_pressure": 0.0,
+        "noise_amplitude": 0.0,
+        "perturbation_present": false,
+        "shared_medium_pressure": 0.0
+      },
+      "external_region_nodes": [
+        "b2_q3",
+        "b2_q4"
+      ],
+      "external_resource_descriptor": {
+        "challenge_class": "C3",
+        "resource_role": "not_resource_assimilation",
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "external_state_role": "structured_external_state",
+      "external_structured_state_descriptor": {
+        "classification": "external_structured_state_not_self_region",
+        "crossing_or_disruption_recorded": false,
+        "structured_external_challenge_present": true,
+        "structured_external_pattern_coherence": 0.92,
+        "treated_as_perturbation": false
+      },
+      "externally_supplied_boundary_control": {
+        "result": "canonical B2 side assignments inherited from derived I3 row",
+        "status": "checked_i4_passed"
+      },
+      "failure_mode": "not_applicable",
+      "final_ap6_supported": false,
+      "flux_tolerance_score": "not_evaluated_by_c3",
+      "hidden_external_state_injection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "aa1597905fa0a4f0398da6e246fc5fd673f92764255fdde92473fd35116889ca",
+        "same_inputs_same_digest_required": true,
+        "self_verified": true
+      },
+      "identity_acceptance_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "inbound_flux": 0.0,
+      "internal_coherence": 0.876,
+      "internal_state_descriptor": {
+        "basin_signal_floor": 0.7,
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_observed_minimum_internal_support": 0.85,
+        "classification_path": "primary_floor",
+        "coherence_floor": 0.84,
+        "coherence_margin_floor": 0.52,
+        "derived_internal_side_nodes": [
+          "b2_q0",
+          "b2_q1",
+          "b2_q2"
+        ],
+        "minimum_observed_internal_support": 0.86,
+        "support_floor": 0.85
+      },
+      "leakage_ratio": 0.066,
+      "mechanism_name": "fixed_B2_challenge_sweep",
+      "mechanism_role": "challenge_response_requirements_discovery",
+      "missing_boundary_side_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "missing_gates": [
+        "boundary_state_sweep_missing",
+        "selected_interaction_probe_missing",
+        "full_negative_control_matrix_missing",
+        "duplicate_and_order_inversion_replay_missing",
+        "claim_boundary_classification_missing"
+      ],
+      "multi_basin_merge_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "native_boundary_requirements_observed": [
+        "structured external coherence must remain external unless crossing or disruption is recorded"
+      ],
+      "native_support_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "noise_resilience_score": "not_evaluated_by_c3",
+      "old_best_claim_inputs": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "order_inversion_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "order_inversion_replay_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "outbound_flux": 0.0,
+      "post_hoc_boundary_label_control": {
+        "result": "challenge decision follows fixed B2 definition and transform metrics",
+        "status": "checked_i4_passed"
+      },
+      "provisional_ap_level": "AP6_candidate_input_only",
+      "provisional_claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "repair_score": "not_evaluated_by_c3",
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "artifact_id": "n16_challenge_sweep_matrix",
+        "boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          }
+        ],
+        "boundary_side_assignments": {
+          "b2_q0": "derived_internal_side",
+          "b2_q1": "derived_internal_side",
+          "b2_q2": "derived_internal_side",
+          "b2_q3": "derived_external_side",
+          "b2_q4": "derived_external_side"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_class": "C3",
+        "challenge_pressure_rationale": "structured_external_coherence_pressure 0.92 creates strong coherent outside false-positive pressure without crossing or disruption",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.92
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "metrics": {
+          "basin_separation_score": "not_evaluated_by_c3",
+          "boundary_stability_score": 0.91,
+          "coherence_margin": 0.531,
+          "external_coherence": 0.345,
+          "flux_tolerance_score": "not_evaluated_by_c3",
+          "inbound_flux": 0.0,
+          "internal_coherence": 0.876,
+          "leakage_ratio": 0.066,
+          "minimum_internal_support": 0.85,
+          "noise_resilience_score": "not_evaluated_by_c3",
+          "outbound_flux": 0.0,
+          "repair_score": "not_evaluated_by_c3",
+          "retained_flux": 1.44
+        },
+        "policy_id": "n16_replay_digest_policy_v1",
+        "row_decision": "supported"
+      },
+      "required_n16_boundary_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "requirements_failed": [
+        "C3_success_is_not_flux_tolerance",
+        "C3_success_is_not_resource_assimilation"
+      ],
+      "requirements_satisfied": [
+        "structured_external_state_role_preserved",
+        "false_positive_structured_coherence_rejected",
+        "structured_external_coherence_not_assimilated_as_self_region"
+      ],
+      "resource_relabel_as_self_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "retained_flux": 1.44,
+      "role_classification_audit": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class_only_changed": true,
+        "claim_ceiling_preserved": true,
+        "status": "passed"
+      },
+      "row_decision": "supported",
+      "row_id": "n16_i4_row_b2_c3",
+      "runtime_state_surface_id": "n16_i4_fixed_b2_c3_surface",
+      "self_region_nodes": [
+        "b2_q0",
+        "b2_q1",
+        "b2_q2"
+      ],
+      "self_support_relabel_as_external_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "selfhood_personhood_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "semantic_goal_ownership_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "source_current": {
+        "B2_fixed": true,
+        "C2_external_role_rationale": "not_applicable",
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+        "challenge_pressure_rationale": "structured_external_coherence_pressure 0.92 creates strong coherent outside false-positive pressure without crossing or disruption",
+        "challenge_transform": {
+          "boundary_classification": "structured_external_false_positive_rejected",
+          "challenge_profile": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.92
+          },
+          "external_state_role": "structured_external_state",
+          "failure_mode": "not_applicable",
+          "metrics": {
+            "basin_separation_score": "not_evaluated_by_c3",
+            "boundary_stability_score": 0.91,
+            "coherence_margin": 0.531,
+            "external_coherence": 0.345,
+            "flux_tolerance_score": "not_evaluated_by_c3",
+            "inbound_flux": 0.0,
+            "internal_coherence": 0.876,
+            "leakage_ratio": 0.066,
+            "minimum_internal_support": 0.85,
+            "noise_resilience_score": "not_evaluated_by_c3",
+            "outbound_flux": 0.0,
+            "repair_score": "not_evaluated_by_c3",
+            "retained_flux": 1.44
+          },
+          "name": "structured external coherence",
+          "requirements_failed": [
+            "C3_success_is_not_flux_tolerance",
+            "C3_success_is_not_resource_assimilation"
+          ],
+          "requirements_observed": [
+            "structured external coherence must remain external unless crossing or disruption is recorded"
+          ],
+          "requirements_satisfied": [
+            "structured_external_state_role_preserved",
+            "false_positive_structured_coherence_rejected",
+            "structured_external_coherence_not_assimilated_as_self_region"
+          ],
+          "row_decision": "supported"
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "source_experiment": "N16",
+      "source_iteration": "iteration_3_quiet_boundary_calibration",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "source_report_sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "source_status": "passed",
+      "stale_external_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "stale_internal_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "state_source_window": {
+        "challenge_pressure": "structured external coherence",
+        "freshness": "source_current_for_iteration_4",
+        "snapshot_count": 3,
+        "window_id": "challenge_sweep_window"
+      },
+      "structured_external_coherence_rejection_control": {
+        "result": "structured coherence remains external structured state",
+        "status": "checked_i4_passed"
+      },
+      "untracked_boundary_crossing_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      }
+    },
+    {
+      "ap5_contribution_status": "context_only_not_promoted",
+      "ap6_required_evidence_still_missing": [
+        "B0_B4_boundary_state_sweep",
+        "B3_repair_reabsorption_probe",
+        "B4_shared_medium_separability_probe",
+        "final_control_matrix",
+        "final_claim_classification"
+      ],
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify each B2 challenge row by the narrow C-class pressure it actually tests; do not let a row substitute for another challenge",
+        "cultivation_of_becoming": "cultivate reusable requirement rows and fail-closed extension blockers before B3/B4 maturity probes",
+        "interrogation_of_becoming": "hold canonical B2 fixed and ask bounded questions about noise, flux, structured external coherence, breach pressure, and shared-medium pressure",
+        "naturalization_of_becoming": "treat observed requirements as artifact-level boundary requirements, not native support or self/environment understanding"
+      },
+      "artifact_only_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "artifact_only_replay_status": "deterministic_builder_replay_ready",
+      "basin_count": 1,
+      "basin_descriptor": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C4",
+        "challenge_name": "breach and repair pressure",
+        "challenge_profile": {
+          "breach_pressure": 0.38,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "extension_target": "B3"
+      },
+      "basin_separation_score": "not_evaluated_by_c4",
+      "blocked_claims": [
+        "final_ap6",
+        "selfhood",
+        "personhood",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "intention",
+        "semantic_choice",
+        "agency",
+        "unrestricted_agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selective_uptake_or_resource_assimilation",
+        "organism_or_life_claim",
+        "B3_repair_capability",
+        "B4_multi_basin_separability"
+      ],
+      "boundary_claim_allowed": false,
+      "boundary_classification": "b2_breach_reclosure_partial_not_b3",
+      "boundary_condition_evaluated_at": "B2_C4_challenge_sweep",
+      "boundary_crossing_trace": [
+        {
+          "challenge_class": "C4",
+          "event": "fixed_b2_boundary_edge",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        },
+        {
+          "breach_pressure": 0.38,
+          "event": "transient_breach_pressure_not_b3_repair",
+          "reclosure_score": 0.52
+        }
+      ],
+      "boundary_drift_outside_policy_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "boundary_edges": [
+        {
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        },
+        {
+          "event": "transient_breach_pressure",
+          "left": "b2_q1",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.28
+        }
+      ],
+      "boundary_policy": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_sweep_policy": "same_B2_policy_only_challenge_class_changes",
+        "inherits": "n16_boundary_policy_v1",
+        "policy_id": "n16_i3_quiet_boundary_calibration_policy",
+        "quiet_leakage_ceiling": 0.12,
+        "quiet_stability_floor": 0.9,
+        "side_derivation": "derived_from_support_coherence_and_basin_signal_thresholds;no externally supplied self or external labels"
+      },
+      "boundary_side_assignments": {
+        "b2_q0": "derived_internal_side",
+        "b2_q1": "derived_internal_side",
+        "b2_q2": "derived_internal_side",
+        "b2_q3": "derived_external_side",
+        "b2_q4": "derived_external_side"
+      },
+      "boundary_stability_score": 0.55,
+      "boundary_state": "B2",
+      "boundary_state_constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "boundary_state_inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "boundary_state_lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "boundary_state_relevance": [
+        "B2"
+      ],
+      "boundary_state_unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ],
+      "boundary_surface": {
+        "canonical_b2_boundary_surface": {
+          "classification_path": "primary_floor",
+          "external_edges": [
+            {
+              "left": "b2_q3",
+              "left_side": "derived_external_side",
+              "right": "b2_q4",
+              "right_side": "derived_external_side",
+              "weight": 0.37
+            }
+          ],
+          "internal_edges": [
+            {
+              "left": "b2_q0",
+              "left_side": "derived_internal_side",
+              "right": "b2_q1",
+              "right_side": "derived_internal_side",
+              "weight": 0.74
+            },
+            {
+              "left": "b2_q1",
+              "left_side": "derived_internal_side",
+              "right": "b2_q2",
+              "right_side": "derived_internal_side",
+              "weight": 0.72
+            }
+          ],
+          "side_derivation": {
+            "b2_q0": "derived_internal_side",
+            "b2_q1": "derived_internal_side",
+            "b2_q2": "derived_internal_side",
+            "b2_q3": "derived_external_side",
+            "b2_q4": "derived_external_side"
+          },
+          "snapshot_id": "q0"
+        },
+        "challenge_boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          },
+          {
+            "event": "transient_breach_pressure",
+            "left": "b2_q1",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.28
+          }
+        ],
+        "challenge_class": "C4"
+      },
+      "budget_cost_surface": {
+        "canonical_json_input_bytes": 2760,
+        "canonical_json_output_bytes": 1393,
+        "matrix_cell_count": 1,
+        "replay_count": 1,
+        "source_row_count": 1,
+        "transform_count": 1,
+        "validation_count": 1,
+        "wall_clock_seconds": 0
+      },
+      "budget_units": [
+        "source_row_count",
+        "matrix_cell_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": "valid",
+      "case_id": "n16_i4_b2_c4_challenge_sweep",
+      "case_policy": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C4",
+        "challenge_name": "breach and repair pressure",
+        "challenge_pressure_rationale": "breach_pressure 0.38 creates partial reclosure pressure below the B3 repair/reabsorption claim boundary",
+        "challenge_sweep_only": true,
+        "challenge_thresholds": {
+          "breach_reclosure_floor": 0.7,
+          "flux_leakage_warning": 0.12,
+          "internal_coherence_floor": 0.84,
+          "internal_support_floor": 0.85,
+          "minimum_coherence_margin_floor": 0.52,
+          "quiet_leakage_ceiling": 0.12,
+          "shared_medium_basin_separation_floor": 0.7
+        },
+        "external_boundary_labels_supplied": false,
+        "post_hoc_labels_allowed": false
+      },
+      "cell_id": "B2_C4",
+      "challenge_class": "C4",
+      "challenge_class_relevance": [
+        "C4"
+      ],
+      "claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "claim_ceiling_preserved": true,
+      "claim_promotion_allowed": false,
+      "coherence_margin": 0.472,
+      "dependency_trace": [
+        {
+          "boundary_side": "derived_internal_and_external_sides",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_side_assignments",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_side_assignments",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_fixed_b2_inheritance",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0"
+          }
+        },
+        {
+          "boundary_side": "boundary_side",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_edges",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_edges",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_edge_projection",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+            "challenge_class": "C4"
+          }
+        },
+        {
+          "boundary_side": "perturbation",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "challenge_class",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "calibration_policy",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_transform",
+          "transform_parameters": {
+            "breach_pressure": 0.38,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          }
+        }
+      ],
+      "direct_historic_ap6_support_status": "not_direct_ap6_support",
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "fixed_b2_challenge_sweep_from_i3_calibration",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "external_coherence": 0.37,
+      "external_perturbation_descriptor": {
+        "breach_pressure": 0.38,
+        "challenge_class": "C4",
+        "directional_flux_pressure": 0.0,
+        "noise_amplitude": 0.0,
+        "perturbation_present": true,
+        "shared_medium_pressure": 0.0
+      },
+      "external_region_nodes": [
+        "b2_q3",
+        "b2_q4"
+      ],
+      "external_resource_descriptor": {
+        "challenge_class": "C4",
+        "resource_role": "not_resource_assimilation",
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "external_state_role": "perturbation",
+      "external_structured_state_descriptor": {
+        "crossing_or_disruption_recorded": false,
+        "structured_external_challenge_present": false,
+        "structured_external_pattern_coherence": 0.0,
+        "treated_as_perturbation": false
+      },
+      "externally_supplied_boundary_control": {
+        "result": "canonical B2 side assignments inherited from derived I3 row",
+        "status": "checked_i4_passed"
+      },
+      "failure_mode": "breach_pressure_exposes_need_for_b3_repair_probe",
+      "final_ap6_supported": false,
+      "flux_tolerance_score": "not_evaluated_by_c4",
+      "hidden_external_state_injection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "b48f326415576a69884c14c40940945bf5c7f194105e35dccf413cf0604db211",
+        "same_inputs_same_digest_required": true,
+        "self_verified": true
+      },
+      "identity_acceptance_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "inbound_flux": 0.18,
+      "internal_coherence": 0.842,
+      "internal_state_descriptor": {
+        "basin_signal_floor": 0.7,
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_observed_minimum_internal_support": 0.83,
+        "classification_path": "primary_floor",
+        "coherence_floor": 0.84,
+        "coherence_margin_floor": 0.52,
+        "derived_internal_side_nodes": [
+          "b2_q0",
+          "b2_q1",
+          "b2_q2"
+        ],
+        "minimum_observed_internal_support": 0.86,
+        "support_floor": 0.85
+      },
+      "leakage_ratio": 0.148,
+      "mechanism_name": "fixed_B2_challenge_sweep",
+      "mechanism_role": "challenge_response_requirements_discovery",
+      "missing_boundary_side_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "missing_gates": [
+        "boundary_state_sweep_missing",
+        "selected_interaction_probe_missing",
+        "full_negative_control_matrix_missing",
+        "duplicate_and_order_inversion_replay_missing",
+        "claim_boundary_classification_missing"
+      ],
+      "multi_basin_merge_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "native_boundary_requirements_observed": [
+        "B2 can record breach pressure but does not yet support B3 repair/reabsorption"
+      ],
+      "native_support_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "noise_resilience_score": "not_evaluated_by_c4",
+      "old_best_claim_inputs": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "order_inversion_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "order_inversion_replay_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "outbound_flux": 0.16,
+      "post_hoc_boundary_label_control": {
+        "result": "challenge decision follows fixed B2 definition and transform metrics",
+        "status": "checked_i4_passed"
+      },
+      "provisional_ap_level": "AP6_candidate_input_only",
+      "provisional_claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "repair_score": 0.52,
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "artifact_id": "n16_challenge_sweep_matrix",
+        "boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          },
+          {
+            "event": "transient_breach_pressure",
+            "left": "b2_q1",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.28
+          }
+        ],
+        "boundary_side_assignments": {
+          "b2_q0": "derived_internal_side",
+          "b2_q1": "derived_internal_side",
+          "b2_q2": "derived_internal_side",
+          "b2_q3": "derived_external_side",
+          "b2_q4": "derived_external_side"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_class": "C4",
+        "challenge_pressure_rationale": "breach_pressure 0.38 creates partial reclosure pressure below the B3 repair/reabsorption claim boundary",
+        "challenge_profile": {
+          "breach_pressure": 0.38,
+          "directional_flux_pressure": 0.0,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.0,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "metrics": {
+          "basin_separation_score": "not_evaluated_by_c4",
+          "boundary_stability_score": 0.55,
+          "coherence_margin": 0.472,
+          "external_coherence": 0.37,
+          "flux_tolerance_score": "not_evaluated_by_c4",
+          "inbound_flux": 0.18,
+          "internal_coherence": 0.842,
+          "leakage_ratio": 0.148,
+          "minimum_internal_support": 0.83,
+          "noise_resilience_score": "not_evaluated_by_c4",
+          "outbound_flux": 0.16,
+          "repair_score": 0.52,
+          "retained_flux": 1.05
+        },
+        "policy_id": "n16_replay_digest_policy_v1",
+        "row_decision": "partial"
+      },
+      "required_n16_boundary_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "requirements_failed": [
+        "regulated_repair_not_supported_for_B2",
+        "reclosure_score_below_breach_reclosure_floor",
+        "B3_repair_reabsorption_probe_required",
+        "quiet_leakage_ceiling_exceeded_under_breach_pressure",
+        "minimum_internal_support_floor_not_preserved_under_breach_pressure",
+        "minimum_coherence_margin_floor_not_preserved_under_breach_pressure"
+      ],
+      "requirements_satisfied": [
+        "breach_pressure_recorded",
+        "reclosure_pressure_recorded_without_b3_promotion",
+        "fail_closed_repair_boundary_preserved"
+      ],
+      "resource_relabel_as_self_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "retained_flux": 1.05,
+      "role_classification_audit": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class_only_changed": true,
+        "claim_ceiling_preserved": true,
+        "status": "passed"
+      },
+      "row_decision": "partial",
+      "row_id": "n16_i4_row_b2_c4",
+      "runtime_state_surface_id": "n16_i4_fixed_b2_c4_surface",
+      "self_region_nodes": [
+        "b2_q0",
+        "b2_q1",
+        "b2_q2"
+      ],
+      "self_support_relabel_as_external_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "selfhood_personhood_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "semantic_goal_ownership_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "source_current": {
+        "B2_fixed": true,
+        "C2_external_role_rationale": "not_applicable",
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+        "challenge_pressure_rationale": "breach_pressure 0.38 creates partial reclosure pressure below the B3 repair/reabsorption claim boundary",
+        "challenge_transform": {
+          "boundary_classification": "b2_breach_reclosure_partial_not_b3",
+          "challenge_profile": {
+            "breach_pressure": 0.38,
+            "directional_flux_pressure": 0.0,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.0,
+            "structured_external_coherence_pressure": 0.0
+          },
+          "external_state_role": "perturbation",
+          "failure_mode": "breach_pressure_exposes_need_for_b3_repair_probe",
+          "metrics": {
+            "basin_separation_score": "not_evaluated_by_c4",
+            "boundary_stability_score": 0.55,
+            "coherence_margin": 0.472,
+            "external_coherence": 0.37,
+            "flux_tolerance_score": "not_evaluated_by_c4",
+            "inbound_flux": 0.18,
+            "internal_coherence": 0.842,
+            "leakage_ratio": 0.148,
+            "minimum_internal_support": 0.83,
+            "noise_resilience_score": "not_evaluated_by_c4",
+            "outbound_flux": 0.16,
+            "repair_score": 0.52,
+            "retained_flux": 1.05
+          },
+          "name": "breach and repair pressure",
+          "requirements_failed": [
+            "regulated_repair_not_supported_for_B2",
+            "reclosure_score_below_breach_reclosure_floor",
+            "B3_repair_reabsorption_probe_required",
+            "quiet_leakage_ceiling_exceeded_under_breach_pressure",
+            "minimum_internal_support_floor_not_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_not_preserved_under_breach_pressure"
+          ],
+          "requirements_observed": [
+            "B2 can record breach pressure but does not yet support B3 repair/reabsorption"
+          ],
+          "requirements_satisfied": [
+            "breach_pressure_recorded",
+            "reclosure_pressure_recorded_without_b3_promotion",
+            "fail_closed_repair_boundary_preserved"
+          ],
+          "row_decision": "partial"
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "synthetic_neighbor_basin": "not_applicable"
+      },
+      "source_experiment": "N16",
+      "source_iteration": "iteration_3_quiet_boundary_calibration",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "source_report_sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "source_status": "passed",
+      "stale_external_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "stale_internal_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "state_source_window": {
+        "challenge_pressure": "breach and repair pressure",
+        "freshness": "source_current_for_iteration_4",
+        "snapshot_count": 3,
+        "window_id": "challenge_sweep_window"
+      },
+      "structured_external_coherence_rejection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "untracked_boundary_crossing_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      }
+    },
+    {
+      "ap5_contribution_status": "context_only_not_promoted",
+      "ap6_required_evidence_still_missing": [
+        "B0_B4_boundary_state_sweep",
+        "B3_repair_reabsorption_probe",
+        "B4_shared_medium_separability_probe",
+        "final_control_matrix",
+        "final_claim_classification"
+      ],
+      "arc_method_mapping": {
+        "classification_of_becoming": "classify each B2 challenge row by the narrow C-class pressure it actually tests; do not let a row substitute for another challenge",
+        "cultivation_of_becoming": "cultivate reusable requirement rows and fail-closed extension blockers before B3/B4 maturity probes",
+        "interrogation_of_becoming": "hold canonical B2 fixed and ask bounded questions about noise, flux, structured external coherence, breach pressure, and shared-medium pressure",
+        "naturalization_of_becoming": "treat observed requirements as artifact-level boundary requirements, not native support or self/environment understanding"
+      },
+      "artifact_only_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "artifact_only_replay_status": "deterministic_builder_replay_ready",
+      "basin_count": 2,
+      "basin_descriptor": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C5",
+        "challenge_name": "coupled neighbor / shared medium",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.12,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.44,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "extension_target": "B4"
+      },
+      "basin_separation_score": 0.38,
+      "blocked_claims": [
+        "final_ap6",
+        "selfhood",
+        "personhood",
+        "identity_acceptance",
+        "runtime_identity_acceptance",
+        "semantic_goal_ownership",
+        "semantic_goal_understanding",
+        "intention",
+        "semantic_choice",
+        "agency",
+        "unrestricted_agency",
+        "native_support_without_phase8",
+        "fully_native_agentic_like_integration",
+        "selective_uptake_or_resource_assimilation",
+        "organism_or_life_claim",
+        "B3_repair_capability",
+        "B4_multi_basin_separability"
+      ],
+      "boundary_claim_allowed": false,
+      "boundary_classification": "b2_shared_medium_pressure_rejected",
+      "boundary_condition_evaluated_at": "B2_C5_challenge_sweep",
+      "boundary_crossing_trace": [
+        {
+          "challenge_class": "C5",
+          "event": "fixed_b2_boundary_edge",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        },
+        {
+          "basin_separation_score": 0.38,
+          "event": "shared_medium_merge_pressure",
+          "leakage_ratio": 0.31
+        }
+      ],
+      "boundary_drift_outside_policy_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "boundary_edges": [
+        {
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "b2_q3",
+          "right_side": "derived_external_side",
+          "weight": 0.09
+        },
+        {
+          "event": "shared_medium_merge_pressure",
+          "left": "b2_q2",
+          "left_side": "derived_internal_side",
+          "right": "neighbor_basin_q0",
+          "right_side": "derived_external_side",
+          "weight": 0.31
+        }
+      ],
+      "boundary_policy": {
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_sweep_policy": "same_B2_policy_only_challenge_class_changes",
+        "inherits": "n16_boundary_policy_v1",
+        "policy_id": "n16_i3_quiet_boundary_calibration_policy",
+        "quiet_leakage_ceiling": 0.12,
+        "quiet_stability_floor": 0.9,
+        "side_derivation": "derived_from_support_coherence_and_basin_signal_thresholds;no externally supplied self or external labels"
+      },
+      "boundary_side_assignments": {
+        "b2_q0": "derived_internal_side",
+        "b2_q1": "derived_internal_side",
+        "b2_q2": "derived_internal_side",
+        "b2_q3": "derived_external_side",
+        "b2_q4": "derived_external_side"
+      },
+      "boundary_stability_score": 0.32,
+      "boundary_state": "B2",
+      "boundary_state_constructed_support": [
+        "B2 can be calibrated as a support-persistent boundary candidate under C0-C2 before repair claims"
+      ],
+      "boundary_state_inherited_closed_claims": [
+        "support-retention and support-seeking regulation are source-backed at AP3 artifact level",
+        "N07 source-specific support/basin compatibility replays artifact-only",
+        "N15 drift/replay discipline can preserve derived artifact target context"
+      ],
+      "boundary_state_lineage_sources": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "boundary_state_relevance": [
+        "B2"
+      ],
+      "boundary_state_unsupported_extension": [
+        "support persistence is not selfhood",
+        "artifact replay stability is not native self/environment understanding"
+      ],
+      "boundary_surface": {
+        "canonical_b2_boundary_surface": {
+          "classification_path": "primary_floor",
+          "external_edges": [
+            {
+              "left": "b2_q3",
+              "left_side": "derived_external_side",
+              "right": "b2_q4",
+              "right_side": "derived_external_side",
+              "weight": 0.37
+            }
+          ],
+          "internal_edges": [
+            {
+              "left": "b2_q0",
+              "left_side": "derived_internal_side",
+              "right": "b2_q1",
+              "right_side": "derived_internal_side",
+              "weight": 0.74
+            },
+            {
+              "left": "b2_q1",
+              "left_side": "derived_internal_side",
+              "right": "b2_q2",
+              "right_side": "derived_internal_side",
+              "weight": 0.72
+            }
+          ],
+          "side_derivation": {
+            "b2_q0": "derived_internal_side",
+            "b2_q1": "derived_internal_side",
+            "b2_q2": "derived_internal_side",
+            "b2_q3": "derived_external_side",
+            "b2_q4": "derived_external_side"
+          },
+          "snapshot_id": "q0"
+        },
+        "challenge_boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          },
+          {
+            "event": "shared_medium_merge_pressure",
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "neighbor_basin_q0",
+            "right_side": "derived_external_side",
+            "weight": 0.31
+          }
+        ],
+        "challenge_class": "C5"
+      },
+      "budget_cost_surface": {
+        "canonical_json_input_bytes": 2787,
+        "canonical_json_output_bytes": 1487,
+        "matrix_cell_count": 1,
+        "replay_count": 1,
+        "source_row_count": 1,
+        "transform_count": 1,
+        "validation_count": 1,
+        "wall_clock_seconds": 0
+      },
+      "budget_units": [
+        "source_row_count",
+        "matrix_cell_count",
+        "transform_count",
+        "canonical_json_input_bytes",
+        "canonical_json_output_bytes",
+        "replay_count",
+        "validation_count",
+        "wall_clock_seconds"
+      ],
+      "budget_validity": "valid",
+      "case_id": "n16_i4_b2_c5_challenge_sweep",
+      "case_policy": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class": "C5",
+        "challenge_name": "coupled neighbor / shared medium",
+        "challenge_pressure_rationale": "shared_medium_pressure 0.44 creates a reference shared-medium failure for B2 and motivates the later B4 x C5 probe",
+        "challenge_sweep_only": true,
+        "challenge_thresholds": {
+          "breach_reclosure_floor": 0.7,
+          "flux_leakage_warning": 0.12,
+          "internal_coherence_floor": 0.84,
+          "internal_support_floor": 0.85,
+          "minimum_coherence_margin_floor": 0.52,
+          "quiet_leakage_ceiling": 0.12,
+          "shared_medium_basin_separation_floor": 0.7
+        },
+        "external_boundary_labels_supplied": false,
+        "post_hoc_labels_allowed": false
+      },
+      "cell_id": "B2_C5",
+      "challenge_class": "C5",
+      "challenge_class_relevance": [
+        "C5"
+      ],
+      "claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "claim_ceiling_preserved": true,
+      "claim_promotion_allowed": false,
+      "coherence_margin": 0.422,
+      "dependency_trace": [
+        {
+          "boundary_side": "derived_internal_and_external_sides",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_side_assignments",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_side_assignments",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_fixed_b2_inheritance",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0"
+          }
+        },
+        {
+          "boundary_side": "boundary_side",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "boundary_edges",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "boundary_edges",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_edge_projection",
+          "transform_parameters": {
+            "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+            "challenge_class": "C5"
+          }
+        },
+        {
+          "boundary_side": "shared_medium",
+          "claim_ceiling_of_source": "support_persistent_basin_candidate_under_C0_only",
+          "row_field": "challenge_class",
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+          "source_field": "calibration_policy",
+          "source_row_id": "n16_i3_row_b2_c0",
+          "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+          "transform_id": "n16_i4_challenge_transform",
+          "transform_parameters": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.12,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.44,
+            "structured_external_coherence_pressure": 0.0
+          }
+        }
+      ],
+      "direct_historic_ap6_support_status": "not_direct_ap6_support",
+      "direct_historic_support_status": "absent",
+      "evidence_strategy": "fixed_b2_challenge_sweep_from_i3_calibration",
+      "evidence_strategy_class": "old_best_claims_construction",
+      "external_coherence": 0.41,
+      "external_perturbation_descriptor": {
+        "breach_pressure": 0.0,
+        "challenge_class": "C5",
+        "directional_flux_pressure": 0.12,
+        "noise_amplitude": 0.0,
+        "perturbation_present": false,
+        "shared_medium_pressure": 0.44
+      },
+      "external_region_nodes": [
+        "b2_q3",
+        "b2_q4",
+        "neighbor_basin_q0"
+      ],
+      "external_resource_descriptor": {
+        "challenge_class": "C5",
+        "resource_role": "not_resource_assimilation",
+        "synthetic_neighbor_basin": {
+          "claim_boundary": "constructed pressure input for B2 rejection only; not evidence of source-backed B4 multi-basin separability",
+          "node_id": "neighbor_basin_q0",
+          "status": "synthetic_shared_medium_stressor"
+        }
+      },
+      "external_state_role": "shared_medium",
+      "external_structured_state_descriptor": {
+        "crossing_or_disruption_recorded": false,
+        "structured_external_challenge_present": false,
+        "structured_external_pattern_coherence": 0.0,
+        "treated_as_perturbation": false
+      },
+      "externally_supplied_boundary_control": {
+        "result": "canonical B2 side assignments inherited from derived I3 row",
+        "status": "checked_i4_passed"
+      },
+      "failure_mode": "shared_medium_leakage_and_merge_pressure_exceed_B2_policy",
+      "final_ap6_supported": false,
+      "flux_tolerance_score": "not_evaluated_by_c5",
+      "hidden_external_state_injection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "idempotency_digest_plan": {
+        "algorithm": "sha256",
+        "digest": "a5620f0dabe2ef1a941c0c401d5dd87d7a46e5877a1c2697e31931450b9eb1f2",
+        "same_inputs_same_digest_required": true,
+        "self_verified": true
+      },
+      "identity_acceptance_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "inbound_flux": 0.31,
+      "internal_coherence": 0.832,
+      "internal_state_descriptor": {
+        "basin_signal_floor": 0.7,
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_observed_minimum_internal_support": 0.82,
+        "classification_path": "primary_floor",
+        "coherence_floor": 0.84,
+        "coherence_margin_floor": 0.52,
+        "derived_internal_side_nodes": [
+          "b2_q0",
+          "b2_q1",
+          "b2_q2"
+        ],
+        "minimum_observed_internal_support": 0.86,
+        "support_floor": 0.85
+      },
+      "leakage_ratio": 0.31,
+      "mechanism_name": "fixed_B2_challenge_sweep",
+      "mechanism_role": "challenge_response_requirements_discovery",
+      "missing_boundary_side_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "missing_gates": [
+        "boundary_state_sweep_missing",
+        "selected_interaction_probe_missing",
+        "full_negative_control_matrix_missing",
+        "duplicate_and_order_inversion_replay_missing",
+        "claim_boundary_classification_missing"
+      ],
+      "multi_basin_merge_control": {
+        "result": "shared-medium leakage and merge pressure exceed B2 policy",
+        "status": "recorded_failure_i4"
+      },
+      "native_boundary_requirements_observed": [
+        "B2 is insufficient for C5 shared-medium pressure without B4-style separability evidence"
+      ],
+      "native_support_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "noise_resilience_score": "not_evaluated_by_c5",
+      "old_best_claim_inputs": [
+        "n16_i1_row_01_n15_closeout_ap5",
+        "n16_i1_row_03_n15_bounded_drift_replay",
+        "n16_i1_row_07_n13_closeout_ap3",
+        "n16_i1_row_11_n03_native_packet_loop_closeout",
+        "n16_i1_row_12_n04_taxonomy_inventory",
+        "n16_i1_row_15_n07_long_horizon_compatibility_closeout",
+        "n16_i1_row_16_n07_identity_support_withdrawal_baseline"
+      ],
+      "order_inversion_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "order_inversion_replay_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "outbound_flux": 0.33,
+      "post_hoc_boundary_label_control": {
+        "result": "challenge decision follows fixed B2 definition and transform metrics",
+        "status": "checked_i4_passed"
+      },
+      "provisional_ap_level": "AP6_candidate_input_only",
+      "provisional_claim_ceiling": "N16_MVP_B2_challenge_requirements_candidate_no_final_AP6",
+      "repair_score": "not_evaluated_by_c5",
+      "replay_digest_algorithm": "sha256_canonical_json_sorted_keys_ascii",
+      "replay_digest_inputs": {
+        "artifact_id": "n16_challenge_sweep_matrix",
+        "boundary_edges": [
+          {
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "b2_q3",
+            "right_side": "derived_external_side",
+            "weight": 0.09
+          },
+          {
+            "event": "shared_medium_merge_pressure",
+            "left": "b2_q2",
+            "left_side": "derived_internal_side",
+            "right": "neighbor_basin_q0",
+            "right_side": "derived_external_side",
+            "weight": 0.31
+          }
+        ],
+        "boundary_side_assignments": {
+          "b2_q0": "derived_internal_side",
+          "b2_q1": "derived_internal_side",
+          "b2_q2": "derived_internal_side",
+          "b2_q3": "derived_external_side",
+          "b2_q4": "derived_external_side"
+        },
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "challenge_class": "C5",
+        "challenge_pressure_rationale": "shared_medium_pressure 0.44 creates a reference shared-medium failure for B2 and motivates the later B4 x C5 probe",
+        "challenge_profile": {
+          "breach_pressure": 0.0,
+          "directional_flux_pressure": 0.12,
+          "noise_amplitude": 0.0,
+          "shared_medium_pressure": 0.44,
+          "structured_external_coherence_pressure": 0.0
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "metrics": {
+          "basin_separation_score": 0.38,
+          "boundary_stability_score": 0.32,
+          "coherence_margin": 0.422,
+          "external_coherence": 0.41,
+          "flux_tolerance_score": "not_evaluated_by_c5",
+          "inbound_flux": 0.31,
+          "internal_coherence": 0.832,
+          "leakage_ratio": 0.31,
+          "minimum_internal_support": 0.82,
+          "noise_resilience_score": "not_evaluated_by_c5",
+          "outbound_flux": 0.33,
+          "repair_score": "not_evaluated_by_c5",
+          "retained_flux": 0.98
+        },
+        "policy_id": "n16_replay_digest_policy_v1",
+        "row_decision": "rejected"
+      },
+      "required_n16_boundary_evidence": [
+        "B2 x C0, C1, and C2 must be evaluated before B3 is unlocked",
+        "boundary-side assignments must be replayable and source-current"
+      ],
+      "requirements_failed": [
+        "basin_separation_score_below_shared_medium_floor",
+        "shared_medium_leakage_exceeds_B2_policy",
+        "B2_insufficient_for_multi_basin_shared_medium",
+        "quiet_leakage_ceiling_exceeded_under_shared_medium",
+        "minimum_internal_support_floor_not_preserved_under_shared_medium",
+        "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+        "minimum_coherence_margin_floor_not_preserved_under_shared_medium"
+      ],
+      "requirements_satisfied": [
+        "shared_medium_pressure_recorded",
+        "coupled_neighbor_merge_pressure_recorded",
+        "B4_extension_need_identified"
+      ],
+      "resource_relabel_as_self_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "retained_flux": 0.98,
+      "role_classification_audit": {
+        "canonical_b2_held_fixed": true,
+        "challenge_class_only_changed": true,
+        "claim_ceiling_preserved": true,
+        "status": "passed"
+      },
+      "row_decision": "rejected",
+      "row_id": "n16_i4_row_b2_c5",
+      "runtime_state_surface_id": "n16_i4_fixed_b2_c5_surface",
+      "self_region_nodes": [
+        "b2_q0",
+        "b2_q1",
+        "b2_q2"
+      ],
+      "self_support_relabel_as_external_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "selfhood_personhood_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "semantic_goal_ownership_relabel_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_replay_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "snapshot_load_status": "not_run_iteration_4_deferred_before_final_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "source_current": {
+        "B2_fixed": true,
+        "C2_external_role_rationale": "not_applicable",
+        "canonical_b2_definition_digest": "e60b71228ee2411e95a77f1724f2c37f6738a8192d2eeab974a385b4dbb2fda0",
+        "canonical_b2_source_row_id": "n16_i3_row_b2_c0",
+        "challenge_pressure_rationale": "shared_medium_pressure 0.44 creates a reference shared-medium failure for B2 and motivates the later B4 x C5 probe",
+        "challenge_transform": {
+          "boundary_classification": "b2_shared_medium_pressure_rejected",
+          "challenge_profile": {
+            "breach_pressure": 0.0,
+            "directional_flux_pressure": 0.12,
+            "noise_amplitude": 0.0,
+            "shared_medium_pressure": 0.44,
+            "structured_external_coherence_pressure": 0.0
+          },
+          "external_state_role": "shared_medium",
+          "failure_mode": "shared_medium_leakage_and_merge_pressure_exceed_B2_policy",
+          "metrics": {
+            "basin_separation_score": 0.38,
+            "boundary_stability_score": 0.32,
+            "coherence_margin": 0.422,
+            "external_coherence": 0.41,
+            "flux_tolerance_score": "not_evaluated_by_c5",
+            "inbound_flux": 0.31,
+            "internal_coherence": 0.832,
+            "leakage_ratio": 0.31,
+            "minimum_internal_support": 0.82,
+            "noise_resilience_score": "not_evaluated_by_c5",
+            "outbound_flux": 0.33,
+            "repair_score": "not_evaluated_by_c5",
+            "retained_flux": 0.98
+          },
+          "name": "coupled neighbor / shared medium",
+          "requirements_failed": [
+            "basin_separation_score_below_shared_medium_floor",
+            "shared_medium_leakage_exceeds_B2_policy",
+            "B2_insufficient_for_multi_basin_shared_medium",
+            "quiet_leakage_ceiling_exceeded_under_shared_medium",
+            "minimum_internal_support_floor_not_preserved_under_shared_medium",
+            "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+            "minimum_coherence_margin_floor_not_preserved_under_shared_medium"
+          ],
+          "requirements_observed": [
+            "B2 is insufficient for C5 shared-medium pressure without B4-style separability evidence"
+          ],
+          "requirements_satisfied": [
+            "shared_medium_pressure_recorded",
+            "coupled_neighbor_merge_pressure_recorded",
+            "B4_extension_need_identified"
+          ],
+          "row_decision": "rejected"
+        },
+        "metric_construction_rationale": {
+          "baseline_anchor": "B2_C0 metrics reproduce the Iteration 3 B2 quiet row",
+          "basin_separation_score": "C5-only shared-medium separation score; below the B4-style separation floor and therefore a reference failure",
+          "boundary_stability_score": "ordered MVP stability score: quiet anchor highest, bounded noise and C3 false-positive rejection high, directional flux/breach partial, shared medium rejected",
+          "construction_type": "deterministic MVP stress probe constructed from the fixed Iteration 3 B2 baseline; metric values are explicit challenge-case construction values, not independent physics simulation outputs",
+          "flux_tolerance_score": "C2-only score reflecting retained measurable boundary under one-sided flow despite leakage and floor failures",
+          "leakage_ratio": "records challenge-specific cross-boundary leakage pressure; C2/C4/C5 intentionally exceed the quiet leakage ceiling to expose requirements",
+          "noise_resilience_score": "C1-only score at the single MVP noise amplitude; it is not a general robustness envelope",
+          "repair_score": "C4-only reclosure-pressure score; below the breach reclosure floor and therefore not B3 repair/reabsorption support",
+          "retained_flux": "starts from the B2_C0 retained flux baseline and decreases as the challenge profile adds leakage, breach, or shared-medium pressure"
+        },
+        "synthetic_neighbor_basin": {
+          "claim_boundary": "constructed pressure input for B2 rejection only; not evidence of source-backed B4 multi-basin separability",
+          "node_id": "neighbor_basin_q0",
+          "status": "synthetic_shared_medium_stressor"
+        }
+      },
+      "source_experiment": "N16",
+      "source_iteration": "iteration_3_quiet_boundary_calibration",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "source_report_sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554",
+      "source_role_classification": [
+        "internal_support_state",
+        "boundary_crossing_trace",
+        "claim_boundary_blocker"
+      ],
+      "source_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "source_status": "passed",
+      "stale_external_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "stale_internal_state_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "state_source_window": {
+        "challenge_pressure": "coupled neighbor / shared medium",
+        "freshness": "source_current_for_iteration_4",
+        "snapshot_count": 3,
+        "window_id": "challenge_sweep_window"
+      },
+      "structured_external_coherence_rejection_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      },
+      "untracked_boundary_crossing_control": {
+        "iteration_4_scope": "challenge_sweep_not_full_control_matrix",
+        "status": "deferred_before_final_ap6"
+      }
+    }
+  ],
+  "schema_version": "n16_boundary_schema_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_boundary_policy_v1.json": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_boundary_policy_v1.json",
+      "sha256": "e1f4e35441801224f0d2fbea39c26cb2228eeb2c4c2b284909cf276b0d4c06d8"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_budget_limits_v1.json": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_budget_limits_v1.json",
+      "sha256": "47319a6391156d3ea2123ce0629dc00d7362c011d37cfa2b6953e1f818656bc5"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_control_variants_v1.json": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_control_variants_v1.json",
+      "sha256": "8dac9bce347f840e3522d0a19449b2e6714c2ff23e864c835fe9083e4a04ac7e"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_replay_policy_v1.json": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_replay_policy_v1.json",
+      "sha256": "d2486aec713045128550b42d7a0b8ac8dba8a278873a96833caecab90b09bae1"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_source_registry.json": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_source_registry.json",
+      "sha256": "16277a9681f90a6a0393616160602573dd8e2441faf6fd7cdfb49480de95d538"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_schema_v1.json": {
+      "acceptance_state": "accepted_boundary_schema_freeze_no_row_validation",
+      "output_digest": "10f603a58f816f588c2a3f60a2f0b54df0386a8ce86324aace18dfd40a6950d8",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_schema_v1.json",
+      "sha256": "5233806d2f004c65c33c0048ada798d062eecb7939c773f2486d613c58ff2df2",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json": {
+      "acceptance_state": "accepted_boundary_source_inventory_only_no_ap6",
+      "output_digest": "5c8972426df7b4d1b28e6de4f1fd19d093e3ac6f3b70f40f790207175ebc3b65",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json",
+      "sha256": "ccb038bbe82b9ed6b8ff491e477a6dfdf9eec9467372961ee3784206ad4d0ed1",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json": {
+      "acceptance_state": "accepted_quiet_boundary_calibration_no_ap6",
+      "output_digest": "863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "status": "passed"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_schema_v1.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_schema_v1.md",
+      "sha256": "ffcabb791576bd16e7d1696e1dc52af07b09bd991798b726d49c12b6fcfb77e3"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md",
+      "sha256": "da507d17f38eae5321d20fd467909bf5a37c5093a1d85806c37b0a44a632a020"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554"
+    }
+  },
+  "status": "passed",
+  "synthesis_mode": "partial_mvp"
+}
