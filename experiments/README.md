@@ -41,6 +41,7 @@ machine-local state.
 | [N14 consequence-sensitive route selection](2026-06-N14-lgrc-consequence-sensitive-route-selection/README.md) | Closed artifact-level AP4 consequence-sensitive route selection with observed route-specific memory and constructed support/regulation followout. | README, then closeout handoff, claim boundary, consequence records, controls, and replay artifacts. |
 | [N15 endogenous proxy formation](2026-06-N15-lgrc-endogenous-proxy-formation/README.md) | Closed artifact-level AP5 endogenous target/proxy formation from source-current support, memory, regulation, and AP4 consequence context. | README, then closeout handoff, claim boundary, control matrix, bounded-drift replay, and validator artifacts. |
 | [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
+| [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Initialized AP7 closed-loop experiment testing ordered external-internal-external-later-internal trace dependence without agency overclaim. | README, then implementation plan/checklist, hypotheses, and planned loop-control artifacts. |
 
 ## Current Roadmap State
 

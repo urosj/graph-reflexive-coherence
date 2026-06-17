@@ -1,0 +1,2181 @@
+{
+  "acceptance_state": "accepted_loop_source_inventory_only_no_ap7",
+  "artifact_id": "n17_loop_source_inventory",
+  "checks": [
+    {
+      "check_id": "n16_closeout_exists_and_frozen",
+      "detail": {
+        "n16_closed_action_perception_loop_opened": false,
+        "n16_closeout_exists": true,
+        "n16_closeout_parse_error": null,
+        "n16_closeout_parseable": true,
+        "n16_final_ap6_supported": true,
+        "n16_final_artifact_level_ap6_frozen": true,
+        "n16_final_supported_ap_level": "AP6",
+        "n16_recommended_next": "N17_closed_action_perception_loop",
+        "n16_to_n17_use": "N16 is admissible as AP6 boundary substrate only; it is not direct AP7 closed-loop support.",
+        "n17_ap7_final_classification_blocked_by_n16_status": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "every_source_artifact_exists",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "every_source_report_exists",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "every_source_json_parseable",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "every_source_status_matches_expected",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "every_source_output_digest_recorded",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "expected_final_supported_ap_levels_match",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "every_source_sha256_recorded",
+      "detail": "artifact and report sha256 values recorded for each row",
+      "passed": true
+    },
+    {
+      "check_id": "loop_phase_contribution_values_valid",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "missing_for_ap7_common_items_complete",
+      "detail": "all rows include common AP7 missing items plus any row-specific blockers",
+      "passed": true
+    },
+    {
+      "check_id": "source_consumption_rules_enforced",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "construction_role_mvp_alignment_valid",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "direct_ap7_admissibility_derived_and_not_accepted",
+      "detail": "direct AP7 criteria are derived per row and no row accepts direct AP7",
+      "passed": true
+    },
+    {
+      "check_id": "direct_historic_ap7_support_absent",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "no_row_closed_loop_claim_allowed",
+      "detail": "all source rows remain fragments, context, or blockers",
+      "passed": true
+    },
+    {
+      "check_id": "no_final_ap7_claim",
+      "detail": "Iteration 1 makes no AP7 claim",
+      "passed": true
+    },
+    {
+      "check_id": "g3_first_rule_recorded",
+      "detail": "G3 is first AP7-admissible rung",
+      "passed": true
+    },
+    {
+      "check_id": "g0_g2_cannot_support_ap7",
+      "detail": "G0-G2 rows are diagnostics/fragments only",
+      "passed": true
+    },
+    {
+      "check_id": "phase_gap_map_recorded",
+      "detail": {
+        "external_feedback_to_internal": {
+          "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+          "partial_rows": [
+            "n17_i1_row_15_n08_memory_context"
+          ],
+          "phase_supported": "partial_context_but_missing_ordered_response_caused_feedback",
+          "yes_rows": []
+        },
+        "external_to_internal": {
+          "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+          "partial_rows": [
+            "n17_i1_row_01_n16_closeout_ap6",
+            "n17_i1_row_05_n16_b4_c5_shared_medium",
+            "n17_i1_row_07_n13_closeout_ap3",
+            "n17_i1_row_08_n13_support_disruption_restoration",
+            "n17_i1_row_09_n09_bounded_regulation",
+            "n17_i1_row_10_n09_perturbation_withdrawal_support"
+          ],
+          "phase_supported": "yes_fragment_only",
+          "yes_rows": [
+            "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+            "n17_i1_row_04_n16_b3_c2_flux_repair"
+          ]
+        },
+        "internal_response": {
+          "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+          "partial_rows": [
+            "n17_i1_row_01_n16_closeout_ap6",
+            "n17_i1_row_05_n16_b4_c5_shared_medium",
+            "n17_i1_row_11_n15_closeout_ap5",
+            "n17_i1_row_12_n15_runtime_target_candidate",
+            "n17_i1_row_14_n14_closeout_ap4",
+            "n17_i1_row_15_n08_memory_context"
+          ],
+          "phase_supported": "yes_fragment_only",
+          "yes_rows": [
+            "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+            "n17_i1_row_04_n16_b3_c2_flux_repair",
+            "n17_i1_row_07_n13_closeout_ap3",
+            "n17_i1_row_08_n13_support_disruption_restoration",
+            "n17_i1_row_09_n09_bounded_regulation",
+            "n17_i1_row_10_n09_perturbation_withdrawal_support"
+          ]
+        },
+        "response_to_external_change": {
+          "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+          "partial_rows": [
+            "n17_i1_row_01_n16_closeout_ap6",
+            "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+            "n17_i1_row_04_n16_b3_c2_flux_repair",
+            "n17_i1_row_05_n16_b4_c5_shared_medium",
+            "n17_i1_row_08_n13_support_disruption_restoration",
+            "n17_i1_row_10_n09_perturbation_withdrawal_support",
+            "n17_i1_row_14_n14_closeout_ap4"
+          ],
+          "phase_supported": "partial",
+          "yes_rows": []
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "external_feedback_to_internal_missing_for_mvp",
+      "detail": {
+        "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+        "partial_rows": [
+          "n17_i1_row_15_n08_memory_context"
+        ],
+        "phase_supported": "partial_context_but_missing_ordered_response_caused_feedback",
+        "yes_rows": []
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mvp_sources_prioritized",
+      "detail": [
+        "n17_i1_row_01_n16_closeout_ap6",
+        "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+        "n17_i1_row_04_n16_b3_c2_flux_repair",
+        "n17_i1_row_07_n13_closeout_ap3",
+        "n17_i1_row_08_n13_support_disruption_restoration",
+        "n17_i1_row_09_n09_bounded_regulation",
+        "n17_i1_row_10_n09_perturbation_withdrawal_support"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "extension_sources_not_mvp_blockers",
+      "detail": [
+        "n17_i1_row_05_n16_b4_c5_shared_medium"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "blockers_first_class",
+      "detail": [
+        "n17_i1_row_02_n16_claim_boundary_record",
+        "n17_i1_row_06_n16_requirements_controls",
+        "n17_i1_row_13_n15_bounded_drift_replay",
+        "n17_i1_row_16_n12_readiness_only"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_claim_ceilings_preserved",
+      "detail": {
+        "N08": "memory/context only",
+        "N09": "bounded regulation context only",
+        "N12": "readiness-only context",
+        "N13": "AP3 support regulation context only",
+        "N14": "AP4 consequence-sensitive selection context only",
+        "N15": "AP5 endogenous proxy context only",
+        "N16": "AP6 boundary evidence only"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 1 generator does not edit src/*",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    },
+    {
+      "check_id": "report_matches_json_summary",
+      "detail": {
+        "missing_phase_values": [],
+        "missing_row_ids": [],
+        "required_fragments": {
+          "acceptance_state": true,
+          "all_phase_values_present": true,
+          "all_rows_present": true,
+          "direct_ap7_exists_false": true,
+          "output_digest": true,
+          "status": true
+        },
+        "row_count": 16
+      },
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_loop_source_inventory.py",
+  "direct_historic_ap7_evidence": {
+    "accepted_rows": [],
+    "decision": "No historic source row directly supports AP7 under source-backed, claim-clean, order-clean, replay-clean, and control-clean criteria.",
+    "exists": false
+  },
+  "experiment_id": "N17",
+  "generated_at": "2026-06-17T00:00:00+00:00",
+  "git": {
+    "head": "7e2013e06a0091ad32ec73a98f8801bf34c00b9f",
+    "status_short": [
+      " M experiments/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/"
+    ]
+  },
+  "iteration": 1,
+  "iteration_result": {
+    "action_perception_loop_proven": false,
+    "agency_claim_opened": false,
+    "ap7_classification_supported": false,
+    "closed_loop_demonstrated": false,
+    "final_ap7_supported": false,
+    "fully_native_integration_opened": false,
+    "iteration_1_is_loop_experiment": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "ready_for_iteration_2_schema": true,
+    "recommended_next": "Iteration 2 loop schema and AP7 gate"
+  },
+  "loop_contract": {
+    "blocked_language": [
+      "AP7 supported",
+      "closed loop demonstrated",
+      "action/perception loop proven",
+      "agency-like loop",
+      "native closed loop"
+    ],
+    "direct_historic_ap7_admissibility_requires": [
+      "source_backed",
+      "claim_clean",
+      "order_clean",
+      "replay_clean",
+      "control_clean"
+    ],
+    "extensions": [
+      "resource_support_modulation_loop",
+      "shared_medium_reciprocal_loop"
+    ],
+    "g0_g1_g2_cannot_support_ap7": true,
+    "g3_first_ap7_admissible_rung": true,
+    "iteration_1_scope": "source_inventory_and_loop_contract_only",
+    "loop_ladder": {
+      "G0": "one-way boundary crossing trace",
+      "G1": "internal update after external crossing",
+      "G2": "outbound response changes external state",
+      "G3": "changed external state feeds back into later internal state",
+      "G4": "replay-stable closed loop",
+      "G5": "challenge-stable closed loop under perturbation or flux",
+      "G6": "shared-medium closed loop without basin merge",
+      "G7": "claim-clean AP7 candidate, unsafe promotions blocked"
+    },
+    "loop_phase_values": [
+      "external_to_internal",
+      "internal_response",
+      "response_to_external_change",
+      "external_feedback_to_internal",
+      "claim_boundary_blocker"
+    ],
+    "mvp_family": "perturbation_response_recovery_loop",
+    "not_a_loop_experiment": true,
+    "ordered_trace_required": [
+      "t0_external_pressure_or_crossing",
+      "t1_internal_support_update",
+      "t2_response_caused_external_change",
+      "t3_later_internal_support_conditioned_by_changed_external_state"
+    ],
+    "proof_target": "ordered_trace_dependence_not_action_label"
+  },
+  "missing_phase_gap_map": {
+    "highest_value_check": "Any source row that lacks external->internal->external->later_internal ordering is classified as a fragment or blocker, not AP7 evidence.",
+    "missing_for_AP7": [
+      "a single ordered row with t0 external, t1 internal, t2 response-caused external change, and t3 later internal dependence",
+      "feedback_removed_control",
+      "one_way_crossing_active_null",
+      "order_inversion_control",
+      "post_hoc_loop_stitching_control",
+      "hidden_external_state_memory_control",
+      "claim-boundary classification under AP7 schema"
+    ],
+    "phase_supported": {
+      "external_feedback_to_internal": {
+        "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+        "partial_rows": [
+          "n17_i1_row_15_n08_memory_context"
+        ],
+        "phase_supported": "partial_context_but_missing_ordered_response_caused_feedback",
+        "yes_rows": []
+      },
+      "external_to_internal": {
+        "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+        "partial_rows": [
+          "n17_i1_row_01_n16_closeout_ap6",
+          "n17_i1_row_05_n16_b4_c5_shared_medium",
+          "n17_i1_row_07_n13_closeout_ap3",
+          "n17_i1_row_08_n13_support_disruption_restoration",
+          "n17_i1_row_09_n09_bounded_regulation",
+          "n17_i1_row_10_n09_perturbation_withdrawal_support"
+        ],
+        "phase_supported": "yes_fragment_only",
+        "yes_rows": [
+          "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+          "n17_i1_row_04_n16_b3_c2_flux_repair"
+        ]
+      },
+      "internal_response": {
+        "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+        "partial_rows": [
+          "n17_i1_row_01_n16_closeout_ap6",
+          "n17_i1_row_05_n16_b4_c5_shared_medium",
+          "n17_i1_row_11_n15_closeout_ap5",
+          "n17_i1_row_12_n15_runtime_target_candidate",
+          "n17_i1_row_14_n14_closeout_ap4",
+          "n17_i1_row_15_n08_memory_context"
+        ],
+        "phase_supported": "yes_fragment_only",
+        "yes_rows": [
+          "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+          "n17_i1_row_04_n16_b3_c2_flux_repair",
+          "n17_i1_row_07_n13_closeout_ap3",
+          "n17_i1_row_08_n13_support_disruption_restoration",
+          "n17_i1_row_09_n09_bounded_regulation",
+          "n17_i1_row_10_n09_perturbation_withdrawal_support"
+        ]
+      },
+      "response_to_external_change": {
+        "claim_boundary": "phase fragments do not support AP7 unless one N17 row shows monotonic external->internal->external->later_internal closure",
+        "partial_rows": [
+          "n17_i1_row_01_n16_closeout_ap6",
+          "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+          "n17_i1_row_04_n16_b3_c2_flux_repair",
+          "n17_i1_row_05_n16_b4_c5_shared_medium",
+          "n17_i1_row_08_n13_support_disruption_restoration",
+          "n17_i1_row_10_n09_perturbation_withdrawal_support",
+          "n17_i1_row_14_n14_closeout_ap4"
+        ],
+        "phase_supported": "partial",
+        "yes_rows": []
+      }
+    }
+  },
+  "n16_closeout_status": {
+    "n16_closed_action_perception_loop_opened": false,
+    "n16_closeout_exists": true,
+    "n16_closeout_parse_error": null,
+    "n16_closeout_parseable": true,
+    "n16_final_ap6_supported": true,
+    "n16_final_artifact_level_ap6_frozen": true,
+    "n16_final_supported_ap_level": "AP6",
+    "n16_recommended_next": "N17_closed_action_perception_loop",
+    "n16_to_n17_use": "N16 is admissible as AP6 boundary substrate only; it is not direct AP7 closed-loop support.",
+    "n17_ap7_final_classification_blocked_by_n16_status": false
+  },
+  "old_best_construction_inputs": {
+    "blocker_rows": [
+      "n17_i1_row_02_n16_claim_boundary_record",
+      "n17_i1_row_06_n16_requirements_controls",
+      "n17_i1_row_13_n15_bounded_drift_replay",
+      "n17_i1_row_16_n12_readiness_only"
+    ],
+    "construction_boundary": "The strongest N17 path must construct a new ordered closure trace from old-best AP6/AP5/AP4/AP3 context. Old rows alone do not prove AP7.",
+    "extension_rows": [
+      "n17_i1_row_05_n16_b4_c5_shared_medium"
+    ],
+    "primary_mvp_rows": [
+      "n17_i1_row_01_n16_closeout_ap6",
+      "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+      "n17_i1_row_04_n16_b3_c2_flux_repair",
+      "n17_i1_row_07_n13_closeout_ap3",
+      "n17_i1_row_08_n13_support_disruption_restoration",
+      "n17_i1_row_09_n09_bounded_regulation",
+      "n17_i1_row_10_n09_perturbation_withdrawal_support"
+    ],
+    "secondary_mvp_rows": [
+      "n17_i1_row_11_n15_closeout_ap5",
+      "n17_i1_row_12_n15_runtime_target_candidate",
+      "n17_i1_row_14_n14_closeout_ap4",
+      "n17_i1_row_15_n08_memory_context"
+    ]
+  },
+  "output_digest": "5d5c8ec793278cb0e2d88e52fdb17497ab7c6fb96dc0e49aa113e3dd32168fbd",
+  "source_claim_ceilings_preserved": {
+    "N08": "memory/context only",
+    "N09": "bounded regulation context only",
+    "N12": "readiness-only context",
+    "N13": "AP3 support regulation context only",
+    "N14": "AP4 consequence-sensitive selection context only",
+    "N15": "AP5 endogenous proxy context only",
+    "N16": "AP6 boundary evidence only"
+  },
+  "source_rows": [
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": true,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "closed action-perception loop",
+        "semantic action or perception",
+        "agency",
+        "native self/environment model",
+        "native support"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_boundary_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "partial",
+        "internal_response": "partial",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_01_n16_closeout_ap6",
+      "mechanism_role": "final AP6 boundary handoff",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_01_n16_closeout_ap6",
+      "row_notes": [
+        "N16 closeout is present and frozen, so N17 may proceed beyond source inventory.",
+        "N16 explicitly leaves closed_action_perception_loop_opened false."
+      ],
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+      "source_consumption_rule": {
+        "allowed_as": "AP6 boundary evidence only",
+        "must_contain_any": [
+          "ap6"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": "AP6",
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N16",
+      "source_final_supported_ap_level": "AP6",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 9 closeout",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_closeout_and_handoff.md",
+      "source_report_exists": true,
+      "source_report_sha256": "474b16320a42b94398234e3a4ef5694d34224741eccb2b4b338425d248687b84",
+      "source_role_classification": "claim_boundary_blocker",
+      "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "controlled inside/outside/crossing boundary context",
+        "AP6 frozen boundary substrate for N17",
+        "explicit handoff that N17 must prove selected response consequences changing later selection inputs"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "claim_boundary_blocker",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "direct AP7 evidence",
+        "ordered closure",
+        "semantic agency"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G0_boundary_classification_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "no",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_02_n16_claim_boundary_record",
+      "mechanism_role": "AP6 claim-boundary control",
+      "missing_for_ap7": [
+        "claim-boundary record blocks overclaim but does not supply loop phases",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "blocker",
+      "row_id": "n17_i1_row_02_n16_claim_boundary_record",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_claim_boundary_record.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap6_classification_claim_boundary_clean",
+      "source_consumption_rule": {
+        "allowed_as": "AP6 boundary evidence only",
+        "must_contain_any": [
+          "ap6"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": "AP6",
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N16",
+      "source_final_supported_ap_level": "AP6",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 8 claim boundary",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "c9e319f6f5a2fce79a13748bc38f2272d9b69775032136c5e47f33abe61bf6c6",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_claim_boundary_record.md",
+      "source_report_exists": true,
+      "source_report_sha256": "e943a9331c36989c3ea20ec5d856b4a7783bfc7dbb217e06baeaa24913626144",
+      "source_role_classification": "claim_boundary_blocker",
+      "source_sha256": "5dce478a429e31d3b5669c48dd7d84030baa5e6081a3bfb899833dcb584640db",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "unsafe AP6 overclaims blocked",
+        "closed action-perception loop overclaim blocked",
+        "native/selfhood/agency promotions blocked"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "autonomous repair",
+        "native reabsorption",
+        "full ordered feedback closure",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_breach_reclosure",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "yes",
+        "internal_response": "yes",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+      "mechanism_role": "breach/reclosure candidate source",
+      "missing_for_ap7": [
+        "later internal support dependence on reclosed external state not isolated",
+        "feedback-removed control not run at N17 AP7 level",
+        "monotonic loop trace not frozen",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_03_n16_b3_c4_breach_reclosure",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_breach_reclosure_candidate_under_AP6",
+      "source_consumption_rule": {
+        "allowed_as": "AP6 boundary evidence only",
+        "must_contain_any": [
+          "ap6"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N16",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 6 selected interaction probe",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+      "source_role_classification": "external_to_internal_and_internal_response_fragment",
+      "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "breach/reclosure context for perturbation-response-recovery MVP",
+        "bounded reclosure candidate after external breach pressure"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "closed-loop feedback",
+        "semantic outbound action",
+        "native repair",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_flux_repair",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "yes",
+        "internal_response": "yes",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_04_n16_b3_c2_flux_repair",
+      "mechanism_role": "directional flux repair/reabsorption source",
+      "missing_for_ap7": [
+        "flux repair does not by itself show changed external state feeding back later",
+        "one-way crossing active null not yet separated",
+        "feedback-removed control not run at N17 AP7 level",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_04_n16_b3_c2_flux_repair",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_state_sweep_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_flux_repair_candidate_under_AP6",
+      "source_consumption_rule": {
+        "allowed_as": "AP6 boundary evidence only",
+        "must_contain_any": [
+          "ap6"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N16",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 5 boundary-state sweep",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "a24c1db84cefbfcb3e99a26373ef5a12f21c795e0574c91fbb06ce72435e2620",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_state_sweep_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "e7fdd00abdd6ffdf524cf6b7033dcaea9e76a8ed5e71c2eb5804e9c391ce9c4c",
+      "source_role_classification": "external_to_internal_and_internal_response_fragment",
+      "source_sha256": "013725b03aa3dab3bacdddeb1255f061d381cbbbc7951237bff76d5d9f3d84ad",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "C2 directional-flux pressure context",
+        "B3 repair/reabsorption improvement over B2 flux failure"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "extension_context",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "shared-medium reciprocal closed loop",
+        "native multi-basin selfhood",
+        "basin merge as success",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_shared_medium_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "partial",
+        "internal_response": "partial",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_05_n16_b4_c5_shared_medium",
+      "mechanism_role": "shared-medium separability extension source",
+      "missing_for_ap7": [
+        "reciprocal shared-medium response ordering not established",
+        "neighbor/later-self feedback phase not isolated",
+        "merge/leakage controls remain future N17 work",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "extension",
+      "row_id": "n17_i1_row_05_n16_b4_c5_shared_medium",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_shared_medium_separability_candidate_under_AP6",
+      "source_consumption_rule": {
+        "allowed_as": "AP6 boundary evidence only",
+        "must_contain_any": [
+          "ap6"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N16",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 6 selected interaction probe",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+      "source_role_classification": "shared_medium_extension_fragment",
+      "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "B4/C5 shared-medium separability candidate evidence",
+        "future shared-medium reciprocal loop context"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "claim_boundary_blocker",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "direct AP7 loop closure",
+        "G3 ordered feedback",
+        "semantic action/perception"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G0_boundary_requirements_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "no",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_06_n16_requirements_controls",
+      "mechanism_role": "boundary requirements and control substrate",
+      "missing_for_ap7": [
+        "requirements matrix controls boundary claims, not ordered loop closure",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "blocker",
+      "row_id": "n17_i1_row_06_n16_requirements_controls",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_under_AP6",
+      "source_consumption_rule": {
+        "allowed_as": "AP6 boundary evidence only",
+        "must_contain_any": [
+          "ap6"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N16",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 7 requirements/control matrix",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+      "source_role_classification": "claim_boundary_blocker",
+      "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "controlled boundary requirements matrix",
+        "negative-control and replay discipline for N17 schema design"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": false,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "selfhood",
+        "agency",
+        "native support",
+        "AP7 closed loop"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G1_fragment_internal_support_response",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "partial",
+        "internal_response": "yes",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_07_n13_closeout_ap3",
+      "mechanism_role": "support-regulation context",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_07_n13_closeout_ap3",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap3_support_seeking_regulation_context",
+      "source_consumption_rule": {
+        "allowed_as": "AP3 support regulation context only",
+        "must_contain_any": [
+          "ap3",
+          "support"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": "AP3",
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N13",
+      "source_final_supported_ap_level": "AP3",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "closeout",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+      "source_report_exists": true,
+      "source_report_sha256": "e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45",
+      "source_role_classification": "internal_response_fragment",
+      "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "support/regulation axis for internal response phase",
+        "bounded response candidate context"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "later external feedback into internal state",
+        "semantic goal ownership",
+        "agency",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_support_restoration",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "partial",
+        "internal_response": "yes",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_08_n13_support_disruption_restoration",
+      "mechanism_role": "support disruption/restoration source",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_08_n13_support_disruption_restoration",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_disruption_restoration_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap3_support_restoration_context",
+      "source_consumption_rule": {
+        "allowed_as": "AP3 support regulation context only",
+        "must_contain_any": [
+          "ap3",
+          "support"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N13",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "support disruption/restoration matrix",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "f515ff673d38adba5d401088762040899add0e0f91d29f1f9d37de9100db7100",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_disruption_restoration_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "3bbf1027e535b3c6136223ca1559f6bdd4e29c6a736fe1f19dbc559f0870685b",
+      "source_role_classification": "external_to_internal_and_internal_response_fragment",
+      "source_sha256": "35270298acde53f910eb9b88582d7c326d89ca601f30bef44aaaf68b657c9363",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "support-below-threshold pressure and bounded restoration response",
+        "candidate internal response lane for perturbation-response-recovery MVP"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "closed environmental feedback",
+        "semantic goal pursuit",
+        "agency",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G1_fragment_bounded_regulation",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "partial",
+        "internal_response": "yes",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_09_n09_bounded_regulation",
+      "mechanism_role": "bounded regulation context",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_09_n09_bounded_regulation",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_bounded_regulation_context",
+      "source_consumption_rule": {
+        "allowed_as": "bounded regulation context only",
+        "must_contain_any": [
+          "bounded",
+          "perturbation"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N09",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 9 closeout",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "source_report_exists": true,
+      "source_report_sha256": "9fc0e91a58892746a55d67c0a5d6c0ab29912a40c8790a9f186091d56f7319f0",
+      "source_role_classification": "internal_response_fragment",
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "bounded regulation and recovery context",
+        "candidate response budget discipline"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": false,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "response-caused external change with later feedback",
+        "native regulation",
+        "semantic action/perception",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_perturbation_recovery",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "partial",
+        "internal_response": "yes",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_10_n09_perturbation_withdrawal_support",
+      "mechanism_role": "perturbation recovery support context",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "primary",
+      "row_id": "n17_i1_row_10_n09_perturbation_withdrawal_support",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_8_perturbation_withdrawal_support.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_perturbation_recovery_context",
+      "source_consumption_rule": {
+        "allowed_as": "bounded regulation context only",
+        "must_contain_any": [
+          "bounded",
+          "perturbation"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N09",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 8 perturbation withdrawal support",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "f109fe171ccd0e2980ed9cdab5262c40edc250c8dec072fd9c7ea914b9beaff9",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_8_perturbation_withdrawal_support.md",
+      "source_report_exists": true,
+      "source_report_sha256": "9d72834521f0b4f30bc83747992c41acb3eada9661e0d04d0c5a51302e6a710b",
+      "source_role_classification": "external_to_internal_and_internal_response_fragment",
+      "source_sha256": "873114340bf655becf39f47dbbd4758f46204eee05a1fb93a0a7457db3caa472",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "perturbation and withdrawal recovery context",
+        "bounded response candidate for N17 MVP construction"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "semantic goal ownership",
+        "intention",
+        "identity acceptance",
+        "agency",
+        "AP7 closed loop"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G1_fragment_proxy_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "partial",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_11_n15_closeout_ap5",
+      "mechanism_role": "endogenous proxy context",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "secondary",
+      "row_id": "n17_i1_row_11_n15_closeout_ap5",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap5_endogenous_proxy_context",
+      "source_consumption_rule": {
+        "allowed_as": "AP5 endogenous proxy context only",
+        "must_contain_any": [
+          "ap5",
+          "proxy"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": "AP5",
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N15",
+      "source_final_supported_ap_level": "AP5",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "closeout",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md",
+      "source_report_exists": true,
+      "source_report_sha256": "7fd4773de2bb4cce79799caf287f22b13e056b567a44da562d22665d07fda4ee",
+      "source_role_classification": "internal_response_fragment",
+      "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "source-current target/proxy context",
+        "claim-clean AP5 ceiling for proxy formation"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "semantic intention",
+        "goal ownership",
+        "external feedback closure",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G1_fragment_runtime_proxy_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "partial",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_12_n15_runtime_target_candidate",
+      "mechanism_role": "runtime-derived target/proxy source",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "secondary",
+      "row_id": "n17_i1_row_12_n15_runtime_target_candidate",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_runtime_derived_proxy_candidate_under_AP5",
+      "source_consumption_rule": {
+        "allowed_as": "AP5 endogenous proxy context only",
+        "must_contain_any": [
+          "ap5",
+          "proxy"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N15",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 3 runtime-derived target candidate",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+      "source_report_exists": true,
+      "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+      "source_role_classification": "internal_response_fragment",
+      "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "target generated before use from source-current inputs",
+        "bounded regulation input context"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "claim_boundary_blocker",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "closed loop",
+        "AP7",
+        "agency"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G0_replay_control_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "no",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_13_n15_bounded_drift_replay",
+      "mechanism_role": "AP5 replay/control context",
+      "missing_for_ap7": [
+        "replay discipline is reusable but contains no loop phase evidence",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "blocker",
+      "row_id": "n17_i1_row_13_n15_bounded_drift_replay",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap5_replay_control_context",
+      "source_consumption_rule": {
+        "allowed_as": "AP5 endogenous proxy context only",
+        "must_contain_any": [
+          "ap5",
+          "proxy"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N15",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 6 bounded drift/replay matrix",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "8766f392358f7aa675a591c076e3cec5a97f91af5ed5f382bc306a9809a13728",
+      "source_role_classification": "claim_boundary_blocker",
+      "source_sha256": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "bounded drift and replay discipline for source-current artifacts",
+        "proxy formation control hygiene"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "semantic choice",
+        "intention",
+        "agency",
+        "goal ownership",
+        "closed AP7 feedback loop"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G2_fragment_consequence_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "partial",
+        "response_to_external_change": "partial"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_14_n14_closeout_ap4",
+      "mechanism_role": "consequence-sensitive selection context",
+      "missing_for_ap7": [
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "secondary",
+      "row_id": "n17_i1_row_14_n14_closeout_ap4",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_selection_context",
+      "source_consumption_rule": {
+        "allowed_as": "AP4 consequence-sensitive selection context only",
+        "must_contain_any": [
+          "ap4",
+          "consequence"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": "AP4",
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N14",
+      "source_final_supported_ap_level": "AP4",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "closeout",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+      "source_report_exists": true,
+      "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+      "source_role_classification": "response_to_external_change_fragment",
+      "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "route/consequence context for interpreting response selection",
+        "artifact-level consequence sensitivity"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "mvp_loop_contract_input",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "response-caused external feedback by itself",
+        "closed loop",
+        "semantic memory/identity",
+        "final AP7"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G1_fragment_memory_context",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "partial",
+        "external_to_internal": "no",
+        "internal_response": "partial",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_15_n08_memory_context",
+      "mechanism_role": "memory/context source for later internal state",
+      "missing_for_ap7": [
+        "memory trend is not tied to response-caused external change",
+        "ordered t0-t3 trace must still be generated by N17",
+        "feedback-removed control not run at N17 AP7 level",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "secondary",
+      "row_id": "n17_i1_row_15_n08_memory_context",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_8_mem6_closeout.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "artifact_level_memory_context",
+      "source_consumption_rule": {
+        "allowed_as": "memory/context only",
+        "must_contain_any": [
+          "memory"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N08",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Iteration 8 closeout",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "202cd1a6d447aedf6c2914b0768819fff6f15c918f509cb26b88eba2d88e7a5c",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_8_mem6_closeout.md",
+      "source_report_exists": true,
+      "source_report_sha256": "f60aa7ab93ca41823c117f45ddd4e4443721f284bc16456f53ea8b8213162d81",
+      "source_role_classification": "external_feedback_to_internal_context",
+      "source_sha256": "73c0681ff6f2d32fe259f2153e3398abad03095e6d9dcfd364b55bf23c48454e",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "historical route-memory context",
+        "potential later-internal-state context for N17 schema design"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    },
+    {
+      "closed_loop_claim_allowed": false,
+      "construction_role": "claim_boundary_blocker",
+      "construction_role_mvp_alignment_valid": true,
+      "direct_historic_ap7_admissibility": {
+        "accepted_direct_ap7": false,
+        "basis": "direct AP7 admissibility is accepted only when source, claim, order, replay, and control criteria are all true",
+        "candidate_direct_ap7_row": false,
+        "claim_clean": true,
+        "claim_clean_basis": "no unsafe source claim flags true",
+        "control_clean": false,
+        "direct_trace_scan": {
+          "has_ap7_marker": false,
+          "has_control_marker": true,
+          "has_external_feedback_marker": false,
+          "has_external_to_internal_marker": false,
+          "has_internal_response_marker": false,
+          "has_monotonic_order_marker": false,
+          "has_replay_marker": true,
+          "has_response_to_external_change_marker": false
+        },
+        "order_clean": false,
+        "replay_clean": false,
+        "source_backed": true,
+        "unsafe_claim_flags_true": []
+      },
+      "direct_historic_ap7_support_status": "not_direct_ap7_support",
+      "does_not_support": [
+        "native support",
+        "Phase 8 opening",
+        "closed AP7 loop",
+        "agency"
+      ],
+      "final_ap7_supported": false,
+      "g3_admissibility_satisfied": false,
+      "highest_loop_rung_supported": "G0_readiness_context_only",
+      "invalid_loop_phase_keys": [],
+      "invalid_loop_phase_values": {},
+      "loop_phase_contributions": {
+        "external_feedback_to_internal": "no",
+        "external_to_internal": "no",
+        "internal_response": "no",
+        "response_to_external_change": "no"
+      },
+      "loop_phase_contributions_valid": true,
+      "mechanism_name": "n17_i1_row_16_n12_readiness_only",
+      "mechanism_role": "readiness-only context",
+      "missing_for_ap7": [
+        "readiness-only artifact has no N17 loop phases",
+        "separate Phase 8 task would be required for native claims",
+        "no_monotonic_t0_t1_t2_t3_ordered_trace",
+        "no_response_caused_external_change_isolation",
+        "no_later_internal_state_conditioned_on_changed_external_state",
+        "feedback_removed_control_not_run",
+        "one_way_crossing_active_null_not_run",
+        "ap7_schema_and_gate_not_frozen"
+      ],
+      "mvp_relevance": "blocker",
+      "row_id": "n17_i1_row_16_n12_readiness_only",
+      "row_notes": [],
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "source_artifact_exists": true,
+      "source_claim_ceiling": "readiness_only_context_not_native_support",
+      "source_consumption_rule": {
+        "allowed_as": "readiness-only context",
+        "must_contain_any": [
+          "readiness"
+        ]
+      },
+      "source_consumption_rule_satisfied": true,
+      "source_expected_final_supported_ap_level": null,
+      "source_expected_status_markers": [
+        "passed",
+        "accepted",
+        "closed"
+      ],
+      "source_experiment": "N12",
+      "source_final_supported_ap_level": "not_recorded",
+      "source_final_supported_ap_level_matches_expected": true,
+      "source_iteration": "Phase 8 readiness matrix",
+      "source_json_parse_error": null,
+      "source_json_parseable": true,
+      "source_output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+      "source_output_digest_recorded": true,
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "source_report_exists": true,
+      "source_report_sha256": "7eb21e99caa2293f8fdd6baa2afdf487b291f73fef3cd7e2a64ff115110c88c5",
+      "source_role_classification": "claim_boundary_blocker",
+      "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+      "source_status": "passed",
+      "source_status_matches_expected": true,
+      "supports": [
+        "readiness context for later optional Phase 8 tasks",
+        "explicit NAT4 readiness ceiling"
+      ],
+      "unsafe_promotions_blocked": {
+        "agency": true,
+        "fully_native_integration": true,
+        "identity_acceptance": true,
+        "intention": true,
+        "native_support": true,
+        "organism_or_life": true,
+        "selfhood": true,
+        "semantic_action": true,
+        "semantic_goal_ownership": true,
+        "semantic_perception": true
+      }
+    }
+  ],
+  "status": "passed"
+}
