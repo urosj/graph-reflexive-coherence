@@ -673,6 +673,65 @@ candidates, and partial or rejected rows remain requirement blockers. Negative
 controls fail closed, replay checks are stable, unsafe claim flags are forced
 false, and final AP6 remains blocked until Iteration 8 classification.
 
+Iteration 8 - Claim Boundary And AP6 Classification:
+
+```text
+status = passed
+acceptance_state = accepted_ap6_classification_claim_boundary_clean_pending_closeout
+claim_boundary_record = outputs/n16_claim_boundary_record.json
+claim_boundary_report = reports/n16_claim_boundary_record.md
+classified_ap_level = AP6
+ap6_classification_supported = true
+artifact_level_ap6_supported = true
+provisional_ap_level = AP6_candidate_boundary_clean_pending_closeout
+final_ap6_supported = false
+final_artifact_level_ap6_frozen = false
+final_ap_freeze_pending_iteration9 = true
+ready_for_iteration_9_closeout = true
+phase8_opened = false
+native_support_opened = false
+```
+
+Iteration 8 resolves all 39 AP6 gates and classifies Hypotheses A, B, and C
+as supported at their scoped levels. The result is an artifact-level AP6
+self/environment boundary candidate with controlled basin-boundary
+requirements. It remains claim-clean: selfhood, identity acceptance, semantic
+goal ownership, agency, native support, Phase 8, fully native integration,
+resource assimilation, organism/life claims, and closed action-perception
+loop claims remain blocked. Final AP6 freeze is deferred to Iteration 9
+closeout. The I8 record explicitly separates artifact-level AP6 support from
+final freeze, records N14/N15 caveat evidence, rechecks carried-forward B/C
+cell consistency, acknowledges duplicate replay as an I7 run-level extension,
+and preserves the B4_C5 one-sided shared-medium limitation before closeout.
+
+Iteration 9 - Closeout And N17 Handoff:
+
+```text
+status = passed
+acceptance_state = closed_claim_clean_ap6_artifact_level_self_environment_boundary_candidate
+closeout_record = outputs/n16_closeout_and_handoff.json
+closeout_report = reports/n16_closeout_and_handoff.md
+final_supported_ap_level = AP6
+final_ap6_supported = true
+artifact_level_ap6_supported = true
+final_artifact_level_ap6_frozen = true
+final_claim_ceiling = artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements
+phase8_opened = false
+native_support_opened = false
+fully_native_integration_opened = false
+closed_action_perception_loop_opened = false
+recommended_next = N17_closed_action_perception_loop
+```
+
+Iteration 9 freezes N16 as a claim-clean artifact-level AP6
+self/environment boundary candidate. The closeout preserves all stronger
+claim blockers: selfhood, identity acceptance, semantic goal ownership,
+agency, native support, fully native integration, organism/life claims,
+unrestricted agency, and closed action-perception loop remain unsupported.
+N17 receives the boundary substrate and must test whether selected actions
+alter substrate/environment state and whether those changed conditions feed
+back into later selection.
+
 ## Directory Structure
 
 ```text

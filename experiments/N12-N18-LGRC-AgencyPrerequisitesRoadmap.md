@@ -460,6 +460,16 @@ formation can be runtime-derived under bounded conditions.
 
 ## N16. Self / Environment Boundary
 
+Status:
+
+```text
+closed_claim_clean_ap6_artifact_level_self_environment_boundary_candidate
+final_supported_ap_level = AP6
+final_ap6_supported = true
+final_claim_ceiling = artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements
+recommended_next = N17_closed_action_perception_loop
+```
+
 Question:
 
 ```text
@@ -490,6 +500,11 @@ identity acceptance relabel blocked
 
 N16 should be careful: "self/environment" is an operational boundary in the
 artifact chain, not a semantic self.
+
+N16 closes as an artifact-level AP6 boundary candidate only. It does not open
+selfhood, identity acceptance, semantic goal ownership, agency, native support,
+fully native integration, organism/life claims, unrestricted agency, or closed
+action-perception loop.
 
 ## N17. Closed Action-Perception Loop
 

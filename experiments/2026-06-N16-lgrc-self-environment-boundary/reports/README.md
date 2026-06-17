@@ -12,9 +12,6 @@ Generated reports:
 - `n16_boundary_state_sweep_matrix.md`
 - `n16_selected_interaction_probe_matrix.md`
 - `n16_basin_boundary_requirements_matrix.md`
-
-Planned reports:
-
 - `n16_claim_boundary_record.md`
 - `n16_closeout_and_handoff.md`
 

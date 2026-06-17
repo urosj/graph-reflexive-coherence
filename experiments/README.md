@@ -40,7 +40,7 @@ machine-local state.
 | [N13 self-maintenance and support-seeking regulation](2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/README.md) | Artifact-level AP3 support-seeking regulation candidate derived from source-current support state, with controls and claim boundaries. | README, then implementation plan/checklist, support schema, control/stress artifacts, and closeout handoff. |
 | [N14 consequence-sensitive route selection](2026-06-N14-lgrc-consequence-sensitive-route-selection/README.md) | Closed artifact-level AP4 consequence-sensitive route selection with observed route-specific memory and constructed support/regulation followout. | README, then closeout handoff, claim boundary, consequence records, controls, and replay artifacts. |
 | [N15 endogenous proxy formation](2026-06-N15-lgrc-endogenous-proxy-formation/README.md) | Closed artifact-level AP5 endogenous target/proxy formation from source-current support, memory, regulation, and AP4 consequence context. | README, then closeout handoff, claim boundary, control matrix, bounded-drift replay, and validator artifacts. |
-| [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Initialized AP6 basin-boundary requirements matrix over lineage-derived boundary states and operational challenge classes. | README, then implementation plan/checklist and hypothesis stubs. |
+| [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
 
 ## Current Roadmap State
 
@@ -107,13 +107,14 @@ phase8_opened = false
 native_support_opened = false
 ```
 
-N15 supports endogenous target/proxy formation from source-current support,
-memory, regulation, and AP4 consequence context under external-proxy contrast,
-adversarial controls, bounded drift, replay, and claim-boundary
-classification. The result is not semantic goal ownership, intention, agency,
-identity acceptance, native support, fully native integration, or unrestricted
-agency. N16 self/environment boundary is the next roadmap experiment; targeted
-Phase 8 remains optional and deferred, not required before N16.
+N16 closes with artifact-level AP6 self/environment boundary evidence:
+internal support-relevant state and external resource, perturbation,
+structured-state, and shared-medium pressures remain separable in generated
+artifacts and controls. The result is not selfhood, identity acceptance,
+semantic goal ownership, agency, native support, fully native integration,
+organism/life, unrestricted agency, or a closed action-perception loop. N17
+closed action-perception loop is the next roadmap experiment; targeted Phase 8
+remains optional and deferred, not required before N17.
 
 Roadmap-level context:
 

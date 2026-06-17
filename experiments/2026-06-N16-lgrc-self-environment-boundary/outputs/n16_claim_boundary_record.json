@@ -1,0 +1,2881 @@
+{
+  "acceptance_state": "accepted_ap6_classification_claim_boundary_clean_pending_closeout",
+  "ap6_gate_resolution": [
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_source_inventory",
+      "gate_id": "source_inventory_accepted",
+      "rationale": "I1 inventory accepted",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_source_inventory",
+      "gate_id": "source_artifact_report_digest_for_each_row",
+      "rationale": "I1 source rows have artifact and report SHA-256 records",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_source_inventory",
+      "gate_id": "direct_historic_ap6_support_status_recorded",
+      "rationale": "I1 records direct historic AP6 support as absent",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_source_inventory",
+      "gate_id": "old_best_claims_construction_inputs_recorded",
+      "rationale": "I1 records old-best construction inputs without promoting prior claims",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "boundary_state_axis_lineage_frozen",
+      "rationale": "I2 freezes B0-B4 lineage-derived boundary-state axis",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "challenge_class_axis_operational_not_environment_taxonomy",
+      "rationale": "I2 freezes C0-C5 as operational challenge classes",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "row_schema_has_internal_support_state_descriptor",
+      "rationale": "I2 row schema includes internal support-relevant state descriptor",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "row_schema_has_external_resource_state_descriptor",
+      "rationale": "I2 row schema includes external resource state descriptor",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "row_schema_has_external_perturbation_state_descriptor",
+      "rationale": "I2 row schema includes external perturbation descriptor",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "row_schema_has_external_structured_state_descriptor",
+      "rationale": "I2 row schema includes external structured state descriptor",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "external_state_role_enum_frozen",
+      "rationale": "I2 freezes external_state_role enum",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "row_decision_enum_frozen",
+      "rationale": "I2 freezes row_decision enum",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "row_decision_boundary_claim_relation_frozen",
+      "rationale": "I2 freezes row_decision and boundary_claim_allowed relation",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "boundary_side_assignments_present",
+      "rationale": "I3-I7 rows carry boundary-side assignment fields",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "boundary_crossing_trace_present",
+      "rationale": "I3-I7 rows carry boundary-crossing traces or fail-closed null roles",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "dependency_trace_present",
+      "rationale": "I3-I7 rows carry dependency traces with source SHA-256 values",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "budget_validity_present",
+      "rationale": "I3-I7 rows carry budget validity fields",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "boundary_schema_v1",
+      "gate_id": "replay_digest_scope_frozen",
+      "rationale": "I2 freezes replay digest scope and algorithm",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "artifact_only_replay_requirement_present",
+      "rationale": "I7 artifact-only replay is stable",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "snapshot_load_equivalence_requirement_present",
+      "rationale": "I7 snapshot/load replay is stable",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "order_inversion_replay_requirement_present",
+      "rationale": "I7 order-inversion replay is stable",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "structured_external_coherence_rejection_control_present",
+      "rationale": "I7 high-stress structured-external relabel control is present",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "selected_interaction_probe_matrix",
+      "gate_id": "b0_c3_active_null_rejects_false_boundary",
+      "rationale": "I6 B0_C3 supports active-null structured-external false-positive rejection",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "selected_interaction_probe_matrix",
+      "gate_id": "b2_c0_c1_c2_unlock_required_before_b3_repair",
+      "rationale": "I6 B3_C4 is unlocked by prior B2 C0/C1/C2 evaluations",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "selected_interaction_probe_matrix",
+      "gate_id": "b4_c5_shared_medium_separability_required",
+      "rationale": "I6 B4_C5 measures shared-medium separability directly",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "externally_supplied_boundary_control_fails_closed",
+      "rationale": "I7 externally_supplied_boundary_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "post_hoc_boundary_label_control_fails_closed",
+      "rationale": "I7 post_hoc_boundary_label_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "hidden_external_state_injection_control_fails_closed",
+      "rationale": "I7 hidden_external_state_injection_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "resource_relabel_as_self_control_fails_closed",
+      "rationale": "I7 resource_relabel_as_self_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "self_support_relabel_as_external_control_fails_closed",
+      "rationale": "I7 self_support_relabel_as_external_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "untracked_boundary_crossing_control_fails_closed",
+      "rationale": "I7 untracked_boundary_crossing_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "identity_acceptance_relabel_control_fails_closed",
+      "rationale": "I7 identity_acceptance_relabel_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "selfhood_personhood_relabel_control_fails_closed",
+      "rationale": "I7 selfhood_personhood_relabel_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "semantic_goal_ownership_relabel_control_fails_closed",
+      "rationale": "I7 semantic_goal_ownership_relabel_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "native_support_relabel_control_fails_closed",
+      "rationale": "I7 native_support_relabel_control fails closed with its recorded blocker and AP6 claim disallowed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "claim_flags_forced_false",
+      "rationale": "I7 unsafe claim flags remain false",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "native_support_not_opened",
+      "rationale": "I7 and I8 keep native support closed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "basin_boundary_requirements_matrix",
+      "gate_id": "phase8_opened_false",
+      "rationale": "I7 and I8 keep Phase 8 closed",
+      "status": "validated"
+    },
+    {
+      "blocks_final_ap6": false,
+      "evidence_source": "git",
+      "gate_id": "src_diff_empty_true",
+      "rationale": "No src diff is present during I8 classification",
+      "status": "validated"
+    }
+  ],
+  "ap6_gate_summary": {
+    "all_ap6_gates_validated": true,
+    "blocked_gate_count": 0,
+    "blocked_gates": [],
+    "gate_count": 39,
+    "validated_gate_count": 39
+  },
+  "artifact_id": "n16_claim_boundary_record",
+  "blocked_input_audit": {
+    "audit_complete": true,
+    "blocked_boundary_claims": [
+      {
+        "blocked_claim": "selfhood",
+        "row_id": "n16_i8_boundary_01_artifact_boundary_not_selfhood",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "identity_acceptance",
+        "row_id": "n16_i8_boundary_02_boundary_side_assignment_not_identity_acceptance",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "semantic_goal_ownership",
+        "row_id": "n16_i8_boundary_03_internal_support_not_semantic_goal_ownership",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "closed_action_perception_loop",
+        "row_id": "n16_i8_boundary_04_boundary_crossing_not_action_perception_loop",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "native_support",
+        "row_id": "n16_i8_boundary_05_artifact_ap6_not_native_support",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "fully_native_agentic_like_integration",
+        "row_id": "n16_i8_boundary_06_artifact_ap6_not_fully_native_integration",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "agency_environment_model",
+        "row_id": "n16_i8_boundary_07_external_state_not_agency_environment_model",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "autonomous_repair",
+        "row_id": "n16_i8_boundary_08_b3_reclosure_not_autonomous_repair",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "native_multi_basin_selfhood",
+        "row_id": "n16_i8_boundary_09_b4_shared_medium_not_native_multi_basin_selfhood",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "selective_uptake_resource_assimilation_life",
+        "row_id": "n16_i8_boundary_10_no_selective_uptake_resource_assimilation_or_life",
+        "source": "n16_i8_claim_boundary_record"
+      },
+      {
+        "blocked_claim": "schema_control_overclaim",
+        "row_id": "n16_i8_boundary_11_duplicate_replay_not_i2_schema_control",
+        "source": "n16_i8_claim_boundary_record"
+      }
+    ],
+    "blocked_control_inputs": [
+      {
+        "control_id": "artifact_only_replay_control",
+        "observed_blocker": "artifact_replay_instability_blocks_ap6",
+        "observed_status": "stable",
+        "schema_backed": true
+      },
+      {
+        "control_id": "boundary_drift_outside_policy_control",
+        "observed_blocker": "boundary_drift_outside_policy_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "duplicate_replay_control",
+        "observed_blocker": "duplicate_replay_instability_blocks_ap6",
+        "observed_status": "stable",
+        "schema_backed": false
+      },
+      {
+        "control_id": "externally_supplied_boundary_control",
+        "observed_blocker": "externally_supplied_boundary_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "hidden_external_state_injection_control",
+        "observed_blocker": "hidden_external_state_injection_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "identity_acceptance_relabel_control",
+        "observed_blocker": "identity_acceptance_relabel_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "missing_boundary_side_state_control",
+        "observed_blocker": "missing_boundary_side_state_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "multi_basin_merge_control",
+        "observed_blocker": "multi_basin_merge_or_leakage_recorded",
+        "observed_status": "blocked_or_recorded_failure",
+        "schema_backed": true
+      },
+      {
+        "control_id": "native_support_relabel_control",
+        "observed_blocker": "native_support_relabel_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "order_inversion_replay_control",
+        "observed_blocker": "order_inversion_instability_blocks_ap6",
+        "observed_status": "stable",
+        "schema_backed": true
+      },
+      {
+        "control_id": "post_hoc_boundary_label_control",
+        "observed_blocker": "post_hoc_boundary_label_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "resource_relabel_as_self_control",
+        "observed_blocker": "resource_relabel_as_self_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "self_support_relabel_as_external_control",
+        "observed_blocker": "self_support_relabel_as_external_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "selfhood_personhood_relabel_control",
+        "observed_blocker": "selfhood_personhood_relabel_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "semantic_goal_ownership_relabel_control",
+        "observed_blocker": "semantic_goal_ownership_relabel_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "snapshot_load_replay_control",
+        "observed_blocker": "snapshot_load_instability_blocks_ap6",
+        "observed_status": "stable",
+        "schema_backed": true
+      },
+      {
+        "control_id": "stale_external_state_control",
+        "observed_blocker": "stale_external_state_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "stale_internal_state_control",
+        "observed_blocker": "stale_internal_state_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      },
+      {
+        "control_id": "structured_external_coherence_rejection_control",
+        "observed_blocker": "structured_external_coherence_false_boundary_blocked",
+        "observed_status": "blocked_or_rejected",
+        "schema_backed": true
+      },
+      {
+        "control_id": "untracked_boundary_crossing_control",
+        "observed_blocker": "untracked_boundary_crossing_blocked",
+        "observed_status": "blocked",
+        "schema_backed": true
+      }
+    ],
+    "duplicate_replay_extension_audited": true,
+    "n14_caveat_evidence": [
+      {
+        "ap6_required_evidence_still_missing": [
+          "route_selection_is_not_boundary_separability",
+          "shared_medium_boundary_rows_not_generated"
+        ],
+        "boundary_claim_allowed": false,
+        "claim_promotion_allowed": false,
+        "direct_historic_ap6_support_status": "not_direct_ap6_support",
+        "evidence_strategy_class": "old_best_claims_construction",
+        "final_ap6_supported": false,
+        "mechanism_name": "artifact_level_ap4_consequence_sensitive_route_selection",
+        "mechanism_role": "old_best_ap4_consequence_selection_axis",
+        "provisional_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate",
+        "row_id": "n16_i1_row_05_n14_closeout_ap4",
+        "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+        "source_experiment": "N14",
+        "source_iteration": "closeout_and_n15_handoff",
+        "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+        "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+        "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+      },
+      {
+        "ap6_required_evidence_still_missing": [
+          "upstream_observed_route_conditioned_support_missing",
+          "upstream_observed_route_conditioned_regulation_missing",
+          "not_multi_basin_separability_evidence"
+        ],
+        "boundary_claim_allowed": false,
+        "claim_promotion_allowed": false,
+        "direct_historic_ap6_support_status": "not_direct_ap6_support",
+        "evidence_strategy_class": "old_best_claims_construction",
+        "final_ap6_supported": false,
+        "mechanism_name": "constructed_route_conditioned_support_regulation_followout",
+        "mechanism_role": "constructed_external_route_context",
+        "provisional_claim_ceiling": "constructed_route_conditioned_followout_context_only",
+        "row_id": "n16_i1_row_06_n14_constructed_followout",
+        "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+        "source_experiment": "N14",
+        "source_iteration": "route_conditioned_followout_probe",
+        "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+        "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+        "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+      }
+    ],
+    "n14_constructed_followout_caveat_preserved": true,
+    "n15_ap5_target_proxy_boundary_caveat_preserved": true,
+    "n15_caveat_evidence": [
+      {
+        "ap6_required_evidence_still_missing": [
+          "ap6_internal_external_boundary_schema_not_frozen",
+          "ap6_boundary_rows_not_generated",
+          "ap6_controls_not_run"
+        ],
+        "boundary_claim_allowed": false,
+        "claim_promotion_allowed": false,
+        "direct_historic_ap6_support_status": "not_direct_ap6_support",
+        "evidence_strategy_class": "old_best_claims_construction",
+        "final_ap6_supported": false,
+        "mechanism_name": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "mechanism_role": "old_best_ap5_proxy_target_axis",
+        "provisional_claim_ceiling": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "row_id": "n16_i1_row_01_n15_closeout_ap5",
+        "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+        "source_experiment": "N15",
+        "source_iteration": "closeout_and_n16_handoff",
+        "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md",
+        "source_report_sha256": "7fd4773de2bb4cce79799caf287f22b13e056b567a44da562d22665d07fda4ee",
+        "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+      },
+      {
+        "ap6_required_evidence_still_missing": [
+          "target_condition_is_not_boundary_side_assignment",
+          "internal_external_state_separation_not_built",
+          "ap6_claim_boundary_not_classified"
+        ],
+        "boundary_claim_allowed": false,
+        "claim_promotion_allowed": false,
+        "direct_historic_ap6_support_status": "not_direct_ap6_support",
+        "evidence_strategy_class": "old_best_claims_construction",
+        "final_ap6_supported": false,
+        "mechanism_name": "runtime_derived_target_candidate_from_old_best_inputs",
+        "mechanism_role": "source_current_target_generation_context",
+        "provisional_claim_ceiling": "provisional_runtime_derived_target_candidate_pending_controls",
+        "row_id": "n16_i1_row_02_n15_runtime_derived_target_candidate",
+        "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+        "source_experiment": "N15",
+        "source_iteration": "iteration_3_runtime_derived_target_candidate",
+        "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+        "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+        "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+      },
+      {
+        "ap6_required_evidence_still_missing": [
+          "boundary_side_replay_digest_not_frozen",
+          "challenge_class_rows_not_generated"
+        ],
+        "boundary_claim_allowed": false,
+        "claim_promotion_allowed": false,
+        "direct_historic_ap6_support_status": "not_direct_ap6_support",
+        "evidence_strategy_class": "control_context",
+        "final_ap6_supported": false,
+        "mechanism_name": "bounded_drift_replay_matrix",
+        "mechanism_role": "replay_and_drift_control_context",
+        "provisional_claim_ceiling": "bounded_drift_replay_context_only",
+        "row_id": "n16_i1_row_03_n15_bounded_drift_replay",
+        "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json",
+        "source_experiment": "N15",
+        "source_iteration": "iteration_6_bounded_drift_and_replay_matrix",
+        "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_bounded_drift_replay_matrix.md",
+        "source_report_sha256": "8766f392358f7aa675a591c076e3cec5a97f91af5ed5f382bc306a9809a13728",
+        "source_sha256": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0"
+      },
+      {
+        "ap6_required_evidence_still_missing": [
+          "positive_ap6_boundary_evidence_absent"
+        ],
+        "boundary_claim_allowed": false,
+        "claim_promotion_allowed": false,
+        "direct_historic_ap6_support_status": "not_ap6_positive_evidence",
+        "evidence_strategy_class": "rejected",
+        "final_ap6_supported": false,
+        "mechanism_name": "n15_claim_boundary_record",
+        "mechanism_role": "unsafe_claim_relabel_blocker_source",
+        "provisional_claim_ceiling": "claim_boundary_context_only",
+        "row_id": "n16_i1_row_04_n15_claim_boundary",
+        "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json",
+        "source_experiment": "N15",
+        "source_iteration": "iteration_7_claim_boundary_record",
+        "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_claim_boundary_record.md",
+        "source_report_sha256": "9a7f9558adeda1449f5b728cf330bea1a4906a99094d9a8fa5c8a310284845fe",
+        "source_sha256": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87"
+      }
+    ],
+    "prior_claim_promotion_blockers": [
+      "N15 AP5 proxy formation is not AP6 boundary separability by relabel",
+      "N14 AP4 consequence-sensitive selection is not intention or semantic choice",
+      "N13 AP3 support regulation is not selfhood or native support",
+      "N12 NAT4 readiness remains readiness-only context"
+    ]
+  },
+  "boundary_rows": [
+    {
+      "blocked_claim": "selfhood",
+      "claim_allowed": false,
+      "rationale": "artifact basin-boundary separability is not semantic or phenomenological selfhood",
+      "row_id": "n16_i8_boundary_01_artifact_boundary_not_selfhood",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "identity_acceptance",
+      "claim_allowed": false,
+      "rationale": "boundary-side assignment is an artifact descriptor, not identity acceptance",
+      "row_id": "n16_i8_boundary_02_boundary_side_assignment_not_identity_acceptance",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "semantic_goal_ownership",
+      "claim_allowed": false,
+      "rationale": "internal support-relevant state is not goal ownership or goal understanding",
+      "row_id": "n16_i8_boundary_03_internal_support_not_semantic_goal_ownership",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "closed_action_perception_loop",
+      "claim_allowed": false,
+      "rationale": "boundary-crossing trace is not a closed action-perception loop",
+      "row_id": "n16_i8_boundary_04_boundary_crossing_not_action_perception_loop",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "native_support",
+      "claim_allowed": false,
+      "rationale": "artifact-level AP6 classification does not open native support or Phase 8",
+      "row_id": "n16_i8_boundary_05_artifact_ap6_not_native_support",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "fully_native_agentic_like_integration",
+      "claim_allowed": false,
+      "rationale": "artifact-level boundary evidence is not fully native integration",
+      "row_id": "n16_i8_boundary_06_artifact_ap6_not_fully_native_integration",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "agency_environment_model",
+      "claim_allowed": false,
+      "rationale": "external resource or challenge descriptors are not an agency environment model",
+      "row_id": "n16_i8_boundary_07_external_state_not_agency_environment_model",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "autonomous_repair",
+      "claim_allowed": false,
+      "rationale": "B3_C4 is artifact-level reclosure evidence, not autonomous repair",
+      "row_id": "n16_i8_boundary_08_b3_reclosure_not_autonomous_repair",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "native_multi_basin_selfhood",
+      "claim_allowed": false,
+      "rationale": "B4_C5 is artifact-level shared-medium separability evidence only",
+      "row_id": "n16_i8_boundary_09_b4_shared_medium_not_native_multi_basin_selfhood",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "selective_uptake_resource_assimilation_life",
+      "claim_allowed": false,
+      "rationale": "N16 excludes selective uptake, resource assimilation, organism, and life claims",
+      "row_id": "n16_i8_boundary_10_no_selective_uptake_resource_assimilation_or_life",
+      "source": "n16_i8_claim_boundary_record"
+    },
+    {
+      "blocked_claim": "schema_control_overclaim",
+      "claim_allowed": false,
+      "rationale": "duplicate replay is an I7 run-level replay extension, not an I2 schema-backed control",
+      "row_id": "n16_i8_boundary_11_duplicate_replay_not_i2_schema_control",
+      "source": "n16_i8_claim_boundary_record"
+    }
+  ],
+  "boundary_summary": {
+    "all_boundary_claims_blocked": true,
+    "all_unsafe_boundary_promotions_blocked": true,
+    "artifact_ap6_boundary_candidate_supported": true,
+    "blocked_claims": [
+      "selfhood",
+      "identity_acceptance",
+      "semantic_goal_ownership",
+      "closed_action_perception_loop",
+      "native_support",
+      "fully_native_agentic_like_integration",
+      "agency_environment_model",
+      "autonomous_repair",
+      "native_multi_basin_selfhood",
+      "selective_uptake_resource_assimilation_life",
+      "schema_control_overclaim"
+    ],
+    "boundary_row_count": 11,
+    "closed_action_perception_loop_blocked": true,
+    "duplicate_replay_schema_backing_acknowledged": true,
+    "identity_acceptance_blocked": true,
+    "native_support_blocked": true,
+    "selfhood_blocked": true,
+    "semantic_goal_ownership_blocked": true
+  },
+  "checks": {
+    "all_ap6_gates_validated": true,
+    "ap6_classification_supported": true,
+    "artifact_level_ap6_supported_separate_from_final_freeze": true,
+    "b4_c5_one_sided_limitation_recorded": true,
+    "boundary_rows_block_claims": true,
+    "claim_flag_merge_consistent": true,
+    "control_gate_rationales_specific": true,
+    "cross_iteration_cell_consistency_passed": true,
+    "duplicate_replay_backing_acknowledged": true,
+    "final_ap6_not_frozen_until_iteration9": true,
+    "global_stress_envelope_scope_explained": true,
+    "hypothesis_a_supported": true,
+    "hypothesis_b_supported": true,
+    "hypothesis_c_supported": true,
+    "i7_requirements_matrix_passed": true,
+    "n14_n15_caveats_traceable": true,
+    "native_phase8_fully_native_false": true,
+    "no_new_b_c_cells_created": true,
+    "post_write_output_digest_self_verification_enabled": true,
+    "row_decision_enum_revalidated": true,
+    "source_digests_match_acceptance": true,
+    "src_diff_empty": true,
+    "unsafe_claim_flags_false": true
+  },
+  "claim_boundary_record": {
+    "ap6_classification_supported": true,
+    "artifact_level_ap6_supported": true,
+    "boundary_summary": {
+      "all_boundary_claims_blocked": true,
+      "all_unsafe_boundary_promotions_blocked": true,
+      "artifact_ap6_boundary_candidate_supported": true,
+      "blocked_claims": [
+        "selfhood",
+        "identity_acceptance",
+        "semantic_goal_ownership",
+        "closed_action_perception_loop",
+        "native_support",
+        "fully_native_agentic_like_integration",
+        "agency_environment_model",
+        "autonomous_repair",
+        "native_multi_basin_selfhood",
+        "selective_uptake_resource_assimilation_life",
+        "schema_control_overclaim"
+      ],
+      "boundary_row_count": 11,
+      "closed_action_perception_loop_blocked": true,
+      "duplicate_replay_schema_backing_acknowledged": true,
+      "identity_acceptance_blocked": true,
+      "native_support_blocked": true,
+      "selfhood_blocked": true,
+      "semantic_goal_ownership_blocked": true
+    },
+    "classification_status": "supported_boundary_clean_pending_closeout",
+    "classified_ap_level": "AP6",
+    "final_ap6_supported": false,
+    "final_ap_freeze_pending_iteration9": true,
+    "final_artifact_level_ap6_frozen": false,
+    "global_stress_envelope": {
+      "maximum_leakage_ratio": 1.0,
+      "minimum_coherence_margin": -0.92,
+      "minimum_internal_support": 0.0,
+      "row_scope": "all_reused_i3_to_i6_rows_including_controls"
+    },
+    "global_stress_envelope_scope_note": "Global aggregate metrics are computed across every reused I3-I6 row, including null, rejected, and partial control rows. Supported boundary-candidate metrics exclude B0 active-null rows and unsupported rows.",
+    "iteration_9_closeout_ready": true,
+    "provisional_ap_level": "AP6_candidate_boundary_clean_pending_closeout",
+    "record_name": "n16_claim_boundary_and_ap6_classification_record",
+    "supported_candidate_operating_envelope": {
+      "cell_sources": [
+        {
+          "cell_id": "B2_C0",
+          "source_artifact_id": "n16_quiet_boundary_calibration"
+        },
+        {
+          "cell_id": "B2_C0",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "cell_id": "B2_C1",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "cell_id": "B3_C2",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "cell_id": "B2_C1",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "cell_id": "B3_C4",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "cell_id": "B4_C5",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "maximum_leakage_ratio": 0.118,
+      "minimum_coherence_margin": 0.524,
+      "minimum_internal_support": 0.85,
+      "row_scope": "supported_B2_B3_B4_rows_only"
+    },
+    "supported_scope": "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements"
+  },
+  "claim_flag_merge_audit": {
+    "control_unsafe_false_preserved": true,
+    "intentional_overrides": {
+      "artifact_level_ap6_supported": {
+        "control_variant_value": false,
+        "iteration_8_value": true,
+        "reason": "I8 classifies artifact-level AP6 as supported while final AP6 freeze and unsafe promotions remain false"
+      }
+    },
+    "shared_unsafe_flags_consistent": true,
+    "shared_unsafe_keys": [
+      "agency_claim_allowed",
+      "biological_behavior_claim_allowed",
+      "final_ap6_supported",
+      "fully_native_agentic_like_integration_claim_allowed",
+      "identity_acceptance_claim_allowed",
+      "intention_claim_allowed",
+      "native_support_opened",
+      "personhood_claim_allowed",
+      "phase8_opened",
+      "resource_assimilation_claim_allowed",
+      "runtime_identity_acceptance_claim_allowed",
+      "selective_uptake_claim_allowed",
+      "selfhood_claim_allowed",
+      "semantic_choice_claim_allowed",
+      "semantic_goal_ownership_claim_allowed",
+      "semantic_goal_understanding_claim_allowed",
+      "unrestricted_agency_claim_allowed"
+    ],
+    "status": "passed",
+    "unsafe_flags_false": true
+  },
+  "claim_flags": {
+    "agency_claim_allowed": false,
+    "artifact_level_ap6_supported": true,
+    "biological_behavior_claim_allowed": false,
+    "closed_action_perception_loop_claim_allowed": false,
+    "final_ap6_supported": false,
+    "fully_native_agentic_like_integration_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "intention_claim_allowed": false,
+    "native_support_opened": false,
+    "organism_life_claim_allowed": false,
+    "personhood_claim_allowed": false,
+    "phase8_opened": false,
+    "resource_assimilation_claim_allowed": false,
+    "runtime_identity_acceptance_claim_allowed": false,
+    "selective_uptake_claim_allowed": false,
+    "selfhood_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_ownership_claim_allowed": false,
+    "semantic_goal_understanding_claim_allowed": false,
+    "unrestricted_agency_claim_allowed": false
+  },
+  "classification_flags": {
+    "ap6_classification_supported": true,
+    "artifact_level_ap6_supported": true,
+    "final_ap6_supported": false,
+    "final_ap_freeze_pending_iteration9": true,
+    "final_artifact_level_ap6_frozen": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/build_n16_claim_boundary_record.py",
+  "controls": {
+    "artifact_only_replay_control": {
+      "ap6_claim_allowed": false,
+      "attack": "replay admissibility control",
+      "blocker": "artifact_replay_instability_blocks_ap6",
+      "control_family": "schema_control",
+      "evidence_cells": [],
+      "expected_blocker": "artifact_replay_instability_blocks_ap6",
+      "expected_status": "stable",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "stable",
+      "stress_level": "standard"
+    },
+    "boundary_drift_outside_policy_control": {
+      "ap6_claim_allowed": false,
+      "attack": "let boundary drift outside frozen policy",
+      "blocker": "boundary_drift_outside_policy_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b2_c2_reproduced_iteration_4_partial_anchor",
+          "cell_id": "B2_C2",
+          "failure_mode": "directional_flux_leakage_exceeds_quiet_ceiling",
+          "requirements_failed": [
+            "quiet_leakage_ceiling_exceeded_under_directional_flux",
+            "minimum_internal_support_floor_not_preserved_under_flux",
+            "minimum_coherence_margin_floor_not_preserved_under_flux"
+          ],
+          "requirements_satisfied": [
+            "directional_flux_measured",
+            "inbound_outbound_retained_flux_recorded",
+            "boundary_remains_measurable_under_flux",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_flux_repair_improves_b2_c2_failure_modes",
+          "cell_id": "B3_C2",
+          "failure_mode": "c2_flux_repair_not_general_repair",
+          "requirements_failed": [
+            "B3_C2_is_not_B3_C4_breach_repair_closeout",
+            "bounded_reabsorption_is_not_autonomous_repair",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "b2_c0_c1_c2_prerequisite_satisfied_before_B3",
+            "quiet_leakage_ceiling_preserved_under_directional_flux",
+            "minimum_internal_support_floor_preserved_under_flux",
+            "minimum_internal_coherence_floor_preserved_under_flux",
+            "minimum_coherence_margin_floor_preserved_under_flux",
+            "retained_flux_improves_over_B2_C2",
+            "boundary_stability_improves_over_B2_C2",
+            "repair_score_recorded_under_flux",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "boundary_drift_outside_policy_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "duplicate_replay_control": {
+      "ap6_claim_allowed": false,
+      "attack": "rerun I7 synthesis over identical serialized inputs",
+      "blocker": "duplicate_replay_instability_blocks_ap6",
+      "control_family": "i7_replay_extension",
+      "evidence_cells": [],
+      "expected_blocker": "duplicate_replay_instability_blocks_ap6",
+      "expected_status": "stable",
+      "fail_closed": true,
+      "schema_backed": false,
+      "schema_status": "i7_full_control_extension_not_i2_schema_backed; replay_matrix contains the authoritative duplicate digest comparison",
+      "status": "stable",
+      "stress_level": "standard"
+    },
+    "externally_supplied_boundary_control": {
+      "ap6_claim_allowed": false,
+      "attack": "trust externally supplied inside/outside labels",
+      "blocker": "externally_supplied_boundary_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "localized_partition_candidate_under_C0",
+          "cell_id": "B1_C0",
+          "failure_mode": "persistence_not_evaluated_for_B1",
+          "requirements_failed": [
+            "support_persistence_not_claimed",
+            "quiet_window_replay_not_required_for_B1",
+            "quiet_leakage_ratio_0.18_exceeds_ceiling_0.12",
+            "coherence_margin_0.445_below_floor_0.52"
+          ],
+          "requirements_satisfied": [
+            "source_rows_selected",
+            "common_schema_populated",
+            "no_externally_supplied_boundary_labels",
+            "boundary_edge_extraction_passed",
+            "inside_outside_partition_passed",
+            "boundary_edges_incident_to_both_derived_sides"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_quiet_boundary_calibration"
+        },
+        {
+          "boundary_classification": "b0_c3_structured_external_false_positive_rejected",
+          "cell_id": "B0_C3",
+          "failure_mode": "structured_external_coherence_no_internal_boundary",
+          "requirements_failed": [
+            "no_internal_support_relevant_side_under_structured_external_coherence",
+            "no_boundary_edge_under_structured_external_coherence",
+            "structured_external_coherence_is_not_self_region",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "structured_external_coherence_rejected_as_boundary_support",
+            "active_null_boundary_claim_remains_false",
+            "C3_external_state_role_preserved_as_structured_external_state",
+            "supported_decision_confirms_active_null_rejection_not_boundary_support"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "externally_supplied_boundary_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "hidden_external_state_injection_control": {
+      "ap6_claim_allowed": false,
+      "attack": "derive support from unrecorded external state",
+      "blocker": "hidden_external_state_injection_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b2_c1_persistent_noise_replay_supported",
+          "cell_id": "B2_C1",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "noise_tolerance_does_not_substitute_for_flux_tolerance",
+            "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+          ],
+          "requirements_satisfied": [
+            "noise_resilience_score_recorded",
+            "derived_boundary_edges_remain_incident_to_both_sides",
+            "leakage_ratio_remains_below_c0_ceiling_under_noise"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "structured_external_false_positive_rejected",
+          "cell_id": "B2_C3",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "C3_success_is_not_flux_tolerance",
+            "C3_success_is_not_resource_assimilation"
+          ],
+          "requirements_satisfied": [
+            "structured_external_state_role_preserved",
+            "false_positive_structured_coherence_rejected",
+            "structured_external_coherence_not_assimilated_as_self_region"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "hidden_external_state_injection_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "identity_acceptance_relabel_control": {
+      "ap6_claim_allowed": false,
+      "attack": "relabel side assignment as identity acceptance",
+      "blocker": "identity_acceptance_relabel_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "localized_partition_candidate_under_C0",
+          "cell_id": "B1_C0",
+          "failure_mode": "persistence_not_evaluated_for_B1",
+          "requirements_failed": [
+            "support_persistence_not_claimed",
+            "quiet_window_replay_not_required_for_B1",
+            "quiet_leakage_ratio_0.18_exceeds_ceiling_0.12",
+            "coherence_margin_0.445_below_floor_0.52"
+          ],
+          "requirements_satisfied": [
+            "source_rows_selected",
+            "common_schema_populated",
+            "no_externally_supplied_boundary_labels",
+            "boundary_edge_extraction_passed",
+            "inside_outside_partition_passed",
+            "boundary_edges_incident_to_both_derived_sides"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_quiet_boundary_calibration"
+        },
+        {
+          "boundary_classification": "b0_c3_structured_external_false_positive_rejected",
+          "cell_id": "B0_C3",
+          "failure_mode": "structured_external_coherence_no_internal_boundary",
+          "requirements_failed": [
+            "no_internal_support_relevant_side_under_structured_external_coherence",
+            "no_boundary_edge_under_structured_external_coherence",
+            "structured_external_coherence_is_not_self_region",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "structured_external_coherence_rejected_as_boundary_support",
+            "active_null_boundary_claim_remains_false",
+            "C3_external_state_role_preserved_as_structured_external_state",
+            "supported_decision_confirms_active_null_rejection_not_boundary_support"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "identity_acceptance_relabel_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "missing_boundary_side_state_control": {
+      "ap6_claim_allowed": false,
+      "attack": "accept a row without both side assignments when required",
+      "blocker": "missing_boundary_side_state_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "localized_partition_candidate_under_C0",
+          "cell_id": "B1_C0",
+          "failure_mode": "persistence_not_evaluated_for_B1",
+          "requirements_failed": [
+            "support_persistence_not_claimed",
+            "quiet_window_replay_not_required_for_B1",
+            "quiet_leakage_ratio_0.18_exceeds_ceiling_0.12",
+            "coherence_margin_0.445_below_floor_0.52"
+          ],
+          "requirements_satisfied": [
+            "source_rows_selected",
+            "common_schema_populated",
+            "no_externally_supplied_boundary_labels",
+            "boundary_edge_extraction_passed",
+            "inside_outside_partition_passed",
+            "boundary_edges_incident_to_both_derived_sides"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_quiet_boundary_calibration"
+        },
+        {
+          "boundary_classification": "within_sweep_quiet_b2_anchor",
+          "cell_id": "B2_C0",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "challenge_classes_not_tested_by_c0_anchor"
+          ],
+          "requirements_satisfied": [
+            "within_sweep_c0_anchor_present",
+            "canonical_b2_definition_held_fixed",
+            "quiet_baseline_reproduced"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "missing_boundary_side_state_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "multi_basin_merge_control": {
+      "ap6_claim_allowed": false,
+      "attack": "treat neighbor leakage or merge pressure as separability",
+      "blocker": "multi_basin_merge_or_leakage_recorded",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b2_shared_medium_pressure_rejected",
+          "cell_id": "B2_C5",
+          "failure_mode": "shared_medium_leakage_and_merge_pressure_exceed_B2_policy",
+          "requirements_failed": [
+            "basin_separation_score_below_shared_medium_floor",
+            "shared_medium_leakage_exceeds_B2_policy",
+            "B2_insufficient_for_multi_basin_shared_medium",
+            "quiet_leakage_ceiling_exceeded_under_shared_medium",
+            "minimum_internal_support_floor_not_preserved_under_shared_medium",
+            "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+            "minimum_coherence_margin_floor_not_preserved_under_shared_medium"
+          ],
+          "requirements_satisfied": [
+            "shared_medium_pressure_recorded",
+            "coupled_neighbor_merge_pressure_recorded",
+            "B4_extension_need_identified"
+          ],
+          "row_decision": "rejected",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b4_c2_flux_stress_partial_not_c5_separability",
+          "cell_id": "B4_C2",
+          "failure_mode": "coupled_flux_distribution_does_not_prove_b4_separability",
+          "requirements_failed": [
+            "B4_C2_is_not_B4_C5_shared_medium_separability",
+            "quiet_leakage_ceiling_exceeded_under_directional_flux",
+            "minimum_coherence_margin_floor_not_preserved_under_flux",
+            "basin_separation_score_below_shared_medium_floor",
+            "merge_confusion_pressure_not_resolved_under_C2"
+          ],
+          "requirements_satisfied": [
+            "multi_basin_flux_components_distinguished",
+            "retained_flux_within_intended_basin_recorded",
+            "redirected_flux_through_coupling_channel_recorded",
+            "neighbor_basin_leakage_recorded",
+            "B4_C2_flux_decomposition_complete_but_no_failure_resolved",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "multi_basin_merge_or_leakage_recorded",
+      "expected_status": "blocked_or_recorded_failure",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked_or_recorded_failure",
+      "stress_level": "high"
+    },
+    "native_support_relabel_control": {
+      "ap6_claim_allowed": false,
+      "attack": "promote artifact-level boundary support to native support",
+      "blocker": "native_support_relabel_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b3_flux_repair_improves_b2_c2_failure_modes",
+          "cell_id": "B3_C2",
+          "failure_mode": "c2_flux_repair_not_general_repair",
+          "requirements_failed": [
+            "B3_C2_is_not_B3_C4_breach_repair_closeout",
+            "bounded_reabsorption_is_not_autonomous_repair",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "b2_c0_c1_c2_prerequisite_satisfied_before_B3",
+            "quiet_leakage_ceiling_preserved_under_directional_flux",
+            "minimum_internal_support_floor_preserved_under_flux",
+            "minimum_internal_coherence_floor_preserved_under_flux",
+            "minimum_coherence_margin_floor_preserved_under_flux",
+            "retained_flux_improves_over_B2_C2",
+            "boundary_stability_improves_over_B2_C2",
+            "repair_score_recorded_under_flux",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "native_support_relabel_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "order_inversion_replay_control": {
+      "ap6_claim_allowed": false,
+      "attack": "replay admissibility control",
+      "blocker": "order_inversion_instability_blocks_ap6",
+      "control_family": "schema_control",
+      "evidence_cells": [],
+      "expected_blocker": "order_inversion_instability_blocks_ap6",
+      "expected_status": "stable",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "stable",
+      "stress_level": "standard"
+    },
+    "post_hoc_boundary_label_control": {
+      "ap6_claim_allowed": false,
+      "attack": "apply boundary label after seeing successful rows",
+      "blocker": "post_hoc_boundary_label_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b0_c3_structured_external_false_positive_rejected",
+          "cell_id": "B0_C3",
+          "failure_mode": "structured_external_coherence_no_internal_boundary",
+          "requirements_failed": [
+            "no_internal_support_relevant_side_under_structured_external_coherence",
+            "no_boundary_edge_under_structured_external_coherence",
+            "structured_external_coherence_is_not_self_region",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "structured_external_coherence_rejected_as_boundary_support",
+            "active_null_boundary_claim_remains_false",
+            "C3_external_state_role_preserved_as_structured_external_state",
+            "supported_decision_confirms_active_null_rejection_not_boundary_support"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "structured_external_false_positive_rejected",
+          "cell_id": "B2_C3",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "C3_success_is_not_flux_tolerance",
+            "C3_success_is_not_resource_assimilation"
+          ],
+          "requirements_satisfied": [
+            "structured_external_state_role_preserved",
+            "false_positive_structured_coherence_rejected",
+            "structured_external_coherence_not_assimilated_as_self_region"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "post_hoc_boundary_label_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "resource_relabel_as_self_control": {
+      "ap6_claim_allowed": false,
+      "attack": "relabel external resource or medium as self-region",
+      "blocker": "resource_relabel_as_self_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b0_c3_structured_external_false_positive_rejected",
+          "cell_id": "B0_C3",
+          "failure_mode": "structured_external_coherence_no_internal_boundary",
+          "requirements_failed": [
+            "no_internal_support_relevant_side_under_structured_external_coherence",
+            "no_boundary_edge_under_structured_external_coherence",
+            "structured_external_coherence_is_not_self_region",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "structured_external_coherence_rejected_as_boundary_support",
+            "active_null_boundary_claim_remains_false",
+            "C3_external_state_role_preserved_as_structured_external_state",
+            "supported_decision_confirms_active_null_rejection_not_boundary_support"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b2_shared_medium_pressure_rejected",
+          "cell_id": "B2_C5",
+          "failure_mode": "shared_medium_leakage_and_merge_pressure_exceed_B2_policy",
+          "requirements_failed": [
+            "basin_separation_score_below_shared_medium_floor",
+            "shared_medium_leakage_exceeds_B2_policy",
+            "B2_insufficient_for_multi_basin_shared_medium",
+            "quiet_leakage_ceiling_exceeded_under_shared_medium",
+            "minimum_internal_support_floor_not_preserved_under_shared_medium",
+            "minimum_internal_coherence_floor_not_preserved_under_shared_medium",
+            "minimum_coherence_margin_floor_not_preserved_under_shared_medium"
+          ],
+          "requirements_satisfied": [
+            "shared_medium_pressure_recorded",
+            "coupled_neighbor_merge_pressure_recorded",
+            "B4_extension_need_identified"
+          ],
+          "row_decision": "rejected",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "resource_relabel_as_self_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "self_support_relabel_as_external_control": {
+      "ap6_claim_allowed": false,
+      "attack": "move support-relevant internal state to the external side",
+      "blocker": "self_support_relabel_as_external_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "within_sweep_quiet_b2_anchor",
+          "cell_id": "B2_C0",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "challenge_classes_not_tested_by_c0_anchor"
+          ],
+          "requirements_satisfied": [
+            "within_sweep_c0_anchor_present",
+            "canonical_b2_definition_held_fixed",
+            "quiet_baseline_reproduced"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b2_c1_persistent_noise_replay_supported",
+          "cell_id": "B2_C1",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "noise_tolerance_does_not_substitute_for_flux_tolerance",
+            "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+          ],
+          "requirements_satisfied": [
+            "noise_resilience_score_recorded",
+            "derived_boundary_edges_remain_incident_to_both_sides",
+            "leakage_ratio_remains_below_c0_ceiling_under_noise"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "self_support_relabel_as_external_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "selfhood_personhood_relabel_control": {
+      "ap6_claim_allowed": false,
+      "attack": "promote artifact boundary to selfhood or personhood",
+      "blocker": "selfhood_personhood_relabel_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "selfhood_personhood_relabel_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "semantic_goal_ownership_relabel_control": {
+      "ap6_claim_allowed": false,
+      "attack": "promote AP5/AP6 artifacts to semantic goal ownership",
+      "blocker": "semantic_goal_ownership_relabel_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b2_c1_persistent_noise_replay_supported",
+          "cell_id": "B2_C1",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "noise_tolerance_does_not_substitute_for_flux_tolerance",
+            "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+          ],
+          "requirements_satisfied": [
+            "noise_resilience_score_recorded",
+            "derived_boundary_edges_remain_incident_to_both_sides",
+            "leakage_ratio_remains_below_c0_ceiling_under_noise"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "semantic_goal_ownership_relabel_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "snapshot_load_replay_control": {
+      "ap6_claim_allowed": false,
+      "attack": "replay admissibility control",
+      "blocker": "snapshot_load_instability_blocks_ap6",
+      "control_family": "schema_control",
+      "evidence_cells": [],
+      "expected_blocker": "snapshot_load_instability_blocks_ap6",
+      "expected_status": "stable",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "stable",
+      "stress_level": "standard"
+    },
+    "stale_external_state_control": {
+      "ap6_claim_allowed": false,
+      "attack": "use stale external challenge or medium state",
+      "blocker": "stale_external_state_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "structured_external_false_positive_rejected",
+          "cell_id": "B2_C3",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "C3_success_is_not_flux_tolerance",
+            "C3_success_is_not_resource_assimilation"
+          ],
+          "requirements_satisfied": [
+            "structured_external_state_role_preserved",
+            "false_positive_structured_coherence_rejected",
+            "structured_external_coherence_not_assimilated_as_self_region"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "stale_external_state_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "stale_internal_state_control": {
+      "ap6_claim_allowed": false,
+      "attack": "use stale internal support state",
+      "blocker": "stale_internal_state_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b2_c1_persistent_noise_replay_supported",
+          "cell_id": "B2_C1",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "noise_tolerance_does_not_substitute_for_flux_tolerance",
+            "noise_tolerance_does_not_substitute_for_repair_or_shared_medium"
+          ],
+          "requirements_satisfied": [
+            "noise_resilience_score_recorded",
+            "derived_boundary_edges_remain_incident_to_both_sides",
+            "leakage_ratio_remains_below_c0_ceiling_under_noise"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b3_flux_repair_improves_b2_c2_failure_modes",
+          "cell_id": "B3_C2",
+          "failure_mode": "c2_flux_repair_not_general_repair",
+          "requirements_failed": [
+            "B3_C2_is_not_B3_C4_breach_repair_closeout",
+            "bounded_reabsorption_is_not_autonomous_repair",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "b2_c0_c1_c2_prerequisite_satisfied_before_B3",
+            "quiet_leakage_ceiling_preserved_under_directional_flux",
+            "minimum_internal_support_floor_preserved_under_flux",
+            "minimum_internal_coherence_floor_preserved_under_flux",
+            "minimum_coherence_margin_floor_preserved_under_flux",
+            "retained_flux_improves_over_B2_C2",
+            "boundary_stability_improves_over_B2_C2",
+            "repair_score_recorded_under_flux",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "stale_internal_state_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    },
+    "structured_external_coherence_rejection_control": {
+      "ap6_claim_allowed": false,
+      "attack": "promote coherent external structure to boundary support",
+      "blocker": "structured_external_coherence_false_boundary_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b0_c3_structured_external_false_positive_rejected",
+          "cell_id": "B0_C3",
+          "failure_mode": "structured_external_coherence_no_internal_boundary",
+          "requirements_failed": [
+            "no_internal_support_relevant_side_under_structured_external_coherence",
+            "no_boundary_edge_under_structured_external_coherence",
+            "structured_external_coherence_is_not_self_region",
+            "final_ap6_not_allowed"
+          ],
+          "requirements_satisfied": [
+            "structured_external_coherence_rejected_as_boundary_support",
+            "active_null_boundary_claim_remains_false",
+            "C3_external_state_role_preserved_as_structured_external_state",
+            "supported_decision_confirms_active_null_rejection_not_boundary_support"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "structured_external_false_positive_rejected",
+          "cell_id": "B2_C3",
+          "failure_mode": "not_applicable",
+          "requirements_failed": [
+            "C3_success_is_not_flux_tolerance",
+            "C3_success_is_not_resource_assimilation"
+          ],
+          "requirements_satisfied": [
+            "structured_external_state_role_preserved",
+            "false_positive_structured_coherence_rejected",
+            "structured_external_coherence_not_assimilated_as_self_region"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        }
+      ],
+      "expected_blocker": "structured_external_coherence_false_boundary_blocked",
+      "expected_status": "blocked_or_rejected",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked_or_rejected",
+      "stress_level": "high"
+    },
+    "untracked_boundary_crossing_control": {
+      "ap6_claim_allowed": false,
+      "attack": "accept a boundary crossing without boundary trace",
+      "blocker": "untracked_boundary_crossing_blocked",
+      "control_family": "schema_control",
+      "evidence_cells": [
+        {
+          "boundary_classification": "b2_c2_reproduced_iteration_4_partial_anchor",
+          "cell_id": "B2_C2",
+          "failure_mode": "directional_flux_leakage_exceeds_quiet_ceiling",
+          "requirements_failed": [
+            "quiet_leakage_ceiling_exceeded_under_directional_flux",
+            "minimum_internal_support_floor_not_preserved_under_flux",
+            "minimum_coherence_margin_floor_not_preserved_under_flux"
+          ],
+          "requirements_satisfied": [
+            "directional_flux_measured",
+            "inbound_outbound_retained_flux_recorded",
+            "boundary_remains_measurable_under_flux",
+            "C2_external_state_role_recorded_as_coupling_channel"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_boundary_state_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b2_breach_reclosure_partial_not_b3",
+          "cell_id": "B2_C4",
+          "failure_mode": "breach_pressure_exposes_need_for_b3_repair_probe",
+          "requirements_failed": [
+            "regulated_repair_not_supported_for_B2",
+            "reclosure_score_below_breach_reclosure_floor",
+            "B3_repair_reabsorption_probe_required",
+            "quiet_leakage_ceiling_exceeded_under_breach_pressure",
+            "minimum_internal_support_floor_not_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_not_preserved_under_breach_pressure"
+          ],
+          "requirements_satisfied": [
+            "breach_pressure_recorded",
+            "reclosure_pressure_recorded_without_b3_promotion",
+            "fail_closed_repair_boundary_preserved"
+          ],
+          "row_decision": "partial",
+          "source_artifact_id": "n16_challenge_sweep_matrix"
+        },
+        {
+          "boundary_classification": "b3_c4_breach_reclosure_candidate_supported",
+          "cell_id": "B3_C4",
+          "failure_mode": "breach_reclosure_candidate_not_autonomous_repair",
+          "requirements_failed": [
+            "B3_C4_is_not_autonomous_repair_or_native_reabsorption",
+            "B3_C4_does_not_close_final_AP6",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required"
+          ],
+          "requirements_satisfied": [
+            "b3_unlock_allowed_by_b2_c0_c1_c2",
+            "breach_pressure_recorded",
+            "reclosure_score_above_breach_reclosure_floor",
+            "quiet_leakage_ceiling_preserved_under_breach_pressure",
+            "minimum_internal_support_floor_preserved_under_breach_pressure",
+            "minimum_coherence_margin_floor_preserved_under_breach_pressure",
+            "B3_C4_breach_reclosure_candidate_supported",
+            "B3_C4_compared_inline_against_B2_C4_baseline",
+            "B3_C2_anchor_metrics_inlined_for_generalization_audit"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        },
+        {
+          "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+          "cell_id": "B4_C5",
+          "failure_mode": "shared_medium_separability_candidate_requires_final_controls",
+          "requirements_failed": [
+            "B4_C5_is_artifact_level_separability_candidate_only",
+            "B4_C5_does_not_close_final_AP6",
+            "native_multi_basin_separability_not_supported",
+            "full_control_matrix_still_required",
+            "duplicate_and_order_inversion_replay_still_required",
+            "reverse_basin_perspective_replay_deferred_before_final_AP6"
+          ],
+          "requirements_satisfied": [
+            "B4_C5_separability_measured_not_inherited_from_label",
+            "basin_separation_score_above_shared_medium_floor",
+            "shared_medium_leakage_below_quiet_ceiling",
+            "merge_confusion_pressure_below_ceiling",
+            "boundary_exclusivity_score_above_floor",
+            "neighbor_leakage_distinguished_from_retained_flux",
+            "B4_C5_asymmetric_one_sided_separability_probe_recorded",
+            "B4_C5_leakage_ratio_documented_as_shared_medium_leakage"
+          ],
+          "row_decision": "supported",
+          "source_artifact_id": "n16_selected_interaction_probe_matrix"
+        }
+      ],
+      "expected_blocker": "untracked_boundary_crossing_blocked",
+      "expected_status": "blocked",
+      "fail_closed": true,
+      "schema_backed": true,
+      "status": "blocked",
+      "stress_level": "standard"
+    }
+  },
+  "cross_iteration_cell_consistency": {
+    "cells": [
+      {
+        "cell_id": "B2_C0",
+        "key_metrics_consistent": true,
+        "metric_consistency": {
+          "boundary_stability_score": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              1.0,
+              1.0
+            ]
+          },
+          "coherence_margin": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.53,
+              0.53
+            ]
+          },
+          "external_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.35,
+              0.35
+            ]
+          },
+          "inbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          "internal_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.88,
+              0.88
+            ]
+          },
+          "leakage_ratio": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.061644,
+              0.061644
+            ]
+          },
+          "minimum_internal_support": {
+            "compared": false,
+            "consistent": true,
+            "values": [
+              0.86
+            ]
+          },
+          "outbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          "retained_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              1.46,
+              1.46
+            ]
+          }
+        },
+        "row_count": 2,
+        "row_decision_consistent": true,
+        "row_decisions": [
+          "supported",
+          "supported"
+        ],
+        "source_rows": [
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "supported",
+            "row_id": "n16_i3_row_b2_c0",
+            "source_artifact_id": "n16_quiet_boundary_calibration"
+          },
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "supported",
+            "row_id": "n16_i4_row_b2_c0",
+            "source_artifact_id": "n16_challenge_sweep_matrix"
+          }
+        ],
+        "status": "consistent"
+      },
+      {
+        "cell_id": "B2_C1",
+        "key_metrics_consistent": true,
+        "metric_consistency": {
+          "boundary_stability_score": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.9,
+              0.9
+            ]
+          },
+          "coherence_margin": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.532,
+              0.532
+            ]
+          },
+          "external_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.34,
+              0.34
+            ]
+          },
+          "inbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.03,
+              0.03
+            ]
+          },
+          "internal_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.872,
+              0.872
+            ]
+          },
+          "leakage_ratio": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.078,
+              0.078
+            ]
+          },
+          "minimum_internal_support": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.85,
+              0.85
+            ]
+          },
+          "outbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.02,
+              0.02
+            ]
+          },
+          "retained_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              1.41,
+              1.41
+            ]
+          }
+        },
+        "row_count": 2,
+        "row_decision_consistent": true,
+        "row_decisions": [
+          "supported",
+          "supported"
+        ],
+        "source_rows": [
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "supported",
+            "row_id": "n16_i4_row_b2_c1",
+            "source_artifact_id": "n16_challenge_sweep_matrix"
+          },
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "supported",
+            "row_id": "n16_i6_row_b2_c1",
+            "source_artifact_id": "n16_selected_interaction_probe_matrix"
+          }
+        ],
+        "status": "consistent"
+      },
+      {
+        "cell_id": "B2_C2",
+        "key_metrics_consistent": true,
+        "metric_consistency": {
+          "boundary_stability_score": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.62,
+              0.62
+            ]
+          },
+          "coherence_margin": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.488,
+              0.488
+            ]
+          },
+          "external_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.36,
+              0.36
+            ]
+          },
+          "inbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.34,
+              0.34
+            ]
+          },
+          "internal_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.848,
+              0.848
+            ]
+          },
+          "leakage_ratio": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.186,
+              0.186
+            ]
+          },
+          "minimum_internal_support": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.84,
+              0.84
+            ]
+          },
+          "outbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.22,
+              0.22
+            ]
+          },
+          "retained_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              1.18,
+              1.18
+            ]
+          }
+        },
+        "row_count": 2,
+        "row_decision_consistent": true,
+        "row_decisions": [
+          "partial",
+          "partial"
+        ],
+        "source_rows": [
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "partial",
+            "row_id": "n16_i4_row_b2_c2",
+            "source_artifact_id": "n16_challenge_sweep_matrix"
+          },
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "partial",
+            "row_id": "n16_i5_row_b2_c2",
+            "source_artifact_id": "n16_boundary_state_sweep_matrix"
+          }
+        ],
+        "status": "consistent"
+      },
+      {
+        "cell_id": "B1_C2",
+        "key_metrics_consistent": true,
+        "metric_consistency": {
+          "boundary_stability_score": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.34,
+              0.34
+            ]
+          },
+          "coherence_margin": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.442,
+              0.442
+            ]
+          },
+          "external_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.37,
+              0.37
+            ]
+          },
+          "inbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.34,
+              0.34
+            ]
+          },
+          "internal_coherence": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.812,
+              0.812
+            ]
+          },
+          "leakage_ratio": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.294,
+              0.294
+            ]
+          },
+          "minimum_internal_support": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.76,
+              0.76
+            ]
+          },
+          "outbound_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.28,
+              0.28
+            ]
+          },
+          "retained_flux": {
+            "compared": true,
+            "consistent": true,
+            "values": [
+              0.76,
+              0.76
+            ]
+          }
+        },
+        "row_count": 2,
+        "row_decision_consistent": true,
+        "row_decisions": [
+          "partial",
+          "partial"
+        ],
+        "source_rows": [
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "partial",
+            "row_id": "n16_i5_row_b1_c2",
+            "source_artifact_id": "n16_boundary_state_sweep_matrix"
+          },
+          {
+            "boundary_claim_allowed": false,
+            "row_decision": "partial",
+            "row_id": "n16_i6_row_b1_c2",
+            "source_artifact_id": "n16_selected_interaction_probe_matrix"
+          }
+        ],
+        "status": "consistent"
+      }
+    ],
+    "cells_checked": [
+      "B2_C0",
+      "B2_C1",
+      "B2_C2",
+      "B1_C2"
+    ],
+    "status": "passed",
+    "tolerance": 1e-09
+  },
+  "duplicate_replay_backing_audit": {
+    "acknowledged": true,
+    "control_present": true,
+    "expected_backing": "i7_run_level_replay_extension_not_i2_schema_control",
+    "handoff_note_contains_control_id": true,
+    "schema_backed": false,
+    "schema_backed_field_present": true
+  },
+  "errors": [],
+  "experiment": "N16",
+  "generated_at": "2026-06-17T00:00:00+00:00",
+  "git": {
+    "head": "9c77f160dccfe80dad5424e13a76b34eea507c25",
+    "src_diff_empty": true,
+    "status_short": "M experiments/2026-06-N16-lgrc-self-environment-boundary/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/implementation/SelfEnvironmentBoundaryImplementationChecklist.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/reports/README.md\n M experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/README.md\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_claim_boundary_record.json\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_claim_boundary_record.md\n?? experiments/2026-06-N16-lgrc-self-environment-boundary/scripts/build_n16_claim_boundary_record.py"
+  },
+  "global_stress_envelope_scope_note": "Global aggregate metrics are computed across every reused I3-I6 row, including null, rejected, and partial control rows. Supported boundary-candidate metrics exclude B0 active-null rows and unsupported rows.",
+  "hypothesis_classification": {
+    "hypothesis_a_boundary_source_inventory": {
+      "decision": "supported",
+      "evidence": [
+        "I1 accepted source inventory",
+        "I2 frozen schema and AP6 gate",
+        "I7 I1/I2 contract provenance verified"
+      ],
+      "remaining_limitations": [
+        "inventory support is not AP6 by itself",
+        "direct historic AP6 support remains absent"
+      ],
+      "scope": "source-backed internal, external, structured, B-axis, and C-axis records are pinned and claim-clean"
+    },
+    "hypothesis_b_artifact_basin_boundary_stability": {
+      "all_native_boundary_requirements_observed": true,
+      "decision": "supported",
+      "evidence": [
+        "I3 quiet calibration",
+        "I4 B2 challenge sweep",
+        "I5 B-state directional-flux sweep",
+        "I6 selected interaction probes",
+        "I7 full requirements/control matrix"
+      ],
+      "remaining_limitations": [
+        "final AP6 freeze remains pending Iteration 9 closeout",
+        "artifact-level separability is not native support",
+        "B4_C5 is a one-sided shared-medium separability probe; reverse-basin-perspective replay remains deferred before final AP6 freeze"
+      ],
+      "requirements_observed": [
+        "flux_balance_requirement",
+        "inter_basin_separation_requirement",
+        "maximum_leakage_requirement",
+        "minimum_coherence_margin_requirement",
+        "minimum_internal_support_requirement",
+        "repair_reabsorption_requirement",
+        "structured_external_coherence_rejection_requirement"
+      ],
+      "scope": "artifact-level AP6 basin-boundary stability candidate pending final closeout"
+    },
+    "hypothesis_c_selfhood_identity_agency_boundary": {
+      "controls": [
+        "identity_acceptance_relabel_control",
+        "selfhood_personhood_relabel_control",
+        "semantic_goal_ownership_relabel_control",
+        "native_support_relabel_control"
+      ],
+      "decision": "supported",
+      "evidence": [
+        "I7 claim flags forced false",
+        "identity, selfhood, semantic-goal, and native-support relabel controls fail closed",
+        "I8 boundary rows block non-AP6 promotions"
+      ],
+      "remaining_limitations": [
+        "does not provide positive evidence for selfhood, agency, or native support"
+      ],
+      "scope": "unsafe promotions remain blocked while AP6 candidate classification is preserved"
+    }
+  },
+  "iteration": "8",
+  "iteration_result": {
+    "acceptance_state": "accepted_ap6_classification_claim_boundary_clean_pending_closeout",
+    "agency_claim_opened": false,
+    "ap6_classification_supported": true,
+    "artifact_level_ap6_supported": true,
+    "classified_ap_level": "AP6",
+    "final_ap6_supported": false,
+    "final_ap_freeze_pending_iteration9": true,
+    "final_artifact_level_ap6_frozen": false,
+    "fully_native_integration_opened": false,
+    "iteration_9_closeout_ready": true,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "provisional_ap_level": "AP6_candidate_boundary_clean_pending_closeout",
+    "selfhood_claim_opened": false,
+    "semantic_goal_ownership_opened": false
+  },
+  "native_supported_flags": {
+    "fully_native_integration_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "next_iteration_handoff": {
+    "candidate_final_claim_ceiling": "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+    "candidate_final_supported_ap_level": "AP6",
+    "final_ap_freeze_pending_iteration9": true,
+    "keep_native_phase8_and_agency_claims_blocked": true,
+    "ready_for_iteration_9_closeout": true
+  },
+  "output_digest": "c9e319f6f5a2fce79a13748bc38f2272d9b69775032136c5e47f33abe61bf6c6",
+  "post_write_output_digest_self_verification": {
+    "algorithm": "sha256_canonical_json_excluding_generated_at_output_digest_git",
+    "enabled": true,
+    "verification_target": "output_digest"
+  },
+  "purpose": "claim_boundary_and_ap6_classification",
+  "replay_matrix": {
+    "artifact_only_replay": {
+      "digest": "bd1bcbe9003eb256fcd9a6d0435fdcba44df35e57c24232c55848852c014e239",
+      "hidden_runtime_dependency_detected": false,
+      "meaning": "I7 uses serialized I3-I6 artifacts and configs only",
+      "status": "stable"
+    },
+    "duplicate_replay": {
+      "first_digest": "bd1bcbe9003eb256fcd9a6d0435fdcba44df35e57c24232c55848852c014e239",
+      "meaning": "same accepted rows and requirement synthesis from same artifact inputs",
+      "same_digest": true,
+      "second_digest": "bd1bcbe9003eb256fcd9a6d0435fdcba44df35e57c24232c55848852c014e239",
+      "status": "stable"
+    },
+    "order_inversion_replay": {
+      "canonical_inverted_digest": "0b6aa3859869a70533ace7179a83be00ce962f6ddd10f50dc0877a205b467a11",
+      "canonical_original_digest": "0b6aa3859869a70533ace7179a83be00ce962f6ddd10f50dc0877a205b467a11",
+      "meaning": "row order does not create boundary evidence",
+      "same_digest_after_canonical_ordering": true,
+      "status": "stable"
+    },
+    "snapshot_load_replay": {
+      "digest": "0b6aa3859869a70533ace7179a83be00ce962f6ddd10f50dc0877a205b467a11",
+      "meaning": "serialized row state can be loaded and re-evaluated without runtime mutation",
+      "state_restore_required": false,
+      "status": "stable"
+    }
+  },
+  "requirements_acceptance_state": "accepted_full_control_matrix_no_ap6_closeout",
+  "requirements_source_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+  "row_decision_enum_revalidation": {
+    "allowed_values": [
+      "blocked",
+      "not_applicable",
+      "partial",
+      "rejected",
+      "supported"
+    ],
+    "control_evidence_cell_count_checked": 47,
+    "invalid_control_evidence": [],
+    "invalid_rows": [],
+    "row_count_checked": 19,
+    "status": "passed"
+  },
+  "schema_version": "n16_claim_boundary_record_v1",
+  "source_artifacts": {
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_boundary_policy_v1.json": {
+      "acceptance_state": null,
+      "output_digest": null,
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_boundary_policy_v1.json",
+      "sha256": "e1f4e35441801224f0d2fbea39c26cb2228eeb2c4c2b284909cf276b0d4c06d8",
+      "status": null
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_control_variants_v1.json": {
+      "acceptance_state": null,
+      "output_digest": null,
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/configs/n16_control_variants_v1.json",
+      "sha256": "8dac9bce347f840e3522d0a19449b2e6714c2ff23e864c835fe9083e4a04ac7e",
+      "status": null
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/hypotheses/hypothesis_a_boundary_source_inventory.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/hypotheses/hypothesis_a_boundary_source_inventory.md",
+      "sha256": "a68eba112d91166e5366375125d6429104ffa9b8c2dae00f8cbe93c12ac03236"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/hypotheses/hypothesis_b_artifact_boundary_separation.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/hypotheses/hypothesis_b_artifact_boundary_separation.md",
+      "sha256": "d41786b19590d345e241ff623628680ef08743b53aaf1f67111a546663c3ecb0"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/hypotheses/hypothesis_c_selfhood_identity_agency_boundary.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/hypotheses/hypothesis_c_selfhood_identity_agency_boundary.md",
+      "sha256": "39f87a737963fefb0ce8469c4c77e0dcd56ed1ac5983a7a785790ee9b540a3d7"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json": {
+      "acceptance_state": "accepted_full_control_matrix_no_ap6_closeout",
+      "output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+      "sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_schema_v1.json": {
+      "acceptance_state": "accepted_boundary_schema_freeze_no_row_validation",
+      "output_digest": "10f603a58f816f588c2a3f60a2f0b54df0386a8ce86324aace18dfd40a6950d8",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_schema_v1.json",
+      "sha256": "5233806d2f004c65c33c0048ada798d062eecb7939c773f2486d613c58ff2df2",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json": {
+      "acceptance_state": "accepted_boundary_source_inventory_only_no_ap6",
+      "output_digest": "5c8972426df7b4d1b28e6de4f1fd19d093e3ac6f3b70f40f790207175ebc3b65",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_source_inventory.json",
+      "sha256": "ccb038bbe82b9ed6b8ff491e477a6dfdf9eec9467372961ee3784206ad4d0ed1",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_state_sweep_matrix.json": {
+      "acceptance_state": "accepted_boundary_state_flux_sweep_no_ap6",
+      "output_digest": "a24c1db84cefbfcb3e99a26373ef5a12f21c795e0574c91fbb06ce72435e2620",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_boundary_state_sweep_matrix.json",
+      "sha256": "013725b03aa3dab3bacdddeb1255f061d381cbbbc7951237bff76d5d9f3d84ad",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_challenge_sweep_matrix.json": {
+      "acceptance_state": "accepted_b2_challenge_sweep_partial_mvp_no_ap6",
+      "output_digest": "b91d7bb77fd0053d9995a05a11571471a9338c0ce6b63909ca5021d429ce9d77",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_challenge_sweep_matrix.json",
+      "sha256": "b2e7f8b37966ccc781e26f294cec89a5fc5a21d902fbe52afb7b7cfaf6699834",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json": {
+      "acceptance_state": "accepted_quiet_boundary_calibration_no_ap6",
+      "output_digest": "863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_quiet_boundary_calibration.json",
+      "sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "status": "passed"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json": {
+      "acceptance_state": "accepted_selected_interaction_probes_no_ap6",
+      "output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+      "sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0",
+      "status": "passed"
+    }
+  },
+  "source_provenance": {
+    "basin_boundary_requirements_matrix": {
+      "accepted_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+      "current_file_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83",
+      "current_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "classification_input"
+    },
+    "boundary_schema_v1": {
+      "accepted_output_digest": "10f603a58f816f588c2a3f60a2f0b54df0386a8ce86324aace18dfd40a6950d8",
+      "current_file_sha256": "5233806d2f004c65c33c0048ada798d062eecb7939c773f2486d613c58ff2df2",
+      "current_output_digest": "10f603a58f816f588c2a3f60a2f0b54df0386a8ce86324aace18dfd40a6950d8",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "contract_artifact"
+    },
+    "boundary_source_inventory": {
+      "accepted_output_digest": "5c8972426df7b4d1b28e6de4f1fd19d093e3ac6f3b70f40f790207175ebc3b65",
+      "current_file_sha256": "ccb038bbe82b9ed6b8ff491e477a6dfdf9eec9467372961ee3784206ad4d0ed1",
+      "current_output_digest": "5c8972426df7b4d1b28e6de4f1fd19d093e3ac6f3b70f40f790207175ebc3b65",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "contract_artifact"
+    },
+    "boundary_state_sweep_matrix": {
+      "accepted_output_digest": "a24c1db84cefbfcb3e99a26373ef5a12f21c795e0574c91fbb06ce72435e2620",
+      "current_file_sha256": "013725b03aa3dab3bacdddeb1255f061d381cbbbc7951237bff76d5d9f3d84ad",
+      "current_output_digest": "a24c1db84cefbfcb3e99a26373ef5a12f21c795e0574c91fbb06ce72435e2620",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "evidence_artifact"
+    },
+    "challenge_sweep_matrix": {
+      "accepted_output_digest": "b91d7bb77fd0053d9995a05a11571471a9338c0ce6b63909ca5021d429ce9d77",
+      "current_file_sha256": "b2e7f8b37966ccc781e26f294cec89a5fc5a21d902fbe52afb7b7cfaf6699834",
+      "current_output_digest": "b91d7bb77fd0053d9995a05a11571471a9338c0ce6b63909ca5021d429ce9d77",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "evidence_artifact"
+    },
+    "quiet_boundary_calibration": {
+      "accepted_output_digest": "863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1",
+      "current_file_sha256": "625cd005da6fe7f31ae704ea63d9af3833818a19a2c6de5c3282d0b9dbe70297",
+      "current_output_digest": "863dcbf79421ee5b620d047ca47949ea1e82e3169f8a0284343a532a36b6a1a1",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "evidence_artifact"
+    },
+    "selected_interaction_probe_matrix": {
+      "accepted_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "current_file_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0",
+      "current_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "output_digest_matches_acceptance": true,
+      "provenance_role": "evidence_artifact"
+    }
+  },
+  "source_reports": {
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+      "sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_schema_v1.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_schema_v1.md",
+      "sha256": "ffcabb791576bd16e7d1696e1dc52af07b09bd991798b726d49c12b6fcfb77e3"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_source_inventory.md",
+      "sha256": "da507d17f38eae5321d20fd467909bf5a37c5093a1d85806c37b0a44a632a020"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_state_sweep_matrix.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_boundary_state_sweep_matrix.md",
+      "sha256": "e7fdd00abdd6ffdf524cf6b7033dcaea9e76a8ed5e71c2eb5804e9c391ce9c4c"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_challenge_sweep_matrix.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_challenge_sweep_matrix.md",
+      "sha256": "e8a399461c76d4fa54fc95d2cc8998c123e6faa1c1180ebd8539b3e68d3295b7"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_quiet_boundary_calibration.md",
+      "sha256": "659e449809454e62458f242bcbcca9c7b2b6da0bc8f1e5db7831ce413b1f8554"
+    },
+    "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md": {
+      "path": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+      "sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801"
+    }
+  },
+  "status": "passed",
+  "whole_experiment_interpretation": "N16 now has a claim-clean artifact-level AP6 classification: internal support-relevant state and external resource, perturbation, structured-state, and shared-medium pressures are separable in the generated artifacts and controls. The result remains a basin-boundary candidate pending Iteration 9 closeout; it does not support selfhood, identity acceptance, semantic goal ownership, agency, native support, Phase 8, fully native integration, selective uptake, resource assimilation, organism claims, life claims, or a closed action-perception loop."
+}

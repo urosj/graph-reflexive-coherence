@@ -100,6 +100,28 @@ N15 is closed as a claim-clean agency-prerequisite experiment:
   acceptance, selfhood, personhood, biological behavior, fully native
   integration, and unrestricted agency claims: still blocked.
 
+N16 is closed as a claim-clean agency-prerequisite experiment:
+
+- Final supported AP level: `AP6`.
+- Final AP6 supported: true.
+- Final claim ceiling:
+  `artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements`.
+- Final scope:
+  internal support-relevant state and external resource, perturbation,
+  structured-state, and shared-medium pressures are separable in generated
+  artifacts and controls.
+- Final controls:
+  20 negative controls fail closed, replay is stable, all 39 AP6 gates are
+  validated, and unsafe claim promotions remain blocked.
+- Recommended next experiment: `N17_closed_action_perception_loop`.
+- Targeted Phase 8 required before N17: false.
+- Phase 8 implementation opened: false.
+- Native support opened: false.
+- Closed action-perception loop opened: false.
+- Selfhood, personhood, identity acceptance, semantic goal ownership,
+  intention, semantic choice, agency, organism/life, biological behavior, fully
+  native integration, and unrestricted agency claims: still blocked.
+
 ## Primary Source Artifacts
 
 Start future review from these files:
@@ -124,6 +146,12 @@ Start future review from these files:
 - `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json`
 - `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_claim_boundary_record.md`
 - `experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json`
+- `experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_closeout_and_handoff.md`
+- `experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json`
+- `experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_claim_boundary_record.md`
+- `experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_claim_boundary_record.json`
+- `experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md`
+- `experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_final_interpretation_and_roadmap_significance.md`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md`
@@ -177,37 +205,35 @@ after their theory and component entry gates are explicit.
 The clean next work, if continuing the experiment roadmap without opening
 Phase 8 implementation, is:
 
-`N16 - LGRC Self / Environment Boundary`
+`N17 - LGRC Closed Action-Perception Loop`
 
 Recommended next actions:
 
-1. Create the `experiment-N16` branch from `main`.
-2. Start from N15 only as artifact-level `AP5` endogenous proxy formation
-   evidence, not as goal ownership, identity acceptance, agency, or native
-   support.
-3. Use N14 only as artifact-level `AP4` consequence-sensitive route selection
-   context, preserving the constructed-followout caveat.
-4. Use N13 only as artifact-level `AP3` support-seeking regulation context.
-5. Use N12 NAT4 records only as readiness context; do not promote them into
-   native support.
-6. Test whether internal support-relevant state and external resource or
-   perturbation state can be separated in artifacts and controls without
-   promoting the boundary into selfhood or identity acceptance.
+1. Create the `experiment-N17` branch from `main`.
+2. Start from N16 only as artifact-level `AP6` self/environment boundary
+   evidence, not as selfhood, identity acceptance, agency, or native support.
+3. Use N15 only as artifact-level `AP5` endogenous proxy formation context.
+4. Use N14 only as artifact-level `AP4` consequence-sensitive route selection
+   context.
+5. Test whether selected actions alter substrate/environment state and whether
+   those altered conditions feed back into later selection.
+6. Block producer direct mutation, stale consequence reads, environment change
+   without selected action, and semantic agency relabels.
 7. Keep Phase 8 optional/deferred unless the explicit goal is native
    implementation of a NAT4 contract.
 
 ## Branch Options
 
-There are three reasonable next branches after N15:
+There are three reasonable next branches after N16:
 
-- N16 first, no `src/*`: continue the agency-prerequisite roadmap with
-  self/environment boundary as artifact-level experiment work.
+- N17 first, no `src/*`: continue the agency-prerequisite roadmap with a
+  closed action-perception loop as artifact-level experiment work.
 - Phase 8 route-conductance memory first: native absorption of the N08 memory
   trail / route affordance mechanism from the N12 NAT4 contract.
 - Phase 8 response-magnitude policy first: native absorption of bounded,
   envelope-gated regulation response sizing from the N12 NAT4 contract.
 
-The most conservative route is N16 first if the goal is to continue the
+The most conservative route is N17 first if the goal is to continue the
 artifact-level roadmap. Open targeted Phase 8 only when the goal is native
 implementation of one of the two N12 NAT4 contracts.
 
@@ -256,7 +282,7 @@ git diff --check
 git diff -- src
 ```
 
-before closing any N16 setup or Phase 8 planning turn.
+before closing any N17 setup or Phase 8 planning turn.
 
 ## Resolved N12 Questions
 
@@ -270,13 +296,13 @@ before closing any N16 setup or Phase 8 planning turn.
 
 ## Remaining Questions
 
-- What exact N16 artifact schema separates internal support-relevant state from
-  external resource or perturbation state without introducing selfhood or
-  identity acceptance?
-- Which negative controls are required to block externally supplied boundaries,
-  post-hoc boundary labels, hidden environment-state injection, and native
-  support relabels?
+- What exact N17 artifact schema separates selected action, changed
+  substrate/environment state, and later selection input without introducing
+  agency or semantic intention?
+- Which negative controls are required to block producer direct mutation,
+  stale consequence reads, environment change without selected action, and
+  semantic agency relabels?
 - If Phase 8 opens, should route conductance memory or response magnitude policy
   be implemented first?
 - What explicit theory gates would be sufficient to reconsider identity
-  acceptance after N16 evidence accumulates?
+  acceptance or agency after N17 evidence accumulates?

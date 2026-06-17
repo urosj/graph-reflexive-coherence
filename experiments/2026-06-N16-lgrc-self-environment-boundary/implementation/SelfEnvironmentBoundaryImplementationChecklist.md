@@ -648,47 +648,128 @@ treated as replay admissibility evidence, not as an I2 schema control.
 
 ## Iteration 8. Claim Boundary And AP6 Classification
 
-- [ ] Resolve every AP6 gate as validated or blocked.
-- [ ] Classify Hypothesis A.
-- [ ] Classify Hypothesis B.
-- [ ] Classify Hypothesis C.
-- [ ] Apply supported/deferred/rejected/partial decision rubric.
-- [ ] Force unsafe claim flags false.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `fully_native_integration_opened = false`.
-- [ ] Audit blocked inputs.
-- [ ] Audit N14 constructed followout caveat.
-- [ ] Audit N15 AP5 target/proxy boundary caveat.
-- [ ] Draft whole-experiment interpretation.
+- [x] Resolve every AP6 gate as validated or blocked.
+- [x] Classify Hypothesis A.
+- [x] Classify Hypothesis B.
+- [x] Classify Hypothesis C.
+- [x] Apply supported/deferred/rejected/partial decision rubric.
+- [x] Force unsafe claim flags false.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
+- [x] Audit blocked inputs.
+- [x] Audit N14 constructed followout caveat.
+- [x] Audit N15 AP5 target/proxy boundary caveat.
+- [x] Separate artifact-level AP6 support from final AP6 freeze.
+- [x] Verify post-write output digest from the written JSON artifact.
+- [x] Recheck repeated B/C cells across carried-forward iterations.
+- [x] Revalidate row-decision enums in control evidence cells.
+- [x] Record B4_C5 one-sided shared-medium limitation.
+- [x] Draft whole-experiment interpretation.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_claim_boundary_record.json`
-- [ ] `reports/n16_claim_boundary_record.md`
-- [ ] `scripts/build_n16_claim_boundary_record.py`
+- [x] `outputs/n16_claim_boundary_record.json`
+- [x] `reports/n16_claim_boundary_record.md`
+- [x] `scripts/build_n16_claim_boundary_record.py`
+
+Output digest:
+
+```text
+c9e319f6f5a2fce79a13748bc38f2272d9b69775032136c5e47f33abe61bf6c6
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_claim_boundary_record.json 5dce478a429e31d3b5669c48dd7d84030baa5e6081a3bfb899833dcb584640db
+reports/n16_claim_boundary_record.md e943a9331c36989c3ea20ec5d856b4a7783bfc7dbb217e06baeaa24913626144
+scripts/build_n16_claim_boundary_record.py 6818fe7d01e540522313d8c70a24abe927fb5014116c9f8d8312026361fb2598
+```
+
+Acceptance state:
+
+```text
+accepted_ap6_classification_claim_boundary_clean_pending_closeout
+```
+
+Interpretation:
+
+```text
+Iteration 8 resolves all 39 AP6 gates, classifies Hypotheses A, B, and C as
+supported at their scoped levels, and supports an artifact-level AP6
+self/environment boundary classification pending Iteration 9 closeout.
+`artifact_level_ap6_supported = true` is now explicit and separate from
+`final_ap6_supported = false` and `final_artifact_level_ap6_frozen = false`.
+The supported scope is
+`artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements`.
+Final AP6 remains unfrozen until Iteration 9. Unsafe promotions remain
+blocked: selfhood, personhood, identity acceptance, semantic goal ownership,
+intention, semantic choice, agency, native support, Phase 8, fully native
+integration, selective uptake, resource assimilation, organism/life claims,
+autonomous repair, native multi-basin selfhood, and closed action-perception
+loop claims are not opened. Review hardening also records traceable N14/N15
+caveat evidence, specific I7 control-gate rationales, repeated-cell
+consistency checks, duplicate replay backing as an I7 run-level extension, and
+the B4_C5 one-sided shared-medium limitation.
+```
 
 ## Iteration 9. Closeout And N17 Handoff
 
-- [ ] Freeze final supported AP level if warranted.
-- [ ] Record final claim ceiling.
-- [ ] Record final controls.
-- [ ] Record final blockers.
-- [ ] Record final N17 handoff.
-- [ ] Record whether targeted Phase 8 is optional, required, or deferred.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `fully_native_integration_opened = false`.
-- [ ] Confirm all source rows receive specific final roles.
+- [x] Freeze final supported AP level if warranted.
+- [x] Record final claim ceiling.
+- [x] Record final controls.
+- [x] Record final blockers.
+- [x] Record final N17 handoff.
+- [x] Record whether targeted Phase 8 is optional, required, or deferred.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
+- [x] Confirm all source rows receive specific final roles.
 
 Expected artifacts:
 
-- [ ] `outputs/n16_closeout_and_handoff.json`
-- [ ] `reports/n16_closeout_and_handoff.md`
-- [ ] `scripts/build_n16_closeout_and_handoff.py`
+- [x] `outputs/n16_closeout_and_handoff.json`
+- [x] `reports/n16_closeout_and_handoff.md`
+- [x] `scripts/build_n16_closeout_and_handoff.py`
+
+Output digest:
+
+```text
+fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf
+```
+
+Artifact SHA-256:
+
+```text
+outputs/n16_closeout_and_handoff.json 88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e
+reports/n16_closeout_and_handoff.md 474b16320a42b94398234e3a4ef5694d34224741eccb2b4b338425d248687b84
+scripts/build_n16_closeout_and_handoff.py 8b41935c1c50c7b40432338cc386bca8ea350a645391e95919b0d4d73c71560a
+```
+
+Acceptance state:
+
+```text
+closed_claim_clean_ap6_artifact_level_self_environment_boundary_candidate
+```
+
+Interpretation:
+
+```text
+Iteration 9 closes N16 with final supported AP level `AP6` and final claim
+ceiling
+`artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements`.
+The closeout freezes artifact-level AP6 support, records 20 fail-closed
+negative controls, stable replay, all 39 AP6 gates validated, final blockers,
+and specific final roles for all 19 source rows. It does not open Phase 8,
+native support, fully native integration, selfhood, identity acceptance,
+semantic goal ownership, agency, organism/life claims, unrestricted agency, or
+closed action-perception loop. The N17 handoff is
+`N17_closed_action_perception_loop`.
+```
 
 ## Setup Verification
 
-- [ ] `git diff --check`
-- [ ] `git diff -- src`
+- [x] `git diff --check`
+- [x] `git diff -- src`

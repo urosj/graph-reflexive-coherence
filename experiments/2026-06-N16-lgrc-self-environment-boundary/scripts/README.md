@@ -11,11 +11,8 @@ Generated scripts:
 - `build_n16_boundary_state_sweep_matrix.py`
 - `build_n16_selected_interaction_probe_matrix.py`
 - `build_n16_basin_boundary_requirements_matrix.py`
-- `validate_n16_row.py`
-
-Planned scripts:
-
 - `build_n16_claim_boundary_record.py`
+- `validate_n16_row.py`
 - `build_n16_closeout_and_handoff.py`
 
 Use `.venv/bin/python` for local runs.
