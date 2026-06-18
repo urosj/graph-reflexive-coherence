@@ -42,6 +42,7 @@ machine-local state.
 | [N15 endogenous proxy formation](2026-06-N15-lgrc-endogenous-proxy-formation/README.md) | Closed artifact-level AP5 endogenous target/proxy formation from source-current support, memory, regulation, and AP4 consequence context. | README, then closeout handoff, claim boundary, control matrix, bounded-drift replay, and validator artifacts. |
 | [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
 | [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Closed artifact-level AP7 closed boundary engagement loop candidate across perturbation, resource/support, and local shared-medium families. | README, then closeout handoff, comparative requirements matrix, claim boundary, loop controls, and extension artifacts. |
+| [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Initialized artifact-level AP8 stress lane for source-current, replay-clean, budget-clean, claim-clean long-horizon closure across N12-N17 prerequisites. | README, then hypotheses, implementation plan/checklist, and future stress artifacts. |
 
 ## Current Roadmap State
 
@@ -125,6 +126,12 @@ acceptance, native support, organism/life, fully native integration, and
 unrestricted agency remain blocked. N18 long-horizon closure stress testing is
 the next roadmap experiment; targeted Phase 8 remains optional and deferred,
 not required before N18.
+
+N18 is initialized as the artifact-level AP8 stress lane. Its starting scope is
+`artifact_only_agentic_like_closure_candidate`: long-horizon stress testing of
+the N12-N17 agency-prerequisite stack without opening native support, Phase 8,
+semantic agency, identity acceptance, organism/life, fully native integration,
+or unrestricted agency claims.
 
 Roadmap-level context:
 

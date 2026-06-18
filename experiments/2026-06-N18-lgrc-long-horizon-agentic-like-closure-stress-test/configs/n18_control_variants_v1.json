@@ -1,0 +1,145 @@
+{
+  "config_id": "n18_control_variants_v1",
+  "control_requirements": [
+    {
+      "control_id": "stale_state_replay_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "stale_state_control_passed",
+      "purpose": "blocks stale earlier-window state from passing as long-horizon continuity"
+    },
+    {
+      "control_id": "stale_support_state_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale support state from carrying long-horizon continuity alone"
+    },
+    {
+      "control_id": "stale_memory_context_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale memory/context state from passing as live continuity"
+    },
+    {
+      "control_id": "stale_selection_context_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale selection context from passing as current selection continuity"
+    },
+    {
+      "control_id": "stale_proxy_target_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale proxy/target state from passing as current proxy continuity"
+    },
+    {
+      "control_id": "stale_boundary_state_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale boundary assignment from passing as current separability"
+    },
+    {
+      "control_id": "stale_loop_feedback_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale loop feedback from passing as current closed-loop feedback"
+    },
+    {
+      "control_id": "order_inversion_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "post_hoc_stitching_control_passed",
+      "purpose": "blocks inverted or shuffled horizon/order traces from passing as source-current continuity"
+    },
+    {
+      "control_id": "hidden_native_support_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "unsafe_claim_flags_false",
+      "purpose": "blocks interpreting artifact evidence as native support"
+    },
+    {
+      "control_id": "semantic_agency_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "unsafe_claim_flags_false",
+      "purpose": "blocks agency, intention, action/perception, and goal-ownership relabels"
+    },
+    {
+      "control_id": "identity_acceptance_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "unsafe_claim_flags_false",
+      "purpose": "blocks identity acceptance from support/memory continuity"
+    },
+    {
+      "control_id": "phase8_native_implementation_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "phase8_not_opened",
+      "purpose": "blocks Phase 8/native implementation claims unless separately opened"
+    },
+    {
+      "control_id": "long_horizon_drift_envelope_control",
+      "expected_status_for_ap8": "passed",
+      "failure_blocks_gate": "horizon_policy_satisfied",
+      "purpose": "blocks drift outside source-backed envelope"
+    },
+    {
+      "control_id": "drift_relabel_as_autonomy_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "drift_as_autonomy_control_passed",
+      "purpose": "blocks long-horizon drift from being relabeled as autonomous adaptation"
+    },
+    {
+      "control_id": "resource_shared_medium_merge_control",
+      "expected_status_for_ap8": "passed",
+      "failure_blocks_gate": "stress_controls_passed",
+      "purpose": "blocks resource or shared-medium merge/leakage as closure"
+    },
+    {
+      "control_id": "b4c5_original_reverse_replay_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "b4c5_relabel_controls_passed",
+      "purpose": "preserves N17's blocker that original B4/C5 reverse replay remains unsupported"
+    },
+    {
+      "control_id": "general_symmetric_native_multibasin_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "b4c5_relabel_controls_passed",
+      "purpose": "blocks local shared-medium evidence from becoming general symmetric/native multi-basin claims"
+    },
+    {
+      "control_id": "post_hoc_long_horizon_stitching_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "post_hoc_stitching_control_passed",
+      "purpose": "blocks assembling compatible windows after the fact"
+    },
+    {
+      "control_id": "budget_overrun_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "budget_valid",
+      "purpose": "blocks rows outside declared budget surface"
+    },
+    {
+      "control_id": "artifact_only_reconstruction_mismatch_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "artifact_only_reconstruction_passed",
+      "purpose": "requires artifact-only reconstruction to match source row digest inputs"
+    }
+  ],
+  "schema_version": "n18.control_variants.v1",
+  "unsafe_claims_blocked": [
+    "agency",
+    "intention",
+    "semantic_action",
+    "semantic_perception",
+    "semantic_goal_ownership",
+    "selfhood",
+    "personhood",
+    "biological_behavior",
+    "identity_acceptance",
+    "native_support",
+    "native_support_without_phase8_validation",
+    "organism_life",
+    "fully_native_integration",
+    "fully_native_agentic_like_integration",
+    "unrestricted_agency",
+    "original_b4c5_reverse_replay",
+    "general_symmetric_native_multi_basin"
+  ]
+}

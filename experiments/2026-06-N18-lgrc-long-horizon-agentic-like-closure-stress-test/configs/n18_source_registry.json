@@ -1,0 +1,152 @@
+{
+  "config_id": "n18_source_registry",
+  "schema_version": "n18.source_registry.v1",
+  "source_inventory": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_source_inventory.json",
+  "source_inventory_digest": "b9e45e7fb4e2c90fac206e1b2c666b425eec18b02bee6cd48685fc705000a2bf",
+  "source_rows": [
+    {
+      "construction_role": "primary_ap8_contract_input",
+      "mvp_relevance": "primary",
+      "row_id": "n18_i1_row_01_n17_closeout_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+      "source_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_consumption_rule": "artifact-level AP7 closed boundary engagement loop evidence only",
+      "source_experiment": "N17",
+      "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+      "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+    },
+    {
+      "construction_role": "primary_ap8_contract_input",
+      "mvp_relevance": "primary",
+      "row_id": "n18_i1_row_02_n17_requirements_matrix",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+      "source_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+      "source_consumption_rule": "artifact-level AP7 closed boundary engagement loop evidence only",
+      "source_experiment": "N17",
+      "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+      "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+    },
+    {
+      "construction_role": "ap8_control_design_input",
+      "mvp_relevance": "secondary",
+      "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+      "source_claim_ceiling": "artifact_level_ap7_loop_candidate_pending_later_stress",
+      "source_consumption_rule": "artifact-level AP7 closed boundary engagement loop evidence only",
+      "source_experiment": "N17",
+      "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+      "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+    },
+    {
+      "construction_role": "claim_boundary_blocker",
+      "mvp_relevance": "blocker",
+      "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+      "source_claim_ceiling": "artifact_level_ap7_claim_boundary_clean",
+      "source_consumption_rule": "artifact-level AP7 closed boundary engagement loop evidence only",
+      "source_experiment": "N17",
+      "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+      "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+    },
+    {
+      "construction_role": "primary_ap8_contract_input",
+      "mvp_relevance": "primary",
+      "row_id": "n18_i1_row_05_n16_closeout_ap6",
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json",
+      "source_claim_ceiling": "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+      "source_consumption_rule": "artifact-level AP6 self/environment boundary evidence only",
+      "source_experiment": "N16",
+      "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_closeout_and_handoff.md",
+      "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+    },
+    {
+      "construction_role": "primary_ap8_contract_input",
+      "mvp_relevance": "primary",
+      "row_id": "n18_i1_row_06_n15_closeout_ap5",
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+      "source_claim_ceiling": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+      "source_consumption_rule": "artifact-level AP5 endogenous proxy context only",
+      "source_experiment": "N15",
+      "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md",
+      "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+    },
+    {
+      "construction_role": "primary_ap8_contract_input",
+      "mvp_relevance": "primary",
+      "row_id": "n18_i1_row_07_n14_closeout_ap4",
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+      "source_consumption_rule": "artifact-level AP4 consequence-sensitive selection context only",
+      "source_experiment": "N14",
+      "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+      "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+    },
+    {
+      "construction_role": "primary_ap8_contract_input",
+      "mvp_relevance": "primary",
+      "row_id": "n18_i1_row_08_n13_closeout_ap3",
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+      "source_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "source_consumption_rule": "artifact-level AP3 support regulation context only",
+      "source_experiment": "N13",
+      "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+      "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+    },
+    {
+      "construction_role": "readiness_context",
+      "mvp_relevance": "secondary",
+      "row_id": "n18_i1_row_09_n12_closeout_nat4",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json",
+      "source_claim_ceiling": "NAT4 readiness-only native absorption context",
+      "source_consumption_rule": "NAT4 readiness context only; not native support",
+      "source_experiment": "N12",
+      "source_output_digest": "e4a71e2e86810eebe2f8cd3eb7933980e7cefe507718e3a930dad83b4b05329e",
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md",
+      "source_sha256": "fd3be9e141dae9204d96799bb1512fdfd4effb5421a520bd95435e7eb4ee262e"
+    },
+    {
+      "construction_role": "readiness_context",
+      "mvp_relevance": "secondary",
+      "row_id": "n18_i1_row_10_n12_phase8_readiness",
+      "source_artifact": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+      "source_claim_ceiling": "NAT4 readiness-only Phase 8 contract context",
+      "source_consumption_rule": "NAT4 readiness context only; not native support",
+      "source_experiment": "N12",
+      "source_output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+      "source_report": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md",
+      "source_sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14"
+    },
+    {
+      "construction_role": "context_input",
+      "mvp_relevance": "secondary",
+      "row_id": "n18_i1_row_11_n08_memory_closeout",
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+      "source_claim_ceiling": "memory_context_only",
+      "source_consumption_rule": "memory/context evidence only",
+      "source_experiment": "N08",
+      "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+      "source_report": "experiments/2026-05-N08-lgrc-memory-trail-affordance/reports/n08_iteration_13_native_geometry_trail_closeout.md",
+      "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+    },
+    {
+      "construction_role": "context_input",
+      "mvp_relevance": "secondary",
+      "row_id": "n18_i1_row_12_n09_regulation_closeout",
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json",
+      "source_claim_ceiling": "bounded_regulation_context_only",
+      "source_consumption_rule": "bounded regulation context only",
+      "source_experiment": "N09",
+      "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+      "source_report": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/reports/n09_iteration_9_gpr6_closeout.md",
+      "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# N18 Outputs
+
+Generated JSON artifacts for N18 are written here.
+
+Current artifacts:
+
+```text
+n18_long_horizon_source_inventory.json
+n18_long_horizon_schema_v1.json
+```
+
+Initial expected output sequence:
+
+```text
+n18_long_horizon_source_inventory.json
+n18_long_horizon_schema_v1.json
+n18_short_horizon_ap7_replay_baseline.json
+n18_horizon_window_sweep.json
+n18_support_proxy_stress_matrix.json
+n18_route_memory_stress_matrix.json
+n18_environment_resource_stress_matrix.json
+n18_shared_medium_stress_matrix.json
+n18_long_horizon_control_and_classification_matrix.json
+n18_closeout_and_handoff.json
+```
+
+Committed outputs must be deterministic, replayable, and free of local absolute
+paths.

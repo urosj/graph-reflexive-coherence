@@ -1,0 +1,842 @@
+{
+  "acceptance_state": "accepted_long_horizon_schema_v1_no_ap8_evidence",
+  "ap8_candidate_allowed": false,
+  "ap8_outcome_taxonomy": {
+    "AP8_blocked": "core continuity, budget, replay, or claim controls fail",
+    "AP8_supported_full": "all required stress families pass under the declared horizon and stress envelope",
+    "AP8_supported_limited": "long-horizon replay plus some stress families pass while other families are deferred or blocked"
+  },
+  "ap8_required_gates": [
+    "source_rows_pinned",
+    "source_claim_ceilings_preserved",
+    "evidence_branch_artifact_only",
+    "horizon_envelope_declared",
+    "horizon_policy_satisfied",
+    "all_required_trace_axes_present",
+    "linked_trace_continuity_present",
+    "cross_axis_continuity_evidence_present",
+    "long_horizon_continuity_present",
+    "budget_valid",
+    "artifact_only_reconstruction_passed",
+    "duplicate_replay_passed",
+    "snapshot_load_replay_passed",
+    "stale_state_control_passed",
+    "single_axis_stale_controls_passed",
+    "post_hoc_stitching_control_passed",
+    "drift_as_autonomy_control_passed",
+    "b4c5_relabel_controls_passed",
+    "stress_controls_passed",
+    "unsafe_claim_flags_false",
+    "phase8_not_opened",
+    "native_support_not_opened"
+  ],
+  "artifact_id": "n18_long_horizon_schema_v1",
+  "budget_policy": {
+    "budget_units": "artifact_stress_units",
+    "config_id": "n18_budget_limits_v1",
+    "invalid_budget_effect": {
+      "ap8_candidate_allowed": false,
+      "row_decision": "blocked"
+    },
+    "limits": {
+      "max_control_rows_per_iteration": 16,
+      "max_positive_stress_rows_per_iteration": 12,
+      "max_relative_window_count": 16,
+      "max_total_source_rows_per_candidate": 12,
+      "must_record_budget_surface": true
+    },
+    "schema_version": "n18.budget_limits.v1"
+  },
+  "checks": [
+    {
+      "check_id": "source_inventory_ready",
+      "detail": {
+        "output_digest": "b9e45e7fb4e2c90fac206e1b2c666b425eec18b02bee6cd48685fc705000a2bf",
+        "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_source_inventory.json",
+        "ready_for_iteration_2_schema": true,
+        "sha256": "743a7d91cc63c9fbd49fa33c1f01404727eecb4225bc39f361817fce7d0c3546"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "required_config_files_written",
+      "detail": [
+        "budget_limits",
+        "control_variants",
+        "horizon_policy",
+        "replay_policy",
+        "source_registry",
+        "stress_policy"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "stress_ladder_frozen",
+      "detail": {
+        "L0": "source inventory and AP8 contract only",
+        "L1": "short-horizon AP7 replay remains source-current",
+        "L2": "longer horizon replay remains source-current without added perturbation",
+        "L3": "support withdrawal/restoration and proxy perturbation remain bounded",
+        "L4": "route/context reversal and memory relaxation remain bounded",
+        "L5": "environment/resource and shared-medium perturbation remain separable",
+        "L6": "artifact-only reconstruction and replay controls pass",
+        "L7": "claim-clean AP8 candidate, unsafe promotions blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap8_gates_fail_closed",
+      "detail": [
+        "source_rows_pinned",
+        "source_claim_ceilings_preserved",
+        "evidence_branch_artifact_only",
+        "horizon_envelope_declared",
+        "horizon_policy_satisfied",
+        "all_required_trace_axes_present",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "budget_valid",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed",
+        "unsafe_claim_flags_false",
+        "phase8_not_opened",
+        "native_support_not_opened"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_only_branch_visible",
+      "detail": {
+        "evidence_branch": "artifact_only",
+        "native_branch_opened": false,
+        "phase8_branch_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "horizon_envelope_policy_frozen",
+      "detail": {
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "not_established_until_iteration_4"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "linked_trace_continuity_policy_frozen",
+      "detail": [
+        "support_to_regulation",
+        "regulation_to_selection",
+        "selection_to_proxy",
+        "proxy_to_boundary",
+        "boundary_to_loop_feedback",
+        "memory_context_to_selection"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "cross_axis_continuity_policy_frozen",
+      "detail": {
+        "field": "cross_axis_continuity_evidence",
+        "must_bind_linked_trace_continuity": true,
+        "required_for_ap8": true,
+        "trace_presence_alone_is_insufficient": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "single_axis_stale_controls_frozen",
+      "detail": [
+        "stale_support_state_control",
+        "stale_memory_context_control",
+        "stale_selection_context_control",
+        "stale_proxy_target_control",
+        "stale_boundary_state_control",
+        "stale_loop_feedback_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "order_inversion_control_frozen",
+      "detail": "order_inversion_control blocks inverted or shuffled horizon traces",
+      "passed": true
+    },
+    {
+      "check_id": "b4c5_relabel_controls_frozen",
+      "detail": [
+        "b4c5_original_reverse_replay_relabel_control",
+        "general_symmetric_native_multibasin_relabel_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_names_aligned",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "ap8_outcome_taxonomy_frozen",
+      "detail": {
+        "AP8_blocked": "core continuity, budget, replay, or claim controls fail",
+        "AP8_supported_full": "all required stress families pass under the declared horizon and stress envelope",
+        "AP8_supported_limited": "long-horizon replay plus some stress families pass while other families are deferred or blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "config_embedded_policy_consistency",
+      "detail": "embedded policy sections match generated config payloads",
+      "passed": true
+    },
+    {
+      "check_id": "baseline_replay_cannot_support_ap8",
+      "detail": "Iteration 3 baseline replay can be L1 only.",
+      "passed": true
+    },
+    {
+      "check_id": "phase8_native_flags_false",
+      "detail": {
+        "native_support_opened": false,
+        "phase8_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_final_ap8_claim",
+      "detail": "Iteration 2 freezes rules only.",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_if_supported": [
+      "artifact_only_agentic_like_closure_candidate",
+      "artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+      "agency_prerequisite_long_horizon_closure_candidate"
+    ],
+    "blocked": [
+      "agency",
+      "intention",
+      "semantic_action",
+      "semantic_perception",
+      "semantic_goal_ownership",
+      "selfhood",
+      "personhood",
+      "biological_behavior",
+      "identity_acceptance",
+      "native_support_without_phase8_validation",
+      "native_support",
+      "organism_life",
+      "fully_native_agentic_like_integration",
+      "fully_native_integration",
+      "unrestricted_agency",
+      "original_b4c5_reverse_replay",
+      "general_symmetric_native_multi_basin"
+    ]
+  },
+  "claim_ceiling_policy": {
+    "allowed_ap8_claim_ceilings": [
+      "artifact_only_agentic_like_closure_candidate",
+      "artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+      "agency_prerequisite_long_horizon_closure_candidate"
+    ],
+    "source_claim_ceilings_must_be_recorded": true,
+    "source_claim_ceilings_must_not_be_rewritten": true
+  },
+  "closed_long_horizon_agentic_like_closure_demonstrated": false,
+  "command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/build_n18_long_horizon_schema_v1.py",
+  "config_files": {
+    "budget_limits": {
+      "digest": "8a6a230872d7eddc1ad1d02cc6ae7e564618ee31b0f37165e5e1a5777d054658",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/configs/n18_budget_limits_v1.json",
+      "sha256": "8e5e87445c70f45b52407da34af32d46980d09b98fe7eebf889d10a5010e4cfa"
+    },
+    "control_variants": {
+      "digest": "94fe8b2850d1dee1eb46d0c9f8f82b323fc13d2f4091318f7d5a69abe4e10e62",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/configs/n18_control_variants_v1.json",
+      "sha256": "1099bb463fdb3147cf6011ee3e41fea22dc1330b3662ea88691edee0747b8de1"
+    },
+    "horizon_policy": {
+      "digest": "d233e70ba450316da13e375de3b22ec469ca380e0af83c3ff4a69079a388e076",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/configs/n18_horizon_policy_v1.json",
+      "sha256": "2aae1cbb8786486d91c6e5dd59cd00a5e1aaaba768e6efa9394874497d89d998"
+    },
+    "replay_policy": {
+      "digest": "c8bd3dfb3fc9a331d074b1a0cc702967e79049fec9c71148ded3c498dc803d95",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/configs/n18_replay_policy_v1.json",
+      "sha256": "e9f0ab3e4131e9d6c34003cf1e8136776c666455ef71d8df73f77ec97048c436"
+    },
+    "source_registry": {
+      "digest": "395bb10c28a9d4613756dfd7d5f916ad87c7325bd83c22afe8ea3572b34297f4",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/configs/n18_source_registry.json",
+      "sha256": "712af2edfaded3c04bb0582e3dad26fc213ecccf5dc896b6f1eddc67b92be031"
+    },
+    "stress_policy": {
+      "digest": "bb64783ed293c726b847d96c1df35c244f2d83e854baef6d431d53046ab792fa",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/configs/n18_stress_policy_v1.json",
+      "sha256": "9016fb30087b7dc40b11d6ba2014e72093875ee1e4d563918184e6c0e6d626c9"
+    }
+  },
+  "control_requirements": [
+    {
+      "control_id": "stale_state_replay_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "stale_state_control_passed",
+      "purpose": "blocks stale earlier-window state from passing as long-horizon continuity"
+    },
+    {
+      "control_id": "stale_support_state_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale support state from carrying long-horizon continuity alone"
+    },
+    {
+      "control_id": "stale_memory_context_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale memory/context state from passing as live continuity"
+    },
+    {
+      "control_id": "stale_selection_context_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale selection context from passing as current selection continuity"
+    },
+    {
+      "control_id": "stale_proxy_target_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale proxy/target state from passing as current proxy continuity"
+    },
+    {
+      "control_id": "stale_boundary_state_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale boundary assignment from passing as current separability"
+    },
+    {
+      "control_id": "stale_loop_feedback_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "single_axis_stale_controls_passed",
+      "purpose": "blocks stale loop feedback from passing as current closed-loop feedback"
+    },
+    {
+      "control_id": "order_inversion_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "post_hoc_stitching_control_passed",
+      "purpose": "blocks inverted or shuffled horizon/order traces from passing as source-current continuity"
+    },
+    {
+      "control_id": "hidden_native_support_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "unsafe_claim_flags_false",
+      "purpose": "blocks interpreting artifact evidence as native support"
+    },
+    {
+      "control_id": "semantic_agency_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "unsafe_claim_flags_false",
+      "purpose": "blocks agency, intention, action/perception, and goal-ownership relabels"
+    },
+    {
+      "control_id": "identity_acceptance_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "unsafe_claim_flags_false",
+      "purpose": "blocks identity acceptance from support/memory continuity"
+    },
+    {
+      "control_id": "phase8_native_implementation_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "phase8_not_opened",
+      "purpose": "blocks Phase 8/native implementation claims unless separately opened"
+    },
+    {
+      "control_id": "long_horizon_drift_envelope_control",
+      "expected_status_for_ap8": "passed",
+      "failure_blocks_gate": "horizon_policy_satisfied",
+      "purpose": "blocks drift outside source-backed envelope"
+    },
+    {
+      "control_id": "drift_relabel_as_autonomy_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "drift_as_autonomy_control_passed",
+      "purpose": "blocks long-horizon drift from being relabeled as autonomous adaptation"
+    },
+    {
+      "control_id": "resource_shared_medium_merge_control",
+      "expected_status_for_ap8": "passed",
+      "failure_blocks_gate": "stress_controls_passed",
+      "purpose": "blocks resource or shared-medium merge/leakage as closure"
+    },
+    {
+      "control_id": "b4c5_original_reverse_replay_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "b4c5_relabel_controls_passed",
+      "purpose": "preserves N17's blocker that original B4/C5 reverse replay remains unsupported"
+    },
+    {
+      "control_id": "general_symmetric_native_multibasin_relabel_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "b4c5_relabel_controls_passed",
+      "purpose": "blocks local shared-medium evidence from becoming general symmetric/native multi-basin claims"
+    },
+    {
+      "control_id": "post_hoc_long_horizon_stitching_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "post_hoc_stitching_control_passed",
+      "purpose": "blocks assembling compatible windows after the fact"
+    },
+    {
+      "control_id": "budget_overrun_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "budget_valid",
+      "purpose": "blocks rows outside declared budget surface"
+    },
+    {
+      "control_id": "artifact_only_reconstruction_mismatch_control",
+      "expected_status_for_ap8": "failed_expected",
+      "failure_blocks_gate": "artifact_only_reconstruction_passed",
+      "purpose": "requires artifact-only reconstruction to match source row digest inputs"
+    }
+  ],
+  "cross_axis_continuity_policy": {
+    "field": "cross_axis_continuity_evidence",
+    "must_bind_linked_trace_continuity": true,
+    "required_for_ap8": true,
+    "trace_presence_alone_is_insufficient": true
+  },
+  "errors": [],
+  "evidence_branch": "artifact_only",
+  "experiment": "N18",
+  "final_ap8_supported": false,
+  "gate_policy": {
+    "ap8_candidate_allowed_requires_all_gates_true": true,
+    "baseline_ap7_replay_alone_cannot_support_ap8": true,
+    "final_ap8_supported_forbidden_before_final_closeout": true,
+    "native_support_opened_forces_artifact_only_ap8_false_until_separate_native_validation": true,
+    "phase8_opened_forces_artifact_only_ap8_false_until_separate_native_validation": true
+  },
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "not_recorded_in_artifact",
+    "policy": "git metadata excluded to keep artifact replay portable",
+    "status_short": []
+  },
+  "horizon_policy": {
+    "admissibility": {
+      "baseline_replay_alone_cannot_support_ap8": true,
+      "must_preserve_source_current_inputs": true,
+      "must_record_per_window_budget": true,
+      "must_reject_drift_outside_source_backed_envelope": true
+    },
+    "baseline_horizon": {
+      "minimum_stress_ladder_rung": "L1",
+      "name": "n17_ap7_closeout_baseline"
+    },
+    "config_id": "n18_horizon_policy_v1",
+    "horizon_extrapolation_allowed": false,
+    "longer_horizon_windows": [
+      {
+        "relative_window_count": 2,
+        "window_id": "h2"
+      },
+      {
+        "relative_window_count": 4,
+        "window_id": "h4"
+      },
+      {
+        "relative_window_count": 8,
+        "window_id": "h8"
+      },
+      {
+        "relative_window_count": 16,
+        "window_id": "h16"
+      }
+    ],
+    "max_supported_horizon": "not_established_until_iteration_4",
+    "schema_version": "n18.horizon_policy.v1",
+    "source_backed_horizon_envelope": {
+      "blocked_windows": [],
+      "status": "not_established_until_iteration_4",
+      "supported_windows": []
+    },
+    "support_statement": "AP8 support is horizon-bounded. A row supports only the explicit tested horizon window and stress envelope, not indefinite persistence.",
+    "tested_horizon_windows": [
+      {
+        "relative_window_count": 2,
+        "window_id": "h2"
+      },
+      {
+        "relative_window_count": 4,
+        "window_id": "h4"
+      },
+      {
+        "relative_window_count": 8,
+        "window_id": "h8"
+      },
+      {
+        "relative_window_count": 16,
+        "window_id": "h16"
+      }
+    ],
+    "window_units": "declared_artifact_trace_windows"
+  },
+  "iteration": 2,
+  "linked_trace_policy": {
+    "all_links_must_be_source_current": true,
+    "required_links": [
+      "support_to_regulation",
+      "regulation_to_selection",
+      "selection_to_proxy",
+      "proxy_to_boundary",
+      "boundary_to_loop_feedback",
+      "memory_context_to_selection"
+    ],
+    "trace_presence_alone_is_insufficient": true
+  },
+  "native_branch_opened": false,
+  "native_support_opened": false,
+  "output_digest": "53918702f07a4ccb613149f839855a855db912646ef7c53e45679d3383bcf760",
+  "phase8_branch_opened": false,
+  "phase8_opened": false,
+  "purpose": "long-horizon schema, replay, budget, and AP8 claim gate",
+  "replay_digest_policy": {
+    "config_id": "n18_replay_policy_v1",
+    "digest_algorithm": "sha256_canonical_json",
+    "exclude_fields": [
+      "generated_at",
+      "wall_clock_time",
+      "local_absolute_paths",
+      "git",
+      "process_id",
+      "temporary_files"
+    ],
+    "include_fields": [
+      "schema_version",
+      "stress_id",
+      "stress_dimension",
+      "stress_ladder_rung",
+      "horizon_window",
+      "max_supported_horizon",
+      "source_backed_horizon_envelope",
+      "horizon_extrapolation_allowed",
+      "evidence_branch",
+      "source_rows",
+      "source_claim_ceilings",
+      "source_digests",
+      "budget_surface",
+      "support_state_trace",
+      "memory_context_trace",
+      "regulation_trace",
+      "selection_context_trace",
+      "proxy_target_trace",
+      "boundary_separation_trace",
+      "closed_loop_feedback_trace",
+      "linked_trace_continuity",
+      "cross_axis_continuity_evidence",
+      "long_horizon_continuity_evidence",
+      "controls",
+      "ap8_gates",
+      "row_decision",
+      "claim_ceiling",
+      "ap8_candidate_allowed",
+      "unsafe_claim_flags"
+    ],
+    "required_replay_statuses_for_ap8": {
+      "artifact_only_reconstruction_status": "stable",
+      "duplicate_replay_status": "stable",
+      "order_inversion_status": "failed_expected",
+      "post_hoc_stitching_control_status": "failed_expected",
+      "snapshot_load_replay_status": "stable",
+      "stale_state_control_status": "failed_expected"
+    },
+    "schema_version": "n18.replay_policy.v1"
+  },
+  "row_schema_contract": {
+    "row_decision_values": [
+      "supported",
+      "partial",
+      "blocked",
+      "rejected",
+      "not_applicable"
+    ],
+    "row_schema_fields": [
+      "row_id",
+      "row_type",
+      "stress_id",
+      "stress_dimension",
+      "stress_ladder_rung",
+      "stress_ladder_index",
+      "horizon_window",
+      "max_supported_horizon",
+      "source_backed_horizon_envelope",
+      "horizon_extrapolation_allowed",
+      "evidence_branch",
+      "native_branch_opened",
+      "phase8_branch_opened",
+      "source_rows",
+      "source_claim_ceilings",
+      "source_digests",
+      "budget_surface",
+      "budget_valid",
+      "support_state_trace",
+      "memory_context_trace",
+      "regulation_trace",
+      "selection_context_trace",
+      "proxy_target_trace",
+      "boundary_separation_trace",
+      "closed_loop_feedback_trace",
+      "linked_trace_continuity",
+      "cross_axis_continuity_evidence",
+      "long_horizon_continuity_evidence",
+      "artifact_only_replay_digest",
+      "artifact_only_reconstruction_status",
+      "duplicate_replay_status",
+      "snapshot_load_replay_status",
+      "stale_state_control_status",
+      "order_inversion_status",
+      "post_hoc_stitching_control_status",
+      "single_axis_stale_controls",
+      "controls",
+      "ap8_gates",
+      "row_decision",
+      "claim_ceiling",
+      "ap8_candidate_allowed",
+      "final_ap8_supported",
+      "phase8_opened",
+      "native_support_opened",
+      "unsafe_claim_flags",
+      "missing_gates",
+      "ap8_outcome_classification"
+    ],
+    "row_type_values": [
+      "baseline_replay",
+      "stress_candidate",
+      "control_row",
+      "classification_row",
+      "validator_self_test_not_evidence"
+    ],
+    "trace_fields": [
+      "support_state_trace",
+      "memory_context_trace",
+      "regulation_trace",
+      "selection_context_trace",
+      "proxy_target_trace",
+      "boundary_separation_trace",
+      "closed_loop_feedback_trace"
+    ]
+  },
+  "rows": [],
+  "schema_version": "n18.long_horizon_schema.v1",
+  "source_inventory": {
+    "output_digest": "b9e45e7fb4e2c90fac206e1b2c666b425eec18b02bee6cd48685fc705000a2bf",
+    "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_source_inventory.json",
+    "ready_for_iteration_2_schema": true,
+    "sha256": "743a7d91cc63c9fbd49fa33c1f01404727eecb4225bc39f361817fce7d0c3546"
+  },
+  "status": "passed",
+  "stress_dimensions": [
+    "baseline_ap7_replay",
+    "longer_horizon_window",
+    "support_withdrawal_restoration",
+    "proxy_perturbation",
+    "route_context_reversal",
+    "memory_relaxation",
+    "environment_resource_perturbation",
+    "shared_medium_perturbation",
+    "artifact_only_reconstruction",
+    "duplicate_replay",
+    "snapshot_load_replay",
+    "stale_state_control",
+    "stale_support_state_control",
+    "stale_memory_context_control",
+    "stale_selection_context_control",
+    "stale_proxy_target_control",
+    "stale_boundary_state_control",
+    "stale_loop_feedback_control"
+  ],
+  "stress_ladder": {
+    "L0": "source inventory and AP8 contract only",
+    "L1": "short-horizon AP7 replay remains source-current",
+    "L2": "longer horizon replay remains source-current without added perturbation",
+    "L3": "support withdrawal/restoration and proxy perturbation remain bounded",
+    "L4": "route/context reversal and memory relaxation remain bounded",
+    "L5": "environment/resource and shared-medium perturbation remain separable",
+    "L6": "artifact-only reconstruction and replay controls pass",
+    "L7": "claim-clean AP8 candidate, unsafe promotions blocked"
+  },
+  "stress_ladder_dimension_policy": {
+    "artifact_only_reconstruction": [
+      "L6"
+    ],
+    "baseline_ap7_replay": [
+      "L1"
+    ],
+    "duplicate_replay": [
+      "L6"
+    ],
+    "environment_resource_perturbation": [
+      "L5"
+    ],
+    "longer_horizon_window": [
+      "L2"
+    ],
+    "memory_relaxation": [
+      "L4"
+    ],
+    "proxy_perturbation": [
+      "L3"
+    ],
+    "route_context_reversal": [
+      "L4"
+    ],
+    "shared_medium_perturbation": [
+      "L5"
+    ],
+    "snapshot_load_replay": [
+      "L6"
+    ],
+    "stale_boundary_state_control": [
+      "L6"
+    ],
+    "stale_loop_feedback_control": [
+      "L6"
+    ],
+    "stale_memory_context_control": [
+      "L6"
+    ],
+    "stale_proxy_target_control": [
+      "L6"
+    ],
+    "stale_selection_context_control": [
+      "L6"
+    ],
+    "stale_state_control": [
+      "L6"
+    ],
+    "stale_support_state_control": [
+      "L6"
+    ],
+    "support_withdrawal_restoration": [
+      "L3"
+    ]
+  },
+  "stress_ladder_index": {
+    "L0": 0,
+    "L1": 1,
+    "L2": 2,
+    "L3": 3,
+    "L4": 4,
+    "L5": 5,
+    "L6": 6,
+    "L7": 7
+  },
+  "stress_policy": {
+    "ap8_outcome_taxonomy": {
+      "AP8_blocked": "core continuity, budget, replay, or claim controls fail",
+      "AP8_supported_full": "all required stress families pass under the declared horizon and stress envelope",
+      "AP8_supported_limited": "long-horizon replay plus some stress families pass while other families are deferred or blocked"
+    },
+    "config_id": "n18_stress_policy_v1",
+    "cross_axis_continuity_policy": {
+      "field": "cross_axis_continuity_evidence",
+      "must_bind_linked_trace_continuity": true,
+      "required_for_ap8": true,
+      "trace_presence_alone_is_insufficient": true
+    },
+    "fail_closed_rules": {
+      "budget_invalid": "ap8_candidate_allowed_false",
+      "missing_linked_trace_continuity": "ap8_candidate_allowed_false",
+      "missing_trace_axis": "ap8_candidate_allowed_false",
+      "phase8_or_native_support_opened": "ap8_candidate_allowed_false",
+      "unsafe_claim_flag_true": "ap8_candidate_allowed_false"
+    },
+    "linked_trace_policy": {
+      "all_links_must_be_source_current": true,
+      "required_links": [
+        "support_to_regulation",
+        "regulation_to_selection",
+        "selection_to_proxy",
+        "proxy_to_boundary",
+        "boundary_to_loop_feedback",
+        "memory_context_to_selection"
+      ],
+      "trace_presence_alone_is_insufficient": true
+    },
+    "required_control_dimensions": [
+      "artifact_only_reconstruction",
+      "duplicate_replay",
+      "snapshot_load_replay",
+      "stale_state_control"
+    ],
+    "required_positive_stress_dimensions": [
+      "longer_horizon_window",
+      "support_withdrawal_restoration",
+      "proxy_perturbation",
+      "route_context_reversal",
+      "memory_relaxation",
+      "environment_resource_perturbation",
+      "shared_medium_perturbation"
+    ],
+    "schema_version": "n18.stress_policy.v1",
+    "stress_dimensions": [
+      "baseline_ap7_replay",
+      "longer_horizon_window",
+      "support_withdrawal_restoration",
+      "proxy_perturbation",
+      "route_context_reversal",
+      "memory_relaxation",
+      "environment_resource_perturbation",
+      "shared_medium_perturbation",
+      "artifact_only_reconstruction",
+      "duplicate_replay",
+      "snapshot_load_replay",
+      "stale_state_control",
+      "stale_support_state_control",
+      "stale_memory_context_control",
+      "stale_selection_context_control",
+      "stale_proxy_target_control",
+      "stale_boundary_state_control",
+      "stale_loop_feedback_control"
+    ],
+    "trace_axes": [
+      "support_state_trace",
+      "memory_context_trace",
+      "regulation_trace",
+      "selection_context_trace",
+      "proxy_target_trace",
+      "boundary_separation_trace",
+      "closed_loop_feedback_trace"
+    ]
+  },
+  "unsafe_claims_blocked": [
+    "agency",
+    "intention",
+    "semantic_action",
+    "semantic_perception",
+    "semantic_goal_ownership",
+    "selfhood",
+    "personhood",
+    "biological_behavior",
+    "identity_acceptance",
+    "native_support",
+    "native_support_without_phase8_validation",
+    "organism_life",
+    "fully_native_integration",
+    "fully_native_agentic_like_integration",
+    "unrestricted_agency",
+    "original_b4c5_reverse_replay",
+    "general_symmetric_native_multi_basin"
+  ]
+}
