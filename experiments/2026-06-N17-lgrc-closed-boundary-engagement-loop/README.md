@@ -399,6 +399,74 @@ Validator check:
 status = passed
 ```
 
+## Iteration 3 Result
+
+Iteration 3 is complete as a one-way crossing active null. It produced a strong
+G2 near-miss and rejected it as AP7.
+
+```text
+artifact = outputs/n17_one_way_crossing_active_null.json
+report = reports/n17_one_way_crossing_active_null.md
+status = passed
+acceptance_state = accepted_one_way_crossing_active_null_no_ap7
+output_digest = 3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635
+artifact_sha256 = b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d
+```
+
+The active-null row records:
+
+```text
+row_decision = supported
+row_type = active_null
+active_null_decision = supported_as_active_null_rejection
+loop_ladder_rung = G2
+closed_loop_claim_allowed = false
+final_ap7_supported = false
+failure_mode = one_way_crossing_is_not_closed_loop
+```
+
+The row has source-backed crossing, internal support update, and a tempting
+bounded response marker. It still fails because
+`external_feedback_to_internal_trace` is explicitly absent and no
+response-caused external change feeds back into later internal support.
+Review closure aligned `row_decision` with the I2 schema enum and bound
+`row_replay_digest` to both `schema_version` and `loop_policy_digest`.
+
+## Iteration 4 Result
+
+Iteration 4 is complete as the first positive minimal
+perturbation-response-recovery G3 candidate. It records all four ordered trace
+legs while keeping AP7 blocked pending Iteration 5 replay and controls.
+
+```text
+artifact = outputs/n17_perturbation_response_recovery_loop.json
+report = reports/n17_perturbation_response_recovery_loop.md
+status = passed
+acceptance_state = accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7
+output_digest = 66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f
+artifact_sha256 = d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec
+```
+
+The row records:
+
+```text
+row_decision = supported
+row_type = loop_candidate
+loop_family = perturbation_response_recovery_loop
+loop_ladder_rung = G3_candidate
+closed_loop_candidate = true
+closed_loop_claim_allowed = false
+final_ap7_supported = false
+```
+
+Iteration 4 contrasts directly with the I3 active null. I3 had crossing,
+internal update, and a tempting bounded-response marker but no feedback leg.
+I4 adds candidate response-caused external perturbation-field change and
+candidate later internal support dependence on that changed external field.
+This is the G3 hinge, but the AP7 gates for validated response causation,
+counterfactual external-change blocking, hidden-state exclusion, feedback
+removal, replay, and controls remain false until I5.
+
 ## Directory Structure
 
 ```text

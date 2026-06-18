@@ -173,37 +173,170 @@ Validator self-test status = passed.
 
 ## Iteration 3. One-Way Crossing Active Null
 
-- [ ] Generate or replay a one-way crossing trace.
-- [ ] Show external-to-internal pressure/crossing.
-- [ ] Show internal support update if present.
-- [ ] Block closed-loop classification when no changed external state feeds
+- [x] Generate or replay a one-way crossing trace.
+- [x] Show external-to-internal pressure/crossing.
+- [x] Show internal support update if present.
+- [x] Block closed-loop classification when no changed external state feeds
       back into later internal support.
-- [ ] Run one-way crossing relabel control.
-- [ ] Confirm `closed_loop_claim_allowed = false`.
+- [x] Run one-way crossing relabel control.
+- [x] Confirm `closed_loop_claim_allowed = false`.
 
 Expected artifacts:
 
-- [ ] `outputs/n17_one_way_crossing_active_null.json`
-- [ ] `reports/n17_one_way_crossing_active_null.md`
-- [ ] `scripts/build_n17_one_way_crossing_active_null.py`
+- [x] `outputs/n17_one_way_crossing_active_null.json`
+- [x] `reports/n17_one_way_crossing_active_null.md`
+- [x] `scripts/build_n17_one_way_crossing_active_null.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_one_way_crossing_active_null_no_ap7
+output_digest = 3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635
+artifact_sha256 = b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d
+row_decision = supported
+row_type = active_null
+active_null_decision = supported_as_active_null_rejection
+loop_ladder_rung = G2
+closed_loop_claim_allowed = false
+final_ap7_supported = false
+failure_mode = one_way_crossing_is_not_closed_loop
+row_replay_digest = 4c985072a0a5acf670677d4586689d380e4ff897a87a439a73484424245d08fa
+review_gap_closure_checks = row_decision_schema_enum_aligned, replay_digest_binds_schema_and_loop_policy
+```
+
+Iteration 3 interpretation:
+
+```text
+The row demonstrates boundary crossing and internal update fragments, but it
+does not demonstrate closed boundary engagement because no response-caused
+external change feeds back into later internal support.
+```
 
 ## Iteration 4. Perturbation-Response-Recovery Loop
 
-- [ ] Build the minimal perturbation-response-recovery loop candidate.
-- [ ] Record external perturbation crossing.
-- [ ] Record internal support shift.
-- [ ] Record bounded response or reclosure.
-- [ ] Record response-caused external perturbation-field change.
-- [ ] Record later internal support dependence on changed external state.
-- [ ] Record monotonic `t0 -> t1 -> t2 -> t3` phase ordering.
-- [ ] Distinguish closed loop from one-step recovery.
-- [ ] Preserve claim boundary.
+- [x] Build the minimal perturbation-response-recovery loop candidate.
+- [x] Record external perturbation crossing.
+- [x] Record internal support shift.
+- [x] Record bounded response or reclosure.
+- [x] Record response-caused external perturbation-field change candidate.
+- [x] Record later internal support dependence candidate on changed external
+      state.
+- [x] Record monotonic `t0 -> t1 -> t2 -> t3` phase ordering.
+- [x] Distinguish closed loop from one-step recovery.
+- [x] Preserve claim boundary.
 
 Expected artifacts:
 
-- [ ] `outputs/n17_perturbation_response_recovery_loop.json`
-- [ ] `reports/n17_perturbation_response_recovery_loop.md`
-- [ ] `scripts/build_n17_perturbation_response_recovery_loop.py`
+- [x] `outputs/n17_perturbation_response_recovery_loop.json`
+- [x] `reports/n17_perturbation_response_recovery_loop.md`
+- [x] `scripts/build_n17_perturbation_response_recovery_loop.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7
+output_digest = 66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f
+artifact_sha256 = d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec
+row_decision = supported
+row_type = loop_candidate
+loop_family = perturbation_response_recovery_loop
+loop_ladder_rung = G3_candidate
+closed_loop_candidate = true
+closed_loop_claim_allowed = false
+final_ap7_supported = false
+row_replay_digest = 4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756
+review_gap_closure_checks = causality_and_counterfactual_gates_false_until_i5, feedback_removed_control_result_pending_not_false, hidden_state_dependent_feedback_gate_false_until_i5
+```
+
+Iteration 4 interpretation:
+
+```text
+I4 crosses the line that I3 deliberately did not cross at candidate level: it
+records response-caused external perturbation-field change candidate evidence
+and later internal support dependence candidate evidence. The AP7 gates for
+validated response causation, counterfactual external-change blocking, hidden
+state exclusion, feedback removal, replay, and controls remain false until I5.
+This is a G3 candidate only.
+```
+
+Iteration 4 geometric and flux candidate interpretation:
+
+```text
+The internal-support dependence candidate is measured as a contrast in minimum
+observed support on the derived internal side:
+
+internal side = b3_c4_0, b3_c4_1, b3_c4_2
+external side = b3_c4_3, b3_c4_4
+
+B2_C4 baseline minimum_internal_support = 0.830
+B3_C4 bounded-reclosure surface minimum_internal_support = 0.851
+support_floor = 0.850
+support_delta_vs_b2_c4 = +0.021
+
+t0:
+  breach pressure crosses the boundary:
+  b3_c4_2 internal -> b3_c4_3 external
+  weight = 0.13
+  breach_pressure = 0.38
+
+t1:
+  internal support shifts under that breach.
+  The B2_C4 breach baseline is below floor:
+  0.830 < 0.850
+
+t2:
+  bounded reclosure response candidate appears:
+  b3_c4_3 external -> b3_c4_1 internal
+  weight = 0.12
+  reclosure_score = 0.76
+  reclosure_latency_steps = 1
+
+t3:
+  later internal support is evaluated on the B3_C4 bounded-reclosure surface,
+  which is the candidate response-modified external perturbation surface:
+  B3_C4 support = 0.851
+  floor preserved: 0.851 >= 0.850
+
+Flux comparison:
+  leakage_ratio      0.148 -> 0.118   delta = -0.030
+  outbound_flux      0.160 -> 0.130
+  retained_flux      1.050 -> 1.220
+  boundary_stability 0.550 -> 0.740
+  coherence_margin   0.472 -> 0.524
+  internal_support   0.830 -> 0.851
+
+So the narrow dependency candidate recorded by I4 is:
+
+without the bounded-reclosure-associated perturbation surface:
+  support remains below floor under the B2_C4 breach baseline
+
+with the B3_C4 bounded-reclosure surface:
+  leakage is reduced, retention improves, and later internal support is above
+  floor
+
+This is still a constructed G3 candidate. I4 does not assert the AP7
+causality/counterfactual/dependence gates as validated. I5 must test whether
+the B2_C4 vs B3_C4 contrast is a validated causal dependence, rather than a
+candidate dependence produced by hidden carryover, order effects,
+post-hoc stitching, independent external change, or feedback-removal failure.
+```
+
+Iteration 4 review non-gaps:
+
+```text
+Extra row fields such as candidate_rung_label, loop_policy_digest,
+schema_version, contrast_with_i3_one_way_null, minimal_loop_scope,
+pending_controls, and row_replay_digest are generated traceability fields.
+The I2 validator treats row_schema_fields as required fields, not an exclusive
+field whitelist.
+
+The broader plan's initial common-row fields are superseded for generated rows
+by the I2 schema artifact and plan_to_schema_field_mapping. Missing plan-era
+field names such as loop_id, phase_order_trace, and case_id are therefore not
+I4 artifact gaps when the I2 schema fields and mappings are present.
+```
 
 ## Iteration 5. Replay And Order Controls
 

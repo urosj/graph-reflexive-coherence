@@ -11,11 +11,14 @@ Generated scripts:
   gate, and config files.
 - `validate_n17_loop_row.py` - Validates future N17 loop rows against the
   Iteration 2 fail-closed AP7 gate.
+- `build_n17_one_way_crossing_active_null.py` - Builds the Iteration 3
+  one-way crossing active null and verifies it fails closed as AP7.
+- `build_n17_perturbation_response_recovery_loop.py` - Builds the Iteration 4
+  perturbation-response-recovery G3 candidate and keeps AP7 blocked pending
+  Iteration 5 replay and controls.
 
 Planned scripts:
 
-- `build_n17_one_way_crossing_active_null.py`
-- `build_n17_perturbation_response_recovery_loop.py`
 - `build_n17_loop_replay_and_control_matrix.py`
 - `build_n17_claim_boundary_record.py`
 - `build_n17_resource_support_modulation_loop.py`
