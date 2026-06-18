@@ -1185,6 +1185,140 @@ local paired-perspective candidate. The claim ceiling remains artifact-level
 local paired-perspective shared-medium G6, not general G6, not B4/C5 reverse
 replay, not symmetric native multi-basin replay, and not final AP7.
 
+## Iteration 8-D Result
+
+Iteration 8-D is complete as a B4/C5-derived two-cycle paired-perspective
+probe. It does not make the original B4/C5 artifact reverse-perspective replay.
+Instead, it asks whether the original B4/C5 forward shared-medium source can
+seed a second cycle that generates new reverse-side state.
+
+```text
+artifact = outputs/n17_b4c5_derived_paired_perspective_probe.json
+report = reports/n17_b4c5_derived_paired_perspective_probe.md
+status = passed
+acceptance_state = accepted_b4c5_derived_two_cycle_paired_perspective_g6_candidate_no_original_relabel_no_final_ap7
+output_digest = 874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a
+artifact_sha256 = 9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474
+```
+
+The 8-D result is bounded:
+
+```text
+current_evidence_rung = G6_B4C5_derived_two_cycle_paired_perspective_candidate
+b4c5_derived_two_cycle_paired_perspective_supported = true
+b4c5_original_state_remains_one_sided = true
+b4c5_original_reverse_perspective_replay_supported = false
+i8c_evidence_imported_as_b4c5_reverse = false
+general_shared_medium_g6_supported = false
+final_ap7_supported = false
+```
+
+Low-margin envelope:
+
+```text
+reverse_minimum_internal_support = 0.8526
+support_floor = 0.85
+reverse_support_margin = 0.0026
+reverse_support_without_feedback = 0.8494
+shared_medium_leakage = 0.108
+quiet_leakage_ceiling = 0.12
+merge_confusion_pressure = 0.14
+merge_confusion_ceiling = 0.2
+```
+
+8-D strengthens B4/C5 lineage evidence without backfilling the original B4/C5
+row. The original row remains one-sided; the new derived two-cycle protocol is
+the only paired-perspective candidate in this artifact. Label swaps, missing
+cycle-2 reverse state, missing reverse metrics, neighbor leakage as retention,
+merge/leakage as reciprocity, hidden routing, 8-C backfill, and final AP7
+relabels all fail closed.
+
+## Iteration 9 Result
+
+Iteration 9 is complete as the comparative requirements and AP7 classification
+matrix. It includes extensions through 8-D and classifies the full N17 evidence
+stack at artifact-level AP7 comparative scope. At I9, final AP7 freeze was
+still reserved for the I10 closeout below.
+
+```text
+artifact = outputs/n17_closed_loop_requirements_matrix.json
+report = reports/n17_closed_loop_requirements_matrix.md
+status = passed
+acceptance_state = accepted_full_comparative_ap7_classification_pending_i10_closeout
+output_digest = 70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976
+artifact_sha256 = ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9
+```
+
+Classification:
+
+```text
+classified_ap_level = AP7_comparative_artifact_candidate
+claim_classification = full_comparative_AP7_artifact_level_candidate_pending_I10_closeout
+full_comparative_ap7_classification_supported = true
+extension_mode = extensions_included
+deferred_iterations = []
+final_ap7_supported = false
+final_artifact_level_ap7_frozen = false
+ready_for_iteration10_closeout = true
+```
+
+Family comparison:
+
+```text
+one_way_crossing_active_null = active_null_not_ap7, G2_near_miss
+perturbation_response_recovery_mvp = supported_artifact_level_AP7_MVP_G5
+resource_support_modulation = supported_artifact_level_AP7_extension_local_G5
+shared_medium_reciprocal = supported_local_artifact_level_AP7_extension_G6, G6_local_paired_and_B4C5_derived_two_cycle
+```
+
+I9 is a classification step, not final closeout. Final AP7 remains blocked
+until Iteration 10 records the final claim ceiling, controls, blockers,
+`src_diff_empty`, native/Phase 8 false flags, and N18 handoff.
+
+## Iteration 10 Result
+
+Iteration 10 is complete as the final closeout and N18 handoff.
+
+```text
+artifact = outputs/n17_closeout_and_handoff.json
+report = reports/n17_closeout_and_handoff.md
+status = passed
+acceptance_state = closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate
+output_digest = f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e
+artifact_sha256 = 84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347
+```
+
+Closeout:
+
+```text
+final_supported_ap_level = AP7
+final_ap7_supported = true
+final_claim_ceiling = artifact_level_ap7_closed_boundary_engagement_loop_candidate
+artifact_level_ap7_supported = true
+final_artifact_level_ap7_frozen = true
+phase8_opened = false
+native_support_opened = false
+fully_native_integration_opened = false
+semantic_action_opened = false
+semantic_perception_opened = false
+agency_claim_opened = false
+```
+
+N17 closes as claim-clean artifact-level AP7 evidence for a closed boundary
+engagement loop across perturbation-response-recovery, resource/support
+modulation, and local shared-medium extension families. It does not support
+agency, intention, semantic action, semantic perception, semantic goal
+ownership, selfhood, identity acceptance, native support, organism/life, fully
+native integration, or unrestricted agency.
+
+N18 handoff:
+
+```text
+recommended_next = N18_long_horizon_agentic_like_closure_stress_test
+target_ap_level = AP8
+targeted_phase8_required_before_n18 = false
+```
+
 ## Directory Structure
 
 ```text

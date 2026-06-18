@@ -41,7 +41,7 @@ machine-local state.
 | [N14 consequence-sensitive route selection](2026-06-N14-lgrc-consequence-sensitive-route-selection/README.md) | Closed artifact-level AP4 consequence-sensitive route selection with observed route-specific memory and constructed support/regulation followout. | README, then closeout handoff, claim boundary, consequence records, controls, and replay artifacts. |
 | [N15 endogenous proxy formation](2026-06-N15-lgrc-endogenous-proxy-formation/README.md) | Closed artifact-level AP5 endogenous target/proxy formation from source-current support, memory, regulation, and AP4 consequence context. | README, then closeout handoff, claim boundary, control matrix, bounded-drift replay, and validator artifacts. |
 | [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
-| [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Initialized AP7 closed-loop experiment testing ordered external-internal-external-later-internal trace dependence without agency overclaim. | README, then implementation plan/checklist, hypotheses, and planned loop-control artifacts. |
+| [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Closed artifact-level AP7 closed boundary engagement loop candidate across perturbation, resource/support, and local shared-medium families. | README, then closeout handoff, comparative requirements matrix, claim boundary, loop controls, and extension artifacts. |
 
 ## Current Roadmap State
 
@@ -113,9 +113,18 @@ internal support-relevant state and external resource, perturbation,
 structured-state, and shared-medium pressures remain separable in generated
 artifacts and controls. The result is not selfhood, identity acceptance,
 semantic goal ownership, agency, native support, fully native integration,
-organism/life, unrestricted agency, or a closed action-perception loop. N17
-closed action-perception loop is the next roadmap experiment; targeted Phase 8
-remains optional and deferred, not required before N17.
+organism/life, unrestricted agency, or a closed action-perception loop. That
+handoff is now consumed by N17; targeted Phase 8 remained optional and
+deferred, not required before N17.
+
+N17 closes with artifact-level AP7 closed boundary engagement loop evidence:
+the perturbation-response-recovery MVP reaches bounded G5, resource/support
+modulation reaches local G5, and shared-medium evidence reaches local G6 while
+one-way crossing, semantic action/perception, agency, selfhood, identity
+acceptance, native support, organism/life, fully native integration, and
+unrestricted agency remain blocked. N18 long-horizon closure stress testing is
+the next roadmap experiment; targeted Phase 8 remains optional and deferred,
+not required before N18.
 
 Roadmap-level context:
 

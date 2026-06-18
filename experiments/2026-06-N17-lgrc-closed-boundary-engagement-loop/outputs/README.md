@@ -54,11 +54,17 @@ Generated artifacts:
 - `n17_paired_perspective_shared_medium_probe.json` - Iteration 8-C local
   paired-perspective shared-medium probe. Status: `passed`; acceptance state:
   `accepted_local_paired_perspective_shared_medium_g6_candidate_no_final_ap7`.
-
-Planned artifacts:
-
-- `n17_closed_loop_requirements_matrix.json`
-- `n17_closeout_and_handoff.json`
+- `n17_b4c5_derived_paired_perspective_probe.json` - Iteration 8-D
+  B4/C5-derived two-cycle paired-perspective probe. Status: `passed`;
+  acceptance state:
+  `accepted_b4c5_derived_two_cycle_paired_perspective_g6_candidate_no_original_relabel_no_final_ap7`.
+- `n17_closed_loop_requirements_matrix.json` - Iteration 9 comparative
+  requirements and AP7 classification matrix. Status: `passed`; acceptance
+  state:
+  `accepted_full_comparative_ap7_classification_pending_i10_closeout`.
+- `n17_closeout_and_handoff.json` - Iteration 10 final closeout and N18
+  handoff. Status: `passed`; acceptance state:
+  `closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate`.
 
 Generated outputs must use relative paths, include source digests, and keep
 claim flags explicit. Any absolute path in an output is a portability failure.

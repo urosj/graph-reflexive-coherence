@@ -53,11 +53,16 @@ Generated scripts:
   Iteration 8-C local paired-perspective shared-medium probe with explicit A/B
   perspective rows, a joint paired row, and fail-closed one-sided, label-swap,
   B4/C5-reuse, merge/leakage, asymmetric, and final-AP7 controls.
-
-Planned scripts:
-
-- `build_n17_closed_loop_requirements_matrix.py`
-- `build_n17_closeout_and_handoff.py`
+- `build_n17_b4c5_derived_paired_perspective_probe.py` - Builds the Iteration
+  8-D B4/C5-derived two-cycle paired-perspective probe, preserving the
+  original B4/C5 reverse-replay blocker while generating source-backed
+  cycle-2 reverse-side state in the derived protocol.
+- `build_n17_closed_loop_requirements_matrix.py` - Builds the Iteration 9
+  comparative requirements and AP7 classification matrix with extensions
+  included as the source classification for the Iteration 10 closeout.
+- `build_n17_closeout_and_handoff.py` - Builds the Iteration 10 final closeout
+  and N18 handoff, freezing final artifact-level AP7 while keeping unsafe,
+  native, Phase 8, and agency claims blocked.
 
 Use `.venv/bin/python` for local runs.
 

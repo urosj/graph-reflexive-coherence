@@ -1,0 +1,685 @@
+{
+  "acceptance_state": "accepted_full_comparative_ap7_classification_pending_i10_closeout",
+  "artifact_id": "n17_closed_loop_requirements_matrix",
+  "blocked_claims": [
+    "final_AP7_until_iteration10_closeout",
+    "semantic_action_perception",
+    "semantic_goal_ownership",
+    "intention",
+    "agency",
+    "selfhood",
+    "identity_acceptance",
+    "native_support",
+    "organism_life",
+    "fully_native_integration",
+    "unrestricted_agency",
+    "phase8",
+    "general_shared_medium_G6",
+    "B4_C5_reverse_perspective_replay",
+    "symmetric_native_multi_basin_replay"
+  ],
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "detail": {
+        "i3_one_way_null": "passed",
+        "i4_g3_candidate": "passed",
+        "i5_replay_controls": "passed",
+        "i6_claim_boundary": "passed",
+        "i6a_mvp_g5": "passed",
+        "i6b_alternative_mvp_g5": "passed",
+        "i7_resource_support": "passed",
+        "i7a_resource_support_g5": "passed",
+        "i7b_alternative_resource_g5": "passed",
+        "i8_shared_medium": "passed",
+        "i8a_shared_medium_alternate": "passed",
+        "i8b_b4c5_reverse_blocker": "passed",
+        "i8c_paired_shared_medium": "passed",
+        "i8d_b4c5_derived_paired": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "extension_mode_included",
+      "detail": "Iterations 7 through 8-D are present and included.",
+      "passed": true
+    },
+    {
+      "check_id": "one_way_null_not_promoted",
+      "detail": "I3 remains active null/near-miss evidence.",
+      "passed": true
+    },
+    {
+      "check_id": "mvp_g5_basis_supported",
+      "detail": "MVP AP7 classification plus bounded and alternative G5 probes.",
+      "passed": true
+    },
+    {
+      "check_id": "resource_support_requirement_supported",
+      "detail": "I7/I7-A/I7-B support resource/support closure while preserving 7-A/7-B distinction.",
+      "passed": true
+    },
+    {
+      "check_id": "shared_medium_requirement_supported",
+      "detail": "I8-C supplies local paired perspective; I8-D supplies B4/C5-derived two-cycle evidence; I8-B preserves the original B4/C5 reverse blocker.",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        "agency_claim_opened",
+        "intention_claim_opened",
+        "semantic_action_opened",
+        "semantic_perception_opened",
+        "semantic_goal_ownership_opened",
+        "selfhood_claim_opened",
+        "identity_acceptance_opened",
+        "native_support_opened",
+        "organism_life_opened",
+        "fully_native_integration_opened",
+        "unrestricted_agency_opened",
+        "phase8_opened"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "final_ap7_still_pending_i10",
+      "detail": "I9 classifies comparative AP7 candidate but does not freeze final AP7.",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 9 does not edit src/*.",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "claim_flags": {
+    "agency_claim_opened": false,
+    "ap7_classification_supported": true,
+    "artifact_level_ap7_candidate_supported": true,
+    "final_ap7_supported": false,
+    "final_artifact_level_ap7_frozen": false,
+    "full_comparative_ap7_classification_supported": true,
+    "fully_native_integration_opened": false,
+    "identity_acceptance_opened": false,
+    "intention_claim_opened": false,
+    "mvp_ap7_classification_supported": true,
+    "native_support_opened": false,
+    "organism_life_opened": false,
+    "phase8_opened": false,
+    "selfhood_claim_opened": false,
+    "semantic_action_opened": false,
+    "semantic_goal_ownership_opened": false,
+    "semantic_perception_opened": false,
+    "unrestricted_agency_opened": false
+  },
+  "classification_result": {
+    "artifact_level_ap7_candidate_supported": true,
+    "claim_ceiling": "artifact_level_full_comparative_closed_boundary_engagement_loop_candidate_not_final_freeze",
+    "claim_classification": "full_comparative_AP7_artifact_level_candidate_pending_I10_closeout",
+    "classified_ap_level": "AP7_comparative_artifact_candidate",
+    "deferred_iterations": [],
+    "extension_mode": "extensions_included",
+    "extensions_included": true,
+    "final_ap7_supported": false,
+    "final_artifact_level_ap7_frozen": false,
+    "final_closeout_pending_iteration10": true,
+    "full_comparative_ap7_classification_supported": true,
+    "fully_native_integration_opened": false,
+    "included_iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      "6-A",
+      "6-B",
+      7,
+      "7-A",
+      "7-B",
+      8,
+      "8-A",
+      "8-B",
+      "8-C",
+      "8-D",
+      9
+    ],
+    "mvp_ap7_classification_supported": true,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "ready_for_iteration10_closeout": true
+  },
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_closed_loop_requirements_matrix.py",
+  "deferred_iterations": [],
+  "errors": [],
+  "experiment": "N17",
+  "extension_mode": "extensions_included",
+  "family_comparison": [
+    {
+      "ap7_role": "negative control",
+      "classification": "active_null_not_ap7",
+      "closed_loop_claim_allowed": false,
+      "family_id": "one_way_crossing_active_null",
+      "highest_rung": "G2_near_miss",
+      "source_iterations": [
+        "I3"
+      ],
+      "supported_claim": "one-way crossing rejection"
+    },
+    {
+      "ap7_role": "MVP basis",
+      "classification": "supported_artifact_level_AP7_MVP_G5",
+      "closed_loop_claim_allowed": true,
+      "family_id": "perturbation_response_recovery_mvp",
+      "highest_rung": "G5",
+      "source_iterations": [
+        "I4",
+        "I5",
+        "I6",
+        "I6-A",
+        "I6-B"
+      ],
+      "supported_claim": "bounded perturbation-response-recovery closed boundary engagement loop"
+    },
+    {
+      "ap7_role": "extension basis",
+      "classification": "supported_artifact_level_AP7_extension_local_G5",
+      "closed_loop_claim_allowed": true,
+      "family_id": "resource_support_modulation",
+      "highest_rung": "G5",
+      "source_iterations": [
+        "I7",
+        "I7-A",
+        "I7-B"
+      ],
+      "supported_claim": "resource/support modulation loop under fixed and alternative local G5 envelopes"
+    },
+    {
+      "ap7_role": "extension basis",
+      "classification": "supported_local_artifact_level_AP7_extension_G6",
+      "closed_loop_claim_allowed": true,
+      "family_id": "shared_medium_reciprocal",
+      "highest_rung": "G6_local_paired_and_B4C5_derived_two_cycle",
+      "source_iterations": [
+        "I8",
+        "I8-A",
+        "I8-B",
+        "I8-C",
+        "I8-D"
+      ],
+      "supported_claim": "local paired-perspective shared-medium loop plus B4/C5-derived two-cycle candidate with original B4/C5 reverse blocker preserved"
+    }
+  ],
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "0750bbc60c856aabc859ffd5b924f22a8b54d15a",
+    "status_short": [
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationChecklist.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationPlan.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_b4c5_derived_paired_perspective_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_closed_loop_requirements_matrix.py"
+    ]
+  },
+  "i10_handoff": {
+    "must_confirm_native_supported_flags_false": true,
+    "must_confirm_phase8_opened_false": true,
+    "must_confirm_src_diff_empty": true,
+    "must_record_final_claim_ceiling": true,
+    "must_record_n18_handoff": true,
+    "ready_for_iteration10_closeout": true
+  },
+  "included_iterations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    "6-A",
+    "6-B",
+    7,
+    "7-A",
+    "7-B",
+    8,
+    "8-A",
+    "8-B",
+    "8-C",
+    "8-D",
+    9
+  ],
+  "iteration": 9,
+  "iteration_result": {
+    "artifact_level_ap7_candidate_supported": true,
+    "claim_ceiling": "artifact_level_full_comparative_closed_boundary_engagement_loop_candidate_not_final_freeze",
+    "claim_classification": "full_comparative_AP7_artifact_level_candidate_pending_I10_closeout",
+    "classified_ap_level": "AP7_comparative_artifact_candidate",
+    "deferred_iterations": [],
+    "extension_mode": "extensions_included",
+    "extensions_included": true,
+    "final_ap7_supported": false,
+    "final_artifact_level_ap7_frozen": false,
+    "final_closeout_pending_iteration10": true,
+    "full_comparative_ap7_classification_supported": true,
+    "fully_native_integration_opened": false,
+    "included_iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      "6-A",
+      "6-B",
+      7,
+      "7-A",
+      "7-B",
+      8,
+      "8-A",
+      "8-B",
+      "8-C",
+      "8-D",
+      9
+    ],
+    "mvp_ap7_classification_supported": true,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "ready_for_iteration10_closeout": true
+  },
+  "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+  "purpose": "synthesize N17 loop requirements, controls, replay, extension evidence, and comparative AP7 classification",
+  "requirement_matrix": [
+    {
+      "blockers": [
+        "one-way crossing alone",
+        "G2 outbound change without fourth leg",
+        "external change after response without response causation"
+      ],
+      "bounded_by": [
+        "I3 one-way crossing active null"
+      ],
+      "claim_role": "minimal AP7 closure hinge",
+      "decision": "supported",
+      "requirement": "external -> internal -> response-caused external change -> later internal dependence",
+      "requirement_id": "ordered_four_leg_closure",
+      "supported_by": [
+        "I4",
+        "I5",
+        "I6"
+      ]
+    },
+    {
+      "bounded_by": [
+        "post-hoc stitching blocked",
+        "hidden external-state memory blocked",
+        "hidden internal-state carryover blocked",
+        "feedback removed control changes result"
+      ],
+      "claim_role": "G4 replay/control cleanliness",
+      "decision": "supported",
+      "requirement": "artifact-only replay, snapshot/load, duplicate replay, order inversion, hidden-state, and feedback-removal controls must pass",
+      "requirement_id": "replay_order_and_hidden_state_controls",
+      "supported_by": [
+        "I5",
+        "I6",
+        "I6-A",
+        "I6-B"
+      ]
+    },
+    {
+      "blockers": [
+        "outside source-backed breach/flux envelope",
+        "outside target-band-gated alternative envelope",
+        "native support or Phase 8 relabel"
+      ],
+      "bounded_by": [
+        "I6-A bounded breach/flux envelope",
+        "I6-B alternative target-band-gated envelope"
+      ],
+      "claim_role": "G5 MVP challenge stability",
+      "decision": "supported",
+      "requirement": "MVP perturbation-response-recovery loop must survive bounded challenge without retuning",
+      "requirement_id": "mvp_challenge_stability",
+      "supported_by": [
+        "I6-A",
+        "I6-B"
+      ]
+    },
+    {
+      "blockers": [
+        "resource depletion as semantic goal pursuit",
+        "resource label-only relabel",
+        "missing modified-resource feedback",
+        "support-floor crossing",
+        "target-band crossing",
+        "response-budget exceedance"
+      ],
+      "bounded_by": [
+        "I7 is G4 only before family-specific challenge testing",
+        "I7-A fixed route_b local G5",
+        "I7-B alternative low-margin local G5, not a 7-A refinement"
+      ],
+      "claim_role": "resource/support extension requirement",
+      "decision": "supported",
+      "requirement": "resource/support state may modulate closure only through source-backed modified resource feedback",
+      "requirement_id": "resource_support_modulation",
+      "requirement_parameters": {
+        "alternative_low_margin_source": "I7-B",
+        "i7a_supported_rows": 5,
+        "i7b_does_not_widen_i7a_envelope": true,
+        "i7b_supported_rows": 5,
+        "strongest_envelope_source": "I7-A"
+      },
+      "supported_by": [
+        "I7",
+        "I7-A",
+        "I7-B"
+      ]
+    },
+    {
+      "blockers": [
+        "B4/C5 reverse replay not source-backed",
+        "original B4/C5 row remains one-sided",
+        "8-C cannot backfill B4/C5 reverse replay",
+        "general shared-medium G6",
+        "symmetric native multi-basin replay",
+        "merge/leakage as reciprocity",
+        "hidden reservoir routing",
+        "label swap as paired perspective"
+      ],
+      "bounded_by": [
+        "I8 local one-sided B4/C5 source",
+        "I8-A alternate N07 dual-basin bounded exchange",
+        "I8-C local paired-perspective N07 protocol",
+        "I8-D B4/C5-derived two-cycle paired-perspective protocol",
+        "I8-B B4/C5 reverse-perspective blocker"
+      ],
+      "claim_role": "G6 shared-medium extension requirement",
+      "decision": "supported_local_only",
+      "requirement": "shared-medium closure must preserve basin separation, bounded leakage, and source-backed changed-medium feedback",
+      "requirement_id": "shared_medium_reciprocity",
+      "requirement_parameters": {
+        "general_shared_medium_g6_supported": false,
+        "i8_local_one_sided_supported": true,
+        "i8a_alternate_source_supported": true,
+        "i8b_b4c5_reverse_supported": false,
+        "i8c_paired_perspective_supported": true,
+        "i8d_b4c5_derived_two_cycle_supported": true,
+        "i8d_original_b4c5_remains_one_sided": true
+      },
+      "supported_by": [
+        "I8",
+        "I8-A",
+        "I8-C",
+        "I8-D"
+      ]
+    },
+    {
+      "bounded_by": [
+        "artifact-level AP7 only",
+        "no semantic action/perception",
+        "no intention or goal ownership",
+        "no selfhood/identity/native support",
+        "no organism/life claim",
+        "no Phase 8 opening"
+      ],
+      "claim_role": "classification ceiling",
+      "decision": "supported",
+      "requirement": "all unsafe promotions remain blocked across MVP and extensions",
+      "requirement_id": "claim_boundary",
+      "supported_by": [
+        "I6",
+        "I7",
+        "I7-A",
+        "I7-B",
+        "I8",
+        "I8-A",
+        "I8-B",
+        "I8-C",
+        "I8-D"
+      ]
+    },
+    {
+      "bounded_by": [
+        "final_ap7_supported remains false",
+        "final_artifact_level_ap7_frozen remains false",
+        "Iteration 10 must record final controls, blockers, and handoff"
+      ],
+      "claim_role": "final closeout blocker",
+      "decision": "pending_iteration10",
+      "requirement": "final AP7 freeze requires closeout and N18 handoff record",
+      "requirement_id": "final_closeout_gate",
+      "supported_by": [
+        "I9 comparative classification readiness"
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "source_acceptance_state": "accepted_one_way_crossing_active_null_no_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": null,
+      "source_iteration": 3,
+      "source_key": "i3_one_way_null",
+      "source_output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+      "source_report_sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286",
+      "source_role": "one_way_crossing_active_null_control",
+      "source_sha256": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": null,
+      "source_iteration": 4,
+      "source_key": "i4_g3_candidate",
+      "source_output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+      "source_report_sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87",
+      "source_role": "first_g3_perturbation_response_recovery_candidate",
+      "source_sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_loop_replay_and_control_matrix_g4_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": null,
+      "source_iteration": 5,
+      "source_key": "i5_replay_controls",
+      "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+      "source_report_sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667",
+      "source_role": "g4_replay_and_control_matrix",
+      "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_mvp_ap7_claim_boundary_clean_pending_extensions_and_closeout",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": "G4_replay_control_clean_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": 6,
+      "source_key": "i6_claim_boundary",
+      "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+      "source_report_sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350",
+      "source_role": "mvp_ap7_claim_boundary_classification",
+      "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_bounded_g5_mvp_challenge_stability_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": "G5_bounded_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "6-A",
+      "source_key": "i6a_mvp_g5",
+      "source_output_digest": "4c795ca09ec6d7b557f5d1f8d1f7d0624f4eb7cfea99a43f383f40d68068ebc4",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_mvp_challenge_stability_probe.md",
+      "source_report_sha256": "8f004b1d08d21a933c077ef3b77f0f14d8edb1a0c599e165c34abaa802a389b5",
+      "source_role": "bounded_mvp_g5_challenge_stability",
+      "source_sha256": "cc34f5bbb06521271341f334c1ed9db4276d0af020d396f85b1334eb9553d726",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "6-B",
+      "source_key": "i6b_alternative_mvp_g5",
+      "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+      "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+      "source_role": "alternative_target_band_mvp_g5",
+      "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_resource_support_modulation_extension_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_current_evidence_rung": "G4_resource_support_modulation_extension_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": 7,
+      "source_key": "i7_resource_support",
+      "source_output_digest": "d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+      "source_report_sha256": "7612d00dc31c0f72d6267f868cf28def9fc2a513a18d0d7c72b02ea78fc3b6ea",
+      "source_role": "resource_support_g4_extension",
+      "source_sha256": "992620b9571a0d83a236d5aeea530fbe0becfadeaba649f1fc4f91936952ffa6",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_resource_support_challenge_stability_g5_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json",
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_current_evidence_rung": "G5_resource_support_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "7-A",
+      "source_key": "i7a_resource_support_g5",
+      "source_output_digest": "c643181eef667d0e7d8ebb65410af363bc2650403b09a11f689be394b8580728",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+      "source_report_sha256": "11e42d38ffdee0e4d216bbd602c7bb72687b2e03c158a785ea6813c2ff938784",
+      "source_role": "fixed_route_b_resource_support_g5",
+      "source_sha256": "233d27318efeb60177ee433bab213d34cb6275e731b453cbfa04e85ccea26454",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_alternative_resource_support_g5_setup_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json",
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_current_evidence_rung": "G5_alternative_resource_support_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "7-B",
+      "source_key": "i7b_alternative_resource_g5",
+      "source_output_digest": "b0f6df9ed0a79e6e93243fdfbfcc8b65d9fcc8374e6fbd1a5775871632e91f06",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+      "source_report_sha256": "3531752ac6f51189c0a0ff24596152ca9f9981dcd50a303b8e3d087e0880120b",
+      "source_role": "alternative_low_margin_resource_support_g5",
+      "source_sha256": "2a957232cae5d5ccca809510213f50bd87fa3a32269a1439c0ee728943771e67",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_local_one_sided_shared_medium_g6_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+      "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+      "source_current_evidence_rung": "G6_local_one_sided_shared_medium_reciprocal_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": 8,
+      "source_key": "i8_shared_medium",
+      "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+      "source_role": "local_one_sided_shared_medium_g6",
+      "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_alternate_source_shared_medium_g6_candidate_b4c5_reverse_blocked_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+      "source_current_evidence_rung": "G6_alternate_source_shared_medium_reciprocal_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-A",
+      "source_key": "i8a_shared_medium_alternate",
+      "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+      "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+      "source_role": "alternate_source_shared_medium_g6",
+      "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_b4c5_reverse_perspective_blocked_multi_source_context_preserved_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json",
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+      "source_current_evidence_rung": "G6_multi_source_shared_medium_candidate_with_b4c5_reverse_blocker_recorded",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-B",
+      "source_key": "i8b_b4c5_reverse_blocker",
+      "source_output_digest": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+      "source_report_sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b",
+      "source_role": "b4c5_reverse_perspective_blocker",
+      "source_sha256": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_local_paired_perspective_shared_medium_g6_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json",
+      "source_claim_ceiling": "local_paired_perspective_artifact_level_shared_medium_G6_candidate_not_general_G6",
+      "source_current_evidence_rung": "G6_local_paired_perspective_shared_medium_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-C",
+      "source_key": "i8c_paired_shared_medium",
+      "source_output_digest": "79072b1bede778958e94e940229f77be7ba846c064539c20a9769aa53c2ef81e",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_paired_perspective_shared_medium_probe.md",
+      "source_report_sha256": "ccd93114f7bf53c11403827b245ca62a5db8a6d96044de45f7bc74b6fd2bd365",
+      "source_role": "local_paired_perspective_shared_medium_g6",
+      "source_sha256": "fd28893605c80d737dd807e170abc70fec760a4bb9b0d100696ff66a68395240",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_b4c5_derived_two_cycle_paired_perspective_g6_candidate_no_original_relabel_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+      "source_claim_ceiling": "artifact_level_B4_C5_derived_two_cycle_paired_perspective_G6_candidate_not_original_B4_C5_reverse_replay_not_general_G6",
+      "source_current_evidence_rung": "G6_B4C5_derived_two_cycle_paired_perspective_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-D",
+      "source_key": "i8d_b4c5_derived_paired",
+      "source_output_digest": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+      "source_report_sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e",
+      "source_role": "b4c5_derived_two_cycle_paired_perspective_g6",
+      "source_sha256": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+      "source_status": "passed"
+    }
+  ],
+  "status": "passed",
+  "synthesis_mode": "full_comparative"
+}

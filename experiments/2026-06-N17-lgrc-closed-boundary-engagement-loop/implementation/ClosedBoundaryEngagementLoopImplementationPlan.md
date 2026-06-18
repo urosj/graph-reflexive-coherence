@@ -822,10 +822,58 @@ reports/n17_paired_perspective_shared_medium_probe.md
 scripts/build_n17_paired_perspective_shared_medium_probe.py
 ```
 
+### Iteration 8-D. B4/C5-Derived Paired-Perspective Loop Probe
+
+Test whether the original B4/C5 source can seed a new two-cycle paired
+perspective protocol without relabeling the original B4/C5 artifact as
+reverse-perspective replay.
+
+8-D must distinguish:
+
+```text
+8-B = original B4/C5 reverse-perspective replay probe
+8-C = independent/local paired-perspective shared-medium construction
+8-D = B4/C5-derived two-cycle perspective-pairing probe
+```
+
+8-D may support a B4/C5-derived paired-perspective candidate only if the new
+second cycle generates source-backed reverse-side evidence:
+
+```text
+cycle 1 forward B4/C5 A -> shared medium trace
+cycle 2 changed shared medium becomes neighbor/B-side input
+reverse internal-side state exists in cycle 2
+reverse support/coherence metrics exist in cycle 2
+reverse boundary-side assignment and boundary edge exist in cycle 2
+reverse changed-medium feedback trace exists in cycle 2
+leakage and merge pressure remain below ceiling
+```
+
+8-D must preserve:
+
+```text
+original B4/C5 row remains one-sided
+8-C evidence cannot backfill B4/C5 reverse replay
+label swap is not reverse perspective
+neighbor leakage is not reverse retention
+merge/leakage is not reciprocity
+hidden shared-medium routing remains blocked
+general shared-medium G6 remains blocked
+final AP7 remains blocked
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_b4c5_derived_paired_perspective_probe.json
+reports/n17_b4c5_derived_paired_perspective_probe.md
+scripts/build_n17_b4c5_derived_paired_perspective_probe.py
+```
+
 ### Iteration 9. Comparative Requirements And AP7 Classification
 
 Synthesize loop requirements, controls, replay, and claim classification.
-Record whether Iterations 7-8-C are included or deferred before comparative
+Record whether Iterations 7-8-D are included or deferred before comparative
 AP7 classification.
 
 Resource/support comparison must preserve the 7-A/7-B distinction:

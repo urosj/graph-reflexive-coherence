@@ -1386,40 +1386,211 @@ medium while separability and leakage stay inside the source-backed envelope.
 It remains local and artifact-level; it does not support general G6, B4/C5
 reverse replay, symmetric native multi-basin replay, or final AP7.
 
-## Iteration 9. Comparative Requirements And AP7 Classification
+## Iteration 8-D. B4/C5-Derived Paired-Perspective Loop Probe
 
-- [ ] Synthesize loop requirements.
-- [ ] Compare one-way null, perturbation loop, resource loop, and shared-medium
-      loop if available.
-- [ ] Record deferred iterations if extensions are not run.
-- [ ] Record `extension_mode = extensions_deferred | extensions_included`.
-- [ ] Resolve AP7 classification only within artifact-level claim ceiling.
-- [ ] Keep final closeout pending until Iteration 10.
+- [x] Build a B4/C5-derived two-cycle paired-perspective probe.
+- [x] Preserve original B4/C5 as one-sided and not reverse-perspective replay.
+- [x] Generate cycle-2 reverse-side state instead of relabeling the original
+      source row.
+- [x] Record reverse support and coherence metrics for the generated cycle-2
+      state.
+- [x] Record a generated reverse boundary-side assignment and boundary edge.
+- [x] Record changed-medium feedback into later reverse internal support.
+- [x] Keep leakage and merge pressure inside the B4/C5 source-backed envelope.
+- [x] Block label swap as reverse perspective.
+- [x] Block missing cycle-2 reverse state.
+- [x] Block missing reverse support/coherence.
+- [x] Block neighbor leakage as reverse retention.
+- [x] Block merge/leakage as reciprocity.
+- [x] Block hidden shared-medium routing.
+- [x] Block original B4/C5 replay relabel.
+- [x] Block 8-C evidence import as B4/C5 reverse backfill.
+- [x] Keep general shared-medium G6 and final AP7 unsupported.
 
 Expected artifacts:
 
-- [ ] `outputs/n17_closed_loop_requirements_matrix.json`
-- [ ] `reports/n17_closed_loop_requirements_matrix.md`
-- [ ] `scripts/build_n17_closed_loop_requirements_matrix.py`
+- [x] `outputs/n17_b4c5_derived_paired_perspective_probe.json`
+- [x] `reports/n17_b4c5_derived_paired_perspective_probe.md`
+- [x] `scripts/build_n17_b4c5_derived_paired_perspective_probe.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_b4c5_derived_two_cycle_paired_perspective_g6_candidate_no_original_relabel_no_final_ap7
+output_digest = 874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a
+artifact_sha256 = 9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474
+current_evidence_rung = G6_B4C5_derived_two_cycle_paired_perspective_candidate
+b4c5_derived_two_cycle_paired_perspective_supported = true
+b4c5_derived_paired_perspective_g6_candidate_supported = true
+b4c5_original_state_remains_one_sided = true
+b4c5_original_reverse_perspective_replay_supported = false
+b4c5_reverse_perspective_replay_supported = false
+i8c_evidence_imported_as_b4c5_reverse = false
+general_shared_medium_g6_supported = false
+final_ap7_supported = false
+```
+
+Low-margin B4/C5-derived envelope:
+
+```text
+reverse_minimum_internal_support = 0.8526
+support_floor = 0.85
+reverse_support_margin = 0.0026
+reverse_support_without_feedback = 0.8494
+reverse_coherence_margin = 0.55
+coherence_margin_floor = 0.52
+shared_medium_leakage = 0.108
+quiet_leakage_ceiling = 0.12
+merge_confusion_pressure = 0.14
+merge_confusion_ceiling = 0.2
+```
+
+Supported rows:
+
+```text
+b4c5_derived_cycle2_reverse_side
+b4c5_derived_joint_paired_perspective
+```
+
+Fail-closed rows:
+
+```text
+label_swap_as_reverse_perspective_control = rejected
+cycle2_reverse_state_missing_control = blocked
+reverse_support_coherence_missing_control = blocked
+neighbor_leakage_as_retention_control = rejected
+merge_leakage_as_reciprocity_control = rejected
+hidden_shared_medium_routing_control = rejected
+original_b4c5_replay_relabel_control = rejected
+i8c_import_backfill_control = rejected
+final_ap7_relabel_control = rejected
+```
+
+8-D sits between 8-B and 8-C. 8-B still blocks original B4/C5 reverse replay.
+8-C remains an independent local paired-perspective protocol. 8-D adds a new
+B4/C5-derived two-cycle candidate: cycle 1 keeps the original forward
+A-to-shared-medium trace, and cycle 2 uses the changed shared medium to
+generate neighbor-side reverse internal state. The pass is intentionally
+low-margin: reverse support is only `0.0026` above floor and the
+feedback-removed control falls below floor. The result strengthens B4/C5
+lineage evidence without making the original B4/C5 row perspective-paired and
+without supporting general shared-medium G6 or final AP7.
+
+## Iteration 9. Comparative Requirements And AP7 Classification
+
+- [x] Synthesize loop requirements.
+- [x] Compare one-way null, perturbation loop, resource loop, and shared-medium
+      loop if available.
+- [x] Record deferred iterations if extensions are not run.
+- [x] Record `extension_mode = extensions_deferred | extensions_included`.
+- [x] Resolve AP7 classification only within artifact-level claim ceiling.
+- [x] Keep final closeout pending until Iteration 10.
+
+Expected artifacts:
+
+- [x] `outputs/n17_closed_loop_requirements_matrix.json`
+- [x] `reports/n17_closed_loop_requirements_matrix.md`
+- [x] `scripts/build_n17_closed_loop_requirements_matrix.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_full_comparative_ap7_classification_pending_i10_closeout
+output_digest = 70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976
+artifact_sha256 = ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9
+classified_ap_level = AP7_comparative_artifact_candidate
+claim_classification = full_comparative_AP7_artifact_level_candidate_pending_I10_closeout
+full_comparative_ap7_classification_supported = true
+extension_mode = extensions_included
+deferred_iterations = []
+final_ap7_supported = false
+final_artifact_level_ap7_frozen = false
+ready_for_iteration10_closeout = true
+```
+
+Family comparison:
+
+```text
+one_way_crossing_active_null = active_null_not_ap7, G2_near_miss
+perturbation_response_recovery_mvp = supported_artifact_level_AP7_MVP_G5
+resource_support_modulation = supported_artifact_level_AP7_extension_local_G5
+shared_medium_reciprocal = supported_local_artifact_level_AP7_extension_G6, G6_local_paired_and_B4C5_derived_two_cycle
+```
+
+Requirement matrix:
+
+```text
+ordered_four_leg_closure = supported
+replay_order_and_hidden_state_controls = supported
+mvp_challenge_stability = supported
+resource_support_modulation = supported
+shared_medium_reciprocity = supported_local_only
+claim_boundary = supported
+final_closeout_gate = pending_iteration10
+```
+
+I9 supports artifact-level AP7 at full N17 comparative scope. It keeps the
+one-way crossing as an active null, uses I6-A/I6-B for bounded MVP G5 support,
+preserves the 7-A/7-B distinction for resource/support G5, uses I8-C for local
+paired-perspective shared-medium G6, and adds I8-D as B4/C5-derived two-cycle
+paired-perspective evidence while preserving the I8-B original B4/C5 reverse
+replay blocker. It does not freeze final AP7; Iteration 10 must still record
+final controls, blockers, claim ceiling, and N18 handoff.
 
 ## Iteration 10. Closeout And N18 Handoff
 
-- [ ] Freeze final supported AP level if warranted.
-- [ ] Record final claim ceiling.
-- [ ] Record final controls.
-- [ ] Record final blockers.
-- [ ] Record final N18 handoff.
-- [ ] Record whether targeted Phase 8 is optional, required, or deferred.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm `native_supported_flags = false`.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `fully_native_integration_opened = false`.
+- [x] Freeze final supported AP level if warranted.
+- [x] Record final claim ceiling.
+- [x] Record final controls.
+- [x] Record final blockers.
+- [x] Record final N18 handoff.
+- [x] Record whether targeted Phase 8 is optional, required, or deferred.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm `native_supported_flags = false`.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `fully_native_integration_opened = false`.
 
 Expected artifacts:
 
-- [ ] `outputs/n17_closeout_and_handoff.json`
-- [ ] `reports/n17_closeout_and_handoff.md`
-- [ ] `scripts/build_n17_closeout_and_handoff.py`
+- [x] `outputs/n17_closeout_and_handoff.json`
+- [x] `reports/n17_closeout_and_handoff.md`
+- [x] `scripts/build_n17_closeout_and_handoff.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate
+output_digest = f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e
+artifact_sha256 = 84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347
+final_supported_ap_level = AP7
+final_ap7_supported = true
+final_claim_ceiling = artifact_level_ap7_closed_boundary_engagement_loop_candidate
+artifact_level_ap7_supported = true
+final_artifact_level_ap7_frozen = true
+phase8_opened = false
+native_support_opened = false
+native_supported_flags = false
+fully_native_integration_opened = false
+recommended_next = N18_long_horizon_agentic_like_closure_stress_test
+targeted_phase8_required_before_n18 = false
+```
+
+Closeout interpretation:
+
+```text
+N17 closes with claim-clean artifact-level AP7 evidence for a closed boundary
+engagement loop. The final scope is comparative: perturbation-response-recovery
+reaches bounded G5, resource/support reaches local G5, and shared-medium
+evidence reaches local G6 while preserving the B4/C5 original reverse replay
+blocker.
+
+This is not agency, intention, semantic action, semantic perception, semantic
+goal ownership, selfhood, identity acceptance, native support, organism/life,
+fully native integration, or unrestricted agency.
+```
 
 ## Setup Verification
 
