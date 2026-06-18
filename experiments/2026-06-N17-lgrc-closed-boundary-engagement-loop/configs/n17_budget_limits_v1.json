@@ -1,0 +1,29 @@
+{
+  "budget_units_values": [
+    "normalized_cost",
+    "trace_steps",
+    "artifact_rows",
+    "not_applicable"
+  ],
+  "budget_validity_required": true,
+  "config_digest": "7dd0bbd3bc9506c59ade2eb620dadb09b7ec606428f15bf15d8f7341ea44b5c7",
+  "config_id": "n17_budget_limits_v1",
+  "fail_closed_rules": [
+    "missing_budget_surface_blocks_closed_loop_claim",
+    "ambiguous_budget_units_blocks_closed_loop_claim",
+    "hidden_state_budget_greater_than_zero_blocks_closed_loop_claim",
+    "unexplained_external_change_budget_greater_than_zero_blocks_closed_loop_claim"
+  ],
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "limits": {
+    "max_absolute_path_count": 0,
+    "max_dependency_edges": 16,
+    "max_hidden_state_allowance": 0,
+    "max_missing_required_controls": 0,
+    "max_ordered_trace_steps": 4,
+    "max_unexplained_external_changes": 0,
+    "min_ordered_trace_steps_for_g3": 4,
+    "min_required_dependency_edges_for_g3": 3
+  },
+  "schema_version": "1.0"
+}

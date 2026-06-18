@@ -7,11 +7,13 @@ Generated scripts:
 - `build_n17_loop_source_inventory.py` - Builds the Iteration 1 source
   inventory, loop contract, source digests, phase gap map, and no-AP7 claim
   checks.
+- `build_n17_loop_schema_v1.py` - Builds the Iteration 2 loop schema, AP7
+  gate, and config files.
+- `validate_n17_loop_row.py` - Validates future N17 loop rows against the
+  Iteration 2 fail-closed AP7 gate.
 
 Planned scripts:
 
-- `build_n17_loop_schema_v1.py`
-- `validate_n17_loop_row.py`
 - `build_n17_one_way_crossing_active_null.py`
 - `build_n17_perturbation_response_recovery_loop.py`
 - `build_n17_loop_replay_and_control_matrix.py`

@@ -7,10 +7,11 @@ Generated reports:
 - `n17_loop_source_inventory.md` - Iteration 1 interpretation of the source
   inventory and loop-contract artifact. It records no direct historic AP7
   support and hands off the missing ordered-closure gap to Iteration 2.
+- `n17_loop_schema_v1.md` - Iteration 2 schema interpretation. It records G3
+  as the first admissible closed-loop rung and keeps AP7 unsupported.
 
 Planned reports:
 
-- `n17_loop_schema_v1.md`
 - `n17_one_way_crossing_active_null.md`
 - `n17_perturbation_response_recovery_loop.md`
 - `n17_loop_replay_and_control_matrix.md`

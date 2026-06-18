@@ -361,6 +361,44 @@ output-digest presence, expected final AP levels where applicable, valid phase
 values, source-consumption rules, construction-role/MVP alignment, derived
 direct-AP7 admissibility, and report/JSON consistency.
 
+## Iteration 2 Result
+
+Iteration 2 is complete as a schema and AP7-gate freeze. It produced no loop
+evidence rows.
+
+```text
+artifact = outputs/n17_loop_schema_v1.json
+report = reports/n17_loop_schema_v1.md
+status = passed
+acceptance_state = accepted_loop_schema_v1_no_ap7_evidence
+output_digest = 911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72
+artifact_sha256 = 55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67
+```
+
+Frozen I2 contract:
+
+```text
+G3 is the first admissible closed-loop rung.
+G0-G2 cannot support AP7.
+external_to_internal + internal_response + outbound external change is still not AP7.
+closure requires later internal dependence on the changed external state.
+feedback_removed_control is required.
+replay, dependency trace, budget validity, controls, and claim boundary are admissibility gates.
+```
+
+Review closure added config/schema consistency checks, removed duplicate
+top-level `controls` and `row_schema_fields`, classified the one-way crossing
+family as a null/control family, froze resource/support and shared-medium
+extension controls, represented replay items as status-backed controls, added
+row-type validation, and documented schema-version plus plan-to-schema mapping.
+
+Validator check:
+
+```text
+.venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/validate_n17_loop_row.py --self-test
+status = passed
+```
+
 ## Directory Structure
 
 ```text

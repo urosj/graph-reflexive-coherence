@@ -115,35 +115,61 @@ external -> internal -> external -> later internal
 
 ## Iteration 2. Loop Schema And AP7 Gate
 
-- [ ] Freeze loop row schema.
-- [ ] Freeze loop ladder values G0-G7.
-- [ ] Freeze the rule that G3 is the first AP7-admissible rung.
-- [ ] Freeze the rule that G0-G2 cannot support AP7.
-- [ ] Freeze monotonic phase ordering fields.
-- [ ] Freeze trace fields:
+- [x] Freeze loop row schema.
+- [x] Freeze loop ladder values G0-G7.
+- [x] Freeze the rule that G3 is the first AP7-admissible rung.
+- [x] Freeze the rule that G0-G2 cannot support AP7.
+- [x] Freeze monotonic phase ordering fields.
+- [x] Freeze trace fields:
       `external_to_internal_trace`, `internal_response_trace`,
       `response_to_external_change_trace`,
       `external_feedback_to_internal_trace`, and `loop_closure_evidence`.
-- [ ] Freeze one-way crossing active-null rules.
-- [ ] Freeze feedback-removed control.
-- [ ] Freeze replay digest scope and algorithm.
-- [ ] Freeze budget validity fields.
-- [ ] Freeze dependency trace fields.
-- [ ] Freeze AP7 gates.
-- [ ] Freeze negative controls.
-- [ ] Materialize `configs/n17_source_registry.json`.
-- [ ] Materialize `configs/n17_loop_policy_v1.json`.
-- [ ] Materialize `configs/n17_budget_limits_v1.json`.
-- [ ] Materialize `configs/n17_control_variants_v1.json`.
-- [ ] Materialize `configs/n17_replay_policy_v1.json`.
-- [ ] Confirm no final AP7 claim is made.
+- [x] Freeze one-way crossing active-null rules.
+- [x] Freeze feedback-removed control.
+- [x] Freeze replay digest scope and algorithm.
+- [x] Freeze budget validity fields.
+- [x] Freeze dependency trace fields.
+- [x] Freeze AP7 gates.
+- [x] Freeze negative controls.
+- [x] Materialize `configs/n17_source_registry.json`.
+- [x] Materialize `configs/n17_loop_policy_v1.json`.
+- [x] Materialize `configs/n17_budget_limits_v1.json`.
+- [x] Materialize `configs/n17_control_variants_v1.json`.
+- [x] Materialize `configs/n17_replay_policy_v1.json`.
+- [x] Confirm no final AP7 claim is made.
 
 Expected artifacts:
 
-- [ ] `outputs/n17_loop_schema_v1.json`
-- [ ] `reports/n17_loop_schema_v1.md`
-- [ ] `scripts/build_n17_loop_schema_v1.py`
-- [ ] `scripts/validate_n17_loop_row.py`
+- [x] `outputs/n17_loop_schema_v1.json`
+- [x] `reports/n17_loop_schema_v1.md`
+- [x] `scripts/build_n17_loop_schema_v1.py`
+- [x] `scripts/validate_n17_loop_row.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_loop_schema_v1_no_ap7_evidence
+output_digest = 911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72
+artifact_sha256 = 55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67
+rows = 0
+loop_schema_frozen = true
+ap7_gates_frozen = true
+one_way_null_rules_frozen = true
+replay_and_controls_frozen = true
+closed_loop_demonstrated = false
+final_ap7_supported = false
+ready_for_iteration_3_one_way_crossing_active_null = true
+review_gap_closure_checks = one_way_null_family_classified_as_null_not_evidence_family, extension_controls_frozen, replay_controls_status_backed, config_schema_policy_consistency, row_type_validator_self_test
+```
+
+Highest-value double-check:
+
+```text
+A G2 row with crossing, internal response, and outbound external change cannot
+pass as AP7 without later internal dependence on the changed external state.
+Validator self-test status = passed.
+```
 
 ## Iteration 3. One-Way Crossing Active Null
 
