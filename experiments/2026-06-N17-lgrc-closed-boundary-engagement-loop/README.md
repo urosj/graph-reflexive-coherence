@@ -240,6 +240,11 @@ N17-G7:
 The key rung is `N17-G3`. That is where a crossing trace becomes a closed
 loop candidate.
 
+Claim-boundary classification is tracked separately from evidence-rung
+advancement. Iteration 6 may classify the replay/control-clean MVP row as an
+artifact-level AP7 MVP candidate, but the current evidence rung remains G4
+until Iteration 6-A or 6-B tests G5 challenge stability.
+
 Formal admissibility rule:
 
 ```text
@@ -286,12 +291,15 @@ N17-MVP:
     Iteration 4 - perturbation-response-recovery loop
     Iteration 5 - replay and order controls
     Iteration 6 - claim boundary record
+    Iteration 6-A - MVP challenge-stability probe
+    Iteration 6-B - alternative target-band G5 challenge probe
 ```
 
 `N17-MVP` may close a perturbation-response-recovery AP7 candidate using
-Iterations 1-6 plus final closeout, provided controls and claim boundaries
-pass. Iterations 7-8 are extensions, not automatic blockers for the first AP7
-claim.
+Iterations 1-6-B plus final closeout, provided controls, claim boundaries, and
+challenge-stability handling pass. Iteration 6-A and 6-B are bounded G5
+alternatives that must be compared before final closeout. Iterations 7-8 are
+extensions, not automatic blockers for the first AP7 claim.
 
 Extensions are:
 
@@ -466,6 +474,209 @@ candidate later internal support dependence on that changed external field.
 This is the G3 hinge, but the AP7 gates for validated response causation,
 counterfactual external-change blocking, hidden-state exclusion, feedback
 removal, replay, and controls remain false until I5.
+
+## Iteration 5 Result
+
+Iteration 5 is complete as a replay and control matrix. It did not add new loop
+evidence; it tried to break the exact I4 G3 candidate.
+
+```text
+artifact = outputs/n17_loop_replay_and_control_matrix.json
+report = reports/n17_loop_replay_and_control_matrix.md
+status = passed
+acceptance_state = accepted_loop_replay_and_control_matrix_g4_candidate_no_final_ap7
+output_digest = 919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a
+artifact_sha256 = b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4
+```
+
+The I5 row records:
+
+```text
+source_loop_digest = 66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f
+candidate_trace_legs_unchanged = true
+loop_ladder_rung = G4_replay_control_clean_candidate
+loop_replay_control_clean = true
+closed_loop_claim_allowed = false
+final_ap7_supported = false
+missing_gate = claim_boundary_clean
+```
+
+Replay is stable for artifact-only, snapshot/load, duplicate, and
+order-inversion replay. For order inversion, stable means the false-order
+variant is reproducibly blocked. I5 replay is artifact-level digest and
+variant-control verification, not a full pipeline rerun. Duplicate replay is a
+run-level digest check rather than a separate schema-backed row control case.
+
+Break controls block post-hoc stitching, hidden external memory, hidden
+internal carryover, external-change-not-caused-by-response, feedback order
+inversion, feedback removal, outbound-response relabel, one-way crossing
+relabel, and unsafe semantic/native/selfhood/life relabels. Resource/support
+and shared-medium controls are not applicable because the MVP row did not open
+those extensions.
+
+I5 therefore upgrades the I4 candidate only to a replay/control-clean G4
+candidate. At the end of I5, I6 remained responsible for the claim-boundary
+record before any AP7 classification could be allowed.
+
+## Iteration 6 Result
+
+Iteration 6 is complete as the MVP claim-boundary record. It classifies the
+perturbation-response-recovery candidate as artifact-level AP7 at MVP scope,
+while keeping full comparative AP7 and final AP7 closeout blocked.
+
+```text
+artifact = outputs/n17_claim_boundary_record.json
+report = reports/n17_claim_boundary_record.md
+status = passed
+acceptance_state = accepted_mvp_ap7_claim_boundary_clean_pending_extensions_and_closeout
+output_digest = cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611
+artifact_sha256 = a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6
+```
+
+The I6 classification state is:
+
+```text
+classified_ap_level = AP7_MVP
+current_evidence_rung = G4_replay_control_clean_candidate
+claim_classification = AP7_MVP_claim_clean_candidate
+ap7_classification_supported = true
+artifact_level_ap7_candidate_supported = true
+mvp_ap7_classification_supported = true
+closed_loop_claim_allowed = true
+g5_challenge_stability_supported = false
+g5_challenge_stability_pending_iteration_6a = true
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+extension_mode = extensions_deferred
+```
+
+The supported claim is only:
+
+```text
+artifact_level_closed_boundary_engagement_loop_candidate_mvp_only
+```
+
+I6 supports Hypothesis A at ordered-loop-trace scope, Hypothesis B at
+replay/control-clean MVP scope, and Hypothesis C as a claim-clean artifact-level
+AP7 MVP candidate. It does not advance the evidence rung beyond G4 and does not
+support G5 challenge stability. It blocks agency, intention, semantic
+action/perception, semantic goal ownership, selfhood, identity acceptance,
+native support, organism/life, fully native integration, unrestricted agency,
+resource/support extension AP7, shared-medium extension AP7, and final AP7
+closeout.
+
+Iteration 6-A is the bounded breach/flux G5 challenge-stability bridge for the
+same MVP loop. Iteration 6-B may test an independent target-band-gated G5
+configuration. Iterations 7-8 remain deferred extensions in this record.
+Iteration 9 must record whether 6-A, 6-B, and the extensions are included or
+deferred in comparative requirements/classification, and Iteration 10 must
+freeze final closeout if warranted.
+
+## Iteration 6-A Result
+
+Iteration 6-A is complete as the bounded G5 challenge-stability probe for the
+same MVP perturbation-response-recovery loop. It keeps the loop family fixed
+and does not open resource/support or shared-medium extensions.
+
+```text
+artifact = outputs/n17_mvp_challenge_stability_probe.json
+report = reports/n17_mvp_challenge_stability_probe.md
+status = passed
+acceptance_state = accepted_bounded_g5_mvp_challenge_stability_no_final_ap7
+output_digest = 4c795ca09ec6d7b557f5d1f8d1f7d0624f4eb7cfea99a43f383f40d68068ebc4
+artifact_sha256 = cc34f5bbb06521271341f334c1ed9db4276d0af020d396f85b1334eb9553d726
+```
+
+The 6-A result is bounded:
+
+```text
+current_evidence_rung = G5_bounded_challenge_stable_candidate
+g5_challenge_stability_supported = true
+g5_support_scope = bounded_source_backed_breach_flux_envelope
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+```
+
+Supported rows:
+
+```text
+canonical_c4_breach_reclosure
+c2_directional_flux_repair_anchor
+bounded_breach_flux_composite_envelope
+```
+
+Fail-closed rows:
+
+```text
+feedback_attenuation_control = partial, claim not allowed
+feedback_delay_control = partial, claim not allowed
+overpressure_control = rejected, claim not allowed
+```
+
+This means N17 now has bounded G5 evidence for the MVP loop under the
+source-backed breach/flux envelope. It does not support delayed-feedback
+tolerance, attenuated-response tolerance, resource/support modulation,
+shared-medium reciprocal closure, full comparative AP7, or final AP7 closeout.
+
+## Iteration 6-B Result
+
+Iteration 6-B is complete as an alternative target-band-gated G5 probe for the
+same MVP perturbation-response-recovery loop. It is not a retune of the 6-A
+breach/flux envelope.
+
+```text
+artifact = outputs/n17_alternative_g5_challenge_probe.json
+report = reports/n17_alternative_g5_challenge_probe.md
+status = passed
+acceptance_state = accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7
+output_digest = cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab
+artifact_sha256 = ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b
+```
+
+The 6-B result is bounded:
+
+```text
+current_evidence_rung = G5_alternative_target_band_challenge_stable_candidate
+alternative_g5_configuration_supported = true
+g5_support_scope = target_band_gated_mvp_perturbation_loop
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+```
+
+The alternative configuration uses:
+
+```text
+target_center = 0.887594607287
+target_band = [0.817594607287, 0.957594607287]
+support_floor = 0.85
+n13_bounded_response_amount = 0.120134817816
+n09_recovery_in_band = true
+n15_bounded_drift_replay_passed = true
+```
+
+Supported rows:
+
+```text
+target_band_anchor_replay
+mild_feedback_attenuation_target_band
+source_window_feedback_delay_target_band
+compound_mild_attenuation_delay_target_band
+```
+
+Fail-closed rows:
+
+```text
+target_band_lower_bound_crossing_control = rejected, claim not allowed
+response_budget_exceeds_n13_control = rejected, claim not allowed
+```
+
+6-B is stronger than 6-A only within this alternative target-band
+configuration. Mild attenuation, a source-backed one-window feedback delay, and
+their compound case remain inside the generated target band and above the
+support floor. The probe still fails closed below the target band and beyond
+the N13 response budget. It does not support arbitrary challenge stability,
+resource/support modulation, shared-medium reciprocal closure, full comparative
+AP7, or final AP7 closeout.
 
 ## Directory Structure
 

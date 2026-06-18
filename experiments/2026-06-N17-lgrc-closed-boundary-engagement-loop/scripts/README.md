@@ -16,11 +16,22 @@ Generated scripts:
 - `build_n17_perturbation_response_recovery_loop.py` - Builds the Iteration 4
   perturbation-response-recovery G3 candidate and keeps AP7 blocked pending
   Iteration 5 replay and controls.
+- `build_n17_loop_replay_and_control_matrix.py` - Builds the Iteration 5
+  replay and control matrix for the I4 candidate without adding new loop
+  evidence.
+- `build_n17_claim_boundary_record.py` - Builds the Iteration 6 MVP
+  claim-boundary record, classifies the perturbation-response-recovery
+  candidate as artifact-level AP7 at MVP scope, keeps the evidence rung at G4,
+  and keeps G5, full comparative AP7, and final AP7 closeout blocked.
+- `build_n17_mvp_challenge_stability_probe.py` - Builds the Iteration 6-A
+  bounded MVP challenge-stability probe for G5 without opening resource/support
+  or shared-medium extensions.
+- `build_n17_alternative_g5_challenge_probe.py` - Builds the Iteration 6-B
+  alternative target-band-gated G5 challenge probe without retuning the 6-A
+  breach/flux envelope.
 
 Planned scripts:
 
-- `build_n17_loop_replay_and_control_matrix.py`
-- `build_n17_claim_boundary_record.py`
 - `build_n17_resource_support_modulation_loop.py`
 - `build_n17_shared_medium_reciprocal_loop.py`
 - `build_n17_closed_loop_requirements_matrix.py`

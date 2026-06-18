@@ -16,11 +16,23 @@ Generated artifacts:
   perturbation-response-recovery G3 candidate. Status: `passed`; acceptance
   state:
   `accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7`.
+- `n17_loop_replay_and_control_matrix.json` - Iteration 5 replay and control
+  matrix. Status: `passed`; acceptance state:
+  `accepted_loop_replay_and_control_matrix_g4_candidate_no_final_ap7`.
+- `n17_claim_boundary_record.json` - Iteration 6 MVP claim-boundary record.
+  Status: `passed`; acceptance state:
+  `accepted_mvp_ap7_claim_boundary_clean_pending_extensions_and_closeout`.
+  Current evidence rung remains `G4`; G5 challenge stability is handled by
+  `n17_mvp_challenge_stability_probe.json`.
+- `n17_mvp_challenge_stability_probe.json` - Iteration 6-A bounded MVP
+  challenge-stability probe. Status: `passed`; acceptance state:
+  `accepted_bounded_g5_mvp_challenge_stability_no_final_ap7`.
+- `n17_alternative_g5_challenge_probe.json` - Iteration 6-B alternative
+  target-band-gated G5 challenge probe. Status: `passed`; acceptance state:
+  `accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7`.
 
 Planned artifacts:
 
-- `n17_loop_replay_and_control_matrix.json`
-- `n17_claim_boundary_record.json`
 - `n17_resource_support_modulation_loop.json`
 - `n17_shared_medium_reciprocal_loop.json`
 - `n17_closed_loop_requirements_matrix.json`

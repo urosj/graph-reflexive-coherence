@@ -123,6 +123,12 @@ G3 is the critical transition. A row below G3 is not closed-loop evidence.
 G3 is the first admissible closed-loop evidence rung; G0/G1/G2 may support
 diagnostics or active nulls, but they cannot support AP7.
 
+Claim-boundary classification and evidence-rung advancement must remain
+separate. Iteration 6 can classify the replay/control-clean MVP row at
+artifact-level AP7 scope, but it must not imply G5 challenge stability or G6
+shared-medium evidence. The evidence rung stays G4 until Iteration 6-A or
+Iteration 6-B produces challenge-stability evidence.
+
 Every candidate loop row must preserve monotonic phase ordering:
 
 ```text
@@ -205,6 +211,8 @@ Iteration 3 - one-way crossing active null
 Iteration 4 - perturbation-response-recovery loop
 Iteration 5 - replay and order controls
 Iteration 6 - claim boundary record
+Iteration 6-A - bounded breach/flux G5 challenge-stability probe
+Iteration 6-B - alternative target-band G5 challenge-stability probe
 ```
 
 Extensions:
@@ -222,9 +230,10 @@ Iteration 10 - closeout and N18 handoff
 ```
 
 N17-MVP can close a perturbation-response-recovery AP7 candidate with
-Iterations 1-6 plus final closeout if controls pass. Iterations 7-8 are
+Iterations 1-6-B plus final closeout if controls pass. Iterations 7-8 are
 extensions and must be explicitly marked as included or deferred before final
-closeout:
+closeout. Iteration 9 must compare 6-A and 6-B as bounded G5 alternatives
+rather than treating 6-B as a retuned repair of 6-A:
 
 ```text
 extension_mode = extensions_deferred | extensions_included
@@ -466,12 +475,94 @@ as an AP7 candidate without promoting unsafe claims. This is not the full
 comparative AP7 classification unless Iterations 7-8 are explicitly included
 and synthesized later.
 
+This iteration does not advance the evidence rung beyond G4. It records
+artifact-level MVP AP7 claim classification only; G5 challenge stability is
+reserved for Iteration 6-A and the alternative Iteration 6-B probe.
+
 Expected artifacts:
 
 ```text
 outputs/n17_claim_boundary_record.json
 reports/n17_claim_boundary_record.md
 scripts/build_n17_claim_boundary_record.py
+```
+
+### Iteration 6-A. MVP Challenge-Stability Probe
+
+Test whether the already replay/control-clean perturbation-response-recovery
+loop remains a closed loop under controlled challenge variation. This is the
+targeted G5 bridge before resource/support and shared-medium extensions.
+
+Keep the loop family fixed:
+
+```text
+perturbation-response-recovery only
+no resource/support modulation
+no shared-medium reciprocal loop
+```
+
+Allowed challenge variations:
+
+```text
+perturbation magnitude
+perturbation duration or window
+boundary leakage pressure
+external noise or flux pressure
+feedback delay
+partial feedback attenuation
+```
+
+Required outcome:
+
+```text
+same four ordered trace legs remain present
+response-caused external change remains explicit
+later internal dependence on changed external state remains explicit
+G0-G2 relabels still fail closed
+unsafe claims remain blocked
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_mvp_challenge_stability_probe.json
+reports/n17_mvp_challenge_stability_probe.md
+scripts/build_n17_mvp_challenge_stability_probe.py
+```
+
+### Iteration 6-B. Alternative G5 Challenge Probe
+
+Test an independent target-band-gated G5 configuration for the same MVP
+perturbation-response-recovery loop. This is not a 6-A threshold refinement and
+must not retune failed 6-A rows. It uses old-best source-backed support values
+from N13/N09/N15 to ask whether a different configuration gives a stronger but
+still bounded G5 claim.
+
+Keep the loop family fixed:
+
+```text
+perturbation-response-recovery only
+no resource/support modulation
+no shared-medium reciprocal loop
+```
+
+Required outcome:
+
+```text
+source values pinned before row evaluation
+target-band pass/fail rule frozen before row evaluation
+mild attenuation and source-window delay may pass only inside target band
+target-band crossing and response-budget exceedance fail closed
+unsafe claims remain blocked
+final AP7 remains blocked
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_alternative_g5_challenge_probe.json
+reports/n17_alternative_g5_challenge_probe.md
+scripts/build_n17_alternative_g5_challenge_probe.py
 ```
 
 ### Iteration 7. Resource/Support Modulation Loop
