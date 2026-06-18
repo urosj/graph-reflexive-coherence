@@ -508,6 +508,16 @@ action-perception loop.
 
 ## N17. Closed Action-Perception Loop
 
+Status:
+
+```text
+closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate
+final_supported_ap_level = AP7
+final_ap7_supported = true
+final_claim_ceiling = artifact_level_ap7_closed_boundary_engagement_loop_candidate
+recommended_next = N18_long_horizon_agentic_like_closure_stress_test
+```
+
 Question:
 
 ```text
@@ -537,6 +547,14 @@ semantic agency relabel blocked
 ```
 
 N17 is where the behavior becomes loop-shaped. It still does not prove agency.
+
+N17 closes as an artifact-level AP7 closed boundary engagement loop candidate.
+The final evidence is comparative: perturbation-response-recovery reaches
+bounded G5, resource/support modulation reaches local G5, and shared-medium
+evidence reaches local G6 while original B4/C5 reverse replay remains blocked.
+It does not open semantic action, semantic perception, agency, intention,
+semantic goal ownership, selfhood, identity acceptance, native support,
+organism/life, fully native integration, unrestricted agency, or Phase 8.
 
 ## N18. Long-Horizon Agentic-Like Closure Stress Test
 

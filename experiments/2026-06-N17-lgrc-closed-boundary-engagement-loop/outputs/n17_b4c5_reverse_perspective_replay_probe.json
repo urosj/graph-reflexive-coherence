@@ -1,0 +1,3274 @@
+{
+  "acceptance_state": "accepted_b4c5_reverse_perspective_blocked_multi_source_context_preserved_no_final_ap7",
+  "alternate_source_shared_medium_g6_candidate_supported": true,
+  "artifact_id": "n17_b4c5_reverse_perspective_replay_probe",
+  "b4c5_multi_basin_source_present": true,
+  "b4c5_perspective_paired_supported": false,
+  "b4c5_reverse_perspective_audit": {
+    "asymmetry_note": "B4_C5 tests whether basin A remains separable in the presence of basin B inside a shared medium; reverse basin perspective replay is deferred before final AP6",
+    "basin_a_as_internal_side": true,
+    "basin_count": 2,
+    "basin_separation_score": 0.74,
+    "boundary_classification": "b4_c5_shared_medium_separability_candidate_supported",
+    "boundary_edges": [
+      {
+        "event": "shared_medium_boundary_exchange",
+        "left": "b4_c5_a2",
+        "left_side": "derived_internal_side",
+        "right": "b4_c5_medium",
+        "right_side": "derived_external_side",
+        "weight": 0.1
+      },
+      {
+        "event": "neighbor_medium_exchange",
+        "left": "b4_c5_neighbor0",
+        "left_side": "derived_external_side",
+        "right": "b4_c5_medium",
+        "right_side": "derived_external_side",
+        "weight": 0.08
+      }
+    ],
+    "boundary_exclusivity_score": 0.73,
+    "boundary_side_assignments": {
+      "b4_c5_a0": "derived_internal_side",
+      "b4_c5_a1": "derived_internal_side",
+      "b4_c5_a2": "derived_internal_side",
+      "b4_c5_medium": "derived_external_side",
+      "b4_c5_neighbor0": "derived_external_side",
+      "b4_c5_neighbor1": "derived_external_side"
+    },
+    "cell_id": "B4_C5",
+    "forward_coherence_margin": 0.552,
+    "forward_internal_nodes": [
+      "b4_c5_a0",
+      "b4_c5_a1",
+      "b4_c5_a2"
+    ],
+    "forward_minimum_internal_support": 0.854,
+    "has_neighbor_internal_descriptor": false,
+    "has_reverse_coherence_metric": false,
+    "has_reverse_support_metric": false,
+    "leakage_into_neighbor_basin": 0.07,
+    "merge_confusion_pressure": 0.14,
+    "neighbor_basin_treated_as_external_side": true,
+    "redirected_flux_through_coupling_channel": 0.1,
+    "reverse_boundary_edge_source_backed": false,
+    "reverse_boundary_edges": [],
+    "reverse_internal_nodes": [],
+    "reverse_trace_source_backed": false,
+    "shared_medium_leakage": 0.108,
+    "source_row_decision": "supported"
+  },
+  "b4c5_reverse_perspective_replay_supported": false,
+  "b4c5_reverse_replay_blocker": "reverse_internal_support_coherence_boundary_assignment_and_feedback_trace_not_source_backed",
+  "checks": [
+    {
+      "check_id": "b4c5_multi_basin_source_present",
+      "detail": {
+        "basin_count": 2,
+        "neighbor_basin_treated_as_external_side": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "b4c5_reverse_internal_side_not_source_backed",
+      "detail": {
+        "has_neighbor_internal_descriptor": false,
+        "reverse_internal_nodes": []
+      },
+      "passed": true
+    },
+    {
+      "check_id": "b4c5_reverse_support_and_coherence_missing",
+      "detail": {
+        "has_reverse_coherence_metric": false,
+        "has_reverse_support_metric": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "b4c5_reverse_trace_legs_missing",
+      "detail": "neighbor-medium edge is external-side to external-side in B4_C5",
+      "passed": true
+    },
+    {
+      "check_id": "all_reverse_probe_rows_fail_closed",
+      "detail": [
+        "b4c5_reverse_source_inventory",
+        "b4c5_neighbor_internal_support_control",
+        "b4c5_neighbor_coherence_control",
+        "b4c5_reverse_boundary_assignment_control",
+        "b4c5_reverse_boundary_edge_control",
+        "b4c5_reverse_feedback_trace_control",
+        "b4c5_label_swap_relabel_control",
+        "b4c5_reverse_leakage_merge_metrics_partial",
+        "b4c5_perspective_paired_candidate"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i8a_multi_source_context_preserved",
+      "detail": "8-B does not weaken 8-A multi-source alternate evidence",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": "unsafe claims remain false",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 8-B does not edit src/*",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_b4c5_reverse_perspective_replay_probe.py",
+  "comparative_classification_pending_iteration9": true,
+  "current_evidence_rung": "G6_multi_source_shared_medium_candidate_with_b4c5_reverse_blocker_recorded",
+  "errors": [],
+  "experiment": "N17",
+  "final_ap7_supported": false,
+  "final_artifact_level_ap7_frozen": false,
+  "final_closeout_pending_iteration10": true,
+  "full_comparative_ap7_classification_supported": false,
+  "general_shared_medium_g6_supported": false,
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "e54b2011ad22070e1ddedcd7ca95dba51268323c",
+    "status_short": [
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationChecklist.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationPlan.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_alternative_resource_support_g5_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_b4c5_reverse_perspective_replay_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_challenge_stability_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_modulation_loop.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_shared_medium_reciprocal_loop.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_shared_medium_reverse_perspective_probe.py"
+    ]
+  },
+  "i9_comparative_classification_role": {
+    "shared_medium_requirement": {
+      "blocked_by": [
+        "B4_C5 reverse-perspective replay not source-backed",
+        "B4_C5 perspective-paired G6 not supported",
+        "general shared-medium G6",
+        "symmetric shared-medium replay",
+        "native multi-basin selfhood",
+        "final AP7"
+      ],
+      "classification_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+      "supported_by": [
+        "I8 local one-sided B4_C5 candidate",
+        "I8-A alternate N07 dual-basin bounded-exchange candidate"
+      ]
+    }
+  },
+  "included_iterations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    "6-A",
+    "6-B",
+    7,
+    "7-A",
+    "7-B",
+    8,
+    "8-A",
+    "8-B"
+  ],
+  "iteration": "8-B",
+  "iteration_result": {
+    "alternate_source_shared_medium_g6_candidate_supported": true,
+    "b4c5_multi_basin_source_present": true,
+    "b4c5_perspective_paired_supported": false,
+    "b4c5_reverse_perspective_replay_supported": false,
+    "claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+    "final_ap7_supported": false,
+    "general_shared_medium_g6_supported": false,
+    "ready_for_iteration_9_comparative_classification": true
+  },
+  "local_one_sided_shared_medium_g6_candidate_supported": true,
+  "output_digest": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+  "purpose": "test whether original N16 B4_C5 can support reverse-perspective replay",
+  "row_summary": {
+    "blocked_or_rejected_row_count": 9,
+    "fail_closed_probe_ids": [
+      "b4c5_reverse_source_inventory",
+      "b4c5_neighbor_internal_support_control",
+      "b4c5_neighbor_coherence_control",
+      "b4c5_reverse_boundary_assignment_control",
+      "b4c5_reverse_boundary_edge_control",
+      "b4c5_reverse_feedback_trace_control",
+      "b4c5_label_swap_relabel_control",
+      "b4c5_reverse_leakage_merge_metrics_partial",
+      "b4c5_perspective_paired_candidate"
+    ],
+    "supported_row_count": 0
+  },
+  "rows": [
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_internal_side_not_source_backed",
+        "closed_loop_claim_allowed": false,
+        "detail": "B4/C5 has basin_count=2 but records basin A as internal and neighbor basin as external side.",
+        "label": "B4/C5 reverse source inventory",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_reverse_source_inventory",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "reverse_internal_side_not_source_backed",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse source inventory: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse source inventory: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 reverse source inventory: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_internal_side_not_source_backed",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "reverse_internal_side_not_source_backed"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 reverse source inventory: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_01_b4c5_reverse_source_inventory",
+      "row_replay_digest": "3dbcdce5eaf08bb2cb60db01148a6acdf0db8921a9d6a73f8b8392a48de93830",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "neighbor_internal_support_metric_missing",
+        "closed_loop_claim_allowed": false,
+        "detail": "The source records forward internal support but no neighbor-as-internal support floor measurement.",
+        "label": "B4/C5 neighbor internal support control",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_neighbor_internal_support_control",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "neighbor_internal_support_metric_missing",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 neighbor internal support control: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 neighbor internal support control: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 neighbor internal support control: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "neighbor_internal_support_metric_missing",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "neighbor_internal_support_metric_missing"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 neighbor internal support control: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_02_b4c5_neighbor_internal_support_control",
+      "row_replay_digest": "1767081e48b8f5fc1f508c337b5848e92b94fbdfaf0ac959e8b59e1f7853cc94",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "neighbor_coherence_metric_missing",
+        "closed_loop_claim_allowed": false,
+        "detail": "The source records forward coherence margin but no reverse-side coherence margin.",
+        "label": "B4/C5 neighbor coherence control",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_neighbor_coherence_control",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "neighbor_coherence_metric_missing",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 neighbor coherence control: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 neighbor coherence control: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 neighbor coherence control: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "neighbor_coherence_metric_missing",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "neighbor_coherence_metric_missing"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 neighbor coherence control: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_03_b4c5_neighbor_coherence_control",
+      "row_replay_digest": "581024f468354f552c83f5f9af8e33327aa962612796ceee25e940f886fbe0bb",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_boundary_side_assignment_missing",
+        "closed_loop_claim_allowed": false,
+        "detail": "Neighbor nodes remain derived_external_side in the source boundary assignments.",
+        "label": "B4/C5 reverse boundary assignment control",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_reverse_boundary_assignment_control",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "reverse_boundary_side_assignment_missing",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse boundary assignment control: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse boundary assignment control: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 reverse boundary assignment control: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_boundary_side_assignment_missing",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "reverse_boundary_side_assignment_missing"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 reverse boundary assignment control: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_04_b4c5_reverse_boundary_assignment_control",
+      "row_replay_digest": "00e2ecf3f1b2a58354450ddf58d8d0737028c816cc5713bab5ca1b2c6a357818",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_boundary_edge_missing",
+        "closed_loop_claim_allowed": false,
+        "detail": "The neighbor-medium edge is recorded as external-side to external-side, not reverse internal-to-medium.",
+        "label": "B4/C5 reverse boundary edge control",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_reverse_boundary_edge_control",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "reverse_boundary_edge_missing",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse boundary edge control: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse boundary edge control: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 reverse boundary edge control: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_boundary_edge_missing",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "reverse_boundary_edge_missing"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 reverse boundary edge control: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_05_b4c5_reverse_boundary_edge_control",
+      "row_replay_digest": "b35df092e2a2783538bb32252bb94df1c6726974d3bb78fde48fee47a02736ae",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_later_internal_feedback_trace_missing",
+        "closed_loop_claim_allowed": false,
+        "detail": "No source-backed later neighbor-internal state depends on the changed shared medium.",
+        "label": "B4/C5 reverse feedback trace control",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_reverse_feedback_trace_control",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "reverse_later_internal_feedback_trace_missing",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse feedback trace control: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse feedback trace control: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 reverse feedback trace control: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "reverse_later_internal_feedback_trace_missing",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "reverse_later_internal_feedback_trace_missing"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 reverse feedback trace control: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_06_b4c5_reverse_feedback_trace_control",
+      "row_replay_digest": "4bac289f1905f743606d172c09916496f8869469700c8cb4e20833193857119e",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "label_swap_is_not_reverse_replay",
+        "closed_loop_claim_allowed": false,
+        "detail": "Changing neighbor labels to internal without source-backed reverse metrics is rejected.",
+        "label": "B4/C5 label swap relabel control",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_label_swap_relabel_control",
+        "row_decision": "rejected"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "label_swap_is_not_reverse_replay",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 label swap relabel control: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 label swap relabel control: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 label swap relabel control: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "label_swap_is_not_reverse_replay",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "label_swap_is_not_reverse_replay"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 label swap relabel control: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8b_row_07_b4c5_label_swap_relabel_control",
+      "row_replay_digest": "a9101c2ee0697949634bdc6d009175f3f97428e7e1d8b37496d76f5cc59a54d7",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "leakage_and_merge_metrics_exist_but_do_not_supply_reverse_internal_state",
+        "closed_loop_claim_allowed": false,
+        "detail": "Shared-medium leakage, neighbor leakage, and merge pressure are measured, but reverse internal support/coherence and trace legs are missing.",
+        "label": "B4/C5 reverse leakage/merge metric partial",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_reverse_leakage_merge_metrics_partial",
+        "row_decision": "partial"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "leakage_and_merge_metrics_exist_but_do_not_supply_reverse_internal_state",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse leakage/merge metric partial: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse leakage/merge metric partial: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 reverse leakage/merge metric partial: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "leakage_and_merge_metrics_exist_but_do_not_supply_reverse_internal_state",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "leakage_and_merge_metrics_exist_but_do_not_supply_reverse_internal_state"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 reverse leakage/merge metric partial: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "partial",
+      "row_id": "n17_i8b_row_08_b4c5_reverse_leakage_merge_metrics_partial",
+      "row_replay_digest": "6dccd12c84c3fc05447c746acc291f44378b76e62fe7fd0cfaf10a85f5ea3312",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "b4c5_reverse_perspective_probe": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "perspective_paired_b4c5_not_supported",
+        "closed_loop_claim_allowed": false,
+        "detail": "B4/C5 remains multi-basin but not perspective-paired.",
+        "label": "B4/C5 perspective-paired candidate",
+        "metrics_available": {
+          "basin_separation_score": 0.74,
+          "boundary_exclusivity_score": 0.73,
+          "forward_coherence_margin": 0.552,
+          "forward_minimum_internal_support": 0.854,
+          "leakage_into_neighbor_basin": 0.07,
+          "merge_confusion_pressure": 0.14,
+          "shared_medium_leakage": 0.108
+        },
+        "missing_reverse_requirements": {
+          "neighbor_internal_descriptor": true,
+          "reverse_boundary_edge": true,
+          "reverse_coherence_metric": true,
+          "reverse_feedback_trace": true,
+          "reverse_internal_boundary_assignment": true,
+          "reverse_support_metric": true
+        },
+        "probe_id": "b4c5_perspective_paired_candidate",
+        "row_decision": "blocked"
+      },
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "B4_C5_perspective_paired_G6",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "forward_internal_side": [
+          "b4_c5_a0",
+          "b4_c5_a1",
+          "b4_c5_a2"
+        ],
+        "neighbor_nodes_source_role": "derived_external_side",
+        "reverse_internal_side": [],
+        "shared_medium": "b4_c5_medium"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "probe_count": 9,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "artifact_rows_and_reverse_probe_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "perspective_paired_b4c5_not_supported",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4c5_label_swap_control": {
+          "blocker": "reverse_replay_requires_source_backed_internal_side_not_label_swap",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "B4_C5_reverse_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 internal side missing"
+          },
+          {
+            "cause_attribution": "not_source_backed_for_reverse_side",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 response missing"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "reverse B4/C5 later internal feedback missing"
+          }
+        ],
+        "missing_edges": [
+          "external_to_internal",
+          "internal_response_to_external_change",
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 perspective-paired candidate: B4/C5 reverse perspective remains blocked",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_reverse_internal_state_source_backed": false
+        },
+        "state_before": {
+          "changed_shared_medium_state": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 perspective-paired candidate: B4/C5 reverse perspective remains blocked",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_crossing_source_backed": false
+        },
+        "state_before": {
+          "neighbor_basin_treated_as_external_side": true
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 perspective-paired candidate: B4/C5 reverse perspective remains blocked",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_internal_support_source_backed": false
+        },
+        "state_before": {
+          "forward_internal_support": 0.854
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "b4c5_multi_basin_source_present": true,
+        "b4c5_perspective_paired_supported": false,
+        "b4c5_reverse_perspective_replay_supported": false,
+        "blocker": "perspective_paired_b4c5_not_supported",
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "perspective_paired_b4c5_not_supported"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "b4c5_reverse_perspective_control_not_claim_allowed",
+      "provisional_claim_ceiling": "B4_C5_multi_basin_source_not_perspective_paired",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 perspective-paired candidate: B4/C5 reverse perspective remains blocked",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "reverse_response_caused_medium_change_source_backed": false
+        },
+        "state_before": {
+          "neighbor_medium_edge_role": "external_to_external"
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8b_row_09_b4c5_perspective_paired_candidate",
+      "row_replay_digest": "da8d15a98e7a1e70db7cf59fe39249258ec750d04f4726371a7af30320b394b5",
+      "row_type": "control_row",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_b4c5_limit_source",
+          "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "multi_source_shared_medium_candidate_context",
+          "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4c5_specific_reverse_probe_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+          "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+          "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+          "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+          "source_role": "b4c5_reverse_requirement_limit_source",
+          "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+          "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i8_local_one_sided_shared_medium_g6_candidate",
+        "n17_i8a_alternate_source_shared_medium_g6_candidate",
+        "n16_i6_row_b4_c5",
+        "n16_i7_basin_boundary_requirements_matrix"
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+      "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+      "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+      "source_role": "local_one_sided_b4c5_limit_source",
+      "source_row_id": "n17_i8_local_one_sided_shared_medium_g6_candidate",
+      "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+      "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+      "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+      "source_role": "multi_source_shared_medium_candidate_context",
+      "source_row_id": "n17_i8a_alternate_source_shared_medium_g6_candidate",
+      "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+      "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_reverse_replay_deferred",
+      "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+      "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+      "source_role": "b4c5_specific_reverse_probe_source",
+      "source_row_id": "n16_i6_row_b4_c5",
+      "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_basin_boundary_requirements_matrix.json",
+      "source_claim_ceiling": "controlled_artifact_level_boundary_requirements_not_native_multi_basin_selfhood",
+      "source_output_digest": "383df2eb297e4a82cb71e0ce4a80aa3c506cc21ee2841b5ec010f33680229bdf",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_basin_boundary_requirements_matrix.md",
+      "source_report_sha256": "05ed0055eb5a06dd547649d6539cca316b094ca745cfe728c169de47b9fa1605",
+      "source_role": "b4c5_reverse_requirement_limit_source",
+      "source_row_id": "n16_i7_basin_boundary_requirements_matrix",
+      "source_sha256": "cbaf212d3ff4d5408c7350bd982f9c84e2b6ef3ce4ae01b5abfcbc79a8a14c83"
+    }
+  ],
+  "status": "passed",
+  "symmetric_shared_medium_replay_supported": false
+}

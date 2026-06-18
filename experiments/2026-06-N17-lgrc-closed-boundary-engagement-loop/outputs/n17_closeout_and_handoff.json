@@ -1,0 +1,1838 @@
+{
+  "acceptance_state": "closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate",
+  "artifact_id": "n17_closeout_and_handoff",
+  "checks": [
+    {
+      "check_id": "i9_status_passed",
+      "detail": "accepted_full_comparative_ap7_classification_pending_i10_closeout",
+      "passed": true
+    },
+    {
+      "check_id": "i9_ready_for_i10",
+      "detail": "ready_for_iteration10_closeout = true",
+      "passed": true
+    },
+    {
+      "check_id": "i9_full_comparative_ap7_supported",
+      "detail": "full_comparative_AP7_artifact_level_candidate_pending_I10_closeout",
+      "passed": true
+    },
+    {
+      "check_id": "all_i9_checks_passed",
+      "detail": [
+        "all_source_artifacts_passed",
+        "extension_mode_included",
+        "one_way_null_not_promoted",
+        "mvp_g5_basis_supported",
+        "resource_support_requirement_supported",
+        "shared_medium_requirement_supported",
+        "unsafe_claim_flags_false",
+        "src_diff_empty",
+        "no_absolute_paths",
+        "final_ap7_closeout_gate_resolved_by_i10"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "required_requirements_supported",
+      "detail": {
+        "claim_boundary": "supported",
+        "mvp_challenge_stability": "supported",
+        "ordered_four_leg_closure": "supported",
+        "replay_order_and_hidden_state_controls": "supported",
+        "resource_support_modulation": "supported",
+        "shared_medium_reciprocity": "supported_local_only"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "final_ap7_frozen",
+      "detail": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        "agency_claim_opened",
+        "intention_claim_opened",
+        "semantic_action_opened",
+        "semantic_perception_opened",
+        "semantic_goal_ownership_opened",
+        "selfhood_claim_opened",
+        "identity_acceptance_opened",
+        "native_support_opened",
+        "organism_life_opened",
+        "fully_native_integration_opened",
+        "unrestricted_agency_opened",
+        "phase8_opened"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "native_supported_flags_false",
+      "detail": {
+        "fully_native_integration_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_opened_false",
+      "detail": "Phase 8 remains unopened.",
+      "passed": true
+    },
+    {
+      "check_id": "fully_native_integration_opened_false",
+      "detail": "Fully native integration remains unopened.",
+      "passed": true
+    },
+    {
+      "check_id": "n18_handoff_recorded",
+      "detail": {
+        "handoff_caveats": [
+          "N17 AP7 is artifact-level closed boundary engagement, not agency.",
+          "N18 may stress the closed loop over longer horizons but must not relabel it as semantic action, semantic perception, or native agency.",
+          "Phase 8 remains unopened and native support remains false.",
+          "Original B4/C5 reverse replay remains blocked; N17 only supports a derived two-cycle local candidate for that lineage."
+        ],
+        "n18_allowed_inputs": [
+          "N12 NAT4 readiness context as readiness-only, not native support",
+          "N13 final artifact-level AP3 support-seeking regulation closeout",
+          "N14 final artifact-level AP4 consequence-sensitive route selection closeout",
+          "N15 final artifact-level AP5 endogenous proxy formation closeout",
+          "N16 final artifact-level AP6 self/environment boundary closeout",
+          "N17 final artifact-level AP7 closed boundary engagement loop closeout"
+        ],
+        "n18_primary_question": "Can identity/support, memory, regulation, consequence-sensitive selection, proxy formation, boundary separation, and closed-loop feedback remain source-current, replay-clean, budget-clean, and claim-clean under longer horizons and perturbations?",
+        "n18_required_controls": [
+          "stale state replay blocked",
+          "hidden native support relabel blocked",
+          "semantic agency relabel blocked",
+          "goal ownership relabel blocked",
+          "identity acceptance relabel blocked",
+          "Phase 8/native implementation relabel blocked",
+          "long-horizon drift outside source-backed envelope blocked",
+          "resource/shared-medium merge relabel blocked"
+        ],
+        "n18_required_stress_dimensions": [
+          "longer horizon windows",
+          "route/context reversal variants",
+          "support withdrawal and restoration",
+          "proxy perturbation",
+          "memory relaxation",
+          "environment/resource perturbation",
+          "shared-medium perturbation",
+          "duplicate and order-inversion replay controls",
+          "artifact-only reconstruction"
+        ],
+        "recommended_branch": "experiment-N18",
+        "recommended_next": "N18_long_horizon_agentic_like_closure_stress_test",
+        "target_ap_level": "AP8",
+        "targeted_phase8_required_before_n18": false,
+        "targeted_phase8_status": "optional_deferred_not_required_for_n18"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "targeted_phase8_not_required_before_n18",
+      "detail": "optional_deferred_not_required_for_n18",
+      "passed": true
+    },
+    {
+      "check_id": "source_digests_present",
+      "detail": 17,
+      "passed": true
+    },
+    {
+      "check_id": "idempotency_digest_reproducible",
+      "detail": "sha256 over canonical closeout scope",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 10 does not edit src/*.",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "closeout_result": {
+    "agency_claim_opened": false,
+    "artifact_level": true,
+    "artifact_only": true,
+    "final_ap7_supported": true,
+    "final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+    "final_scope": "artifact-level closed boundary engagement loop evidence across perturbation-response-recovery, resource/support modulation, and local shared-medium extension families",
+    "final_supported_ap_level": "AP7",
+    "fully_native": false,
+    "fully_native_integration_opened": false,
+    "identity_acceptance_opened": false,
+    "intention_claim_opened": false,
+    "n18_handoff_ready": true,
+    "native_support_opened": false,
+    "native_supported_flag_detail": {
+      "fully_native_integration_opened": false,
+      "native_support_opened": false,
+      "phase8_opened": false
+    },
+    "native_supported_flags": false,
+    "organism_life_opened": false,
+    "phase8_opened": false,
+    "selfhood_claim_opened": false,
+    "semantic_action_opened": false,
+    "semantic_goal_ownership_opened": false,
+    "semantic_perception_opened": false,
+    "status": "closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate",
+    "targeted_phase8_required_before_n18": false,
+    "unrestricted_agency_opened": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_closeout_and_handoff.py",
+  "errors": [],
+  "experiment": "N17",
+  "final_blockers": [
+    {
+      "blocker_id": "semantic_action_perception_blocked",
+      "rationale": "N17 proves ordered artifact-level trace dependence, not semantic action or semantic perception.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "agency_intention_goal_ownership_blocked",
+      "rationale": "Closed boundary engagement remains below agency, intention, and semantic goal ownership.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "selfhood_identity_acceptance_blocked",
+      "rationale": "The AP7 loop consumes AP6 boundary evidence but does not promote it into selfhood or identity acceptance.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "native_support_phase8_blocked",
+      "rationale": "Phase 8 remains unopened and native support remains false.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "organism_life_unrestricted_agency_blocked",
+      "rationale": "Artifact-level AP7 is not organism/life behavior or unrestricted autonomous agency.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "one_way_crossing_relabel_blocked",
+      "rationale": "I3 remains an active null; external-to-internal crossing alone is not closure.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "resource_goal_pursuit_relabel_blocked",
+      "rationale": "Resource/support modulation is bounded feedback evidence, not semantic goal pursuit.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "shared_medium_general_g6_blocked",
+      "rationale": "Shared-medium support is local only; general shared-medium G6 remains blocked.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "original_b4c5_reverse_replay_blocked",
+      "rationale": "8-D supports only a derived two-cycle protocol; original B4/C5 reverse replay remains blocked.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "symmetric_native_multi_basin_replay_blocked",
+      "rationale": "Paired shared-medium evidence is artifact-level and does not open symmetric native multi-basin replay.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_1",
+      "rationale": "semantic_action_perception",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_2",
+      "rationale": "semantic_goal_ownership",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_3",
+      "rationale": "intention",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_4",
+      "rationale": "agency",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_5",
+      "rationale": "selfhood",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_6",
+      "rationale": "identity_acceptance",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_7",
+      "rationale": "native_support",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_8",
+      "rationale": "organism_life",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_9",
+      "rationale": "fully_native_integration",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_10",
+      "rationale": "unrestricted_agency",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_11",
+      "rationale": "phase8",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_12",
+      "rationale": "general_shared_medium_G6",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_13",
+      "rationale": "B4_C5_reverse_perspective_replay",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i9_blocked_claim_14",
+      "rationale": "symmetric_native_multi_basin_replay",
+      "status": "blocked"
+    }
+  ],
+  "final_claim_boundary": {
+    "agency_supported": false,
+    "artifact_level_ap7_closed_boundary_engagement_loop_candidate_supported": true,
+    "blocked_claims": [
+      "agency",
+      "intention",
+      "semantic_action",
+      "semantic_perception",
+      "semantic_goal_ownership",
+      "selfhood",
+      "identity_acceptance",
+      "native_support",
+      "organism_life",
+      "fully_native_integration",
+      "unrestricted_agency",
+      "semantic_action_perception_loop",
+      "native_closed_loop",
+      "agency_like_loop",
+      "general_shared_medium_G6",
+      "B4_C5_original_reverse_perspective_replay",
+      "symmetric_native_multi_basin_replay"
+    ],
+    "fully_native_integration_supported": false,
+    "identity_acceptance_supported": false,
+    "intention_supported": false,
+    "native_support_supported": false,
+    "organism_life_supported": false,
+    "phase8_opened": false,
+    "selfhood_supported": false,
+    "semantic_action_supported": false,
+    "semantic_goal_ownership_supported": false,
+    "semantic_perception_supported": false,
+    "unrestricted_agency_supported": false
+  },
+  "final_claim_flags": {
+    "agency_claim_opened": false,
+    "ap7_classification_supported": true,
+    "artifact_level_ap7_candidate_supported": true,
+    "final_ap7_supported": true,
+    "final_artifact_level_ap7_frozen": true,
+    "full_comparative_ap7_classification_supported": true,
+    "fully_native_integration_opened": false,
+    "identity_acceptance_opened": false,
+    "intention_claim_opened": false,
+    "native_support_opened": false,
+    "native_supported_flags": false,
+    "organism_life_opened": false,
+    "phase8_opened": false,
+    "selfhood_claim_opened": false,
+    "semantic_action_opened": false,
+    "semantic_goal_ownership_opened": false,
+    "semantic_perception_opened": false,
+    "targeted_phase8_required_before_n18": false,
+    "unrestricted_agency_opened": false
+  },
+  "final_controls": {
+    "all_i9_checks_passed": true,
+    "all_source_artifacts_passed": true,
+    "artifact_replay_and_control_scope": {
+      "claim_boundary": "supported",
+      "mvp_challenge_stability": "supported",
+      "ordered_four_leg_closure": "supported",
+      "replay_order_and_hidden_state_controls": "supported",
+      "resource_support_modulation": "supported",
+      "shared_medium_reciprocity": "supported_local_only"
+    },
+    "i9_check_count": 10,
+    "i9_checks_passed_by_id": {
+      "all_source_artifacts_passed": true,
+      "extension_mode_included": true,
+      "mvp_g5_basis_supported": true,
+      "no_absolute_paths": true,
+      "one_way_null_not_promoted": true,
+      "resource_support_requirement_supported": true,
+      "shared_medium_requirement_supported": true,
+      "src_diff_empty": true,
+      "unsafe_claim_flags_false": true
+    },
+    "i9_pre_closeout_final_gate": {
+      "final_ap7_supported_after_i10": true,
+      "resolved_by_iteration10": true,
+      "source_check_present": true
+    },
+    "mvp_g5_basis_supported": true,
+    "one_way_null_not_promoted": true,
+    "resource_support_requirement_supported": true,
+    "shared_medium_requirement_supported": true,
+    "unsafe_claim_flags_false": true
+  },
+  "final_source_roles": [
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "not_recorded",
+      "source_iteration": 3,
+      "source_key": "i3_one_way_null",
+      "source_role": "one_way_crossing_active_null_control"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "not_recorded",
+      "source_iteration": 4,
+      "source_key": "i4_g3_candidate",
+      "source_role": "first_g3_perturbation_response_recovery_candidate"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "not_recorded",
+      "source_iteration": 5,
+      "source_key": "i5_replay_controls",
+      "source_role": "g4_replay_and_control_matrix"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "not_recorded",
+      "source_iteration": 6,
+      "source_key": "i6_claim_boundary",
+      "source_role": "mvp_ap7_claim_boundary_classification"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "not_recorded",
+      "source_iteration": "6-A",
+      "source_key": "i6a_mvp_g5",
+      "source_role": "bounded_mvp_g5_challenge_stability"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "not_recorded",
+      "source_iteration": "6-B",
+      "source_key": "i6b_alternative_mvp_g5",
+      "source_role": "alternative_target_band_mvp_g5"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_iteration": 7,
+      "source_key": "i7_resource_support",
+      "source_role": "resource_support_g4_extension"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_iteration": "7-A",
+      "source_key": "i7a_resource_support_g5",
+      "source_role": "fixed_route_b_resource_support_g5"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_iteration": "7-B",
+      "source_key": "i7b_alternative_resource_g5",
+      "source_role": "alternative_low_margin_resource_support_g5"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+      "source_iteration": 8,
+      "source_key": "i8_shared_medium",
+      "source_role": "local_one_sided_shared_medium_g6"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+      "source_iteration": "8-A",
+      "source_key": "i8a_shared_medium_alternate",
+      "source_role": "alternate_source_shared_medium_g6"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+      "source_iteration": "8-B",
+      "source_key": "i8b_b4c5_reverse_blocker",
+      "source_role": "b4c5_reverse_perspective_blocker"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "local_paired_perspective_artifact_level_shared_medium_G6_candidate_not_general_G6",
+      "source_iteration": "8-C",
+      "source_key": "i8c_paired_shared_medium",
+      "source_role": "local_paired_perspective_shared_medium_g6"
+    },
+    {
+      "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+      "final_claim_promotion_allowed": false,
+      "source_claim_ceiling": "artifact_level_B4_C5_derived_two_cycle_paired_perspective_G6_candidate_not_original_B4_C5_reverse_replay_not_general_G6",
+      "source_iteration": "8-D",
+      "source_key": "i8d_b4c5_derived_paired",
+      "source_role": "b4c5_derived_two_cycle_paired_perspective_g6"
+    }
+  ],
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "0750bbc60c856aabc859ffd5b924f22a8b54d15a",
+    "status_short": [
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationChecklist.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationPlan.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_b4c5_derived_paired_perspective_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_closed_loop_requirements_matrix.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_closeout_and_handoff.py"
+    ]
+  },
+  "hypotheses_closeout": {
+    "hypothesis_a_source_current_loop_trace": {
+      "closeout_decision": "closed_supported",
+      "scope": "source-current ordered loop trace from external to internal to response-caused external change to later internal dependence",
+      "source_hypothesis": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/hypotheses/hypothesis_a_source_current_loop_trace.md",
+      "source_hypothesis_sha256": "df13b6123fa838253a296115d041dc1ae1c893e141c39f10721f1f25f0d9caeb",
+      "supporting_requirement_decisions": {
+        "mvp_challenge_stability": "supported",
+        "ordered_four_leg_closure": "supported",
+        "resource_support_modulation": "supported",
+        "shared_medium_reciprocity": "supported_local_only"
+      },
+      "supporting_requirements": [
+        "ordered_four_leg_closure",
+        "mvp_challenge_stability",
+        "resource_support_modulation",
+        "shared_medium_reciprocity"
+      ],
+      "unsafe_claim_promotions_allowed": false
+    },
+    "hypothesis_b_loop_replay_and_control": {
+      "closeout_decision": "closed_supported",
+      "scope": "artifact-level replay, order, hidden-state, feedback-removal, and fail-closed controls",
+      "source_hypothesis": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/hypotheses/hypothesis_b_loop_replay_and_control.md",
+      "source_hypothesis_sha256": "f64e065a878745066e2dba8a338b311c12d3c0091fb1c676bb2ca2328623d608",
+      "supporting_requirement_decisions": {
+        "claim_boundary": "supported",
+        "replay_order_and_hidden_state_controls": "supported"
+      },
+      "supporting_requirements": [
+        "replay_order_and_hidden_state_controls",
+        "claim_boundary"
+      ],
+      "unsafe_claim_promotions_allowed": false
+    },
+    "hypothesis_c_closed_loop_claim_boundary": {
+      "closeout_decision": "closed_supported",
+      "scope": "artifact-level AP7 claim boundary with unsafe promotions blocked",
+      "source_hypothesis": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/hypotheses/hypothesis_c_closed_loop_claim_boundary.md",
+      "source_hypothesis_sha256": "a4075952fcf2b4af3bbe5032c3a50a1159f6211b9bbb3c038857f561c92e48e4",
+      "supporting_requirement_decisions": {
+        "claim_boundary": "supported"
+      },
+      "supporting_requirements": [
+        "claim_boundary"
+      ],
+      "unsafe_claim_promotions_allowed": false
+    }
+  },
+  "idempotency_digest_plan": {
+    "algorithm": "sha256_canonical_json_sorted_keys",
+    "digest": "2011f840499552362c09744b5612e4681f1ba1af65e3f70889f1b5755e4724de",
+    "excluded_top_level_fields": [
+      "generated_at",
+      "git",
+      "output_digest"
+    ],
+    "record_id": "n17_i10_idempotency_digest_plan_v1",
+    "scope": {
+      "closeout_result": {
+        "agency_claim_opened": false,
+        "artifact_level": true,
+        "artifact_only": true,
+        "final_ap7_supported": true,
+        "final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "final_scope": "artifact-level closed boundary engagement loop evidence across perturbation-response-recovery, resource/support modulation, and local shared-medium extension families",
+        "final_supported_ap_level": "AP7",
+        "fully_native": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "n18_handoff_ready": true,
+        "native_support_opened": false,
+        "native_supported_flag_detail": {
+          "fully_native_integration_opened": false,
+          "native_support_opened": false,
+          "phase8_opened": false
+        },
+        "native_supported_flags": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "status": "closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate",
+        "targeted_phase8_required_before_n18": false,
+        "unrestricted_agency_opened": false
+      },
+      "final_blockers": [
+        {
+          "blocker_id": "semantic_action_perception_blocked",
+          "rationale": "N17 proves ordered artifact-level trace dependence, not semantic action or semantic perception.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "agency_intention_goal_ownership_blocked",
+          "rationale": "Closed boundary engagement remains below agency, intention, and semantic goal ownership.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "selfhood_identity_acceptance_blocked",
+          "rationale": "The AP7 loop consumes AP6 boundary evidence but does not promote it into selfhood or identity acceptance.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "native_support_phase8_blocked",
+          "rationale": "Phase 8 remains unopened and native support remains false.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "organism_life_unrestricted_agency_blocked",
+          "rationale": "Artifact-level AP7 is not organism/life behavior or unrestricted autonomous agency.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "one_way_crossing_relabel_blocked",
+          "rationale": "I3 remains an active null; external-to-internal crossing alone is not closure.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "resource_goal_pursuit_relabel_blocked",
+          "rationale": "Resource/support modulation is bounded feedback evidence, not semantic goal pursuit.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "shared_medium_general_g6_blocked",
+          "rationale": "Shared-medium support is local only; general shared-medium G6 remains blocked.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "original_b4c5_reverse_replay_blocked",
+          "rationale": "8-D supports only a derived two-cycle protocol; original B4/C5 reverse replay remains blocked.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "symmetric_native_multi_basin_replay_blocked",
+          "rationale": "Paired shared-medium evidence is artifact-level and does not open symmetric native multi-basin replay.",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_1",
+          "rationale": "semantic_action_perception",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_2",
+          "rationale": "semantic_goal_ownership",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_3",
+          "rationale": "intention",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_4",
+          "rationale": "agency",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_5",
+          "rationale": "selfhood",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_6",
+          "rationale": "identity_acceptance",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_7",
+          "rationale": "native_support",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_8",
+          "rationale": "organism_life",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_9",
+          "rationale": "fully_native_integration",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_10",
+          "rationale": "unrestricted_agency",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_11",
+          "rationale": "phase8",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_12",
+          "rationale": "general_shared_medium_G6",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_13",
+          "rationale": "B4_C5_reverse_perspective_replay",
+          "status": "blocked"
+        },
+        {
+          "blocker_id": "i9_blocked_claim_14",
+          "rationale": "symmetric_native_multi_basin_replay",
+          "status": "blocked"
+        }
+      ],
+      "final_claim_boundary": {
+        "agency_supported": false,
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_supported": true,
+        "blocked_claims": [
+          "agency",
+          "intention",
+          "semantic_action",
+          "semantic_perception",
+          "semantic_goal_ownership",
+          "selfhood",
+          "identity_acceptance",
+          "native_support",
+          "organism_life",
+          "fully_native_integration",
+          "unrestricted_agency",
+          "semantic_action_perception_loop",
+          "native_closed_loop",
+          "agency_like_loop",
+          "general_shared_medium_G6",
+          "B4_C5_original_reverse_perspective_replay",
+          "symmetric_native_multi_basin_replay"
+        ],
+        "fully_native_integration_supported": false,
+        "identity_acceptance_supported": false,
+        "intention_supported": false,
+        "native_support_supported": false,
+        "organism_life_supported": false,
+        "phase8_opened": false,
+        "selfhood_supported": false,
+        "semantic_action_supported": false,
+        "semantic_goal_ownership_supported": false,
+        "semantic_perception_supported": false,
+        "unrestricted_agency_supported": false
+      },
+      "final_claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": true,
+        "artifact_level_ap7_candidate_supported": true,
+        "final_ap7_supported": true,
+        "final_artifact_level_ap7_frozen": true,
+        "full_comparative_ap7_classification_supported": true,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "native_supported_flags": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "targeted_phase8_required_before_n18": false,
+        "unrestricted_agency_opened": false
+      },
+      "final_controls": {
+        "all_i9_checks_passed": true,
+        "all_source_artifacts_passed": true,
+        "artifact_replay_and_control_scope": {
+          "claim_boundary": "supported",
+          "mvp_challenge_stability": "supported",
+          "ordered_four_leg_closure": "supported",
+          "replay_order_and_hidden_state_controls": "supported",
+          "resource_support_modulation": "supported",
+          "shared_medium_reciprocity": "supported_local_only"
+        },
+        "i9_check_count": 10,
+        "i9_checks_passed_by_id": {
+          "all_source_artifacts_passed": true,
+          "extension_mode_included": true,
+          "mvp_g5_basis_supported": true,
+          "no_absolute_paths": true,
+          "one_way_null_not_promoted": true,
+          "resource_support_requirement_supported": true,
+          "shared_medium_requirement_supported": true,
+          "src_diff_empty": true,
+          "unsafe_claim_flags_false": true
+        },
+        "i9_pre_closeout_final_gate": {
+          "final_ap7_supported_after_i10": true,
+          "resolved_by_iteration10": true,
+          "source_check_present": true
+        },
+        "mvp_g5_basis_supported": true,
+        "one_way_null_not_promoted": true,
+        "resource_support_requirement_supported": true,
+        "shared_medium_requirement_supported": true,
+        "unsafe_claim_flags_false": true
+      },
+      "final_source_roles": [
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "not_recorded",
+          "source_iteration": 3,
+          "source_key": "i3_one_way_null",
+          "source_role": "one_way_crossing_active_null_control"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "not_recorded",
+          "source_iteration": 4,
+          "source_key": "i4_g3_candidate",
+          "source_role": "first_g3_perturbation_response_recovery_candidate"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "not_recorded",
+          "source_iteration": 5,
+          "source_key": "i5_replay_controls",
+          "source_role": "g4_replay_and_control_matrix"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "not_recorded",
+          "source_iteration": 6,
+          "source_key": "i6_claim_boundary",
+          "source_role": "mvp_ap7_claim_boundary_classification"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "not_recorded",
+          "source_iteration": "6-A",
+          "source_key": "i6a_mvp_g5",
+          "source_role": "bounded_mvp_g5_challenge_stability"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "not_recorded",
+          "source_iteration": "6-B",
+          "source_key": "i6b_alternative_mvp_g5",
+          "source_role": "alternative_target_band_mvp_g5"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+          "source_iteration": 7,
+          "source_key": "i7_resource_support",
+          "source_role": "resource_support_g4_extension"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+          "source_iteration": "7-A",
+          "source_key": "i7a_resource_support_g5",
+          "source_role": "fixed_route_b_resource_support_g5"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+          "source_iteration": "7-B",
+          "source_key": "i7b_alternative_resource_g5",
+          "source_role": "alternative_low_margin_resource_support_g5"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_iteration": 8,
+          "source_key": "i8_shared_medium",
+          "source_role": "local_one_sided_shared_medium_g6"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_iteration": "8-A",
+          "source_key": "i8a_shared_medium_alternate",
+          "source_role": "alternate_source_shared_medium_g6"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+          "source_iteration": "8-B",
+          "source_key": "i8b_b4c5_reverse_blocker",
+          "source_role": "b4c5_reverse_perspective_blocker"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "local_paired_perspective_artifact_level_shared_medium_G6_candidate_not_general_G6",
+          "source_iteration": "8-C",
+          "source_key": "i8c_paired_shared_medium",
+          "source_role": "local_paired_perspective_shared_medium_g6"
+        },
+        {
+          "final_ap7_source_use": "source_backed_component_or_control_for_artifact_level_ap7_closeout",
+          "final_claim_promotion_allowed": false,
+          "source_claim_ceiling": "artifact_level_B4_C5_derived_two_cycle_paired_perspective_G6_candidate_not_original_B4_C5_reverse_replay_not_general_G6",
+          "source_iteration": "8-D",
+          "source_key": "i8d_b4c5_derived_paired",
+          "source_role": "b4c5_derived_two_cycle_paired_perspective_g6"
+        }
+      ],
+      "hypotheses_closeout": {
+        "hypothesis_a_source_current_loop_trace": {
+          "closeout_decision": "closed_supported",
+          "scope": "source-current ordered loop trace from external to internal to response-caused external change to later internal dependence",
+          "source_hypothesis": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/hypotheses/hypothesis_a_source_current_loop_trace.md",
+          "source_hypothesis_sha256": "df13b6123fa838253a296115d041dc1ae1c893e141c39f10721f1f25f0d9caeb",
+          "supporting_requirement_decisions": {
+            "mvp_challenge_stability": "supported",
+            "ordered_four_leg_closure": "supported",
+            "resource_support_modulation": "supported",
+            "shared_medium_reciprocity": "supported_local_only"
+          },
+          "supporting_requirements": [
+            "ordered_four_leg_closure",
+            "mvp_challenge_stability",
+            "resource_support_modulation",
+            "shared_medium_reciprocity"
+          ],
+          "unsafe_claim_promotions_allowed": false
+        },
+        "hypothesis_b_loop_replay_and_control": {
+          "closeout_decision": "closed_supported",
+          "scope": "artifact-level replay, order, hidden-state, feedback-removal, and fail-closed controls",
+          "source_hypothesis": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/hypotheses/hypothesis_b_loop_replay_and_control.md",
+          "source_hypothesis_sha256": "f64e065a878745066e2dba8a338b311c12d3c0091fb1c676bb2ca2328623d608",
+          "supporting_requirement_decisions": {
+            "claim_boundary": "supported",
+            "replay_order_and_hidden_state_controls": "supported"
+          },
+          "supporting_requirements": [
+            "replay_order_and_hidden_state_controls",
+            "claim_boundary"
+          ],
+          "unsafe_claim_promotions_allowed": false
+        },
+        "hypothesis_c_closed_loop_claim_boundary": {
+          "closeout_decision": "closed_supported",
+          "scope": "artifact-level AP7 claim boundary with unsafe promotions blocked",
+          "source_hypothesis": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/hypotheses/hypothesis_c_closed_loop_claim_boundary.md",
+          "source_hypothesis_sha256": "a4075952fcf2b4af3bbe5032c3a50a1159f6211b9bbb3c038857f561c92e48e4",
+          "supporting_requirement_decisions": {
+            "claim_boundary": "supported"
+          },
+          "supporting_requirements": [
+            "claim_boundary"
+          ],
+          "unsafe_claim_promotions_allowed": false
+        }
+      },
+      "n18_handoff": {
+        "handoff_caveats": [
+          "N17 AP7 is artifact-level closed boundary engagement, not agency.",
+          "N18 may stress the closed loop over longer horizons but must not relabel it as semantic action, semantic perception, or native agency.",
+          "Phase 8 remains unopened and native support remains false.",
+          "Original B4/C5 reverse replay remains blocked; N17 only supports a derived two-cycle local candidate for that lineage."
+        ],
+        "n18_allowed_inputs": [
+          "N12 NAT4 readiness context as readiness-only, not native support",
+          "N13 final artifact-level AP3 support-seeking regulation closeout",
+          "N14 final artifact-level AP4 consequence-sensitive route selection closeout",
+          "N15 final artifact-level AP5 endogenous proxy formation closeout",
+          "N16 final artifact-level AP6 self/environment boundary closeout",
+          "N17 final artifact-level AP7 closed boundary engagement loop closeout"
+        ],
+        "n18_primary_question": "Can identity/support, memory, regulation, consequence-sensitive selection, proxy formation, boundary separation, and closed-loop feedback remain source-current, replay-clean, budget-clean, and claim-clean under longer horizons and perturbations?",
+        "n18_required_controls": [
+          "stale state replay blocked",
+          "hidden native support relabel blocked",
+          "semantic agency relabel blocked",
+          "goal ownership relabel blocked",
+          "identity acceptance relabel blocked",
+          "Phase 8/native implementation relabel blocked",
+          "long-horizon drift outside source-backed envelope blocked",
+          "resource/shared-medium merge relabel blocked"
+        ],
+        "n18_required_stress_dimensions": [
+          "longer horizon windows",
+          "route/context reversal variants",
+          "support withdrawal and restoration",
+          "proxy perturbation",
+          "memory relaxation",
+          "environment/resource perturbation",
+          "shared-medium perturbation",
+          "duplicate and order-inversion replay controls",
+          "artifact-only reconstruction"
+        ],
+        "recommended_branch": "experiment-N18",
+        "recommended_next": "N18_long_horizon_agentic_like_closure_stress_test",
+        "target_ap_level": "AP8",
+        "targeted_phase8_required_before_n18": false,
+        "targeted_phase8_status": "optional_deferred_not_required_for_n18"
+      },
+      "source_artifacts": [
+        {
+          "source_acceptance_state": "accepted_loop_source_inventory_only_no_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_source_inventory.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": null,
+          "source_final_ap7_supported": false,
+          "source_iteration": 1,
+          "source_key": "i1_source_inventory",
+          "source_output_digest": "5d5c8ec793278cb0e2d88e52fdb17497ab7c6fb96dc0e49aa113e3dd32168fbd",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_source_inventory.md",
+          "source_report_sha256": "8c38db478f20f40e8dd1867f764bdf7758744bb3867c1a6ec5d1d0d3b0ab5f47",
+          "source_role": "source_inventory_and_loop_contract",
+          "source_sha256": "b814f3bd21e3d4203ac9f2e1c647ecb3111b9c37bae1cc40e31ecd3cac1c4db1",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_loop_schema_v1_no_ap7_evidence",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": null,
+          "source_final_ap7_supported": false,
+          "source_iteration": 2,
+          "source_key": "i2_schema",
+          "source_output_digest": "911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_schema_v1.md",
+          "source_report_sha256": "1a2e67bef294bcfd220ae0e68fbe45491abc3a0a0f6199aa114766f3efb08452",
+          "source_role": "loop_schema_and_ap7_gate",
+          "source_sha256": "55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_one_way_crossing_active_null_no_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": null,
+          "source_final_ap7_supported": false,
+          "source_iteration": 3,
+          "source_key": "i3_one_way_null",
+          "source_output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+          "source_report_sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286",
+          "source_role": "one_way_crossing_active_null_control",
+          "source_sha256": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": null,
+          "source_final_ap7_supported": false,
+          "source_iteration": 4,
+          "source_key": "i4_g3_candidate",
+          "source_output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+          "source_report_sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87",
+          "source_role": "first_g3_perturbation_response_recovery_candidate",
+          "source_sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_loop_replay_and_control_matrix_g4_candidate_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": null,
+          "source_final_ap7_supported": false,
+          "source_iteration": 5,
+          "source_key": "i5_replay_controls",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+          "source_report_sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667",
+          "source_role": "g4_replay_and_control_matrix",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_mvp_ap7_claim_boundary_clean_pending_extensions_and_closeout",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": "G4_replay_control_clean_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": 6,
+          "source_key": "i6_claim_boundary",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+          "source_report_sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350",
+          "source_role": "mvp_ap7_claim_boundary_classification",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_bounded_g5_mvp_challenge_stability_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": "G5_bounded_challenge_stable_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "6-A",
+          "source_key": "i6a_mvp_g5",
+          "source_output_digest": "4c795ca09ec6d7b557f5d1f8d1f7d0624f4eb7cfea99a43f383f40d68068ebc4",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_mvp_challenge_stability_probe.md",
+          "source_report_sha256": "8f004b1d08d21a933c077ef3b77f0f14d8edb1a0c599e165c34abaa802a389b5",
+          "source_role": "bounded_mvp_g5_challenge_stability",
+          "source_sha256": "cc34f5bbb06521271341f334c1ed9db4276d0af020d396f85b1334eb9553d726",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "source_claim_ceiling": "not_recorded",
+          "source_current_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "6-B",
+          "source_key": "i6b_alternative_mvp_g5",
+          "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+          "source_role": "alternative_target_band_mvp_g5",
+          "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_resource_support_modulation_extension_candidate_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+          "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+          "source_current_evidence_rung": "G4_resource_support_modulation_extension_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": 7,
+          "source_key": "i7_resource_support",
+          "source_output_digest": "d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+          "source_report_sha256": "7612d00dc31c0f72d6267f868cf28def9fc2a513a18d0d7c72b02ea78fc3b6ea",
+          "source_role": "resource_support_g4_extension",
+          "source_sha256": "992620b9571a0d83a236d5aeea530fbe0becfadeaba649f1fc4f91936952ffa6",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_resource_support_challenge_stability_g5_candidate_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json",
+          "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+          "source_current_evidence_rung": "G5_resource_support_challenge_stable_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "7-A",
+          "source_key": "i7a_resource_support_g5",
+          "source_output_digest": "c643181eef667d0e7d8ebb65410af363bc2650403b09a11f689be394b8580728",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+          "source_report_sha256": "11e42d38ffdee0e4d216bbd602c7bb72687b2e03c158a785ea6813c2ff938784",
+          "source_role": "fixed_route_b_resource_support_g5",
+          "source_sha256": "233d27318efeb60177ee433bab213d34cb6275e731b453cbfa04e85ccea26454",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_alternative_resource_support_g5_setup_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json",
+          "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+          "source_current_evidence_rung": "G5_alternative_resource_support_challenge_stable_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "7-B",
+          "source_key": "i7b_alternative_resource_g5",
+          "source_output_digest": "b0f6df9ed0a79e6e93243fdfbfcc8b65d9fcc8374e6fbd1a5775871632e91f06",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+          "source_report_sha256": "3531752ac6f51189c0a0ff24596152ca9f9981dcd50a303b8e3d087e0880120b",
+          "source_role": "alternative_low_margin_resource_support_g5",
+          "source_sha256": "2a957232cae5d5ccca809510213f50bd87fa3a32269a1439c0ee728943771e67",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_local_one_sided_shared_medium_g6_candidate_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_current_evidence_rung": "G6_local_one_sided_shared_medium_reciprocal_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": 8,
+          "source_key": "i8_shared_medium",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_alternate_source_shared_medium_g6_candidate_b4c5_reverse_blocked_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+          "source_current_evidence_rung": "G6_alternate_source_shared_medium_reciprocal_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "8-A",
+          "source_key": "i8a_shared_medium_alternate",
+          "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+          "source_role": "alternate_source_shared_medium_g6",
+          "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_b4c5_reverse_perspective_blocked_multi_source_context_preserved_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json",
+          "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+          "source_current_evidence_rung": "G6_multi_source_shared_medium_candidate_with_b4c5_reverse_blocker_recorded",
+          "source_final_ap7_supported": false,
+          "source_iteration": "8-B",
+          "source_key": "i8b_b4c5_reverse_blocker",
+          "source_output_digest": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+          "source_report_sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b",
+          "source_role": "b4c5_reverse_perspective_blocker",
+          "source_sha256": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_local_paired_perspective_shared_medium_g6_candidate_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json",
+          "source_claim_ceiling": "local_paired_perspective_artifact_level_shared_medium_G6_candidate_not_general_G6",
+          "source_current_evidence_rung": "G6_local_paired_perspective_shared_medium_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "8-C",
+          "source_key": "i8c_paired_shared_medium",
+          "source_output_digest": "79072b1bede778958e94e940229f77be7ba846c064539c20a9769aa53c2ef81e",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_paired_perspective_shared_medium_probe.md",
+          "source_report_sha256": "ccd93114f7bf53c11403827b245ca62a5db8a6d96044de45f7bc74b6fd2bd365",
+          "source_role": "local_paired_perspective_shared_medium_g6",
+          "source_sha256": "fd28893605c80d737dd807e170abc70fec760a4bb9b0d100696ff66a68395240",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_b4c5_derived_two_cycle_paired_perspective_g6_candidate_no_original_relabel_no_final_ap7",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_derived_two_cycle_paired_perspective_G6_candidate_not_original_B4_C5_reverse_replay_not_general_G6",
+          "source_current_evidence_rung": "G6_B4C5_derived_two_cycle_paired_perspective_candidate",
+          "source_final_ap7_supported": false,
+          "source_iteration": "8-D",
+          "source_key": "i8d_b4c5_derived_paired",
+          "source_output_digest": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+          "source_report_sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e",
+          "source_role": "b4c5_derived_two_cycle_paired_perspective_g6",
+          "source_sha256": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+          "source_status": "passed"
+        },
+        {
+          "source_acceptance_state": "accepted_full_comparative_ap7_classification_pending_i10_closeout",
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "source_claim_ceiling": "artifact_level_full_comparative_closed_boundary_engagement_loop_candidate_not_final_freeze",
+          "source_current_evidence_rung": null,
+          "source_final_ap7_supported": false,
+          "source_iteration": 9,
+          "source_key": "i9_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+          "source_report_sha256": "a43400b6de39dd098b81f6f89e17ba101679cdb5c79b0b08876c8b7168f50fb4",
+          "source_role": "comparative_ap7_classification_source",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "source_status": "passed"
+        }
+      ],
+      "source_reports": [
+        {
+          "source_key": "i1_source_inventory",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_source_inventory.md",
+          "source_report_sha256": "8c38db478f20f40e8dd1867f764bdf7758744bb3867c1a6ec5d1d0d3b0ab5f47"
+        },
+        {
+          "source_key": "i2_schema",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_schema_v1.md",
+          "source_report_sha256": "1a2e67bef294bcfd220ae0e68fbe45491abc3a0a0f6199aa114766f3efb08452"
+        },
+        {
+          "source_key": "i3_one_way_null",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+          "source_report_sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286"
+        },
+        {
+          "source_key": "i4_g3_candidate",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+          "source_report_sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87"
+        },
+        {
+          "source_key": "i5_replay_controls",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+          "source_report_sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667"
+        },
+        {
+          "source_key": "i6_claim_boundary",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+          "source_report_sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350"
+        },
+        {
+          "source_key": "i6a_mvp_g5",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_mvp_challenge_stability_probe.md",
+          "source_report_sha256": "8f004b1d08d21a933c077ef3b77f0f14d8edb1a0c599e165c34abaa802a389b5"
+        },
+        {
+          "source_key": "i6b_alternative_mvp_g5",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1"
+        },
+        {
+          "source_key": "i7_resource_support",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+          "source_report_sha256": "7612d00dc31c0f72d6267f868cf28def9fc2a513a18d0d7c72b02ea78fc3b6ea"
+        },
+        {
+          "source_key": "i7a_resource_support_g5",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+          "source_report_sha256": "11e42d38ffdee0e4d216bbd602c7bb72687b2e03c158a785ea6813c2ff938784"
+        },
+        {
+          "source_key": "i7b_alternative_resource_g5",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+          "source_report_sha256": "3531752ac6f51189c0a0ff24596152ca9f9981dcd50a303b8e3d087e0880120b"
+        },
+        {
+          "source_key": "i8_shared_medium",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5"
+        },
+        {
+          "source_key": "i8a_shared_medium_alternate",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26"
+        },
+        {
+          "source_key": "i8b_b4c5_reverse_blocker",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+          "source_report_sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b"
+        },
+        {
+          "source_key": "i8c_paired_shared_medium",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_paired_perspective_shared_medium_probe.md",
+          "source_report_sha256": "ccd93114f7bf53c11403827b245ca62a5db8a6d96044de45f7bc74b6fd2bd365"
+        },
+        {
+          "source_key": "i8d_b4c5_derived_paired",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+          "source_report_sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e"
+        },
+        {
+          "source_key": "i9_requirements_matrix",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+          "source_report_sha256": "a43400b6de39dd098b81f6f89e17ba101679cdb5c79b0b08876c8b7168f50fb4"
+        }
+      ]
+    }
+  },
+  "iteration": 10,
+  "iteration_result": {
+    "acceptance_state": "closed_claim_clean_ap7_artifact_level_closed_boundary_engagement_loop_candidate",
+    "agency_claim_opened": false,
+    "artifact_level_ap7_supported": true,
+    "final_ap7_supported": true,
+    "final_ap_freeze_pending_iteration10": false,
+    "final_artifact_level_ap7_frozen": true,
+    "final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+    "final_supported_ap_level": "AP7",
+    "fully_native_integration_opened": false,
+    "identity_acceptance_opened": false,
+    "intention_claim_opened": false,
+    "native_support_opened": false,
+    "native_supported_flags": false,
+    "organism_life_opened": false,
+    "phase8_opened": false,
+    "recommended_next": "N18_long_horizon_agentic_like_closure_stress_test",
+    "selfhood_claim_opened": false,
+    "semantic_action_opened": false,
+    "semantic_goal_ownership_opened": false,
+    "semantic_perception_opened": false,
+    "targeted_phase8_required_before_n18": false,
+    "unrestricted_agency_opened": false
+  },
+  "n18_handoff": {
+    "handoff_caveats": [
+      "N17 AP7 is artifact-level closed boundary engagement, not agency.",
+      "N18 may stress the closed loop over longer horizons but must not relabel it as semantic action, semantic perception, or native agency.",
+      "Phase 8 remains unopened and native support remains false.",
+      "Original B4/C5 reverse replay remains blocked; N17 only supports a derived two-cycle local candidate for that lineage."
+    ],
+    "n18_allowed_inputs": [
+      "N12 NAT4 readiness context as readiness-only, not native support",
+      "N13 final artifact-level AP3 support-seeking regulation closeout",
+      "N14 final artifact-level AP4 consequence-sensitive route selection closeout",
+      "N15 final artifact-level AP5 endogenous proxy formation closeout",
+      "N16 final artifact-level AP6 self/environment boundary closeout",
+      "N17 final artifact-level AP7 closed boundary engagement loop closeout"
+    ],
+    "n18_primary_question": "Can identity/support, memory, regulation, consequence-sensitive selection, proxy formation, boundary separation, and closed-loop feedback remain source-current, replay-clean, budget-clean, and claim-clean under longer horizons and perturbations?",
+    "n18_required_controls": [
+      "stale state replay blocked",
+      "hidden native support relabel blocked",
+      "semantic agency relabel blocked",
+      "goal ownership relabel blocked",
+      "identity acceptance relabel blocked",
+      "Phase 8/native implementation relabel blocked",
+      "long-horizon drift outside source-backed envelope blocked",
+      "resource/shared-medium merge relabel blocked"
+    ],
+    "n18_required_stress_dimensions": [
+      "longer horizon windows",
+      "route/context reversal variants",
+      "support withdrawal and restoration",
+      "proxy perturbation",
+      "memory relaxation",
+      "environment/resource perturbation",
+      "shared-medium perturbation",
+      "duplicate and order-inversion replay controls",
+      "artifact-only reconstruction"
+    ],
+    "recommended_branch": "experiment-N18",
+    "recommended_next": "N18_long_horizon_agentic_like_closure_stress_test",
+    "target_ap_level": "AP8",
+    "targeted_phase8_required_before_n18": false,
+    "targeted_phase8_status": "optional_deferred_not_required_for_n18"
+  },
+  "native_supported_flags": {
+    "fully_native_integration_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+  "purpose": "final AP7 closeout and N18 handoff",
+  "roadmap_update_decision": {
+    "experiments_readme_update_required": true,
+    "handoff_file_update_required": true,
+    "reason": "N17 is closed and the recommended roadmap continuation is N18.",
+    "roadmap_file_update_required": true
+  },
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "source_acceptance_state": "accepted_loop_source_inventory_only_no_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_source_inventory.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": false,
+      "source_iteration": 1,
+      "source_key": "i1_source_inventory",
+      "source_output_digest": "5d5c8ec793278cb0e2d88e52fdb17497ab7c6fb96dc0e49aa113e3dd32168fbd",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_source_inventory.md",
+      "source_report_sha256": "8c38db478f20f40e8dd1867f764bdf7758744bb3867c1a6ec5d1d0d3b0ab5f47",
+      "source_role": "source_inventory_and_loop_contract",
+      "source_sha256": "b814f3bd21e3d4203ac9f2e1c647ecb3111b9c37bae1cc40e31ecd3cac1c4db1",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_loop_schema_v1_no_ap7_evidence",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": false,
+      "source_iteration": 2,
+      "source_key": "i2_schema",
+      "source_output_digest": "911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_schema_v1.md",
+      "source_report_sha256": "1a2e67bef294bcfd220ae0e68fbe45491abc3a0a0f6199aa114766f3efb08452",
+      "source_role": "loop_schema_and_ap7_gate",
+      "source_sha256": "55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_one_way_crossing_active_null_no_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": false,
+      "source_iteration": 3,
+      "source_key": "i3_one_way_null",
+      "source_output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+      "source_report_sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286",
+      "source_role": "one_way_crossing_active_null_control",
+      "source_sha256": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": false,
+      "source_iteration": 4,
+      "source_key": "i4_g3_candidate",
+      "source_output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+      "source_report_sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87",
+      "source_role": "first_g3_perturbation_response_recovery_candidate",
+      "source_sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_loop_replay_and_control_matrix_g4_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": false,
+      "source_iteration": 5,
+      "source_key": "i5_replay_controls",
+      "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+      "source_report_sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667",
+      "source_role": "g4_replay_and_control_matrix",
+      "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_mvp_ap7_claim_boundary_clean_pending_extensions_and_closeout",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": "G4_replay_control_clean_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": 6,
+      "source_key": "i6_claim_boundary",
+      "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+      "source_report_sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350",
+      "source_role": "mvp_ap7_claim_boundary_classification",
+      "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_bounded_g5_mvp_challenge_stability_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": "G5_bounded_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "6-A",
+      "source_key": "i6a_mvp_g5",
+      "source_output_digest": "4c795ca09ec6d7b557f5d1f8d1f7d0624f4eb7cfea99a43f383f40d68068ebc4",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_mvp_challenge_stability_probe.md",
+      "source_report_sha256": "8f004b1d08d21a933c077ef3b77f0f14d8edb1a0c599e165c34abaa802a389b5",
+      "source_role": "bounded_mvp_g5_challenge_stability",
+      "source_sha256": "cc34f5bbb06521271341f334c1ed9db4276d0af020d396f85b1334eb9553d726",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+      "source_claim_ceiling": "not_recorded",
+      "source_current_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "6-B",
+      "source_key": "i6b_alternative_mvp_g5",
+      "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+      "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+      "source_role": "alternative_target_band_mvp_g5",
+      "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_resource_support_modulation_extension_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_current_evidence_rung": "G4_resource_support_modulation_extension_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": 7,
+      "source_key": "i7_resource_support",
+      "source_output_digest": "d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+      "source_report_sha256": "7612d00dc31c0f72d6267f868cf28def9fc2a513a18d0d7c72b02ea78fc3b6ea",
+      "source_role": "resource_support_g4_extension",
+      "source_sha256": "992620b9571a0d83a236d5aeea530fbe0becfadeaba649f1fc4f91936952ffa6",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_resource_support_challenge_stability_g5_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json",
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_current_evidence_rung": "G5_resource_support_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "7-A",
+      "source_key": "i7a_resource_support_g5",
+      "source_output_digest": "c643181eef667d0e7d8ebb65410af363bc2650403b09a11f689be394b8580728",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+      "source_report_sha256": "11e42d38ffdee0e4d216bbd602c7bb72687b2e03c158a785ea6813c2ff938784",
+      "source_role": "fixed_route_b_resource_support_g5",
+      "source_sha256": "233d27318efeb60177ee433bab213d34cb6275e731b453cbfa04e85ccea26454",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_alternative_resource_support_g5_setup_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json",
+      "source_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "source_current_evidence_rung": "G5_alternative_resource_support_challenge_stable_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "7-B",
+      "source_key": "i7b_alternative_resource_g5",
+      "source_output_digest": "b0f6df9ed0a79e6e93243fdfbfcc8b65d9fcc8374e6fbd1a5775871632e91f06",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+      "source_report_sha256": "3531752ac6f51189c0a0ff24596152ca9f9981dcd50a303b8e3d087e0880120b",
+      "source_role": "alternative_low_margin_resource_support_g5",
+      "source_sha256": "2a957232cae5d5ccca809510213f50bd87fa3a32269a1439c0ee728943771e67",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_local_one_sided_shared_medium_g6_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+      "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+      "source_current_evidence_rung": "G6_local_one_sided_shared_medium_reciprocal_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": 8,
+      "source_key": "i8_shared_medium",
+      "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+      "source_role": "local_one_sided_shared_medium_g6",
+      "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_alternate_source_shared_medium_g6_candidate_b4c5_reverse_blocked_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+      "source_current_evidence_rung": "G6_alternate_source_shared_medium_reciprocal_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-A",
+      "source_key": "i8a_shared_medium_alternate",
+      "source_output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+      "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26",
+      "source_role": "alternate_source_shared_medium_g6",
+      "source_sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_b4c5_reverse_perspective_blocked_multi_source_context_preserved_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json",
+      "source_claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_with_b4c5_reverse_blocker",
+      "source_current_evidence_rung": "G6_multi_source_shared_medium_candidate_with_b4c5_reverse_blocker_recorded",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-B",
+      "source_key": "i8b_b4c5_reverse_blocker",
+      "source_output_digest": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+      "source_report_sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b",
+      "source_role": "b4c5_reverse_perspective_blocker",
+      "source_sha256": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_local_paired_perspective_shared_medium_g6_candidate_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json",
+      "source_claim_ceiling": "local_paired_perspective_artifact_level_shared_medium_G6_candidate_not_general_G6",
+      "source_current_evidence_rung": "G6_local_paired_perspective_shared_medium_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-C",
+      "source_key": "i8c_paired_shared_medium",
+      "source_output_digest": "79072b1bede778958e94e940229f77be7ba846c064539c20a9769aa53c2ef81e",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_paired_perspective_shared_medium_probe.md",
+      "source_report_sha256": "ccd93114f7bf53c11403827b245ca62a5db8a6d96044de45f7bc74b6fd2bd365",
+      "source_role": "local_paired_perspective_shared_medium_g6",
+      "source_sha256": "fd28893605c80d737dd807e170abc70fec760a4bb9b0d100696ff66a68395240",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_b4c5_derived_two_cycle_paired_perspective_g6_candidate_no_original_relabel_no_final_ap7",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+      "source_claim_ceiling": "artifact_level_B4_C5_derived_two_cycle_paired_perspective_G6_candidate_not_original_B4_C5_reverse_replay_not_general_G6",
+      "source_current_evidence_rung": "G6_B4C5_derived_two_cycle_paired_perspective_candidate",
+      "source_final_ap7_supported": false,
+      "source_iteration": "8-D",
+      "source_key": "i8d_b4c5_derived_paired",
+      "source_output_digest": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+      "source_report_sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e",
+      "source_role": "b4c5_derived_two_cycle_paired_perspective_g6",
+      "source_sha256": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_full_comparative_ap7_classification_pending_i10_closeout",
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+      "source_claim_ceiling": "artifact_level_full_comparative_closed_boundary_engagement_loop_candidate_not_final_freeze",
+      "source_current_evidence_rung": null,
+      "source_final_ap7_supported": false,
+      "source_iteration": 9,
+      "source_key": "i9_requirements_matrix",
+      "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+      "source_report_sha256": "a43400b6de39dd098b81f6f89e17ba101679cdb5c79b0b08876c8b7168f50fb4",
+      "source_role": "comparative_ap7_classification_source",
+      "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+      "source_status": "passed"
+    }
+  ],
+  "source_reports": [
+    {
+      "source_key": "i1_source_inventory",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_source_inventory.md",
+      "source_report_sha256": "8c38db478f20f40e8dd1867f764bdf7758744bb3867c1a6ec5d1d0d3b0ab5f47"
+    },
+    {
+      "source_key": "i2_schema",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_schema_v1.md",
+      "source_report_sha256": "1a2e67bef294bcfd220ae0e68fbe45491abc3a0a0f6199aa114766f3efb08452"
+    },
+    {
+      "source_key": "i3_one_way_null",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+      "source_report_sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286"
+    },
+    {
+      "source_key": "i4_g3_candidate",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+      "source_report_sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87"
+    },
+    {
+      "source_key": "i5_replay_controls",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+      "source_report_sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667"
+    },
+    {
+      "source_key": "i6_claim_boundary",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+      "source_report_sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350"
+    },
+    {
+      "source_key": "i6a_mvp_g5",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_mvp_challenge_stability_probe.md",
+      "source_report_sha256": "8f004b1d08d21a933c077ef3b77f0f14d8edb1a0c599e165c34abaa802a389b5"
+    },
+    {
+      "source_key": "i6b_alternative_mvp_g5",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+      "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1"
+    },
+    {
+      "source_key": "i7_resource_support",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+      "source_report_sha256": "7612d00dc31c0f72d6267f868cf28def9fc2a513a18d0d7c72b02ea78fc3b6ea"
+    },
+    {
+      "source_key": "i7a_resource_support_g5",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+      "source_report_sha256": "11e42d38ffdee0e4d216bbd602c7bb72687b2e03c158a785ea6813c2ff938784"
+    },
+    {
+      "source_key": "i7b_alternative_resource_g5",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+      "source_report_sha256": "3531752ac6f51189c0a0ff24596152ca9f9981dcd50a303b8e3d087e0880120b"
+    },
+    {
+      "source_key": "i8_shared_medium",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5"
+    },
+    {
+      "source_key": "i8a_shared_medium_alternate",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+      "source_report_sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26"
+    },
+    {
+      "source_key": "i8b_b4c5_reverse_blocker",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+      "source_report_sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b"
+    },
+    {
+      "source_key": "i8c_paired_shared_medium",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_paired_perspective_shared_medium_probe.md",
+      "source_report_sha256": "ccd93114f7bf53c11403827b245ca62a5db8a6d96044de45f7bc74b6fd2bd365"
+    },
+    {
+      "source_key": "i8d_b4c5_derived_paired",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+      "source_report_sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e"
+    },
+    {
+      "source_key": "i9_requirements_matrix",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+      "source_report_sha256": "a43400b6de39dd098b81f6f89e17ba101679cdb5c79b0b08876c8b7168f50fb4"
+    }
+  ],
+  "status": "passed",
+  "target_ap_ceiling": "AP7",
+  "whole_experiment_interpretation": {
+    "claim_boundary_summary": "The closeout supports AP7 only as artifact-level closed boundary engagement. It does not support semantic action/perception, agency, intention, goal ownership, selfhood, identity acceptance, native support, organism/life, fully native integration, or unrestricted agency.",
+    "evidence_summary": [
+      "I3 preserves one-way crossing as an active null.",
+      "I4-I6 establish replay/control-clean MVP AP7 candidate evidence.",
+      "I6-A and I6-B provide bounded and alternative G5 MVP challenge-stability evidence.",
+      "I7, I7-A, and I7-B provide resource/support extension evidence at local G5 scope.",
+      "I8 through I8-D provide local shared-medium G6 evidence while preserving B4/C5 blockers.",
+      "I9 synthesizes requirements and classifies the full comparative AP7 candidate.",
+      "I10 freezes final AP7 at artifact-level claim ceiling and hands off to N18."
+    ],
+    "plain_language_interpretation": "N17 closes with claim-clean artifact-level AP7 evidence for a closed boundary engagement loop. The result is comparative: the MVP perturbation loop reaches bounded G5, resource/support reaches local G5, and shared-medium evidence reaches local G6 while unsafe semantic, native, and agency promotions remain blocked.",
+    "record_id": "n17_i10_whole_experiment_interpretation_v1",
+    "supported_interpretation": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+    "why_it_matters_for_roadmap": "N17 gives N18 a source-backed AP7 closed-loop substrate for long-horizon closure stress testing without opening Phase 8."
+  }
+}

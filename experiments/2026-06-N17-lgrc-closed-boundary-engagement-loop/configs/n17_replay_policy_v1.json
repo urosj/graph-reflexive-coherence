@@ -1,0 +1,67 @@
+{
+  "config_digest": "2d11c7e8a181c8a461cd0254eaa8e09033877e2f761c4cac5a7920a0d23ae9b8",
+  "config_id": "n17_replay_policy_v1",
+  "digest_algorithm": "sha256_canonical_json",
+  "exclude_field_notes": {
+    "config_digest": "excluded to avoid circular digest references in generated config files",
+    "generated_at": "excluded to keep deterministic replay digests independent of generation time",
+    "git": "excluded because replay must not depend on working-tree metadata"
+  },
+  "exclude_fields": [
+    "generated_at",
+    "config_digest",
+    "wall_clock_time",
+    "local_absolute_paths",
+    "git",
+    "temporary_files",
+    "process_id"
+  ],
+  "fail_closed_rules": [
+    "missing_digest_blocks_closed_loop_claim",
+    "digest_mismatch_blocks_closed_loop_claim",
+    "order_inversion_stability_required_to_block_post_hoc_order",
+    "absolute_path_in_digest_input_blocks_closed_loop_claim",
+    "git_metadata_in_digest_input_blocks_closed_loop_claim"
+  ],
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "include_fields": [
+    "schema_version",
+    "source_row_ids",
+    "source_artifacts",
+    "loop_policy_digest",
+    "boundary_assignments",
+    "row_decision",
+    "external_to_internal_trace",
+    "internal_response_trace",
+    "response_to_external_change_trace",
+    "external_feedback_to_internal_trace",
+    "phase_timing",
+    "monotonic_phase_order",
+    "response_caused_external_change",
+    "later_internal_depends_on_changed_external_state",
+    "loop_closure_evidence",
+    "dependency_trace",
+    "budget_cost_surface",
+    "budget_validity",
+    "controls",
+    "ap7_gates",
+    "claim_flags",
+    "closed_loop_claim_allowed"
+  ],
+  "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+  "replay_control_mapping": {
+    "artifact_only_replay_control": "artifact_only_replay_status",
+    "duplicate_replay_control": "duplicate_replay_status",
+    "order_inversion_replay_control": "order_inversion_replay_status",
+    "snapshot_load_replay_control": "snapshot_load_status"
+  },
+  "replay_controls_are_status_backed": true,
+  "required_replay_status_fields": [
+    "artifact_only_replay_status",
+    "snapshot_load_status",
+    "duplicate_replay_status",
+    "order_inversion_replay_status"
+  ],
+  "required_replay_status_for_claim": "stable",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,1329 @@
+{
+  "acceptance_state": "accepted_loop_replay_and_control_matrix_g4_candidate_no_final_ap7",
+  "artifact_id": "n17_loop_replay_and_control_matrix",
+  "candidate_summary": {
+    "closed_loop_claim_allowed": false,
+    "final_ap7_supported": false,
+    "loop_ladder_rung": "G4_replay_control_clean_candidate",
+    "missing_gates": [
+      "claim_boundary_clean"
+    ],
+    "provisional_ap_level": "G4_replay_control_clean_candidate",
+    "row_decision": "supported",
+    "row_id": "n17_i5_row_01_replay_control_clean_g4_candidate",
+    "source_i4_candidate_rung_label": "G3_candidate",
+    "source_i4_schema_loop_rung": "G3"
+  },
+  "checks": [
+    {
+      "check_id": "source_i4_status_passed",
+      "detail": {
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_i4_candidate_unchanged",
+      "detail": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_only_replay_stable",
+      "detail": {
+        "candidate_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "hidden_runtime_dependency_detected": false,
+        "interpretation": "serialized artifact alone reconstructs the I4 candidate",
+        "replay_id": "artifact_only_replay",
+        "replayed_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "same_digest": true,
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "status": "stable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "snapshot_load_replay_stable",
+      "detail": {
+        "interpretation": "loading the recorded row state preserves the candidate",
+        "loaded_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "replay_id": "snapshot_load_replay",
+        "same_digest": true,
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "state_restore_mutation_detected": false,
+        "status": "stable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_stable",
+      "detail": {
+        "duplicate_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "interpretation": "same serialized inputs preserve the accepted synthesis",
+        "replay_id": "duplicate_replay",
+        "same_digest": true,
+        "schema_backed_explanation": "duplicate replay compares deterministic row replay digests; it is a run-level replay check, not a separate row-schema control case",
+        "schema_backed_like_row_controls": false,
+        "scope": "run_level_duplicate_replay_control",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "status": "stable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "order_inversion_blocks_false_order",
+      "detail": {
+        "blocker": "order_inversion_replay_blocked_false_order",
+        "canonical_order_required_for_loop": true,
+        "interpretation": "phase inversion is replayed as a blocked false-order variant",
+        "inverted_order_does_not_create_loop": true,
+        "inverted_variant_closed_loop_claim_allowed": false,
+        "replay_id": "order_inversion_replay",
+        "status": "stable",
+        "status_semantics": "stable_means_false_order_variant_is_reproducibly_blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "post_hoc_loop_stitching_blocked",
+      "detail": {
+        "blocked_as_expected": true,
+        "blocker": "post_hoc_loop_stitching_blocked",
+        "candidate_survives_control": true,
+        "control_id": "post_hoc_loop_stitching_control",
+        "detail": {
+          "ablation": "remove_source_current_ordered_dependency_keep_compatible_fragments",
+          "attempted_relabel": "assembled_fragments_as_closed_loop",
+          "expected_closed_loop_claim_allowed": false
+        },
+        "expected_result_satisfied": true,
+        "failure_blocks_gate": "controls_passed",
+        "invalid_variant_closed_loop_claim_allowed": false,
+        "outcome_class": "blocked_invalid_variant",
+        "purpose": "compatible fragments cannot be narrated into closure after the fact",
+        "status": "passed",
+        "variant_result": "blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "hidden_state_controls_blocked_with_distinct_blockers",
+      "detail": {
+        "hidden_external": {
+          "blocked_as_expected": true,
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "control_id": "hidden_external_state_memory_control",
+          "detail": {
+            "ablation": "supply_t3_external_feedback_from_unrecorded_external_memory",
+            "expected_result": "blocked_hidden_external_state_memory",
+            "hidden_external_state_memory_allowed": false
+          },
+          "expected_result_satisfied": true,
+          "failure_blocks_gate": "controls_passed",
+          "invalid_variant_closed_loop_claim_allowed": false,
+          "outcome_class": "blocked_invalid_variant",
+          "purpose": "hidden external memory cannot supply the t3 feedback leg",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal": {
+          "blocked_as_expected": true,
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "control_id": "hidden_internal_state_carryover_control",
+          "detail": {
+            "ablation": "preserve_later_internal_support_by_unrecorded_internal_carryover",
+            "expected_result": "blocked_hidden_internal_state_carryover",
+            "hidden_internal_state_carryover_allowed": false
+          },
+          "expected_result_satisfied": true,
+          "failure_blocks_gate": "controls_passed",
+          "invalid_variant_closed_loop_claim_allowed": false,
+          "outcome_class": "blocked_invalid_variant",
+          "purpose": "hidden internal carryover cannot mimic later feedback dependence",
+          "status": "passed",
+          "variant_result": "blocked"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "external_change_not_caused_by_response_blocked",
+      "detail": {
+        "blocked_as_expected": true,
+        "blocker": "external_change_not_caused_by_response_blocked",
+        "candidate_survives_control": true,
+        "control_id": "external_change_not_caused_by_response_control",
+        "detail": {
+          "external_change_independent_of_response_cannot_support_loop": true,
+          "external_change_would_occur_without_response": false
+        },
+        "expected_result_satisfied": true,
+        "failure_blocks_gate": "response_caused_external_change",
+        "invalid_variant_closed_loop_claim_allowed": false,
+        "outcome_class": "blocked_invalid_variant",
+        "purpose": "independent external change cannot support closed-loop causality",
+        "status": "passed",
+        "variant_result": "blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "feedback_removed_blocks_loop_claim",
+      "detail": {
+        "blocked_as_expected": true,
+        "blocker": "feedback_removed_blocks_loop_claim",
+        "candidate_survives_control": true,
+        "control_id": "feedback_removed_control",
+        "detail": {
+          "closed_loop_claim_allowed_when_feedback_removed": false,
+          "external_feedback_to_internal_trace_required": true
+        },
+        "expected_result_satisfied": true,
+        "failure_blocks_gate": "feedback_removed_control_passed",
+        "invalid_variant_closed_loop_claim_allowed": false,
+        "outcome_class": "blocked_invalid_variant",
+        "purpose": "fourth leg must be necessary",
+        "status": "passed",
+        "variant_result": "blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "one_way_crossing_still_fails",
+      "detail": {
+        "blocked_as_expected": true,
+        "blocker": "one_way_crossing_is_not_closed_loop",
+        "candidate_survives_control": true,
+        "control_id": "one_way_crossing_relabel_control",
+        "detail": {
+          "i3_one_way_crossing_replay_status": "rejected_as_closed_loop",
+          "i3_output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635"
+        },
+        "expected_result_satisfied": true,
+        "failure_blocks_gate": "one_way_crossing_null_blocked",
+        "invalid_variant_closed_loop_claim_allowed": false,
+        "outcome_class": "blocked_invalid_variant",
+        "purpose": "I3 active null remains below AP7",
+        "status": "passed",
+        "variant_result": "blocked"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "resource_and_shared_medium_extensions_not_opened",
+      "detail": {
+        "resource": {
+          "blocked_as_expected": null,
+          "blocker": "resource_rows_not_present_in_mvp",
+          "candidate_survives_control": true,
+          "control_id": "resource_depletion_goal_pursuit_relabel_control",
+          "detail": {
+            "resource_rows_present": false
+          },
+          "expected_result_satisfied": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "invalid_variant_closed_loop_claim_allowed": false,
+          "outcome_class": "not_applicable_extension",
+          "purpose": "resource/support extension was not opened in MVP",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "shared_medium": {
+          "blocked_as_expected": null,
+          "blocker": "shared_medium_rows_not_present_in_mvp",
+          "candidate_survives_control": true,
+          "control_id": "shared_medium_merge_relabel_as_reciprocal_loop_control",
+          "detail": {
+            "shared_medium_rows_present": false
+          },
+          "expected_result_satisfied": true,
+          "failure_blocks_gate": "controls_passed",
+          "invalid_variant_closed_loop_claim_allowed": false,
+          "outcome_class": "not_applicable_extension",
+          "purpose": "shared-medium extension was not opened in MVP",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "final_ap7_still_false",
+      "detail": {
+        "closed_loop_claim_allowed": false,
+        "final_ap7_supported": false,
+        "missing_gates": [
+          "claim_boundary_clean"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "pre_i5_pending_controls_resolved",
+      "detail": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 5 does not edit src/*",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_loop_replay_and_control_matrix.py",
+  "control_matrix": [
+    {
+      "blocked_as_expected": null,
+      "blocker": "not_blocked_replay_stable",
+      "candidate_survives_control": true,
+      "control_id": "artifact_only_replay_control",
+      "detail": {
+        "hidden_runtime_dependency_detected": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "replay_digest_valid",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "stable_candidate_preservation",
+      "purpose": "no hidden runtime dependency",
+      "status": "passed",
+      "variant_result": "stable"
+    },
+    {
+      "blocked_as_expected": null,
+      "blocker": "not_blocked_replay_stable",
+      "candidate_survives_control": true,
+      "control_id": "snapshot_load_replay_control",
+      "detail": {
+        "state_restore_mutation_detected": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "replay_digest_valid",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "stable_candidate_preservation",
+      "purpose": "state restoration preserves candidate",
+      "status": "passed",
+      "variant_result": "stable"
+    },
+    {
+      "blocked_as_expected": null,
+      "blocker": "not_blocked_replay_stable",
+      "candidate_survives_control": true,
+      "control_id": "duplicate_replay_control",
+      "detail": {
+        "same_digest": true,
+        "schema_backed_explanation": "duplicate replay is evaluated by matching deterministic row replay digests, not by materializing a separate schema-backed row",
+        "schema_backed_like_row_controls": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "replay_digest_valid",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "stable_candidate_preservation",
+      "purpose": "same inputs preserve synthesis and digest",
+      "status": "passed",
+      "variant_result": "stable"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "order_inversion_replay_blocked_false_order",
+      "candidate_survives_control": true,
+      "control_id": "order_inversion_replay_control",
+      "detail": {
+        "canonical_order_required_for_loop": true,
+        "inverted_order_does_not_create_loop": true
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "replay_digest_valid",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "inverted order cannot create closure",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "post_hoc_loop_stitching_blocked",
+      "candidate_survives_control": true,
+      "control_id": "post_hoc_loop_stitching_control",
+      "detail": {
+        "ablation": "remove_source_current_ordered_dependency_keep_compatible_fragments",
+        "attempted_relabel": "assembled_fragments_as_closed_loop",
+        "expected_closed_loop_claim_allowed": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "controls_passed",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "compatible fragments cannot be narrated into closure after the fact",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "hidden_external_state_memory_blocked",
+      "candidate_survives_control": true,
+      "control_id": "hidden_external_state_memory_control",
+      "detail": {
+        "ablation": "supply_t3_external_feedback_from_unrecorded_external_memory",
+        "expected_result": "blocked_hidden_external_state_memory",
+        "hidden_external_state_memory_allowed": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "controls_passed",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "hidden external memory cannot supply the t3 feedback leg",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "hidden_internal_state_carryover_blocked",
+      "candidate_survives_control": true,
+      "control_id": "hidden_internal_state_carryover_control",
+      "detail": {
+        "ablation": "preserve_later_internal_support_by_unrecorded_internal_carryover",
+        "expected_result": "blocked_hidden_internal_state_carryover",
+        "hidden_internal_state_carryover_allowed": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "controls_passed",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "hidden internal carryover cannot mimic later feedback dependence",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "external_change_not_caused_by_response_blocked",
+      "candidate_survives_control": true,
+      "control_id": "external_change_not_caused_by_response_control",
+      "detail": {
+        "external_change_independent_of_response_cannot_support_loop": true,
+        "external_change_would_occur_without_response": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "response_caused_external_change",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "independent external change cannot support closed-loop causality",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "feedback_order_inversion_blocked",
+      "candidate_survives_control": true,
+      "control_id": "feedback_order_inversion_control",
+      "detail": {
+        "ablation": "move_t3_feedback_before_t2_response_caused_external_change",
+        "expected_closed_loop_claim_allowed": false,
+        "expected_monotonic_phase_order": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "monotonic_phase_order_valid",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "t3 feedback before t2 response-caused external change cannot pass",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "feedback_removed_blocks_loop_claim",
+      "candidate_survives_control": true,
+      "control_id": "feedback_removed_control",
+      "detail": {
+        "closed_loop_claim_allowed_when_feedback_removed": false,
+        "external_feedback_to_internal_trace_required": true
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "feedback_removed_control_passed",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "fourth leg must be necessary",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "outbound_response_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "outbound_response_relabel_control",
+      "detail": {
+        "named_action_without_feedback_dependence_not_ap7": true,
+        "relabel_attempt": "bounded_reclosure_response_as_semantic_action",
+        "requires_feedback_dependence": true
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "controls_passed",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "named action without feedback dependence is not AP7",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "one_way_crossing_is_not_closed_loop",
+      "candidate_survives_control": true,
+      "control_id": "one_way_crossing_relabel_control",
+      "detail": {
+        "i3_one_way_crossing_replay_status": "rejected_as_closed_loop",
+        "i3_output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "one_way_crossing_null_blocked",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "I3 active null remains below AP7",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "semantic_agency_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "semantic_agency_relabel_control",
+      "detail": {
+        "claim_allowed": false,
+        "relabel_attempt": "loop_as_agency"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "replay-clean loop is not agency",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "semantic_intention_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "semantic_intention_relabel_control",
+      "detail": {
+        "claim_allowed": false,
+        "relabel_attempt": "internal_response_as_intention"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "replay-clean loop is not intention",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "semantic_action_perception_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "semantic_action_perception_relabel_control",
+      "detail": {
+        "claim_allowed": false,
+        "relabel_attempt": "trace_legs_as_semantic_action_perception"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "ordered trace dependence is not semantic action/perception",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "native_support_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "native_support_relabel_control",
+      "detail": {
+        "claim_allowed": false,
+        "relabel_attempt": "artifact_support_as_native_support"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "artifact-level support trace is not native support",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "selfhood_identity_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "selfhood_identity_relabel_control",
+      "detail": {
+        "claim_allowed": false,
+        "relabel_attempt": "closed_boundary_loop_as_selfhood_or_identity"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "closed boundary engagement is not selfhood or identity acceptance",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": true,
+      "blocker": "organism_life_relabel_blocked",
+      "candidate_survives_control": true,
+      "control_id": "organism_life_relabel_control",
+      "detail": {
+        "claim_allowed": false,
+        "relabel_attempt": "closed_boundary_loop_as_life"
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "blocked_invalid_variant",
+      "purpose": "closed boundary engagement is not organism or life evidence",
+      "status": "passed",
+      "variant_result": "blocked"
+    },
+    {
+      "blocked_as_expected": null,
+      "blocker": "resource_rows_not_present_in_mvp",
+      "candidate_survives_control": true,
+      "control_id": "resource_depletion_goal_pursuit_relabel_control",
+      "detail": {
+        "resource_rows_present": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "claim_boundary_clean",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "not_applicable_extension",
+      "purpose": "resource/support extension was not opened in MVP",
+      "status": "not_applicable",
+      "variant_result": "not_applicable"
+    },
+    {
+      "blocked_as_expected": null,
+      "blocker": "shared_medium_rows_not_present_in_mvp",
+      "candidate_survives_control": true,
+      "control_id": "shared_medium_merge_relabel_as_reciprocal_loop_control",
+      "detail": {
+        "shared_medium_rows_present": false
+      },
+      "expected_result_satisfied": true,
+      "failure_blocks_gate": "controls_passed",
+      "invalid_variant_closed_loop_claim_allowed": false,
+      "outcome_class": "not_applicable_extension",
+      "purpose": "shared-medium extension was not opened in MVP",
+      "status": "not_applicable",
+      "variant_result": "not_applicable"
+    }
+  ],
+  "control_result_summary": {
+    "artifact_only_replay_status": "stable",
+    "candidate_trace_legs_unchanged": true,
+    "duplicate_replay_status": "stable",
+    "external_change_not_caused_by_response": "blocked_as_expected",
+    "feedback_removed": "blocked_as_expected",
+    "hidden_external_state_memory": "blocked_as_expected",
+    "hidden_internal_state_carryover": "blocked_as_expected",
+    "loop_replay_control_clean": true,
+    "one_way_crossing_relabel": "blocked_as_expected",
+    "order_inversion_replay_status": "stable_false_order_blocked",
+    "outbound_response_relabel": "blocked_as_expected",
+    "post_hoc_loop_stitching": "blocked_as_expected",
+    "resource_support_extension": "not_applicable",
+    "semantic_relabels": "blocked_as_expected",
+    "shared_medium_extension": "not_applicable",
+    "snapshot_load_status": "stable"
+  },
+  "errors": [],
+  "experiment": "N17",
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "41c047e8cf3c846e25c6e1854be9c52d6479380a",
+    "status_short": [
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationChecklist.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_loop_replay_and_control_matrix.py"
+    ]
+  },
+  "iteration": 5,
+  "iteration_result": {
+    "ap7_classification_supported": false,
+    "closed_loop_claim_allowed": false,
+    "final_ap7_supported": false,
+    "g4_replay_control_clean_candidate_recorded": true,
+    "i4_candidate_survives_replay_and_controls": true,
+    "iteration_5_adds_new_loop_evidence": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "ready_for_iteration_6_claim_boundary_record": true
+  },
+  "output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+  "purpose": "try to break the Iteration 4 G3 candidate without adding new loop evidence",
+  "replay_matrix": [
+    {
+      "candidate_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+      "hidden_runtime_dependency_detected": false,
+      "interpretation": "serialized artifact alone reconstructs the I4 candidate",
+      "replay_id": "artifact_only_replay",
+      "replayed_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+      "same_digest": true,
+      "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+      "status": "stable"
+    },
+    {
+      "interpretation": "loading the recorded row state preserves the candidate",
+      "loaded_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+      "replay_id": "snapshot_load_replay",
+      "same_digest": true,
+      "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+      "state_restore_mutation_detected": false,
+      "status": "stable"
+    },
+    {
+      "duplicate_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+      "interpretation": "same serialized inputs preserve the accepted synthesis",
+      "replay_id": "duplicate_replay",
+      "same_digest": true,
+      "schema_backed_explanation": "duplicate replay compares deterministic row replay digests; it is a run-level replay check, not a separate row-schema control case",
+      "schema_backed_like_row_controls": false,
+      "scope": "run_level_duplicate_replay_control",
+      "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+      "status": "stable"
+    },
+    {
+      "blocker": "order_inversion_replay_blocked_false_order",
+      "canonical_order_required_for_loop": true,
+      "interpretation": "phase inversion is replayed as a blocked false-order variant",
+      "inverted_order_does_not_create_loop": true,
+      "inverted_variant_closed_loop_claim_allowed": false,
+      "replay_id": "order_inversion_replay",
+      "status": "stable",
+      "status_semantics": "stable_means_false_order_variant_is_reproducibly_blocked"
+    }
+  ],
+  "replay_mode": {
+    "mode": "artifact_digest_and_variant_control_verification",
+    "not_full_pipeline_rerun": true,
+    "reason": "I5 verifies the serialized I4 candidate, row replay digest, trace digest, and declared break variants without building a new loop"
+  },
+  "replay_status_semantics": {
+    "artifact_only_replay_stable": "serialized artifact digest and trace digest preserved",
+    "duplicate_replay_stable": "same serialized inputs preserve row replay digest",
+    "order_inversion_replay_stable": "false-order variant is reproducibly blocked; stable does not mean the inverted order supports closure",
+    "snapshot_load_replay_stable": "loaded row state preserves digest and trace"
+  },
+  "rows": [
+    {
+      "ap7_gates": {
+        "budget_validity_passed": true,
+        "claim_boundary_clean": false,
+        "controls_passed": true,
+        "dependency_trace_complete": true,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": true,
+        "four_trace_legs_present": true,
+        "four_trace_legs_source_backed": true,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": true,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": true,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "final_AP7_supported",
+        "AP7_classification_supported_before_I6_claim_boundary_record",
+        "action_perception_loop_proven",
+        "agency",
+        "intention",
+        "semantic_action",
+        "semantic_perception",
+        "semantic_goal_ownership",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "organism_life",
+        "fully_native_integration",
+        "unrestricted_agency"
+      ],
+      "boundary_assignments": {
+        "boundary_edges": [
+          {
+            "event": "transient_breach_pressure",
+            "left": "b3_c4_2",
+            "left_side": "derived_internal_side",
+            "right": "b3_c4_3",
+            "right_side": "derived_external_side",
+            "weight": 0.13
+          },
+          {
+            "event": "bounded_reclosure_response",
+            "left": "b3_c4_3",
+            "left_side": "derived_external_side",
+            "right": "b3_c4_1",
+            "right_side": "derived_internal_side",
+            "weight": 0.12
+          }
+        ],
+        "boundary_side_assignments": {
+          "b3_c4_0": "derived_internal_side",
+          "b3_c4_1": "derived_internal_side",
+          "b3_c4_2": "derived_internal_side",
+          "b3_c4_3": "derived_external_side",
+          "b3_c4_4": "derived_external_side"
+        },
+        "source": "N16_B3_C4_selected_interaction_probe"
+      },
+      "budget_cost_surface": {
+        "closure_claim_budget": 0,
+        "control_count": 20,
+        "hidden_state_allowance": 0,
+        "present_trace_leg_count": 4,
+        "replay_count": 4,
+        "source_row_count": 2,
+        "trace_leg_count": 4,
+        "unexplained_external_change_budget": 0
+      },
+      "budget_units": "normalized_cost",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "loop is replay/control clean, but AP7 claim budget remains closed until I6",
+        "valid": true,
+        "within_limits": true
+      },
+      "candidate_field_retention_note": "candidate fields are retained after I5 validation to preserve continuity with the I4 pre-control row",
+      "candidate_rung_label": "G4_replay_control_clean_candidate",
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "contrast_with_i3_one_way_null": {
+        "i3_closed_loop_claim_allowed": false,
+        "i3_loop_rung": "G2",
+        "i3_missing_feedback_leg": true,
+        "i4_closed_loop_claim_allowed": false,
+        "i4_feedback_leg_present": true,
+        "what_changed": [
+          "response_caused_external_change_candidate_recorded",
+          "later_internal_dependence_candidate_recorded"
+        ]
+      },
+      "controls": {
+        "artifact_only_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "duplicate_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "external_change_not_caused_by_response_control": {
+          "blocker": "external_change_not_caused_by_response_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "response_caused_external_change",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_order_inversion_control": {
+          "blocker": "feedback_order_inversion_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "monotonic_phase_order_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_removed_control": {
+          "blocker": "feedback_removed_blocks_loop_claim",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "feedback_removed_control_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_external_state_memory_control": {
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal_state_carryover_control": {
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": {
+          "blocker": "native_support_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "one_way_crossing_relabel_control": {
+          "blocker": "one_way_crossing_is_not_closed_loop",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "one_way_crossing_null_blocked",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "order_inversion_replay_control": {
+          "blocker": "order_inversion_replay_blocked_false_order",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "organism_life_relabel_control": {
+          "blocker": "organism_life_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "outbound_response_relabel_control": {
+          "blocker": "outbound_response_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "post_hoc_loop_stitching_control": {
+          "blocker": "post_hoc_loop_stitching_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "resource_depletion_goal_pursuit_relabel_control": {
+          "blocker": "resource_rows_not_present_in_mvp",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "selfhood_identity_relabel_control": {
+          "blocker": "selfhood_identity_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_action_perception_relabel_control": {
+          "blocker": "semantic_action_perception_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_agency_relabel_control": {
+          "blocker": "semantic_agency_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_intention_relabel_control": {
+          "blocker": "semantic_intention_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "shared_medium_rows_not_present_in_mvp",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "snapshot_load_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        }
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "N16_B3_C4_transient_breach_pressure"
+          },
+          {
+            "cause_attribution": "response_caused_candidate_pending_i5_control",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": true,
+            "source_trace": "N16_B3_C4_bounded_reclosure_response"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state_candidate": true,
+            "source_backed": true,
+            "source_trace": "B3_C4_support_preservation_vs_B2_C4_breach_baseline"
+          }
+        ],
+        "missing_edges": []
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_counterfactual_status": "validated_by_i5_control",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "control_status": "pending_i5_hidden_state_and_feedback_removed_controls",
+        "dependency_note": "The later internal support state differs across the B2_C4 breach baseline and B3_C4 bounded-reclosure surface only when the response-modified external perturbation surface is present; I5 must still rule out hidden carryover and feedback-removal failure",
+        "later_internal_conditioned_by_changed_external_state_candidate": true,
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "b3_c4_later_minimum_internal_support": 0.851,
+          "support_delta_vs_b2_c4": 0.021,
+          "with_response_changed_external_state": true
+        },
+        "state_before": {
+          "b2_c4_reference_minimum_internal_support": 0.83,
+          "support_floor": 0.85,
+          "without_response_changed_external_state": false
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "N16 B3_C4 records transient breach pressure crossing a derived internal/external boundary edge",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "boundary_edge_crossed": {
+            "event": "transient_breach_pressure",
+            "left": "b3_c4_2",
+            "left_side": "derived_internal_side",
+            "right": "b3_c4_3",
+            "right_side": "derived_external_side",
+            "weight": 0.13
+          },
+          "breach_pressure": 0.38,
+          "external_state_role": "perturbation"
+        },
+        "state_before": {
+          "breach_pressure": 0.0,
+          "external_state_role": "perturbation",
+          "minimum_internal_support_reference": 0.83
+        }
+      },
+      "feedback_removed_control_changes_result": true,
+      "feedback_removed_control_result_status": "validated_by_i5_control",
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "The perturbation is followed by a bounded B3 reclosure response and support preservation above the N16 floor",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "b3_c4_minimum_internal_support": 0.851,
+          "b3_c4_reclosure_score": 0.76,
+          "reclosure_latency_steps": 1
+        },
+        "state_before": {
+          "b2_c4_reference_minimum_internal_support": 0.83,
+          "b2_c4_reference_repair_score": 0.52
+        }
+      },
+      "iteration_5_control_status": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "iteration_5_trace_preservation": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "later_internal_dependence_candidate": true,
+      "later_internal_depends_on_changed_external_state": true,
+      "loop_closure_evidence": {
+        "candidate_status": "pending_iteration_6_claim_boundary_record",
+        "closed_loop_candidate": true,
+        "closure_hinge": "changed_external_state_feeds_later_internal_support",
+        "g3_reached": true,
+        "g4_reached": true,
+        "not_final_ap7": true,
+        "one_step_recovery_only": false,
+        "ordered_closure_candidate_present": true,
+        "ordered_closure_present": true,
+        "reason": "I5 replay and break controls preserve the I4 candidate, but final AP7 classification remains pending I6 claim-boundary record",
+        "replay_control_clean": true
+      },
+      "loop_family": "perturbation_response_recovery_loop",
+      "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+      "loop_rung": "G4",
+      "loop_rung_index": 4,
+      "minimal_loop_scope": {
+        "perturbation_response_recovery_only": true,
+        "resource_support_extension_opened": false,
+        "shared_medium_extension_opened": false
+      },
+      "missing_gates": [
+        "claim_boundary_clean"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "G4_replay_control_clean_candidate",
+      "provisional_claim_ceiling": "artifact_level_replay_control_clean_closed_boundary_engagement_loop_candidate_pending_i6",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": true,
+      "response_caused_external_change_candidate": true,
+      "response_to_external_change_trace": {
+        "cause_attribution": "response_caused_candidate_pending_i5_control",
+        "control_status": "pending_i5_external_change_not_caused_by_response_control",
+        "dependency_note": "The selected-probe response edge is the recorded bounded reclosure event and the external perturbation surface changes through reduced leakage relative to B2_C4; I5 must still rule out independent external change",
+        "external_change_not_independent_candidate": true,
+        "phase": "t2_response_caused_external_change",
+        "present": true,
+        "response_caused_candidate": true,
+        "source_backed": true,
+        "state_after": {
+          "b3_c4_leakage_ratio": 0.118,
+          "bounded_reclosure_response_edge": {
+            "event": "bounded_reclosure_response",
+            "left": "b3_c4_3",
+            "left_side": "derived_external_side",
+            "right": "b3_c4_1",
+            "right_side": "derived_internal_side",
+            "weight": 0.12
+          },
+          "leakage_ratio_delta": -0.03
+        },
+        "state_before": {
+          "b2_c4_reference_leakage_ratio": 0.148,
+          "bounded_reclosure_response": "absent_in_b2_reference"
+        }
+      },
+      "row_decision": "supported",
+      "row_id": "n17_i5_row_01_replay_control_clean_g4_candidate",
+      "row_replay_digest": "3d324e9ed012957979466813dd620fe880b52f20f75ab6ab693a2192c7468a10",
+      "row_type": "loop_candidate",
+      "schema_version": "1.0",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+          "source_claim_ceiling": "artifact_level_closed_boundary_engagement_loop_candidate_pending_controls",
+          "source_output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+          "source_report_sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87",
+          "source_row_id": "n17_i4_row_01_perturbation_response_recovery_g3_candidate",
+          "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+          "source_sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json",
+          "source_claim_ceiling": "one_way_crossing_internal_update_fragment_not_closed_loop",
+          "source_output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+          "source_report_sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286",
+          "source_row_id": "n17_i3_row_01_one_way_crossing_active_null",
+          "source_sha256": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d"
+        }
+      ],
+      "source_row_ids": [
+        "n17_i4_row_01_perturbation_response_recovery_g3_candidate",
+        "n17_i3_row_01_one_way_crossing_active_null"
+      ]
+    }
+  ],
+  "schema": {
+    "output_digest": "911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72",
+    "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json",
+    "sha256": "55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67"
+  },
+  "schema_version": "1.0",
+  "source_active_null": {
+    "artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json",
+    "output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+    "report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+    "sha256": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d"
+  },
+  "source_loop": {
+    "artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+    "candidate_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+    "output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+    "report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+    "row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+    "sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec"
+  },
+  "status": "passed"
+}

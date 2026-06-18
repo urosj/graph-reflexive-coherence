@@ -1,0 +1,144 @@
+{
+  "config_digest": "bdce60933253b273752c4b7b81fa128c03ff9fd2106e2d68ed3178b0e1ebbe67",
+  "config_id": "n17_control_variants_v1",
+  "control_pass_policy": {
+    "all_required_controls_must_pass_for_closed_loop_claim": true,
+    "feedback_removed_control_is_required": true,
+    "one_way_crossing_relabel_must_fail_closed": true,
+    "semantic_relabels_must_fail_closed": true
+  },
+  "control_status_values": [
+    "passed",
+    "failed_expected",
+    "blocked",
+    "not_applicable"
+  ],
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "required_controls": [
+    {
+      "control_id": "artifact_only_replay_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "replay_digest_valid",
+      "purpose": "requires replay from artifact state rather than hidden runtime state",
+      "status_backed_by": "artifact_only_replay_status"
+    },
+    {
+      "control_id": "snapshot_load_replay_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "replay_digest_valid",
+      "purpose": "requires snapshot/load replay stability",
+      "status_backed_by": "snapshot_load_status"
+    },
+    {
+      "control_id": "duplicate_replay_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "replay_digest_valid",
+      "purpose": "requires duplicate replay stability",
+      "status_backed_by": "duplicate_replay_status"
+    },
+    {
+      "control_id": "order_inversion_replay_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "replay_digest_valid",
+      "purpose": "requires order-inversion replay to block post-hoc ordering",
+      "status_backed_by": "order_inversion_replay_status"
+    },
+    {
+      "control_id": "post_hoc_loop_stitching_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "controls_passed",
+      "purpose": "blocks unordered compatible events from being narrated as closure"
+    },
+    {
+      "control_id": "hidden_external_state_memory_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "controls_passed",
+      "purpose": "blocks hidden external-state carryover as later feedback"
+    },
+    {
+      "control_id": "hidden_internal_state_carryover_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "controls_passed",
+      "purpose": "blocks hidden internal-state carryover as loop dependence"
+    },
+    {
+      "control_id": "outbound_response_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "controls_passed",
+      "purpose": "blocks naming an outbound change action without causal closure"
+    },
+    {
+      "control_id": "external_change_not_caused_by_response_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "response_caused_external_change",
+      "purpose": "blocks external change that follows response but is not caused by it"
+    },
+    {
+      "control_id": "feedback_order_inversion_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "monotonic_phase_order_valid",
+      "purpose": "blocks t3 feedback appearing before t2 response-caused external change"
+    },
+    {
+      "control_id": "feedback_removed_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "feedback_removed_control_passed",
+      "purpose": "removing changed-external feedback must force closed_loop_claim_allowed false"
+    },
+    {
+      "control_id": "one_way_crossing_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "one_way_crossing_null_blocked",
+      "purpose": "blocks N16-style crossing from being relabeled as AP7"
+    },
+    {
+      "control_id": "semantic_agency_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks agency-language promotion"
+    },
+    {
+      "control_id": "semantic_intention_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks intention-language promotion"
+    },
+    {
+      "control_id": "semantic_action_perception_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks semantic action/perception promotion"
+    },
+    {
+      "control_id": "native_support_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks native support promotion"
+    },
+    {
+      "control_id": "selfhood_identity_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks selfhood and identity-acceptance promotion"
+    },
+    {
+      "control_id": "organism_life_relabel_control",
+      "expected_for_supported_loop": "passed",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks organism, life, and biological-behavior promotion; split from the plan's claim-boundary text so the validator has an explicit flag"
+    },
+    {
+      "control_id": "resource_depletion_goal_pursuit_relabel_control",
+      "expected_for_supported_loop": "not_applicable_for_mvp_or_passed_for_resource_extension",
+      "failure_blocks_gate": "claim_boundary_clean",
+      "purpose": "blocks resource depletion from being relabeled as semantic goal pursuit in resource/support extensions"
+    },
+    {
+      "control_id": "shared_medium_merge_relabel_as_reciprocal_loop_control",
+      "expected_for_supported_loop": "not_applicable_for_mvp_or_passed_for_shared_medium_extension",
+      "failure_blocks_gate": "controls_passed",
+      "purpose": "blocks basin merge or leakage from being relabeled as shared-medium reciprocal closure"
+    }
+  ],
+  "schema_version": "1.0"
+}

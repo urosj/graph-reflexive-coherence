@@ -1,0 +1,127 @@
+{
+  "ap7_required_gates": [
+    "g3_or_higher",
+    "four_trace_legs_present",
+    "four_trace_legs_source_backed",
+    "monotonic_phase_order_valid",
+    "response_caused_external_change",
+    "external_change_counterfactual_blocks_spontaneous_change",
+    "later_internal_depends_on_changed_external_state",
+    "feedback_removed_control_passed",
+    "one_way_crossing_null_blocked",
+    "dependency_trace_complete",
+    "replay_digest_valid",
+    "budget_validity_passed",
+    "controls_passed",
+    "claim_boundary_clean",
+    "source_registry_backed",
+    "no_absolute_paths"
+  ],
+  "config_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+  "config_id": "n17_loop_policy_v1",
+  "evidence_loop_families": [
+    "perturbation_response_recovery_loop",
+    "resource_support_modulation_loop",
+    "shared_medium_reciprocal_loop"
+  ],
+  "extension_families": [
+    "resource_support_modulation_loop",
+    "shared_medium_reciprocal_loop"
+  ],
+  "extensions_can_be_deferred": true,
+  "feedback_policy": {
+    "external_feedback_to_internal_trace_is_ap7_hinge": true,
+    "feedback_removed_control_required": true,
+    "feedback_removed_expected_claim": "closed_loop_claim_allowed_false"
+  },
+  "first_admissible_closed_loop_rung": "G3",
+  "g0_g1_g2_policy": {
+    "ap7_support_allowed": false,
+    "closed_loop_claim_allowed": false,
+    "reason": "G0-G2 are fragments; G3 is the first closure rung"
+  },
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "iteration_2_is_contract_only": true,
+  "loop_families": [
+    "one_way_crossing_active_null",
+    "perturbation_response_recovery_loop",
+    "resource_support_modulation_loop",
+    "shared_medium_reciprocal_loop"
+  ],
+  "loop_ladder": {
+    "G0": "one-way boundary crossing trace",
+    "G1": "internal update after external crossing",
+    "G2": "outbound response changes external state",
+    "G3": "changed external state feeds back into later internal state",
+    "G4": "replay-stable closed loop",
+    "G5": "challenge-stable closed loop under perturbation or flux",
+    "G6": "shared-medium closed loop without basin merge",
+    "G7": "claim-clean AP7 candidate, unsafe promotions blocked"
+  },
+  "loop_rung_index": {
+    "G0": 0,
+    "G1": 1,
+    "G2": 2,
+    "G3": 3,
+    "G4": 4,
+    "G5": 5,
+    "G6": 6,
+    "G7": 7
+  },
+  "mvp_family": "perturbation_response_recovery_loop",
+  "null_control_families": [
+    "one_way_crossing_active_null"
+  ],
+  "one_way_crossing_promotion_policy": {
+    "closure_requires": "later_internal_dependence_on_changed_external_state",
+    "external_to_internal_plus_internal_response": "not_ap7",
+    "external_to_internal_plus_internal_response_plus_outbound_change": "not_ap7",
+    "external_to_internal_trace_alone": "not_ap7"
+  },
+  "ordered_phases": [
+    "t0_external_pressure_or_crossing",
+    "t1_internal_support_update",
+    "t2_response_caused_external_change",
+    "t3_later_internal_support_conditioned_by_changed_external_state"
+  ],
+  "phase_order_policy": {
+    "post_hoc_stitching_allowed": false,
+    "required_order": [
+      "t0_external_pressure_or_crossing",
+      "t1_internal_support_update",
+      "t2_response_caused_external_change",
+      "t3_later_internal_support_conditioned_by_changed_external_state"
+    ],
+    "unordered_cooccurrence_allowed": false
+  },
+  "required_dependency_edges": [
+    "external_to_internal",
+    "internal_response_to_external_change",
+    "changed_external_to_later_internal"
+  ],
+  "response_causation_policy": {
+    "counterfactual_required": "external_change_would_occur_without_response must be false",
+    "external_changed_after_response_is_sufficient": false,
+    "response_caused_external_change_required": true
+  },
+  "row_decision_policy": {
+    "blocked_rejected_partial_not_applicable_force_closed_loop_false": true,
+    "supported_control_or_null_rows_remain_control_or_null_rows": true,
+    "supported_does_not_automatically_allow_closed_loop_claim": true
+  },
+  "row_decision_values": [
+    "supported",
+    "blocked",
+    "partial",
+    "rejected",
+    "not_applicable"
+  ],
+  "schema_version": "1.0",
+  "target_ap_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+  "trace_legs": [
+    "external_to_internal_trace",
+    "internal_response_trace",
+    "response_to_external_change_trace",
+    "external_feedback_to_internal_trace"
+  ]
+}
