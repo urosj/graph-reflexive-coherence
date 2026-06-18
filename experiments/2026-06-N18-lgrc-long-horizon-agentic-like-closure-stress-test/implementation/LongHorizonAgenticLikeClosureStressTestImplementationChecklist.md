@@ -178,39 +178,130 @@ replay alone is explicitly blocked from supporting AP8.
 
 ## Iteration 3. Short-Horizon AP7 Replay Baseline
 
-- [ ] Replay the N17 AP7 closeout at the declared baseline horizon.
-- [ ] Treat AP7 replay as an AP8 active null.
-- [ ] Confirm source-current loop traces remain present.
-- [ ] Confirm boundary separation remains present.
-- [ ] Confirm AP8 is not claimed from baseline replay alone.
-- [ ] Run stale-state and hidden-native-support controls.
+- [x] Replay the N17 AP7 closeout at the declared baseline horizon.
+- [x] Treat AP7 replay as an AP8 active null.
+- [x] Confirm source-current loop traces remain present.
+- [x] Confirm boundary separation remains present.
+- [x] Confirm AP8 is not claimed from baseline replay alone.
+- [x] Run stale-state and hidden-native-support controls.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_short_horizon_ap7_replay_baseline.json`
-- [ ] `reports/n18_short_horizon_ap7_replay_baseline.md`
-- [ ] `scripts/build_n18_short_horizon_ap7_replay_baseline.py`
+- [x] `outputs/n18_short_horizon_ap7_replay_baseline.json`
+- [x] `reports/n18_short_horizon_ap7_replay_baseline.md`
+- [x] `scripts/build_n18_short_horizon_ap7_replay_baseline.py`
 
-Expected acceptance:
+Result:
 
 ```text
-accepted_short_horizon_ap7_replay_baseline_no_ap8
+status = passed
+acceptance_state = accepted_short_horizon_ap7_replay_baseline_no_ap8
+output_digest = 9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe
+artifact_sha256 = 23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671
+row_count = 10
+highest_positive_stress_ladder_rung = L1
+control_rungs_exercised = [L6]
+baseline_ap7_replay_supported = true
+long_horizon_continuity_tested = false
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_4_horizon_window_sweep = true
+failed_checks = []
+```
+
+Iteration 3 interpretation:
+
+```text
+The N17 AP7 closeout stack replays at the short baseline horizon with support,
+memory, regulation, selection, proxy, boundary, and closed-loop feedback traces
+present and source-current. This is only the AP8 active null: the positive row
+is L1 baseline replay, while L6 stale-state rows are controls rather than
+positive evidence. Baseline AP7 replay, stale whole-state replay, stale
+single-axis replay, and hidden-native-support relabels all keep
+ap8_candidate_allowed = false.
+```
+
+Iteration 3 review follow-up:
+
+```text
+The post-review cleanup keeps ap8_outcome_classification inside the frozen
+Iteration 2 taxonomy by using AP8_blocked for AP8 outcome classification, with
+row-specific diagnostics moved to ap8_outcome_detail. Row 02 no longer adds an
+ad-hoc control key outside the schema control set. Stale single-axis rows now
+mark only links touching the stale trace as non-source-current. N12 remains
+excluded from I3 trace sources by design because it is readiness-only context,
+not AP7 baseline trace evidence.
 ```
 
 ## Iteration 4. Horizon Window Sweep
 
-- [ ] Run longer horizon windows without added perturbation.
-- [ ] Track support, memory, regulation, selection, proxy, boundary, and loop
+- [x] Run longer horizon windows without added perturbation.
+- [x] Track support, memory, regulation, selection, proxy, boundary, and loop
       continuity per window.
-- [ ] Record drift and budget surface.
-- [ ] Reject windows outside source-backed envelope.
-- [ ] Confirm AP8 remains provisional pending stress controls.
+- [x] Record drift and budget surface.
+- [x] Reject windows outside source-backed envelope.
+- [x] Confirm AP8 remains provisional pending stress controls.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_horizon_window_sweep.json`
-- [ ] `reports/n18_horizon_window_sweep.md`
-- [ ] `scripts/build_n18_horizon_window_sweep.py`
+- [x] `outputs/n18_horizon_window_sweep.json`
+- [x] `reports/n18_horizon_window_sweep.md`
+- [x] `scripts/build_n18_horizon_window_sweep.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_horizon_window_sweep_l2_max_h4_no_ap8
+output_digest = 0b65b390dabc30ee34b3003796cfb85cb1ca8f2c1bfe44f91bac160aa9c7c21e
+artifact_sha256 = 1d5b554dc6c6a5f08b2b559cc40f6afca71622024b7c5ff50b57d8150a209971
+row_count = 4
+highest_positive_stress_ladder_rung = L2
+supported_windows = [h2, h4]
+partial_windows = [h8]
+blocked_windows = [h16]
+max_supported_horizon = h4
+long_horizon_continuity_tested = true
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_5_support_proxy_stress = true
+failed_checks = []
+```
+
+Iteration 4 interpretation:
+
+```text
+Iteration 4 is stronger than the I3 active null because it tests longer
+no-perturbation windows. The h2 and h4 rows remain source-current across the
+support, memory, regulation, selection, proxy, boundary, loop feedback, and
+linked-continuity axes, establishing max_supported_horizon = h4 for the L2
+replay envelope. The h8 row is partial because linked continuity drops below
+floor and drift exceeds the quiet ceiling. The h16 row is rejected because it is
+outside the source-backed envelope and exceeds the budget surface. AP8 remains
+blocked pending stress families, replay controls, stale-state controls, and
+classification.
+```
+
+Iteration 4 review follow-up:
+
+```text
+h4 is explicitly recorded as the primary Iteration 5 stress anchor, with h2 as
+fallback/control. h8 remains partial horizon-limit evidence, not almost
+supported AP8, and h16 remains rejected out-of-envelope evidence. The h4
+limiting axis is loop_feedback and the limiting linked edge is
+boundary_to_loop_feedback; support/proxy stress in I5 must preserve those links
+rather than retune the horizon. N12 is explicitly not consumed in I4 trace rows
+because it remains readiness-only context. The L2 numeric floors and ceilings
+are recorded in threshold_policy: Iteration 2 froze the required fields and
+fail-closed gates, while Iteration 4 freezes the L2 numeric thresholds before
+row evaluation.
+```
 
 ## Iteration 5. Support Withdrawal And Proxy Perturbation
 

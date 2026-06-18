@@ -7,6 +7,8 @@ Current scripts:
 ```text
 build_n18_long_horizon_source_inventory.py
 build_n18_long_horizon_schema_v1.py
+build_n18_short_horizon_ap7_replay_baseline.py
+build_n18_horizon_window_sweep.py
 validate_n18_stress_row.py
 ```
 

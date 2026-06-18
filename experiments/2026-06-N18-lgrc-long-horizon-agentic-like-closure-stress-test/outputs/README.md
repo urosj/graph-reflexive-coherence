@@ -7,6 +7,8 @@ Current artifacts:
 ```text
 n18_long_horizon_source_inventory.json
 n18_long_horizon_schema_v1.json
+n18_short_horizon_ap7_replay_baseline.json
+n18_horizon_window_sweep.json
 ```
 
 Initial expected output sequence:

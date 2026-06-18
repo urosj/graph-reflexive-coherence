@@ -1,0 +1,2378 @@
+{
+  "acceptance_state": "accepted_horizon_window_sweep_l2_max_h4_no_ap8",
+  "ap8_candidate_allowed": false,
+  "artifact_id": "n18_horizon_window_sweep",
+  "checks": [
+    {
+      "check_id": "iteration3_baseline_ready",
+      "detail": "accepted_short_horizon_ap7_replay_baseline_no_ap8",
+      "passed": true
+    },
+    {
+      "check_id": "all_horizon_policy_windows_present",
+      "detail": [
+        "h16",
+        "h2",
+        "h4",
+        "h8"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "supported_envelope_is_h2_h4",
+      "detail": {
+        "max_supported_horizon": "h4",
+        "supported": [
+          "h2",
+          "h4"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "out_of_envelope_windows_fail_closed",
+      "detail": {
+        "h16": "rejected",
+        "h8": "partial"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_l2_no_added_perturbation",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_keep_ap8_false",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "i5_anchor_policy_recorded",
+      "detail": {
+        "h16": "rejected_out_of_envelope_not_stress_anchor",
+        "h2": "fallback_i5_control",
+        "h4": "primary_i5_stress_anchor",
+        "h8": "horizon_limit_evidence_not_stress_anchor"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n12_not_consumed_in_i4_traces",
+      "detail": "N12 remains readiness-only context and is not an I4 trace source.",
+      "passed": true
+    },
+    {
+      "actual_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671",
+      "check_id": "source_digest_matches_n18_i3_baseline",
+      "expected_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_short_horizon_ap7_replay_baseline.json"
+    },
+    {
+      "actual_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+      "check_id": "source_digest_matches_n18_i1_row_01_n17_closeout_ap7",
+      "expected_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+      "check_id": "source_digest_matches_n18_i1_row_02_n17_requirements_matrix",
+      "expected_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json"
+    },
+    {
+      "actual_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+      "check_id": "source_digest_matches_n18_i1_row_03_n17_replay_control_matrix",
+      "expected_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json"
+    },
+    {
+      "actual_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+      "check_id": "source_digest_matches_n18_i1_row_04_n17_claim_boundary_record",
+      "expected_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json"
+    },
+    {
+      "actual_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+      "check_id": "source_digest_matches_n18_i1_row_05_n16_closeout_ap6",
+      "expected_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "check_id": "source_digest_matches_n18_i1_row_06_n15_closeout_ap5",
+      "expected_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "check_id": "source_digest_matches_n18_i1_row_07_n14_closeout_ap4",
+      "expected_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "check_id": "source_digest_matches_n18_i1_row_08_n13_closeout_ap3",
+      "expected_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "check_id": "source_digest_matches_n18_i1_row_11_n08_memory_closeout",
+      "expected_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "passed": true,
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json"
+    },
+    {
+      "actual_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "check_id": "source_digest_matches_n18_i1_row_12_n09_regulation_closeout",
+      "expected_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "passed": true,
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "closed_long_horizon_agentic_like_closure_demonstrated": false,
+  "command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/build_n18_horizon_window_sweep.py",
+  "evidence_branch": "artifact_only",
+  "experiment": "N18",
+  "failed_checks": [],
+  "final_ap8_supported": false,
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "not_recorded_in_artifact",
+    "policy": "git metadata excluded to keep artifact replay portable",
+    "status_short": []
+  },
+  "highest_positive_stress_ladder_rung": "L2",
+  "iteration": 4,
+  "iteration5_handoff": {
+    "fallback_control_window": "h2",
+    "handoff_question": "Can the h4-supported L2 horizon envelope survive support withdrawal/restoration and proxy perturbation while keeping source-current continuity, budget validity, and claim boundaries clean?",
+    "horizon_extension_not_allowed": true,
+    "horizon_limit_rows": {
+      "h16": "rejected out-of-envelope evidence",
+      "h8": "partial horizon limit evidence, not almost-supported AP8"
+    },
+    "primary_stress_anchor": "h4",
+    "stress_anchor_budget_headroom": 0.59,
+    "stress_anchor_limiting_axes": [
+      "loop_feedback"
+    ],
+    "stress_anchor_limiting_links": [
+      "boundary_to_loop_feedback"
+    ],
+    "stress_anchor_note": "h4 is limited first by loop feedback and boundary-to-loop-feedback link continuity, so I5 support/proxy stress must preserve those links instead of retuning the horizon.",
+    "windows": {
+      "h16": {
+        "budget_headroom": -0.21,
+        "cross_axis_score": 0.52,
+        "decision": "rejected",
+        "drift": 0.315,
+        "limiting_axes": [
+          "loop_feedback"
+        ],
+        "limiting_links": [
+          "boundary_to_loop_feedback"
+        ],
+        "min_axis_score": 0.49,
+        "min_linked_score": 0.49,
+        "role_for_downstream": "rejected_out_of_envelope_not_stress_anchor"
+      },
+      "h2": {
+        "budget_headroom": 0.78,
+        "cross_axis_score": 0.89,
+        "decision": "supported",
+        "drift": 0.045,
+        "limiting_axes": [
+          "loop_feedback"
+        ],
+        "limiting_links": [
+          "boundary_to_loop_feedback"
+        ],
+        "min_axis_score": 0.88,
+        "min_linked_score": 0.88,
+        "role_for_downstream": "fallback_i5_control"
+      },
+      "h4": {
+        "budget_headroom": 0.59,
+        "cross_axis_score": 0.84,
+        "decision": "supported",
+        "drift": 0.086,
+        "limiting_axes": [
+          "loop_feedback"
+        ],
+        "limiting_links": [
+          "boundary_to_loop_feedback"
+        ],
+        "min_axis_score": 0.83,
+        "min_linked_score": 0.83,
+        "role_for_downstream": "primary_i5_stress_anchor"
+      },
+      "h8": {
+        "budget_headroom": 0.24,
+        "cross_axis_score": 0.73,
+        "decision": "partial",
+        "drift": 0.142,
+        "limiting_axes": [
+          "loop_feedback"
+        ],
+        "limiting_links": [
+          "boundary_to_loop_feedback"
+        ],
+        "min_axis_score": 0.72,
+        "min_linked_score": 0.72,
+        "role_for_downstream": "horizon_limit_evidence_not_stress_anchor"
+      }
+    }
+  },
+  "long_horizon_continuity_tested": true,
+  "max_supported_horizon": "h4",
+  "n12_readiness_context_role": {
+    "consumed_in_i4_trace_rows": false,
+    "reason": "N12 remains readiness-only context and is not AP7/L2 horizon replay trace evidence.",
+    "source_rows_not_consumed": [
+      "n18_i1_row_09_n12_closeout_nat4",
+      "n18_i1_row_10_n12_phase8_readiness"
+    ]
+  },
+  "native_branch_opened": false,
+  "native_support_opened": false,
+  "output_digest": "0b65b390dabc30ee34b3003796cfb85cb1ca8f2c1bfe44f91bac160aa9c7c21e",
+  "phase8_branch_opened": false,
+  "phase8_opened": false,
+  "purpose": "horizon window sweep without added perturbation",
+  "ready_for_iteration_5_support_proxy_stress": true,
+  "row_count": 4,
+  "rows": [
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": true,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": true,
+        "linked_trace_continuity_present": true,
+        "long_horizon_continuity_present": true,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "L2_horizon_window_supported_pending_stress_controls",
+      "artifact_only_reconstruction_status": "not_run_iteration4",
+      "artifact_only_replay_digest": "82d7691de8b48a5b5320b81f11964048117611abbf0cb5373ae6080f7bfead42",
+      "boundary_separation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.91,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "trace_axis": "boundary"
+      },
+      "budget_surface": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 0.22,
+        "budget_units": "artifact_stress_units",
+        "relative_window_count": 2,
+        "valid": true,
+        "window_id": "h2"
+      },
+      "budget_valid": true,
+      "claim_ceiling": "artifact_level_l2_long_horizon_replay_candidate_pending_stress_controls",
+      "closed_loop_feedback_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.88,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix"
+        ],
+        "trace_axis": "loop_feedback"
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "budget_overrun_control": {
+          "effect": "pending later matrix",
+          "status": "not_triggered"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "pending later matrix",
+          "status": "passed"
+        },
+        "order_inversion_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_memory_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_proxy_target_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_selection_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_state_replay_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_support_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "continuity_floor": 0.8,
+        "drift": 0.045,
+        "drift_ceiling": 0.1,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": true,
+        "source_current_reason": "all linked trace edges remain within L2 envelope",
+        "window_score": 0.89
+      },
+      "duplicate_replay_status": "not_run_iteration4",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "added_perturbation": false,
+        "relative_window_count": 2,
+        "source_horizon": "N17 AP7 baseline replay extended without added perturbation",
+        "window_id": "h2",
+        "window_role": "longer_horizon_no_added_perturbation_sweep"
+      },
+      "limiting_axes": {
+        "axis_labels": [
+          "loop_feedback"
+        ],
+        "axis_trace_ids": [
+          "closed_loop_feedback_trace"
+        ],
+        "minimum_axis_score": 0.88
+      },
+      "limiting_linked_edges": {
+        "link_ids": [
+          "boundary_to_loop_feedback"
+        ],
+        "minimum_linked_score": 0.88
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.88,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "boundary_separation_trace",
+            "closed_loop_feedback_trace"
+          ]
+        },
+        "memory_context_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.9,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "memory_context_trace",
+            "selection_context_trace"
+          ]
+        },
+        "proxy_to_boundary": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.89,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "proxy_target_trace",
+            "boundary_separation_trace"
+          ]
+        },
+        "regulation_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.9,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "regulation_trace",
+            "selection_context_trace"
+          ]
+        },
+        "selection_to_proxy": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.89,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "selection_context_trace",
+            "proxy_target_trace"
+          ]
+        },
+        "support_to_regulation": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.92,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "support_state_trace",
+            "regulation_trace"
+          ]
+        }
+      },
+      "long_horizon_continuity_evidence": {
+        "horizon_window": "h2",
+        "present": true,
+        "relative_window_count": 2,
+        "source_current": true,
+        "window_decision": "supported",
+        "window_failure_mode": null,
+        "within_supported_envelope": true
+      },
+      "max_supported_horizon": "h4",
+      "memory_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.91,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "trace_axis": "memory"
+      },
+      "missing_gates": [
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration4",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration4",
+      "proxy_target_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.89,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "trace_axis": "proxy"
+      },
+      "regulation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.92,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "regulation"
+      },
+      "row_decision": "supported",
+      "row_id": "n18_i4_row_01_h2_no_added_perturbation",
+      "row_type": "stress_candidate",
+      "selection_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.9,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "trace_axis": "selection"
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "not_run_iteration4",
+        "stale_loop_feedback_control": "not_run_iteration4",
+        "stale_memory_context_control": "not_run_iteration4",
+        "stale_proxy_target_control": "not_run_iteration4",
+        "stale_selection_context_control": "not_run_iteration4",
+        "stale_support_state_control": "not_run_iteration4"
+      },
+      "snapshot_load_replay_status": "not_run_iteration4",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "h4",
+        "partial_windows": [
+          "h8"
+        ],
+        "status": "bounded_l2_envelope_established",
+        "supported_windows": [
+          "h2",
+          "h4"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_short_horizon_replay_baseline_no_ap8",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "source_output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+          "source_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671"
+        },
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration4",
+      "stress_dimension": "longer_horizon_window",
+      "stress_id": "i4_l2_h2_no_added_perturbation",
+      "stress_ladder_index": 2,
+      "stress_ladder_rung": "L2",
+      "support_state_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.93,
+        "horizon_window": "h2",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "support"
+      },
+      "threshold_policy": {
+        "axis_continuity_minimum": 0.8,
+        "budget_ceiling": 1.0,
+        "cross_axis_continuity_minimum": 0.8,
+        "drift_ceiling": 0.1,
+        "linked_continuity_minimum": 0.8,
+        "threshold_origin": "Iteration 2 froze the required horizon, budget, trace, link, and fail-closed fields. Iteration 4 freezes these L2 numeric floors before row evaluation and records them in every generated artifact."
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      },
+      "window_budget_interpretation": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 0.22,
+        "budget_headroom": 0.78,
+        "budget_limited": false,
+        "interpretation": "within budget surface"
+      },
+      "window_role_for_downstream": "fallback_i5_control"
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": true,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": true,
+        "linked_trace_continuity_present": true,
+        "long_horizon_continuity_present": true,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "L2_horizon_window_supported_pending_stress_controls",
+      "artifact_only_reconstruction_status": "not_run_iteration4",
+      "artifact_only_replay_digest": "6f60441974b40f9897b919ee9e186a5e3e30190eb104ea58e6b2ad4bcdc620d4",
+      "boundary_separation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.86,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "trace_axis": "boundary"
+      },
+      "budget_surface": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 0.41,
+        "budget_units": "artifact_stress_units",
+        "relative_window_count": 4,
+        "valid": true,
+        "window_id": "h4"
+      },
+      "budget_valid": true,
+      "claim_ceiling": "artifact_level_l2_long_horizon_replay_candidate_pending_stress_controls",
+      "closed_loop_feedback_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.83,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix"
+        ],
+        "trace_axis": "loop_feedback"
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "budget_overrun_control": {
+          "effect": "pending later matrix",
+          "status": "not_triggered"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "pending later matrix",
+          "status": "passed"
+        },
+        "order_inversion_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_memory_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_proxy_target_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_selection_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_state_replay_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_support_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "continuity_floor": 0.8,
+        "drift": 0.086,
+        "drift_ceiling": 0.1,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": true,
+        "source_current_reason": "all linked trace edges remain within L2 envelope",
+        "window_score": 0.84
+      },
+      "duplicate_replay_status": "not_run_iteration4",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "added_perturbation": false,
+        "relative_window_count": 4,
+        "source_horizon": "N17 AP7 baseline replay extended without added perturbation",
+        "window_id": "h4",
+        "window_role": "longer_horizon_no_added_perturbation_sweep"
+      },
+      "limiting_axes": {
+        "axis_labels": [
+          "loop_feedback"
+        ],
+        "axis_trace_ids": [
+          "closed_loop_feedback_trace"
+        ],
+        "minimum_axis_score": 0.83
+      },
+      "limiting_linked_edges": {
+        "link_ids": [
+          "boundary_to_loop_feedback"
+        ],
+        "minimum_linked_score": 0.83
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.83,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "boundary_separation_trace",
+            "closed_loop_feedback_trace"
+          ]
+        },
+        "memory_context_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.85,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "memory_context_trace",
+            "selection_context_trace"
+          ]
+        },
+        "proxy_to_boundary": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.84,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "proxy_target_trace",
+            "boundary_separation_trace"
+          ]
+        },
+        "regulation_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.85,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "regulation_trace",
+            "selection_context_trace"
+          ]
+        },
+        "selection_to_proxy": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.84,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "selection_context_trace",
+            "proxy_target_trace"
+          ]
+        },
+        "support_to_regulation": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.87,
+          "present": true,
+          "source_current": true,
+          "trace_axes": [
+            "support_state_trace",
+            "regulation_trace"
+          ]
+        }
+      },
+      "long_horizon_continuity_evidence": {
+        "horizon_window": "h4",
+        "present": true,
+        "relative_window_count": 4,
+        "source_current": true,
+        "window_decision": "supported",
+        "window_failure_mode": null,
+        "within_supported_envelope": true
+      },
+      "max_supported_horizon": "h4",
+      "memory_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.86,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "trace_axis": "memory"
+      },
+      "missing_gates": [
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration4",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration4",
+      "proxy_target_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.84,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "trace_axis": "proxy"
+      },
+      "regulation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.87,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "regulation"
+      },
+      "row_decision": "supported",
+      "row_id": "n18_i4_row_02_h4_no_added_perturbation",
+      "row_type": "stress_candidate",
+      "selection_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.85,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "trace_axis": "selection"
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "not_run_iteration4",
+        "stale_loop_feedback_control": "not_run_iteration4",
+        "stale_memory_context_control": "not_run_iteration4",
+        "stale_proxy_target_control": "not_run_iteration4",
+        "stale_selection_context_control": "not_run_iteration4",
+        "stale_support_state_control": "not_run_iteration4"
+      },
+      "snapshot_load_replay_status": "not_run_iteration4",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "h4",
+        "partial_windows": [
+          "h8"
+        ],
+        "status": "bounded_l2_envelope_established",
+        "supported_windows": [
+          "h2",
+          "h4"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_short_horizon_replay_baseline_no_ap8",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "source_output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+          "source_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671"
+        },
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration4",
+      "stress_dimension": "longer_horizon_window",
+      "stress_id": "i4_l2_h4_no_added_perturbation",
+      "stress_ladder_index": 2,
+      "stress_ladder_rung": "L2",
+      "support_state_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.88,
+        "horizon_window": "h4",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "support"
+      },
+      "threshold_policy": {
+        "axis_continuity_minimum": 0.8,
+        "budget_ceiling": 1.0,
+        "cross_axis_continuity_minimum": 0.8,
+        "drift_ceiling": 0.1,
+        "linked_continuity_minimum": 0.8,
+        "threshold_origin": "Iteration 2 froze the required horizon, budget, trace, link, and fail-closed fields. Iteration 4 freezes these L2 numeric floors before row evaluation and records them in every generated artifact."
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      },
+      "window_budget_interpretation": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 0.41,
+        "budget_headroom": 0.59,
+        "budget_limited": false,
+        "interpretation": "within budget surface"
+      },
+      "window_role_for_downstream": "primary_i5_stress_anchor"
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "L2_horizon_window_partial_linked_trace_continuity_below_floor_and_drift_above_ceiling",
+      "artifact_only_reconstruction_status": "not_run_iteration4",
+      "artifact_only_replay_digest": "0d1660472df926ecc6d89031e66031d69a2d3fa11d8875a89607f455407e675d",
+      "boundary_separation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.78,
+        "horizon_window": "h8",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "trace_axis": "boundary"
+      },
+      "budget_surface": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 0.76,
+        "budget_units": "artifact_stress_units",
+        "relative_window_count": 8,
+        "valid": true,
+        "window_id": "h8"
+      },
+      "budget_valid": true,
+      "claim_ceiling": "blocked_l2_horizon_replay_no_ap8",
+      "closed_loop_feedback_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.72,
+        "horizon_window": "h8",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix"
+        ],
+        "trace_axis": "loop_feedback"
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "budget_overrun_control": {
+          "effect": "pending later matrix",
+          "status": "not_triggered"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "order_inversion_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_memory_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_proxy_target_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_selection_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_state_replay_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_support_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "continuity_floor": 0.8,
+        "drift": 0.142,
+        "drift_ceiling": 0.1,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "source_current_reason": "linked_trace_continuity_below_floor_and_drift_above_ceiling",
+        "window_score": 0.73
+      },
+      "duplicate_replay_status": "not_run_iteration4",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "added_perturbation": false,
+        "relative_window_count": 8,
+        "source_horizon": "N17 AP7 baseline replay extended without added perturbation",
+        "window_id": "h8",
+        "window_role": "longer_horizon_no_added_perturbation_sweep"
+      },
+      "limiting_axes": {
+        "axis_labels": [
+          "loop_feedback"
+        ],
+        "axis_trace_ids": [
+          "closed_loop_feedback_trace"
+        ],
+        "minimum_axis_score": 0.72
+      },
+      "limiting_linked_edges": {
+        "link_ids": [
+          "boundary_to_loop_feedback"
+        ],
+        "minimum_linked_score": 0.72
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.72,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "boundary_separation_trace",
+            "closed_loop_feedback_trace"
+          ]
+        },
+        "memory_context_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.75,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "memory_context_trace",
+            "selection_context_trace"
+          ]
+        },
+        "proxy_to_boundary": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.74,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "proxy_target_trace",
+            "boundary_separation_trace"
+          ]
+        },
+        "regulation_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.77,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "regulation_trace",
+            "selection_context_trace"
+          ]
+        },
+        "selection_to_proxy": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.74,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "selection_context_trace",
+            "proxy_target_trace"
+          ]
+        },
+        "support_to_regulation": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.79,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "support_state_trace",
+            "regulation_trace"
+          ]
+        }
+      },
+      "long_horizon_continuity_evidence": {
+        "horizon_window": "h8",
+        "present": true,
+        "relative_window_count": 8,
+        "source_current": false,
+        "window_decision": "partial",
+        "window_failure_mode": "linked_trace_continuity_below_floor_and_drift_above_ceiling",
+        "within_supported_envelope": false
+      },
+      "max_supported_horizon": "h4",
+      "memory_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.75,
+        "horizon_window": "h8",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "trace_axis": "memory"
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration4",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration4",
+      "proxy_target_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.74,
+        "horizon_window": "h8",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "trace_axis": "proxy"
+      },
+      "regulation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.79,
+        "horizon_window": "h8",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "regulation"
+      },
+      "row_decision": "partial",
+      "row_id": "n18_i4_row_03_h8_no_added_perturbation",
+      "row_type": "stress_candidate",
+      "selection_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.77,
+        "horizon_window": "h8",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "trace_axis": "selection"
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "not_run_iteration4",
+        "stale_loop_feedback_control": "not_run_iteration4",
+        "stale_memory_context_control": "not_run_iteration4",
+        "stale_proxy_target_control": "not_run_iteration4",
+        "stale_selection_context_control": "not_run_iteration4",
+        "stale_support_state_control": "not_run_iteration4"
+      },
+      "snapshot_load_replay_status": "not_run_iteration4",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "h4",
+        "partial_windows": [
+          "h8"
+        ],
+        "status": "bounded_l2_envelope_established",
+        "supported_windows": [
+          "h2",
+          "h4"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_short_horizon_replay_baseline_no_ap8",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "source_output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+          "source_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671"
+        },
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration4",
+      "stress_dimension": "longer_horizon_window",
+      "stress_id": "i4_l2_h8_no_added_perturbation",
+      "stress_ladder_index": 2,
+      "stress_ladder_rung": "L2",
+      "support_state_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.81,
+        "horizon_window": "h8",
+        "interpretation": "source-current within L2 envelope",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "support"
+      },
+      "threshold_policy": {
+        "axis_continuity_minimum": 0.8,
+        "budget_ceiling": 1.0,
+        "cross_axis_continuity_minimum": 0.8,
+        "drift_ceiling": 0.1,
+        "linked_continuity_minimum": 0.8,
+        "threshold_origin": "Iteration 2 froze the required horizon, budget, trace, link, and fail-closed fields. Iteration 4 freezes these L2 numeric floors before row evaluation and records them in every generated artifact."
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      },
+      "window_budget_interpretation": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 0.76,
+        "budget_headroom": 0.24,
+        "budget_limited": false,
+        "interpretation": "within budget surface"
+      },
+      "window_role_for_downstream": "horizon_limit_evidence_not_stress_anchor"
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "L2_horizon_window_rejected_outside_source_backed_horizon_envelope_and_budget_surface",
+      "artifact_only_reconstruction_status": "not_run_iteration4",
+      "artifact_only_replay_digest": "8fe5fa4a72fa9678c9cfa18bb3e1846e1a5c46b2582dc95b8082da38aca44390",
+      "boundary_separation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.57,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "trace_axis": "boundary"
+      },
+      "budget_surface": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 1.21,
+        "budget_units": "artifact_stress_units",
+        "relative_window_count": 16,
+        "valid": false,
+        "window_id": "h16"
+      },
+      "budget_valid": false,
+      "claim_ceiling": "blocked_l2_horizon_replay_no_ap8",
+      "closed_loop_feedback_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.49,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix"
+        ],
+        "trace_axis": "loop_feedback"
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "budget_overrun_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "order_inversion_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_memory_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_proxy_target_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_selection_context_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_state_replay_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        },
+        "stale_support_state_control": {
+          "effect": "pending later matrix",
+          "status": "not_run_iteration4"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "continuity_floor": 0.8,
+        "drift": 0.315,
+        "drift_ceiling": 0.1,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "source_current_reason": "outside_source_backed_horizon_envelope_and_budget_surface",
+        "window_score": 0.52
+      },
+      "duplicate_replay_status": "not_run_iteration4",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "added_perturbation": false,
+        "relative_window_count": 16,
+        "source_horizon": "N17 AP7 baseline replay extended without added perturbation",
+        "window_id": "h16",
+        "window_role": "longer_horizon_no_added_perturbation_sweep"
+      },
+      "limiting_axes": {
+        "axis_labels": [
+          "loop_feedback"
+        ],
+        "axis_trace_ids": [
+          "closed_loop_feedback_trace"
+        ],
+        "minimum_axis_score": 0.49
+      },
+      "limiting_linked_edges": {
+        "link_ids": [
+          "boundary_to_loop_feedback"
+        ],
+        "minimum_linked_score": 0.49
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.49,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "boundary_separation_trace",
+            "closed_loop_feedback_trace"
+          ]
+        },
+        "memory_context_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.56,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "memory_context_trace",
+            "selection_context_trace"
+          ]
+        },
+        "proxy_to_boundary": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.54,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "proxy_target_trace",
+            "boundary_separation_trace"
+          ]
+        },
+        "regulation_to_selection": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.58,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "regulation_trace",
+            "selection_context_trace"
+          ]
+        },
+        "selection_to_proxy": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.54,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "selection_context_trace",
+            "proxy_target_trace"
+          ]
+        },
+        "support_to_regulation": {
+          "continuity_floor": 0.8,
+          "continuity_score": 0.61,
+          "present": true,
+          "source_current": false,
+          "trace_axes": [
+            "support_state_trace",
+            "regulation_trace"
+          ]
+        }
+      },
+      "long_horizon_continuity_evidence": {
+        "horizon_window": "h16",
+        "present": true,
+        "relative_window_count": 16,
+        "source_current": false,
+        "window_decision": "rejected",
+        "window_failure_mode": "outside_source_backed_horizon_envelope_and_budget_surface",
+        "within_supported_envelope": false
+      },
+      "max_supported_horizon": "h4",
+      "memory_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.56,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "trace_axis": "memory"
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration4",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration4",
+      "proxy_target_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.54,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "trace_axis": "proxy"
+      },
+      "regulation_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.61,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "regulation"
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i4_row_04_h16_no_added_perturbation",
+      "row_type": "stress_candidate",
+      "selection_context_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.58,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "trace_axis": "selection"
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "not_run_iteration4",
+        "stale_loop_feedback_control": "not_run_iteration4",
+        "stale_memory_context_control": "not_run_iteration4",
+        "stale_proxy_target_control": "not_run_iteration4",
+        "stale_selection_context_control": "not_run_iteration4",
+        "stale_support_state_control": "not_run_iteration4"
+      },
+      "snapshot_load_replay_status": "not_run_iteration4",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "h4",
+        "partial_windows": [
+          "h8"
+        ],
+        "status": "bounded_l2_envelope_established",
+        "supported_windows": [
+          "h2",
+          "h4"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_short_horizon_replay_baseline_no_ap8",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "source_output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+          "source_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671"
+        },
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration4",
+      "stress_dimension": "longer_horizon_window",
+      "stress_id": "i4_l2_h16_no_added_perturbation",
+      "stress_ladder_index": 2,
+      "stress_ladder_rung": "L2",
+      "support_state_trace": {
+        "continuity_floor": 0.8,
+        "continuity_score": 0.65,
+        "horizon_window": "h16",
+        "interpretation": "present but below source-current continuity floor for this horizon",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "trace_axis": "support"
+      },
+      "threshold_policy": {
+        "axis_continuity_minimum": 0.8,
+        "budget_ceiling": 1.0,
+        "cross_axis_continuity_minimum": 0.8,
+        "drift_ceiling": 0.1,
+        "linked_continuity_minimum": 0.8,
+        "threshold_origin": "Iteration 2 froze the required horizon, budget, trace, link, and fail-closed fields. Iteration 4 freezes these L2 numeric floors before row evaluation and records them in every generated artifact."
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      },
+      "window_budget_interpretation": {
+        "budget_ceiling": 1.0,
+        "budget_cost": 1.21,
+        "budget_headroom": -0.21,
+        "budget_limited": true,
+        "interpretation": "budget surface exceeded"
+      },
+      "window_role_for_downstream": "rejected_out_of_envelope_not_stress_anchor"
+    }
+  ],
+  "schema_version": "n18.horizon_window_sweep.v1",
+  "source_backed_horizon_envelope": {
+    "blocked_windows": [
+      "h16"
+    ],
+    "horizon_extrapolation_allowed": false,
+    "max_supported_horizon": "h4",
+    "partial_windows": [
+      "h8"
+    ],
+    "status": "bounded_l2_envelope_established",
+    "supported_windows": [
+      "h2",
+      "h4"
+    ]
+  },
+  "source_inventory": {
+    "output_digest": "b9e45e7fb4e2c90fac206e1b2c666b425eec18b02bee6cd48685fc705000a2bf",
+    "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_source_inventory.json",
+    "sha256": "743a7d91cc63c9fbd49fa33c1f01404727eecb4225bc39f361817fce7d0c3546"
+  },
+  "source_predecessor": {
+    "artifact_id": "n18_short_horizon_ap7_replay_baseline",
+    "output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+    "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_short_horizon_ap7_replay_baseline.json",
+    "sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671"
+  },
+  "status": "passed",
+  "threshold_policy": {
+    "axis_continuity_minimum": 0.8,
+    "budget_ceiling": 1.0,
+    "cross_axis_continuity_minimum": 0.8,
+    "drift_ceiling": 0.1,
+    "linked_continuity_minimum": 0.8,
+    "threshold_origin": "Iteration 2 froze the required horizon, budget, trace, link, and fail-closed fields. Iteration 4 freezes these L2 numeric floors before row evaluation and records them in every generated artifact."
+  },
+  "validator_command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/validate_n18_stress_row.py experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_horizon_window_sweep.json",
+  "window_summary": {
+    "h16": {
+      "budget_headroom": -0.21,
+      "cross_axis_score": 0.52,
+      "decision": "rejected",
+      "drift": 0.315,
+      "limiting_axes": [
+        "loop_feedback"
+      ],
+      "limiting_links": [
+        "boundary_to_loop_feedback"
+      ],
+      "min_axis_score": 0.49,
+      "min_linked_score": 0.49,
+      "role_for_downstream": "rejected_out_of_envelope_not_stress_anchor"
+    },
+    "h2": {
+      "budget_headroom": 0.78,
+      "cross_axis_score": 0.89,
+      "decision": "supported",
+      "drift": 0.045,
+      "limiting_axes": [
+        "loop_feedback"
+      ],
+      "limiting_links": [
+        "boundary_to_loop_feedback"
+      ],
+      "min_axis_score": 0.88,
+      "min_linked_score": 0.88,
+      "role_for_downstream": "fallback_i5_control"
+    },
+    "h4": {
+      "budget_headroom": 0.59,
+      "cross_axis_score": 0.84,
+      "decision": "supported",
+      "drift": 0.086,
+      "limiting_axes": [
+        "loop_feedback"
+      ],
+      "limiting_links": [
+        "boundary_to_loop_feedback"
+      ],
+      "min_axis_score": 0.83,
+      "min_linked_score": 0.83,
+      "role_for_downstream": "primary_i5_stress_anchor"
+    },
+    "h8": {
+      "budget_headroom": 0.24,
+      "cross_axis_score": 0.73,
+      "decision": "partial",
+      "drift": 0.142,
+      "limiting_axes": [
+        "loop_feedback"
+      ],
+      "limiting_links": [
+        "boundary_to_loop_feedback"
+      ],
+      "min_axis_score": 0.72,
+      "min_linked_score": 0.72,
+      "role_for_downstream": "horizon_limit_evidence_not_stress_anchor"
+    }
+  }
+}

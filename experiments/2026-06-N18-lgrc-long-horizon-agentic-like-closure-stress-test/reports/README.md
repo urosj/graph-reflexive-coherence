@@ -7,6 +7,8 @@ Current reports:
 ```text
 n18_long_horizon_source_inventory.md
 n18_long_horizon_schema_v1.md
+n18_short_horizon_ap7_replay_baseline.md
+n18_horizon_window_sweep.md
 ```
 
 Reports should summarize the matching JSON outputs without expanding the claim
