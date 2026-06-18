@@ -305,38 +305,192 @@ row evaluation.
 
 ## Iteration 5. Support Withdrawal And Proxy Perturbation
 
-- [ ] Apply support withdrawal and restoration stress.
-- [ ] Apply proxy/target perturbation stress.
-- [ ] Confirm bounded regulation and proxy formation remain source-current.
-- [ ] Reject hidden goal-ownership or native-support relabels.
-- [ ] Record whether the AP7 loop remains closed under stress.
+- [x] Apply support withdrawal and restoration stress.
+- [x] Apply proxy/target perturbation stress.
+- [x] Confirm bounded regulation and proxy formation remain source-current.
+- [x] Reject hidden goal-ownership or native-support relabels.
+- [x] Record whether the AP7 loop remains closed under stress.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_support_proxy_stress_matrix.json`
-- [ ] `reports/n18_support_proxy_stress_matrix.md`
-- [ ] `scripts/build_n18_support_proxy_stress_matrix.py`
+- [x] `outputs/n18_support_proxy_stress_matrix.json`
+- [x] `reports/n18_support_proxy_stress_matrix.md`
+- [x] `scripts/build_n18_support_proxy_stress_matrix.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_support_proxy_stress_matrix_h4_l3_no_ap8
+output_digest = ecaa439bdfc20cd416d3b9405c9ed9b04b1aa0871dfce82f27ad966fba13b352
+artifact_sha256 = f40c2d3d3390c69b99741e3beff5cbd8773551d9534fcdcb1e0f70fc0db3a715
+row_count = 7
+highest_positive_stress_ladder_rung = L3
+primary_stress_anchor = h4
+max_supported_horizon = h4
+support_withdrawal_restoration_supported = true
+proxy_perturbation_supported = true
+h2_fallback_supported = true
+current_bottleneck_axis = loop_feedback
+current_bottleneck_link = boundary_to_loop_feedback
+minimum_loop_feedback_score_supported_h4_rows = 0.808
+minimum_budget_headroom_supported_h4_rows = 0.24
+support_overdraw = partial
+proxy_target_band_crossing = rejected
+hidden_native_support_relabel_blocked = true
+semantic_goal_ownership_relabel_blocked = true
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_6_route_memory_stress = true
+failed_checks = []
+```
+
+Iteration 5 interpretation:
+
+```text
+Iteration 5 stresses the I4 h4 anchor without retuning the horizon or trying to
+recover h8. The bounded support withdrawal/restoration row and bounded
+proxy-perturbation row are both supported at L3, but both are narrow and remain
+pending replay/control validation. Support overdraw is partial because support
+and loop-feedback floors are not preserved. Proxy target-band crossing is
+rejected because proxy continuity and loop feedback fail closed when target
+deviation exceeds the declared ceiling. The h2 row is only fallback/control; it
+does not widen or replace the h4 envelope. Hidden native support and semantic
+goal ownership relabels are rejected, so bounded restoration is not native
+support and bounded proxy perturbation is not semantic goal ownership.
+```
+
+Iteration 5 review follow-up:
+
+```text
+The supported h4 stress rows preserve linked continuity across the full AP8
+stack, not only local support/proxy fields: all trace axes and all trace links
+remain source-current in the two supported h4 rows. The current bottleneck is
+loop_feedback, specifically boundary_to_loop_feedback, with minimum supported
+h4 loop-feedback score 0.808. I6 must use the h4/L3 support-proxy envelope
+as-is, must not replace it with h2 fallback success, must not recover h8, and
+must not change the budget policy. Route/context reversal and memory relaxation
+should be interpreted against the existing loop-feedback bottleneck and the
+minimum supported h4 budget headroom of 0.24.
+```
 
 ## Iteration 6. Route/Context Reversal And Memory Relaxation
 
-- [ ] Apply route/context reversal variants.
-- [ ] Apply memory relaxation stress.
-- [ ] Confirm consequence-sensitive selection remains bounded and
+- [x] Apply route/context reversal variants.
+- [x] Apply memory relaxation stress.
+- [x] Confirm consequence-sensitive selection remains bounded and
       claim-clean.
-- [ ] Confirm memory effects remain source-backed and do not become native
+- [x] Confirm memory effects remain source-backed and do not become native
       identity acceptance.
-- [ ] Record whether loop closure survives the reversal/relaxation matrix.
+- [x] Record whether loop closure survives the reversal/relaxation matrix.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_route_memory_stress_matrix.json`
-- [ ] `reports/n18_route_memory_stress_matrix.md`
-- [ ] `scripts/build_n18_route_memory_stress_matrix.py`
+- [x] `outputs/n18_route_memory_stress_matrix.json`
+- [x] `reports/n18_route_memory_stress_matrix.md`
+- [x] `scripts/build_n18_route_memory_stress_matrix.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_route_memory_stress_matrix_h4_l4_no_ap8
+output_digest = a2a9d0f41b389a9769605329a282674fa17e12ec861897ed81a5f31b83a9a114
+artifact_sha256 = 082b0ad9fe639135e3c8b6fff6409d6739030435ab100372dc2f7c1ac0564ec7
+row_count = 7
+highest_positive_stress_ladder_rung = L4
+primary_stress_anchor = h4
+max_supported_horizon = h4
+route_context_reversal_supported = true
+memory_relaxation_supported = true
+route_context_break = partial
+memory_decay = partial
+compound_route_memory = rejected
+semantic_choice_intention_relabel_blocked = true
+identity_acceptance_relabel_blocked = true
+current_bottleneck_axis = loop_feedback
+current_bottleneck_link = boundary_to_loop_feedback
+minimum_loop_feedback_score_supported_h4_rows = 0.801
+minimum_budget_headroom_supported_h4_rows = 0.09
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_7_environment_resource_stress = true
+failed_checks = []
+```
+
+Iteration 6 interpretation:
+
+```text
+Iteration 6 stresses the h4/L3 support-proxy envelope without changing horizon
+or budget policy. Bounded route/context reversal and bounded memory relaxation
+are supported at L4, with linked stack continuity preserved. Route/context
+break and memory decay are partial boundary rows; compound route/memory stress
+is rejected because linked continuity and budget fall outside the envelope.
+Route reversal is not semantic choice/intention, and memory relaxation is not
+identity acceptance. AP8 remains blocked pending later
+stress/replay/control/classification.
+```
+
+Iteration 6 review follow-up:
+
+```text
+I6 supports bounded L4 route/context and memory stress at h4, but the active
+bottleneck is now loop_feedback, specifically boundary_to_loop_feedback. I7
+must treat boundary_to_loop_feedback as the main risk, preserve h4 as the only
+positive horizon anchor, avoid recovering h8, and keep the budget policy
+unchanged. Supported h4 rows have narrow remaining budget headroom, with
+minimum supported h4 budget headroom 0.09, so I7 must distinguish real
+environment/resource failure from budget exhaustion.
+
+The compound route/memory row remains a real blocker and must not become the
+positive I7 starting point. I7 positive rows should start from the supported
+h4/L4 envelope, not from the rejected compound route-memory row. The partial
+route/context break and memory-decay rows remain envelope limits for
+selection/memory continuity and must be carried forward to I9.
+
+I7 must verify linked continuity link-by-link, not only in aggregate. The links
+to keep visible are memory_context_to_selection, regulation_to_selection,
+selection_to_proxy, and boundary_to_loop_feedback. Consequence-sensitive route
+context remains not semantic choice or intention, and memory relaxation remains
+not identity acceptance. L4 is still not AP8; AP8 remains blocked pending
+environment/resource stress, shared-medium stress, replay/reconstruction,
+stale-state controls, and claim classification.
+```
+
+Iteration 6 validation follow-up:
+
+```text
+The I6 budget-valid gate is now conditioned on the same budget ceiling used by
+row-level budget_valid and budget_surface.valid. The compound route-memory
+limit row therefore records budget_valid = false, ap8_gates.budget_valid =
+false, and within_supported_envelope = false. The same gate helper was updated
+in I5 to remove the latent mismatch before I7 consumes the stress chain.
+
+within_supported_envelope now reflects threshold/budget membership, not mere
+presence in the h4 horizon. Partial limit rows remain outside the supported
+envelope; relabel controls can remain numerically inside the envelope while
+their unsafe claim remains rejected.
+```
 
 ## Iteration 7. Environment/Resource Perturbation
 
 - [ ] Apply environment/resource perturbation stress.
 - [ ] Confirm boundary separation remains preserved.
+- [ ] Treat `boundary_to_loop_feedback` as the primary expected bottleneck.
+- [ ] Use the supported `h4/L4` envelope without recovering `h8` or changing
+      budget policy.
+- [ ] Start positive rows from supported I6 h4 rows, not from the rejected
+      compound route-memory row.
+- [ ] Check budget exhaustion separately from environment/resource failure.
+- [ ] Preserve route/context and memory partial rows as envelope limits.
+- [ ] Verify `memory_context_to_selection`, `regulation_to_selection`,
+      `selection_to_proxy`, and `boundary_to_loop_feedback` link-by-link.
 - [ ] Confirm resource/support closure does not become goal ownership.
 - [ ] Reject resource-as-self relabels.
 - [ ] Record long-horizon budget and replay status.
