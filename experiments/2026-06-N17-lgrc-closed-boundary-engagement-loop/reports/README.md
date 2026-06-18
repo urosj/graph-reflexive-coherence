@@ -29,11 +29,37 @@ Generated reports:
 - `n17_alternative_g5_challenge_probe.md` - Iteration 6-B interpretation. It
   records an independent target-band-gated G5 alternative with mild
   attenuation and source-window delay support while keeping final AP7 blocked.
+- `n17_resource_support_modulation_loop.md` - Iteration 7 interpretation. It
+  records a bounded resource/support modulation extension while blocking
+  resource depletion as goal pursuit and keeping final AP7 blocked.
+- `n17_resource_support_challenge_stability_probe.md` - Iteration 7-A
+  interpretation. It records local G5 support for the fixed route_b
+  resource/support family under the recorded challenge envelope while keeping
+  shared-medium reciprocal closure and final AP7 blocked.
+- `n17_alternative_resource_support_g5_probe.md` - Iteration 7-B
+  interpretation. It records a second, narrower local G5 resource/support
+  setup that is not a 7-A refinement while keeping final AP7 blocked.
+- `n17_shared_medium_reciprocal_loop.md` - Iteration 8 interpretation. It
+  records a local one-sided artifact-level G6 shared-medium reciprocal
+  candidate, blocks general/reverse-perspective G6, basin merge/leakage
+  relabels, and keeps symmetric native multi-basin claims and final AP7
+  blocked.
+- `n17_shared_medium_reverse_perspective_probe.md` - Iteration 8-A
+  interpretation. It records alternate-source N07 dual-basin bounded-exchange
+  support, keeps B4/C5 reverse replay blocked, and keeps general G6, symmetric
+  native multi-basin claims, and final AP7 blocked.
+- `n17_b4c5_reverse_perspective_replay_probe.md` - Iteration 8-B
+  interpretation. It records that B4/C5 is multi-basin but not
+  perspective-paired, preserving the 8-A multi-source context while keeping
+  B4/C5 reverse replay blocked.
+- `n17_paired_perspective_shared_medium_probe.md` - Iteration 8-C
+  interpretation. It records a local paired-perspective shared-medium G6
+  candidate with explicit A/B perspective rows and a joint paired row while
+  preserving the B4/C5 reverse replay blocker and keeping general G6/final AP7
+  blocked.
 
 Planned reports:
 
-- `n17_resource_support_modulation_loop.md`
-- `n17_shared_medium_reciprocal_loop.md`
 - `n17_closed_loop_requirements_matrix.md`
 - `n17_closeout_and_handoff.md`
 

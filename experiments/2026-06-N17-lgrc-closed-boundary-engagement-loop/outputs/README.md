@@ -30,11 +30,33 @@ Generated artifacts:
 - `n17_alternative_g5_challenge_probe.json` - Iteration 6-B alternative
   target-band-gated G5 challenge probe. Status: `passed`; acceptance state:
   `accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7`.
+- `n17_resource_support_modulation_loop.json` - Iteration 7 resource/support
+  modulation extension. Status: `passed`; acceptance state:
+  `accepted_resource_support_modulation_extension_candidate_no_final_ap7`.
+- `n17_resource_support_challenge_stability_probe.json` - Iteration 7-A
+  local G5 challenge-stability probe for the fixed Iteration 7 route_b
+  resource/support loop. Status: `passed`; acceptance state:
+  `accepted_resource_support_challenge_stability_g5_candidate_no_final_ap7`.
+- `n17_alternative_resource_support_g5_probe.json` - Iteration 7-B
+  alternative low-margin resource/support G5 setup. Status: `passed`;
+  acceptance state:
+  `accepted_alternative_resource_support_g5_setup_no_final_ap7`.
+- `n17_shared_medium_reciprocal_loop.json` - Iteration 8 local one-sided
+  shared-medium reciprocal loop extension. Status: `passed`; acceptance state:
+  `accepted_local_one_sided_shared_medium_g6_candidate_no_final_ap7`.
+- `n17_shared_medium_reverse_perspective_probe.json` - Iteration 8-A
+  shared-medium reverse-perspective/alternate-source probe. Status: `passed`;
+  acceptance state:
+  `accepted_alternate_source_shared_medium_g6_candidate_b4c5_reverse_blocked_no_final_ap7`.
+- `n17_b4c5_reverse_perspective_replay_probe.json` - Iteration 8-B B4/C5
+  reverse-perspective replay probe. Status: `passed`; acceptance state:
+  `accepted_b4c5_reverse_perspective_blocked_multi_source_context_preserved_no_final_ap7`.
+- `n17_paired_perspective_shared_medium_probe.json` - Iteration 8-C local
+  paired-perspective shared-medium probe. Status: `passed`; acceptance state:
+  `accepted_local_paired_perspective_shared_medium_g6_candidate_no_final_ap7`.
 
 Planned artifacts:
 
-- `n17_resource_support_modulation_loop.json`
-- `n17_shared_medium_reciprocal_loop.json`
 - `n17_closed_loop_requirements_matrix.json`
 - `n17_closeout_and_handoff.json`
 

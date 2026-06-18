@@ -1,0 +1,3436 @@
+{
+  "acceptance_state": "accepted_resource_support_modulation_extension_candidate_no_final_ap7",
+  "ap7_classification_supported": true,
+  "artifact_id": "n17_resource_support_modulation_loop",
+  "artifact_level_ap7_candidate_supported": true,
+  "checks": [
+    {
+      "check_id": "i6b_mvp_g5_contract_available",
+      "detail": {
+        "i6b_current_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+        "i6b_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_values_support_resource_extension",
+      "detail": {
+        "constructed_followout_supported": true,
+        "current_support_retention": 0.7298651821835279,
+        "n13_bounded_response_amount": 0.120134817816,
+        "n13_bounded_response_budget_debit": 0.120134817816,
+        "observed_upstream_route_conditioned_support_regulation_supported": false,
+        "restored_lane_support": 0.9244958974324687,
+        "route_a_followout_score": -0.720024135632,
+        "route_a_inside_target_band": true,
+        "route_a_projected_support": 0.85,
+        "route_a_regulation_component": -0.32,
+        "route_a_support_component": -0.240269635632,
+        "route_a_support_floor_preserved": true,
+        "route_b_followout_score": 0.2,
+        "route_b_inside_target_band": true,
+        "route_b_projected_support": 0.924495897432,
+        "route_b_regulation_component": 0.08,
+        "route_b_support_component": 0.0,
+        "route_b_support_floor_preserved": true,
+        "route_b_support_gain_vs_current": 0.194630715248,
+        "route_b_support_gain_vs_route_a": 0.074495897432,
+        "support_error": 0.120134817816,
+        "support_floor": 0.85,
+        "target_band": [
+          0.817594607287,
+          0.957594607287
+        ],
+        "target_center": 0.887594607287,
+        "top_followout_route": "route_b"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "resource_support_positive_row_present",
+      "detail": [
+        "route_b_resource_support_access_modulation"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "resource_controls_fail_closed",
+      "detail": [
+        "route_a_depletion_burden_control",
+        "resource_depletion_goal_pursuit_relabel_control",
+        "missing_modified_resource_feedback_control",
+        "resource_label_only_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "resource_family_does_not_inherit_g5",
+      "detail": "I7 is a resource/support extension candidate; G5 remains MVP context until this family has its own challenge-stability probe",
+      "passed": true
+    },
+    {
+      "check_id": "row_replay_digest_bound_to_schema_policy",
+      "detail": "I7 computes row replay digests from the frozen I2 replay scope; independent comparative replay remains an I9 duty",
+      "passed": true
+    },
+    {
+      "check_id": "resource_goal_pursuit_relabel_control_passed_for_supported_row",
+      "detail": "resource depletion/route modulation cannot be relabeled as semantic goal pursuit",
+      "passed": true
+    },
+    {
+      "check_id": "shared_medium_extension_not_opened",
+      "detail": "Iteration 8 remains required for shared-medium reciprocal closure",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": "all unsafe claim flags remain false",
+      "passed": true
+    },
+    {
+      "check_id": "final_ap7_still_false",
+      "detail": "I7 opens a bounded extension only; final closeout remains pending",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 7 does not edit src/*",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "classified_ap_level": "AP7_extension_candidate",
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_modulation_loop.py",
+  "comparative_classification_pending_iteration9": true,
+  "current_evidence_rung": "G4_resource_support_modulation_extension_candidate",
+  "deferred_extension_iterations": [
+    8
+  ],
+  "errors": [],
+  "experiment": "N17",
+  "extension_mode": "extensions_included",
+  "extension_scope": "resource_support_extension_included_shared_medium_deferred",
+  "final_ap7_supported": false,
+  "final_artifact_level_ap7_frozen": false,
+  "final_closeout_pending_iteration10": true,
+  "full_comparative_ap7_classification_supported": false,
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "e54b2011ad22070e1ddedcd7ca95dba51268323c",
+    "status_short": [
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationChecklist.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationPlan.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_challenge_stability_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_modulation_loop.py"
+    ]
+  },
+  "included_iterations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    "6-A",
+    "6-B",
+    7
+  ],
+  "iteration": "7",
+  "iteration_result": {
+    "claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+    "current_evidence_rung": "G4_resource_support_modulation_extension_candidate",
+    "final_ap7_supported": false,
+    "native_support_opened": false,
+    "ready_for_iteration_8_shared_medium_reciprocal_loop": true,
+    "resource_support_family_challenge_stability_supported": false,
+    "resource_support_modulation_extension_supported": true,
+    "semantic_goal_pursuit_opened": false,
+    "shared_medium_extension_opened": false,
+    "supported_case_id": "route_b_resource_support_access_modulation"
+  },
+  "mvp_ap7_classification_supported": true,
+  "output_digest": "d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2",
+  "purpose": "test resource/support modulation loop extension after MVP G5 context",
+  "replay_digest_verification_note": "row_replay_digest is computed from the frozen I2 replay digest scope for each I7 row. A separate independent replay/comparative digest pass is deferred to Iteration 9 unless a dedicated I7 replay extension is opened.",
+  "resource_support_extension_supported": true,
+  "resource_support_family_challenge_stability_supported": false,
+  "resource_support_policy": {
+    "evidence_rung_policy": "resource/support extension receives G4 at I7; it does not inherit G5 challenge stability from the MVP perturbation loop",
+    "loop_family": "resource_support_modulation_loop",
+    "pass_rule": "route-conditioned resource/support modulation must be source-backed, inside the N15 target band, above the N13 support floor, and must pass the resource-depletion-as-goal-pursuit relabel control",
+    "policy_id": "n17_i7_resource_support_modulation_policy",
+    "resource_support_extension_opened": true,
+    "semantic_goal_pursuit_allowed": false,
+    "shared_medium_extension_opened": false,
+    "source_values": {
+      "constructed_followout_supported": true,
+      "current_support_retention": 0.7298651821835279,
+      "n13_bounded_response_amount": 0.120134817816,
+      "n13_bounded_response_budget_debit": 0.120134817816,
+      "observed_upstream_route_conditioned_support_regulation_supported": false,
+      "restored_lane_support": 0.9244958974324687,
+      "route_a_followout_score": -0.720024135632,
+      "route_a_inside_target_band": true,
+      "route_a_projected_support": 0.85,
+      "route_a_regulation_component": -0.32,
+      "route_a_support_component": -0.240269635632,
+      "route_a_support_floor_preserved": true,
+      "route_b_followout_score": 0.2,
+      "route_b_inside_target_band": true,
+      "route_b_projected_support": 0.924495897432,
+      "route_b_regulation_component": 0.08,
+      "route_b_support_component": 0.0,
+      "route_b_support_floor_preserved": true,
+      "route_b_support_gain_vs_current": 0.194630715248,
+      "route_b_support_gain_vs_route_a": 0.074495897432,
+      "support_error": 0.120134817816,
+      "support_floor": 0.85,
+      "target_band": [
+        0.817594607287,
+        0.957594607287
+      ],
+      "target_center": 0.887594607287,
+      "top_followout_route": "route_b"
+    }
+  },
+  "row_summary": {
+    "fail_closed_case_ids": [
+      "route_a_depletion_burden_control",
+      "resource_depletion_goal_pursuit_relabel_control",
+      "missing_modified_resource_feedback_control",
+      "resource_label_only_control"
+    ],
+    "fail_closed_row_count": 4,
+    "resource_support_extension_supported": true,
+    "resource_support_family_challenge_stability_supported": false,
+    "still_not_supported": [
+      "resource_depletion_as_goal_pursuit",
+      "resource_label_only_loop",
+      "missing_modified_resource_feedback",
+      "resource_support_family_challenge_stability",
+      "shared_medium_reciprocal_loop",
+      "full_comparative_AP7",
+      "final_AP7"
+    ],
+    "supported_case_ids": [
+      "route_b_resource_support_access_modulation"
+    ],
+    "supported_row_count": 1
+  },
+  "rows": [
+    {
+      "alternative_g5_challenge_probe": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "challenge_id": "target_band_anchor_replay",
+        "challenge_profile": {
+          "derivation_policy": "N15 target band plus N13 bounded response",
+          "feedback_attenuation_ratio": 0.0,
+          "feedback_delay_windows": 0,
+          "profile_type": "alternative_config_anchor"
+        },
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "target-band anchor replay",
+        "metrics": {
+          "bounded_response_within_n13_budget": true,
+          "n09_recovery_in_band": true,
+          "n15_replay_clean": true,
+          "projected_later_internal_support": 0.887594607287,
+          "response_budget_debit": 0.120134817816,
+          "response_budget_limit": 0.120134817816,
+          "response_causation_preserved": true,
+          "support_cost": 0.0,
+          "support_floor": 0.85,
+          "support_floor_margin": 0.037594607287,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_band_margin_to_lower": 0.07,
+          "target_band_margin_to_upper": 0.07,
+          "target_band_membership": true,
+          "target_center": 0.887594607287
+        },
+        "row_decision": "supported"
+      },
+      "ap7_gates": {
+        "budget_validity_passed": true,
+        "claim_boundary_clean": true,
+        "controls_passed": true,
+        "dependency_trace_complete": true,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": true,
+        "four_trace_legs_present": true,
+        "four_trace_legs_source_backed": true,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": true,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": true,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "final_AP7_supported",
+        "full_comparative_AP7_without_iterations_8_9_10",
+        "shared_medium_reciprocal_AP7",
+        "resource_depletion_as_goal_pursuit",
+        "semantic_goal_ownership",
+        "semantic_action",
+        "semantic_perception",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "organism_life",
+        "fully_native_integration",
+        "unrestricted_agency"
+      ],
+      "boundary_assignments": {
+        "resource_support_extension_boundary": {
+          "crossing_relation": "support_condition_pressure_or_access_modulation",
+          "external_side": "route_conditioned_resource_support_surface",
+          "internal_side": "support_relevant_state_surface"
+        },
+        "route_side_assignments": {
+          "route_a": "external_resource_support_depletion_candidate",
+          "route_b": "external_resource_support_access_candidate"
+        },
+        "source": "N16_AP6_boundary_inherited_via_N17_I6B"
+      },
+      "budget_cost_surface": {
+        "case_index": 1,
+        "hidden_state_allowance": 0,
+        "present_trace_leg_count": 4,
+        "resource_extension_case_count": 5,
+        "response_budget_debit": 0.0,
+        "response_budget_limit": 0.120134817816,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "normalized_cost",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": true,
+        "reason": "resource/support extension row is inside bounded response and target-band scope",
+        "valid": true,
+        "within_limits": true
+      },
+      "candidate_field_retention_note": "candidate fields are retained after I5 validation to preserve continuity with the I4 pre-control row",
+      "candidate_rung_label": "G4_resource_support_modulation_extension_candidate",
+      "claim_classification": "AP7_MVP_claim_clean_candidate",
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": true,
+        "artifact_level_ap7_candidate_supported": true,
+        "closed_loop_demonstrated": true,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "g5_challenge_stability_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": true,
+      "contrast_with_i3_one_way_null": {
+        "i3_closed_loop_claim_allowed": false,
+        "i3_loop_rung": "G2",
+        "i3_missing_feedback_leg": true,
+        "i4_closed_loop_claim_allowed": false,
+        "i4_feedback_leg_present": true,
+        "what_changed": [
+          "response_caused_external_change_candidate_recorded",
+          "later_internal_dependence_candidate_recorded"
+        ]
+      },
+      "controls": {
+        "artifact_only_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "duplicate_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "external_change_not_caused_by_response_control": {
+          "blocker": "external_change_not_caused_by_response_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "response_caused_external_change",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_order_inversion_control": {
+          "blocker": "feedback_order_inversion_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "monotonic_phase_order_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_removed_control": {
+          "blocker": "feedback_removed_blocks_loop_claim",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "feedback_removed_control_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_external_state_memory_control": {
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal_state_carryover_control": {
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": {
+          "blocker": "native_support_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "one_way_crossing_relabel_control": {
+          "blocker": "one_way_crossing_is_not_closed_loop",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "one_way_crossing_null_blocked",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "order_inversion_replay_control": {
+          "blocker": "order_inversion_replay_blocked_false_order",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "organism_life_relabel_control": {
+          "blocker": "organism_life_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "outbound_response_relabel_control": {
+          "blocker": "outbound_response_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "post_hoc_loop_stitching_control": {
+          "blocker": "post_hoc_loop_stitching_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "resource_depletion_goal_pursuit_relabel_control": {
+          "blocker": "resource_depletion_as_goal_pursuit_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "selfhood_identity_relabel_control": {
+          "blocker": "selfhood_identity_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_action_perception_relabel_control": {
+          "blocker": "semantic_action_perception_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_agency_relabel_control": {
+          "blocker": "semantic_agency_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_intention_relabel_control": {
+          "blocker": "semantic_intention_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "shared_medium_rows_not_present_in_i7_resource_extension",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "snapshot_load_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        }
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "route_b_resource_support_access_modulation"
+          },
+          {
+            "cause_attribution": "response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": true,
+            "source_trace": "route_b_resource_support_access_modulation"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": true,
+            "source_backed": true,
+            "source_trace": "route_b_resource_support_access_modulation"
+          }
+        ],
+        "missing_edges": []
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_counterfactual_status": "validated_by_i5_control",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "route_b resource/support access modulation: later support is accepted only when it is conditioned by the modified resource/support state",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "later_internal_depends_on_changed_external_state": true,
+          "projected_later_internal_support": 0.924495897432,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "modified_resource_feedback_present": true
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "route_b resource/support access modulation: resource/support condition is represented by serialized route-conditioned support and regulation components",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "external_state_role": "resource",
+          "route_a_regulation_component": -0.32,
+          "route_a_support_component": -0.240269635632,
+          "route_b_regulation_component": 0.08,
+          "route_b_support_component": 0.0
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "external_resource_support_condition": "not_modulated"
+        }
+      },
+      "feedback_removed_control_changes_result": true,
+      "feedback_removed_control_result_status": "validated_by_i5_control",
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "route_b resource/support access modulation: internal support-relevant state is updated from source-visible support retention and route followout components",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "followout_score": 0.2,
+          "resource_support_extension_opened": true,
+          "response_budget_debit": 0.0,
+          "support_delta_vs_current": 0.194630715248
+        },
+        "state_before": {
+          "support_floor": 0.85,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        }
+      },
+      "iteration_5_control_status": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "iteration_5_trace_preservation": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "iteration_6_classification": {
+        "alternative_g5_configuration_supported": true,
+        "classified_ap_level": "AP7_MVP",
+        "final_closeout_pending_iteration10": true,
+        "full_comparative_ap7_classification_supported": false,
+        "iteration_6b_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+        "mvp_scope_only": true,
+        "source_i6_evidence_rung": "G4_replay_control_clean_candidate"
+      },
+      "iteration_6b_classification": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "bounded_g5_scope": "target_band_gated_mvp_perturbation_loop",
+        "not_a_retune_of_iteration_6a": true,
+        "resource_support_extension_opened": false,
+        "row_supported": true,
+        "shared_medium_extension_opened": false
+      },
+      "later_internal_dependence_candidate": true,
+      "later_internal_depends_on_changed_external_state": true,
+      "loop_closure_evidence": {
+        "case_id": "route_b_resource_support_access_modulation",
+        "closed_loop_candidate": true,
+        "closure_hinge": "modified_resource_support_state_feeds_later_internal_support",
+        "failure_reasons": [],
+        "g3_reached": true,
+        "g4_replay_control_clean_inherited": true,
+        "g5_not_claimed_for_resource_family": true,
+        "mvp_g5_challenge_context_available": true,
+        "not_final_ap7": true,
+        "one_step_recovery_only": false,
+        "ordered_closure_present": true,
+        "resource_support_extension_row": true,
+        "resource_support_family_challenge_stability_earned": false
+      },
+      "loop_family": "resource_support_modulation_loop",
+      "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+      "loop_rung": "G4",
+      "loop_rung_index": 4,
+      "minimal_loop_scope": {
+        "perturbation_response_recovery_contract_inherited": true,
+        "resource_support_extension_opened": true,
+        "shared_medium_extension_opened": false
+      },
+      "missing_gates": [],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "G4_resource_support_modulation_AP7_extension_candidate",
+      "provisional_claim_ceiling": "artifact_level_resource_support_modulation_closed_loop_extension_candidate",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "resource_support_modulation_probe": {
+        "case_id": "route_b_resource_support_access_modulation",
+        "case_kind": "positive_extension_candidate",
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "followout_score": 0.2,
+        "interpretation": "route_b is the constructed top followout route; it preserves support inside the generated target band while blocking goal-pursuit language",
+        "label": "route_b resource/support access modulation",
+        "projected_later_internal_support": 0.924495897432,
+        "response_budget_debit": 0.0,
+        "route_conditioned_regulation_component": 0.08,
+        "route_conditioned_support_component": 0.0,
+        "row_decision": "supported",
+        "support_delta_vs_current": 0.194630715248
+      },
+      "response_caused_external_change": true,
+      "response_caused_external_change_candidate": true,
+      "response_to_external_change_trace": {
+        "cause_attribution": "response_caused",
+        "dependency_note": "route_b resource/support access modulation: response-caused external change is bounded to access/path/pressure modulation, not semantic action",
+        "phase": "t2_response_caused_external_change",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "resource_depletion_goal_pursuit_relabel_blocked": true,
+          "response_caused_access_or_pressure_change": true,
+          "route_access_modulated_to": "route_b"
+        },
+        "state_before": {
+          "route_access_unmodulated": true,
+          "semantic_goal_pursuit_allowed": false
+        }
+      },
+      "row_decision": "supported",
+      "row_id": "n17_i7_row_01_route_b_resource_support_access_modulation",
+      "row_replay_digest": "2dae36aaa9f951019308dd2c44445b095b96faae7d0a4071bba1434636e52001",
+      "row_type": "extension_candidate",
+      "schema_version": "1.0",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "source_claim_ceiling": "artifact_level_alternative_g5_mvp_loop_candidate_not_final_AP7",
+          "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+          "source_row_id": "n17_i6b_row_04_compound_mild_attenuation_delay_target_band",
+          "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "source_claim_ceiling": "constructed_route_conditioned_support_regulation_followout_not_native_support",
+          "source_output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+          "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+          "source_row_id": "n14_i6c_route_conditioned_followout_probe",
+          "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+          "source_row_id": "n14_closeout_ap4",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_claim_ceiling": "artifact_level_AP3_support_regulation_context_not_selfhood_or_native_support",
+          "source_output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+          "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+          "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+          "source_row_id": "n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "source_claim_ceiling": "artifact_level_runtime_derived_target_candidate_not_goal_ownership",
+          "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+          "source_row_id": "n15_i3_runtime_derived_target_candidate",
+          "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+        }
+      ],
+      "source_iteration_6_classification": {
+        "artifact_level_ap7_candidate_supported": true,
+        "claim_classification": "AP7_MVP_claim_clean_candidate",
+        "classified_ap_level": "AP7_MVP",
+        "comparative_classification_pending_iteration9": true,
+        "current_evidence_rung": "G4_replay_control_clean_candidate",
+        "deferred_extension_iterations": [
+          7,
+          8
+        ],
+        "extension_mode": "extensions_deferred",
+        "final_closeout_pending_iteration10": true,
+        "g5_challenge_stability_pending_iteration_6a": true,
+        "g5_challenge_stability_supported": false,
+        "included_iterations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mvp_scope_only": true,
+        "pending_bridge_iterations": [
+          "6-A"
+        ]
+      },
+      "source_row_ids": [
+        "n17_i6b_alternative_g5_contract",
+        "n14_i6c_route_conditioned_followout_probe",
+        "n13_support_seeking_regulation_candidate",
+        "n15_i3_runtime_derived_target_candidate"
+      ]
+    },
+    {
+      "alternative_g5_challenge_probe": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "challenge_id": "target_band_anchor_replay",
+        "challenge_profile": {
+          "derivation_policy": "N15 target band plus N13 bounded response",
+          "feedback_attenuation_ratio": 0.0,
+          "feedback_delay_windows": 0,
+          "profile_type": "alternative_config_anchor"
+        },
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "target-band anchor replay",
+        "metrics": {
+          "bounded_response_within_n13_budget": true,
+          "n09_recovery_in_band": true,
+          "n15_replay_clean": true,
+          "projected_later_internal_support": 0.887594607287,
+          "response_budget_debit": 0.120134817816,
+          "response_budget_limit": 0.120134817816,
+          "response_causation_preserved": true,
+          "support_cost": 0.0,
+          "support_floor": 0.85,
+          "support_floor_margin": 0.037594607287,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_band_margin_to_lower": 0.07,
+          "target_band_margin_to_upper": 0.07,
+          "target_band_membership": true,
+          "target_center": 0.887594607287
+        },
+        "row_decision": "supported"
+      },
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "final_AP7_supported",
+        "full_comparative_AP7_without_iterations_8_9_10",
+        "shared_medium_reciprocal_AP7",
+        "resource_depletion_as_goal_pursuit",
+        "semantic_goal_ownership",
+        "semantic_action",
+        "semantic_perception",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "organism_life",
+        "fully_native_integration",
+        "unrestricted_agency"
+      ],
+      "boundary_assignments": {
+        "resource_support_extension_boundary": {
+          "crossing_relation": "support_condition_pressure_or_access_modulation",
+          "external_side": "route_conditioned_resource_support_surface",
+          "internal_side": "support_relevant_state_surface"
+        },
+        "route_side_assignments": {
+          "route_a": "external_resource_support_depletion_candidate",
+          "route_b": "external_resource_support_access_candidate"
+        },
+        "source": "N16_AP6_boundary_inherited_via_N17_I6B"
+      },
+      "budget_cost_surface": {
+        "case_index": 2,
+        "hidden_state_allowance": 0,
+        "present_trace_leg_count": 4,
+        "resource_extension_case_count": 5,
+        "response_budget_debit": 0.120134817816,
+        "response_budget_limit": 0.120134817816,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "normalized_cost",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "resource/support extension control row is not claim-admissible",
+        "valid": false,
+        "within_limits": false
+      },
+      "candidate_field_retention_note": "candidate fields are retained after I5 validation to preserve continuity with the I4 pre-control row",
+      "candidate_rung_label": "G4_resource_support_modulation_fail_closed_control",
+      "claim_classification": "AP7_MVP_claim_clean_candidate",
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "g5_challenge_stability_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": false,
+        "resource_support_family_challenge_stability_supported": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "contrast_with_i3_one_way_null": {
+        "i3_closed_loop_claim_allowed": false,
+        "i3_loop_rung": "G2",
+        "i3_missing_feedback_leg": true,
+        "i4_closed_loop_claim_allowed": false,
+        "i4_feedback_leg_present": true,
+        "what_changed": [
+          "response_caused_external_change_candidate_recorded",
+          "later_internal_dependence_candidate_recorded"
+        ]
+      },
+      "controls": {
+        "artifact_only_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "duplicate_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "external_change_not_caused_by_response_control": {
+          "blocker": "external_change_not_caused_by_response_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "response_caused_external_change",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_order_inversion_control": {
+          "blocker": "feedback_order_inversion_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "monotonic_phase_order_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_removed_control": {
+          "blocker": "feedback_removed_blocks_loop_claim",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "feedback_removed_control_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_external_state_memory_control": {
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal_state_carryover_control": {
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": {
+          "blocker": "native_support_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "one_way_crossing_relabel_control": {
+          "blocker": "one_way_crossing_is_not_closed_loop",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "one_way_crossing_null_blocked",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "order_inversion_replay_control": {
+          "blocker": "order_inversion_replay_blocked_false_order",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "organism_life_relabel_control": {
+          "blocker": "organism_life_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "outbound_response_relabel_control": {
+          "blocker": "outbound_response_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "post_hoc_loop_stitching_control": {
+          "blocker": "post_hoc_loop_stitching_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "resource_depletion_goal_pursuit_relabel_control": {
+          "blocker": "resource_depletion_as_goal_pursuit_blocked",
+          "candidate_survives_control": false,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "selfhood_identity_relabel_control": {
+          "blocker": "selfhood_identity_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_action_perception_relabel_control": {
+          "blocker": "semantic_action_perception_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_agency_relabel_control": {
+          "blocker": "semantic_agency_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_intention_relabel_control": {
+          "blocker": "semantic_intention_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "shared_medium_rows_not_present_in_i7_resource_extension",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "snapshot_load_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        }
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "route_a_depletion_burden_control"
+          },
+          {
+            "cause_attribution": "not_admissible",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "route_a_depletion_burden_control"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "route_a_depletion_burden_control"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_counterfactual_status": "validated_by_i5_control",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "route_a depletion-burden control: later support is accepted only when it is conditioned by the modified resource/support state",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_internal_depends_on_changed_external_state": false,
+          "projected_later_internal_support": 0.85,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "modified_resource_feedback_present": false
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "route_a depletion-burden control: resource/support condition is represented by serialized route-conditioned support and regulation components",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "external_state_role": "resource",
+          "route_a_regulation_component": -0.32,
+          "route_a_support_component": -0.240269635632,
+          "route_b_regulation_component": 0.08,
+          "route_b_support_component": 0.0
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "external_resource_support_condition": "not_modulated"
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "feedback_removed_control_result_status": "validated_by_i5_control",
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "route_a depletion-burden control: internal support-relevant state is updated from source-visible support retention and route followout components",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "followout_score": -0.720024135632,
+          "resource_support_extension_opened": true,
+          "response_budget_debit": 0.120134817816,
+          "support_delta_vs_current": 0.120134817816
+        },
+        "state_before": {
+          "support_floor": 0.85,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        }
+      },
+      "iteration_5_control_status": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "iteration_5_trace_preservation": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "iteration_6_classification": {
+        "alternative_g5_configuration_supported": true,
+        "classified_ap_level": "AP7_MVP",
+        "final_closeout_pending_iteration10": true,
+        "full_comparative_ap7_classification_supported": false,
+        "iteration_6b_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+        "mvp_scope_only": true,
+        "source_i6_evidence_rung": "G4_replay_control_clean_candidate"
+      },
+      "iteration_6b_classification": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "bounded_g5_scope": "target_band_gated_mvp_perturbation_loop",
+        "not_a_retune_of_iteration_6a": true,
+        "resource_support_extension_opened": false,
+        "row_supported": true,
+        "shared_medium_extension_opened": false
+      },
+      "later_internal_dependence_candidate": true,
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "case_id": "route_a_depletion_burden_control",
+        "closed_loop_candidate": false,
+        "closure_hinge": "modified_resource_support_state_feeds_later_internal_support",
+        "failure_reasons": [
+          "route_condition_has_support_depletion_burden",
+          "route_condition_has_negative_regulation_component",
+          "route_not_top_followout_route"
+        ],
+        "g3_reached": true,
+        "g4_replay_control_clean_inherited": true,
+        "g5_not_claimed_for_resource_family": true,
+        "mvp_g5_challenge_context_available": true,
+        "not_final_ap7": true,
+        "one_step_recovery_only": false,
+        "ordered_closure_present": false,
+        "resource_support_extension_row": false,
+        "resource_support_family_challenge_stability_earned": false
+      },
+      "loop_family": "resource_support_modulation_loop",
+      "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+      "loop_rung": "G4",
+      "loop_rung_index": 4,
+      "minimal_loop_scope": {
+        "perturbation_response_recovery_contract_inherited": true,
+        "resource_support_extension_opened": true,
+        "shared_medium_extension_opened": false
+      },
+      "missing_gates": [
+        "route_condition_has_support_depletion_burden",
+        "route_condition_has_negative_regulation_component",
+        "route_not_top_followout_route"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "resource_support_modulation_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_resource_support_modulation_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "resource_support_modulation_probe": {
+        "case_id": "route_a_depletion_burden_control",
+        "case_kind": "depletion_burden_control",
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "route_condition_has_support_depletion_burden",
+          "route_condition_has_negative_regulation_component",
+          "route_not_top_followout_route"
+        ],
+        "followout_score": -0.720024135632,
+        "interpretation": "route_a shows support recovery to floor under bounded response, but the route-conditioned support/regulation components remain negative",
+        "label": "route_a depletion-burden control",
+        "projected_later_internal_support": 0.85,
+        "response_budget_debit": 0.120134817816,
+        "route_conditioned_regulation_component": -0.32,
+        "route_conditioned_support_component": -0.240269635632,
+        "row_decision": "partial",
+        "support_delta_vs_current": 0.120134817816
+      },
+      "response_caused_external_change": false,
+      "response_caused_external_change_candidate": true,
+      "response_to_external_change_trace": {
+        "cause_attribution": "not_admissible",
+        "dependency_note": "route_a depletion-burden control: response-caused external change is bounded to access/path/pressure modulation, not semantic action",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "resource_depletion_goal_pursuit_relabel_blocked": true,
+          "response_caused_access_or_pressure_change": false,
+          "route_access_modulated_to": "not_claim_allowed"
+        },
+        "state_before": {
+          "route_access_unmodulated": true,
+          "semantic_goal_pursuit_allowed": false
+        }
+      },
+      "row_decision": "partial",
+      "row_id": "n17_i7_row_02_route_a_depletion_burden_control",
+      "row_replay_digest": "6e8e7042df40cf0a293efbd4204a3625c561bab01d96655e97aea384d962274f",
+      "row_type": "control_row",
+      "schema_version": "1.0",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "source_claim_ceiling": "artifact_level_alternative_g5_mvp_loop_candidate_not_final_AP7",
+          "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+          "source_row_id": "n17_i6b_row_04_compound_mild_attenuation_delay_target_band",
+          "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "source_claim_ceiling": "constructed_route_conditioned_support_regulation_followout_not_native_support",
+          "source_output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+          "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+          "source_row_id": "n14_i6c_route_conditioned_followout_probe",
+          "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+          "source_row_id": "n14_closeout_ap4",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_claim_ceiling": "artifact_level_AP3_support_regulation_context_not_selfhood_or_native_support",
+          "source_output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+          "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+          "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+          "source_row_id": "n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "source_claim_ceiling": "artifact_level_runtime_derived_target_candidate_not_goal_ownership",
+          "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+          "source_row_id": "n15_i3_runtime_derived_target_candidate",
+          "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+        }
+      ],
+      "source_iteration_6_classification": {
+        "artifact_level_ap7_candidate_supported": true,
+        "claim_classification": "AP7_MVP_claim_clean_candidate",
+        "classified_ap_level": "AP7_MVP",
+        "comparative_classification_pending_iteration9": true,
+        "current_evidence_rung": "G4_replay_control_clean_candidate",
+        "deferred_extension_iterations": [
+          7,
+          8
+        ],
+        "extension_mode": "extensions_deferred",
+        "final_closeout_pending_iteration10": true,
+        "g5_challenge_stability_pending_iteration_6a": true,
+        "g5_challenge_stability_supported": false,
+        "included_iterations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mvp_scope_only": true,
+        "pending_bridge_iterations": [
+          "6-A"
+        ]
+      },
+      "source_row_ids": [
+        "n17_i6b_alternative_g5_contract",
+        "n14_i6c_route_conditioned_followout_probe",
+        "n13_support_seeking_regulation_candidate",
+        "n15_i3_runtime_derived_target_candidate"
+      ]
+    },
+    {
+      "alternative_g5_challenge_probe": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "challenge_id": "target_band_anchor_replay",
+        "challenge_profile": {
+          "derivation_policy": "N15 target band plus N13 bounded response",
+          "feedback_attenuation_ratio": 0.0,
+          "feedback_delay_windows": 0,
+          "profile_type": "alternative_config_anchor"
+        },
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "target-band anchor replay",
+        "metrics": {
+          "bounded_response_within_n13_budget": true,
+          "n09_recovery_in_band": true,
+          "n15_replay_clean": true,
+          "projected_later_internal_support": 0.887594607287,
+          "response_budget_debit": 0.120134817816,
+          "response_budget_limit": 0.120134817816,
+          "response_causation_preserved": true,
+          "support_cost": 0.0,
+          "support_floor": 0.85,
+          "support_floor_margin": 0.037594607287,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_band_margin_to_lower": 0.07,
+          "target_band_margin_to_upper": 0.07,
+          "target_band_membership": true,
+          "target_center": 0.887594607287
+        },
+        "row_decision": "supported"
+      },
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "final_AP7_supported",
+        "full_comparative_AP7_without_iterations_8_9_10",
+        "shared_medium_reciprocal_AP7",
+        "resource_depletion_as_goal_pursuit",
+        "semantic_goal_ownership",
+        "semantic_action",
+        "semantic_perception",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "organism_life",
+        "fully_native_integration",
+        "unrestricted_agency"
+      ],
+      "boundary_assignments": {
+        "resource_support_extension_boundary": {
+          "crossing_relation": "support_condition_pressure_or_access_modulation",
+          "external_side": "route_conditioned_resource_support_surface",
+          "internal_side": "support_relevant_state_surface"
+        },
+        "route_side_assignments": {
+          "route_a": "external_resource_support_depletion_candidate",
+          "route_b": "external_resource_support_access_candidate"
+        },
+        "source": "N16_AP6_boundary_inherited_via_N17_I6B"
+      },
+      "budget_cost_surface": {
+        "case_index": 3,
+        "hidden_state_allowance": 0,
+        "present_trace_leg_count": 4,
+        "resource_extension_case_count": 5,
+        "response_budget_debit": 0.0,
+        "response_budget_limit": 0.120134817816,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "normalized_cost",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "resource/support extension control row is not claim-admissible",
+        "valid": false,
+        "within_limits": false
+      },
+      "candidate_field_retention_note": "candidate fields are retained after I5 validation to preserve continuity with the I4 pre-control row",
+      "candidate_rung_label": "G4_resource_support_modulation_fail_closed_control",
+      "claim_classification": "AP7_MVP_claim_clean_candidate",
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "g5_challenge_stability_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": false,
+        "resource_support_family_challenge_stability_supported": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "contrast_with_i3_one_way_null": {
+        "i3_closed_loop_claim_allowed": false,
+        "i3_loop_rung": "G2",
+        "i3_missing_feedback_leg": true,
+        "i4_closed_loop_claim_allowed": false,
+        "i4_feedback_leg_present": true,
+        "what_changed": [
+          "response_caused_external_change_candidate_recorded",
+          "later_internal_dependence_candidate_recorded"
+        ]
+      },
+      "controls": {
+        "artifact_only_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "duplicate_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "external_change_not_caused_by_response_control": {
+          "blocker": "external_change_not_caused_by_response_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "response_caused_external_change",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_order_inversion_control": {
+          "blocker": "feedback_order_inversion_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "monotonic_phase_order_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_removed_control": {
+          "blocker": "feedback_removed_blocks_loop_claim",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "feedback_removed_control_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_external_state_memory_control": {
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal_state_carryover_control": {
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": {
+          "blocker": "native_support_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "one_way_crossing_relabel_control": {
+          "blocker": "one_way_crossing_is_not_closed_loop",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "one_way_crossing_null_blocked",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "order_inversion_replay_control": {
+          "blocker": "order_inversion_replay_blocked_false_order",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "organism_life_relabel_control": {
+          "blocker": "organism_life_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "outbound_response_relabel_control": {
+          "blocker": "outbound_response_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "post_hoc_loop_stitching_control": {
+          "blocker": "post_hoc_loop_stitching_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "resource_depletion_goal_pursuit_relabel_control": {
+          "blocker": "resource_depletion_as_goal_pursuit_blocked",
+          "candidate_survives_control": false,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "selfhood_identity_relabel_control": {
+          "blocker": "selfhood_identity_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_action_perception_relabel_control": {
+          "blocker": "semantic_action_perception_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_agency_relabel_control": {
+          "blocker": "semantic_agency_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_intention_relabel_control": {
+          "blocker": "semantic_intention_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "shared_medium_rows_not_present_in_i7_resource_extension",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "snapshot_load_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        }
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "resource_depletion_goal_pursuit_relabel_control"
+          },
+          {
+            "cause_attribution": "not_admissible",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "resource_depletion_goal_pursuit_relabel_control"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "resource_depletion_goal_pursuit_relabel_control"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_counterfactual_status": "validated_by_i5_control",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "resource depletion as goal-pursuit relabel control: later support is accepted only when it is conditioned by the modified resource/support state",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_internal_depends_on_changed_external_state": false,
+          "projected_later_internal_support": 0.924495897432,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "modified_resource_feedback_present": false
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "resource depletion as goal-pursuit relabel control: resource/support condition is represented by serialized route-conditioned support and regulation components",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "external_state_role": "resource",
+          "route_a_regulation_component": -0.32,
+          "route_a_support_component": -0.240269635632,
+          "route_b_regulation_component": 0.08,
+          "route_b_support_component": 0.0
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "external_resource_support_condition": "not_modulated"
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "feedback_removed_control_result_status": "validated_by_i5_control",
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "resource depletion as goal-pursuit relabel control: internal support-relevant state is updated from source-visible support retention and route followout components",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "followout_score": 0.2,
+          "resource_support_extension_opened": true,
+          "response_budget_debit": 0.0,
+          "support_delta_vs_current": 0.194630715248
+        },
+        "state_before": {
+          "support_floor": 0.85,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        }
+      },
+      "iteration_5_control_status": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "iteration_5_trace_preservation": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "iteration_6_classification": {
+        "alternative_g5_configuration_supported": true,
+        "classified_ap_level": "AP7_MVP",
+        "final_closeout_pending_iteration10": true,
+        "full_comparative_ap7_classification_supported": false,
+        "iteration_6b_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+        "mvp_scope_only": true,
+        "source_i6_evidence_rung": "G4_replay_control_clean_candidate"
+      },
+      "iteration_6b_classification": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "bounded_g5_scope": "target_band_gated_mvp_perturbation_loop",
+        "not_a_retune_of_iteration_6a": true,
+        "resource_support_extension_opened": false,
+        "row_supported": true,
+        "shared_medium_extension_opened": false
+      },
+      "later_internal_dependence_candidate": true,
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "case_id": "resource_depletion_goal_pursuit_relabel_control",
+        "closed_loop_candidate": false,
+        "closure_hinge": "modified_resource_support_state_feeds_later_internal_support",
+        "failure_reasons": [
+          "semantic_goal_pursuit_relabel_blocked"
+        ],
+        "g3_reached": true,
+        "g4_replay_control_clean_inherited": true,
+        "g5_not_claimed_for_resource_family": true,
+        "mvp_g5_challenge_context_available": true,
+        "not_final_ap7": true,
+        "one_step_recovery_only": false,
+        "ordered_closure_present": false,
+        "resource_support_extension_row": false,
+        "resource_support_family_challenge_stability_earned": false
+      },
+      "loop_family": "resource_support_modulation_loop",
+      "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+      "loop_rung": "G4",
+      "loop_rung_index": 4,
+      "minimal_loop_scope": {
+        "perturbation_response_recovery_contract_inherited": true,
+        "resource_support_extension_opened": true,
+        "shared_medium_extension_opened": false
+      },
+      "missing_gates": [
+        "semantic_goal_pursuit_relabel_blocked"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "resource_support_modulation_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_resource_support_modulation_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "resource_support_modulation_probe": {
+        "case_id": "resource_depletion_goal_pursuit_relabel_control",
+        "case_kind": "semantic_relabel_control",
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "semantic_goal_pursuit_relabel_blocked"
+        ],
+        "followout_score": 0.2,
+        "interpretation": "the same route/support modulation evidence cannot be relabeled as goal pursuit, intention, seeking, or semantic action",
+        "label": "resource depletion as goal-pursuit relabel control",
+        "projected_later_internal_support": 0.924495897432,
+        "response_budget_debit": 0.0,
+        "route_conditioned_regulation_component": 0.08,
+        "route_conditioned_support_component": 0.0,
+        "row_decision": "rejected",
+        "support_delta_vs_current": 0.194630715248
+      },
+      "response_caused_external_change": false,
+      "response_caused_external_change_candidate": true,
+      "response_to_external_change_trace": {
+        "cause_attribution": "not_admissible",
+        "dependency_note": "resource depletion as goal-pursuit relabel control: response-caused external change is bounded to access/path/pressure modulation, not semantic action",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "resource_depletion_goal_pursuit_relabel_blocked": true,
+          "response_caused_access_or_pressure_change": false,
+          "route_access_modulated_to": "not_claim_allowed"
+        },
+        "state_before": {
+          "route_access_unmodulated": true,
+          "semantic_goal_pursuit_allowed": false
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i7_row_03_resource_depletion_goal_pursuit_relabel_control",
+      "row_replay_digest": "c11b25d63ea6cfe0473f69cc90a4102ce0625520221cc323d8d65e3e8a8fde77",
+      "row_type": "control_row",
+      "schema_version": "1.0",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "source_claim_ceiling": "artifact_level_alternative_g5_mvp_loop_candidate_not_final_AP7",
+          "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+          "source_row_id": "n17_i6b_row_04_compound_mild_attenuation_delay_target_band",
+          "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "source_claim_ceiling": "constructed_route_conditioned_support_regulation_followout_not_native_support",
+          "source_output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+          "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+          "source_row_id": "n14_i6c_route_conditioned_followout_probe",
+          "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+          "source_row_id": "n14_closeout_ap4",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_claim_ceiling": "artifact_level_AP3_support_regulation_context_not_selfhood_or_native_support",
+          "source_output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+          "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+          "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+          "source_row_id": "n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "source_claim_ceiling": "artifact_level_runtime_derived_target_candidate_not_goal_ownership",
+          "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+          "source_row_id": "n15_i3_runtime_derived_target_candidate",
+          "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+        }
+      ],
+      "source_iteration_6_classification": {
+        "artifact_level_ap7_candidate_supported": true,
+        "claim_classification": "AP7_MVP_claim_clean_candidate",
+        "classified_ap_level": "AP7_MVP",
+        "comparative_classification_pending_iteration9": true,
+        "current_evidence_rung": "G4_replay_control_clean_candidate",
+        "deferred_extension_iterations": [
+          7,
+          8
+        ],
+        "extension_mode": "extensions_deferred",
+        "final_closeout_pending_iteration10": true,
+        "g5_challenge_stability_pending_iteration_6a": true,
+        "g5_challenge_stability_supported": false,
+        "included_iterations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mvp_scope_only": true,
+        "pending_bridge_iterations": [
+          "6-A"
+        ]
+      },
+      "source_row_ids": [
+        "n17_i6b_alternative_g5_contract",
+        "n14_i6c_route_conditioned_followout_probe",
+        "n13_support_seeking_regulation_candidate",
+        "n15_i3_runtime_derived_target_candidate"
+      ]
+    },
+    {
+      "alternative_g5_challenge_probe": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "challenge_id": "target_band_anchor_replay",
+        "challenge_profile": {
+          "derivation_policy": "N15 target band plus N13 bounded response",
+          "feedback_attenuation_ratio": 0.0,
+          "feedback_delay_windows": 0,
+          "profile_type": "alternative_config_anchor"
+        },
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "target-band anchor replay",
+        "metrics": {
+          "bounded_response_within_n13_budget": true,
+          "n09_recovery_in_band": true,
+          "n15_replay_clean": true,
+          "projected_later_internal_support": 0.887594607287,
+          "response_budget_debit": 0.120134817816,
+          "response_budget_limit": 0.120134817816,
+          "response_causation_preserved": true,
+          "support_cost": 0.0,
+          "support_floor": 0.85,
+          "support_floor_margin": 0.037594607287,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_band_margin_to_lower": 0.07,
+          "target_band_margin_to_upper": 0.07,
+          "target_band_membership": true,
+          "target_center": 0.887594607287
+        },
+        "row_decision": "supported"
+      },
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "final_AP7_supported",
+        "full_comparative_AP7_without_iterations_8_9_10",
+        "shared_medium_reciprocal_AP7",
+        "resource_depletion_as_goal_pursuit",
+        "semantic_goal_ownership",
+        "semantic_action",
+        "semantic_perception",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "organism_life",
+        "fully_native_integration",
+        "unrestricted_agency"
+      ],
+      "boundary_assignments": {
+        "resource_support_extension_boundary": {
+          "crossing_relation": "support_condition_pressure_or_access_modulation",
+          "external_side": "route_conditioned_resource_support_surface",
+          "internal_side": "support_relevant_state_surface"
+        },
+        "route_side_assignments": {
+          "route_a": "external_resource_support_depletion_candidate",
+          "route_b": "external_resource_support_access_candidate"
+        },
+        "source": "N16_AP6_boundary_inherited_via_N17_I6B"
+      },
+      "budget_cost_surface": {
+        "case_index": 4,
+        "hidden_state_allowance": 0,
+        "present_trace_leg_count": 4,
+        "resource_extension_case_count": 5,
+        "response_budget_debit": 0.0,
+        "response_budget_limit": 0.120134817816,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "normalized_cost",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "resource/support extension control row is not claim-admissible",
+        "valid": false,
+        "within_limits": false
+      },
+      "candidate_field_retention_note": "candidate fields are retained after I5 validation to preserve continuity with the I4 pre-control row",
+      "candidate_rung_label": "G4_resource_support_modulation_fail_closed_control",
+      "claim_classification": "AP7_MVP_claim_clean_candidate",
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "g5_challenge_stability_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": false,
+        "resource_support_family_challenge_stability_supported": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "contrast_with_i3_one_way_null": {
+        "i3_closed_loop_claim_allowed": false,
+        "i3_loop_rung": "G2",
+        "i3_missing_feedback_leg": true,
+        "i4_closed_loop_claim_allowed": false,
+        "i4_feedback_leg_present": true,
+        "what_changed": [
+          "response_caused_external_change_candidate_recorded",
+          "later_internal_dependence_candidate_recorded"
+        ]
+      },
+      "controls": {
+        "artifact_only_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "duplicate_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "external_change_not_caused_by_response_control": {
+          "blocker": "external_change_not_caused_by_response_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "response_caused_external_change",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_order_inversion_control": {
+          "blocker": "feedback_order_inversion_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "monotonic_phase_order_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_removed_control": {
+          "blocker": "feedback_removed_blocks_loop_claim",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "feedback_removed_control_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_external_state_memory_control": {
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal_state_carryover_control": {
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": {
+          "blocker": "native_support_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "one_way_crossing_relabel_control": {
+          "blocker": "one_way_crossing_is_not_closed_loop",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "one_way_crossing_null_blocked",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "order_inversion_replay_control": {
+          "blocker": "order_inversion_replay_blocked_false_order",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "organism_life_relabel_control": {
+          "blocker": "organism_life_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "outbound_response_relabel_control": {
+          "blocker": "outbound_response_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "post_hoc_loop_stitching_control": {
+          "blocker": "post_hoc_loop_stitching_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "resource_depletion_goal_pursuit_relabel_control": {
+          "blocker": "resource_depletion_as_goal_pursuit_blocked",
+          "candidate_survives_control": false,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "selfhood_identity_relabel_control": {
+          "blocker": "selfhood_identity_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_action_perception_relabel_control": {
+          "blocker": "semantic_action_perception_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_agency_relabel_control": {
+          "blocker": "semantic_agency_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_intention_relabel_control": {
+          "blocker": "semantic_intention_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "shared_medium_rows_not_present_in_i7_resource_extension",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "snapshot_load_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        }
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "missing_modified_resource_feedback_control"
+          },
+          {
+            "cause_attribution": "not_admissible",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "missing_modified_resource_feedback_control"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "missing_modified_resource_feedback_control"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_counterfactual_status": "validated_by_i5_control",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "missing modified-resource feedback control: later support is accepted only when it is conditioned by the modified resource/support state",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_internal_depends_on_changed_external_state": false,
+          "projected_later_internal_support": 0.729865182184,
+          "support_floor_preserved": false,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "modified_resource_feedback_present": false
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "missing modified-resource feedback control: resource/support condition is represented by serialized route-conditioned support and regulation components",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "external_state_role": "resource",
+          "route_a_regulation_component": -0.32,
+          "route_a_support_component": -0.240269635632,
+          "route_b_regulation_component": 0.08,
+          "route_b_support_component": 0.0
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "external_resource_support_condition": "not_modulated"
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "feedback_removed_control_result_status": "validated_by_i5_control",
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "missing modified-resource feedback control: internal support-relevant state is updated from source-visible support retention and route followout components",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "followout_score": 0.0,
+          "resource_support_extension_opened": true,
+          "response_budget_debit": 0.0,
+          "support_delta_vs_current": 0.0
+        },
+        "state_before": {
+          "support_floor": 0.85,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        }
+      },
+      "iteration_5_control_status": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "iteration_5_trace_preservation": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "iteration_6_classification": {
+        "alternative_g5_configuration_supported": true,
+        "classified_ap_level": "AP7_MVP",
+        "final_closeout_pending_iteration10": true,
+        "full_comparative_ap7_classification_supported": false,
+        "iteration_6b_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+        "mvp_scope_only": true,
+        "source_i6_evidence_rung": "G4_replay_control_clean_candidate"
+      },
+      "iteration_6b_classification": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "bounded_g5_scope": "target_band_gated_mvp_perturbation_loop",
+        "not_a_retune_of_iteration_6a": true,
+        "resource_support_extension_opened": false,
+        "row_supported": true,
+        "shared_medium_extension_opened": false
+      },
+      "later_internal_dependence_candidate": true,
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "case_id": "missing_modified_resource_feedback_control",
+        "closed_loop_candidate": false,
+        "closure_hinge": "modified_resource_support_state_feeds_later_internal_support",
+        "failure_reasons": [
+          "modified_resource_state_does_not_feed_later_internal_support"
+        ],
+        "g3_reached": true,
+        "g4_replay_control_clean_inherited": true,
+        "g5_not_claimed_for_resource_family": true,
+        "mvp_g5_challenge_context_available": true,
+        "not_final_ap7": true,
+        "one_step_recovery_only": false,
+        "ordered_closure_present": false,
+        "resource_support_extension_row": false,
+        "resource_support_family_challenge_stability_earned": false
+      },
+      "loop_family": "resource_support_modulation_loop",
+      "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+      "loop_rung": "G4",
+      "loop_rung_index": 4,
+      "minimal_loop_scope": {
+        "perturbation_response_recovery_contract_inherited": true,
+        "resource_support_extension_opened": true,
+        "shared_medium_extension_opened": false
+      },
+      "missing_gates": [
+        "modified_resource_state_does_not_feed_later_internal_support"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "resource_support_modulation_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_resource_support_modulation_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "resource_support_modulation_probe": {
+        "case_id": "missing_modified_resource_feedback_control",
+        "case_kind": "missing_feedback_control",
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "modified_resource_state_does_not_feed_later_internal_support"
+        ],
+        "followout_score": 0.0,
+        "interpretation": "external support labels and internal response fragments do not support closure when later support is not conditioned by the modified resource state",
+        "label": "missing modified-resource feedback control",
+        "projected_later_internal_support": 0.729865182184,
+        "response_budget_debit": 0.0,
+        "route_conditioned_regulation_component": 0.0,
+        "route_conditioned_support_component": 0.0,
+        "row_decision": "rejected",
+        "support_delta_vs_current": 0.0
+      },
+      "response_caused_external_change": false,
+      "response_caused_external_change_candidate": true,
+      "response_to_external_change_trace": {
+        "cause_attribution": "not_admissible",
+        "dependency_note": "missing modified-resource feedback control: response-caused external change is bounded to access/path/pressure modulation, not semantic action",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "resource_depletion_goal_pursuit_relabel_blocked": true,
+          "response_caused_access_or_pressure_change": false,
+          "route_access_modulated_to": "not_claim_allowed"
+        },
+        "state_before": {
+          "route_access_unmodulated": true,
+          "semantic_goal_pursuit_allowed": false
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i7_row_04_missing_modified_resource_feedback_control",
+      "row_replay_digest": "ac7cd39815e9d0061ad298ad2408a820bfdbdb2bb2d4123496133522c5a53592",
+      "row_type": "control_row",
+      "schema_version": "1.0",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "source_claim_ceiling": "artifact_level_alternative_g5_mvp_loop_candidate_not_final_AP7",
+          "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+          "source_row_id": "n17_i6b_row_04_compound_mild_attenuation_delay_target_band",
+          "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "source_claim_ceiling": "constructed_route_conditioned_support_regulation_followout_not_native_support",
+          "source_output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+          "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+          "source_row_id": "n14_i6c_route_conditioned_followout_probe",
+          "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+          "source_row_id": "n14_closeout_ap4",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_claim_ceiling": "artifact_level_AP3_support_regulation_context_not_selfhood_or_native_support",
+          "source_output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+          "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+          "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+          "source_row_id": "n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "source_claim_ceiling": "artifact_level_runtime_derived_target_candidate_not_goal_ownership",
+          "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+          "source_row_id": "n15_i3_runtime_derived_target_candidate",
+          "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+        }
+      ],
+      "source_iteration_6_classification": {
+        "artifact_level_ap7_candidate_supported": true,
+        "claim_classification": "AP7_MVP_claim_clean_candidate",
+        "classified_ap_level": "AP7_MVP",
+        "comparative_classification_pending_iteration9": true,
+        "current_evidence_rung": "G4_replay_control_clean_candidate",
+        "deferred_extension_iterations": [
+          7,
+          8
+        ],
+        "extension_mode": "extensions_deferred",
+        "final_closeout_pending_iteration10": true,
+        "g5_challenge_stability_pending_iteration_6a": true,
+        "g5_challenge_stability_supported": false,
+        "included_iterations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mvp_scope_only": true,
+        "pending_bridge_iterations": [
+          "6-A"
+        ]
+      },
+      "source_row_ids": [
+        "n17_i6b_alternative_g5_contract",
+        "n14_i6c_route_conditioned_followout_probe",
+        "n13_support_seeking_regulation_candidate",
+        "n15_i3_runtime_derived_target_candidate"
+      ]
+    },
+    {
+      "alternative_g5_challenge_probe": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "challenge_id": "target_band_anchor_replay",
+        "challenge_profile": {
+          "derivation_policy": "N15 target band plus N13 bounded response",
+          "feedback_attenuation_ratio": 0.0,
+          "feedback_delay_windows": 0,
+          "profile_type": "alternative_config_anchor"
+        },
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "target-band anchor replay",
+        "metrics": {
+          "bounded_response_within_n13_budget": true,
+          "n09_recovery_in_band": true,
+          "n15_replay_clean": true,
+          "projected_later_internal_support": 0.887594607287,
+          "response_budget_debit": 0.120134817816,
+          "response_budget_limit": 0.120134817816,
+          "response_causation_preserved": true,
+          "support_cost": 0.0,
+          "support_floor": 0.85,
+          "support_floor_margin": 0.037594607287,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ],
+          "target_band_margin_to_lower": 0.07,
+          "target_band_margin_to_upper": 0.07,
+          "target_band_membership": true,
+          "target_center": 0.887594607287
+        },
+        "row_decision": "supported"
+      },
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "final_AP7_supported",
+        "full_comparative_AP7_without_iterations_8_9_10",
+        "shared_medium_reciprocal_AP7",
+        "resource_depletion_as_goal_pursuit",
+        "semantic_goal_ownership",
+        "semantic_action",
+        "semantic_perception",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "organism_life",
+        "fully_native_integration",
+        "unrestricted_agency"
+      ],
+      "boundary_assignments": {
+        "resource_support_extension_boundary": {
+          "crossing_relation": "support_condition_pressure_or_access_modulation",
+          "external_side": "route_conditioned_resource_support_surface",
+          "internal_side": "support_relevant_state_surface"
+        },
+        "route_side_assignments": {
+          "route_a": "external_resource_support_depletion_candidate",
+          "route_b": "external_resource_support_access_candidate"
+        },
+        "source": "N16_AP6_boundary_inherited_via_N17_I6B"
+      },
+      "budget_cost_surface": {
+        "case_index": 5,
+        "hidden_state_allowance": 0,
+        "present_trace_leg_count": 4,
+        "resource_extension_case_count": 5,
+        "response_budget_debit": 0.0,
+        "response_budget_limit": 0.120134817816,
+        "source_row_count": 4,
+        "trace_leg_count": 4
+      },
+      "budget_units": "normalized_cost",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "resource/support extension control row is not claim-admissible",
+        "valid": false,
+        "within_limits": false
+      },
+      "candidate_field_retention_note": "candidate fields are retained after I5 validation to preserve continuity with the I4 pre-control row",
+      "candidate_rung_label": "G4_resource_support_modulation_fail_closed_control",
+      "claim_classification": "AP7_MVP_claim_clean_candidate",
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "g5_challenge_stability_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": false,
+        "resource_support_family_challenge_stability_supported": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "contrast_with_i3_one_way_null": {
+        "i3_closed_loop_claim_allowed": false,
+        "i3_loop_rung": "G2",
+        "i3_missing_feedback_leg": true,
+        "i4_closed_loop_claim_allowed": false,
+        "i4_feedback_leg_present": true,
+        "what_changed": [
+          "response_caused_external_change_candidate_recorded",
+          "later_internal_dependence_candidate_recorded"
+        ]
+      },
+      "controls": {
+        "artifact_only_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "duplicate_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        },
+        "external_change_not_caused_by_response_control": {
+          "blocker": "external_change_not_caused_by_response_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "response_caused_external_change",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_order_inversion_control": {
+          "blocker": "feedback_order_inversion_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "monotonic_phase_order_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "feedback_removed_control": {
+          "blocker": "feedback_removed_blocks_loop_claim",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "feedback_removed_control_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_external_state_memory_control": {
+          "blocker": "hidden_external_state_memory_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "hidden_internal_state_carryover_control": {
+          "blocker": "hidden_internal_state_carryover_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": {
+          "blocker": "native_support_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "one_way_crossing_relabel_control": {
+          "blocker": "one_way_crossing_is_not_closed_loop",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "one_way_crossing_null_blocked",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "order_inversion_replay_control": {
+          "blocker": "order_inversion_replay_blocked_false_order",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "organism_life_relabel_control": {
+          "blocker": "organism_life_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "outbound_response_relabel_control": {
+          "blocker": "outbound_response_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "post_hoc_loop_stitching_control": {
+          "blocker": "post_hoc_loop_stitching_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "resource_depletion_goal_pursuit_relabel_control": {
+          "blocker": "resource_depletion_as_goal_pursuit_blocked",
+          "candidate_survives_control": false,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "selfhood_identity_relabel_control": {
+          "blocker": "selfhood_identity_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_action_perception_relabel_control": {
+          "blocker": "semantic_action_perception_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_agency_relabel_control": {
+          "blocker": "semantic_agency_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "semantic_intention_relabel_control": {
+          "blocker": "semantic_intention_relabel_blocked",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "claim_boundary_clean",
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "shared_medium_rows_not_present_in_i7_resource_extension",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "controls_passed",
+          "status": "not_applicable",
+          "variant_result": "not_applicable"
+        },
+        "snapshot_load_replay_control": {
+          "blocker": "not_blocked_replay_stable",
+          "candidate_survives_control": true,
+          "failure_blocks_gate": "replay_digest_valid",
+          "status": "passed",
+          "variant_result": "stable"
+        }
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "resource_label_only_control"
+          },
+          {
+            "cause_attribution": "not_admissible",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "resource_label_only_control"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "resource_label_only_control"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_counterfactual_status": "validated_by_i5_control",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "resource label-only control: later support is accepted only when it is conditioned by the modified resource/support state",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "later_internal_depends_on_changed_external_state": false,
+          "projected_later_internal_support": 0.924495897432,
+          "support_floor_preserved": true,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "modified_resource_feedback_present": false
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "resource label-only control: resource/support condition is represented by serialized route-conditioned support and regulation components",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "external_state_role": "resource",
+          "route_a_regulation_component": -0.32,
+          "route_a_support_component": -0.240269635632,
+          "route_b_regulation_component": 0.08,
+          "route_b_support_component": 0.0
+        },
+        "state_before": {
+          "current_support_retention": 0.7298651821835279,
+          "external_resource_support_condition": "not_modulated"
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "feedback_removed_control_result_status": "validated_by_i5_control",
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "resource label-only control: internal support-relevant state is updated from source-visible support retention and route followout components",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "followout_score": 0.0,
+          "resource_support_extension_opened": true,
+          "response_budget_debit": 0.0,
+          "support_delta_vs_current": 0.194630715248
+        },
+        "state_before": {
+          "support_floor": 0.85,
+          "target_band": [
+            0.817594607287,
+            0.957594607287
+          ]
+        }
+      },
+      "iteration_5_control_status": {
+        "closed_loop_claim_allowed_pending_i6": false,
+        "completed_controls": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control",
+          "semantic_agency_relabel_control",
+          "semantic_intention_relabel_control",
+          "semantic_action_perception_relabel_control",
+          "native_support_relabel_control",
+          "selfhood_identity_relabel_control",
+          "organism_life_relabel_control"
+        ],
+        "loop_replay_control_clean": true,
+        "not_applicable_controls": [
+          "resource_depletion_goal_pursuit_relabel_control",
+          "shared_medium_merge_relabel_as_reciprocal_loop_control"
+        ],
+        "pre_i5_pending_controls_resolved": [
+          "artifact_only_replay_control",
+          "snapshot_load_replay_control",
+          "duplicate_replay_control",
+          "order_inversion_replay_control",
+          "post_hoc_loop_stitching_control",
+          "hidden_external_state_memory_control",
+          "hidden_internal_state_carryover_control",
+          "external_change_not_caused_by_response_control",
+          "feedback_order_inversion_control",
+          "feedback_removed_control",
+          "outbound_response_relabel_control",
+          "one_way_crossing_relabel_control"
+        ],
+        "ready_for_iteration_6_claim_boundary_record": true
+      },
+      "iteration_5_trace_preservation": {
+        "candidate_trace_legs_unchanged": true,
+        "controlled_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382",
+        "source_loop_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+        "source_loop_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+        "source_row_replay_digest": "4ee4687d9a45d0fcc627faa26a85bb2ced6608d64dd07c85e5b00696804cc756",
+        "source_trace_digest": "50aa3ea2b27c99cded96d704bd9667989ff0f828ea5279d48aa01701ca849382"
+      },
+      "iteration_6_classification": {
+        "alternative_g5_configuration_supported": true,
+        "classified_ap_level": "AP7_MVP",
+        "final_closeout_pending_iteration10": true,
+        "full_comparative_ap7_classification_supported": false,
+        "iteration_6b_evidence_rung": "G5_alternative_target_band_challenge_stable_candidate",
+        "mvp_scope_only": true,
+        "source_i6_evidence_rung": "G4_replay_control_clean_candidate"
+      },
+      "iteration_6b_classification": {
+        "alternative_config_id": "n17_i6b_target_band_gated_support_buffer_config",
+        "bounded_g5_scope": "target_band_gated_mvp_perturbation_loop",
+        "not_a_retune_of_iteration_6a": true,
+        "resource_support_extension_opened": false,
+        "row_supported": true,
+        "shared_medium_extension_opened": false
+      },
+      "later_internal_dependence_candidate": true,
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "case_id": "resource_label_only_control",
+        "closed_loop_candidate": false,
+        "closure_hinge": "modified_resource_support_state_feeds_later_internal_support",
+        "failure_reasons": [
+          "resource_label_without_source_conditioned_followout_blocked"
+        ],
+        "g3_reached": true,
+        "g4_replay_control_clean_inherited": true,
+        "g5_not_claimed_for_resource_family": true,
+        "mvp_g5_challenge_context_available": true,
+        "not_final_ap7": true,
+        "one_step_recovery_only": false,
+        "ordered_closure_present": false,
+        "resource_support_extension_row": false,
+        "resource_support_family_challenge_stability_earned": false
+      },
+      "loop_family": "resource_support_modulation_loop",
+      "loop_policy_digest": "c5f9749c67cdb19375f5b000640b15d336aa96e695c0be5fa487960b48ff8e18",
+      "loop_rung": "G4",
+      "loop_rung_index": 4,
+      "minimal_loop_scope": {
+        "perturbation_response_recovery_contract_inherited": true,
+        "resource_support_extension_opened": true,
+        "shared_medium_extension_opened": false
+      },
+      "missing_gates": [
+        "resource_label_without_source_conditioned_followout_blocked"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "resource_support_modulation_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_resource_support_modulation_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "resource_support_modulation_probe": {
+        "case_id": "resource_label_only_control",
+        "case_kind": "label_only_control",
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "resource_label_without_source_conditioned_followout_blocked"
+        ],
+        "followout_score": 0.0,
+        "interpretation": "a resource/support label without serialized route-conditioned support and regulation components is not resource/support loop evidence",
+        "label": "resource label-only control",
+        "projected_later_internal_support": 0.924495897432,
+        "response_budget_debit": 0.0,
+        "route_conditioned_regulation_component": 0.0,
+        "route_conditioned_support_component": 0.0,
+        "row_decision": "rejected",
+        "support_delta_vs_current": 0.194630715248
+      },
+      "response_caused_external_change": false,
+      "response_caused_external_change_candidate": true,
+      "response_to_external_change_trace": {
+        "cause_attribution": "not_admissible",
+        "dependency_note": "resource label-only control: response-caused external change is bounded to access/path/pressure modulation, not semantic action",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "resource_depletion_goal_pursuit_relabel_blocked": true,
+          "response_caused_access_or_pressure_change": false,
+          "route_access_modulated_to": "not_claim_allowed"
+        },
+        "state_before": {
+          "route_access_unmodulated": true,
+          "semantic_goal_pursuit_allowed": false
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i7_row_05_resource_label_only_control",
+      "row_replay_digest": "4fcb467032bf284824210bae49beff9cbfb918ec7400b11b4855e8ba167d0e7f",
+      "row_type": "control_row",
+      "schema_version": "1.0",
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "source_claim_ceiling": "artifact_level_alternative_g5_mvp_loop_candidate_not_final_AP7",
+          "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+          "source_row_id": "n17_i6b_row_04_compound_mild_attenuation_delay_target_band",
+          "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "source_claim_ceiling": "constructed_route_conditioned_support_regulation_followout_not_native_support",
+          "source_output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+          "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+          "source_row_id": "n14_i6c_route_conditioned_followout_probe",
+          "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+          "source_row_id": "n14_closeout_ap4",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "source_claim_ceiling": "artifact_level_AP3_support_regulation_context_not_selfhood_or_native_support",
+          "source_output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+          "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+          "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+          "source_row_id": "n13_support_seeking_regulation_candidate",
+          "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "source_claim_ceiling": "artifact_level_runtime_derived_target_candidate_not_goal_ownership",
+          "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+          "source_row_id": "n15_i3_runtime_derived_target_candidate",
+          "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+        }
+      ],
+      "source_iteration_6_classification": {
+        "artifact_level_ap7_candidate_supported": true,
+        "claim_classification": "AP7_MVP_claim_clean_candidate",
+        "classified_ap_level": "AP7_MVP",
+        "comparative_classification_pending_iteration9": true,
+        "current_evidence_rung": "G4_replay_control_clean_candidate",
+        "deferred_extension_iterations": [
+          7,
+          8
+        ],
+        "extension_mode": "extensions_deferred",
+        "final_closeout_pending_iteration10": true,
+        "g5_challenge_stability_pending_iteration_6a": true,
+        "g5_challenge_stability_supported": false,
+        "included_iterations": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mvp_scope_only": true,
+        "pending_bridge_iterations": [
+          "6-A"
+        ]
+      },
+      "source_row_ids": [
+        "n17_i6b_alternative_g5_contract",
+        "n14_i6c_route_conditioned_followout_probe",
+        "n13_support_seeking_regulation_candidate",
+        "n15_i3_runtime_derived_target_candidate"
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "shared_medium_extension_supported": false,
+  "source_artifacts": [
+    {
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+      "source_claim_ceiling": "artifact_level_alternative_g5_mvp_loop_candidate_not_final_AP7",
+      "source_output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+      "source_report_sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1",
+      "source_row_id": "n17_i6b_row_04_compound_mild_attenuation_delay_target_band",
+      "source_sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+      "source_claim_ceiling": "constructed_route_conditioned_support_regulation_followout_not_native_support",
+      "source_output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_followout_probe.md",
+      "source_report_sha256": "6b25d12a8f8cf9412d317ebb398972be68b19f9ae8cc8f683b59fbf69316533f",
+      "source_row_id": "n14_i6c_route_conditioned_followout_probe",
+      "source_sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+      "source_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+      "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+      "source_report": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+      "source_report_sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a",
+      "source_row_id": "n14_closeout_ap4",
+      "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+      "source_claim_ceiling": "artifact_level_AP3_support_regulation_context_not_selfhood_or_native_support",
+      "source_output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+      "source_report": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+      "source_report_sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449",
+      "source_row_id": "n13_support_seeking_regulation_candidate",
+      "source_sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+      "source_claim_ceiling": "artifact_level_runtime_derived_target_candidate_not_goal_ownership",
+      "source_output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+      "source_report": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+      "source_report_sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c",
+      "source_row_id": "n15_i3_runtime_derived_target_candidate",
+      "source_sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+    }
+  ],
+  "source_metrics": {
+    "constructed_followout_supported": true,
+    "current_support_retention": 0.7298651821835279,
+    "n13_bounded_response_amount": 0.120134817816,
+    "n13_bounded_response_budget_debit": 0.120134817816,
+    "observed_upstream_route_conditioned_support_regulation_supported": false,
+    "restored_lane_support": 0.9244958974324687,
+    "route_a_followout_score": -0.720024135632,
+    "route_a_inside_target_band": true,
+    "route_a_projected_support": 0.85,
+    "route_a_regulation_component": -0.32,
+    "route_a_support_component": -0.240269635632,
+    "route_a_support_floor_preserved": true,
+    "route_b_followout_score": 0.2,
+    "route_b_inside_target_band": true,
+    "route_b_projected_support": 0.924495897432,
+    "route_b_regulation_component": 0.08,
+    "route_b_support_component": 0.0,
+    "route_b_support_floor_preserved": true,
+    "route_b_support_gain_vs_current": 0.194630715248,
+    "route_b_support_gain_vs_route_a": 0.074495897432,
+    "support_error": 0.120134817816,
+    "support_floor": 0.85,
+    "target_band": [
+      0.817594607287,
+      0.957594607287
+    ],
+    "target_center": 0.887594607287,
+    "top_followout_route": "route_b"
+  },
+  "status": "passed"
+}

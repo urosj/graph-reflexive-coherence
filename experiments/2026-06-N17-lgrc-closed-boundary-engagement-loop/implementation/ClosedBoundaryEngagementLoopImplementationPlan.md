@@ -219,6 +219,8 @@ Extensions:
 
 ```text
 Iteration 7 - resource/support modulation loop
+Iteration 7-A - resource/support challenge-stability probe
+Iteration 7-B - alternative resource/support G5 setup
 Iteration 8 - shared-medium reciprocal loop
 ```
 
@@ -232,8 +234,12 @@ Iteration 10 - closeout and N18 handoff
 N17-MVP can close a perturbation-response-recovery AP7 candidate with
 Iterations 1-6-B plus final closeout if controls pass. Iterations 7-8 are
 extensions and must be explicitly marked as included or deferred before final
-closeout. Iteration 9 must compare 6-A and 6-B as bounded G5 alternatives
-rather than treating 6-B as a retuned repair of 6-A:
+closeout. Iteration 7-A is required if the resource/support family is included
+as local G5 evidence rather than only a G4 extension. Iteration 7-B may add a
+separate resource/support G5 setup, but it must not be treated as a refinement
+or rescue of 7-A. Iteration 9 must compare 6-A and 6-B as bounded G5
+alternatives rather than treating 6-B as a retuned repair of 6-A, and it must
+separately classify any included 7-A/7-B evidence:
 
 ```text
 extension_mode = extensions_deferred | extensions_included
@@ -568,6 +574,25 @@ scripts/build_n17_alternative_g5_challenge_probe.py
 ### Iteration 7. Resource/Support Modulation Loop
 
 Extend from perturbation-response-recovery to resource/support modulation.
+This opens the first extension after the MVP loop. A supported row must not
+relabel resource depletion or route/access modulation as semantic goal pursuit.
+Because this is a new loop family, it does not inherit G5 challenge stability
+from the MVP perturbation-response-recovery loop. Iteration 7 can support a G4
+resource/support extension candidate; this family needs its own challenge probe
+before any G5 resource/support claim.
+
+Required outcome:
+
+```text
+G4 resource/support extension candidate at most
+external resource/support condition change recorded
+internal support-relevant update recorded
+response-caused access/path/pressure change recorded
+later internal support conditioned by modified resource state recorded
+resource depletion as semantic goal pursuit blocked
+native support, intention, agency, and selfhood blocked
+shared-medium reciprocal loop remains unopened
+```
 
 Expected artifacts:
 
@@ -577,10 +602,103 @@ reports/n17_resource_support_modulation_loop.md
 scripts/build_n17_resource_support_modulation_loop.py
 ```
 
+### Iteration 7-A. Resource/Support Challenge-Stability Probe
+
+Test local G5 challenge stability for the exact Iteration 7 resource/support
+row. Keep the positive route_b row fixed; do not retune the route, source
+values, claim ceiling, or unsafe-claim policy to make the extension pass.
+
+Required outcome:
+
+```text
+fixed_source_row = route_b_resource_support_access_modulation
+retune_allowed = false
+same route_b identity preserved
+all four trace legs remain substantive for supported rows
+response-caused access/path/pressure change remains explicit
+later internal support depends on the modified resource state
+projected support remains above floor and inside target band for supported rows
+resource/support attenuation, access delay, and route_b reduction envelope recorded
+target-band crossing and response-budget exceedance fail closed
+missing modified-resource feedback fails closed
+resource label-only relabel fails closed
+resource depletion as semantic goal pursuit fails closed
+unsafe claims remain blocked
+shared-medium reciprocal loop remains unopened
+final AP7 remains blocked
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_resource_support_challenge_stability_probe.json
+reports/n17_resource_support_challenge_stability_probe.md
+scripts/build_n17_resource_support_challenge_stability_probe.py
+```
+
+### Iteration 7-B. Alternative Resource/Support G5 Setup
+
+Test a second resource/support G5 configuration that is not a 7-A refinement.
+The setup must be selected before challenge evaluation and must use a different
+source-backed construction from the fixed I7 route_b row used by 7-A.
+
+Required outcome:
+
+```text
+alternative_setup_id frozen before row evaluation
+iteration_7a thresholds not reused
+not a rescue of failed 7-A controls
+different source-current support anchor recorded
+all four trace legs remain substantive for supported rows
+response-caused access/path/pressure change remains explicit
+later internal support depends on modified resource state
+projected support remains above floor and inside target band for supported rows
+support-floor crossing, target-band crossing, and budget exceedance fail closed
+missing modified-resource feedback fails closed
+resource label-only relabel fails closed
+resource depletion as semantic goal pursuit fails closed
+unsafe claims remain blocked
+shared-medium reciprocal loop remains unopened
+final AP7 remains blocked
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_alternative_resource_support_g5_probe.json
+reports/n17_alternative_resource_support_g5_probe.md
+scripts/build_n17_alternative_resource_support_g5_probe.py
+```
+
 ### Iteration 8. Shared-Medium Reciprocal Loop
 
 Test whether shared-medium reciprocal closure can occur without basin merge or
 loss of boundary exclusivity.
+
+The shared-medium row must remain one-sided and artifact-level unless reverse
+perspective replay is explicitly supplied later. A passing row may support a
+local one-sided G6 shared-medium reciprocal candidate only if it keeps basin
+separation, boundary exclusivity, leakage, merge pressure, internal support,
+coherence, ordered trace dependence, and merge/leakage controls inside the
+frozen B4/C5 policy. General shared-medium G6 robustness, reverse-perspective
+shared-medium replay, symmetric multi-basin claims, and final AP7 remain
+blocked unless later evidence explicitly supports them.
+
+I8 must block:
+
+```text
+general shared-medium G6 robustness
+reverse-perspective shared-medium replay
+B2/C5 shared-medium pressure as enough for reciprocity
+B4/C2 flux distribution relabel as C5 shared-medium separability
+shared-medium leakage over ceiling
+merge pressure over ceiling
+neighbor leakage counted as intended basin retention
+missing changed shared-medium feedback
+shared-medium label-only relabel
+one-sided B4/C5 promoted to symmetric/native multi-basin claims
+final AP7
+```
 
 Expected artifacts:
 
@@ -590,11 +708,141 @@ reports/n17_shared_medium_reciprocal_loop.md
 scripts/build_n17_shared_medium_reciprocal_loop.py
 ```
 
+### Iteration 8-A. Shared-Medium Reverse-Perspective Probe
+
+Probe the open I8 limitation without relabeling I8 as general G6. The first
+question is whether B4/C5 itself can supply reverse-perspective replay. If the
+N16 source still records reverse basin perspective as deferred, that row must
+remain blocked. The second question is whether another source-backed
+shared-medium setup can strengthen the G6 candidate family.
+
+8-A may use N07 11-B/12 as alternate dual-basin bounded-exchange evidence
+because it records artifact-only replay, both basin supports surviving, basin
+separability preserved, nonzero leakage bounded below threshold, exact budget,
+and control replay. This strengthens shared-medium evidence only as an
+alternate-source artifact-level candidate; it does not convert B4/C5 into
+reverse replay and does not establish general G6.
+
+8-A must block:
+
+```text
+B4/C5 reverse-perspective replay from N16-only evidence
+general G6 from I8-only relabel
+zero-leakage relabel
+missing reservoir absorption
+hidden reservoir routing
+asymmetric absorber preference
+support destroyed by allowed exchange
+budget discontinuity
+native identity relabel
+final AP7
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_shared_medium_reverse_perspective_probe.json
+reports/n17_shared_medium_reverse_perspective_probe.md
+scripts/build_n17_shared_medium_reverse_perspective_probe.py
+```
+
+### Iteration 8-B. B4/C5 Reverse-Perspective Replay Probe
+
+Test the original N16 B4/C5 row specifically. This is narrower than 8-A:
+8-A establishes alternate-source multi-basin evidence through N07, while 8-B
+asks whether the original B4/C5 source itself can become perspective-paired.
+
+8-B must distinguish:
+
+```text
+B4/C5 is multi-basin
+B4/C5 is not automatically perspective-paired
+neighbor basin as external side is not neighbor basin as reverse internal side
+leakage/merge metrics are not reverse support/coherence metrics
+label swap is not reverse replay
+```
+
+8-B may support B4/C5 reverse-perspective replay only if the source contains:
+
+```text
+reverse internal-side boundary assignment
+reverse internal support floor measurement
+reverse coherence margin measurement
+reverse boundary edge
+reverse response-caused shared-medium change
+later reverse-internal state conditioned by changed shared medium
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_b4c5_reverse_perspective_replay_probe.json
+reports/n17_b4c5_reverse_perspective_replay_probe.md
+scripts/build_n17_b4c5_reverse_perspective_replay_probe.py
+```
+
+### Iteration 8-C. Paired-Perspective Shared-Medium Probe
+
+Construct a separate local paired-perspective shared-medium probe. This is not
+a rescue of B4/C5 and not another alternate-source broadening pass. It must
+record basin A perspective, basin B perspective, and a joint paired row in one
+source-backed protocol.
+
+8-C may use N07 dual-basin bounded-exchange evidence only if it records:
+
+```text
+basin A internal perspective trace
+basin B internal perspective trace
+same-protocol paired perspective requirement
+response-caused shared-medium change
+later support for both basins conditioned by changed shared medium
+artifact-only replay and control replay
+bounded leakage, separability, interference, exchange, and budget margins
+```
+
+8-C must preserve:
+
+```text
+B4/C5 reverse replay remains blocked by 8-B
+one-sided I8 cannot be promoted to paired perspective
+label swap is not paired replay
+hidden reservoir routing remains blocked
+merge/leakage cannot be counted as reciprocity
+asymmetric perspective preference remains blocked
+general shared-medium G6 remains blocked
+symmetric native multi-basin replay remains blocked
+final AP7 remains blocked
+```
+
+Expected artifacts:
+
+```text
+outputs/n17_paired_perspective_shared_medium_probe.json
+reports/n17_paired_perspective_shared_medium_probe.md
+scripts/build_n17_paired_perspective_shared_medium_probe.py
+```
+
 ### Iteration 9. Comparative Requirements And AP7 Classification
 
 Synthesize loop requirements, controls, replay, and claim classification.
-Record whether Iterations 7-8 are included or deferred before comparative AP7
-classification.
+Record whether Iterations 7-8-C are included or deferred before comparative
+AP7 classification.
+
+Resource/support comparison must preserve the 7-A/7-B distinction:
+
+```text
+7-A = local G5 for the original fixed I7 route_b resource/support loop
+7-B = alternative local G5 under a lower-margin support bridge
+7-B does not replace 7-A
+7-B does not widen the 7-A envelope
+
+resource/support closure requirement:
+  supported_by: I7, I7-A, I7-B
+  strongest_envelope: I7-A
+  alternative_low_margin_support: I7-B
+  blocked_by: support-floor crossing, target-band crossing, budget exceedance,
+              missing feedback, label-only relabel, goal-pursuit relabel
+```
 
 Expected artifacts:
 

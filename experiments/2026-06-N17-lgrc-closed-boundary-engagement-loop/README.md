@@ -678,6 +678,513 @@ the N13 response budget. It does not support arbitrary challenge stability,
 resource/support modulation, shared-medium reciprocal closure, full comparative
 AP7, or final AP7 closeout.
 
+## Iteration 7 Result
+
+Iteration 7 is complete as the resource/support modulation extension. It opens
+resource/support modulation after the MVP loop has G4 replay/control
+cleanliness and bounded G5 context from 6-A and 6-B. The resource/support
+family does not inherit G5 challenge stability from the MVP perturbation loop.
+
+```text
+artifact = outputs/n17_resource_support_modulation_loop.json
+report = reports/n17_resource_support_modulation_loop.md
+status = passed
+acceptance_state = accepted_resource_support_modulation_extension_candidate_no_final_ap7
+output_digest = d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2
+artifact_sha256 = 992620b9571a0d83a236d5aeea530fbe0becfadeaba649f1fc4f91936952ffa6
+```
+
+The I7 result is bounded:
+
+```text
+current_evidence_rung = G4_resource_support_modulation_extension_candidate
+resource_support_extension_supported = true
+resource_support_family_challenge_stability_supported = false
+shared_medium_extension_supported = false
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+```
+
+Source values:
+
+```text
+top_followout_route = route_b
+route_b_projected_support = 0.924495897432
+route_a_projected_support = 0.85
+current_support_retention = 0.7298651821835279
+target_band = [0.817594607287, 0.957594607287]
+route_b_support_gain_vs_current = 0.194630715248
+```
+
+Supported row:
+
+```text
+route_b_resource_support_access_modulation
+```
+
+Fail-closed rows:
+
+```text
+route_a_depletion_burden_control = partial, claim not allowed
+resource_depletion_goal_pursuit_relabel_control = rejected, claim not allowed
+missing_modified_resource_feedback_control = rejected, claim not allowed
+resource_label_only_control = rejected, claim not allowed
+```
+
+I7 supports only a G4 artifact-level resource/support modulation extension
+candidate. The positive row is route_b because it is the constructed top
+followout route, preserves support inside the generated target band, and blocks
+resource depletion as semantic goal pursuit. It does not support resource
+support family challenge stability, resource seeking, semantic goal pursuit,
+intention, agency, native support, selfhood, shared-medium reciprocal closure,
+full comparative AP7, or final AP7 closeout.
+
+## Iteration 7-A Result
+
+Iteration 7-A is complete as the resource/support challenge-stability probe.
+It keeps the I7 route_b resource/support row fixed and asks whether that same
+extension earns local G5 under resource-specific challenge variation.
+
+```text
+artifact = outputs/n17_resource_support_challenge_stability_probe.json
+report = reports/n17_resource_support_challenge_stability_probe.md
+status = passed
+acceptance_state = accepted_resource_support_challenge_stability_g5_candidate_no_final_ap7
+output_digest = c643181eef667d0e7d8ebb65410af363bc2650403b09a11f689be394b8580728
+artifact_sha256 = 233d27318efeb60177ee433bab213d34cb6275e731b453cbfa04e85ccea26454
+```
+
+The 7-A result is bounded:
+
+```text
+current_evidence_rung = G5_resource_support_challenge_stable_candidate
+resource_support_family_challenge_stability_supported = true
+shared_medium_extension_supported = false
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+```
+
+Challenge envelope:
+
+```text
+attenuation_max_supported = 0.2
+access_delay_max_supported_windows = 1
+route_b_support_reduction_max_supported = 0.05
+response_budget_margin_min_supported = 0.080134817816
+support_margin_min_supported = 0.004495897432
+target_band_floor_crossing_status = rejected
+budget_exceedance_status = rejected
+```
+
+Supported rows:
+
+```text
+route_b_resource_support_anchor_replay
+resource_support_attenuation_20
+access_path_delay_one_window
+route_b_support_reduction_005
+compound_resource_support_stress
+```
+
+Fail-closed rows:
+
+```text
+route_a_depletion_pressure_control = partial, claim not allowed
+target_band_lower_bound_crossing_control = rejected, claim not allowed
+response_budget_exceedance_control = rejected, claim not allowed
+missing_modified_resource_feedback_control = rejected, claim not allowed
+resource_label_only_relabel_control = rejected, claim not allowed
+resource_depletion_goal_pursuit_relabel_control = rejected, claim not allowed
+```
+
+7-A supports local G5 for the resource/support family only under the recorded
+envelope while preserving the I7 resource/support claim ceiling. It does not
+support shared-medium reciprocal closure, semantic goal pursuit, intention,
+agency, native support, selfhood, full comparative AP7, or final AP7 closeout.
+
+## Iteration 7-B Result
+
+Iteration 7-B is complete as an alternative resource/support G5 setup. It is
+not a refinement of 7-A: the 7-A thresholds are not reused, and the base support
+source is the N13 `mild_support_weakening` lane rather than the fixed high-
+margin I7 route_b row.
+
+```text
+artifact = outputs/n17_alternative_resource_support_g5_probe.json
+report = reports/n17_alternative_resource_support_g5_probe.md
+status = passed
+acceptance_state = accepted_alternative_resource_support_g5_setup_no_final_ap7
+output_digest = b0f6df9ed0a79e6e93243fdfbfcc8b65d9fcc8374e6fbd1a5775871632e91f06
+artifact_sha256 = 2a957232cae5d5ccca809510213f50bd87fa3a32269a1439c0ee728943771e67
+```
+
+The 7-B result is bounded:
+
+```text
+current_evidence_rung = G5_alternative_resource_support_challenge_stable_candidate
+resource_support_family_challenge_stability_supported = true
+resource_support_alternative_setup_supported = true
+shared_medium_extension_supported = false
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+```
+
+Alternative setup:
+
+```text
+alternative_setup_id = low_margin_route_b_resource_support_bridge
+base_support_source_lane = mild_support_weakening
+base_projected_support = 0.87583821862
+support_floor = 0.85
+support_margin_above_floor = 0.02583821862
+target_band = [0.817594607287, 0.957594607287]
+iteration_7a_used_as_threshold_source = false
+```
+
+Challenge envelope:
+
+```text
+attenuation_max_supported = 0.1
+access_delay_max_supported_windows = 1
+route_b_support_reduction_max_supported = 0.015
+compound_support_cost_max_supported = 0.02
+response_budget_margin_min_supported = 0.100134817816
+support_margin_min_supported = 0.00583821862
+support_floor_crossing_status = rejected
+target_band_floor_crossing_status = rejected
+budget_exceedance_status = rejected
+```
+
+Supported rows:
+
+```text
+low_margin_resource_support_anchor
+low_margin_resource_attenuation_010
+low_margin_access_delay_one_window
+low_margin_route_b_support_reduction_015
+low_margin_compound_resource_support_stress
+```
+
+Fail-closed rows:
+
+```text
+low_margin_support_floor_crossing_control = rejected, claim not allowed
+low_margin_target_band_crossing_control = rejected, claim not allowed
+low_margin_response_budget_exceedance_control = rejected, claim not allowed
+route_a_burden_switch_control = partial, claim not allowed
+missing_modified_resource_feedback_control = rejected, claim not allowed
+resource_label_only_relabel_control = rejected, claim not allowed
+resource_depletion_goal_pursuit_relabel_control = rejected, claim not allowed
+```
+
+7-B strengthens the resource/support result by adding a second, narrower local
+G5 setup. It does not widen the 7-A envelope, change the I7 resource/support
+claim ceiling, support shared-medium reciprocal closure, or support final AP7
+closeout.
+
+Comparative role for I9:
+
+```text
+7-A supports local G5 for the original fixed I7 route_b resource/support loop.
+7-B supports local G5 for an alternative low-margin resource/support bridge.
+Together they strengthen the resource/support extension by showing two
+challenge-stable configurations, not one widened envelope.
+
+resource/support closure requirement:
+  supported_by: I7, I7-A, I7-B
+  strongest_envelope: I7-A
+  alternative_low_margin_support: I7-B
+  blocked_by: support-floor crossing, target-band crossing, budget exceedance,
+              missing feedback, label-only relabel, goal-pursuit relabel
+```
+
+## Iteration 8 Result
+
+Iteration 8 is complete as a one-sided shared-medium reciprocal loop extension.
+It uses the N16 `B4_C5` shared-medium separability candidate as the source
+anchor and tests whether the shared medium can carry reciprocal closure without
+basin merge, neighbor leakage relabeling, or symmetric/native multi-basin
+promotion.
+
+```text
+artifact = outputs/n17_shared_medium_reciprocal_loop.json
+report = reports/n17_shared_medium_reciprocal_loop.md
+status = passed
+acceptance_state = accepted_local_one_sided_shared_medium_g6_candidate_no_final_ap7
+output_digest = 18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db
+artifact_sha256 = 5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2
+```
+
+The I8 result is bounded:
+
+```text
+current_evidence_rung = G6_local_one_sided_shared_medium_reciprocal_candidate
+shared_medium_extension_supported = true
+shared_medium_g6_candidate_supported = true
+local_one_sided_shared_medium_g6_candidate_supported = true
+general_shared_medium_g6_supported = false
+reverse_perspective_shared_medium_replay_supported = false
+symmetric_shared_medium_replay_supported = false
+full_comparative_ap7_classification_supported = false
+final_ap7_supported = false
+```
+
+Shared-medium envelope:
+
+```text
+basin_separation_min_supported = 0.74
+boundary_exclusivity_min_supported = 0.73
+shared_medium_leakage_max_supported = 0.108
+neighbor_leakage_max_supported = 0.07
+merge_confusion_pressure_max_supported = 0.14
+redirected_flux_through_coupling_channel_supported = 0.1
+shared_medium_leakage_over_ceiling_status = rejected
+merge_pressure_over_ceiling_status = rejected
+neighbor_leakage_as_retention_status = rejected
+symmetric_native_relabel_status = rejected
+```
+
+Geometrically, basin A remains the derived internal side, while the shared
+medium and neighbor basin remain external-side structure. In flux terms, the
+supported row uses the B4/C5 shared-medium boundary exchange and
+coupling-channel attribution: shared-medium pressure is present,
+response-attributed redirected flux changes the medium, and later boundary
+state is conditioned by that changed medium without counting neighbor leakage
+as retention. This is not yet a reverse-perspective or general shared-medium
+robustness result.
+
+```text
+basin_a_to_shared_medium_edge_weight = 0.1
+neighbor_to_shared_medium_edge_weight = 0.08
+redirected_flux_through_coupling_channel = 0.1
+basin_separation_margin = 0.04
+boundary_exclusivity_margin = 0.03
+shared_medium_leakage_margin_to_ceiling = 0.012
+merge_confusion_margin_to_ceiling = 0.06
+internal_support_margin = 0.004
+coherence_margin_above_floor = 0.032
+```
+
+Supported rows:
+
+```text
+b4_c5_shared_medium_reciprocal_anchor
+shared_medium_neighbor_feedback_path
+coupling_channel_attribution_path
+```
+
+Fail-closed rows:
+
+```text
+b2_c5_shared_medium_pressure_control = rejected, claim not allowed
+b4_c2_flux_distribution_not_c5_control = partial, claim not allowed
+shared_medium_leakage_over_ceiling_control = rejected, claim not allowed
+merge_pressure_over_ceiling_control = rejected, claim not allowed
+neighbor_leakage_as_retention_relabel_control = rejected, claim not allowed
+missing_changed_shared_medium_feedback_control = rejected, claim not allowed
+shared_medium_label_only_relabel_control = rejected, claim not allowed
+symmetric_native_multi_basin_relabel_control = rejected, claim not allowed
+```
+
+I8 supports only a local one-sided artifact-level G6 shared-medium reciprocal
+candidate. It does not support general shared-medium G6, reverse-perspective
+shared-medium replay, symmetric native multi-basin replay, native multi-basin
+selfhood, semantic action/perception, agency, full comparative AP7, or final
+AP7 closeout.
+
+## Iteration 8-A Result
+
+Iteration 8-A is complete as a shared-medium reverse-perspective/alternate
+source probe. It separates two questions: B4/C5 reverse-perspective replay from
+N16 alone remains blocked, while N07 11-B/12 supplies alternate artifact-only
+dual-basin bounded-exchange evidence.
+
+```text
+artifact = outputs/n17_shared_medium_reverse_perspective_probe.json
+report = reports/n17_shared_medium_reverse_perspective_probe.md
+status = passed
+acceptance_state = accepted_alternate_source_shared_medium_g6_candidate_b4c5_reverse_blocked_no_final_ap7
+output_digest = b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0
+artifact_sha256 = 7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a
+```
+
+The 8-A result is bounded:
+
+```text
+current_evidence_rung = G6_alternate_source_shared_medium_reciprocal_candidate
+alternate_source_shared_medium_g6_candidate_supported = true
+alternate_source_reverse_side_survival_supported = true
+b4_c5_reverse_perspective_replay_supported = false
+general_shared_medium_g6_supported = false
+symmetric_shared_medium_replay_supported = false
+final_ap7_supported = false
+```
+
+Alternate N07 envelope:
+
+```text
+A_support_retention_min_supported = 0.9731535762447039
+B_support_retention_min_supported = 0.9753907782243119
+support_survival_threshold = 0.85
+basin_separability_min_supported = 0.9731535762447039
+basin_separability_floor = 0.9
+wrong_basin_leakage_max_supported = 0.07457339932026706
+wrong_basin_leakage_threshold = 0.1
+destructive_interference_max_supported = 0.02684642375529611
+destructive_interference_threshold = 0.15
+bounded_exchange_max_supported = 0.07457339932026706
+exchange_cap = 0.075
+post_transient_wrong_basin_slope = 0.0008716360195236764
+budget_error_level = 0.0
+```
+
+Supported rows:
+
+```text
+n07_dual_basin_alternate_shared_medium_candidate
+n07_reverse_side_survival_candidate
+```
+
+Fail-closed rows:
+
+```text
+b4_c5_reverse_perspective_from_n16_only_control = blocked, claim not allowed
+general_g6_from_i8_only_relabel_control = rejected, claim not allowed
+zero_leakage_requirement_misframed_control = rejected, claim not allowed
+reservoir_absorption_missing_control = rejected, claim not allowed
+hidden_reservoir_routing_control = rejected, claim not allowed
+asymmetric_absorber_preference_control = rejected, claim not allowed
+support_destroyed_by_allowed_exchange_control = rejected, claim not allowed
+budget_discontinuity_after_absorption_control = rejected, claim not allowed
+native_identity_relabel_control = rejected, claim not allowed
+```
+
+8-A strengthens the shared-medium family from a single-source local B4/C5 row
+to multi-source artifact-level evidence by adding N07's alternate dual-basin
+bounded exchange. It does not convert B4/C5 into reverse replay and does not
+support general G6 robustness, symmetric/native multi-basin claims, or final
+AP7 closeout.
+
+## Iteration 8-B Result
+
+Iteration 8-B is complete as the B4/C5-specific reverse-perspective replay
+probe. It confirms that the original N16 `B4_C5` row is multi-basin, but not
+perspective-paired.
+
+```text
+artifact = outputs/n17_b4c5_reverse_perspective_replay_probe.json
+report = reports/n17_b4c5_reverse_perspective_replay_probe.md
+status = passed
+acceptance_state = accepted_b4c5_reverse_perspective_blocked_multi_source_context_preserved_no_final_ap7
+output_digest = 2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7
+artifact_sha256 = 56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50
+```
+
+The 8-B result is bounded:
+
+```text
+current_evidence_rung = G6_multi_source_shared_medium_candidate_with_b4c5_reverse_blocker_recorded
+b4c5_multi_basin_source_present = true
+b4c5_perspective_paired_supported = false
+b4c5_reverse_perspective_replay_supported = false
+alternate_source_shared_medium_g6_candidate_supported = true
+general_shared_medium_g6_supported = false
+final_ap7_supported = false
+```
+
+B4/C5 source audit:
+
+```text
+basin_count = 2
+forward_internal_nodes = ['b4_c5_a0', 'b4_c5_a1', 'b4_c5_a2']
+reverse_internal_nodes = []
+neighbor_basin_treated_as_external_side = true
+has_neighbor_internal_descriptor = false
+has_reverse_support_metric = false
+has_reverse_coherence_metric = false
+reverse_boundary_edge_source_backed = false
+reverse_trace_source_backed = false
+shared_medium_leakage = 0.108
+leakage_into_neighbor_basin = 0.07
+merge_confusion_pressure = 0.14
+```
+
+8-B preserves the I8-A multi-source shared-medium state while keeping the
+B4/C5-specific reverse replay blocked. The shared-medium G6 candidate evidence
+is multi-source; the B4/C5 row itself remains one-sided and not
+perspective-paired.
+
+## Iteration 8-C Result
+
+Iteration 8-C is complete as a local paired-perspective shared-medium probe.
+It records basin A perspective, basin B perspective, and a joint paired row in
+one generated artifact. It does not try to rescue B4/C5; the B4/C5-specific
+reverse replay blocker from Iteration 8-B remains in force.
+
+```text
+artifact = outputs/n17_paired_perspective_shared_medium_probe.json
+report = reports/n17_paired_perspective_shared_medium_probe.md
+status = passed
+acceptance_state = accepted_local_paired_perspective_shared_medium_g6_candidate_no_final_ap7
+output_digest = 79072b1bede778958e94e940229f77be7ba846c064539c20a9769aa53c2ef81e
+artifact_sha256 = fd28893605c80d737dd807e170abc70fec760a4bb9b0d100696ff66a68395240
+```
+
+The 8-C result is bounded:
+
+```text
+current_evidence_rung = G6_local_paired_perspective_shared_medium_candidate
+paired_perspective_shared_medium_g6_candidate_supported = true
+local_paired_perspective_replay_supported = true
+b4c5_perspective_paired_supported = false
+b4c5_reverse_perspective_replay_supported = false
+general_shared_medium_g6_supported = false
+symmetric_shared_medium_replay_supported = false
+final_ap7_supported = false
+```
+
+Paired envelope:
+
+```text
+A_support_retention_level = 0.9731535762447039
+B_support_retention_level = 0.9753907782243119
+dual_basin_survival_threshold = 0.85
+paired_support_min_margin = 0.123153576245
+support_balance_delta = 0.00223720198
+basin_separability_margin = 0.073153576245
+wrong_basin_leakage_margin_to_threshold = 0.02542660068
+destructive_interference_level = 0.02684642375529611
+exchange_margin_to_cap = 0.00042660068
+budget_error_level = 0.0
+```
+
+Supported rows:
+
+```text
+basin_a_perspective_shared_medium_loop
+basin_b_perspective_shared_medium_loop
+joint_paired_perspective_shared_medium_candidate
+```
+
+Fail-closed rows:
+
+```text
+one_sided_i8_promotion_control = rejected, claim not allowed
+b4c5_reverse_replay_reuse_control = blocked, claim not allowed
+label_swap_as_paired_perspective_control = rejected, claim not allowed
+missing_a_perspective_control = rejected, claim not allowed
+missing_b_perspective_control = rejected, claim not allowed
+hidden_reservoir_routing_control = rejected, claim not allowed
+merge_leakage_as_reciprocity_control = rejected, claim not allowed
+asymmetric_perspective_preference_control = rejected, claim not allowed
+final_ap7_relabel_control = rejected, claim not allowed
+```
+
+8-C strengthens the shared-medium extension from multi-source evidence to a
+local paired-perspective candidate. The claim ceiling remains artifact-level
+local paired-perspective shared-medium G6, not general G6, not B4/C5 reverse
+replay, not symmetric native multi-basin replay, and not final AP7.
+
 ## Directory Structure
 
 ```text

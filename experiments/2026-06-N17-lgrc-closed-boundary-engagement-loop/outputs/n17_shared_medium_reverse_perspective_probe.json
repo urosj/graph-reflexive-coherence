@@ -1,0 +1,4103 @@
+{
+  "acceptance_state": "accepted_alternate_source_shared_medium_g6_candidate_b4c5_reverse_blocked_no_final_ap7",
+  "alternate_shared_medium_envelope": {
+    "A_support_retention_min_supported": 0.9731535762447039,
+    "B_support_retention_min_supported": 0.9753907782243119,
+    "basin_separability_floor": 0.9,
+    "basin_separability_min_supported": 0.9731535762447039,
+    "bounded_exchange_max_supported": 0.07457339932026706,
+    "budget_error_level": 0.0,
+    "destructive_interference_max_supported": 0.02684642375529611,
+    "destructive_interference_threshold": 0.15,
+    "exchange_cap": 0.075,
+    "post_transient_flattening_epsilon": 0.001,
+    "post_transient_wrong_basin_slope": 0.0008716360195236764,
+    "support_survival_threshold": 0.85,
+    "wrong_basin_leakage_max_supported": 0.07457339932026706,
+    "wrong_basin_leakage_threshold": 0.1
+  },
+  "alternate_shared_medium_margins": {
+    "A_support_margin": 0.123153576245,
+    "B_support_margin": 0.125390778224,
+    "basin_separability_margin": 0.073153576245,
+    "destructive_interference_margin_to_threshold": 0.123153576245,
+    "exchange_margin_to_cap": 0.00042660068,
+    "wrong_basin_leakage_margin_to_threshold": 0.02542660068
+  },
+  "alternate_source_reverse_side_survival_supported": true,
+  "alternate_source_shared_medium_g6_candidate_supported": true,
+  "artifact_id": "n17_shared_medium_reverse_perspective_probe",
+  "b4_c5_reverse_perspective_replay_supported": false,
+  "checks": [
+    {
+      "check_id": "i8_local_one_sided_limit_preserved",
+      "detail": "I8 remains local one-sided and not general G6",
+      "passed": true
+    },
+    {
+      "check_id": "n16_b4_c5_reverse_perspective_deferred_recorded",
+      "detail": "B4_C5 tests whether basin A remains separable in the presence of basin B inside a shared medium; reverse basin perspective replay is deferred before final AP6",
+      "passed": true
+    },
+    {
+      "check_id": "n07_artifact_only_replay_passed",
+      "detail": {
+        "control_replay_passed": true,
+        "window_count": 12
+      },
+      "passed": true
+    },
+    {
+      "check_id": "alternate_source_supported_rows_present",
+      "detail": 2,
+      "passed": true
+    },
+    {
+      "check_id": "reverse_b4_c5_and_general_g6_remain_blocked",
+      "detail": "8-A supports alternate-source evidence, not B4/C5 reverse replay",
+      "passed": true
+    },
+    {
+      "check_id": "controls_fail_closed",
+      "detail": [
+        "b4_c5_reverse_perspective_from_n16_only_control",
+        "general_g6_from_i8_only_relabel_control",
+        "zero_leakage_requirement_misframed_control",
+        "reservoir_absorption_missing_control",
+        "hidden_reservoir_routing_control",
+        "asymmetric_absorber_preference_control",
+        "support_destroyed_by_allowed_exchange_control",
+        "budget_discontinuity_after_absorption_control",
+        "native_identity_relabel_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": "unsafe claims remain false",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "Iteration 8-A does not edit src/*",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_shared_medium_reverse_perspective_probe.py",
+  "comparative_classification_pending_iteration9": true,
+  "current_evidence_rung": "G6_alternate_source_shared_medium_reciprocal_candidate",
+  "errors": [],
+  "experiment": "N17",
+  "final_ap7_supported": false,
+  "final_artifact_level_ap7_frozen": false,
+  "final_closeout_pending_iteration10": true,
+  "full_comparative_ap7_classification_supported": false,
+  "general_shared_medium_g6_supported": false,
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "e54b2011ad22070e1ddedcd7ca95dba51268323c",
+    "status_short": [
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationChecklist.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/implementation/ClosedBoundaryEngagementLoopImplementationPlan.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/README.md",
+      " M experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/README.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_alternative_resource_support_g5_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_challenge_stability_probe.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_resource_support_modulation_loop.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_shared_medium_reciprocal_loop.py",
+      "?? experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/scripts/build_n17_shared_medium_reverse_perspective_probe.py"
+    ]
+  },
+  "i9_comparative_classification_role": {
+    "shared_medium_requirement": {
+      "blocked_by": [
+        "B4_C5 reverse-perspective replay remains source-deferred",
+        "general G6 from I8-only relabel",
+        "zero leakage relabel",
+        "missing reservoir absorption",
+        "hidden reservoir routing",
+        "asymmetric absorber preference",
+        "support destroyed by exchange",
+        "budget discontinuity",
+        "native identity relabel"
+      ],
+      "classification_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6_not_final_ap7",
+      "supported_by": [
+        "I8_local_one_sided_B4_C5_candidate",
+        "I8-A_N07_alternate_dual_basin_exchange_candidate"
+      ]
+    }
+  },
+  "included_iterations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    "6-A",
+    "6-B",
+    7,
+    "7-A",
+    "7-B",
+    8,
+    "8-A"
+  ],
+  "iteration": "8-A",
+  "iteration_result": {
+    "alternate_source_reverse_side_survival_supported": true,
+    "alternate_source_shared_medium_g6_candidate_supported": true,
+    "b4_c5_reverse_perspective_replay_supported": false,
+    "claim_ceiling": "multi_source_artifact_level_shared_medium_g6_candidate_not_general_g6",
+    "final_ap7_supported": false,
+    "general_shared_medium_g6_supported": false,
+    "ready_for_iteration_9_comparative_classification": true,
+    "symmetric_shared_medium_replay_supported": false
+  },
+  "local_one_sided_shared_medium_g6_candidate_supported": true,
+  "n07_alternate_shared_medium_policy": {
+    "allowed_exchange_mode": "bounded_non_destructive_exchange",
+    "artifact_only_replay_passed": true,
+    "control_replay_passed": true,
+    "native_support_status": "experiment_local_serialized_reservoir_policy",
+    "policy_id": "neutral_absorber_reservoir_v1"
+  },
+  "output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+  "purpose": "test whether I8 local G6 can be strengthened by reverse-perspective or alternate shared-medium evidence",
+  "reverse_perspective_resolution": {
+    "alternate_source_reverse_side_survival_supported": true,
+    "b4_c5_reverse_perspective_replay_supported": false,
+    "b4_c5_reverse_perspective_status": "blocked_by_N16_deferred_reverse_replay",
+    "general_shared_medium_g6_supported": false,
+    "interpretation": "8-A strengthens I8 by adding N07 artifact-only dual-basin bounded-exchange evidence, but it does not convert the original B4_C5 row into a reverse-perspective replay."
+  },
+  "row_summary": {
+    "fail_closed_probe_ids": [
+      "b4_c5_reverse_perspective_from_n16_only_control",
+      "general_g6_from_i8_only_relabel_control",
+      "zero_leakage_requirement_misframed_control",
+      "reservoir_absorption_missing_control",
+      "hidden_reservoir_routing_control",
+      "asymmetric_absorber_preference_control",
+      "support_destroyed_by_allowed_exchange_control",
+      "budget_discontinuity_after_absorption_control",
+      "native_identity_relabel_control"
+    ],
+    "fail_closed_row_count": 9,
+    "supported_probe_ids": [
+      "n07_dual_basin_alternate_shared_medium_candidate",
+      "n07_reverse_side_survival_candidate"
+    ],
+    "supported_row_count": 2
+  },
+  "rows": [
+    {
+      "ap7_gates": {
+        "budget_validity_passed": true,
+        "claim_boundary_clean": true,
+        "controls_passed": true,
+        "dependency_trace_complete": true,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": true,
+        "four_trace_legs_present": true,
+        "four_trace_legs_source_backed": true,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": true,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": true,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": true,
+        "reason": "N07 bounded exchange remains under leakage/interference caps with exact budget",
+        "valid": true,
+        "within_limits": true
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": true,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": true,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": true,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": true,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": true,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": true,
+            "source_backed": true,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": []
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "N07 dual-basin bounded-exchange alternate shared-medium candidate: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": true,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "N07 dual-basin bounded-exchange alternate shared-medium candidate: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": true,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": true,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "N07 dual-basin bounded-exchange alternate shared-medium candidate: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": true,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": true,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": true
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "alternate_source_G6_shared_medium_reciprocal_candidate",
+      "provisional_claim_ceiling": "artifact_level_alternate_source_shared_medium_reciprocal_candidate_not_general_g6",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": true,
+      "response_to_external_change_trace": {
+        "dependency_note": "N07 dual-basin bounded-exchange alternate shared-medium candidate: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": true,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "supported",
+      "row_id": "n17_i8a_row_01_n07_dual_basin_alternate_shared_medium_candidate",
+      "row_replay_digest": "76d383909b9ba22c652850bf25cab96b97c6359db88b4662c0ca5a473717c7ea",
+      "row_type": "extension_candidate",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "N07 dual-basin bounded-exchange alternate shared-medium candidate",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "n07_dual_basin_alternate_shared_medium_candidate",
+        "probe_kind": "positive_alternate_source_g6_candidate",
+        "row_decision": "supported",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": true,
+        "claim_boundary_clean": true,
+        "controls_passed": true,
+        "dependency_trace_complete": true,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": true,
+        "four_trace_legs_present": true,
+        "four_trace_legs_source_backed": true,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": true,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": true,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": true,
+        "reason": "N07 bounded exchange remains under leakage/interference caps with exact budget",
+        "valid": true,
+        "within_limits": true
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": true,
+        "alternate_source_shared_medium_g6_candidate_supported": true,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": true,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": true,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": true,
+        "shared_medium_g6_candidate_supported": true,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": true,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": true,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": true,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": true,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": true,
+            "source_backed": true,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": []
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "N07 alternate reverse-side survival under shared exchange: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": true,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "N07 alternate reverse-side survival under shared exchange: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": true,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": true,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "N07 alternate reverse-side survival under shared exchange: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": true,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": true,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": true
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "alternate_source_G6_shared_medium_reciprocal_candidate",
+      "provisional_claim_ceiling": "artifact_level_alternate_source_shared_medium_reciprocal_candidate_not_general_g6",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": true,
+      "response_to_external_change_trace": {
+        "dependency_note": "N07 alternate reverse-side survival under shared exchange: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": true,
+        "source_backed": true,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": true,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "supported",
+      "row_id": "n17_i8a_row_02_n07_reverse_side_survival_candidate",
+      "row_replay_digest": "6c6b350324f91d21bc997c24341b35d8e5b51b814b17f6b859713ffec2eaa770",
+      "row_type": "extension_candidate",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": true,
+        "failure_reasons": [],
+        "label": "N07 alternate reverse-side survival under shared exchange",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "n07_reverse_side_survival_candidate",
+        "probe_kind": "positive_alternate_reverse_side_survival",
+        "row_decision": "supported",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse perspective from N16-only control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "B4/C5 reverse perspective from N16-only control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "B4/C5 reverse perspective from N16-only control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "B4_C5_reverse_basin_perspective_replay_deferred_in_N16"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "B4_C5_reverse_basin_perspective_replay_deferred_in_N16"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "B4/C5 reverse perspective from N16-only control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "blocked",
+      "row_id": "n17_i8a_row_03_b4_c5_reverse_perspective_from_n16_only_control",
+      "row_replay_digest": "ff6b2832315ffa017b90e50bd8ac7d30d74259680cca85a221090c7ed61d599d",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "B4_C5_reverse_basin_perspective_replay_deferred_in_N16"
+        ],
+        "label": "B4/C5 reverse perspective from N16-only control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "b4_c5_reverse_perspective_from_n16_only_control",
+        "probe_kind": "b4_c5_reverse_perspective_blocker",
+        "row_decision": "blocked",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "general G6 from I8-only relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "general G6 from I8-only relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "general G6 from I8-only relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "local_one_sided_I8_candidate_cannot_be_relabelled_general_G6"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "local_one_sided_I8_candidate_cannot_be_relabelled_general_G6"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "general G6 from I8-only relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_04_general_g6_from_i8_only_relabel_control",
+      "row_replay_digest": "6be9c4d2207167eefe4cbfd683b60058ff651d4d959223f43a8c6a8544c8022f",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "local_one_sided_I8_candidate_cannot_be_relabelled_general_G6"
+        ],
+        "label": "general G6 from I8-only relabel control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "general_g6_from_i8_only_relabel_control",
+        "probe_kind": "general_g6_relabel_control",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "zero leakage requirement misframed control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "zero leakage requirement misframed control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "zero leakage requirement misframed control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "zero_leakage_requirement_misframed"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "zero_leakage_requirement_misframed"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "zero leakage requirement misframed control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_05_zero_leakage_requirement_misframed_control",
+      "row_replay_digest": "3b9fb0404ff85d381869f935ddb16a57128e5d21db9dc71f2d5192d808f6d024",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "zero_leakage_requirement_misframed"
+        ],
+        "label": "zero leakage requirement misframed control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "zero_leakage_requirement_misframed_control",
+        "probe_kind": "n07_control_replay",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "reservoir absorption missing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "reservoir absorption missing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "reservoir absorption missing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "reservoir_absorption_missing"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "reservoir_absorption_missing"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "reservoir absorption missing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_06_reservoir_absorption_missing_control",
+      "row_replay_digest": "278684b6fb0c6dbcad940b32697bc775c545e8af13eab39229b760160d0e9ca6",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "reservoir_absorption_missing"
+        ],
+        "label": "reservoir absorption missing control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "reservoir_absorption_missing_control",
+        "probe_kind": "n07_control_replay",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "hidden reservoir routing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "hidden reservoir routing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "hidden reservoir routing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "hidden_support_field"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "hidden_support_field"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "hidden reservoir routing control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_07_hidden_reservoir_routing_control",
+      "row_replay_digest": "3d87319877a2c0fc888fa89273b06799788d99761444e1ed9d78d10bf7c71bf9",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "hidden_support_field"
+        ],
+        "label": "hidden reservoir routing control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "hidden_reservoir_routing_control",
+        "probe_kind": "n07_control_replay",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "asymmetric absorber preference control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "asymmetric absorber preference control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "asymmetric absorber preference control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "asymmetric_exchange_preference"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "asymmetric_exchange_preference"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "asymmetric absorber preference control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_08_asymmetric_absorber_preference_control",
+      "row_replay_digest": "4113a71ff215e253929e13d8ade3c6bb5676f1cd6e3d9440774d2d5d8999dd09",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "asymmetric_exchange_preference"
+        ],
+        "label": "asymmetric absorber preference control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "asymmetric_absorber_preference_control",
+        "probe_kind": "n07_control_replay",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "support destroyed by allowed exchange control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "support destroyed by allowed exchange control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "support destroyed by allowed exchange control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "support_drift_beyond_threshold"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "support_drift_beyond_threshold"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "support destroyed by allowed exchange control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_09_support_destroyed_by_allowed_exchange_control",
+      "row_replay_digest": "ad44153da1a1af66753f0086c66170af590932e1d0705775673b3f6e6cd8696c",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "support_drift_beyond_threshold"
+        ],
+        "label": "support destroyed by allowed exchange control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "support_destroyed_by_allowed_exchange_control",
+        "probe_kind": "n07_control_replay",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "budget discontinuity after absorption control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "budget discontinuity after absorption control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "budget discontinuity after absorption control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "budget_discontinuity"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "budget_discontinuity"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "budget discontinuity after absorption control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_10_budget_discontinuity_after_absorption_control",
+      "row_replay_digest": "b33c88a711912caa6476a863f3c7a3bb3216532fa6aed59952d42225fe04227b",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "budget_discontinuity"
+        ],
+        "label": "budget discontinuity after absorption control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "budget_discontinuity_after_absorption_control",
+        "probe_kind": "n07_control_replay",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    },
+    {
+      "ap7_gates": {
+        "budget_validity_passed": false,
+        "claim_boundary_clean": true,
+        "controls_passed": false,
+        "dependency_trace_complete": false,
+        "external_change_counterfactual_blocks_spontaneous_change": true,
+        "feedback_removed_control_passed": false,
+        "four_trace_legs_present": false,
+        "four_trace_legs_source_backed": false,
+        "g3_or_higher": true,
+        "later_internal_depends_on_changed_external_state": false,
+        "monotonic_phase_order_valid": true,
+        "no_absolute_paths": true,
+        "one_way_crossing_null_blocked": true,
+        "replay_digest_valid": true,
+        "response_caused_external_change": false,
+        "source_registry_backed": true
+      },
+      "artifact_only_replay_status": "stable",
+      "blocked_claims": [
+        "B4_C5_reverse_perspective_replay",
+        "general_shared_medium_G6",
+        "symmetric_shared_medium_replay",
+        "native_multi_basin_selfhood",
+        "semantic_action",
+        "semantic_perception",
+        "agency",
+        "native_support",
+        "fully_native_integration",
+        "final_AP7"
+      ],
+      "boundary_assignments": {
+        "basin_A": "source_side",
+        "basin_B": "alternate_internal_side_for_reverse_side_survival_probe",
+        "neutral_reservoir": "shared_medium_absorber",
+        "shared_U_flux": "shared_medium_pressure"
+      },
+      "budget_cost_surface": {
+        "hidden_state_allowance": 0,
+        "source_row_count": 4,
+        "trace_leg_count": 4,
+        "window_count": 12
+      },
+      "budget_units": "artifact_rows_and_n07_window_count",
+      "budget_validity": {
+        "closed_loop_claim_budget_valid": false,
+        "reason": "control row fails 8-A admissibility",
+        "valid": false,
+        "within_limits": false
+      },
+      "claim_flags": {
+        "agency_claim_opened": false,
+        "alternate_source_reverse_side_survival_supported": false,
+        "alternate_source_shared_medium_g6_candidate_supported": false,
+        "ap7_classification_supported": false,
+        "artifact_level_ap7_candidate_supported": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "closed_loop_demonstrated": false,
+        "final_ap7_supported": false,
+        "final_artifact_level_ap7_frozen": false,
+        "full_comparative_ap7_classification_supported": false,
+        "fully_native_integration_opened": false,
+        "general_shared_medium_g6_supported": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "local_one_sided_shared_medium_g6_candidate_supported": true,
+        "mvp_ap7_classification_supported": true,
+        "mvp_g5_challenge_context_available": true,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "resource_support_extension_supported": true,
+        "resource_support_family_challenge_stability_supported": true,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "shared_medium_extension_supported": false,
+        "shared_medium_g6_candidate_supported": false,
+        "symmetric_shared_medium_replay_supported": false,
+        "unrestricted_agency_opened": false
+      },
+      "closed_loop_claim_allowed": false,
+      "controls": {
+        "artifact_only_replay_control": "passed",
+        "b4_c5_reverse_perspective_replay_control": {
+          "blocker": "B4_C5_reverse_perspective_replay_not_source_backed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "duplicate_replay_control": "passed",
+        "external_change_not_caused_by_response_control": "passed",
+        "feedback_order_inversion_control": "passed",
+        "feedback_removed_control": "passed",
+        "hidden_external_state_memory_control": "passed",
+        "hidden_internal_state_carryover_control": "passed",
+        "n07_hidden_reservoir_routing_control": {
+          "blocker": "hidden_support_field",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "n07_zero_leakage_relabel_control": {
+          "blocker": "zero_leakage_requirement_misframed",
+          "candidate_survives_control": false,
+          "status": "passed",
+          "variant_result": "blocked"
+        },
+        "native_support_relabel_control": "passed",
+        "one_way_crossing_relabel_control": "passed",
+        "order_inversion_replay_control": "passed",
+        "organism_life_relabel_control": "passed",
+        "outbound_response_relabel_control": "passed",
+        "post_hoc_loop_stitching_control": "passed",
+        "resource_depletion_goal_pursuit_relabel_control": "not_applicable",
+        "selfhood_identity_relabel_control": "passed",
+        "semantic_action_perception_relabel_control": "passed",
+        "semantic_agency_relabel_control": "passed",
+        "semantic_intention_relabel_control": "passed",
+        "shared_medium_merge_relabel_as_reciprocal_loop_control": {
+          "blocker": "merge_or_leakage_relabel_blocked",
+          "candidate_survives_control": false,
+          "status": "not_applicable",
+          "variant_result": "blocked"
+        },
+        "snapshot_load_replay_control": "passed"
+      },
+      "dependency_trace": {
+        "edges": [
+          {
+            "edge_id": "external_to_internal",
+            "source_backed": false,
+            "source_trace": "N07 connected basin exchange event"
+          },
+          {
+            "cause_attribution": "neutral_absorber_response_caused",
+            "edge_id": "internal_response_to_external_change",
+            "source_backed": false,
+            "source_trace": "N07 neutral absorber reservoir state"
+          },
+          {
+            "edge_id": "changed_external_to_later_internal",
+            "later_internal_conditioned_by_changed_external_state": false,
+            "source_backed": false,
+            "source_trace": "N07 artifact-only support/separability replay"
+          }
+        ],
+        "missing_edges": [
+          "changed_external_to_later_internal"
+        ]
+      },
+      "duplicate_replay_status": "stable",
+      "external_change_would_occur_without_response": false,
+      "external_feedback_to_internal_trace": {
+        "dependency_note": "native identity relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t3_later_internal_support_conditioned_by_changed_external_state",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039
+        },
+        "state_before": {
+          "changed_neutral_reservoir_state": false,
+          "window_count": 12
+        }
+      },
+      "external_to_internal_trace": {
+        "dependency_note": "native identity relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t0_external_pressure_or_crossing",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "connected_basin_exchange_event_source_visible": false,
+          "zero_leakage_required": false
+        },
+        "state_before": {
+          "raw_A_flux_into_B_support": 0.02,
+          "raw_B_flux_into_A_support": 0.02,
+          "raw_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "feedback_removed_control_changes_result": false,
+      "final_ap7_supported": false,
+      "internal_response_trace": {
+        "dependency_note": "native identity relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t1_internal_support_update",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "absorbed_to_neutral_reservoir": 0.034,
+          "neutral_reservoir_residual": 0.0033770291941682302
+        },
+        "state_before": {
+          "hidden_routing_allowed": false,
+          "neutral_absorber_policy": "neutral_absorber_reservoir_v1"
+        }
+      },
+      "later_internal_depends_on_changed_external_state": false,
+      "loop_closure_evidence": {
+        "alternate_source_shared_medium_candidate": false,
+        "b4_c5_reverse_perspective_replay_supported": false,
+        "failure_reasons": [
+          "identity_claim_promotion"
+        ],
+        "g6_local_one_sided_candidate_from_i8": true,
+        "general_shared_medium_g6_supported": false,
+        "not_final_ap7": true,
+        "ordered_closure_present": false
+      },
+      "loop_family": "shared_medium_reciprocal_loop",
+      "loop_rung": "G6",
+      "loop_rung_index": 6,
+      "missing_gates": [
+        "identity_claim_promotion"
+      ],
+      "monotonic_phase_order": true,
+      "order_inversion_replay_status": "stable",
+      "phase_timing": {
+        "t0_external_pressure_or_crossing": 0,
+        "t1_internal_support_update": 1,
+        "t2_response_caused_external_change": 2,
+        "t3_later_internal_support_conditioned_by_changed_external_state": 3
+      },
+      "provisional_ap_level": "shared_medium_8a_control_not_claim_allowed",
+      "provisional_claim_ceiling": "fail_closed_8a_shared_medium_control",
+      "replay_digest_algorithm": "sha256_canonical_json",
+      "replay_digest_inputs": [
+        "schema_version",
+        "source_row_ids",
+        "source_artifacts",
+        "loop_policy_digest",
+        "boundary_assignments",
+        "row_decision",
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_timing",
+        "monotonic_phase_order",
+        "response_caused_external_change",
+        "later_internal_depends_on_changed_external_state",
+        "loop_closure_evidence",
+        "dependency_trace",
+        "budget_cost_surface",
+        "budget_validity",
+        "controls",
+        "ap7_gates",
+        "claim_flags",
+        "closed_loop_claim_allowed"
+      ],
+      "response_caused_external_change": false,
+      "response_to_external_change_trace": {
+        "dependency_note": "native identity relabel control: alternate N07 dual-basin exchange evidence is not B4_C5 reverse replay",
+        "phase": "t2_response_caused_external_change",
+        "present": false,
+        "source_backed": false,
+        "state_after": {
+          "bounded_exchange_level": 0.07457339932026706,
+          "response_caused_external_medium_change": false,
+          "source_recaptured_from_neutral_reservoir": 0.03039326274751405
+        },
+        "state_before": {
+          "fresh_wrong_basin_leakage_pressure": 0.04
+        }
+      },
+      "row_decision": "rejected",
+      "row_id": "n17_i8a_row_11_native_identity_relabel_control",
+      "row_replay_digest": "fed7747337feb7f7c296d3b0900f11f7a5b44501e1161f573314e3e3a47edd06",
+      "row_type": "control_row",
+      "shared_medium_reverse_perspective_probe": {
+        "closed_loop_claim_allowed": false,
+        "failure_reasons": [
+          "identity_claim_promotion"
+        ],
+        "label": "native identity relabel control",
+        "metrics": {
+          "A_support_retention_level": 0.9731535762447039,
+          "B_support_retention_level": 0.9753907782243119,
+          "basin_separability_level": 0.9731535762447039,
+          "basin_separability_min": 0.9,
+          "bounded_exchange_level": 0.07457339932026706,
+          "budget_error_level": 0.0,
+          "destructive_interference_level": 0.02684642375529611,
+          "destructive_interference_threshold": 0.15,
+          "dual_basin_survival_threshold": 0.85,
+          "exchange_balance_error_level": 0.0,
+          "exchange_cap": 0.075,
+          "post_transient_flattening_epsilon": 0.001,
+          "post_transient_wrong_basin_slope": 0.0008716360195236764,
+          "wrong_basin_leakage_level": 0.07457339932026706,
+          "wrong_basin_threshold": 0.1
+        },
+        "probe_id": "native_identity_relabel_control",
+        "probe_kind": "unsafe_claim_relabel_control",
+        "row_decision": "rejected",
+        "source_family": "N07_neutral_absorber_reservoir"
+      },
+      "snapshot_load_status": "stable",
+      "source_artifacts": [
+        {
+          "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+          "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+          "source_role": "local_one_sided_g6_candidate_and_limit_source",
+          "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+          "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+        },
+        {
+          "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+          "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+          "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+          "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+          "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+          "source_role": "b4_c5_reverse_perspective_blocker_source",
+          "source_row_id": "n16_i6_row_b4_c5",
+          "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+          "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+          "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+          "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+          "source_role": "alternate_dual_basin_bounded_exchange_source",
+          "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+          "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+        },
+        {
+          "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+          "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+          "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+          "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+          "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+          "source_role": "artifact_only_replay_and_control_source",
+          "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+          "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+        }
+      ],
+      "source_row_ids": [
+        "n17_iteration_8_local_one_sided_shared_medium_g6",
+        "n16_i6_row_b4_c5",
+        "n07_i11b_neutral_absorber_reservoir",
+        "n07_i12_artifact_only_dual_basin_closeout"
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "shared_medium_extension_supported": true,
+  "source_artifacts": [
+    {
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+      "source_claim_ceiling": "artifact_level_local_one_sided_shared_medium_reciprocal_loop_candidate_without_basin_merge",
+      "source_output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+      "source_report": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+      "source_report_sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5",
+      "source_role": "local_one_sided_g6_candidate_and_limit_source",
+      "source_row_id": "n17_iteration_8_local_one_sided_shared_medium_g6",
+      "source_sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+    },
+    {
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+      "source_claim_ceiling": "artifact_level_B4_C5_shared_medium_separability_candidate_with_reverse_perspective_deferred",
+      "source_output_digest": "20c90ead4f3c5c3621d940cf02d315a6ff398e85f053a928ad5f7ecd3f85106d",
+      "source_report": "experiments/2026-06-N16-lgrc-self-environment-boundary/reports/n16_selected_interaction_probe_matrix.md",
+      "source_report_sha256": "263cb160913dc67544fabd1f90818768a49530b221171483ec901383706c6801",
+      "source_role": "b4_c5_reverse_perspective_blocker_source",
+      "source_row_id": "n16_i6_row_b4_c5",
+      "source_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0"
+    },
+    {
+      "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+      "source_claim_ceiling": "id5_long_horizon_c3_bounded_non_destructive_exchange_candidate",
+      "source_output_digest": "db073ea88df88f44657f0f42c24eb95ba19a8f0f5735a85eba400d9da8c649e1",
+      "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_11b_neutral_absorber_reservoir.md",
+      "source_report_sha256": "866f767ca4b098b46aad4f5833f9644092eaa028bb9e4c742763fe612b238354",
+      "source_role": "alternate_dual_basin_bounded_exchange_source",
+      "source_row_id": "n07_i11b_neutral_absorber_reservoir",
+      "source_sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497"
+    },
+    {
+      "source_artifact": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_12_long_horizon_compatibility_closeout.json",
+      "source_claim_ceiling": "artifact_only_source_specific_bounded_non_destructive_exchange_under_neutral_absorber_reservoir_v1",
+      "source_output_digest": "e7e190947df21fabf196c1ce5fc6ae1951bfea3c33c7dbf12b3757c7c3bedca3",
+      "source_report": "experiments/2026-05-N07-rc-identity-attractor-invariance/reports/n07_iteration_12_long_horizon_compatibility_closeout.md",
+      "source_report_sha256": "33bfb5c32c7212cce496d1d0e2495dda95b9627ffe510fe79afe4981548d7bc8",
+      "source_role": "artifact_only_replay_and_control_source",
+      "source_row_id": "n07_i12_artifact_only_dual_basin_closeout",
+      "source_sha256": "af966c2f8063d88078d7a1c5fb9cfc0286b383ce7970221bdd8248e443c5c189"
+    }
+  ],
+  "status": "passed",
+  "symmetric_shared_medium_replay_supported": false
+}

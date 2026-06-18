@@ -29,11 +29,33 @@ Generated scripts:
 - `build_n17_alternative_g5_challenge_probe.py` - Builds the Iteration 6-B
   alternative target-band-gated G5 challenge probe without retuning the 6-A
   breach/flux envelope.
+- `build_n17_resource_support_modulation_loop.py` - Builds the Iteration 7
+  resource/support modulation extension and blocks resource depletion as
+  semantic goal pursuit.
+- `build_n17_resource_support_challenge_stability_probe.py` - Builds the
+  Iteration 7-A local G5 challenge-stability probe for the fixed Iteration 7
+  route_b resource/support loop.
+- `build_n17_alternative_resource_support_g5_probe.py` - Builds the Iteration
+  7-B alternative low-margin resource/support G5 setup without treating it as a
+  7-A refinement.
+- `build_n17_shared_medium_reciprocal_loop.py` - Builds the Iteration 8 local
+  one-sided shared-medium reciprocal loop extension, blocks general/reverse-
+  perspective G6, merge/leakage relabels, and keeps symmetric native
+  multi-basin claims and final AP7 blocked.
+- `build_n17_shared_medium_reverse_perspective_probe.py` - Builds the
+  Iteration 8-A shared-medium reverse-perspective/alternate-source probe,
+  preserving the B4/C5 reverse-replay blocker while adding N07 alternate
+  dual-basin bounded-exchange evidence.
+- `build_n17_b4c5_reverse_perspective_replay_probe.py` - Builds the Iteration
+  8-B B4/C5-specific reverse-perspective replay probe, recording that B4/C5 is
+  multi-basin but not perspective-paired.
+- `build_n17_paired_perspective_shared_medium_probe.py` - Builds the
+  Iteration 8-C local paired-perspective shared-medium probe with explicit A/B
+  perspective rows, a joint paired row, and fail-closed one-sided, label-swap,
+  B4/C5-reuse, merge/leakage, asymmetric, and final-AP7 controls.
 
 Planned scripts:
 
-- `build_n17_resource_support_modulation_loop.py`
-- `build_n17_shared_medium_reciprocal_loop.py`
 - `build_n17_closed_loop_requirements_matrix.py`
 - `build_n17_closeout_and_handoff.py`
 
