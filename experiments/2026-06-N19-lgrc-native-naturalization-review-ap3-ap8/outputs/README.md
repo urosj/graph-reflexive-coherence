@@ -25,6 +25,9 @@ n19_lower_stack_candidate_classification.json
 n19_ap6_boundary_native_readiness_classification.json
 n19_ap7_loop_native_readiness_classification.json
 n19_ap8_horizon_budget_native_readiness_classification.json
+n19_candidate_classification_matrix.json
+n19_phase8_readiness_matrix.json
+n19_closeout_and_handoff.json
 ```
 
 Outputs must be deterministic, replayable, digest-backed, and free of local

@@ -31,6 +31,9 @@ build_n19_lower_stack_candidate_classification.py
 build_n19_ap6_boundary_native_readiness_classification.py
 build_n19_ap7_loop_native_readiness_classification.py
 build_n19_ap8_horizon_budget_native_readiness_classification.py
+build_n19_candidate_classification_matrix.py
+build_n19_phase8_readiness_matrix.py
+build_n19_closeout_and_handoff.py
 ```
 
 Scripts should write only experiment-local outputs and reports. N19 must not

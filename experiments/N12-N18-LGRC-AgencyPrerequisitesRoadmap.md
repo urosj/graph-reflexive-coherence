@@ -667,3 +667,25 @@ agency/personhood/biology/unrestricted claims remain blocked
 
 The intended progression is toward native agentic-like dynamics candidates, not
 toward premature agency labels.
+
+## Post-N19 Readiness Review Addendum
+
+N19 is closed as the N12-style native naturalization review of the N13-N18
+AP3-AP8 stack. It does not open a new series, Phase 8 implementation, native
+support, or AP9.
+
+N19 records:
+
+```text
+final_claim_ceiling = artifact_level_phase8_readiness_review_for_ap3_ap8
+phase8_ready_surface_count = 12
+full_ap3_ap8_nat4_ladder_generation_supported = false
+current_implementation_can_generate_claimed_ap_ladder = false
+claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
+```
+
+The current experiment stack is therefore closed with a specific native
+generation blocker: AP4/N14 and AP5/N15 lack NAT4 evidence. Any future N20+
+series or Phase 8 implementation branch must be defined separately and must
+start from that closeout state, not from an assumption that the full AP3-AP8
+ladder is already natively generatable.

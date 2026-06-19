@@ -451,6 +451,16 @@ no native implementation claim is made
 Close N19 as a native-readiness review and hand off any Phase 8 implementation
 tasks explicitly.
 
+The closeout must also answer the AP-level generation gate:
+
+```text
+Does every AP rung in AP3-AP8 have NAT4 evidence sufficient to generate the
+claimed ladder with the current implementations?
+```
+
+If any AP rung lacks NAT4 evidence, N19 must record that the full claimed
+ladder cannot yet be generated natively, even if some rows are Phase-8-ready.
+
 Expected artifacts:
 
 ```text
@@ -468,6 +478,8 @@ native_support_opened = false
 src_diff_empty = true
 unsafe claims blocked
 future Phase 8 tasks named without being implemented
+AP-level NAT4 coverage answered
+current ladder generation blocked if any AP rung lacks NAT4 evidence
 ```
 
 ## Controls

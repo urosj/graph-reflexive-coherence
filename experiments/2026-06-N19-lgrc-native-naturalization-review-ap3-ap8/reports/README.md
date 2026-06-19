@@ -25,6 +25,9 @@ n19_lower_stack_candidate_classification.md
 n19_ap6_boundary_native_readiness_classification.md
 n19_ap7_loop_native_readiness_classification.md
 n19_ap8_horizon_budget_native_readiness_classification.md
+n19_candidate_classification_matrix.md
+n19_phase8_readiness_matrix.md
+n19_closeout_and_handoff.md
 ```
 
 Reports should summarize matching JSON artifacts without widening the claim

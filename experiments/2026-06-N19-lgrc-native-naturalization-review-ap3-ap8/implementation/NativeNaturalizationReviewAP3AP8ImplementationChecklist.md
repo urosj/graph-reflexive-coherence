@@ -19,11 +19,11 @@
 - [x] Treat `phase8_ready` as derived from `nat_level = NAT4`.
 - [x] Keep `NAT5` and `NAT6` out of scope.
 - [x] Require exactly one `primary_disposition` per candidate row.
-- [ ] Force unsafe claim flags false in every row.
+- [x] Force unsafe claim flags false in every row.
 - [x] Require source digests for all consumed artifacts.
 - [x] Use relative paths only.
 - [x] Confirm generated records contain no local absolute paths.
-- [ ] Confirm `src_diff_empty = true` before closeout.
+- [x] Confirm `src_diff_empty = true` before closeout.
 - [x] Reject native-support claims unless a separate Phase 8 implementation
       exists and validates them.
 
@@ -392,14 +392,14 @@ Phase 8 validation requirement, not as a solved bottleneck.
 
 ## Iteration 7. Phase 8 Readiness Matrix
 
-- [ ] Generate candidate classification matrix.
-- [ ] Generate Phase 8 readiness matrix.
-- [ ] Require all NAT4 rows to satisfy all NAT4 gates.
-- [ ] Keep NAT3 rows below `phase8_ready`.
-- [ ] Record blocked rows with distinct blockers.
-- [ ] Record implementation-gap rows with minimal producer code needed.
-- [ ] Confirm no native implementation claim is made.
-- [ ] Confirm all unsafe claim flags remain false.
+- [x] Generate candidate classification matrix.
+- [x] Generate Phase 8 readiness matrix.
+- [x] Require all NAT4 rows to satisfy all NAT4 gates.
+- [x] Keep NAT3 rows below `phase8_ready`.
+- [x] Record blocked rows with distinct blockers.
+- [x] Record implementation-gap rows with minimal producer code needed.
+- [x] Confirm no native implementation claim is made.
+- [x] Confirm all unsafe claim flags remain false.
 
 Expected artifacts:
 
@@ -412,19 +412,72 @@ scripts/build_n19_candidate_classification_matrix.py
 scripts/build_n19_phase8_readiness_matrix.py
 ```
 
+Implementation record:
+
+```text
+status = passed
+candidate_matrix_artifact = outputs/n19_candidate_classification_matrix.json
+candidate_matrix_report = reports/n19_candidate_classification_matrix.md
+candidate_matrix_script = scripts/build_n19_candidate_classification_matrix.py
+candidate_matrix_command = .venv/bin/python experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/scripts/build_n19_candidate_classification_matrix.py
+candidate_matrix_row_count = 24
+candidate_matrix_phase8_ready_row_count = 12
+candidate_matrix_output_digest = 46e8675c62ee399c840844a7f5aee04108c9ba35eaf194a11de6d1e956bae266
+candidate_matrix_artifact_sha256 = b08c533cb7977f82008b1f1d803f00993d3b04fb00f9b2a7d157454ece270e40
+candidate_matrix_report_sha256 = f566ecd400670a210de83d15c348ae8e13da824c8c45c5b311e0cc70043dc06d
+candidate_matrix_script_sha256 = f93eddeaba47196f5569e9cd914c5ee5ab44a88890775b47a83c3125ccf48264
+readiness_matrix_artifact = outputs/n19_phase8_readiness_matrix.json
+readiness_matrix_report = reports/n19_phase8_readiness_matrix.md
+readiness_matrix_script = scripts/build_n19_phase8_readiness_matrix.py
+readiness_matrix_command = .venv/bin/python experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/scripts/build_n19_phase8_readiness_matrix.py
+readiness_matrix_phase8_ready_surface_count = 12
+readiness_matrix_non_ready_row_count = 12
+readiness_matrix_output_digest = 193ea18a1ab3398e0d6a210101e7f6fc0fd91ea6c5ecd59853dee0814cc38eae
+readiness_matrix_artifact_sha256 = a411d361ce43bdfdc6951ee07192ce3c7b8d887034258dcd069a1c274afc2379
+readiness_matrix_report_sha256 = 495ab1e04a83d962a9d63b55f4d9081b74b838c2ed9a910003842790b9bf4064
+readiness_matrix_script_sha256 = 66cfe9ba8e0eb24171d7dcd9b27f7f60bebb96ae0814197fd737ab9bbe38448d
+failed_checks = []
+phase8_opened = false
+native_support_opened = false
+ap9_opened = false
+```
+
+Iteration 7 synthesizes I3-I6 into a candidate matrix without widening any row.
+The partition is:
+
+```text
+NAT4 phase8_ready native policy/telemetry candidates = 12
+NAT3 native contract candidates below phase8_ready = 3
+NAT2 implementation-gap blockers = 4
+NAT0 unsafe relabel rejections = 5
+```
+
+The Phase 8 readiness matrix derives readiness only from gate-complete `NAT4`
+rows. It records 12 future default-off producer/runtime surfaces across
+support regulation, boundary separability, closed-loop engagement, and limited
+h4/L5 horizon-budget continuity. It also preserves 12 non-ready rows: the
+`NAT3` rows remain contract candidates, the `NAT2` rows remain distinct
+implementation blockers, and the `NAT0` rows remain unsafe relabel rejections.
+
+No native implementation claim is made: `phase8_opened = false`,
+`native_support_opened = false`, `ap9_opened = false`, and all unsafe claim
+flags remain false.
+
 ## Iteration 8. Closeout And Handoff
 
-- [ ] Close N19 as native-readiness review only.
-- [ ] Record final candidate partition.
-- [ ] Record Phase 8-ready candidates, if any.
-- [ ] Record scaffolds and blockers.
-- [ ] Record future Phase 8 implementation tasks without implementing them.
-- [ ] Confirm `phase8_opened = false`.
-- [ ] Confirm `native_support_opened = false`.
-- [ ] Confirm `ap9_opened = false`.
-- [ ] Confirm `src_diff_empty = true`.
-- [ ] Confirm no absolute paths in generated records.
-- [ ] Confirm final claim ceiling is
+- [x] Close N19 as native-readiness review only.
+- [x] Record final candidate partition.
+- [x] Record Phase 8-ready candidates, if any.
+- [x] Record scaffolds and blockers.
+- [x] Record AP-level NAT4 coverage for AP3-AP8.
+- [x] Record whether current implementations can generate the claimed AP ladder.
+- [x] Record future Phase 8 implementation tasks without implementing them.
+- [x] Confirm `phase8_opened = false`.
+- [x] Confirm `native_support_opened = false`.
+- [x] Confirm `ap9_opened = false`.
+- [x] Confirm `src_diff_empty = true`.
+- [x] Confirm no absolute paths in generated records.
+- [x] Confirm final claim ceiling is
       `artifact_level_phase8_readiness_review_for_ap3_ap8`.
 
 Expected artifacts:
@@ -434,6 +487,67 @@ outputs/n19_closeout_and_handoff.json
 reports/n19_closeout_and_handoff.md
 scripts/build_n19_closeout_and_handoff.py
 ```
+
+Implementation record:
+
+```text
+status = passed
+artifact = outputs/n19_closeout_and_handoff.json
+report = reports/n19_closeout_and_handoff.md
+script = scripts/build_n19_closeout_and_handoff.py
+command = .venv/bin/python experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/scripts/build_n19_closeout_and_handoff.py
+output_digest = 233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe
+artifact_sha256 = 7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e
+report_sha256 = f0b1f8fb8ee77d83e150da6b239b515bb958d010820f650167b9e90aba5894ef
+script_sha256 = 45e13585c63baa1c27aee7ff9dce41a3dc9065bc0e7fbff96e038495c119f312
+failed_checks = []
+phase8_opened = false
+native_support_opened = false
+ap9_opened = false
+src_diff_empty = true
+```
+
+Iteration 8 answers the AP-level NAT4 coverage question explicitly:
+
+```text
+AP3 = NAT4 evidence present
+AP4 = NAT4 evidence absent; best current level is NAT3
+AP5 = NAT4 evidence absent; best current level is NAT3
+AP6 = NAT4 evidence present
+AP7 = NAT4 evidence present
+AP8 = NAT4 evidence present for limited h4/L5 claim only
+```
+
+Therefore:
+
+```text
+full_ap3_ap8_nat4_ladder_generation_supported = false
+current_implementation_can_generate_claimed_ap_ladder = false
+claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
+```
+
+N19 still records 12 Phase-8-ready NAT4 surfaces, but the full current ladder
+cannot be generated as a complete NAT4 ladder until AP4/N14 and AP5/N15 are
+upgraded. The required handoff tasks are `phase8_upgrade_ap4_to_nat4` and
+`phase8_upgrade_ap5_to_nat4`. Optional/generalization blockers remain recorded
+for AP6 original B4/C5 reverse perspective, AP7 general shared-medium reverse
+perspective, and AP8 h8/h16/general AP8 extrapolation.
+
+The AP4/N14 gap is not simply "more classification needed." N14 has a NAT3
+route consequence-selection contract, but it is missing source-current
+route-conditioned support/regulation rows, observed route-conditioned inputs
+instead of constructed followout, same-horizon and same-budget peer-route
+comparisons, native route-selection telemetry with replay/stale-record
+controls, and a rejection record for generic support/regulation reuse as
+route-conditioned evidence.
+
+The AP5/N15 gap depends on that AP4 gap and adds its own missing surface. N15
+has a NAT3 proxy-derivation contract, but it is missing native lower-stack input
+capture after AP3/AP4 native surfaces exist, AP4 NAT4 route-conditioned
+support/regulation evidence, a default-off native proxy derivation policy,
+target-condition digest before use, replay digest over target derivation and
+bridge ranking, and validation that readiness-only context remains non-mutating
+support context.
 
 ## Final Blocked Claims
 
