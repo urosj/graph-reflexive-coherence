@@ -480,41 +480,327 @@ their unsafe claim remains rejected.
 
 ## Iteration 7. Environment/Resource Perturbation
 
-- [ ] Apply environment/resource perturbation stress.
-- [ ] Confirm boundary separation remains preserved.
-- [ ] Treat `boundary_to_loop_feedback` as the primary expected bottleneck.
-- [ ] Use the supported `h4/L4` envelope without recovering `h8` or changing
+- [x] Apply environment/resource perturbation stress.
+- [x] Confirm boundary separation remains preserved.
+- [x] Treat `boundary_to_loop_feedback` as the primary expected bottleneck.
+- [x] Use the supported `h4/L4` envelope without recovering `h8` or changing
       budget policy.
-- [ ] Start positive rows from supported I6 h4 rows, not from the rejected
+- [x] Start positive rows from supported I6 h4 rows, not from the rejected
       compound route-memory row.
-- [ ] Check budget exhaustion separately from environment/resource failure.
-- [ ] Preserve route/context and memory partial rows as envelope limits.
-- [ ] Verify `memory_context_to_selection`, `regulation_to_selection`,
+- [x] Check budget exhaustion separately from environment/resource failure.
+- [x] Preserve route/context and memory partial rows as envelope limits.
+- [x] Verify `memory_context_to_selection`, `regulation_to_selection`,
       `selection_to_proxy`, and `boundary_to_loop_feedback` link-by-link.
-- [ ] Confirm resource/support closure does not become goal ownership.
-- [ ] Reject resource-as-self relabels.
-- [ ] Record long-horizon budget and replay status.
+- [x] Confirm resource/support closure does not become goal ownership.
+- [x] Reject resource-as-self relabels.
+- [x] Record long-horizon budget and replay status.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_environment_resource_stress_matrix.json`
-- [ ] `reports/n18_environment_resource_stress_matrix.md`
-- [ ] `scripts/build_n18_environment_resource_stress_matrix.py`
+- [x] `outputs/n18_environment_resource_stress_matrix.json`
+- [x] `reports/n18_environment_resource_stress_matrix.md`
+- [x] `scripts/build_n18_environment_resource_stress_matrix.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_environment_resource_stress_matrix_h4_l5_no_ap8
+output_digest = f1e9b88b5ab0f3157f46f62787092477f232f5045d31e35284a3abefabb7ee48
+artifact_sha256 = 102d2fd4758e08bb0d29060fda95944363afa18a55891ca0c20069f20eb3490f
+row_count = 7
+highest_positive_stress_ladder_rung = L5
+primary_stress_anchor = h4
+max_supported_horizon = h4
+environment_boundary_pressure_supported = true
+resource_access_perturbation_supported = true
+environment_boundary_pressure = partial
+resource_access_budget = rejected
+compound_environment_resource = rejected
+resource_goal_ownership_relabel_blocked = true
+resource_as_self_relabel_blocked = true
+current_bottleneck_axis = loop_feedback
+current_bottleneck_link = boundary_to_loop_feedback
+minimum_boundary_score_supported_h4_rows = 0.806
+minimum_loop_feedback_score_supported_h4_rows = 0.800
+minimum_budget_headroom_supported_h4_rows = 0.03
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_8_shared_medium_stress = true
+failed_checks = []
+```
+
+Iteration 7 interpretation:
+
+```text
+Iteration 7 stresses the h4/L4 route-memory envelope without changing horizon
+or budget policy. Bounded environment boundary pressure and bounded resource
+access perturbation are supported at L5 for the environment/resource family,
+with linked stack continuity preserved. The result is narrow: the minimum
+supported h4 budget headroom is 0.03 and the active bottleneck remains
+loop_feedback, specifically boundary_to_loop_feedback.
+
+The environment pressure limit is partial because boundary-to-loop feedback
+falls below floor before budget is exhausted. The resource-access budget row is
+rejected because budget fails while trace continuity is still source-current,
+separating budget exhaustion from environment/resource trace failure. The
+compound environment/resource row is rejected because both linked continuity
+and budget leave the envelope.
+
+Resource access is not semantic goal ownership, native support, selfhood, or
+resource-as-self evidence. AP8 remains blocked pending shared-medium stress,
+replay/reconstruction, stale-state controls, and claim classification.
+```
+
+Iteration 7 review follow-up:
+
+```text
+I7 is the narrowest positive stress result so far. It supports L5
+environment/resource stress at h4, but only with minimum supported h4 budget
+headroom 0.03 and boundary_to_loop_feedback still the active bottleneck. I8
+must treat 0.03 budget headroom as a hard constraint, must not change the
+budget policy, and must not recover h8.
+
+The resource-access budget-limit row is a real blocker: source-current trace
+continuity alone is not enough because budget validity is a hard AP8 gate. The
+environment pressure limit is a different blocker because boundary-to-loop
+feedback fails before budget is exhausted. The compound environment/resource
+row is rejected because both linked continuity and budget leave the envelope.
+I8 must preserve these three failure modes rather than smoothing them together.
+
+I8 should therefore be a minimal bounded shared-medium separability test, not a
+general shared-medium robustness sweep. It should start from supported h4/L5
+rows only, keep resource-as-goal and resource-as-self relabels blocked, and
+keep AP8 blocked until I9 replay/control/classification.
+```
 
 ## Iteration 8. Shared-Medium Perturbation And Merge Controls
 
-- [ ] Apply shared-medium perturbation stress.
-- [ ] Confirm basin separability and no-merge controls.
-- [ ] Preserve N17 caveat that original B4/C5 reverse replay remains blocked.
-- [ ] Distinguish derived paired-perspective evidence from original B4/C5
+- [x] Apply shared-medium perturbation stress.
+- [x] Confirm basin separability and no-merge controls.
+- [x] Treat `minimum_budget_headroom_supported_h4_rows = 0.03` as a hard
+      budget constraint.
+- [x] Keep `boundary_to_loop_feedback` as the primary expected bottleneck.
+- [x] Use the supported `h4/L5` environment-resource envelope without
+      recovering `h8` or changing budget policy.
+- [x] Do not treat the rejected compound environment/resource row as a
+      positive shared-medium starting point.
+- [x] Run a minimal bounded shared-medium separability probe, not a general
+      robustness sweep.
+- [x] Preserve environment continuity failure, resource budget failure, and
+      compound failure as distinct blockers.
+- [x] Preserve N17 caveat that original B4/C5 reverse replay remains blocked.
+- [x] Distinguish derived paired-perspective evidence from original B4/C5
       relabeling.
-- [ ] Reject resource/shared-medium merge relabels.
+- [x] Reject resource/shared-medium merge relabels.
+- [x] Keep AP8 blocked until Iteration 9 replay/control/classification.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_shared_medium_stress_matrix.json`
-- [ ] `reports/n18_shared_medium_stress_matrix.md`
-- [ ] `scripts/build_n18_shared_medium_stress_matrix.py`
+- [x] `outputs/n18_shared_medium_stress_matrix.json`
+- [x] `reports/n18_shared_medium_stress_matrix.md`
+- [x] `scripts/build_n18_shared_medium_stress_matrix.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_minimal_shared_medium_stress_matrix_h4_l5_no_ap8
+output_digest = f2e0d7f8b8c88bb85f7bf5d588819e83043d3ff17c4bdfad306955fd8fcd9b60
+artifact_sha256 = f3e9f4c7c6fd57100e47c03f73110fbf3a0293deaa2d370df4f54533534a605c
+row_count = 7
+highest_positive_stress_ladder_rung = L5
+primary_stress_anchor = h4
+max_supported_horizon = h4
+minimal_shared_medium_separability_supported = true
+shared_medium_merge_pressure = partial
+shared_medium_budget = rejected
+compound_shared_medium = rejected
+b4c5_original_reverse_replay_relabel_blocked = true
+derived_paired_as_original_b4c5_relabel_blocked = true
+resource_shared_medium_merge_relabel_blocked = true
+current_bottleneck_axis = loop_feedback
+current_bottleneck_link = boundary_to_loop_feedback
+maximum_merge_pressure_supported_h4_rows = 0.12
+maximum_neighbor_leakage_supported_h4_rows = 0.012
+minimum_boundary_score_supported_h4_rows = 0.802
+minimum_loop_feedback_score_supported_h4_rows = 0.800
+minimum_budget_headroom_supported_h4_rows = 0.01
+minimum_continuity_margin_supported_h4_rows = 0.0
+floor_sensitivity_recorded_for_i9 = true
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_9_replay_control_classification = true
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+Iteration 8 stresses the h4/L5 environment-resource envelope without changing
+horizon or budget policy. Only a minimal bounded shared-medium separability row
+is supported at L5, with linked stack continuity preserved and minimum budget
+headroom 0.01.
+
+The positive row is exactly at the inclusive `0.800` continuity floor for
+`closed_loop_feedback_trace`, `boundary_to_loop_feedback`, and cross-axis
+continuity. The builder comparison policy is floor-inclusive (`score >= floor`)
+and ceiling-inclusive (`cost/drift <= ceiling`), and the JSON records numeric
+values before report formatting. I9 must preserve this equality-at-floor
+semantics during replay/classification.
+
+The merge-pressure row is partial because boundary-to-loop feedback fails
+before budget is exhausted. The budget row is rejected while traces remain
+source-current. The compound row is rejected because both separability and
+budget leave the envelope.
+
+Original B4/C5 reverse replay remains blocked, derived paired-perspective
+evidence cannot backfill the original B4/C5 source, and bounded shared-medium
+separability is not a resource/shared-medium merge. AP8 remains blocked
+pending I9 replay/control/classification.
+```
+
+Iteration 8 review follow-up:
+
+```text
+I8 is a good pass but the positive envelope is now very tight. It supports only
+bounded artifact-level L5 minimal shared-medium stress under h4, not AP8,
+general shared-medium robustness, original B4/C5 reverse replay, agency,
+native support, Phase 8, or unrestricted autonomy.
+
+The I8 positive row has zero continuity margin at the active floor:
+closed_loop_feedback_trace = 0.800, boundary_to_loop_feedback = 0.800, and
+cross_axis_score = 0.800. This is valid because the frozen comparison policy is
+inclusive, but I9 must reproduce it from canonical numeric artifact values and
+must not let formatted report rounding, hidden state, order effects, or budget
+policy changes flip the row.
+
+The final I8 bottleneck remains boundary_to_loop_feedback. Budget validity is
+a hard gate: the budget-limit row remains rejected even while trace continuity
+is source-current. Merge pressure is a distinct partial continuity boundary,
+and compound shared-medium stress is a distinct rejected separability-plus-
+budget boundary. I9 must preserve all three failure modes and must not start a
+positive AP8 path from rejected compound stress.
+
+I7 and I8 together complete the L5 stress stack enough for I9 control and
+classification, but AP8 remains false until I9/I10.
+```
+
+## Iteration 8-A. Shared-Medium Margin Robustness Probe
+
+- [x] Add an alternative shared-medium margin probe without retuning or
+      replacing I8.
+- [x] Keep `h4`, `L5`, threshold policy, budget ceiling, and claim boundary
+      fixed.
+- [x] Preserve I8 as the primary minimal edge-case support row.
+- [x] Require the alternative positive row to have budget headroom at least
+      `0.05` and continuity margin above the `0.800` floor.
+- [x] Preserve `boundary_to_loop_feedback` as the limiting link.
+- [x] Reject hidden budget relief, threshold relaxation, horizon shortening,
+      dropped bottleneck-link, merge-as-success, and original B4/C5 backfill
+      controls.
+- [x] Keep AP8 blocked until Iteration 9 replay/control/classification.
+
+Expected artifacts:
+
+- [x] `outputs/n18_shared_medium_margin_probe.json`
+- [x] `reports/n18_shared_medium_margin_probe.md`
+- [x] `scripts/build_n18_shared_medium_margin_probe.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_shared_medium_margin_probe_h4_l5_no_ap8
+output_digest = 997bbcfa45c10cfd3a51fa61553a7df56337aa60b969c231a90848cca7723c0b
+artifact_sha256 = 765ea51640d7533727d9a946a9b38db4696e71bc7c43b9a109c232eac3bae318
+row_count = 8
+highest_positive_stress_ladder_rung = L5
+primary_stress_anchor = h4
+max_supported_horizon = h4
+margin_candidate_supported = true
+minimum_boundary_score_supported_h4_rows = 0.826
+minimum_loop_feedback_score_supported_h4_rows = 0.822
+minimum_budget_headroom_supported_h4_rows = 0.06
+minimum_continuity_margin_supported_h4_rows = 0.022
+current_bottleneck_axis = loop_feedback
+current_bottleneck_link = boundary_to_loop_feedback
+hidden_budget_relief_rejected = true
+threshold_relaxation_rejected = true
+horizon_shortening_rejected = true
+dropped_boundary_to_loop_feedback_rejected = true
+merge_as_success_rejected = true
+b4c5_original_reverse_replay_relabel_blocked = true
+i8a_replaces_i8_minimal_row = false
+ap8_candidate_allowed = false
+final_ap8_supported = false
+phase8_opened = false
+native_support_opened = false
+validator_error_count = 0
+ready_for_iteration_9_replay_control_classification = true
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+Iteration 8-A adds a higher-margin shared-medium variant without changing the
+horizon, stress ladder, thresholds, budget ceiling, or claim boundary. It
+preserves the same shared-medium perturbation size as I8 while raising the
+minimum continuity margin from 0.0 to 0.022 and budget headroom from 0.01 to
+0.06.
+
+This is additional robustness evidence, not a replacement for I8. I8 remains
+the honest minimal edge-case support row. I8-A says the shared-medium story is
+not only a knife-edge equality-at-floor pass, but the result is still local,
+source-backed, h4/L5, and AP8-false.
+
+The active bottleneck remains boundary_to_loop_feedback. Hidden budget relief,
+threshold relaxation, horizon shortening, dropped boundary-to-loop feedback,
+merge-as-success, and original B4/C5 backfill all fail closed.
+```
+
+Geometric and flux difference from Iteration 8:
+
+```text
+Iteration 8 is the minimal shared-medium crossing case. Geometrically, the
+boundary and loop surfaces remain connected, but the connection is tangent to
+the admissible floor: closed_loop_feedback_trace = 0.800,
+boundary_to_loop_feedback = 0.800, and cross_axis_score = 0.800. In flux terms,
+shared-medium pressure is transmitted through the boundary-to-loop channel
+without breaking it, but the retained loop-feedback flow has no continuity
+slack. The pass is valid only because the frozen policy accepts equality at
+the floor.
+
+Iteration 8-A does not reduce the horizon, relax thresholds, change the budget
+ceiling, or remove the shared-medium perturbation. It changes the geometric
+configuration of the source-backed variant so the shared-medium crossing has
+more separation from the merge/leakage boundary and more retained continuity
+through the bottleneck link. The limiting link is still
+boundary_to_loop_feedback, but it now carries 0.822 instead of 0.800, while
+cross-axis continuity rises to 0.823 and boundary separation rises to 0.826.
+
+In flux terms, I8-A is not "less shared-medium stress"; it is a better
+channeled shared-medium flow. The perturbation still enters through the
+shared-medium path, but less of it becomes merge pressure or neighbor leakage,
+and more of the resulting signal remains attributable to the intended
+boundary-to-loop feedback channel. That is why budget headroom rises from 0.01
+to 0.06 and the minimum continuity margin rises from 0.0 to 0.022.
+
+The composed interpretation is therefore:
+I8 proves the minimal edge case survives.
+I8-A proves a second source-backed configuration survives with positive
+geometric/flux margin.
+Together they strengthen the shared-medium L5 story without turning it into
+general robustness, original B4/C5 reverse replay, AP8, agency, native
+support, or Phase 8 evidence.
+```
 
 ## Iteration 9. Full Replay, Control, And Classification Matrix
 
@@ -526,6 +812,24 @@ Expected artifacts:
 - [ ] Run hidden-native-support controls.
 - [ ] Run semantic agency, action/perception, goal-ownership, identity, and
       Phase 8 relabel controls.
+- [ ] Classify the narrow `h4/L5` stress stack as-is without widening horizon,
+      recovering `h8`, changing budget policy, or promoting local
+      shared-medium separability into general shared-medium robustness.
+- [ ] Classify I8 and I8-A together as narrow shared-medium evidence: I8 as
+      the minimal edge case, I8-A as additional higher-margin evidence, not a
+      replacement or generalized robustness result.
+- [ ] Reproduce the I8 minimal shared-medium row from canonical numeric values
+      without rounding drift, hidden state, order effects, or threshold-policy
+      changes; preserve inclusive equality-at-floor semantics for the `0.800`
+      continuity floor.
+- [ ] Preserve `boundary_to_loop_feedback` as the final bottleneck unless replay
+      produces a source-backed blocker.
+- [ ] Preserve merge-pressure, budget, and compound shared-medium failure modes
+      as distinct classification limits.
+- [ ] Do not use rejected compound shared-medium stress as positive AP8
+      evidence.
+- [ ] Preserve original B4/C5 reverse replay and derived-as-original relabel
+      blockers.
 - [ ] Classify AP8 only if all gates pass.
 - [ ] Keep final closeout pending Iteration 10.
 

@@ -11,6 +11,9 @@ n18_short_horizon_ap7_replay_baseline.json
 n18_horizon_window_sweep.json
 n18_support_proxy_stress_matrix.json
 n18_route_memory_stress_matrix.json
+n18_environment_resource_stress_matrix.json
+n18_shared_medium_stress_matrix.json
+n18_shared_medium_margin_probe.json
 ```
 
 Initial expected output sequence:
@@ -24,6 +27,7 @@ n18_support_proxy_stress_matrix.json
 n18_route_memory_stress_matrix.json
 n18_environment_resource_stress_matrix.json
 n18_shared_medium_stress_matrix.json
+n18_shared_medium_margin_probe.json
 n18_long_horizon_control_and_classification_matrix.json
 n18_closeout_and_handoff.json
 ```

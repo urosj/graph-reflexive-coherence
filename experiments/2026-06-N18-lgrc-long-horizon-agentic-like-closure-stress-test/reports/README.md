@@ -11,6 +11,9 @@ n18_short_horizon_ap7_replay_baseline.md
 n18_horizon_window_sweep.md
 n18_support_proxy_stress_matrix.md
 n18_route_memory_stress_matrix.md
+n18_environment_resource_stress_matrix.md
+n18_shared_medium_stress_matrix.md
+n18_shared_medium_margin_probe.md
 ```
 
 Reports should summarize the matching JSON outputs without expanding the claim
