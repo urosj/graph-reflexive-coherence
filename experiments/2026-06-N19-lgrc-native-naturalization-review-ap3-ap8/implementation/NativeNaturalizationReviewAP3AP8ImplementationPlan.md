@@ -339,9 +339,9 @@ Classify N13 AP3, N14 AP4, and N15 AP5 native-readiness candidates and blockers.
 Expected output:
 
 ```text
-support/regulation native-readiness rows
-consequence/selection native-readiness rows
-proxy/target native-readiness rows
+outputs/n19_lower_stack_candidate_classification.json
+reports/n19_lower_stack_candidate_classification.md
+scripts/build_n19_lower_stack_candidate_classification.py
 ```
 
 Acceptance:
@@ -358,6 +358,14 @@ candidate NAT levels justified gate by gate
 Classify N16 AP6 boundary, leakage, separability, side assignment, and
 shared-medium geometry/telemetry candidates.
 
+Expected output:
+
+```text
+outputs/n19_ap6_boundary_native_readiness_classification.json
+reports/n19_ap6_boundary_native_readiness_classification.md
+scripts/build_n19_ap6_boundary_native_readiness_classification.py
+```
+
 Acceptance:
 
 ```text
@@ -371,6 +379,14 @@ native multi-basin selfhood remains blocked
 
 Classify N17 AP7 ordered loop trace, replay, controls, resource/support, and
 shared-medium loop contracts.
+
+Expected output:
+
+```text
+outputs/n19_ap7_loop_native_readiness_classification.json
+reports/n19_ap7_loop_native_readiness_classification.md
+scripts/build_n19_ap7_loop_native_readiness_classification.py
+```
 
 Acceptance:
 
@@ -386,6 +402,14 @@ one-way crossing relabel remains rejected
 
 Classify N18 AP8 limited h4/L5 horizon, budget, cross-axis continuity, replay,
 and stress controls as native validation contract candidates or blockers.
+
+Expected output:
+
+```text
+outputs/n19_ap8_horizon_budget_native_readiness_classification.json
+reports/n19_ap8_horizon_budget_native_readiness_classification.md
+scripts/build_n19_ap8_horizon_budget_native_readiness_classification.py
+```
 
 Acceptance:
 

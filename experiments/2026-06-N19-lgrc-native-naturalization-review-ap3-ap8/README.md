@@ -133,6 +133,10 @@ Initial expected artifacts:
 ```text
 outputs/n19_ap3_ap8_source_inventory.json
 outputs/n19_naturalization_schema_v1.json
+outputs/n19_lower_stack_candidate_classification.json
+outputs/n19_ap6_boundary_native_readiness_classification.json
+outputs/n19_ap7_loop_native_readiness_classification.json
+outputs/n19_ap8_horizon_budget_native_readiness_classification.json
 outputs/n19_candidate_classification_matrix.json
 outputs/n19_phase8_readiness_matrix.json
 outputs/n19_closeout_and_handoff.json
@@ -143,6 +147,10 @@ Initial expected reports:
 ```text
 reports/n19_ap3_ap8_source_inventory.md
 reports/n19_naturalization_schema_v1.md
+reports/n19_lower_stack_candidate_classification.md
+reports/n19_ap6_boundary_native_readiness_classification.md
+reports/n19_ap7_loop_native_readiness_classification.md
+reports/n19_ap8_horizon_budget_native_readiness_classification.md
 reports/n19_candidate_classification_matrix.md
 reports/n19_phase8_readiness_matrix.md
 reports/n19_closeout_and_handoff.md
@@ -156,4 +164,3 @@ phase8_opened = false
 native_support_opened = false
 final_claim_ceiling = artifact_level_phase8_readiness_review_for_ap3_ap8
 ```
-

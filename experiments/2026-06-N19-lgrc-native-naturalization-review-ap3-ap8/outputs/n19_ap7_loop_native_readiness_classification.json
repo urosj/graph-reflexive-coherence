@@ -1,0 +1,1951 @@
+{
+  "ap9_opened": false,
+  "artifact_id": "n19_ap7_loop_native_readiness_classification",
+  "candidate_rows": [
+    {
+      "artifact_claim_scope": "artifact-level ordered loop trace-leg evidence: external -> internal -> external -> later internal",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "semantic action",
+        "semantic perception",
+        "agency",
+        "intention",
+        "native closed loop",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "NAT5/NAT6 are out of scope for N19.",
+        "A later Phase 8 task must implement the telemetry surface in src and validate it natively."
+      ],
+      "budget_surface": {
+        "g3_minimum_rung": true,
+        "required": true,
+        "units": [
+          "trace_leg_count",
+          "ordered_event_count",
+          "source_window_count",
+          "canonical_json_input_bytes",
+          "canonical_json_output_bytes",
+          "validation_count"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "closed_loop_claim_enabled": false,
+        "native_loop_trace_telemetry_enabled": false,
+        "semantic_action_perception_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "N17 I3 records G2 one-way crossing as an active null.",
+        "N17 I4 records the G3 hinge: response-caused external change and later internal dependence on that changed external state.",
+        "N17 closeout freezes AP7 at artifact_level_ap7_closed_boundary_engagement_loop_candidate."
+      ],
+      "i3_active_null_summary": {
+        "acceptance_state": "accepted_one_way_crossing_active_null_no_ap7",
+        "final_ap7_supported": "not_recorded"
+      },
+      "i4_response_dependence_summary": {
+        "closed_loop_claim_allowed": "not_recorded",
+        "final_ap7_supported": "not_recorded",
+        "loop_rung": "not_recorded"
+      },
+      "implementation_boundary": "N19 classifies native-readiness for trace telemetry only. It does not implement native closed-loop state or semantic action/perception.",
+      "minimal_producer_code_needed": [
+        "add default-off ordered loop trace-leg telemetry record",
+        "add phase-order digest over t0/t1/t2/t3 events",
+        "add G0-G2 fail-closed rung validation",
+        "add fourth-leg feedback dependency validation hook"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_or_telemetry_surface_name": "native_ordered_closed_loop_trace_leg_telemetry",
+      "native_question": "Can N17 ordered trace legs become a native telemetry contract without promoting G0-G2 one-way fragments into AP7?",
+      "native_state_needed": [
+        "four trace-leg records with source window digests",
+        "ordered t0/t1/t2/t3 event index",
+        "response-caused external-change attribution",
+        "later-internal feedback dependency record",
+        "G0-G2 fail-closed blocker record"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic action",
+          "semantic perception",
+          "agency intention",
+          "native loop state"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "phase8_ready_native_policy_candidate",
+      "record_schema_sketch": {
+        "enabled": false,
+        "g3_or_higher_required_for_closed_loop": true,
+        "loop_rung": "G0_to_G7",
+        "one_way_relabel_allowed": false,
+        "phase_order_digest": "sha256",
+        "supported": false,
+        "surface_id": "native_ordered_closed_loop_trace_leg_telemetry",
+        "trace_leg_digest": "sha256",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "50f67f0e9c880ce0f1c4722af6bb6bfb2fdbe2e229dd324870a9b0392e1db8e1",
+      "row_id": "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+      "runtime_visible_inputs": [
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_order_t0_t1_t2_t3",
+        "loop_ladder_rung",
+        "one_way_crossing_active_null_status",
+        "later_internal_dependency_on_changed_external_state"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay trace legs from serialized artifact rows",
+        "reject missing fourth-leg feedback",
+        "reject phase-order inversion",
+        "reject one-way crossing relabel as closure"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json",
+          "sha256": "55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67",
+          "status": "passed"
+        },
+        {
+          "output_digest": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json",
+          "sha256": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d",
+          "status": "passed"
+        },
+        {
+          "output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+          "sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 I2-I4 ordered loop contract and first G3 candidate",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json": "911f2910da5cb5899f9bc4b87e52e71177a013725b48b0356a6087a2e237ad72",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json": "3f70a70db68edf537d20f4b1478e0b53a7012510c7357539b3af8385fef30635",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+          "sha256": "1ba9c338c3f70ec73d715215dea08af502ef52627f32c4f7951c06bb318e59b8"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_schema_v1.md",
+          "sha256": "1a2e67bef294bcfd220ae0e68fbe45491abc3a0a0f6199aa114766f3efb08452"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_one_way_crossing_active_null.md",
+          "sha256": "5068abc0f62bd84805a9de0159bb82c3b2c0e7da43284eb16edb8836c975e286"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+          "sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87"
+        }
+      ],
+      "source_rungs": {
+        "first_positive_candidate": "accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7",
+        "one_way_null": "G2"
+      },
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json": "55b0f8c32c72018f8c8392c950ecc37a6184373af953984ba46e905a347e9f67",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json": "b9d60944babac53f31573ba662b8799ee1f4b8775c6ad5ac25c9020c3945c09d",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_one_way_crossing_active_null.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future native loop trace recorder at LGRC step snapshot boundary",
+      "telemetry_requirements": [
+        "record all four ordered trace legs before row decision",
+        "record G3 as the first admissible closure rung",
+        "record one-way crossing and G2 outbound response as below-closure controls",
+        "record response-caused external change separately from later external change",
+        "record later internal dependence on changed external state"
+      ]
+    },
+    {
+      "artifact_claim_scope": "artifact-level AP7 replay, order, hidden-state, and loop-overclaim controls",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic action",
+        "semantic perception",
+        "semantic action-perception loop",
+        "native closed loop",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "NAT5/NAT6 are out of scope for N19.",
+        "Native replay/control admission requires future Phase 8 implementation."
+      ],
+      "budget_surface": {
+        "duplicate_replay_is_run_level_control": true,
+        "required": true,
+        "units": [
+          "replay_count",
+          "negative_control_count",
+          "claim_boundary_check_count",
+          "canonical_digest_count",
+          "validation_count"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_loop_claim_admission_enabled": false,
+        "native_loop_replay_control_telemetry_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "N17 I5 records artifact-only, snapshot/load, duplicate, and order-inversion replay outcomes.",
+        "N17 I6 preserves claim-clean loop interpretation before extension rows.",
+        "N17 closeout confirms unsafe claim flags and native supported flags remain false."
+      ],
+      "implementation_boundary": "N19 classifies replay/control readiness only. It does not make AP7 native and does not admit semantic agency, action, or perception claims.",
+      "minimal_producer_code_needed": [
+        "add default-off loop replay/control telemetry surface",
+        "add canonical replay digest over trace legs, budget, row decision, and claim flags",
+        "add negative-control blocker records for loop failure modes",
+        "add run-level duplicate replay note distinct from schema-backed row controls"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_or_telemetry_surface_name": "native_closed_loop_replay_order_control_telemetry",
+      "native_question": "Can AP7 replay and controls become native admissibility telemetry for future loop rows?",
+      "native_state_needed": [
+        "stable replay matrix",
+        "fail-closed loop-specific negative control matrix",
+        "claim boundary record",
+        "duplicate replay run-level note",
+        "source digest set for loop artifacts"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "outbound response relabel",
+        "semantic action/perception loop relabel",
+        "native closed-loop relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "hidden runtime state",
+          "hidden external memory",
+          "hidden internal carryover",
+          "semantic agency"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "phase8_ready_native_policy_candidate",
+      "record_schema_sketch": {
+        "claim_boundary_digest": "sha256",
+        "control_matrix_digest": "sha256",
+        "enabled": false,
+        "negative_controls_fail_closed": true,
+        "replay_matrix_digest": "sha256",
+        "supported": false,
+        "surface_id": "native_closed_loop_replay_order_control_telemetry",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "9d2482988a3e6af924a3f65d7eea8f49a09dd6aa8956bdd50dbdf8112a5a5c64",
+      "row_id": "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+      "runtime_visible_inputs": [
+        "artifact_only_replay_status",
+        "snapshot_load_replay_status",
+        "duplicate_replay_status",
+        "order_inversion_control_status",
+        "post_hoc_stitching_control_status",
+        "hidden_external_state_memory_control_status",
+        "hidden_internal_state_carryover_control_status",
+        "external_change_not_caused_by_response_control_status",
+        "claim_boundary_flags"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "artifact-only replay stable",
+        "snapshot/load replay stable",
+        "duplicate replay stable",
+        "order-inversion control fails closed as expected",
+        "post-hoc stitching control fails closed as expected"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+          "sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+          "status": "passed"
+        },
+        {
+          "output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+          "sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 I5-I6 replay/order/control matrix and claim boundary",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+          "sha256": "1ba9c338c3f70ec73d715215dea08af502ef52627f32c4f7951c06bb318e59b8"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+          "sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+          "sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+          "sha256": "a43400b6de39dd098b81f6f89e17ba101679cdb5c79b0b08876c8b7168f50fb4"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future native loop replay/control validator",
+      "telemetry_requirements": [
+        "record replay stability before loop claim admission",
+        "record fail-closed negative controls with blocker ids",
+        "record duplicate replay separately from schema-backed row controls",
+        "record unsafe claim flags false beside every loop row"
+      ]
+    },
+    {
+      "artifact_claim_scope": "artifact-level perturbation-response-recovery G3/G5 loop family evidence",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "semantic action",
+        "semantic perception",
+        "agency",
+        "intention",
+        "autonomous repair",
+        "native support",
+        "native closed loop",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "NAT5/NAT6 are out of scope for N19.",
+        "Native loop execution would require a Phase 8 producer implementation and source-current validation."
+      ],
+      "budget_surface": {
+        "alternative_g5_source": "accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7",
+        "g3_source": "accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7",
+        "g5_source": "accepted_bounded_g5_mvp_challenge_stability_no_final_ap7",
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_perturbation_loop_telemetry_enabled": false,
+        "native_semantic_action_enabled": false,
+        "native_semantic_perception_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "I4 supplies the first G3 closure candidate.",
+        "I6-A current evidence rung is G5_bounded_challenge_stable_candidate.",
+        "I6-B current evidence rung is G5_alternative_target_band_challenge_stable_candidate.",
+        "The loop family remains perturbation-response-recovery, not semantic agency."
+      ],
+      "implementation_boundary": "The row is Phase 8-ready as telemetry only. It does not implement native closed-loop control, semantic action, perception, or autonomous repair.",
+      "minimal_producer_code_needed": [
+        "add default-off perturbation-response loop telemetry surface",
+        "add response-causation attribution record",
+        "add later-internal dependency-on-changed-external-state record",
+        "add challenge-stability envelope digest and fail-closed controls"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_or_telemetry_surface_name": "native_perturbation_response_recovery_loop_telemetry",
+      "native_question": "Can perturbation-response-recovery loop telemetry become a Phase-8-ready native policy surface without becoming semantic action/perception?",
+      "native_state_needed": [
+        "perturbation field trace",
+        "internal support before/after response",
+        "bounded reclosure response edge",
+        "challenge-stability envelope rows",
+        "alternative target-band gated challenge rows"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "one-step recovery as closed loop",
+        "response label as semantic action",
+        "later stability without changed-field dependence"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic action",
+          "semantic perception",
+          "agency intention",
+          "native repair"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "phase8_ready_native_policy_candidate",
+      "record_schema_sketch": {
+        "challenge_envelope_digest": "sha256",
+        "enabled": false,
+        "feedback_dependency_digest": "sha256",
+        "perturbation_trace_digest": "sha256",
+        "response_trace_digest": "sha256",
+        "semantic_action_claim_allowed": false,
+        "supported": false,
+        "surface_id": "native_perturbation_response_recovery_loop_telemetry",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "b51df0d86ffc3eff0254522deb27c533bf2d438734bea8ab0b56cb57d73fd9a4",
+      "row_id": "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+      "runtime_visible_inputs": [
+        "external_perturbation_crossing",
+        "internal_support_shift",
+        "bounded_response_or_reclosure",
+        "response_caused_external_perturbation_field_change",
+        "later_internal_support_conditioned_by_changed_external_state",
+        "challenge_stability_envelope",
+        "target_band_gated_alternative_envelope",
+        "support_floor",
+        "budget_surface"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay the G3 candidate through I5 controls",
+        "replay I6-A fixed challenge-stability envelope",
+        "replay I6-B alternative target-band-gated envelope",
+        "reject feedback-removed and external-change-not-caused-by-response controls"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json",
+          "sha256": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec",
+          "status": "passed"
+        },
+        {
+          "output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+          "sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+          "status": "passed"
+        },
+        {
+          "output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+          "sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+          "status": "passed"
+        },
+        {
+          "output_digest": "4c795ca09ec6d7b557f5d1f8d1f7d0624f4eb7cfea99a43f383f40d68068ebc4",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json",
+          "sha256": "cc34f5bbb06521271341f334c1ed9db4276d0af020d396f85b1334eb9553d726",
+          "status": "passed"
+        },
+        {
+          "output_digest": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json",
+          "sha256": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 I4, I6-A, and I6-B perturbation-response-recovery loop probes",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json": "cecfc28625e871c4d7d12ba0a1904a9ef7866c2230206c1b033b316b9b2564ab",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json": "4c795ca09ec6d7b557f5d1f8d1f7d0624f4eb7cfea99a43f383f40d68068ebc4",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json": "66bd43b80a31c08dd5b8106430cbf4623f0cebc9bbf505c986e2a617846b993f"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_perturbation_response_recovery_loop.md",
+          "sha256": "09c45193c621a133c00fe9b3dd39766085f8f8a3578babc4fafd89c578cb1d87"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_mvp_challenge_stability_probe.md",
+          "sha256": "8f004b1d08d21a933c077ef3b77f0f14d8edb1a0c599e165c34abaa802a389b5"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_g5_challenge_probe.md",
+          "sha256": "4e0ea595232a8b3eda03479d66b843183f400e611b58110855bad47094f64fe1"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+          "sha256": "1ba9c338c3f70ec73d715215dea08af502ef52627f32c4f7951c06bb318e59b8"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json": "ff1306a22857c9509ea526e715a0b99e640d3e2631519a632cd9376e9584d33b",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json": "cc34f5bbb06521271341f334c1ed9db4276d0af020d396f85b1334eb9553d726",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json": "d6b2fdd68e03b2132c2fa300e9560115cc7419609f35cf2554e6985fcaa981ec"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_g5_challenge_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_mvp_challenge_stability_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_perturbation_response_recovery_loop.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future native perturbation-response loop telemetry recorder",
+      "telemetry_requirements": [
+        "record perturbation field before crossing",
+        "record support shift after crossing",
+        "record bounded response/reclosure and its budget cost",
+        "record response-caused perturbation-field change",
+        "record later internal support dependence on the changed field",
+        "record G5 challenge-stability envelope and failed controls"
+      ]
+    },
+    {
+      "artifact_claim_scope": "artifact-level local resource/support modulation loop evidence",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "semantic goal ownership",
+        "resource seeking",
+        "intention",
+        "semantic action",
+        "semantic perception",
+        "native support",
+        "agency",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "NAT5/NAT6 are out of scope for N19.",
+        "Native support/resource-seeking remains blocked without a separate Phase 8 implementation."
+      ],
+      "budget_surface": {
+        "i7a_fixed_route_b_support_margin_above_floor": 0.074495897432,
+        "i7b_does_not_expand_i7a_envelope": true,
+        "i7b_low_margin_min_supported": 0.00583821862,
+        "i7b_low_margin_support_margin_above_floor": 0.02583821862,
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_resource_seeking_enabled": false,
+        "native_resource_support_loop_telemetry_enabled": false,
+        "native_support_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "I7-A current evidence rung is G5_resource_support_challenge_stable_candidate.",
+        "I7-B current evidence rung is G5_alternative_resource_support_challenge_stable_candidate.",
+        "I7-B strengthens setup variation but does not widen the I7-A fixed route_b envelope.",
+        "Resource/support modulation remains artifact-level loop telemetry, not goal pursuit or native support."
+      ],
+      "implementation_boundary": "The row is a local resource/support telemetry readiness candidate. It does not implement native support, resource seeking, or semantic goal pursuit.",
+      "minimal_producer_code_needed": [
+        "add default-off resource/support loop telemetry surface",
+        "add route-fixed resource access digest",
+        "add support-floor and target-band gate records",
+        "add local challenge-envelope records for fixed and alternative setups",
+        "add resource/goal/native-support relabel rejection hooks"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_or_telemetry_surface_name": "native_resource_support_modulation_loop_telemetry",
+      "native_question": "Can resource/support modulation loop telemetry become Phase-8-ready without becoming resource seeking, goal pursuit, or native support?",
+      "native_state_needed": [
+        "fixed route_b resource/support loop row",
+        "I7-A fixed-row local G5 envelope",
+        "I7-B alternative low-margin local G5 envelope",
+        "support floor and target-band gate records",
+        "goal-pursuit and native-support relabel controls"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "resource label-only relabel",
+        "resource depletion as goal pursuit",
+        "route_a burden switching as route_b stability",
+        "native support relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic goal",
+          "resource seeking intention",
+          "native support",
+          "hidden route switch"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "phase8_ready_native_policy_candidate",
+      "record_schema_sketch": {
+        "challenge_envelope_digest": "sha256",
+        "enabled": false,
+        "resource_support_access_digest": "sha256",
+        "route_id": "string",
+        "semantic_goal_pursuit_claim_allowed": false,
+        "support_floor_digest": "sha256",
+        "supported": false,
+        "surface_id": "native_resource_support_modulation_loop_telemetry",
+        "target_band_digest": "sha256",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "0e03fcb38158d5e30d2d04dd55e1164cb387dde637a5e99c7d3a7fe103f5dc5c",
+      "row_id": "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+      "runtime_visible_inputs": [
+        "route_b_resource_support_access_modulation",
+        "support_floor",
+        "support_margin_above_floor",
+        "target_band",
+        "resource_support_attenuation",
+        "access_delay_window",
+        "route_b_support_reduction",
+        "compound_support_cost",
+        "resource_goal_pursuit_relabel_control"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay fixed route_b row without retuning",
+        "replay I7-A fixed-row G5 envelope",
+        "replay I7-B alternative low-margin envelope as separate evidence",
+        "reject support-floor crossing, target-band crossing, and missing-feedback controls"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json",
+          "sha256": "992620b9571a0d83a236d5aeea530fbe0becfadeaba649f1fc4f91936952ffa6",
+          "status": "passed"
+        },
+        {
+          "output_digest": "c643181eef667d0e7d8ebb65410af363bc2650403b09a11f689be394b8580728",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json",
+          "sha256": "233d27318efeb60177ee433bab213d34cb6275e731b453cbfa04e85ccea26454",
+          "status": "passed"
+        },
+        {
+          "output_digest": "b0f6df9ed0a79e6e93243fdfbfcc8b65d9fcc8374e6fbd1a5775871632e91f06",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json",
+          "sha256": "2a957232cae5d5ccca809510213f50bd87fa3a32269a1439c0ee728943771e67",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 I7, I7-A, and I7-B resource/support loop probes",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json": "b0f6df9ed0a79e6e93243fdfbfcc8b65d9fcc8374e6fbd1a5775871632e91f06",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json": "c643181eef667d0e7d8ebb65410af363bc2650403b09a11f689be394b8580728",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json": "d85cf91d26431151e7914f37ec804094fcfdf7cbddc8632635cf2eda394194e2"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_modulation_loop.md",
+          "sha256": "7612d00dc31c0f72d6267f868cf28def9fc2a513a18d0d7c72b02ea78fc3b6ea"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_resource_support_challenge_stability_probe.md",
+          "sha256": "11e42d38ffdee0e4d216bbd602c7bb72687b2e03c158a785ea6813c2ff938784"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_alternative_resource_support_g5_probe.md",
+          "sha256": "3531752ac6f51189c0a0ff24596152ca9f9981dcd50a303b8e3d087e0880120b"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+          "sha256": "1ba9c338c3f70ec73d715215dea08af502ef52627f32c4f7951c06bb318e59b8"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json": "2a957232cae5d5ccca809510213f50bd87fa3a32269a1439c0ee728943771e67",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json": "233d27318efeb60177ee433bab213d34cb6275e731b453cbfa04e85ccea26454",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json": "992620b9571a0d83a236d5aeea530fbe0becfadeaba649f1fc4f91936952ffa6"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_alternative_resource_support_g5_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_challenge_stability_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_resource_support_modulation_loop.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future native resource/support loop telemetry recorder",
+      "telemetry_requirements": [
+        "record selected route identity and resource/support access trace",
+        "record support floor and target-band membership before row decision",
+        "record fixed-row I7-A envelope separately from I7-B alternative setup",
+        "record floor crossing, target-band crossing, missing feedback, and goal-pursuit relabel controls"
+      ]
+    },
+    {
+      "artifact_claim_scope": "artifact-level scoped shared-medium loop telemetry: local one-sided, alternate-source, local paired, and B4_C5-derived two-cycle candidates",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "general shared-medium G6",
+        "B4_C5 original reverse-perspective replay",
+        "symmetric native multi-basin replay",
+        "native multi-basin selfhood",
+        "semantic action",
+        "semantic perception",
+        "agency",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "general shared-medium G6 remains blocked",
+        "original B4_C5 reverse replay remains blocked",
+        "native symmetric multi-basin replay remains blocked",
+        "NAT5/NAT6 are out of scope for N19"
+      ],
+      "budget_surface": {
+        "b4c5_derived_two_cycle_candidate_supported": true,
+        "local_one_sided_candidate_supported": true,
+        "local_paired_candidate_supported": true,
+        "original_b4c5_reverse_replay_supported": false,
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_general_shared_medium_g6_enabled": false,
+        "native_multi_basin_selfhood_enabled": false,
+        "native_shared_medium_loop_telemetry_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "I8 source supports a local one-sided shared-medium G6 candidate.",
+        "I8-C local paired-perspective evidence rung is G6_local_paired_perspective_shared_medium_candidate.",
+        "I8-D derived two-cycle evidence rung is G6_B4C5_derived_two_cycle_paired_perspective_candidate.",
+        "I8-B keeps original B4_C5 reverse replay blocked, so the NAT4 surface is scoped and provenance-sensitive."
+      ],
+      "implementation_boundary": "The row is scoped shared-medium telemetry readiness only. It does not support general shared-medium G6, symmetric native replay, or native multi-basin selfhood.",
+      "minimal_producer_code_needed": [
+        "add default-off scoped shared-medium loop telemetry surface",
+        "add paired-perspective and derived two-cycle provenance digests",
+        "add original-B4_C5 reverse replay blocker field",
+        "add merge/leakage attribution controls",
+        "add general/symmetric/native shared-medium relabel rejection hooks"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_or_telemetry_surface_name": "native_scoped_shared_medium_loop_telemetry",
+      "native_question": "Can scoped shared-medium loop telemetry become Phase-8-ready while preserving the original B4_C5 reverse replay blocker and rejecting general symmetric/native claims?",
+      "native_state_needed": [
+        "local one-sided shared-medium G6 row",
+        "alternate-source shared-medium G6 row",
+        "local paired-perspective shared-medium G6 row",
+        "B4_C5-derived two-cycle paired-perspective G6 row",
+        "original B4_C5 reverse-perspective blocker",
+        "merge/leakage attribution controls"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "neighbor leakage as retention",
+        "merge/leakage as reciprocity",
+        "label swap as reverse perspective",
+        "8-C evidence imported as original B4_C5 reverse replay",
+        "general shared-medium G6 relabel",
+        "symmetric native multi-basin replay relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "hidden reverse perspective",
+          "hidden shared-medium routing",
+          "native multi-basin selfhood",
+          "general symmetric shared-medium loop"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "phase8_ready_native_policy_candidate",
+      "record_schema_sketch": {
+        "derived_two_cycle_digest": "sha256",
+        "enabled": false,
+        "general_shared_medium_g6_allowed": false,
+        "original_b4c5_reverse_replay_allowed": false,
+        "paired_perspective_digest": "sha256",
+        "shared_medium_exchange_digest": "sha256",
+        "supported": false,
+        "surface_id": "native_scoped_shared_medium_loop_telemetry",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "28a464c91f1cda9456e33e231a8cb3b51aaa542cd2a4a04ac3a3805a88a4cbba",
+      "row_id": "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4",
+      "runtime_visible_inputs": [
+        "shared_medium_boundary_exchange",
+        "coupling_channel_attribution",
+        "shared_medium_leakage",
+        "neighbor_leakage",
+        "merge_confusion_pressure",
+        "local_paired_perspective_trace",
+        "b4c5_derived_two_cycle_reverse_side_state",
+        "original_b4c5_reverse_replay_blocker"
+      ],
+      "secondary_tags": [],
+      "shared_medium_scope": {
+        "b4c5_reverse_replay_blocker": "reverse_internal_support_coherence_boundary_assignment_and_feedback_trace_not_source_backed",
+        "b4c5_reverse_replay_supported": false,
+        "general_shared_medium_g6_supported": false,
+        "local_one_sided_supported": true
+      },
+      "snapshot_replay_requirements": [
+        "replay local one-sided shared-medium row with one-sided scope",
+        "replay local paired-perspective row without importing it into original B4_C5",
+        "replay B4_C5-derived two-cycle row as derived protocol only",
+        "reject original B4_C5 reverse replay and label-swap controls",
+        "reject merge/leakage as reciprocity"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2",
+          "status": "passed"
+        },
+        {
+          "output_digest": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json",
+          "sha256": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a",
+          "status": "passed"
+        },
+        {
+          "output_digest": "79072b1bede778958e94e940229f77be7ba846c064539c20a9769aa53c2ef81e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json",
+          "sha256": "fd28893605c80d737dd807e170abc70fec760a4bb9b0d100696ff66a68395240",
+          "status": "passed"
+        },
+        {
+          "output_digest": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+          "sha256": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+          "status": "passed"
+        },
+        {
+          "output_digest": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json",
+          "sha256": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 I8 through I8-D scoped shared-medium loop probes",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json": "79072b1bede778958e94e940229f77be7ba846c064539c20a9769aa53c2ef81e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json": "b2e03d7fb8cf70bcf7b8b6e0cf36114651e8faecbf67fdeca6f3ff8875f239d0"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reverse_perspective_probe.md",
+          "sha256": "415c65c553f36c1da8a054c54f7a9a66a6d5bb01d6e7d108c018df96f315af26"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_paired_perspective_shared_medium_probe.md",
+          "sha256": "ccd93114f7bf53c11403827b245ca62a5db8a6d96044de45f7bc74b6fd2bd365"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+          "sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+          "sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json": "fd28893605c80d737dd807e170abc70fec760a4bb9b0d100696ff66a68395240",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json": "7194131d5bf088c4f1be6b00a73faccad4b05d1340a1430321dd80a02ffb482a"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_paired_perspective_shared_medium_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reverse_perspective_probe.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future native scoped shared-medium loop telemetry recorder",
+      "telemetry_requirements": [
+        "record shared-medium exchange and coupling-channel attribution",
+        "record leakage, neighbor leakage, and merge pressure separately",
+        "record local paired perspective rows separately from original B4_C5 replay",
+        "record B4_C5-derived two-cycle protocol as derived evidence only",
+        "record general/symmetric/native shared-medium relabel blockers"
+      ]
+    },
+    {
+      "artifact_claim_scope": "blocked upgrade of original B4_C5 into reverse-perspective, general shared-medium G6, or symmetric native multi-basin replay evidence",
+      "artifact_supported": false,
+      "blocked_claims": [
+        "general shared-medium G6",
+        "B4_C5 original reverse-perspective replay",
+        "symmetric native multi-basin replay",
+        "native multi-basin selfhood",
+        "agency",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "reverse internal side not source-backed in original B4_C5",
+        "reverse support/coherence metrics missing",
+        "reverse boundary edge missing",
+        "reverse feedback trace missing",
+        "derived evidence cannot backfill original source provenance"
+      ],
+      "budget_surface": {
+        "derived_two_cycle_rows_do_not_rewrite_original_source": true,
+        "required": true,
+        "status": "blocked_until_original_reverse_source_rows_exist"
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_general_shared_medium_g6_enabled": false,
+        "native_symmetric_multi_basin_replay_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": true
+      },
+      "evidence_notes": [
+        "NAT2 describes replayable blocker evidence only; row_decision remains blocked and phase8_ready remains false.",
+        "I8-B confirms original B4_C5 is multi-basin but not reverse-perspective paired.",
+        "I8-D can generate a B4_C5-derived two-cycle protocol, but it does not rewrite original B4_C5.",
+        "Original reverse blocker: reverse_internal_support_coherence_boundary_assignment_and_feedback_trace_not_source_backed."
+      ],
+      "implementation_boundary": "This blocker preserves source provenance. It prevents scoped shared-medium telemetry from becoming general/native symmetric shared-medium evidence.",
+      "minimal_producer_code_needed": [
+        "generate original-source reverse-side rows rather than relabeling",
+        "record reverse support/coherence/boundary/feedback traces",
+        "preserve derived two-cycle provenance as separate evidence"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT2",
+      "native_policy_or_telemetry_surface_name": "native_general_shared_medium_reverse_perspective_evidence_required",
+      "native_question": "Can original B4_C5 or later derived shared-medium evidence be relabeled as general/native symmetric shared-medium loop evidence?",
+      "native_state_needed": [
+        "source-backed reverse internal nodes for original source",
+        "reverse support/coherence metrics for original source",
+        "reverse boundary edge for original source",
+        "reverse changed-medium feedback trace for original source",
+        "control preventing derived-pair evidence from backfilling original B4_C5"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "label swap as reverse perspective",
+        "derived paired evidence as original B4_C5 reverse replay",
+        "merge/leakage as reciprocity",
+        "general shared-medium G6 relabel",
+        "symmetric native multi-basin replay relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "hidden reverse-side state",
+          "hidden reverse support/coherence",
+          "hidden reverse boundary edge",
+          "native multi-basin selfhood"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "implementation_gap_blocker",
+      "record_schema_sketch": {
+        "blocked_upgrade_id": "original_b4c5_general_shared_medium_blocker",
+        "derived_evidence_backfill_allowed": false,
+        "general_shared_medium_g6_allowed": false,
+        "original_forward_digest": "sha256",
+        "reverse_perspective_digest": "required_missing"
+      },
+      "row_decision": "blocked",
+      "row_digest": "c2c4908d47838b0c685e55a904cdab69cc0cface652b262b69e5dc31f2537cfe",
+      "row_id": "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker",
+      "runtime_visible_inputs": [
+        "original_b4c5_forward_perspective",
+        "missing_reverse_internal_side_state",
+        "missing_reverse_support_metric",
+        "missing_reverse_coherence_metric",
+        "missing_reverse_boundary_edge",
+        "missing_reverse_feedback_trace",
+        "derived_two_cycle_protocol_distinct_from_original_source"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay original B4_C5 without perspective swap",
+        "reject reverse replay when reverse source rows are missing",
+        "reject 8-C or 8-D evidence imported into original B4_C5 provenance"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json",
+          "sha256": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2",
+          "status": "passed"
+        },
+        {
+          "output_digest": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json",
+          "sha256": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+          "status": "passed"
+        },
+        {
+          "output_digest": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json",
+          "sha256": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 I8-B blocker and I8/I8-D provenance distinction",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json": "874495c7778ad263ebf8045e95392ba64797a7513db4a0d189057792fe6ae46a",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json": "2434af23c68d0a6e3856e8e131a9ff60ce4eee8252ad2c30235e347774ea22f7",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json": "18302290f9cf14eed2ae93a0db27ce5c88ccc5769c4c36e2989c753880b069db"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_reverse_perspective_replay_probe.md",
+          "sha256": "a401d6862c80f50ae550fedb2cded17e1456b54e9c657afc17df2d08b7497b7b"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_shared_medium_reciprocal_loop.md",
+          "sha256": "47892bfbd1ed0e8f148f74748d4c8137fd73ed0a688640bd8589554a4a3447b5"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_b4c5_derived_paired_perspective_probe.md",
+          "sha256": "6c08c4f50a6f1b1128a5595f4b8555d5f7af9e3b19d269c5f1627e04809b081e"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+          "sha256": "1ba9c338c3f70ec73d715215dea08af502ef52627f32c4f7951c06bb318e59b8"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json": "9bb0b18f2568cd241c81a0763ee200b66043e9af9e20c3c0d539ac155418b474",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json": "56c2fd0ae8268380d9c0404a23124e90c66d2bba347cc8f2c126c63c86d7bf50",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json": "5cd48d623cd727ebf9d5991a8b048bae5dcb2d9fee38a0f612a102fede765cf2"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_derived_paired_perspective_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_b4c5_reverse_perspective_replay_probe.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_shared_medium_reciprocal_loop.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future general shared-medium reverse-perspective producer",
+      "telemetry_requirements": [
+        "record original B4_C5 as one-sided in provenance",
+        "record reverse support/coherence/boundary/feedback evidence as missing",
+        "record derived two-cycle evidence as separate protocol",
+        "record general and symmetric relabel attempts as blocked"
+      ]
+    },
+    {
+      "artifact_claim_scope": "unsafe relabel controls over AP7 loop evidence",
+      "artifact_supported": false,
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "choice",
+        "semantic action",
+        "semantic perception",
+        "semantic goal ownership",
+        "selfhood",
+        "identity acceptance",
+        "native support",
+        "organism/life behavior",
+        "fully native agentic-like integration",
+        "unrestricted agency",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "unsafe relabel has no native-readiness promotion path"
+      ],
+      "budget_surface": {
+        "reason": "claim-control row",
+        "required": false
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "unsafe_loop_relabel_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": true
+      },
+      "evidence_notes": [
+        "N17 closeout supports artifact-level AP7 only.",
+        "The final claim boundary blocks agency, intention, semantic action, semantic perception, native support, and fully native integration.",
+        "One-way crossing relabel remains rejected; G0-G2 fragments cannot become closed-loop evidence.",
+        "one_way_crossing_trace != closed_boundary_engagement_loop"
+      ],
+      "implementation_boundary": "Rejected relabel row; no implementation path.",
+      "minimal_producer_code_needed": [
+        "none for this rejected relabel; preserve controls in any future loop surface"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": false,
+        "claim_flags_forced_false": false,
+        "default_off_flags_present": false,
+        "enabled_validated_supported_separation_present": false,
+        "native_policy_or_telemetry_surface_name_present": false,
+        "native_support_opened_false": false,
+        "negative_controls_specified": false,
+        "non_rc_quantity_audit_passes": false,
+        "phase8_opened_false": false,
+        "record_schema_sketch_present": false,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": false,
+        "src_diff_empty_true": false,
+        "state_mutation_owner_specified": false,
+        "telemetry_requirements_specified": false
+      },
+      "nat_level": "NAT0",
+      "native_policy_or_telemetry_surface_name": "not_applicable_relabel_rejected",
+      "native_question": "Can AP7 loop evidence be relabeled as agency, intention, semantic action, semantic perception, native support, or fully native integration?",
+      "native_state_needed": [],
+      "native_support_opened": false,
+      "negative_controls": [
+        "loop as agency",
+        "response as semantic action",
+        "feedback as semantic perception",
+        "resource/support loop as semantic goal ownership",
+        "shared-medium loop as native multi-basin selfhood",
+        "AP7 as native support",
+        "AP7 as Phase 8 implementation"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "agency",
+          "intention",
+          "semantic action",
+          "semantic perception",
+          "native support"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "unsafe_relabel_rejected",
+      "record_schema_sketch": {
+        "claim_allowed": false,
+        "relabel_claim": "string"
+      },
+      "row_decision": "rejected",
+      "row_digest": "5a4317b1ce88fba13a622c01bddd634c32e7c0ea69351ffc7fa42d66d455d8d8",
+      "row_id": "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected",
+      "runtime_visible_inputs": [],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay unsafe claim flags as false"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json",
+          "sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+          "status": "passed"
+        },
+        {
+          "output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json",
+          "sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+          "status": "passed"
+        },
+        {
+          "output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json",
+          "sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+          "status": "passed"
+        },
+        {
+          "output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json",
+          "sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N17",
+      "source_final_claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "source_final_supported_ap_level": "AP7",
+      "source_iteration_or_closeout": "N17 closeout, claim boundary, and replay/control records",
+      "source_output_digest": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closeout_and_handoff.md",
+          "sha256": "1ba9c338c3f70ec73d715215dea08af502ef52627f32c4f7951c06bb318e59b8"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_claim_boundary_record.md",
+          "sha256": "d608124d08f7bac06f5c215540de163884a4b59a7fbbede25e50970fb84e6350"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_replay_and_control_matrix.md",
+          "sha256": "c9c8b0047a95bfd329793794faa7d22e0eb08c087c919259449b1cbc1d3a9667"
+        },
+        {
+          "path": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_closed_loop_requirements_matrix.md",
+          "sha256": "a43400b6de39dd098b81f6f89e17ba101679cdb5c79b0b08876c8b7168f50fb4"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+      },
+      "source_status": {
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "not_applicable",
+      "telemetry_requirements": [
+        "record rejected relabel and source claim boundary"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "source_inventory_passed",
+      "detail": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap3_ap8_source_inventory.json",
+      "passed": true
+    },
+    {
+      "check_id": "schema_freeze_passed",
+      "detail": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_naturalization_schema_v1.json",
+      "passed": true
+    },
+    {
+      "check_id": "required_ap7_rows_present",
+      "detail": [
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4",
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker",
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_required_schema_fields_present",
+      "detail": {},
+      "passed": true
+    },
+    {
+      "check_id": "primary_dispositions_valid",
+      "detail": {
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4": "phase8_ready_native_policy_candidate",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4": "phase8_ready_native_policy_candidate",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4": "phase8_ready_native_policy_candidate",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4": "phase8_ready_native_policy_candidate",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4": "phase8_ready_native_policy_candidate",
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker": "implementation_gap_blocker",
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected": "unsafe_relabel_rejected"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "nat_levels_valid",
+      "detail": {
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4": "NAT4",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4": "NAT4",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4": "NAT4",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4": "NAT4",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4": "NAT4",
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker": "NAT2",
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected": "NAT0"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "row_decisions_valid",
+      "detail": {
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4": "supported",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4": "supported",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4": "supported",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4": "supported",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4": "supported",
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker": "blocked",
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected": "rejected"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_ready_derivation_enforced",
+      "detail": {
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4": {
+          "all_nat4_gates_pass": true,
+          "nat_level": "NAT4",
+          "phase8_ready": true
+        },
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4": {
+          "all_nat4_gates_pass": true,
+          "nat_level": "NAT4",
+          "phase8_ready": true
+        },
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4": {
+          "all_nat4_gates_pass": true,
+          "nat_level": "NAT4",
+          "phase8_ready": true
+        },
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4": {
+          "all_nat4_gates_pass": true,
+          "nat_level": "NAT4",
+          "phase8_ready": true
+        },
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4": {
+          "all_nat4_gates_pass": true,
+          "nat_level": "NAT4",
+          "phase8_ready": true
+        },
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT2",
+          "phase8_ready": false
+        },
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT0",
+          "phase8_ready": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "nat4_rows_have_all_gates_passed",
+      "detail": [
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "nat2_blocker_has_nat4_gap",
+      "detail": "original B4_C5/general shared-medium blocker remains below NAT4",
+      "passed": true
+    },
+    {
+      "check_id": "claim_flags_forced_false_all_rows",
+      "detail": 7,
+      "passed": true
+    },
+    {
+      "check_id": "phase8_and_native_support_not_opened",
+      "detail": 7,
+      "passed": true
+    },
+    {
+      "check_id": "source_digests_present",
+      "detail": 7,
+      "passed": true
+    },
+    {
+      "check_id": "ordered_trace_leg_candidates_classified",
+      "detail": "external -> internal -> external -> later internal telemetry row present",
+      "passed": true
+    },
+    {
+      "check_id": "loop_replay_control_telemetry_classified",
+      "detail": "replay/order/control telemetry row present",
+      "passed": true
+    },
+    {
+      "check_id": "perturbation_response_recovery_classified",
+      "detail": "G3/G5 perturbation-response-recovery row present",
+      "passed": true
+    },
+    {
+      "check_id": "resource_support_loop_classified",
+      "detail": "I7/I7-A/I7-B resource/support row present",
+      "passed": true
+    },
+    {
+      "check_id": "shared_medium_loop_classified_with_scope",
+      "detail": "shared-medium NAT4 row is scoped and keeps original B4_C5 blocker",
+      "passed": true
+    },
+    {
+      "check_id": "one_way_crossing_relabel_remains_rejected",
+      "detail": "G0-G2 fragments cannot become AP7",
+      "passed": true
+    },
+    {
+      "check_id": "agency_action_perception_relabels_rejected",
+      "detail": "unsafe AP7 relabel row rejected",
+      "passed": true
+    },
+    {
+      "check_id": "native_loop_telemetry_requirements_recorded",
+      "detail": [
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "all row paths are relative",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty_recorded_true",
+      "detail": 7,
+      "passed": true
+    }
+  ],
+  "classification_summary": {
+    "ap7_phase8_ready_surfaces": [
+      "native_ordered_closed_loop_trace_leg_telemetry",
+      "native_closed_loop_replay_order_control_telemetry",
+      "native_perturbation_response_recovery_loop_telemetry",
+      "native_resource_support_modulation_loop_telemetry",
+      "native_scoped_shared_medium_loop_telemetry"
+    ],
+    "blocked_rows": [
+      "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker"
+    ],
+    "classified_sources": [
+      "N17"
+    ],
+    "nat2_rows": [
+      "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker"
+    ],
+    "nat4_rows": [
+      "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+      "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+      "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+      "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+      "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4"
+    ],
+    "native_support_relabel_status": "rejected",
+    "one_way_crossing_relabel_status": "rejected",
+    "ordered_trace_legs_classification": "NAT4 phase8-ready telemetry candidate",
+    "perturbation_response_recovery_classification": "NAT4 phase8-ready telemetry candidate",
+    "phase8_ready_row_count": 5,
+    "rejected_rows": [
+      "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected"
+    ],
+    "replay_control_classification": "NAT4 phase8-ready telemetry candidate",
+    "resource_support_classification": "NAT4 scoped local telemetry candidate",
+    "semantic_agency_action_perception_relabel_status": "rejected",
+    "shared_medium_classification": "NAT4 scoped local/derived telemetry candidate with original B4_C5 and general symmetric shared-medium blockers preserved"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/scripts/build_n19_ap7_loop_native_readiness_classification.py",
+  "experiment": "2026-06-N19-lgrc-native-naturalization-review-ap3-ap8",
+  "failed_checks": [],
+  "generated_at": "2026-06-19T00:00:00+00:00",
+  "interpretation": {
+    "main_read": "Iteration 5 classifies N17 AP7 evidence as a set of Phase-8-ready native telemetry candidates: ordered trace legs, replay/order controls, perturbation-response-recovery, local resource/support modulation, and scoped shared-medium loop telemetry. The classification is not a native loop implementation and does not promote response into semantic action, feedback into semantic perception, or loop closure into agency.",
+    "not_supported": [
+      "agency",
+      "intention",
+      "semantic action",
+      "semantic perception",
+      "semantic goal ownership",
+      "selfhood",
+      "identity acceptance",
+      "native support",
+      "native closed loop",
+      "general shared-medium G6",
+      "symmetric native multi-basin replay",
+      "organism/life behavior",
+      "fully native agentic-like integration",
+      "Phase 8 implementation",
+      "AP9"
+    ],
+    "scope_boundary": "The original B4_C5 reverse-perspective replay and general symmetric shared-medium G6 remain blocked. Local paired and B4_C5-derived two-cycle evidence can support scoped shared-medium telemetry readiness, but cannot rewrite the original B4_C5 source or open native multi-basin selfhood."
+  },
+  "iteration": 5,
+  "native_support_opened": false,
+  "output_digest": "5da747e86b49ec88921ed204a4af3dc369acf31c4696fce403f18c53c870845c",
+  "phase8_opened": false,
+  "purpose": "Classify N17 AP7 ordered loop, replay/control, perturbation-response, resource/support, and scoped shared-medium loop evidence as native-readiness surfaces without opening Phase 8, native support, agency, action, or perception.",
+  "row_count": 7,
+  "schema_source": {
+    "output_digest": "b8e33e97c51603dc73455409b41f858af71d7d7ded8099df2a52e3ce07640935",
+    "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_naturalization_schema_v1.json",
+    "sha256": "a5b3afa89b0075cf3805557019788d6bc02d7c3fd3bcb63fe6bdcc244d0d8ccb"
+  },
+  "schema_version": "n19_ap7_loop_native_readiness_classification_v1",
+  "source_inventory": {
+    "output_digest": "d8238db4f551ddf43bde51511ab1f2d061f1fda5874875b96c7b68a40c22f19a",
+    "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap3_ap8_source_inventory.json",
+    "sha256": "29844f5f77fd06a4d2cd11bb6ae973ff2154760328b010803dd3018a214a477a"
+  },
+  "src_diff_empty": true,
+  "status": "passed"
+}
