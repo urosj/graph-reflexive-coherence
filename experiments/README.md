@@ -43,6 +43,7 @@ machine-local state.
 | [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
 | [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Closed artifact-level AP7 closed boundary engagement loop candidate across perturbation, resource/support, and local shared-medium families. | README, then closeout handoff, comparative requirements matrix, claim boundary, loop controls, and extension artifacts. |
 | [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Closed limited artifact-level AP8 long-horizon agentic-like closure candidate over the narrow h4/L5 stress envelope, with general AP8, Phase 8, native support, agency, and identity claims blocked. | README, then closeout handoff, I9 classification matrix, stress artifacts, hypotheses, and implementation checklist. |
+| [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Initialized N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 agency-prerequisite stack. | README, then implementation plan/checklist, hypotheses, and future classification artifacts. |
 
 ## Current Roadmap State
 
@@ -134,6 +135,13 @@ envelope. The closeout preserves `max_supported_horizon = h4`,
 boundary_to_loop_feedback`, and Phase 8/native support remain unopened.
 General AP8, semantic agency, identity acceptance, organism/life, fully native
 integration, and unrestricted agency claims remain blocked.
+
+N19 is initialized as the N12-style native naturalization review for the
+N13-N18 AP3-AP8 stack. It is classification work only: no AP9, no Phase 8
+implementation, no native support, and no `src/*` changes. Its purpose is to
+identify native contract candidates, Phase 8-ready candidates,
+implementation-gap blockers, theory-sensitive blockers, and scaffolds before
+any future native implementation work begins.
 
 N18 Iteration 8 supporting visualization:
 
