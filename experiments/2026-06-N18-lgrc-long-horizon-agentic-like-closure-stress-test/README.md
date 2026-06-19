@@ -52,6 +52,26 @@ the N12-N18 tranche. A stronger native result may be considered only if a
 separate Phase 8 implementation has actually implemented and validated native
 support.
 
+## Closeout Result
+
+N18 closes as:
+
+```text
+final_supported_ap_level = AP8_limited_artifact_candidate
+final_claim_ceiling = artifact_level_ap8_long_horizon_agentic_like_closure_candidate
+max_supported_horizon = h4
+horizon_extrapolation_allowed = false
+principal_bottleneck_link = boundary_to_loop_feedback
+phase8_opened = false
+native_support_opened = false
+```
+
+The supported result is limited to the narrow h4/L5 stress envelope. It does
+not recover h8 or h16 and does not support general AP8, agency, choice,
+intention, semantic action/perception, semantic goal ownership, selfhood,
+identity acceptance, native support, Phase 8, organism/life, fully native
+integration, or unrestricted autonomy.
+
 ## Boundary
 
 N18 starts from:

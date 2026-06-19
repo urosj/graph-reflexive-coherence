@@ -14,6 +14,9 @@ build_n18_route_memory_stress_matrix.py
 build_n18_environment_resource_stress_matrix.py
 build_n18_shared_medium_stress_matrix.py
 build_n18_shared_medium_margin_probe.py
+render_n18_iteration8_shared_medium_visualization.py
+build_n18_long_horizon_control_and_classification_matrix.py
+build_n18_closeout_and_handoff.py
 validate_n18_stress_row.py
 ```
 

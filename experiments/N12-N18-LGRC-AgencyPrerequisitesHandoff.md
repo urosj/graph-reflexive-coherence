@@ -231,47 +231,40 @@ The first two are ready only as targeted Phase 8 contract entries. They are not
 native support. The identity and integration validators should follow only
 after their theory and component entry gates are explicit.
 
-## Recommended Next Start
+## N18 Closeout State
 
-The clean next work, if continuing the experiment roadmap without opening
-Phase 8 implementation, is:
+N18 is now closed as:
 
-`N18 - LGRC Long-Horizon Agentic-Like Closure Stress Test`
+```text
+final_supported_ap_level = AP8_limited_artifact_candidate
+final_claim_ceiling = artifact_level_ap8_long_horizon_agentic_like_closure_candidate
+max_supported_horizon = h4
+horizon_extrapolation_allowed = false
+principal_bottleneck_link = boundary_to_loop_feedback
+phase8_opened = false
+native_support_opened = false
+```
 
-Recommended next actions:
+The support is limited to the narrow h4/L5 stress envelope. N18 does not
+recover h8 or h16 and does not support general AP8, native support, agency,
+semantic action/perception, identity acceptance, organism/life, fully native
+integration, or unrestricted autonomy.
 
-1. Create the `experiment-N18` branch from `main`.
-2. Start from N17 only as artifact-level `AP7` closed boundary engagement
-   loop evidence, not as agency, semantic action/perception, native support, or
-   unrestricted autonomous behavior.
-3. Use N16 only as artifact-level `AP6` self/environment boundary evidence.
-4. Use N15 only as artifact-level `AP5` endogenous proxy formation context.
-5. Use N14/N13/N12 only at their closed claim ceilings and preserve all
-   readiness/native blockers.
-6. Stress longer horizons, route/context reversals, support withdrawal and
-   restoration, proxy perturbation, memory relaxation, environment/resource
-   perturbation, shared-medium perturbation, and replay controls.
-7. Block stale state replay, hidden native-support relabels, semantic agency
-   relabels, goal ownership relabels, identity acceptance relabels, Phase
-   8/native implementation relabels, long-horizon drift outside source-backed
-   envelope, and resource/shared-medium merge relabels.
-8. Keep Phase 8 optional/deferred unless the explicit goal is native
-   implementation of a NAT4 contract.
+## Next Options After N18
 
-## Branch Options
+The N12-N18 artifact-level agency-prerequisite tranche is closed. Reasonable
+next branches are:
 
-There are three reasonable next branches after N17:
-
-- N18 first, no `src/*`: continue the agency-prerequisite roadmap with a
-  long-horizon closure stress test as artifact-level experiment work.
-- Phase 8 route-conductance memory first: native absorption of the N08 memory
-  trail / route affordance mechanism from the N12 NAT4 contract.
-- Phase 8 response-magnitude policy first: native absorption of bounded,
+- Tranche synthesis/review: summarize the closed N12-N18 AP ladder and its
+  claim boundaries without opening native implementation.
+- Phase 8 route-conductance memory: native absorption of the N08 memory trail /
+  route affordance mechanism from the N12 NAT4 contract.
+- Phase 8 response-magnitude policy: native absorption of bounded,
   envelope-gated regulation response sizing from the N12 NAT4 contract.
 
-The most conservative route is N18 first if the goal is to continue the
-artifact-level roadmap. Open targeted Phase 8 only when the goal is native
-implementation of one of the two N12 NAT4 contracts.
+Open targeted Phase 8 only when the goal is native implementation of one of
+the N12 NAT4 contracts. N18 artifact evidence cannot be relabeled as native
+support.
 
 ## Claim Boundary
 
@@ -287,6 +280,8 @@ Current supported language:
 - `artifact_level_ap5_endogenous_proxy_formation_candidate`
 - `artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements`
 - `artifact_level_ap7_closed_boundary_engagement_loop_candidate`
+- `artifact_level_ap8_long_horizon_agentic_like_closure_candidate`
+- `AP8_limited_artifact_candidate`
 - `native_absorption_candidate`
 
 Current blocked language:
@@ -310,7 +305,7 @@ Before closing a handoff update, rerun:
 - `git diff --check`
 - `git diff -- src`
 
-The post-N17 handoff update and experiment-index refresh are documentation
+The post-N18 handoff update and experiment-index refresh are documentation
 work only. They should leave `src/*` unchanged.
 
 Future sessions should rerun:
@@ -320,7 +315,7 @@ git diff --check
 git diff -- src
 ```
 
-before closing any N18 setup or Phase 8 planning turn.
+before closing any post-N18 synthesis or Phase 8 planning turn.
 
 ## Resolved N12 Questions
 
@@ -332,13 +327,16 @@ before closing any N18 setup or Phase 8 planning turn.
 - Full native agentic-like integration remains deferred as a `NAT2`
   theory-sensitive blocker.
 
+## Resolved N18 Questions
+
+- The N18 schema and closeout artifacts preserve source-current,
+  replay-clean, budget-clean, and claim-clean AP8 evidence without promoting
+  agency.
+- The sufficient supported horizon/stress envelope is narrow `h4/L5`; `h8`,
+  `h16`, general AP8, and native implementation remain blocked.
+
 ## Remaining Questions
 
-- What exact N18 artifact schema keeps long-horizon AP8 stress evidence
-  source-current, replay-clean, budget-clean, and claim-clean without
-  promoting agency?
-- Which horizon lengths, perturbation families, and replay variants are
-  sufficient for AP8 without opening Phase 8 native implementation?
 - If Phase 8 opens, should route conductance memory or response magnitude policy
   be implemented first?
 - What explicit theory gates would be sufficient to reconsider identity

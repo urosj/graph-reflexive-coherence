@@ -692,6 +692,45 @@ I7 and I8 together complete the L5 stress stack enough for I9 control and
 classification, but AP8 remains false until I9/I10.
 ```
 
+Iteration 8 visualization addendum:
+
+```text
+status = passed
+artifact = outputs/n18_iteration8_shared_medium_visualization.json
+report = reports/n18_iteration8_shared_medium_visualization.md
+script = scripts/render_n18_iteration8_shared_medium_visualization.py
+static_graph = outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png
+sequence_panel = outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png
+animation = outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif
+geometry_graph = outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png
+geometry_sequence_panel = outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_sequence.png
+geometry_animation = outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif
+output_digest = 2683140c773fa54ef7e2f2c0a63c3d665653c0bf8f580f410618159d781951e5
+manifest_sha256 = 524fc111d82f51a8fc20138d3ca4f5c5b0ba13578745d5d023cee286d78e87ba
+report_sha256 = 64489c388cba1cbebe611b5cc96b06a7d51819da79f95f064ffbde9242b60cb8
+script_sha256 = 913ca0165bb2aafa7e8fe08b0c4fa8c0f1b425dfa29b91dfa503040b6aaccffe
+static_graph_sha256 = 6b03c5fe62e34b5a32945222a6b1ba696b4eca4142ccf4339cc689a854e82fc6
+sequence_panel_sha256 = a6474d3643a9b7b6a3b9a5b161b040844abe17773bab31979e99ce17c6af8af1
+animation_sha256 = 0b91d37a4975e6d97dd0ef115334cf221e68635c9d2ad0d73d3e5e54539d8fa3
+geometry_graph_sha256 = 3f35d7f7fabb934de12b263c40d03f0ecfc23df84c8cc97fa7d0be806951748c
+geometry_sequence_panel_sha256 = 134c483c7709b1d95ea2600a5db9caf1a2d1886b47a296182f9ffa64360dc825
+geometry_animation_sha256 = 75a5b2e0c63d38fb9cd096b0e964704d4d51c6b4ad1f2029eb26c3be9246d60c
+renderer_boundary = supporting artifact-level visualization only
+direct_pygrc_graph_checkpoint_renderer_used = false
+reused_libraries = matplotlib, networkx, PIL
+```
+
+The visualization renders I8's source-row graph, phase progression, and
+source-backed B4/C5 geometry graph. It
+reuses the same visualization dependency stack used by the LGRC visual tools,
+but it does not call the checkpoint-backed `render_graph_run_visual_bundle`
+path because I8 is an artifact-level stress matrix and does not contain native
+LGRC telemetry graph checkpoints.
+
+The animations are therefore source-row/phase and source-backed geometry
+animations, not native runtime execution. They do not add evidence, open AP8,
+open Phase 8, support agency, or support native LGRC dynamics.
+
 ## Iteration 8-A. Shared-Medium Margin Robustness Probe
 
 - [x] Add an alternative shared-medium margin probe without retuning or
@@ -804,58 +843,222 @@ support, or Phase 8 evidence.
 
 ## Iteration 9. Full Replay, Control, And Classification Matrix
 
-- [ ] Run artifact-only reconstruction.
-- [ ] Run duplicate replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run stale-state controls.
-- [ ] Run post-hoc long-horizon stitching controls.
-- [ ] Run hidden-native-support controls.
-- [ ] Run semantic agency, action/perception, goal-ownership, identity, and
+- [x] Run artifact-only reconstruction.
+- [x] Run duplicate replay.
+- [x] Run snapshot/load replay.
+- [x] Run stale-state controls.
+- [x] Run post-hoc long-horizon stitching controls.
+- [x] Run hidden-native-support controls.
+- [x] Run semantic agency, action/perception, goal-ownership, identity, and
       Phase 8 relabel controls.
-- [ ] Classify the narrow `h4/L5` stress stack as-is without widening horizon,
+- [x] Classify the narrow `h4/L5` stress stack as-is without widening horizon,
       recovering `h8`, changing budget policy, or promoting local
       shared-medium separability into general shared-medium robustness.
-- [ ] Classify I8 and I8-A together as narrow shared-medium evidence: I8 as
+- [x] Classify I8 and I8-A together as narrow shared-medium evidence: I8 as
       the minimal edge case, I8-A as additional higher-margin evidence, not a
       replacement or generalized robustness result.
-- [ ] Reproduce the I8 minimal shared-medium row from canonical numeric values
+- [x] Reproduce the I8 minimal shared-medium row from canonical numeric values
       without rounding drift, hidden state, order effects, or threshold-policy
       changes; preserve inclusive equality-at-floor semantics for the `0.800`
       continuity floor.
-- [ ] Preserve `boundary_to_loop_feedback` as the final bottleneck unless replay
+- [x] Preserve `boundary_to_loop_feedback` as the final bottleneck unless replay
       produces a source-backed blocker.
-- [ ] Preserve merge-pressure, budget, and compound shared-medium failure modes
+- [x] Preserve merge-pressure, budget, and compound shared-medium failure modes
       as distinct classification limits.
-- [ ] Do not use rejected compound shared-medium stress as positive AP8
+- [x] Do not use rejected compound shared-medium stress as positive AP8
       evidence.
-- [ ] Preserve original B4/C5 reverse replay and derived-as-original relabel
+- [x] Preserve original B4/C5 reverse replay and derived-as-original relabel
       blockers.
-- [ ] Classify AP8 only if all gates pass.
-- [ ] Keep final closeout pending Iteration 10.
+- [x] Classify AP8 only if all gates pass.
+- [x] Keep final closeout pending Iteration 10.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_long_horizon_control_and_classification_matrix.json`
-- [ ] `reports/n18_long_horizon_control_and_classification_matrix.md`
-- [ ] `scripts/build_n18_long_horizon_control_and_classification_matrix.py`
+- [x] `outputs/n18_long_horizon_control_and_classification_matrix.json`
+- [x] `reports/n18_long_horizon_control_and_classification_matrix.md`
+- [x] `scripts/build_n18_long_horizon_control_and_classification_matrix.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_limited_ap8_classification_pending_i10_closeout
+output_digest = c7b400660c5203a3b975b1921ee808ad447329ebdda199af47ba27e26d1fc734
+artifact_sha256 = b9a4c0409a8ae2b9cf12aad0758be26f8047d6234867694e460b64a06b36979b
+report_sha256 = d87604a5b4669484b26dd8ca38502005b9a8e37127c75f28dc084e3955e0ac71
+script_sha256 = 4b1e8dbe23496103fff540e51a2e58acbd8fcf9c37af0aa3017ef14dda92242b
+row_count = 1
+classified_ap_level = AP8_limited_artifact_candidate
+ap8_classification_supported = true
+ap8_candidate_allowed = true
+final_ap8_supported = false
+final_artifact_level_ap8_frozen = false
+max_supported_horizon = h4
+highest_positive_stress_ladder_rung = L5
+replay_control_ladder_rung = L6
+classification_ladder_rung = L7
+i8_minimal_result_preserved = true
+i8a_margin_role = additional_robustness_evidence_not_i8_replacement
+boundary_to_loop_feedback_score = 0.800
+minimum_budget_headroom_classified_stack = 0.01
+artifact_only_reconstruction_status = stable
+duplicate_replay_status = stable
+snapshot_load_replay_status = stable
+stale_state_control_status = failed_expected
+order_inversion_status = failed_expected
+post_hoc_stitching_control_status = failed_expected
+unsafe_claim_flags_false = true
+phase8_opened = false
+native_support_opened = false
+ready_for_iteration10_closeout = true
+failed_checks = []
+validator_error_count = 0
+```
+
+Interpretation:
+
+```text
+Iteration 9 classifies the existing N18 h4/L5 stress stack as a limited
+artifact-level AP8 candidate. The classification is intentionally conservative:
+the validator row is an L6 artifact-only replay/control row, while the
+classification result records the L7 claim boundary around that validated row.
+
+I9 does not widen the horizon, recover h8, change the budget policy, retune
+thresholds, or promote shared-medium evidence into general robustness. The
+classification preserves I8 as the minimal equality-at-floor shared-medium row
+and I8-A as additional higher-margin evidence, not as an I8 replacement.
+
+Geometrically, the classified stack remains pinned to the narrow h4/L5 corridor.
+The final active bottleneck is still the boundary-to-loop feedback link at
+0.800, with only 0.01 budget headroom in the conservative composed row. I8-A
+shows that a second source-backed configuration has positive margin, but I9
+keeps the composed AP8 classification bounded by the original I8 edge case.
+
+Replay and controls now pass the L6 gate: artifact-only reconstruction,
+duplicate replay, and snapshot/load replay are stable; stale-state,
+single-axis stale, order inversion, post-hoc stitching, hidden native support,
+semantic agency/action/perception, identity, Phase 8, B4/C5 relabel, general
+symmetric multi-basin, and budget-overrun controls fail closed.
+
+The supported claim is therefore:
+artifact-level AP8 long-horizon agentic-like closure candidate for a narrow
+h4/L5 envelope, pending Iteration 10 final freeze and handoff.
+
+The result does not support final AP8 freeze, Phase 8, native support,
+semantic agency, semantic action/perception, identity acceptance, selfhood,
+organism/life, or general shared-medium robustness.
+```
 
 ## Iteration 10. Closeout And Phase 8 Handoff/Defer Record
 
-- [ ] Freeze final supported AP level if warranted.
-- [ ] Record final claim ceiling.
-- [ ] Record final controls and blockers.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Confirm no absolute paths.
-- [ ] Confirm `phase8_opened = false` unless separately opened.
-- [ ] Confirm native-supported flags remain false unless separately validated.
-- [ ] Record whether targeted Phase 8 remains optional/deferred or becomes the
+- [x] Freeze final supported AP level if warranted.
+- [x] Preserve the final supported AP level as
+      `AP8_limited_artifact_candidate`; do not upgrade to full/general AP8.
+- [x] Record final claim ceiling.
+- [x] Record `final_claim_ceiling =
+      artifact_level_ap8_long_horizon_agentic_like_closure_candidate`.
+- [x] Record `max_supported_horizon = h4` and
+      `horizon_extrapolation_allowed = false`; do not recover `h8` or `h16`.
+- [x] Preserve the I8/I8-A distinction: I8 is the minimal equality-at-floor
+      shared-medium edge case, and I8-A is additional higher-margin evidence,
+      not an I8 replacement or generalized robustness result.
+- [x] Preserve `principal_bottleneck_axis = loop_feedback` and
+      `principal_bottleneck_link = boundary_to_loop_feedback`.
+- [x] Record final controls and blockers.
+- [x] Phrase negative controls as `failed_closed_as_expected` or equivalent,
+      not as ambiguous failures.
+- [x] Keep stale support, memory, selection, proxy, boundary, and loop-feedback
+      controls visible in the final record.
+- [x] Confirm `src_diff_empty`.
+- [x] Confirm no absolute paths.
+- [x] Confirm `phase8_opened = false` unless separately opened.
+- [x] Confirm native-supported flags remain false unless separately validated.
+- [x] Force unsafe closeout flags false for agency, choice, intention,
+      semantic action/perception, semantic goal ownership, selfhood, identity
+      acceptance, native support, Phase 8, organism/life, fully native
+      integration, and unrestricted autonomy.
+- [x] Record whether targeted Phase 8 remains optional/deferred or becomes the
       recommended next step.
 
 Expected artifacts:
 
-- [ ] `outputs/n18_closeout_and_handoff.json`
-- [ ] `reports/n18_closeout_and_handoff.md`
-- [ ] `scripts/build_n18_closeout_and_handoff.py`
+- [x] `outputs/n18_closeout_and_handoff.json`
+- [x] `reports/n18_closeout_and_handoff.md`
+- [x] `scripts/build_n18_closeout_and_handoff.py`
+
+Result:
+
+```text
+status = passed
+acceptance_state = closed_limited_artifact_level_ap8_long_horizon_agentic_like_closure_candidate
+output_digest = 09c0987d19e372d3df86377a843367a8bae8c85b0bc925f8328948b17a743af1
+artifact_sha256 = d4b2bacfec3fbb5684cf8aec5aeb3cbc9b2409969ae94ae53ac436191c75407c
+report_sha256 = c98605b724db60ca3df6fca7dc628f31a87a81a80dea8fcfe561352ee578f9c7
+script_sha256 = 2b995805865c7fd0b8b789a55382148518fb42280c596244b6543bd5aa60387a
+final_supported_ap_level = AP8_limited_artifact_candidate
+final_ap8_supported = true
+final_artifact_level_ap8_frozen = true
+general_ap8_supported = false
+final_claim_ceiling = artifact_level_ap8_long_horizon_agentic_like_closure_candidate
+max_supported_horizon = h4
+horizon_extrapolation_allowed = false
+h8_recovered = false
+h16_recovered = false
+highest_positive_stress_ladder_rung = L5
+replay_control_ladder_rung = L6
+classification_ladder_rung = L7
+principal_bottleneck_axis = loop_feedback
+principal_bottleneck_link = boundary_to_loop_feedback
+principal_bottleneck_score = 0.800
+minimum_budget_headroom_classified_stack = 0.01
+i8_role = minimal_equality_at_floor_shared_medium_edge_case
+i8a_role = additional_higher_margin_shared_medium_evidence
+i8a_replaces_i8 = false
+phase8_opened = false
+native_support_opened = false
+fully_native_integration_opened = false
+src_diff_empty = true
+failed_checks = []
+```
+
+Interpretation:
+
+```text
+N18 closes as a limited artifact-level AP8 long-horizon agentic-like closure
+candidate. The final claim is deliberately not general AP8: it is bounded to
+the narrow h4/L5 stress envelope, with h8 and h16 unrecovered and horizon
+extrapolation blocked.
+
+The closeout preserves the I8/I8-A distinction. I8 remains the minimal
+equality-at-floor shared-medium support row. I8-A remains additional
+higher-margin corroboration, not a replacement for I8 and not general
+shared-medium robustness.
+
+The final geometric bottleneck is still the loop-feedback axis, specifically
+the boundary_to_loop_feedback link at 0.800. The conservative classified stack
+also preserves only 0.01 budget headroom.
+
+Replay/control closeout remains clean: artifact-only reconstruction, duplicate
+replay, and snapshot/load replay are stable; stale-state, stale support,
+stale memory, stale selection, stale proxy, stale boundary, stale loop
+feedback, order inversion, post-hoc stitching, hidden native support, semantic
+agency/action/perception, identity, Phase 8, original B4/C5 reverse replay,
+general symmetric multi-basin, and budget-overrun controls fail closed as
+expected.
+
+Phase 8 is deferred, not opened. N18 does not support agency, choice,
+intention, semantic action/perception, semantic goal ownership, selfhood,
+identity acceptance, native support, organism/life, fully native integration,
+or unrestricted autonomy.
+
+General RC theory interpretation is recorded in the closeout artifact/report.
+The concise reading is: N18 demonstrates that RC can construct and preserve a
+bounded artifact-level agency-prerequisite closure stack across horizon and
+stress. The result supports limited AP8 agentic-like closure, not agency. The
+main limiting constraint is the boundary-to-loop-feedback link, and the next
+theoretical step is native producer-side implementation, not stronger semantic
+interpretation.
+```
 
 ## Initial Setup Result
 

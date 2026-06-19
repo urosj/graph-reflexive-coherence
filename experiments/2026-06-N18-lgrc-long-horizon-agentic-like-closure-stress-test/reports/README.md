@@ -14,6 +14,9 @@ n18_route_memory_stress_matrix.md
 n18_environment_resource_stress_matrix.md
 n18_shared_medium_stress_matrix.md
 n18_shared_medium_margin_probe.md
+n18_iteration8_shared_medium_visualization.md
+n18_long_horizon_control_and_classification_matrix.md
+n18_closeout_and_handoff.md
 ```
 
 Reports should summarize the matching JSON outputs without expanding the claim
