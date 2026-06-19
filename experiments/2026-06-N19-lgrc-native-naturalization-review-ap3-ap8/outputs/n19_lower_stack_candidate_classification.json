@@ -1,0 +1,1464 @@
+{
+  "ap9_opened": false,
+  "artifact_id": "n19_lower_stack_candidate_classification",
+  "candidate_rows": [
+    {
+      "artifact_claim_scope": "artifact-level AP3 support-seeking regulation, support-margin, and bounded response-magnitude candidate",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "native support",
+        "semantic goal ownership",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity acceptance",
+        "organism/life behavior",
+        "fully native agentic-like integration",
+        "Phase 8 opened",
+        "Phase 8 implementation",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "NAT5/NAT6 are out of scope for N19.",
+        "A later Phase 8 implementation would need to add the default-off policy surface and validate it in src."
+      ],
+      "budget_surface": {
+        "max_correction_per_window": 0.07,
+        "producer_direct_mutation_allowed": false,
+        "required": true,
+        "surfaces": [
+          "support_response_packet_budget_debit",
+          "response_packet_budget_surface",
+          "node_plus_packet_budget_error",
+          "final_budget_error"
+        ],
+        "total_bounded_correction_capacity": 0.28
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_support_margin_response_policy_enabled": false,
+        "native_support_margin_response_telemetry_enabled": false,
+        "native_support_mutation_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": true,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "N13 records support error as max(0, threshold - source-current support retention).",
+        "The disrupted lane schedules a bounded response total of 0.120134817816 within a four-window capacity of 0.28.",
+        "N12 response magnitude readiness is consumed only as readiness input, not as native support.",
+        "The mutation boundary is explicit: schedule only; step/topology owns state mutation."
+      ],
+      "implementation_boundary": "N19 classifies readiness only; producer may schedule response packets, but no native support mutation or Phase 8 implementation is opened.",
+      "minimal_producer_code_needed": [
+        "add default-off native support-margin telemetry record",
+        "add default-off response-magnitude policy schedule record",
+        "add budget-debit validation hook before response packet commit",
+        "add replay digest over support, threshold, response schedule, budget, and claim flags"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT4",
+      "native_policy_or_telemetry_surface_name": "native_support_margin_and_response_magnitude_policy",
+      "native_question": "Can support-margin measurement and bounded response magnitude become a native regulation policy surface without claiming native support?",
+      "native_state_needed": [
+        "source-current support retention per support area",
+        "support survival threshold digest",
+        "support margin / threshold deficit",
+        "bounded response packet schedule",
+        "budget debit before commit"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "external proxy fields reused as support error",
+        "hidden target injected as support condition",
+        "post-hoc support label written after response",
+        "unbounded perturbation envelope",
+        "native support relabel",
+        "support-seeking relabel as semantic goal ownership",
+        "self-maintenance relabel as selfhood"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic goal",
+          "intention",
+          "selfhood state",
+          "native support flag",
+          "external proxy-as-support"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_readiness_basis": "direct lower-stack readiness: source-current support margin, bounded response schedule, budget debit, default-off policy separation, and claim-clean controls",
+      "phase8_ready": true,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "phase8_ready_native_policy_candidate",
+      "record_schema_sketch": {
+        "budget_after_digest": "sha256",
+        "budget_before_digest": "sha256",
+        "claim_flags_digest": "sha256",
+        "enabled": false,
+        "max_correction_per_window": "float",
+        "policy_id": "native_support_margin_and_response_magnitude_policy",
+        "response_magnitude_policy_id": "native_response_magnitude_policy",
+        "scheduled_response_digest": "sha256",
+        "source_current_support_digest": "sha256",
+        "support_error_digest": "sha256",
+        "supported": false,
+        "threshold_digest": "sha256",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "42b05ce9842ae51a6a9730f27be9f10e7f86403256bcf9b4a455e07a616cae41",
+      "row_id": "n19_i3_row_01_n13_support_margin_response_policy_nat4",
+      "runtime_visible_inputs": [
+        "final_A_support_retention",
+        "support_survival_threshold",
+        "support_margin",
+        "support_error_signal",
+        "lane_digest",
+        "support_area_digest",
+        "scheduled_response_amounts",
+        "scheduled_response_total",
+        "bounded_window_count",
+        "budget_debit_surface"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay support retention and threshold digests",
+        "recompute support error from source-current support only",
+        "recompute bounded response schedule and budget debit",
+        "reject duplicate schedule, stale support, external proxy, hidden target, and out-of-envelope variants"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+          "sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+          "status": "passed"
+        },
+        {
+          "output_digest": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json",
+          "sha256": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea",
+          "status": "passed"
+        },
+        {
+          "output_digest": "7691834eb654dc15ee8aabf8ce732a10a72c375d95f3fa97290a8b6cf6984a4f",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json",
+          "sha256": "55d9105ca829d5ca23467906390ddeebdd35b72a09dfa688ae01ff1804bd8e6f",
+          "status": "passed"
+        },
+        {
+          "output_digest": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json",
+          "sha256": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+          "status": "passed"
+        },
+        {
+          "output_digest": "4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json",
+          "sha256": "40b50b7df537c908af28d0dbb352bf154dea3e023979928aa89fe8f3444a028d",
+          "status": "passed"
+        },
+        {
+          "output_digest": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+          "path": "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json",
+          "sha256": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N13",
+      "source_final_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "source_final_supported_ap_level": "AP3",
+      "source_iteration_or_closeout": "N13 closeout + support-seeking regulation candidate + N12 readiness input",
+      "source_output_digest": {
+        "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": "949c32f5a64e4e1332fb184507d25411af89fd77dc9a5adf3ba3c78efa384e1b",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": "4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json": "917e65721362fcda37ea4777489a5e3289a35ef550a16b3774884c803584ac3e",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json": "7691834eb654dc15ee8aabf8ce732a10a72c375d95f3fa97290a8b6cf6984a4f",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json": "a6c367246eaeba14953b87c4a89862238b5bde4568308f1ee4c7ef1d9c85116b"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+          "sha256": "e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45"
+        },
+        {
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_support_seeking_regulation_candidate.md",
+          "sha256": "912a1340d9ff47381951c52f3e5093e0d7b320385a7c21b52f37968a30b8e449"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": "c4106d4f61cfe19ab43b29d0c045565d739f90cdf71aea33a21a938237d2bf14",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": "40b50b7df537c908af28d0dbb352bf154dea3e023979928aa89fe8f3444a028d",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json": "59db9662a29dad513bc0d861b31ef8c46ae1d421be3befe97b383752855c7bdb",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json": "55d9105ca829d5ca23467906390ddeebdd35b72a09dfa688ae01ff1804bd8e6f",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json": "890611bf58898034d728af897b1a5d799aee999faaf5ec6446691121b9d8c9ea"
+      },
+      "source_status": {
+        "experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_phase8_readiness_matrix.json": "passed",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": "passed",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_derived_target_candidate.json": "passed",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_schema_v1.json": "passed",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_support_seeking_regulation_candidate.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "LGRC step or committed response-packet scheduling event boundary",
+      "telemetry_requirements": [
+        "record source-current support margin before response scheduling",
+        "record threshold deficit expression and source digests",
+        "record bounded response schedule and budget debit",
+        "record out-of-envelope blocker for unbounded perturbation",
+        "record unsafe claim flags false at the same boundary"
+      ]
+    },
+    {
+      "artifact_claim_scope": "unsafe relabel controls over N13 AP3 support-seeking regulation",
+      "artifact_supported": false,
+      "blocked_claims": [
+        "semantic goal ownership",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity acceptance",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "unsafe relabel has no native-readiness promotion path"
+      ],
+      "budget_surface": {
+        "reason": "claim-control row",
+        "required": false
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "unsafe_relabel_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": true
+      },
+      "evidence_notes": [
+        "N13 closeout forces unsafe claim flags false.",
+        "External proxy and hidden target controls prevent support error from becoming semantic goal ownership."
+      ],
+      "implementation_boundary": "Rejected relabel row; no implementation path.",
+      "minimal_producer_code_needed": [
+        "none for this rejected relabel; preserve controls in any future producer surface"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": false,
+        "claim_flags_forced_false": false,
+        "default_off_flags_present": false,
+        "enabled_validated_supported_separation_present": false,
+        "native_policy_or_telemetry_surface_name_present": false,
+        "native_support_opened_false": false,
+        "negative_controls_specified": false,
+        "non_rc_quantity_audit_passes": false,
+        "phase8_opened_false": false,
+        "record_schema_sketch_present": false,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": false,
+        "src_diff_empty_true": false,
+        "state_mutation_owner_specified": false,
+        "telemetry_requirements_specified": false
+      },
+      "nat_level": "NAT0",
+      "native_policy_or_telemetry_surface_name": "not_applicable_relabel_rejected",
+      "native_question": "Can support-seeking regulation be relabeled as semantic goal ownership, agency, selfhood, or native support?",
+      "native_state_needed": [],
+      "native_support_opened": false,
+      "negative_controls": [
+        "support target as semantic goal",
+        "bounded response as intention",
+        "support regulation as agency",
+        "self-maintenance as selfhood",
+        "artifact AP3 as native support"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "goal ownership",
+          "selfhood",
+          "native support"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "unsafe_relabel_rejected",
+      "record_schema_sketch": {
+        "claim_allowed": false,
+        "relabel_claim": "string"
+      },
+      "row_decision": "rejected",
+      "row_digest": "c7f2497d21d0ac775397f18a01fdd6640c04d7ab28d94e827e643f0847eca791",
+      "row_id": "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected",
+      "runtime_visible_inputs": [],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay claim flags as false"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json",
+          "sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+          "status": "passed"
+        },
+        {
+          "output_digest": "4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16",
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json",
+          "sha256": "40b50b7df537c908af28d0dbb352bf154dea3e023979928aa89fe8f3444a028d",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N13",
+      "source_final_claim_ceiling": "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+      "source_final_supported_ap_level": "AP3",
+      "source_iteration_or_closeout": "N13 claim boundary and external proxy controls",
+      "source_output_digest": {
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": "4894859811d54d1ebd80411847de5bd4670bfe8e282f3bffea3c0d0712ce7d16"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_closeout_and_handoff.md",
+          "sha256": "e2b46f6790e95488c0b3eef70469fcfd618b31ff6b2b9aa13ead1c8ed9ae3b45"
+        },
+        {
+          "path": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/reports/n13_external_proxy_control_matrix.md",
+          "sha256": "d3d97e379004ed49de812c6d516e20ed99bcfa2c0203ce896017e899faaf382a"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": "40b50b7df537c908af28d0dbb352bf154dea3e023979928aa89fe8f3444a028d"
+      },
+      "source_status": {
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_external_proxy_control_matrix.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "not_applicable",
+      "telemetry_requirements": [
+        "record rejected relabel and source claim boundary"
+      ]
+    },
+    {
+      "artifact_claim_scope": "artifact-level AP4 consequence-sensitive route selection with memory-dominant route consequence evidence",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "semantic choice",
+        "intention",
+        "semantic goal ownership",
+        "agency",
+        "identity acceptance",
+        "native support",
+        "fully native agentic-like integration",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "route-conditioned support/regulation rows are absent upstream",
+        "constructed followout cannot be treated as observed native support",
+        "native route-selection mutation and telemetry surface are not implemented"
+      ],
+      "budget_surface": {
+        "required": true,
+        "route_specific_support_regulation_budget_supported": false,
+        "surfaces": [
+          "n06_budget_conservation",
+          "n08_memory_budget",
+          "n09_node_plus_packet_budget_error",
+          "n13_support_response_budget_debit"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_route_consequence_selection_enabled": false,
+        "native_route_consequence_telemetry_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "N14 selects route_b by derived consequence rank even though immediate affordance favors route_a.",
+        "The AP4 closeout preserves a memory-dominant scope with constructed route-conditioned followout.",
+        "The source itself records that upstream observed route-conditioned support/regulation remains unsupported."
+      ],
+      "implementation_boundary": "N19 classifies a native contract candidate only. Current N14 route selection is memory-dominant and artifact-level.",
+      "minimal_producer_code_needed": [
+        "add default-off route consequence telemetry record",
+        "add deterministic route rank replay digest",
+        "add budget-validity and stale-record rejection hooks",
+        "add source-current route-conditioned support/regulation fields before NAT4 promotion"
+      ],
+      "nat3_reason": "The contract surface is clear and source-backed, but the route-conditioned support/regulation gap blocks Phase 8-ready NAT4 classification.",
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT3",
+      "native_policy_or_telemetry_surface_name": "native_route_consequence_selection_telemetry",
+      "native_question": "Can route consequence records and deterministic route-conditioned selection context become a native selection telemetry or policy surface?",
+      "native_state_needed": [
+        "route candidate set digest",
+        "pre-selection consequence record per route",
+        "route consequence score components",
+        "deterministic rank and tie policy",
+        "budget-validity surface"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "hidden outcome table",
+        "post-hoc selected-route scoring",
+        "route label swap",
+        "missing consequence record",
+        "stale consequence record",
+        "semantic choice relabel",
+        "intention relabel",
+        "native support relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic choice",
+          "intention",
+          "hidden outcome table",
+          "native support"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "native_contract_candidate",
+      "record_schema_sketch": {
+        "budget_validity_digest": "sha256",
+        "candidate_set_digest": "sha256",
+        "enabled": false,
+        "policy_id": "native_route_consequence_selection_telemetry",
+        "route_records_digest": "sha256",
+        "selected_route": "route_id",
+        "selection_rule_id": "lowest_derived_consequence_rank_budget_valid_v1",
+        "supported": false,
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "d18f73ac398b93a24cd017cb2bce65db555dc5a2d8b3bb8f3f056db6939b724d",
+      "row_id": "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+      "runtime_visible_inputs": [
+        "complete_candidate_route_set",
+        "pre_selection_consequence_records",
+        "serialized_consequence_score_components",
+        "derived_consequence_rank",
+        "budget_validity",
+        "tie_policy",
+        "selected_route"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay candidate set and consequence rank deterministically",
+        "reject missing consequence records",
+        "reject stale records, hidden outcome tables, post-hoc scoring, and invalid budgets"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "status": "passed"
+        },
+        {
+          "output_digest": "d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json",
+          "sha256": "da0d2e070fa34098d14673714f2d23ea3f3041821c2a203798c206786e07cde3",
+          "status": "passed"
+        },
+        {
+          "output_digest": "9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_consequence_records.json",
+          "sha256": "59efc5980f1dce63438f1c5f054ce8feab9cf818fb63ee718b07b7934933470d",
+          "status": "passed"
+        },
+        {
+          "output_digest": "d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_control_matrix.json",
+          "sha256": "9d7153c031665f8325502ee9241048f8a2ac43cecf1b47ecefa67d715d1d59c0",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N14",
+      "source_final_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+      "source_final_supported_ap_level": "AP4",
+      "source_iteration_or_closeout": "N14 AP4 closeout and consequence-sensitive selection candidate",
+      "source_output_digest": {
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_control_matrix.json": "d9ff2a2ff515eec26226048b25a990faa9f7c7ba94cea14ef833a89f8d9292e7",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json": "d867b665e3ca96df4a78576b89fb2b89a19ff2761f0099e48d057f00c6b8cfdd",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_consequence_records.json": "9eef9c0bbcfd64004915259964ddcbb39efb32563fec5975a6bb30684d83d253"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a"
+        },
+        {
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_consequence_sensitive_selection_candidate.md",
+          "sha256": "45d32f1ca30cbe95b262e650ca9c627e9c6dc858b2f06e202d60490036070cca"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_control_matrix.json": "9d7153c031665f8325502ee9241048f8a2ac43cecf1b47ecefa67d715d1d59c0",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json": "da0d2e070fa34098d14673714f2d23ea3f3041821c2a203798c206786e07cde3",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_consequence_records.json": "59efc5980f1dce63438f1c5f054ce8feab9cf818fb63ee718b07b7934933470d"
+      },
+      "source_status": {
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_control_matrix.json": "passed",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_consequence_sensitive_selection_candidate.json": "passed",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_consequence_records.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future route-selection policy event boundary, default-off",
+      "telemetry_requirements": [
+        "record route candidate set before selection",
+        "record per-route consequence components and ranks before selection",
+        "record budget validity and tie policy",
+        "record selected route and rejected route records",
+        "record source window for memory, regulation, and support context"
+      ]
+    },
+    {
+      "artifact_claim_scope": "route-conditioned support/regulation followout blocker; constructed followout must not become observed native support",
+      "artifact_supported": false,
+      "blocked_claims": [
+        "observed route-conditioned support consequence support",
+        "observed route-conditioned regulation consequence support",
+        "constructed followout as native support",
+        "semantic choice",
+        "intention",
+        "agency",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "runtime-visible route-conditioned support/regulation inputs are missing",
+        "generic source reuse is blocked",
+        "constructed followout cannot satisfy the observed-source gate"
+      ],
+      "budget_surface": {
+        "generic_support_regulation_budget_reuse_allowed": false,
+        "required": true,
+        "status": "not_validated_without_route_conditioned_rows"
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_route_conditioned_support_regulation_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "N14 route-conditioned support/regulation probe records route_a and route_b support/regulation observations as unsupported.",
+        "Generic N09/N13 support and regulation sources are available but generic reuse is blocked.",
+        "Constructed followout is valid as artifact context, not as observed upstream route-conditioned support/regulation."
+      ],
+      "implementation_boundary": "This blocker names producer work needed before any route-conditioned support/regulation NAT4 promotion.",
+      "minimal_producer_code_needed": [
+        "add route_candidate_id to support/regulation consequence rows",
+        "add peer-route same-horizon comparison record",
+        "add peer-route same-budget comparison record",
+        "add rejection record for generic support/regulation reuse"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT2",
+      "native_policy_or_telemetry_surface_name": "native_route_conditioned_support_regulation_observation_required",
+      "native_question": "Can constructed route-conditioned followout be promoted to observed route-specific support/regulation or native support?",
+      "native_state_needed": [
+        "route-bound support consequence row",
+        "route-bound regulation consequence row",
+        "same-horizon and same-budget evidence for peer routes"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "generic support source reuse",
+        "generic regulation source reuse",
+        "post-hoc route conditioning",
+        "route label swap",
+        "constructed followout as observed support",
+        "constructed followout as native support"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "hidden route-specific support row",
+          "hidden route-specific regulation row",
+          "native support flag"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "implementation_gap_blocker",
+      "record_schema_sketch": {
+        "axis": "support_or_regulation",
+        "generic_source_reuse_allowed": false,
+        "observed_source_row_digest": "sha256",
+        "route_candidate_id": "route_id",
+        "route_conditioned": true,
+        "same_budget_digest": "sha256",
+        "same_horizon_digest": "sha256"
+      },
+      "row_decision": "blocked",
+      "row_digest": "bf2b7617a2baec2f1dcbedc2e04c0bcd04477e8f027b877aeca1c9e858ca4172",
+      "row_id": "n19_i3_row_04_n14_constructed_followout_native_support_blocker",
+      "runtime_visible_inputs": [
+        "route_candidate_id",
+        "route_conditioned_support_observation",
+        "route_conditioned_regulation_observation",
+        "same_budget_accounting",
+        "same_horizon_requirement"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay route label swap control",
+        "replay generic source reuse control",
+        "replay missing/stale route observation controls"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json",
+          "sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+          "status": "passed"
+        },
+        {
+          "output_digest": "e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_support_regulation_probe.json",
+          "sha256": "2f5c6176e09a02eb2afb83dc9d83a98de743587609f9cf6c010cf3e8ef91ffc2",
+          "status": "passed"
+        },
+        {
+          "output_digest": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json",
+          "sha256": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N14",
+      "source_final_claim_ceiling": "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+      "source_final_supported_ap_level": "AP4",
+      "source_iteration_or_closeout": "N14 route-conditioned support/regulation blocker probe",
+      "source_output_digest": {
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json": "387faa187068737884b67723e21c2c8068e38c337b486d8146cbd3261e73cb29",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_support_regulation_probe.json": "e309f40822f782d5d5dba684656c4a4dd133b649ce815f72b253c38957565f6e"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_closeout_and_handoff.md",
+          "sha256": "5f058dd6802065954e2c4e0f8d663d93fb8d55b2520a43edafbf79b3a14e1c7a"
+        },
+        {
+          "path": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/reports/n14_route_conditioned_support_regulation_probe.md",
+          "sha256": "9ab0be6d6fa90e179aebffd8f185249c0d50ab7c805f50f702e89da98f3ec4cf"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json": "450dd43f4f35a7ba375fa0b197c34c11a0ddac324b2d26660d75c98b201ccaa4",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_support_regulation_probe.json": "2f5c6176e09a02eb2afb83dc9d83a98de743587609f9cf6c010cf3e8ef91ffc2"
+      },
+      "source_status": {
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_followout_probe.json": "passed",
+        "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_route_conditioned_support_regulation_probe.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future route-conditioned consequence observation producer",
+      "telemetry_requirements": [
+        "record route_candidate_id on support/regulation rows",
+        "record same-horizon and same-budget status per route",
+        "record generic source reuse as blocked when route-conditioned rows are absent"
+      ]
+    },
+    {
+      "artifact_claim_scope": "artifact-level AP5 endogenous proxy formation from source-current support, memory, regulation, AP4 context, and readiness-only context",
+      "artifact_supported": true,
+      "blocked_claims": [
+        "semantic goal ownership",
+        "intention",
+        "semantic choice",
+        "agency",
+        "identity acceptance",
+        "native support",
+        "fully native agentic-like integration",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "lower AP3/AP4 native policy surfaces are not implemented",
+        "N14 route-conditioned support/regulation remains constructed or absent upstream",
+        "native proxy derivation policy and replay hooks do not exist in src"
+      ],
+      "budget_surface": {
+        "lower_native_surface_dependency": true,
+        "required": true,
+        "surfaces": [
+          "target_derivation_transform_budget",
+          "bridge_probe_response_budget_validity",
+          "bounded_drift_replay_budget"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "native_proxy_derivation_enabled": false,
+        "native_proxy_telemetry_enabled": false,
+        "semantic_goal_interpretation_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": false
+      },
+      "evidence_notes": [
+        "N15 generates target_center 0.887594607287 and target_band [0.817594607287, 0.957594607287] before bridge use.",
+        "The generated target ranks the bounded N13 response inside band and rejects the no-response baseline outside band.",
+        "N12 readiness has weight 0.0 in the derivation, so it remains context and does not change the target value.",
+        "The runtime vector explicitly records the N14 constructed-followout caveat."
+      ],
+      "implementation_boundary": "N15 remains a native contract candidate because its target derivation depends on artifact lower-stack inputs rather than implemented native lower-stack surfaces.",
+      "minimal_producer_code_needed": [
+        "add default-off proxy derivation policy record",
+        "add native lower-stack input vector capture after AP3/AP4 native surfaces exist",
+        "add target condition digest before use",
+        "add replay digest over target derivation, bridge ranking, budget, and claim flags"
+      ],
+      "nat3_reason": "The proxy contract is source-backed and replay/control clean at artifact level, but it is not Phase 8-ready until its lower-stack inputs are native surfaces.",
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat_level": "NAT3",
+      "native_policy_or_telemetry_surface_name": "native_proxy_derivation_policy",
+      "native_question": "Can source-current target/proxy derivation become a native proxy policy surface without semantic goal ownership?",
+      "native_state_needed": [
+        "source-current lower-stack vector",
+        "frozen proxy derivation policy",
+        "target-condition digest before use",
+        "budget-valid candidate response ranking",
+        "bounded drift/replay state"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "externally injected target",
+        "hidden target derivation",
+        "post-hoc proxy formation",
+        "fixture-label proxy",
+        "stale source state",
+        "missing source state",
+        "unbounded target drift",
+        "semantic goal ownership relabel",
+        "native support relabel"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic goal",
+          "intention",
+          "choice",
+          "native support",
+          "hidden target"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "native_contract_candidate",
+      "record_schema_sketch": {
+        "bridge_rank_digest": "sha256",
+        "budget_surface_digest": "sha256",
+        "claim_flags_digest": "sha256",
+        "derivation_policy_digest": "sha256",
+        "enabled": false,
+        "input_vector_digest": "sha256",
+        "policy_id": "native_proxy_derivation_policy",
+        "supported": false,
+        "target_band": [
+          "float",
+          "float"
+        ],
+        "target_condition_digest": "sha256",
+        "validated": false
+      },
+      "row_decision": "supported",
+      "row_digest": "1ff21f7efdee95a71483e4e119bad2bee77200fb2641d979296658e74a827a93",
+      "row_id": "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+      "runtime_visible_inputs": [
+        "support_margin",
+        "support_threshold",
+        "current_support_retention",
+        "regulation_recovery_score",
+        "memory_context_score",
+        "ap4_consequence_context_score",
+        "readiness_context_flag",
+        "weighted_sum",
+        "target_center",
+        "target_tolerance",
+        "target_band",
+        "bridge_probe_candidate_ranking"
+      ],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay target derivation from serialized source-current vector",
+        "replay bridge ranking against target band",
+        "reject external target, post-hoc proxy, hidden target, stale source, and unbounded drift variants"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+          "sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+          "status": "passed"
+        },
+        {
+          "output_digest": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json",
+          "sha256": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873",
+          "status": "passed"
+        },
+        {
+          "output_digest": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json",
+          "sha256": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+          "status": "passed"
+        },
+        {
+          "output_digest": "251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+          "sha256": "35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf",
+          "status": "passed"
+        },
+        {
+          "output_digest": "b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json",
+          "sha256": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0",
+          "status": "passed"
+        },
+        {
+          "output_digest": "76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json",
+          "sha256": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N15",
+      "source_final_claim_ceiling": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+      "source_final_supported_ap_level": "AP5",
+      "source_iteration_or_closeout": "N15 AP5 closeout and runtime-derived target candidate",
+      "source_output_digest": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json": "b73f05459697a18117ab5db0ef3f3bf5dff41c78a4dbacc40af11676a8b0532a",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json": "76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": "251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": "3894554145fe84a7f594983ead562442cda686fd53d6b240164626b578f2ee67",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json": "7fcb73f4b70fdd4f4aadaa9e931040f8299669ca1598c9a1391c560637a26fbc"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md",
+          "sha256": "7fd4773de2bb4cce79799caf287f22b13e056b567a44da562d22665d07fda4ee"
+        },
+        {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_runtime_derived_target_candidate.md",
+          "sha256": "c54c784652e004a23f1283d8e716f370993636b72e4d9ade46f2d9d7c071277c"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json": "c9c5307c408836d7a54e88507ceb85cf6dae4755444b20ab072409cddbc7b3d0",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": "35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": "aa276922df3c39c30bcf09500b7eccfe96468fd681f3992a328a504f0d8c9d5b",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json": "30c834b47a7decf2bb32f3dabb8dcb436b2b7876be5b0e9c79fe76b7de010873"
+      },
+      "source_status": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_bounded_drift_replay_matrix.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_formation_schema_v1.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_runtime_derived_target_candidate.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "future proxy-derivation policy boundary, default-off",
+      "telemetry_requirements": [
+        "record source-current vector and source digests",
+        "record frozen derivation policy and target digest before bridge use",
+        "record target-band membership for each candidate response",
+        "record external proxy, hidden target, stale source, and drift controls"
+      ]
+    },
+    {
+      "artifact_claim_scope": "unsafe relabel controls over N15 proxy/target formation",
+      "artifact_supported": false,
+      "blocked_claims": [
+        "semantic goal ownership",
+        "semantic choice",
+        "intention",
+        "agency",
+        "identity acceptance",
+        "selfhood",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "blockers_to_next_level": [
+        "unsafe relabel has no native-readiness promotion path"
+      ],
+      "budget_surface": {
+        "reason": "claim-control row",
+        "required": false
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "default_off_flags": {
+        "unsafe_relabel_enabled": false
+      },
+      "enabled_validated_supported_separation": {
+        "enabled": false,
+        "phase8_ready_candidate": false,
+        "supported": false,
+        "validated": true
+      },
+      "evidence_notes": [
+        "N15 closeout forces unsafe proxy/target promotion flags false.",
+        "Proxy controls reject external, hidden, stale, post-hoc, and semantic relabel variants."
+      ],
+      "implementation_boundary": "Rejected relabel row; no implementation path.",
+      "minimal_producer_code_needed": [
+        "none for this rejected relabel; preserve controls in any future producer surface"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": false,
+        "claim_flags_forced_false": false,
+        "default_off_flags_present": false,
+        "enabled_validated_supported_separation_present": false,
+        "native_policy_or_telemetry_surface_name_present": false,
+        "native_support_opened_false": false,
+        "negative_controls_specified": false,
+        "non_rc_quantity_audit_passes": false,
+        "phase8_opened_false": false,
+        "record_schema_sketch_present": false,
+        "runtime_visible_inputs_source_backed": false,
+        "snapshot_replay_requirements_specified": false,
+        "src_diff_empty_true": false,
+        "state_mutation_owner_specified": false,
+        "telemetry_requirements_specified": false
+      },
+      "nat_level": "NAT0",
+      "native_policy_or_telemetry_surface_name": "not_applicable_relabel_rejected",
+      "native_question": "Can a generated target/proxy be relabeled as semantic goal ownership, choice, intention, agency, identity, or native support?",
+      "native_state_needed": [],
+      "native_support_opened": false,
+      "negative_controls": [
+        "generated target as semantic goal",
+        "target consumption as semantic choice",
+        "runtime target as intention",
+        "support-derived target as agency",
+        "artifact AP5 as native support"
+      ],
+      "non_rc_quantity_audit": {
+        "blocked_hidden_quantities": [
+          "semantic goal",
+          "semantic choice",
+          "intention",
+          "identity",
+          "native support"
+        ],
+        "non_rc_quantities_required": false,
+        "passes": true
+      },
+      "phase8_opened": false,
+      "phase8_ready": false,
+      "phase8_ready_derivation": "phase8_ready = true only when nat_level = NAT4 and all NAT4 gates pass",
+      "primary_disposition": "unsafe_relabel_rejected",
+      "record_schema_sketch": {
+        "claim_allowed": false,
+        "relabel_claim": "string"
+      },
+      "row_decision": "rejected",
+      "row_digest": "550a7eef0133ebc1fbb0a1b791633b04631b7216e828a7cf4b589d149819fd27",
+      "row_id": "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected",
+      "runtime_visible_inputs": [],
+      "secondary_tags": [],
+      "snapshot_replay_requirements": [
+        "replay claim flags as false"
+      ],
+      "source_artifacts": [
+        {
+          "output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json",
+          "sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+          "status": "passed"
+        },
+        {
+          "output_digest": "251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json",
+          "sha256": "35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf",
+          "status": "passed"
+        },
+        {
+          "output_digest": "76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266",
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json",
+          "sha256": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87",
+          "status": "passed"
+        }
+      ],
+      "source_experiment": "N15",
+      "source_final_claim_ceiling": "artifact_level_ap5_endogenous_proxy_formation_candidate",
+      "source_final_supported_ap_level": "AP5",
+      "source_iteration_or_closeout": "N15 claim boundary and proxy controls",
+      "source_output_digest": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json": "76d2258795d5799503cca9ad26fd24df512c2dbfb3450055c349e3162cef0266",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": "251116879e10182729ace752d2f684acf6878a2d2d3db74c7f39bef1a7a76a7f"
+      },
+      "source_reports": [
+        {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_closeout_and_handoff.md",
+          "sha256": "7fd4773de2bb4cce79799caf287f22b13e056b567a44da562d22665d07fda4ee"
+        },
+        {
+          "path": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/reports/n15_proxy_control_matrix.md",
+          "sha256": "e25c2b6b50bd6c50934963de8d2c93fc4045ac632f713f778f8c1733d006fa69"
+        }
+      ],
+      "source_sha256": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json": "99781fbd38ea972c07c1f1313cbcce95bbbc99eeec05cdafb2678a445810bb87",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": "35edc1ac9c475104d7c2b76e4278c108b2050dac65c06d0024141fc4b9ceadcf"
+      },
+      "source_status": {
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_claim_boundary_record.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json": "passed",
+        "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_proxy_control_matrix.json": "passed"
+      },
+      "src_diff_empty": true,
+      "state_mutation_owner": "not_applicable",
+      "telemetry_requirements": [
+        "record rejected relabel and source claim boundary"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "source_inventory_passed",
+      "detail": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap3_ap8_source_inventory.json",
+      "passed": true
+    },
+    {
+      "check_id": "schema_freeze_passed",
+      "detail": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_naturalization_schema_v1.json",
+      "passed": true
+    },
+    {
+      "check_id": "required_lower_stack_rows_present",
+      "detail": [
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4",
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected",
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker",
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_required_schema_fields_present",
+      "detail": {},
+      "passed": true
+    },
+    {
+      "check_id": "primary_dispositions_valid_and_singular",
+      "detail": {
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4": "phase8_ready_native_policy_candidate",
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected": "unsafe_relabel_rejected",
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3": "native_contract_candidate",
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker": "implementation_gap_blocker",
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3": "native_contract_candidate",
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected": "unsafe_relabel_rejected"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "nat_levels_valid",
+      "detail": {
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4": "NAT4",
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected": "NAT0",
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3": "NAT3",
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker": "NAT2",
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3": "NAT3",
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected": "NAT0"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "row_decisions_valid",
+      "detail": {
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4": "supported",
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected": "rejected",
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3": "supported",
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker": "blocked",
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3": "supported",
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected": "rejected"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_ready_derivation_enforced",
+      "detail": {
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4": {
+          "all_nat4_gates_pass": true,
+          "nat_level": "NAT4",
+          "phase8_ready": true
+        },
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT0",
+          "phase8_ready": false
+        },
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT3",
+          "phase8_ready": false
+        },
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT2",
+          "phase8_ready": false
+        },
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT3",
+          "phase8_ready": false
+        },
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected": {
+          "all_nat4_gates_pass": false,
+          "nat_level": "NAT0",
+          "phase8_ready": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "nat4_rows_have_all_gates_passed",
+      "detail": [
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "nat3_rows_keep_phase8_ready_false",
+      "detail": [
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "nat3_rows_have_explicit_nat4_gate_blocker",
+      "detail": {
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3": [
+          "runtime_visible_inputs_source_backed"
+        ],
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3": [
+          "runtime_visible_inputs_source_backed"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "claim_flags_forced_false_all_rows",
+      "detail": 6,
+      "passed": true
+    },
+    {
+      "check_id": "phase8_and_native_support_not_opened",
+      "detail": 6,
+      "passed": true
+    },
+    {
+      "check_id": "source_digests_present",
+      "detail": 6,
+      "passed": true
+    },
+    {
+      "check_id": "constructed_followout_not_promoted_to_observed_native_support",
+      "detail": "N14 constructed followout remains blocker context, not native support.",
+      "passed": true
+    },
+    {
+      "check_id": "n12_readiness_only_context_not_relabelled_as_native_support",
+      "detail": "N12 readiness remains readiness-only in N13 and N15 rows.",
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_goal_choice_selfhood_agency_promotions_rejected",
+      "detail": "Unsafe promotions remain in blocked_claims.",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "all row paths are relative",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty_recorded_true",
+      "detail": 6,
+      "passed": true
+    }
+  ],
+  "classification_summary": {
+    "blocked_rows": [
+      "n19_i3_row_04_n14_constructed_followout_native_support_blocker"
+    ],
+    "classified_sources": [
+      "N13",
+      "N14",
+      "N15"
+    ],
+    "lower_stack_phase8_ready_surfaces": [
+      "native_support_margin_and_response_magnitude_policy"
+    ],
+    "n13_classification": "NAT4 phase8-ready native policy candidate",
+    "n14_classification": "NAT3 native contract candidate plus route-conditioned support/regulation blocker",
+    "n15_classification": "NAT3 native contract candidate plus unsafe proxy/goal relabel rejection",
+    "nat3_rows": [
+      "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+      "n19_i3_row_05_n15_proxy_derivation_contract_nat3"
+    ],
+    "nat4_rows": [
+      "n19_i3_row_01_n13_support_margin_response_policy_nat4"
+    ],
+    "native_contract_surfaces": [
+      "native_route_consequence_selection_telemetry",
+      "native_proxy_derivation_policy"
+    ],
+    "phase8_ready_row_count": 1,
+    "rejected_rows": [
+      "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected",
+      "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected"
+    ]
+  },
+  "command": ".venv/bin/python experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/scripts/build_n19_lower_stack_candidate_classification.py",
+  "experiment": "2026-06-N19-lgrc-native-naturalization-review-ap3-ap8",
+  "failed_checks": [],
+  "generated_at": "2026-06-19T00:00:00+00:00",
+  "interpretation": {
+    "claim_boundary": "phase8_ready in the N13 row is readiness classification only. It does not open Phase 8, implement native producer code, or support native support.",
+    "main_read": "Iteration 3 finds one lower-stack Phase 8-ready native policy candidate: N13 support-margin/response-magnitude telemetry. N14 and N15 are stronger than scaffolds because their native contracts are clear and source-backed, but they remain NAT3: N14 is limited by the constructed-followout versus observed route-conditioned support/regulation gap, and N15 depends on artifact lower-stack inputs that are not yet native surfaces.",
+    "not_supported": [
+      "native support",
+      "semantic goal ownership",
+      "semantic choice",
+      "intention",
+      "agency",
+      "selfhood",
+      "identity acceptance",
+      "Phase 8 implementation",
+      "AP9"
+    ]
+  },
+  "iteration": 3,
+  "native_support_opened": false,
+  "output_digest": "b0c2a1ec62143b1108034be99174176fa87f782baa51a18811dd5ea28aa76836",
+  "phase8_opened": false,
+  "purpose": "Classify AP3-AP5 lower-stack native-readiness candidates and blockers under the N19 schema without opening Phase 8 or native support.",
+  "row_count": 6,
+  "schema_source": {
+    "output_digest": "b8e33e97c51603dc73455409b41f858af71d7d7ded8099df2a52e3ce07640935",
+    "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_naturalization_schema_v1.json",
+    "sha256": "a5b3afa89b0075cf3805557019788d6bc02d7c3fd3bcb63fe6bdcc244d0d8ccb"
+  },
+  "schema_version": "n19_lower_stack_candidate_classification_v1",
+  "source_inventory": {
+    "output_digest": "d8238db4f551ddf43bde51511ab1f2d061f1fda5874875b96c7b68a40c22f19a",
+    "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap3_ap8_source_inventory.json",
+    "sha256": "29844f5f77fd06a4d2cd11bb6ae973ff2154760328b010803dd3018a214a477a"
+  },
+  "src_diff_empty": true,
+  "status": "passed"
+}

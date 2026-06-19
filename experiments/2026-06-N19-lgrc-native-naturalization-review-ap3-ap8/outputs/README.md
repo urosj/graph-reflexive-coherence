@@ -1,0 +1,34 @@
+# N19 Outputs
+
+Generated JSON artifacts for N19 are written here.
+
+Initial expected outputs:
+
+```text
+n19_ap3_ap8_source_inventory.json
+n19_naturalization_schema_v1.json
+n19_lower_stack_candidate_classification.json
+n19_ap6_boundary_native_readiness_classification.json
+n19_ap7_loop_native_readiness_classification.json
+n19_ap8_horizon_budget_native_readiness_classification.json
+n19_candidate_classification_matrix.json
+n19_phase8_readiness_matrix.json
+n19_closeout_and_handoff.json
+```
+
+Current outputs:
+
+```text
+n19_ap3_ap8_source_inventory.json
+n19_naturalization_schema_v1.json
+n19_lower_stack_candidate_classification.json
+n19_ap6_boundary_native_readiness_classification.json
+n19_ap7_loop_native_readiness_classification.json
+n19_ap8_horizon_budget_native_readiness_classification.json
+n19_candidate_classification_matrix.json
+n19_phase8_readiness_matrix.json
+n19_closeout_and_handoff.json
+```
+
+Outputs must be deterministic, replayable, digest-backed, and free of local
+absolute paths.

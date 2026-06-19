@@ -43,6 +43,7 @@ machine-local state.
 | [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
 | [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Closed artifact-level AP7 closed boundary engagement loop candidate across perturbation, resource/support, and local shared-medium families. | README, then closeout handoff, comparative requirements matrix, claim boundary, loop controls, and extension artifacts. |
 | [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Closed limited artifact-level AP8 long-horizon agentic-like closure candidate over the narrow h4/L5 stress envelope, with general AP8, Phase 8, native support, agency, and identity claims blocked. | README, then closeout handoff, I9 classification matrix, stress artifacts, hypotheses, and implementation checklist. |
+| [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Closed N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 stack; records 12 NAT4 surfaces while blocking full native ladder generation on AP4/AP5 NAT4 gaps. | README, then closeout handoff, candidate matrix, Phase 8 readiness matrix, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -134,6 +135,28 @@ envelope. The closeout preserves `max_supported_horizon = h4`,
 boundary_to_loop_feedback`, and Phase 8/native support remain unopened.
 General AP8, semantic agency, identity acceptance, organism/life, fully native
 integration, and unrestricted agency claims remain blocked.
+
+N19 closes as the N12-style native naturalization review for the N13-N18
+AP3-AP8 stack:
+
+```text
+final_claim_ceiling = artifact_level_phase8_readiness_review_for_ap3_ap8
+phase8_ready_surface_count = 12
+full_ap3_ap8_nat4_ladder_generation_supported = false
+current_implementation_can_generate_claimed_ap_ladder = false
+claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
+phase8_opened = false
+native_support_opened = false
+ap9_opened = false
+```
+
+N19 records local NAT4 Phase-8-ready surfaces for AP3, AP6, AP7, and limited
+AP8, but AP4/N14 and AP5/N15 remain below NAT4. Therefore the current
+implementation cannot generate the claimed AP3-AP8 ladder as a complete NAT4
+ladder. This closes the current N12-N19 documentation/review stack before any
+new series is defined. Any N20+ or Phase 8 implementation series needs its own
+roadmap/branch and must start from the N19 AP4/AP5 NAT4 gaps rather than
+silently treating the ladder as natively generatable.
 
 N18 Iteration 8 supporting visualization:
 

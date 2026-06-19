@@ -1,9 +1,10 @@
 # N12-N18 LGRC Agency Prerequisites Handoff
 
 This handoff is the pickup note for continuing after the N05-N11 foundation
-arc and the completed N12-N17 agency-prerequisite experiments. It is meant to
-let a future conversation restart without rediscovering the claim boundary,
-source artifacts, or next branch options.
+arc, the completed N12-N18 agency-prerequisite experiments, and the closed N19
+native-readiness review. It is meant to let a future conversation restart
+without rediscovering the claim boundary, source artifacts, or next branch
+options.
 
 ## Current Position
 
@@ -18,12 +19,20 @@ composition. The strongest current result is from N11:
 - Agency, semantic choice, identity acceptance, biological behavior,
   personhood, and unrestricted agency claims: still blocked.
 
-The current roadmap continuation is:
+The primary roadmap source record is:
 
 - `experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md`
 
 That roadmap treats N12-N18 as agency-prerequisite experiments, not agency
 claims.
+
+Current closure state:
+
+```text
+N12-N18 artifact-level agency-prerequisite tranche = closed
+N19 native-readiness review = closed
+new N20+ or Phase 8 implementation series defined here = false
+```
 
 N12 is now closed as a claim-clean bridge experiment:
 
@@ -181,6 +190,16 @@ Start future review from these files:
 - `experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json`
 - `experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/reports/n17_loop_schema_v1.md`
 - `experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_schema_v1.json`
+- `experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_closeout_and_handoff.md`
+- `experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_closeout_and_handoff.json`
+- `experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_long_horizon_control_and_classification_matrix.md`
+- `experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_control_and_classification_matrix.json`
+- `experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md`
+- `experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json`
+- `experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_candidate_classification_matrix.md`
+- `experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_candidate_classification_matrix.json`
+- `experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_phase8_readiness_matrix.md`
+- `experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_phase8_readiness_matrix.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_final_interpretation_and_roadmap_significance.md`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_12_final_closeout_and_handoff.json`
 - `experiments/2026-05-N11-lgrc-general-agentic-like-integration/reports/n11_iteration_12_final_closeout_and_handoff.md`
@@ -205,6 +224,12 @@ Known recent output digests:
   `715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9`
 - N17 Iteration 10:
   `f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e`
+- N19 candidate matrix:
+  `46e8675c62ee399c840844a7f5aee04108c9ba35eaf194a11de6d1e956bae266`
+- N19 Phase 8 readiness matrix:
+  `193ea18a1ab3398e0d6a210101e7f6fc0fd91ea6c5ecd59853dee0814cc38eae`
+- N19 closeout and handoff:
+  `233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe`
 
 ## Native Gaps Carried Forward After N12
 
@@ -250,20 +275,60 @@ recover h8 or h16 and does not support general AP8, native support, agency,
 semantic action/perception, identity acceptance, organism/life, fully native
 integration, or unrestricted autonomy.
 
-## Next Options After N18
+## N19 Closeout State
 
-The N12-N18 artifact-level agency-prerequisite tranche is closed. Reasonable
-next branches are:
+N19 is now closed as:
 
-- Tranche synthesis/review: summarize the closed N12-N18 AP ladder and its
-  claim boundaries without opening native implementation.
-- Phase 8 route-conductance memory: native absorption of the N08 memory trail /
-  route affordance mechanism from the N12 NAT4 contract.
-- Phase 8 response-magnitude policy: native absorption of bounded,
+```text
+final_claim_ceiling = artifact_level_phase8_readiness_review_for_ap3_ap8
+phase8_ready_surface_count = 12
+full_ap3_ap8_nat4_ladder_generation_supported = false
+current_implementation_can_generate_claimed_ap_ladder = false
+claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
+phase8_opened = false
+native_support_opened = false
+ap9_opened = false
+```
+
+N19 records 12 local NAT4 Phase-8-ready surfaces, but the AP-level coverage
+gate fails for the full AP3-AP8 ladder:
+
+```text
+AP3 = NAT4 evidence present
+AP4 = NAT4 evidence absent; best current level is NAT3
+AP5 = NAT4 evidence absent; best current level is NAT3
+AP6 = NAT4 evidence present
+AP7 = NAT4 evidence present
+AP8 = NAT4 evidence present for limited h4/L5 claim only
+```
+
+The required precondition for a future native ladder-generation claim is to
+upgrade AP4/N14 and AP5/N15 to NAT4. AP4/N14 is missing source-current
+route-conditioned support/regulation evidence and native route-selection
+telemetry. AP5/N15 depends on the AP4 gap and is missing native lower-stack
+input capture plus a default-off native proxy derivation policy.
+
+## Next Options After N19
+
+The N12-N18 artifact-level agency-prerequisite tranche is closed, and the N19
+native-readiness review is closed. No new N20+ or Phase 8 implementation series
+is defined by this handoff. Reasonable next branch families are:
+
+- Phase 8 AP4 NAT4 upgrade: add route-conditioned support/regulation evidence
+  and native route-selection telemetry before claiming native ladder
+  generation.
+- Phase 8 AP5 NAT4 upgrade: add native lower-stack input capture and a
+  default-off native proxy derivation policy after the AP4 gap is resolved.
+- Targeted Phase 8 route-conductance memory: native absorption of the N08
+  memory trail / route affordance mechanism from the N12 NAT4 contract.
+- Targeted Phase 8 response-magnitude policy: native absorption of bounded,
   envelope-gated regulation response sizing from the N12 NAT4 contract.
+- Post-tranche synthesis only: summarize the closed N12-N19 record without
+  opening native implementation or a new experiment series.
 
 Open targeted Phase 8 only when the goal is native implementation of one of
-the N12 NAT4 contracts. N18 artifact evidence cannot be relabeled as native
+the recorded NAT4 contracts or the required AP4/AP5 NAT4 upgrades. N18 artifact
+evidence and N19 readiness classifications cannot be relabeled as native
 support.
 
 ## Claim Boundary
@@ -282,7 +347,9 @@ Current supported language:
 - `artifact_level_ap7_closed_boundary_engagement_loop_candidate`
 - `artifact_level_ap8_long_horizon_agentic_like_closure_candidate`
 - `AP8_limited_artifact_candidate`
+- `artifact_level_phase8_readiness_review_for_ap3_ap8`
 - `native_absorption_candidate`
+- `Phase 8-ready native policy/telemetry candidate`
 
 Current blocked language:
 
@@ -297,6 +364,7 @@ Current blocked language:
 - native support without explicit Phase 8 implementation
 - unrestricted agency
 - fully native agentic integration
+- full AP3-AP8 NAT4 ladder generation with current implementations
 
 ## Verification Notes
 
@@ -305,7 +373,7 @@ Before closing a handoff update, rerun:
 - `git diff --check`
 - `git diff -- src`
 
-The post-N18 handoff update and experiment-index refresh are documentation
+The post-N19 handoff update and experiment-index refresh are documentation
 work only. They should leave `src/*` unchanged.
 
 Future sessions should rerun:
@@ -315,7 +383,7 @@ git diff --check
 git diff -- src
 ```
 
-before closing any post-N18 synthesis or Phase 8 planning turn.
+before closing any post-N19 synthesis or Phase 8 planning turn.
 
 ## Resolved N12 Questions
 
@@ -335,9 +403,21 @@ before closing any post-N18 synthesis or Phase 8 planning turn.
 - The sufficient supported horizon/stress envelope is narrow `h4/L5`; `h8`,
   `h16`, general AP8, and native implementation remain blocked.
 
+## Resolved N19 Questions
+
+- N19 partitions the N13-N18 AP3-AP8 stack with the N12 NAT ladder without
+  opening Phase 8, native support, or AP9.
+- N19 records 12 local NAT4 Phase-8-ready surfaces, but this does not make the
+  full AP3-AP8 ladder natively generatable.
+- AP4/N14 and AP5/N15 lack NAT4 evidence, so current native ladder generation
+  is blocked by `blocked_by_ap4_ap5_nat4_evidence_gaps`.
+- AP6/AP7 local NAT4 readiness remains local surface readiness. It does not
+  repair the lower AP4/AP5 gaps.
+
 ## Remaining Questions
 
-- If Phase 8 opens, should route conductance memory or response magnitude policy
-  be implemented first?
+- If Phase 8 opens, should it first target AP4 route-conditioned
+  support/regulation evidence, AP5 native proxy derivation, route conductance
+  memory, or response magnitude policy?
 - What explicit theory gates would be sufficient to reconsider identity
   acceptance or agency after long-horizon AP8-style evidence accumulates?

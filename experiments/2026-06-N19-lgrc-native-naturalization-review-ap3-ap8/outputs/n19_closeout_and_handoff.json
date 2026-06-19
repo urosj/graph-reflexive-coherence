@@ -1,0 +1,2231 @@
+{
+  "ap9_opened": false,
+  "ap_level_nat4_coverage": [
+    {
+      "ap_level": "AP3",
+      "best_nat_level": "NAT4",
+      "candidate_row_ids": [
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4",
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected"
+      ],
+      "claim_scope": "artifact-level AP3 support/regulation candidate",
+      "claimed_artifact_role": "support-seeking regulation and bounded response magnitude",
+      "coverage_status": "nat4_present_for_current_claim",
+      "current_claim_nat4_supported": true,
+      "generalization_note": "not_applicable",
+      "implementation_gap_blocker_row_ids": [],
+      "minimal_producer_code_needed_for_gaps": [],
+      "nat3_row_ids": [],
+      "nat4_evidence_present": true,
+      "nat4_row_ids": [
+        "n19_i3_row_01_n13_support_margin_response_policy_nat4"
+      ],
+      "required_for_current_ladder": true,
+      "source_experiment": "N13",
+      "unsafe_relabel_rejected_row_ids": [
+        "n19_i3_row_02_n13_support_goal_selfhood_relabels_rejected"
+      ]
+    },
+    {
+      "ap_level": "AP4",
+      "best_nat_level": "NAT3",
+      "candidate_row_ids": [
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker"
+      ],
+      "claim_scope": "artifact-level AP4 consequence-sensitive selection candidate",
+      "claimed_artifact_role": "consequence-sensitive route selection",
+      "coverage_status": "nat4_absent_contract_only",
+      "current_claim_nat4_supported": false,
+      "generalization_note": "not_applicable",
+      "implementation_gap_blocker_row_ids": [
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker"
+      ],
+      "minimal_producer_code_needed_for_gaps": [
+        {
+          "blockers_to_next_level": [
+            "route-conditioned support/regulation rows are absent upstream",
+            "constructed followout cannot be treated as observed native support",
+            "native route-selection mutation and telemetry surface are not implemented"
+          ],
+          "minimal_producer_code_needed": [
+            "add default-off route consequence telemetry record",
+            "add deterministic route rank replay digest",
+            "add budget-validity and stale-record rejection hooks",
+            "add source-current route-conditioned support/regulation fields before NAT4 promotion"
+          ],
+          "row_id": "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+          "surface": "native_route_consequence_selection_telemetry"
+        },
+        {
+          "blockers_to_next_level": [
+            "runtime-visible route-conditioned support/regulation inputs are missing",
+            "generic source reuse is blocked",
+            "constructed followout cannot satisfy the observed-source gate"
+          ],
+          "minimal_producer_code_needed": [
+            "add route_candidate_id to support/regulation consequence rows",
+            "add peer-route same-horizon comparison record",
+            "add peer-route same-budget comparison record",
+            "add rejection record for generic support/regulation reuse"
+          ],
+          "row_id": "n19_i3_row_04_n14_constructed_followout_native_support_blocker",
+          "surface": "native_route_conditioned_support_regulation_observation_required"
+        }
+      ],
+      "nat3_row_ids": [
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3"
+      ],
+      "nat4_evidence_present": false,
+      "nat4_gap_explanation": {
+        "ap_level": "AP4",
+        "best_current_evidence": "N14 route consequence-selection telemetry is a NAT3 native-contract candidate, not NAT4 Phase-8-ready evidence.",
+        "missing_for_nat4": [
+          "source-current route-conditioned support/regulation rows",
+          "observed route-conditioned support/regulation inputs instead of constructed followout",
+          "peer-route same-horizon comparison records",
+          "peer-route same-budget comparison records",
+          "default-off native route-selection telemetry surface with replay and stale-record controls",
+          "rejection record for generic support/regulation reuse as route-conditioned evidence"
+        ],
+        "source_experiment": "N14",
+        "source_rows": [
+          "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+          "n19_i3_row_04_n14_constructed_followout_native_support_blocker"
+        ],
+        "why_this_blocks_ladder_generation": "AP4 is the consequence-sensitive selection rung. Without source-current route-conditioned support/regulation evidence, a native producer could record route consequences, but it could not generate the claimed AP4 selection step as a NAT4 Phase-8-ready rung."
+      },
+      "nat4_row_ids": [],
+      "required_for_current_ladder": true,
+      "source_experiment": "N14",
+      "unsafe_relabel_rejected_row_ids": []
+    },
+    {
+      "ap_level": "AP5",
+      "best_nat_level": "NAT3",
+      "candidate_row_ids": [
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected"
+      ],
+      "claim_scope": "artifact-level AP5 endogenous proxy formation candidate",
+      "claimed_artifact_role": "endogenous proxy / target formation",
+      "coverage_status": "nat4_absent_contract_only",
+      "current_claim_nat4_supported": false,
+      "generalization_note": "not_applicable",
+      "implementation_gap_blocker_row_ids": [],
+      "minimal_producer_code_needed_for_gaps": [
+        {
+          "blockers_to_next_level": [
+            "lower AP3/AP4 native policy surfaces are not implemented",
+            "N14 route-conditioned support/regulation remains constructed or absent upstream",
+            "native proxy derivation policy and replay hooks do not exist in src"
+          ],
+          "minimal_producer_code_needed": [
+            "add default-off proxy derivation policy record",
+            "add native lower-stack input vector capture after AP3/AP4 native surfaces exist",
+            "add target condition digest before use",
+            "add replay digest over target derivation, bridge ranking, budget, and claim flags"
+          ],
+          "row_id": "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+          "surface": "native_proxy_derivation_policy"
+        }
+      ],
+      "nat3_row_ids": [
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3"
+      ],
+      "nat4_evidence_present": false,
+      "nat4_gap_explanation": {
+        "ap_level": "AP5",
+        "best_current_evidence": "N15 proxy derivation is a NAT3 native-contract candidate, not NAT4 Phase-8-ready evidence.",
+        "missing_for_nat4": [
+          "native lower-stack input vector captured after AP3/AP4 native surfaces exist",
+          "AP4 NAT4 route-conditioned support/regulation evidence",
+          "default-off native proxy derivation policy record",
+          "target condition digest recorded before use",
+          "replay digest over target derivation, bridge ranking, budget, and claim flags",
+          "validation that readiness-only context remains non-mutating support context"
+        ],
+        "source_experiment": "N15",
+        "source_rows": [
+          "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+          "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected"
+        ],
+        "why_this_blocks_ladder_generation": "AP5 derives a proxy/target from lower-stack inputs. Because AP4 is not yet NAT4, and because the proxy derivation policy is not implemented as a native default-off surface, the current implementation cannot generate the AP5 rung as NAT4 Phase-8-ready evidence."
+      },
+      "nat4_row_ids": [],
+      "required_for_current_ladder": true,
+      "source_experiment": "N15",
+      "unsafe_relabel_rejected_row_ids": [
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected"
+      ]
+    },
+    {
+      "ap_level": "AP6",
+      "best_nat_level": "NAT4",
+      "candidate_row_ids": [
+        "n19_i4_row_01_n16_boundary_side_state_edge_telemetry_nat4",
+        "n19_i4_row_02_n16_leakage_separability_requirement_telemetry_nat4",
+        "n19_i4_row_03_n16_breach_reclosure_boundary_telemetry_nat4",
+        "n19_i4_row_04_n16_b4_c5_shared_medium_one_sided_contract_nat3",
+        "n19_i4_row_05_n16_original_b4c5_reverse_backfill_blocker",
+        "n19_i4_row_06_n16_boundary_selfhood_native_support_relabels_rejected"
+      ],
+      "claim_scope": "artifact-level AP6 self/environment boundary candidate",
+      "claimed_artifact_role": "self/environment boundary requirements",
+      "coverage_status": "nat4_present_for_current_claim",
+      "current_claim_nat4_supported": true,
+      "generalization_note": "Core AP6 boundary telemetry has NAT4 evidence, while original B4/C5 reverse-perspective backfill remains blocked.",
+      "implementation_gap_blocker_row_ids": [
+        "n19_i4_row_05_n16_original_b4c5_reverse_backfill_blocker"
+      ],
+      "minimal_producer_code_needed_for_gaps": [
+        {
+          "blockers_to_next_level": [
+            "reverse basin perspective side-state is not source-backed in original N16",
+            "paired support/coherence metrics are missing from original N16",
+            "reverse boundary edge and medium feedback trace are missing from original N16"
+          ],
+          "minimal_producer_code_needed": [
+            "add paired-perspective side-state recorder",
+            "add reverse basin support/coherence metric records",
+            "add reverse boundary edge and medium-attribution digests",
+            "add reverse later-feedback trace record",
+            "validate separability, leakage, and merge controls from both perspectives",
+            "add controls rejecting label swap, merge-as-success, and later-evidence backfill"
+          ],
+          "row_id": "n19_i4_row_04_n16_b4_c5_shared_medium_one_sided_contract_nat3",
+          "surface": "native_shared_medium_paired_separability_telemetry_contract_gap"
+        },
+        {
+          "blockers_to_next_level": [
+            "reverse perspective source rows absent",
+            "reverse support/coherence metrics absent",
+            "reverse boundary edge absent",
+            "label-swap and later-evidence backfill controls must fail closed"
+          ],
+          "minimal_producer_code_needed": [
+            "generate source-backed reverse-side state in a new probe",
+            "record reverse support/coherence metrics",
+            "record reverse boundary edge and medium attribution",
+            "record reverse later-feedback trace",
+            "validate separability, leakage, and merge controls under reverse perspective",
+            "keep original B4_C5 one-sided in provenance"
+          ],
+          "row_id": "n19_i4_row_05_n16_original_b4c5_reverse_backfill_blocker",
+          "surface": "native_shared_medium_reverse_perspective_evidence_required"
+        }
+      ],
+      "nat3_row_ids": [
+        "n19_i4_row_04_n16_b4_c5_shared_medium_one_sided_contract_nat3"
+      ],
+      "nat4_evidence_present": true,
+      "nat4_row_ids": [
+        "n19_i4_row_01_n16_boundary_side_state_edge_telemetry_nat4",
+        "n19_i4_row_02_n16_leakage_separability_requirement_telemetry_nat4",
+        "n19_i4_row_03_n16_breach_reclosure_boundary_telemetry_nat4"
+      ],
+      "required_for_current_ladder": true,
+      "source_experiment": "N16",
+      "unsafe_relabel_rejected_row_ids": [
+        "n19_i4_row_06_n16_boundary_selfhood_native_support_relabels_rejected"
+      ]
+    },
+    {
+      "ap_level": "AP7",
+      "best_nat_level": "NAT4",
+      "candidate_row_ids": [
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4",
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker",
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected"
+      ],
+      "claim_scope": "artifact-level AP7 closed-loop boundary engagement candidate",
+      "claimed_artifact_role": "closed boundary engagement loop",
+      "coverage_status": "nat4_present_for_current_claim",
+      "current_claim_nat4_supported": true,
+      "generalization_note": "Core and scoped AP7 loop telemetry has NAT4 evidence, while general shared-medium reverse-perspective evidence remains blocked.",
+      "implementation_gap_blocker_row_ids": [
+        "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker"
+      ],
+      "minimal_producer_code_needed_for_gaps": [
+        {
+          "blockers_to_next_level": [
+            "reverse internal side not source-backed in original B4_C5",
+            "reverse support/coherence metrics missing",
+            "reverse boundary edge missing",
+            "reverse feedback trace missing",
+            "derived evidence cannot backfill original source provenance"
+          ],
+          "minimal_producer_code_needed": [
+            "generate original-source reverse-side rows rather than relabeling",
+            "record reverse support/coherence/boundary/feedback traces",
+            "preserve derived two-cycle provenance as separate evidence"
+          ],
+          "row_id": "n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker",
+          "surface": "native_general_shared_medium_reverse_perspective_evidence_required"
+        }
+      ],
+      "nat3_row_ids": [],
+      "nat4_evidence_present": true,
+      "nat4_row_ids": [
+        "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+        "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+        "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+        "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+        "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4"
+      ],
+      "required_for_current_ladder": true,
+      "source_experiment": "N17",
+      "unsafe_relabel_rejected_row_ids": [
+        "n19_i5_row_07_n17_loop_agency_action_perception_relabels_rejected"
+      ]
+    },
+    {
+      "ap_level": "AP8",
+      "best_nat_level": "NAT4",
+      "candidate_row_ids": [
+        "n19_i6_row_01_n18_limited_h4_horizon_envelope_telemetry_nat4",
+        "n19_i6_row_02_n18_budget_replay_control_telemetry_nat4",
+        "n19_i6_row_03_n18_cross_axis_bottleneck_telemetry_nat4",
+        "n19_i6_row_04_n18_h8_h16_general_ap8_extrapolation_blocker",
+        "n19_i6_row_05_n18_native_support_agency_ap8_relabels_rejected"
+      ],
+      "claim_scope": "limited artifact-level AP8 h4/L5 candidate",
+      "claimed_artifact_role": "limited h4/L5 long-horizon closure stress envelope",
+      "coverage_status": "nat4_present_for_limited_h4_l5_claim",
+      "current_claim_nat4_supported": true,
+      "generalization_note": "NAT4 evidence covers only N18's limited h4/L5 AP8 claim; h8, h16, and general AP8 remain blocked.",
+      "implementation_gap_blocker_row_ids": [
+        "n19_i6_row_04_n18_h8_h16_general_ap8_extrapolation_blocker"
+      ],
+      "minimal_producer_code_needed_for_gaps": [
+        {
+          "blockers_to_next_level": [
+            "h8 partial window not recovered",
+            "h16 rejected window not recovered",
+            "general AP8 unsupported",
+            "horizon extrapolation disallowed"
+          ],
+          "minimal_producer_code_needed": [
+            "produce supported h8 and h16 source rows under frozen policy",
+            "record longer-window budget and replay controls",
+            "record longer-window stale-axis and post-hoc stitching controls",
+            "preserve limited/general AP8 distinction in claim boundary"
+          ],
+          "row_id": "n19_i6_row_04_n18_h8_h16_general_ap8_extrapolation_blocker",
+          "surface": "native_horizon_extrapolation_evidence_required"
+        }
+      ],
+      "nat3_row_ids": [],
+      "nat4_evidence_present": true,
+      "nat4_row_ids": [
+        "n19_i6_row_01_n18_limited_h4_horizon_envelope_telemetry_nat4",
+        "n19_i6_row_02_n18_budget_replay_control_telemetry_nat4",
+        "n19_i6_row_03_n18_cross_axis_bottleneck_telemetry_nat4"
+      ],
+      "required_for_current_ladder": true,
+      "source_experiment": "N18",
+      "unsafe_relabel_rejected_row_ids": [
+        "n19_i6_row_05_n18_native_support_agency_ap8_relabels_rejected"
+      ]
+    }
+  ],
+  "ap_levels_lacking_nat4_evidence": [
+    "AP4",
+    "AP5"
+  ],
+  "artifact_id": "n19_closeout_and_handoff",
+  "blocked_claims_preserved": [
+    "native support",
+    "Phase 8 implementation",
+    "general AP8",
+    "AP9",
+    "agency",
+    "choice",
+    "intention",
+    "semantic action",
+    "semantic perception",
+    "semantic goal ownership",
+    "selfhood",
+    "identity acceptance",
+    "organism/life behavior",
+    "fully native agentic-like integration",
+    "unrestricted autonomy"
+  ],
+  "candidate_matrix_source": {
+    "output_digest": "46e8675c62ee399c840844a7f5aee04108c9ba35eaf194a11de6d1e956bae266",
+    "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_candidate_classification_matrix.json",
+    "sha256": "b08c533cb7977f82008b1f1d803f00993d3b04fb00f9b2a7d157454ece270e40",
+    "status": "passed"
+  },
+  "checks": [
+    {
+      "check_id": "candidate_matrix_passed",
+      "detail": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_candidate_classification_matrix.json",
+      "passed": true
+    },
+    {
+      "check_id": "phase8_readiness_matrix_passed",
+      "detail": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_phase8_readiness_matrix.json",
+      "passed": true
+    },
+    {
+      "check_id": "ap_level_nat4_coverage_answered",
+      "detail": {
+        "AP3": "nat4_present_for_current_claim",
+        "AP4": "nat4_absent_contract_only",
+        "AP5": "nat4_absent_contract_only",
+        "AP6": "nat4_present_for_current_claim",
+        "AP7": "nat4_present_for_current_claim",
+        "AP8": "nat4_present_for_limited_h4_l5_claim"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_nat4_gaps_detected",
+      "detail": [
+        "AP4",
+        "AP5"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_missing_evidence_explained",
+      "detail": {
+        "AP4": [
+          "source-current route-conditioned support/regulation rows",
+          "observed route-conditioned support/regulation inputs instead of constructed followout",
+          "peer-route same-horizon comparison records",
+          "peer-route same-budget comparison records",
+          "default-off native route-selection telemetry surface with replay and stale-record controls",
+          "rejection record for generic support/regulation reuse as route-conditioned evidence"
+        ],
+        "AP5": [
+          "native lower-stack input vector captured after AP3/AP4 native surfaces exist",
+          "AP4 NAT4 route-conditioned support/regulation evidence",
+          "default-off native proxy derivation policy record",
+          "target condition digest recorded before use",
+          "replay digest over target derivation, bridge ranking, budget, and claim flags",
+          "validation that readiness-only context remains non-mutating support context"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "full_ladder_generation_blocked_when_any_ap_lacks_nat4",
+      "detail": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+      "passed": true
+    },
+    {
+      "check_id": "limited_ap8_boundary_preserved",
+      "detail": "AP8 NAT4 is limited to h4/L5",
+      "passed": true
+    },
+    {
+      "check_id": "future_phase8_tasks_named_without_implementation",
+      "detail": 5,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_blocked",
+      "detail": 24,
+      "passed": true
+    },
+    {
+      "check_id": "phase8_native_support_ap9_not_opened",
+      "detail": "N19 remains review/classification only",
+      "passed": true
+    },
+    {
+      "check_id": "final_claim_ceiling_preserved",
+      "detail": "artifact_level_phase8_readiness_review_for_ap3_ap8",
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "closeout paths are relative",
+      "passed": true
+    }
+  ],
+  "claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+  "command": ".venv/bin/python experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/scripts/build_n19_closeout_and_handoff.py",
+  "current_implementation_can_generate_claimed_ap_ladder": false,
+  "experiment": "2026-06-N19-lgrc-native-naturalization-review-ap3-ap8",
+  "failed_checks": [],
+  "final_claim_ceiling": "artifact_level_phase8_readiness_review_for_ap3_ap8",
+  "final_supported_status": "partial_phase8_readiness_review_with_ap4_ap5_nat4_generation_gaps",
+  "full_ap3_ap8_nat4_ladder_generation_supported": false,
+  "future_phase8_handoff_tasks": [
+    {
+      "ap_level": "AP4",
+      "minimal_producer_code_needed": [
+        {
+          "blockers_to_next_level": [
+            "route-conditioned support/regulation rows are absent upstream",
+            "constructed followout cannot be treated as observed native support",
+            "native route-selection mutation and telemetry surface are not implemented"
+          ],
+          "minimal_producer_code_needed": [
+            "add default-off route consequence telemetry record",
+            "add deterministic route rank replay digest",
+            "add budget-validity and stale-record rejection hooks",
+            "add source-current route-conditioned support/regulation fields before NAT4 promotion"
+          ],
+          "row_id": "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+          "surface": "native_route_consequence_selection_telemetry"
+        },
+        {
+          "blockers_to_next_level": [
+            "runtime-visible route-conditioned support/regulation inputs are missing",
+            "generic source reuse is blocked",
+            "constructed followout cannot satisfy the observed-source gate"
+          ],
+          "minimal_producer_code_needed": [
+            "add route_candidate_id to support/regulation consequence rows",
+            "add peer-route same-horizon comparison record",
+            "add peer-route same-budget comparison record",
+            "add rejection record for generic support/regulation reuse"
+          ],
+          "row_id": "n19_i3_row_04_n14_constructed_followout_native_support_blocker",
+          "surface": "native_route_conditioned_support_regulation_observation_required"
+        }
+      ],
+      "reason": "current AP rung lacks NAT4 evidence",
+      "required_before_native_ladder_generation": true,
+      "task_id": "phase8_upgrade_ap4_to_nat4"
+    },
+    {
+      "ap_level": "AP5",
+      "minimal_producer_code_needed": [
+        {
+          "blockers_to_next_level": [
+            "lower AP3/AP4 native policy surfaces are not implemented",
+            "N14 route-conditioned support/regulation remains constructed or absent upstream",
+            "native proxy derivation policy and replay hooks do not exist in src"
+          ],
+          "minimal_producer_code_needed": [
+            "add default-off proxy derivation policy record",
+            "add native lower-stack input vector capture after AP3/AP4 native surfaces exist",
+            "add target condition digest before use",
+            "add replay digest over target derivation, bridge ranking, budget, and claim flags"
+          ],
+          "row_id": "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+          "surface": "native_proxy_derivation_policy"
+        }
+      ],
+      "reason": "current AP rung lacks NAT4 evidence",
+      "required_before_native_ladder_generation": true,
+      "task_id": "phase8_upgrade_ap5_to_nat4"
+    },
+    {
+      "ap_level": "AP6",
+      "blocked_claims": [
+        "original B4_C5 paired perspective",
+        "original B4_C5 native multi-basin separability",
+        "native multi-basin selfhood",
+        "selfhood",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "minimal_producer_code_needed": [
+        "generate source-backed reverse-side state in a new probe",
+        "record reverse support/coherence metrics",
+        "record reverse boundary edge and medium attribution",
+        "record reverse later-feedback trace",
+        "validate separability, leakage, and merge controls under reverse perspective",
+        "keep original B4_C5 one-sided in provenance"
+      ],
+      "reason": "optional/generalization gap preserved by N19 closeout",
+      "required_before_native_ladder_generation": false,
+      "task_id": "phase8_optional_gap_n19_i4_row_05_n16_original_b4c5_reverse_backfill_blocker"
+    },
+    {
+      "ap_level": "AP7",
+      "blocked_claims": [
+        "general shared-medium G6",
+        "B4_C5 original reverse-perspective replay",
+        "symmetric native multi-basin replay",
+        "native multi-basin selfhood",
+        "agency",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "minimal_producer_code_needed": [
+        "generate original-source reverse-side rows rather than relabeling",
+        "record reverse support/coherence/boundary/feedback traces",
+        "preserve derived two-cycle provenance as separate evidence"
+      ],
+      "reason": "optional/generalization gap preserved by N19 closeout",
+      "required_before_native_ladder_generation": false,
+      "task_id": "phase8_optional_gap_n19_i5_row_06_n17_original_b4c5_general_shared_medium_blocker"
+    },
+    {
+      "ap_level": "AP8",
+      "blocked_claims": [
+        "h8 recovery",
+        "h16 recovery",
+        "horizon extrapolation",
+        "general AP8",
+        "unrestricted autonomy",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "minimal_producer_code_needed": [
+        "produce supported h8 and h16 source rows under frozen policy",
+        "record longer-window budget and replay controls",
+        "record longer-window stale-axis and post-hoc stitching controls",
+        "preserve limited/general AP8 distinction in claim boundary"
+      ],
+      "reason": "optional/generalization gap preserved by N19 closeout",
+      "required_before_native_ladder_generation": false,
+      "task_id": "phase8_optional_gap_n19_i6_row_04_n18_h8_h16_general_ap8_extrapolation_blocker"
+    }
+  ],
+  "generated_at": "2026-06-19T00:00:00+00:00",
+  "interpretation": {
+    "ap4_ap5_gap_summary": "AP4 is missing source-current route-conditioned support/regulation evidence and native route-selection telemetry. AP5 is missing native lower-stack input capture after AP3/AP4 native surfaces exist and a default-off native proxy derivation policy.",
+    "ap8_boundary": "AP8 coverage is limited to N18's h4/L5 claim. h8, h16, and general AP8 remain blocked and are not required for the limited AP8 row, but they remain future/generalization blockers.",
+    "ladder_generation_implication": "With the current implementations and source records, the claimed AP3-AP8 ladder cannot be generated as a complete NAT4 Phase-8-ready ladder. AP3, AP6, AP7, and limited AP8 have NAT4 evidence; AP4 and AP5 remain below NAT4 and must be upgraded before a current native ladder-generation claim is allowed.",
+    "main_read": "N19 closes as a native-readiness review, not as native implementation. It finds 12 NAT4 Phase-8-ready surfaces, but the AP-level coverage gate fails for the full AP3-AP8 ladder because AP4/N14 and AP5/N15 do not yet have NAT4 evidence."
+  },
+  "iteration": 8,
+  "native_support_opened": false,
+  "non_ready_row_count": 12,
+  "output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+  "phase8_opened": false,
+  "phase8_readiness_matrix_source": {
+    "output_digest": "193ea18a1ab3398e0d6a210101e7f6fc0fd91ea6c5ecd59853dee0814cc38eae",
+    "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_phase8_readiness_matrix.json",
+    "sha256": "a411d361ce43bdfdc6951ee07192ce3c7b8d887034258dcd069a1c274afc2379",
+    "status": "passed"
+  },
+  "phase8_ready_surface_count": 12,
+  "phase8_ready_surfaces": [
+    {
+      "blocked_claims": [
+        "native support",
+        "semantic goal ownership",
+        "intention",
+        "agency",
+        "selfhood",
+        "identity acceptance",
+        "organism/life behavior",
+        "fully native agentic-like integration",
+        "Phase 8 opened",
+        "Phase 8 implementation",
+        "AP9"
+      ],
+      "budget_surface": {
+        "max_correction_per_window": 0.07,
+        "producer_direct_mutation_allowed": false,
+        "required": true,
+        "surfaces": [
+          "support_response_packet_budget_debit",
+          "response_packet_budget_surface",
+          "node_plus_packet_budget_error",
+          "final_budget_error"
+        ],
+        "total_bounded_correction_capacity": 0.28
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP3_AP5_lower_stack",
+      "implementation_boundary": "N19 classifies readiness only; producer may schedule response packets, but no native support mutation or Phase 8 implementation is opened.",
+      "minimal_producer_code_needed": [
+        "add default-off native support-margin telemetry record",
+        "add default-off response-magnitude policy schedule record",
+        "add budget-debit validation hook before response packet commit",
+        "add replay digest over support, threshold, response schedule, budget, and claim flags"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_support_margin_and_response_magnitude_policy",
+      "native_state_needed": [
+        "source-current support retention per support area",
+        "support survival threshold digest",
+        "support margin / threshold deficit",
+        "bounded response packet schedule",
+        "budget debit before commit"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "external proxy fields reused as support error",
+        "hidden target injected as support condition",
+        "post-hoc support label written after response",
+        "unbounded perturbation envelope",
+        "native support relabel",
+        "support-seeking relabel as semantic goal ownership",
+        "self-maintenance relabel as selfhood"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "support_regulation_lower_stack",
+      "readiness_id": "phase8_ready_n19_i3_row_01_n13_support_margin_response_policy_nat4",
+      "readiness_row_digest": "d96713564bd5517cf4b104dc557fb7e315e8bd04d41c23d8eda272845455461b",
+      "runtime_visible_inputs": [
+        "final_A_support_retention",
+        "support_survival_threshold",
+        "support_margin",
+        "support_error_signal",
+        "lane_digest",
+        "support_area_digest",
+        "scheduled_response_amounts",
+        "scheduled_response_total",
+        "bounded_window_count",
+        "budget_debit_surface"
+      ],
+      "snapshot_replay_requirements": [
+        "replay support retention and threshold digests",
+        "recompute support error from source-current support only",
+        "recompute bounded response schedule and budget debit",
+        "reject duplicate schedule, stale support, external proxy, hidden target, and out-of-envelope variants"
+      ],
+      "source_candidate_row_id": "n19_i3_row_01_n13_support_margin_response_policy_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "b0c2a1ec62143b1108034be99174176fa87f782baa51a18811dd5ea28aa76836",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_lower_stack_candidate_classification.json",
+        "row_count": 6,
+        "sha256": "61c783065cf8fa7828944fd99b71c717a5ebc46cadbb95dc85c198beadac3c1a",
+        "status": "passed"
+      },
+      "source_experiment": "N13",
+      "source_iteration_or_closeout": "N13 closeout + support-seeking regulation candidate + N12 readiness input",
+      "source_row_digest": "42b05ce9842ae51a6a9730f27be9f10e7f86403256bcf9b4a455e07a616cae41",
+      "state_mutation_owner": "LGRC step or committed response-packet scheduling event boundary",
+      "telemetry_requirements": [
+        "record source-current support margin before response scheduling",
+        "record threshold deficit expression and source digests",
+        "record bounded response schedule and budget debit",
+        "record out-of-envelope blocker for unbounded perturbation",
+        "record unsafe claim flags false at the same boundary"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "selfhood",
+        "identity acceptance",
+        "semantic goal ownership",
+        "agency",
+        "agency environment model",
+        "native support",
+        "fully native agentic-like integration",
+        "organism/life behavior",
+        "closed action-perception loop",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "budget_validity_required": true,
+        "required": true,
+        "units": [
+          "source_row_count",
+          "matrix_cell_count",
+          "transform_count",
+          "canonical_json_input_bytes",
+          "canonical_json_output_bytes",
+          "replay_count",
+          "validation_count",
+          "wall_clock_seconds"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP6_boundary",
+      "implementation_boundary": "N19 classifies telemetry readiness only. It does not implement native boundary state, selfhood, native support, or Phase 8.",
+      "minimal_producer_code_needed": [
+        "add default-off boundary side-state telemetry record",
+        "add boundary-edge attribution digest at LGRC step snapshot boundary",
+        "add replay digest over side assignments, edge list, challenge role, and claim flags"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_boundary_side_state_and_edge_telemetry",
+      "native_state_needed": [
+        "derived internal/external side assignment map",
+        "boundary edge list with left/right side attribution",
+        "internal support-relevant state descriptor",
+        "external resource/perturbation/structured/shared-medium role descriptor",
+        "source window and replay digest boundary"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "externally supplied boundary labels",
+        "post-hoc boundary labels",
+        "hidden external-state injection",
+        "missing boundary side state",
+        "stale internal state",
+        "stale external state",
+        "boundary drift outside frozen policy",
+        "untracked boundary crossing",
+        "native support relabel",
+        "selfhood/personhood relabel",
+        "identity acceptance relabel"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "boundary_separability",
+      "readiness_id": "phase8_ready_n19_i4_row_01_n16_boundary_side_state_edge_telemetry_nat4",
+      "readiness_row_digest": "294f41748b3821c70cf82bdb024f6df533924c21cd257f01c051a0b068ee2ae0",
+      "runtime_visible_inputs": [
+        "boundary_state",
+        "challenge_class",
+        "external_state_role",
+        "boundary_side_assignments",
+        "boundary_edges",
+        "internal_state_descriptor",
+        "external_region_nodes",
+        "self_region_nodes",
+        "challenge_profile",
+        "dependency_trace",
+        "replay_digest_inputs"
+      ],
+      "snapshot_replay_requirements": [
+        "artifact-only replay over serialized side assignments and edge list",
+        "snapshot/load replay of boundary side state",
+        "order-inversion replay over canonical row order",
+        "reject externally supplied labels and hidden external state"
+      ],
+      "source_candidate_row_id": "n19_i4_row_01_n16_boundary_side_state_edge_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "74bf51bfa5b4e581baa777b3133d2e7de1706d9fb2229995a81a2432ccb46e0f",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap6_boundary_native_readiness_classification.json",
+        "row_count": 6,
+        "sha256": "ad4ad341a71ee94d5710249d26a60479379929f16b766b126f2ad3816b17e449",
+        "status": "passed"
+      },
+      "source_experiment": "N16",
+      "source_iteration_or_closeout": "N16 AP6 closeout, schema, selected probes, and requirements matrix",
+      "source_row_digest": "433afd73b08e64ed10ef96161ae197454561fd5c87a788a9a716a9ab0031ac92",
+      "state_mutation_owner": "future native boundary telemetry recorder at LGRC step snapshot boundary",
+      "telemetry_requirements": [
+        "record boundary side assignments before row decision",
+        "record boundary edges incident to derived sides",
+        "record external_state_role from frozen enum",
+        "record source-current challenge profile and window",
+        "record claim flags false beside every side-state row"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "native support",
+        "selfhood",
+        "identity acceptance",
+        "agency",
+        "semantic goal ownership",
+        "closed action-perception loop",
+        "fully native agentic-like integration",
+        "organism/life behavior",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "budget_policy": "consume serialized I3-I7 source rows and controls only",
+        "duplicate_replay_stable": true,
+        "order_inversion_replay_stable": true,
+        "required": true,
+        "snapshot_load_replay_stable": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP6_boundary",
+      "implementation_boundary": "N19 classifies a native validation telemetry candidate. It does not make AP6 native, general, or selfhood-supporting.",
+      "minimal_producer_code_needed": [
+        "add default-off boundary requirement telemetry surface",
+        "add operating-envelope digest for supported boundary candidates",
+        "add fail-closed negative-control replay hooks",
+        "add stale-state and boundary-drift rejection records"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_boundary_leakage_separability_requirements_telemetry",
+      "native_state_needed": [
+        "supported-candidate operating envelope",
+        "all-row stress envelope",
+        "boundary requirement table",
+        "fail-closed control outcomes",
+        "stable replay digests"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "externally supplied boundary labels",
+        "post-hoc boundary labels",
+        "hidden external-state injection",
+        "missing boundary side state",
+        "stale internal state",
+        "stale external state",
+        "boundary drift outside frozen policy",
+        "untracked boundary crossing",
+        "native support relabel",
+        "selfhood/personhood relabel",
+        "identity acceptance relabel",
+        "multi-basin merge/leakage as retention",
+        "structured external coherence as self region",
+        "resource relabel as self"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "boundary_separability",
+      "readiness_id": "phase8_ready_n19_i4_row_02_n16_leakage_separability_requirement_telemetry_nat4",
+      "readiness_row_digest": "e739ee4cd8e8e135c2f92bdf12587f853669ee86c031fb664cd4bb2f894b39c4",
+      "runtime_visible_inputs": [
+        "minimum_internal_support",
+        "minimum_coherence_margin",
+        "maximum_leakage_ratio",
+        "inbound_flux",
+        "outbound_flux",
+        "retained_flux",
+        "repair_score",
+        "reclosure_score",
+        "basin_separation_score",
+        "boundary_exclusivity_score",
+        "merge_confusion_pressure",
+        "row_decision",
+        "negative_control_matrix",
+        "replay_matrix"
+      ],
+      "snapshot_replay_requirements": [
+        "artifact-only replay stable",
+        "duplicate replay stable",
+        "order-inversion replay stable after canonical ordering",
+        "snapshot/load replay stable",
+        "reject stale internal/external state and boundary drift outside policy"
+      ],
+      "source_candidate_row_id": "n19_i4_row_02_n16_leakage_separability_requirement_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "74bf51bfa5b4e581baa777b3133d2e7de1706d9fb2229995a81a2432ccb46e0f",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap6_boundary_native_readiness_classification.json",
+        "row_count": 6,
+        "sha256": "ad4ad341a71ee94d5710249d26a60479379929f16b766b126f2ad3816b17e449",
+        "status": "passed"
+      },
+      "source_experiment": "N16",
+      "source_iteration_or_closeout": "N16 controlled basin-boundary requirements matrix",
+      "source_row_digest": "58cd77bbb5b53def60febea0c9d3f86641482183127d735885a78adb04f1975b",
+      "state_mutation_owner": "future native boundary validation telemetry recorder",
+      "telemetry_requirements": [
+        "record supported-candidate operating envelope separately from all-row stress envelope",
+        "record which rows support and limit each requirement",
+        "record negative-control blocker for each dangerous relabel",
+        "record stable replay digests"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "autonomous repair",
+        "native reabsorption",
+        "native support",
+        "selfhood",
+        "organism/life behavior",
+        "agency",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "autonomous_repair_budget_supported": false,
+        "budget_validity_required": true,
+        "reclosure_window": "selected_probe_window",
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP6_boundary",
+      "implementation_boundary": "The row is Phase 8-ready only as telemetry. It does not implement or support autonomous repair, native reabsorption, or native support.",
+      "minimal_producer_code_needed": [
+        "add default-off breach/reclosure telemetry surface",
+        "add baseline-comparison digest for B2_C4 and B3_C2 references",
+        "add autonomous-repair relabel rejection hook"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_breach_reclosure_boundary_telemetry",
+      "native_state_needed": [
+        "transient breach edge",
+        "bounded reclosure response edge",
+        "B2 baseline comparison row",
+        "B3 flux repair anchor metrics",
+        "claim ceiling that blocks autonomous repair"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "externally supplied boundary labels",
+        "post-hoc boundary labels",
+        "hidden external-state injection",
+        "missing boundary side state",
+        "stale internal state",
+        "stale external state",
+        "boundary drift outside frozen policy",
+        "untracked boundary crossing",
+        "native support relabel",
+        "selfhood/personhood relabel",
+        "identity acceptance relabel",
+        "B2 persistence as repair",
+        "breach/reclosure telemetry as autonomous repair",
+        "reclosure response as native reabsorption"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "boundary_separability",
+      "readiness_id": "phase8_ready_n19_i4_row_03_n16_breach_reclosure_boundary_telemetry_nat4",
+      "readiness_row_digest": "1be3badb8ca8dd381ac1253cfc81cb4c0d39aaedd39bfbe6e2a05daf306de1a9",
+      "runtime_visible_inputs": [
+        "breach_pressure",
+        "reclosure_score",
+        "repair_score",
+        "leakage_ratio",
+        "minimum_internal_support",
+        "coherence_margin",
+        "boundary_edges",
+        "boundary_side_assignments",
+        "B2_C4 baseline comparison",
+        "B3_C2 anchor comparison"
+      ],
+      "snapshot_replay_requirements": [
+        "replay B3_C4 boundary edges and metrics from serialized selected probe",
+        "reject B2 persistence as repair",
+        "reject autonomous repair, native reabsorption, and native support relabels"
+      ],
+      "source_candidate_row_id": "n19_i4_row_03_n16_breach_reclosure_boundary_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "74bf51bfa5b4e581baa777b3133d2e7de1706d9fb2229995a81a2432ccb46e0f",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap6_boundary_native_readiness_classification.json",
+        "row_count": 6,
+        "sha256": "ad4ad341a71ee94d5710249d26a60479379929f16b766b126f2ad3816b17e449",
+        "status": "passed"
+      },
+      "source_experiment": "N16",
+      "source_iteration_or_closeout": "N16 selected B3_C4 breach/reclosure probe and requirements matrix",
+      "source_row_digest": "02e099f088b3dcad75f3c6ff14f3f56217c77aab68c1680b1b586aef2e8f510a",
+      "state_mutation_owner": "future native breach/reclosure telemetry recorder",
+      "telemetry_requirements": [
+        "record breach pressure and reclosure edge separately",
+        "record reclosure score and repair score as telemetry only",
+        "record B2_C4 baseline and B3_C2 anchor comparison",
+        "record autonomous repair and native reabsorption claim flags false"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "semantic action",
+        "semantic perception",
+        "agency",
+        "intention",
+        "native closed loop",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "g3_minimum_rung": true,
+        "required": true,
+        "units": [
+          "trace_leg_count",
+          "ordered_event_count",
+          "source_window_count",
+          "canonical_json_input_bytes",
+          "canonical_json_output_bytes",
+          "validation_count"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP7_closed_loop",
+      "implementation_boundary": "N19 classifies native-readiness for trace telemetry only. It does not implement native closed-loop state or semantic action/perception.",
+      "minimal_producer_code_needed": [
+        "add default-off ordered loop trace-leg telemetry record",
+        "add phase-order digest over t0/t1/t2/t3 events",
+        "add G0-G2 fail-closed rung validation",
+        "add fourth-leg feedback dependency validation hook"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_ordered_closed_loop_trace_leg_telemetry",
+      "native_state_needed": [
+        "four trace-leg records with source window digests",
+        "ordered t0/t1/t2/t3 event index",
+        "response-caused external-change attribution",
+        "later-internal feedback dependency record",
+        "G0-G2 fail-closed blocker record"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "closed_boundary_engagement_loop",
+      "readiness_id": "phase8_ready_n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+      "readiness_row_digest": "44da9ae3703387246efc737144ca4c1e6d6b9690b9253231257c4fc59b453429",
+      "runtime_visible_inputs": [
+        "external_to_internal_trace",
+        "internal_response_trace",
+        "response_to_external_change_trace",
+        "external_feedback_to_internal_trace",
+        "phase_order_t0_t1_t2_t3",
+        "loop_ladder_rung",
+        "one_way_crossing_active_null_status",
+        "later_internal_dependency_on_changed_external_state"
+      ],
+      "snapshot_replay_requirements": [
+        "replay trace legs from serialized artifact rows",
+        "reject missing fourth-leg feedback",
+        "reject phase-order inversion",
+        "reject one-way crossing relabel as closure"
+      ],
+      "source_candidate_row_id": "n19_i5_row_01_n17_ordered_trace_leg_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5da747e86b49ec88921ed204a4af3dc369acf31c4696fce403f18c53c870845c",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap7_loop_native_readiness_classification.json",
+        "row_count": 7,
+        "sha256": "8144c3b8c3d94f553b8ce9c85a2bf97222eee6cded317613c1200283c0b7c9fa",
+        "status": "passed"
+      },
+      "source_experiment": "N17",
+      "source_iteration_or_closeout": "N17 I2-I4 ordered loop contract and first G3 candidate",
+      "source_row_digest": "50f67f0e9c880ce0f1c4722af6bb6bfb2fdbe2e229dd324870a9b0392e1db8e1",
+      "state_mutation_owner": "future native loop trace recorder at LGRC step snapshot boundary",
+      "telemetry_requirements": [
+        "record all four ordered trace legs before row decision",
+        "record G3 as the first admissible closure rung",
+        "record one-way crossing and G2 outbound response as below-closure controls",
+        "record response-caused external change separately from later external change",
+        "record later internal dependence on changed external state"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "agency",
+        "intention",
+        "semantic action",
+        "semantic perception",
+        "semantic action-perception loop",
+        "native closed loop",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "duplicate_replay_is_run_level_control": true,
+        "required": true,
+        "units": [
+          "replay_count",
+          "negative_control_count",
+          "claim_boundary_check_count",
+          "canonical_digest_count",
+          "validation_count"
+        ]
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP7_closed_loop",
+      "implementation_boundary": "N19 classifies replay/control readiness only. It does not make AP7 native and does not admit semantic agency, action, or perception claims.",
+      "minimal_producer_code_needed": [
+        "add default-off loop replay/control telemetry surface",
+        "add canonical replay digest over trace legs, budget, row decision, and claim flags",
+        "add negative-control blocker records for loop failure modes",
+        "add run-level duplicate replay note distinct from schema-backed row controls"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_closed_loop_replay_order_control_telemetry",
+      "native_state_needed": [
+        "stable replay matrix",
+        "fail-closed loop-specific negative control matrix",
+        "claim boundary record",
+        "duplicate replay run-level note",
+        "source digest set for loop artifacts"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "outbound response relabel",
+        "semantic action/perception loop relabel",
+        "native closed-loop relabel"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "closed_boundary_engagement_loop",
+      "readiness_id": "phase8_ready_n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+      "readiness_row_digest": "75499b579b564dfbb2fb415709b6c08f746bb3fe45b3c7bb2d3702ae03ffb03e",
+      "runtime_visible_inputs": [
+        "artifact_only_replay_status",
+        "snapshot_load_replay_status",
+        "duplicate_replay_status",
+        "order_inversion_control_status",
+        "post_hoc_stitching_control_status",
+        "hidden_external_state_memory_control_status",
+        "hidden_internal_state_carryover_control_status",
+        "external_change_not_caused_by_response_control_status",
+        "claim_boundary_flags"
+      ],
+      "snapshot_replay_requirements": [
+        "artifact-only replay stable",
+        "snapshot/load replay stable",
+        "duplicate replay stable",
+        "order-inversion control fails closed as expected",
+        "post-hoc stitching control fails closed as expected"
+      ],
+      "source_candidate_row_id": "n19_i5_row_02_n17_loop_replay_order_control_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5da747e86b49ec88921ed204a4af3dc369acf31c4696fce403f18c53c870845c",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap7_loop_native_readiness_classification.json",
+        "row_count": 7,
+        "sha256": "8144c3b8c3d94f553b8ce9c85a2bf97222eee6cded317613c1200283c0b7c9fa",
+        "status": "passed"
+      },
+      "source_experiment": "N17",
+      "source_iteration_or_closeout": "N17 I5-I6 replay/order/control matrix and claim boundary",
+      "source_row_digest": "9d2482988a3e6af924a3f65d7eea8f49a09dd6aa8956bdd50dbdf8112a5a5c64",
+      "state_mutation_owner": "future native loop replay/control validator",
+      "telemetry_requirements": [
+        "record replay stability before loop claim admission",
+        "record fail-closed negative controls with blocker ids",
+        "record duplicate replay separately from schema-backed row controls",
+        "record unsafe claim flags false beside every loop row"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "semantic action",
+        "semantic perception",
+        "agency",
+        "intention",
+        "autonomous repair",
+        "native support",
+        "native closed loop",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "alternative_g5_source": "accepted_alternative_target_band_g5_mvp_challenge_stability_no_final_ap7",
+        "g3_source": "accepted_perturbation_response_recovery_g3_candidate_pending_controls_no_ap7",
+        "g5_source": "accepted_bounded_g5_mvp_challenge_stability_no_final_ap7",
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP7_closed_loop",
+      "implementation_boundary": "The row is Phase 8-ready as telemetry only. It does not implement native closed-loop control, semantic action, perception, or autonomous repair.",
+      "minimal_producer_code_needed": [
+        "add default-off perturbation-response loop telemetry surface",
+        "add response-causation attribution record",
+        "add later-internal dependency-on-changed-external-state record",
+        "add challenge-stability envelope digest and fail-closed controls"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_perturbation_response_recovery_loop_telemetry",
+      "native_state_needed": [
+        "perturbation field trace",
+        "internal support before/after response",
+        "bounded reclosure response edge",
+        "challenge-stability envelope rows",
+        "alternative target-band gated challenge rows"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "one-step recovery as closed loop",
+        "response label as semantic action",
+        "later stability without changed-field dependence"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "closed_boundary_engagement_loop",
+      "readiness_id": "phase8_ready_n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+      "readiness_row_digest": "77e3807c99f45905ba79f0216b8eae79f70d2e04f83b09a5c27ed1d2eecc809b",
+      "runtime_visible_inputs": [
+        "external_perturbation_crossing",
+        "internal_support_shift",
+        "bounded_response_or_reclosure",
+        "response_caused_external_perturbation_field_change",
+        "later_internal_support_conditioned_by_changed_external_state",
+        "challenge_stability_envelope",
+        "target_band_gated_alternative_envelope",
+        "support_floor",
+        "budget_surface"
+      ],
+      "snapshot_replay_requirements": [
+        "replay the G3 candidate through I5 controls",
+        "replay I6-A fixed challenge-stability envelope",
+        "replay I6-B alternative target-band-gated envelope",
+        "reject feedback-removed and external-change-not-caused-by-response controls"
+      ],
+      "source_candidate_row_id": "n19_i5_row_03_n17_perturbation_response_recovery_loop_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5da747e86b49ec88921ed204a4af3dc369acf31c4696fce403f18c53c870845c",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap7_loop_native_readiness_classification.json",
+        "row_count": 7,
+        "sha256": "8144c3b8c3d94f553b8ce9c85a2bf97222eee6cded317613c1200283c0b7c9fa",
+        "status": "passed"
+      },
+      "source_experiment": "N17",
+      "source_iteration_or_closeout": "N17 I4, I6-A, and I6-B perturbation-response-recovery loop probes",
+      "source_row_digest": "b51df0d86ffc3eff0254522deb27c533bf2d438734bea8ab0b56cb57d73fd9a4",
+      "state_mutation_owner": "future native perturbation-response loop telemetry recorder",
+      "telemetry_requirements": [
+        "record perturbation field before crossing",
+        "record support shift after crossing",
+        "record bounded response/reclosure and its budget cost",
+        "record response-caused perturbation-field change",
+        "record later internal support dependence on the changed field",
+        "record G5 challenge-stability envelope and failed controls"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "semantic goal ownership",
+        "resource seeking",
+        "intention",
+        "semantic action",
+        "semantic perception",
+        "native support",
+        "agency",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "i7a_fixed_route_b_support_margin_above_floor": 0.074495897432,
+        "i7b_does_not_expand_i7a_envelope": true,
+        "i7b_low_margin_min_supported": 0.00583821862,
+        "i7b_low_margin_support_margin_above_floor": 0.02583821862,
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP7_closed_loop",
+      "implementation_boundary": "The row is a local resource/support telemetry readiness candidate. It does not implement native support, resource seeking, or semantic goal pursuit.",
+      "minimal_producer_code_needed": [
+        "add default-off resource/support loop telemetry surface",
+        "add route-fixed resource access digest",
+        "add support-floor and target-band gate records",
+        "add local challenge-envelope records for fixed and alternative setups",
+        "add resource/goal/native-support relabel rejection hooks"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_resource_support_modulation_loop_telemetry",
+      "native_state_needed": [
+        "fixed route_b resource/support loop row",
+        "I7-A fixed-row local G5 envelope",
+        "I7-B alternative low-margin local G5 envelope",
+        "support floor and target-band gate records",
+        "goal-pursuit and native-support relabel controls"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "resource label-only relabel",
+        "resource depletion as goal pursuit",
+        "route_a burden switching as route_b stability",
+        "native support relabel"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "closed_boundary_engagement_loop",
+      "readiness_id": "phase8_ready_n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+      "readiness_row_digest": "3cd330a93929987ef845910320896de2dcb9895cd9745bf540e72b190ded1c1d",
+      "runtime_visible_inputs": [
+        "route_b_resource_support_access_modulation",
+        "support_floor",
+        "support_margin_above_floor",
+        "target_band",
+        "resource_support_attenuation",
+        "access_delay_window",
+        "route_b_support_reduction",
+        "compound_support_cost",
+        "resource_goal_pursuit_relabel_control"
+      ],
+      "snapshot_replay_requirements": [
+        "replay fixed route_b row without retuning",
+        "replay I7-A fixed-row G5 envelope",
+        "replay I7-B alternative low-margin envelope as separate evidence",
+        "reject support-floor crossing, target-band crossing, and missing-feedback controls"
+      ],
+      "source_candidate_row_id": "n19_i5_row_04_n17_resource_support_loop_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5da747e86b49ec88921ed204a4af3dc369acf31c4696fce403f18c53c870845c",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap7_loop_native_readiness_classification.json",
+        "row_count": 7,
+        "sha256": "8144c3b8c3d94f553b8ce9c85a2bf97222eee6cded317613c1200283c0b7c9fa",
+        "status": "passed"
+      },
+      "source_experiment": "N17",
+      "source_iteration_or_closeout": "N17 I7, I7-A, and I7-B resource/support loop probes",
+      "source_row_digest": "0e03fcb38158d5e30d2d04dd55e1164cb387dde637a5e99c7d3a7fe103f5dc5c",
+      "state_mutation_owner": "future native resource/support loop telemetry recorder",
+      "telemetry_requirements": [
+        "record selected route identity and resource/support access trace",
+        "record support floor and target-band membership before row decision",
+        "record fixed-row I7-A envelope separately from I7-B alternative setup",
+        "record floor crossing, target-band crossing, missing feedback, and goal-pursuit relabel controls"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "general shared-medium G6",
+        "B4_C5 original reverse-perspective replay",
+        "symmetric native multi-basin replay",
+        "native multi-basin selfhood",
+        "semantic action",
+        "semantic perception",
+        "agency",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "b4c5_derived_two_cycle_candidate_supported": true,
+        "local_one_sided_candidate_supported": true,
+        "local_paired_candidate_supported": true,
+        "original_b4c5_reverse_replay_supported": false,
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP7_closed_loop",
+      "implementation_boundary": "The row is scoped shared-medium telemetry readiness only. It does not support general shared-medium G6, symmetric native replay, or native multi-basin selfhood.",
+      "minimal_producer_code_needed": [
+        "add default-off scoped shared-medium loop telemetry surface",
+        "add paired-perspective and derived two-cycle provenance digests",
+        "add original-B4_C5 reverse replay blocker field",
+        "add merge/leakage attribution controls",
+        "add general/symmetric/native shared-medium relabel rejection hooks"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_scoped_shared_medium_loop_telemetry",
+      "native_state_needed": [
+        "local one-sided shared-medium G6 row",
+        "alternate-source shared-medium G6 row",
+        "local paired-perspective shared-medium G6 row",
+        "B4_C5-derived two-cycle paired-perspective G6 row",
+        "original B4_C5 reverse-perspective blocker",
+        "merge/leakage attribution controls"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "post-hoc loop stitching",
+        "hidden external-state memory",
+        "hidden internal-state carryover",
+        "external change not caused by response",
+        "feedback order inversion",
+        "feedback removed",
+        "one-way crossing relabel as closed loop",
+        "semantic agency relabel",
+        "semantic action/perception relabel",
+        "native support relabel",
+        "neighbor leakage as retention",
+        "merge/leakage as reciprocity",
+        "label swap as reverse perspective",
+        "8-C evidence imported as original B4_C5 reverse replay",
+        "general shared-medium G6 relabel",
+        "symmetric native multi-basin replay relabel"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "closed_boundary_engagement_loop",
+      "readiness_id": "phase8_ready_n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4",
+      "readiness_row_digest": "6b654af6b14809bd79f99c7cf7f2b78a1a9877a9d1a70fc14cb6a8b12ba62518",
+      "runtime_visible_inputs": [
+        "shared_medium_boundary_exchange",
+        "coupling_channel_attribution",
+        "shared_medium_leakage",
+        "neighbor_leakage",
+        "merge_confusion_pressure",
+        "local_paired_perspective_trace",
+        "b4c5_derived_two_cycle_reverse_side_state",
+        "original_b4c5_reverse_replay_blocker"
+      ],
+      "snapshot_replay_requirements": [
+        "replay local one-sided shared-medium row with one-sided scope",
+        "replay local paired-perspective row without importing it into original B4_C5",
+        "replay B4_C5-derived two-cycle row as derived protocol only",
+        "reject original B4_C5 reverse replay and label-swap controls",
+        "reject merge/leakage as reciprocity"
+      ],
+      "source_candidate_row_id": "n19_i5_row_05_n17_scoped_shared_medium_loop_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5da747e86b49ec88921ed204a4af3dc369acf31c4696fce403f18c53c870845c",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap7_loop_native_readiness_classification.json",
+        "row_count": 7,
+        "sha256": "8144c3b8c3d94f553b8ce9c85a2bf97222eee6cded317613c1200283c0b7c9fa",
+        "status": "passed"
+      },
+      "source_experiment": "N17",
+      "source_iteration_or_closeout": "N17 I8 through I8-D scoped shared-medium loop probes",
+      "source_row_digest": "28a464c91f1cda9456e33e231a8cb3b51aaa542cd2a4a04ac3a3805a88a4cbba",
+      "state_mutation_owner": "future native scoped shared-medium loop telemetry recorder",
+      "telemetry_requirements": [
+        "record shared-medium exchange and coupling-channel attribution",
+        "record leakage, neighbor leakage, and merge pressure separately",
+        "record local paired perspective rows separately from original B4_C5 replay",
+        "record B4_C5-derived two-cycle protocol as derived evidence only",
+        "record general/symmetric/native shared-medium relabel blockers"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "general AP8",
+        "h8/h16 extrapolation",
+        "unbounded long-horizon persistence",
+        "native support",
+        "fully native integration",
+        "unrestricted autonomy",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "highest_positive_stress_ladder_rung": "L5",
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "h4",
+        "minimum_budget_headroom_classified_stack": 0.01,
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP8_horizon_budget",
+      "implementation_boundary": "N19 classifies h4 envelope readiness only. It does not recover h8/h16, support general AP8, or implement native horizon persistence.",
+      "minimal_producer_code_needed": [
+        "add default-off native horizon-envelope telemetry surface",
+        "add horizon-window decision digest",
+        "add h8/h16 extrapolation blocker records",
+        "add limited-claim-ceiling replay digest"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_limited_horizon_envelope_validation_telemetry",
+      "native_state_needed": [
+        "source-current horizon window id",
+        "relative window count",
+        "horizon decision per window",
+        "horizon extrapolation blocker",
+        "limited AP8 claim ceiling"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "stale state replay",
+        "single-axis stale support",
+        "single-axis stale memory",
+        "single-axis stale selection",
+        "single-axis stale proxy/target",
+        "single-axis stale boundary",
+        "single-axis stale loop feedback",
+        "order inversion",
+        "post-hoc long-horizon stitching",
+        "budget overrun",
+        "artifact-only reconstruction mismatch",
+        "hidden native support relabel",
+        "semantic agency relabel",
+        "Phase 8/native implementation relabel",
+        "limited AP8 as general AP8",
+        "h8 partial as supported horizon",
+        "h16 rejected as recoverable horizon"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "long_horizon_budget_and_continuity",
+      "readiness_id": "phase8_ready_n19_i6_row_01_n18_limited_h4_horizon_envelope_telemetry_nat4",
+      "readiness_row_digest": "5d939e1be6206cec65c653bfab06623a21274d09031f567d5119b8f8498c2b4b",
+      "runtime_visible_inputs": [
+        "supported_windows",
+        "partial_windows",
+        "blocked_windows",
+        "max_supported_horizon",
+        "horizon_extrapolation_allowed",
+        "highest_positive_stress_ladder_rung",
+        "final_supported_ap_level",
+        "final_claim_ceiling"
+      ],
+      "snapshot_replay_requirements": [
+        "artifact-only replay of horizon sweep and closeout fields",
+        "snapshot/load replay of horizon envelope",
+        "reject horizon extrapolation beyond h4",
+        "reject h8/h16 recovery without new source-backed rows"
+      ],
+      "source_candidate_row_id": "n19_i6_row_01_n18_limited_h4_horizon_envelope_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5423c24806dba6df1344c667646fa72d329ce939857b9577b369fc9fe4c558b3",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap8_horizon_budget_native_readiness_classification.json",
+        "row_count": 5,
+        "sha256": "be1b9e3288e2d3a5c4999a827b8024b2ac14ab5b6bc37ea504caff5709920c68",
+        "status": "passed"
+      },
+      "source_experiment": "N18",
+      "source_iteration_or_closeout": "N18 I4 horizon sweep, I9 classification, and I10 closeout",
+      "source_row_digest": "5739b650b7179691671dcc22dacf653644163468b7f53fa6fdd3ed1cdbb76b0b",
+      "state_mutation_owner": "future native horizon-envelope validation telemetry recorder",
+      "telemetry_requirements": [
+        "record supported, partial, and blocked horizon windows separately",
+        "record max_supported_horizon as h4 before claim classification",
+        "record h8 partial and h16 rejected as blockers, not pending successes",
+        "record limited AP8 claim ceiling with every horizon envelope row"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "artifact replay as native support",
+        "hidden native support",
+        "native implementation",
+        "general AP8",
+        "agency",
+        "semantic action/perception",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "artifact_only_reconstruction": "stable",
+        "duplicate_replay": "stable",
+        "minimum_budget_headroom_classified_stack": 0.01,
+        "order_inversion_control": "failed_closed_as_expected",
+        "post_hoc_stitching_control": "failed_closed_as_expected",
+        "required": true,
+        "snapshot_load_replay": "stable"
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP8_horizon_budget",
+      "implementation_boundary": "N19 classifies validation telemetry readiness. It does not implement native replay, native support, or Phase 8.",
+      "minimal_producer_code_needed": [
+        "add default-off long-horizon replay/control telemetry surface",
+        "add budget-headroom and budget-overrun digests",
+        "add single-axis stale-control records for support, memory, selection, proxy, boundary, and loop feedback",
+        "add replay digest over source rows, horizon envelope, budget surface, and claim flags"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_long_horizon_budget_replay_control_telemetry",
+      "native_state_needed": [
+        "budget headroom record",
+        "replay digest matrix",
+        "negative control matrix",
+        "single-axis stale-control matrix",
+        "budget overrun blocker",
+        "artifact-only reconstruction digest"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "stale state replay",
+        "single-axis stale support",
+        "single-axis stale memory",
+        "single-axis stale selection",
+        "single-axis stale proxy/target",
+        "single-axis stale boundary",
+        "single-axis stale loop feedback",
+        "order inversion",
+        "post-hoc long-horizon stitching",
+        "budget overrun",
+        "artifact-only reconstruction mismatch",
+        "hidden native support relabel",
+        "semantic agency relabel",
+        "Phase 8/native implementation relabel"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "long_horizon_budget_and_continuity",
+      "readiness_id": "phase8_ready_n19_i6_row_02_n18_budget_replay_control_telemetry_nat4",
+      "readiness_row_digest": "6e981afb0836689a676aeed176dfbd88469a67082c794d600cec956ae61b4dae",
+      "runtime_visible_inputs": [
+        "minimum_budget_headroom_classified_stack",
+        "artifact_only_reconstruction_status",
+        "duplicate_replay_status",
+        "snapshot_load_replay_status",
+        "order_inversion_control_status",
+        "post_hoc_stitching_control_status",
+        "stale_state_control_status",
+        "single_axis_stale_control_statuses",
+        "budget_overrun_control_status"
+      ],
+      "snapshot_replay_requirements": [
+        "artifact-only reconstruction stable",
+        "duplicate replay stable",
+        "snapshot/load replay stable",
+        "order-inversion control fails closed as expected",
+        "post-hoc stitching control fails closed as expected",
+        "single-axis stale controls fail closed as expected"
+      ],
+      "source_candidate_row_id": "n19_i6_row_02_n18_budget_replay_control_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5423c24806dba6df1344c667646fa72d329ce939857b9577b369fc9fe4c558b3",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap8_horizon_budget_native_readiness_classification.json",
+        "row_count": 5,
+        "sha256": "be1b9e3288e2d3a5c4999a827b8024b2ac14ab5b6bc37ea504caff5709920c68",
+        "status": "passed"
+      },
+      "source_experiment": "N18",
+      "source_iteration_or_closeout": "N18 I9 classification and I10 replay/control closeout",
+      "source_row_digest": "2382412eaeb2cd3dbfc1c703548473d7f9e496aec244afd54e939e6cf54e6375",
+      "state_mutation_owner": "future native long-horizon replay/budget validator",
+      "telemetry_requirements": [
+        "record budget headroom beside every positive long-horizon claim row",
+        "record replay digest stability for artifact-only, duplicate, and snapshot/load replay",
+        "record order inversion and post-hoc stitching as failed-closed controls",
+        "record each single-axis stale control separately",
+        "record budget overrun as failed-closed blocker"
+      ]
+    },
+    {
+      "blocked_claims": [
+        "general shared-medium robustness",
+        "I8-A as I8 replacement",
+        "autonomous adaptation",
+        "unrestricted autonomy",
+        "general AP8",
+        "native support",
+        "Phase 8 opened",
+        "AP9"
+      ],
+      "budget_surface": {
+        "i8_boundary_to_loop_feedback_score": 0.8,
+        "i8_budget_headroom": 0.01,
+        "i8a_boundary_to_loop_feedback_score": 0.822,
+        "i8a_budget_headroom": 0.06,
+        "principal_bottleneck_score": 0.8,
+        "required": true
+      },
+      "claim_flags": {
+        "agency_claim_allowed": false,
+        "ap9_opened": false,
+        "choice_claim_allowed": false,
+        "fully_native_agentic_like_integration_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "intention_claim_allowed": false,
+        "native_support_opened": false,
+        "organism_life_claim_allowed": false,
+        "phase8_opened": false,
+        "selfhood_claim_allowed": false,
+        "semantic_action_claim_allowed": false,
+        "semantic_goal_ownership_claim_allowed": false,
+        "semantic_perception_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "claim_flags_all_false": true,
+      "classification_scope": "AP8_horizon_budget",
+      "implementation_boundary": "The row is bottleneck telemetry readiness only. It does not widen N18 beyond h4/L5 and does not infer autonomy from drift or margin. The boundary_to_loop_feedback bottleneck is recorded as a Phase 8 validation requirement, not resolved.",
+      "minimal_producer_code_needed": [
+        "add default-off cross-axis continuity telemetry surface",
+        "add principal bottleneck axis/link/score record",
+        "add I8/I8-A role-separation record",
+        "add controls for dropped feedback, budget relief, threshold relaxation, and horizon shortening"
+      ],
+      "nat4_gate_results": {
+        "budget_surface_specified": true,
+        "claim_flags_forced_false": true,
+        "default_off_flags_present": true,
+        "enabled_validated_supported_separation_present": true,
+        "native_policy_or_telemetry_surface_name_present": true,
+        "native_support_opened_false": true,
+        "negative_controls_specified": true,
+        "non_rc_quantity_audit_passes": true,
+        "phase8_opened_false": true,
+        "record_schema_sketch_present": true,
+        "runtime_visible_inputs_source_backed": true,
+        "snapshot_replay_requirements_specified": true,
+        "src_diff_empty_true": true,
+        "state_mutation_owner_specified": true,
+        "telemetry_requirements_specified": true
+      },
+      "nat4_gates_all_pass": true,
+      "nat_level": "NAT4",
+      "native_implementation_claimed": false,
+      "native_policy_or_telemetry_surface_name": "native_cross_axis_continuity_bottleneck_telemetry",
+      "native_state_needed": [
+        "per-axis continuity score records",
+        "cross-axis linked continuity record",
+        "principal bottleneck axis/link/score",
+        "I8 equality-at-floor shared-medium row",
+        "I8-A margin evidence row with non-replacement role"
+      ],
+      "native_support_opened": false,
+      "negative_controls": [
+        "stale state replay",
+        "single-axis stale support",
+        "single-axis stale memory",
+        "single-axis stale selection",
+        "single-axis stale proxy/target",
+        "single-axis stale boundary",
+        "single-axis stale loop feedback",
+        "order inversion",
+        "post-hoc long-horizon stitching",
+        "budget overrun",
+        "artifact-only reconstruction mismatch",
+        "hidden native support relabel",
+        "semantic agency relabel",
+        "Phase 8/native implementation relabel",
+        "dropped boundary_to_loop_feedback",
+        "hidden budget relief",
+        "threshold relaxation",
+        "horizon shortening",
+        "I8-A as I8 replacement",
+        "general shared-medium robustness relabel",
+        "drift as autonomy"
+      ],
+      "phase8_opened": false,
+      "phase8_ready": true,
+      "producer_implementation_scope": "future default-off Phase 8 producer/runtime work only; N19 records the required surface and validation contract without implementing it",
+      "readiness_domain": "long_horizon_budget_and_continuity",
+      "readiness_id": "phase8_ready_n19_i6_row_03_n18_cross_axis_bottleneck_telemetry_nat4",
+      "readiness_row_digest": "e5782fd2d362e8b3cd61f345f2fb280acfbbc2abc9ff0615dd913820c97684cf",
+      "runtime_visible_inputs": [
+        "support_proxy_axis_status",
+        "route_memory_axis_status",
+        "environment_resource_axis_status",
+        "shared_medium_axis_status",
+        "boundary_to_loop_feedback_score",
+        "minimum_loop_feedback_score_supported_h4_rows",
+        "minimum_budget_headroom_supported_h4_rows",
+        "i8_i8a_relationship",
+        "principal_bottleneck_link"
+      ],
+      "snapshot_replay_requirements": [
+        "replay I5-I8A source rows with fixed h4/L5 policy",
+        "reject dropped boundary_to_loop_feedback variants",
+        "reject hidden budget relief, threshold relaxation, and horizon shortening",
+        "reject I8-A replacement or averaging-away of I8 bottleneck"
+      ],
+      "source_candidate_row_id": "n19_i6_row_03_n18_cross_axis_bottleneck_telemetry_nat4",
+      "source_classifier_artifact": {
+        "output_digest": "5423c24806dba6df1344c667646fa72d329ce939857b9577b369fc9fe4c558b3",
+        "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_ap8_horizon_budget_native_readiness_classification.json",
+        "row_count": 5,
+        "sha256": "be1b9e3288e2d3a5c4999a827b8024b2ac14ab5b6bc37ea504caff5709920c68",
+        "status": "passed"
+      },
+      "source_experiment": "N18",
+      "source_iteration_or_closeout": "N18 I5-I8A stress stack and I10 bottleneck closeout",
+      "source_row_digest": "6335d6b04eb4df0879c09995bd26269363e71eec79b913a4497382ade486ea38",
+      "state_mutation_owner": "future native cross-axis continuity telemetry recorder",
+      "telemetry_requirements": [
+        "record cross-axis continuity by axis and link",
+        "record boundary_to_loop_feedback as the principal bottleneck",
+        "record I8 minimal equality-at-floor support separately from I8-A margin evidence",
+        "record I8-A as additional robustness evidence, not replacement",
+        "record general shared-medium robustness as blocked"
+      ]
+    }
+  ],
+  "purpose": "Close N19 as a native-readiness review and answer whether every AP3-AP8 rung has NAT4 evidence sufficient for current native ladder generation.",
+  "schema_version": "n19_closeout_and_handoff_v1",
+  "src_diff_empty": true,
+  "status": "passed"
+}
