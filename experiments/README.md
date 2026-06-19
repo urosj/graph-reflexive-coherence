@@ -136,6 +136,18 @@ boundary_to_loop_feedback`, and Phase 8/native support remain unopened.
 General AP8, semantic agency, identity acceptance, organism/life, fully native
 integration, and unrestricted agency claims remain blocked.
 
+N18 Iteration 8 supporting visualization:
+
+| Stress-relation graph | B4/C5 source geometry | Source-row sequence |
+| --- | --- | --- |
+| [![N18 I8 stress-relation graph](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif) | [![N18 I8 B4/C5 source geometry](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif) | ![N18 I8 shared-medium sequence](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png) |
+
+Click either graph image to open its animation. The stress graph shows how the
+I8 evidence axes relate to each other; the geometry graph shows the
+source-backed B4/C5 artifact geometry constructed from basin nodes, side
+assignments, and boundary edges. The visuals are supporting artifact-level
+inspection aids, not native LGRC telemetry or additional evidence.
+
 N19 closes as the N12-style native naturalization review for the N13-N18
 AP3-AP8 stack:
 
@@ -157,18 +169,6 @@ ladder. This closes the current N12-N19 documentation/review stack before any
 new series is defined. Any N20+ or Phase 8 implementation series needs its own
 roadmap/branch and must start from the N19 AP4/AP5 NAT4 gaps rather than
 silently treating the ladder as natively generatable.
-
-N18 Iteration 8 supporting visualization:
-
-| Stress-relation graph | B4/C5 source geometry | Source-row sequence |
-| --- | --- | --- |
-| [![N18 I8 stress-relation graph](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif) | [![N18 I8 B4/C5 source geometry](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif) | ![N18 I8 shared-medium sequence](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png) |
-
-Click either graph image to open its animation. The stress graph shows how the
-I8 evidence axes relate to each other; the geometry graph shows the
-source-backed B4/C5 artifact geometry constructed from basin nodes, side
-assignments, and boundary edges. The visuals are supporting artifact-level
-inspection aids, not native LGRC telemetry or additional evidence.
 
 Roadmap-level context:
 
