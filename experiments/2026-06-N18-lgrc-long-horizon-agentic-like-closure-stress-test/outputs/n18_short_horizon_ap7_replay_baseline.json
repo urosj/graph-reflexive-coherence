@@ -1,0 +1,4275 @@
+{
+  "acceptance_state": "accepted_short_horizon_ap7_replay_baseline_no_ap8",
+  "ap8_candidate_allowed": false,
+  "artifact_id": "n18_short_horizon_ap7_replay_baseline",
+  "baseline_ap7_replay_supported": true,
+  "checks": [
+    {
+      "check_id": "required_source_rows_selected",
+      "detail": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "baseline_row_supported_at_l1",
+      "detail": "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+      "passed": true
+    },
+    {
+      "check_id": "baseline_trace_axes_source_current",
+      "detail": [
+        "support_state_trace",
+        "memory_context_trace",
+        "regulation_trace",
+        "selection_context_trace",
+        "proxy_target_trace",
+        "boundary_separation_trace",
+        "closed_loop_feedback_trace"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "baseline_ap7_replay_not_promoted_to_ap8",
+      "detail": {
+        "ap8_candidate_allowed": false,
+        "final_ap8_supported": false,
+        "long_horizon_continuity_evidence": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "stale_controls_fail_closed",
+      "detail": [
+        "n18_i3_row_03_stale_state_replay_control",
+        "n18_i3_row_04_stale_support_state_control",
+        "n18_i3_row_05_stale_memory_context_control",
+        "n18_i3_row_06_stale_selection_context_control",
+        "n18_i3_row_07_stale_proxy_target_control",
+        "n18_i3_row_08_stale_boundary_state_control",
+        "n18_i3_row_09_stale_loop_feedback_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "hidden_native_support_relabel_fails_closed",
+      "detail": "n18_i3_row_10_hidden_native_support_relabel_control",
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_keep_ap8_false",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "actual_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+      "check_id": "source_digest_matches_n18_i1_row_01_n17_closeout_ap7",
+      "expected_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+      "check_id": "source_digest_matches_n18_i1_row_02_n17_requirements_matrix",
+      "expected_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_closed_loop_requirements_matrix.json"
+    },
+    {
+      "actual_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+      "check_id": "source_digest_matches_n18_i1_row_03_n17_replay_control_matrix",
+      "expected_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_loop_replay_and_control_matrix.json"
+    },
+    {
+      "actual_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+      "check_id": "source_digest_matches_n18_i1_row_04_n17_claim_boundary_record",
+      "expected_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N17-lgrc-closed-boundary-engagement-loop/outputs/n17_claim_boundary_record.json"
+    },
+    {
+      "actual_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+      "check_id": "source_digest_matches_n18_i1_row_05_n16_closeout_ap6",
+      "expected_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "check_id": "source_digest_matches_n18_i1_row_06_n15_closeout_ap5",
+      "expected_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N15-lgrc-endogenous-proxy-formation/outputs/n15_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "check_id": "source_digest_matches_n18_i1_row_07_n14_closeout_ap4",
+      "expected_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N14-lgrc-consequence-sensitive-route-selection/outputs/n14_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "check_id": "source_digest_matches_n18_i1_row_08_n13_closeout_ap3",
+      "expected_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806",
+      "passed": true,
+      "source_artifact": "experiments/2026-06-N13-lgrc-self-maintenance-and-support-seeking-regulation/outputs/n13_closeout_and_handoff.json"
+    },
+    {
+      "actual_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "check_id": "source_digest_matches_n18_i1_row_11_n08_memory_closeout",
+      "expected_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "passed": true,
+      "source_artifact": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json"
+    },
+    {
+      "actual_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "check_id": "source_digest_matches_n18_i1_row_12_n09_regulation_closeout",
+      "expected_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68",
+      "passed": true,
+      "source_artifact": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_9_gpr6_closeout.json"
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    }
+  ],
+  "closed_long_horizon_agentic_like_closure_demonstrated": false,
+  "command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/build_n18_short_horizon_ap7_replay_baseline.py",
+  "control_rungs_are_not_positive_evidence": true,
+  "control_rungs_exercised": [
+    "L6"
+  ],
+  "evidence_branch": "artifact_only",
+  "experiment": "N18",
+  "failed_checks": [],
+  "final_ap8_supported": false,
+  "generated_at": "2026-06-18T00:00:00+00:00",
+  "git": {
+    "head": "not_recorded_in_artifact",
+    "policy": "git metadata excluded to keep artifact replay portable",
+    "status_short": []
+  },
+  "highest_positive_stress_ladder_rung": "L1",
+  "iteration": 3,
+  "long_horizon_continuity_tested": false,
+  "native_branch_opened": false,
+  "native_support_opened": false,
+  "output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+  "phase8_branch_opened": false,
+  "phase8_opened": false,
+  "purpose": "short-horizon AP7 replay baseline and AP8 active-null controls",
+  "ready_for_iteration_4_horizon_window_sweep": true,
+  "row_count": 10,
+  "rows": [
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": true,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": true,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "baseline_ap7_replay_supported_no_ap8",
+      "artifact_only_reconstruction_status": "stable",
+      "artifact_only_replay_digest": "3f5e2b2625baef28163a543f204c55eeb41ee4b2f11c7815555832f563c2e46a",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": true,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "baseline_horizon_only",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "supported",
+      "row_id": "n18_i3_row_01_n17_ap7_short_horizon_replay_baseline",
+      "row_type": "baseline_replay",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration3",
+      "stress_dimension": "baseline_ap7_replay",
+      "stress_id": "i3_l1_n17_ap7_short_horizon_baseline",
+      "stress_ladder_index": 1,
+      "stress_ladder_rung": "L1",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": true,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": true,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_baseline_only",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "f1702c645bc7cf78ccfd3c3c1c7cd00d0b8098dfe141a2c156b2344218c15c3d",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "baseline_ap7_replay_is_not_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": true,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_02_baseline_ap7_as_ap8_relabel_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration3",
+      "stress_dimension": "baseline_ap7_replay",
+      "stress_id": "i3_l1_baseline_ap7_as_ap8_relabel_control",
+      "stress_ladder_index": 1,
+      "stress_ladder_rung": "L1",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_state",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "6d19706c47f21610609e17187b9d026fe39d12638d1df0754065e3135d4d2ab8",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_state_replay_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_03_stale_state_replay_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_state_control",
+      "stress_id": "i3_l6_stale_state_replay_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant cannot establish source-current continuity",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_single_axis",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "cf219d6e9a96ab256afac2c001b78e4bbc9f2796a15e732d6d133a7a1b022ed5",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_support_state_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_04_stale_support_state_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_support_state_control",
+      "stress_id": "i3_l6_stale_support_state_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant with stale or relabeled state",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": true
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_single_axis",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "8f72bbcac5b8de2688fe34f606db0309a7ded3078fce37ce72352d1ed83412c3",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_memory_context_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant with stale or relabeled state",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": true
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_05_stale_memory_context_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_memory_context_control",
+      "stress_id": "i3_l6_stale_memory_context_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_single_axis",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "8b643833244e04539e33ab72bf90d7f739f6d0099a16e65b9f92c529349180a9",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_selection_context_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_06_stale_selection_context_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant with stale or relabeled state",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": true
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_selection_context_control",
+      "stress_id": "i3_l6_stale_selection_context_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_single_axis",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "fe2681838485fdc4db80780391486fa73e3641ea255098ed571ebe70b58786f4",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_proxy_target_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant with stale or relabeled state",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": true
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_07_stale_proxy_target_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_proxy_target_control",
+      "stress_id": "i3_l6_stale_proxy_target_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_single_axis",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "ac6548673d05a93e4956dcb916ab2b172fda6b7af96e91cd7b67df3082ebf298",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant with stale or relabeled state",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": true
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_boundary_state_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_08_stale_boundary_state_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_boundary_state_control",
+      "stress_id": "i3_l6_stale_boundary_state_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": false,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": false,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_stale_single_axis",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "90d89e22d88a3131a62cd65cc33eb92a0ca309737084864917dc146891c7dd43",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "stale_loop_feedback_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "control variant with stale or relabeled state",
+        "present": true,
+        "source_backed": true,
+        "source_current": false,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": true
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": false,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": false
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "linked_trace_continuity_present",
+        "cross_axis_continuity_evidence_present",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_09_stale_loop_feedback_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "failed_expected",
+      "stress_dimension": "stale_loop_feedback_control",
+      "stress_id": "i3_l6_stale_loop_feedback_control",
+      "stress_ladder_index": 6,
+      "stress_ladder_rung": "L6",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    },
+    {
+      "ap8_candidate_allowed": false,
+      "ap8_gates": {
+        "all_required_trace_axes_present": true,
+        "artifact_only_reconstruction_passed": false,
+        "b4c5_relabel_controls_passed": false,
+        "budget_valid": true,
+        "cross_axis_continuity_evidence_present": true,
+        "drift_as_autonomy_control_passed": false,
+        "duplicate_replay_passed": false,
+        "evidence_branch_artifact_only": true,
+        "horizon_envelope_declared": true,
+        "horizon_policy_satisfied": false,
+        "linked_trace_continuity_present": true,
+        "long_horizon_continuity_present": false,
+        "native_support_not_opened": true,
+        "phase8_not_opened": true,
+        "post_hoc_stitching_control_passed": false,
+        "single_axis_stale_controls_passed": false,
+        "snapshot_load_replay_passed": false,
+        "source_claim_ceilings_preserved": true,
+        "source_rows_pinned": true,
+        "stale_state_control_passed": false,
+        "stress_controls_passed": false,
+        "unsafe_claim_flags_false": true
+      },
+      "ap8_outcome_classification": "AP8_blocked",
+      "ap8_outcome_detail": "AP8_blocked_hidden_native_support",
+      "artifact_only_reconstruction_status": "not_applicable_control_row",
+      "artifact_only_replay_digest": "99350f88b3e93bc3cdce1106390b78af607c80f7995b20349226ccca80339c4a",
+      "boundary_separation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_05_n16_closeout_ap6"
+        ],
+        "stale_axis": false
+      },
+      "budget_surface": {
+        "budget_units": "artifact_stress_units",
+        "control_rows": 9,
+        "positive_rows": 1,
+        "relative_window_count": 1,
+        "stress_rows": 10,
+        "valid": true
+      },
+      "budget_valid": true,
+      "claim_ceiling": "hidden_native_support_relabel_cannot_support_ap8",
+      "closed_loop_feedback_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_02_n17_requirements_matrix",
+          "n18_i1_row_03_n17_replay_control_matrix"
+        ],
+        "stale_axis": false
+      },
+      "controls": {
+        "artifact_only_reconstruction_mismatch_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "b4c5_original_reverse_replay_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "budget_overrun_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "drift_relabel_as_autonomy_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "general_symmetric_native_multibasin_relabel_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "hidden_native_support_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "identity_acceptance_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "long_horizon_drift_envelope_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "order_inversion_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "phase8_native_implementation_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "post_hoc_long_horizon_stitching_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "resource_shared_medium_merge_control": {
+          "effect": "deferred to later iteration",
+          "status": "not_run_iteration3"
+        },
+        "semantic_agency_relabel_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_boundary_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_loop_feedback_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_memory_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_proxy_target_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_selection_context_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_state_replay_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        },
+        "stale_support_state_control": {
+          "effect": "blocks AP8 relabel",
+          "status": "failed_expected"
+        }
+      },
+      "cross_axis_continuity_evidence": {
+        "baseline_only": true,
+        "linked_edges": [
+          "support_to_regulation",
+          "regulation_to_selection",
+          "selection_to_proxy",
+          "proxy_to_boundary",
+          "boundary_to_loop_feedback",
+          "memory_context_to_selection"
+        ],
+        "present": true,
+        "source_current": true,
+        "supports_long_horizon": false
+      },
+      "duplicate_replay_status": "not_run_iteration3",
+      "evidence_branch": "artifact_only",
+      "final_ap8_supported": false,
+      "horizon_extrapolation_allowed": false,
+      "horizon_window": {
+        "relative_window_count": 1,
+        "source_horizon": "N17 closeout baseline",
+        "window_id": "n17_ap7_closeout_baseline",
+        "window_role": "short_horizon_ap7_replay_active_null"
+      },
+      "linked_trace_continuity": {
+        "boundary_to_loop_feedback": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "memory_context_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "proxy_to_boundary": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "regulation_to_selection": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "selection_to_proxy": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        },
+        "support_to_regulation": {
+          "baseline_only": true,
+          "present": true,
+          "source_current": true
+        }
+      },
+      "long_horizon_continuity_evidence": false,
+      "max_supported_horizon": "none_for_ap8",
+      "memory_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_11_n08_memory_closeout"
+        ],
+        "stale_axis": false
+      },
+      "missing_gates": [
+        "horizon_policy_satisfied",
+        "long_horizon_continuity_present",
+        "artifact_only_reconstruction_passed",
+        "duplicate_replay_passed",
+        "snapshot_load_replay_passed",
+        "stale_state_control_passed",
+        "single_axis_stale_controls_passed",
+        "post_hoc_stitching_control_passed",
+        "drift_as_autonomy_control_passed",
+        "b4c5_relabel_controls_passed",
+        "stress_controls_passed"
+      ],
+      "native_branch_opened": false,
+      "native_support_opened": false,
+      "order_inversion_status": "not_run_iteration3",
+      "phase8_branch_opened": false,
+      "phase8_opened": false,
+      "post_hoc_stitching_control_status": "not_run_iteration3",
+      "proxy_target_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_06_n15_closeout_ap5"
+        ],
+        "stale_axis": false
+      },
+      "regulation_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "row_decision": "rejected",
+      "row_id": "n18_i3_row_10_hidden_native_support_relabel_control",
+      "row_type": "control_row",
+      "selection_context_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_07_n14_closeout_ap4"
+        ],
+        "stale_axis": false
+      },
+      "single_axis_stale_controls": {
+        "stale_boundary_state_control": "failed_expected",
+        "stale_loop_feedback_control": "failed_expected",
+        "stale_memory_context_control": "failed_expected",
+        "stale_proxy_target_control": "failed_expected",
+        "stale_selection_context_control": "failed_expected",
+        "stale_support_state_control": "failed_expected"
+      },
+      "snapshot_load_replay_status": "not_run_iteration3",
+      "source_backed_horizon_envelope": {
+        "blocked_windows": [
+          "h2",
+          "h4",
+          "h8",
+          "h16"
+        ],
+        "horizon_extrapolation_allowed": false,
+        "status": "baseline_only",
+        "supported_windows": [
+          "n17_ap7_closeout_baseline"
+        ]
+      },
+      "source_claim_ceilings": [
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate",
+        "artifact_level_ap7_closed_boundary_engagement_loop_candidate_pending_closeout",
+        "artifact_level_ap7_loop_candidate_pending_later_stress",
+        "artifact_level_ap7_claim_boundary_clean",
+        "artifact_level_ap6_self_environment_boundary_candidate_with_controlled_basin_boundary_requirements",
+        "artifact_level_ap5_endogenous_proxy_formation_candidate",
+        "artifact_level_ap4_consequence_sensitive_route_selection_candidate_with_constructed_route_conditioned_support_regulation_followout",
+        "artifact_level_ap3_self_maintenance_candidate_support_seeking_regulation",
+        "memory_context_only",
+        "bounded_regulation_context_only"
+      ],
+      "source_digests": [
+        {
+          "row_id": "n18_i1_row_01_n17_closeout_ap7",
+          "source_output_digest": "f9cb00dc918698320876332024d3f2a9af066e196b36252b8fce9c645ea2e65e",
+          "source_sha256": "84501a68377363f938a8e42a32e15bed040c5f6ebe7407ba76c27664d93c8347"
+        },
+        {
+          "row_id": "n18_i1_row_02_n17_requirements_matrix",
+          "source_output_digest": "70aa786c56879aa03b9f08acea71663e49ca5fd7041cb1af8635ba7ed1345976",
+          "source_sha256": "ab7e55dfcca0aa1f566e22045f823a357724e3c2e304183b0879c02b9546d0a9"
+        },
+        {
+          "row_id": "n18_i1_row_03_n17_replay_control_matrix",
+          "source_output_digest": "919af53a36661c52439a7be65bbb0ea18770cdec28c118043e12c399bce5bb8a",
+          "source_sha256": "b5d988c38e646a9c622e3452d4896384d559809459979357530fcfae8bb50ee4"
+        },
+        {
+          "row_id": "n18_i1_row_04_n17_claim_boundary_record",
+          "source_output_digest": "cfefe6fba20ea64e1db132f8f3f5d024fdab5397f11c036d7cb5a96508068611",
+          "source_sha256": "a362b9b9f84fbbeb753050d7e00d27ebd1a41d8be1cc9d6f5ac017a20c52a8b6"
+        },
+        {
+          "row_id": "n18_i1_row_05_n16_closeout_ap6",
+          "source_output_digest": "fb073257cde92b544ff5dbfb169d8177720cfba7622de09d913b670ce3fcebdf",
+          "source_sha256": "88811bda15a0878705e5a8339a11464136a480a8b6dae34db6e1042c1b44a74e"
+        },
+        {
+          "row_id": "n18_i1_row_06_n15_closeout_ap5",
+          "source_output_digest": "715153a1cd8336a5376cd4e2f4a4c7fcb0becce28ef63f252de2c90122b93ba9",
+          "source_sha256": "9a86c0e3f5fcc96dd055a8c05baf8b0cd22edc91693a67dc6a8ee209db862fa5"
+        },
+        {
+          "row_id": "n18_i1_row_07_n14_closeout_ap4",
+          "source_output_digest": "494da082bfe804cac1b683469d2b8e2f4e7c5f8574fc77ded7ce945c83a1422a",
+          "source_sha256": "47d794a5fd53e96e9017d5cbdcf8959d5372d6dfa52467661a0dc14661eadbc1"
+        },
+        {
+          "row_id": "n18_i1_row_08_n13_closeout_ap3",
+          "source_output_digest": "e4a1df87ca55d5e3710ccc77739f71589a8f4767fc517e9030662b5f6d06380b",
+          "source_sha256": "4a6aefc94f50d90795c64199e7cf84b430a197aa5f0e07c9215e6fa66b362806"
+        },
+        {
+          "row_id": "n18_i1_row_11_n08_memory_closeout",
+          "source_output_digest": "45351727bc12b243b62f8562f38c541029c46ccc443e67707fcb3280cd95153e",
+          "source_sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa"
+        },
+        {
+          "row_id": "n18_i1_row_12_n09_regulation_closeout",
+          "source_output_digest": "45083c4e9fecc817a8e54a7683828ecc201ade747090f0a519bcb681909eaa88",
+          "source_sha256": "f2023e4b3aa456ac7aa301494b25e4a190226260fb90adc1c292182dccee3b68"
+        }
+      ],
+      "source_rows": [
+        "n18_i1_row_01_n17_closeout_ap7",
+        "n18_i1_row_02_n17_requirements_matrix",
+        "n18_i1_row_03_n17_replay_control_matrix",
+        "n18_i1_row_04_n17_claim_boundary_record",
+        "n18_i1_row_05_n16_closeout_ap6",
+        "n18_i1_row_06_n15_closeout_ap5",
+        "n18_i1_row_07_n14_closeout_ap4",
+        "n18_i1_row_08_n13_closeout_ap3",
+        "n18_i1_row_11_n08_memory_closeout",
+        "n18_i1_row_12_n09_regulation_closeout"
+      ],
+      "stale_state_control_status": "not_run_iteration3",
+      "stress_dimension": "baseline_ap7_replay",
+      "stress_id": "i3_l1_hidden_native_support_relabel_control",
+      "stress_ladder_index": 1,
+      "stress_ladder_rung": "L1",
+      "support_state_trace": {
+        "baseline_replay": true,
+        "interpretation": "source-current at the N17 AP7 baseline only",
+        "present": true,
+        "source_backed": true,
+        "source_current": true,
+        "source_rows": [
+          "n18_i1_row_01_n17_closeout_ap7",
+          "n18_i1_row_08_n13_closeout_ap3",
+          "n18_i1_row_12_n09_regulation_closeout"
+        ],
+        "stale_axis": false
+      },
+      "unsafe_claim_flags": {
+        "agency_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false
+      }
+    }
+  ],
+  "schema_version": "n18.short_horizon_ap7_replay_baseline.v1",
+  "source_inventory": {
+    "output_digest": "b9e45e7fb4e2c90fac206e1b2c666b425eec18b02bee6cd48685fc705000a2bf",
+    "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_source_inventory.json",
+    "sha256": "743a7d91cc63c9fbd49fa33c1f01404727eecb4225bc39f361817fce7d0c3546"
+  },
+  "status": "passed",
+  "validator_command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/validate_n18_stress_row.py experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_short_horizon_ap7_replay_baseline.json"
+}

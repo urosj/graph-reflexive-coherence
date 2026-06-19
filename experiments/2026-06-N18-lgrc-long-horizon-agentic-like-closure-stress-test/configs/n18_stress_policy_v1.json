@@ -1,0 +1,78 @@
+{
+  "ap8_outcome_taxonomy": {
+    "AP8_blocked": "core continuity, budget, replay, or claim controls fail",
+    "AP8_supported_full": "all required stress families pass under the declared horizon and stress envelope",
+    "AP8_supported_limited": "long-horizon replay plus some stress families pass while other families are deferred or blocked"
+  },
+  "config_id": "n18_stress_policy_v1",
+  "cross_axis_continuity_policy": {
+    "field": "cross_axis_continuity_evidence",
+    "must_bind_linked_trace_continuity": true,
+    "required_for_ap8": true,
+    "trace_presence_alone_is_insufficient": true
+  },
+  "fail_closed_rules": {
+    "budget_invalid": "ap8_candidate_allowed_false",
+    "missing_linked_trace_continuity": "ap8_candidate_allowed_false",
+    "missing_trace_axis": "ap8_candidate_allowed_false",
+    "phase8_or_native_support_opened": "ap8_candidate_allowed_false",
+    "unsafe_claim_flag_true": "ap8_candidate_allowed_false"
+  },
+  "linked_trace_policy": {
+    "all_links_must_be_source_current": true,
+    "required_links": [
+      "support_to_regulation",
+      "regulation_to_selection",
+      "selection_to_proxy",
+      "proxy_to_boundary",
+      "boundary_to_loop_feedback",
+      "memory_context_to_selection"
+    ],
+    "trace_presence_alone_is_insufficient": true
+  },
+  "required_control_dimensions": [
+    "artifact_only_reconstruction",
+    "duplicate_replay",
+    "snapshot_load_replay",
+    "stale_state_control"
+  ],
+  "required_positive_stress_dimensions": [
+    "longer_horizon_window",
+    "support_withdrawal_restoration",
+    "proxy_perturbation",
+    "route_context_reversal",
+    "memory_relaxation",
+    "environment_resource_perturbation",
+    "shared_medium_perturbation"
+  ],
+  "schema_version": "n18.stress_policy.v1",
+  "stress_dimensions": [
+    "baseline_ap7_replay",
+    "longer_horizon_window",
+    "support_withdrawal_restoration",
+    "proxy_perturbation",
+    "route_context_reversal",
+    "memory_relaxation",
+    "environment_resource_perturbation",
+    "shared_medium_perturbation",
+    "artifact_only_reconstruction",
+    "duplicate_replay",
+    "snapshot_load_replay",
+    "stale_state_control",
+    "stale_support_state_control",
+    "stale_memory_context_control",
+    "stale_selection_context_control",
+    "stale_proxy_target_control",
+    "stale_boundary_state_control",
+    "stale_loop_feedback_control"
+  ],
+  "trace_axes": [
+    "support_state_trace",
+    "memory_context_trace",
+    "regulation_trace",
+    "selection_context_trace",
+    "proxy_target_trace",
+    "boundary_separation_trace",
+    "closed_loop_feedback_trace"
+  ]
+}

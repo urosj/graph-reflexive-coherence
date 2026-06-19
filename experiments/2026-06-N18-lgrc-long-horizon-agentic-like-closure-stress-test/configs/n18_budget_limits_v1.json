@@ -1,0 +1,16 @@
+{
+  "budget_units": "artifact_stress_units",
+  "config_id": "n18_budget_limits_v1",
+  "invalid_budget_effect": {
+    "ap8_candidate_allowed": false,
+    "row_decision": "blocked"
+  },
+  "limits": {
+    "max_control_rows_per_iteration": 16,
+    "max_positive_stress_rows_per_iteration": 12,
+    "max_relative_window_count": 16,
+    "max_total_source_rows_per_candidate": 12,
+    "must_record_budget_surface": true
+  },
+  "schema_version": "n18.budget_limits.v1"
+}

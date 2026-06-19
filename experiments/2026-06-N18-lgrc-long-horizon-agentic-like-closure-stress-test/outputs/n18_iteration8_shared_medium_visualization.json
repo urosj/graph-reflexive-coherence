@@ -1,0 +1,125 @@
+{
+  "artifact_id": "n18_iteration8_shared_medium_visualization",
+  "artifact_sha256": {
+    "animation": "0b91d37a4975e6d97dd0ef115334cf221e68635c9d2ad0d73d3e5e54539d8fa3",
+    "frames": {
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_00.png": "f2a9c8bb68c88df2e92080ea12e3aa04258400877de6fc251584d3ee2bf1a79c",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_01.png": "a1f3f00743b7fe05003f1d9a4aaf25c1db1745589327fd0df2c708052f5b239b",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_02.png": "f6f8dce76e91dff13eeac87799e9e6120240154dc86a4a6d3eebf1fe4cf0e0b8",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_03.png": "033edb834b679bbca160e59d87089cd0f044787352a277544eb8eb264ad99990",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_04.png": "8cd3dd7031b0a661ff48fe709c2871a879dfed0ff236ba9369cbf993f7d24bfa",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_05.png": "331d9b831f5ad31c564ca4bd7a273434dd75dfc8faae75bace03302f3f8eb4af"
+    },
+    "geometry_animation": "75a5b2e0c63d38fb9cd096b0e964704d4d51c6b4ad1f2029eb26c3be9246d60c",
+    "geometry_frames": {
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_00.png": "3b249c1e476146a130ba036954f221cfcbb5baca56948d938ef14adc8eb251e5",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_01.png": "e62f979921ff863f5e34ccf1474f3cc712524d782dad36668982915261118cd5",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_02.png": "049d2a63620459fe7389788de87a5629eda196bdbeae09e1b379bb4204da13a4",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_03.png": "8096eb1c4144ee8c82c46e3628869786a9df76b96b45d5ea5ec5eb72a7fa22f6"
+    },
+    "geometry_graph": "3f35d7f7fabb934de12b263c40d03f0ecfc23df84c8cc97fa7d0be806951748c",
+    "geometry_sequence_panel": "134c483c7709b1d95ea2600a5db9caf1a2d1886b47a296182f9ffa64360dc825",
+    "sequence_panel": "a6474d3643a9b7b6a3b9a5b161b040844abe17773bab31979e99ce17c6af8af1",
+    "static_graph": "6b03c5fe62e34b5a32945222a6b1ba696b4eca4142ccf4339cc689a854e82fc6"
+  },
+  "artifacts": {
+    "animation": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif",
+    "frames": [
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_00.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_01.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_02.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_03.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_04.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/frames/n18_i8_shared_medium_frame_05.png"
+    ],
+    "geometry_animation": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif",
+    "geometry_frames": [
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_00.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_01.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_02.png",
+      "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/geometry_frames/n18_i8_b4c5_source_geometry_frame_03.png"
+    ],
+    "geometry_graph": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png",
+    "geometry_sequence_panel": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_sequence.png",
+    "sequence_panel": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png",
+    "static_graph": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png"
+  },
+  "claim_boundary": "does not add evidence, does not open AP8, does not open Phase 8, does not support agency or native support",
+  "command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/render_n18_iteration8_shared_medium_visualization.py",
+  "generated_at": "2026-06-19T00:00:00+00:00",
+  "geometry_summary": {
+    "basin_count": 2,
+    "basin_separation_score": 0.74,
+    "boundary_edges": [
+      {
+        "event": "shared_medium_boundary_exchange",
+        "left": "b4_c5_a2",
+        "left_side": "derived_internal_side",
+        "right": "b4_c5_medium",
+        "right_side": "derived_external_side",
+        "weight": 0.1
+      },
+      {
+        "event": "neighbor_medium_exchange",
+        "left": "b4_c5_neighbor0",
+        "left_side": "derived_external_side",
+        "right": "b4_c5_medium",
+        "right_side": "derived_external_side",
+        "weight": 0.08
+      }
+    ],
+    "boundary_exclusivity_score": 0.73,
+    "geometry_source_row": "n16_i6_row_b4_c5",
+    "geometry_source_status": "source_backed_artifact_geometry",
+    "i8_overlay_role": "h4_L5_stress_overlay_not_geometry_source",
+    "i8_overlay_row": "n18_i8_row_01_h4_minimal_shared_medium_separability_bounded",
+    "leakage_into_neighbor_basin": 0.07,
+    "merge_confusion_pressure": 0.14,
+    "native_lgrc_runtime_geometry_checkpoint_available": false,
+    "nodes": {
+      "b4_c5_a0": "derived_internal_side",
+      "b4_c5_a1": "derived_internal_side",
+      "b4_c5_a2": "derived_internal_side",
+      "b4_c5_medium": "derived_external_side",
+      "b4_c5_neighbor0": "derived_external_side",
+      "b4_c5_neighbor1": "derived_external_side"
+    },
+    "shared_medium_leakage": 0.108,
+    "shared_medium_pressure": 0.44
+  },
+  "output_digest": "2683140c773fa54ef7e2f2c0a63c3d665653c0bf8f580f410618159d781951e5",
+  "renderer_boundary": "supporting artifact-level visualization only; animation shows source-row/phase progression from the I8 matrix plus B4/C5 source geometry, not native LGRC runtime execution",
+  "renderer_reuse": {
+    "direct_pygrc_graph_checkpoint_renderer_used": false,
+    "reason": "N18 Iteration 8 is an artifact-level stress matrix and does not contain native LGRC telemetry graph checkpoints.",
+    "reused_libraries": [
+      "matplotlib",
+      "networkx",
+      "PIL"
+    ]
+  },
+  "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_shared_medium_stress_matrix.json",
+  "source_geometry_artifact": "experiments/2026-06-N16-lgrc-self-environment-boundary/outputs/n16_selected_interaction_probe_matrix.json",
+  "source_geometry_sha256": "3c029fc47cba11c58afe8efde0d860b771dc776ff4878308af1301a56e77e4e0",
+  "source_sha256": "f3e9f4c7c6fd57100e47c03f73110fbf3a0293deaa2d370df4f54533534a605c",
+  "status": "passed",
+  "visual_summary": {
+    "boundary_to_loop_feedback_score": 0.8,
+    "budget_headroom": 0.01,
+    "highest_positive_stress_ladder_rung": "L5",
+    "iteration": 8,
+    "limit_rows": {
+      "n18_i8_row_02_h4_shared_medium_merge_pressure_limit": "partial",
+      "n18_i8_row_03_h4_shared_medium_budget_limit": "rejected",
+      "n18_i8_row_04_h4_compound_shared_medium_limit": "rejected"
+    },
+    "max_supported_horizon": "h4",
+    "positive_row": "n18_i8_row_01_h4_minimal_shared_medium_separability_bounded",
+    "positive_row_decision": "supported",
+    "relabel_controls": {
+      "n18_i8_row_05_b4c5_original_reverse_replay_relabel_control": "rejected",
+      "n18_i8_row_06_derived_paired_as_original_b4c5_relabel_control": "rejected",
+      "n18_i8_row_07_resource_shared_medium_merge_relabel_control": "rejected"
+    }
+  }
+}

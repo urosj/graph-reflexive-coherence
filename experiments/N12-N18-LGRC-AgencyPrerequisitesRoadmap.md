@@ -140,13 +140,20 @@ long-horizon closure => unrestricted agency
 native policy support => semantic agency
 ```
 
-The strongest conservative target for this tranche is:
+The strongest possible native target for this tranche, if a separate Phase 8
+implementation is opened and validated, is:
 
 ```text
 native_lgrc_agentic_like_dynamics_candidate
 ```
 
-not:
+The strongest supported N12-N18 artifact-level closeout is:
+
+```text
+AP8_limited_artifact_candidate
+```
+
+Neither supports:
 
 ```text
 agent
@@ -593,6 +600,22 @@ the result should remain:
 ```text
 artifact_only_agentic_like_closure_candidate
 ```
+
+Closeout result:
+
+```text
+final_supported_ap_level = AP8_limited_artifact_candidate
+final_claim_ceiling = artifact_level_ap8_long_horizon_agentic_like_closure_candidate
+max_supported_horizon = h4
+horizon_extrapolation_allowed = false
+phase8_opened = false
+native_support_opened = false
+```
+
+N18 closed the N12-N18 tranche with limited artifact-level AP8 support over the
+narrow h4/L5 stress envelope. General AP8, h8/h16 recovery, native support,
+Phase 8 implementation, semantic agency, identity acceptance, organism/life,
+and unrestricted autonomy remain blocked.
 
 ## Native Absorption Interface
 

@@ -1,0 +1,699 @@
+{
+  "acceptance_state": "closed_limited_artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+  "artifact_id": "n18_closeout_and_handoff",
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "detail": {
+        "i1_source_inventory": "passed",
+        "i2_schema": "passed",
+        "i3_short_replay": "passed",
+        "i4_horizon_sweep": "passed",
+        "i5_support_proxy": "passed",
+        "i6_route_memory": "passed",
+        "i7_environment_resource": "passed",
+        "i8_shared_medium": "passed",
+        "i8a_shared_medium_margin": "passed",
+        "i9_classification": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i9_ready_for_i10",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "i9_limited_ap8_classification_supported",
+      "detail": {
+        "ap8_candidate_allowed": true,
+        "ap8_classification_supported": true,
+        "ap8_outcome_classification": "AP8_supported_limited",
+        "claim_ceiling": "artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+        "claim_classification": "artifact_level_ap8_long_horizon_agentic_like_closure_candidate_pending_i10_closeout",
+        "classification_ladder_rung": "L7",
+        "classification_row": "n18_i9_row_01_ap8_limited_classification",
+        "classified_ap_level": "AP8_limited_artifact_candidate",
+        "final_ap8_supported": false,
+        "final_artifact_level_ap8_frozen": false,
+        "final_closeout_pending_iteration10": true,
+        "fully_native_integration_opened": false,
+        "highest_positive_stress_ladder_rung": "L5",
+        "max_supported_horizon": "h4",
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "ready_for_iteration10_closeout": true,
+        "replay_control_ladder_rung": "L6"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "limited_ap8_preserved",
+      "detail": "AP8_limited_artifact_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "final_claim_ceiling_preserved",
+      "detail": "artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "h4_horizon_boundary_preserved",
+      "detail": {
+        "h16_recovered": false,
+        "h8_recovered": false,
+        "horizon_extrapolation_allowed": false,
+        "max_supported_horizon": "h4"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i8_i8a_distinction_preserved",
+      "detail": {
+        "classification_policy": "conservative composition remains bounded by the original I8 bottleneck and budget headroom",
+        "general_shared_medium_robustness_supported": false,
+        "i8_boundary_to_loop_feedback_score": 0.8,
+        "i8_budget_headroom": 0.01,
+        "i8_role": "minimal_equality_at_floor_shared_medium_edge_case",
+        "i8a_boundary_to_loop_feedback_score": 0.822,
+        "i8a_budget_headroom": 0.06,
+        "i8a_replaces_i8": false,
+        "i8a_role": "additional_higher_margin_shared_medium_evidence"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "principal_bottleneck_preserved",
+      "detail": {
+        "axis": "loop_feedback",
+        "link": "boundary_to_loop_feedback",
+        "score": 0.8
+      },
+      "passed": true
+    },
+    {
+      "check_id": "replay_controls_finalized",
+      "detail": {
+        "artifact_only_reconstruction": "stable",
+        "duplicate_replay": "stable",
+        "order_inversion_control": "failed_closed_as_expected",
+        "post_hoc_stitching_control": "failed_closed_as_expected",
+        "snapshot_load_replay": "stable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "single_axis_stale_controls_visible",
+      "detail": {
+        "stale_boundary_state_control": "failed_closed_as_expected",
+        "stale_loop_feedback_control": "failed_closed_as_expected",
+        "stale_memory_context_control": "failed_closed_as_expected",
+        "stale_proxy_target_control": "failed_closed_as_expected",
+        "stale_selection_context_control": "failed_closed_as_expected",
+        "stale_support_state_control": "failed_closed_as_expected"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_closeout_flags_false",
+      "detail": {
+        "agency_claim_opened": false,
+        "choice_claim_opened": false,
+        "fully_native_integration_opened": false,
+        "identity_acceptance_opened": false,
+        "intention_claim_opened": false,
+        "native_support_opened": false,
+        "organism_life_opened": false,
+        "phase8_opened": false,
+        "selfhood_claim_opened": false,
+        "semantic_action_opened": false,
+        "semantic_goal_ownership_opened": false,
+        "semantic_perception_opened": false,
+        "unrestricted_agency_opened": false,
+        "unrestricted_autonomy_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_deferred",
+      "detail": {
+        "handoff_scope": "A later Phase 8 task may attempt native implementation, but it must start separately and cannot treat N18 artifact evidence as native support.",
+        "minimum_future_phase8_requirements": [
+          "explicit native support implementation",
+          "native producer-side state rather than artifact reconstruction",
+          "native replay/control evidence",
+          "separate claim-boundary review",
+          "no reuse of N18 limited AP8 as native support"
+        ],
+        "phase8_handoff_decision": "deferred",
+        "phase8_opened": false,
+        "targeted_phase8_required_for_n18_closeout": false,
+        "targeted_phase8_status": "optional_deferred_not_required_for_n18_closeout"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "No src/* diff or untracked src/* files.",
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "portable relative paths only",
+      "passed": true
+    },
+    {
+      "check_id": "source_digests_present",
+      "detail": 10,
+      "passed": true
+    }
+  ],
+  "closeout_result": {
+    "agency_claim_opened": false,
+    "artifact_level": true,
+    "artifact_only": true,
+    "choice_claim_opened": false,
+    "classification_ladder_rung": "L7",
+    "final_ap8_supported": true,
+    "final_artifact_level_ap8_frozen": true,
+    "final_claim_ceiling": "artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+    "final_supported_ap_level": "AP8_limited_artifact_candidate",
+    "full_general_ap8_supported": false,
+    "fully_native_integration_opened": false,
+    "general_ap8_supported": false,
+    "h16_recovered": false,
+    "h8_recovered": false,
+    "highest_positive_stress_ladder_rung": "L5",
+    "horizon_extrapolation_allowed": false,
+    "i9_classification_output_digest": "c7b400660c5203a3b975b1921ee808ad447329ebdda199af47ba27e26d1fc734",
+    "identity_acceptance_opened": false,
+    "intention_claim_opened": false,
+    "limited": true,
+    "max_supported_horizon": "h4",
+    "minimum_budget_headroom_classified_stack": 0.01,
+    "native_support_opened": false,
+    "native_supported_flags": false,
+    "organism_life_opened": false,
+    "phase8_opened": false,
+    "principal_bottleneck_axis": "loop_feedback",
+    "principal_bottleneck_link": "boundary_to_loop_feedback",
+    "principal_bottleneck_score": 0.8,
+    "replay_control_ladder_rung": "L6",
+    "selfhood_claim_opened": false,
+    "semantic_action_opened": false,
+    "semantic_goal_ownership_opened": false,
+    "semantic_perception_opened": false,
+    "src_diff_empty": true,
+    "status": "closed_limited_artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+    "unrestricted_agency_opened": false,
+    "unrestricted_autonomy_opened": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/scripts/build_n18_closeout_and_handoff.py",
+  "evidence_branch": "artifact_only",
+  "experiment": "N18",
+  "failed_checks": [],
+  "final_blockers": [
+    {
+      "blocker_id": "general_ap8_blocked",
+      "rationale": "N18 closes only as a limited h4/L5 artifact candidate, not general AP8.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "h8_h16_extrapolation_blocked",
+      "rationale": "h8 and h16 were not recovered; horizon extrapolation remains disallowed.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "semantic_action_perception_blocked",
+      "rationale": "Long-horizon trace continuity is not semantic action or semantic perception.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "agency_intention_choice_goal_ownership_blocked",
+      "rationale": "The AP8 candidate does not support agency, intention, choice, or semantic goal ownership.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "selfhood_identity_acceptance_blocked",
+      "rationale": "Artifact-level continuity does not promote AP6 boundary evidence into selfhood or identity acceptance.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "native_support_phase8_blocked",
+      "rationale": "Phase 8 remains unopened and native support remains false.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "organism_life_unrestricted_autonomy_blocked",
+      "rationale": "N18 is not organism/life behavior or unrestricted autonomous agency.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "i8a_as_i8_replacement_blocked",
+      "rationale": "I8-A is additional margin evidence, not a replacement for the I8 equality-at-floor edge case.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "general_shared_medium_robustness_blocked",
+      "rationale": "Shared-medium evidence remains local and bounded by h4/L5 controls.",
+      "status": "blocked"
+    },
+    {
+      "blocker_id": "original_b4c5_reverse_replay_relabel_blocked",
+      "rationale": "Original B4/C5 reverse replay remains blocked and cannot be backfilled by derived evidence.",
+      "status": "blocked"
+    }
+  ],
+  "final_handoff": {
+    "allowed_future_inputs": [
+      "N18 final limited artifact-level AP8 closeout",
+      "N17 final artifact-level AP7 closed boundary engagement loop closeout",
+      "N16 final artifact-level AP6 self/environment boundary closeout",
+      "N15 final artifact-level AP5 endogenous proxy formation closeout",
+      "N14 final artifact-level AP4 consequence-sensitive route selection closeout",
+      "N13 final artifact-level AP3 support-seeking regulation closeout",
+      "N12 NAT4 readiness context as readiness-only, not native support"
+    ],
+    "future_work_must_not_relabel": [
+      "limited AP8 as general AP8",
+      "artifact evidence as native support",
+      "long-horizon closure as semantic agency",
+      "shared-medium local evidence as general multi-basin robustness",
+      "I8-A margin evidence as replacement for I8 edge-case support"
+    ],
+    "handoff_caveats": [
+      "N18 closes as limited artifact-level AP8, not agency.",
+      "The final supported horizon is h4; h8 and h16 remain blocked.",
+      "The strongest supported stress envelope is h4/L5 with L6 replay controls.",
+      "Phase 8 remains unopened and native support remains false.",
+      "Future native implementation work must begin as a separate task."
+    ],
+    "n18_closed": true,
+    "recommended_next": "optional_targeted_phase8_or_tranche_synthesis",
+    "targeted_phase8_required": false,
+    "targeted_phase8_status": "optional_deferred",
+    "tranche": "N12-N18 agency-prerequisite tranche"
+  },
+  "final_replay_and_controls": {
+    "artifact_only_reconstruction": "stable",
+    "duplicate_replay": "stable",
+    "negative_controls": [
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_state_replay_control",
+        "gate": "stale_state_control_passed",
+        "purpose": "blocks stale earlier-window state from passing as long-horizon continuity"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_support_state_control",
+        "gate": "single_axis_stale_controls_passed",
+        "purpose": "blocks stale support state from carrying long-horizon continuity alone"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_memory_context_control",
+        "gate": "single_axis_stale_controls_passed",
+        "purpose": "blocks stale memory/context state from passing as live continuity"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_selection_context_control",
+        "gate": "single_axis_stale_controls_passed",
+        "purpose": "blocks stale selection context from passing as current selection continuity"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_proxy_target_control",
+        "gate": "single_axis_stale_controls_passed",
+        "purpose": "blocks stale proxy/target state from passing as current proxy continuity"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_boundary_state_control",
+        "gate": "single_axis_stale_controls_passed",
+        "purpose": "blocks stale boundary assignment from passing as current separability"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "stale_loop_feedback_control",
+        "gate": "single_axis_stale_controls_passed",
+        "purpose": "blocks stale loop feedback from passing as current closed-loop feedback"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "order_inversion_control",
+        "gate": "post_hoc_stitching_control_passed",
+        "purpose": "blocks inverted or shuffled horizon/order traces from passing as source-current continuity"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "hidden_native_support_relabel_control",
+        "gate": "unsafe_claim_flags_false",
+        "purpose": "blocks interpreting artifact evidence as native support"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "semantic_agency_relabel_control",
+        "gate": "unsafe_claim_flags_false",
+        "purpose": "blocks agency, intention, action/perception, and goal-ownership relabels"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "identity_acceptance_relabel_control",
+        "gate": "unsafe_claim_flags_false",
+        "purpose": "blocks identity acceptance from support/memory continuity"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "phase8_native_implementation_relabel_control",
+        "gate": "phase8_not_opened",
+        "purpose": "blocks Phase 8/native implementation claims unless separately opened"
+      },
+      {
+        "closeout_status": "passed",
+        "control_id": "long_horizon_drift_envelope_control",
+        "gate": "horizon_policy_satisfied",
+        "purpose": "blocks drift outside source-backed envelope"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "drift_relabel_as_autonomy_control",
+        "gate": "drift_as_autonomy_control_passed",
+        "purpose": "blocks long-horizon drift from being relabeled as autonomous adaptation"
+      },
+      {
+        "closeout_status": "passed",
+        "control_id": "resource_shared_medium_merge_control",
+        "gate": "stress_controls_passed",
+        "purpose": "blocks resource or shared-medium merge/leakage as closure"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "b4c5_original_reverse_replay_relabel_control",
+        "gate": "b4c5_relabel_controls_passed",
+        "purpose": "preserves N17's blocker that original B4/C5 reverse replay remains unsupported"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "general_symmetric_native_multibasin_relabel_control",
+        "gate": "b4c5_relabel_controls_passed",
+        "purpose": "blocks local shared-medium evidence from becoming general symmetric/native multi-basin claims"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "post_hoc_long_horizon_stitching_control",
+        "gate": "post_hoc_stitching_control_passed",
+        "purpose": "blocks assembling compatible windows after the fact"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "budget_overrun_control",
+        "gate": "budget_valid",
+        "purpose": "blocks rows outside declared budget surface"
+      },
+      {
+        "closeout_status": "failed_closed_as_expected",
+        "control_id": "artifact_only_reconstruction_mismatch_control",
+        "gate": "artifact_only_reconstruction_passed",
+        "purpose": "requires artifact-only reconstruction to match source row digest inputs"
+      }
+    ],
+    "order_inversion_control": "failed_closed_as_expected",
+    "post_hoc_stitching_control": "failed_closed_as_expected",
+    "single_axis_stale_controls": {
+      "stale_boundary_state_control": "failed_closed_as_expected",
+      "stale_loop_feedback_control": "failed_closed_as_expected",
+      "stale_memory_context_control": "failed_closed_as_expected",
+      "stale_proxy_target_control": "failed_closed_as_expected",
+      "stale_selection_context_control": "failed_closed_as_expected",
+      "stale_support_state_control": "failed_closed_as_expected"
+    },
+    "snapshot_load_replay": "stable",
+    "stale_state_control": "failed_closed_as_expected"
+  },
+  "general_rc_theory_interpretation": {
+    "agentic_like_closure_vs_agency": {
+      "blocked": [
+        "agency",
+        "choice",
+        "intention",
+        "semantic action/perception",
+        "semantic goal ownership",
+        "selfhood",
+        "identity acceptance",
+        "native support",
+        "organism/life behavior",
+        "fully native integration",
+        "unrestricted autonomy"
+      ],
+      "principle": "Agency-like closure can be structurally present before agency is warranted.",
+      "supported": "artifact-level long-horizon agentic-like closure candidate"
+    },
+    "artifact_vs_native_distinction": {
+      "artifact_level_closure": "Reconstruction from source-backed artifacts and controls.",
+      "n18_result": "N18 closes artifact-level closure only.",
+      "native_closure": "Produced by the substrate itself as ongoing native dynamics."
+    },
+    "best_concise_formulation": "N18 shows that RC can construct and preserve a bounded, artifact-level agency-prerequisite closure stack across horizon and stress. The result supports limited AP8 agentic-like closure, not agency. The main limiting constraint is the boundary-to-loop-feedback link, and the next theoretical step is native producer-side implementation, not stronger semantic interpretation.",
+    "controls_as_negative_semantic_boundaries": [
+      "A closure trace is not valid if it can be produced by stale state.",
+      "A long-horizon trace is not valid if it can be stitched post-hoc.",
+      "A resource/shared-medium loop is not valid if it is actually merge/leakage.",
+      "A drift trajectory is not autonomy.",
+      "Artifact replay is not native support."
+    ],
+    "demonstrated_agency_prerequisite_ladder": [
+      "AP3 support regulation",
+      "AP4 consequence-sensitive route selection",
+      "AP5 endogenous proxy/target formation",
+      "AP6 self/environment boundary",
+      "AP7 closed boundary engagement loop",
+      "AP8 bounded long-horizon agentic-like closure"
+    ],
+    "formal_closeout_anchor": {
+      "final_claim_ceiling": "artifact_level_ap8_long_horizon_agentic_like_closure_candidate",
+      "final_supported_ap_level": "AP8_limited_artifact_candidate",
+      "general_ap8_supported": false,
+      "highest_positive_stress_ladder_rung": "L5",
+      "max_supported_horizon": "h4",
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "principal_bottleneck_link": "boundary_to_loop_feedback"
+    },
+    "general_rc_statement": "Agency-like closure is not a primitive. It is a layered condition over support, memory, regulation, selection, proxy formation, boundary separability, closed-loop feedback, horizon continuity, budget validity, and replay controls.",
+    "persistence_envelope": {
+      "blocked": [
+        "h8",
+        "h16"
+      ],
+      "interpretation": "A basin/loop can be persistent enough to support agentic-like closure over a tested horizon while still failing at longer horizons.",
+      "principle": "Persistence is not binary; persistence has an envelope.",
+      "supported": "h4/L5"
+    },
+    "principal_theoretical_bottleneck": {
+      "link": "boundary_to_loop_feedback",
+      "principle": "The hardest part of agentic-like closure is keeping the self/environment boundary coupled to recurrent loop feedback across horizon and stress without drift, stale state, budget overrun, or merge/relabel failure.",
+      "score": 0.8
+    },
+    "scope_note": "N18 is a major RC theory milestone, but it must be read narrowly: it shows bounded artifact-level agency-prerequisite closure, not agency.",
+    "theorem_schema": "If a system has support regulation, memory/context continuity, consequence-sensitive route selection, proxy/target formation, boundary separability, closed boundary engagement, bounded long-horizon continuity, replay/control cleanliness, and claim-clean blockers, then it can support artifact-level agentic-like closure within a bounded horizon/stress envelope."
+  },
+  "generated_at": "2026-06-19T00:00:00+00:00",
+  "hypotheses": [
+    {
+      "closeout_decision": "closed_supported_limited",
+      "hypothesis_id": "hypothesis_a_long_horizon_source_current_closure",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/hypotheses/hypothesis_a_long_horizon_source_current_closure.md",
+      "scope": "source-current closure is supported only for the narrow h4/L5 artifact envelope; h8 and h16 remain unrecovered",
+      "sha256": "bfade6127a57770e64846f6976ec31c27643068aa96508ea19e76a7f36b38b1b",
+      "supported_by": [
+        "I3",
+        "I4",
+        "I5",
+        "I6",
+        "I7",
+        "I8",
+        "I8-A",
+        "I9"
+      ]
+    },
+    {
+      "closeout_decision": "closed_supported_limited",
+      "hypothesis_id": "hypothesis_b_stress_replay_and_budget_clean",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/hypotheses/hypothesis_b_stress_replay_and_budget_clean.md",
+      "scope": "declared h4/L5 stress, replay, and budget controls pass with fail-closed negative controls",
+      "sha256": "14c9be5816576d1b722cabae165bdd1dd7e890d8aeb942b3eebd3dd827f11199",
+      "supported_by": [
+        "I5",
+        "I6",
+        "I7",
+        "I8",
+        "I8-A",
+        "I9"
+      ]
+    },
+    {
+      "closeout_decision": "closed_supported",
+      "hypothesis_id": "hypothesis_c_claim_boundary_and_phase8_blockers",
+      "path": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/hypotheses/hypothesis_c_claim_boundary_and_phase8_blockers.md",
+      "scope": "unsafe promotions, Phase 8, native support, identity, agency, semantic action/perception, and organism/life claims remain blocked",
+      "sha256": "2b7b6066dd0bdec024f0333bb8015382907f88304face2bd9ad719c25f9bd52a",
+      "supported_by": [
+        "I1",
+        "I2",
+        "I9",
+        "I10"
+      ]
+    }
+  ],
+  "i8_i8a_relationship": {
+    "classification_policy": "conservative composition remains bounded by the original I8 bottleneck and budget headroom",
+    "general_shared_medium_robustness_supported": false,
+    "i8_boundary_to_loop_feedback_score": 0.8,
+    "i8_budget_headroom": 0.01,
+    "i8_role": "minimal_equality_at_floor_shared_medium_edge_case",
+    "i8a_boundary_to_loop_feedback_score": 0.822,
+    "i8a_budget_headroom": 0.06,
+    "i8a_replaces_i8": false,
+    "i8a_role": "additional_higher_margin_shared_medium_evidence"
+  },
+  "output_digest": "09c0987d19e372d3df86377a843367a8bae8c85b0bc925f8328948b17a743af1",
+  "phase8_defer_record": {
+    "handoff_scope": "A later Phase 8 task may attempt native implementation, but it must start separately and cannot treat N18 artifact evidence as native support.",
+    "minimum_future_phase8_requirements": [
+      "explicit native support implementation",
+      "native producer-side state rather than artifact reconstruction",
+      "native replay/control evidence",
+      "separate claim-boundary review",
+      "no reuse of N18 limited AP8 as native support"
+    ],
+    "phase8_handoff_decision": "deferred",
+    "phase8_opened": false,
+    "targeted_phase8_required_for_n18_closeout": false,
+    "targeted_phase8_status": "optional_deferred_not_required_for_n18_closeout"
+  },
+  "source_artifacts": [
+    {
+      "source_acceptance_state": "accepted_long_horizon_source_inventory_only_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_source_inventory.json",
+      "source_iteration": 1,
+      "source_key": "i1_source_inventory",
+      "source_output_digest": "b9e45e7fb4e2c90fac206e1b2c666b425eec18b02bee6cd48685fc705000a2bf",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_long_horizon_source_inventory.md",
+      "source_report_sha256": "38ff3fb473cb4c7388d37eb6de93da3bef5aa53d240cac4ea9af9db7783a6159",
+      "source_role": "source_inventory_and_ap8_contract",
+      "source_sha256": "743a7d91cc63c9fbd49fa33c1f01404727eecb4225bc39f361817fce7d0c3546",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_long_horizon_schema_v1_no_ap8_evidence",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_schema_v1.json",
+      "source_iteration": 2,
+      "source_key": "i2_schema",
+      "source_output_digest": "53918702f07a4ccb613149f839855a855db912646ef7c53e45679d3383bcf760",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_long_horizon_schema_v1.md",
+      "source_report_sha256": "c2365c308cc12ba848ab86d98f96251162b5d4b6adef48bcf82fdcb3716c3821",
+      "source_role": "long_horizon_schema_replay_budget_claim_gate",
+      "source_sha256": "fba0c288b9aa18bc4963715185dc81dc62ee3ae1e9a0ba06db7a9c2f0a0a2252",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_short_horizon_ap7_replay_baseline_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_short_horizon_ap7_replay_baseline.json",
+      "source_iteration": 3,
+      "source_key": "i3_short_replay",
+      "source_output_digest": "9a7a01ed47991bd8ca631d36fa427c8365dc9ae7324c6984c8fc41b5e37aa7fe",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_short_horizon_ap7_replay_baseline.md",
+      "source_report_sha256": "783e4024059208d092dd5c7ff318b1b0b1a1732e9ff9049f8c44a619eef7b8d8",
+      "source_role": "short_horizon_ap7_replay_baseline_l1",
+      "source_sha256": "23418170ff6e46de96b8e40730197c1997f7803d04597a9c814b2b3c9aa11671",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_horizon_window_sweep_l2_max_h4_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_horizon_window_sweep.json",
+      "source_iteration": 4,
+      "source_key": "i4_horizon_sweep",
+      "source_output_digest": "0b65b390dabc30ee34b3003796cfb85cb1ca8f2c1bfe44f91bac160aa9c7c21e",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_horizon_window_sweep.md",
+      "source_report_sha256": "7f5a838dbfedf9ce1c82c09ff9c310ec98c22919a06b9a5175b5589cd2ecf024",
+      "source_role": "horizon_window_sweep_l2_h4_limit",
+      "source_sha256": "1d5b554dc6c6a5f08b2b559cc40f6afca71622024b7c5ff50b57d8150a209971",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_support_proxy_stress_matrix_h4_l3_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_support_proxy_stress_matrix.json",
+      "source_iteration": 5,
+      "source_key": "i5_support_proxy",
+      "source_output_digest": "ecaa439bdfc20cd416d3b9405c9ed9b04b1aa0871dfce82f27ad966fba13b352",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_support_proxy_stress_matrix.md",
+      "source_report_sha256": "0dcda62afe2ddf11170eadabcd583800ba7e168e04ed1796c47591079ba89db9",
+      "source_role": "support_proxy_stress_l3_h4",
+      "source_sha256": "f40c2d3d3390c69b99741e3beff5cbd8773551d9534fcdcb1e0f70fc0db3a715",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_route_memory_stress_matrix_h4_l4_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_route_memory_stress_matrix.json",
+      "source_iteration": 6,
+      "source_key": "i6_route_memory",
+      "source_output_digest": "a2a9d0f41b389a9769605329a282674fa17e12ec861897ed81a5f31b83a9a114",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_route_memory_stress_matrix.md",
+      "source_report_sha256": "e94fb97ca307ff52602d265076f131d2ae0151e00715c0eb2ffd853739320fa9",
+      "source_role": "route_memory_stress_l4_h4",
+      "source_sha256": "082b0ad9fe639135e3c8b6fff6409d6739030435ab100372dc2f7c1ac0564ec7",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_environment_resource_stress_matrix_h4_l5_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_environment_resource_stress_matrix.json",
+      "source_iteration": 7,
+      "source_key": "i7_environment_resource",
+      "source_output_digest": "f1e9b88b5ab0f3157f46f62787092477f232f5045d31e35284a3abefabb7ee48",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_environment_resource_stress_matrix.md",
+      "source_report_sha256": "170af6faa6dcfdfffeafb5a3b1500c1a018d9441b56c239dbbdb2e2000efbe74",
+      "source_role": "environment_resource_stress_l5_h4",
+      "source_sha256": "102d2fd4758e08bb0d29060fda95944363afa18a55891ca0c20069f20eb3490f",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_minimal_shared_medium_stress_matrix_h4_l5_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_shared_medium_stress_matrix.json",
+      "source_iteration": 8,
+      "source_key": "i8_shared_medium",
+      "source_output_digest": "f2e0d7f8b8c88bb85f7bf5d588819e83043d3ff17c4bdfad306955fd8fcd9b60",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_shared_medium_stress_matrix.md",
+      "source_report_sha256": "57bc0ca0dc2111340060d1ae94e8dcd201acf9d5b1d45a03ede1f1914c5f6b6a",
+      "source_role": "minimal_shared_medium_stress_l5_h4",
+      "source_sha256": "f3e9f4c7c6fd57100e47c03f73110fbf3a0293deaa2d370df4f54533534a605c",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_shared_medium_margin_probe_h4_l5_no_ap8",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_shared_medium_margin_probe.json",
+      "source_iteration": "8-A",
+      "source_key": "i8a_shared_medium_margin",
+      "source_output_digest": "997bbcfa45c10cfd3a51fa61553a7df56337aa60b969c231a90848cca7723c0b",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_shared_medium_margin_probe.md",
+      "source_report_sha256": "e0659b478172557529068c16de3357ac73afb86d4f330644e075e09906f579e5",
+      "source_role": "shared_medium_margin_probe_l5_h4",
+      "source_sha256": "765ea51640d7533727d9a946a9b38db4696e71bc7c43b9a109c232eac3bae318",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_limited_ap8_classification_pending_i10_closeout",
+      "source_artifact": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_long_horizon_control_and_classification_matrix.json",
+      "source_iteration": 9,
+      "source_key": "i9_classification",
+      "source_output_digest": "c7b400660c5203a3b975b1921ee808ad447329ebdda199af47ba27e26d1fc734",
+      "source_report": "experiments/2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/reports/n18_long_horizon_control_and_classification_matrix.md",
+      "source_report_sha256": "d87604a5b4669484b26dd8ca38502005b9a8e37127c75f28dc084e3955e0ac71",
+      "source_role": "limited_ap8_classification_and_l6_replay_controls",
+      "source_sha256": "b9a4c0409a8ae2b9cf12aad0758be26f8047d6234867694e460b64a06b36979b",
+      "source_status": "passed"
+    }
+  ],
+  "status": "passed"
+}

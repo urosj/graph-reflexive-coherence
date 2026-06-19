@@ -1,0 +1,59 @@
+{
+  "admissibility": {
+    "baseline_replay_alone_cannot_support_ap8": true,
+    "must_preserve_source_current_inputs": true,
+    "must_record_per_window_budget": true,
+    "must_reject_drift_outside_source_backed_envelope": true
+  },
+  "baseline_horizon": {
+    "minimum_stress_ladder_rung": "L1",
+    "name": "n17_ap7_closeout_baseline"
+  },
+  "config_id": "n18_horizon_policy_v1",
+  "horizon_extrapolation_allowed": false,
+  "longer_horizon_windows": [
+    {
+      "relative_window_count": 2,
+      "window_id": "h2"
+    },
+    {
+      "relative_window_count": 4,
+      "window_id": "h4"
+    },
+    {
+      "relative_window_count": 8,
+      "window_id": "h8"
+    },
+    {
+      "relative_window_count": 16,
+      "window_id": "h16"
+    }
+  ],
+  "max_supported_horizon": "not_established_until_iteration_4",
+  "schema_version": "n18.horizon_policy.v1",
+  "source_backed_horizon_envelope": {
+    "blocked_windows": [],
+    "status": "not_established_until_iteration_4",
+    "supported_windows": []
+  },
+  "support_statement": "AP8 support is horizon-bounded. A row supports only the explicit tested horizon window and stress envelope, not indefinite persistence.",
+  "tested_horizon_windows": [
+    {
+      "relative_window_count": 2,
+      "window_id": "h2"
+    },
+    {
+      "relative_window_count": 4,
+      "window_id": "h4"
+    },
+    {
+      "relative_window_count": 8,
+      "window_id": "h8"
+    },
+    {
+      "relative_window_count": 16,
+      "window_id": "h16"
+    }
+  ],
+  "window_units": "declared_artifact_trace_windows"
+}

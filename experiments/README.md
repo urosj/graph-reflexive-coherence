@@ -42,6 +42,7 @@ machine-local state.
 | [N15 endogenous proxy formation](2026-06-N15-lgrc-endogenous-proxy-formation/README.md) | Closed artifact-level AP5 endogenous target/proxy formation from source-current support, memory, regulation, and AP4 consequence context. | README, then closeout handoff, claim boundary, control matrix, bounded-drift replay, and validator artifacts. |
 | [N16 self/environment boundary](2026-06-N16-lgrc-self-environment-boundary/README.md) | Closed artifact-level AP6 self/environment boundary candidate with controlled basin-boundary requirements and claim-clean N17 handoff. | README, then closeout handoff, claim boundary, requirements matrix, selected probes, and source inventory. |
 | [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Closed artifact-level AP7 closed boundary engagement loop candidate across perturbation, resource/support, and local shared-medium families. | README, then closeout handoff, comparative requirements matrix, claim boundary, loop controls, and extension artifacts. |
+| [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Closed limited artifact-level AP8 long-horizon agentic-like closure candidate over the narrow h4/L5 stress envelope, with general AP8, Phase 8, native support, agency, and identity claims blocked. | README, then closeout handoff, I9 classification matrix, stress artifacts, hypotheses, and implementation checklist. |
 
 ## Current Roadmap State
 
@@ -122,9 +123,29 @@ the perturbation-response-recovery MVP reaches bounded G5, resource/support
 modulation reaches local G5, and shared-medium evidence reaches local G6 while
 one-way crossing, semantic action/perception, agency, selfhood, identity
 acceptance, native support, organism/life, fully native integration, and
-unrestricted agency remain blocked. N18 long-horizon closure stress testing is
-the next roadmap experiment; targeted Phase 8 remains optional and deferred,
-not required before N18.
+unrestricted agency remain blocked. N18 has now consumed that handoff and
+closed the long-horizon stress lane; targeted Phase 8 remains optional and
+deferred.
+
+N18 closes as `AP8_limited_artifact_candidate`: a limited artifact-level AP8
+long-horizon agentic-like closure candidate over the narrow h4/L5 stress
+envelope. The closeout preserves `max_supported_horizon = h4`,
+`horizon_extrapolation_allowed = false`, `principal_bottleneck_link =
+boundary_to_loop_feedback`, and Phase 8/native support remain unopened.
+General AP8, semantic agency, identity acceptance, organism/life, fully native
+integration, and unrestricted agency claims remain blocked.
+
+N18 Iteration 8 supporting visualization:
+
+| Stress-relation graph | B4/C5 source geometry | Source-row sequence |
+| --- | --- | --- |
+| [![N18 I8 stress-relation graph](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif) | [![N18 I8 B4/C5 source geometry](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif) | ![N18 I8 shared-medium sequence](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png) |
+
+Click either graph image to open its animation. The stress graph shows how the
+I8 evidence axes relate to each other; the geometry graph shows the
+source-backed B4/C5 artifact geometry constructed from basin nodes, side
+assignments, and boundary edges. The visuals are supporting artifact-level
+inspection aids, not native LGRC telemetry or additional evidence.
 
 Roadmap-level context:
 
