@@ -22,16 +22,20 @@ composition. The strongest current result is from N11:
 The primary roadmap source record is:
 
 - `experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md`
+- `experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md`
 
-That roadmap treats N12-N18 as agency-prerequisite experiments, not agency
-claims.
+The N12-N18 roadmap treats N12-N18 as agency-prerequisite experiments, not
+agency claims. The N20-N29 roadmap defines the next becoming-agency primitive
+arc and the N29 convergence bridge into agentic ecology.
 
 Current closure state:
 
 ```text
 N12-N18 artifact-level agency-prerequisite tranche = closed
 N19 native-readiness review = closed
-new N20+ or Phase 8 implementation series defined here = false
+N20-N29 becoming-agency ecology roadmap = defined
+N20-N29 implemented experiment stubs = false
+Phase 8 implementation series defined here = false
 ```
 
 N12 is now closed as a claim-clean bridge experiment:
@@ -160,6 +164,7 @@ Start future review from these files:
 
 - `experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md`
 - `experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md`
+- `experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md`
 - `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_closeout_and_handoff.md`
 - `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/outputs/n12_closeout_and_handoff.json`
 - `experiments/2026-06-N12-lgrc-native-naturalization-and-producer-dissolution/reports/n12_phase8_readiness_matrix.md`
@@ -311,8 +316,62 @@ input capture plus a default-off native proxy derivation policy.
 ## Next Options After N19
 
 The N12-N18 artifact-level agency-prerequisite tranche is closed, and the N19
-native-readiness review is closed. No new N20+ or Phase 8 implementation series
-is defined by this handoff. Reasonable next branch families are:
+native-readiness review is closed. N20-N29 are now defined as a roadmap arc,
+not as implemented experiment stubs or a Phase 8 implementation branch.
+
+The next planned experiment family is:
+
+- N20 becoming-primitive / producer translation contract: define LGRC-visible
+  agency-of-becoming primitives, producers, native-function descriptors, proxy
+  metrics, producer residue, and naturalization debt without producing
+  primitive evidence yet.
+- N21 withdrawal resistance and naturalization depth: test basin-signature
+  persistence under bounded support weakening/removal.
+- N22 susceptibility update / durable geometry modification: test
+  reinforcement, inhibition, boundary reshaping, and corridor formation without
+  choice claims.
+- N23 live-continuation collapse / selection geometry: test source-current
+  branch selection among real alternatives while addressing the AP4/N14 NAT4
+  gap.
+- N24 abundance as surplus-supported optionality: test optional continuation
+  space supported by surplus above maintenance floors.
+- N25 spark / sub-basin / new-basin formation: test whether becoming pressure
+  creates a distinguishable new basin or sub-basin rather than only reinforcing
+  an old one.
+- N26 proxy divergence / proxy collapse: test proxy-geometry divergence while
+  addressing the AP5/N15 NAT4 gap.
+- N27 configuration / substrate transfer: test basin-signature persistence
+  across declared fixture, context, or substrate changes.
+- N28 generative vs extractive persistence: test whether one basin can persist
+  while increasing neighboring or sub-basin formation capacity.
+- N29 agentic ecology convergence bridge: map N20-N28 primitives into the
+  agentic ecology / ants project with producer residue, medium debt, claim
+  boundaries, and first applied probe definitions.
+
+N20-N29 converge three paths in N29:
+
+```text
+geometric coherence papers and essays:
+    Arc of Becoming method plus agency-specific interpretation from the essays
+
+graph substrate experiments:
+    N01-N28 LGRC primitive evidence and controls
+
+agentic ecology / ants project:
+    applied multi-basin shared-medium ecology target
+```
+
+Formal agentic ecology specs start at N29, not before. N20-N28 may use the
+ecology project as future application context, but should remain LGRC primitive
+experiments inside this repository.
+
+The agency-specific essay sources include `From Structural Abundance to
+Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
+Read-Back`. Treat `Sentience as Read-Back` as a boundary source separating
+agency from sentience; it does not open sentience, consciousness, or
+interiority claims for N20-N29.
+
+Other reasonable branch families remain:
 
 - Phase 8 AP4 NAT4 upgrade: add route-conditioned support/regulation evidence
   and native route-selection telemetry before claiming native ladder
@@ -326,10 +385,10 @@ is defined by this handoff. Reasonable next branch families are:
 - Post-tranche synthesis only: summarize the closed N12-N19 record without
   opening native implementation or a new experiment series.
 
-Open targeted Phase 8 only when the goal is native implementation of one of
-the recorded NAT4 contracts or the required AP4/AP5 NAT4 upgrades. N18 artifact
-evidence and N19 readiness classifications cannot be relabeled as native
-support.
+Open targeted Phase 8 only when the goal is native implementation of one of the
+recorded NAT4 contracts or the required AP4/AP5 NAT4 upgrades. N18 artifact
+evidence, N19 readiness classifications, and N20-N29 roadmap language cannot be
+relabeled as native support.
 
 ## Claim Boundary
 

@@ -165,13 +165,38 @@ ap9_opened = false
 N19 records local NAT4 Phase-8-ready surfaces for AP3, AP6, AP7, and limited
 AP8, but AP4/N14 and AP5/N15 remain below NAT4. Therefore the current
 implementation cannot generate the claimed AP3-AP8 ladder as a complete NAT4
-ladder. This closes the current N12-N19 documentation/review stack before any
-new series is defined. Any N20+ or Phase 8 implementation series needs its own
-roadmap/branch and must start from the N19 AP4/AP5 NAT4 gaps rather than
-silently treating the ladder as natively generatable.
+ladder. This closes the current N12-N19 documentation/review stack.
+
+N20-N29 are now defined as the next roadmap arc, not as implemented experiment
+stubs. The arc keeps three paths distinct until N29:
+
+```text
+geometric coherence papers and essays:
+    Arc of Becoming method plus agency-specific interpretation from the essays
+
+graph substrate experiments:
+    N01-N28 LGRC primitive evidence and control discipline
+
+agentic ecology / ants project:
+    applied multi-basin shared-medium ecology target, held as context until N29
+```
+
+N20-N28 stay inside this repository and ground becoming-style primitives:
+withdrawal resistance, naturalization depth, susceptibility update, live
+continuation collapse, surplus-supported optionality, spark/new-basin
+formation, proxy divergence, transfer, and generative persistence. N29 is the
+first formal convergence bridge into the agentic ecology project, where
+producer residue, medium debt, and first applied ant-ecology probes can be
+specified. Phase 8, native support,
+native ant agency, biological agency, and unrestricted agency remain unopened.
+The agency-specific essay sources include `From Structural Abundance to
+Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
+Read-Back`; the last is a boundary source for separating agency from sentience,
+not a sentience claim.
 
 Roadmap-level context:
 
 - [N05-N11 LGRC Agentic-Like Foundation Roadmap](N05-N11-LGRC-AgenticLikeFoundationRoadmap.md)
 - [N12-N18 LGRC Agency Prerequisites Roadmap](N12-N18-LGRC-AgencyPrerequisitesRoadmap.md)
 - [N12-N18 LGRC Agency Prerequisites Handoff](N12-N18-LGRC-AgencyPrerequisitesHandoff.md)
+- [N20-N29 LGRC Becoming-Agency Ecology Roadmap](N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md)

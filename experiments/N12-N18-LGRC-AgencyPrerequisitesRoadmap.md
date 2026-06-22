@@ -685,7 +685,12 @@ claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
 ```
 
 The current experiment stack is therefore closed with a specific native
-generation blocker: AP4/N14 and AP5/N15 lack NAT4 evidence. Any future N20+
-series or Phase 8 implementation branch must be defined separately and must
-start from that closeout state, not from an assumption that the full AP3-AP8
-ladder is already natively generatable.
+generation blocker: AP4/N14 and AP5/N15 lack NAT4 evidence. The separate
+`N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md` now defines the next
+becoming-agency primitive arc and the N29 convergence bridge to agentic
+ecology. That arc must start from the N19 closeout state, not from an
+assumption that the full AP3-AP8 ladder is already natively generatable.
+
+Any Phase 8 implementation branch remains separate from N20-N29 and should
+only open when the goal is native implementation of recorded NAT4 contracts or
+the required AP4/AP5 NAT4 upgrades.
