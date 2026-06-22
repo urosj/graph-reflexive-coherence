@@ -1,7 +1,8 @@
 # N20-N29 LGRC Becoming-Agency Ecology Roadmap
 
-This roadmap defines the next experiment arc after the closed N12-N19
-agency-prerequisite and native-readiness stack.
+This roadmap defines the active experiment arc after the closed N12-N19
+agency-prerequisite and native-readiness stack. N20 is now closed as the
+translation-contract entry point, and N21 is the next experiment.
 
 It is not a Phase 8 implementation plan, not an ant ecology specification, and
 not an agency claim. Its purpose is to ground the deeper "agency of becoming"
@@ -161,6 +162,16 @@ Avoid treating "learning", "choice", "function", "intention", "goal", or
 
 ## N20. Becoming-Primitive / Producer Translation Contract
 
+Status:
+
+```text
+closed
+final_supported_status = N20_contract_closed_no_primitive_evidence
+final_claim_ceiling = artifact_level_becoming_primitive_translation_contract_only
+ready_for_n21 = true
+n21_handoff_scope = withdrawal_resistance, naturalization_depth
+```
+
 Question:
 
 ```text
@@ -176,7 +187,7 @@ LGRC-visible field mapping
 producer definition
 producer residue ledger
 naturalization debt ledger
-native function descriptor
+continuation function descriptor
 proxy metric definition
 support/scaffold declaration
 what_counts_as_same_basin_continuing
@@ -201,10 +212,26 @@ naturalization_debt
 blocked_relabel
 ```
 
-N20 should define the admissibility contract for the rest of the arc. It should
-not produce learning, choice, spark, abundance, ecology, or agency evidence yet.
+N20 defines the admissibility contract for the rest of the arc. It does not
+produce withdrawal resistance, naturalization depth, learning, choice, spark,
+abundance, ecology, or agency evidence.
+
+Active handoff:
+
+- `experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md`
+- `experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_closeout_and_n21_handoff.md`
+- `experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json`
 
 ## N21. Withdrawal Resistance And Naturalization Depth
+
+Status:
+
+```text
+next
+must_consume_i5_contract = true
+may_redefine_n20_contract_to_pass = false
+must_produce_source_backed_pass_fail_evidence = true
+```
 
 Question:
 
@@ -579,11 +606,11 @@ N29 is the first formal bridge to agentic ecology
 Arc of Becoming is used as method, not as evidence shortcut
 the geometric coherence papers and essays supply diagnostics, not proof by citation
 producer residue and native evidence remain separate
-each N21-N28 experiment consumes the N20 producer/native-function contract
+each N21-N28 experiment consumes the N20 producer/continuation-function contract
 each positive row states substrate-carried fields, producer-mediated fields,
 and naturalization debt
 no primitive is promoted if it succeeds only by changing the N20 definition of
-basin signature, native function descriptor, or proxy-only success
+basin signature, continuation-function descriptor, or proxy-only success
 negative controls fail closed with named blockers
 AP4/AP5 NAT4 gaps are tracked rather than bypassed
 N22 learning, N23 choice/collapse, N24 abundance, N25 spark/new-basin

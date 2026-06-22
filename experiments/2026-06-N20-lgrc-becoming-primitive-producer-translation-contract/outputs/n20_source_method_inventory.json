@@ -1,0 +1,957 @@
+{
+  "acceptance_state": "accepted_source_method_inventory_no_primitive_evidence",
+  "agency_claim_opened": false,
+  "ant_ecology_spec_opened": false,
+  "ap_gap_propagation_map": {
+    "ap4_gap": {
+      "affected_primitives": [
+        "susceptibility_update",
+        "live_continuation_collapse"
+      ],
+      "ap_level": "AP4",
+      "best_current_evidence": "N14 route consequence-selection telemetry is a NAT3 native-contract candidate, not NAT4 Phase-8-ready evidence.",
+      "best_nat_level": "NAT3",
+      "blocked_relabels": [
+        "semantic_choice",
+        "intention",
+        "producer_preference"
+      ],
+      "coverage_status": "nat4_absent_contract_only",
+      "gap": "route consequence selection is not yet source-current native policy",
+      "gap_summary": "route consequence selection is not yet source-current native policy",
+      "missing_for_nat4": [
+        "source-current route-conditioned support/regulation rows",
+        "observed route-conditioned support/regulation inputs instead of constructed followout",
+        "peer-route same-horizon comparison records",
+        "peer-route same-budget comparison records",
+        "default-off native route-selection telemetry surface with replay and stale-record controls",
+        "rejection record for generic support/regulation reuse as route-conditioned evidence"
+      ],
+      "nat4_evidence_present": false,
+      "source": [
+        "N19",
+        "N14"
+      ],
+      "source_rows": [
+        "n19_i3_row_03_n14_route_consequence_selection_contract_nat3",
+        "n19_i3_row_04_n14_constructed_followout_native_support_blocker"
+      ],
+      "source_specific_blockers": [
+        "constructed_followout_as_native_support"
+      ],
+      "why_this_blocks_ladder_generation": "AP4 is the consequence-sensitive selection rung. Without source-current route-conditioned support/regulation evidence, a native producer could record route consequences, but it could not generate the claimed AP4 selection step as a NAT4 Phase-8-ready rung."
+    },
+    "ap4_gap_carried_forward": true,
+    "ap5_gap": {
+      "affected_primitives": [
+        "proxy_divergence_proxy_collapse"
+      ],
+      "ap_level": "AP5",
+      "best_current_evidence": "N15 proxy derivation is a NAT3 native-contract candidate, not NAT4 Phase-8-ready evidence.",
+      "best_nat_level": "NAT3",
+      "blocked_relabels": [
+        "semantic_goal",
+        "goal_ownership",
+        "hidden_proxy_policy"
+      ],
+      "coverage_status": "nat4_absent_contract_only",
+      "gap": "proxy derivation depends on lower-stack artifact surfaces",
+      "gap_summary": "proxy derivation depends on lower-stack artifact surfaces",
+      "missing_for_nat4": [
+        "native lower-stack input vector captured after AP3/AP4 native surfaces exist",
+        "AP4 NAT4 route-conditioned support/regulation evidence",
+        "default-off native proxy derivation policy record",
+        "target condition digest recorded before use",
+        "replay digest over target derivation, bridge ranking, budget, and claim flags",
+        "validation that readiness-only context remains non-mutating support context"
+      ],
+      "nat4_evidence_present": false,
+      "source": [
+        "N19",
+        "N15"
+      ],
+      "source_rows": [
+        "n19_i3_row_05_n15_proxy_derivation_contract_nat3",
+        "n19_i3_row_06_n15_proxy_goal_choice_relabels_rejected"
+      ],
+      "source_specific_blockers": [
+        "readiness_only_context_as_native_support"
+      ],
+      "why_this_blocks_ladder_generation": "AP5 derives a proxy/target from lower-stack inputs. Because AP4 is not yet NAT4, and because the proxy derivation policy is not implemented as a native default-off surface, the current implementation cannot generate the AP5 rung as NAT4 Phase-8-ready evidence."
+    },
+    "ap5_gap_carried_forward": true,
+    "gap_status": "carried_forward_not_resolved",
+    "propagation_rule": "Any later primitive depending on route selection, proxy derivation, target formation, or lower-stack source-currentness must carry the relevant N19 gap until source-backed naturalization evidence removes it."
+  },
+  "artifact_id": "n20_source_method_inventory",
+  "artifact_invariants": {
+    "agency_claim_opened": false,
+    "ant_ecology_spec_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "primitive_evidence_opened": false,
+    "sentience_opened": false,
+    "src_diff_empty_required": true
+  },
+  "checks": [
+    {
+      "check_id": "all_source_roles_allowed",
+      "detail": [
+        "boundary_source",
+        "diagnostic_vocabulary_source",
+        "future_application_context",
+        "implementation_boundary_source",
+        "method_source",
+        "roadmap_source"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_local_source_records_have_relative_paths",
+      "detail": [
+        "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+        "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md",
+        "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_phase8_readiness_matrix.json",
+        "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+        "experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md",
+        "experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_source_rows_have_consumption_rules",
+      "detail": 13,
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false_per_row",
+      "detail": 13,
+      "passed": true
+    },
+    {
+      "check_id": "arc_sources_method_only",
+      "detail": [
+        "n20_i1_row_03_classification_of_becoming_method",
+        "n20_i1_row_04_interrogation_of_becoming_method",
+        "n20_i1_row_05_naturalization_of_becoming_method",
+        "n20_i1_row_06_cultivation_of_becoming_method"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "agency_essays_are_vocabulary_or_boundary_only",
+      "detail": [
+        "n20_i1_row_07_agency_of_becoming_diagnostics",
+        "n20_i1_row_08_agency_after_choice_vocabulary",
+        "n20_i1_row_09_structural_abundance_boundary",
+        "n20_i1_row_10_sentience_as_readback_boundary"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "sentience_boundary_only",
+      "detail": "Sentience as Read-Back is boundary-only.",
+      "passed": true
+    },
+    {
+      "check_id": "n19_boundary_status_carried_forward",
+      "detail": {
+        "ap9_opened": false,
+        "boundary_source_path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+        "claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+        "current_implementation_can_generate_claimed_ap_ladder": false,
+        "full_ap3_ap8_nat4_ladder_generation_supported": false,
+        "native_support_opened": false,
+        "phase8_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_gap_map_started",
+      "detail": {
+        "ap4": [
+          "susceptibility_update",
+          "live_continuation_collapse"
+        ],
+        "ap5": [
+          "proxy_divergence_proxy_collapse"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "roadmap_is_not_evidence",
+      "detail": "N20-N29 roadmap defines arc order and boundaries only.",
+      "passed": true
+    },
+    {
+      "check_id": "agentic_ecology_future_context_only",
+      "detail": "N29 remains first formal ecology bridge.",
+      "passed": true
+    },
+    {
+      "check_id": "no_primitive_evidence_or_classification_opened",
+      "detail": {
+        "primitive_evidence_opened": false,
+        "primitive_rows_classified": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_invariants_preserved",
+      "detail": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "all inventory paths are relative or title records",
+      "passed": true
+    }
+  ],
+  "claim_boundary": "N20 Iteration 1 inventories sources and method only. It does not classify primitives, open primitive evidence, prove agency, open Phase 8, open native support, open sentience/read-back claims, or start ant ecology specifications before N29.",
+  "command": ".venv/bin/python experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/scripts/build_n20_source_method_inventory.py",
+  "experiment": "2026-06-N20-lgrc-becoming-primitive-producer-translation-contract",
+  "failed_checks": [],
+  "generated_at": "2026-06-22T00:00:00+00:00",
+  "iteration": 1,
+  "n19_boundary_status": {
+    "ap9_opened": false,
+    "boundary_source_path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+    "claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+    "current_implementation_can_generate_claimed_ap_ladder": false,
+    "full_ap3_ap8_nat4_ladder_generation_supported": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "native_ant_agency_claim_opened": false,
+  "native_colony_agency_claim_opened": false,
+  "native_support_opened": false,
+  "output_digest": "07a827ef3cade00882e9b04f53cadea75ca277df8ec12e04e4db60b99b0e0aa3",
+  "phase8_opened": false,
+  "primitive_evidence_opened": false,
+  "primitive_rows_classified": false,
+  "purpose": "Inventory N20 source, method, diagnostic, roadmap, boundary, and future-context sources before primitive classification.",
+  "readback_claim_opened": false,
+  "ready_for_iteration_2_schema": true,
+  "row_count": 13,
+  "schema_version": "n20_source_method_inventory_v1",
+  "sentience_opened": false,
+  "source_role_policy": {
+    "allowed_roles": [
+      "boundary_source",
+      "diagnostic_vocabulary_source",
+      "future_application_context",
+      "implementation_boundary_source",
+      "method_source",
+      "roadmap_source"
+    ],
+    "boundary_sources_do_not_open_claims": true,
+    "diagnostic_sources_are_not_proof": true,
+    "future_application_context_not_specification": true,
+    "method_sources_are_not_evidence": true
+  },
+  "source_rows": [
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "N19 is consumed only as native-readiness boundary and gap source; it does not make the AP3-AP8 ladder natively generatable.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "current implementation boundary",
+        "AP4/AP5 NAT4 gaps",
+        "Phase 8 unopened",
+        "native support unopened"
+      ],
+      "may_consume_as": [
+        "native-readiness boundary",
+        "AP4/AP5 NAT4 gap source",
+        "Phase 8 and native-support blocker source"
+      ],
+      "must_not_consume_as": [
+        "Phase 8 implementation",
+        "native support",
+        "primitive evidence",
+        "agency proof",
+        "AP4/AP5 NAT4 gap resolution"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_01_n19_implementation_boundary",
+      "source_consumption_rule": "implementation_boundary_only_no_primitive_evidence",
+      "source_digest_or_title_record": {
+        "phase8_matrix": {
+          "output_digest": "193ea18a1ab3398e0d6a210101e7f6fc0fd91ea6c5ecd59853dee0814cc38eae",
+          "parseable_json": true,
+          "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_phase8_readiness_matrix.json",
+          "record_type": "relative_path_digest",
+          "sha256": "a411d361ce43bdfdc6951ee07192ce3c7b8d887034258dcd069a1c274afc2379",
+          "status": "passed"
+        },
+        "primary": {
+          "output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+          "parseable_json": true,
+          "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+          "record_type": "relative_path_digest",
+          "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+          "status": "passed"
+        },
+        "report": {
+          "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md",
+          "record_type": "relative_path_digest",
+          "sha256": "f0b1f8fb8ee77d83e150da6b239b515bb958d010820f650167b9e90aba5894ef"
+        }
+      },
+      "source_id": "N19",
+      "source_role": "implementation_boundary_source",
+      "source_title": "LGRC Native Naturalization Review AP3-AP8",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Roadmap defines order and boundaries; it is not evidence.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "N20 contract",
+        "N21-N28 primitive order",
+        "N29 first formal ecology bridge"
+      ],
+      "may_consume_as": [
+        "local experiment arc definition",
+        "claim boundary source",
+        "N29 convergence boundary"
+      ],
+      "must_not_consume_as": [
+        "primitive evidence",
+        "agency proof",
+        "Phase 8 implementation plan",
+        "ant ecology specification before N29"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_02_n20_n29_roadmap",
+      "source_consumption_rule": "roadmap_not_evidence",
+      "source_digest_or_title_record": {
+        "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+        "record_type": "relative_path_digest",
+        "sha256": "6ee3f1fa5d6fa101259ef1d28e1be0bcbb3467b1ea904c660b847bed2391d5df"
+      },
+      "source_id": "N20_N29_ROADMAP",
+      "source_role": "roadmap_source",
+      "source_title": "N20-N29 LGRC Becoming-Agency Ecology Roadmap",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Method only; classification is not proof.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "name primitives without semantic promotion",
+        "classify what appeared",
+        "preserve value without overclaiming"
+      ],
+      "may_consume_as": [
+        "method for naming expressed primitives",
+        "method for non-promoting result classification"
+      ],
+      "must_not_consume_as": [
+        "proof of LGRC primitive evidence",
+        "agency proof",
+        "native support proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_03_classification_of_becoming_method",
+      "source_consumption_rule": "method_only_not_evidence",
+      "source_digest_or_title_record": {
+        "collection": "arc-of-becoming",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ARC_CLASSIFICATION_OF_BECOMING",
+      "source_role": "method_source",
+      "source_title": "Classification of Becoming",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Method only; probes remain questions until artifacts exist.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "bounded probe",
+        "control design",
+        "withdrawal as question"
+      ],
+      "may_consume_as": [
+        "method for bounded probes",
+        "method for failure and control design"
+      ],
+      "must_not_consume_as": [
+        "probe result proof",
+        "primitive evidence",
+        "agency proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_04_interrogation_of_becoming_method",
+      "source_consumption_rule": "method_only_not_evidence",
+      "source_digest_or_title_record": {
+        "collection": "arc-of-becoming",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ARC_INTERROGATION_OF_BECOMING",
+      "source_role": "method_source",
+      "source_title": "Interrogation of Becoming",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Method only; naturalization must be source-backed later.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "naturalization gap",
+        "support translation",
+        "proxy-localization trap"
+      ],
+      "may_consume_as": [
+        "method for separating substrate-carried state",
+        "method for identifying producer-mediated support",
+        "method for naming naturalization debt"
+      ],
+      "must_not_consume_as": [
+        "native support proof",
+        "Phase 8 proof",
+        "primitive evidence"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_05_naturalization_of_becoming_method",
+      "source_consumption_rule": "method_only_not_native_support",
+      "source_digest_or_title_record": {
+        "collection": "arc-of-becoming",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ARC_NATURALIZATION_OF_BECOMING",
+      "source_role": "method_source",
+      "source_title": "Naturalization of Becoming",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Method only; cultivation cannot relabel scaffolded success.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "orient",
+        "observe",
+        "classify",
+        "probe",
+        "withdraw",
+        "naturalize",
+        "integrate"
+      ],
+      "may_consume_as": [
+        "method for minimal producer-surface design",
+        "method for integrate-after-probe sequencing"
+      ],
+      "must_not_consume_as": [
+        "permission to retune until success",
+        "primitive evidence",
+        "agency proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_06_cultivation_of_becoming_method",
+      "source_consumption_rule": "method_only_not_evidence",
+      "source_digest_or_title_record": {
+        "collection": "arc-of-becoming",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ARC_CULTIVATION_OF_BECOMING",
+      "source_role": "method_source",
+      "source_title": "Cultivation of Becoming",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Diagnostic vocabulary only; no agency claim opened.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "withdrawal resistance",
+        "naturalization depth",
+        "configuration or substrate transfer",
+        "proxy pressure",
+        "generative versus extractive persistence"
+      ],
+      "may_consume_as": [
+        "diagnostic vocabulary",
+        "bounded interpretation source",
+        "withdrawal/naturalization/transfer/proxy-pressure vocabulary"
+      ],
+      "must_not_consume_as": [
+        "proof of agency",
+        "proof of LGRC primitive evidence",
+        "proof of native support",
+        "semantic intention proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_07_agency_of_becoming_diagnostics",
+      "source_consumption_rule": "diagnostic_vocabulary_only_not_proof",
+      "source_digest_or_title_record": {
+        "collection": "essays",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ESSAY_AGENCY_OF_BECOMING",
+      "source_role": "diagnostic_vocabulary_source",
+      "source_title": "Agency of Becoming: An Interpretation Through Reflexive Coherence",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Vocabulary only; vocabulary labels cannot become proof.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "scaffolded agency vocabulary",
+        "native agency vocabulary",
+        "proxy agency vocabulary",
+        "wounded agency vocabulary",
+        "extractive agency vocabulary",
+        "generative agency vocabulary"
+      ],
+      "may_consume_as": [
+        "scaffolded/native/proxy/wounded/extractive/generative vocabulary",
+        "claim-boundary vocabulary"
+      ],
+      "must_not_consume_as": [
+        "semantic choice proof",
+        "agency proof",
+        "native agency proof",
+        "primitive evidence"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_08_agency_after_choice_vocabulary",
+      "source_consumption_rule": "diagnostic_vocabulary_only_not_proof",
+      "source_digest_or_title_record": {
+        "collection": "essays",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ESSAY_AGENCY_AFTER_CHOICE",
+      "source_role": "diagnostic_vocabulary_source",
+      "source_title": "Agency After Choice",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Abundance opens a question; it does not prove agency.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "structural abundance",
+        "basin proliferation",
+        "surplus possibility",
+        "abundance is not yet agency"
+      ],
+      "may_consume_as": [
+        "abundance vocabulary",
+        "surplus possibility boundary",
+        "basin proliferation context"
+      ],
+      "must_not_consume_as": [
+        "abundance proof",
+        "agency proof",
+        "primitive evidence",
+        "reward maximization proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_09_structural_abundance_boundary",
+      "source_consumption_rule": "diagnostic_vocabulary_only_not_proof",
+      "source_digest_or_title_record": {
+        "collection": "essays",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ESSAY_FROM_STRUCTURAL_ABUNDANCE_TO_AGENCY",
+      "source_role": "diagnostic_vocabulary_source",
+      "source_title": "From Structural Abundance to Agency",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Boundary-only; sentience and read-back claims remain closed.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "sentience boundary",
+        "read-back blocked",
+        "interiority blocked"
+      ],
+      "may_consume_as": [
+        "boundary source separating agency from sentience",
+        "read-back and interiority blocker source"
+      ],
+      "must_not_consume_as": [
+        "sentience proof",
+        "consciousness proof",
+        "interiority proof",
+        "primitive evidence",
+        "agency proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "geometric-reflexive-coherence",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_10_sentience_as_readback_boundary",
+      "source_consumption_rule": "boundary_only_no_sentience_claim",
+      "source_digest_or_title_record": {
+        "collection": "essays",
+        "record_type": "title_record_only",
+        "source_repo_id": "geometric-reflexive-coherence"
+      },
+      "source_id": "ESSAY_SENTIENCE_AS_READBACK",
+      "source_role": "boundary_source",
+      "source_title": "Sentience as Read-Back",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Future context only; no ant ecology spec opened in N20.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "future multi-basin ecology context",
+        "medium debt deferred until N28/N29",
+        "N29 first bridge"
+      ],
+      "may_consume_as": [
+        "future application context",
+        "N29 convergence target",
+        "medium-debt placeholder context"
+      ],
+      "must_not_consume_as": [
+        "ant ecology implementation spec before N29",
+        "native ant agency proof",
+        "native colony agency proof",
+        "primitive evidence"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "reflexive-coherence-agentic-ecology",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_11_agentic_ecology_future_context",
+      "source_consumption_rule": "future_context_only_until_N29",
+      "source_digest_or_title_record": {
+        "record_type": "context_record_only",
+        "source_repo_id": "reflexive-coherence-agentic-ecology"
+      },
+      "source_id": "AGENTIC_ECOLOGY_CONTEXT",
+      "source_role": "future_application_context",
+      "source_title": "Agentic Ecology / Ants Project",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Closed prerequisite context only; does not solve N19 gaps.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "artifact-level prerequisite stack",
+        "Phase 8 unopened",
+        "claim-boundary discipline"
+      ],
+      "may_consume_as": [
+        "closed prerequisite stack context",
+        "AP3-AP8 artifact-claim boundary source"
+      ],
+      "must_not_consume_as": [
+        "native implementation evidence",
+        "primitive evidence",
+        "agency proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_12_n12_n18_prerequisites_roadmap",
+      "source_consumption_rule": "historical_boundary_context_only",
+      "source_digest_or_title_record": {
+        "path": "experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md",
+        "record_type": "relative_path_digest",
+        "sha256": "ca4f7904aebabe81d821e4d5c52e88110b6e9cec7872daab8cf6d895190029d1"
+      },
+      "source_id": "N12_N18_ROADMAP",
+      "source_role": "boundary_source",
+      "source_title": "N12-N18 LGRC Agency Prerequisites Roadmap",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "agency_proof_status": "not_agency_proof",
+      "claim_boundary": "Handoff context only; not primitive or agency evidence.",
+      "contract_status": "complete",
+      "diagnostics_or_method_terms": [
+        "closed N12-N19 documentation/review stack",
+        "N20-N29 roadmap transition"
+      ],
+      "may_consume_as": [
+        "closed-stack handoff context",
+        "N19 and N20 transition boundary"
+      ],
+      "must_not_consume_as": [
+        "primitive evidence",
+        "Phase 8 implementation",
+        "native support",
+        "agency proof"
+      ],
+      "primitive_evidence_status": "not_primitive_evidence",
+      "relative_path_or_repo_id": "experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md",
+      "row_decision": "supported",
+      "row_id": "n20_i1_row_13_n12_n18_prerequisites_handoff",
+      "source_consumption_rule": "historical_boundary_context_only",
+      "source_digest_or_title_record": {
+        "path": "experiments/N12-N18-LGRC-AgencyPrerequisitesHandoff.md",
+        "record_type": "relative_path_digest",
+        "sha256": "1cd411b5f421fa191bb8e32cc771a05c58cb413a4964f3403c49bb36cc18567d"
+      },
+      "source_id": "N12_N18_HANDOFF",
+      "source_role": "boundary_source",
+      "source_title": "N12-N18 LGRC Agency Prerequisites Handoff",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "status": "passed"
+}

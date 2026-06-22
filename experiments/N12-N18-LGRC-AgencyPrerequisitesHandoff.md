@@ -1,5 +1,16 @@
 # N12-N18 LGRC Agency Prerequisites Handoff
 
+Historical note:
+
+```text
+active continuation handoff = experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md
+current next experiment = N21_withdrawal_resistance_and_naturalization_depth
+```
+
+This file remains the historical pickup note for the N12-N18
+agency-prerequisite stack and N19 native-readiness review. Current continuation
+after the closed N20 contract should use the N20-N29 handoff instead.
+
 This handoff is the pickup note for continuing after the N05-N11 foundation
 arc, the completed N12-N18 agency-prerequisite experiments, and the closed N19
 native-readiness review. It is meant to let a future conversation restart
@@ -34,7 +45,9 @@ Current closure state:
 N12-N18 artifact-level agency-prerequisite tranche = closed
 N19 native-readiness review = closed
 N20-N29 becoming-agency ecology roadmap = defined
-N20-N29 implemented experiment stubs = false
+N20 becoming-primitive translation contract = closed
+current active handoff = N20-N29-LGRC-BecomingAgencyEcologyHandoff.md
+current next experiment = N21_withdrawal_resistance_and_naturalization_depth
 Phase 8 implementation series defined here = false
 ```
 
@@ -313,20 +326,25 @@ route-conditioned support/regulation evidence and native route-selection
 telemetry. AP5/N15 depends on the AP4 gap and is missing native lower-stack
 input capture plus a default-off native proxy derivation policy.
 
-## Next Options After N19
+## Historical Next Options After N19
 
 The N12-N18 artifact-level agency-prerequisite tranche is closed, and the N19
-native-readiness review is closed. N20-N29 are now defined as a roadmap arc,
-not as implemented experiment stubs or a Phase 8 implementation branch.
+native-readiness review is closed. This section records the branch options that
+existed after N19. The active continuation has since moved to:
+
+```text
+experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md
+```
 
 The next planned experiment family is:
 
-- N20 becoming-primitive / producer translation contract: define LGRC-visible
-  agency-of-becoming primitives, producers, native-function descriptors, proxy
-  metrics, producer residue, and naturalization debt without producing
-  primitive evidence yet.
+- N20 becoming-primitive / producer translation contract: now closed as
+  `artifact_level_becoming_primitive_translation_contract_only`, with primitive
+  evidence, agency, Phase 8, native support, sentience, and ant ecology
+  implementation still unopened.
 - N21 withdrawal resistance and naturalization depth: test basin-signature
-  persistence under bounded support weakening/removal.
+  persistence under bounded support weakening/removal. This is now the active
+  next experiment.
 - N22 susceptibility update / durable geometry modification: test
   reinforcement, inhibition, boundary reshaping, and corridor formation without
   choice claims.
