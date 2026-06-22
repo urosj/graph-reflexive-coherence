@@ -253,7 +253,7 @@ proxy_id
 measured_quantity
 source_current_inputs
 producer_inputs
-expected_relation_to_native_function
+expected_relation_to_continuation_function
 divergence_condition
 collapse_condition
 proxy_only_success_blocker
@@ -290,7 +290,7 @@ LGRC_visible_fields
 producer_mediated_fields
 naturalization_debt_fields
 blocked_relabel_fields
-native_function_descriptor
+native_function_descriptor_alias
 continuation_function_descriptor
 proxy_metric_definition
 support_scaffold_declaration
@@ -307,10 +307,16 @@ Frozen `contract_status` values:
 
 ```text
 complete
+incomplete_missing_producer_residue_classification
 incomplete_missing_continuation_function
 incomplete_missing_proxy_metric
+incomplete_missing_support_scaffold_declaration
 incomplete_missing_same_basin_rule
 incomplete_missing_controls
+incomplete_missing_claim_ceiling
+incomplete_missing_unsafe_claim_flags
+incomplete_missing_variable_classification
+incomplete_missing_debt_subtype
 blocked_by_relabel
 ```
 
