@@ -1,0 +1,2562 @@
+{
+  "acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+  "agency_claim_opened": false,
+  "ant_ecology_spec_opened": false,
+  "ap4_ap5_local_dependency_summary": {
+    "configuration_substrate_transfer_has_conditional_ap4": true,
+    "live_continuation_collapse_has_ap4": true,
+    "live_continuation_collapse_has_conditional_ap5": true,
+    "proxy_divergence_proxy_collapse_has_ap5": true,
+    "susceptibility_update_has_ap4": true,
+    "susceptibility_update_has_conditional_ap5": true
+  },
+  "artifact_id": "n20_native_function_proxy_contract",
+  "artifact_invariants": {
+    "agency_claim_opened": false,
+    "ant_ecology_spec_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "primitive_evidence_opened": false,
+    "sentience_opened": false,
+    "src_diff_empty_required": true
+  },
+  "checks": [
+    {
+      "check_id": "source_ledger_passed_and_not_primitive_evidence",
+      "detail": "accepted_producer_residue_naturalization_debt_ledger_no_primitive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "all_expected_primitives_have_contract_rows",
+      "detail": [
+        "withdrawal_resistance",
+        "naturalization_depth",
+        "susceptibility_update",
+        "live_continuation_collapse",
+        "surplus_supported_optionality",
+        "spark_sub_basin_new_basin_formation",
+        "proxy_divergence_proxy_collapse",
+        "configuration_substrate_transfer",
+        "generative_extractive_persistence"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "continuation_descriptors_defined_geometric",
+      "detail": "native function is alias only, not semantic purpose or goal",
+      "passed": true
+    },
+    {
+      "check_id": "proxy_metrics_defined_as_signs_not_replacements",
+      "detail": "proxy metrics cannot replace continuation function",
+      "passed": true
+    },
+    {
+      "check_id": "proxy_only_success_blockers_defined",
+      "detail": "proxy improves while basin continuation fails -> primitive not supported",
+      "passed": true
+    },
+    {
+      "check_id": "blocked_relabels_not_used_as_proxy_metrics",
+      "detail": [
+        "agency",
+        "choice",
+        "goal",
+        "intention",
+        "sentience",
+        "identity",
+        "native_support",
+        "selfhood",
+        "consciousness",
+        "organism_life"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "support_scaffold_declarations_defined",
+      "detail": "declared, required, producer-supplied, and withdrawable supports present",
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_dependencies_carried_forward_locally",
+      "detail": {
+        "configuration_substrate_transfer_has_conditional_ap4": true,
+        "live_continuation_collapse_has_ap4": true,
+        "live_continuation_collapse_has_conditional_ap5": true,
+        "proxy_divergence_proxy_collapse_has_ap5": true,
+        "susceptibility_update_has_ap4": true,
+        "susceptibility_update_has_conditional_ap5": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "rows_remain_incomplete_until_iteration5",
+      "detail": {
+        "incomplete_missing_same_basin_rule": 9
+      },
+      "passed": true
+    },
+    {
+      "check_id": "primitive_specific_descriptors_distinct",
+      "detail": "continuation/proxy/scaffold descriptor signatures are unique",
+      "passed": true
+    },
+    {
+      "check_id": "n21_handoff_inputs_present",
+      "detail": [
+        "withdrawal_resistance",
+        "naturalization_depth"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false_per_row",
+      "detail": 9,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_invariants_preserved",
+      "detail": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_primitive_evidence_opened",
+      "detail": {
+        "native_support_opened": false,
+        "primitive_evidence_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "contract paths are relative",
+      "passed": true
+    }
+  ],
+  "claim_boundary": "N20 Iteration 4 defines contract objects only. It does not test or support withdrawal resistance, naturalization depth, susceptibility update, live-continuation collapse, optionality, spark/new-basin formation, proxy collapse, transfer, generative persistence, agency, Phase 8, native support, sentience, or semantic function.",
+  "command": ".venv/bin/python experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/scripts/build_n20_native_function_proxy_contract.py",
+  "continuation_function_descriptors_defined": true,
+  "contract_rows": [
+    {
+      "LGRC_visible_fields": [
+        "withdrawal_resistance.basin_signature_trace",
+        "withdrawal_resistance.support_coherence_floor_trace",
+        "withdrawal_resistance.boundary_integrity_trace",
+        "withdrawal_resistance.withdrawal_window_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": []
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "basin_signature_trace",
+          "boundary_integrity_trace",
+          "support_coherence_floor_trace"
+        ],
+        "boundary_condition": "boundary remains distinguishable during support reduction",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "continuation_condition": "basin signature persists through declared support reduction",
+        "descriptor_id": "n20_i4_withdrawal_resistance_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "flux leakage does not explain apparent persistence",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_withdrawal_resistance_support_coherence_survival_margin",
+        "source_ledger_row": "n20_i3_row_01_withdrawal_resistance",
+        "support_floor": "support remains above declared withdrawal floor",
+        "transfer_condition": "not tested in N21 withdrawal row",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency of Becoming: An Interpretation Through Reflexive Coherence",
+        "Interrogation of Becoming",
+        "Naturalization of Becoming"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N21",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "n21_handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_withdrawal_resistance_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "withdrawal_resistance",
+      "primitive_name": "Withdrawal Resistance",
+      "primitive_specific_consumption_inputs": [
+        "withdrawal_condition",
+        "support_scaffold_declaration",
+        "support_floor",
+        "coherence_floor",
+        "same_basin_continuation_rule",
+        "hidden_producer_support_control",
+        "proxy_only_success_control"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "hidden producer support keeps the margin above floor after withdrawal",
+        "divergence_condition": "survival margin improves while basin signature or boundary integrity fails",
+        "expected_relation_to_continuation_function": "positive margin is only a sign of persistence if basin signature and boundary integrity remain source-visible",
+        "measured_quantity": "support_coherence_survival_margin",
+        "producer_inputs": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy",
+          "withdrawal_resistance.pass_fail_threshold_label"
+        ],
+        "proxy_id": "n20_i4_withdrawal_resistance_support_coherence_survival_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.withdrawal_window_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_01_withdrawal_resistance"
+      },
+      "roadmap_target": "N21",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_01_withdrawal_resistance",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_withdrawal_resistance_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_01_withdrawal_resistance",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_01_withdrawal_resistance",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_04_interrogation_of_becoming_method",
+        "n20_i1_row_05_naturalization_of_becoming_method",
+        "n20_i1_row_07_agency_of_becoming_diagnostics"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_04_interrogation_of_becoming_method",
+          "source_role": "method_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_05_naturalization_of_becoming_method",
+          "source_role": "method_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_07_agency_of_becoming_diagnostics",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "withdrawal_resistance.source_current_support_withdrawal_surface",
+          "withdrawal_resistance.producer_independent_withdrawal_replay"
+        ],
+        "optional_supports": [
+          "withdrawal window telemetry"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "source_ledger_row": "n20_i3_row_01_withdrawal_resistance",
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "declared support surface"
+        ],
+        "withdrawal_condition": "support weakened or removed under bounded schedule"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "naturalization_depth.post_probe_basin_signature_trace",
+        "naturalization_depth.post_probe_support_floor_trace",
+        "naturalization_depth.post_probe_coherence_floor_trace",
+        "naturalization_depth.multi_window_replay_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": []
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "post_probe_basin_signature_trace",
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "boundary_condition": "basin boundary remains distinguishable after probe removal",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "continuation_condition": "basin signature persists after the original probe/scaffold is absent",
+        "descriptor_id": "n20_i4_naturalization_depth_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "residual persistence is not explained by hidden support flux",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_naturalization_depth_post_probe_persistence_margin",
+        "source_ledger_row": "n20_i3_row_02_naturalization_depth",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "transfer_condition": "not tested in N21 naturalization-depth row",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Naturalization of Becoming",
+        "Agency of Becoming: An Interpretation Through Reflexive Coherence"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N21",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "n21_handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_naturalization_depth_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "naturalization_depth",
+      "primitive_name": "Naturalization Depth",
+      "primitive_specific_consumption_inputs": [
+        "withdrawal_condition",
+        "support_scaffold_declaration",
+        "support_floor",
+        "coherence_floor",
+        "same_basin_continuation_rule",
+        "hidden_producer_support_control",
+        "proxy_only_success_control"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "depth score depends on support annotation or probe residue",
+        "divergence_condition": "depth score improves while post-probe basin signature does not persist",
+        "expected_relation_to_continuation_function": "depth margin is a sign only when probe-absent basin state replays",
+        "measured_quantity": "post_probe_persistence_margin",
+        "producer_inputs": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.support_source_annotation",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "proxy_id": "n20_i4_naturalization_depth_post_probe_persistence_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace",
+          "naturalization_depth.multi_window_replay_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_02_naturalization_depth"
+      },
+      "roadmap_target": "N21",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_02_naturalization_depth",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_naturalization_depth_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_02_naturalization_depth",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_02_naturalization_depth",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_05_naturalization_of_becoming_method",
+        "n20_i1_row_07_agency_of_becoming_diagnostics"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_05_naturalization_of_becoming_method",
+          "source_role": "method_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_07_agency_of_becoming_diagnostics",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "naturalization_depth.source_current_producer_removal_observation",
+          "naturalization_depth.multi_window_without_probe_replay"
+        ],
+        "optional_supports": [
+          "support source annotation"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "source_ledger_row": "n20_i3_row_02_naturalization_depth",
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ],
+        "withdrawal_condition": "probe absent while residual basin trace remains auditable"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "susceptibility_update.pre_interaction_geometry_trace",
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [
+          {
+            "ap_level": "AP4",
+            "reason": "susceptibility update may depend on route-conditioned selection evidence",
+            "source": "N19/N14",
+            "status": "required_local_gap_dependency"
+          }
+        ],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": [
+          {
+            "ap_level": "AP5",
+            "condition": "proxy or target formation participates in susceptibility update",
+            "source": "N19/N15",
+            "status": "conditional_local_gap_dependency"
+          }
+        ]
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "pre_interaction_geometry_trace",
+          "post_interaction_geometry_trace",
+          "susceptibility_delta_trace"
+        ],
+        "boundary_condition": "route or region boundary remains auditable after update",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "altered geometry stays above coherence floor",
+        "continuation_condition": "later route or boundary susceptibility differs because prior interaction altered replay-visible geometry",
+        "descriptor_id": "n20_i4_susceptibility_update_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "durable delta is not a flux-only transient",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_susceptibility_update_susceptibility_delta_replay_margin",
+        "source_ledger_row": "n20_i3_row_03_susceptibility_update",
+        "support_floor": "altered geometry stays above support floor",
+        "transfer_condition": "not tested before N27",
+        "withdrawal_condition": "prior interaction support can be removed without erasing replay trace"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency After Choice",
+        "N20-N29 LGRC Becoming-Agency Ecology Roadmap"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N22",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_susceptibility_update_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "susceptibility_update",
+      "primitive_name": "Susceptibility Update",
+      "primitive_specific_consumption_inputs": [
+        "susceptibility_fields",
+        "replay_requirement",
+        "durable_geometry_modification_controls",
+        "AP4_gap_dependency_if_route_conditioned"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "replay loses the durable delta or depends on producer reinforcement",
+        "divergence_condition": "delta label changes while source-current geometry and re-entry do not",
+        "expected_relation_to_continuation_function": "delta is a sign only if replay-visible geometry changes and later re-entry follows that altered geometry",
+        "measured_quantity": "susceptibility_delta_replay_margin",
+        "producer_inputs": [
+          "susceptibility_update.route_update_rule",
+          "susceptibility_update.reinforcement_schedule",
+          "susceptibility_update.learning_label"
+        ],
+        "proxy_id": "n20_i4_susceptibility_update_susceptibility_delta_replay_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace",
+          "susceptibility_update.route_or_region_reentry_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_03_susceptibility_update"
+      },
+      "roadmap_target": "N22",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_03_susceptibility_update",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_susceptibility_update_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_03_susceptibility_update",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_03_susceptibility_update",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_08_agency_after_choice_vocabulary"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_08_agency_after_choice_vocabulary",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "susceptibility_update.source_current_route_conditioned_state_mutation",
+          "susceptibility_update.peer_route_same_budget_comparison"
+        ],
+        "optional_supports": [
+          "peer-route comparison telemetry"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "susceptibility_update.route_update_rule",
+          "susceptibility_update.reinforcement_schedule"
+        ],
+        "required_supports": [
+          "replay-visible geometry delta",
+          "later re-entry trace"
+        ],
+        "source_ledger_row": "n20_i3_row_03_susceptibility_update",
+        "support_id": "n20_i4_susceptibility_update_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "producer reinforcement schedule"
+        ],
+        "withdrawal_condition": "delta replays after scheduled reinforcement is absent"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "live_continuation_collapse.live_branch_set_trace",
+        "live_continuation_collapse.branch_support_coherence_traces",
+        "live_continuation_collapse.collapsed_continuation_trace",
+        "live_continuation_collapse.counterfactual_branch_retention_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [
+          {
+            "ap_level": "AP4",
+            "reason": "live continuation collapse depends on route or branch consequence selection",
+            "source": "N19/N14",
+            "status": "required_local_gap_dependency"
+          }
+        ],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": [
+          {
+            "ap_level": "AP5",
+            "condition": "proxy or target formation participates in branch valuation",
+            "source": "N19/N15",
+            "status": "conditional_local_gap_dependency"
+          }
+        ]
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "live_continuation_collapse.blocked.agency",
+        "live_continuation_collapse.blocked.consciousness",
+        "live_continuation_collapse.blocked.identity_acceptance",
+        "live_continuation_collapse.blocked.intention",
+        "live_continuation_collapse.blocked.native_ant_agency",
+        "live_continuation_collapse.blocked.native_colony_agency",
+        "live_continuation_collapse.blocked.native_support",
+        "live_continuation_collapse.blocked.organism_life",
+        "live_continuation_collapse.blocked.phase8_implementation",
+        "live_continuation_collapse.blocked.preference_injection",
+        "live_continuation_collapse.blocked.selfhood",
+        "live_continuation_collapse.blocked.semantic_action",
+        "live_continuation_collapse.blocked.semantic_choice",
+        "live_continuation_collapse.blocked.semantic_goal",
+        "live_continuation_collapse.blocked.semantic_goal_ownership",
+        "live_continuation_collapse.blocked.semantic_intention",
+        "live_continuation_collapse.blocked.semantic_perception",
+        "live_continuation_collapse.blocked.sentience",
+        "live_continuation_collapse.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "live_branch_set_trace",
+          "branch_support_coherence_traces",
+          "collapsed_continuation_trace"
+        ],
+        "boundary_condition": "live alternatives are real and boundary-distinguishable",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "selected branch remains above coherence floor",
+        "continuation_condition": "multiple live continuation branches resolve into one source-current continuation while alternatives remain auditable",
+        "descriptor_id": "n20_i4_live_continuation_collapse_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "collapse is not leakage or merge pressure masquerading as selection",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_live_continuation_collapse_branch_collapse_geometry_margin",
+        "source_ledger_row": "n20_i3_row_04_live_continuation_collapse",
+        "support_floor": "selected branch remains above support floor",
+        "transfer_condition": "not tested before N27",
+        "withdrawal_condition": "producer selected-branch label can be removed"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency After Choice",
+        "N20-N29 LGRC Becoming-Agency Ecology Roadmap"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N23",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_live_continuation_collapse_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "live_continuation_collapse.source_current_counterfactual_branch_records",
+        "live_continuation_collapse.route_conditioned_selection_policy",
+        "live_continuation_collapse.proxy_independent_branch_valuation"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "live_continuation_collapse",
+      "primitive_name": "Live-Continuation Collapse",
+      "primitive_specific_consumption_inputs": [
+        "live_continuation_set",
+        "fake_alternative_controls",
+        "producer_preference_injection_blockers",
+        "AP4_gap_dependency"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "live_continuation_collapse.branch_enumeration_policy",
+        "live_continuation_collapse.selected_branch_label",
+        "live_continuation_collapse.tie_breaker_schedule"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "collapse vanishes when producer preference or selected label is removed",
+        "divergence_condition": "selected branch score improves while alternatives are fake or post-hoc",
+        "expected_relation_to_continuation_function": "branch margin is a sign only when alternatives are source-current and collapse is geometry-conditioned",
+        "measured_quantity": "branch_collapse_geometry_margin",
+        "producer_inputs": [
+          "live_continuation_collapse.branch_enumeration_policy",
+          "live_continuation_collapse.selected_branch_label",
+          "live_continuation_collapse.tie_breaker_schedule"
+        ],
+        "proxy_id": "n20_i4_live_continuation_collapse_branch_collapse_geometry_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "live_continuation_collapse.live_branch_set_trace",
+          "live_continuation_collapse.branch_support_coherence_traces",
+          "live_continuation_collapse.collapsed_continuation_trace",
+          "live_continuation_collapse.counterfactual_branch_retention_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_04_live_continuation_collapse"
+      },
+      "roadmap_target": "N23",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_04_live_continuation_collapse",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_live_continuation_collapse_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_04_live_continuation_collapse",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_04_live_continuation_collapse",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_08_agency_after_choice_vocabulary"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_08_agency_after_choice_vocabulary",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "live_continuation_collapse.live_branch_set_trace",
+          "live_continuation_collapse.branch_support_coherence_traces"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "live_continuation_collapse.source_current_counterfactual_branch_records",
+          "live_continuation_collapse.route_conditioned_selection_policy"
+        ],
+        "optional_supports": [
+          "tie-break telemetry"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "live_continuation_collapse.branch_enumeration_policy",
+          "live_continuation_collapse.selected_branch_label"
+        ],
+        "required_supports": [
+          "live continuation set",
+          "counterfactual branch retention"
+        ],
+        "source_ledger_row": "n20_i3_row_04_live_continuation_collapse",
+        "support_id": "n20_i4_live_continuation_collapse_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "selected-branch label"
+        ],
+        "withdrawal_condition": "collapse remains auditable without selected label"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "surplus_supported_optionality.support_surplus_margin_trace",
+        "surplus_supported_optionality.optional_continuation_set_trace",
+        "surplus_supported_optionality.maintenance_floor_trace",
+        "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": []
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "surplus_supported_optionality.blocked.abundance_as_goal",
+        "surplus_supported_optionality.blocked.agency",
+        "surplus_supported_optionality.blocked.consciousness",
+        "surplus_supported_optionality.blocked.identity_acceptance",
+        "surplus_supported_optionality.blocked.native_ant_agency",
+        "surplus_supported_optionality.blocked.native_colony_agency",
+        "surplus_supported_optionality.blocked.native_support",
+        "surplus_supported_optionality.blocked.organism_life",
+        "surplus_supported_optionality.blocked.phase8_implementation",
+        "surplus_supported_optionality.blocked.reward_maximization",
+        "surplus_supported_optionality.blocked.selfhood",
+        "surplus_supported_optionality.blocked.semantic_action",
+        "surplus_supported_optionality.blocked.semantic_choice",
+        "surplus_supported_optionality.blocked.semantic_goal",
+        "surplus_supported_optionality.blocked.semantic_goal_ownership",
+        "surplus_supported_optionality.blocked.semantic_intention",
+        "surplus_supported_optionality.blocked.semantic_perception",
+        "surplus_supported_optionality.blocked.sentience",
+        "surplus_supported_optionality.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "support_surplus_margin_trace",
+          "optional_continuation_set_trace",
+          "maintenance_floor_trace"
+        ],
+        "boundary_condition": "boundary integrity remains above floor under optional branches",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "coherence remains preserved while optionality opens",
+        "continuation_condition": "surplus above maintenance floor opens optional continuations without collapsing the basin",
+        "descriptor_id": "n20_i4_surplus_supported_optionality_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "optional flux does not drain maintenance support",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_surplus_supported_optionality_surplus_optional_branch_capacity",
+        "source_ledger_row": "n20_i3_row_05_surplus_supported_optionality",
+        "support_floor": "maintenance floor remains preserved",
+        "transfer_condition": "not tested before N27",
+        "withdrawal_condition": "surplus can be reduced back to maintenance floor"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "From Structural Abundance to Agency",
+        "N20-N29 LGRC Becoming-Agency Ecology Roadmap"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N24",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_surplus_supported_optionality_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "surplus_supported_optionality.source_current_optional_branch_telemetry",
+        "surplus_supported_optionality.surplus_budget_owner",
+        "surplus_supported_optionality.hidden_budget_relief_control"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "surplus_supported_optionality",
+      "primitive_name": "Surplus-Supported Optionality",
+      "primitive_specific_consumption_inputs": [
+        "surplus_support_condition",
+        "optional_continuation_space",
+        "floor_crossing_controls",
+        "hidden_budget_relief_control"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "surplus_supported_optionality.optionality_enumerator",
+        "surplus_supported_optionality.exploration_schedule",
+        "surplus_supported_optionality.reward_or_proxy_label"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "optional branches disappear under hidden budget control",
+        "divergence_condition": "optional branch count improves while maintenance floor or boundary fails",
+        "expected_relation_to_continuation_function": "option count is a sign only if surplus remains above maintenance floor and boundary integrity holds",
+        "measured_quantity": "surplus_optional_branch_capacity",
+        "producer_inputs": [
+          "surplus_supported_optionality.optionality_enumerator",
+          "surplus_supported_optionality.exploration_schedule",
+          "surplus_supported_optionality.reward_or_proxy_label"
+        ],
+        "proxy_id": "n20_i4_surplus_supported_optionality_surplus_optional_branch_capacity",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.optional_continuation_set_trace",
+          "surplus_supported_optionality.maintenance_floor_trace",
+          "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_05_surplus_supported_optionality"
+      },
+      "roadmap_target": "N24",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_05_surplus_supported_optionality",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_surplus_supported_optionality_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_05_surplus_supported_optionality",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_05_surplus_supported_optionality",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_09_structural_abundance_boundary"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_09_structural_abundance_boundary",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.maintenance_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "surplus_supported_optionality.source_current_optional_branch_telemetry",
+          "surplus_supported_optionality.surplus_budget_owner"
+        ],
+        "optional_supports": [
+          "optional branch telemetry"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "surplus_supported_optionality.optionality_enumerator",
+          "surplus_supported_optionality.exploration_schedule"
+        ],
+        "required_supports": [
+          "surplus support condition",
+          "maintenance floor",
+          "boundary integrity"
+        ],
+        "source_ledger_row": "n20_i3_row_05_surplus_supported_optionality",
+        "support_id": "n20_i4_surplus_supported_optionality_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "surplus above maintenance floor"
+        ],
+        "withdrawal_condition": "optional branches close while maintenance basin remains"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "spark_sub_basin_new_basin_formation.bifurcation_trace",
+        "spark_sub_basin_new_basin_formation.new_boundary_candidate_trace",
+        "spark_sub_basin_new_basin_formation.new_basin_support_coherence_trace",
+        "spark_sub_basin_new_basin_formation.replayable_distinction_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": []
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "spark_sub_basin_new_basin_formation.blocked.agency",
+        "spark_sub_basin_new_basin_formation.blocked.consciousness",
+        "spark_sub_basin_new_basin_formation.blocked.identity_acceptance",
+        "spark_sub_basin_new_basin_formation.blocked.label_only_new_basin",
+        "spark_sub_basin_new_basin_formation.blocked.native_ant_agency",
+        "spark_sub_basin_new_basin_formation.blocked.native_colony_agency",
+        "spark_sub_basin_new_basin_formation.blocked.native_support",
+        "spark_sub_basin_new_basin_formation.blocked.organism_life",
+        "spark_sub_basin_new_basin_formation.blocked.phase8_implementation",
+        "spark_sub_basin_new_basin_formation.blocked.selfhood",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_action",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_choice",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_goal",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_goal_ownership",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_intention",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_perception",
+        "spark_sub_basin_new_basin_formation.blocked.sentience",
+        "spark_sub_basin_new_basin_formation.blocked.transient_as_basin",
+        "spark_sub_basin_new_basin_formation.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "bifurcation_trace",
+          "new_boundary_candidate_trace",
+          "new_basin_support_coherence_trace"
+        ],
+        "boundary_condition": "new/sub-basin boundary is distinguishable from old basin thickening",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "new or sub-basin candidate has its own coherence floor",
+        "continuation_condition": "source-backed bifurcation or basin-creation candidate persists as a distinguishable replay state",
+        "descriptor_id": "n20_i4_spark_sub_basin_new_basin_formation_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "candidate is not merge/leakage masquerading as formation",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_spark_sub_basin_new_basin_formation_basin_distinguishability_persistence_margin",
+        "source_ledger_row": "n20_i3_row_06_spark_sub_basin_new_basin_formation",
+        "support_floor": "new or sub-basin candidate has its own support floor",
+        "transfer_condition": "not tested before N27",
+        "withdrawal_condition": "producer seed or label can be removed"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency of Becoming: An Interpretation Through Reflexive Coherence",
+        "N20-N29 LGRC Becoming-Agency Ecology Roadmap"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N25",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_spark_sub_basin_new_basin_formation_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "spark_sub_basin_new_basin_formation.source_current_basin_birth_state_mutation",
+        "spark_sub_basin_new_basin_formation.distinguishability_replay",
+        "spark_sub_basin_new_basin_formation.surplus_precondition_from_n24"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "spark_sub_basin_new_basin_formation",
+      "primitive_name": "Spark / Sub-Basin / New-Basin Formation",
+      "primitive_specific_consumption_inputs": [
+        "basin_signature",
+        "sub_basin_distinguishability_rule",
+        "new_basin_replay_requirement",
+        "hidden_producer_insertion_control"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "spark_sub_basin_new_basin_formation.new_basin_label",
+        "spark_sub_basin_new_basin_formation.seed_insertion_policy",
+        "spark_sub_basin_new_basin_formation.split_threshold_schedule"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "candidate vanishes when seed insertion or label is removed",
+        "divergence_condition": "distinguishability score improves while replay shows old-basin thickening",
+        "expected_relation_to_continuation_function": "distinguishability margin is a sign only if the new/sub-basin replays without label support",
+        "measured_quantity": "basin_distinguishability_persistence_margin",
+        "producer_inputs": [
+          "spark_sub_basin_new_basin_formation.new_basin_label",
+          "spark_sub_basin_new_basin_formation.seed_insertion_policy",
+          "spark_sub_basin_new_basin_formation.split_threshold_schedule"
+        ],
+        "proxy_id": "n20_i4_spark_sub_basin_new_basin_formation_basin_distinguishability_persistence_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "spark_sub_basin_new_basin_formation.bifurcation_trace",
+          "spark_sub_basin_new_basin_formation.new_boundary_candidate_trace",
+          "spark_sub_basin_new_basin_formation.new_basin_support_coherence_trace",
+          "spark_sub_basin_new_basin_formation.replayable_distinction_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_06_spark_sub_basin_new_basin_formation"
+      },
+      "roadmap_target": "N25",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_06_spark_sub_basin_new_basin_formation",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_spark_sub_basin_new_basin_formation_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_06_spark_sub_basin_new_basin_formation",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_06_spark_sub_basin_new_basin_formation",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_07_agency_of_becoming_diagnostics"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_07_agency_of_becoming_diagnostics",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "spark_sub_basin_new_basin_formation.new_basin_support_coherence_trace",
+          "spark_sub_basin_new_basin_formation.new_boundary_candidate_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "spark_sub_basin_new_basin_formation.source_current_basin_birth_state_mutation",
+          "spark_sub_basin_new_basin_formation.distinguishability_replay"
+        ],
+        "optional_supports": [
+          "surplus precondition from N24"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "spark_sub_basin_new_basin_formation.new_basin_label",
+          "spark_sub_basin_new_basin_formation.seed_insertion_policy"
+        ],
+        "required_supports": [
+          "bifurcation trace",
+          "distinguishable boundary",
+          "replayable distinction"
+        ],
+        "source_ledger_row": "n20_i3_row_06_spark_sub_basin_new_basin_formation",
+        "support_id": "n20_i4_spark_sub_basin_new_basin_formation_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "seed insertion label"
+        ],
+        "withdrawal_condition": "candidate persists after label/seed support is absent"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "proxy_divergence_proxy_collapse.basin_persistence_capacity_trace",
+        "proxy_divergence_proxy_collapse.support_coherence_floor_trace",
+        "proxy_divergence_proxy_collapse.proxy_failure_under_perturbation_trace",
+        "proxy_divergence_proxy_collapse.basin_deepening_comparison_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [
+          {
+            "ap_level": "AP5",
+            "reason": "proxy divergence/collapse depends directly on AP5 proxy derivation",
+            "source": "N19/N15",
+            "status": "required_local_gap_dependency"
+          }
+        ],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": []
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "proxy_divergence_proxy_collapse.blocked.agency",
+        "proxy_divergence_proxy_collapse.blocked.consciousness",
+        "proxy_divergence_proxy_collapse.blocked.goal_ownership",
+        "proxy_divergence_proxy_collapse.blocked.hidden_proxy_policy",
+        "proxy_divergence_proxy_collapse.blocked.identity_acceptance",
+        "proxy_divergence_proxy_collapse.blocked.native_ant_agency",
+        "proxy_divergence_proxy_collapse.blocked.native_colony_agency",
+        "proxy_divergence_proxy_collapse.blocked.native_support",
+        "proxy_divergence_proxy_collapse.blocked.organism_life",
+        "proxy_divergence_proxy_collapse.blocked.phase8_implementation",
+        "proxy_divergence_proxy_collapse.blocked.selfhood",
+        "proxy_divergence_proxy_collapse.blocked.semantic_action",
+        "proxy_divergence_proxy_collapse.blocked.semantic_choice",
+        "proxy_divergence_proxy_collapse.blocked.semantic_goal",
+        "proxy_divergence_proxy_collapse.blocked.semantic_goal_ownership",
+        "proxy_divergence_proxy_collapse.blocked.semantic_intention",
+        "proxy_divergence_proxy_collapse.blocked.semantic_perception",
+        "proxy_divergence_proxy_collapse.blocked.sentience",
+        "proxy_divergence_proxy_collapse.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "basin_persistence_capacity_trace",
+          "support_coherence_floor_trace",
+          "basin_deepening_comparison_trace"
+        ],
+        "boundary_condition": "basin persistence remains distinguishable from proxy gain",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "basin deepening remains coherent under stress",
+        "continuation_condition": "basin persistence capacity remains coupled to the proxy under stress",
+        "descriptor_id": "n20_i4_proxy_divergence_proxy_collapse_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "proxy gain does not hide basin support leakage",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_proxy_divergence_proxy_collapse_proxy_basin_coupling_gap",
+        "source_ledger_row": "n20_i3_row_07_proxy_divergence_proxy_collapse",
+        "support_floor": "basin persistence capacity remains above floor",
+        "transfer_condition": "not tested before N27",
+        "withdrawal_condition": "proxy target/policy can be removed or perturbed"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency of Becoming: An Interpretation Through Reflexive Coherence",
+        "Agency After Choice"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N26",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_proxy_divergence_proxy_collapse_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "proxy_divergence_proxy_collapse.native_lower_stack_input_vector",
+        "proxy_divergence_proxy_collapse.source_current_proxy_derivation_policy",
+        "proxy_divergence_proxy_collapse.target_condition_digest_before_use"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "proxy_divergence_proxy_collapse",
+      "primitive_name": "Proxy Divergence / Proxy Collapse",
+      "primitive_specific_consumption_inputs": [
+        "proxy_metric_definition",
+        "continuation_function_descriptor",
+        "proxy_divergence_condition",
+        "proxy_collapse_condition",
+        "AP5_gap_dependency"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "proxy_divergence_proxy_collapse.target_derivation_policy",
+        "proxy_divergence_proxy_collapse.proxy_metric_formula",
+        "proxy_divergence_proxy_collapse.ranking_policy"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "proxy-optimized row fails under perturbation that basin-deepened row would survive",
+        "divergence_condition": "proxy improves while basin persistence stalls or degrades",
+        "expected_relation_to_continuation_function": "proxy improvement is a sign only while basin persistence capacity also remains coupled and replay-visible",
+        "measured_quantity": "proxy_basin_coupling_gap",
+        "producer_inputs": [
+          "proxy_divergence_proxy_collapse.target_derivation_policy",
+          "proxy_divergence_proxy_collapse.proxy_metric_formula",
+          "proxy_divergence_proxy_collapse.ranking_policy"
+        ],
+        "proxy_id": "n20_i4_proxy_divergence_proxy_collapse_proxy_basin_coupling_gap",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "proxy_divergence_proxy_collapse.basin_persistence_capacity_trace",
+          "proxy_divergence_proxy_collapse.support_coherence_floor_trace",
+          "proxy_divergence_proxy_collapse.proxy_failure_under_perturbation_trace",
+          "proxy_divergence_proxy_collapse.basin_deepening_comparison_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_07_proxy_divergence_proxy_collapse"
+      },
+      "roadmap_target": "N26",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_07_proxy_divergence_proxy_collapse",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_proxy_divergence_proxy_collapse_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_07_proxy_divergence_proxy_collapse",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_07_proxy_divergence_proxy_collapse",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_07_agency_of_becoming_diagnostics",
+        "n20_i1_row_08_agency_after_choice_vocabulary"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_07_agency_of_becoming_diagnostics",
+          "source_role": "diagnostic_vocabulary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_08_agency_after_choice_vocabulary",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "proxy_divergence_proxy_collapse.basin_persistence_capacity_trace",
+          "proxy_divergence_proxy_collapse.support_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "proxy_divergence_proxy_collapse.native_lower_stack_input_vector",
+          "proxy_divergence_proxy_collapse.source_current_proxy_derivation_policy"
+        ],
+        "optional_supports": [
+          "target digest telemetry"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "proxy_divergence_proxy_collapse.target_derivation_policy",
+          "proxy_divergence_proxy_collapse.proxy_metric_formula"
+        ],
+        "required_supports": [
+          "proxy metric definition",
+          "basin deepening comparison",
+          "perturbation trace"
+        ],
+        "source_ledger_row": "n20_i3_row_07_proxy_divergence_proxy_collapse",
+        "support_id": "n20_i4_proxy_divergence_proxy_collapse_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "proxy target derivation policy"
+        ],
+        "withdrawal_condition": "basin persistence remains auditable when proxy policy is removed"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+        "configuration_substrate_transfer.post_transfer_basin_signature_trace",
+        "configuration_substrate_transfer.boundary_mapping_trace",
+        "configuration_substrate_transfer.support_preservation_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": [
+          {
+            "ap_level": "AP4",
+            "condition": "route-conditioned selection is part of transfer",
+            "source": "N19/N14",
+            "status": "conditional_local_gap_dependency"
+          }
+        ]
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "configuration_substrate_transfer.blocked.agency",
+        "configuration_substrate_transfer.blocked.consciousness",
+        "configuration_substrate_transfer.blocked.identity_acceptance",
+        "configuration_substrate_transfer.blocked.native_ant_agency",
+        "configuration_substrate_transfer.blocked.native_colony_agency",
+        "configuration_substrate_transfer.blocked.native_support",
+        "configuration_substrate_transfer.blocked.organism_life",
+        "configuration_substrate_transfer.blocked.phase8_implementation",
+        "configuration_substrate_transfer.blocked.same_label_different_basin",
+        "configuration_substrate_transfer.blocked.selfhood",
+        "configuration_substrate_transfer.blocked.semantic_action",
+        "configuration_substrate_transfer.blocked.semantic_choice",
+        "configuration_substrate_transfer.blocked.semantic_goal",
+        "configuration_substrate_transfer.blocked.semantic_goal_ownership",
+        "configuration_substrate_transfer.blocked.semantic_intention",
+        "configuration_substrate_transfer.blocked.semantic_perception",
+        "configuration_substrate_transfer.blocked.sentience",
+        "configuration_substrate_transfer.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "pre_transfer_basin_signature_trace",
+          "post_transfer_basin_signature_trace",
+          "boundary_mapping_trace"
+        ],
+        "boundary_condition": "mapped boundary preserves the declared basin signature",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "post-transfer coherence remains above floor",
+        "continuation_condition": "basin signature persists under declared configuration or substrate mapping",
+        "descriptor_id": "n20_i4_configuration_substrate_transfer_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "transfer is not support reconstruction through hidden flux",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_configuration_substrate_transfer_transfer_signature_preservation_margin",
+        "source_ledger_row": "n20_i3_row_08_configuration_substrate_transfer",
+        "support_floor": "post-transfer support remains above floor",
+        "transfer_condition": "declared fixture/topology/substrate mapping is source-backed",
+        "withdrawal_condition": "original fixture support can be removed or changed"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency of Becoming: An Interpretation Through Reflexive Coherence",
+        "N20-N29 LGRC Becoming-Agency Ecology Roadmap"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N27",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_configuration_substrate_transfer_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "configuration_substrate_transfer.source_current_mapping_telemetry",
+        "configuration_substrate_transfer.independent_substrate_replay",
+        "configuration_substrate_transfer.route_conditioned_transfer_selection"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "configuration_substrate_transfer",
+      "primitive_name": "Configuration / Substrate Transfer",
+      "primitive_specific_consumption_inputs": [
+        "basin_signature",
+        "transfer_mapping_declaration",
+        "reconstructed_support_ledger",
+        "producer_residue_ledger"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "configuration_substrate_transfer.configuration_mapping_policy",
+        "configuration_substrate_transfer.fixture_equivalence_label",
+        "configuration_substrate_transfer.support_reconstruction_schedule"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "transfer fails when original support reconstruction is blocked",
+        "divergence_condition": "signature score improves while mapping is only a fixture-equivalence label",
+        "expected_relation_to_continuation_function": "signature margin is a sign only when mapped boundary and support preservation are source-backed",
+        "measured_quantity": "transfer_signature_preservation_margin",
+        "producer_inputs": [
+          "configuration_substrate_transfer.configuration_mapping_policy",
+          "configuration_substrate_transfer.fixture_equivalence_label",
+          "configuration_substrate_transfer.support_reconstruction_schedule"
+        ],
+        "proxy_id": "n20_i4_configuration_substrate_transfer_transfer_signature_preservation_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+          "configuration_substrate_transfer.post_transfer_basin_signature_trace",
+          "configuration_substrate_transfer.boundary_mapping_trace",
+          "configuration_substrate_transfer.support_preservation_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_08_configuration_substrate_transfer"
+      },
+      "roadmap_target": "N27",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_08_configuration_substrate_transfer",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_configuration_substrate_transfer_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_08_configuration_substrate_transfer",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_08_configuration_substrate_transfer",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_07_agency_of_becoming_diagnostics"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_07_agency_of_becoming_diagnostics",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "configuration_substrate_transfer.pre_transfer_basin_signature_trace",
+          "configuration_substrate_transfer.post_transfer_basin_signature_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "configuration_substrate_transfer.source_current_mapping_telemetry",
+          "configuration_substrate_transfer.independent_substrate_replay"
+        ],
+        "optional_supports": [
+          "reconstructed support ledger"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "configuration_substrate_transfer.configuration_mapping_policy",
+          "configuration_substrate_transfer.fixture_equivalence_label"
+        ],
+        "required_supports": [
+          "transfer mapping declaration",
+          "boundary mapping trace",
+          "support preservation trace"
+        ],
+        "source_ledger_row": "n20_i3_row_08_configuration_substrate_transfer",
+        "support_id": "n20_i4_configuration_substrate_transfer_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "original fixture support"
+        ],
+        "withdrawal_condition": "post-transfer signature remains after original support changes"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "LGRC_visible_fields": [
+        "generative_extractive_persistence.focal_basin_stability_trace",
+        "generative_extractive_persistence.neighbor_basin_distinguishability_trace",
+        "generative_extractive_persistence.neighbor_support_floor_trace",
+        "generative_extractive_persistence.extraction_cost_trace"
+      ],
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": []
+      },
+      "artifact_invariants": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "blocked_relabel_fields": [
+        "generative_extractive_persistence.blocked.agency",
+        "generative_extractive_persistence.blocked.consciousness",
+        "generative_extractive_persistence.blocked.identity_acceptance",
+        "generative_extractive_persistence.blocked.native_ant_agency",
+        "generative_extractive_persistence.blocked.native_colony_agency",
+        "generative_extractive_persistence.blocked.native_support",
+        "generative_extractive_persistence.blocked.organism_life",
+        "generative_extractive_persistence.blocked.phase8_implementation",
+        "generative_extractive_persistence.blocked.selfhood",
+        "generative_extractive_persistence.blocked.semantic_action",
+        "generative_extractive_persistence.blocked.semantic_choice",
+        "generative_extractive_persistence.blocked.semantic_goal",
+        "generative_extractive_persistence.blocked.semantic_goal_ownership",
+        "generative_extractive_persistence.blocked.semantic_intention",
+        "generative_extractive_persistence.blocked.semantic_perception",
+        "generative_extractive_persistence.blocked.sentience",
+        "generative_extractive_persistence.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "continuation/proxy/scaffold contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "focal_basin_stability_trace",
+          "neighbor_basin_distinguishability_trace",
+          "neighbor_support_floor_trace"
+        ],
+        "boundary_condition": "neighbor structures do not merge into focal basin",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "focal and neighbor coherence remain distinguishable",
+        "continuation_condition": "focal basin persists while neighborhood basin-forming capacity increases or remains distinguishable",
+        "descriptor_id": "n20_i4_generative_extractive_persistence_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "environment capacity gain is not focal extraction or leakage",
+        "native_function_descriptor_alias_allowed": true,
+        "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+        "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+        "proxy_metric": "n20_i4_generative_extractive_persistence_generative_capacity_delta_margin",
+        "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence",
+        "support_floor": "focal and neighbor support floors remain visible",
+        "transfer_condition": "ecology-specific transfer deferred until N29",
+        "withdrawal_condition": "producer generativity label can be removed"
+      },
+      "contract_complete_allowed": false,
+      "contract_row_supported_as": "continuation_proxy_scaffold_contract_defined",
+      "contract_status": "incomplete_missing_same_basin_rule",
+      "diagnostic_source_titles": [
+        "Agency After Choice",
+        "N20-N29 LGRC Becoming-Agency Ecology Roadmap"
+      ],
+      "downstream_consumption_status": "not_consumable_until_iteration5_contract_complete",
+      "downstream_immutability_rule": "N21-N28 may not redefine basin signature, continuation condition, proxy-only success blocker, or producer-residue classification in order to pass.",
+      "expected_first_positive_experiment": "N28",
+      "minimum_controls": {
+        "reason": "I4 names proxy-only and hidden-support blockers but does not freeze the full I5 control contract",
+        "required_control_templates": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control"
+        ],
+        "status": "deferred_to_iteration_5"
+      },
+      "missing_contract_objects": [
+        "same_basin_continuation_rule",
+        "minimum_controls"
+      ],
+      "native_function_descriptor_alias": {
+        "alias_for": "continuation_function_descriptor",
+        "descriptor_id": "n20_i4_generative_extractive_persistence_native_function_alias",
+        "semantic_function_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_intention_claim_allowed": false,
+        "semantic_purpose_claim_allowed": false,
+        "usage_rule": "native_function_descriptor may be used only as shorthand for bounded geometric continuation condition"
+      },
+      "naturalization_debt_fields": [
+        "generative_extractive_persistence.source_current_neighbor_basin_birth_telemetry",
+        "generative_extractive_persistence.medium_debt_deferred_to_n28_n29",
+        "generative_extractive_persistence.environment_capacity_budget_replay"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "generative_extractive_persistence",
+      "primitive_name": "Generative Vs Extractive Persistence",
+      "primitive_specific_consumption_inputs": [
+        "generative_persistence_fields",
+        "extractive_persistence_fields",
+        "environment_basin_forming_capacity_fields",
+        "medium_debt_placeholder"
+      ],
+      "primitive_supported": false,
+      "producer_mediated_fields": [
+        "generative_extractive_persistence.generativity_label",
+        "generative_extractive_persistence.neighbor_attribution_policy",
+        "generative_extractive_persistence.medium_segmentation_policy"
+      ],
+      "proxy_metric_definition": {
+        "blocked_proxy_terms": [
+          "agency",
+          "choice",
+          "goal",
+          "intention",
+          "sentience",
+          "identity",
+          "native_support",
+          "selfhood",
+          "consciousness",
+          "organism_life"
+        ],
+        "blocked_relabels_as_proxy_metrics_allowed": false,
+        "collapse_condition": "apparent generation is explained by extraction cost or medium segmentation",
+        "divergence_condition": "capacity score improves while neighbor support degrades or merge pressure rises",
+        "expected_relation_to_continuation_function": "capacity delta is a sign only if focal persistence and neighbor distinguishability both remain source-visible",
+        "measured_quantity": "generative_capacity_delta_margin",
+        "producer_inputs": [
+          "generative_extractive_persistence.generativity_label",
+          "generative_extractive_persistence.neighbor_attribution_policy",
+          "generative_extractive_persistence.medium_segmentation_policy"
+        ],
+        "proxy_id": "n20_i4_generative_extractive_persistence_generative_capacity_delta_margin",
+        "proxy_kind": "bounded_indicator_not_replacement",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "generative_extractive_persistence.focal_basin_stability_trace",
+          "generative_extractive_persistence.neighbor_basin_distinguishability_trace",
+          "generative_extractive_persistence.neighbor_support_floor_trace",
+          "generative_extractive_persistence.extraction_cost_trace"
+        ],
+        "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence"
+      },
+      "roadmap_target": "N28",
+      "row_decision": "supported",
+      "row_id": "n20_i4_row_09_generative_extractive_persistence",
+      "same_basin_continuation_rule": {
+        "label_only_continuation_allowed": false,
+        "reason": "I4 defines continuation/proxy/scaffold only; I5 defines same-basin criteria and fail-closed controls",
+        "rule_id": "pending_n20_i5_generative_extractive_persistence_same_basin_rule",
+        "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence",
+        "status": "deferred_to_iteration_5"
+      },
+      "source_consumption_rules": {
+        "N12_N18_status": "historical_prerequisite_context_only",
+        "N19_status": "current_implementation_classification_boundary",
+        "diagnostic_vocabulary_can_define_fields": true,
+        "diagnostic_vocabulary_can_satisfy_evidence_gates": false
+      },
+      "source_i3_row_id": "n20_i3_row_09_generative_extractive_persistence",
+      "source_inventory_row_ids": [
+        "n20_i1_row_01_n19_implementation_boundary",
+        "n20_i1_row_02_n20_n29_roadmap",
+        "n20_i1_row_08_agency_after_choice_vocabulary",
+        "n20_i1_row_11_agentic_ecology_future_context"
+      ],
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_08_agency_after_choice_vocabulary",
+          "source_role": "diagnostic_vocabulary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_11_agentic_ecology_future_context",
+          "source_role": "future_application_context"
+        }
+      ],
+      "support_scaffold_declaration": {
+        "declared_supports": [
+          "generative_extractive_persistence.focal_basin_stability_trace",
+          "generative_extractive_persistence.neighbor_support_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "generative_extractive_persistence.source_current_neighbor_basin_birth_telemetry",
+          "generative_extractive_persistence.medium_debt_deferred_to_n28_n29"
+        ],
+        "optional_supports": [
+          "medium debt placeholder"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "generative_extractive_persistence.generativity_label",
+          "generative_extractive_persistence.neighbor_attribution_policy",
+          "generative_extractive_persistence.medium_segmentation_policy"
+        ],
+        "required_supports": [
+          "neighbor distinguishability",
+          "environment basin-forming capacity",
+          "extraction cost trace"
+        ],
+        "source_ledger_row": "n20_i3_row_09_generative_extractive_persistence",
+        "support_id": "n20_i4_generative_extractive_persistence_support_scaffold",
+        "support_source": "declared source-current or producer-mediated support surface",
+        "support_surface": "support/coherence/boundary/flux contract surface",
+        "withdrawable_supports": [
+          "generativity label"
+        ],
+        "withdrawal_condition": "environment-side effects remain after label removal"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "contract_status_counts": {
+    "incomplete_missing_same_basin_rule": 9
+  },
+  "experiment": "2026-06-N20-lgrc-becoming-primitive-producer-translation-contract",
+  "failed_checks": [],
+  "generated_at": "2026-06-22T00:00:00+00:00",
+  "iteration": 4,
+  "iteration5_handoff": {
+    "i5_must_define": [
+      "same-basin continuation criteria",
+      "allowed drift",
+      "support/coherence floors",
+      "boundary integrity and flux balance criteria",
+      "replay requirements",
+      "fail-closed controls"
+    ],
+    "ready_for_iteration_5_same_basin_control_contract": true,
+    "remaining_contract_objects": [
+      "same_basin_continuation_rule",
+      "minimum_controls"
+    ],
+    "remaining_contract_status": "incomplete_missing_same_basin_rule"
+  },
+  "n21_handoff_inputs": [
+    {
+      "coherence_floor": "coherence remains above declared withdrawal floor",
+      "declared_supports": [
+        "support_coherence_floor_trace",
+        "boundary_integrity_trace"
+      ],
+      "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+      "primitive_id": "withdrawal_resistance",
+      "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+      "probe_present_condition": "declared support/scaffold present before withdrawal",
+      "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+      "support_floor": "support remains above declared withdrawal floor",
+      "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+    },
+    {
+      "coherence_floor": "post-probe coherence remains above declared residual floor",
+      "declared_supports": [
+        "post_probe_support_floor_trace",
+        "post_probe_coherence_floor_trace"
+      ],
+      "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+      "primitive_id": "naturalization_depth",
+      "probe_absent_condition": "original probe/scaffold absent with residual replay",
+      "probe_present_condition": "original probe/scaffold present",
+      "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+      "support_floor": "post-probe support remains above declared residual floor",
+      "withdrawal_condition": "original probe/scaffold is removed or disabled"
+    }
+  ],
+  "native_function_descriptors_defined": true,
+  "native_support_opened": false,
+  "output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+  "phase8_opened": false,
+  "primitive_evidence_opened": false,
+  "proxy_metric_definitions_defined": true,
+  "proxy_only_fail_closed_rule": "A proxy metric can be an indicator only. If the proxy improves while the continuation function, declared basin signature, support floor, coherence floor, boundary condition, or flux condition fails, the primitive is not supported.",
+  "proxy_only_success_blockers_defined": true,
+  "purpose": "Define bounded continuation-function, proxy metric, and support/scaffold contracts for each N20 becoming primitive without testing or supporting primitive evidence.",
+  "row_count": 9,
+  "rows_marked_complete": false,
+  "schema_version": "n20_native_function_proxy_contract_v1",
+  "sentience_opened": false,
+  "source_ledger": {
+    "acceptance_state": "accepted_producer_residue_naturalization_debt_ledger_no_primitive_evidence",
+    "output_digest": "0d7193fa14e9a3f299f0ff941f7424a944d6de963578eb9fc566a5244653d69f",
+    "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_producer_residue_ledger.json",
+    "row_count": 9,
+    "sha256": "cfb4a0f00d75fe99924ccfacd37c86565cf459c7ab01150fd3761c54526dea70",
+    "status": "passed",
+    "variable_record_count": 258
+  },
+  "status": "passed",
+  "support_scaffold_declarations_defined": true
+}

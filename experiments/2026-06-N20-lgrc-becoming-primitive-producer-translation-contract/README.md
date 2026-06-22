@@ -236,15 +236,17 @@ reports/n20_same_basin_continuation_contract.md
 reports/n20_closeout_and_n21_handoff.md
 ```
 
-The strongest allowed closeout is:
+Closed result:
 
 ```text
-N20 = becoming-primitive producer translation contract
+final_supported_status = N20_contract_closed_no_primitive_evidence
+final_claim_ceiling = artifact_level_becoming_primitive_translation_contract_only
 primitive_evidence_opened = false
 agency_claim_opened = false
 phase8_opened = false
 native_support_opened = false
 sentience_opened = false
 ant_ecology_spec_opened = false
-final_claim_ceiling = artifact_level_becoming_primitive_translation_contract
+ready_for_n21 = true
+n21_handoff_scope = withdrawal_resistance, naturalization_depth
 ```

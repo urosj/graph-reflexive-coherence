@@ -1,0 +1,847 @@
+{
+  "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+  "agency_claim_opened": false,
+  "ant_ecology_spec_opened": false,
+  "ap4_ap5_gap_closeout": {
+    "ap4_gap_carried_forward": true,
+    "ap5_gap_carried_forward": true,
+    "ap5_gap_removed": false,
+    "ap5_susceptibility_update_split": {
+      "base_susceptibility_update": "AP4 is required when route-conditioned selection participates; AP5 is not required for proxy-free susceptibility update",
+      "i2_relation": "I2 required AP5 for the direct proxy-collapse primitive and froze the general rule that any primitive depending on proxy derivation or target formation must carry AP5. I5 makes that general rule explicit for susceptibility_update instead of treating all susceptibility updates as AP5-dependent.",
+      "n19_ap5_gap_removed": false,
+      "proxy_conditioned_susceptibility_update": "AP5 is required when proxy derivation or target formation participates in susceptibility update",
+      "susceptibility_update_split_status": "explicit_split_not_gap_removal"
+    },
+    "claim_boundary": "N20 records AP4/AP5 dependency rules for later primitive tests; it does not resolve the N19 NAT4 gaps."
+  },
+  "artifact_id": "n20_closeout_and_n21_handoff",
+  "artifact_invariants": {
+    "agency_claim_opened": false,
+    "ant_ecology_spec_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "primitive_evidence_opened": false,
+    "sentience_opened": false,
+    "src_diff_empty_required": true
+  },
+  "blocked_closeout_claims": [
+    "primitive support",
+    "withdrawal resistance supported",
+    "naturalization depth supported",
+    "susceptibility update supported",
+    "learning or choice",
+    "abundance",
+    "spark or new-basin formation",
+    "proxy collapse supported",
+    "configuration/substrate transfer supported",
+    "generative/extractive persistence supported",
+    "agency",
+    "semantic action",
+    "semantic perception",
+    "semantic goal ownership",
+    "selfhood",
+    "identity acceptance",
+    "native support",
+    "Phase 8 implementation",
+    "sentience",
+    "ant ecology implementation",
+    "organism/life behavior",
+    "unrestricted autonomy"
+  ],
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "detail": [
+        "i1_source_inventory",
+        "i2_translation_schema",
+        "i3_residue_ledger",
+        "i4_function_proxy_scaffold",
+        "i5_same_basin_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i5_contract_passed_and_ready_for_closeout",
+      "detail": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "contract_rows_complete_not_primitive_evidence",
+      "detail": {
+        "all_primitives_complete_language_allowed": false,
+        "contract_complete": true,
+        "contract_complete_means": "N20_contract_surface_complete",
+        "primitive_evidence_opened": false,
+        "primitive_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_invariants_preserved",
+      "detail": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "sentience_opened": false,
+        "src_diff_empty_required": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false_per_row",
+      "detail": 9,
+      "passed": true
+    },
+    {
+      "check_id": "definition_guards_preserved",
+      "detail": {
+        "ad_hoc_redefinition_to_pass_allowed": false,
+        "claim_boundary_must_be_preserved": true,
+        "contract_definitions_are_primitive_evidence": false,
+        "future_rows_must_supply_source_backed_pass_fail_evidence": true,
+        "row_specific_thresholds_must_be_declared_before_use": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_gap_guards_preserved",
+      "detail": {
+        "base_susceptibility_update": "AP4 is required when route-conditioned selection participates; AP5 is not required for proxy-free susceptibility update",
+        "i2_relation": "I2 required AP5 for the direct proxy-collapse primitive and froze the general rule that any primitive depending on proxy derivation or target formation must carry AP5. I5 makes that general rule explicit for susceptibility_update instead of treating all susceptibility updates as AP5-dependent.",
+        "n19_ap5_gap_removed": false,
+        "proxy_conditioned_susceptibility_update": "AP5 is required when proxy derivation or target formation participates in susceptibility update",
+        "susceptibility_update_split_status": "explicit_split_not_gap_removal"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_handoff_rows_present",
+      "detail": [
+        "naturalization_depth",
+        "withdrawal_resistance"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n21_handoff_requires_hidden_support_and_proxy_controls",
+      "detail": "N21 rows fail closed for hidden support and proxy-only success",
+      "passed": true
+    },
+    {
+      "check_id": "n21_readiness_gate_blocks_redefinition",
+      "detail": {
+        "may_redefine_n20_contract_to_pass": false,
+        "must_consume_i5_contract": true,
+        "must_declare_row_specific_thresholds_before_use": true,
+        "must_fail_closed_on_hidden_support": true,
+        "must_fail_closed_on_proxy_only_success": true,
+        "must_keep_agency_native_phase8_sentience_claims_blocked": true,
+        "must_keep_primitive_evidence_separate_from_contract": true,
+        "must_produce_source_backed_pass_fail_evidence": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "hypotheses_closed_as_contract_supported",
+      "detail": [
+        "hypothesis_a_becoming_diagnostic_translation",
+        "hypothesis_b_producer_residue_and_naturalization_debt",
+        "hypothesis_c_claim_boundary_and_gap_preservation",
+        "hypothesis_d_downstream_contract_enforceability"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "all closeout paths are repository-relative",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/scripts/build_n20_closeout_and_n21_handoff.py",
+  "contract_completion_alias": {
+    "all_primitives_complete_language_allowed": false,
+    "contract_complete": true,
+    "contract_complete_means": "N20_contract_surface_complete",
+    "primitive_evidence_opened": false,
+    "primitive_supported": false
+  },
+  "contract_status_counts": {
+    "complete": 9
+  },
+  "definition_closeout": {
+    "definition_outcome_guard": {
+      "ad_hoc_redefinition_to_pass_allowed": false,
+      "claim_boundary_must_be_preserved": true,
+      "contract_definitions_are_primitive_evidence": false,
+      "future_rows_must_supply_source_backed_pass_fail_evidence": true,
+      "row_specific_thresholds_must_be_declared_before_use": true
+    },
+    "definition_revision_policy": "N21-N28 cannot redefine basin signature, continuation condition, proxy-only success, or producer-residue classification ad hoc in order to pass. A later experiment may only revise an I5 definition by recording source-backed evidence that the definition is over- or under-constraining, while preserving N19 AP4/AP5 gap propagation and unsafe claim blockers.",
+    "definition_sufficiency_status": "necessary_contract_gates_not_sufficient_primitive_evidence",
+    "definition_validation_status": "validated_as_evidence_informed_conservative_contract_not_as_primitive_evidence"
+  },
+  "experiment": "2026-06-N20-lgrc-becoming-primitive-producer-translation-contract",
+  "failed_checks": [],
+  "final_claim_ceiling": "artifact_level_becoming_primitive_translation_contract_only",
+  "final_supported_status": "N20_contract_closed_no_primitive_evidence",
+  "generated_at": "2026-06-22T00:00:00+00:00",
+  "hypothesis_closeout": [
+    {
+      "closeout_decision": "closed_supported_as_translation_contract",
+      "hypothesis_id": "hypothesis_a_becoming_diagnostic_translation",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/hypotheses/hypothesis_a_becoming_diagnostic_translation.md",
+      "primitive_evidence_opened": false,
+      "primitive_evidence_required": false,
+      "scope": "agency-of-becoming diagnostics are translated into LGRC-visible primitive contracts without semantic promotion",
+      "sha256": "ccabb5525b598a125368e9d673ca5bdf36c631f3bfa848d737d18db6c105b07e",
+      "supported_by": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6"
+      ]
+    },
+    {
+      "closeout_decision": "closed_supported_as_residue_debt_contract",
+      "hypothesis_id": "hypothesis_b_producer_residue_and_naturalization_debt",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/hypotheses/hypothesis_b_producer_residue_and_naturalization_debt.md",
+      "primitive_evidence_opened": false,
+      "primitive_evidence_required": false,
+      "scope": "substrate-carried fields, producer-mediated fields, naturalization debt, and blocked relabels are separated before primitive tests",
+      "sha256": "9db7fd10c8c89551d87ab4d8e2df13dc5aebfa9d4343a55159cd004dda28358b",
+      "supported_by": [
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6"
+      ]
+    },
+    {
+      "closeout_decision": "closed_supported_as_claim_boundary_contract",
+      "hypothesis_id": "hypothesis_c_claim_boundary_and_gap_preservation",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/hypotheses/hypothesis_c_claim_boundary_and_gap_preservation.md",
+      "primitive_evidence_opened": false,
+      "primitive_evidence_required": false,
+      "scope": "N19 AP4/AP5 NAT4 gaps and unsafe claim blockers remain preserved while N20 closes as contract work",
+      "sha256": "b8d815440c96987c567471f53c3538f81b4a3e6626d88bc54c9e5577d03ce7ed",
+      "supported_by": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6"
+      ]
+    },
+    {
+      "closeout_decision": "closed_supported_as_downstream_enforceable_contract",
+      "hypothesis_id": "hypothesis_d_downstream_contract_enforceability",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/hypotheses/hypothesis_d_downstream_contract_enforceability.md",
+      "primitive_evidence_opened": false,
+      "primitive_evidence_required": false,
+      "scope": "N21-N28 must consume the frozen N20 contract without redefining basin signature, continuation condition, proxy-only success, or producer-residue classification in order to pass",
+      "sha256": "3bfcfb786486a5ab34e3532c217958678a5280339a9ace59df2a20caa4ed6d12",
+      "supported_by": [
+        "I2",
+        "I3",
+        "I4",
+        "I5",
+        "I6"
+      ]
+    }
+  ],
+  "interpretation": {
+    "main_read": "N20 closes as a contract/schema experiment. It translates becoming-agency diagnostics into LGRC-visible contract rows, separates producer residue and naturalization debt, freezes same-basin and proxy-failure rules, and hands N21 the first two primitive contracts. It does not produce primitive evidence.",
+    "n21_read": "N21 may start with withdrawal resistance and naturalization depth, but only by consuming the I5 contract rows and producing new source-backed pass/fail evidence."
+  },
+  "iteration": 6,
+  "n20_contract_complete": true,
+  "n21_handoff": {
+    "blockers": [
+      "missing I5 same-basin rule",
+      "missing declared support/coherence floor",
+      "missing boundary integrity check",
+      "hidden support preserves margin",
+      "proxy-only success",
+      "label-only continuation",
+      "post-hoc replay construction",
+      "producer-mediated state relabeled as native support",
+      "semantic agency or sentience relabel"
+    ],
+    "first_positive_experiment": "N21",
+    "handoff_rows": [
+      {
+        "LGRC_visible_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace",
+          "naturalization_depth.multi_window_replay_trace"
+        ],
+        "blocked_relabel_fields": [
+          "naturalization_depth.blocked.agency",
+          "naturalization_depth.blocked.consciousness",
+          "naturalization_depth.blocked.identity_acceptance",
+          "naturalization_depth.blocked.native_absorption_by_label",
+          "naturalization_depth.blocked.native_ant_agency",
+          "naturalization_depth.blocked.native_colony_agency",
+          "naturalization_depth.blocked.native_support",
+          "naturalization_depth.blocked.organism_life",
+          "naturalization_depth.blocked.phase8_implementation",
+          "naturalization_depth.blocked.selfhood",
+          "naturalization_depth.blocked.semantic_action",
+          "naturalization_depth.blocked.semantic_choice",
+          "naturalization_depth.blocked.semantic_goal",
+          "naturalization_depth.blocked.semantic_goal_ownership",
+          "naturalization_depth.blocked.semantic_intention",
+          "naturalization_depth.blocked.semantic_perception",
+          "naturalization_depth.blocked.sentience",
+          "naturalization_depth.blocked.support_memory_as_selfhood",
+          "naturalization_depth.blocked.unrestricted_autonomy"
+        ],
+        "claim_ceiling": "complete N20 contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+        "continuation_function_descriptor": {
+          "basin_signature": [
+            "post_probe_basin_signature_trace",
+            "post_probe_support_floor_trace",
+            "post_probe_coherence_floor_trace"
+          ],
+          "boundary_condition": "basin boundary remains distinguishable after probe removal",
+          "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "continuation_condition": "basin signature persists after the original probe/scaffold is absent",
+          "descriptor_id": "n20_i4_naturalization_depth_continuation_function",
+          "descriptor_kind": "bounded_geometric_continuation_condition",
+          "flux_condition": "residual persistence is not explained by hidden support flux",
+          "native_function_descriptor_alias_allowed": true,
+          "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+          "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+          "proxy_metric": "n20_i4_naturalization_depth_post_probe_persistence_margin",
+          "source_ledger_row": "n20_i3_row_02_naturalization_depth",
+          "support_floor": "post-probe support remains above declared residual floor",
+          "transfer_condition": "not tested in N21 naturalization-depth row",
+          "withdrawal_condition": "original probe/scaffold is removed or disabled"
+        },
+        "contract_status": "complete",
+        "expected_first_positive_experiment": "N21",
+        "handoff_status": "ready_for_n21_contract_consumption",
+        "minimum_control_ids": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "probe_present_only_control",
+          "probe_residue_control",
+          "support_source_annotation_relabel_control"
+        ],
+        "n21_handoff_inputs": {
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "declared_supports": [
+            "post_probe_support_floor_trace",
+            "post_probe_coherence_floor_trace"
+          ],
+          "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "primitive_id": "naturalization_depth",
+          "probe_absent_condition": "original probe/scaffold absent with residual replay",
+          "probe_present_condition": "original probe/scaffold present",
+          "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+          "support_floor": "post-probe support remains above declared residual floor",
+          "withdrawal_condition": "original probe/scaffold is removed or disabled"
+        },
+        "naturalization_debt_fields": [
+          "naturalization_depth.source_current_producer_removal_observation",
+          "naturalization_depth.multi_window_without_probe_replay",
+          "naturalization_depth.naturalization_depth_budget_surface"
+        ],
+        "primitive_evidence_opened": false,
+        "primitive_id": "naturalization_depth",
+        "primitive_name": "Naturalization Depth",
+        "primitive_specific_consumption_inputs": [
+          "withdrawal_condition",
+          "support_scaffold_declaration",
+          "support_floor",
+          "coherence_floor",
+          "same_basin_continuation_rule",
+          "hidden_producer_support_control",
+          "proxy_only_success_control"
+        ],
+        "primitive_supported": false,
+        "producer_mediated_fields": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.support_source_annotation",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "proxy_metric_definition": {
+          "blocked_proxy_terms": [
+            "agency",
+            "choice",
+            "goal",
+            "intention",
+            "sentience",
+            "identity",
+            "native_support",
+            "selfhood",
+            "consciousness",
+            "organism_life"
+          ],
+          "blocked_relabels_as_proxy_metrics_allowed": false,
+          "collapse_condition": "depth score depends on support annotation or probe residue",
+          "divergence_condition": "depth score improves while post-probe basin signature does not persist",
+          "expected_relation_to_continuation_function": "depth margin is a sign only when probe-absent basin state replays",
+          "measured_quantity": "post_probe_persistence_margin",
+          "producer_inputs": [
+            "naturalization_depth.naturalization_depth_score_formula",
+            "naturalization_depth.support_source_annotation",
+            "naturalization_depth.depth_rank_label"
+          ],
+          "proxy_id": "n20_i4_naturalization_depth_post_probe_persistence_margin",
+          "proxy_kind": "bounded_indicator_not_replacement",
+          "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+          "proxy_success_replaces_continuation": false,
+          "source_current_inputs": [
+            "naturalization_depth.post_probe_basin_signature_trace",
+            "naturalization_depth.post_probe_support_floor_trace",
+            "naturalization_depth.post_probe_coherence_floor_trace",
+            "naturalization_depth.multi_window_replay_trace"
+          ],
+          "source_ledger_row": "n20_i3_row_02_naturalization_depth"
+        },
+        "same_basin_continuation_rule": {
+          "allowed_drift": "probe removal may reduce margin but not erase post-probe basin signature",
+          "basin_signature_fields": [
+            "naturalization_depth.post_probe_basin_signature_trace",
+            "naturalization_depth.post_probe_support_floor_trace",
+            "naturalization_depth.post_probe_coherence_floor_trace"
+          ],
+          "blocked_relabels": [
+            "naturalization_depth.blocked.agency",
+            "naturalization_depth.blocked.consciousness",
+            "naturalization_depth.blocked.identity_acceptance",
+            "naturalization_depth.blocked.native_absorption_by_label",
+            "naturalization_depth.blocked.native_ant_agency",
+            "naturalization_depth.blocked.native_colony_agency",
+            "naturalization_depth.blocked.native_support",
+            "naturalization_depth.blocked.organism_life",
+            "naturalization_depth.blocked.phase8_implementation",
+            "naturalization_depth.blocked.selfhood",
+            "naturalization_depth.blocked.semantic_action",
+            "naturalization_depth.blocked.semantic_choice",
+            "naturalization_depth.blocked.semantic_goal",
+            "naturalization_depth.blocked.semantic_goal_ownership",
+            "naturalization_depth.blocked.semantic_intention",
+            "naturalization_depth.blocked.semantic_perception",
+            "naturalization_depth.blocked.sentience",
+            "naturalization_depth.blocked.support_memory_as_selfhood",
+            "naturalization_depth.blocked.unrestricted_autonomy"
+          ],
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "failure_modes": [
+            "probe residue preserves row",
+            "post-probe signature absent",
+            "support annotation replaces source-current support",
+            "depth score without replay"
+          ],
+          "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+          "hidden_producer_support_allowed": false,
+          "label_only_continuation_allowed": false,
+          "proxy_only_success_allowed": false,
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "required_coherence_floor": "post-probe coherence remains above residual floor",
+          "required_support_floor": "post-probe support remains above residual floor",
+          "rule_id": "n20_i5_naturalization_depth_same_basin_rule",
+          "source_contract_row": "n20_i4_row_02_naturalization_depth"
+        },
+        "source_i5_row_id": "n20_i5_row_02_naturalization_depth",
+        "support_scaffold_declaration": {
+          "declared_supports": [
+            "naturalization_depth.post_probe_support_floor_trace",
+            "naturalization_depth.post_probe_coherence_floor_trace"
+          ],
+          "hidden_support_allowed": false,
+          "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "naturalization_debt": [
+            "naturalization_depth.source_current_producer_removal_observation",
+            "naturalization_depth.multi_window_without_probe_replay"
+          ],
+          "optional_supports": [
+            "support source annotation"
+          ],
+          "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+          "producer_supplied_scaffolds": [
+            "naturalization_depth.naturalization_depth_score_formula",
+            "naturalization_depth.depth_rank_label"
+          ],
+          "required_supports": [
+            "post-probe support floor",
+            "post-probe coherence floor",
+            "multi-window replay trace"
+          ],
+          "source_ledger_row": "n20_i3_row_02_naturalization_depth",
+          "support_id": "n20_i4_naturalization_depth_support_scaffold",
+          "support_source": "declared source-current or producer-mediated support surface",
+          "support_surface": "support/coherence/boundary/flux contract surface",
+          "withdrawable_supports": [
+            "original probe/scaffold"
+          ],
+          "withdrawal_condition": "probe absent while residual basin trace remains auditable"
+        },
+        "unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      {
+        "LGRC_visible_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.withdrawal_window_trace"
+        ],
+        "blocked_relabel_fields": [
+          "withdrawal_resistance.blocked.agency",
+          "withdrawal_resistance.blocked.consciousness",
+          "withdrawal_resistance.blocked.identity_acceptance",
+          "withdrawal_resistance.blocked.native_ant_agency",
+          "withdrawal_resistance.blocked.native_colony_agency",
+          "withdrawal_resistance.blocked.native_support",
+          "withdrawal_resistance.blocked.organism_life",
+          "withdrawal_resistance.blocked.phase8_implementation",
+          "withdrawal_resistance.blocked.resilience_as_identity",
+          "withdrawal_resistance.blocked.selfhood",
+          "withdrawal_resistance.blocked.semantic_action",
+          "withdrawal_resistance.blocked.semantic_choice",
+          "withdrawal_resistance.blocked.semantic_goal",
+          "withdrawal_resistance.blocked.semantic_goal_ownership",
+          "withdrawal_resistance.blocked.semantic_intention",
+          "withdrawal_resistance.blocked.semantic_perception",
+          "withdrawal_resistance.blocked.sentience",
+          "withdrawal_resistance.blocked.unrestricted_autonomy",
+          "withdrawal_resistance.blocked.willpower"
+        ],
+        "claim_ceiling": "complete N20 contract row only; no primitive evidence, agency, Phase 8, native support, sentience, or semantic function",
+        "continuation_function_descriptor": {
+          "basin_signature": [
+            "basin_signature_trace",
+            "boundary_integrity_trace",
+            "support_coherence_floor_trace"
+          ],
+          "boundary_condition": "boundary remains distinguishable during support reduction",
+          "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "continuation_condition": "basin signature persists through declared support reduction",
+          "descriptor_id": "n20_i4_withdrawal_resistance_continuation_function",
+          "descriptor_kind": "bounded_geometric_continuation_condition",
+          "flux_condition": "flux leakage does not explain apparent persistence",
+          "native_function_descriptor_alias_allowed": true,
+          "native_function_descriptor_alias_meaning": "alias only; not purpose, goal, semantic function, biological function, intention, task success, or goal ownership",
+          "proxy_divergence_blocker": "primitive not supported when proxy improves while basin continuation or declared basin signature fails",
+          "proxy_metric": "n20_i4_withdrawal_resistance_support_coherence_survival_margin",
+          "source_ledger_row": "n20_i3_row_01_withdrawal_resistance",
+          "support_floor": "support remains above declared withdrawal floor",
+          "transfer_condition": "not tested in N21 withdrawal row",
+          "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+        },
+        "contract_status": "complete",
+        "expected_first_positive_experiment": "N21",
+        "handoff_status": "ready_for_n21_contract_consumption",
+        "minimum_control_ids": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "withdrawal_schedule_removed_control",
+          "hidden_support_margin_control",
+          "support_floor_crossing_control"
+        ],
+        "n21_handoff_inputs": {
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "declared_supports": [
+            "support_coherence_floor_trace",
+            "boundary_integrity_trace"
+          ],
+          "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "primitive_id": "withdrawal_resistance",
+          "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+          "probe_present_condition": "declared support/scaffold present before withdrawal",
+          "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+          "support_floor": "support remains above declared withdrawal floor",
+          "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+        },
+        "naturalization_debt_fields": [
+          "withdrawal_resistance.source_current_support_withdrawal_surface",
+          "withdrawal_resistance.producer_independent_withdrawal_replay",
+          "withdrawal_resistance.native_support_decay_owner"
+        ],
+        "primitive_evidence_opened": false,
+        "primitive_id": "withdrawal_resistance",
+        "primitive_name": "Withdrawal Resistance",
+        "primitive_specific_consumption_inputs": [
+          "withdrawal_condition",
+          "support_scaffold_declaration",
+          "support_floor",
+          "coherence_floor",
+          "same_basin_continuation_rule",
+          "hidden_producer_support_control",
+          "proxy_only_success_control"
+        ],
+        "primitive_supported": false,
+        "producer_mediated_fields": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy",
+          "withdrawal_resistance.pass_fail_threshold_label"
+        ],
+        "proxy_metric_definition": {
+          "blocked_proxy_terms": [
+            "agency",
+            "choice",
+            "goal",
+            "intention",
+            "sentience",
+            "identity",
+            "native_support",
+            "selfhood",
+            "consciousness",
+            "organism_life"
+          ],
+          "blocked_relabels_as_proxy_metrics_allowed": false,
+          "collapse_condition": "hidden producer support keeps the margin above floor after withdrawal",
+          "divergence_condition": "survival margin improves while basin signature or boundary integrity fails",
+          "expected_relation_to_continuation_function": "positive margin is only a sign of persistence if basin signature and boundary integrity remain source-visible",
+          "measured_quantity": "support_coherence_survival_margin",
+          "producer_inputs": [
+            "withdrawal_resistance.declared_withdrawal_schedule",
+            "withdrawal_resistance.withdrawal_amount_policy",
+            "withdrawal_resistance.pass_fail_threshold_label"
+          ],
+          "proxy_id": "n20_i4_withdrawal_resistance_support_coherence_survival_margin",
+          "proxy_kind": "bounded_indicator_not_replacement",
+          "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+          "proxy_success_replaces_continuation": false,
+          "source_current_inputs": [
+            "withdrawal_resistance.basin_signature_trace",
+            "withdrawal_resistance.support_coherence_floor_trace",
+            "withdrawal_resistance.boundary_integrity_trace",
+            "withdrawal_resistance.withdrawal_window_trace"
+          ],
+          "source_ledger_row": "n20_i3_row_01_withdrawal_resistance"
+        },
+        "same_basin_continuation_rule": {
+          "allowed_drift": "bounded support reduction may lower margin but may not change declared basin signature",
+          "basin_signature_fields": [
+            "withdrawal_resistance.basin_signature_trace",
+            "withdrawal_resistance.boundary_integrity_trace",
+            "withdrawal_resistance.support_coherence_floor_trace"
+          ],
+          "blocked_relabels": [
+            "withdrawal_resistance.blocked.agency",
+            "withdrawal_resistance.blocked.consciousness",
+            "withdrawal_resistance.blocked.identity_acceptance",
+            "withdrawal_resistance.blocked.native_ant_agency",
+            "withdrawal_resistance.blocked.native_colony_agency",
+            "withdrawal_resistance.blocked.native_support",
+            "withdrawal_resistance.blocked.organism_life",
+            "withdrawal_resistance.blocked.phase8_implementation",
+            "withdrawal_resistance.blocked.resilience_as_identity",
+            "withdrawal_resistance.blocked.selfhood",
+            "withdrawal_resistance.blocked.semantic_action",
+            "withdrawal_resistance.blocked.semantic_choice",
+            "withdrawal_resistance.blocked.semantic_goal",
+            "withdrawal_resistance.blocked.semantic_goal_ownership",
+            "withdrawal_resistance.blocked.semantic_intention",
+            "withdrawal_resistance.blocked.semantic_perception",
+            "withdrawal_resistance.blocked.sentience",
+            "withdrawal_resistance.blocked.unrestricted_autonomy",
+            "withdrawal_resistance.blocked.willpower"
+          ],
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "failure_modes": [
+            "basin signature changes",
+            "support floor crosses below declared floor",
+            "coherence floor crosses below declared floor",
+            "hidden support preserves margin",
+            "label-only resistance"
+          ],
+          "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+          "hidden_producer_support_allowed": false,
+          "label_only_continuation_allowed": false,
+          "proxy_only_success_allowed": false,
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "required_coherence_floor": "coherence remains above declared withdrawal floor",
+          "required_support_floor": "support remains above declared withdrawal floor",
+          "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule",
+          "source_contract_row": "n20_i4_row_01_withdrawal_resistance"
+        },
+        "source_i5_row_id": "n20_i5_row_01_withdrawal_resistance",
+        "support_scaffold_declaration": {
+          "declared_supports": [
+            "withdrawal_resistance.support_coherence_floor_trace",
+            "withdrawal_resistance.boundary_integrity_trace"
+          ],
+          "hidden_support_allowed": false,
+          "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "hidden_support_control": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "naturalization_debt": [
+            "withdrawal_resistance.source_current_support_withdrawal_surface",
+            "withdrawal_resistance.producer_independent_withdrawal_replay"
+          ],
+          "optional_supports": [
+            "withdrawal window telemetry"
+          ],
+          "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+          "producer_supplied_scaffolds": [
+            "withdrawal_resistance.declared_withdrawal_schedule",
+            "withdrawal_resistance.withdrawal_amount_policy"
+          ],
+          "required_supports": [
+            "support floor",
+            "coherence floor",
+            "boundary integrity floor"
+          ],
+          "source_ledger_row": "n20_i3_row_01_withdrawal_resistance",
+          "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+          "support_source": "declared source-current or producer-mediated support surface",
+          "support_surface": "support/coherence/boundary/flux contract surface",
+          "withdrawable_supports": [
+            "declared support surface"
+          ],
+          "withdrawal_condition": "support weakened or removed under bounded schedule"
+        },
+        "unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      }
+    ],
+    "handoff_scope": [
+      "withdrawal_resistance",
+      "naturalization_depth"
+    ],
+    "readiness_gate": {
+      "may_redefine_n20_contract_to_pass": false,
+      "must_consume_i5_contract": true,
+      "must_declare_row_specific_thresholds_before_use": true,
+      "must_fail_closed_on_hidden_support": true,
+      "must_fail_closed_on_proxy_only_success": true,
+      "must_keep_agency_native_phase8_sentience_claims_blocked": true,
+      "must_keep_primitive_evidence_separate_from_contract": true,
+      "must_produce_source_backed_pass_fail_evidence": true
+    },
+    "ready_for_n21": true
+  },
+  "native_support_opened": false,
+  "output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+  "phase8_opened": false,
+  "primitive_evidence_opened": false,
+  "purpose": "Close N20 as a becoming-primitive translation contract and hand withdrawal-resistance / naturalization-depth contract rows to N21.",
+  "schema_version": "n20_closeout_and_n21_handoff_v1",
+  "sentience_opened": false,
+  "source_artifacts": [
+    {
+      "source_acceptance_state": "accepted_source_method_inventory_no_primitive_evidence",
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_source_method_inventory.json",
+      "source_iteration": 1,
+      "source_key": "i1_source_inventory",
+      "source_output_digest": "07a827ef3cade00882e9b04f53cadea75ca277df8ec12e04e4db60b99b0e0aa3",
+      "source_report": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_source_method_inventory.md",
+      "source_report_sha256": "e34d78b4fdb104131711bb5b54c9c020ab867540d5b614f1b4e94f1fa0b31ffc",
+      "source_role": "source_and_method_inventory",
+      "source_sha256": "42ae9bbdb700346fc49098e58fb2f9251b288e21a7771852ac84ac0f7780ed07",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_translation_schema_frozen_no_primitive_evidence",
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_translation_schema_v1.json",
+      "source_iteration": 2,
+      "source_key": "i2_translation_schema",
+      "source_output_digest": "c0cf2a1990aa0ce302ebe52c0bf8d2d8ada695c8b812d2fd3abb78b9ffc935ef",
+      "source_report": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_translation_schema_v1.md",
+      "source_report_sha256": "39081a57f5399bbdd637f37f104ced290cc38aa934d497073c7434db0588b5b2",
+      "source_role": "translation_schema_and_gap_rules",
+      "source_sha256": "c36c5ea5425535edee76aad5047377b50a15c259f1341baccdac76652ecc6875",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_producer_residue_naturalization_debt_ledger_no_primitive_evidence",
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_producer_residue_ledger.json",
+      "source_iteration": 3,
+      "source_key": "i3_residue_ledger",
+      "source_output_digest": "0d7193fa14e9a3f299f0ff941f7424a944d6de963578eb9fc566a5244653d69f",
+      "source_report": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_producer_residue_ledger.md",
+      "source_report_sha256": "82ac671430362ae5f54bc98d7c95e6c757f726ee4df9cfc2ef890378fde3cdc9",
+      "source_role": "producer_residue_and_naturalization_debt_ledger",
+      "source_sha256": "cfb4a0f00d75fe99924ccfacd37c86565cf459c7ab01150fd3761c54526dea70",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "source_iteration": 4,
+      "source_key": "i4_function_proxy_scaffold",
+      "source_output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+      "source_report": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_native_function_proxy_contract.md",
+      "source_report_sha256": "b1e9b0bc55f4691fcf8ca343e4353ab4d9392099d3dd1ef4d73459c9b7e73b10",
+      "source_role": "continuation_function_proxy_scaffold_contract",
+      "source_sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_status": "passed"
+    },
+    {
+      "source_acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "source_iteration": 5,
+      "source_key": "i5_same_basin_control",
+      "source_output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "source_report": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_same_basin_continuation_contract.md",
+      "source_report_sha256": "e77c2e8b9c4b716ec718b394e056086d9357ac37f2600bb2fa9d2a940c2d94d2",
+      "source_role": "same_basin_continuation_and_control_contract",
+      "source_sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_status": "passed"
+    }
+  ],
+  "src_diff_empty": true,
+  "status": "passed"
+}
