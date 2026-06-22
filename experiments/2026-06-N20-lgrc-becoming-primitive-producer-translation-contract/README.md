@@ -1,8 +1,8 @@
 # N20 - LGRC Becoming-Primitive Producer Translation Contract
 
-N20 opens the N20-N29 becoming-agency ecology roadmap as a contract experiment.
-It does not test withdrawal, learning, choice, abundance, spark, proxy
-collapse, transfer, generative persistence, or ecology yet.
+N20 closes the N20-N29 becoming-agency ecology roadmap entry point as a
+contract experiment. It does not test withdrawal, learning, choice, abundance,
+spark, proxy collapse, transfer, generative persistence, or ecology.
 
 The core question is:
 
@@ -11,9 +11,9 @@ Which agency-of-becoming diagnostics can be expressed as LGRC-visible geometry,
 and which still require explicit producer surfaces?
 ```
 
-N20 is deliberately prior to primitive evidence. Its job is to define the
-language, schemas, claim boundaries, and producer-residue accounting that later
-experiments must obey.
+N20 is deliberately prior to primitive evidence. Its completed job is to define
+the language, schemas, claim boundaries, and producer-residue accounting that
+later experiments must obey.
 
 ## Boundary
 

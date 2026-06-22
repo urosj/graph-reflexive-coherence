@@ -44,7 +44,7 @@ machine-local state.
 | [N17 closed boundary engagement loop](2026-06-N17-lgrc-closed-boundary-engagement-loop/README.md) | Closed artifact-level AP7 closed boundary engagement loop candidate across perturbation, resource/support, and local shared-medium families. | README, then closeout handoff, comparative requirements matrix, claim boundary, loop controls, and extension artifacts. |
 | [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Closed limited artifact-level AP8 long-horizon agentic-like closure candidate over the narrow h4/L5 stress envelope, with general AP8, Phase 8, native support, agency, and identity claims blocked. | README, then closeout handoff, I9 classification matrix, stress artifacts, hypotheses, and implementation checklist. |
 | [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Closed N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 stack; records 12 NAT4 surfaces while blocking full native ladder generation on AP4/AP5 NAT4 gaps. | README, then closeout handoff, candidate matrix, Phase 8 readiness matrix, implementation checklist, and hypotheses. |
-| [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Open contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, native-function descriptors, proxy blockers, and N21 handoff rules before any primitive evidence is claimed. | README, then implementation plan/checklist, hypotheses, and later contract artifacts. |
+| [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Closed contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, continuation-function descriptors, proxy blockers, same-basin controls, and the N21 handoff without claiming primitive evidence. | README, then closeout handoff, same-basin contract, producer residue ledger, function/proxy contract, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -168,8 +168,36 @@ AP8, but AP4/N14 and AP5/N15 remain below NAT4. Therefore the current
 implementation cannot generate the claimed AP3-AP8 ladder as a complete NAT4
 ladder. This closes the current N12-N19 documentation/review stack.
 
-N20-N29 are now defined as the next roadmap arc, not as implemented experiment
-stubs. The arc keeps three paths distinct until N29:
+N20 closes as the first N20-N29 contract experiment:
+
+```text
+final_supported_status = N20_contract_closed_no_primitive_evidence
+final_claim_ceiling = artifact_level_becoming_primitive_translation_contract_only
+primitive_evidence_opened = false
+agency_claim_opened = false
+phase8_opened = false
+native_support_opened = false
+sentience_opened = false
+ant_ecology_spec_opened = false
+ready_for_n21 = true
+n21_handoff_scope = withdrawal_resistance, naturalization_depth
+```
+
+N20 supports contract closure only: translation schema, producer residue,
+naturalization debt, continuation-function descriptors, proxy blockers,
+same-basin criteria, and fail-closed N21 handoff gates. It does not support
+withdrawal resistance, naturalization depth, learning, choice, abundance,
+spark/new-basin formation, proxy collapse, transfer, generative persistence,
+agency, Phase 8, native support, sentience, organism/life, or ant-ecology
+implementation.
+
+N21 is now the next experiment. It must consume the N20 I5 contract rows for
+`withdrawal_resistance` and `naturalization_depth`, declare row-specific
+thresholds before use, produce source-backed pass/fail evidence, and fail
+closed on hidden support and proxy-only success. It may not redefine the N20
+contract to pass.
+
+The N20-N29 arc keeps three paths distinct until N29:
 
 ```text
 geometric coherence papers and essays:
@@ -199,5 +227,5 @@ Roadmap-level context:
 
 - [N05-N11 LGRC Agentic-Like Foundation Roadmap](N05-N11-LGRC-AgenticLikeFoundationRoadmap.md)
 - [N12-N18 LGRC Agency Prerequisites Roadmap](N12-N18-LGRC-AgencyPrerequisitesRoadmap.md)
-- [N12-N18 LGRC Agency Prerequisites Handoff](N12-N18-LGRC-AgencyPrerequisitesHandoff.md)
 - [N20-N29 LGRC Becoming-Agency Ecology Roadmap](N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md)
+- [N20-N29 LGRC Becoming-Agency Ecology Handoff](N20-N29-LGRC-BecomingAgencyEcologyHandoff.md)
