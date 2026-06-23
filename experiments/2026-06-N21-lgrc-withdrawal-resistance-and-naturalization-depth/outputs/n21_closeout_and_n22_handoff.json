@@ -1,0 +1,776 @@
+{
+  "acceptance_state": "closed_n21_bounded_wr_nd_candidate_and_n22_handoff",
+  "artifact_id": "n21_closeout_and_n22_handoff",
+  "checks": [
+    {
+      "check_id": "source_artifacts_present_and_clean",
+      "detail": {
+        "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe.json": "5cdb24a076ae5a4e814a523663ad460754937f3650f3359da86d3c9f5147cec6",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation.json": "311440952d246a6fa1748f3a215ae8d8513c4bd8c29eb0fcce346ecf76060dc2",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe.json": "076461e9779b024e0633810be35e78359b8e36cd88bbb9ea655aa8b5c9bf7df2",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_replay_and_control_matrix.json": "d4b25c36f84d0300dd7a41f19cbdcfe47d771281ba9a25fbac30b16d346b941f",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_source_contract_inventory.json": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_active_nulls.json": "154d10eb14dc54289154f28e9eb0107343f6e02939bc9905f35c30a09f041cf2",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe.json": "6d80c4dd915c0c5d2b1f67c2af69881d88ab3d632acf828013389f90c53cfb36",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_schema_and_thresholds.json": "49ec439aa4d3f2bb895dc11d8c7613a0f18f75d4f78fa38aead2282ebbf78bb7",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe.json": "611de6672537df3a27c5a259fe53c09f302771eaceb1d40fac4284cea08558e8",
+        "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_transfer_shape_probe.json": "8179871ea16bd6243c46e28249c1f1e8f12246158d873763fa9ee5909cc64a1f"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i6_ready_for_closeout",
+      "detail": {
+        "all_artifact_paths_exist": true,
+        "all_artifact_sha256_match_file_contents": true,
+        "candidate_row_count": 15,
+        "failed_open_controls": 0,
+        "failed_open_replays": 0,
+        "final_closeout_pending_iteration7": true,
+        "final_naturalization_depth_supported": false,
+        "final_withdrawal_resistance_supported": false,
+        "nd3_consumable_rows": 1,
+        "nd4_consumable_rows": 2,
+        "nd_candidate_rows_consumed": 3,
+        "no_absolute_paths": true,
+        "not_run_controls": 0,
+        "not_run_replays": 0,
+        "ready_for_iteration7_closeout": true,
+        "wr5_consumable_rows": 8,
+        "wr_candidate_rows_consumed": 12,
+        "wr_floor_boundary_rows_consumed": 1,
+        "wr_rejected_boundary_rows_consumed": 3
+      },
+      "passed": true
+    },
+    {
+      "check_id": "withdrawal_resistance_status_enum_valid",
+      "detail": "withdrawal_resistance_supported_artifact_level_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "withdrawal_resistance_wr6_closeout_supported",
+      "detail": {
+        "below_floor_or_removal_rejections": [
+          "n21_i4a_row_amount_0_05",
+          "n21_i4a_row_amount_0_03",
+          "n21_i4a_row_amount_0_00"
+        ],
+        "boundary_rows": [
+          "n21_i4a_row_amount_0_06",
+          "n21_i4a_row_amount_0_05",
+          "n21_i4a_row_amount_0_03",
+          "n21_i4a_row_amount_0_00"
+        ],
+        "floor_boundary_row": "n21_i4a_row_amount_0_06",
+        "supporting_rows": [
+          "n21_i4_row_01_withdrawal_resistance_lgrc9v3_support_weakening",
+          "n21_i4a_row_amount_0_09",
+          "n21_i4a_row_amount_0_07",
+          "n21_i4b_row_reference_single_route",
+          "n21_i4b_row_alternate_single_route",
+          "n21_i4b_row_delayed_single_route",
+          "n21_i4b_row_split_same_route",
+          "n21_i4b_row_mixed_route_split"
+        ],
+        "wr5_consumable_row_count": 8
+      },
+      "passed": true
+    },
+    {
+      "check_id": "naturalization_depth_status_enum_valid",
+      "detail": "naturalization_depth_supported_bounded_N21_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "naturalization_depth_nd5_closeout_supported",
+      "detail": {
+        "eventful_post_probe_row": "n21_i5b_row_01_eventful_post_probe_continuation",
+        "nd3_consumable_row_count": 1,
+        "nd4_consumable_row_count": 2,
+        "static_post_probe_row": "n21_i5a_row_01_post_probe_derived_state_persistence"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_c6_handoff_supported",
+      "detail": {
+        "final_claim_ceiling": "bounded artifact-level WR6 withdrawal candidate plus bounded N21-local ND5 naturalization-depth candidate; no agency, native support, sentience, Phase 8, or ant-ecology implementation",
+        "final_supported_status": "bounded_artifact_level_withdrawal_and_naturalization_candidate",
+        "n21_closeout_ladder_rung": "N21-C6",
+        "n21_closeout_status": "n22_ready_bounded_primitive_evidence",
+        "ready_for_n22": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_residue_and_debt_recorded",
+      "detail": {
+        "naturalization_debt_remaining": {
+          "n22_susceptibility_update": [
+            "susceptibility_update.source_current_route_conditioned_state_mutation",
+            "susceptibility_update.peer_route_same_budget_comparison",
+            "susceptibility_update.proxy_free_susceptibility_policy"
+          ],
+          "naturalization_depth": [
+            "naturalization_depth.source_current_producer_removal_observation",
+            "naturalization_depth.multi_window_without_probe_replay",
+            "naturalization_depth.naturalization_depth_budget_surface"
+          ],
+          "withdrawal_resistance": [
+            "withdrawal_resistance.source_current_support_withdrawal_surface",
+            "withdrawal_resistance.producer_independent_withdrawal_replay",
+            "withdrawal_resistance.native_support_decay_owner"
+          ]
+        },
+        "producer_residue_remaining": {
+          "n22_susceptibility_update": [
+            "susceptibility_update.route_update_rule",
+            "susceptibility_update.reinforcement_schedule",
+            "susceptibility_update.learning_label"
+          ],
+          "naturalization_depth": [
+            "naturalization_depth.naturalization_depth_score_formula",
+            "naturalization_depth.support_source_annotation",
+            "naturalization_depth.depth_rank_label"
+          ],
+          "withdrawal_resistance": [
+            "withdrawal_resistance.declared_withdrawal_schedule",
+            "withdrawal_resistance.withdrawal_amount_policy",
+            "withdrawal_resistance.pass_fail_threshold_label"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claims_blocked",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "blocked_closeout_claims": [
+          "agency",
+          "choice",
+          "willpower",
+          "semantic action",
+          "semantic perception",
+          "semantic goal ownership",
+          "semantic intention",
+          "selfhood",
+          "identity acceptance",
+          "native support",
+          "Phase 8 implementation",
+          "sentience",
+          "consciousness",
+          "organism/life",
+          "native ant agency",
+          "native colony agency",
+          "unrestricted autonomy",
+          "ant ecology implementation",
+          "support-removal resistance",
+          "robust withdrawal resistance",
+          "general naturalization depth",
+          "ND6 naturalization closeout"
+        ],
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "sentience_supported": false,
+        "source_mutation_supported": false,
+        "unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n22_handoff_contract_complete",
+      "detail": [
+        "susceptibility_fields",
+        "replay_requirement",
+        "durable_geometry_modification_controls",
+        "AP4_gap_dependency_if_route_conditioned",
+        "AP5_gap_dependency_if_proxy_conditioned"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": "all closeout paths are repository-relative",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "blocked_closeout_claims": [
+      "agency",
+      "choice",
+      "willpower",
+      "semantic action",
+      "semantic perception",
+      "semantic goal ownership",
+      "semantic intention",
+      "selfhood",
+      "identity acceptance",
+      "native support",
+      "Phase 8 implementation",
+      "sentience",
+      "consciousness",
+      "organism/life",
+      "native ant agency",
+      "native colony agency",
+      "unrestricted autonomy",
+      "ant ecology implementation",
+      "support-removal resistance",
+      "robust withdrawal resistance",
+      "general naturalization depth",
+      "ND6 naturalization closeout"
+    ],
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "sentience_supported": false,
+    "source_mutation_supported": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "consciousness": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "combined_closeout": {
+    "final_claim_ceiling": "bounded artifact-level WR6 withdrawal candidate plus bounded N21-local ND5 naturalization-depth candidate; no agency, native support, sentience, Phase 8, or ant-ecology implementation",
+    "final_supported_status": "bounded_artifact_level_withdrawal_and_naturalization_candidate",
+    "n21_closeout_ladder_rung": "N21-C6",
+    "n21_closeout_status": "n22_ready_bounded_primitive_evidence",
+    "ready_for_n22": true
+  },
+  "command": ".venv/bin/python experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/scripts/build_n21_closeout_and_n22_handoff.py",
+  "experiment": "N21",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "hypothesis_closeout": [
+    {
+      "basis": "Eight WR rows are I6-consumable at WR5, with I4-A mapping the floor/removal boundary and no failed-open controls.",
+      "claim_ceiling": "bounded artifact-level withdrawal-resistance candidate",
+      "closeout_decision": "supported_bounded_artifact_level_candidate",
+      "hypothesis_id": "hypothesis_a_withdrawal_resistance",
+      "supported_by": [
+        "I4",
+        "I4-A",
+        "I4-B",
+        "I6"
+      ],
+      "supporting_metric": 8,
+      "unsafe_promotions_blocked": true
+    },
+    {
+      "basis": "I5 supplies ND3 no-probe baseline evidence; I5-A and I5-B supply I6-consumable ND4 post-probe-derived evidence.",
+      "claim_ceiling": "bounded N21 naturalization-depth candidate, not general naturalization depth",
+      "closeout_decision": "supported_bounded_N21_candidate",
+      "hypothesis_id": "hypothesis_b_naturalization_depth",
+      "supported_by": [
+        "I5",
+        "I5-A",
+        "I5-B",
+        "I6"
+      ],
+      "supporting_metric": 2,
+      "unsafe_promotions_blocked": true
+    },
+    {
+      "basis": "All unsafe claim flags remain false, failed-open controls are zero, source artifacts are repository-relative, and producer residue/debt fields are recorded rather than promoted.",
+      "claim_ceiling": "claim hygiene condition for A/B support",
+      "closeout_decision": "supported_as_claim_boundary_and_residue_guard",
+      "hypothesis_id": "hypothesis_c_claim_boundary_and_producer_residue",
+      "supported_by": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7"
+      ],
+      "supporting_metric": 0,
+      "unsafe_promotions_blocked": true
+    }
+  ],
+  "iteration": "7",
+  "n22_handoff": {
+    "ap_gap_contract": {
+      "ap_gap_dependencies": [
+        {
+          "ap_level": "AP4",
+          "reason": "susceptibility update may depend on route-conditioned selection evidence",
+          "source": "N19/N14",
+          "status": "required_local_gap_dependency"
+        }
+      ],
+      "carried_forward_from_i3": true,
+      "conditional_gap_dependencies": [
+        {
+          "ap_level": "AP5",
+          "condition": "proxy or target formation participates in susceptibility update",
+          "source": "N19/N15",
+          "status": "conditional_local_gap_dependency"
+        }
+      ]
+    },
+    "handoff_blockers": [
+      "N22 must produce new source-backed durable geometry deltas",
+      "N22 may not treat N21 WR/ND closeout as susceptibility evidence",
+      "N22 must keep AP4 dependency row-local when route-conditioned selection participates",
+      "N22 must carry conditional AP5 dependency if proxy or target formation participates",
+      "N22 must keep producer route update / reinforcement / learning labels out of native support"
+    ],
+    "handoff_scope": "durable geometry modification / susceptibility update after withdrawal and post-probe persistence evidence",
+    "minimum_controls": {
+      "all_controls_fail_closed": true,
+      "primitive_specific_controls": [
+        {
+          "blocked_condition": "durable_geometry_modification_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "durable_geometry_modification_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "route_label_only_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "route_label_only_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "reinforcement_schedule_removed_control blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reinforcement_schedule_removed_control",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "AP4_gap_dependency_if_route_conditioned blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP4_gap_dependency_if_route_conditioned",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "AP5_gap_dependency_if_proxy_conditioned blocks primitive-specific relabel or hidden support path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP5_gap_dependency_if_proxy_conditioned",
+          "control_kind": "primitive_specific_fail_closed_control",
+          "expected_result": "rejected_or_blocked_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        }
+      ],
+      "shared_control_template_ids": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control"
+      ],
+      "shared_controls": [
+        {
+          "blocked_condition": "continuation label changes or persists while basin signature, support, coherence, boundary, flux, or replay criteria fail",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_success_control",
+          "control_kind": "label_relabel_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "proxy metric improves while same-basin continuation criteria fail",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "proxy_only_success_control",
+          "control_kind": "proxy_replacement_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "undeclared producer support preserves the row after declared support or scaffold is withdrawn",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_support_control",
+          "control_kind": "hidden_support_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "continuation trace is assembled after the fact instead of replaying from declared source-current fields",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction_control",
+          "control_kind": "trace_order_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "agency, choice, goal, intention, sentience, selfhood, identity, or life labels are used as evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_relabel_control",
+          "control_kind": "semantic_overclaim_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "producer-mediated or naturalization-debt state is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_kind": "native_support_overclaim_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        },
+        {
+          "blocked_condition": "contract artifact is relabeled as Phase 8 implementation or source mutation support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_kind": "phase8_overclaim_blocker",
+          "expected_result": "rejected_fail_closed",
+          "fail_closed": true,
+          "source_contract_row": "n20_i4_row_03_susceptibility_update"
+        }
+      ],
+      "source_contract_row": "n20_i4_row_03_susceptibility_update",
+      "status": "defined"
+    },
+    "n21_consumable_inputs": {
+      "naturalization_depth_ladder_rung": "ND5",
+      "naturalization_depth_status": "naturalization_depth_supported_bounded_N21_candidate",
+      "withdrawal_resistance_ladder_rung": "WR6",
+      "withdrawal_resistance_status": "withdrawal_resistance_supported_artifact_level_candidate"
+    },
+    "ready_for_n22": true,
+    "required_n22_inputs": [
+      "susceptibility_fields",
+      "replay_requirement",
+      "durable_geometry_modification_controls",
+      "AP4_gap_dependency_if_route_conditioned",
+      "AP5_gap_dependency_if_proxy_conditioned"
+    ],
+    "same_basin_continuation_rule": {
+      "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+      "basin_signature_fields": [
+        "susceptibility_update.pre_interaction_geometry_trace",
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace"
+      ],
+      "blocked_relabels": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "boundary_integrity_floor": "route or region boundary remains auditable after update",
+      "failure_modes": [
+        "route label changed without geometry change",
+        "delta vanishes on replay",
+        "reinforcement schedule supplies hidden support",
+        "AP4 gap omitted when base route-conditioned susceptibility participates",
+        "AP5 gap omitted when proxy-conditioned susceptibility participates"
+      ],
+      "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+      "hidden_producer_support_allowed": false,
+      "label_only_continuation_allowed": false,
+      "proxy_only_success_allowed": false,
+      "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+      "required_coherence_floor": "altered geometry stays above coherence floor",
+      "required_support_floor": "altered geometry stays above support floor",
+      "rule_id": "n20_i5_susceptibility_update_same_basin_rule",
+      "source_contract_row": "n20_i4_row_03_susceptibility_update"
+    },
+    "source_contract_row": "n20_i5_row_03_susceptibility_update",
+    "source_contract_status": "complete",
+    "source_current_fields": [
+      "susceptibility_update.pre_interaction_geometry_trace",
+      "susceptibility_update.post_interaction_geometry_trace",
+      "susceptibility_update.susceptibility_delta_trace",
+      "susceptibility_update.route_or_region_reentry_trace"
+    ],
+    "target_experiment": "N22",
+    "target_primitive": "susceptibility_update"
+  },
+  "naturalization_debt_remaining": {
+    "n22_susceptibility_update": [
+      "susceptibility_update.source_current_route_conditioned_state_mutation",
+      "susceptibility_update.peer_route_same_budget_comparison",
+      "susceptibility_update.proxy_free_susceptibility_policy"
+    ],
+    "naturalization_depth": [
+      "naturalization_depth.source_current_producer_removal_observation",
+      "naturalization_depth.multi_window_without_probe_replay",
+      "naturalization_depth.naturalization_depth_budget_surface"
+    ],
+    "withdrawal_resistance": [
+      "withdrawal_resistance.source_current_support_withdrawal_surface",
+      "withdrawal_resistance.producer_independent_withdrawal_replay",
+      "withdrawal_resistance.native_support_decay_owner"
+    ]
+  },
+  "naturalization_depth_closeout": {
+    "claim_scope": "bounded N21-local post-probe-derived naturalization-depth candidate with producer/debt boundedness recorded",
+    "naturalization_depth_ladder_rung": "ND5",
+    "naturalization_depth_status": "naturalization_depth_supported_bounded_N21_candidate",
+    "not_supported": [
+      "ND6 general artifact-level naturalization depth",
+      "general naturalization-depth ladder",
+      "native support",
+      "agency",
+      "Phase 8",
+      "sentience"
+    ],
+    "source_backed_i6_consumable_rungs": {
+      "initial_fixture_baseline": [
+        "n21_i5_row_01_naturalization_depth_lgrc9v3_probe_absence"
+      ],
+      "post_probe_derived_rows": [
+        "n21_i5a_row_01_post_probe_derived_state_persistence",
+        "n21_i5b_row_01_eventful_post_probe_continuation"
+      ]
+    },
+    "support_basis": {
+      "eventful_post_probe_row": "n21_i5b_row_01_eventful_post_probe_continuation",
+      "nd3_consumable_row_count": 1,
+      "nd4_consumable_row_count": 2,
+      "static_post_probe_row": "n21_i5a_row_01_post_probe_derived_state_persistence"
+    }
+  },
+  "output_digest": "dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10",
+  "producer_residue_remaining": {
+    "n22_susceptibility_update": [
+      "susceptibility_update.route_update_rule",
+      "susceptibility_update.reinforcement_schedule",
+      "susceptibility_update.learning_label"
+    ],
+    "naturalization_depth": [
+      "naturalization_depth.naturalization_depth_score_formula",
+      "naturalization_depth.support_source_annotation",
+      "naturalization_depth.depth_rank_label"
+    ],
+    "withdrawal_resistance": [
+      "withdrawal_resistance.declared_withdrawal_schedule",
+      "withdrawal_resistance.withdrawal_amount_policy",
+      "withdrawal_resistance.pass_fail_threshold_label"
+    ]
+  },
+  "purpose": "Close N21 withdrawal resistance and naturalization depth, record claim ceiling and remaining producer debt, and hand bounded primitive evidence to N22 susceptibility update.",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "artifact_id": "n20_same_basin_continuation_contract",
+      "failed_checks": [],
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_role": "n20_susceptibility_update_contract_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_contract_inventory_no_primitive_evidence",
+      "artifact_id": "n21_source_contract_inventory",
+      "failed_checks": [],
+      "output_digest": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_source_contract_inventory.json",
+      "sha256": "9c4b35fad34d5bc1ec3cf740cd475f30b21ff4ee51a82ee0d148e2111769eb6e",
+      "source_role": "source_contract_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_withdrawal_naturalization_schema_frozen_no_primitive_evidence",
+      "artifact_id": "n21_withdrawal_schema_and_thresholds",
+      "failed_checks": [],
+      "output_digest": "49ec439aa4d3f2bb895dc11d8c7613a0f18f75d4f78fa38aead2282ebbf78bb7",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_schema_and_thresholds.json",
+      "sha256": "3bfbfc843f5d627d1105b7b5e9c7b57fb7a17b566d785f4c9d13c61a807e8ff5",
+      "source_role": "schema_and_threshold_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_primitive_evidence",
+      "artifact_id": "n21_withdrawal_active_nulls",
+      "failed_checks": [],
+      "output_digest": "154d10eb14dc54289154f28e9eb0107343f6e02939bc9905f35c30a09f041cf2",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_active_nulls.json",
+      "sha256": "8c0961c0bff8d35585fa5d701d2678c8522169176622b3c7e37e0a895354a79a",
+      "source_role": "active_nulls_and_failure_baselines",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_wr4_withdrawal_candidate_pending_i6",
+      "artifact_id": "n21_withdrawal_resistance_probe",
+      "failed_checks": [],
+      "output_digest": "6d80c4dd915c0c5d2b1f67c2af69881d88ab3d632acf828013389f90c53cfb36",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe.json",
+      "sha256": "3fb80e72cc1a739627794ef85f2191637564c04f266b5610e38849bf478b7a26",
+      "source_role": "reference_support_weakening_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_withdrawal_severity_boundary_mapped_no_removal_overclaim",
+      "artifact_id": "n21_withdrawal_severity_boundary_probe",
+      "failed_checks": [],
+      "output_digest": "611de6672537df3a27c5a259fe53c09f302771eaceb1d40fac4284cea08558e8",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe.json",
+      "sha256": "82072dd08488153361adc6d682f1ded4e3083227ad8d5afc489888a635cb3357",
+      "source_role": "severity_and_removal_boundary_map",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_withdrawal_transfer_shape_wr4_candidate_pending_i6",
+      "artifact_id": "n21_withdrawal_transfer_shape_probe",
+      "failed_checks": [],
+      "output_digest": "8179871ea16bd6243c46e28249c1f1e8f12246158d873763fa9ee5909cc64a1f",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_transfer_shape_probe.json",
+      "sha256": "8e4aacf9f3e0ad371869903a533bcc8f87d2385a036680e14322358d6c95dca3",
+      "source_role": "transfer_and_schedule_shape_candidates",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_nd3_naturalization_candidate_pending_i6",
+      "artifact_id": "n21_naturalization_depth_probe",
+      "failed_checks": [],
+      "output_digest": "076461e9779b024e0633810be35e78359b8e36cd88bbb9ea655aa8b5c9bf7df2",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe.json",
+      "sha256": "367b1ca45639a91f313271bc84f52b067f953d7f13e1f1dbea65a10e0c59e45a",
+      "source_role": "no_probe_initial_fixture_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_post_probe_derived_nd3_candidate_pending_i6",
+      "artifact_id": "n21_naturalization_depth_post_probe_derivation",
+      "failed_checks": [],
+      "output_digest": "311440952d246a6fa1748f3a215ae8d8513c4bd8c29eb0fcce346ecf76060dc2",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation.json",
+      "sha256": "ecbc42f3dd722f2565325b5b4105e42caddd2a3a768d09c2e47e92507c999c07",
+      "source_role": "post_probe_derived_static_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_eventful_post_probe_derived_nd3_candidate_pending_i6",
+      "artifact_id": "n21_naturalization_depth_eventful_post_probe",
+      "failed_checks": [],
+      "output_digest": "5cdb24a076ae5a4e814a523663ad460754937f3650f3359da86d3c9f5147cec6",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe.json",
+      "sha256": "fa367d72356fe60f68ebcb961effe72129c1a7bbbde99a216ac83804fa8c8b7e",
+      "source_role": "eventful_post_probe_derived_candidate",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_matrix_consumed_all_candidates_no_closeout",
+      "artifact_id": "n21_replay_and_control_matrix",
+      "failed_checks": [],
+      "output_digest": "d4b25c36f84d0300dd7a41f19cbdcfe47d771281ba9a25fbac30b16d346b941f",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_replay_and_control_matrix.json",
+      "sha256": "c06bcc82fcee643d437a942e32fe20d105264fd6c0a7d3a77dd9f33b2045f63e",
+      "source_role": "replay_and_control_matrix",
+      "status": "passed"
+    }
+  ],
+  "source_i6_output_digest": "d4b25c36f84d0300dd7a41f19cbdcfe47d771281ba9a25fbac30b16d346b941f",
+  "src_diff_empty": true,
+  "status": "passed",
+  "withdrawal_resistance_closeout": {
+    "claim_scope": "artifact-level bounded withdrawal-resistance candidate under declared support weakening and transfer/schedule-shape probes",
+    "not_supported": [
+      "support-removal resistance",
+      "robust withdrawal resistance",
+      "native support",
+      "agency",
+      "Phase 8",
+      "sentience"
+    ],
+    "source_backed_i6_consumable_rung": "WR5",
+    "support_basis": {
+      "below_floor_or_removal_rejections": [
+        "n21_i4a_row_amount_0_05",
+        "n21_i4a_row_amount_0_03",
+        "n21_i4a_row_amount_0_00"
+      ],
+      "boundary_rows": [
+        "n21_i4a_row_amount_0_06",
+        "n21_i4a_row_amount_0_05",
+        "n21_i4a_row_amount_0_03",
+        "n21_i4a_row_amount_0_00"
+      ],
+      "floor_boundary_row": "n21_i4a_row_amount_0_06",
+      "supporting_rows": [
+        "n21_i4_row_01_withdrawal_resistance_lgrc9v3_support_weakening",
+        "n21_i4a_row_amount_0_09",
+        "n21_i4a_row_amount_0_07",
+        "n21_i4b_row_reference_single_route",
+        "n21_i4b_row_alternate_single_route",
+        "n21_i4b_row_delayed_single_route",
+        "n21_i4b_row_split_same_route",
+        "n21_i4b_row_mixed_route_split"
+      ],
+      "wr5_consumable_row_count": 8
+    },
+    "withdrawal_resistance_ladder_rung": "WR6",
+    "withdrawal_resistance_status": "withdrawal_resistance_supported_artifact_level_candidate"
+  }
+}

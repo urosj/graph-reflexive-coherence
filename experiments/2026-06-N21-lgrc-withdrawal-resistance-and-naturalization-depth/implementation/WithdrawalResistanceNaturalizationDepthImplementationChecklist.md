@@ -1430,42 +1430,43 @@ absolute_path_scan = passed
 
 ## Iteration 6. Replay And Control Matrix
 
-- [ ] Run artifact-only replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run duplicate replay.
-- [ ] Run order-inversion control.
-- [ ] Run label-only continuation control.
-- [ ] Run proxy-only success control.
-- [ ] Run hidden producer support control.
-- [ ] Run post-hoc trace construction control.
-- [ ] Run withdrawal schedule removed control.
-- [ ] Run support floor crossing control.
-- [ ] Run probe-present-only control.
-- [ ] Run probe residue control.
-- [ ] Run support source annotation relabel control.
-- [ ] Run native support relabel control.
-- [ ] Run semantic agency/sentience relabel control.
-- [ ] Run Phase 8 relabel control.
-- [ ] Record every required replay/control status as `passed`,
+- [x] Run artifact-only replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Run order-inversion control.
+- [x] Run label-only continuation control.
+- [x] Run proxy-only success control.
+- [x] Run hidden producer support control.
+- [x] Run post-hoc trace construction control.
+- [x] Run withdrawal schedule removed control.
+- [x] Run support floor crossing control.
+- [x] Run probe-present-only control.
+- [x] Run probe residue control.
+- [x] Run support source annotation relabel control.
+- [x] Run native support relabel control.
+- [x] Run semantic agency/sentience relabel control.
+- [x] Run Phase 8 relabel control.
+- [x] Record every required replay/control status as `passed`,
       `failed_closed`, `failed_open`, `not_run`, or `not_applicable`.
-- [ ] Confirm negative controls fail closed as expected.
-- [ ] Confirm controls consume or replay the same run artifacts and do not
+- [x] Confirm negative controls fail closed as expected.
+- [x] Confirm controls consume or replay the same run artifacts and do not
       construct success post-hoc.
-- [ ] Confirm controls can demote or block WR/ND ladder rungs when they fail.
-- [ ] Confirm any required replay/control with status `not_run` blocks the rung
+- [x] Confirm controls can demote or block WR/ND ladder rungs when they fail.
+- [x] Confirm any required replay/control with status `not_run` blocks the rung
       that depends on it.
-- [ ] Consume I4 reference support-weakening WR4 row.
-- [ ] Consume I4-A positive severity rows.
-- [ ] Consume I4-A floor-boundary and fail-closed rows as boundary evidence.
-- [ ] Consume I4-B transfer/schedule-shape rows only as bounded WR4
+- [x] Consume I4 reference support-weakening WR4 row.
+- [x] Consume I4-A positive severity rows.
+- [x] Consume I4-A floor-boundary and fail-closed rows as boundary evidence.
+- [x] Consume I4-B transfer/schedule-shape rows only as bounded WR4
       candidates, not as robust withdrawal or support-removal evidence.
-- [ ] Consume I5 no-probe initial-fixture ND3 row.
-- [ ] Consume I5-A post-probe-derived static ND3 row.
-- [ ] Consume I5-B eventful post-probe-derived ND3 row.
-- [ ] For every consumed row, record `candidate_id`, `source_iteration`,
+- [x] Consume I5 no-probe initial-fixture ND3 row.
+- [x] Consume I5-A post-probe-derived static ND3 row.
+- [x] Consume I5-B eventful post-probe-derived ND3 row.
+- [x] For every consumed row, record `candidate_id`, `source_iteration`,
       `source_output_digest`, `control_statuses`, `replay_statuses`,
-      `demoted_rung_if_any`, and `final_consumable_rung`.
-- [ ] Assign final WR/ND rungs only after I6 control results.
+      `demoted_rung_if_any`, `final_consumable_rung`, and
+      `i6_consumable_rung`.
+- [x] Assign final WR/ND rungs only after I6 control results.
 
 Expected artifacts:
 
@@ -1475,23 +1476,176 @@ reports/n21_replay_and_control_matrix.md
 scripts/build_n21_replay_and_control_matrix.py
 ```
 
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_replay_control_matrix_consumed_all_candidates_no_closeout
+output_digest = d4b25c36f84d0300dd7a41f19cbdcfe47d771281ba9a25fbac30b16d346b941f
+check_count = 15
+failed_checks = []
+candidate_row_count = 15
+wr_candidate_rows_consumed = 12
+nd_candidate_rows_consumed = 3
+wr5_consumable_rows = 8
+wr_floor_boundary_rows_consumed = 1
+wr_rejected_boundary_rows_consumed = 3
+nd3_consumable_rows = 1
+nd4_consumable_rows = 2
+failed_open_controls = 0
+failed_open_replays = 0
+not_run_controls = 0
+not_run_replays = 0
+all_artifact_paths_exist = true
+all_artifact_sha256_match_file_contents = true
+no_absolute_paths = true
+final_withdrawal_resistance_supported = false
+final_naturalization_depth_supported = false
+final_closeout_pending_iteration7 = true
+ready_for_iteration7_closeout = true
+```
+
+Artifact hashes:
+
+```text
+output_json_sha256 = c06bcc82fcee643d437a942e32fe20d105264fd6c0a7d3a77dd9f33b2045f63e
+report_md_sha256 = 989ba81afe5385677836a052161326f8665cef242e46e1968238813d06b46aef
+script_py_sha256 = 267fb686653d9e01de1e9a742a863c7f72fba8783607e9a2305d22a0fd4f7164
+```
+
+Status and field semantics:
+
+```text
+final_consumable_rung = legacy plan-required field; read as I6-consumable by I7,
+not closeout-final
+i6_consumable_rung = preferred closeout-facing field name
+
+passed = positive required condition passed for the row's declared scope
+failed_closed = false-positive claim path was rejected; candidate may be retained
+failed_open = false-positive claim path passed when it should not; candidate invalid
+not_run = required status was not executed; dependent rung is blocked
+not_applicable = control or replay mode is outside the row's declared scope
+```
+
+Replay requirement map:
+
+```text
+WR rows require:
+  artifact_only_replay
+  snapshot_load_replay
+  duplicate_replay
+
+I5 ND row requires:
+  artifact_only_replay
+  declared_multi_window_replay_without_original_probe_scaffold
+  snapshot_load_replay
+  duplicate_replay
+
+I5-A ND row requires:
+  artifact_only_replay
+  declared_multi_window_replay_without_original_probe_scaffold
+  snapshot_load_replay
+  duplicate_replay if declared by source row, otherwise not_applicable with scope reason
+
+I5-B ND row requires:
+  artifact_only_replay
+  declared_multi_window_replay_without_original_probe_scaffold
+  snapshot_load_replay
+  duplicate_replay
+```
+
+Consumed row effects:
+
+```text
+I4 reference support-weakening WR4 row:
+  i6_consumable_rung = WR5
+
+I4-A positive severity rows:
+  n21_i4a_row_amount_0_09 -> WR5
+  n21_i4a_row_amount_0_07 -> WR5
+
+I4-A boundary/fail-closed rows:
+  n21_i4a_row_amount_0_06 -> WR3_floor_boundary_evidence
+  n21_i4a_row_amount_0_05 -> rejected boundary evidence
+  n21_i4a_row_amount_0_03 -> rejected boundary evidence
+  n21_i4a_row_amount_0_00 -> rejected boundary evidence
+
+I4-B transfer/schedule-shape rows:
+  reference_single_route -> WR5
+  alternate_single_route -> WR5
+  delayed_single_route -> WR5
+  split_same_route -> WR5
+  mixed_route_split -> WR5
+
+I5 no-probe initial-fixture row:
+  i6_consumable_rung = ND3_initial_fixture_no_probe_replay_candidate
+  demotion = not_promoted_beyond_ND3_initial_fixture_scope
+
+I5-A post-probe-derived static row:
+  i6_consumable_rung = ND4
+
+I5-B eventful post-probe-derived row:
+  i6_consumable_rung = ND4
+```
+
+Evidence/support split:
+
+```text
+I4-A floor and rejected boundary rows:
+  evidence_claim_allowed = true
+  positive_primitive_support_allowed = false
+  primitive_claim_allowed = false
+
+Positive WR/ND rows:
+  evidence_claim_allowed = true
+  positive_primitive_support_allowed = true
+```
+
+Interpretation:
+
+I6 is a control matrix, not final closeout. It consumes every provisional
+candidate family from I4 through I5-B and records no `failed_open` or
+`not_run` replay/control statuses. The positive WR rows become consumable as
+control-backed `WR5` candidates, while the I4-A floor and below-floor rows
+remain boundary/fail-closed evidence rather than support-removal or robust
+withdrawal evidence.
+
+The naturalization-depth side now has a clean split. I5 remains only an
+`ND3` no-probe initial-fixture baseline because it did not start from a
+probe-present final state. I5-A and I5-B become `ND4`-consumable because
+post-probe derivation, active probe residue, hidden support,
+support-annotation relabel, post-hoc trace, and unsafe relabel controls pass
+or fail closed within scope. They do not support `ND5`, `ND6`, final
+naturalization depth, native support, agency, sentience, Phase 8, or
+ant-ecology implementation.
+
+Validation record:
+
+```text
+script_compile = passed
+producer_run = passed
+git_diff_check = passed
+src_diff_empty = true
+absolute_path_scan = passed
+```
+
 ## Iteration 7. Closeout And N22 Handoff
 
-- [ ] Classify withdrawal-resistance result.
-- [ ] Record final WR ladder rung.
-- [ ] Classify naturalization-depth result.
-- [ ] Record final ND ladder rung.
-- [ ] Record final N21-C closeout ladder rung.
-- [ ] Record exact WR status enum.
-- [ ] Record exact ND status enum.
-- [ ] Record remaining producer residue.
-- [ ] Record remaining naturalization debt.
-- [ ] Record final primitive claim ceiling.
-- [ ] Record unsafe claim blockers.
-- [ ] Confirm agency, native support, sentience, Phase 8, and ant-ecology
+- [x] Classify withdrawal-resistance result.
+- [x] Record final WR ladder rung.
+- [x] Classify naturalization-depth result.
+- [x] Record final ND ladder rung.
+- [x] Record final N21-C closeout ladder rung.
+- [x] Record exact WR status enum.
+- [x] Record exact ND status enum.
+- [x] Record remaining producer residue.
+- [x] Record remaining naturalization debt.
+- [x] Record final primitive claim ceiling.
+- [x] Record unsafe claim blockers.
+- [x] Confirm agency, native support, sentience, Phase 8, and ant-ecology
       implementation remain blocked.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Record N22 handoff for susceptibility update / durable geometry
+- [x] Confirm `src_diff_empty`.
+- [x] Record N22 handoff for susceptibility update / durable geometry
       modification.
 
 Expected artifacts:
@@ -1500,6 +1654,194 @@ Expected artifacts:
 outputs/n21_closeout_and_n22_handoff.json
 reports/n21_closeout_and_n22_handoff.md
 scripts/build_n21_closeout_and_n22_handoff.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = closed_n21_bounded_wr_nd_candidate_and_n22_handoff
+output_digest = dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10
+check_count = 12
+failed_checks = []
+source_i6_output_digest = d4b25c36f84d0300dd7a41f19cbdcfe47d771281ba9a25fbac30b16d346b941f
+source_n20_i5_output_digest = 6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5
+ready_for_n22 = true
+src_diff_empty = true
+no_absolute_paths = true
+```
+
+Artifact hashes:
+
+```text
+output_json_sha256 = 91e7799c1a75ff2839cd5c64b0ca89ba584e8f1e69395f03b69f3565791fd47d
+report_md_sha256 = 80ec12366b4cc7e1b3cbc52ef5c697660613af4f4d72e8229e5354888ffd5977
+script_py_sha256 = d084b4333bf616926fd7373fa99a1021ea7ebd6d01bae4bdeb4846c1778f11e4
+```
+
+Closeout classification:
+
+```text
+withdrawal_resistance_status = withdrawal_resistance_supported_artifact_level_candidate
+withdrawal_resistance_ladder_rung = WR6
+source_backed_i6_consumable_rung = WR5
+
+naturalization_depth_status = naturalization_depth_supported_bounded_N21_candidate
+naturalization_depth_ladder_rung = ND5
+source_backed_i6_consumable_rungs = [
+  ND3_initial_fixture_no_probe_replay_candidate,
+  ND4
+]
+
+n21_closeout_status = n22_ready_bounded_primitive_evidence
+n21_closeout_ladder_rung = N21-C6
+final_supported_status = bounded_artifact_level_withdrawal_and_naturalization_candidate
+final_claim_ceiling = bounded artifact-level WR6 withdrawal candidate plus bounded
+  N21-local ND5 naturalization-depth candidate; no agency, native support,
+  sentience, Phase 8, or ant-ecology implementation
+```
+
+Withdrawal-resistance closeout:
+
+```text
+wr5_consumable_row_count = 8
+floor_boundary_row = n21_i4a_row_amount_0_06
+below_floor_or_removal_rejections = [
+  n21_i4a_row_amount_0_05,
+  n21_i4a_row_amount_0_03,
+  n21_i4a_row_amount_0_00
+]
+
+support-removal resistance = false
+robust withdrawal resistance = false
+general withdrawal resistance = false
+native support = false
+agency = false
+```
+
+I7 closes WR as `WR6` because I6 supplies source-backed, replay/control-clean
+`WR5` consumable rows and I7 records the remaining producer residue,
+naturalization debt, claim ceiling, unsafe blockers, and source-clean closeout
+state. The WR6 result remains bounded to artifact-level withdrawal evidence.
+It does not upgrade the zero-margin floor row, below-floor rows, or full-removal
+row into support-removal resistance.
+
+Naturalization-depth closeout:
+
+```text
+nd3_consumable_row_count = 1
+nd4_consumable_row_count = 2
+static_post_probe_row = n21_i5a_row_01_post_probe_derived_state_persistence
+eventful_post_probe_row = n21_i5b_row_01_eventful_post_probe_continuation
+
+ND6 = false
+general naturalization depth = false
+native support = false
+agency = false
+sentience = false
+```
+
+I7 closes ND as a bounded N21-local `ND5` candidate. I5 remains only the
+initial-fixture no-probe `ND3` baseline. I5-A and I5-B remain the stronger
+post-probe-derived `ND4` consumable rows from I6. I7 records
+producer/debt boundedness and claim hygiene, so the local closeout can report
+`ND5` while keeping `ND6`, general naturalization depth, native support,
+agency, sentience, Phase 8, and ant-ecology implementation blocked.
+
+Remaining producer residue and naturalization debt:
+
+```text
+withdrawal_resistance producer residue:
+  withdrawal_resistance.declared_withdrawal_schedule
+  withdrawal_resistance.withdrawal_amount_policy
+  withdrawal_resistance.pass_fail_threshold_label
+
+withdrawal_resistance naturalization debt:
+  withdrawal_resistance.source_current_support_withdrawal_surface
+  withdrawal_resistance.producer_independent_withdrawal_replay
+  withdrawal_resistance.native_support_decay_owner
+
+naturalization_depth producer residue:
+  naturalization_depth.naturalization_depth_score_formula
+  naturalization_depth.support_source_annotation
+  naturalization_depth.depth_rank_label
+
+naturalization_depth naturalization debt:
+  naturalization_depth.source_current_producer_removal_observation
+  naturalization_depth.multi_window_without_probe_replay
+  naturalization_depth.naturalization_depth_budget_surface
+
+n22_susceptibility_update producer residue:
+  susceptibility_update.route_update_rule
+  susceptibility_update.reinforcement_schedule
+  susceptibility_update.learning_label
+
+n22_susceptibility_update naturalization debt:
+  susceptibility_update.source_current_route_conditioned_state_mutation
+  susceptibility_update.peer_route_same_budget_comparison
+  susceptibility_update.proxy_free_susceptibility_policy
+```
+
+Unsafe claim blockers:
+
+```text
+agency = false
+choice = false
+willpower = false
+semantic action = false
+semantic perception = false
+semantic goal ownership = false
+semantic intention = false
+selfhood = false
+identity acceptance = false
+native support = false
+Phase 8 implementation = false
+sentience = false
+consciousness = false
+organism/life = false
+native ant agency = false
+native colony agency = false
+unrestricted autonomy = false
+ant ecology implementation = false
+support-removal resistance = false
+robust withdrawal resistance = false
+general naturalization depth = false
+ND6 naturalization closeout = false
+```
+
+N22 handoff:
+
+```text
+target_primitive = susceptibility_update
+target_experiment = N22
+source_contract_row = n20_i5_row_03_susceptibility_update
+required_n22_inputs = [
+  susceptibility_fields,
+  replay_requirement,
+  durable_geometry_modification_controls,
+  AP4_gap_dependency_if_route_conditioned,
+  AP5_gap_dependency_if_proxy_conditioned
+]
+```
+
+N22 must test susceptibility update / durable geometry modification with new
+source-backed durable geometry deltas. N21 can be consumed only as bounded
+becoming-primitive context. N21 evidence cannot directly satisfy N22's
+susceptibility update primitive, cannot backfill AP4/AP5 NAT4 gaps, and cannot
+turn producer-mediated route updates, reinforcement schedules, or learning
+labels into substrate-carried evidence.
+
+Validation record:
+
+```text
+script_compile = passed
+producer_run = passed
+jq_failed_checks_empty = passed
+idempotency_rerun = passed
+all_n21_scripts_compile = passed
+git_diff_check = passed
+src_diff_empty = true
+absolute_path_scan = passed
 ```
 
 ## Closeout Requirement
