@@ -48,6 +48,26 @@ N21 ready_for_n22 = true
 N21 cannot supply susceptibility-update evidence. N22 must produce new
 source-backed durable geometry deltas.
 
+N19 may be consumed only as AP-gap boundary context:
+
+```text
+n19_native_readiness_boundary_consumption =
+  ap_gap_boundary_only
+```
+
+N19 must not be consumed as susceptibility-update evidence, durable geometry
+delta evidence, or an SU ladder assignment source.
+
+When N22 mirrors N20 source statuses, inherited fields must be explicitly
+prefixed:
+
+```text
+n20_source_downstream_consumption_status
+```
+
+This prevents N20's `contract_complete_pending_iteration6_closeout` status from
+being confused with N22 Iteration 6 transfer/re-entry.
+
 ## N21 ND6 Bridge Rule
 
 N22 does not reopen N21 and does not claim to perform N21 `ND6` directly.
@@ -87,6 +107,8 @@ source_commit_or_source_digest
 runtime_config_digest
 source_current_inputs
 row_specific_thresholds_declared_before_use
+n19_native_readiness_boundary_consumption
+n20_source_downstream_consumption_status
 interaction_window
 reentry_window
 pre_interaction_geometry_trace
@@ -98,8 +120,15 @@ allowed_delta_fields
 same_basin_invariant_fields
 out_of_scope_drift_blocks_row
 delta_not_label_reassignment
+route_or_region_conditioned
 peer_same_budget_comparison
+peer_same_budget_comparison_scope_reason
 peer_route_or_region_trace
+historical_interaction_provenance_present
+active_reinforcement_schedule_disabled
+active_reinforcement_queue_empty
+reinforcement_budget_in_flight
+reinforcement_schedule_not_used_as_evidence
 support_floor_result
 coherence_floor_result
 boundary_integrity_result
@@ -116,6 +145,7 @@ reentry_delta_digest
 delta_persistence_ratio
 delta_threshold_or_rule
 one_window_transient_rejected
+global_drift_rejected
 producer_residue_fields
 naturalization_debt_fields
 blocked_relabel_fields
@@ -124,8 +154,10 @@ unsafe_claim_flags
 row_decision
 susceptibility_update_claim_allowed
 derived_report_only
+artifact_manifest
 artifact_paths
 artifact_sha256
+all_artifact_sha256_match_file_contents
 output_digest
 ```
 
@@ -143,6 +175,39 @@ SU6 = N23-ready bounded durable geometry modification evidence
 
 Rows below `SU3` cannot support durable geometry modification. `SU6` is a
 handoff rung, not an agency claim.
+
+## Closeout Ladder
+
+N22 must also use a tranche-level closeout ladder:
+
+```text
+N22-C0 = contract-only closeout
+  N20/N21 handoff consumed, but no N22 susceptibility evidence opened.
+
+N22-C1 = active-null/control discipline established
+  Active nulls and failure baselines fail closed, but no positive SU row.
+
+N22-C2 = susceptibility partial
+  Interaction or delta evidence appears, but replay, re-entry, controls, or AP
+  gaps block stronger support.
+
+N22-C3 = replay-backed susceptibility candidate
+  SU3 reached on at least one source-backed row.
+
+N22-C4 = durable geometry modification candidate
+  SU4 reached after replay and fail-closed controls.
+
+N22-C5 = transfer/re-entry-backed susceptibility candidate
+  SU5 reached with later route/region re-entry or transfer evidence.
+
+N22-C6 = N23-ready bounded durable geometry evidence
+  SU5/SU6 evidence plus producer residue, naturalization debt, AP4/AP5
+  discipline, unsafe-claim blockers, src_diff_empty, and N23 handoff.
+```
+
+The closeout ladder classifies the whole N22 tranche. It must not convert an
+SU row into semantic learning, choice, agency, native support, sentience, or a
+Phase 8 claim.
 
 ## Schema Policies To Freeze
 
@@ -173,6 +238,51 @@ later re-entry differs only in the target route or region
 If the same delta appears globally, or appears equally in the peer route or
 region, the row is not route-conditioned susceptibility evidence.
 
+Peer comparison may be `not_applicable` only for a non-route-conditioned `SU2`
+row, and only with:
+
+```text
+peer_same_budget_comparison_scope_reason = non_route_conditioned_SU2_only
+```
+
+For `SU5`, `SU6`, `N22-C5`, and `N22-C6`, missing peer comparison blocks the
+claim.
+
+N22 must distinguish historical interaction provenance from active producer
+reinforcement. Later rows may require prior interaction to exist historically,
+but active reinforcement cannot carry the durable delta:
+
+```text
+historical_interaction_provenance_present = true
+active_reinforcement_schedule_disabled = true
+active_reinforcement_queue_empty = true
+reinforcement_budget_in_flight = 0.0
+reinforcement_schedule_not_used_as_evidence = true
+```
+
+If active reinforcement remains, the row may still be useful producer-residue
+evidence, but it cannot support source-current durable geometry modification.
+
+Active reinforcement remaining has a fixed rung effect:
+
+```text
+SU1/SU2 = descriptive only if source-current traces exist
+SU3 = replay-limited only if replay is not reinforcement-carried
+SU4/SU5/SU6 = blocked
+N22-C4/N22-C5/N22-C6 = blocked
+n21_nd6_bridge_status = blocked_by_producer_residue
+```
+
+Support/coherence/boundary/flux changes are field-specific. A changed status is
+accepted only if the declared floor or bound remains preserved:
+
+```text
+support_floor_result = preserved | changed_within_allowed_delta_above_floor
+coherence_floor_result = preserved | changed_within_allowed_delta_above_floor
+boundary_integrity_result = preserved | changed_within_allowed_delta
+flux_or_leakage_result = preserved | changed_within_bound
+```
+
 AP dependency statuses are closed enums:
 
 ```text
@@ -199,6 +309,32 @@ reentry_delta_digest
 delta_persistence_ratio
 delta_threshold_or_rule
 one_window_transient_rejected = true
+global_drift_rejected = true
+peer_same_budget_comparison_required_if_route_or_region_conditioned = true
+```
+
+The persistence rule must be declared before use. A positive row requires a
+declared persistence floor, replay-window survival, later re-entry survival,
+one-window transient rejection, and global-drift rejection.
+
+Every positive row must record an artifact manifest:
+
+```text
+artifact_manifest = [
+  { path, sha256, artifact_role }
+]
+all_artifact_sha256_match_file_contents = true
+```
+
+Replay names must use canonical names. `artifact_only_replay` is accepted only
+as an alias for `artifact_replay`.
+
+Iteration 3 must include AP-gap active nulls:
+
+```text
+route_conditioned_row_missing_AP4 -> failed_closed
+proxy_or_target_conditioned_row_missing_AP5 -> failed_closed
+AP_gap_prose_only -> failed_closed
 ```
 
 ## Iteration Plan
@@ -219,10 +355,12 @@ scripts/build_n22_source_handoff_inventory.py
 
 ### Iteration 2. Schema, Ladder, And Control Freeze
 
-Freeze source-current fields, run-artifact admissibility, local SU ladder,
-AP4/AP5 dependency rules, replay requirements, row decisions, allowed drift
-versus same-basin invariants, peer/same-budget comparison, durability metrics,
-N21 ND6 bridge status, and claim boundary.
+Freeze source-current fields, run-artifact admissibility, N19 boundary-only
+consumption, N20-prefixed inherited source status, local SU ladder, N22-C
+closeout ladder, AP4/AP5 dependency rules, replay requirements, row decisions,
+allowed drift versus same-basin invariants, historical interaction versus
+active reinforcement, peer/same-budget comparison, durability metrics, N21 ND6
+bridge status, and claim boundary.
 
 Expected artifacts:
 
@@ -236,7 +374,8 @@ scripts/build_n22_susceptibility_schema_and_controls.py
 
 Show that label-only route changes, producer schedule changes, one-window flux
 transients, no-reentry rows, post-hoc deltas, hidden reinforcement, AP-gap
-omissions, and semantic learning relabels fail closed.
+omissions, AP-gap prose-only handling, and semantic learning relabels fail
+closed.
 
 Expected artifacts:
 

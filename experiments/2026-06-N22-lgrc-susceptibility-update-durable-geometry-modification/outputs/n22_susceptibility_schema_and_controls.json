@@ -1,0 +1,1685 @@
+{
+  "acceptance_state": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+  "artifact_id": "n22_susceptibility_schema_and_controls",
+  "checks": [
+    {
+      "check_id": "source_i1_inventory_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+        "failed_checks": [],
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i1_boundary_kept_no_susceptibility_evidence",
+      "detail": {
+        "durable_geometry_modification_supported": false,
+        "n21_nd6_bridge_status": "not_supported",
+        "n21_reopened": false,
+        "positive_run_artifacts_consumed": false,
+        "ready_for_iteration_2_schema_freeze": true,
+        "source_handoff_inventory_only": true,
+        "su_ladder_rung_assigned": false,
+        "susceptibility_evidence_opened": false,
+        "susceptibility_update_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "candidate_evidence_row_schema_complete",
+      "detail": {
+        "field_constraint_count": 61,
+        "required_field_count": 61
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n19_boundary_only_schema_frozen",
+      "detail": {
+        "markdown_sources_context_only": [
+          "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+          "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md"
+        ],
+        "n19_must_not_consume_as": [
+          "susceptibility_update_evidence",
+          "durable_geometry_delta",
+          "SU_ladder_assignment_source"
+        ],
+        "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+        "n21_closeout_may_consume_as": [
+          "prerequisite_context",
+          "WR6_ND5_N21-C6_readiness_boundary",
+          "N22_handoff_contract"
+        ],
+        "n21_closeout_must_not_consume_as": [
+          "susceptibility_update_evidence",
+          "durable_geometry_delta",
+          "SU_ladder_assignment_source",
+          "semantic_learning_evidence",
+          "native_support_evidence"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n20_prefixed_status_frozen",
+      "detail": "contract_complete_pending_iteration6_closeout",
+      "passed": true
+    },
+    {
+      "check_id": "run_artifact_admissibility_fail_closed",
+      "detail": {
+        "all_artifact_sha256_match_file_contents_required": true,
+        "artifact_digests_must_match_file_contents": true,
+        "artifact_manifest_schema": {
+          "artifact_role_required": true,
+          "path_policy": "repository_relative_paths_only",
+          "required_item_fields": [
+            "path",
+            "sha256",
+            "artifact_role"
+          ],
+          "type": "list[object]"
+        },
+        "artifact_paths_must_exist": true,
+        "derived_report_only_true_blocks_positive_support": true,
+        "digest_algorithm": "sha256",
+        "digest_mismatch_blocks_rung_assignment": true,
+        "fail_closed_on_missing_or_mismatch": true,
+        "missing_required_artifact_blocks_rung_assignment": true,
+        "path_policy": "repository_relative_paths_only",
+        "report_only_artifacts_may_summarize_but_not_assign_rungs": true,
+        "required_fields": [
+          "run_artifact_id",
+          "source_commit_or_source_digest",
+          "runtime_config_digest",
+          "source_contract_row_digest",
+          "artifact_manifest",
+          "pre_interaction_artifact_path",
+          "interaction_artifact_path",
+          "post_interaction_artifact_path",
+          "reentry_artifact_path",
+          "event_log_or_trace_path",
+          "snapshot_or_replay_artifact_path",
+          "artifact_sha256",
+          "all_artifact_sha256_match_file_contents",
+          "derived_report_only"
+        ],
+        "source_contract_row_digest_must_match_i1": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "threshold_policy_declared_before_use",
+      "detail": {
+        "failure_policy": "missing_or_post_hoc_threshold_blocks_support",
+        "outcome_inspection_before_threshold_declaration_allowed": false,
+        "required_threshold_surfaces": [
+          "support_floor",
+          "coherence_floor",
+          "boundary_integrity_floor",
+          "flux_or_leakage_bound",
+          "delta_persistence_ratio_floor",
+          "replay_window_survival_rule",
+          "reentry_survival_rule",
+          "peer_same_budget_comparison_rule",
+          "global_drift_rejection_rule"
+        ],
+        "retune_after_outcome_allowed": false,
+        "row_specific_thresholds_declared_before_use": true,
+        "threshold_record_required_fields": [
+          "threshold_id",
+          "source_contract_row",
+          "source_contract_row_digest",
+          "threshold_declared_before_use",
+          "threshold_value_or_rule",
+          "threshold_owner",
+          "failure_policy"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "susceptibility_delta_schema_blocks_labels",
+      "detail": {
+        "delta_must_be_source_current": true,
+        "delta_not_label_reassignment": true,
+        "post_hoc_delta_construction_blocks_support": true,
+        "reinforcement_schedule_only_delta_blocks_support": true,
+        "required_trace_fields": [
+          "pre_interaction_geometry_trace",
+          "interaction_window",
+          "post_interaction_geometry_trace",
+          "susceptibility_delta_trace",
+          "reentry_window",
+          "route_or_region_reentry_trace"
+        ],
+        "route_label_only_delta_blocks_support": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "allowed_drift_and_same_basin_schema_frozen",
+      "detail": {
+        "allowed_delta_fields": [
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace",
+          "susceptibility_update.route_or_region_reentry_trace"
+        ],
+        "delta_not_label_reassignment": true,
+        "large_topology_boundary_support_or_identity_drift_blocks_support": true,
+        "out_of_scope_drift_blocks_row": true,
+        "same_basin_invariant_fields": [
+          "source_contract_row",
+          "same_basin_rule.rule_id",
+          "support_floor_result",
+          "coherence_floor_result",
+          "boundary_integrity_result",
+          "flux_or_leakage_result"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "historical_interaction_active_reinforcement_split_frozen",
+      "detail": {
+        "active_reinforcement_queue_empty_required": true,
+        "active_reinforcement_remaining_demotes_to": "producer_residue_or_blocked",
+        "active_reinforcement_remaining_rung_effect": {
+          "N22-C4": "blocked",
+          "N22-C5": "blocked",
+          "N22-C6": "blocked",
+          "SU1": "descriptive_allowed_if_source_current_trace_exists",
+          "SU2": "descriptive_allowed_if_source_current_delta_exists",
+          "SU3": "replay_limited_only_if_replay_not_reinforcement_carried",
+          "SU4": "blocked",
+          "SU5": "blocked",
+          "SU6": "blocked",
+          "n21_nd6_bridge_status": "blocked_by_producer_residue"
+        },
+        "active_reinforcement_schedule_disabled_required": true,
+        "historical_interaction_is_not_active_support": true,
+        "historical_interaction_provenance_present_required_when_claimed": true,
+        "reinforcement_budget_in_flight_required_value": 0.0,
+        "reinforcement_schedule_not_used_as_evidence_required": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "peer_same_budget_comparison_mandatory_when_conditioned",
+      "detail": {
+        "allowed_not_applicable_scope_reason": "non_route_conditioned_SU2_only",
+        "global_drift_rejected_required": true,
+        "missing_peer_comparison_blocks": [
+          "SU5",
+          "SU6",
+          "N22-C5",
+          "N22-C6"
+        ],
+        "not_applicable_scope_reason_required": true,
+        "not_required_for_non_route_conditioned_su2_only": true,
+        "peer_route_or_region_receives_same_budget_without_same_prior_interaction": true,
+        "required_when_route_or_region_conditioned": true,
+        "same_delta_in_peer_blocks_route_conditioned_support": true,
+        "target_route_or_region_receives_prior_interaction": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "durability_metrics_frozen",
+      "detail": {
+        "delta_persistence_ratio_floor_declared_before_use": true,
+        "global_drift_rejected_required_for_route_conditioned_rows": true,
+        "later_reentry_survival_required": true,
+        "missing_metric_blocks_durable_delta_support": true,
+        "one_window_transient_rejected_required": true,
+        "replay_window_survival_required": true,
+        "required_metrics": [
+          "interaction_delta_digest",
+          "post_replay_delta_digest",
+          "reentry_delta_digest",
+          "delta_persistence_ratio",
+          "delta_threshold_or_rule",
+          "one_window_transient_rejected",
+          "global_drift_rejected"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "support_coherence_boundary_flux_schema_frozen",
+      "detail": {
+        "changed_status_requires_declared_floor_or_bound_preserved": true,
+        "field_specific_acceptance": {
+          "boundary_integrity_result": [
+            "preserved",
+            "changed_within_allowed_delta"
+          ],
+          "coherence_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "flux_or_leakage_result": [
+            "preserved",
+            "changed_within_bound"
+          ],
+          "support_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ]
+        },
+        "floor_crossing_blocks_support": true,
+        "flux_bound_exceeded_blocks_support": true,
+        "missing_result_blocks_support": true,
+        "out_of_scope_boundary_change_blocks_support": true,
+        "required_result_fields": [
+          "support_floor_result",
+          "coherence_floor_result",
+          "boundary_integrity_result",
+          "flux_or_leakage_result"
+        ],
+        "result_status_values": [
+          "preserved",
+          "changed_within_allowed_delta",
+          "changed_within_allowed_delta_above_floor",
+          "changed_within_bound",
+          "crossed_floor",
+          "exceeded_bound",
+          "missing",
+          "not_applicable"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "replay_control_schema_frozen",
+      "detail": {
+        "canonical_replay_names_required": true,
+        "failed_closed_demotes_or_blocks_dependent_rung": true,
+        "failed_open_invalidates_row": true,
+        "not_applicable_requires_scope_reason": true,
+        "not_run_blocks_dependent_rung": true,
+        "replay_name_aliases": {
+          "artifact_replay": [
+            "artifact_only_replay"
+          ]
+        },
+        "required_control_records": [
+          "control_id",
+          "control_status",
+          "blocked_condition",
+          "expected_result",
+          "actual_result",
+          "claim_allowed_when_control_triggers",
+          "rung_effect"
+        ],
+        "required_replay_modes": {
+          "SU3": [
+            "artifact_replay"
+          ],
+          "SU4": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay"
+          ],
+          "SU5": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay",
+            "later_reentry_replay"
+          ],
+          "SU6": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay",
+            "later_reentry_replay",
+            "handoff_reconstruction_replay"
+          ]
+        },
+        "status_enum": [
+          "passed",
+          "failed_closed",
+          "failed_open",
+          "not_run",
+          "not_applicable"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_null_comparability_frozen",
+      "detail": {
+        "expected_result": "fail_closed",
+        "same_basin_signature_fields": true,
+        "same_budget_schedule_digest_where_applicable": true,
+        "same_budget_schedule_family_where_applicable": true,
+        "same_route_or_region_scope_where_applicable": true,
+        "same_runtime_envelope_digest": true,
+        "same_seed_or_declared_seed_pairing_rule": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "same_topology_config_family": true,
+        "weak_or_noncomparable_null_blocks_null_use": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "su_ladder_complete",
+      "detail": [
+        {
+          "meaning": "no_source_current_susceptibility_evidence",
+          "rung": "SU0"
+        },
+        {
+          "meaning": "interaction_run_present",
+          "rung": "SU1"
+        },
+        {
+          "meaning": "source_current_pre_post_geometry_delta_observed",
+          "rung": "SU2"
+        },
+        {
+          "meaning": "replay_backed_susceptibility_update_candidate",
+          "rung": "SU3"
+        },
+        {
+          "meaning": "control_backed_durable_geometry_modification_candidate",
+          "rung": "SU4"
+        },
+        {
+          "meaning": "transfer_reentry_backed_susceptibility_update_candidate",
+          "rung": "SU5"
+        },
+        {
+          "meaning": "n23_ready_bounded_durable_geometry_modification_evidence",
+          "rung": "SU6"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n22_closeout_ladder_complete",
+      "detail": [
+        {
+          "meaning": "contract_only_closeout",
+          "rung": "N22-C0"
+        },
+        {
+          "meaning": "active_null_control_discipline_established",
+          "rung": "N22-C1"
+        },
+        {
+          "meaning": "susceptibility_partial",
+          "rung": "N22-C2"
+        },
+        {
+          "meaning": "replay_backed_susceptibility_candidate",
+          "rung": "N22-C3"
+        },
+        {
+          "meaning": "durable_geometry_modification_candidate",
+          "rung": "N22-C4"
+        },
+        {
+          "meaning": "transfer_reentry_backed_susceptibility_candidate",
+          "rung": "N22-C5"
+        },
+        {
+          "meaning": "n23_ready_bounded_durable_geometry_evidence",
+          "rung": "N22-C6"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ap_dependency_enums_frozen",
+      "detail": {
+        "ap4_condition_reason_required": true,
+        "ap4_dependency_status_values": [
+          "required_recorded",
+          "not_applicable",
+          "missing_blocks_row"
+        ],
+        "ap5_condition_reason_required": true,
+        "ap5_dependency_status_values": [
+          "conditional_required_recorded",
+          "not_applicable",
+          "missing_blocks_row"
+        ],
+        "ap_gap_prose_only_not_sufficient": true,
+        "iteration3_active_null_expectations": [
+          {
+            "expected_status": "failed_closed",
+            "null_id": "route_conditioned_row_missing_AP4"
+          },
+          {
+            "expected_status": "failed_closed",
+            "null_id": "proxy_or_target_conditioned_row_missing_AP5"
+          },
+          {
+            "expected_status": "failed_closed",
+            "null_id": "AP_gap_prose_only"
+          }
+        ],
+        "missing_blocks_row_status": "missing_blocks_row",
+        "proxy_or_target_conditioned_rows_require_ap5": true,
+        "route_conditioned_rows_require_ap4": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_nd6_bridge_status_enum_frozen",
+      "detail": {
+        "allowed_values": [
+          "not_supported",
+          "bridge_candidate_supported",
+          "blocked_by_replay",
+          "blocked_by_controls",
+          "blocked_by_AP_gap",
+          "blocked_by_producer_residue"
+        ],
+        "blocked_wording": [
+          "N21 ND6 achieved",
+          "N21 ND6 supported",
+          "N21 reopened"
+        ],
+        "bridge_candidate_supported_requires": [
+          "SU5_or_SU6_cleanly_supported",
+          "source_backed_durable_susceptibility_delta",
+          "replay_and_reentry_support",
+          "peer_same_budget_comparison_when_route_or_region_conditioned",
+          "AP4_AP5_dependency_controls_intact",
+          "unsafe_claims_blocked"
+        ],
+        "does_not_reopen_n21": true,
+        "does_not_retroactively_upgrade_n21": true,
+        "initial_status": "not_supported",
+        "wording_policy": "ND6_bridge_candidate_only"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "demotion_precedence_frozen",
+      "detail": {
+        "active_reinforcement_remaining_blocks_durable_delta_support": true,
+        "control_failed_closed_blocks_control_backed_and_stronger": true,
+        "control_failed_open_invalidates_row": true,
+        "final_su_and_n22_c_rungs_assigned_after_control_matrix_only": true,
+        "iteration4_candidate_rungs_are_provisional_until_controls": true,
+        "missing_ap_dependency_blocks_dependent_row": true,
+        "missing_peer_same_budget_blocks_su5_su6": true,
+        "not_run_blocks_dependent_rung": true,
+        "replay_failure_blocks_replay_backed_and_stronger": true,
+        "unsafe_claim_requested_blocks_claim": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "row_decision_policy_frozen",
+      "detail": {
+        "blocked_blocks_susceptibility_claim": true,
+        "inventory_contract_support_field": "inventory_decision",
+        "inventory_rows_keep_row_decision": "not_applicable",
+        "partial_blocks_susceptibility_claim": true,
+        "rejected_blocks_susceptibility_claim": true,
+        "row_decision_enum": [
+          "supported",
+          "partial",
+          "blocked",
+          "rejected",
+          "not_applicable"
+        ],
+        "supported_does_not_permit_unsafe_claims": true,
+        "supported_null_control_does_not_permit_susceptibility_claim": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_schema_frozen",
+      "detail": {
+        "blocked_claims": [
+          "agency",
+          "semantic_action",
+          "semantic_perception",
+          "semantic_goal_ownership",
+          "semantic_intention",
+          "semantic_choice",
+          "semantic_learning",
+          "free_will",
+          "selfhood",
+          "identity_acceptance",
+          "native_support",
+          "phase8_implementation",
+          "fully_native_integration",
+          "organism_life",
+          "sentience",
+          "consciousness",
+          "native_ant_agency",
+          "native_colony_agency",
+          "unrestricted_autonomy"
+        ],
+        "global_unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        "n19_boundary_context_is_not_evidence": true,
+        "n21_wr_nd_context_is_not_susceptibility_evidence": true,
+        "naturalization_debt_fields_are_not_native_support": true,
+        "producer_mediated_fields_are_not_substrate_carried": true,
+        "row_specific_blocked_relabels_separate": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "closeout_status_enums_frozen",
+      "detail": {
+        "durable_geometry_modification_status": [
+          "durable_geometry_modification_supported_bounded_candidate",
+          "durable_geometry_modification_partial_or_blocked",
+          "durable_geometry_modification_rejected"
+        ],
+        "n21_nd6_bridge_status": [
+          "not_supported",
+          "bridge_candidate_supported",
+          "blocked_by_replay",
+          "blocked_by_controls",
+          "blocked_by_AP_gap",
+          "blocked_by_producer_residue"
+        ],
+        "susceptibility_update_status": [
+          "susceptibility_update_supported_bounded_candidate",
+          "susceptibility_update_partial_or_blocked",
+          "susceptibility_update_rejected"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "primitive_schema_row_frozen_from_i1",
+      "detail": {
+        "same_basin_rule_id": "n20_i5_susceptibility_update_same_basin_rule",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "support_scaffold_id": "n20_i4_susceptibility_update_support_scaffold"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_evidence_opened",
+      "detail": {
+        "n22_closeout_ladder_rung_assigned": false,
+        "positive_run_artifacts_consumed": false,
+        "schema_freeze_only": true,
+        "su_ladder_rung_assigned": false,
+        "susceptibility_evidence_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_local_absolute_paths",
+      "detail": "payload uses repository-relative paths and source IDs only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_susceptibility_schema_and_controls.py",
+  "context_source_boundary": {
+    "markdown_sources_context_only": [
+      "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md"
+    ],
+    "n19_must_not_consume_as": [
+      "susceptibility_update_evidence",
+      "durable_geometry_delta",
+      "SU_ladder_assignment_source"
+    ],
+    "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+    "n21_closeout_may_consume_as": [
+      "prerequisite_context",
+      "WR6_ND5_N21-C6_readiness_boundary",
+      "N22_handoff_contract"
+    ],
+    "n21_closeout_must_not_consume_as": [
+      "susceptibility_update_evidence",
+      "durable_geometry_delta",
+      "SU_ladder_assignment_source",
+      "semantic_learning_evidence",
+      "native_support_evidence"
+    ]
+  },
+  "experiment": "2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "iteration": 2,
+  "iteration2_boundary": {
+    "durable_geometry_modification_supported": false,
+    "n21_nd6_bridge_status": "not_supported",
+    "n22_closeout_ladder_rung_assigned": false,
+    "positive_run_artifacts_consumed": false,
+    "ready_for_iteration_3_active_nulls": true,
+    "schema_freeze_only": true,
+    "su_ladder_rung_assigned": false,
+    "susceptibility_evidence_opened": false,
+    "susceptibility_update_supported": false
+  },
+  "output_digest": "a6d4e478b1e29f31007bb965c97a838764e196f18ca7ac8e1c78a7ccfc03680f",
+  "purpose": "Freeze N22 susceptibility-update schemas, ladders, source-current admissibility, durability metrics, AP dependency rules, active reinforcement controls, and claim boundary before positive probes.",
+  "schema_freeze": {
+    "active_null_comparability_rule": {
+      "expected_result": "fail_closed",
+      "same_basin_signature_fields": true,
+      "same_budget_schedule_digest_where_applicable": true,
+      "same_budget_schedule_family_where_applicable": true,
+      "same_route_or_region_scope_where_applicable": true,
+      "same_runtime_envelope_digest": true,
+      "same_seed_or_declared_seed_pairing_rule": true,
+      "same_source_contract_row": true,
+      "same_source_contract_row_digest": true,
+      "same_topology_config_family": true,
+      "weak_or_noncomparable_null_blocks_null_use": true
+    },
+    "allowed_drift_same_basin_schema": {
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "delta_not_label_reassignment": true,
+      "large_topology_boundary_support_or_identity_drift_blocks_support": true,
+      "out_of_scope_drift_blocks_row": true,
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ]
+    },
+    "ap_dependency_schema": {
+      "ap4_condition_reason_required": true,
+      "ap4_dependency_status_values": [
+        "required_recorded",
+        "not_applicable",
+        "missing_blocks_row"
+      ],
+      "ap5_condition_reason_required": true,
+      "ap5_dependency_status_values": [
+        "conditional_required_recorded",
+        "not_applicable",
+        "missing_blocks_row"
+      ],
+      "ap_gap_prose_only_not_sufficient": true,
+      "iteration3_active_null_expectations": [
+        {
+          "expected_status": "failed_closed",
+          "null_id": "route_conditioned_row_missing_AP4"
+        },
+        {
+          "expected_status": "failed_closed",
+          "null_id": "proxy_or_target_conditioned_row_missing_AP5"
+        },
+        {
+          "expected_status": "failed_closed",
+          "null_id": "AP_gap_prose_only"
+        }
+      ],
+      "missing_blocks_row_status": "missing_blocks_row",
+      "proxy_or_target_conditioned_rows_require_ap5": true,
+      "route_conditioned_rows_require_ap4": true
+    },
+    "candidate_evidence_row_schema": {
+      "claim_allowed_false_for_non_supported_rows": true,
+      "claim_allowed_false_if_unsafe_claim_requested": true,
+      "field_constraints": {
+        "active_reinforcement_queue_empty": {
+          "constraint": "false demotes to producer residue",
+          "required_value_for_durable_delta_support": true,
+          "type": "boolean"
+        },
+        "active_reinforcement_schedule_disabled": {
+          "constraint": "false demotes to producer residue",
+          "required_value_for_durable_delta_support": true,
+          "type": "boolean"
+        },
+        "all_artifact_sha256_match_file_contents": {
+          "constraint": "false blocks positive support",
+          "required_value_for_positive_support": true,
+          "type": "boolean"
+        },
+        "allowed_delta_fields": {
+          "constraint": "only declared source-current fields may change as delta evidence",
+          "type": "list[string]"
+        },
+        "ap4_condition_reason": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "ap4_dependency_status": {
+          "allowed_values": [
+            "required_recorded",
+            "not_applicable",
+            "missing_blocks_row"
+          ],
+          "constraint": "missing_blocks_row blocks route-conditioned rows",
+          "type": "enum"
+        },
+        "ap5_condition_reason": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "ap5_dependency_status": {
+          "allowed_values": [
+            "conditional_required_recorded",
+            "not_applicable",
+            "missing_blocks_row"
+          ],
+          "constraint": "missing_blocks_row blocks proxy-conditioned rows",
+          "type": "enum"
+        },
+        "artifact_manifest": {
+          "constraint": "all row artifacts must be listed with role and digest",
+          "required_item_fields": [
+            "path",
+            "sha256",
+            "artifact_role"
+          ],
+          "type": "list[object]"
+        },
+        "artifact_paths": {
+          "constraint": "must match artifact_manifest paths",
+          "type": "list[repository_relative_path]"
+        },
+        "artifact_sha256": {
+          "constraint": "must match artifact_manifest sha256 values",
+          "type": "object_or_list"
+        },
+        "blocked_relabel_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "boundary_integrity_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "claim_ceiling": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "coherence_floor_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "control_results": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "delta_not_label_reassignment": {
+          "constraint": "false blocks support",
+          "required_value": true,
+          "type": "boolean"
+        },
+        "delta_persistence_ratio": {
+          "constraint": "must meet declared floor before use",
+          "type": "number"
+        },
+        "delta_threshold_or_rule": {
+          "constraint": "must be declared before outcome inspection",
+          "type": "object_or_string"
+        },
+        "derived_report_only": {
+          "constraint": "true blocks positive susceptibility support",
+          "required_value_for_positive_support": false,
+          "type": "boolean"
+        },
+        "flux_or_leakage_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "global_drift_rejected": {
+          "constraint": "false blocks route/region-conditioned SU5/SU6",
+          "required_value_for_route_conditioned_support": true,
+          "type": "boolean"
+        },
+        "historical_interaction_provenance_present": {
+          "constraint": "required when prior interaction is claimed",
+          "type": "boolean"
+        },
+        "interaction_delta_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "interaction_window": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "n19_native_readiness_boundary_consumption": {
+          "allowed_values": [
+            "context_only",
+            "ap_gap_boundary_only",
+            "evidence_source"
+          ],
+          "constraint": "evidence_source blocks susceptibility support",
+          "required_value": "ap_gap_boundary_only",
+          "type": "enum"
+        },
+        "n20_source_downstream_consumption_status": {
+          "constraint": "records inherited N20 status, not N22 iteration status",
+          "type": "string"
+        },
+        "naturalization_debt_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "one_window_transient_rejected": {
+          "constraint": "false blocks SU4 and stronger",
+          "required_value_for_durable_delta_support": true,
+          "type": "boolean"
+        },
+        "out_of_scope_drift_blocks_row": {
+          "constraint": "false blocks support",
+          "required_value": true,
+          "type": "boolean"
+        },
+        "output_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "peer_route_or_region_trace": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "peer_same_budget_comparison": {
+          "constraint": "mandatory when route_or_region_conditioned = true",
+          "type": "object"
+        },
+        "peer_same_budget_comparison_scope_reason": {
+          "constraint": "required when peer comparison is not_applicable; only non_route_conditioned_SU2_only may bypass peer comparison",
+          "type": "string"
+        },
+        "post_interaction_geometry_trace": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "post_replay_delta_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "pre_interaction_geometry_trace": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "producer_residue_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "reentry_delta_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "reentry_window": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "reinforcement_budget_in_flight": {
+          "constraint": "nonzero demotes to producer residue",
+          "required_value_for_durable_delta_support": 0.0,
+          "type": "number"
+        },
+        "reinforcement_schedule_not_used_as_evidence": {
+          "constraint": "false blocks source-current durable geometry claim",
+          "required_value_for_durable_delta_support": true,
+          "type": "boolean"
+        },
+        "replay_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "route_or_region_conditioned": {
+          "constraint": "determines whether peer comparison is mandatory",
+          "type": "boolean"
+        },
+        "route_or_region_reentry_trace": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "row_decision": {
+          "allowed_values": [
+            "supported",
+            "partial",
+            "blocked",
+            "rejected",
+            "not_applicable"
+          ],
+          "constraint": "partial, blocked, rejected, and not_applicable block support",
+          "type": "enum"
+        },
+        "row_id": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "row_specific_thresholds_declared_before_use": {
+          "constraint": "false blocks positive support",
+          "required_value": true,
+          "type": "boolean"
+        },
+        "run_artifact_id": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "runtime_config_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "same_basin_continuation_rule": {
+          "constraint": "must be consumed without redefinition",
+          "source": "N22 I1 frozen N20 I5 same-basin rule",
+          "type": "object"
+        },
+        "same_basin_invariant_fields": {
+          "constraint": "must remain stable enough for same-basin continuation",
+          "type": "list[string]"
+        },
+        "source_commit_or_source_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "source_contract_row": {
+          "constraint": "must equal n20_i5_row_03_susceptibility_update",
+          "type": "string"
+        },
+        "source_contract_row_digest": {
+          "constraint": "must match N22 I1 contract digest",
+          "type": "sha256_string"
+        },
+        "source_current_inputs": {
+          "constraint": "must be runtime/replay emitted, not report-built",
+          "type": "list[string]"
+        },
+        "source_output_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "support_floor_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "susceptibility_delta_trace": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "susceptibility_update_claim_allowed": {
+          "constraint": "true only when artifacts, thresholds, same-basin rule, replay, controls, AP dependencies, durability, peer comparison, and unsafe flags all pass",
+          "type": "boolean"
+        },
+        "unsafe_claim_flags": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        }
+      },
+      "missing_required_field_blocks_candidate_admissibility": true,
+      "required_fields": [
+        "row_id",
+        "source_contract_row",
+        "source_contract_row_digest",
+        "source_output_digest",
+        "run_artifact_id",
+        "source_commit_or_source_digest",
+        "runtime_config_digest",
+        "source_current_inputs",
+        "row_specific_thresholds_declared_before_use",
+        "n19_native_readiness_boundary_consumption",
+        "n20_source_downstream_consumption_status",
+        "interaction_window",
+        "reentry_window",
+        "pre_interaction_geometry_trace",
+        "post_interaction_geometry_trace",
+        "susceptibility_delta_trace",
+        "route_or_region_reentry_trace",
+        "same_basin_continuation_rule",
+        "allowed_delta_fields",
+        "same_basin_invariant_fields",
+        "out_of_scope_drift_blocks_row",
+        "delta_not_label_reassignment",
+        "route_or_region_conditioned",
+        "peer_same_budget_comparison",
+        "peer_same_budget_comparison_scope_reason",
+        "peer_route_or_region_trace",
+        "historical_interaction_provenance_present",
+        "active_reinforcement_schedule_disabled",
+        "active_reinforcement_queue_empty",
+        "reinforcement_budget_in_flight",
+        "reinforcement_schedule_not_used_as_evidence",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result",
+        "replay_result",
+        "control_results",
+        "ap4_dependency_status",
+        "ap5_dependency_status",
+        "ap4_condition_reason",
+        "ap5_condition_reason",
+        "interaction_delta_digest",
+        "post_replay_delta_digest",
+        "reentry_delta_digest",
+        "delta_persistence_ratio",
+        "delta_threshold_or_rule",
+        "one_window_transient_rejected",
+        "global_drift_rejected",
+        "producer_residue_fields",
+        "naturalization_debt_fields",
+        "blocked_relabel_fields",
+        "claim_ceiling",
+        "unsafe_claim_flags",
+        "row_decision",
+        "susceptibility_update_claim_allowed",
+        "derived_report_only",
+        "artifact_manifest",
+        "artifact_paths",
+        "artifact_sha256",
+        "all_artifact_sha256_match_file_contents",
+        "output_digest"
+      ],
+      "same_basin_rule_must_use_i1_reference": true,
+      "source_contract_row_must_match_i1": true
+    },
+    "claim_boundary_schema": {
+      "blocked_claims": [
+        "agency",
+        "semantic_action",
+        "semantic_perception",
+        "semantic_goal_ownership",
+        "semantic_intention",
+        "semantic_choice",
+        "semantic_learning",
+        "free_will",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "phase8_implementation",
+        "fully_native_integration",
+        "organism_life",
+        "sentience",
+        "consciousness",
+        "native_ant_agency",
+        "native_colony_agency",
+        "unrestricted_autonomy"
+      ],
+      "global_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "n19_boundary_context_is_not_evidence": true,
+      "n21_wr_nd_context_is_not_susceptibility_evidence": true,
+      "naturalization_debt_fields_are_not_native_support": true,
+      "producer_mediated_fields_are_not_substrate_carried": true,
+      "row_specific_blocked_relabels_separate": true
+    },
+    "classification_ladders": {
+      "n20_contract_completeness_assigns_rungs": false,
+      "n21_closeout_assigns_su_rungs": false,
+      "n22_c_rungs_cannot_open_unsafe_claims": true,
+      "n22_c_rungs_classify_tranche_not_individual_row_labels": true,
+      "n22_closeout_ladder": [
+        {
+          "meaning": "contract_only_closeout",
+          "rung": "N22-C0"
+        },
+        {
+          "meaning": "active_null_control_discipline_established",
+          "rung": "N22-C1"
+        },
+        {
+          "meaning": "susceptibility_partial",
+          "rung": "N22-C2"
+        },
+        {
+          "meaning": "replay_backed_susceptibility_candidate",
+          "rung": "N22-C3"
+        },
+        {
+          "meaning": "durable_geometry_modification_candidate",
+          "rung": "N22-C4"
+        },
+        {
+          "meaning": "transfer_reentry_backed_susceptibility_candidate",
+          "rung": "N22-C5"
+        },
+        {
+          "meaning": "n23_ready_bounded_durable_geometry_evidence",
+          "rung": "N22-C6"
+        }
+      ],
+      "rows_below_su3_cannot_support_durable_geometry_modification": true,
+      "rungs_require_source_backed_n22_evidence_rows": true,
+      "su6_is_handoff_rung_not_agency_claim": true,
+      "susceptibility_update_ladder": [
+        {
+          "meaning": "no_source_current_susceptibility_evidence",
+          "rung": "SU0"
+        },
+        {
+          "meaning": "interaction_run_present",
+          "rung": "SU1"
+        },
+        {
+          "meaning": "source_current_pre_post_geometry_delta_observed",
+          "rung": "SU2"
+        },
+        {
+          "meaning": "replay_backed_susceptibility_update_candidate",
+          "rung": "SU3"
+        },
+        {
+          "meaning": "control_backed_durable_geometry_modification_candidate",
+          "rung": "SU4"
+        },
+        {
+          "meaning": "transfer_reentry_backed_susceptibility_update_candidate",
+          "rung": "SU5"
+        },
+        {
+          "meaning": "n23_ready_bounded_durable_geometry_modification_evidence",
+          "rung": "SU6"
+        }
+      ]
+    },
+    "closeout_status_enums": {
+      "durable_geometry_modification_status": [
+        "durable_geometry_modification_supported_bounded_candidate",
+        "durable_geometry_modification_partial_or_blocked",
+        "durable_geometry_modification_rejected"
+      ],
+      "n21_nd6_bridge_status": [
+        "not_supported",
+        "bridge_candidate_supported",
+        "blocked_by_replay",
+        "blocked_by_controls",
+        "blocked_by_AP_gap",
+        "blocked_by_producer_residue"
+      ],
+      "susceptibility_update_status": [
+        "susceptibility_update_supported_bounded_candidate",
+        "susceptibility_update_partial_or_blocked",
+        "susceptibility_update_rejected"
+      ]
+    },
+    "demotion_precedence": {
+      "active_reinforcement_remaining_blocks_durable_delta_support": true,
+      "control_failed_closed_blocks_control_backed_and_stronger": true,
+      "control_failed_open_invalidates_row": true,
+      "final_su_and_n22_c_rungs_assigned_after_control_matrix_only": true,
+      "iteration4_candidate_rungs_are_provisional_until_controls": true,
+      "missing_ap_dependency_blocks_dependent_row": true,
+      "missing_peer_same_budget_blocks_su5_su6": true,
+      "not_run_blocks_dependent_rung": true,
+      "replay_failure_blocks_replay_backed_and_stronger": true,
+      "unsafe_claim_requested_blocks_claim": true
+    },
+    "durability_metric_schema": {
+      "delta_persistence_ratio_floor_declared_before_use": true,
+      "global_drift_rejected_required_for_route_conditioned_rows": true,
+      "later_reentry_survival_required": true,
+      "missing_metric_blocks_durable_delta_support": true,
+      "one_window_transient_rejected_required": true,
+      "replay_window_survival_required": true,
+      "required_metrics": [
+        "interaction_delta_digest",
+        "post_replay_delta_digest",
+        "reentry_delta_digest",
+        "delta_persistence_ratio",
+        "delta_threshold_or_rule",
+        "one_window_transient_rejected",
+        "global_drift_rejected"
+      ]
+    },
+    "historical_interaction_reinforcement_schema": {
+      "active_reinforcement_queue_empty_required": true,
+      "active_reinforcement_remaining_demotes_to": "producer_residue_or_blocked",
+      "active_reinforcement_remaining_rung_effect": {
+        "N22-C4": "blocked",
+        "N22-C5": "blocked",
+        "N22-C6": "blocked",
+        "SU1": "descriptive_allowed_if_source_current_trace_exists",
+        "SU2": "descriptive_allowed_if_source_current_delta_exists",
+        "SU3": "replay_limited_only_if_replay_not_reinforcement_carried",
+        "SU4": "blocked",
+        "SU5": "blocked",
+        "SU6": "blocked",
+        "n21_nd6_bridge_status": "blocked_by_producer_residue"
+      },
+      "active_reinforcement_schedule_disabled_required": true,
+      "historical_interaction_is_not_active_support": true,
+      "historical_interaction_provenance_present_required_when_claimed": true,
+      "reinforcement_budget_in_flight_required_value": 0.0,
+      "reinforcement_schedule_not_used_as_evidence_required": true
+    },
+    "n21_nd6_bridge_status_schema": {
+      "allowed_values": [
+        "not_supported",
+        "bridge_candidate_supported",
+        "blocked_by_replay",
+        "blocked_by_controls",
+        "blocked_by_AP_gap",
+        "blocked_by_producer_residue"
+      ],
+      "blocked_wording": [
+        "N21 ND6 achieved",
+        "N21 ND6 supported",
+        "N21 reopened"
+      ],
+      "bridge_candidate_supported_requires": [
+        "SU5_or_SU6_cleanly_supported",
+        "source_backed_durable_susceptibility_delta",
+        "replay_and_reentry_support",
+        "peer_same_budget_comparison_when_route_or_region_conditioned",
+        "AP4_AP5_dependency_controls_intact",
+        "unsafe_claims_blocked"
+      ],
+      "does_not_reopen_n21": true,
+      "does_not_retroactively_upgrade_n21": true,
+      "initial_status": "not_supported",
+      "wording_policy": "ND6_bridge_candidate_only"
+    },
+    "peer_same_budget_comparison_schema": {
+      "allowed_not_applicable_scope_reason": "non_route_conditioned_SU2_only",
+      "global_drift_rejected_required": true,
+      "missing_peer_comparison_blocks": [
+        "SU5",
+        "SU6",
+        "N22-C5",
+        "N22-C6"
+      ],
+      "not_applicable_scope_reason_required": true,
+      "not_required_for_non_route_conditioned_su2_only": true,
+      "peer_route_or_region_receives_same_budget_without_same_prior_interaction": true,
+      "required_when_route_or_region_conditioned": true,
+      "same_delta_in_peer_blocks_route_conditioned_support": true,
+      "target_route_or_region_receives_prior_interaction": true
+    },
+    "primitive_schema_rows": [
+      {
+        "blocked_relabel_fields": [
+          "susceptibility_update.blocked.agency",
+          "susceptibility_update.blocked.consciousness",
+          "susceptibility_update.blocked.free_will",
+          "susceptibility_update.blocked.identity_acceptance",
+          "susceptibility_update.blocked.native_ant_agency",
+          "susceptibility_update.blocked.native_colony_agency",
+          "susceptibility_update.blocked.native_support",
+          "susceptibility_update.blocked.organism_life",
+          "susceptibility_update.blocked.phase8_implementation",
+          "susceptibility_update.blocked.selfhood",
+          "susceptibility_update.blocked.semantic_action",
+          "susceptibility_update.blocked.semantic_choice",
+          "susceptibility_update.blocked.semantic_goal",
+          "susceptibility_update.blocked.semantic_goal_ownership",
+          "susceptibility_update.blocked.semantic_intention",
+          "susceptibility_update.blocked.semantic_learning",
+          "susceptibility_update.blocked.semantic_perception",
+          "susceptibility_update.blocked.sentience",
+          "susceptibility_update.blocked.unrestricted_autonomy"
+        ],
+        "claim_ceiling": "source contract input only; no N22 susceptibility-update evidence, semantic learning, choice, agency, native support, Phase 8, sentience, or ant-ecology implementation",
+        "contract_consumed_without_redefinition_required": true,
+        "derived_report_only_true_blocks_support": true,
+        "i1_contract_structures_read_only": true,
+        "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+        "naturalization_debt_fields": [
+          "susceptibility_update.source_current_route_conditioned_state_mutation",
+          "susceptibility_update.peer_route_same_budget_comparison",
+          "susceptibility_update.proxy_free_susceptibility_policy"
+        ],
+        "positive_evidence_requires_run_artifacts": true,
+        "primitive_id": "susceptibility_update",
+        "producer_mediated_fields": [
+          "susceptibility_update.route_update_rule",
+          "susceptibility_update.reinforcement_schedule",
+          "susceptibility_update.learning_label"
+        ],
+        "required_control_ids": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "durable_geometry_modification_control",
+          "route_label_only_control",
+          "reinforcement_schedule_removed_control",
+          "AP4_gap_dependency_if_route_conditioned",
+          "AP5_gap_dependency_if_proxy_conditioned"
+        ],
+        "row_specific_thresholds_required_before_use": true,
+        "same_basin_continuation_rule": {
+          "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+          "basin_signature_fields": [
+            "susceptibility_update.pre_interaction_geometry_trace",
+            "susceptibility_update.post_interaction_geometry_trace",
+            "susceptibility_update.susceptibility_delta_trace"
+          ],
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "failure_modes": [
+            "route label changed without geometry change",
+            "delta vanishes on replay",
+            "reinforcement schedule supplies hidden support",
+            "AP4 gap omitted when base route-conditioned susceptibility participates",
+            "AP5 gap omitted when proxy-conditioned susceptibility participates"
+          ],
+          "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+          "hidden_producer_support_allowed": false,
+          "label_only_continuation_allowed": false,
+          "proxy_only_success_allowed": false,
+          "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+          "required_coherence_floor": "altered geometry stays above coherence floor",
+          "required_support_floor": "altered geometry stays above support floor",
+          "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+        },
+        "schema_row_status": "frozen_from_i1_contract_inventory",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "source_current_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace",
+          "susceptibility_update.route_or_region_reentry_trace"
+        ],
+        "support_scaffold": {
+          "declared_supports": [
+            "susceptibility_update.pre_interaction_geometry_trace",
+            "susceptibility_update.post_interaction_geometry_trace"
+          ],
+          "hidden_support_allowed": false,
+          "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+          "naturalization_debt": [
+            "susceptibility_update.source_current_route_conditioned_state_mutation",
+            "susceptibility_update.peer_route_same_budget_comparison"
+          ],
+          "optional_supports": [
+            "peer-route comparison telemetry"
+          ],
+          "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+          "producer_supplied_scaffolds": [
+            "susceptibility_update.route_update_rule",
+            "susceptibility_update.reinforcement_schedule"
+          ],
+          "required_supports": [
+            "replay-visible geometry delta",
+            "later re-entry trace"
+          ],
+          "support_id": "n20_i4_susceptibility_update_support_scaffold",
+          "withdrawable_supports": [
+            "producer reinforcement schedule"
+          ]
+        }
+      }
+    ],
+    "replay_control_schema": {
+      "canonical_replay_names_required": true,
+      "failed_closed_demotes_or_blocks_dependent_rung": true,
+      "failed_open_invalidates_row": true,
+      "not_applicable_requires_scope_reason": true,
+      "not_run_blocks_dependent_rung": true,
+      "replay_name_aliases": {
+        "artifact_replay": [
+          "artifact_only_replay"
+        ]
+      },
+      "required_control_records": [
+        "control_id",
+        "control_status",
+        "blocked_condition",
+        "expected_result",
+        "actual_result",
+        "claim_allowed_when_control_triggers",
+        "rung_effect"
+      ],
+      "required_replay_modes": {
+        "SU3": [
+          "artifact_replay"
+        ],
+        "SU4": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay"
+        ],
+        "SU5": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay",
+          "later_reentry_replay"
+        ],
+        "SU6": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay",
+          "later_reentry_replay",
+          "handoff_reconstruction_replay"
+        ]
+      },
+      "status_enum": [
+        "passed",
+        "failed_closed",
+        "failed_open",
+        "not_run",
+        "not_applicable"
+      ]
+    },
+    "row_decision_policy": {
+      "blocked_blocks_susceptibility_claim": true,
+      "inventory_contract_support_field": "inventory_decision",
+      "inventory_rows_keep_row_decision": "not_applicable",
+      "partial_blocks_susceptibility_claim": true,
+      "rejected_blocks_susceptibility_claim": true,
+      "row_decision_enum": [
+        "supported",
+        "partial",
+        "blocked",
+        "rejected",
+        "not_applicable"
+      ],
+      "supported_does_not_permit_unsafe_claims": true,
+      "supported_null_control_does_not_permit_susceptibility_claim": true
+    },
+    "run_artifact_admissibility_schema": {
+      "all_artifact_sha256_match_file_contents_required": true,
+      "artifact_digests_must_match_file_contents": true,
+      "artifact_manifest_schema": {
+        "artifact_role_required": true,
+        "path_policy": "repository_relative_paths_only",
+        "required_item_fields": [
+          "path",
+          "sha256",
+          "artifact_role"
+        ],
+        "type": "list[object]"
+      },
+      "artifact_paths_must_exist": true,
+      "derived_report_only_true_blocks_positive_support": true,
+      "digest_algorithm": "sha256",
+      "digest_mismatch_blocks_rung_assignment": true,
+      "fail_closed_on_missing_or_mismatch": true,
+      "missing_required_artifact_blocks_rung_assignment": true,
+      "path_policy": "repository_relative_paths_only",
+      "report_only_artifacts_may_summarize_but_not_assign_rungs": true,
+      "required_fields": [
+        "run_artifact_id",
+        "source_commit_or_source_digest",
+        "runtime_config_digest",
+        "source_contract_row_digest",
+        "artifact_manifest",
+        "pre_interaction_artifact_path",
+        "interaction_artifact_path",
+        "post_interaction_artifact_path",
+        "reentry_artifact_path",
+        "event_log_or_trace_path",
+        "snapshot_or_replay_artifact_path",
+        "artifact_sha256",
+        "all_artifact_sha256_match_file_contents",
+        "derived_report_only"
+      ],
+      "source_contract_row_digest_must_match_i1": true
+    },
+    "source_current_definition": {
+      "allowed_sources": [
+        "LGRC runtime output",
+        "artifact-only replay from declared run artifacts",
+        "snapshot/load replay from declared run artifacts",
+        "duplicate replay from declared run artifacts"
+      ],
+      "blocked_sources": [
+        "route label",
+        "reinforcement schedule label",
+        "learning label",
+        "report-built row",
+        "post-hoc parser construction",
+        "N21 WR/ND closeout",
+        "N19 AP-gap boundary artifact",
+        "roadmap or handoff prose"
+      ],
+      "definition": "emitted by the LGRC runtime or replay from declared run artifacts, not invented by a report builder, label, post-hoc parser, producer-only reinforcement policy, or semantic learning vocabulary",
+      "required_future_inputs": [
+        "susceptibility_update.pre_interaction_geometry_trace",
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ]
+    },
+    "support_coherence_boundary_flux_schema": {
+      "changed_status_requires_declared_floor_or_bound_preserved": true,
+      "field_specific_acceptance": {
+        "boundary_integrity_result": [
+          "preserved",
+          "changed_within_allowed_delta"
+        ],
+        "coherence_floor_result": [
+          "preserved",
+          "changed_within_allowed_delta_above_floor"
+        ],
+        "flux_or_leakage_result": [
+          "preserved",
+          "changed_within_bound"
+        ],
+        "support_floor_result": [
+          "preserved",
+          "changed_within_allowed_delta_above_floor"
+        ]
+      },
+      "floor_crossing_blocks_support": true,
+      "flux_bound_exceeded_blocks_support": true,
+      "missing_result_blocks_support": true,
+      "out_of_scope_boundary_change_blocks_support": true,
+      "required_result_fields": [
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "result_status_values": [
+        "preserved",
+        "changed_within_allowed_delta",
+        "changed_within_allowed_delta_above_floor",
+        "changed_within_bound",
+        "crossed_floor",
+        "exceeded_bound",
+        "missing",
+        "not_applicable"
+      ]
+    },
+    "susceptibility_delta_schema": {
+      "delta_must_be_source_current": true,
+      "delta_not_label_reassignment": true,
+      "post_hoc_delta_construction_blocks_support": true,
+      "reinforcement_schedule_only_delta_blocks_support": true,
+      "required_trace_fields": [
+        "pre_interaction_geometry_trace",
+        "interaction_window",
+        "post_interaction_geometry_trace",
+        "susceptibility_delta_trace",
+        "reentry_window",
+        "route_or_region_reentry_trace"
+      ],
+      "route_label_only_delta_blocks_support": true
+    },
+    "threshold_declaration_policy": {
+      "failure_policy": "missing_or_post_hoc_threshold_blocks_support",
+      "outcome_inspection_before_threshold_declaration_allowed": false,
+      "required_threshold_surfaces": [
+        "support_floor",
+        "coherence_floor",
+        "boundary_integrity_floor",
+        "flux_or_leakage_bound",
+        "delta_persistence_ratio_floor",
+        "replay_window_survival_rule",
+        "reentry_survival_rule",
+        "peer_same_budget_comparison_rule",
+        "global_drift_rejection_rule"
+      ],
+      "retune_after_outcome_allowed": false,
+      "row_specific_thresholds_declared_before_use": true,
+      "threshold_record_required_fields": [
+        "threshold_id",
+        "source_contract_row",
+        "source_contract_row_digest",
+        "threshold_declared_before_use",
+        "threshold_value_or_rule",
+        "threshold_owner",
+        "failure_policy"
+      ]
+    }
+  },
+  "schema_version": "n22_susceptibility_schema_and_controls_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+      "output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_source_handoff_inventory.json",
+      "sha256": "1ea13c1d9fcdaa75ba284aa1041dd08b18f8e8c1a6d73f24c45512b639e9773f",
+      "source_role": "n22_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_source_handoff_inventory.md",
+      "sha256": "de70051ee105253b3ebbb8686de378a0f62fefe810f5bf223aa0fa430d53b8f5",
+      "source_role": "n22_i1_source_handoff_inventory_report"
+    }
+  ],
+  "source_inventory_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+  "status": "passed"
+}

@@ -114,6 +114,30 @@ the susceptibility delta survives a later replay or re-entry window without
 the producer reinforcement schedule carrying the result.
 ```
 
+N22 must distinguish historical interaction provenance from active producer
+reinforcement:
+
+```text
+historical_interaction_provenance_present = true
+active_reinforcement_schedule_disabled = true
+active_reinforcement_queue_empty = true
+reinforcement_budget_in_flight = 0.0
+reinforcement_schedule_not_used_as_evidence = true
+```
+
+Historical interaction may be required to explain where a later delta came
+from, but active reinforcement cannot be the thing preserving that delta.
+
+If active reinforcement remains, its maximum interpretation is bounded:
+
+```text
+SU1/SU2 = descriptive only if source-current traces exist
+SU3 = replay-limited only if replay is not reinforcement-carried
+SU4/SU5/SU6 = blocked
+N22-C4/N22-C5/N22-C6 = blocked
+n21_nd6_bridge_status = blocked_by_producer_residue
+```
+
 N22 must allow geometry to change while preserving same-basin continuation.
 Iteration 2 should freeze:
 
@@ -135,6 +159,26 @@ later re-entry differs only in the target route or region
 
 Without that comparison, global drift or scheduler artifacts can masquerade as
 route-conditioned susceptibility.
+
+Peer comparison may be `not_applicable` only for a non-route-conditioned `SU2`
+row with:
+
+```text
+peer_same_budget_comparison_scope_reason = non_route_conditioned_SU2_only
+```
+
+For `SU5`, `SU6`, `N22-C5`, and `N22-C6`, missing peer comparison blocks the
+claim.
+
+Changed gate values are acceptable only when the declared floor or bound still
+holds:
+
+```text
+support_floor_result = preserved | changed_within_allowed_delta_above_floor
+coherence_floor_result = preserved | changed_within_allowed_delta_above_floor
+boundary_integrity_result = preserved | changed_within_allowed_delta
+flux_or_leakage_result = preserved | changed_within_bound
+```
 
 It is not:
 
@@ -167,6 +211,37 @@ SU6 = N23-ready bounded durable geometry modification evidence
 
 The ladder is not an agency score and not a full learning taxonomy. It records
 how much source-backed evidence exists for the N22 primitive.
+
+## N22 Closeout Ladder
+
+N22 also uses a closeout ladder for the whole experiment:
+
+```text
+N22-C0 = contract-only closeout
+  N20/N21 handoff consumed, but no N22 susceptibility evidence opened.
+
+N22-C1 = active-null/control discipline established
+  Active nulls and failure baselines fail closed, but no positive SU row.
+
+N22-C2 = susceptibility partial
+  Interaction or delta evidence appears, but replay, re-entry, controls, or AP
+  gaps block stronger support.
+
+N22-C3 = replay-backed susceptibility candidate
+  SU3 reached on at least one source-backed row.
+
+N22-C4 = durable geometry modification candidate
+  SU4 reached after replay and fail-closed controls.
+
+N22-C5 = transfer/re-entry-backed susceptibility candidate
+  SU5 reached with later route/region re-entry or transfer evidence.
+
+N22-C6 = N23-ready bounded durable geometry evidence
+  SU5/SU6 evidence plus producer residue, naturalization debt, AP4/AP5
+  discipline, unsafe-claim blockers, src_diff_empty, and N23 handoff.
+```
+
+The closeout ladder classifies the tranche, not agency or semantic learning.
 
 ## AP Gap Boundary
 
@@ -202,6 +277,14 @@ N22 may contribute new evidence toward AP4/AP5 native-readiness gaps, but it
 may not bypass those gaps by relabeling route labels, target labels, or proxy
 metrics as source-current geometry.
 
+N19 is consumed only as AP-gap boundary context:
+
+```text
+n19_native_readiness_boundary_consumption = ap_gap_boundary_only
+```
+
+N19 is not a susceptibility-update evidence source and cannot assign SU rungs.
+
 ## Evidence Standard
 
 Good N22 evidence requires:
@@ -211,6 +294,8 @@ actual LGRC/source-current run artifacts
 predeclared interaction and later re-entry windows
 source_current_inputs recorded
 row_specific_thresholds_declared_before_use = true
+artifact_manifest with path, sha256, and artifact_role
+all_artifact_sha256_match_file_contents = true
 pre-interaction geometry trace
 post-interaction geometry trace
 susceptibility delta trace
@@ -222,10 +307,25 @@ reentry_delta_digest
 delta_persistence_ratio
 delta_threshold_or_rule
 one_window_transient_rejected = true
+global_drift_rejected = true
 artifact replay
 snapshot/load replay
 duplicate replay where applicable
 negative controls that fail closed
+```
+
+For route- or region-conditioned rows, peer/same-budget comparison is
+mandatory. Missing peer comparison blocks `SU5` and `SU6`.
+
+Replay records should use canonical `artifact_replay`; `artifact_only_replay`
+is accepted only as an alias.
+
+Iteration 3 must include active nulls for:
+
+```text
+route_conditioned_row_missing_AP4 -> failed_closed
+proxy_or_target_conditioned_row_missing_AP5 -> failed_closed
+AP_gap_prose_only -> failed_closed
 ```
 
 Insufficient evidence:
