@@ -3,7 +3,9 @@
 This roadmap defines the active experiment arc after the closed N12-N19
 agency-prerequisite and native-readiness stack. N20 is closed as the
 translation-contract entry point, N21 is closed as the first bounded
-becoming-primitive evidence experiment, and N22 is the next experiment.
+becoming-primitive evidence experiment, N22 is closed as the bounded
+susceptibility-update / durable geometry modification experiment, and N23 is
+the next experiment.
 
 It is not a Phase 8 implementation plan, not an ant ecology specification, and
 not an agency claim. Its purpose is to ground the deeper "agency of becoming"
@@ -280,11 +282,15 @@ unrestricted autonomy
 Status:
 
 ```text
-next
-must_consume_n20_i5_susceptibility_update_contract = true
-must_consume_n21_closeout_as_context_only = true
-must_produce_new_source_backed_durable_geometry_deltas = true
-may_treat_n21_wr_nd_as_susceptibility_evidence = false
+closed
+final_supported_status = bounded_artifact_level_susceptibility_update_candidate
+final_supported_su_ladder_rung = SU5_producer_mediated_bounded_susceptibility_update_candidate
+n22_closeout_ladder_rung = N22-C6
+n22_closeout_supported = true
+source_backed_susceptibility_update_evidence = true
+delta_survived_replay_and_later_reentry = true
+same_budget_peer_comparison_rules_out_global_drift = true
+ready_for_n23 = true
 ```
 
 Question:
@@ -329,8 +335,8 @@ L5 = basin splitting / sub-basin differentiation
 L6 = new basin formation candidate, deferred to N25
 ```
 
-N22 should contribute to the AP4/AP5 gap story by producing source-current
-susceptibility evidence, but it should not try to prove choice/collapse or
+N22 contributes bounded producer-mediated susceptibility evidence, but it does
+not resolve the AP4/AP5 NAT4 gaps, prove choice/collapse, or produce
 new-basin formation.
 
 N22 source boundary:
@@ -344,12 +350,30 @@ N22 must preserve the AP gap split:
 
 ```text
 route-conditioned susceptibility update:
-    carry AP4 dependency row-locally.
+    AP4 dependency carried row-locally; AP4 NAT4 gap remains unresolved.
 
 proxy-conditioned susceptibility update:
     carry conditional AP5 dependency when proxy derivation or target formation
-    participates.
+    participates; AP5 NAT4 gap remains unresolved.
 ```
+
+Closeout:
+
+```text
+packet branch = SU3 consumptive transfer/readout expression only
+carrier branch = SU5 producer-mediated bounded carrier transfer candidate
+su6_supported = false
+native_route_conductance_memory_supported = false
+native_non_consumptive_carrier_update_policy_supported = false
+n21_nd6_bridge_status = bridge_candidate_supported
+retroactive_n21_upgrade_allowed = false
+```
+
+N22's successful branch uses a producer-mediated carrier in LGRC-visible
+edge/base/port conductance state. That is valid N22 evidence because the
+producer residue and naturalization debt remain recorded. It is not native
+learning, semantic choice, agency, native support, Phase 8, or ant-ecology
+evidence.
 
 Blocked claims:
 
@@ -361,7 +385,23 @@ agency
 free will
 ```
 
+Active handoff:
+
+- `experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md`
+- `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_closeout_and_n23_handoff.md`
+- `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json`
+
 ## N23. Live-Continuation Collapse / Selection Geometry
+
+Status:
+
+```text
+next
+must_consume_n20_contract = true
+must_consume_n22_as_producer_mediated_susceptibility_context = true
+must_not_consume_n22_as_semantic_learning_or_native_memory = true
+must_preserve_ap4_ap5_gap_ledger = true
+```
 
 Question:
 

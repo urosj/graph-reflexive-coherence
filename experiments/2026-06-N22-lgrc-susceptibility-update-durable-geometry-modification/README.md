@@ -1,19 +1,25 @@
 # N22 - LGRC Susceptibility Update And Durable Geometry Modification
 
-N22 is the next becoming-primitive experiment after N21. It consumes the N20
-same-basin continuation contract for `susceptibility_update` and the N21
-closeout handoff as prerequisite context, then asks whether prior interaction
-can durably alter later basin geometry without becoming a semantic learning
-label.
+N22 is closed as the bounded susceptibility-update / durable geometry
+modification experiment after N21. It consumes the N20 same-basin continuation
+contract for `susceptibility_update` and the N21 closeout handoff as
+prerequisite context, then tests whether prior interaction can durably alter
+later basin geometry without becoming a semantic learning label.
 
 Current state:
 
 ```text
-status = initialized
+status = closed
+acceptance_state = accepted_n22_c6_handoff_ready_producer_mediated_su5_no_native_learning
 source_contract_row = n20_i5_row_03_susceptibility_update
 n21_context = WR6, ND5, N21-C6, ready_for_n22
 target_primitive = susceptibility_update
 target_reading = durable_geometry_modification
+final_supported_status = bounded_artifact_level_susceptibility_update_candidate
+final_supported_su_ladder_rung = SU5_producer_mediated_bounded_susceptibility_update_candidate
+n22_closeout_ladder_rung = N22-C6
+n22_closeout_supported = true
+ready_for_n23 = true
 ```
 
 Core question:
@@ -31,6 +37,67 @@ primitive label is:
 ```text
 susceptibility_update
 durable_geometry_modification
+```
+
+## Closeout Summary
+
+N22 closes with source-backed susceptibility-update evidence, replay/re-entry
+survival, same-budget peer comparison, and fail-closed controls:
+
+```text
+source_backed_susceptibility_update_evidence = true
+delta_survived_replay_and_later_reentry = true
+same_budget_peer_comparison_rules_out_global_drift = true
+durable_geometry_modification_not_label_schedule_proxy = true
+su5_supported_final = true
+su6_supported = false
+native_route_conductance_memory_supported = false
+semantic_learning_supported = false
+semantic_choice_supported = false
+agency_supported = false
+native_support_supported = false
+sentience_supported = false
+phase8_opened = false
+ant_ecology_opened = false
+```
+
+The packet branch remains capped at:
+
+```text
+SU3_consumptive_transfer_readout_expression_only
+```
+
+because repeated readout spends route-b packet residue.
+
+The successful carrier branch closes at:
+
+```text
+SU5_producer_mediated_bounded_carrier_transfer_candidate
+```
+
+It uses a producer-mediated carrier in LGRC-visible edge/base/port conductance
+state. The producer residue and naturalization debt remain explicit:
+
+```text
+producer_mediated_fields = target_edge_base_conductance_delta, target_edge_port_conductance_delta
+naturalization_debt_fields = native_non_consumptive_carrier_update_policy, native_route_conductance_memory_policy
+```
+
+The N21 `ND6` bridge is recorded only as:
+
+```text
+n21_nd6_bridge_status = bridge_candidate_supported
+native_nd6_supported = false
+retroactive_n21_upgrade_allowed = false
+```
+
+N21 remains closed and is not retroactively upgraded.
+
+N23 is now next:
+
+```text
+next_experiment = N23_live_continuation_collapse_selection_geometry
+handoff_claim_ceiling = bounded producer-mediated artifact-level susceptibility-update / durable geometry modification evidence; not native learning, choice, agency, native support, sentience, Phase 8, or ant ecology
 ```
 
 ## Source Boundary
@@ -62,7 +129,7 @@ However, N21 closed at bounded local `ND5` because source-backed durable
 geometry modification / susceptibility update was not yet produced. N22 tests
 that missing condition.
 
-N22 closeout should record:
+N22 closeout records:
 
 ```text
 n21_nd6_bridge_status =
@@ -343,7 +410,7 @@ semantic learning or choice label used as evidence
 
 ## Expected Output Shape
 
-Initial planned artifacts:
+Selected artifacts:
 
 ```text
 outputs/n22_source_handoff_inventory.json

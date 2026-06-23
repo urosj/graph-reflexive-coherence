@@ -46,7 +46,7 @@ machine-local state.
 | [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Closed N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 stack; records 12 NAT4 surfaces while blocking full native ladder generation on AP4/AP5 NAT4 gaps. | README, then closeout handoff, candidate matrix, Phase 8 readiness matrix, implementation checklist, and hypotheses. |
 | [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Closed contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, continuation-function descriptors, proxy blockers, same-basin controls, and the N21 handoff without claiming primitive evidence. | README, then closeout handoff, same-basin contract, producer residue ledger, function/proxy contract, implementation checklist, and hypotheses. |
 | [N21 withdrawal resistance and naturalization depth](2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md) | Closed bounded becoming-primitive evidence experiment: WR6 artifact-level withdrawal-resistance candidate plus bounded N21-local ND5 naturalization-depth candidate, with agency, native support, sentience, Phase 8, ant ecology, robust withdrawal, support-removal resistance, and general naturalization depth blocked. | README, then closeout handoff, replay/control matrix, withdrawal and naturalization probes, implementation checklist, and hypotheses. |
-| [N22 susceptibility update and durable geometry modification](2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md) | Initialized becoming-primitive experiment for source-current susceptibility update / durable geometry modification; N22 must produce new pre/post/delta/re-entry evidence, same-budget peer comparison, durability metrics, and an explicit N21 ND6 bridge status without treating labels, reinforcement schedules, or N21 WR/ND closeout as susceptibility evidence. | README, then implementation plan/checklist, hypotheses, source handoff inventory, active nulls, susceptibility probes, replay/control matrix, and closeout handoff. |
+| [N22 susceptibility update and durable geometry modification](2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md) | Closed bounded artifact-level susceptibility-update candidate: producer-mediated SU5 durable geometry modification evidence with N22-C6/N23 handoff, while native route-conductance memory, semantic learning, choice, agency, native support, sentience, Phase 8, ant ecology, and SU6 remain blocked. | README, then closeout handoff, replay/control matrix, carrier and packet probes, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -214,10 +214,43 @@ initial no-probe replay, static post-probe-derived persistence, and eventful
 post-probe-derived persistence; it does not support general naturalization
 depth or `ND6`.
 
-N22 is now initialized as the next experiment. It must consume the N20 I5
-`susceptibility_update` contract and the N21 closeout handoff, then produce new
-source-backed durable geometry modification evidence. N21 WR/ND evidence is
-prerequisite context only; it cannot satisfy N22 susceptibility update.
+N22 closes as the bounded susceptibility-update / durable geometry modification
+experiment:
+
+```text
+final_supported_status = bounded_artifact_level_susceptibility_update_candidate
+final_supported_su_ladder_rung = SU5_producer_mediated_bounded_susceptibility_update_candidate
+n22_closeout_ladder_rung = N22-C6
+n22_closeout_supported = true
+source_backed_susceptibility_update_evidence = true
+delta_survived_replay_and_later_reentry = true
+same_budget_peer_comparison_rules_out_global_drift = true
+su6_supported = false
+native_route_conductance_memory_supported = false
+semantic_learning_supported = false
+semantic_choice_supported = false
+agency_supported = false
+native_support_supported = false
+phase8_opened = false
+ant_ecology_opened = false
+ready_for_n23 = true
+```
+
+N22's packet branch remains capped at `SU3` because repeated readout spends the
+packet residue. Its successful carrier branch reaches controlled
+producer-mediated `SU5`: I5-C creates a non-consumptive carrier in
+LGRC-visible edge conductance state, I6-A shows transfer/re-entry, I6-B shows
+bounded stress survival, and I7 replay/control validation remains clean. The
+carrier write policy is still producer-mediated, so native route-conductance
+memory and native non-consumptive carrier update policy remain naturalization
+debt.
+
+N22 preserves the N19 AP4/AP5 NAT4 gap claims. AP4 is propagated for
+route-conditioned susceptibility/transfer; AP5 remains preserved for later
+proxy/target-dependent rows. N22 does not resolve those gaps.
+
+The N21 `ND6` bridge is recorded only as a bounded producer-mediated bridge
+candidate. N21 remains closed and is not retroactively upgraded.
 
 The N20-N29 arc keeps three paths distinct until N29:
 
@@ -235,10 +268,11 @@ agentic ecology / ants project:
 N20-N28 stay inside this repository and ground becoming-style primitives:
 withdrawal resistance, naturalization depth, susceptibility update, live
 continuation collapse, surplus-supported optionality, spark/new-basin
-formation, proxy divergence, transfer, and generative persistence. N21 has now
-closed the first two primitives; N22 is the active next durable-geometry
-modification / susceptibility update lane. N29 is the first formal convergence
-bridge into the agentic ecology project, where
+formation, proxy divergence, transfer, and generative persistence. N21 closed
+the first two primitives, N22 closed bounded producer-mediated susceptibility
+update / durable geometry modification, and N23 is now the next
+live-continuation collapse / selection geometry lane. N29 is the first formal
+convergence bridge into the agentic ecology project, where
 producer residue, medium debt, and first applied ant-ecology probes can be
 specified. Phase 8, native support,
 native ant agency, biological agency, and unrestricted agency remain unopened.
