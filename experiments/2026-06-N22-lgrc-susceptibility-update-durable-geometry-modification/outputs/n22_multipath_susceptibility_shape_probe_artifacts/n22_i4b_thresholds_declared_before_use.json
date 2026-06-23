@@ -1,0 +1,144 @@
+{
+  "boundary_active_degree_floor": 9,
+  "coherence_floor": 9.85,
+  "declared_before_use": true,
+  "inherits_i4_threshold_policy": true,
+  "max_budget_error": 1e-09,
+  "min_reentry_delta_persistence_ratio": 0.45,
+  "min_route_local_delta": 0.05,
+  "min_target_over_peer_route_delta_margin": 0.05,
+  "path_rows_declared_before_use": [
+    {
+      "path_id": "single_route_b_reference",
+      "path_shape_class": "single_target_route",
+      "peer_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        }
+      ],
+      "target_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 0,
+          "source_node_id": 0,
+          "target_node_id": 1
+        }
+      ]
+    },
+    {
+      "path_id": "competing_alternate_route_same_budget",
+      "path_shape_class": "competing_alternate_route",
+      "peer_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 0,
+          "source_node_id": 0,
+          "target_node_id": 1
+        }
+      ],
+      "target_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        }
+      ]
+    },
+    {
+      "path_id": "complementary_split_route_b_adjacent",
+      "path_shape_class": "complementary_split",
+      "peer_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        },
+        {
+          "amount": 0.06,
+          "edge_id": 2,
+          "source_node_id": 0,
+          "target_node_id": 3
+        }
+      ],
+      "target_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 0,
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        {
+          "amount": 0.06,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        }
+      ]
+    },
+    {
+      "path_id": "split_unrelated_insufficient_route_b",
+      "path_shape_class": "insufficient_target_component_split",
+      "peer_segments": [
+        {
+          "amount": 0.08,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        }
+      ],
+      "target_segments": [
+        {
+          "amount": 0.04,
+          "edge_id": 0,
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        {
+          "amount": 0.04,
+          "edge_id": 8,
+          "source_node_id": 0,
+          "target_node_id": 9
+        }
+      ]
+    },
+    {
+      "path_id": "overcoupled_multipath_gate_block",
+      "path_shape_class": "overcoupled_split",
+      "peer_segments": [
+        {
+          "amount": 0.12,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        },
+        {
+          "amount": 0.12,
+          "edge_id": 2,
+          "source_node_id": 0,
+          "target_node_id": 3
+        }
+      ],
+      "target_segments": [
+        {
+          "amount": 0.12,
+          "edge_id": 0,
+          "source_node_id": 0,
+          "target_node_id": 1
+        },
+        {
+          "amount": 0.12,
+          "edge_id": 1,
+          "source_node_id": 0,
+          "target_node_id": 2
+        }
+      ]
+    }
+  ],
+  "support_floor": 9.85,
+  "threshold_record_id": "n22_i4b_multipath_shape_thresholds"
+}

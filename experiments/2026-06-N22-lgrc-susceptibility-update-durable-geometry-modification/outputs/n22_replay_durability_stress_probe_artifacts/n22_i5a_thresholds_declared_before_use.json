@@ -1,0 +1,18 @@
+{
+  "boundary_active_degree_floor": 9,
+  "coherence_floor": 9.85,
+  "declared_before_use": true,
+  "inherits_i5_threshold_policy": true,
+  "max_budget_error": 1e-09,
+  "mild_peer_flux_amount": 0.01,
+  "min_reentry_delta_persistence_ratio": 0.45,
+  "stress_modes": [
+    "baseline_post_snapshot_reentry",
+    "delayed_idle_two_windows_reentry",
+    "repeated_reentry_two_step",
+    "mild_peer_flux_before_reentry"
+  ],
+  "su4_or_stronger_allowed": false,
+  "support_floor": 9.85,
+  "threshold_record_id": "n22_i5a_replay_durability_stress_thresholds"
+}

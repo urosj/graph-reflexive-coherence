@@ -401,12 +401,61 @@ reports/n22_minimal_susceptibility_update_probe.md
 scripts/build_n22_minimal_susceptibility_update_probe.py
 ```
 
+### Iteration 4-A. Susceptibility Dose / Boundary Probe
+
+Keep the Iteration 4 fixture, threshold policy, peer comparison rule, and claim
+boundary fixed. Sweep a declared route-local prior-interaction dose ladder to
+test whether the I4 route-local delta has a bounded support region and
+fail-closed boundaries.
+
+This iteration must not retune I4, replace the I4 reference row, or widen N22
+claims. It may support additional provisional `SU2` rows only when source-current
+pre/post geometry delta, same-budget peer rejection, later re-entry trace, and
+same-basin gates all remain in scope. Below-threshold rows and out-of-scope drift
+rows must fail closed.
+
+Expected artifacts:
+
+```text
+outputs/n22_susceptibility_dose_boundary_probe.json
+reports/n22_susceptibility_dose_boundary_probe.md
+scripts/build_n22_susceptibility_dose_boundary_probe.py
+```
+
+### Iteration 4-B. Multi-Path Susceptibility Shape Probe
+
+Keep the Iteration 4/4-A fixture, threshold policy, peer comparison rule, and
+claim boundary fixed. Test whether route/path shape matters by separating
+single-route, competing-route, complementary split, insufficient split, and
+over-coupled split cases.
+
+This iteration must not interpret complementary paths as cooperation, strategy,
+choice, or agency. Complementary evidence is only multi-edge source-current
+geometry. Supporting rows may remain provisional `SU2` only; replay-backed
+`SU3`, durable `SU4`, transfer/re-entry `SU5`, `SU6`, final N22 closeout, and
+the N21 `ND6` bridge remain pending later iterations.
+
+Expected artifacts:
+
+```text
+outputs/n22_multipath_susceptibility_shape_probe.json
+reports/n22_multipath_susceptibility_shape_probe.md
+scripts/build_n22_multipath_susceptibility_shape_probe.py
+```
+
 ### Iteration 5. Durability Replay Probe
 
-Replay the provisional susceptibility delta and test whether it survives
-artifact-only reconstruction, snapshot/load replay, duplicate replay where
-applicable, and later re-entry without producer reinforcement. Record
-interaction, post-replay, and re-entry delta digests plus persistence ratio.
+Replay the provisional susceptibility deltas from I4, I4-A, and I4-B and test
+whether they survive artifact-only reconstruction, snapshot/load replay,
+duplicate replay where applicable, and later re-entry without producer
+reinforcement. Record interaction, post-replay, and re-entry delta digests plus
+persistence ratio.
+
+Snapshot/load replay may compare stable source-current state signatures rather
+than script-specific geometry digests when earlier positive rows used different
+geometry-record schemas. The comparison must still include center/route
+coherence, basin support, boundary/topology signature, packet budget, and
+in-flight packet state.
 
 Expected artifacts:
 
@@ -416,10 +465,42 @@ reports/n22_durability_replay_probe.md
 scripts/build_n22_durability_replay_probe.py
 ```
 
+### Iteration 5-A. Replay Durability Stress Probe
+
+Stress-test the I5 replay-backed `SU3` candidates without changing thresholds
+or opening `SU4`. Start from each saved post-interaction state and run:
+
+```text
+baseline post-snapshot re-entry
+delayed idle windows before re-entry
+repeated re-entry
+mild unrelated peer flux before re-entry
+```
+
+The probe must distinguish preservation stress from depletion boundaries. If
+baseline, delayed, and mild-peer-flux re-entry preserve the route-local delta,
+the row may remain a stress-limited `SU3` candidate. If repeated re-entry
+depletes the route-local delta below the declared persistence ratio, record it
+as a fail-closed boundary that blocks `SU4`, not as a hidden success.
+
+I5-A must not replace I5. It supplies additional stress-limit evidence for I6
+and I7 while keeping durable `SU4`, transfer `SU5`, `SU6`, final N22, the N21
+`ND6` bridge, semantic learning, choice, agency, native support, sentience,
+Phase 8, and ant-ecology implementation blocked.
+
+Expected artifacts:
+
+```text
+outputs/n22_replay_durability_stress_probe.json
+reports/n22_replay_durability_stress_probe.md
+scripts/build_n22_replay_durability_stress_probe.py
+```
+
 ### Iteration 6. Transfer / Re-entry Probe
 
 Test whether the susceptibility delta is expressed in a declared later route,
-boundary, corridor, or region re-entry context. This may remain local and
+boundary, corridor, or region re-entry context. Consume I5 and I5-A explicitly,
+including the repeated-reentry depletion boundary. This may remain local and
 bounded; it must not claim general learning.
 
 Expected artifacts:

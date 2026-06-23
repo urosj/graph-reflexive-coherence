@@ -1,0 +1,3668 @@
+{
+  "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+  "active_null_rows": [
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "route label changes without source-current geometry delta",
+        "budget_schedule": {
+          "budget_schedule_digest": "b8d081a3caa0b4cd94a53a97807a43b4d36461b3547f74eeec1789cd7c69b82d",
+          "budget_schedule_family": "n22_i3_route_label_only_delta_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "d548a1ede844b149869ebb149091e40a0cb1d76a5796b8c5772c2b2162ef22ad",
+          "runtime_envelope_id": "n22_i3_route_label_only_delta_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "36b50b7d14e41e6122f01a5296ae9a7b67286bf6c302070a65c011f7bb4db231",
+          "seed_pairing_rule_id": "n22_i3_route_label_only_delta_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "b14e55b9b0bac965ff746dfec49b91e5dd541a277daf81252c7d7e797d79b02e",
+          "topology_config_family": "n22_i3_route_label_only_delta_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "label_only_delta",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "control_ids_covered": [
+        "route_label_only_control",
+        "label_only_success_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "route label changes without source-current geometry delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "route_label_only_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU2 and stronger"
+        },
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "route label changes without source-current geometry delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_success_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU2 and stronger"
+        }
+      ],
+      "delta_not_label_reassignment": false,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_route_label_only_delta_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "9fbfb0793aff408e6678eb413a96566c0f8b820d2f56c96f6997405265dbc97e",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "missing",
+      "geometric_failure_reading": "A name moves, but no basin geometry moves. There is no measured pre/post shape delta and no later re-entry expression.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": false,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "route_b label differs while geometry traces are absent",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "756f016c890e03fa7dbba91a379306e12d34f19ed236040579367c34e2026d0e",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "route label changes without source-current geometry delta",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_01_route_label_only_delta",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_route_label_only_delta",
+      "runtime_config_digest": "9f649d8dde09e16ddee5c4ec0efef27a00af8af6b4505fba6870f3c7936fc8fe",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "route_label_only_delta",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "missing",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "route_label_only_delta"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "producer reinforcement schedule changes without source-current delta",
+        "budget_schedule": {
+          "budget_schedule_digest": "f09c7428c0e31ff5257d0ba8bb93ce65c5543a3c394914d5a373b1e224514e20",
+          "budget_schedule_family": "n22_i3_reinforcement_schedule_only_delta_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57993dbce9e40bd8d98d6d9db52e13ad65fe80ec69790b67879971846b8640ce",
+          "runtime_envelope_id": "n22_i3_reinforcement_schedule_only_delta_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "e258addb17d6817d46efdca9618e762ce89a6876412db7c081d14354299ca7f1",
+          "seed_pairing_rule_id": "n22_i3_reinforcement_schedule_only_delta_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "c9a48910b18d9eaf019272bfa9f0bd0bd097af3e3b4cf5b81427160f73430a57",
+          "topology_config_family": "n22_i3_reinforcement_schedule_only_delta_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "producer_schedule_only_delta",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "control_ids_covered": [
+        "reinforcement_schedule_removed_control",
+        "hidden_producer_support_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "producer reinforcement schedule changes without source-current delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reinforcement_schedule_removed_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU2 and stronger"
+        },
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "producer reinforcement schedule changes without source-current delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_support_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU2 and stronger"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_reinforcement_schedule_only_delta_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "803a35fead5ff9eeb60ab1615054308ffe101455ebf27c2f0483691a397cc8d8",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "missing",
+      "geometric_failure_reading": "The producer surface changes, but the substrate basin does not show a source-current susceptibility delta.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "producer schedule differs but geometry/re-entry traces are absent",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "6c098117d91cfe4fe633ede863855b77122e700839f724b902343cc6e2fdd46e",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "producer reinforcement schedule changes without source-current delta",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": false,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_02_reinforcement_schedule_only_delta",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_reinforcement_schedule_only_delta",
+      "runtime_config_digest": "d3a04961c431b6803da36e53288bb789e92553375567f379c7b6b6cf106db3e6",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "reinforcement_schedule_only_delta",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "missing",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "reinforcement_schedule_only_delta"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "single-window flux perturbation is relabeled as durable modification",
+        "budget_schedule": {
+          "budget_schedule_digest": "a7f34c6b7efe227f3707e348d414f2fbda0bcb106f15fc2b75b03550275d9308",
+          "budget_schedule_family": "n22_i3_one_window_flux_transient_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "d42a26043ae77ec11936e667874c0d466135a95c8c00745446da67b0c03cc76f",
+          "runtime_envelope_id": "n22_i3_one_window_flux_transient_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "83010fe5bb1d1982d2d8b666d989bc9c872d69cf8a035023f57e1b2acc5ac57e",
+          "seed_pairing_rule_id": "n22_i3_one_window_flux_transient_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "d39dbaa704d387f9e2dde7654c964d80650fd5778b07596aa269b8b262d55f74",
+          "topology_config_family": "n22_i3_one_window_flux_transient_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "one_window_flux_transient",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "durable_geometry_modification_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "single-window flux perturbation is relabeled as durable modification",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "durable_geometry_modification_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU4 and stronger"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_one_window_flux_transient_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "0be3f1970f87c2837a206e1e9d6e3aadccda08a3f5f6234b8cb2e041cbc1a880",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "changed_within_bound",
+      "geometric_failure_reading": "A local flow pulse appears in one window, but it does not leave a durable basin deformation.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "one transient flux change appears without replay/re-entry persistence",
+      "one_window_transient_rejected": false,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "fcd6062907afb2c5f18491a9eab43719ff82b1f0db78da1d0bdde9ca765f71ac",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "single-window flux perturbation is relabeled as durable modification",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_03_one_window_flux_transient",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_one_window_flux_transient",
+      "runtime_config_digest": "a959ed61519a66c8fee11c55ac4e1bffac8d069ef00d21659d3bfce5e500947b",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "one_window_flux_transient",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "one_window_flux_transient"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "later route or region re-entry trace is missing",
+        "budget_schedule": {
+          "budget_schedule_digest": "4e248e8b371ce75e342b9a4b46449adcf4e1ec07d8b9e888b1f1c300a8a03a5d",
+          "budget_schedule_family": "n22_i3_missing_later_reentry_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "fc9d7a116bfb27526162ed3cd0845f966eebadde37ecd477a9d7c984a3632d6c",
+          "runtime_envelope_id": "n22_i3_missing_later_reentry_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "f775145fcb3a7d44c5779d7c5aea840e2975ae5e7cdd14aca02337c5c6b08b22",
+          "seed_pairing_rule_id": "n22_i3_missing_later_reentry_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "666ef3f54cf972dc0931fa221b86264642cd0b555db4d0a565781ab297b1de52",
+          "topology_config_family": "n22_i3_missing_later_reentry_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "missing_reentry_trace",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "durable_geometry_modification_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "later route or region re-entry trace is missing",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "durable_geometry_modification_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU5 and stronger"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_missing_later_reentry_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "f06e4323e4b1765d395396fccd61e0c6e340c316ccfdcd07d0e3b30ffac8615e",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "preserved",
+      "geometric_failure_reading": "The basin may show an immediate difference, but there is no later return through the route or region where susceptibility should be expressed.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "pre/post delta is asserted without later re-entry expression",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "5f3f8af3d72cb5e976c6cfa66ef82d9ed2b49f70048536b602b5bc7d18b826ce",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "later route or region re-entry trace is missing",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_04_missing_later_reentry",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_missing_later_reentry",
+      "runtime_config_digest": "a8a1e9d94dbbed59bf953a8182bf7bf508811ccacb85679dfe4aac0ed02a5259",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "missing_later_reentry",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "missing_later_reentry"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "delta trace is assembled after outcome inspection",
+        "budget_schedule": {
+          "budget_schedule_digest": "1a011ac9a1b557fdc331ec999eb5ef1d9c832f067bd31ac2550001f87bf2dbbc",
+          "budget_schedule_family": "n22_i3_post_hoc_delta_construction_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "31bafcac0b99a39e88bb14c230b797a41e7b28918a8420fe352e97f408a4ac79",
+          "runtime_envelope_id": "n22_i3_post_hoc_delta_construction_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "34326a4f3181ba07e11ab3ac3f666dcc170a73df41ca7f8f7b8736133d35791a",
+          "seed_pairing_rule_id": "n22_i3_post_hoc_delta_construction_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "103d9381e54a57711f31e55447151f8f91b1dc07c0e2c653a9984847814ce8ee",
+          "topology_config_family": "n22_i3_post_hoc_delta_construction_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "post_hoc_delta_construction",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "control_ids_covered": [
+        "post_hoc_trace_construction_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "delta trace is assembled after outcome inspection",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU2 and stronger"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_post_hoc_delta_construction_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "996ca9c16eaf7ac7ec4c5526167b0d3e12de2a9844b4846d1382ba5414968b82",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "missing",
+      "geometric_failure_reading": "The geometry is narrated after the fact instead of emitted as a source-current pre/post trace.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": false,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "delta exists only as report-side reconstruction",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "a263bb3be8dbe8baec35e5867ed9857298385236aa438f5f97620b7de8877ba8",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "delta trace is assembled after outcome inspection",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_05_post_hoc_delta_construction",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_post_hoc_delta_construction",
+      "runtime_config_digest": "4ded5ec49862023bcf1ece73c52e6821eb71f31a65e0b3b4527be265a125acf3",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "post_hoc_delta_construction",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "missing",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "post_hoc_delta_construction"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "active reinforcement remains and carries the apparent delta",
+        "budget_schedule": {
+          "budget_schedule_digest": "6a08a1d3d021a78d196ceb0b5bd05090b2e35ff7652d3dccf8285391035b4d9d",
+          "budget_schedule_family": "n22_i3_hidden_reinforcement_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "bc8268bbcdeeb5b4d10c45aca051590ac36ef156e02ee50f5c56c05d716f858c",
+          "runtime_envelope_id": "n22_i3_hidden_reinforcement_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "e46a248bc9f836ca76d995bb306ebac7675ce397e2aee98e3394efa7d74163a0",
+          "seed_pairing_rule_id": "n22_i3_hidden_reinforcement_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "b4ba1b294358258fd4773712eb26f4fe22f7665297e147a31c5f250a8fda19ad",
+          "topology_config_family": "n22_i3_hidden_reinforcement_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": false,
+      "active_reinforcement_schedule_disabled": false,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "hidden_reinforcement",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "hidden_producer_support_control",
+        "reinforcement_schedule_removed_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "active reinforcement remains and carries the apparent delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_support_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU4, SU5, SU6, N22-C4, N22-C5, N22-C6, and ND6 bridge"
+        },
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "active reinforcement remains and carries the apparent delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reinforcement_schedule_removed_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU4, SU5, SU6, N22-C4, N22-C5, N22-C6, and ND6 bridge"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_hidden_reinforcement_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "dd808cc9359801efb12ee92015fefd54606fbfa524b8eac0787142a6cf62d258",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "preserved",
+      "geometric_failure_reading": "The basin is held by an active producer channel, so persistence is not yet a substrate-carried geometric modification.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "apparent persistence depends on producer reinforcement still active",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "4e547a3c1bd02ac1f3e444557c15757b07113cc416d8e2af75d7a2ca3ca49b5c",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "active reinforcement remains and carries the apparent delta",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.1,
+      "reinforcement_schedule_not_used_as_evidence": false,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_06_hidden_reinforcement",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_hidden_reinforcement",
+      "runtime_config_digest": "4d081285f2d7e35449b790977ab8483e848ee53d6d5e07119b90b38877020499",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "hidden_reinforcement",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "hidden_reinforcement"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "route-conditioned susceptibility omits required AP4 dependency record",
+        "budget_schedule": {
+          "budget_schedule_digest": "f4ad65b3f2975871f20572590f4eb0e5ba94d6e87b5cc113a94f2cac2594729a",
+          "budget_schedule_family": "n22_i3_route_conditioned_row_missing_AP4_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "516f45e03c62303fe404d37e7351499c3e9c5ff2012d11822b1c3a12f26c180c",
+          "runtime_envelope_id": "n22_i3_route_conditioned_row_missing_AP4_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "5edc5fbaafa4047aece0d473275d4951a4e5fdbb03b5210b56407ddf586aefbe",
+          "seed_pairing_rule_id": "n22_i3_route_conditioned_row_missing_AP4_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "9da269bcf431f13c2adc5271c517f15ef0053899903386d6ecbd532f12376f01",
+          "topology_config_family": "n22_i3_route_conditioned_row_missing_AP4_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "missing AP4 dependency active null",
+      "ap4_dependency_status": "missing_blocks_row",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "ap4_gap_omission",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "AP4_gap_dependency_if_route_conditioned"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "route-conditioned susceptibility omits required AP4 dependency record",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP4_gap_dependency_if_route_conditioned",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks route-conditioned SU rows"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_route_conditioned_row_missing_AP4_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "de231f961ead4ec69425f65ef51f3e54f3f9ad80a4e4c0552ec1c3de8acd5208",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "preserved",
+      "geometric_failure_reading": "The row depends on route-conditioned selection, but the selection axis is not made auditable.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "route-conditioned row is asserted without AP4 status",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "f3a447aee832b894ad74ab739f8922ba758aa8bb93f2068b423008d6db80f51f",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "route-conditioned susceptibility omits required AP4 dependency record",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_07_route_conditioned_row_missing_AP4",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_route_conditioned_row_missing_AP4",
+      "runtime_config_digest": "d3615de1fceb0dbc47667ba793fce8f983fae7c9d528438f6b80df273b73133c",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "route_conditioned_row_missing_AP4",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "route_conditioned_row_missing_AP4"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "proxy or target conditioned susceptibility omits conditional AP5 record",
+        "budget_schedule": {
+          "budget_schedule_digest": "5d923d8e86ffcd979682fb7e2d188de248dff4c5676a1e4c4bbd4b7e0fc47e27",
+          "budget_schedule_family": "n22_i3_proxy_or_target_conditioned_row_missing_AP5_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "b3e959d63cd5bd1ded389f3cb9b9f5519218a35870aafc981bfc957171fc0599",
+          "runtime_envelope_id": "n22_i3_proxy_or_target_conditioned_row_missing_AP5_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "c80f80f4d7f97b46546026323bc558924b413565d9e86bdffce2fc7632da079c",
+          "seed_pairing_rule_id": "n22_i3_proxy_or_target_conditioned_row_missing_AP5_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "de73ee61b531a539f9a5f460592702418212add6dfd4db39d5b1d7f8c8be63d4",
+          "topology_config_family": "n22_i3_proxy_or_target_conditioned_row_missing_AP5_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "missing AP5 dependency active null",
+      "ap5_dependency_status": "missing_blocks_row",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "ap5_gap_omission",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "AP5_gap_dependency_if_proxy_conditioned"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "proxy or target conditioned susceptibility omits conditional AP5 record",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP5_gap_dependency_if_proxy_conditioned",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks proxy-conditioned SU rows"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_proxy_or_target_conditioned_row_missing_AP5_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "3ee1f3541808af90e50a378cc887df5ad268b84ea991259bc705615d65041f99",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "preserved",
+      "geometric_failure_reading": "The row depends on target/proxy formation, but that target/proxy axis is not made auditable.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "proxy-conditioned row is asserted without AP5 status",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "afe0961613477687b515d2d5bf7dca8c307173384e3a65ce37a84a948191bfe6",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "proxy or target conditioned susceptibility omits conditional AP5 record",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_08_proxy_or_target_conditioned_row_missing_AP5",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_proxy_or_target_conditioned_row_missing_AP5",
+      "runtime_config_digest": "6c47f75adf2894711aec88a20ccb7045b30c537e555e2d14ae83a32c7316f7f2",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "proxy_or_target_conditioned_row_missing_AP5",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "proxy_or_target_conditioned_row_missing_AP5"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "AP gap is acknowledged only in prose, not row-local fields",
+        "budget_schedule": {
+          "budget_schedule_digest": "6a1a2dc33ac58c98c8a7b15fb5d22dc5996e1f42bd24db723856859303bd8868",
+          "budget_schedule_family": "n22_i3_AP_gap_prose_only_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "953d3d0416244a88c8102aae26ac81763254f2c6fa11c24167f82fece1103064",
+          "runtime_envelope_id": "n22_i3_AP_gap_prose_only_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "87f25e68d0f44c427d137dbbebe3c6b3ebed7a0127611b505057d0ae2e86d626",
+          "seed_pairing_rule_id": "n22_i3_AP_gap_prose_only_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "79bdd05b52f43157d7e2129fc18426b57c8bb721d311441cf52e1050076b3381",
+          "topology_config_family": "n22_i3_AP_gap_prose_only_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "AP gap prose-only active null",
+      "ap5_dependency_status": "missing_blocks_row",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "ap_gap_prose_only",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "AP4_gap_dependency_if_route_conditioned",
+        "AP5_gap_dependency_if_proxy_conditioned"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "AP gap is acknowledged only in prose, not row-local fields",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP4_gap_dependency_if_route_conditioned",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks dependent SU rows"
+        },
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "AP gap is acknowledged only in prose, not row-local fields",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP5_gap_dependency_if_proxy_conditioned",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks dependent SU rows"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_AP_gap_prose_only_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "dd6b57edf8efb4e03f057d2ee117dd82fd0c865a4a8495403402aced5d23ae29",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "preserved",
+      "geometric_failure_reading": "The dependency is outside the row's geometry record, so the row cannot be replayed as a controlled susceptibility claim.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "AP4/AP5 caveat appears in interpretation text only",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "cc0aa8dcbc4303129e0ce740ba1ac315e6ec2715031164ce76d3bfee2b8b705c",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "AP gap is acknowledged only in prose, not row-local fields",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_09_AP_gap_prose_only",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_AP_gap_prose_only",
+      "runtime_config_digest": "2d46de30b11fe18263eb3ef9c84501f1323fe81cfe7a396b93d397c7b2af9c45",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "AP_gap_prose_only",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "AP_gap_prose_only"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "route/region-conditioned row lacks same-budget peer comparison",
+        "budget_schedule": {
+          "budget_schedule_digest": "898f572dc5fe108ded147dd42c81e8735e024d7987be52016e023708ea2696d4",
+          "budget_schedule_family": "n22_i3_peer_same_budget_missing_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "6d6860a26834ae7ddd5200fd77c7f393c0f74495c6e09c157550e0cc5719cec4",
+          "runtime_envelope_id": "n22_i3_peer_same_budget_missing_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "2d14bfadea72cae14fe7e1813daa713bcfeaae30659d18c3d496c4b37eebdb84",
+          "seed_pairing_rule_id": "n22_i3_peer_same_budget_missing_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "01884cfd4a19d1fb32dc344b458f3d6dcf4a27d17d23a289096d663f37df2806",
+          "topology_config_family": "n22_i3_peer_same_budget_missing_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "missing_peer_same_budget_comparison",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "control_ids_covered": [
+        "peer_same_budget_comparison_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "route/region-conditioned row lacks same-budget peer comparison",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "peer_same_budget_comparison_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks SU5, SU6, N22-C5, and N22-C6"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_peer_same_budget_missing_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "0890b95bea83addd63f40accdae28215865445e88090ead0a770cec9ad66ff36",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "preserved",
+      "geometric_failure_reading": "A route-local change cannot be separated from scheduler/global drift without an equal-budget peer lane.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "target route changes but peer route is not checked",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "878c1fabab1fc0278062e8206180b659fd29bdbf83c7b83bb69d82f9101f6c1e",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "route/region-conditioned row lacks same-budget peer comparison",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_10_peer_same_budget_missing",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_peer_same_budget_missing",
+      "runtime_config_digest": "eebc6a7831d1fb5d1baa7791f4deaff3b63d038283bcde6533ae81c783e5624b",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "peer_same_budget_missing",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "preserved",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "peer_same_budget_missing"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "same delta appears globally or peer/global drift is not rejected",
+        "budget_schedule": {
+          "budget_schedule_digest": "7951e2a1ebeac4bfdc062d31d030c32af657815ca6f481b8d72d777cfcaf4deb",
+          "budget_schedule_family": "n22_i3_global_drift_not_rejected_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": true,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "6256407eb235b45506489a4d2df08e064399ea2afab86894c05429c5ca3bd325",
+          "runtime_envelope_id": "n22_i3_global_drift_not_rejected_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "79d7dd2b1cb577a63f1b4a40f992d2798d01f349e17193767c30200b3ec82be9",
+          "seed_pairing_rule_id": "n22_i3_global_drift_not_rejected_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e69e408cfd3b782704e344623f008781ee653e05265fdb853aa8589cda3fd462",
+          "topology_config_family": "n22_i3_global_drift_not_rejected_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "route-conditioned null records AP4 dependency discipline",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "global_drift_not_rejected",
+      "boundary_integrity_result": "changed_within_allowed_delta",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "changed_within_allowed_delta_above_floor",
+      "control_ids_covered": [
+        "global_drift_rejection_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "same delta appears globally or peer/global drift is not rejected",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "global_drift_rejection_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks route/region-conditioned SU5 and SU6"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_global_drift_not_rejected_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "2460dc3b79facd99be21ba0c5e8716e47a2f306881486bde94018f03a1dfd1f7",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "changed_within_bound",
+      "geometric_failure_reading": "The whole substrate drifts, so no route-specific susceptibility update has been isolated.",
+      "global_drift_rejected": false,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "target and peer regions move together",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "7d4a65d0ebde9e419b384fca4562c1f7baf325901c00d7295a3b8fdaddb48122",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "same delta appears globally or peer/global drift is not rejected",
+        "required_when_route_or_region_conditioned": true,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "route_or_region_conditioned_active_null",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_11_global_drift_not_rejected",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_global_drift_not_rejected",
+      "runtime_config_digest": "ac1537456a4f07a3f43ebebdbc64e83efad81968db3c81f9da53b67f5c33abf3",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "global_drift_not_rejected",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "changed_within_allowed_delta_above_floor",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "global_drift_not_rejected"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "semantic learning label is used as susceptibility evidence",
+        "budget_schedule": {
+          "budget_schedule_digest": "f0277e14871cbecaffd8f231df097cbe5c9e6d7d21a2f2e3ed1d58edb88feab7",
+          "budget_schedule_family": "n22_i3_semantic_learning_relabel_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": false,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "f1e5e46a20161993ba7a4616523eb03769a58fcbe1d565851a35503e7d280594",
+          "runtime_envelope_id": "n22_i3_semantic_learning_relabel_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "997daed503e7e54a87a04b5a9c77079ed96aee75a2057e13900c69f65599fc54",
+          "seed_pairing_rule_id": "n22_i3_semantic_learning_relabel_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e50af3e2d53894fbc09f5e4d0c3f1129984b75872d4d0dbcf450ed602c627836",
+          "topology_config_family": "n22_i3_semantic_learning_relabel_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "not route conditioned",
+      "ap4_dependency_status": "not_applicable",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "semantic_learning_relabel",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "control_ids_covered": [
+        "semantic_relabel_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "semantic learning label is used as susceptibility evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks all SU support and unsafe claims"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_semantic_learning_relabel_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "dce8ec09b5db9bd7597c95d07701c1db203b62e2f0d4b7e4f4a6fc16f0c58fe2",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "missing",
+      "geometric_failure_reading": "A semantic label is substituted for a measured geometric susceptibility change.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "learning label appears without source-current geometry delta",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "596b578f6cbeff9eca922ad4361f0750321d12646ffc92bcf3fb5909103adaf1",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "semantic learning label is used as susceptibility evidence",
+        "required_when_route_or_region_conditioned": false,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "not_applicable_unsafe_relabel_control",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": false,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_12_semantic_learning_relabel",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_semantic_learning_relabel",
+      "runtime_config_digest": "2552b33287fd68b45a81be2ec1974b4881c5da0665ef8e5702ddf620f9087a05",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "semantic_learning_relabel",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "missing",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "semantic_learning_relabel"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "producer-mediated support is relabeled as native support",
+        "budget_schedule": {
+          "budget_schedule_digest": "9975349d59ca3499adbc6952a85850546168ddaa77d9d2e67d7d8a4f5ba84c59",
+          "budget_schedule_family": "n22_i3_native_support_relabel_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": false,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "5d176f95bbf2354282dc0ef77f281dac94e112012365a1348abfead22f55a53e",
+          "runtime_envelope_id": "n22_i3_native_support_relabel_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "544ec928dbbebb9bc48d33003c4bc3a8c4113bd95da369ff4e4544365210dce3",
+          "seed_pairing_rule_id": "n22_i3_native_support_relabel_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "1dfed796806a663e945555092d9364e59fef153a90ccb584d3be61304e83236d",
+          "topology_config_family": "n22_i3_native_support_relabel_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "not route conditioned",
+      "ap4_dependency_status": "not_applicable",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "native_support_relabel",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "control_ids_covered": [
+        "native_support_relabel_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "producer-mediated support is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks all SU support and unsafe claims"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_native_support_relabel_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "8d83278f60664a1a46e03ebde07ba465e6db5ced74402253f50a6b41b1abc5b4",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "missing",
+      "geometric_failure_reading": "Producer support is treated as substrate-native support, which is outside the N22 claim ceiling.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "support annotation or producer field is used as native support",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "a083542ae7f9feb119045e953830fa431329e9369b96a548387e19d48de8b6d3",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "producer-mediated support is relabeled as native support",
+        "required_when_route_or_region_conditioned": false,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "not_applicable_unsafe_relabel_control",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": false,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_13_native_support_relabel",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_native_support_relabel",
+      "runtime_config_digest": "6e7aa85bc807760314543490a041097eb9a414e7e9e9a0ce3918d7d54cd50a18",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "native_support_relabel",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "missing",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "native_support_relabel"
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "blocked_condition": "schema or artifact result is relabeled as Phase 8 implementation",
+        "budget_schedule": {
+          "budget_schedule_digest": "08b57f31d4e67dc0f154bea91d0e3155be6e7eb98605345f729a1ab2175b0179",
+          "budget_schedule_family": "n22_i3_phase8_relabel_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "route_scope": {
+          "route_or_region_conditioned": false,
+          "same_route_or_region_scope_where_applicable": true
+        },
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "0514aa99e8a2637b5815562a330dc8ce81ea9f53ad6bffab49e4ded0bf3a0f8a",
+          "runtime_envelope_id": "n22_i3_phase8_relabel_runtime_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed/topology family as future N22 candidates while removing or corrupting the claimed susceptibility condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "0752748d6dc6854f76ab99e293e733e23909611d69168d5a1300579544148b9b",
+          "seed_pairing_rule_id": "n22_i3_phase8_relabel_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "14b5ea87dde01f1278ed3d442320918c66e4161405c95ed9d3c3e4a33bba03aa",
+          "topology_config_family": "n22_i3_phase8_relabel_topology_family"
+        }
+      },
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "actual_result": "failed_closed",
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "ap4_condition_reason": "not route conditioned",
+      "ap4_dependency_status": "not_applicable",
+      "ap5_condition_reason": "proxy/target formation not claimed",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [],
+      "artifact_paths": [],
+      "artifact_sha256": {},
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "phase8_relabel",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no SU, N22-C, durable geometry modification, semantic learning, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "control_ids_covered": [
+        "phase8_relabel_control"
+      ],
+      "control_results": [
+        {
+          "actual_result": "susceptibility_update_claim_allowed=false",
+          "blocked_condition": "schema or artifact result is relabeled as Phase 8 implementation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "susceptibility claim rejected",
+          "rung_effect": "blocks all SU support and unsafe claims"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.0,
+      "delta_threshold_or_rule": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update",
+        "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n22_i3_phase8_relabel_thresholds",
+        "threshold_owner": "frozen_i2_schema_reference",
+        "threshold_record_digest": "7321fcad7d0e13b98419a74d2683656fd7b05b72e8d9261cc8ba73541a870f04",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "route or region boundary remains auditable after update",
+          "coherence_floor": "altered geometry stays above coherence floor",
+          "delta_persistence_ratio_floor": "not_applicable_active_null",
+          "flux_or_leakage_bound": "durable delta cannot be a one-window flux transient",
+          "global_drift_rejection_rule": "active null must fail closed if not rejected",
+          "support_floor": "altered geometry stays above support floor"
+        }
+      },
+      "derived_report_only": true,
+      "expected_result": "failed_closed",
+      "flux_or_leakage_result": "missing",
+      "geometric_failure_reading": "A classification artifact is promoted into native implementation, which N22 explicitly does not open.",
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "not_applicable_active_null",
+      "interaction_window": "not_applicable_pre_positive_active_null",
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_closeout_ladder_rung": "not_assigned_active_null_control_only",
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "observed_null_signal": "Phase 8 implementation claim appears without native producer code",
+      "one_window_transient_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "425447e77cdee0c3e8452d73ecf7eb882a5931bc266c7442bbb82f0e28ee7e8a",
+      "peer_route_or_region_trace": "missing_or_invalid_by_active_null_design",
+      "peer_same_budget_comparison": {
+        "reason": "schema or artifact result is relabeled as Phase 8 implementation",
+        "required_when_route_or_region_conditioned": false,
+        "status": "failed_closed"
+      },
+      "peer_same_budget_comparison_scope_reason": "not_applicable_unsafe_relabel_control",
+      "post_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "post_replay_delta_digest": "not_applicable_active_null",
+      "pre_interaction_geometry_trace": "missing_or_invalid_by_active_null_design",
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "reentry_delta_digest": "not_applicable_active_null",
+      "reentry_window": "not_applicable_pre_positive_active_null",
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rung": "SU3_and_stronger",
+        "alias_accepted": "artifact_only_replay",
+        "canonical_replay_name": "artifact_replay",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed N22 probes are admitted"
+      },
+      "route_or_region_conditioned": false,
+      "route_or_region_reentry_trace": "missing_or_invalid_by_active_null_design",
+      "row_decision": "rejected",
+      "row_id": "n22_i3_row_14_phase8_relabel",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n22_i3_active_null_phase8_relabel",
+      "runtime_config_digest": "6b37ea32ae7f0b90277f2a3dfba2fa8d45dbc0482858caed08182152c7e09410",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "source_contract_row",
+        "same_basin_rule.rule_id",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "scenario_id": "phase8_relabel",
+      "schema_expansion": false,
+      "schema_instantiation_only": true,
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su_ladder_rung": "not_assigned_active_null_control_only",
+      "support_floor_result": "missing",
+      "susceptibility_delta_trace": "missing_or_invalid_by_active_null_design",
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "violated_gate": "phase8_relabel"
+    }
+  ],
+  "active_null_summary": {
+    "blocker_classes": [
+      "ap4_gap_omission",
+      "ap5_gap_omission",
+      "ap_gap_prose_only",
+      "global_drift_not_rejected",
+      "hidden_reinforcement",
+      "label_only_delta",
+      "missing_peer_same_budget_comparison",
+      "missing_reentry_trace",
+      "native_support_relabel",
+      "one_window_flux_transient",
+      "phase8_relabel",
+      "post_hoc_delta_construction",
+      "producer_schedule_only_delta",
+      "semantic_learning_relabel"
+    ],
+    "covered_controls": [
+      "AP4_gap_dependency_if_route_conditioned",
+      "AP5_gap_dependency_if_proxy_conditioned",
+      "durable_geometry_modification_control",
+      "global_drift_rejection_control",
+      "hidden_producer_support_control",
+      "label_only_success_control",
+      "native_support_relabel_control",
+      "peer_same_budget_comparison_control",
+      "phase8_relabel_control",
+      "post_hoc_trace_construction_control",
+      "reinforcement_schedule_removed_control",
+      "route_label_only_control",
+      "semantic_relabel_control"
+    ],
+    "failed_closed_rows": 14,
+    "failed_open_rows": 0,
+    "n22_closeout_ladder_rung_assigned": false,
+    "positive_susceptibility_evidence_opened": false,
+    "required_nulls_present": [
+      "AP_gap_prose_only",
+      "global_drift_not_rejected",
+      "hidden_reinforcement",
+      "missing_later_reentry",
+      "native_support_relabel",
+      "one_window_flux_transient",
+      "peer_same_budget_missing",
+      "phase8_relabel",
+      "post_hoc_delta_construction",
+      "proxy_or_target_conditioned_row_missing_AP5",
+      "reinforcement_schedule_only_delta",
+      "route_conditioned_row_missing_AP4",
+      "route_label_only_delta",
+      "semantic_learning_relabel"
+    ],
+    "row_count": 14,
+    "su_ladder_rung_assigned_above_control_scope": false,
+    "susceptibility_update_claim_allowed_any": false
+  },
+  "artifact_id": "n22_active_nulls_and_failure_baselines",
+  "checks": [
+    {
+      "check_id": "source_i1_inventory_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+        "failed_checks": [],
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_i2_schema_passed",
+      "detail": {
+        "acceptance_state": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+        "failed_checks": [],
+        "ready_for_iteration_3_active_nulls": true,
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "required_active_null_matrix_complete",
+      "detail": {
+        "present": [
+          "AP_gap_prose_only",
+          "global_drift_not_rejected",
+          "hidden_reinforcement",
+          "missing_later_reentry",
+          "native_support_relabel",
+          "one_window_flux_transient",
+          "peer_same_budget_missing",
+          "phase8_relabel",
+          "post_hoc_delta_construction",
+          "proxy_or_target_conditioned_row_missing_AP5",
+          "reinforcement_schedule_only_delta",
+          "route_conditioned_row_missing_AP4",
+          "route_label_only_delta",
+          "semantic_learning_relabel"
+        ],
+        "required": [
+          "route_label_only_delta",
+          "reinforcement_schedule_only_delta",
+          "one_window_flux_transient",
+          "missing_later_reentry",
+          "post_hoc_delta_construction",
+          "hidden_reinforcement",
+          "route_conditioned_row_missing_AP4",
+          "proxy_or_target_conditioned_row_missing_AP5",
+          "AP_gap_prose_only",
+          "peer_same_budget_missing",
+          "global_drift_not_rejected",
+          "semantic_learning_relabel",
+          "native_support_relabel",
+          "phase8_relabel"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "candidate_evidence_fields_present_in_all_rows",
+      "detail": {
+        "required_field_count": 61
+      },
+      "passed": true
+    },
+    {
+      "check_id": "schema_instantiated_without_expansion",
+      "detail": "I3 rows instantiate I2 schema without adding schema concepts",
+      "passed": true
+    },
+    {
+      "check_id": "label_only_null_visibly_violates_delta_gate",
+      "detail": "route-label-only null explicitly violates the label-reassignment gate",
+      "passed": true
+    },
+    {
+      "check_id": "all_active_nulls_fail_closed",
+      "detail": {
+        "blocker_classes": [
+          "ap4_gap_omission",
+          "ap5_gap_omission",
+          "ap_gap_prose_only",
+          "global_drift_not_rejected",
+          "hidden_reinforcement",
+          "label_only_delta",
+          "missing_peer_same_budget_comparison",
+          "missing_reentry_trace",
+          "native_support_relabel",
+          "one_window_flux_transient",
+          "phase8_relabel",
+          "post_hoc_delta_construction",
+          "producer_schedule_only_delta",
+          "semantic_learning_relabel"
+        ],
+        "covered_controls": [
+          "AP4_gap_dependency_if_route_conditioned",
+          "AP5_gap_dependency_if_proxy_conditioned",
+          "durable_geometry_modification_control",
+          "global_drift_rejection_control",
+          "hidden_producer_support_control",
+          "label_only_success_control",
+          "native_support_relabel_control",
+          "peer_same_budget_comparison_control",
+          "phase8_relabel_control",
+          "post_hoc_trace_construction_control",
+          "reinforcement_schedule_removed_control",
+          "route_label_only_control",
+          "semantic_relabel_control"
+        ],
+        "failed_closed_rows": 14,
+        "failed_open_rows": 0,
+        "n22_closeout_ladder_rung_assigned": false,
+        "positive_susceptibility_evidence_opened": false,
+        "required_nulls_present": [
+          "AP_gap_prose_only",
+          "global_drift_not_rejected",
+          "hidden_reinforcement",
+          "missing_later_reentry",
+          "native_support_relabel",
+          "one_window_flux_transient",
+          "peer_same_budget_missing",
+          "phase8_relabel",
+          "post_hoc_delta_construction",
+          "proxy_or_target_conditioned_row_missing_AP5",
+          "reinforcement_schedule_only_delta",
+          "route_conditioned_row_missing_AP4",
+          "route_label_only_delta",
+          "semantic_learning_relabel"
+        ],
+        "row_count": 14,
+        "su_ladder_rung_assigned_above_control_scope": false,
+        "susceptibility_update_claim_allowed_any": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_reject_claims",
+      "detail": "every active-null control failed closed",
+      "passed": true
+    },
+    {
+      "check_id": "ap_gap_active_nulls_present",
+      "detail": {
+        "present": [
+          "AP_gap_prose_only",
+          "global_drift_not_rejected",
+          "hidden_reinforcement",
+          "missing_later_reentry",
+          "native_support_relabel",
+          "one_window_flux_transient",
+          "peer_same_budget_missing",
+          "phase8_relabel",
+          "post_hoc_delta_construction",
+          "proxy_or_target_conditioned_row_missing_AP5",
+          "reinforcement_schedule_only_delta",
+          "route_conditioned_row_missing_AP4",
+          "route_label_only_delta",
+          "semantic_learning_relabel"
+        ],
+        "required_ap_nulls": [
+          "AP_gap_prose_only",
+          "proxy_or_target_conditioned_row_missing_AP5",
+          "route_conditioned_row_missing_AP4"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_present_but_not_positive",
+      "detail": "active null rows carry manifest fields without positive run artifacts",
+      "passed": true
+    },
+    {
+      "check_id": "no_source_current_inputs_opened",
+      "detail": "active nulls do not provide positive source-current inputs",
+      "passed": true
+    },
+    {
+      "check_id": "no_su_or_n22c_rungs_above_control_scope",
+      "detail": {
+        "n22_closeout_ladder_rung_assigned": false,
+        "su_ladder_rung_assigned_above_control_scope": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": "unsafe claims remain blocked in every active null row",
+      "passed": true
+    },
+    {
+      "check_id": "geometric_interpretations_present",
+      "detail": "each row records a geometric failure interpretation",
+      "passed": true
+    },
+    {
+      "check_id": "no_local_absolute_paths",
+      "detail": "payload uses repository-relative paths and source IDs only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_active_nulls_and_failure_baselines.py",
+  "experiment": "2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "iteration": 3,
+  "iteration3_boundary": {
+    "durable_geometry_modification_supported": false,
+    "n21_nd6_bridge_status": "not_supported",
+    "n22_closeout_ladder_rung_assigned": false,
+    "positive_susceptibility_evidence_opened": false,
+    "ready_for_iteration_4_positive_probe": true,
+    "schema_expansion": false,
+    "schema_instantiation_only": true,
+    "su_ladder_rung_assigned_above_control_scope": false,
+    "susceptibility_update_supported": false
+  },
+  "output_digest": "4843f5661908cc612d71df1957bc16929ed199b7c2c72134c4f0d67bea750138",
+  "purpose": "Instantiate the frozen I2 schema as active nulls and failure baselines before positive susceptibility probes.",
+  "required_null_ids": [
+    "route_label_only_delta",
+    "reinforcement_schedule_only_delta",
+    "one_window_flux_transient",
+    "missing_later_reentry",
+    "post_hoc_delta_construction",
+    "hidden_reinforcement",
+    "route_conditioned_row_missing_AP4",
+    "proxy_or_target_conditioned_row_missing_AP5",
+    "AP_gap_prose_only",
+    "peer_same_budget_missing",
+    "global_drift_not_rejected",
+    "semantic_learning_relabel",
+    "native_support_relabel",
+    "phase8_relabel"
+  ],
+  "schema_version": "n22_active_nulls_and_failure_baselines_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+      "output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_source_handoff_inventory.json",
+      "sha256": "1ea13c1d9fcdaa75ba284aa1041dd08b18f8e8c1a6d73f24c45512b639e9773f",
+      "source_role": "n22_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+      "output_digest": "a6d4e478b1e29f31007bb965c97a838764e196f18ca7ac8e1c78a7ccfc03680f",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_schema_and_controls.json",
+      "sha256": "221dae0353bdb5a04c2a324cd9d94b3634de5c66e8ffef3721df1f5791e0f4e5",
+      "source_role": "n22_i2_schema_and_controls",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_susceptibility_schema_and_controls.md",
+      "sha256": "c919bc2c51149d29f44690351159d102ca9fc2c354a8dcb1e667bba8354976dc",
+      "source_role": "n22_i2_schema_and_controls_report"
+    }
+  ],
+  "source_inventory_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+  "source_schema_output_digest": "a6d4e478b1e29f31007bb965c97a838764e196f18ca7ac8e1c78a7ccfc03680f",
+  "status": "passed"
+}
