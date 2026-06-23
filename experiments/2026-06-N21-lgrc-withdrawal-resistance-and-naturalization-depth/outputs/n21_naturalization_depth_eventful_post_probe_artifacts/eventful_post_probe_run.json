@@ -1,0 +1,994 @@
+{
+  "active_original_probe_packet_records_in_eventful_window": 0,
+  "active_original_probe_schedule_disabled": true,
+  "active_probe_queue_empty": true,
+  "artifact_id": "n21_i5b_eventful_post_probe_lgrc9v3_run",
+  "derived_report_only": false,
+  "event_counts_by_kind": {
+    "lgrc9v3_causal_spark_candidate": 1,
+    "lgrc9v3_local_update": 1,
+    "lgrc9v3_packet_arrival": 1,
+    "lgrc9v3_packet_arrival_eligibility": 1,
+    "lgrc9v3_packet_departure": 1
+  },
+  "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe_events.jsonl",
+  "eventful_post_probe_event_count": 5,
+  "eventful_replay_windows": 3,
+  "final_geometry": {
+    "active_degree": 9,
+    "basin_signature": {
+      "active_degree": 9,
+      "basin_members": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "basin_signature_digest": "0091b941e699c3711064954cd6b7f907c2f67b964acf83b018906581ee41df99",
+      "center_basin_id": "root",
+      "center_basin_mass": 10.0,
+      "center_coherence": 10.03,
+      "center_depth": 0,
+      "center_node_id": 0,
+      "edge_count": 9,
+      "incident_edge_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "node_count": 10,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "budget_error": -1.4210854715202004e-14,
+    "center_basin_mass": 10.0,
+    "center_node_coherence": 10.03,
+    "center_node_id": 0,
+    "checkpoint_index": 4,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9,
+    "event_time_key": 3.0,
+    "geometry_digest": "cef5db3b1b9e068aec1c632f6ea15120b9e1081071c161a5b2cd89069dfc61aa",
+    "in_flight_packet_total": 0.0,
+    "node_count": 10,
+    "original_probe_packet_record_count": 1,
+    "original_probe_present": true,
+    "packet_count": 2,
+    "packet_event_records": [
+      {
+        "amount": 0.04,
+        "budget_after": 100.25000000000001,
+        "budget_before": 100.25,
+        "budget_error": 1.4210854715202004e-14,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-22e9bb07fa60933e",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-8be6607e9d4c383b",
+        "scheduler_event_index": 1,
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.04,
+        "budget_after": 100.25,
+        "budget_before": 100.25000000000001,
+        "budget_error": -1.4210854715202004e-14,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-3c0a84d66ae4a2ae",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 2.0,
+        "packet_id": "lgrc9v3-packet-8be6607e9d4c383b",
+        "scheduler_event_index": 2,
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.01,
+        "budget_after": 100.25000000000001,
+        "budget_before": 100.25,
+        "budget_error": 1.4210854715202004e-14,
+        "edge_id": 1,
+        "event_id": "lgrc9v3-packet-event-961f7c5830483390",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 2.0,
+        "packet_id": "lgrc9v3-packet-5d54bda336d025bc",
+        "scheduler_event_index": 2,
+        "source_node_id": 0,
+        "target_node_id": 2
+      },
+      {
+        "amount": 0.01,
+        "budget_after": 100.25,
+        "budget_before": 100.25000000000001,
+        "budget_error": -1.4210854715202004e-14,
+        "edge_id": 1,
+        "event_id": "lgrc9v3-packet-event-bc5112628b1a4fef",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 3.0,
+        "packet_id": "lgrc9v3-packet-5d54bda336d025bc",
+        "scheduler_event_index": 3,
+        "source_node_id": 0,
+        "target_node_id": 2
+      }
+    ],
+    "packet_records": [
+      {
+        "amount": 0.01,
+        "arrival_event_id": "lgrc9v3-packet-event-bc5112628b1a4fef",
+        "arrival_event_time_key": 3.0,
+        "arrival_scheduler_event_index": 3,
+        "departure_event_id": "lgrc9v3-packet-event-961f7c5830483390",
+        "departure_event_time_key": 2.0,
+        "departure_scheduler_event_index": 2,
+        "edge_id": 1,
+        "packet_id": "lgrc9v3-packet-5d54bda336d025bc",
+        "packet_state": "arrived",
+        "source_lineage_id": null,
+        "source_node_id": 0,
+        "target_lineage_id": null,
+        "target_node_id": 2
+      },
+      {
+        "amount": 0.04,
+        "arrival_event_id": "lgrc9v3-packet-event-3c0a84d66ae4a2ae",
+        "arrival_event_time_key": 2.0,
+        "arrival_scheduler_event_index": 2,
+        "departure_event_id": "lgrc9v3-packet-event-22e9bb07fa60933e",
+        "departure_event_time_key": 1.0,
+        "departure_scheduler_event_index": 1,
+        "edge_id": 0,
+        "packet_id": "lgrc9v3-packet-8be6607e9d4c383b",
+        "packet_state": "arrived",
+        "source_lineage_id": null,
+        "source_node_id": 1,
+        "target_lineage_id": null,
+        "target_node_id": 0
+      }
+    ],
+    "post_probe_support_score": 10.0,
+    "probe_edge_id": 0,
+    "probe_source_node_id": 1,
+    "producer_probe_schedule_disabled": true,
+    "scheduler_event_index": 3,
+    "source_node_coherence": 12.96,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "final_observables": {
+    "arrival_eligibility_count": 2.0,
+    "boundary_birth_trial_queue_length": 0.0,
+    "causal_spark_diagnostic_count": 2.0,
+    "checkpoint_index": 4.0,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9.0,
+    "event_queue_length": 0.0,
+    "event_time_key": 3.0,
+    "in_flight_packet_total": 0.0,
+    "local_update_count": 2.0,
+    "node_count": 10.0,
+    "packet_count": 2.0,
+    "scheduler_event_index": 3.0,
+    "topology_event_count": 0.0
+  },
+  "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe_final_snapshot.json",
+  "graph_checkpoint_paths": [
+    "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe-checkpoint-00000000.json",
+    "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe-checkpoint-00000001.json"
+  ],
+  "historical_probe_provenance_present": true,
+  "in_flight_probe_budget": 0.0,
+  "initial_geometry": {
+    "active_degree": 9,
+    "basin_signature": {
+      "active_degree": 9,
+      "basin_members": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "basin_signature_digest": "8e4cdd407af02ae43131e334c8acc2abc45ec66627312d4e6ccd3254be1d2b32",
+      "center_basin_id": "root",
+      "center_basin_mass": 10.0,
+      "center_coherence": 10.04,
+      "center_depth": 0,
+      "center_node_id": 0,
+      "edge_count": 9,
+      "incident_edge_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "node_count": 10,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "budget_error": -1.4210854715202004e-14,
+    "center_basin_mass": 10.0,
+    "center_node_coherence": 10.04,
+    "center_node_id": 0,
+    "checkpoint_index": 2,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9,
+    "event_time_key": 2.0,
+    "geometry_digest": "df2b9c25191a4c61f7a4b045785657ba6bc916eecebc39cfd5d1ccac0c0da04f",
+    "in_flight_packet_total": 0.0,
+    "node_count": 10,
+    "original_probe_packet_record_count": 1,
+    "original_probe_present": true,
+    "packet_count": 1,
+    "packet_event_records": [
+      {
+        "amount": 0.04,
+        "budget_after": 100.25000000000001,
+        "budget_before": 100.25,
+        "budget_error": 1.4210854715202004e-14,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-22e9bb07fa60933e",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 1.0,
+        "packet_id": "lgrc9v3-packet-8be6607e9d4c383b",
+        "scheduler_event_index": 1,
+        "source_node_id": 1,
+        "target_node_id": 0
+      },
+      {
+        "amount": 0.04,
+        "budget_after": 100.25,
+        "budget_before": 100.25000000000001,
+        "budget_error": -1.4210854715202004e-14,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-3c0a84d66ae4a2ae",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 2.0,
+        "packet_id": "lgrc9v3-packet-8be6607e9d4c383b",
+        "scheduler_event_index": 2,
+        "source_node_id": 1,
+        "target_node_id": 0
+      }
+    ],
+    "packet_records": [
+      {
+        "amount": 0.04,
+        "arrival_event_id": "lgrc9v3-packet-event-3c0a84d66ae4a2ae",
+        "arrival_event_time_key": 2.0,
+        "arrival_scheduler_event_index": 2,
+        "departure_event_id": "lgrc9v3-packet-event-22e9bb07fa60933e",
+        "departure_event_time_key": 1.0,
+        "departure_scheduler_event_index": 1,
+        "edge_id": 0,
+        "packet_id": "lgrc9v3-packet-8be6607e9d4c383b",
+        "packet_state": "arrived",
+        "source_lineage_id": null,
+        "source_node_id": 1,
+        "target_lineage_id": null,
+        "target_node_id": 0
+      }
+    ],
+    "post_probe_support_score": 10.0,
+    "probe_edge_id": 0,
+    "probe_source_node_id": 1,
+    "producer_probe_schedule_disabled": true,
+    "scheduler_event_index": 2,
+    "source_node_coherence": 12.96,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe_initial_snapshot.json",
+  "model_family": "LGRC9V3",
+  "post_probe_challenge_packet": {
+    "amount": 0.01,
+    "departure_event_time_key": 2.0,
+    "edge_id": 1,
+    "packet_index": 0,
+    "scheduler_event_index": 2,
+    "source_node_id": 0,
+    "target_node_id": 2
+  },
+  "post_probe_state_derivation_source": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/probe_present_baseline_final_snapshot.json",
+  "probe_support_not_used_as_evidence": true,
+  "producer_policy": "eventful_post_probe_no_original_probe_schedule",
+  "producer_probe_schedule_disabled": true,
+  "run_role": "eventful_post_probe",
+  "runtime_config_digest": "db88d29ba976df09047542b803d82ee0e6d6a354ef6298b819c3e8093c87b447",
+  "source_current_inputs_emitted": true,
+  "step_summaries": [
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "causal_flux_events_processed": 1,
+        "causal_pulse_substrate_surface_rows": 0,
+        "causal_spark_diagnostic_events": 0,
+        "causal_spark_evaluation_index": 1,
+        "causal_topology_integration_events": 0,
+        "checkpoint_index": 3,
+        "delayed_evaluation_applied": false,
+        "event_time_key": 2.0,
+        "local_update_eligibility_events": 0,
+        "local_update_events": 0,
+        "packetized_flux_applied": true,
+        "processed_event_id": "lgrc9v3-packet-event-961f7c5830483390",
+        "processed_event_kind": "lgrc9v3_packet_departure",
+        "queue_length_after": 1,
+        "queue_length_before": 1,
+        "scheduler_event_index": 2,
+        "step_order": [
+          "order_event_queue",
+          "process_packet_event",
+          "emit_causal_pulse_substrate_surface_row",
+          "route_arrival_eligibility",
+          "apply_packetized_local_update",
+          "evaluate_causal_spark_diagnostics",
+          "checkpoint_runtime_state"
+        ],
+        "topology_events_routed": 0
+      },
+      "event_kinds": [
+        "lgrc9v3_packet_departure"
+      ],
+      "observables": {
+        "arrival_eligibility_count": 1.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 1.0,
+        "checkpoint_index": 3.0,
+        "conserved_budget_total": 100.25000000000001,
+        "edge_count": 9.0,
+        "event_queue_length": 1.0,
+        "event_time_key": 2.0,
+        "in_flight_packet_total": 0.01,
+        "local_update_count": 1.0,
+        "node_count": 10.0,
+        "packet_count": 2.0,
+        "scheduler_event_index": 2.0,
+        "topology_event_count": 0.0
+      },
+      "run_role": "eventful_post_probe",
+      "step_index": 2,
+      "time": 2.0,
+      "window_index": 1
+    },
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "causal_flux_events_processed": 1,
+        "causal_pulse_substrate_surface_rows": 0,
+        "causal_spark_diagnostic_events": 1,
+        "causal_spark_evaluation_index": 2,
+        "causal_topology_integration_events": 0,
+        "checkpoint_index": 4,
+        "delayed_evaluation_applied": false,
+        "event_time_key": 3.0,
+        "local_update_eligibility_events": 1,
+        "local_update_events": 1,
+        "packetized_flux_applied": true,
+        "processed_event_id": "lgrc9v3-packet-event-bc5112628b1a4fef",
+        "processed_event_kind": "lgrc9v3_packet_arrival",
+        "queue_length_after": 0,
+        "queue_length_before": 1,
+        "scheduler_event_index": 3,
+        "step_order": [
+          "order_event_queue",
+          "process_packet_event",
+          "emit_causal_pulse_substrate_surface_row",
+          "route_arrival_eligibility",
+          "apply_packetized_local_update",
+          "evaluate_causal_spark_diagnostics",
+          "checkpoint_runtime_state"
+        ],
+        "topology_events_routed": 0
+      },
+      "event_kinds": [
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update",
+        "lgrc9v3_causal_spark_candidate"
+      ],
+      "observables": {
+        "arrival_eligibility_count": 2.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 2.0,
+        "checkpoint_index": 4.0,
+        "conserved_budget_total": 100.25,
+        "edge_count": 9.0,
+        "event_queue_length": 0.0,
+        "event_time_key": 3.0,
+        "in_flight_packet_total": 0.0,
+        "local_update_count": 2.0,
+        "node_count": 10.0,
+        "packet_count": 2.0,
+        "scheduler_event_index": 3.0,
+        "topology_event_count": 0.0
+      },
+      "run_role": "eventful_post_probe",
+      "step_index": 3,
+      "time": 3.0,
+      "window_index": 2
+    },
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "checkpoint_index": 4,
+        "event_time_key": 3.0,
+        "local_update_eligibility_events": 0,
+        "queue_length_after": 0,
+        "queue_length_before": 0,
+        "scheduler_event_index": 3,
+        "stop_condition": "event_queue_empty",
+        "topology_events_routed": 0
+      },
+      "event_kinds": [],
+      "observables": {
+        "arrival_eligibility_count": 2.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 2.0,
+        "checkpoint_index": 4.0,
+        "conserved_budget_total": 100.25,
+        "edge_count": 9.0,
+        "event_queue_length": 0.0,
+        "event_time_key": 3.0,
+        "in_flight_packet_total": 0.0,
+        "local_update_count": 2.0,
+        "node_count": 10.0,
+        "packet_count": 2.0,
+        "scheduler_event_index": 3.0,
+        "topology_event_count": 0.0
+      },
+      "run_role": "eventful_post_probe",
+      "step_index": 3,
+      "time": 3.0,
+      "window_index": 3
+    }
+  ]
+}

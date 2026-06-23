@@ -1,0 +1,176 @@
+{
+  "baseline_total": 0.1,
+  "claim_boundary": {
+    "agency_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "config_id": "n21_i4b_withdrawal_transfer_shape_runtime_config",
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "model_family": "LGRC9V3",
+  "runtime_config_builder": "make_config",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "thresholds": {
+    "boundary_active_degree_floor": 9,
+    "center_coherence_floor": 10.05,
+    "declared_before_use": true,
+    "max_budget_error": 1e-09,
+    "support_packet_amount_floor": 0.06
+  },
+  "variants": [
+    {
+      "baseline_packets": [
+        {
+          "amount": 0.1,
+          "departure_event_time_key": 1.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ],
+      "transfer_role": "i4_reference_reproduction",
+      "variant_id": "reference_single_route",
+      "withdrawn_packets": [
+        {
+          "amount": 0.07,
+          "departure_event_time_key": 1.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ]
+    },
+    {
+      "baseline_packets": [
+        {
+          "amount": 0.1,
+          "departure_event_time_key": 1.0,
+          "edge_id": 8,
+          "scheduler_event_index": 1,
+          "source_node_id": 9,
+          "target_node_id": 0
+        }
+      ],
+      "transfer_role": "route_transfer_candidate",
+      "variant_id": "alternate_single_route",
+      "withdrawn_packets": [
+        {
+          "amount": 0.07,
+          "departure_event_time_key": 1.0,
+          "edge_id": 8,
+          "scheduler_event_index": 1,
+          "source_node_id": 9,
+          "target_node_id": 0
+        }
+      ]
+    },
+    {
+      "baseline_packets": [
+        {
+          "amount": 0.1,
+          "departure_event_time_key": 2.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ],
+      "transfer_role": "schedule_delay_candidate",
+      "variant_id": "delayed_single_route",
+      "withdrawn_packets": [
+        {
+          "amount": 0.07,
+          "departure_event_time_key": 2.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ]
+    },
+    {
+      "baseline_packets": [
+        {
+          "amount": 0.05,
+          "departure_event_time_key": 1.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        {
+          "amount": 0.05,
+          "departure_event_time_key": 1.5,
+          "edge_id": 0,
+          "scheduler_event_index": 2,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ],
+      "transfer_role": "schedule_split_candidate",
+      "variant_id": "split_same_route",
+      "withdrawn_packets": [
+        {
+          "amount": 0.035,
+          "departure_event_time_key": 1.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        {
+          "amount": 0.035,
+          "departure_event_time_key": 1.5,
+          "edge_id": 0,
+          "scheduler_event_index": 2,
+          "source_node_id": 1,
+          "target_node_id": 0
+        }
+      ]
+    },
+    {
+      "baseline_packets": [
+        {
+          "amount": 0.05,
+          "departure_event_time_key": 1.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        {
+          "amount": 0.05,
+          "departure_event_time_key": 1.5,
+          "edge_id": 8,
+          "scheduler_event_index": 2,
+          "source_node_id": 9,
+          "target_node_id": 0
+        }
+      ],
+      "transfer_role": "route_and_schedule_split_candidate",
+      "variant_id": "mixed_route_split",
+      "withdrawn_packets": [
+        {
+          "amount": 0.035,
+          "departure_event_time_key": 1.0,
+          "edge_id": 0,
+          "scheduler_event_index": 1,
+          "source_node_id": 1,
+          "target_node_id": 0
+        },
+        {
+          "amount": 0.035,
+          "departure_event_time_key": 1.5,
+          "edge_id": 8,
+          "scheduler_event_index": 2,
+          "source_node_id": 9,
+          "target_node_id": 0
+        }
+      ]
+    }
+  ],
+  "withdrawn_total": 0.07
+}

@@ -1,0 +1,65 @@
+{
+  "artifact_id": "n21_i4_withdrawal_resistance_trace",
+  "baseline_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe_artifacts/baseline_events.jsonl",
+  "baseline_packet_amount": 0.1,
+  "baseline_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe_artifacts/baseline_run.json",
+  "boundary_integrity_trace": {
+    "active_degree_floor": 9,
+    "status": "preserved",
+    "topology_signature_same": true,
+    "withdrawn_active_degree": 9
+  },
+  "coherence_floor_trace": {
+    "center_coherence_floor": 10.05,
+    "coherence_margin": 0.019999999999999574,
+    "status": "preserved",
+    "withdrawn_center_coherence": 10.07
+  },
+  "flux_or_leakage_trace": {
+    "leakage_amount": 0.0,
+    "max_budget_error": 1e-09,
+    "status": "preserved",
+    "target_arrival_amount": 0.07,
+    "withdrawn_budget_error": 0.0,
+    "withdrawn_in_flight_packet_total": 0.0
+  },
+  "runtime_config_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe_artifacts/runtime_config.json",
+  "same_basin_comparison": {
+    "active_degree_same": true,
+    "basin_member_count_same": true,
+    "center_basin_id_same": true,
+    "center_node_id_same": true,
+    "topology_signature_same": true
+  },
+  "same_basin_continuation_status": "preserved",
+  "support_floor_trace": {
+    "status": "preserved",
+    "support_margin": 0.010000000000000009,
+    "support_packet_amount_floor": 0.06,
+    "withdrawn_packet_amount": 0.07
+  },
+  "support_retention_ratio": 0.7000000000000001,
+  "trace_digest": "50f14d7b3df6672e5e9ca112a8cb720362466e2bfe16736f5d829fa957b458b4",
+  "withdrawal_amount": 0.03,
+  "withdrawal_schedule": {
+    "baseline_packet_amount": 0.1,
+    "edge_id": 0,
+    "floor_crossing_policy": "crossing_blocks_WR3_and_stronger",
+    "kind": "packetized_causal_flux_support_surface",
+    "recovery_window": [
+      1.0,
+      2.0
+    ],
+    "source_node_id": 1,
+    "target_node_id": 0,
+    "withdrawal_amount": 0.03,
+    "withdrawal_end": 2.0,
+    "withdrawal_mode": "weaken",
+    "withdrawal_start": 1.0,
+    "withdrawal_target": "support",
+    "withdrawn_packet_amount": 0.07
+  },
+  "withdrawn_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe_artifacts/withdrawn_events.jsonl",
+  "withdrawn_packet_amount": 0.07,
+  "withdrawn_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe_artifacts/withdrawn_run.json"
+}

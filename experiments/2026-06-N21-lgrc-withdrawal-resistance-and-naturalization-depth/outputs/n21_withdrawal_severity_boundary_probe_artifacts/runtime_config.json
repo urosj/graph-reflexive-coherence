@@ -1,0 +1,50 @@
+{
+  "claim_boundary": {
+    "agency_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "config_id": "n21_i4a_withdrawal_severity_boundary_runtime_config",
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "model_family": "LGRC9V3",
+  "runtime_config_builder": "make_config",
+  "severity_amounts": [
+    0.09,
+    0.07,
+    0.06,
+    0.05,
+    0.03,
+    0.0
+  ],
+  "spark_lane": "grc9v3_column_h_assisted",
+  "support_surface": {
+    "baseline_packet_amount": 0.1,
+    "edge_id": 0,
+    "floor_crossing_policy": "crossing_blocks_WR3_and_stronger",
+    "kind": "packetized_causal_flux_support_surface",
+    "recovery_window": [
+      1.0,
+      2.0
+    ],
+    "source_node_id": 1,
+    "target_node_id": 0,
+    "withdrawal_amounts": [
+      0.01,
+      0.03,
+      0.04,
+      0.05,
+      0.07,
+      0.1
+    ],
+    "withdrawal_mode": "severity_sweep",
+    "withdrawal_target": "support"
+  },
+  "thresholds": {
+    "boundary_active_degree_floor": 9,
+    "center_coherence_floor": 10.05,
+    "declared_before_use": true,
+    "max_budget_error": 1e-09,
+    "support_packet_amount_floor": 0.06
+  }
+}

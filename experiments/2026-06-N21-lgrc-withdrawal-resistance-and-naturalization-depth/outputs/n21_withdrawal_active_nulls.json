@@ -1,0 +1,3466 @@
+{
+  "acceptance_state": "accepted_active_nulls_fail_closed_no_primitive_evidence",
+  "active_null_policy": {
+    "active_null_rows_assign_wr_or_nd_rungs": false,
+    "derived_report_only_rows_can_only_reject": true,
+    "failed_closed_controls_required_before_positive_probes": true,
+    "positive_primitive_evidence_allowed": false,
+    "post_positive_replay_control_matrix_still_required_in_iteration_6": true,
+    "pre_positive_active_nulls_only": true
+  },
+  "active_null_rows": [
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "no declared support weakening or removal",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "60d973cd29150480fa4fddabb52f72e87dc779a35eecea7fdc1b30ba819cf174",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "no_withdrawal_no_removal",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "withdrawal_schedule_removed_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "no declared support weakening or removal",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "withdrawal_schedule_removed_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR1 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "baseline-like basin label without source-current withdrawal",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_01_withdrawal_resistance_no_declared_withdrawal",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_no_declared_withdrawal",
+      "runtime_config_digest": "48bbb072529fd0356175f4b65ad66c0abeb388e1a152ac2269edf5964c4a54ea",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "continuation label without source-current basin trace",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "cb66b29f17ed13bb6fc5f7db8c71f7451779a759143db1a9f3d91c5a142886ff",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "label_only_continuation",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "label_only_success_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "continuation label without source-current basin trace",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_success_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR2 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "same-basin text label remains while required fields are absent",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_02_withdrawal_resistance_label_only_continuation",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_label_only_continuation",
+      "runtime_config_digest": "08db9dbaa4c9d0a91f7ae21c29f30a5ca6f0f78b3d2c6f871e25fab96ee5020a",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "proxy improves while same-basin continuation gates fail",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "dec5a779f61aed3ec559fb91c98fcebeb6e5ec86f34146eaf122d1c0fde1fc43",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "proxy_only_success",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "proxy_only_success_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "proxy improves while same-basin continuation gates fail",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "proxy_only_success_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR3 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "proxy score improves but support/coherence/boundary evidence is absent",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_03_withdrawal_resistance_proxy_only_improvement",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_proxy_only_improvement",
+      "runtime_config_digest": "bc5baa47f3c830b805ad28bfef9e2984645e249be3223c85a1b9a8a329898b71",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "crossed_floor",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "undeclared producer support preserves apparent margin",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "6c506ca9301205dcda65a173d6e1829d2782712f2cb0175cf32137e1b31cc5b1",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "hidden_producer_support",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "hidden_producer_support_control",
+        "hidden_support_margin_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "undeclared producer support preserves apparent margin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_support_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR5 and stronger"
+        },
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "undeclared producer support preserves apparent margin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_support_margin_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR5 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "preserved",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "support appears preserved only because hidden support remains",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_04_withdrawal_resistance_hidden_producer_support",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_hidden_producer_support",
+      "runtime_config_digest": "3eb90144c9280d7396d279f9f3bffc321cbc6ad9c8d159d650aeca30f370a190",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "preserved",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "same-basin trace is assembled after outcome inspection",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "bd738d233290ce8bcb3a9ee4cef485276a0ad03cad995cc380a9dccc44d9bb0d",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "post_hoc_trace_construction",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "post_hoc_trace_construction_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "same-basin trace is assembled after outcome inspection",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR2 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "trace exists only as report-side reconstruction",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_05_withdrawal_resistance_post_hoc_trace_construction",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_post_hoc_trace_construction",
+      "runtime_config_digest": "92038e9213867e4bf3472f912468a6466bf9e1b2635fade2ab3e3c17a3762129",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "declared support floor is crossed",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "f5fa4cfd8ca7a580d631bcfd8e987b16086cf92db3bcca38ac3d05516dcdf8e8",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "floor_crossing",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "support_floor_crossing_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "declared support floor is crossed",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "support_floor_crossing_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks WR3 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "preserved",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "basin label remains while support falls below declared floor",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_06_withdrawal_resistance_support_floor_crossing",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_support_floor_crossing",
+      "runtime_config_digest": "bada5762a73da490561ae910bf5d3d423852c884fb60daa776db72a8f6f35044",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "crossed_floor",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "blocked_condition": "producer-mediated or semantic label is relabeled as native support",
+        "budget_schedule": {
+          "budget_schedule_digest": "80877571e5c5a2e7c27fc7581071dbe4e19ab34c2d77d8becae910214fc90a89",
+          "budget_schedule_family": "n21_i3_withdrawal_resistance_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "41d5b5e4f27e18a4b63d5e5abaff059419adce6031a971fc7c9a00642b34f11d",
+          "runtime_envelope_id": "n21_i3_withdrawal_resistance_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "194965c57935c1d1ca689d2b7df314b9059bcf017ba370877d5f6eb20d0fac38",
+          "seed_pairing_rule_id": "n21_i3_withdrawal_resistance_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "456833df37b91c4a40361f0060178d430df95c0aedb3e66635970253159463df",
+          "topology_config_family": "n21_i3_withdrawal_resistance_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "ef22c260671a9df3e8e6f75094ea9ed0a3eb7e09eb14b65f306fbf454c2e71ba",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "blocker_class": "producer_mediated_native_support_relabel",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "producer-mediated or semantic label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        },
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "producer-mediated or semantic label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        },
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "producer-mediated or semantic label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "producer-mediated schedule/threshold label is used as support evidence",
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_07_withdrawal_resistance_unsafe_native_support_relabel",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_withdrawal_resistance_unsafe_native_support_relabel",
+      "runtime_config_digest": "e51261bbef2c88b94db15583534f144de401f70ac3abdfd430034ead90dcce12",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "withdrawal_resistance",
+        "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+        "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_withdrawal_resistance_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "259b9ff5d4554b0a5c76b584e389ca946b6e2313c3784b4c18eeca7ae394c77a",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+          "coherence_floor": "coherence remains above declared withdrawal floor",
+          "flux_or_leakage_bound": "leakage cannot explain apparent persistence under support reduction",
+          "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+          "support_floor": "support remains above declared withdrawal floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "original probe or scaffold remains present",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "6254690a73248219a2a3e87c3f4f5dbb2609537b97ab5293fad81b914c8d383b",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "no_probe_absence",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "probe_present_only_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "original probe or scaffold remains present",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "probe_present_only_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks ND1 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "post-probe claim is made while probe-present condition remains",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_08_naturalization_depth_probe_present_only",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_probe_present_only",
+      "runtime_config_digest": "e4f39044813bfd125b84fad5d95009928b36466ddc17c4e3f6d3ebd4a7726b62",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "post-probe continuation label without source-current basin trace",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "58ca49de62a02e9440c40331b50d621e9c16e490e32e9a399b38cd4e9f2bb2bb",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "label_only_continuation",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "label_only_success_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "post-probe continuation label without source-current basin trace",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_success_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks ND2 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "same-basin text label remains while post-probe fields are absent",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_09_naturalization_depth_label_only_continuation",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_label_only_continuation",
+      "runtime_config_digest": "a9e7b3a69780266d2d2619207106ac918d51049fe0ac3a2ceb84a7da5ea17ebd",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "proxy improves while post-probe same-basin gates fail",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "17700d69de9fdba693140862bc4f02c251d72dad7ac8e0b91d228e679730845d",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "proxy_only_success",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "crossed_floor",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "proxy_only_success_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "proxy improves while post-probe same-basin gates fail",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "proxy_only_success_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks ND2 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "depth score improves but post-probe basin signature is absent",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_10_naturalization_depth_proxy_only_improvement",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_proxy_only_improvement",
+      "runtime_config_digest": "179cc3c0399e7a6541fddc815e62a3deb7ddc828a6cad85e6dc6d9213ba8d412",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "undeclared producer support preserves apparent post-probe margin",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "3a12397b61043c055188266c80a9e57174c18cccc7ef66b047698511b3f390be",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "hidden_producer_support",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "hidden_producer_support_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "undeclared producer support preserves apparent post-probe margin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_support_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks ND4 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "preserved",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "post-probe support appears preserved by hidden producer surface",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_11_naturalization_depth_hidden_producer_support",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_hidden_producer_support",
+      "runtime_config_digest": "459779dea0c7cc80a479edc94f1e91a9b867380b6e2b58a87e0e1c0372c49361",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "preserved",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "post-probe trace is assembled after outcome inspection",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "1d9d1d67aede13079cec5ad538ce371d9bc1e5a3c1a40b49ddd07030dd1d411b",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "post_hoc_trace_construction",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "post_hoc_trace_construction_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "post-probe trace is assembled after outcome inspection",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_trace_construction_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks ND2 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "trace exists only as report-side reconstruction",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_12_naturalization_depth_post_hoc_trace_construction",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_post_hoc_trace_construction",
+      "runtime_config_digest": "a0982a75aa7298c5a411bad60a76c7bf08a18280f071c0fb86f75fa03d667f6a",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "probe residue remains in evaluated runtime input",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "10504e310b0a31e28c11fee3ad09ff4de7a7503da9dfbe7a9be559fde9788c68",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "probe_residue",
+      "boundary_integrity_result": "preserved",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "preserved",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "probe_residue_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "probe residue remains in evaluated runtime input",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "probe_residue_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks ND4 and stronger"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "preserved",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "post-probe trace persists only with probe residue present",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_13_naturalization_depth_probe_residue_only",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_probe_residue_only",
+      "runtime_config_digest": "6277c3463949b5b1300f36f7f09f497ff6c15061aa501a2808d0b3c299a59362",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "preserved",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    },
+    {
+      "active_null_comparability": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "blocked_condition": "support annotation or producer-mediated label is relabeled as native support",
+        "budget_schedule": {
+          "budget_schedule_digest": "8932a3dd6486845e00a00161defb565b6e68fee2a726354af3e57afade2f9b8f",
+          "budget_schedule_family": "n21_i3_naturalization_depth_null_budget_family",
+          "same_budget_schedule_digest_where_applicable": true,
+          "same_budget_schedule_family_where_applicable": true
+        },
+        "expected_result": "fail_closed",
+        "no_declared_withdrawal_or_no_probe_absence": true,
+        "runtime_envelope": {
+          "derived_report_only": true,
+          "runtime_envelope_digest": "57afd979465000ad21c79df4d38506d50488a2c55be4697ba648289379b3bd54",
+          "runtime_envelope_id": "n21_i3_naturalization_depth_null_envelope",
+          "same_runtime_envelope": true
+        },
+        "same_basin_signature_fields": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "seed_pairing_rule": {
+          "pairing_reason": "pre-positive null uses the same declared seed family as the future candidate row but removes the claimed withdrawal/probe absence condition",
+          "same_seed_or_declared_seed_pairing_rule": true,
+          "seed_pairing_rule_digest": "527c9889f436bac6f40b47ecc0403a945d61f92dd1dd712428f99f101b058cf8",
+          "seed_pairing_rule_id": "n21_i3_naturalization_depth_null_seed_pairing"
+        },
+        "topology_config": {
+          "same_topology_config_family": true,
+          "topology_config_digest": "e4bc629ec99ff086466c173891a4550670f44ddb052a450e83194ae0be536105",
+          "topology_config_family": "n21_i3_naturalization_depth_null_topology_family"
+        }
+      },
+      "actual_result": "failed_closed",
+      "artifact_digest": "10dec57e33a9049ef290de60c98a7f0b52bbe239ad4e934c24c898569498e468",
+      "artifact_digest_role": "active_null_row_digest_not_positive_run_artifact",
+      "baseline_artifact_path": "not_applicable_pre_positive_active_null",
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "blocker_class": "producer_mediated_native_support_relabel",
+      "boundary_integrity_result": "missing",
+      "claim_ceiling": "pre-positive active null and failure baseline only; no WR, ND, agency, native support, sentience, Phase 8, or ant-ecology implementation claim",
+      "coherence_floor_result": "missing",
+      "contract_consumed_without_redefinition": true,
+      "control_ids_covered": [
+        "support_source_annotation_relabel_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control"
+      ],
+      "control_result_statuses": [
+        "failed_closed"
+      ],
+      "control_results": [
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "support annotation or producer-mediated label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "support_source_annotation_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        },
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "support annotation or producer-mediated label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        },
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "support annotation or producer-mediated label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        },
+        {
+          "actual_result": "primitive_claim_allowed=false",
+          "blocked_condition": "support annotation or producer-mediated label is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_status": "failed_closed",
+          "expected_result": "primitive claim rejected",
+          "rung_effect": "blocks all primitive support and unsafe claims"
+        }
+      ],
+      "derived_report_only": true,
+      "event_log_or_trace_path": "not_applicable_pre_positive_active_null",
+      "expected_result": "fail_closed",
+      "flux_or_leakage_result": "missing",
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": null,
+      "observed_null_signal": "support annotation is used as post-probe source-current support",
+      "primitive_claim_allowed": false,
+      "primitive_id": "naturalization_depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "replay_result": {
+        "affected_rung": "replay_backed_and_stronger",
+        "reason_code": "pre_positive_active_null_no_replay_claim",
+        "replay_result_status": "not_applicable",
+        "why_outside_declared_scope": "I3 active nulls test fail-closed blocker behavior before positive replay-backed probes are admitted"
+      },
+      "replay_result_status": "not_applicable",
+      "row_decision": "rejected",
+      "row_id": "n21_i3_row_14_naturalization_depth_support_annotation_native_support_relabel",
+      "row_specific_thresholds_declared_before_use": true,
+      "run_artifact_id": "n21_i3_active_null_naturalization_depth_support_annotation_native_support_relabel",
+      "runtime_config_digest": "c4e7584c0296386172042f44a9ed432be01ca7dbb3f22a2ca6393cacbf077cd6",
+      "same_basin_continuation_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "snapshot_or_replay_artifact_path": "not_applicable_pre_positive_active_null",
+      "source_commit_or_source_digest": "not_applicable_pre_positive_active_null",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_current_input_status": "absent_by_active_null_design",
+      "source_current_inputs": [],
+      "support_floor_result": "missing",
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "threshold_record": {
+        "failure_policy": "active_null_cannot_retune_or_override_thresholds",
+        "primitive_id": "naturalization_depth",
+        "source_contract_row": "n20_i5_row_02_naturalization_depth",
+        "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+        "threshold_declared_before_use": true,
+        "threshold_id": "n21_i3_naturalization_depth_active_null_thresholds",
+        "threshold_owner": "frozen_i1_contract_reference",
+        "threshold_record_digest": "eaf449ca5ec587192f27f321aa234b485341884b09bc1933a2c6684d5c001387",
+        "threshold_value_or_rule": {
+          "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+          "coherence_floor": "post-probe coherence remains above declared residual floor",
+          "flux_or_leakage_bound": "residual persistence cannot be imported by hidden support flux",
+          "replay_requirement": "multi-window replay without original probe/scaffold",
+          "support_floor": "post-probe support remains above declared residual floor"
+        }
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawn_or_probe_absent_artifact_path": "not_applicable_pre_positive_active_null",
+      "wr_ladder_rung": null
+    }
+  ],
+  "active_null_summary": {
+    "active_nulls_ready_before_positive_probes": true,
+    "blocker_classes": [
+      "floor_crossing",
+      "hidden_producer_support",
+      "label_only_continuation",
+      "no_probe_absence",
+      "no_withdrawal_no_removal",
+      "post_hoc_trace_construction",
+      "probe_residue",
+      "producer_mediated_native_support_relabel",
+      "proxy_only_success"
+    ],
+    "covered_controls": [
+      "hidden_producer_support_control",
+      "hidden_support_margin_control",
+      "label_only_success_control",
+      "native_support_relabel_control",
+      "phase8_relabel_control",
+      "post_hoc_trace_construction_control",
+      "probe_present_only_control",
+      "probe_residue_control",
+      "proxy_only_success_control",
+      "semantic_relabel_control",
+      "support_floor_crossing_control",
+      "support_source_annotation_relabel_control",
+      "withdrawal_schedule_removed_control"
+    ],
+    "failed_closed_rows": 14,
+    "failed_open_rows": 0,
+    "nd_ladder_rung_assigned": false,
+    "positive_primitive_evidence_opened": false,
+    "primitive_claim_allowed_any": false,
+    "row_count": 14,
+    "wr_ladder_rung_assigned": false
+  },
+  "artifact_id": "n21_withdrawal_active_nulls",
+  "checks": [
+    {
+      "check_id": "source_i1_inventory_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_contract_inventory_no_primitive_evidence",
+        "failed_checks": [],
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_i2_schema_passed",
+      "detail": {
+        "acceptance_state": "accepted_withdrawal_naturalization_schema_frozen_no_primitive_evidence",
+        "failed_checks": [],
+        "ready_for_iteration_3_active_nulls": true,
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_null_row_count_complete",
+      "detail": {
+        "row_count": 14,
+        "summary": {
+          "active_nulls_ready_before_positive_probes": true,
+          "blocker_classes": [
+            "floor_crossing",
+            "hidden_producer_support",
+            "label_only_continuation",
+            "no_probe_absence",
+            "no_withdrawal_no_removal",
+            "post_hoc_trace_construction",
+            "probe_residue",
+            "producer_mediated_native_support_relabel",
+            "proxy_only_success"
+          ],
+          "covered_controls": [
+            "hidden_producer_support_control",
+            "hidden_support_margin_control",
+            "label_only_success_control",
+            "native_support_relabel_control",
+            "phase8_relabel_control",
+            "post_hoc_trace_construction_control",
+            "probe_present_only_control",
+            "probe_residue_control",
+            "proxy_only_success_control",
+            "semantic_relabel_control",
+            "support_floor_crossing_control",
+            "support_source_annotation_relabel_control",
+            "withdrawal_schedule_removed_control"
+          ],
+          "failed_closed_rows": 14,
+          "failed_open_rows": 0,
+          "nd_ladder_rung_assigned": false,
+          "positive_primitive_evidence_opened": false,
+          "primitive_claim_allowed_any": false,
+          "row_count": 14,
+          "wr_ladder_rung_assigned": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "candidate_evidence_fields_present_in_all_rows",
+      "detail": {
+        "required_field_count": 33
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_nulls_use_same_contract_and_digest",
+      "detail": [
+        {
+          "row_id": "n21_i3_row_01_withdrawal_resistance_no_declared_withdrawal",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_02_withdrawal_resistance_label_only_continuation",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_03_withdrawal_resistance_proxy_only_improvement",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_04_withdrawal_resistance_hidden_producer_support",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_05_withdrawal_resistance_post_hoc_trace_construction",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_06_withdrawal_resistance_support_floor_crossing",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_07_withdrawal_resistance_unsafe_native_support_relabel",
+          "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+          "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5"
+        },
+        {
+          "row_id": "n21_i3_row_08_naturalization_depth_probe_present_only",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        },
+        {
+          "row_id": "n21_i3_row_09_naturalization_depth_label_only_continuation",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        },
+        {
+          "row_id": "n21_i3_row_10_naturalization_depth_proxy_only_improvement",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        },
+        {
+          "row_id": "n21_i3_row_11_naturalization_depth_hidden_producer_support",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        },
+        {
+          "row_id": "n21_i3_row_12_naturalization_depth_post_hoc_trace_construction",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        },
+        {
+          "row_id": "n21_i3_row_13_naturalization_depth_probe_residue_only",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        },
+        {
+          "row_id": "n21_i3_row_14_naturalization_depth_support_annotation_native_support_relabel",
+          "source_contract_row": "n20_i5_row_02_naturalization_depth",
+          "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "active_null_comparability_complete",
+      "detail": "all rows preserve I2 active-null comparability requirements",
+      "passed": true
+    },
+    {
+      "check_id": "required_i3_blockers_fail_closed",
+      "detail": {
+        "present_blockers": [
+          "floor_crossing",
+          "hidden_producer_support",
+          "label_only_continuation",
+          "no_probe_absence",
+          "no_withdrawal_no_removal",
+          "post_hoc_trace_construction",
+          "probe_residue",
+          "producer_mediated_native_support_relabel",
+          "proxy_only_success"
+        ],
+        "required_blockers": [
+          "hidden_producer_support",
+          "label_only_continuation",
+          "no_probe_absence",
+          "no_withdrawal_no_removal",
+          "post_hoc_trace_construction",
+          "producer_mediated_native_support_relabel",
+          "proxy_only_success"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_required_controls_covered",
+      "detail": {
+        "covered_controls": [
+          "hidden_producer_support_control",
+          "hidden_support_margin_control",
+          "label_only_success_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "post_hoc_trace_construction_control",
+          "probe_present_only_control",
+          "probe_residue_control",
+          "proxy_only_success_control",
+          "semantic_relabel_control",
+          "support_floor_crossing_control",
+          "support_source_annotation_relabel_control",
+          "withdrawal_schedule_removed_control"
+        ],
+        "required_controls": [
+          "hidden_producer_support_control",
+          "hidden_support_margin_control",
+          "label_only_success_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "post_hoc_trace_construction_control",
+          "probe_present_only_control",
+          "probe_residue_control",
+          "proxy_only_success_control",
+          "semantic_relabel_control",
+          "support_floor_crossing_control",
+          "support_source_annotation_relabel_control",
+          "withdrawal_schedule_removed_control"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_controls_fail_closed_without_failed_open",
+      "detail": "active null controls reject the tested false-positive paths",
+      "passed": true
+    },
+    {
+      "check_id": "not_applicable_replay_has_scope_reason",
+      "detail": "pre-positive null rows do not claim replay-backed rungs",
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_primitive_evidence_or_ladder_rungs_opened",
+      "detail": {
+        "nd_ladder_rung_assigned": false,
+        "primitive_claim_allowed_any": false,
+        "wr_ladder_rung_assigned": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": "all active null rows keep unsafe claim flags false",
+      "passed": true
+    },
+    {
+      "check_id": "active_nulls_admit_iterations_4_and_5",
+      "detail": {
+        "ready_for_iteration_4_withdrawal_probe": true,
+        "ready_for_iteration_5_naturalization_probe": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_local_absolute_paths",
+      "detail": "payload uses repository-relative paths and source IDs only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/scripts/build_n21_withdrawal_active_nulls.py",
+  "experiment": "2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "iteration": 3,
+  "iteration3_boundary": {
+    "active_nulls_only": true,
+    "n21_closeout_ladder_rung_assigned": false,
+    "naturalization_depth_supported": false,
+    "nd_ladder_rung_assigned": false,
+    "positive_run_artifacts_consumed": false,
+    "primitive_evidence_opened": false,
+    "ready_for_iteration_4_withdrawal_probe": true,
+    "ready_for_iteration_5_naturalization_probe": true,
+    "withdrawal_resistance_supported": false,
+    "wr_ladder_rung_assigned": false
+  },
+  "output_digest": "154d10eb14dc54289154f28e9eb0107343f6e02939bc9905f35c30a09f041cf2",
+  "purpose": "Build pre-positive active nulls and failure baselines that reject label-only, proxy-only, hidden-support, post-hoc, no-withdrawal, no-probe-absence, probe-residue, and unsafe relabel paths.",
+  "schema_version": "n21_withdrawal_active_nulls_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_contract_inventory_no_primitive_evidence",
+      "output_digest": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_source_contract_inventory.json",
+      "sha256": "9c4b35fad34d5bc1ec3cf740cd475f30b21ff4ee51a82ee0d148e2111769eb6e",
+      "source_role": "n21_i1_source_contract_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_withdrawal_naturalization_schema_frozen_no_primitive_evidence",
+      "output_digest": "49ec439aa4d3f2bb895dc11d8c7613a0f18f75d4f78fa38aead2282ebbf78bb7",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_schema_and_thresholds.json",
+      "sha256": "3bfbfc843f5d627d1105b7b5e9c7b57fb7a17b566d785f4c9d13c61a807e8ff5",
+      "source_role": "n21_i2_schema_freeze",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/reports/n21_withdrawal_schema_and_thresholds.md",
+      "sha256": "e8c5befb1734e383f6a4e22eb39cf272b7fbb3e8b124f78570c67e97924b9d31",
+      "source_role": "n21_i2_schema_freeze_report"
+    }
+  ],
+  "source_inventory_output_digest": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+  "source_schema_output_digest": "49ec439aa4d3f2bb895dc11d8c7613a0f18f75d4f78fa38aead2282ebbf78bb7",
+  "status": "passed"
+}

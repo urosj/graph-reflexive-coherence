@@ -1,0 +1,937 @@
+{
+  "artifact_id": "n21_i5_probe_absent_duplicate_replay_lgrc9v3_naturalization_run",
+  "derived_report_only": false,
+  "event_counts_by_kind": {},
+  "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_duplicate_replay_events.jsonl",
+  "final_geometry": {
+    "active_degree": 9,
+    "basin_signature": {
+      "active_degree": 9,
+      "basin_members": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "basin_signature_digest": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+      "center_basin_id": "root",
+      "center_basin_mass": 10.0,
+      "center_coherence": 10.0,
+      "center_depth": 0,
+      "center_node_id": 0,
+      "edge_count": 9,
+      "incident_edge_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "node_count": 10,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "budget_error": 0.0,
+    "center_basin_mass": 10.0,
+    "center_node_coherence": 10.0,
+    "center_node_id": 0,
+    "checkpoint_index": 0,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9,
+    "event_time_key": 0.0,
+    "geometry_digest": "ac27c6bfae255bf87440b1329637d79e0b698279cc192e37601725d2b838e868",
+    "in_flight_packet_total": 0.0,
+    "node_count": 10,
+    "original_probe_packet_record_count": 0,
+    "original_probe_present": false,
+    "packet_count": 0,
+    "packet_event_records": [],
+    "packet_records": [],
+    "post_probe_support_score": 10.0,
+    "probe_edge_id": 0,
+    "probe_source_node_id": 1,
+    "producer_probe_schedule_disabled": true,
+    "scheduler_event_index": 0,
+    "source_node_coherence": 13.0,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "final_observables": {
+    "arrival_eligibility_count": 0.0,
+    "boundary_birth_trial_queue_length": 0.0,
+    "causal_spark_diagnostic_count": 0.0,
+    "checkpoint_index": 0.0,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9.0,
+    "event_queue_length": 0.0,
+    "event_time_key": 0.0,
+    "in_flight_packet_total": 0.0,
+    "local_update_count": 0.0,
+    "node_count": 10.0,
+    "packet_count": 0.0,
+    "scheduler_event_index": 0.0,
+    "topology_event_count": 0.0
+  },
+  "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_duplicate_replay_final_snapshot.json",
+  "graph_checkpoint_paths": [
+    "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_duplicate_replay-checkpoint-00000000.json",
+    "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_duplicate_replay-checkpoint-00000001.json"
+  ],
+  "initial_geometry": {
+    "active_degree": 9,
+    "basin_signature": {
+      "active_degree": 9,
+      "basin_members": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "basin_signature_digest": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+      "center_basin_id": "root",
+      "center_basin_mass": 10.0,
+      "center_coherence": 10.0,
+      "center_depth": 0,
+      "center_node_id": 0,
+      "edge_count": 9,
+      "incident_edge_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "node_count": 10,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "budget_error": 0.0,
+    "center_basin_mass": 10.0,
+    "center_node_coherence": 10.0,
+    "center_node_id": 0,
+    "checkpoint_index": 0,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9,
+    "event_time_key": 0.0,
+    "geometry_digest": "ac27c6bfae255bf87440b1329637d79e0b698279cc192e37601725d2b838e868",
+    "in_flight_packet_total": 0.0,
+    "node_count": 10,
+    "original_probe_packet_record_count": 0,
+    "original_probe_present": false,
+    "packet_count": 0,
+    "packet_event_records": [],
+    "packet_records": [],
+    "post_probe_support_score": 10.0,
+    "probe_edge_id": 0,
+    "probe_source_node_id": 1,
+    "producer_probe_schedule_disabled": true,
+    "scheduler_event_index": 0,
+    "source_node_coherence": 13.0,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_duplicate_replay_initial_snapshot.json",
+  "model_family": "LGRC9V3",
+  "original_probe_present": false,
+  "post_probe_replay_windows": 3,
+  "probe_absent_runtime_input": true,
+  "probe_residue_digest_absent": true,
+  "producer_policy": "probe_present_baseline_or_probe_absent_replay",
+  "producer_probe_schedule_disabled": true,
+  "run_role": "probe_absent_duplicate_replay",
+  "runtime_config_digest": "b4df3ed60904865fdb5035ed4793a8d6e2a0ef092c705e7d47906f8929bb9c87",
+  "source_current_inputs_emitted": true,
+  "source_current_trace": {
+    "center_node_coherence_after": 10.0,
+    "fixed_topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "original_probe_packet_records_present": false,
+    "packet_budget_error": 0.0,
+    "post_probe_support_score_after": 10.0,
+    "probe_absent_runtime_input": true,
+    "producer_probe_schedule_disabled": true
+  },
+  "step_summaries": [
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "checkpoint_index": 0,
+        "event_time_key": 0.0,
+        "local_update_eligibility_events": 0,
+        "queue_length_after": 0,
+        "queue_length_before": 0,
+        "scheduler_event_index": 0,
+        "stop_condition": "event_queue_empty",
+        "topology_events_routed": 0
+      },
+      "event_kinds": [],
+      "observables": {
+        "arrival_eligibility_count": 0.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 0.0,
+        "checkpoint_index": 0.0,
+        "conserved_budget_total": 100.25,
+        "edge_count": 9.0,
+        "event_queue_length": 0.0,
+        "event_time_key": 0.0,
+        "in_flight_packet_total": 0.0,
+        "local_update_count": 0.0,
+        "node_count": 10.0,
+        "packet_count": 0.0,
+        "scheduler_event_index": 0.0,
+        "topology_event_count": 0.0
+      },
+      "run_role": "probe_absent_duplicate_replay",
+      "step_index": 0,
+      "time": 0.0,
+      "window_index": 1
+    },
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "checkpoint_index": 0,
+        "event_time_key": 0.0,
+        "local_update_eligibility_events": 0,
+        "queue_length_after": 0,
+        "queue_length_before": 0,
+        "scheduler_event_index": 0,
+        "stop_condition": "event_queue_empty",
+        "topology_events_routed": 0
+      },
+      "event_kinds": [],
+      "observables": {
+        "arrival_eligibility_count": 0.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 0.0,
+        "checkpoint_index": 0.0,
+        "conserved_budget_total": 100.25,
+        "edge_count": 9.0,
+        "event_queue_length": 0.0,
+        "event_time_key": 0.0,
+        "in_flight_packet_total": 0.0,
+        "local_update_count": 0.0,
+        "node_count": 10.0,
+        "packet_count": 0.0,
+        "scheduler_event_index": 0.0,
+        "topology_event_count": 0.0
+      },
+      "run_role": "probe_absent_duplicate_replay",
+      "step_index": 0,
+      "time": 0.0,
+      "window_index": 2
+    },
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "checkpoint_index": 0,
+        "event_time_key": 0.0,
+        "local_update_eligibility_events": 0,
+        "queue_length_after": 0,
+        "queue_length_before": 0,
+        "scheduler_event_index": 0,
+        "stop_condition": "event_queue_empty",
+        "topology_events_routed": 0
+      },
+      "event_kinds": [],
+      "observables": {
+        "arrival_eligibility_count": 0.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 0.0,
+        "checkpoint_index": 0.0,
+        "conserved_budget_total": 100.25,
+        "edge_count": 9.0,
+        "event_queue_length": 0.0,
+        "event_time_key": 0.0,
+        "in_flight_packet_total": 0.0,
+        "local_update_count": 0.0,
+        "node_count": 10.0,
+        "packet_count": 0.0,
+        "scheduler_event_index": 0.0,
+        "topology_event_count": 0.0
+      },
+      "run_role": "probe_absent_duplicate_replay",
+      "step_index": 0,
+      "time": 0.0,
+      "window_index": 3
+    }
+  ],
+  "support_annotation_not_used_as_evidence": true
+}

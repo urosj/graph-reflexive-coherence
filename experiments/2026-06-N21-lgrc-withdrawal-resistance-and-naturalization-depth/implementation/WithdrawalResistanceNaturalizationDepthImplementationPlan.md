@@ -612,6 +612,71 @@ reports/n21_withdrawal_resistance_probe.md
 scripts/build_n21_withdrawal_resistance_probe.py
 ```
 
+### Iteration 4-A. Withdrawal Severity And Removal Boundary Probe
+
+Purpose:
+
+```text
+Keep the Iteration 4 producer family and thresholds fixed, then sweep the
+declared support surface across weaker, floor, below-floor, strong-withdrawal,
+and full-removal rows.
+```
+
+Required distinction:
+
+```text
+Iteration 4 = one bounded support-weakening candidate
+Iteration 4-A = local severity/removal boundary map
+
+above-floor rows may support bounded weakening
+floor row is zero-margin boundary evidence
+below-floor and full-removal rows must fail closed if gates fail
+support-relevance control must show the support surface mattered
+support removal resistance and robust withdrawal resistance remain blocked
+unless full-removal rows preserve same-basin gates and replay
+```
+
+Expected artifacts:
+
+```text
+outputs/n21_withdrawal_severity_boundary_probe.json
+reports/n21_withdrawal_severity_boundary_probe.md
+scripts/build_n21_withdrawal_severity_boundary_probe.py
+```
+
+### Iteration 4-B. Withdrawal Transfer And Schedule-Shape Probe
+
+Purpose:
+
+```text
+Keep the Iteration 4/4-A producer family and thresholds fixed, then test
+whether bounded withdrawal evidence transfers across a second support route
+and changed packet schedule shapes.
+```
+
+Required distinction:
+
+```text
+Iteration 4 = one bounded support-weakening candidate
+Iteration 4-A = local severity/removal boundary map
+Iteration 4-B = transfer/schedule-shape evidence for the bounded WR4 pattern
+
+each variant must have its own matching baseline and withdrawn run
+route-transfer rows must use a distinct source node / edge
+schedule-shape rows must use source-current delayed or split packet traces
+thresholds must not be retuned
+support-removal resistance remains blocked
+WR5/WR6 remain pending Iteration 6 controls and closeout
+```
+
+Expected artifacts:
+
+```text
+outputs/n21_withdrawal_transfer_shape_probe.json
+reports/n21_withdrawal_transfer_shape_probe.md
+scripts/build_n21_withdrawal_transfer_shape_probe.py
+```
+
 ### Iteration 5. Naturalization Depth Probe
 
 Purpose:
@@ -644,6 +709,74 @@ reports/n21_naturalization_depth_probe.md
 scripts/build_n21_naturalization_depth_probe.py
 ```
 
+### Iteration 5-A. Post-Probe State Derivation Persistence Probe
+
+Purpose:
+
+```text
+Strengthen Iteration 5 by testing whether the probe-present final state can
+be checkpointed, have active probe support disabled, and persist as the same
+basin when replay starts from that derived post-probe state.
+```
+
+Required distinction:
+
+```text
+Iteration 5 = no-probe replay from initial fixture
+Iteration 5-A = probe-present final state -> active probe removed -> static
+                post-probe-derived replay
+
+the probe-present run must measurably change source-current geometry
+the no-probe replay must start from the probe-present final snapshot
+historical probe provenance is allowed
+active probe support must be disabled
+same-basin gates must remain preserved after replay
+"aftereffect" wording, if used, means geometric derived-state persistence
+only; it is not learning, memory, agency, or native support
+ND4/ND5 and final naturalization depth remain pending Iteration 6/7
+```
+
+Expected artifacts:
+
+```text
+outputs/n21_naturalization_depth_post_probe_derivation.json
+reports/n21_naturalization_depth_post_probe_derivation.md
+scripts/build_n21_naturalization_depth_post_probe_derivation.py
+```
+
+### Iteration 5-B. Eventful Post-Probe Continuation Probe
+
+Purpose:
+
+```text
+Strengthen Iteration 5-A by testing whether the derived post-probe state
+persists through a real non-original runtime event window after the original
+probe support remains disabled.
+```
+
+Required distinction:
+
+```text
+Iteration 5 = no-probe replay from initial fixture
+Iteration 5-A = probe-present final state -> active probe removed -> static
+                post-probe-derived replay
+Iteration 5-B = probe-present final state -> active probe removed -> distinct
+                non-original post-probe event -> same-basin continuation
+
+the original probe route must not be reintroduced
+the event must be source-current, not report-only
+same-basin gates must remain preserved after the eventful window
+ND4/ND5 and final naturalization depth remain pending Iteration 6/7
+```
+
+Expected artifacts:
+
+```text
+outputs/n21_naturalization_depth_eventful_post_probe.json
+reports/n21_naturalization_depth_eventful_post_probe.md
+scripts/build_n21_naturalization_depth_eventful_post_probe.py
+```
+
 ### Iteration 6. Replay And Control Matrix
 
 Purpose:
@@ -673,6 +806,34 @@ support source annotation relabel
 native support relabel
 semantic agency/sentience relabel
 phase8 relabel
+```
+
+Required candidate inputs:
+
+```text
+WR:
+  - I4 reference support-weakening WR4 row
+  - I4-A positive severity rows
+  - I4-A floor-boundary and fail-closed rows as boundary evidence
+  - I4-B transfer/schedule-shape rows
+
+ND:
+  - I5 no-probe initial-fixture ND3 row
+  - I5-A post-probe-derived static ND3 row
+  - I5-B eventful post-probe-derived ND3 row
+```
+
+Required per-row output fields:
+
+```text
+candidate_id
+source_iteration
+source_output_digest
+control_statuses
+replay_statuses
+demoted_rung_if_any
+final_consumable_rung
+claim_boundary_result
 ```
 
 Expected artifacts:

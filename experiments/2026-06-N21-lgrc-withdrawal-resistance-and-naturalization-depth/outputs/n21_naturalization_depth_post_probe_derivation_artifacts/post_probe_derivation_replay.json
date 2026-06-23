@@ -1,0 +1,23 @@
+{
+  "all_replay_modes_passed": true,
+  "artifact_id": "n21_i5a_post_probe_derivation_replay",
+  "artifact_replay": {
+    "artifact_path_exists": true,
+    "source_run_artifact_digest": "d79ea323b3af96918df87b6c53335f0285c176749fc5c6ddd93a442409a7923e",
+    "status": "passed"
+  },
+  "declared_multi_window_replay_without_active_probe_scaffold": {
+    "active_probe_packet_records_in_replay": 0,
+    "historical_probe_packet_record_count": 1,
+    "status": "passed",
+    "window_count": 3
+  },
+  "replay_digest": "ed6a607f4fba199dfaee8e0ea223d97a1a0b79a29b8e644ff7d30d5026be2fa4",
+  "snapshot_load_replay": {
+    "loaded_snapshot_geometry_digest": "df2b9c25191a4c61f7a4b045785657ba6bc916eecebc39cfd5d1ccac0c0da04f",
+    "original_geometry_digest": "df2b9c25191a4c61f7a4b045785657ba6bc916eecebc39cfd5d1ccac0c0da04f",
+    "status": "passed"
+  },
+  "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/post_probe_derived_final_snapshot.json",
+  "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/post_probe_derived_run.json"
+}

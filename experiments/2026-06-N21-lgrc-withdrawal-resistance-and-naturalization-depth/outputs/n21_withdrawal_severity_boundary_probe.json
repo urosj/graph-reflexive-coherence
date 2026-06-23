@@ -1,0 +1,1012 @@
+{
+  "acceptance_state": "accepted_withdrawal_severity_boundary_mapped_no_removal_overclaim",
+  "artifact_digest": "f41e5fa0d9a1df5c9109e794c5dde21bb7f828d9f2c3e93fe8de8c281af9c268",
+  "artifact_id": "n21_withdrawal_severity_boundary_probe",
+  "artifact_manifest": [
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_final_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_run.json",
+      "sha256": "65244cd2b20ff90b07b9798404340d2afb0c17b11eb0acc32f14a999cceb652c"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_final_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_run.json",
+      "sha256": "1b35875cbad9a79d975947177b3c9a37b354ea589d348050a6848b799153ecc7"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_events.jsonl",
+      "sha256": "e5b3b3c68922ef4bad76d93bd6b0c98bb6c5e466f65a1f37029764a2f9635a71"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_final_snapshot.json",
+      "sha256": "76d79f37580e91a88bc86d47971601c6f94be8b3285017d9d77c73b38af788d0"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_run.json",
+      "sha256": "019afc842bba0f0d80f04a414f917005401c2ff21d7d48f52a4fe508066252b2"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_events.jsonl",
+      "sha256": "488bff6f1357a0e487308a69a23dadbec30b465e6d45e7820255bffb1b070b7b"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_final_snapshot.json",
+      "sha256": "76d79f37580e91a88bc86d47971601c6f94be8b3285017d9d77c73b38af788d0"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_run.json",
+      "sha256": "180697267d209695d437a99eab18f425eaf7384aa0fe0d5971991a0503ba75b4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_events.jsonl",
+      "sha256": "96b385611eb4919c35bb84e40b9a615dcaf2e6df75f89732200ec0b3d3d3c725"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_final_snapshot.json",
+      "sha256": "8be81f01f7677a82dfbdd75a31f3b625a8c230d642a2527ff95530d1356dfc14"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_run.json",
+      "sha256": "f179ca0bb019d9ab0663920b676ee518b62fee7f4188900e32f862c7d642586f"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_events.jsonl",
+      "sha256": "387b7a89a7b9036b29566ca4e5ea4d1b12e70ef3836b6f5f1c791478343a0412"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_final_snapshot.json",
+      "sha256": "8be81f01f7677a82dfbdd75a31f3b625a8c230d642a2527ff95530d1356dfc14"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_run.json",
+      "sha256": "5b014c7538b027b260a0b9b8feb3875d7a267a5029542a6299c5a42babae4b48"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_events.jsonl",
+      "sha256": "e304304d40f9b1475a51a345997aa1d517f383ae1290ebeb6b3bc82490c8af5e"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_final_snapshot.json",
+      "sha256": "aa5362073af2e40a0a7a55b30e0a935cdbe77b840888f6f9be7c9ad5db2939b8"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_run.json",
+      "sha256": "44b3c403fca31e521fd389a120d1f1e29a605726e5aaec9d949acded4a312b70"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_events.jsonl",
+      "sha256": "0afea50ac910eea354270a1975ead3722ceeefe391dee10707fe9b201be425fd"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_final_snapshot.json",
+      "sha256": "aa5362073af2e40a0a7a55b30e0a935cdbe77b840888f6f9be7c9ad5db2939b8"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_run.json",
+      "sha256": "072112d5154732a14e6fe6ee407ba4cfeffaf7623d390c4a1d20f482bc8ae118"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_events.jsonl",
+      "sha256": "ff46170e09789eb384d647e18ae6ea64e7629063d51afcc58ff945dc3fec669a"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_final_snapshot.json",
+      "sha256": "3d24ddca3b50d1b4ea6740d4269a1ede4eb78bd2f66ca56b8d9c41e85a2416cc"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_run.json",
+      "sha256": "06f989f20c3b9ca1dccafe431f8481eda59d24723db1311e39e0cbb45b685af5"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_events.jsonl",
+      "sha256": "7ec3ba372736e5fb93c15409682718e3f7be5925fa090f8b2674e2f4b2377b89"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_final_snapshot.json",
+      "sha256": "3d24ddca3b50d1b4ea6740d4269a1ede4eb78bd2f66ca56b8d9c41e85a2416cc"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_run.json",
+      "sha256": "4fda41d2512a66c2ce68da5b0c8b1ea02db9b56b7844c15bac97ec00a1310ceb"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_events.jsonl",
+      "sha256": "5ce5d5e86decca2b81773cb0e09fd1b1a2b24df415ab41290416c3dc0379025b"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_final_snapshot.json",
+      "sha256": "0d7b857f6965b962e33e1da8760797b70bea48852bcfb42ff04d6aa1e48944f8"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_run.json",
+      "sha256": "73b9cd8e6ec708f7e7c0caa92940bef9bbaecffc89534ebb14510d34de982351"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_events.jsonl",
+      "sha256": "51d78a71d3a87e928de50c0c29984fc81d2735729516d212c664369d26ab3635"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_final_snapshot.json",
+      "sha256": "0d7b857f6965b962e33e1da8760797b70bea48852bcfb42ff04d6aa1e48944f8"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_run.json",
+      "sha256": "68062a6603129fb43dd2dad525cbb40fcf7d69eec2439f4796e920692756989a"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/baseline_amount_0_10_events.jsonl",
+      "sha256": "283a95d0dc484d56583dee19d7b7809be9de1800ff03355763ba81de321abd64"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/baseline_amount_0_10_final_snapshot.json",
+      "sha256": "feb529a97ad99af44e7760d3819446041db63f92086deb794f9056cd51241442"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/baseline_amount_0_10_initial_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/baseline_amount_0_10_run.json",
+      "sha256": "b4ecd57f22466b8a7688ade464656dc5df9fd7eb9b319a2dfb37c22bc4c60aba"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/runtime_config.json",
+      "sha256": "e239dbd5a970b2ba21e006eac261fc3142c0e7927a3884228ae660e1667e6d51"
+    },
+    {
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/withdrawal_severity_boundary_trace.json",
+      "sha256": "404f30f2cdd08246507b32a3b4fef0ad96f06b02debc47d5a3a6cf3ac3cc904a"
+    }
+  ],
+  "boundary_summary": {
+    "boundary_summary_digest": "d8a2d786434e4f1f33c701bede82f84a90ae2e19e32a41faef570ab021356c28",
+    "bounded_support_weakening_scope_supported": true,
+    "fail_closed_amounts": [
+      0.05,
+      0.03,
+      0.0
+    ],
+    "failure_boundary_interval": [
+      0.06,
+      0.05
+    ],
+    "floor_boundary_amounts": [
+      0.06
+    ],
+    "floor_boundary_packet_amount": 0.06,
+    "full_removal_failure_modes": [
+      "support_floor_crossed",
+      "coherence_floor_crossed"
+    ],
+    "full_removal_status": "rejected",
+    "max_positive_margin_supported_withdrawal_amount": 0.03,
+    "min_positive_margin_supported_packet_amount": 0.07,
+    "robust_withdrawal_resistance_supported": false,
+    "severity_boundary_interpretation": "I4 survives one mild weakening. I4-A maps the local boundary: positive-margin rows above the 0.06 floor support bounded weakening, the exact floor row is zero-margin partial, and rows below the floor fail closed. Full removal is rejected.",
+    "support_removal_resistance_supported": false,
+    "supported_positive_margin_amounts": [
+      0.09,
+      0.07
+    ]
+  },
+  "checks": [
+    {
+      "check_id": "source_i1_i2_i3_i4_passed",
+      "detail": {
+        "i1": "accepted_source_contract_inventory_no_primitive_evidence",
+        "i2": "accepted_withdrawal_naturalization_schema_frozen_no_primitive_evidence",
+        "i3": "accepted_active_nulls_fail_closed_no_primitive_evidence",
+        "i4": "accepted_provisional_wr4_withdrawal_candidate_pending_i6"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "severity_amounts_match_plan",
+      "detail": {
+        "actual": [
+          0.09,
+          0.07,
+          0.06,
+          0.05,
+          0.03,
+          0.0
+        ],
+        "expected": [
+          0.09,
+          0.07,
+          0.06,
+          0.05,
+          0.03,
+          0.0
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_exist_and_hash",
+      "detail": {
+        "artifact_count": 54
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i4_row_reproduced",
+      "detail": {
+        "row_decision": "supported",
+        "source_i4_output_digest": "6d80c4dd915c0c5d2b1f67c2af69881d88ab3d632acf828013389f90c53cfb36",
+        "support_margin": 0.01,
+        "support_packet_amount": 0.07
+      },
+      "passed": true
+    },
+    {
+      "check_id": "support_relevance_control_passed",
+      "detail": {
+        "actual_result": {
+          "baseline_packet_amount": 0.1,
+          "center_coherence_delta": 0.1,
+          "event_count_delta": 5,
+          "packet_count_delta": 1,
+          "removal_packet_amount": 0.0,
+          "source_coherence_delta": 0.1
+        },
+        "blocked_condition": "support surface can be changed or removed with no measurable source-current geometric effect",
+        "claim_allowed_when_control_triggers": false,
+        "control_id": "support_necessity_or_relevance_control",
+        "control_status": "passed",
+        "expected_result": "support removal changes coherence, packet records, and event trace",
+        "rung_effect": "demotes positive rows to same-basin invariance under irrelevant support perturbation if triggered"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "positive_boundary_and_fail_closed_rows_present",
+      "detail": {
+        "boundary_summary_digest": "d8a2d786434e4f1f33c701bede82f84a90ae2e19e32a41faef570ab021356c28",
+        "bounded_support_weakening_scope_supported": true,
+        "fail_closed_amounts": [
+          0.05,
+          0.03,
+          0.0
+        ],
+        "failure_boundary_interval": [
+          0.06,
+          0.05
+        ],
+        "floor_boundary_amounts": [
+          0.06
+        ],
+        "floor_boundary_packet_amount": 0.06,
+        "full_removal_failure_modes": [
+          "support_floor_crossed",
+          "coherence_floor_crossed"
+        ],
+        "full_removal_status": "rejected",
+        "max_positive_margin_supported_withdrawal_amount": 0.03,
+        "min_positive_margin_supported_packet_amount": 0.07,
+        "robust_withdrawal_resistance_supported": false,
+        "severity_boundary_interpretation": "I4 survives one mild weakening. I4-A maps the local boundary: positive-margin rows above the 0.06 floor support bounded weakening, the exact floor row is zero-margin partial, and rows below the floor fail closed. Full removal is rejected.",
+        "support_removal_resistance_supported": false,
+        "supported_positive_margin_amounts": [
+          0.09,
+          0.07
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "full_removal_rejected_no_removal_overclaim",
+      "detail": {
+        "boundary_summary_digest": "d8a2d786434e4f1f33c701bede82f84a90ae2e19e32a41faef570ab021356c28",
+        "bounded_support_weakening_scope_supported": true,
+        "fail_closed_amounts": [
+          0.05,
+          0.03,
+          0.0
+        ],
+        "failure_boundary_interval": [
+          0.06,
+          0.05
+        ],
+        "floor_boundary_amounts": [
+          0.06
+        ],
+        "floor_boundary_packet_amount": 0.06,
+        "full_removal_failure_modes": [
+          "support_floor_crossed",
+          "coherence_floor_crossed"
+        ],
+        "full_removal_status": "rejected",
+        "max_positive_margin_supported_withdrawal_amount": 0.03,
+        "min_positive_margin_supported_packet_amount": 0.07,
+        "robust_withdrawal_resistance_supported": false,
+        "severity_boundary_interpretation": "I4 survives one mild weakening. I4-A maps the local boundary: positive-margin rows above the 0.06 floor support bounded weakening, the exact floor row is zero-margin partial, and rows below the floor fail closed. Full removal is rejected.",
+        "support_removal_resistance_supported": false,
+        "supported_positive_margin_amounts": [
+          0.09,
+          0.07
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_replays_stable",
+      "detail": {
+        "n21_i4a_row_amount_0_00": true,
+        "n21_i4a_row_amount_0_03": true,
+        "n21_i4a_row_amount_0_05": true,
+        "n21_i4a_row_amount_0_06": true,
+        "n21_i4a_row_amount_0_07": true,
+        "n21_i4a_row_amount_0_09": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": "all severity rows keep unsafe claim flags false",
+      "passed": true
+    },
+    {
+      "check_id": "no_local_absolute_paths",
+      "detail": "payload uses repository-relative paths and source IDs only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_supported": false,
+    "bounded_support_weakening_scope_supported": true,
+    "final_withdrawal_resistance_supported": false,
+    "iteration6_replay_control_matrix_required": true,
+    "native_support_supported": false,
+    "phase8_implementation_supported": false,
+    "robust_withdrawal_resistance_supported": false,
+    "sentience_supported": false,
+    "support_removal_resistance_supported": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/scripts/build_n21_withdrawal_severity_boundary_probe.py",
+  "derived_report_only": false,
+  "experiment": "2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "iteration": "4-A",
+  "output_digest": "611de6672537df3a27c5a259fe53c09f302771eaceb1d40fac4284cea08558e8",
+  "purpose": "Map how far the declared LGRC9V3 packetized support surface can be weakened or removed before same-basin continuation fails closed.",
+  "runtime_config_digest": "5a9e8e6c08ad30160af9fb51ce9ef0e9cb5ba0838184b55271e18e773367def8",
+  "schema_version": "n21_withdrawal_severity_boundary_probe_v1",
+  "severity_rows": [
+    {
+      "active_degree": 9,
+      "budget_error": 0.0,
+      "center_coherence": 10.09,
+      "claim_ceiling": "bounded support-weakening evidence only; no support-removal resistance, robust withdrawal resistance, native support, agency, sentience, or Phase 8 claim",
+      "coherence_margin": 0.04,
+      "event_count": 5,
+      "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_events.jsonl",
+      "failure_modes": [],
+      "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_final_snapshot.json",
+      "gate_statuses": {
+        "boundary_integrity_result": "preserved",
+        "coherence_floor_result": "preserved",
+        "flux_or_leakage_result": "preserved",
+        "support_floor_result": "preserved"
+      },
+      "in_flight_packet_total": 0.0,
+      "packet_count": 1,
+      "primitive_claim_allowed": true,
+      "primitive_id": "withdrawal_resistance",
+      "replay_result": {
+        "all_replay_modes_passed": true,
+        "artifact_replay": {
+          "artifact_path_exists": true,
+          "source_run_artifact_digest": "68062a6603129fb43dd2dad525cbb40fcf7d69eec2439f4796e920692756989a",
+          "status": "passed"
+        },
+        "duplicate_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_events.jsonl",
+        "duplicate_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_final_snapshot.json",
+        "duplicate_initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_initial_snapshot.json",
+        "duplicate_replay": {
+          "duplicate_geometry_digest": "74b2636ca3451644d4f4b4a299d2035114769a8cf24e9f7c9a073a83df4e9b19",
+          "original_geometry_digest": "74b2636ca3451644d4f4b4a299d2035114769a8cf24e9f7c9a073a83df4e9b19",
+          "status": "passed"
+        },
+        "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_duplicate_run.json",
+        "replay_digest": "aa3937d4784c7b3955e170796a14e6092305b5f86d5523490daade32a7e9d10b",
+        "snapshot_load_replay": {
+          "loaded_snapshot_geometry_digest": "74b2636ca3451644d4f4b4a299d2035114769a8cf24e9f7c9a073a83df4e9b19",
+          "original_geometry_digest": "74b2636ca3451644d4f4b4a299d2035114769a8cf24e9f7c9a073a83df4e9b19",
+          "status": "passed"
+        },
+        "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_final_snapshot.json",
+        "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_run.json"
+      },
+      "row_decision": "supported",
+      "row_digest": "2b2ab9fa8c8d73abcf2ddc2ded324cdd7de113d0b28dbfc77cd70294ddbafdb8",
+      "row_id": "n21_i4a_row_amount_0_09",
+      "run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_09_run.json",
+      "same_basin_comparison": {
+        "active_degree_same": true,
+        "all_same_basin_signature_fields_preserved": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "severity_role": "positive_margin_withdrawal_candidate",
+      "support_margin": 0.03,
+      "support_packet_amount": 0.09,
+      "support_retention_ratio": 0.9,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawal_amount": 0.01,
+      "wr_ladder_rung": "WR4",
+      "wr_ladder_rung_status": "provisional_pending_iteration6_control_matrix"
+    },
+    {
+      "active_degree": 9,
+      "budget_error": 0.0,
+      "center_coherence": 10.07,
+      "claim_ceiling": "bounded support-weakening evidence only; no support-removal resistance, robust withdrawal resistance, native support, agency, sentience, or Phase 8 claim",
+      "coherence_margin": 0.02,
+      "event_count": 5,
+      "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_events.jsonl",
+      "failure_modes": [],
+      "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_final_snapshot.json",
+      "gate_statuses": {
+        "boundary_integrity_result": "preserved",
+        "coherence_floor_result": "preserved",
+        "flux_or_leakage_result": "preserved",
+        "support_floor_result": "preserved"
+      },
+      "in_flight_packet_total": 0.0,
+      "packet_count": 1,
+      "primitive_claim_allowed": true,
+      "primitive_id": "withdrawal_resistance",
+      "replay_result": {
+        "all_replay_modes_passed": true,
+        "artifact_replay": {
+          "artifact_path_exists": true,
+          "source_run_artifact_digest": "4fda41d2512a66c2ce68da5b0c8b1ea02db9b56b7844c15bac97ec00a1310ceb",
+          "status": "passed"
+        },
+        "duplicate_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_events.jsonl",
+        "duplicate_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_final_snapshot.json",
+        "duplicate_initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_initial_snapshot.json",
+        "duplicate_replay": {
+          "duplicate_geometry_digest": "c0f61e7929d4a4491f4dbc74fa79633b4687bc610e3aa96ea19c6981cebd7633",
+          "original_geometry_digest": "c0f61e7929d4a4491f4dbc74fa79633b4687bc610e3aa96ea19c6981cebd7633",
+          "status": "passed"
+        },
+        "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_duplicate_run.json",
+        "replay_digest": "81256b706300cd0ed43c97721c90473ca61076a68495ca4243e7d74655a6b36e",
+        "snapshot_load_replay": {
+          "loaded_snapshot_geometry_digest": "c0f61e7929d4a4491f4dbc74fa79633b4687bc610e3aa96ea19c6981cebd7633",
+          "original_geometry_digest": "c0f61e7929d4a4491f4dbc74fa79633b4687bc610e3aa96ea19c6981cebd7633",
+          "status": "passed"
+        },
+        "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_final_snapshot.json",
+        "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_run.json"
+      },
+      "row_decision": "supported",
+      "row_digest": "c49ea5cd38b7dd46fc621adc687e6be433ebcdcd38e3c3fd84c8285df9e3eec7",
+      "row_id": "n21_i4a_row_amount_0_07",
+      "run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_07_run.json",
+      "same_basin_comparison": {
+        "active_degree_same": true,
+        "all_same_basin_signature_fields_preserved": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "severity_role": "positive_margin_withdrawal_candidate",
+      "support_margin": 0.01,
+      "support_packet_amount": 0.07,
+      "support_retention_ratio": 0.7,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawal_amount": 0.03,
+      "wr_ladder_rung": "WR4",
+      "wr_ladder_rung_status": "provisional_pending_iteration6_control_matrix"
+    },
+    {
+      "active_degree": 9,
+      "budget_error": 0.0,
+      "center_coherence": 10.06,
+      "claim_ceiling": "bounded support-weakening evidence only; no support-removal resistance, robust withdrawal resistance, native support, agency, sentience, or Phase 8 claim",
+      "coherence_margin": 0.01,
+      "event_count": 5,
+      "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_events.jsonl",
+      "failure_modes": [],
+      "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_final_snapshot.json",
+      "gate_statuses": {
+        "boundary_integrity_result": "preserved",
+        "coherence_floor_result": "preserved",
+        "flux_or_leakage_result": "preserved",
+        "support_floor_result": "preserved"
+      },
+      "in_flight_packet_total": 0.0,
+      "packet_count": 1,
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "replay_result": {
+        "all_replay_modes_passed": true,
+        "artifact_replay": {
+          "artifact_path_exists": true,
+          "source_run_artifact_digest": "072112d5154732a14e6fe6ee407ba4cfeffaf7623d390c4a1d20f482bc8ae118",
+          "status": "passed"
+        },
+        "duplicate_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_events.jsonl",
+        "duplicate_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_final_snapshot.json",
+        "duplicate_initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_initial_snapshot.json",
+        "duplicate_replay": {
+          "duplicate_geometry_digest": "b7f55c1a14b2b32ca97f006aaaadf6d2038f1f23cbad7f75e3d445ed3832ec04",
+          "original_geometry_digest": "b7f55c1a14b2b32ca97f006aaaadf6d2038f1f23cbad7f75e3d445ed3832ec04",
+          "status": "passed"
+        },
+        "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_duplicate_run.json",
+        "replay_digest": "735896e9db7c9b795401e71506bc7e7bb62cb2dbe180baee1257782290d9e23d",
+        "snapshot_load_replay": {
+          "loaded_snapshot_geometry_digest": "b7f55c1a14b2b32ca97f006aaaadf6d2038f1f23cbad7f75e3d445ed3832ec04",
+          "original_geometry_digest": "b7f55c1a14b2b32ca97f006aaaadf6d2038f1f23cbad7f75e3d445ed3832ec04",
+          "status": "passed"
+        },
+        "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_final_snapshot.json",
+        "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_run.json"
+      },
+      "row_decision": "partial",
+      "row_digest": "9e60cdecf7da488e6ef032489228f51dbf9b69b367529c712ea8f4aa693b7859",
+      "row_id": "n21_i4a_row_amount_0_06",
+      "run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_06_run.json",
+      "same_basin_comparison": {
+        "active_degree_same": true,
+        "all_same_basin_signature_fields_preserved": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "severity_role": "floor_boundary_zero_margin",
+      "support_margin": 0.0,
+      "support_packet_amount": 0.06,
+      "support_retention_ratio": 0.6,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawal_amount": 0.04,
+      "wr_ladder_rung": "WR3_floor_boundary_partial",
+      "wr_ladder_rung_status": "not_positive_candidate"
+    },
+    {
+      "active_degree": 9,
+      "budget_error": 0.0,
+      "center_coherence": 10.05,
+      "claim_ceiling": "bounded support-weakening evidence only; no support-removal resistance, robust withdrawal resistance, native support, agency, sentience, or Phase 8 claim",
+      "coherence_margin": 0.0,
+      "event_count": 5,
+      "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_events.jsonl",
+      "failure_modes": [
+        "support_floor_crossed"
+      ],
+      "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_final_snapshot.json",
+      "gate_statuses": {
+        "boundary_integrity_result": "preserved",
+        "coherence_floor_result": "preserved",
+        "flux_or_leakage_result": "preserved",
+        "support_floor_result": "crossed_floor"
+      },
+      "in_flight_packet_total": 0.0,
+      "packet_count": 1,
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "replay_result": {
+        "all_replay_modes_passed": true,
+        "artifact_replay": {
+          "artifact_path_exists": true,
+          "source_run_artifact_digest": "5b014c7538b027b260a0b9b8feb3875d7a267a5029542a6299c5a42babae4b48",
+          "status": "passed"
+        },
+        "duplicate_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_events.jsonl",
+        "duplicate_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_final_snapshot.json",
+        "duplicate_initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_initial_snapshot.json",
+        "duplicate_replay": {
+          "duplicate_geometry_digest": "f9595be60b61ffdb470dcc416e4ff1394efc48e1d6a62ec138c3583c10184625",
+          "original_geometry_digest": "f9595be60b61ffdb470dcc416e4ff1394efc48e1d6a62ec138c3583c10184625",
+          "status": "passed"
+        },
+        "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_duplicate_run.json",
+        "replay_digest": "925dd960da82d90f149bc1267eb46be963dd80946bd0eef330117ace25d37315",
+        "snapshot_load_replay": {
+          "loaded_snapshot_geometry_digest": "f9595be60b61ffdb470dcc416e4ff1394efc48e1d6a62ec138c3583c10184625",
+          "original_geometry_digest": "f9595be60b61ffdb470dcc416e4ff1394efc48e1d6a62ec138c3583c10184625",
+          "status": "passed"
+        },
+        "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_final_snapshot.json",
+        "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_run.json"
+      },
+      "row_decision": "rejected",
+      "row_digest": "60a04ddacb4d30438380e964db55719652e8756d47f8bdedeaef12331d950fe9",
+      "row_id": "n21_i4a_row_amount_0_05",
+      "run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_05_run.json",
+      "same_basin_comparison": {
+        "active_degree_same": true,
+        "all_same_basin_signature_fields_preserved": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "severity_role": "fail_closed_boundary_row",
+      "support_margin": -0.01,
+      "support_packet_amount": 0.05,
+      "support_retention_ratio": 0.5,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawal_amount": 0.05,
+      "wr_ladder_rung": null,
+      "wr_ladder_rung_status": "not_positive_candidate"
+    },
+    {
+      "active_degree": 9,
+      "budget_error": 0.0,
+      "center_coherence": 10.03,
+      "claim_ceiling": "bounded support-weakening evidence only; no support-removal resistance, robust withdrawal resistance, native support, agency, sentience, or Phase 8 claim",
+      "coherence_margin": -0.02,
+      "event_count": 5,
+      "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_events.jsonl",
+      "failure_modes": [
+        "support_floor_crossed",
+        "coherence_floor_crossed"
+      ],
+      "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_final_snapshot.json",
+      "gate_statuses": {
+        "boundary_integrity_result": "preserved",
+        "coherence_floor_result": "crossed_floor",
+        "flux_or_leakage_result": "preserved",
+        "support_floor_result": "crossed_floor"
+      },
+      "in_flight_packet_total": 0.0,
+      "packet_count": 1,
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "replay_result": {
+        "all_replay_modes_passed": true,
+        "artifact_replay": {
+          "artifact_path_exists": true,
+          "source_run_artifact_digest": "180697267d209695d437a99eab18f425eaf7384aa0fe0d5971991a0503ba75b4",
+          "status": "passed"
+        },
+        "duplicate_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_events.jsonl",
+        "duplicate_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_final_snapshot.json",
+        "duplicate_initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_initial_snapshot.json",
+        "duplicate_replay": {
+          "duplicate_geometry_digest": "afe90be9e189293b295cea4c24e488001850f2d63a32d578c0141fedb2fbd859",
+          "original_geometry_digest": "afe90be9e189293b295cea4c24e488001850f2d63a32d578c0141fedb2fbd859",
+          "status": "passed"
+        },
+        "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_duplicate_run.json",
+        "replay_digest": "1df662f65dce04f59270cd68bfd3a4742ebad909f815f7b0320fc1cf2cf112d0",
+        "snapshot_load_replay": {
+          "loaded_snapshot_geometry_digest": "afe90be9e189293b295cea4c24e488001850f2d63a32d578c0141fedb2fbd859",
+          "original_geometry_digest": "afe90be9e189293b295cea4c24e488001850f2d63a32d578c0141fedb2fbd859",
+          "status": "passed"
+        },
+        "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_final_snapshot.json",
+        "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_run.json"
+      },
+      "row_decision": "rejected",
+      "row_digest": "808a790f465902b541854d5db4fab0ecdca192b469f3fe05bc87c5f287aa7e7f",
+      "row_id": "n21_i4a_row_amount_0_03",
+      "run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_03_run.json",
+      "same_basin_comparison": {
+        "active_degree_same": true,
+        "all_same_basin_signature_fields_preserved": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "severity_role": "fail_closed_boundary_row",
+      "support_margin": -0.03,
+      "support_packet_amount": 0.03,
+      "support_retention_ratio": 0.3,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawal_amount": 0.07,
+      "wr_ladder_rung": null,
+      "wr_ladder_rung_status": "not_positive_candidate"
+    },
+    {
+      "active_degree": 9,
+      "budget_error": 0.0,
+      "center_coherence": 10.0,
+      "claim_ceiling": "bounded support-weakening evidence only; no support-removal resistance, robust withdrawal resistance, native support, agency, sentience, or Phase 8 claim",
+      "coherence_margin": -0.05,
+      "event_count": 0,
+      "event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_events.jsonl",
+      "failure_modes": [
+        "support_floor_crossed",
+        "coherence_floor_crossed"
+      ],
+      "final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_final_snapshot.json",
+      "gate_statuses": {
+        "boundary_integrity_result": "preserved",
+        "coherence_floor_result": "crossed_floor",
+        "flux_or_leakage_result": "preserved",
+        "support_floor_result": "crossed_floor"
+      },
+      "in_flight_packet_total": 0.0,
+      "packet_count": 0,
+      "primitive_claim_allowed": false,
+      "primitive_id": "withdrawal_resistance",
+      "replay_result": {
+        "all_replay_modes_passed": true,
+        "artifact_replay": {
+          "artifact_path_exists": true,
+          "source_run_artifact_digest": "1b35875cbad9a79d975947177b3c9a37b354ea589d348050a6848b799153ecc7",
+          "status": "passed"
+        },
+        "duplicate_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_events.jsonl",
+        "duplicate_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_final_snapshot.json",
+        "duplicate_initial_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_initial_snapshot.json",
+        "duplicate_replay": {
+          "duplicate_geometry_digest": "810ebd8b266a1696a7018103cf25a3fd44e2c4c4e0c16b4f047d7928c85d68c1",
+          "original_geometry_digest": "810ebd8b266a1696a7018103cf25a3fd44e2c4c4e0c16b4f047d7928c85d68c1",
+          "status": "passed"
+        },
+        "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_duplicate_run.json",
+        "replay_digest": "765d4b56b26e7c7a7c13a2573c8e244387d8d50e6c41f79a8c378ad42d2c2423",
+        "snapshot_load_replay": {
+          "loaded_snapshot_geometry_digest": "810ebd8b266a1696a7018103cf25a3fd44e2c4c4e0c16b4f047d7928c85d68c1",
+          "original_geometry_digest": "810ebd8b266a1696a7018103cf25a3fd44e2c4c4e0c16b4f047d7928c85d68c1",
+          "status": "passed"
+        },
+        "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_final_snapshot.json",
+        "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_run.json"
+      },
+      "row_decision": "rejected",
+      "row_digest": "51a44ca3213a7fddc18a3936b6b36b6a11bd81fefff8e8901fa2efc7e0fea499",
+      "row_id": "n21_i4a_row_amount_0_00",
+      "run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/amount_0_00_run.json",
+      "same_basin_comparison": {
+        "active_degree_same": true,
+        "all_same_basin_signature_fields_preserved": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "severity_role": "fail_closed_boundary_row",
+      "support_margin": -0.06,
+      "support_packet_amount": 0.0,
+      "support_retention_ratio": 0.0,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "withdrawal_amount": 0.1,
+      "wr_ladder_rung": null,
+      "wr_ladder_rung_status": "not_positive_candidate"
+    }
+  ],
+  "source_active_null_output_digest": "154d10eb14dc54289154f28e9eb0107343f6e02939bc9905f35c30a09f041cf2",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_contract_inventory_no_primitive_evidence",
+      "output_digest": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_source_contract_inventory.json",
+      "sha256": "9c4b35fad34d5bc1ec3cf740cd475f30b21ff4ee51a82ee0d148e2111769eb6e",
+      "source_role": "n21_i1_source_contract_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_withdrawal_naturalization_schema_frozen_no_primitive_evidence",
+      "output_digest": "49ec439aa4d3f2bb895dc11d8c7613a0f18f75d4f78fa38aead2282ebbf78bb7",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_schema_and_thresholds.json",
+      "sha256": "3bfbfc843f5d627d1105b7b5e9c7b57fb7a17b566d785f4c9d13c61a807e8ff5",
+      "source_role": "n21_i2_schema_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_primitive_evidence",
+      "output_digest": "154d10eb14dc54289154f28e9eb0107343f6e02939bc9905f35c30a09f041cf2",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_active_nulls.json",
+      "sha256": "8c0961c0bff8d35585fa5d701d2678c8522169176622b3c7e37e0a895354a79a",
+      "source_role": "n21_i3_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_provisional_wr4_withdrawal_candidate_pending_i6",
+      "output_digest": "6d80c4dd915c0c5d2b1f67c2af69881d88ab3d632acf828013389f90c53cfb36",
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_resistance_probe.json",
+      "sha256": "3fb80e72cc1a739627794ef85f2191637564c04f266b5610e38849bf478b7a26",
+      "source_role": "n21_i4_mild_withdrawal_candidate",
+      "status": "passed"
+    }
+  ],
+  "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+  "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+  "source_current_run_artifacts_consumed": true,
+  "source_i4_output_digest": "6d80c4dd915c0c5d2b1f67c2af69881d88ab3d632acf828013389f90c53cfb36",
+  "source_inventory_output_digest": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+  "source_schema_output_digest": "49ec439aa4d3f2bb895dc11d8c7613a0f18f75d4f78fa38aead2282ebbf78bb7",
+  "status": "passed",
+  "support_necessity_or_relevance_control": {
+    "actual_result": {
+      "baseline_packet_amount": 0.1,
+      "center_coherence_delta": 0.1,
+      "event_count_delta": 5,
+      "packet_count_delta": 1,
+      "removal_packet_amount": 0.0,
+      "source_coherence_delta": 0.1
+    },
+    "blocked_condition": "support surface can be changed or removed with no measurable source-current geometric effect",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "support_necessity_or_relevance_control",
+    "control_status": "passed",
+    "expected_result": "support removal changes coherence, packet records, and event trace",
+    "rung_effect": "demotes positive rows to same-basin invariance under irrelevant support perturbation if triggered"
+  },
+  "trace_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_withdrawal_severity_boundary_probe_artifacts/withdrawal_severity_boundary_trace.json",
+  "trace_digest": "77b7cf6c1be1e00b80230dbc1575b85da6cdcc718b48062c37a23acf3b2d8566"
+}

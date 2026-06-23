@@ -1,0 +1,107 @@
+{
+  "artifact_id": "n21_i5_naturalization_depth_trace",
+  "baseline_original_probe_packet_amount": 0.04,
+  "claim_scope_clarification": {
+    "general_naturalization_depth_supported": false,
+    "native_support_supported": false,
+    "post_probe_aftereffect_persistence_supported": false,
+    "requires_post_probe_state_derivation_probe_for_stronger_claim": true,
+    "supported_scope": "provisional_probe_absent_same_basin_replay_candidate"
+  },
+  "eventful_post_probe_continuation": false,
+  "multi_window_replay_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_multi_window_replay_run.json",
+  "multi_window_replay_trace": {
+    "all_windows_without_original_probe": true,
+    "declared_window_count": 3,
+    "probe_absent_geometry_digest": "ac27c6bfae255bf87440b1329637d79e0b698279cc192e37601725d2b838e868",
+    "replay_geometry_digest": "ac27c6bfae255bf87440b1329637d79e0b698279cc192e37601725d2b838e868",
+    "status": "passed"
+  },
+  "post_probe_boundary_trace": {
+    "active_degree_floor": 9,
+    "post_probe_active_degree": 9,
+    "status": "preserved",
+    "topology_signature_same": true
+  },
+  "post_probe_coherence_floor_trace": {
+    "coherence_margin": 0.05000000000000071,
+    "post_probe_center_coherence": 10.0,
+    "post_probe_coherence_floor": 9.95,
+    "status": "preserved"
+  },
+  "post_probe_flux_or_leakage_trace": {
+    "max_budget_error": 1e-09,
+    "original_probe_packet_record_count": 0,
+    "post_probe_budget_error": 0.0,
+    "post_probe_in_flight_packet_total": 0.0,
+    "post_probe_packet_count": 0,
+    "status": "preserved"
+  },
+  "post_probe_replay_windows": 3,
+  "post_probe_same_basin_comparison": {
+    "active_degree_same": true,
+    "basin_member_count_same": true,
+    "center_basin_id_same": true,
+    "center_node_id_same": true,
+    "topology_signature_same": true
+  },
+  "post_probe_same_basin_continuation_status": "preserved",
+  "post_probe_support_floor_trace": {
+    "post_probe_support_floor": 9.95,
+    "post_probe_support_score": 10.0,
+    "status": "preserved",
+    "support_margin": 0.05000000000000071
+  },
+  "probe_absent_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_events.jsonl",
+  "probe_absent_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_absent_run.json",
+  "probe_absent_runtime_input": true,
+  "probe_effect_trace": {
+    "baseline_event_count": 5,
+    "baseline_original_probe_packet_record_count": 1,
+    "baseline_probe_effect_observed": true,
+    "center_coherence_delta": 0.03999999999999915,
+    "packet_count_delta": 1,
+    "probe_effect_digest": "6de5940b36f4f2a7073e8200b3fa5e94c2ebb6bcb25162160484a2e51f01b71f",
+    "source_coherence_delta": -0.03999999999999915
+  },
+  "probe_present_baseline_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_present_baseline_run.json",
+  "probe_present_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/probe_present_baseline_events.jsonl",
+  "probe_present_vs_absent_comparison": {
+    "active_degree_same": true,
+    "baseline_original_probe_packet_record_count": 1,
+    "center_basin_id_same": true,
+    "center_node_id_same": true,
+    "probe_absent_event_count": 0,
+    "probe_absent_original_probe_packet_record_count": 0,
+    "topology_signature_same": true
+  },
+  "probe_residue_digest_absent": true,
+  "probe_schedule": {
+    "baseline_probe_packet_amount": 0.04,
+    "edge_id": 0,
+    "kind": "packetized_probe_scaffold",
+    "post_probe_replay_windows": 3,
+    "probe_absent_condition": "original packetized probe scaffold disabled",
+    "probe_absent_in_evaluated_run": true,
+    "probe_absent_runtime_input": true,
+    "probe_present_in_baseline": true,
+    "producer_probe_schedule_disabled": true,
+    "source_node_id": 1,
+    "target_node_id": 0
+  },
+  "producer_probe_schedule_disabled": true,
+  "replay_kind": "static_snapshot_replay",
+  "runtime_config_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe_artifacts/runtime_config.json",
+  "state_derivation_record": {
+    "post_probe_state_carried_into_probe_absent_run": false,
+    "probe_absent_initial_state_digest": "ac27c6bfae255bf87440b1329637d79e0b698279cc192e37601725d2b838e868",
+    "probe_absent_initial_state_source": "initial_fixture_state",
+    "probe_present_final_state_digest": "35fa77d993587cd6ab957d6cabe3bf89d436acfa98b55e605ef3860c1c6e6495",
+    "probe_present_initial_state_digest": "c9693a253471f19ca8ed47cc80f6a210c29013eb6157ad3bdb2318416802851b",
+    "probe_removed_from_existing_state": false,
+    "state_derivation_digest": "3c20abdbb2725d04edee33b80de74c4652262025e211286b0685cf16019e2423",
+    "state_derivation_interpretation": "I5 tests probe-omitted source-current persistence from the declared initial fixture, not a carried post-probe aftereffect state."
+  },
+  "support_annotation_not_used_as_evidence": true,
+  "trace_digest": "c2e64f269ee53d2775529deb39774f482478f6324b215219beb4e45dfbd9fa9f"
+}

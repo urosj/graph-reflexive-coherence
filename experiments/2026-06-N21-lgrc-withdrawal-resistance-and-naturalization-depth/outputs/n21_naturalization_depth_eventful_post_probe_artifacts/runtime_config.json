@@ -1,0 +1,43 @@
+{
+  "claim_boundary": {
+    "agency_opened": false,
+    "native_support_opened": false,
+    "phase8_opened": false
+  },
+  "config_id": "n21_i5b_eventful_post_probe_runtime_config",
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "model_family": "LGRC9V3",
+  "original_probe_scaffold": {
+    "active_original_probe_schedule_disabled": true,
+    "baseline_probe_packet_amount": 0.04,
+    "edge_id": 0,
+    "kind": "packetized_probe_scaffold",
+    "post_probe_state_derivation_source": "probe_present_final_snapshot",
+    "probe_present_in_baseline": true,
+    "source_node_id": 1,
+    "target_node_id": 0
+  },
+  "post_probe_eventful_challenge": {
+    "amount": 0.01,
+    "departure_event_time_key": 2.0,
+    "edge_id": 1,
+    "eventful_replay_windows": 3,
+    "kind": "non_original_post_probe_challenge_packet",
+    "original_probe_route_reused": false,
+    "packet_index": 0,
+    "route_role": "center_outward_perturbation_not_original_probe",
+    "scheduler_event_index": 2,
+    "source_node_id": 0,
+    "target_node_id": 2
+  },
+  "runtime_config_builder": "make_config",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "thresholds": {
+    "boundary_active_degree_floor": 9,
+    "declared_before_use": true,
+    "max_budget_error": 1e-09,
+    "post_probe_coherence_floor": 9.95,
+    "post_probe_support_floor": 9.95
+  }
+}
