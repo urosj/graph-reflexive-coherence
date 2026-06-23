@@ -46,6 +46,7 @@ machine-local state.
 | [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Closed N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 stack; records 12 NAT4 surfaces while blocking full native ladder generation on AP4/AP5 NAT4 gaps. | README, then closeout handoff, candidate matrix, Phase 8 readiness matrix, implementation checklist, and hypotheses. |
 | [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Closed contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, continuation-function descriptors, proxy blockers, same-basin controls, and the N21 handoff without claiming primitive evidence. | README, then closeout handoff, same-basin contract, producer residue ledger, function/proxy contract, implementation checklist, and hypotheses. |
 | [N21 withdrawal resistance and naturalization depth](2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md) | Closed bounded becoming-primitive evidence experiment: WR6 artifact-level withdrawal-resistance candidate plus bounded N21-local ND5 naturalization-depth candidate, with agency, native support, sentience, Phase 8, ant ecology, robust withdrawal, support-removal resistance, and general naturalization depth blocked. | README, then closeout handoff, replay/control matrix, withdrawal and naturalization probes, implementation checklist, and hypotheses. |
+| [N22 susceptibility update and durable geometry modification](2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md) | Initialized becoming-primitive experiment for source-current susceptibility update / durable geometry modification; N22 must produce new pre/post/delta/re-entry evidence, same-budget peer comparison, durability metrics, and an explicit N21 ND6 bridge status without treating labels, reinforcement schedules, or N21 WR/ND closeout as susceptibility evidence. | README, then implementation plan/checklist, hypotheses, source handoff inventory, active nulls, susceptibility probes, replay/control matrix, and closeout handoff. |
 
 ## Current Roadmap State
 
@@ -213,7 +214,7 @@ initial no-probe replay, static post-probe-derived persistence, and eventful
 post-probe-derived persistence; it does not support general naturalization
 depth or `ND6`.
 
-N22 is now the next experiment. It must consume the N20 I5
+N22 is now initialized as the next experiment. It must consume the N20 I5
 `susceptibility_update` contract and the N21 closeout handoff, then produce new
 source-backed durable geometry modification evidence. N21 WR/ND evidence is
 prerequisite context only; it cannot satisfy N22 susceptibility update.
