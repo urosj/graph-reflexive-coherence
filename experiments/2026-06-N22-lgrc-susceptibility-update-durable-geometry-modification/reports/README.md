@@ -15,4 +15,3 @@ no sentience claim
 no Phase 8 implementation claim
 no ant ecology implementation claim
 ```
-
