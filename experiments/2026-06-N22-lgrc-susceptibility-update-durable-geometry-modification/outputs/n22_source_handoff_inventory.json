@@ -1,0 +1,795 @@
+{
+  "acceptance_state": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+  "artifact_id": "n22_source_handoff_inventory",
+  "blocked_claims": [
+    "agency",
+    "semantic_action",
+    "semantic_perception",
+    "semantic_goal_ownership",
+    "semantic_intention",
+    "semantic_choice",
+    "semantic_learning",
+    "free_will",
+    "selfhood",
+    "identity_acceptance",
+    "native_support",
+    "phase8_implementation",
+    "fully_native_integration",
+    "organism_life",
+    "sentience",
+    "consciousness",
+    "native_ant_agency",
+    "native_colony_agency",
+    "unrestricted_autonomy"
+  ],
+  "checks": [
+    {
+      "check_id": "n20_closeout_present_and_contract_only",
+      "detail": {
+        "primitive_evidence_opened": false,
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n20_i5_contract_present_and_complete",
+      "detail": {
+        "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+        "source_contract_status": "complete",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "susceptibility_source_row_present",
+      "detail": {
+        "primitive_id": "susceptibility_update",
+        "source_contract_row": "n20_i5_row_03_susceptibility_update"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_closeout_ready_for_n22",
+      "detail": {
+        "n21_closeout_ladder_rung": "N21-C6",
+        "ready_for_n22": true,
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_consumed_as_context_only",
+      "detail": {
+        "naturalization_depth_ladder_rung": "ND5",
+        "naturalization_depth_status": "naturalization_depth_supported_bounded_N21_candidate",
+        "withdrawal_resistance_ladder_rung": "WR6",
+        "withdrawal_resistance_status": "withdrawal_resistance_supported_artifact_level_candidate"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_current_fields_match_handoff",
+      "detail": {
+        "handoff": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace",
+          "susceptibility_update.route_or_region_reentry_trace"
+        ],
+        "row": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace",
+          "susceptibility_update.route_or_region_reentry_trace"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "required_n22_inputs_match_handoff",
+      "detail": {
+        "handoff": [
+          "susceptibility_fields",
+          "replay_requirement",
+          "durable_geometry_modification_controls",
+          "AP4_gap_dependency_if_route_conditioned",
+          "AP5_gap_dependency_if_proxy_conditioned"
+        ],
+        "row": [
+          "susceptibility_fields",
+          "replay_requirement",
+          "durable_geometry_modification_controls",
+          "AP4_gap_dependency_if_route_conditioned",
+          "AP5_gap_dependency_if_proxy_conditioned"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_and_debt_fields_recorded",
+      "detail": {
+        "naturalization_debt_fields": [
+          "susceptibility_update.source_current_route_conditioned_state_mutation",
+          "susceptibility_update.peer_route_same_budget_comparison",
+          "susceptibility_update.proxy_free_susceptibility_policy"
+        ],
+        "producer_mediated_fields": [
+          "susceptibility_update.route_update_rule",
+          "susceptibility_update.reinforcement_schedule",
+          "susceptibility_update.learning_label"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap_gap_contract_present",
+      "detail": {
+        "handoff_ap_gap": {
+          "ap_gap_dependencies": [
+            {
+              "ap_level": "AP4",
+              "reason": "susceptibility update may depend on route-conditioned selection evidence",
+              "source": "N19/N14",
+              "status": "required_local_gap_dependency"
+            }
+          ],
+          "carried_forward_from_i3": true,
+          "conditional_gap_dependencies": [
+            {
+              "ap_level": "AP5",
+              "condition": "proxy or target formation participates in susceptibility update",
+              "source": "N19/N15",
+              "status": "conditional_local_gap_dependency"
+            }
+          ]
+        },
+        "source_ap5_split": {
+          "base_susceptibility_update": {
+            "ap4_gap_dependency": "required_if_route_conditioned",
+            "ap5_gap_dependency": "not_required_when_proxy_target_formation_absent"
+          },
+          "i2_source_map_relation": "I2 required AP5 propagation for direct proxy/target primitives and a general rule for any later primitive that depends on proxy derivation or target formation. I5 makes that general rule row-local for susceptibility_update.",
+          "proxy_conditioned_susceptibility_update": {
+            "ap5_gap_dependency": "required_when_proxy_or_target_formation_participates",
+            "source": "N19/N15"
+          },
+          "status": "explicit_split_not_gap_removal"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "required_controls_recorded",
+      "detail": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "durable_geometry_modification_control",
+        "route_label_only_control",
+        "reinforcement_schedule_removed_control",
+        "AP4_gap_dependency_if_route_conditioned",
+        "AP5_gap_dependency_if_proxy_conditioned"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "same_basin_and_support_scaffold_recorded",
+      "detail": {
+        "same_basin_rule": "n20_i5_susceptibility_update_same_basin_rule",
+        "support_scaffold": "n20_i4_susceptibility_update_support_scaffold"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "primitive_evidence_not_opened",
+      "detail": {
+        "n22_row_primitive_evidence_opened": false,
+        "n22_susceptibility_update_supported": false,
+        "source_row_primitive_evidence_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "su_ladder_not_assigned",
+      "detail": {
+        "n22_ladder_rung_assigned": false,
+        "su_ladder_rung": "not_assigned_contract_inventory_only"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "nd6_bridge_not_supported_in_inventory",
+      "detail": "N22 I1 records the ND6 bridge question only; no bridge support is assigned.",
+      "passed": true
+    },
+    {
+      "check_id": "global_and_source_unsafe_claim_flags_false",
+      "detail": {
+        "global_unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        "source_unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_unopened",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "blocked_closeout_claims": [
+          "agency",
+          "choice",
+          "willpower",
+          "semantic action",
+          "semantic perception",
+          "semantic goal ownership",
+          "semantic intention",
+          "selfhood",
+          "identity acceptance",
+          "native support",
+          "Phase 8 implementation",
+          "sentience",
+          "consciousness",
+          "organism/life",
+          "native ant agency",
+          "native colony agency",
+          "unrestricted autonomy",
+          "ant ecology implementation",
+          "support-removal resistance",
+          "robust withdrawal resistance",
+          "general naturalization depth",
+          "ND6 naturalization closeout"
+        ],
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "sentience_supported": false,
+        "source_mutation_supported": false,
+        "unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "inventory_decision_uses_standard_row_decision",
+      "detail": {
+        "inventory_decision": "supported_as_contract_input_only",
+        "row_decision": "not_applicable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "controls_declared_not_executed_in_inventory",
+      "detail": {
+        "control_execution_status": "not_run",
+        "controls_declared_fail_closed_in_contract": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_local_absolute_paths",
+      "detail": "payload uses repository-relative paths and source IDs only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_source_handoff_inventory.py",
+  "evidence_boundary": {
+    "derived_report_only_true_blocks_positive_support": true,
+    "iteration_1_role": "source_handoff_inventory_only",
+    "n20_contract_completeness_assigns_su_rungs": false,
+    "n21_closeout_assigns_su_rungs": false,
+    "positive_evidence_requires_future_run_artifacts": true,
+    "required_future_candidate_fields": [
+      "source_current_inputs",
+      "row_specific_thresholds_declared_before_use",
+      "pre_interaction_geometry_trace",
+      "post_interaction_geometry_trace",
+      "susceptibility_delta_trace",
+      "route_or_region_reentry_trace",
+      "allowed_delta_fields",
+      "same_basin_invariant_fields",
+      "peer_same_budget_comparison",
+      "interaction_delta_digest",
+      "post_replay_delta_digest",
+      "reentry_delta_digest",
+      "delta_persistence_ratio",
+      "delta_threshold_or_rule",
+      "one_window_transient_rejected"
+    ],
+    "source_current_definition": "emitted by the LGRC runtime or replay from declared run artifacts, not invented by a report builder, label, post-hoc parser, producer-only policy, or semantic learning vocabulary",
+    "su_rungs_require_source_backed_n22_evidence": true
+  },
+  "experiment": "2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "iteration": 1,
+  "iteration1_boundary": {
+    "durable_geometry_modification_supported": false,
+    "n21_nd6_bridge_status": "not_supported",
+    "n21_reopened": false,
+    "positive_run_artifacts_consumed": false,
+    "ready_for_iteration_2_schema_freeze": true,
+    "source_handoff_inventory_only": true,
+    "su_ladder_rung_assigned": false,
+    "susceptibility_evidence_opened": false,
+    "susceptibility_update_supported": false
+  },
+  "n21_nd6_bridge_contract": {
+    "allowed_bridge_status_values": [
+      "not_supported",
+      "bridge_candidate_supported",
+      "blocked_by_replay",
+      "blocked_by_controls",
+      "blocked_by_AP_gap",
+      "blocked_by_producer_residue"
+    ],
+    "bridge_candidate_requires": [
+      "SU5_or_SU6_cleanly_supported",
+      "source_backed_durable_susceptibility_delta",
+      "replay_and_reentry_support",
+      "peer_same_budget_comparison_when_route_or_region_conditioned",
+      "AP4_AP5_dependency_controls_intact",
+      "unsafe_claims_blocked"
+    ],
+    "bridge_status_initial": "not_supported",
+    "n21_is_closed": true,
+    "n21_ladder_rung": "N21-C6",
+    "n21_naturalization_depth_ladder_rung": "ND5",
+    "n21_nd6_supported": false,
+    "n21_source_mutation_supported": false,
+    "n22_bridge_question": "Does N22 produce source-backed durable susceptibility delta evidence that can serve as a bridge candidate for the missing N21 ND6 condition?",
+    "n22_direct_nd6_claim_allowed": false
+  },
+  "output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+  "purpose": "Inventory N20 susceptibility_update contract, N21 closeout handoff, and AP4/AP5 dependency context without opening N22 primitive evidence.",
+  "schema_version": "n22_source_handoff_inventory_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+      "output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+      "sha256": "f6897b0bd39d716e3f8de33ff1818d7b71cf59d9da957197dccd247e7ec438e9",
+      "source_role": "n20_closeout_and_n21_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_role": "n20_i5_same_basin_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "closed_n21_bounded_wr_nd_candidate_and_n22_handoff",
+      "output_digest": "dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_closeout_and_n22_handoff.json",
+      "sha256": "91e7799c1a75ff2839cd5c64b0ca89ba584e8f1e69395f03b69f3565791fd47d",
+      "source_role": "n21_closeout_and_n22_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+      "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+      "source_role": "n19_native_readiness_boundary",
+      "status": "passed"
+    },
+    {
+      "parseable_json": false,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "sha256": "90b0b7b59fefe8a250dcb9804c9e7ebbdab9702490c1b760dfd269b21e98830a",
+      "source_role": "n20_n29_handoff",
+      "status": "markdown_context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "sha256": "76b14cf9621036dd0e3ff01e0802d78314c73348b565a32f0b1c41566acfcf60",
+      "source_role": "n20_n29_roadmap",
+      "status": "markdown_context_only"
+    }
+  ],
+  "source_closeout_summary": {
+    "n19_claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+    "n20_acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+    "n20_output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+    "n20_status": "passed",
+    "n21_acceptance_state": "closed_n21_bounded_wr_nd_candidate_and_n22_handoff",
+    "n21_closeout_ladder_rung": "N21-C6",
+    "n21_output_digest": "dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10",
+    "n21_status": "passed",
+    "n22_handoff_blockers": [
+      "N22 must produce new source-backed durable geometry deltas",
+      "N22 may not treat N21 WR/ND closeout as susceptibility evidence",
+      "N22 must keep AP4 dependency row-local when route-conditioned selection participates",
+      "N22 must carry conditional AP5 dependency if proxy or target formation participates",
+      "N22 must keep producer route update / reinforcement / learning labels out of native support"
+    ],
+    "n22_handoff_scope": "durable geometry modification / susceptibility update after withdrawal and post-probe persistence evidence",
+    "ready_for_n22": true
+  },
+  "source_context_boundary": {
+    "markdown_sources_context_only": [
+      "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md"
+    ],
+    "n21_closeout_may_consume_as": [
+      "prerequisite_context",
+      "WR6_ND5_N21-C6_readiness_boundary",
+      "N22_handoff_contract"
+    ],
+    "n21_closeout_must_not_consume_as": [
+      "susceptibility_update_evidence",
+      "durable_geometry_delta",
+      "SU_ladder_assignment_source",
+      "semantic_learning_evidence",
+      "native_support_evidence"
+    ]
+  },
+  "source_contract_rows": [
+    {
+      "allowed_next_assignment_source": "source_backed_N22_evidence_rows_only",
+      "ap5_dependency_split": {
+        "base_susceptibility_update": {
+          "ap4_gap_dependency": "required_if_route_conditioned",
+          "ap5_gap_dependency": "not_required_when_proxy_target_formation_absent"
+        },
+        "i2_source_map_relation": "I2 required AP5 propagation for direct proxy/target primitives and a general rule for any later primitive that depends on proxy derivation or target formation. I5 makes that general rule row-local for susceptibility_update.",
+        "proxy_conditioned_susceptibility_update": {
+          "ap5_gap_dependency": "required_when_proxy_or_target_formation_participates",
+          "source": "N19/N15"
+        },
+        "status": "explicit_split_not_gap_removal"
+      },
+      "ap_gap_contract": {
+        "ap_gap_dependencies": [
+          {
+            "ap_level": "AP4",
+            "reason": "susceptibility update may depend on route-conditioned selection evidence",
+            "source": "N19/N14",
+            "status": "required_local_gap_dependency"
+          }
+        ],
+        "carried_forward_from_i3": true,
+        "conditional_gap_dependencies": [
+          {
+            "ap_level": "AP5",
+            "condition": "proxy or target formation participates in susceptibility update",
+            "source": "N19/N15",
+            "status": "conditional_local_gap_dependency"
+          }
+        ]
+      },
+      "blocked_claims_carried_forward": [
+        "agency",
+        "semantic_action",
+        "semantic_perception",
+        "semantic_goal_ownership",
+        "semantic_intention",
+        "semantic_choice",
+        "semantic_learning",
+        "free_will",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "phase8_implementation",
+        "fully_native_integration",
+        "organism_life",
+        "sentience",
+        "consciousness",
+        "native_ant_agency",
+        "native_colony_agency",
+        "unrestricted_autonomy"
+      ],
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "source contract input only; no N22 susceptibility-update evidence, semantic learning, choice, agency, native support, Phase 8, sentience, or ant-ecology implementation",
+      "continuation_function_descriptor": {
+        "basin_signature": [
+          "pre_interaction_geometry_trace",
+          "post_interaction_geometry_trace",
+          "susceptibility_delta_trace"
+        ],
+        "boundary_condition": "route or region boundary remains auditable after update",
+        "claim_ceiling": "contract descriptor only; no primitive support, agency, Phase 8, native support, sentience, or semantic function",
+        "coherence_floor": "altered geometry stays above coherence floor",
+        "continuation_condition": "later route or boundary susceptibility differs because prior interaction altered replay-visible geometry",
+        "descriptor_id": "n20_i4_susceptibility_update_continuation_function",
+        "descriptor_kind": "bounded_geometric_continuation_condition",
+        "flux_condition": "durable delta is not a flux-only transient",
+        "proxy_metric": "n20_i4_susceptibility_update_susceptibility_delta_replay_margin",
+        "support_floor": "altered geometry stays above support floor"
+      },
+      "contract_consumed_without_redefinition": true,
+      "control_execution_status": "not_run",
+      "controls_declared_fail_closed_in_contract": true,
+      "global_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "global_unsafe_claim_flags_all_false": true,
+      "inventory_decision": "supported_as_contract_input_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n22_inventory_role": "source_contract_input_only",
+      "n22_ladder_rung_assigned": false,
+      "n22_primitive_evidence_opened": false,
+      "n22_susceptibility_update_supported": false,
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "primitive_id": "susceptibility_update",
+      "primitive_name": "Susceptibility Update",
+      "producer_mediated_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "proxy_metric_definition": {
+        "collapse_condition": "replay loses the durable delta or depends on producer reinforcement",
+        "divergence_condition": "delta label changes while source-current geometry and re-entry do not",
+        "expected_relation_to_continuation_function": "delta is a sign only if replay-visible geometry changes and later re-entry follows that altered geometry",
+        "measured_quantity": "susceptibility_delta_replay_margin",
+        "producer_inputs": [
+          "susceptibility_update.route_update_rule",
+          "susceptibility_update.reinforcement_schedule",
+          "susceptibility_update.learning_label"
+        ],
+        "proxy_id": "n20_i4_susceptibility_update_susceptibility_delta_replay_margin",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "proxy_success_replaces_continuation": false,
+        "source_current_inputs": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace",
+          "susceptibility_update.route_or_region_reentry_trace"
+        ]
+      },
+      "required_control_ids": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "durable_geometry_modification_control",
+        "route_label_only_control",
+        "reinforcement_schedule_removed_control",
+        "AP4_gap_dependency_if_route_conditioned",
+        "AP5_gap_dependency_if_proxy_conditioned"
+      ],
+      "required_n22_inputs": [
+        "susceptibility_fields",
+        "replay_requirement",
+        "durable_geometry_modification_controls",
+        "AP4_gap_dependency_if_route_conditioned",
+        "AP5_gap_dependency_if_proxy_conditioned"
+      ],
+      "row_decision": "not_applicable",
+      "row_id": "n22_i1_row_01_susceptibility_update_contract_input",
+      "same_basin_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_contract_status": "complete",
+      "source_current_fields": [
+        "susceptibility_update.pre_interaction_geometry_trace",
+        "susceptibility_update.post_interaction_geometry_trace",
+        "susceptibility_update.susceptibility_delta_trace",
+        "susceptibility_update.route_or_region_reentry_trace"
+      ],
+      "source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "source_i4_row_id": "n20_i4_row_03_susceptibility_update",
+      "source_role_dependencies": [
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_01_n19_implementation_boundary",
+          "source_role": "implementation_boundary_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_02_n20_n29_roadmap",
+          "source_role": "roadmap_source"
+        },
+        {
+          "consumption_status": "vocabulary_method_boundary_or_context_only_not_evidence",
+          "source_inventory_row_id": "n20_i1_row_08_agency_after_choice_vocabulary",
+          "source_role": "diagnostic_vocabulary_source"
+        }
+      ],
+      "source_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "source_unsafe_claim_flags_all_false": true,
+      "su_ladder_rung": "not_assigned_contract_inventory_only",
+      "support_scaffold": {
+        "declared_supports": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "naturalization_debt": [
+          "susceptibility_update.source_current_route_conditioned_state_mutation",
+          "susceptibility_update.peer_route_same_budget_comparison"
+        ],
+        "optional_supports": [
+          "peer-route comparison telemetry"
+        ],
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "susceptibility_update.route_update_rule",
+          "susceptibility_update.reinforcement_schedule"
+        ],
+        "required_supports": [
+          "replay-visible geometry delta",
+          "later re-entry trace"
+        ],
+        "support_id": "n20_i4_susceptibility_update_support_scaffold",
+        "withdrawable_supports": [
+          "producer reinforcement schedule"
+        ]
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "status": "passed"
+}

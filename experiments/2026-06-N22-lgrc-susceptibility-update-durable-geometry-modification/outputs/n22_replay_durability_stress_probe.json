@@ -1,0 +1,1882 @@
+{
+  "acceptance_state": "accepted_replay_stress_limited_su3_candidates_pending_i7_controls",
+  "artifact_id": "n22_i5a_replay_durability_stress_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry-checkpoint-00000000.json",
+      "sha256": "5a1be3369b8803970d2fc38a44dc70b97e4789a430b143824cb90f922ee6e2ec"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry-checkpoint-00000001.json",
+      "sha256": "2cd41752ede388a4dbf9df592ddedce969d1974aaf6c558c3f3cf7c6d5a5653f"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_events.jsonl",
+      "sha256": "c738b3fc8d27d13b1a488d1e9ff79f654e38ad0f4b16559b677560fa01a24c7d"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_final_snapshot.json",
+      "sha256": "224bb93a2e3a6b0480840e65081d2d998135f0b41bc85b4f34c967623bc6d13c"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_run.json",
+      "sha256": "18b200942ff0fc71bf70b12be2982435a07673b7f004133634909715aa187eb8"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry-checkpoint-00000000.json",
+      "sha256": "f8d0acf8a0eeac449819c8f6e50fbbe562c934cfa7db0a015475ad10580c778e"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry-checkpoint-00000001.json",
+      "sha256": "36ba3a3c60890df187247c701c308cb89ad2aceddaaea3a807844bfa1d334b5b"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_events.jsonl",
+      "sha256": "795980b3f49d71e710bfbcd0a2f1255552d1b3d19e104e5263c70ce896abccfb"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_final_snapshot.json",
+      "sha256": "224bb93a2e3a6b0480840e65081d2d998135f0b41bc85b4f34c967623bc6d13c"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_run.json",
+      "sha256": "764223e7bcaa207344bc4617c302074ad4798011b68c3fac6c8cd40b773e4bec"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry-checkpoint-00000000.json",
+      "sha256": "d7b42760aa7c6ee69c86f178e8031e1c419e8198a84c335c36c693b88c931274"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry-checkpoint-00000001.json",
+      "sha256": "9e7c32de9897f922cb18a2497d0198d8ba00ef2fd0aee4a91cda1a60c6a909ec"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_events.jsonl",
+      "sha256": "7f4f1757e4552fe544c21ee0a0a33be1b1133412d9c2b83c6d31547af86370a0"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_final_snapshot.json",
+      "sha256": "41b3d503f1a867e7a3c3c38e729338e054dc6a3a5ed75d648d79af15b9b25bc9"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_run.json",
+      "sha256": "7453f38925e5cb66dc298081df9c2bb8937d8772307a75bec88f5998d155658d"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_repeated_reentry_two_step_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step-checkpoint-00000000.json",
+      "sha256": "cbe7e76834b40e242d43983e4b718fea17265f4d93ae292e9c24551282b19b7b"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_repeated_reentry_two_step_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step-checkpoint-00000001.json",
+      "sha256": "663e262f4f35a22694305fbd535177aa3da3fefd51d8f91b4b9a6d72e253ab1c"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_repeated_reentry_two_step_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step_events.jsonl",
+      "sha256": "f9a281867c3cce4a80446030cef1f3509e95554e1f5785231452ca1d4f0d6855"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_repeated_reentry_two_step_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step_final_snapshot.json",
+      "sha256": "445bb9f65bec03d26ef139c0770d8aa773d689b9807b3e4e7470b016bbc69f16"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_repeated_reentry_two_step_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_repeated_reentry_two_step_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step_run.json",
+      "sha256": "f0caadf0adb4b344ca85ed4d2a3c9e9297dcfba164a70cb220b340ac637a88e9"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_baseline_post_snapshot_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry-checkpoint-00000000.json",
+      "sha256": "b68903baa970a02fdf0f3e1728d31d6309ba8ad5592dc6d96b34f21df2357f1a"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_baseline_post_snapshot_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry-checkpoint-00000001.json",
+      "sha256": "906445932aaaa7493a04f6d1772bf0a958e92517dbe2ae43cb5b0a709de5cca9"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_baseline_post_snapshot_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry_events.jsonl",
+      "sha256": "9bd91659fda71a23df10bc6b32dc529e858105e37877fd0871edb75aad54e793"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_baseline_post_snapshot_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry_final_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_baseline_post_snapshot_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_baseline_post_snapshot_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry_run.json",
+      "sha256": "97ad116fb85edc0c5c55b8896ea2b16aed42471713fcf69b42d12a1845aeb2ee"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_idle_two_windows_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry-checkpoint-00000000.json",
+      "sha256": "a2dca45c2d2b0f907d1a66f6182cbfbe94a303b3747bef9f72e04378faac2c8d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_idle_two_windows_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry-checkpoint-00000001.json",
+      "sha256": "1bce795ef3c78b4fafb0733e7adbe79f5118d578b9e58b0101ed95a00ba0829f"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_idle_two_windows_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry_events.jsonl",
+      "sha256": "549037be622a10243aba2cc3eaacbcedd8d4efabe7af02a1ab579eb0f6933925"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_idle_two_windows_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry_final_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_idle_two_windows_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_idle_two_windows_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry_run.json",
+      "sha256": "edd24548cbd5e065556fdf96b4d21d61231e0337b24256f3ae970656c9066f93"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_mild_peer_flux_before_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry-checkpoint-00000000.json",
+      "sha256": "27074a5dba6d8d67f07f8dd753efbff52c0fe770d3868334bdc79c58f9079a41"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_mild_peer_flux_before_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry-checkpoint-00000001.json",
+      "sha256": "9c0a2d7c16ad424e1a417a1bde770aea296025128b297de08b172c2424ba2f4f"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_mild_peer_flux_before_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry_events.jsonl",
+      "sha256": "3ae8c7fc44cc508c46dcd0f4607a29d0e843f885036fccb5fc591833f48e90bf"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_mild_peer_flux_before_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry_final_snapshot.json",
+      "sha256": "c3ba4f14eb102d26798f94824735c69192d2024d26269ee2a707eb603d9c091f"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_mild_peer_flux_before_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_mild_peer_flux_before_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry_run.json",
+      "sha256": "3f8e3602985f83fce777ff079d98f4b67a1106c4d71b9f46a1f3142262d50ece"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_repeated_reentry_two_step_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step-checkpoint-00000000.json",
+      "sha256": "0e9202a79a8593aed1eb241a6ab52278dd61185082eb29e0120a4597634f7099"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_repeated_reentry_two_step_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step-checkpoint-00000001.json",
+      "sha256": "4345ff1b27beda082713f78892d390a3031f597652cac4bbf3d9330b2b15cb19"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_repeated_reentry_two_step_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step_events.jsonl",
+      "sha256": "633607becc879434f00a4238313d31ed5464c7ab0417a7587a16ad8ad740efa0"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_repeated_reentry_two_step_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step_final_snapshot.json",
+      "sha256": "b2c46f1f57335769d65131110c931a10e01c5714f5a8f4e6f78ad1836829b29e"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_repeated_reentry_two_step_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_repeated_reentry_two_step_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step_run.json",
+      "sha256": "a7e7b6b924bd8fa1192657923a6cb162fa91860d3c93c4baea9a611550dc28c4"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_baseline_post_snapshot_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry-checkpoint-00000000.json",
+      "sha256": "96083f540446f383749c8f0013e219019bea1bfa59a8ddb072dc278265ea2055"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_baseline_post_snapshot_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry-checkpoint-00000001.json",
+      "sha256": "c9c6fc775593a7b05811342b413f7f2091ba32e0fbd930374d52e9ea5916d3e3"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_baseline_post_snapshot_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry_events.jsonl",
+      "sha256": "a60524f96da7fcc8154ecd123592de9a07c4d6ed989f01a27a54c12b995a27b1"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_baseline_post_snapshot_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry_final_snapshot.json",
+      "sha256": "6bf6688edb51bda1191c1fb3c09a67e1ca730a2669f98c5ea08adef2427565b6"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_baseline_post_snapshot_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_baseline_post_snapshot_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry_run.json",
+      "sha256": "6b18c37620e2606d3033353542cf7e3455ae65945024b15526b2a068e11f96b2"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_idle_two_windows_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry-checkpoint-00000000.json",
+      "sha256": "a4c71a2d72e82fb817389d497d1114edd8917e8a6f50104e61724b8fb669a699"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_idle_two_windows_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry-checkpoint-00000001.json",
+      "sha256": "770d57ac25eba20c69ecda853c8bb3b8965a17ec29c770563f99ca1686ee6305"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_idle_two_windows_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry_events.jsonl",
+      "sha256": "1532604881c53ca029f4c385494877db0eb2c495d6df7e07b804b054b80aa513"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_idle_two_windows_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry_final_snapshot.json",
+      "sha256": "6bf6688edb51bda1191c1fb3c09a67e1ca730a2669f98c5ea08adef2427565b6"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_idle_two_windows_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_idle_two_windows_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry_run.json",
+      "sha256": "d85dcece73d1815490989985cd70d739a3bee360353a55c73e2060c565e49691"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_mild_peer_flux_before_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry-checkpoint-00000000.json",
+      "sha256": "597b607909117cc480ac8640f015c8bcb023cb1ac811855d236e7b5fcabf5b0c"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_mild_peer_flux_before_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry-checkpoint-00000001.json",
+      "sha256": "a013f3221967ea011591cec369ec28b08391ed629c51aac474d9aa97ecf14754"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_mild_peer_flux_before_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry_events.jsonl",
+      "sha256": "85dcabf4a79d42301a44923218cb923bcc7fa9c5786c77ccfcad4663dc3782fc"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_mild_peer_flux_before_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry_final_snapshot.json",
+      "sha256": "218b407d3b49ae0ac0b8e077f673ce3bc13921edc2f92062a3ff17ca8cc22a79"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_mild_peer_flux_before_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_mild_peer_flux_before_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry_run.json",
+      "sha256": "47bbdace7f0d5d207d299e88777365266056c726d7f611050492fb6c4140940c"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_repeated_reentry_two_step_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step-checkpoint-00000000.json",
+      "sha256": "88910790728dcea3f26efd22aa32ab0d2e7f1772b8b6ba9a761e886a64bedb96"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_repeated_reentry_two_step_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step-checkpoint-00000001.json",
+      "sha256": "93d3f58ffcf2bac2a86f5f608d4a0ea6a6879396e6501aa678f8d13615156bd2"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_repeated_reentry_two_step_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step_events.jsonl",
+      "sha256": "1d375e6506952cd4dc01b23614cb00353f4edea1da2c1662c4c2ea46134af82b"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_repeated_reentry_two_step_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step_final_snapshot.json",
+      "sha256": "887ab776f7ca62148918554867f715f2479d3a659765f59570b85e81176c9a65"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_repeated_reentry_two_step_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_repeated_reentry_two_step_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step_run.json",
+      "sha256": "c7a5871c9f80e853333c0240d06935870ab55968489bbfd62148805ab34c0b7b"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_baseline_post_snapshot_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry-checkpoint-00000000.json",
+      "sha256": "a36020d74dfad9720466b020238a3b9fac7e8d0e64bb1d4562f94e89fe7ddf13"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_baseline_post_snapshot_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry-checkpoint-00000001.json",
+      "sha256": "b726f041ebf48338b3db62884767f0d128fe34c9f6a74abe32f4f73c9d7dda9b"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_baseline_post_snapshot_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry_events.jsonl",
+      "sha256": "22dd51ba3611df274ae741dea4df27af7ad1c98909b914de6e429d768a039e52"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_baseline_post_snapshot_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry_final_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_baseline_post_snapshot_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_baseline_post_snapshot_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry_run.json",
+      "sha256": "41adcd470e892c889f0d8ef745395c0ec2d495b215165b1f40d7821497a1a3f7"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_idle_two_windows_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry-checkpoint-00000000.json",
+      "sha256": "48f1fee21e11d92fdc6706e7ace1a915c250b3ebd6f186eb70e54fa9fee512d0"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_idle_two_windows_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry-checkpoint-00000001.json",
+      "sha256": "04812b60393cd2e23872c8662f945896fc076dc7e0181b00700e1fc91bdb5d21"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_idle_two_windows_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry_events.jsonl",
+      "sha256": "b6f09b8cedb9f879b2737244dec6dfa1d04c370fd0257acbbb11ff69c3784365"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_idle_two_windows_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry_final_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_idle_two_windows_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_idle_two_windows_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry_run.json",
+      "sha256": "211b7783c03a4e26be07a58bb86ecb179f2c743942389e19451f3b0e10db028b"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_mild_peer_flux_before_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry-checkpoint-00000000.json",
+      "sha256": "3e2f3041383ae84c80259f3e1f7f5ea7cab30c7cf114ffd08fbad735414d9659"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_mild_peer_flux_before_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry-checkpoint-00000001.json",
+      "sha256": "8647b59ab305d658ae9a7ab2f6f09473424346e0a311be7c50e37bd609d7b53f"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_mild_peer_flux_before_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry_events.jsonl",
+      "sha256": "7e5296c5b8eaa342b9e1270f54139f0a12d50efbd50e988b3ff9f11cd7b79e2f"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_mild_peer_flux_before_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry_final_snapshot.json",
+      "sha256": "c3ba4f14eb102d26798f94824735c69192d2024d26269ee2a707eb603d9c091f"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_mild_peer_flux_before_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_mild_peer_flux_before_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry_run.json",
+      "sha256": "0f8dacff5cb740a32cb46bf7f9e7ed39a0f5e4bbe904a203e6f297dc7d2774d0"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_repeated_reentry_two_step_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step-checkpoint-00000000.json",
+      "sha256": "23cff6a5c2581e622957590c3aa2d9b748fbb7e2b7ec684be66789461b35ef9c"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_repeated_reentry_two_step_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step-checkpoint-00000001.json",
+      "sha256": "440d3b4896ae647379808b3a337248f18523571c234047a0649da3bccffbc822"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_repeated_reentry_two_step_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step_events.jsonl",
+      "sha256": "362f131904354e8917fd57e98e688c7da2c00e8f52a087bb6f76cafa1d563003"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_repeated_reentry_two_step_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step_final_snapshot.json",
+      "sha256": "b2c46f1f57335769d65131110c931a10e01c5714f5a8f4e6f78ad1836829b29e"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_repeated_reentry_two_step_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_repeated_reentry_two_step_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step_run.json",
+      "sha256": "0d7d24fff6732cbde21bc15c9c1584cefedf5ce88525e374247ccee39fc98961"
+    },
+    {
+      "artifact_role": "thresholds_declared_before_use",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/n22_i5a_thresholds_declared_before_use.json",
+      "sha256": "98087ed5781eab203a3836265f128612dd09763cabaf5833a197e23332ca88ab"
+    },
+    {
+      "artifact_role": "single_route_b_reference_baseline_post_snapshot_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry-checkpoint-00000000.json",
+      "sha256": "6752a1389fd322b05d388e18427f9ee821b2ab0885a551bf19d4e1702f855b06"
+    },
+    {
+      "artifact_role": "single_route_b_reference_baseline_post_snapshot_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry-checkpoint-00000001.json",
+      "sha256": "3f38c60a3d6d20c1ceeb4a5bcd0aff968cd3974583500c199f61f83b10113a37"
+    },
+    {
+      "artifact_role": "single_route_b_reference_baseline_post_snapshot_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry_events.jsonl",
+      "sha256": "587c2e1e5fcce58777451d7e9d82f4379053a7ae6b89524ede1b5435a1f44e43"
+    },
+    {
+      "artifact_role": "single_route_b_reference_baseline_post_snapshot_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry_final_snapshot.json",
+      "sha256": "45c53a5f18139f085fbe9494237bbebd33d0f4d43d348aa3c5195966422ddded"
+    },
+    {
+      "artifact_role": "single_route_b_reference_baseline_post_snapshot_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_baseline_post_snapshot_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry_run.json",
+      "sha256": "6c49695a6db15d42217c598abee3e1b7787fdb072080f1f25125c4f5893e7294"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_idle_two_windows_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry-checkpoint-00000000.json",
+      "sha256": "96d758e098f2ebe1ff7be77152cadb0cee6afea65277473d3194045de090697d"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_idle_two_windows_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry-checkpoint-00000001.json",
+      "sha256": "bd7586ae97418b9d15d4bc732546d78722841ce306b03e243aaa642ab17ccca6"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_idle_two_windows_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry_events.jsonl",
+      "sha256": "b5f70fe17d49c2f39e2d6e77064f4971c4de512156d7215db5fc042fc9ed3786"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_idle_two_windows_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry_final_snapshot.json",
+      "sha256": "45c53a5f18139f085fbe9494237bbebd33d0f4d43d348aa3c5195966422ddded"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_idle_two_windows_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_idle_two_windows_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry_run.json",
+      "sha256": "f6081e81d565e9aa4d0f3e64605639b9e36f69c390e8a736a8188ec2ca42a9ce"
+    },
+    {
+      "artifact_role": "single_route_b_reference_mild_peer_flux_before_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry-checkpoint-00000000.json",
+      "sha256": "ca2595688524009316e04636bf36c008bbc969db3f29a1b72f20d7e6eecc29d8"
+    },
+    {
+      "artifact_role": "single_route_b_reference_mild_peer_flux_before_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry-checkpoint-00000001.json",
+      "sha256": "57d0849bddf47a98a3e041c1bcd91716f75d4277de42058fea946b0f240738d9"
+    },
+    {
+      "artifact_role": "single_route_b_reference_mild_peer_flux_before_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry_events.jsonl",
+      "sha256": "33109ff4129b3d21bd2b24b1a2f659e5f6b5ee6a813d4d1b3922bb23973d470e"
+    },
+    {
+      "artifact_role": "single_route_b_reference_mild_peer_flux_before_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry_final_snapshot.json",
+      "sha256": "c7a6eb5a5c730d94f27f90576df09950a5393dafa48accd66985dcb27fae1d71"
+    },
+    {
+      "artifact_role": "single_route_b_reference_mild_peer_flux_before_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_mild_peer_flux_before_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry_run.json",
+      "sha256": "7c55e7c9a711fa6639db9e5e49745bbc8c8a11b63367683ca333cb2156df2fe7"
+    },
+    {
+      "artifact_role": "single_route_b_reference_repeated_reentry_two_step_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step-checkpoint-00000000.json",
+      "sha256": "148c61aa4c23212830413e1910f10b92d81903556b45590743a3b7ce69643f3a"
+    },
+    {
+      "artifact_role": "single_route_b_reference_repeated_reentry_two_step_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step-checkpoint-00000001.json",
+      "sha256": "285425a8e1af65661e97ad4f5e79de8d7a02b126e5adf1f669831d2783472d46"
+    },
+    {
+      "artifact_role": "single_route_b_reference_repeated_reentry_two_step_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step_events.jsonl",
+      "sha256": "3cd23212aff2bb2e4b2e2af597e491d8767d37301f775bd84f76d1012f681a0a"
+    },
+    {
+      "artifact_role": "single_route_b_reference_repeated_reentry_two_step_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step_final_snapshot.json",
+      "sha256": "e25acbaa8da949d8079c87ff2979f82d0a773a42ab8bef8281fdfc672fc1de1d"
+    },
+    {
+      "artifact_role": "single_route_b_reference_repeated_reentry_two_step_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_repeated_reentry_two_step_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step_run.json",
+      "sha256": "389bcf5bb89eee1079d293e7143e821434815841549e08b17c3be61602f9ff41"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i5_passed",
+      "detail": "accepted_replay_backed_su3_candidates_pending_i7_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5_su3_candidate_count",
+      "detail": [
+        "n22_i5_row_i4_minimal_route_b",
+        "n22_i5_row_dose_08_i4_reference",
+        "n22_i5_row_dose_14_stronger_bounded",
+        "n22_i5_row_single_route_b_reference",
+        "n22_i5_row_complementary_split_route_b_adjacent"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "stress_modes_declared_before_use",
+      "detail": [
+        "baseline_post_snapshot_reentry",
+        "delayed_idle_two_windows_reentry",
+        "repeated_reentry_two_step",
+        "mild_peer_flux_before_reentry"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": 121,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": 121,
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_have_four_stress_modes",
+      "detail": [
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": true,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_pass_su3_preservation_stress_modes",
+      "detail": [
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": true,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "repeated_reentry_depletion_boundary_recorded",
+      "detail": [
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": true,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "narrow_complementary_stress_tracked",
+      "detail": [
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": true,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_rows_promote_to_su4",
+      "detail": [
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": true,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_claims_still_blocked",
+      "detail": [
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        },
+        {
+          "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+          "narrow_margin_candidate": true,
+          "passed_stress_mode_count": 3,
+          "provisional_su_ladder_rung": "SU3_stress_limited",
+          "repeated_reentry_depletion_boundary_recorded": true,
+          "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "stress_mode_count": 4,
+          "su3_preservation_stress_modes_passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_flags_all_false",
+      "detail": "all stress rows",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": "relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_replay_durability_stress_probe.py",
+  "experiment": "N22",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "I5-A strengthens replay-backed SU3 evidence only for delayed and mild-peer-flux preservation. Repeated re-entry is a fail-closed depletion boundary. I5-A does not support durable SU4, transfer SU5, SU6, final N22, the N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+    "short_read": "I5-A shows the replay-backed SU3 candidates preserve their route-specific delta under delayed re-entry and mild peer flux, while repeated re-entry exposes a fail-closed depletion boundary.",
+    "what_changed_from_i5": "I5 tested clean replay. I5-A keeps the same thresholds and starts from the saved post-interaction state, then delays re-entry, repeats re-entry, or injects a mild unrelated peer flux before route_b re-entry. The second repeated re-entry depletes the route-specific delta below the SU3 preservation ratio, so I5-A records limited replay-stress support rather than SU4 evidence."
+  },
+  "iteration": "5-A",
+  "iteration5a_boundary": {
+    "agency_supported": false,
+    "choice_supported": false,
+    "durable_geometry_modification_supported": false,
+    "n21_nd6_bridge_status": "not_supported",
+    "n22_closeout_ladder_rung_assigned": false,
+    "narrow_margin_candidate_count": 1,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "provisional_su_ladder_rung": "SU3_stress_limited",
+    "ready_for_iteration_6_transfer_reentry_probe": true,
+    "ready_for_iteration_7_control_matrix": true,
+    "repeated_reentry_depletion_boundary_count": 5,
+    "semantic_learning_supported": false,
+    "sentience_supported": false,
+    "source_i5_su3_candidate_count": 5,
+    "stress_limited_su3_candidate_count": 5,
+    "stress_mode_count_per_row": 4,
+    "stress_supported_su3_candidate_count": 0,
+    "su3_preservation_stress_supported_candidate_count": 5,
+    "su4_or_stronger_supported": false
+  },
+  "output_digest": "2602c7b3fb99b19521b5a72f0615f0ff401aa2cb532674df7eeae2875c48ff27",
+  "purpose": "replay durability stress over I5 SU3 candidates",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_replay_backed_su3_candidates_pending_i7_controls",
+      "output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_durability_replay_probe.json",
+      "sha256": "fabc510447d3a98c1545c1a2b4c00acb79112c1aec9c47f015af9b4694ba3af0",
+      "source_role": "n22_i5_durability_replay_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "stress_policy": {
+    "full_i7_control_matrix_run": false,
+    "repeated_reentry_two_step_role": "depletion_boundary_probe_not_required_for_SU3_preservation_support",
+    "stress_modes": [
+      "baseline_post_snapshot_reentry",
+      "delayed_idle_two_windows_reentry",
+      "repeated_reentry_two_step",
+      "mild_peer_flux_before_reentry"
+    ],
+    "su3_preservation_stress_modes": [
+      "baseline_post_snapshot_reentry",
+      "delayed_idle_two_windows_reentry",
+      "mild_peer_flux_before_reentry"
+    ],
+    "su4_or_stronger_allowed": false,
+    "threshold_policy_changed_from_i5": false
+  },
+  "stress_rows": [
+    {
+      "claim_ceiling": "I5-A replay-stress SU3 evidence pending I7 controls; no durable SU4, transfer SU5, SU6, final N22, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "durability_stress_supported": false,
+      "durable_geometry_modification_supported": false,
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "one_window_transient_rejected": true,
+      "output_digest": "ad4510679b4fea202eadf99788afd14bf55d8ebf47f38262d0088fdfe2111b43",
+      "passed_stress_mode_count": 3,
+      "preservation_stress_supported": true,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_boundary_blocks_su4": true,
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "replay_stress_status": "partial",
+      "row_decision": "partial",
+      "row_id": "n22_i5a_row_i4_minimal_route_b",
+      "source_candidate_row_id": "n22_i4_row_01_minimal_route_b_susceptibility_update_probe",
+      "source_i5_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+      "source_iteration": "I4",
+      "stress_mode_count": 4,
+      "stress_results": [
+        {
+          "status": "passed",
+          "stress_artifact_digest": "660950f1d32dcd3767257fd170aa624b84746e75dd0f59983772af91e2c3a111",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_baseline_post_snapshot_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "baseline_post_snapshot_reentry"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "7996750bdaaffacdc732da752eec3b44d02b0297392bf84acae2e478f16221e9",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_delayed_idle_two_windows_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "delayed_idle_two_windows_reentry"
+        },
+        {
+          "status": "failed_closed",
+          "stress_artifact_digest": "dad1ad8f4be5072f7174718ccf081fad82510adec8bdc6c58b3ef10bf8086f6c",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_repeated_reentry_two_step_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            },
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.14999999999999858,
+              "delta_persistence_ratio_against_source": 2.2204460492503112e-14,
+              "gate_digest": "6baf8bdb0a6e8b9b61b75522d4532f694fe5aa3cae0a8381e91c12dc72878a63",
+              "in_flight_packet_total": 0.0,
+              "passed": false,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 1.7763568394002505e-15
+            }
+          ],
+          "stress_mode": "repeated_reentry_two_step"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "6b31bbb79ad38de71422c3623909031a9800133a6c42f2f4eabc7dbd65c37475",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/i4_minimal_route_b_mild_peer_flux_before_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.09999999999999964,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "8cd1668be69f86b6136f6ba82fb308865cb47a2a2df921a11a2889c4664fb11d",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "mild_peer_flux_before_reentry"
+        }
+      ],
+      "su3_preservation_stress_modes": [
+        "baseline_post_snapshot_reentry",
+        "delayed_idle_two_windows_reentry",
+        "mild_peer_flux_before_reentry"
+      ],
+      "su3_preservation_stress_modes_passed": true,
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-A replay-stress SU3 evidence pending I7 controls; no durable SU4, transfer SU5, SU6, final N22, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "durability_stress_supported": false,
+      "durable_geometry_modification_supported": false,
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "one_window_transient_rejected": true,
+      "output_digest": "a9b89e92ecef7a20c3d4c7ed99c1f0ac94e175f2bd7c5278a7e71d568d13842c",
+      "passed_stress_mode_count": 3,
+      "preservation_stress_supported": true,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_boundary_blocks_su4": true,
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "replay_stress_status": "partial",
+      "row_decision": "partial",
+      "row_id": "n22_i5a_row_dose_08_i4_reference",
+      "source_candidate_row_id": "n22_i4a_row_dose_08_i4_reference",
+      "source_i5_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+      "source_iteration": "I4-A",
+      "stress_mode_count": 4,
+      "stress_results": [
+        {
+          "status": "passed",
+          "stress_artifact_digest": "ba2271a0d558faca0392cdaea29bc52edda8ee322efc3d32b05b2bc59198c438",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_baseline_post_snapshot_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "baseline_post_snapshot_reentry"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "b3260152c75c1e6b3b9172a32d1ee3b9807cf805cf29b90649d64d653aefe624",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_delayed_idle_two_windows_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "delayed_idle_two_windows_reentry"
+        },
+        {
+          "status": "failed_closed",
+          "stress_artifact_digest": "a268ff6a1b20a1521001d550fd066c74b2a5ab33f26bd41f1265aca0a4930229",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_repeated_reentry_two_step_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            },
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.14999999999999858,
+              "delta_persistence_ratio_against_source": 2.2204460492503112e-14,
+              "gate_digest": "6baf8bdb0a6e8b9b61b75522d4532f694fe5aa3cae0a8381e91c12dc72878a63",
+              "in_flight_packet_total": 0.0,
+              "passed": false,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 1.7763568394002505e-15
+            }
+          ],
+          "stress_mode": "repeated_reentry_two_step"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "56893bc2aa5d62cca537903bb0d1d5159bd631bce2dcd38ee45ade408f32ba26",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_08_i4_reference_mild_peer_flux_before_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.09999999999999964,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "8cd1668be69f86b6136f6ba82fb308865cb47a2a2df921a11a2889c4664fb11d",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "mild_peer_flux_before_reentry"
+        }
+      ],
+      "su3_preservation_stress_modes": [
+        "baseline_post_snapshot_reentry",
+        "delayed_idle_two_windows_reentry",
+        "mild_peer_flux_before_reentry"
+      ],
+      "su3_preservation_stress_modes_passed": true,
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-A replay-stress SU3 evidence pending I7 controls; no durable SU4, transfer SU5, SU6, final N22, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "durability_stress_supported": false,
+      "durable_geometry_modification_supported": false,
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "one_window_transient_rejected": true,
+      "output_digest": "aaf98770f7558e1d982b4ddc57ba649ba8dfb179f4b06991771c3e787e8c636b",
+      "passed_stress_mode_count": 3,
+      "preservation_stress_supported": true,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_boundary_blocks_su4": true,
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "replay_stress_status": "partial",
+      "row_decision": "partial",
+      "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+      "source_candidate_row_id": "n22_i4a_row_dose_14_stronger_bounded",
+      "source_i5_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+      "source_iteration": "I4-A",
+      "stress_mode_count": 4,
+      "stress_results": [
+        {
+          "status": "passed",
+          "stress_artifact_digest": "8d076487d8280517b80c75ace992a0ecff309d0158979a5c8dcb3090de3269b1",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_baseline_post_snapshot_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.049999999999998934,
+              "delta_persistence_ratio_against_source": 0.7142857142857215,
+              "gate_digest": "ceb322406a249577740a7d7bd42153085b1434025fabf11a52410f08b3a2905e",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.10000000000000142
+            }
+          ],
+          "stress_mode": "baseline_post_snapshot_reentry"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "4173347abb4d834768aa0e94c24d90322fea431e2b75fece97d2bccea4e4fb05",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_delayed_idle_two_windows_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.049999999999998934,
+              "delta_persistence_ratio_against_source": 0.7142857142857215,
+              "gate_digest": "ceb322406a249577740a7d7bd42153085b1434025fabf11a52410f08b3a2905e",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.10000000000000142
+            }
+          ],
+          "stress_mode": "delayed_idle_two_windows_reentry"
+        },
+        {
+          "status": "failed_closed",
+          "stress_artifact_digest": "4b45f92feb1280a3b2530dc97dd40196906aa9453884c30c0803d7c8e0ddab45",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_repeated_reentry_two_step_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.049999999999998934,
+              "delta_persistence_ratio_against_source": 0.7142857142857215,
+              "gate_digest": "ceb322406a249577740a7d7bd42153085b1434025fabf11a52410f08b3a2905e",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.10000000000000142
+            },
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.08999999999999808,
+              "delta_persistence_ratio_against_source": 0.4285714285714431,
+              "gate_digest": "0f40ddb2a36584647804a19c4df23963d0529f01d08b1b75f5385f0ef79ca415",
+              "in_flight_packet_total": 0.0,
+              "passed": false,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.060000000000002274
+            }
+          ],
+          "stress_mode": "repeated_reentry_two_step"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "4c069ead42ff052bb2f2d562ba1976900a601b90eb63fa5800d0a53773e07c81",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/dose_14_stronger_bounded_mild_peer_flux_before_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.03999999999999915,
+              "delta_persistence_ratio_against_source": 0.7142857142857215,
+              "gate_digest": "8adc9f19b26c27fe0178c38dd746ea6b083b339fb5647b892c8775e202a1828c",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.10000000000000142
+            }
+          ],
+          "stress_mode": "mild_peer_flux_before_reentry"
+        }
+      ],
+      "su3_preservation_stress_modes": [
+        "baseline_post_snapshot_reentry",
+        "delayed_idle_two_windows_reentry",
+        "mild_peer_flux_before_reentry"
+      ],
+      "su3_preservation_stress_modes_passed": true,
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-A replay-stress SU3 evidence pending I7 controls; no durable SU4, transfer SU5, SU6, final N22, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "durability_stress_supported": false,
+      "durable_geometry_modification_supported": false,
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "one_window_transient_rejected": true,
+      "output_digest": "5eafcaba75cc213c0a9c6fd45aa19a6eaaf4299bc127c67120d65d5b4299ffca",
+      "passed_stress_mode_count": 3,
+      "preservation_stress_supported": true,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_boundary_blocks_su4": true,
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "replay_stress_status": "partial",
+      "row_decision": "partial",
+      "row_id": "n22_i5a_row_single_route_b_reference",
+      "source_candidate_row_id": "n22_i4b_row_single_route_b_reference",
+      "source_i5_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+      "source_iteration": "I4-B",
+      "stress_mode_count": 4,
+      "stress_results": [
+        {
+          "status": "passed",
+          "stress_artifact_digest": "1404fff431fd35bec8b2bf1fa3da31dfdb073f571d438c0c1a9126ab896bdaf9",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_baseline_post_snapshot_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "baseline_post_snapshot_reentry"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "63efe41a9a961118c4b8921a090ab9ce7fd622d7e31edaa8b3ec21bc7c0faec1",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_delayed_idle_two_windows_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "delayed_idle_two_windows_reentry"
+        },
+        {
+          "status": "failed_closed",
+          "stress_artifact_digest": "76a444cebb2d098d29b50eb9e799a1f4902b837df5826290a26e91deb11ff7b3",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_repeated_reentry_two_step_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.10999999999999943,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "0703ec23d7c5731ee63199878396bad98f1580f75070aa9a46a545cac30e91d8",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            },
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.14999999999999858,
+              "delta_persistence_ratio_against_source": 2.2204460492503112e-14,
+              "gate_digest": "6baf8bdb0a6e8b9b61b75522d4532f694fe5aa3cae0a8381e91c12dc72878a63",
+              "in_flight_packet_total": 0.0,
+              "passed": false,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 1.7763568394002505e-15
+            }
+          ],
+          "stress_mode": "repeated_reentry_two_step"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "4007487ccfeeb0ba6f15d03584f854eaa659005cc56a30176edeb57aab5cdea9",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/single_route_b_reference_mild_peer_flux_before_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.09999999999999964,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "8cd1668be69f86b6136f6ba82fb308865cb47a2a2df921a11a2889c4664fb11d",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "mild_peer_flux_before_reentry"
+        }
+      ],
+      "su3_preservation_stress_modes": [
+        "baseline_post_snapshot_reentry",
+        "delayed_idle_two_windows_reentry",
+        "mild_peer_flux_before_reentry"
+      ],
+      "su3_preservation_stress_modes_passed": true,
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-A replay-stress SU3 evidence pending I7 controls; no durable SU4, transfer SU5, SU6, final N22, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "durability_stress_supported": false,
+      "durable_geometry_modification_supported": false,
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": true,
+      "one_window_transient_rejected": true,
+      "output_digest": "e7fab03661cabc3ea032c59266a386e680a6b75e38d357fa89299df36b782faf",
+      "passed_stress_mode_count": 3,
+      "preservation_stress_supported": true,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_boundary_blocks_su4": true,
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "replay_stress_status": "partial",
+      "row_decision": "partial",
+      "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+      "source_candidate_row_id": "n22_i4b_row_complementary_split_route_b_adjacent",
+      "source_i5_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+      "source_iteration": "I4-B",
+      "stress_mode_count": 4,
+      "stress_results": [
+        {
+          "status": "passed",
+          "stress_artifact_digest": "046a2ce97cbee3629ef365ea848691db34a31f8404edfbf5798aaed7f346690a",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_baseline_post_snapshot_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.049999999999998934,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "4f79f18a58f5aaa073890d11a2784cd1a002ffe6b2a7d751b11d360e94027deb",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "baseline_post_snapshot_reentry"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "2e6cbde8dbde9ebcab17042abec9e121097a60333c3ed336e5a1564477e69cca",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_delayed_idle_two_windows_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.049999999999998934,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "4f79f18a58f5aaa073890d11a2784cd1a002ffe6b2a7d751b11d360e94027deb",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "delayed_idle_two_windows_reentry"
+        },
+        {
+          "status": "failed_closed",
+          "stress_artifact_digest": "1ef23668462b87608f8b4b413a6efb9d523ea3b548c73892dc38fc21e83e7612",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_repeated_reentry_two_step_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.049999999999998934,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "4f79f18a58f5aaa073890d11a2784cd1a002ffe6b2a7d751b11d360e94027deb",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            },
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.08999999999999808,
+              "delta_persistence_ratio_against_source": 2.2204460492503112e-14,
+              "gate_digest": "dbaaca63f51421705ee92e8fe087804e0ba4a02f74c60dcdeb2e6ec335c0c75c",
+              "in_flight_packet_total": 0.0,
+              "passed": false,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 1.7763568394002505e-15
+            }
+          ],
+          "stress_mode": "repeated_reentry_two_step"
+        },
+        {
+          "status": "passed",
+          "stress_artifact_digest": "6a1bfd9d5e9b48b0a4a3240bf7f7b24bb49f908b0ca78ae51472ba6683a3fae4",
+          "stress_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe_artifacts/complementary_split_route_b_adjacent_mild_peer_flux_before_reentry_run.json",
+          "stress_gates": [
+            {
+              "boundary_margin": 0,
+              "budget_error": 1.4210854715202004e-14,
+              "coherence_margin": 0.03999999999999915,
+              "delta_persistence_ratio_against_source": 0.5000000000000111,
+              "gate_digest": "c7f74f507b1ab483869368aeea59b1b5e5e77c23fe6a7c05669efee68e9f63c1",
+              "in_flight_packet_total": 0.0,
+              "passed": true,
+              "support_margin": 0.15000000000000036,
+              "target_reentry_delta_from_pre": 0.040000000000000924
+            }
+          ],
+          "stress_mode": "mild_peer_flux_before_reentry"
+        }
+      ],
+      "su3_preservation_stress_modes": [
+        "baseline_post_snapshot_reentry",
+        "delayed_idle_two_windows_reentry",
+        "mild_peer_flux_before_reentry"
+      ],
+      "su3_preservation_stress_modes_passed": true,
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "stress_summary": [
+    {
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "passed_stress_mode_count": 3,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "row_id": "n22_i5a_row_i4_minimal_route_b",
+      "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+      "source_iteration": "I4",
+      "stress_mode_count": 4,
+      "su3_preservation_stress_modes_passed": true
+    },
+    {
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "passed_stress_mode_count": 3,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "row_id": "n22_i5a_row_dose_08_i4_reference",
+      "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+      "source_iteration": "I4-A",
+      "stress_mode_count": 4,
+      "su3_preservation_stress_modes_passed": true
+    },
+    {
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "passed_stress_mode_count": 3,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "row_id": "n22_i5a_row_dose_14_stronger_bounded",
+      "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+      "source_iteration": "I4-A",
+      "stress_mode_count": 4,
+      "su3_preservation_stress_modes_passed": true
+    },
+    {
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "passed_stress_mode_count": 3,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "row_id": "n22_i5a_row_single_route_b_reference",
+      "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+      "source_iteration": "I4-B",
+      "stress_mode_count": 4,
+      "su3_preservation_stress_modes_passed": true
+    },
+    {
+      "i5a_consumable_role": "replay_stress_limited_SU3_candidate_pending_I7_controls",
+      "narrow_margin_candidate": true,
+      "passed_stress_mode_count": 3,
+      "provisional_su_ladder_rung": "SU3_stress_limited",
+      "repeated_reentry_depletion_boundary_recorded": true,
+      "row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+      "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+      "source_iteration": "I4-B",
+      "stress_mode_count": 4,
+      "su3_preservation_stress_modes_passed": true
+    }
+  ]
+}

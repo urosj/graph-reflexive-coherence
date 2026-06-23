@@ -1,0 +1,57 @@
+{
+  "boundary_active_degree_floor": 9,
+  "coherence_floor": 9.85,
+  "declared_before_use": true,
+  "dose_rows_declared_before_use": [
+    {
+      "dose_id": "dose_00_no_prior_interaction_control",
+      "expected_role": "no_prior_interaction_control",
+      "prior_interaction_packet_amount": 0.0
+    },
+    {
+      "dose_id": "dose_03_below_delta_floor",
+      "expected_role": "below_delta_floor_control",
+      "prior_interaction_packet_amount": 0.03
+    },
+    {
+      "dose_id": "dose_08_i4_reference",
+      "expected_role": "i4_reference_positive",
+      "prior_interaction_packet_amount": 0.08
+    },
+    {
+      "dose_id": "dose_14_stronger_bounded",
+      "expected_role": "stronger_bounded_positive",
+      "prior_interaction_packet_amount": 0.14
+    },
+    {
+      "dose_id": "dose_20_out_of_scope_coherence_drift",
+      "expected_role": "out_of_scope_drift_control",
+      "prior_interaction_packet_amount": 0.2
+    }
+  ],
+  "field_specific_acceptance": {
+    "boundary_integrity_result": [
+      "preserved",
+      "changed_within_allowed_delta"
+    ],
+    "coherence_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ],
+    "flux_or_leakage_result": [
+      "preserved",
+      "changed_within_bound"
+    ],
+    "support_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ]
+  },
+  "inherits_i4_threshold_policy": true,
+  "max_budget_error": 1e-09,
+  "min_reentry_delta_persistence_ratio": 0.45,
+  "min_route_local_delta": 0.05,
+  "min_target_over_peer_route_delta_margin": 0.05,
+  "support_floor": 9.85,
+  "threshold_record_id": "n22_i4a_susceptibility_dose_boundary_thresholds"
+}

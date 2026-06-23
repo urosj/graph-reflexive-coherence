@@ -1,0 +1,27 @@
+{
+  "carrier_families": [
+    "route_conductance_geometry_carrier",
+    "neutral_reservoir_buffered_carrier",
+    "band_buffered_return_carrier",
+    "reduced_packet_readout_boundary"
+  ],
+  "config_id": "n22_i5c_alternative_nonconsumptive_carrier_runtime_config",
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "model_family": "LGRC9V3",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "thresholds": {
+    "coherence_floor": 9.85,
+    "declared_before_use": true,
+    "i5b_threshold_policy_not_relaxed": true,
+    "max_budget_error": 1e-09,
+    "max_second_readback_loss": 0.02,
+    "min_carrier_delta": 0.05,
+    "min_carrier_target_over_peer_margin": 0.05,
+    "min_second_readback_ratio": 0.9,
+    "native_conductance_memory_policy_available": false,
+    "su5_or_su6_allowed": false,
+    "support_floor": 9.85,
+    "threshold_record_id": "n22_i5c_alternative_nonconsumptive_carrier_thresholds"
+  }
+}

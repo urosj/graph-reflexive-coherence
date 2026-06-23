@@ -1,0 +1,19 @@
+{
+  "boundary_active_degree_floor": 9,
+  "coherence_floor": 9.85,
+  "declared_before_use": true,
+  "inherits_i4_i4a_i4b_threshold_policy": true,
+  "max_budget_error": 1e-09,
+  "min_reentry_delta_persistence_ratio": 0.45,
+  "min_route_local_delta": 0.05,
+  "min_target_over_peer_route_delta_margin": 0.05,
+  "required_replay_modes": [
+    "artifact_replay",
+    "snapshot_load_replay",
+    "duplicate_replay",
+    "post_snapshot_reentry_replay_without_active_reinforcement"
+  ],
+  "support_floor": 9.85,
+  "supporting_interpretation": "I5 may assign replay-backed provisional SU3 candidates. SU4 and stronger remain blocked until I7 control matrix.",
+  "threshold_record_id": "n22_i5_durability_replay_thresholds"
+}

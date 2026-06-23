@@ -1,0 +1,119 @@
+{
+  "config_id": "n22_i4a_susceptibility_dose_boundary_runtime_config",
+  "dose_rows": [
+    {
+      "dose_id": "dose_00_no_prior_interaction_control",
+      "expected_role": "no_prior_interaction_control",
+      "prior_interaction_packet_amount": 0.0
+    },
+    {
+      "dose_id": "dose_03_below_delta_floor",
+      "expected_role": "below_delta_floor_control",
+      "prior_interaction_packet_amount": 0.03
+    },
+    {
+      "dose_id": "dose_08_i4_reference",
+      "expected_role": "i4_reference_positive",
+      "prior_interaction_packet_amount": 0.08
+    },
+    {
+      "dose_id": "dose_14_stronger_bounded",
+      "expected_role": "stronger_bounded_positive",
+      "prior_interaction_packet_amount": 0.14
+    },
+    {
+      "dose_id": "dose_20_out_of_scope_coherence_drift",
+      "expected_role": "out_of_scope_drift_control",
+      "prior_interaction_packet_amount": 0.2
+    }
+  ],
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "later_reentry": {
+    "departure_event_time_key": 3.0,
+    "kind": "route_b_reentry_packet",
+    "packet_amount": 0.04,
+    "route": "route_b edge 0",
+    "scheduler_event_index": 3
+  },
+  "model_family": "LGRC9V3",
+  "peer_route": {
+    "edge_id": 1,
+    "prior_source_node_id": 0,
+    "prior_target_node_id": 2,
+    "route_id": "route_peer_edge_1"
+  },
+  "producer_boundary": {
+    "active_reinforcement_queue_empty_before_reentry": true,
+    "active_reinforcement_schedule_disabled_after_prior_interaction": true,
+    "reentry_packet_is_diagnostic_input_not_reinforcement_evidence": true,
+    "reinforcement_budget_in_flight_before_reentry": 0.0
+  },
+  "runtime_config_builder": "make_config",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "target_route": {
+    "edge_id": 0,
+    "prior_source_node_id": 0,
+    "prior_target_node_id": 1,
+    "reentry_source_node_id": 1,
+    "reentry_target_node_id": 0,
+    "route_id": "route_b"
+  },
+  "thresholds": {
+    "boundary_active_degree_floor": 9,
+    "coherence_floor": 9.85,
+    "declared_before_use": true,
+    "dose_rows_declared_before_use": [
+      {
+        "dose_id": "dose_00_no_prior_interaction_control",
+        "expected_role": "no_prior_interaction_control",
+        "prior_interaction_packet_amount": 0.0
+      },
+      {
+        "dose_id": "dose_03_below_delta_floor",
+        "expected_role": "below_delta_floor_control",
+        "prior_interaction_packet_amount": 0.03
+      },
+      {
+        "dose_id": "dose_08_i4_reference",
+        "expected_role": "i4_reference_positive",
+        "prior_interaction_packet_amount": 0.08
+      },
+      {
+        "dose_id": "dose_14_stronger_bounded",
+        "expected_role": "stronger_bounded_positive",
+        "prior_interaction_packet_amount": 0.14
+      },
+      {
+        "dose_id": "dose_20_out_of_scope_coherence_drift",
+        "expected_role": "out_of_scope_drift_control",
+        "prior_interaction_packet_amount": 0.2
+      }
+    ],
+    "field_specific_acceptance": {
+      "boundary_integrity_result": [
+        "preserved",
+        "changed_within_allowed_delta"
+      ],
+      "coherence_floor_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ],
+      "flux_or_leakage_result": [
+        "preserved",
+        "changed_within_bound"
+      ],
+      "support_floor_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ]
+    },
+    "inherits_i4_threshold_policy": true,
+    "max_budget_error": 1e-09,
+    "min_reentry_delta_persistence_ratio": 0.45,
+    "min_route_local_delta": 0.05,
+    "min_target_over_peer_route_delta_margin": 0.05,
+    "support_floor": 9.85,
+    "threshold_record_id": "n22_i4a_susceptibility_dose_boundary_thresholds"
+  }
+}

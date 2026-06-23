@@ -1,0 +1,508 @@
+{
+  "acceptance_state": "accepted_n22_c6_handoff_ready_producer_mediated_su5_no_native_learning",
+  "ap_gap_propagation": {
+    "ap4_condition_reason": "route-conditioned susceptibility/transfer claims depend on route selection; N19 AP4 NAT4 gap remains propagated rather than resolved",
+    "ap4_dependency_status": "required_recorded",
+    "ap4_nat4_gap_resolved": false,
+    "ap5_condition_reason": "N22 closeout does not claim proxy or target formation as evidence; N19 AP5 NAT4 gap remains preserved for later dependent rows",
+    "ap5_dependency_status": "not_applicable",
+    "ap5_nat4_gap_resolved": false,
+    "ap_gap_prose_only_allowed": false
+  },
+  "artifact_id": "n22_i8_closeout_and_n23_handoff",
+  "artifact_manifest": [
+    {
+      "artifact_role": "closeout_policy",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff_artifacts/n22_i8_closeout_policy_declared_before_use.json",
+      "sha256": "a94d76f7f0e25c84de6d59d698f471887a183d2b7a2e15b475a11b128fefd722"
+    },
+    {
+      "artifact_role": "source_i2_schema",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_schema_and_controls.json",
+      "sha256": "221dae0353bdb5a04c2a324cd9d94b3634de5c66e8ffef3721df1f5791e0f4e5"
+    },
+    {
+      "artifact_role": "source_i5c_carrier",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe.json",
+      "sha256": "a944464675fc2bb42b1e24417a511073a6ef2d491334aff9f590ca970f9296a3"
+    },
+    {
+      "artifact_role": "source_i6a_carrier_transfer",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe.json",
+      "sha256": "df49bc138786189f83d19c114d9532a02a1fe26f36107d695848c76bca5bd9e4"
+    },
+    {
+      "artifact_role": "source_i6b_carrier_stress",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_stress_boundary_probe.json",
+      "sha256": "0496b4e751bfd5ab2add2d0e91000dfa69522a5284e81e5ac9ce61e88d66704e"
+    },
+    {
+      "artifact_role": "source_i7_replay_control_matrix",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_and_control_matrix.json",
+      "sha256": "b9e91d81bd42bcff925980c06b758499e1bf5e87b3adea53ae8c0c9aff7081c7"
+    }
+  ],
+  "branch_closeout": {
+    "carrier_branch": {
+      "consumable_su5_row_count": 3,
+      "final_branch_ceiling": "SU5_producer_mediated_bounded_carrier_transfer_candidate",
+      "max_carrier_loss_after_stress": 0.0,
+      "min_target_over_peer_margin": 0.07000000000000006,
+      "min_transfer_ratio": 1.0,
+      "native_route_conductance_memory_supported": false,
+      "producer_mediated": true,
+      "reason": "I5-C creates a non-consumptive carrier through producer-mediated edge conductance state, I6-A shows transfer/re-entry, I6-B shows bounded stress survival, and I7 validates replay/control cleanliness.",
+      "su5_supported": true,
+      "su6_supported": false
+    },
+    "packet_branch": {
+      "blocked_before_su5_row_count": 1,
+      "consumable_su3_row_count": 4,
+      "final_branch_ceiling": "SU3_consumptive_transfer_readout_expression_only",
+      "reason": "I5-B shows repeated packet readout spends route-b residue, so packet transfer remains readout expression and cannot support durable SU4/SU5.",
+      "su4_supported": false,
+      "su5_supported": false,
+      "su6_supported": false
+    }
+  },
+  "checks": [
+    {
+      "check_id": "source_artifacts_valid",
+      "detail": [
+        {
+          "acceptance_state": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+          "artifact_manifest_count": 0,
+          "artifact_manifest_valid": true,
+          "output_digest": "a6d4e478b1e29f31007bb965c97a838764e196f18ca7ac8e1c78a7ccfc03680f",
+          "output_digest_valid": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_schema_and_controls.json",
+          "sha256": "221dae0353bdb5a04c2a324cd9d94b3634de5c66e8ffef3721df1f5791e0f4e5",
+          "source_id": "i2_schema",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_producer_mediated_non_consumptive_carrier_candidate_native_gap_preserved",
+          "artifact_manifest_count": 35,
+          "artifact_manifest_valid": true,
+          "output_digest": "b2bc2089b24ba5e945e861b0e2fd93974c1a7d882905fcaa75f24d3f6ba0bfed",
+          "output_digest_valid": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe.json",
+          "sha256": "a944464675fc2bb42b1e24417a511073a6ef2d491334aff9f590ca970f9296a3",
+          "source_id": "i5c_carrier",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_producer_mediated_carrier_transfer_candidates_pending_i7_no_final_su5",
+          "artifact_manifest_count": 47,
+          "artifact_manifest_valid": true,
+          "output_digest": "e919277fbf8b3d40a3da977be9bafba38675cd0af893ef7f594bc25659009678",
+          "output_digest_valid": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe.json",
+          "sha256": "df49bc138786189f83d19c114d9532a02a1fe26f36107d695848c76bca5bd9e4",
+          "source_id": "i6a_carrier_transfer",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_producer_mediated_carrier_transfer_stress_boundary_pending_i7_no_final_su5",
+          "artifact_manifest_count": 77,
+          "artifact_manifest_valid": true,
+          "output_digest": "3ee5f391766d9d75db6d794f8fe0f33341e5dfd96eee4e4bca6254ec5be7e9a6",
+          "output_digest_valid": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_stress_boundary_probe.json",
+          "sha256": "0496b4e751bfd5ab2add2d0e91000dfa69522a5284e81e5ac9ce61e88d66704e",
+          "source_id": "i6b_carrier_stress",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_controlled_producer_mediated_su5_candidate_no_final_closeout",
+          "artifact_manifest_count": 14,
+          "artifact_manifest_valid": true,
+          "output_digest": "243d068ba53715b30a40312d8f5c6a2e512f41a23c1773e0e7abb620dce963ef",
+          "output_digest_valid": true,
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_and_control_matrix.json",
+          "sha256": "b9e91d81bd42bcff925980c06b758499e1bf5e87b3adea53ae8c0c9aff7081c7",
+          "source_id": "i7_replay_control_matrix",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i7_ready_for_closeout",
+      "detail": {
+        "active_null_rows_consumed": 14,
+        "carrier_branch_i7_consumable_su5_count": 3,
+        "carrier_branch_native_route_conductance_memory_supported": false,
+        "carrier_branch_producer_mediated": true,
+        "control_count": 7,
+        "controls_failed_closed": true,
+        "final_n22_supported": false,
+        "i7_consumable_highest_su_rung": "SU5_producer_mediated_carrier_transfer_stress_boundary_controlled_candidate",
+        "n21_nd6_bridge_iteration8_input": "producer_mediated_su5_candidate_available_for_closeout_review",
+        "n21_nd6_bridge_status": "not_supported",
+        "n22_closeout_ladder_rung_assigned": false,
+        "packet_branch_blocked_before_su5_count": 1,
+        "packet_branch_i7_consumable_su3_count": 4,
+        "packet_branch_su4_su5_blocked_by_consumptive_readout": true,
+        "ready_for_iteration_8_closeout": true,
+        "recommended_iteration8_closeout_candidate": "N22-C5_producer_mediated_bounded_candidate",
+        "replay_count": 4,
+        "replays_passed": true,
+        "source_artifact_count": 13,
+        "source_artifacts_valid": true,
+        "su5_supported_final": false,
+        "su6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "packet_branch_capped_at_su3",
+      "detail": {
+        "blocked_before_su5_row_count": 1,
+        "consumable_su3_row_count": 4,
+        "final_branch_ceiling": "SU3_consumptive_transfer_readout_expression_only",
+        "reason": "I5-B shows repeated packet readout spends route-b residue, so packet transfer remains readout expression and cannot support durable SU4/SU5.",
+        "su4_supported": false,
+        "su5_supported": false,
+        "su6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "carrier_branch_final_su5_candidate",
+      "detail": {
+        "consumable_su5_row_count": 3,
+        "final_branch_ceiling": "SU5_producer_mediated_bounded_carrier_transfer_candidate",
+        "max_carrier_loss_after_stress": 0.0,
+        "min_target_over_peer_margin": 0.07000000000000006,
+        "min_transfer_ratio": 1.0,
+        "native_route_conductance_memory_supported": false,
+        "producer_mediated": true,
+        "reason": "I5-C creates a non-consumptive carrier through producer-mediated edge conductance state, I6-A shows transfer/re-entry, I6-B shows bounded stress survival, and I7 validates replay/control cleanliness.",
+        "su5_supported": true,
+        "su6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_residue_and_naturalization_debt_recorded",
+      "detail": {
+        "blocked_relabel_fields": [
+          "carrier_delta_as_native_route_conductance_memory",
+          "carrier_readback_as_semantic_choice",
+          "native_support_by_reservoir_label",
+          "producer_conductance_update_as_native_learning",
+          "producer_mediated_su5_as_native_support",
+          "producer_mediated_su5_as_semantic_learning"
+        ],
+        "native_non_consumptive_carrier_update_policy_supported": false,
+        "native_route_conductance_memory_supported": false,
+        "naturalization_debt_fields": [
+          "native_non_consumptive_carrier_update_policy",
+          "native_route_conductance_memory_policy"
+        ],
+        "producer_mediated_fields": [
+          "target_edge_base_conductance_delta",
+          "target_edge_port_conductance_delta"
+        ],
+        "producer_residue_status": "present_and_recorded",
+        "state_mutation_owners": [
+          "n22_iteration_5c_experiment_local_producer"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_ap5_dependency_status_preserved",
+      "detail": {
+        "ap4_condition_reason": "route-conditioned susceptibility/transfer claims depend on route selection; N19 AP4 NAT4 gap remains propagated rather than resolved",
+        "ap4_dependency_status": "required_recorded",
+        "ap4_nat4_gap_resolved": false,
+        "ap5_condition_reason": "N22 closeout does not claim proxy or target formation as evidence; N19 AP5 NAT4 gap remains preserved for later dependent rows",
+        "ap5_dependency_status": "not_applicable",
+        "ap5_nat4_gap_resolved": false,
+        "ap_gap_prose_only_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_nd6_bridge_bounded",
+      "detail": {
+        "blocked_stronger_claims": [
+          "N21_ND6_final_reopen",
+          "native_naturalization_depth",
+          "native_support",
+          "semantic_learning",
+          "agency"
+        ],
+        "bridge_scope": "producer-mediated artifact-level bridge candidate only; N21 remains closed and is not retroactively upgraded",
+        "n21_nd6_bridge_status": "bridge_candidate_supported",
+        "native_nd6_supported": false,
+        "retroactive_n21_upgrade_allowed": false,
+        "source_condition_tested": "durable_geometry_modification_susceptibility_update",
+        "supporting_n22_rung": "SU5_producer_mediated_bounded_susceptibility_update_candidate"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claims_blocked",
+      "detail": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": "git diff -- src is empty",
+      "passed": true
+    },
+    {
+      "check_id": "n22_c6_requirements_met",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_opened": false,
+        "delta_survived_replay_and_later_reentry": true,
+        "durable_geometry_modification_not_label_schedule_proxy": true,
+        "final_supported_status": "bounded_artifact_level_susceptibility_update_candidate",
+        "final_supported_su_ladder_rung": "SU5_producer_mediated_bounded_susceptibility_update_candidate",
+        "n22_closeout_ladder_rung": "N22-C6",
+        "n22_closeout_ladder_rung_assigned": true,
+        "n22_closeout_supported": true,
+        "native_route_conductance_memory_supported": false,
+        "native_su6_supported": false,
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "ready_for_n23": true,
+        "same_budget_peer_comparison_rules_out_global_drift": true,
+        "semantic_choice_supported": false,
+        "semantic_learning_supported": false,
+        "sentience_supported": false,
+        "source_backed_susceptibility_update_evidence": true,
+        "src_diff_empty": true,
+        "su5_supported_final": true,
+        "su6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": "relative paths only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_ceiling": "bounded producer-mediated artifact-level susceptibility-update / durable geometry modification evidence; not native learning, choice, agency, native support, sentience, Phase 8, or ant ecology",
+    "unsafe_claim_flags": {
+      "agency": false,
+      "consciousness": false,
+      "free_will": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_learning": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "closeout_policy": {
+    "declared_before_use": true,
+    "final_supported_su_rung_allowed": "SU5_producer_mediated_bounded_susceptibility_update_candidate",
+    "n22_c6_requires": [
+      "controlled_SU5_or_SU6_evidence",
+      "producer_residue_recorded",
+      "naturalization_debt_recorded",
+      "AP4_AP5_dependency_status_recorded",
+      "unsafe_claim_blockers_false",
+      "src_diff_empty",
+      "N23_handoff_recorded"
+    ],
+    "native_su6_allowed": false,
+    "phase8_allowed": false,
+    "semantic_learning_allowed": false,
+    "threshold_record_id": "n22_i8_closeout_policy"
+  },
+  "command": "python3 experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_closeout_and_n23_handoff.py",
+  "experiment": "N22",
+  "failed_checks": [],
+  "final_closeout": {
+    "agency_supported": false,
+    "ant_ecology_opened": false,
+    "delta_survived_replay_and_later_reentry": true,
+    "durable_geometry_modification_not_label_schedule_proxy": true,
+    "final_supported_status": "bounded_artifact_level_susceptibility_update_candidate",
+    "final_supported_su_ladder_rung": "SU5_producer_mediated_bounded_susceptibility_update_candidate",
+    "n22_closeout_ladder_rung": "N22-C6",
+    "n22_closeout_ladder_rung_assigned": true,
+    "n22_closeout_supported": true,
+    "native_route_conductance_memory_supported": false,
+    "native_su6_supported": false,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "ready_for_n23": true,
+    "same_budget_peer_comparison_rules_out_global_drift": true,
+    "semantic_choice_supported": false,
+    "semantic_learning_supported": false,
+    "sentience_supported": false,
+    "source_backed_susceptibility_update_evidence": true,
+    "src_diff_empty": true,
+    "su5_supported_final": true,
+    "su6_supported": false
+  },
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "carrier_branch_boundary": "The carrier branch stores the susceptibility delta in serialized LGRC-visible edge/base/port conductance state, but the write policy is still producer-mediated. That supports bounded SU5 and leaves native route-conductance memory as naturalization debt.",
+    "claim_boundary": "C6 means N23-ready closeout, not native SU6. N22 does not support semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+    "packet_branch_boundary": "The packet branch remains consumptive: repeated readout spends the route-b residue, so it is capped at SU3 transfer/readout expression.",
+    "short_read": "N22 closes with a producer-mediated carrier branch that durably changes source-current edge conductance geometry and survives transfer, re-entry, stress, replay, and fail-closed controls."
+  },
+  "iteration": "8",
+  "n21_nd6_bridge": {
+    "blocked_stronger_claims": [
+      "N21_ND6_final_reopen",
+      "native_naturalization_depth",
+      "native_support",
+      "semantic_learning",
+      "agency"
+    ],
+    "bridge_scope": "producer-mediated artifact-level bridge candidate only; N21 remains closed and is not retroactively upgraded",
+    "n21_nd6_bridge_status": "bridge_candidate_supported",
+    "native_nd6_supported": false,
+    "retroactive_n21_upgrade_allowed": false,
+    "source_condition_tested": "durable_geometry_modification_susceptibility_update",
+    "supporting_n22_rung": "SU5_producer_mediated_bounded_susceptibility_update_candidate"
+  },
+  "n23_handoff": {
+    "consume_n22_as": [
+      "bounded_producer_mediated_susceptibility_update_context",
+      "durable_geometry_modification_candidate",
+      "producer_residue_and_naturalization_debt_ledger",
+      "AP4_AP5_gap_propagation_context"
+    ],
+    "handoff_claim_ceiling": "bounded producer-mediated artifact-level susceptibility-update / durable geometry modification evidence; not native learning, choice, agency, native support, sentience, Phase 8, or ant ecology",
+    "must_not_consume_n22_as": [
+      "semantic_learning",
+      "semantic_choice",
+      "agency",
+      "native_support",
+      "native_route_conductance_memory",
+      "sentience",
+      "phase8_implementation",
+      "ant_ecology_specification"
+    ],
+    "next_experiment": "N23_live_continuation_collapse_selection_geometry",
+    "ready_for_n23": true
+  },
+  "output_digest": "96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4",
+  "producer_residue": {
+    "blocked_relabel_fields": [
+      "carrier_delta_as_native_route_conductance_memory",
+      "carrier_readback_as_semantic_choice",
+      "native_support_by_reservoir_label",
+      "producer_conductance_update_as_native_learning",
+      "producer_mediated_su5_as_native_support",
+      "producer_mediated_su5_as_semantic_learning"
+    ],
+    "native_non_consumptive_carrier_update_policy_supported": false,
+    "native_route_conductance_memory_supported": false,
+    "naturalization_debt_fields": [
+      "native_non_consumptive_carrier_update_policy",
+      "native_route_conductance_memory_policy"
+    ],
+    "producer_mediated_fields": [
+      "target_edge_base_conductance_delta",
+      "target_edge_port_conductance_delta"
+    ],
+    "producer_residue_status": "present_and_recorded",
+    "state_mutation_owners": [
+      "n22_iteration_5c_experiment_local_producer"
+    ]
+  },
+  "purpose": "close N22 and hand off bounded susceptibility-update evidence to N23",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+      "artifact_manifest_count": 0,
+      "artifact_manifest_valid": true,
+      "output_digest": "a6d4e478b1e29f31007bb965c97a838764e196f18ca7ac8e1c78a7ccfc03680f",
+      "output_digest_valid": true,
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_schema_and_controls.json",
+      "sha256": "221dae0353bdb5a04c2a324cd9d94b3634de5c66e8ffef3721df1f5791e0f4e5",
+      "source_id": "i2_schema",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_non_consumptive_carrier_candidate_native_gap_preserved",
+      "artifact_manifest_count": 35,
+      "artifact_manifest_valid": true,
+      "output_digest": "b2bc2089b24ba5e945e861b0e2fd93974c1a7d882905fcaa75f24d3f6ba0bfed",
+      "output_digest_valid": true,
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe.json",
+      "sha256": "a944464675fc2bb42b1e24417a511073a6ef2d491334aff9f590ca970f9296a3",
+      "source_id": "i5c_carrier",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_carrier_transfer_candidates_pending_i7_no_final_su5",
+      "artifact_manifest_count": 47,
+      "artifact_manifest_valid": true,
+      "output_digest": "e919277fbf8b3d40a3da977be9bafba38675cd0af893ef7f594bc25659009678",
+      "output_digest_valid": true,
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe.json",
+      "sha256": "df49bc138786189f83d19c114d9532a02a1fe26f36107d695848c76bca5bd9e4",
+      "source_id": "i6a_carrier_transfer",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_carrier_transfer_stress_boundary_pending_i7_no_final_su5",
+      "artifact_manifest_count": 77,
+      "artifact_manifest_valid": true,
+      "output_digest": "3ee5f391766d9d75db6d794f8fe0f33341e5dfd96eee4e4bca6254ec5be7e9a6",
+      "output_digest_valid": true,
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_stress_boundary_probe.json",
+      "sha256": "0496b4e751bfd5ab2add2d0e91000dfa69522a5284e81e5ac9ce61e88d66704e",
+      "source_id": "i6b_carrier_stress",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_controlled_producer_mediated_su5_candidate_no_final_closeout",
+      "artifact_manifest_count": 14,
+      "artifact_manifest_valid": true,
+      "output_digest": "243d068ba53715b30a40312d8f5c6a2e512f41a23c1773e0e7abb620dce963ef",
+      "output_digest_valid": true,
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_and_control_matrix.json",
+      "sha256": "b9e91d81bd42bcff925980c06b758499e1bf5e87b3adea53ae8c0c9aff7081c7",
+      "source_id": "i7_replay_control_matrix",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

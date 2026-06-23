@@ -1,0 +1,40 @@
+{
+  "config_id": "n22_i6a_carrier_transfer_runtime_config",
+  "control_contexts": [
+    "peer_label_swap_reentry_control",
+    "active_carrier_update_carryover_control",
+    "native_conductance_memory_relabel_control"
+  ],
+  "fixture_source": "I5-C source-current snapshots",
+  "model_family": "LGRC9V3",
+  "positive_contexts": [
+    "delayed_target_reentry_then_readback",
+    "peer_corridor_flux_then_target_reentry_readback"
+  ],
+  "producer_carrier_update_after_load_allowed": false,
+  "source_iteration": "I5-C",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "thresholds": {
+    "coherence_floor": 9.85,
+    "consumes_i5c_only": true,
+    "control_contexts": [
+      "peer_label_swap_reentry_control",
+      "active_carrier_update_carryover_control",
+      "native_conductance_memory_relabel_control"
+    ],
+    "declared_before_use": true,
+    "max_budget_error": 1e-09,
+    "max_carrier_loss_after_transfer": 0.02,
+    "min_transfer_carrier_ratio": 0.9,
+    "min_transfer_target_over_peer_margin": 0.05,
+    "peer_corridor_packet_amount": 0.01,
+    "positive_contexts": [
+      "delayed_target_reentry_then_readback",
+      "peer_corridor_flux_then_target_reentry_readback"
+    ],
+    "su6_or_final_n22_allowed": false,
+    "support_floor": 9.85,
+    "target_reentry_packet_amount": 0.02,
+    "threshold_record_id": "n22_i6a_carrier_transfer_reentry_thresholds"
+  }
+}

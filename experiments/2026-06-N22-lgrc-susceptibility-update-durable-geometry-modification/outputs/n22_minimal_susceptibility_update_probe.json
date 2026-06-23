@@ -1,0 +1,965 @@
+{
+  "acceptance_state": "accepted_minimal_source_current_su2_candidate_pending_replay_controls",
+  "artifact_id": "n22_i4_minimal_susceptibility_update_probe",
+  "candidate_rows": [
+    {
+      "active_reinforcement_queue_empty": true,
+      "active_reinforcement_schedule_disabled": true,
+      "all_artifact_sha256_match_file_contents": true,
+      "allowed_delta_fields": [
+        "target_route_node_coherence",
+        "target_route_basin_mass",
+        "center_node_coherence within declared floor"
+      ],
+      "ap4_condition_reason": "I4 is route-conditioned, so AP4 route/consequence selection gap status is recorded row-locally from N19/N14.",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy or target formation participates in I4; source-current packet geometry supplies the delta.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "minimal_susceptibility_trace",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_minimal_susceptibility_trace.json",
+          "sha256": "734d05abfaf1fb18bcf2ef7987b47565cfb14047ee58b31ff1126ae095f716d4"
+        },
+        {
+          "artifact_role": "runtime_config",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_runtime_config.json",
+          "sha256": "39ccc85c99bf17789368ecaa9738aaa04b86fb0ffd08c2c53ab5aca3554a4f09"
+        },
+        {
+          "artifact_role": "thresholds_declared_before_use",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+          "sha256": "baca15593297c5a99a749f88d43806acfe54df14be46b4cba6d523a338a428ef"
+        },
+        {
+          "artifact_role": "peer_budget_edge_1_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000000.json",
+          "sha256": "6310cac1c455b9fb99ce5e889ace3db4dc6c48e3f02bdf955864f3321feb063e"
+        },
+        {
+          "artifact_role": "peer_budget_edge_1_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000001.json",
+          "sha256": "be7daedbe45d436dabe6d45ac88e9792ffa8423e3c4fc801c6b68f31d1702365"
+        },
+        {
+          "artifact_role": "peer_budget_edge_1_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000002.json",
+          "sha256": "7db8c286ced9a1e23a6bf5ca6f94b0d64ac7747baeff664729c527e280cfcde5"
+        },
+        {
+          "artifact_role": "peer_event_log",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_events.jsonl",
+          "sha256": "ccf9f58aa47326d7a7e8605d3d5d0490f1defac5d9fdf17cf85951b52fe8c315"
+        },
+        {
+          "artifact_role": "peer_post_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_post_interaction_snapshot.json",
+          "sha256": "cbb9b79aecceccb2c1713ea2c46e3f1d6bb684cc22f52a7ab085f125a2664a0b"
+        },
+        {
+          "artifact_role": "peer_pre_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_pre_interaction_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "peer_later_reentry_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_reentry_snapshot.json",
+          "sha256": "da0585407a65a0f59a7c57bd3355103c4b19ea2721c68c1640dc4cca3b5e05eb"
+        },
+        {
+          "artifact_role": "same_budget_peer_run_artifact",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_run.json",
+          "sha256": "d82faa7659f5a9626b750d5d50aff922f13b510a5d09939b261c9e77ae271dc9"
+        },
+        {
+          "artifact_role": "target_route_b_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000000.json",
+          "sha256": "6e18f3ef55f941c16ff68b4ed7d6d247e80d3d054bcd128fed6a794cba9fc970"
+        },
+        {
+          "artifact_role": "target_route_b_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000001.json",
+          "sha256": "d744b3222847a0554a8c4ead0931d691177092f489f5e9614770f55719493f74"
+        },
+        {
+          "artifact_role": "target_route_b_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000002.json",
+          "sha256": "078d53d51a3eb226f1b96d65e1a5c0f15dfdac4384b8f8c995063ee0162d26e7"
+        },
+        {
+          "artifact_role": "target_event_log",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_events.jsonl",
+          "sha256": "604ea534e6271c69e8d117b427388f2f3dea05de577dbc2989d11399c25e6cf3"
+        },
+        {
+          "artifact_role": "target_post_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json",
+          "sha256": "af1fae59ca93334b05032156bcd6857bebde6dac46bdbc104733b97095d77d52"
+        },
+        {
+          "artifact_role": "target_pre_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_pre_interaction_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "target_later_reentry_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_reentry_snapshot.json",
+          "sha256": "a0683d0e9b1e2df1818f21748ae6fd40ace7281ec5939727b0a6173972e18a44"
+        },
+        {
+          "artifact_role": "target_route_run_artifact",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json",
+          "sha256": "7a83e70c89778e0c57a732ca9a083dc91da14c8eeba9de96376a822cfba2f085"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_minimal_susceptibility_trace.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_runtime_config.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000000.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000001.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000002.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_events.jsonl",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_post_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_pre_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_reentry_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_run.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000000.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000001.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000002.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_events.jsonl",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_pre_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_reentry_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json"
+      ],
+      "artifact_sha256": {
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_minimal_susceptibility_trace.json": "734d05abfaf1fb18bcf2ef7987b47565cfb14047ee58b31ff1126ae095f716d4",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_runtime_config.json": "39ccc85c99bf17789368ecaa9738aaa04b86fb0ffd08c2c53ab5aca3554a4f09",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json": "baca15593297c5a99a749f88d43806acfe54df14be46b4cba6d523a338a428ef",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000000.json": "6310cac1c455b9fb99ce5e889ace3db4dc6c48e3f02bdf955864f3321feb063e",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000001.json": "be7daedbe45d436dabe6d45ac88e9792ffa8423e3c4fc801c6b68f31d1702365",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000002.json": "7db8c286ced9a1e23a6bf5ca6f94b0d64ac7747baeff664729c527e280cfcde5",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_events.jsonl": "ccf9f58aa47326d7a7e8605d3d5d0490f1defac5d9fdf17cf85951b52fe8c315",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_post_interaction_snapshot.json": "cbb9b79aecceccb2c1713ea2c46e3f1d6bb684cc22f52a7ab085f125a2664a0b",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_pre_interaction_snapshot.json": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_reentry_snapshot.json": "da0585407a65a0f59a7c57bd3355103c4b19ea2721c68c1640dc4cca3b5e05eb",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_run.json": "d82faa7659f5a9626b750d5d50aff922f13b510a5d09939b261c9e77ae271dc9",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000000.json": "6e18f3ef55f941c16ff68b4ed7d6d247e80d3d054bcd128fed6a794cba9fc970",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000001.json": "d744b3222847a0554a8c4ead0931d691177092f489f5e9614770f55719493f74",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000002.json": "078d53d51a3eb226f1b96d65e1a5c0f15dfdac4384b8f8c995063ee0162d26e7",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_events.jsonl": "604ea534e6271c69e8d117b427388f2f3dea05de577dbc2989d11399c25e6cf3",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json": "af1fae59ca93334b05032156bcd6857bebde6dac46bdbc104733b97095d77d52",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_pre_interaction_snapshot.json": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_reentry_snapshot.json": "a0683d0e9b1e2df1818f21748ae6fd40ace7281ec5939727b0a6173972e18a44",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json": "7a83e70c89778e0c57a732ca9a083dc91da14c8eeba9de96376a822cfba2f085"
+      },
+      "blocked_relabel_fields": [
+        "susceptibility_update.blocked.agency",
+        "susceptibility_update.blocked.consciousness",
+        "susceptibility_update.blocked.free_will",
+        "susceptibility_update.blocked.identity_acceptance",
+        "susceptibility_update.blocked.native_ant_agency",
+        "susceptibility_update.blocked.native_colony_agency",
+        "susceptibility_update.blocked.native_support",
+        "susceptibility_update.blocked.organism_life",
+        "susceptibility_update.blocked.phase8_implementation",
+        "susceptibility_update.blocked.selfhood",
+        "susceptibility_update.blocked.semantic_action",
+        "susceptibility_update.blocked.semantic_choice",
+        "susceptibility_update.blocked.semantic_goal",
+        "susceptibility_update.blocked.semantic_goal_ownership",
+        "susceptibility_update.blocked.semantic_intention",
+        "susceptibility_update.blocked.semantic_learning",
+        "susceptibility_update.blocked.semantic_perception",
+        "susceptibility_update.blocked.sentience",
+        "susceptibility_update.blocked.unrestricted_autonomy"
+      ],
+      "boundary_integrity_result": {
+        "active_degree": 9,
+        "active_degree_floor": 9,
+        "boundary_margin": 0,
+        "status": "preserved",
+        "topology_signature_same": true
+      },
+      "claim_ceiling": "provisional source-current SU2 susceptibility-delta candidate pending I5 replay and I7 control matrix; no durable geometry modification, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "coherence_floor_result": {
+        "center_node_coherence": 9.959999999999999,
+        "coherence_floor": 9.85,
+        "coherence_margin": 0.10999999999999943,
+        "status": "changed_within_allowed_delta_above_floor"
+      },
+      "control_results": [
+        {
+          "actual_result": "route_b node coherence delta is source-current and recorded",
+          "blocked_condition": "route label changes without geometry delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "route_label_only_control",
+          "control_status": "passed",
+          "rung_effect": "blocks SU2 and stronger if triggered"
+        },
+        {
+          "actual_result": "prior interaction queue drained before later re-entry; no in-flight reinforcement budget",
+          "blocked_condition": "active producer reinforcement carries the apparent delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reinforcement_schedule_removed_control",
+          "control_status": "passed",
+          "rung_effect": "blocks SU4 and stronger if triggered"
+        },
+        {
+          "actual_result": {
+            "global_drift_rejected": true,
+            "peer_prior_route": "route_peer_edge_1",
+            "peer_route_delta": 0.0,
+            "same_prior_interaction_budget": true,
+            "same_reentry_route": "route_b",
+            "status": "passed",
+            "target_over_peer_margin": 0.08000000000000007,
+            "target_prior_route": "route_b",
+            "target_route_delta": 0.08000000000000007
+          },
+          "blocked_condition": "same-budget peer route carries same target delta",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "peer_same_budget_comparison_control",
+          "control_status": "passed",
+          "rung_effect": "blocks SU5 and SU6 if missing or failed"
+        },
+        {
+          "actual_result": "target route_b delta exceeds same-budget peer route_b delta",
+          "blocked_condition": "target and peer regions move together",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "global_drift_rejection_control",
+          "control_status": "passed",
+          "rung_effect": "blocks route-conditioned SU5 and SU6 if failed"
+        },
+        {
+          "actual_result": "ap4_dependency_status = required_recorded",
+          "blocked_condition": "route-conditioned row omits AP4 dependency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP4_gap_dependency_if_route_conditioned",
+          "control_status": "passed",
+          "rung_effect": "blocks route-conditioned SU rows if missing"
+        },
+        {
+          "actual_result": "I4 uses packet geometry, not proxy or target formation",
+          "blocked_condition": "proxy or target formation participates without AP5 record",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "AP5_gap_dependency_if_proxy_conditioned",
+          "control_status": "not_applicable",
+          "rung_effect": "not applicable for this row"
+        },
+        {
+          "actual_result": "deferred to I5/I7 replay and control matrix",
+          "blocked_condition": "one-window delta is relabeled as durable geometry modification",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "durable_geometry_modification_control",
+          "control_status": "not_run",
+          "rung_effect": "blocks SU4 and stronger until executed"
+        },
+        {
+          "actual_result": "deferred to I7 control matrix; unsafe flags remain false",
+          "blocked_condition": "source-current susceptibility is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_relabel_control",
+          "control_status": "not_run",
+          "rung_effect": "blocks closeout claims until executed"
+        },
+        {
+          "actual_result": "deferred to I7 control matrix; native support remains false",
+          "blocked_condition": "packet-mediated evidence is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_status": "not_run",
+          "rung_effect": "blocks closeout claims until executed"
+        },
+        {
+          "actual_result": "deferred to I7 control matrix; Phase 8 remains false",
+          "blocked_condition": "I4 artifact evidence is relabeled as Phase 8 implementation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_status": "not_run",
+          "rung_effect": "blocks closeout claims until executed"
+        }
+      ],
+      "delta_not_label_reassignment": true,
+      "delta_persistence_ratio": 0.5000000000000111,
+      "delta_threshold_or_rule": {
+        "boundary_active_degree_floor": 9,
+        "coherence_floor": 9.85,
+        "declared_before_use": true,
+        "field_specific_acceptance": {
+          "boundary_integrity_result": [
+            "preserved",
+            "changed_within_allowed_delta"
+          ],
+          "coherence_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "flux_or_leakage_result": [
+            "preserved",
+            "changed_within_bound"
+          ],
+          "support_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ]
+        },
+        "max_budget_error": 1e-09,
+        "min_reentry_delta_persistence_ratio": 0.45,
+        "min_route_local_delta": 0.05,
+        "min_target_over_peer_route_delta_margin": 0.05,
+        "support_floor": 9.85,
+        "supporting_interpretation": "I4 may assign only provisional SU2. Replay-backed and control-backed rungs remain blocked until later iterations.",
+        "threshold_record_id": "n22_i4_minimal_susceptibility_thresholds"
+      },
+      "derived_report_only": false,
+      "durable_geometry_modification_supported": false,
+      "flux_or_leakage_result": {
+        "budget_error": 1.4210854715202004e-14,
+        "in_flight_packet_total": 0.0,
+        "max_budget_error": 1e-09,
+        "status": "preserved"
+      },
+      "global_drift_rejected": true,
+      "historical_interaction_provenance_present": true,
+      "interaction_delta_digest": "4fbc9577db20ad3b652c34e0a987a2be350076063d73a90b2083416d032fd793",
+      "interaction_window": {
+        "arrival_event_time_key": 2.0,
+        "departure_event_time_key": 1.0,
+        "packet_amount": 0.08,
+        "phase": "prior_interaction"
+      },
+      "n19_native_readiness_boundary_consumption": "ap_gap_boundary_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "native_support_supported": false,
+      "naturalization_debt_fields": [
+        "susceptibility_update.source_current_route_conditioned_state_mutation",
+        "susceptibility_update.peer_route_same_budget_comparison",
+        "susceptibility_update.proxy_free_susceptibility_policy"
+      ],
+      "one_window_transient_rejected": false,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "2e71db0cf52d8bfcf156047af447c0a7119350bb1a5314e35c9adf6a31ad1180",
+      "peer_route_or_region_trace": {
+        "interpretation": "same budget spent on peer edge 1 moves peer node 2, not route_b node 1; this rejects a global-drift reading for I4 scope",
+        "peer_post_peer_node_delta": 0.08000000000000007,
+        "peer_prior_interaction_route": "route_peer_edge_1",
+        "peer_prior_target_node_id": 2,
+        "peer_target_route_node_delta": 0.0
+      },
+      "peer_same_budget_comparison": {
+        "global_drift_rejected": true,
+        "peer_prior_route": "route_peer_edge_1",
+        "peer_route_delta": 0.0,
+        "same_prior_interaction_budget": true,
+        "same_reentry_route": "route_b",
+        "status": "passed",
+        "target_over_peer_margin": 0.08000000000000007,
+        "target_prior_route": "route_b",
+        "target_route_delta": 0.08000000000000007
+      },
+      "peer_same_budget_comparison_scope_reason": "required_and_present_for_route_conditioned_row",
+      "phase8_opened": false,
+      "post_interaction_geometry_trace": {
+        "artifact_role": "post_interaction_geometry_trace",
+        "geometry_digest": "22fbd034ebe3c9ca7cb3224017f2a549568083a86efc6a5f5145a4898cc06afd",
+        "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json"
+      },
+      "post_replay_delta_digest": "not_run_until_iteration_5",
+      "pre_interaction_geometry_trace": {
+        "artifact_role": "pre_interaction_geometry_trace",
+        "geometry_digest": "b08d359601ebf675510a1a5017c1b7fb09f889b0ea80f20792c6e37e6aae6558",
+        "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json"
+      },
+      "producer_residue_fields": [
+        "susceptibility_update.route_update_rule",
+        "susceptibility_update.reinforcement_schedule",
+        "susceptibility_update.learning_label"
+      ],
+      "provisional_su_ladder_rung": "SU2",
+      "provisional_su_ladder_rung_status": "pending_iteration_5_replay_and_iteration_7_controls",
+      "reentry_delta_digest": "18c065444005abbf8c65c1db215f67ba964904be807939537c1221ec6ebfb4de",
+      "reentry_window": {
+        "arrival_event_time_key": 4.0,
+        "departure_event_time_key": 3.0,
+        "packet_amount": 0.04,
+        "phase": "later_reentry"
+      },
+      "reinforcement_budget_in_flight": 0.0,
+      "reinforcement_schedule_not_used_as_evidence": true,
+      "replay_result": {
+        "affected_rungs": [
+          "SU3",
+          "SU4",
+          "SU5",
+          "SU6",
+          "N22-C3",
+          "N22-C4",
+          "N22-C5",
+          "N22-C6"
+        ],
+        "artifact_replay": "not_run",
+        "duplicate_replay": "not_run",
+        "later_reentry_replay": "not_run",
+        "not_run_reason": "I4 is minimal positive probe; I5/I7 replay matrix required for SU3 and stronger",
+        "snapshot_load_replay": "not_run"
+      },
+      "route_or_region_conditioned": true,
+      "route_or_region_reentry_trace": {
+        "delta_persistence_ratio": 0.5000000000000111,
+        "min_reentry_delta_persistence_ratio": 0.45,
+        "peer_reentry_route_delta_from_pre": -0.03999999999999915,
+        "reentry_expression_present": true,
+        "reentry_target_over_peer_margin": 0.08000000000000007,
+        "target_reentry_route_delta_from_pre": 0.040000000000000924,
+        "target_route_reentry_source": "route_b node 1"
+      },
+      "row_decision": "partial",
+      "row_id": "n22_i4_row_01_minimal_route_b_susceptibility_update_probe",
+      "row_specific_thresholds_declared_before_use": {
+        "declared_before_use": true,
+        "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+        "sha256": "baca15593297c5a99a749f88d43806acfe54df14be46b4cba6d523a338a428ef",
+        "threshold_record": {
+          "boundary_active_degree_floor": 9,
+          "coherence_floor": 9.85,
+          "declared_before_use": true,
+          "field_specific_acceptance": {
+            "boundary_integrity_result": [
+              "preserved",
+              "changed_within_allowed_delta"
+            ],
+            "coherence_floor_result": [
+              "preserved",
+              "changed_within_allowed_delta_above_floor"
+            ],
+            "flux_or_leakage_result": [
+              "preserved",
+              "changed_within_bound"
+            ],
+            "support_floor_result": [
+              "preserved",
+              "changed_within_allowed_delta_above_floor"
+            ]
+          },
+          "max_budget_error": 1e-09,
+          "min_reentry_delta_persistence_ratio": 0.45,
+          "min_route_local_delta": 0.05,
+          "min_target_over_peer_route_delta_margin": 0.05,
+          "support_floor": 9.85,
+          "supporting_interpretation": "I4 may assign only provisional SU2. Replay-backed and control-backed rungs remain blocked until later iterations.",
+          "threshold_record_id": "n22_i4_minimal_susceptibility_thresholds"
+        }
+      },
+      "run_artifact_id": "n22_i4_minimal_susceptibility_route_b_probe",
+      "runtime_config_digest": "12aaec9444a9e69f3b7ec72abed988f7a1cf1851f2d44d7b0b935e31e5ce727c",
+      "runtime_config_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_runtime_config.json",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "durable geometry delta must remain within declared route or region boundary",
+        "basin_signature_fields": [
+          "susceptibility_update.pre_interaction_geometry_trace",
+          "susceptibility_update.post_interaction_geometry_trace",
+          "susceptibility_update.susceptibility_delta_trace"
+        ],
+        "boundary_integrity_floor": "route or region boundary remains auditable after update",
+        "failure_modes": [
+          "route label changed without geometry change",
+          "delta vanishes on replay",
+          "reinforcement schedule supplies hidden support",
+          "AP4 gap omitted when base route-conditioned susceptibility participates",
+          "AP5 gap omitted when proxy-conditioned susceptibility participates"
+        ],
+        "flux_balance_bounds": "durable delta cannot be a one-window flux transient",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "later replay preserves susceptibility delta without producer reinforcement",
+        "required_coherence_floor": "altered geometry stays above coherence floor",
+        "required_support_floor": "altered geometry stays above support floor",
+        "rule_id": "n20_i5_susceptibility_update_same_basin_rule"
+      },
+      "same_basin_invariant_fields": [
+        "center_node_id",
+        "center_basin_id",
+        "topology_signature",
+        "active_degree",
+        "basin_member_count"
+      ],
+      "semantic_learning_supported": false,
+      "source_commit_or_source_digest": {
+        "script_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_minimal_susceptibility_update_probe.py",
+        "script_sha256": "5fd3191ca6c2aca6d313fc4e0c46326f2afc69f0f125b9b8037ec769ac2c6e8c"
+      },
+      "source_contract_row": "n20_i5_row_03_susceptibility_update",
+      "source_contract_row_digest": "6ec04e099f877f3cf0dfa9427acc388e1b791afb2c5e5f97e0fb27355d29df43",
+      "source_current_inputs": [
+        "LGRC9V3 target route pre-interaction snapshot",
+        "LGRC9V3 target route post-interaction snapshot",
+        "LGRC9V3 target route later re-entry snapshot",
+        "LGRC9V3 same-budget peer route run",
+        "LGRC9V3 event logs and graph checkpoints"
+      ],
+      "source_output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "su3_or_stronger_blocker": "replay_result_not_run_and_one_window_transient_not_yet_rejected",
+      "support_floor_result": {
+        "center_basin_mass": 10.0,
+        "status": "preserved",
+        "support_floor": 9.85,
+        "support_margin": 0.15000000000000036
+      },
+      "susceptibility_delta_trace": {
+        "delta_observed": true,
+        "delta_source": "LGRC9V3 packet arrival modified route_b node coherence",
+        "min_route_local_delta": 0.05,
+        "min_target_over_peer_route_delta_margin": 0.05,
+        "peer_global_drift_rejected": true,
+        "peer_same_route_delta_under_peer_prior_budget": 0.0,
+        "target_over_peer_route_delta_margin": 0.08000000000000007,
+        "target_route": "route_b",
+        "target_route_delta": 0.08000000000000007,
+        "target_route_node_id": 1
+      },
+      "susceptibility_update_claim_allowed": false,
+      "threshold_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+      "trace_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_minimal_susceptibility_trace.json",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_ready",
+      "detail": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_row_has_required_fields",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "derived_report_only_false",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_present",
+      "detail": [
+        "LGRC9V3 target route pre-interaction snapshot",
+        "LGRC9V3 target route post-interaction snapshot",
+        "LGRC9V3 target route later re-entry snapshot",
+        "LGRC9V3 same-budget peer route run",
+        "LGRC9V3 event logs and graph checkpoints"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "thresholds_declared_before_use",
+      "detail": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": 19,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": [
+        {
+          "artifact_role": "minimal_susceptibility_trace",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_minimal_susceptibility_trace.json",
+          "sha256": "734d05abfaf1fb18bcf2ef7987b47565cfb14047ee58b31ff1126ae095f716d4"
+        },
+        {
+          "artifact_role": "runtime_config",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_runtime_config.json",
+          "sha256": "39ccc85c99bf17789368ecaa9738aaa04b86fb0ffd08c2c53ab5aca3554a4f09"
+        },
+        {
+          "artifact_role": "thresholds_declared_before_use",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+          "sha256": "baca15593297c5a99a749f88d43806acfe54df14be46b4cba6d523a338a428ef"
+        },
+        {
+          "artifact_role": "peer_budget_edge_1_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000000.json",
+          "sha256": "6310cac1c455b9fb99ce5e889ace3db4dc6c48e3f02bdf955864f3321feb063e"
+        },
+        {
+          "artifact_role": "peer_budget_edge_1_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000001.json",
+          "sha256": "be7daedbe45d436dabe6d45ac88e9792ffa8423e3c4fc801c6b68f31d1702365"
+        },
+        {
+          "artifact_role": "peer_budget_edge_1_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000002.json",
+          "sha256": "7db8c286ced9a1e23a6bf5ca6f94b0d64ac7747baeff664729c527e280cfcde5"
+        },
+        {
+          "artifact_role": "peer_event_log",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_events.jsonl",
+          "sha256": "ccf9f58aa47326d7a7e8605d3d5d0490f1defac5d9fdf17cf85951b52fe8c315"
+        },
+        {
+          "artifact_role": "peer_post_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_post_interaction_snapshot.json",
+          "sha256": "cbb9b79aecceccb2c1713ea2c46e3f1d6bb684cc22f52a7ab085f125a2664a0b"
+        },
+        {
+          "artifact_role": "peer_pre_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_pre_interaction_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "peer_later_reentry_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_reentry_snapshot.json",
+          "sha256": "da0585407a65a0f59a7c57bd3355103c4b19ea2721c68c1640dc4cca3b5e05eb"
+        },
+        {
+          "artifact_role": "same_budget_peer_run_artifact",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_run.json",
+          "sha256": "d82faa7659f5a9626b750d5d50aff922f13b510a5d09939b261c9e77ae271dc9"
+        },
+        {
+          "artifact_role": "target_route_b_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000000.json",
+          "sha256": "6e18f3ef55f941c16ff68b4ed7d6d247e80d3d054bcd128fed6a794cba9fc970"
+        },
+        {
+          "artifact_role": "target_route_b_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000001.json",
+          "sha256": "d744b3222847a0554a8c4ead0931d691177092f489f5e9614770f55719493f74"
+        },
+        {
+          "artifact_role": "target_route_b_prior_graph_checkpoint",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000002.json",
+          "sha256": "078d53d51a3eb226f1b96d65e1a5c0f15dfdac4384b8f8c995063ee0162d26e7"
+        },
+        {
+          "artifact_role": "target_event_log",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_events.jsonl",
+          "sha256": "604ea534e6271c69e8d117b427388f2f3dea05de577dbc2989d11399c25e6cf3"
+        },
+        {
+          "artifact_role": "target_post_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json",
+          "sha256": "af1fae59ca93334b05032156bcd6857bebde6dac46bdbc104733b97095d77d52"
+        },
+        {
+          "artifact_role": "target_pre_interaction_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_pre_interaction_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "target_later_reentry_snapshot",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_reentry_snapshot.json",
+          "sha256": "a0683d0e9b1e2df1818f21748ae6fd40ace7281ec5939727b0a6173972e18a44"
+        },
+        {
+          "artifact_role": "target_route_run_artifact",
+          "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json",
+          "sha256": "7a83e70c89778e0c57a732ca9a083dc91da14c8eeba9de96376a822cfba2f085"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "pre_post_delta_observed",
+      "detail": {
+        "delta_observed": true,
+        "delta_source": "LGRC9V3 packet arrival modified route_b node coherence",
+        "min_route_local_delta": 0.05,
+        "min_target_over_peer_route_delta_margin": 0.05,
+        "peer_global_drift_rejected": true,
+        "peer_same_route_delta_under_peer_prior_budget": 0.0,
+        "target_over_peer_route_delta_margin": 0.08000000000000007,
+        "target_route": "route_b",
+        "target_route_delta": 0.08000000000000007,
+        "target_route_node_id": 1
+      },
+      "passed": true
+    },
+    {
+      "check_id": "peer_comparison_rejects_global_drift",
+      "detail": {
+        "global_drift_rejected": true,
+        "peer_prior_route": "route_peer_edge_1",
+        "peer_route_delta": 0.0,
+        "same_prior_interaction_budget": true,
+        "same_reentry_route": "route_b",
+        "status": "passed",
+        "target_over_peer_margin": 0.08000000000000007,
+        "target_prior_route": "route_b",
+        "target_route_delta": 0.08000000000000007
+      },
+      "passed": true
+    },
+    {
+      "check_id": "later_reentry_trace_present",
+      "detail": {
+        "delta_persistence_ratio": 0.5000000000000111,
+        "min_reentry_delta_persistence_ratio": 0.45,
+        "peer_reentry_route_delta_from_pre": -0.03999999999999915,
+        "reentry_expression_present": true,
+        "reentry_target_over_peer_margin": 0.08000000000000007,
+        "target_reentry_route_delta_from_pre": 0.040000000000000924,
+        "target_route_reentry_source": "route_b node 1"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "same_basin_preserved",
+      "detail": {
+        "active_degree_same": true,
+        "basin_member_count_same": true,
+        "center_basin_id_same": true,
+        "center_node_id_same": true,
+        "topology_signature_same": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "support_gate_accepted",
+      "detail": {
+        "center_basin_mass": 10.0,
+        "status": "preserved",
+        "support_floor": 9.85,
+        "support_margin": 0.15000000000000036
+      },
+      "passed": true
+    },
+    {
+      "check_id": "coherence_gate_accepted",
+      "detail": {
+        "center_node_coherence": 9.959999999999999,
+        "coherence_floor": 9.85,
+        "coherence_margin": 0.10999999999999943,
+        "status": "changed_within_allowed_delta_above_floor"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "boundary_gate_accepted",
+      "detail": {
+        "active_degree": 9,
+        "active_degree_floor": 9,
+        "boundary_margin": 0,
+        "status": "preserved",
+        "topology_signature_same": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "flux_gate_accepted",
+      "detail": {
+        "budget_error": 1.4210854715202004e-14,
+        "in_flight_packet_total": 0.0,
+        "max_budget_error": 1e-09,
+        "status": "preserved"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_reinforcement_absent_before_reentry",
+      "detail": {
+        "active_reinforcement_queue_empty": true,
+        "active_reinforcement_schedule_disabled": true,
+        "reinforcement_budget_in_flight": 0.0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_recorded_ap5_not_applicable",
+      "detail": {
+        "ap4": "required_recorded",
+        "ap5": "not_applicable"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_flags_all_false",
+      "detail": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "claim_allowed_false_pending_replay_controls",
+      "detail": "provisional source-current SU2 susceptibility-delta candidate pending I5 replay and I7 control matrix; no durable geometry modification, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "passed": true
+    },
+    {
+      "check_id": "su2_only_pending_replay",
+      "detail": {
+        "row_decision": "partial",
+        "rung": "SU2"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "durable_geometry_not_supported_yet",
+      "detail": {
+        "durable_geometry_modification_supported": false,
+        "one_window_transient_rejected": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": [
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_minimal_susceptibility_trace.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_runtime_config.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/n22_i4_thresholds_declared_before_use.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000000.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000001.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior-checkpoint-00000002.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_events.jsonl",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_post_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_pre_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_reentry_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/peer_budget_edge_1_prior_run.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000000.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000001.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior-checkpoint-00000002.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_events.jsonl",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_pre_interaction_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_reentry_snapshot.json",
+        "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_run.json"
+      ],
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_minimal_susceptibility_update_probe.py",
+  "experiment": "N22",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "The result is provisional SU2 pending I5 replay and I7 controls; it is not semantic learning, choice, agency, native support, or Phase 8.",
+    "short_read": "I4 records a route-local source-current geometry delta, not a learning or choice claim.",
+    "what_changed": "The prior interaction moves 0.08 coherence from the center into route_b node 1. The same-budget peer run moves the same budget into node 2 instead, leaving route_b node 1 unchanged.",
+    "why_peer_matters": "Because the peer run spends the same budget but does not create the route_b node delta, the I4 delta is route-local rather than a global scheduler or budget drift.",
+    "why_reentry_matters": "Later route_b re-entry preserves a measurable route_b delta relative to the peer run, but replay and control matrices have not yet established durable geometry modification."
+  },
+  "iteration": 4,
+  "iteration4_boundary": {
+    "agency_supported": false,
+    "choice_supported": false,
+    "durable_geometry_modification_supported": false,
+    "n21_nd6_bridge_status": "not_supported",
+    "n22_closeout_ladder_rung_assigned": false,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "positive_run_artifacts_consumed": true,
+    "provisional_su_ladder_rung": "SU2",
+    "ready_for_iteration_5_durability_replay": true,
+    "semantic_learning_supported": false,
+    "sentience_supported": false,
+    "source_current_susceptibility_delta_observed": true,
+    "su3_or_stronger_supported": false,
+    "susceptibility_update_claim_allowed": false
+  },
+  "output_digest": "9bee91dba55414c1be3b63dd299b9d3c2629743adf2796cbf4da911a3db769ae",
+  "purpose": "source-backed minimal susceptibility-update probe",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_susceptibility_evidence",
+      "output_digest": "8c470a09056834437fe19bbbe170c5eb8e0a95284212fd73bf7e1427e76625f5",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_source_handoff_inventory.json",
+      "sha256": "1ea13c1d9fcdaa75ba284aa1041dd08b18f8e8c1a6d73f24c45512b639e9773f",
+      "source_role": "n22_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_susceptibility_schema_frozen_no_positive_evidence",
+      "output_digest": "a6d4e478b1e29f31007bb965c97a838764e196f18ca7ac8e1c78a7ccfc03680f",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_schema_and_controls.json",
+      "sha256": "221dae0353bdb5a04c2a324cd9d94b3634de5c66e8ffef3721df1f5791e0f4e5",
+      "source_role": "n22_i2_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "4843f5661908cc612d71df1957bc16929ed199b7c2c72134c4f0d67bea750138",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_active_nulls_and_failure_baselines.json",
+      "sha256": "599fc7ee6616714cb48aecab7fc04564f00ad94b5a66063869c631e206935f50",
+      "source_role": "n22_i3_active_nulls",
+      "status": "passed"
+    }
+  ],
+  "source_backed_probe": {
+    "fixture": "examples/grc9v3/_fixtures.py::make_column_h_state",
+    "model_family": "LGRC9V3",
+    "peer_route": {
+      "edge_id": 1,
+      "prior_source_node_id": 0,
+      "prior_target_node_id": 2,
+      "route_id": "route_peer_edge_1"
+    },
+    "target_probe_summary": {
+      "geometric_change": "route_b node 1 receives prior packet interaction from center, then later re-enters center through edge 0",
+      "peer_route_delta": 0.0,
+      "reentry_delta_persistence_ratio": 0.5000000000000111,
+      "target_route_delta": 0.08000000000000007
+    },
+    "target_route": {
+      "edge_id": 0,
+      "prior_source_node_id": 0,
+      "prior_target_node_id": 1,
+      "reentry_source_node_id": 1,
+      "reentry_target_node_id": 0,
+      "route_id": "route_b"
+    }
+  },
+  "status": "passed"
+}

@@ -1,0 +1,30 @@
+{
+  "boundary_active_degree_floor": 9,
+  "coherence_floor": 9.85,
+  "declared_before_use": true,
+  "field_specific_acceptance": {
+    "boundary_integrity_result": [
+      "preserved",
+      "changed_within_allowed_delta"
+    ],
+    "coherence_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ],
+    "flux_or_leakage_result": [
+      "preserved",
+      "changed_within_bound"
+    ],
+    "support_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ]
+  },
+  "max_budget_error": 1e-09,
+  "min_reentry_delta_persistence_ratio": 0.45,
+  "min_route_local_delta": 0.05,
+  "min_target_over_peer_route_delta_margin": 0.05,
+  "support_floor": 9.85,
+  "supporting_interpretation": "I4 may assign only provisional SU2. Replay-backed and control-backed rungs remain blocked until later iterations.",
+  "threshold_record_id": "n22_i4_minimal_susceptibility_thresholds"
+}

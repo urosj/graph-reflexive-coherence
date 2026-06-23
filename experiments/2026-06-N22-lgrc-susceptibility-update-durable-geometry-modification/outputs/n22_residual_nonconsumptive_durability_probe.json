@@ -1,0 +1,1416 @@
+{
+  "acceptance_state": "accepted_consumptive_readout_boundary_no_nonconsumptive_durability",
+  "artifact_id": "n22_i5b_residual_nonconsumptive_durability_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_loaded_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive-checkpoint-00000000.json",
+      "sha256": "230f1a70d52fa4e9121b059044dfc3f431b6f39508dfa0df83af273a34459c28"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_first_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive-checkpoint-00000001.json",
+      "sha256": "8fa64e1836702e604a8df47ada34a5a7a8b478c50ccb053bc8286a77451afc28"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_idle_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive-checkpoint-00000002.json",
+      "sha256": "40bd71f309333ef7bd596db3226c1f0797186d8ee9d94653a8fbf7b4cc3c2b6f"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_second_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive-checkpoint-00000003.json",
+      "sha256": "28818357b298d23ebb2660f064fadea04160363a88ef64f4784a6686e2aa93f9"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_after_first_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_after_first_readout_snapshot.json",
+      "sha256": "224bb93a2e3a6b0480840e65081d2d998135f0b41bc85b4f34c967623bc6d13c"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_after_idle_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_after_idle_snapshot.json",
+      "sha256": "224bb93a2e3a6b0480840e65081d2d998135f0b41bc85b4f34c967623bc6d13c"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_after_second_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_after_second_readout_snapshot.json",
+      "sha256": "8d2008c218c3d1556f8e3f270cee027f140277bd66e09c82de8978c648529114"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_residual_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_events.jsonl",
+      "sha256": "b716cd98b31f6500fc8744405b69e85c37178e26f687c7be407363b6fe2c7919"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_residual_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_run.json",
+      "sha256": "24a140fb211e2e551d7075608a25d20f7e337a542d8397fb02af92d7e73bf38e"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_loaded_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive-checkpoint-00000000.json",
+      "sha256": "10bb5f96e351e553b4b6d0c8d39567d40b4bebfce0559f2b2935f823884a1475"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_first_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive-checkpoint-00000001.json",
+      "sha256": "7a9752bc57f59c2fa54a3bb4495393141cc85e3618c9405a5b4d2de6cd42a0e2"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_idle_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive-checkpoint-00000002.json",
+      "sha256": "a03ae10f18767e469c8fb1bcf4ebb5bdaff663ed9f471892f3bc23bcaa492544"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_second_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive-checkpoint-00000003.json",
+      "sha256": "0c157d9586c5bc17065f0614584f60c201f8d30bf87da6a83b01f879248a71e1"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_after_first_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_after_first_readout_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_after_idle_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_after_idle_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_after_second_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_after_second_readout_snapshot.json",
+      "sha256": "c17f491e02663bdcb8ca061df41429714d95a41c81b8ae10693280502c775d8b"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_residual_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_events.jsonl",
+      "sha256": "9b8fe22ab11caed4b39ce27abbdae6d2955be1921a794fb1034dad0418549c82"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_residual_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_run.json",
+      "sha256": "8ca35c43d647fbec8b0b8b2698920c76b0f4143716bcc6146d66c7385b54491c"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_loaded_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive-checkpoint-00000000.json",
+      "sha256": "56edc148b8dfd640e18b6d7eb7401c148476fec1e77b11b180691a87c507bcca"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_first_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive-checkpoint-00000001.json",
+      "sha256": "d1859b4299cc0c229665a8372c84adff1cbffd97653555d4f97e6e03dba48200"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_idle_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive-checkpoint-00000002.json",
+      "sha256": "e1273aabe68ffc55c0535e7a3433d16b31a4025b49759d49369cecfe6f7141c1"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_second_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive-checkpoint-00000003.json",
+      "sha256": "c7f70913a03c4653e5f1c68bac80881ba84c56f5eff624e401d720680936741d"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_after_first_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_after_first_readout_snapshot.json",
+      "sha256": "6bf6688edb51bda1191c1fb3c09a67e1ca730a2669f98c5ea08adef2427565b6"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_after_idle_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_after_idle_snapshot.json",
+      "sha256": "6bf6688edb51bda1191c1fb3c09a67e1ca730a2669f98c5ea08adef2427565b6"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_after_second_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_after_second_readout_snapshot.json",
+      "sha256": "992e622d23b64475e076fe6999f5cf567d2747dd2a2769e93f28d70d86d5d4f9"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_residual_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_events.jsonl",
+      "sha256": "3831ac63f023c48bd9f1875169a570b3c9c447630af0d50adce4f245071da5b0"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_residual_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_run.json",
+      "sha256": "02f94087a81cf2ccf422d78dfcbef81abef346fc231cd48e92335199058301e1"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_loaded_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive-checkpoint-00000000.json",
+      "sha256": "d5eea90bb98edd19d7b58149f62d3f5193aac5f6cfbb917675e3880a41525da5"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_first_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive-checkpoint-00000001.json",
+      "sha256": "7b79c1115fada2530a2cd1a02e7f3e0ca1b08d28b749ed2c3cea82958390631e"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_idle_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive-checkpoint-00000002.json",
+      "sha256": "04c5f71373b3ad552bc27e417e7cadacb76be379b8f7c0f7611a3521f84a5446"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_second_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive-checkpoint-00000003.json",
+      "sha256": "310fdc42cbf30930294921366590d022735dbf3d8ceda8db1e9650f332c009f8"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_after_first_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_after_first_readout_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_after_idle_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_after_idle_snapshot.json",
+      "sha256": "c7e1ad43b6ba2cc181149f56e99b228d8442f267c5cac8bdd6fa7850a7ceeac4"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_after_second_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_after_second_readout_snapshot.json",
+      "sha256": "c17f491e02663bdcb8ca061df41429714d95a41c81b8ae10693280502c775d8b"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_residual_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_events.jsonl",
+      "sha256": "b02fae1c21a745a259470508ae88628886cb0fdc1c9923f66f06cb81d3bee6ac"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_residual_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_run.json",
+      "sha256": "74084a365bc8bae746bcb00fa3e35febade6155791b1c0512a318a31e97ccd42"
+    },
+    {
+      "artifact_role": "thresholds_declared_before_use",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/n22_i5b_thresholds_declared_before_use.json",
+      "sha256": "ae830a81d4f068a28bc25a23c6b82afb7f79e9a9994fc2b39cedb3172e7ccbaf"
+    },
+    {
+      "artifact_role": "single_route_b_reference_loaded_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive-checkpoint-00000000.json",
+      "sha256": "1632514b71311eceb692b8a48fe96d7312cd97c345069cb57c69891310955616"
+    },
+    {
+      "artifact_role": "single_route_b_reference_first_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive-checkpoint-00000001.json",
+      "sha256": "2755476cc3ec3224bfa79cf362ad49c1e7ff0a5ffb51ba9fd18a449bae8de76e"
+    },
+    {
+      "artifact_role": "single_route_b_reference_idle_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive-checkpoint-00000002.json",
+      "sha256": "9830147872196ccb98867fdbf772e5280ac1c0272912bd880529075c4536e338"
+    },
+    {
+      "artifact_role": "single_route_b_reference_second_readout_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive-checkpoint-00000003.json",
+      "sha256": "40b2776ed11f2f8d3341eb4c5de4f0f43575fc8803a2a9db4c7879d9630a5ed0"
+    },
+    {
+      "artifact_role": "single_route_b_reference_after_first_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_after_first_readout_snapshot.json",
+      "sha256": "45c53a5f18139f085fbe9494237bbebd33d0f4d43d348aa3c5195966422ddded"
+    },
+    {
+      "artifact_role": "single_route_b_reference_after_idle_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_after_idle_snapshot.json",
+      "sha256": "45c53a5f18139f085fbe9494237bbebd33d0f4d43d348aa3c5195966422ddded"
+    },
+    {
+      "artifact_role": "single_route_b_reference_after_second_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_after_second_readout_snapshot.json",
+      "sha256": "697f7e49bcba767f8b20764d405ced17433bcaccad72e1528bbaa00aaafa8eed"
+    },
+    {
+      "artifact_role": "single_route_b_reference_residual_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_events.jsonl",
+      "sha256": "34982b685a95eaf5d0f8784578e7f00096b93db116547700783847534d133ab5"
+    },
+    {
+      "artifact_role": "single_route_b_reference_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_residual_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_run.json",
+      "sha256": "07d38430d608df0fcd00798f178f1c2d880dec0f67264e1b4fc2ee2c8fdfc9a8"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i5_passed",
+      "detail": "accepted_replay_backed_su3_candidates_pending_i7_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5a_passed",
+      "detail": "accepted_replay_stress_limited_su3_candidates_pending_i7_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5_su3_candidate_count",
+      "detail": [
+        "n22_i5_row_i4_minimal_route_b",
+        "n22_i5_row_dose_08_i4_reference",
+        "n22_i5_row_dose_14_stronger_bounded",
+        "n22_i5_row_single_route_b_reference",
+        "n22_i5_row_complementary_split_route_b_adjacent"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i5a_rows_cover_i5_rows",
+      "detail": [
+        "n22_i5_row_i4_minimal_route_b",
+        "n22_i5_row_dose_08_i4_reference",
+        "n22_i5_row_dose_14_stronger_bounded",
+        "n22_i5_row_single_route_b_reference",
+        "n22_i5_row_complementary_split_route_b_adjacent"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "thresholds_declared_before_use",
+      "detail": {
+        "boundary_active_degree_floor": 9,
+        "coherence_floor": 9.85,
+        "consumes_i5a_repeated_reentry_boundary": true,
+        "declared_before_use": true,
+        "durable_su4_or_stronger_allowed": false,
+        "inherits_i5_threshold_policy": true,
+        "max_budget_error": 1e-09,
+        "max_ratio_loss_after_second_readout": 0.1,
+        "min_residual_delta_persistence_ratio": 0.45,
+        "reentry_packet_amount": 0.04,
+        "support_floor": 9.85,
+        "threshold_record_id": "n22_i5b_residual_nonconsumptive_thresholds"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": 51,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": 51,
+      "passed": true
+    },
+    {
+      "check_id": "first_residual_present_for_all_rows",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "idle_residual_stable_for_all_rows",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_consumptive_readout_detected",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_rows_support_non_consumptive_durability",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_block_su4_or_stronger",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i6_reclassification_required",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "narrow_complementary_row_tracked",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_claims_still_blocked",
+      "detail": [
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_i4_minimal_route_b",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_08_i4_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.7142857142857215,
+          "after_second_ratio": 0.4285714285714431,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+          "second_readout_ratio_loss": 0.2857142857142784,
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": false,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_single_route_b_reference",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B"
+        },
+        {
+          "after_first_ratio": 0.5000000000000111,
+          "after_second_ratio": 2.2204460492503112e-14,
+          "consumptive_readout_detected": true,
+          "first_residual_present": true,
+          "idle_residual_stable": true,
+          "narrow_margin_candidate": true,
+          "non_consumptive_durability_supported": false,
+          "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+          "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+          "second_readout_ratio_loss": 0.4999999999999889,
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_flags_all_false",
+      "detail": "all residual rows",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": "relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_residual_nonconsumptive_durability_probe.py",
+  "experiment": "N22",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "I5-B supports only consumptive-readout-limited SU3 evidence. It blocks durable SU4, transfer SU5 as durable susceptibility, SU6, final N22, the N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, and ant-ecology implementation.",
+    "short_read": "I5-B shows the I5/I5-A route_b signal is a consumptive readout boundary, not non-consumptive durable geometry modification.",
+    "what_changed_from_i5a": "I5-A recorded repeated re-entry depletion. I5-B makes that explicit by measuring the residual route_b delta after the first readout, after an idle window, and after a second readout. A first residual remains and is idle-stable, but the second readout spends the residual below the non-consumptive floor."
+  },
+  "iteration": "5-B",
+  "iteration5b_boundary": {
+    "agency_supported": false,
+    "choice_supported": false,
+    "consumptive_readout_detected_count": 5,
+    "durable_geometry_modification_supported": false,
+    "first_residual_present_count": 5,
+    "i6_su5_requires_reclassification": true,
+    "idle_residual_stable_count": 5,
+    "n21_nd6_bridge_status": "not_supported",
+    "n22_closeout_ladder_rung_assigned": false,
+    "narrow_margin_candidate_count": 1,
+    "native_support_supported": false,
+    "non_consumptive_durability_supported_count": 0,
+    "phase8_opened": false,
+    "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+    "ready_for_iteration_6_reclassification": true,
+    "ready_for_iteration_7_control_matrix": true,
+    "semantic_learning_supported": false,
+    "sentience_supported": false,
+    "source_i5_su3_candidate_count": 5,
+    "source_i5a_stress_limited_candidate_count": 5,
+    "su4_or_stronger_supported": false
+  },
+  "output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+  "purpose": "residual and non-consumptive durability classification over I5/I5-A rows",
+  "residual_policy": {
+    "durable_su4_or_stronger_allowed": false,
+    "non_consumptive_requires_second_readout_above_floor": true,
+    "repeated_reentry_boundary_from_i5a_consumed": true,
+    "threshold_policy_changed_from_i5": false
+  },
+  "residual_rows": [
+    {
+      "claim_ceiling": "I5-B confirms consumptive route_b readout: first readout leaves some residual, but repeated readout spends the residual below the non-consumptive floor. No durable SU4, transfer SU5, SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+      "consumptive_readout_detected": true,
+      "durable_geometry_modification_supported": false,
+      "first_residual_present": true,
+      "i5b_consumable_role": "consumptive_readout_boundary_for_I6_I7",
+      "i6_su5_requires_reclassification": true,
+      "idle_residual_stable": true,
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "output_digest": "bf2f511f0a1928dd6b92c773d9d03968992d53f7af1c38fd85b552fcff977602",
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "repeated_reentry_depletion_boundary_confirmed": true,
+      "residual_artifact_digest": "4215aeaa327919fc31552948a9f7c792331394ee13c7bc180695e5d3745eb534",
+      "residual_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/i4_minimal_route_b_residual_nonconsumptive_run.json",
+      "residual_gate": {
+        "after_first_readout_residual_ratio": 0.5000000000000111,
+        "after_idle_residual_ratio": 0.5000000000000111,
+        "after_second_readout_residual_ratio": 2.2204460492503112e-14,
+        "boundary_margin": 0,
+        "budget_error": 1.4210854715202004e-14,
+        "coherence_margin": 0.14999999999999858,
+        "consumptive_readout_detected": true,
+        "first_readout_ratio_loss": 0.4999999999999889,
+        "first_residual_present": true,
+        "gate_digest": "34c165dbb72fa901cbf69803faaadc49cd7716e6ef25ce66eeb54dab97136ee8",
+        "idle_residual_stable": true,
+        "in_flight_packet_total": 0.0,
+        "loaded_residual_ratio": 1.0,
+        "non_consumptive_after_second_readout": false,
+        "queued_packet_count": 0,
+        "second_readout_ratio_loss": 0.4999999999999889,
+        "support_margin": 0.15000000000000036
+      },
+      "row_decision": "partial",
+      "row_id": "n22_i5b_row_i4_minimal_route_b",
+      "source_candidate_row_id": "n22_i4_row_01_minimal_route_b_susceptibility_update_probe",
+      "source_i5_output_digest": "9bee91dba55414c1be3b63dd299b9d3c2629743adf2796cbf4da911a3db769ae",
+      "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_i4_minimal_route_b",
+      "source_iteration": "I4",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json",
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-B confirms consumptive route_b readout: first readout leaves some residual, but repeated readout spends the residual below the non-consumptive floor. No durable SU4, transfer SU5, SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+      "consumptive_readout_detected": true,
+      "durable_geometry_modification_supported": false,
+      "first_residual_present": true,
+      "i5b_consumable_role": "consumptive_readout_boundary_for_I6_I7",
+      "i6_su5_requires_reclassification": true,
+      "idle_residual_stable": true,
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "output_digest": "2c468c5e9890499d9537fff42570a1ad3e16377d9937e7844740cff18b67ef95",
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "repeated_reentry_depletion_boundary_confirmed": true,
+      "residual_artifact_digest": "ccb1ced19eda456f01f9f5e1a9a55369fa22a6875b28895b53f7951de7722a1a",
+      "residual_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_08_i4_reference_residual_nonconsumptive_run.json",
+      "residual_gate": {
+        "after_first_readout_residual_ratio": 0.5000000000000111,
+        "after_idle_residual_ratio": 0.5000000000000111,
+        "after_second_readout_residual_ratio": 2.2204460492503112e-14,
+        "boundary_margin": 0,
+        "budget_error": 1.4210854715202004e-14,
+        "coherence_margin": 0.14999999999999858,
+        "consumptive_readout_detected": true,
+        "first_readout_ratio_loss": 0.4999999999999889,
+        "first_residual_present": true,
+        "gate_digest": "34c165dbb72fa901cbf69803faaadc49cd7716e6ef25ce66eeb54dab97136ee8",
+        "idle_residual_stable": true,
+        "in_flight_packet_total": 0.0,
+        "loaded_residual_ratio": 1.0,
+        "non_consumptive_after_second_readout": false,
+        "queued_packet_count": 0,
+        "second_readout_ratio_loss": 0.4999999999999889,
+        "support_margin": 0.15000000000000036
+      },
+      "row_decision": "partial",
+      "row_id": "n22_i5b_row_dose_08_i4_reference",
+      "source_candidate_row_id": "n22_i4a_row_dose_08_i4_reference",
+      "source_i5_output_digest": "bfc7856e5685fab47383f3e03e0311f6f140841667a5f36a75b7e6f2b5cd5d6d",
+      "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_dose_08_i4_reference",
+      "source_iteration": "I4-A",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_dose_boundary_probe_artifacts/dose_08_i4_reference_target_route_b_post_interaction_snapshot.json",
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-B confirms consumptive route_b readout: first readout leaves some residual, but repeated readout spends the residual below the non-consumptive floor. No durable SU4, transfer SU5, SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+      "consumptive_readout_detected": true,
+      "durable_geometry_modification_supported": false,
+      "first_residual_present": true,
+      "i5b_consumable_role": "consumptive_readout_boundary_for_I6_I7",
+      "i6_su5_requires_reclassification": true,
+      "idle_residual_stable": true,
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "output_digest": "abbfb929a633f20ef49f0fac86ab110638e7d23cbfddd8e9ffa0cf4a71c18b63",
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "repeated_reentry_depletion_boundary_confirmed": true,
+      "residual_artifact_digest": "17020a5bf91008c9cf179152b2712cb558bb556e23025d27bbe1f44c926c79a7",
+      "residual_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/dose_14_stronger_bounded_residual_nonconsumptive_run.json",
+      "residual_gate": {
+        "after_first_readout_residual_ratio": 0.7142857142857215,
+        "after_idle_residual_ratio": 0.7142857142857215,
+        "after_second_readout_residual_ratio": 0.4285714285714431,
+        "boundary_margin": 0,
+        "budget_error": 1.4210854715202004e-14,
+        "coherence_margin": 0.08999999999999808,
+        "consumptive_readout_detected": true,
+        "first_readout_ratio_loss": 0.2857142857142785,
+        "first_residual_present": true,
+        "gate_digest": "edeaa3c156f8e300f4228a7520342b023532bbf4f6c3a77386ed9542e1bc32ad",
+        "idle_residual_stable": true,
+        "in_flight_packet_total": 0.0,
+        "loaded_residual_ratio": 1.0,
+        "non_consumptive_after_second_readout": false,
+        "queued_packet_count": 0,
+        "second_readout_ratio_loss": 0.2857142857142784,
+        "support_margin": 0.15000000000000036
+      },
+      "row_decision": "partial",
+      "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+      "source_candidate_row_id": "n22_i4a_row_dose_14_stronger_bounded",
+      "source_i5_output_digest": "bfc7856e5685fab47383f3e03e0311f6f140841667a5f36a75b7e6f2b5cd5d6d",
+      "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_dose_14_stronger_bounded",
+      "source_iteration": "I4-A",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_dose_boundary_probe_artifacts/dose_14_stronger_bounded_target_route_b_post_interaction_snapshot.json",
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-B confirms consumptive route_b readout: first readout leaves some residual, but repeated readout spends the residual below the non-consumptive floor. No durable SU4, transfer SU5, SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+      "consumptive_readout_detected": true,
+      "durable_geometry_modification_supported": false,
+      "first_residual_present": true,
+      "i5b_consumable_role": "consumptive_readout_boundary_for_I6_I7",
+      "i6_su5_requires_reclassification": true,
+      "idle_residual_stable": true,
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "output_digest": "c42a0867f4845ebf941b2693ec17976449e33d00a92836e711cef4327e706a8e",
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "repeated_reentry_depletion_boundary_confirmed": true,
+      "residual_artifact_digest": "7033fe91bdc8d32d9e9f1826722abd6617beb957619045349433ba7124a48840",
+      "residual_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/single_route_b_reference_residual_nonconsumptive_run.json",
+      "residual_gate": {
+        "after_first_readout_residual_ratio": 0.5000000000000111,
+        "after_idle_residual_ratio": 0.5000000000000111,
+        "after_second_readout_residual_ratio": 2.2204460492503112e-14,
+        "boundary_margin": 0,
+        "budget_error": 1.4210854715202004e-14,
+        "coherence_margin": 0.14999999999999858,
+        "consumptive_readout_detected": true,
+        "first_readout_ratio_loss": 0.4999999999999889,
+        "first_residual_present": true,
+        "gate_digest": "34c165dbb72fa901cbf69803faaadc49cd7716e6ef25ce66eeb54dab97136ee8",
+        "idle_residual_stable": true,
+        "in_flight_packet_total": 0.0,
+        "loaded_residual_ratio": 1.0,
+        "non_consumptive_after_second_readout": false,
+        "queued_packet_count": 0,
+        "second_readout_ratio_loss": 0.4999999999999889,
+        "support_margin": 0.15000000000000036
+      },
+      "row_decision": "partial",
+      "row_id": "n22_i5b_row_single_route_b_reference",
+      "source_candidate_row_id": "n22_i4b_row_single_route_b_reference",
+      "source_i5_output_digest": "4ac32cc56502ebc9f4723f171fdc40bb2b059e6a5c167f0d1e837b873064f266",
+      "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_single_route_b_reference",
+      "source_iteration": "I4-B",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/single_route_b_reference_target_post_interaction_snapshot.json",
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "I5-B confirms consumptive route_b readout: first readout leaves some residual, but repeated readout spends the residual below the non-consumptive floor. No durable SU4, transfer SU5, SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+      "consumptive_readout_detected": true,
+      "durable_geometry_modification_supported": false,
+      "first_residual_present": true,
+      "i5b_consumable_role": "consumptive_readout_boundary_for_I6_I7",
+      "i6_su5_requires_reclassification": true,
+      "idle_residual_stable": true,
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": true,
+      "non_consumptive_durability_supported": false,
+      "output_digest": "25f462749e178107720161f5a08181bfa2752f2f421b3df013a36335d4d490b5",
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "repeated_reentry_depletion_boundary_confirmed": true,
+      "residual_artifact_digest": "212d362c0cc1e52e9d4ca7e1a65927d470ed2c4cfb0da764068c69aa2cdd5720",
+      "residual_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe_artifacts/complementary_split_route_b_adjacent_residual_nonconsumptive_run.json",
+      "residual_gate": {
+        "after_first_readout_residual_ratio": 0.5000000000000111,
+        "after_idle_residual_ratio": 0.5000000000000111,
+        "after_second_readout_residual_ratio": 2.2204460492503112e-14,
+        "boundary_margin": 0,
+        "budget_error": 1.4210854715202004e-14,
+        "coherence_margin": 0.08999999999999808,
+        "consumptive_readout_detected": true,
+        "first_readout_ratio_loss": 0.4999999999999889,
+        "first_residual_present": true,
+        "gate_digest": "e1e7a0f4fa69e06da0c87da53c8271f3d2e99135316003dd0f94bfeb16063026",
+        "idle_residual_stable": true,
+        "in_flight_packet_total": 0.0,
+        "loaded_residual_ratio": 1.0,
+        "non_consumptive_after_second_readout": false,
+        "queued_packet_count": 0,
+        "second_readout_ratio_loss": 0.4999999999999889,
+        "support_margin": 0.15000000000000036
+      },
+      "row_decision": "partial",
+      "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+      "source_candidate_row_id": "n22_i4b_row_complementary_split_route_b_adjacent",
+      "source_i5_output_digest": "4ac32cc56502ebc9f4723f171fdc40bb2b059e6a5c167f0d1e837b873064f266",
+      "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+      "source_iteration": "I4-B",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/complementary_split_route_b_adjacent_target_post_interaction_snapshot.json",
+      "su4_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "residual_summary": [
+    {
+      "after_first_ratio": 0.5000000000000111,
+      "after_second_ratio": 2.2204460492503112e-14,
+      "consumptive_readout_detected": true,
+      "first_residual_present": true,
+      "idle_residual_stable": true,
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "row_id": "n22_i5b_row_i4_minimal_route_b",
+      "second_readout_ratio_loss": 0.4999999999999889,
+      "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+      "source_iteration": "I4"
+    },
+    {
+      "after_first_ratio": 0.5000000000000111,
+      "after_second_ratio": 2.2204460492503112e-14,
+      "consumptive_readout_detected": true,
+      "first_residual_present": true,
+      "idle_residual_stable": true,
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "row_id": "n22_i5b_row_dose_08_i4_reference",
+      "second_readout_ratio_loss": 0.4999999999999889,
+      "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+      "source_iteration": "I4-A"
+    },
+    {
+      "after_first_ratio": 0.7142857142857215,
+      "after_second_ratio": 0.4285714285714431,
+      "consumptive_readout_detected": true,
+      "first_residual_present": true,
+      "idle_residual_stable": true,
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "row_id": "n22_i5b_row_dose_14_stronger_bounded",
+      "second_readout_ratio_loss": 0.2857142857142784,
+      "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+      "source_iteration": "I4-A"
+    },
+    {
+      "after_first_ratio": 0.5000000000000111,
+      "after_second_ratio": 2.2204460492503112e-14,
+      "consumptive_readout_detected": true,
+      "first_residual_present": true,
+      "idle_residual_stable": true,
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_supported": false,
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "row_id": "n22_i5b_row_single_route_b_reference",
+      "second_readout_ratio_loss": 0.4999999999999889,
+      "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+      "source_iteration": "I4-B"
+    },
+    {
+      "after_first_ratio": 0.5000000000000111,
+      "after_second_ratio": 2.2204460492503112e-14,
+      "consumptive_readout_detected": true,
+      "first_residual_present": true,
+      "idle_residual_stable": true,
+      "narrow_margin_candidate": true,
+      "non_consumptive_durability_supported": false,
+      "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+      "row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+      "second_readout_ratio_loss": 0.4999999999999889,
+      "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+      "source_iteration": "I4-B"
+    }
+  ],
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_replay_backed_su3_candidates_pending_i7_controls",
+      "output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_durability_replay_probe.json",
+      "sha256": "fabc510447d3a98c1545c1a2b4c00acb79112c1aec9c47f015af9b4694ba3af0",
+      "source_role": "n22_i5_durability_replay_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_stress_limited_su3_candidates_pending_i7_controls",
+      "output_digest": "2602c7b3fb99b19521b5a72f0615f0ff401aa2cb532674df7eeae2875c48ff27",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe.json",
+      "sha256": "c7da8eb8349a6f6bc9331b309fffe623269ddbe840b516e9d7d7d042b050df8d",
+      "source_role": "n22_i5a_replay_durability_stress_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

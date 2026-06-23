@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N21. It replaces the
+This handoff is the current pickup note after N22. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -15,7 +15,8 @@ N12-N18 artifact-level agency-prerequisite tranche = closed
 N19 native-readiness review = closed
 N20 becoming-primitive translation contract = closed
 N21 withdrawal resistance and naturalization depth = closed
-current next experiment = N22_susceptibility_update_durable_geometry_modification
+N22 susceptibility update and durable geometry modification = closed
+current next experiment = N23_live_continuation_collapse_selection_geometry
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -61,6 +62,27 @@ general naturalization depth, `ND6`, susceptibility update, learning, choice,
 agency, semantic action/perception, native support, Phase 8, sentience,
 organism/life, or ant ecology implementation.
 
+N22 closed as the bounded susceptibility-update / durable geometry
+modification experiment:
+
+```text
+status = passed
+acceptance_state = accepted_n22_c6_handoff_ready_producer_mediated_su5_no_native_learning
+final_supported_status = bounded_artifact_level_susceptibility_update_candidate
+final_supported_su_ladder_rung = SU5_producer_mediated_bounded_susceptibility_update_candidate
+n22_closeout_ladder_rung = N22-C6
+n22_closeout_supported = true
+source_backed_susceptibility_update_evidence = true
+delta_survived_replay_and_later_reentry = true
+same_budget_peer_comparison_rules_out_global_drift = true
+ready_for_n23 = true
+```
+
+N22 does not support semantic learning, semantic choice, agency, native
+support, sentience, Phase 8, ant ecology implementation, native
+route-conductance memory, native non-consumptive carrier update policy, or
+native `SU6`.
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -72,6 +94,9 @@ Use this handoff together with:
 - `experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md`
 - `experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/reports/n21_closeout_and_n22_handoff.md`
 - `experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_closeout_and_n22_handoff.json`
+- `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md`
+- `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_closeout_and_n23_handoff.md`
+- `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -179,74 +204,124 @@ naturalization-depth candidate; no agency, native support, sentience, Phase 8,
 or ant-ecology implementation
 ```
 
-## N22 Handoff
+## N22 Closeout Evidence
 
-N22 is the next experiment. It should test the next becoming primitive:
-
-```text
-susceptibility_update
-durable_geometry_modification
-```
-
-N22 must consume the N20 I5 contract row:
+Primary N22 closeout artifact:
 
 ```text
-susceptibility_update source row = n20_i5_row_03_susceptibility_update
+artifact = experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json
+report = experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_closeout_and_n23_handoff.md
+script = experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_closeout_and_n23_handoff.py
+output_digest = 96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4
+artifact_sha256 = af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0
+report_sha256 = c4a6d9831d48c58504a1686605ed2a945452c2e87b3104e2c35a0cb7e9b16f61
+script_sha256 = 4a04f7666ade18bf73c7ded21b732223de57c09c8bc83dd63f7705d28cbbf9c1
 ```
 
-N22 must also consume N21 closeout as prerequisite context:
+N22 I7 replay/control source consumed by closeout:
 
 ```text
-N21 withdrawal_resistance_ladder_rung = WR6
-N21 naturalization_depth_ladder_rung = ND5
-N21 n21_closeout_ladder_rung = N21-C6
-N21 ready_for_n22 = true
+artifact = experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_and_control_matrix.json
+report = experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_replay_and_control_matrix.md
+script = experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_replay_and_control_matrix.py
+output_digest = 243d068ba53715b30a40312d8f5c6a2e512f41a23c1773e0e7abb620dce963ef
+artifact_sha256 = b9e91d81bd42bcff925980c06b758499e1bf5e87b3adea53ae8c0c9aff7081c7
+report_sha256 = 5b1c79c6458bceac0033a80acb51c966f923eee04c26f82cd015106e77f6c84c
+script_sha256 = fbeba3593eff4e5f8a55abd1fbaf857c5c2948f806037ecc2194516aafa3f236
 ```
 
-N22 must ask:
+N22 final claim ceiling:
 
 ```text
-Can prior interaction durably alter later basin geometry without becoming a
-semantic learning label?
+bounded producer-mediated artifact-level susceptibility-update / durable
+geometry modification evidence; no native learning, choice, agency, native
+support, sentience, Phase 8, or ant ecology
 ```
 
-N22 required source-current fields:
+N22 branch closeout:
 
 ```text
-susceptibility_update.pre_interaction_geometry_trace
-susceptibility_update.post_interaction_geometry_trace
-susceptibility_update.susceptibility_delta_trace
-susceptibility_update.route_or_region_reentry_trace
+packet branch = SU3 consumptive transfer/readout expression only
+carrier branch = SU5 producer-mediated bounded carrier transfer candidate
+producer_mediated_fields = target_edge_base_conductance_delta, target_edge_port_conductance_delta
+naturalization_debt_fields = native_non_consumptive_carrier_update_policy, native_route_conductance_memory_policy
 ```
 
-N22 required inputs:
+N22 AP gap carry-forward:
 
 ```text
-susceptibility_fields
-replay_requirement
-durable_geometry_modification_controls
-AP4_gap_dependency_if_route_conditioned
-AP5_gap_dependency_if_proxy_conditioned
+AP4/N14 NAT4 gap resolved = false
+AP5/N15 NAT4 gap resolved = false
+route-conditioned susceptibility/transfer carries AP4 dependency row-locally
+proxy/target-conditioned future rows must carry AP5 dependency row-locally
+AP4/AP5 gap prose-only handling allowed = false
 ```
 
-N22 readiness gate:
+N21 `ND6` bridge status after N22:
 
 ```text
-must_consume_n20_i5_susceptibility_update_contract = true
-must_consume_n21_closeout_as_context_only = true
-may_treat_n21_wr_nd_as_susceptibility_evidence = false
-must_produce_new_source_backed_durable_geometry_deltas = true
-must_keep_AP4_dependency_row_local_when_route_conditioned = true
-must_keep_conditional_AP5_dependency_when_proxy_or_target_conditioned = true
-must_fail_closed_on_route_label_only_success = true
-must_fail_closed_on_reinforcement_schedule_hidden_support = true
-must_fail_closed_on_semantic_learning_choice_agency_relabels = true
-must_keep_phase8_native_support_sentience_ant_ecology_claims_blocked = true
+n21_nd6_bridge_status = bridge_candidate_supported
+bridge_scope = producer-mediated artifact-level bridge candidate only
+native_nd6_supported = false
+retroactive_n21_upgrade_allowed = false
 ```
 
-## Blocked Claims Carried Into N22
+## N23 Handoff
 
-N22 must keep these blocked unless a later source-backed experiment explicitly
+N23 is the next experiment. It should test the next becoming primitive:
+
+```text
+live_continuation_collapse
+selection_geometry
+```
+
+N23 must consume N20 as the standing primitive contract and N22 as bounded
+producer-mediated susceptibility-update context:
+
+```text
+must_consume_n20_contract = true
+must_consume_n22_as_producer_mediated_susceptibility_context = true
+must_not_consume_n22_as_semantic_learning_or_native_memory = true
+must_preserve_AP4_AP5_gap_ledger = true
+```
+
+N23 must ask:
+
+```text
+Can multiple live continuation branches resolve into one selected continuation
+without semantic choice labels or producer-side selection?
+```
+
+N23 should use N22 only as:
+
+```text
+bounded_producer_mediated_susceptibility_update_context
+durable_geometry_modification_candidate
+producer_residue_and_naturalization_debt_ledger
+AP4_AP5_gap_propagation_context
+```
+
+N23 must not consume N22 as:
+
+```text
+semantic_learning
+semantic_choice
+agency
+native_support
+native_route_conductance_memory
+sentience
+phase8_implementation
+ant_ecology_specification
+```
+
+N23 should directly address the AP4/N14 NAT4 gap by making route or branch
+selection source-current and geometry-conditioned, not merely a constructed
+followout, declared preference, or label. AP5 remains conditional for rows
+that use proxy derivation or target formation.
+
+## Blocked Claims Carried Into N23
+
+N23 must keep these blocked unless a later source-backed experiment explicitly
 supports a narrower claim:
 
 ```text

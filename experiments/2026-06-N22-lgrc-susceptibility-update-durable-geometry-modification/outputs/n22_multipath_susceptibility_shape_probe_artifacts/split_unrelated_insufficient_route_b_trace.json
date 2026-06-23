@@ -1,0 +1,882 @@
+{
+  "artifact_id": "n22_i4b_trace_split_unrelated_insufficient_route_b",
+  "boundary_integrity_trace": {
+    "active_degree": 9,
+    "active_degree_floor": 9,
+    "boundary_margin": 0,
+    "status": "preserved",
+    "topology_signature_same": true
+  },
+  "coherence_floor_trace": {
+    "center_node_coherence": 9.96,
+    "coherence_floor": 9.85,
+    "coherence_margin": 0.11000000000000121,
+    "status": "changed_within_allowed_delta_above_floor"
+  },
+  "flux_or_leakage_trace": {
+    "budget_error": 1.4210854715202004e-14,
+    "in_flight_packet_total": 0.0,
+    "max_budget_error": 1e-09,
+    "status": "preserved"
+  },
+  "interaction_delta_digest": "c7a4ddbc5becc508a882fa3a7477a74a62492c03d959bcf7d9036a74205cf74f",
+  "path_classification": {
+    "failure_mode": "target_route_delta_or_peer_margin_below_threshold",
+    "path_classification": "path_shape_control_failed_closed",
+    "provisional_su_ladder_rung": "SU1",
+    "row_decision": "rejected",
+    "supporting_su2_candidate": false
+  },
+  "path_id": "split_unrelated_insufficient_route_b",
+  "path_shape_class": "insufficient_target_component_split",
+  "peer_event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/split_unrelated_insufficient_route_b_peer_events.jsonl",
+  "peer_run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/split_unrelated_insufficient_route_b_peer_run.json",
+  "peer_same_budget_comparison": {
+    "global_drift_rejected": false,
+    "peer_route_delta": 0.0,
+    "same_total_prior_interaction_budget": true,
+    "status": "failed_closed",
+    "target_over_peer_margin": 0.03999999999999915,
+    "target_route_delta": 0.03999999999999915
+  },
+  "peer_segments": [
+    {
+      "amount": 0.08,
+      "edge_id": 1,
+      "source_node_id": 0,
+      "target_node_id": 2
+    }
+  ],
+  "peer_total_prior_budget": 0.08,
+  "post_interaction_geometry_trace": {
+    "active_degree": 9,
+    "basin_signature": {
+      "active_degree": 9,
+      "basin_members": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "basin_signature_digest": "83a4e9ac9c9e0867d91254ee5b6dee9909f7889fd42bc7501c3c79f8f54bf0bd",
+      "center_basin_id": "root",
+      "center_basin_mass": 10.0,
+      "center_coherence": 9.920000000000002,
+      "center_depth": 0,
+      "center_node_id": 0,
+      "edge_count": 9,
+      "incident_edge_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "node_count": 10,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "budget_error": -1.4210854715202004e-14,
+    "center_basin_mass": 10.0,
+    "center_node_coherence": 9.920000000000002,
+    "center_node_id": 0,
+    "checkpoint_index": 4,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9,
+    "event_time_key": 2.02,
+    "geometry_digest": "c4694cfe22daa15e4bfb22561e48d7eddce8aac544b04f4af0ea4a062d5c56b9",
+    "in_flight_packet_total": 0.0,
+    "node_count": 10,
+    "observables": {
+      "arrival_eligibility_count": 2.0,
+      "boundary_birth_trial_queue_length": 0.0,
+      "causal_spark_diagnostic_count": 2.0,
+      "checkpoint_index": 4.0,
+      "conserved_budget_total": 100.25,
+      "edge_count": 9.0,
+      "event_queue_length": 0.0,
+      "event_time_key": 2.02,
+      "in_flight_packet_total": 0.0,
+      "local_update_count": 2.0,
+      "node_count": 10.0,
+      "packet_count": 2.0,
+      "scheduler_event_index": 3.0,
+      "topology_event_count": 0.0
+    },
+    "packet_count": 2,
+    "packet_event_records": [
+      {
+        "amount": 0.04,
+        "budget_after": 100.25000000000001,
+        "budget_before": 100.25,
+        "budget_error": 1.4210854715202004e-14,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-73c635db9823ca6d",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 1.01,
+        "packet_id": "lgrc9v3-packet-af92b534160cf4bb",
+        "scheduler_event_index": 1,
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.04,
+        "budget_after": 100.25000000000001,
+        "budget_before": 100.25000000000001,
+        "budget_error": 0.0,
+        "edge_id": 8,
+        "event_id": "lgrc9v3-packet-event-a6f54038134432ac",
+        "event_kind": "lgrc9v3_packet_departure",
+        "event_time_key": 1.02,
+        "packet_id": "lgrc9v3-packet-1bad9d59c4451dd5",
+        "scheduler_event_index": 2,
+        "source_node_id": 0,
+        "target_node_id": 9
+      },
+      {
+        "amount": 0.04,
+        "budget_after": 100.25000000000001,
+        "budget_before": 100.25,
+        "budget_error": 1.4210854715202004e-14,
+        "edge_id": 0,
+        "event_id": "lgrc9v3-packet-event-d4d0cc000c65c75a",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 2.01,
+        "packet_id": "lgrc9v3-packet-af92b534160cf4bb",
+        "scheduler_event_index": 2,
+        "source_node_id": 0,
+        "target_node_id": 1
+      },
+      {
+        "amount": 0.04,
+        "budget_after": 100.25,
+        "budget_before": 100.25000000000001,
+        "budget_error": -1.4210854715202004e-14,
+        "edge_id": 8,
+        "event_id": "lgrc9v3-packet-event-8fa63f9ef4857669",
+        "event_kind": "lgrc9v3_packet_arrival",
+        "event_time_key": 2.02,
+        "packet_id": "lgrc9v3-packet-1bad9d59c4451dd5",
+        "scheduler_event_index": 3,
+        "source_node_id": 0,
+        "target_node_id": 9
+      }
+    ],
+    "packet_records": [
+      {
+        "amount": 0.04,
+        "arrival_event_id": "lgrc9v3-packet-event-8fa63f9ef4857669",
+        "arrival_event_time_key": 2.02,
+        "arrival_scheduler_event_index": 3,
+        "departure_event_id": "lgrc9v3-packet-event-a6f54038134432ac",
+        "departure_event_time_key": 1.02,
+        "departure_scheduler_event_index": 2,
+        "edge_id": 8,
+        "packet_id": "lgrc9v3-packet-1bad9d59c4451dd5",
+        "packet_state": "arrived",
+        "source_lineage_id": null,
+        "source_node_id": 0,
+        "target_lineage_id": null,
+        "target_node_id": 9
+      },
+      {
+        "amount": 0.04,
+        "arrival_event_id": "lgrc9v3-packet-event-d4d0cc000c65c75a",
+        "arrival_event_time_key": 2.01,
+        "arrival_scheduler_event_index": 2,
+        "departure_event_id": "lgrc9v3-packet-event-73c635db9823ca6d",
+        "departure_event_time_key": 1.01,
+        "departure_scheduler_event_index": 1,
+        "edge_id": 0,
+        "packet_id": "lgrc9v3-packet-af92b534160cf4bb",
+        "packet_state": "arrived",
+        "source_lineage_id": null,
+        "source_node_id": 0,
+        "target_lineage_id": null,
+        "target_node_id": 1
+      }
+    ],
+    "peer_route_node_2_basin_mass": 9.0,
+    "peer_route_node_2_coherence": 9.0,
+    "phase": "post_interaction",
+    "run_role": "split_unrelated_insufficient_route_b_target",
+    "scheduler_event_index": 3,
+    "target_route_basin_mass": 13.0,
+    "target_route_edge_id": 0,
+    "target_route_id": "route_b",
+    "target_route_node_coherence": 13.04,
+    "target_route_node_id": 1,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "pre_interaction_geometry_trace": {
+    "active_degree": 9,
+    "basin_signature": {
+      "active_degree": 9,
+      "basin_members": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "basin_signature_digest": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+      "center_basin_id": "root",
+      "center_basin_mass": 10.0,
+      "center_coherence": 10.0,
+      "center_depth": 0,
+      "center_node_id": 0,
+      "edge_count": 9,
+      "incident_edge_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "node_count": 10,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "budget_error": 0.0,
+    "center_basin_mass": 10.0,
+    "center_node_coherence": 10.0,
+    "center_node_id": 0,
+    "checkpoint_index": 0,
+    "conserved_budget_total": 100.25,
+    "edge_count": 9,
+    "event_time_key": 0.0,
+    "geometry_digest": "cb93625f9945381b64be5572413e7b96d465be1bdb543d820367fc66813f1d98",
+    "in_flight_packet_total": 0.0,
+    "node_count": 10,
+    "observables": {
+      "arrival_eligibility_count": 0.0,
+      "boundary_birth_trial_queue_length": 0.0,
+      "causal_spark_diagnostic_count": 0.0,
+      "checkpoint_index": 0.0,
+      "conserved_budget_total": 100.25,
+      "edge_count": 9.0,
+      "event_queue_length": 0.0,
+      "event_time_key": 0.0,
+      "in_flight_packet_total": 0.0,
+      "local_update_count": 0.0,
+      "node_count": 10.0,
+      "packet_count": 0.0,
+      "scheduler_event_index": 0.0,
+      "topology_event_count": 0.0
+    },
+    "packet_count": 0,
+    "packet_event_records": [],
+    "packet_records": [],
+    "peer_route_node_2_basin_mass": 9.0,
+    "peer_route_node_2_coherence": 9.0,
+    "phase": "pre_interaction",
+    "run_role": "split_unrelated_insufficient_route_b_target",
+    "scheduler_event_index": 0,
+    "target_route_basin_mass": 13.0,
+    "target_route_edge_id": 0,
+    "target_route_id": "route_b",
+    "target_route_node_coherence": 13.0,
+    "target_route_node_id": 1,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "reentry_delta_digest": "1e61b46b9c3092c2d99238305cbc33d712fbae9b62fcb452f8c1192fd7917c4f",
+  "route_or_region_reentry_trace": {
+    "delta_persistence_ratio": 0.0,
+    "min_reentry_delta_persistence_ratio": 0.45,
+    "peer_reentry_route_delta_from_pre": -0.03999999999999915,
+    "reentry_expression_present": false,
+    "reentry_target_over_peer_margin": 0.03999999999999915,
+    "target_reentry_route_delta_from_pre": 0.0
+  },
+  "runtime_config_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/n22_i4b_runtime_config.json",
+  "same_basin_comparison": {
+    "active_degree_same": true,
+    "basin_member_count_same": true,
+    "center_basin_id_same": true,
+    "center_node_id_same": true,
+    "topology_signature_same": true
+  },
+  "same_basin_continuation_status": "preserved",
+  "support_floor_trace": {
+    "center_basin_mass": 10.0,
+    "status": "preserved",
+    "support_floor": 9.85,
+    "support_margin": 0.15000000000000036
+  },
+  "susceptibility_delta_trace": {
+    "delta_observed": false,
+    "delta_source": "LGRC9V3 packet arrivals modified route_b node coherence",
+    "min_route_local_delta": 0.05,
+    "min_target_over_peer_route_delta_margin": 0.05,
+    "peer_global_drift_rejected": false,
+    "peer_same_route_delta_under_peer_path_budget": 0.0,
+    "target_over_peer_route_delta_margin": 0.03999999999999915,
+    "target_route": "route_b",
+    "target_route_delta": 0.03999999999999915,
+    "target_route_node_id": 1
+  },
+  "target_event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/split_unrelated_insufficient_route_b_target_events.jsonl",
+  "target_run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/split_unrelated_insufficient_route_b_target_run.json",
+  "target_segments": [
+    {
+      "amount": 0.04,
+      "edge_id": 0,
+      "source_node_id": 0,
+      "target_node_id": 1
+    },
+    {
+      "amount": 0.04,
+      "edge_id": 8,
+      "source_node_id": 0,
+      "target_node_id": 9
+    }
+  ],
+  "target_total_prior_budget": 0.08,
+  "threshold_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/n22_i4b_thresholds_declared_before_use.json",
+  "trace_digest": "11fc9f421d70edbab88083fcdb88202f2703bb3aa81981f71d1c72308581a08a"
+}

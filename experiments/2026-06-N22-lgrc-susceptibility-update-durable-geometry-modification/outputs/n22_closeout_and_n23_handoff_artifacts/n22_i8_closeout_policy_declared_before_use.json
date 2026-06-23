@@ -1,0 +1,17 @@
+{
+  "declared_before_use": true,
+  "final_supported_su_rung_allowed": "SU5_producer_mediated_bounded_susceptibility_update_candidate",
+  "n22_c6_requires": [
+    "controlled_SU5_or_SU6_evidence",
+    "producer_residue_recorded",
+    "naturalization_debt_recorded",
+    "AP4_AP5_dependency_status_recorded",
+    "unsafe_claim_blockers_false",
+    "src_diff_empty",
+    "N23_handoff_recorded"
+  ],
+  "native_su6_allowed": false,
+  "phase8_allowed": false,
+  "semantic_learning_allowed": false,
+  "threshold_record_id": "n22_i8_closeout_policy"
+}

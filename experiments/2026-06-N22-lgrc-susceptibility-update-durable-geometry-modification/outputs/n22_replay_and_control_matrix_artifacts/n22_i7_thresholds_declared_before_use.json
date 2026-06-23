@@ -1,0 +1,10 @@
+{
+  "carrier_branch_candidate_ceiling": "I7_consumable_producer_mediated_SU5_candidate",
+  "consume_packet_and_carrier_branches_separately": true,
+  "declared_before_use": true,
+  "final_su5_or_n22_closeout_allowed": false,
+  "n21_nd6_bridge_closeout_allowed": false,
+  "native_route_conductance_memory_allowed": false,
+  "packet_branch_final_ceiling": "SU3_consumptive_transfer_readout_expression",
+  "threshold_record_id": "n22_i7_replay_and_control_matrix_thresholds"
+}
