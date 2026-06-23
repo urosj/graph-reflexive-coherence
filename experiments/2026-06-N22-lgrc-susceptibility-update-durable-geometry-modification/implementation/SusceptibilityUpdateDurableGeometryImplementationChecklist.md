@@ -1365,30 +1365,30 @@ implementation.
 
 ## Iteration 7. Replay And Control Matrix
 
-- [ ] Consume all provisional N22 candidate rows.
-- [ ] Consume the I6 transfer/readout-expression subset and the complementary
+- [x] Consume all provisional N22 candidate rows.
+- [x] Consume the I6 transfer/readout-expression subset and the complementary
       split demotion.
-- [ ] Preserve the I5-B consumptive-readout boundary as an SU5/SU6 blocker.
-- [ ] Consume I5-C as a separate producer-mediated non-consumptive carrier
+- [x] Preserve the I5-B consumptive-readout boundary as an SU5/SU6 blocker.
+- [x] Consume I5-C as a separate producer-mediated non-consumptive carrier
       branch, not as a replacement for I5-B or I6.
-- [ ] Consume I6-A as the I5-C-derived carrier transfer/re-entry branch,
+- [x] Consume I6-A as the I5-C-derived carrier transfer/re-entry branch,
       provisional pending controls.
-- [ ] Preserve I6-A as producer-mediated carrier evidence, not native
+- [x] Preserve I6-A as producer-mediated carrier evidence, not native
       route-conductance memory.
-- [ ] Keep the existing I6 packet-readout branch unchanged and separate from
+- [x] Keep the existing I6 packet-readout branch unchanged and separate from
       I6-A.
-- [ ] Consume I6-B as the carrier transfer stress-boundary branch, provisional
+- [x] Consume I6-B as the carrier transfer stress-boundary branch, provisional
       pending controls.
-- [ ] Preserve I6-B as a bounded stress envelope over producer-mediated carrier
+- [x] Preserve I6-B as a bounded stress envelope over producer-mediated carrier
       state, not final SU5 or native route-conductance memory.
-- [ ] Keep I5-C native route-conductance memory naturalization debt visible.
-- [ ] Consume all active-null and failure-baseline rows.
-- [ ] Run required replay and negative controls.
-- [ ] Record every required control status as `passed`, `failed_closed`,
+- [x] Keep I5-C native route-conductance memory naturalization debt visible.
+- [x] Consume all active-null and failure-baseline rows.
+- [x] Run required replay and negative controls.
+- [x] Record every required control status as `passed`, `failed_closed`,
       `failed_open`, `not_run`, or `not_applicable`.
-- [ ] Demote or block rows with failed-open or not-run required controls.
-- [ ] Assign I7-consumable SU rungs only after controls.
-- [ ] Keep closeout pending Iteration 8.
+- [x] Demote or block rows with failed-open or not-run required controls.
+- [x] Assign I7-consumable SU rungs only after controls.
+- [x] Keep closeout pending Iteration 8.
 
 Expected artifacts:
 
@@ -1398,20 +1398,90 @@ reports/n22_replay_and_control_matrix.md
 scripts/build_n22_replay_and_control_matrix.py
 ```
 
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_controlled_producer_mediated_su5_candidate_no_final_closeout
+output_digest = 243d068ba53715b30a40312d8f5c6a2e512f41a23c1773e0e7abb620dce963ef
+check_count = 9
+failed_checks = []
+source_artifact_count = 13
+source_artifacts_valid = true
+active_null_rows_consumed = 14
+packet_branch_i7_consumable_su3_count = 4
+packet_branch_blocked_before_su5_count = 1
+packet_branch_su4_su5_blocked_by_consumptive_readout = true
+carrier_branch_i7_consumable_su5_count = 3
+carrier_branch_native_route_conductance_memory_supported = false
+carrier_branch_producer_mediated = true
+control_count = 7
+controls_failed_closed = true
+replay_count = 4
+replays_passed = true
+i7_consumable_highest_su_rung = SU5_producer_mediated_carrier_transfer_stress_boundary_controlled_candidate
+recommended_iteration8_closeout_candidate = N22-C5_producer_mediated_bounded_candidate
+n22_closeout_ladder_rung_assigned = false
+su5_supported_final = false
+su6_supported = false
+final_n22_supported = false
+n21_nd6_bridge_status = not_supported
+n21_nd6_bridge_iteration8_input = producer_mediated_su5_candidate_available_for_closeout_review
+ready_for_iteration_8_closeout = true
+```
+
+Artifact hashes:
+
+```text
+b9e91d81bd42bcff925980c06b758499e1bf5e87b3adea53ae8c0c9aff7081c7  outputs/n22_replay_and_control_matrix.json
+5b1c79c6458bceac0033a80acb51c966f923eee04c26f82cd015106e77f6c84c  reports/n22_replay_and_control_matrix.md
+fbeba3593eff4e5f8a55abd1fbaf857c5c2948f806037ecc2194516aafa3f236  scripts/build_n22_replay_and_control_matrix.py
+```
+
+Interpretation:
+
+```text
+Iteration 7 converts the I4-I6-B evidence into a controlled matrix without
+closing N22. The packet branch and carrier branch are intentionally kept
+separate.
+
+The packet branch is now classified as consumptive SU3 transfer/readout
+expression only. Four rows preserve transfer/readout expression, but I5-B shows
+that repeated readout spends the packet residue. The complementary split row is
+blocked before SU5 because it loses route-specific target-over-peer separation.
+So the packet branch cannot support SU4, SU5, SU6, final N22, or the N21 ND6
+bridge.
+
+The carrier branch is stronger. I5-C supplies producer-mediated
+non-consumptive carrier state, I6-A shows carrier transfer/re-entry, and I6-B
+shows the same carrier surviving a bounded stress envelope. I7 validates the
+branch through artifact replay, source digest replay, branch-order replay, and
+fail-closed controls. The result is therefore an I7-consumable
+producer-mediated SU5 carrier-transfer/stress candidate.
+
+The result remains producer-mediated. The target edge/base-conductance carrier
+is serialized in LGRC-visible state, but current LGRC still lacks a native
+route-conductance memory policy that would write the carrier without producer
+code. That naturalization debt remains visible. I7 therefore does not support
+native conductance memory, final SU5, SU6, final N22, the N21 ND6 bridge,
+semantic learning, choice, agency, native support, sentience, Phase 8, or
+ant-ecology implementation.
+```
+
 ## Iteration 8. Closeout And N23 Handoff
 
-- [ ] Classify final N22 susceptibility-update result.
-- [ ] Record final SU ladder rung.
-- [ ] Record producer residue.
-- [ ] Record naturalization debt.
-- [ ] Record AP4/AP5 dependency status.
-- [ ] Record N21 `ND6` bridge status.
-- [ ] Record final claim ceiling.
-- [ ] Record unsafe claim blockers.
-- [ ] Confirm semantic learning, choice, agency, native support, sentience,
+- [x] Classify final N22 susceptibility-update result.
+- [x] Record final SU ladder rung.
+- [x] Record producer residue.
+- [x] Record naturalization debt.
+- [x] Record AP4/AP5 dependency status.
+- [x] Record N21 `ND6` bridge status.
+- [x] Record final claim ceiling.
+- [x] Record unsafe claim blockers.
+- [x] Confirm semantic learning, choice, agency, native support, sentience,
       Phase 8, and ant-ecology implementation remain blocked.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Record N23 handoff for live-continuation collapse / selection geometry.
+- [x] Confirm `src_diff_empty`.
+- [x] Record N23 handoff for live-continuation collapse / selection geometry.
 
 Expected artifacts:
 
@@ -1419,4 +1489,102 @@ Expected artifacts:
 outputs/n22_closeout_and_n23_handoff.json
 reports/n22_closeout_and_n23_handoff.md
 scripts/build_n22_closeout_and_n23_handoff.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_n22_c6_handoff_ready_producer_mediated_su5_no_native_learning
+output_digest = 96a6cfde842a342fd40fbddd413a47dc9f0ae3fca565d50cd3a875c3911a50a4
+check_count = 11
+failed_checks = []
+final_supported_status = bounded_artifact_level_susceptibility_update_candidate
+final_supported_su_ladder_rung = SU5_producer_mediated_bounded_susceptibility_update_candidate
+n22_closeout_ladder_rung = N22-C6
+n22_closeout_supported = true
+source_backed_susceptibility_update_evidence = true
+delta_survived_replay_and_later_reentry = true
+same_budget_peer_comparison_rules_out_global_drift = true
+durable_geometry_modification_not_label_schedule_proxy = true
+packet_branch_final_ceiling = SU3_consumptive_transfer_readout_expression_only
+packet_branch_consumable_su3_row_count = 4
+packet_branch_su5_supported = false
+carrier_branch_final_ceiling = SU5_producer_mediated_bounded_carrier_transfer_candidate
+carrier_branch_consumable_su5_row_count = 3
+carrier_branch_min_transfer_ratio = 1.000000
+carrier_branch_min_target_over_peer_margin = 0.070000
+carrier_branch_max_carrier_loss_after_stress = 0.000000
+producer_mediated_fields = target_edge_base_conductance_delta, target_edge_port_conductance_delta
+state_mutation_owners = n22_iteration_5c_experiment_local_producer
+naturalization_debt_fields = native_non_consumptive_carrier_update_policy, native_route_conductance_memory_policy
+native_route_conductance_memory_supported = false
+n21_nd6_bridge_status = bridge_candidate_supported
+n21_nd6_bridge_scope = producer-mediated artifact-level bridge candidate only
+native_nd6_supported = false
+retroactive_n21_upgrade_allowed = false
+su5_supported_final = true
+su6_supported = false
+native_su6_supported = false
+semantic_learning_supported = false
+semantic_choice_supported = false
+agency_supported = false
+native_support_supported = false
+sentience_supported = false
+phase8_opened = false
+ant_ecology_opened = false
+src_diff_empty = true
+ready_for_n23 = true
+next_experiment = N23_live_continuation_collapse_selection_geometry
+```
+
+Artifact hashes:
+
+```text
+af4aad5f0f60209581ec130c40bd81b08c90e8a02b9417a548c844ccbd9166f0  outputs/n22_closeout_and_n23_handoff.json
+c4a6d9831d48c58504a1686605ed2a945452c2e87b3104e2c35a0cb7e9b16f61  reports/n22_closeout_and_n23_handoff.md
+4a04f7666ade18bf73c7ded21b732223de57c09c8bc83dd63f7705d28cbbf9c1  scripts/build_n22_closeout_and_n23_handoff.py
+a94d76f7f0e25c84de6d59d698f471887a183d2b7a2e15b475a11b128fefd722  outputs/n22_closeout_and_n23_handoff_artifacts/n22_i8_closeout_policy_declared_before_use.json
+```
+
+Interpretation:
+
+```text
+Iteration 8 closes N22 at the tranche level. The final source evidence supports
+a bounded artifact-level susceptibility-update candidate, with final supported
+SU rung:
+
+SU5_producer_mediated_bounded_susceptibility_update_candidate
+
+The closeout rung is N22-C6 because the controlled SU5 evidence, producer
+residue, naturalization debt, AP4/AP5 dependency discipline, unsafe-claim
+blockers, src diff check, and N23 handoff are all recorded. C6 is therefore a
+handoff-ready closeout state, not native SU6.
+
+The packet branch remains capped at SU3 transfer/readout expression. It shows
+route-b transfer/readout expression, but I5-B shows repeated readout spends the
+packet residue. That branch cannot support SU4, SU5, SU6, final N22, native
+learning, native support, or the N21 ND6 bridge.
+
+The carrier branch is the successful closeout branch. I5-C records a
+producer-mediated non-consumptive carrier in LGRC-visible edge/base/port
+conductance state. I6-A shows transfer and later re-entry. I6-B shows bounded
+stress survival. I7 replay/control validation remains clean. I8 can therefore
+close the branch as bounded producer-mediated SU5 evidence.
+
+The carrier write is still producer-mediated. Current LGRC does not yet provide
+a native route-conductance memory policy or native non-consumptive carrier
+update policy. Those remain naturalization debt for later producer-to-native
+work.
+
+The N21 ND6 bridge is recorded as a bounded bridge candidate because N22 tested
+the missing durable-geometry/susceptibility-update condition that N21 could not
+produce. It is not a retroactive N21 upgrade, not native ND6, and not general
+naturalization depth.
+
+N22 hands off to N23 as bounded producer-mediated artifact-level
+susceptibility-update / durable geometry modification context. N23 may consume
+this as susceptibility-update context and naturalization-debt ledger, but not as
+semantic learning, semantic choice, agency, native support, sentience, Phase 8,
+or ant-ecology implementation.
 ```
