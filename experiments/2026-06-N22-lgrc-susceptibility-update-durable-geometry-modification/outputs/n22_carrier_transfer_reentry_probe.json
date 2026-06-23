@@ -1,0 +1,1156 @@
+{
+  "acceptance_state": "accepted_producer_mediated_carrier_transfer_candidates_pending_i7_no_final_su5",
+  "artifact_id": "n22_i6a_carrier_transfer_reentry_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "band_buffered_return_carrier_delayed_target_reentry_then_readback_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_after_readback_snapshot.json",
+      "sha256": "9b8ec58f99b2f9b2a9ae24777e8f2227f7441e176339b8ce0385fd5d9901d655"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot.json",
+      "sha256": "741960208fb4334ca4bbf187258ab662595cc5a29303d8d737e9f9394bd12b7e"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_delayed_target_reentry_then_readback_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_events.jsonl",
+      "sha256": "05fce10ba54f4159829e975eb63f397d77c2062cad13d6f5155cb7a02d06ae3c"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_delayed_target_reentry_then_readback_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_loaded_snapshot.json",
+      "sha256": "18c7ad6421d775865c2f7806c661d27320d47d4288e66607a697c5341004d0c0"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_delayed_target_reentry_then_readback_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_run.json",
+      "sha256": "264853171d339c2ad621dd7b356dd94a68771f116c4833c0bd8b794a511b49b2"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot.json",
+      "sha256": "c5b3ea6110b55fb1398c570e92bfdf59018994c8959ecdf97e619df14e0380f6"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot.json",
+      "sha256": "dac883f3911dadf7eda9e03516f5e20c82f0aac397120eef6925837c186e8f0c"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_events.jsonl",
+      "sha256": "fe5892a53de7c1d84da61122258b302e8dfd2ac8a3d56d82e4334074541a61a4"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot.json",
+      "sha256": "18c7ad6421d775865c2f7806c661d27320d47d4288e66607a697c5341004d0c0"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_run.json",
+      "sha256": "7604519c6dc48fe215b4cac87c48d2fce385b29f5a8f657ae91131cdfdfa3b0b"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_label_swap_reentry_control_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_after_readback_snapshot.json",
+      "sha256": "edb34f70167b9d8f27b3dbdc6d0d5e8f44519546debe9005f20e1a8a6c348bf9"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_label_swap_reentry_control_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_after_transfer_snapshot.json",
+      "sha256": "64260e6a00ffde898cf3c5089eb36babb5419830c611893ee8cfa305465af550"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_label_swap_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_events.jsonl",
+      "sha256": "c47523c7289df0757cdcf6d4eb7e111cb22f1747e4f07130a42fbdd173028d70"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_label_swap_reentry_control_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_loaded_snapshot.json",
+      "sha256": "d984d2b84a34f066c3492ea6101795a39a96ce53a55ff5e47e94d50caf346234"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_label_swap_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_run.json",
+      "sha256": "9ea74ac555fde15560a1a37e536e361c8a141cf11aa2816ec5b3f08ef306b568"
+    },
+    {
+      "artifact_role": "runtime_config",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/n22_i6a_runtime_config.json",
+      "sha256": "7ff2458f027525394ca531c73eee65b81d074fc10f2fb0c76384db415b468ed1"
+    },
+    {
+      "artifact_role": "threshold_record",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/n22_i6a_thresholds_declared_before_use.json",
+      "sha256": "faae39cf12bcacf7f0a41101cd334457f55589acd5102caa0eca5a33240f6aa9"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_after_readback_snapshot.json",
+      "sha256": "0d4ed73ce33b9102134d74c2f6c56a5511814f76a28729a496f97f6772394c2f"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot.json",
+      "sha256": "b038cf0fe33ffbb8a163cc093c7fe87bb9fdc238b9dea8ef80112a284815d9fa"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_events.jsonl",
+      "sha256": "7f1f19ab29b3e8c239656ee2b276a83bf883e89a5ed576bd798edc386c1c5918"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_loaded_snapshot.json",
+      "sha256": "f4fc6ddf8eff1080d8a51f8f41f32bcce3c5b96e96607c5a170a57ba4811061e"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_run.json",
+      "sha256": "f98d13ff624ac586ef3be428a2a7b6bee9de0c9ebcaaad87c60c698458afde73"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot.json",
+      "sha256": "f86922eb3c44357e94ee21b478621f5f29d9ab4030720e213ef379a6d8cfb480"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot.json",
+      "sha256": "edc133cd33890113ac57aad0dd2be5601408821442317132008b4fad5c2b9817"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_events.jsonl",
+      "sha256": "d5527059f735cee79d555b4119a1b942783925ab68b1c3fcd18a2246185526bb"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot.json",
+      "sha256": "f4fc6ddf8eff1080d8a51f8f41f32bcce3c5b96e96607c5a170a57ba4811061e"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_run.json",
+      "sha256": "de070a0abac3d072b6c41ad472ae21343fbbdde861a815d12d40cd9c23728061"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_after_readback_snapshot.json",
+      "sha256": "00a636555fbd4a251b01d58b25ce3697cbf31f12c40cb13a066aa6d0fb624e35"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_after_transfer_snapshot.json",
+      "sha256": "5c0024a10a4af9f5b04a8277ca9fc14ac01e9c5c622f87f1e5fc6b2af7904bd7"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_events.jsonl",
+      "sha256": "2ec45fe5cd695619d626265b5a6a78f031810c172e5a4b357e4d551c8614d3d6"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_loaded_snapshot.json",
+      "sha256": "372c3fb1ca3ca42b932f9a2aa11494b6c2885043fc72796b5df6eb19c387eaf8"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_run.json",
+      "sha256": "fac09bf44e2aa89bca30ea217f1415dd55f4c4db0f21f7ffe4d74d6e18a5d822"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_delayed_target_reentry_then_readback_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_after_readback_snapshot.json",
+      "sha256": "91b2272fd8f1c690740f0935bbbb9da5af223878235322da9a6eedf893469c55"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot.json",
+      "sha256": "db30d5a1f833b7974f98e48a2efd21b42fbf26e549df5bdc9ec970da528ca0d4"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_delayed_target_reentry_then_readback_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_events.jsonl",
+      "sha256": "3ad002161543bd1deb8062e5fc8af0a1b56a716f660f04942df9df5857732880"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_delayed_target_reentry_then_readback_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_loaded_snapshot.json",
+      "sha256": "042d677cf9d10322be14fda2f5f3b71112718b0e629323649b8a975d2fb9cbe9"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_delayed_target_reentry_then_readback_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_run.json",
+      "sha256": "7b9b84949ad6a3764d76e316dddb4c6e8d4a746558afdfb9880b541f1ceaa5f8"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot.json",
+      "sha256": "4cb7acd1902f0db58a45b5350e1c64c57bdc7466ebea869b4e2d7aa293ab1b23"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot.json",
+      "sha256": "63d1d096c42e5d72f5efc335fbd02da96b69f5678be67b811b28ca8b8a977ef2"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_events.jsonl",
+      "sha256": "16051e1d9fa67b7c9fffabb6939f9b53bcbcd6b103ef78fb5e6f8686b369b46e"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot.json",
+      "sha256": "042d677cf9d10322be14fda2f5f3b71112718b0e629323649b8a975d2fb9cbe9"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_run.json",
+      "sha256": "996ac602d1b7a6ca945d4d949def6998166585743fa38d577aa3b476d1e5e06b"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_label_swap_reentry_control_after_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_after_readback_snapshot.json",
+      "sha256": "d6ebe690d637c27fbb824b6c327ace2fd07fadee6e96731eec33e42bcffa6762"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_label_swap_reentry_control_after_transfer_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_after_transfer_snapshot.json",
+      "sha256": "879b30aee5234224c93834b28ff8587417607cf1104cc10989301e6674f7b20c"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_label_swap_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_events.jsonl",
+      "sha256": "6fc78f582896458a5ded77b0303654cfe8e1861d6761a77dbea3b117739fdfb3"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_label_swap_reentry_control_loaded_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_loaded_snapshot.json",
+      "sha256": "8745451c370c8494aa9ef2e9e0132c01911f5737d5d8f08ffeac747d2a072885"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_label_swap_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_run.json",
+      "sha256": "7f7e377986e477302c95893cde6c7bf14de4c361e928129c678f663e2a80f069"
+    }
+  ],
+  "carrier_transfer_policy": {
+    "consumes_i5c_only": true,
+    "existing_i6_replaced": false,
+    "native_route_conductance_memory_policy_available": false,
+    "packet_readout_branch_reopened": false,
+    "positive_rows_are_producer_mediated": true,
+    "producer_carrier_update_after_load_allowed": false,
+    "su6_or_final_n22_allowed": false
+  },
+  "checks": [
+    {
+      "check_id": "i5c_passed",
+      "detail": {
+        "candidate_row_count": 4,
+        "existing_i6_superseded": false,
+        "final_n22_supported": false,
+        "i6_rerun_or_i7_controls_required": true,
+        "n21_nd6_bridge_status": "not_supported",
+        "native_route_conductance_memory_supported": false,
+        "producer_mediated_non_consumptive_carrier_candidate_count": 3,
+        "reduced_readout_boundary_count": 1,
+        "su5_supported": false,
+        "su6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "thresholds_declared_before_use",
+      "detail": {
+        "coherence_floor": 9.85,
+        "consumes_i5c_only": true,
+        "control_contexts": [
+          "peer_label_swap_reentry_control",
+          "active_carrier_update_carryover_control",
+          "native_conductance_memory_relabel_control"
+        ],
+        "declared_before_use": true,
+        "max_budget_error": 1e-09,
+        "max_carrier_loss_after_transfer": 0.02,
+        "min_transfer_carrier_ratio": 0.9,
+        "min_transfer_target_over_peer_margin": 0.05,
+        "peer_corridor_packet_amount": 0.01,
+        "positive_contexts": [
+          "delayed_target_reentry_then_readback",
+          "peer_corridor_flux_then_target_reentry_readback"
+        ],
+        "su6_or_final_n22_allowed": false,
+        "support_floor": 9.85,
+        "target_reentry_packet_amount": 0.02,
+        "threshold_record_id": "n22_i6a_carrier_transfer_reentry_thresholds"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_i5c_su4_candidate_count",
+      "detail": [
+        "n22_i5c_row_route_conductance_geometry_carrier",
+        "n22_i5c_row_neutral_reservoir_buffered_carrier",
+        "n22_i5c_row_band_buffered_return_carrier"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": 47,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": 47,
+      "passed": true
+    },
+    {
+      "check_id": "all_positive_contexts_passed",
+      "detail": [
+        {
+          "contexts": [
+            {
+              "context_id": "delayed_target_reentry_then_readback",
+              "passed": true
+            },
+            {
+              "context_id": "peer_corridor_flux_then_target_reentry_readback",
+              "passed": true
+            }
+          ],
+          "row_id": "n22_i6a_row_route_conductance_geometry_carrier"
+        },
+        {
+          "contexts": [
+            {
+              "context_id": "delayed_target_reentry_then_readback",
+              "passed": true
+            },
+            {
+              "context_id": "peer_corridor_flux_then_target_reentry_readback",
+              "passed": true
+            }
+          ],
+          "row_id": "n22_i6a_row_neutral_reservoir_buffered_carrier"
+        },
+        {
+          "contexts": [
+            {
+              "context_id": "delayed_target_reentry_then_readback",
+              "passed": true
+            },
+            {
+              "context_id": "peer_corridor_flux_then_target_reentry_readback",
+              "passed": true
+            }
+          ],
+          "row_id": "n22_i6a_row_band_buffered_return_carrier"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_provisional_su5_candidates",
+      "detail": [
+        "SU5_producer_mediated_carrier_transfer_candidate_pending_I7",
+        "SU5_producer_mediated_carrier_transfer_candidate_pending_I7",
+        "SU5_producer_mediated_carrier_transfer_candidate_pending_I7"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "carrier_update_disabled_after_load",
+      "detail": "no new carrier update after I5-C snapshots",
+      "passed": true
+    },
+    {
+      "check_id": "peer_label_swap_controls_fail_closed",
+      "detail": [
+        "n22_i6a_row_route_conductance_geometry_carrier",
+        "n22_i6a_row_neutral_reservoir_buffered_carrier",
+        "n22_i6a_row_band_buffered_return_carrier"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "native_conductance_memory_still_blocked",
+      "detail": "native policy gap preserved",
+      "passed": true
+    },
+    {
+      "check_id": "controls_fail_closed",
+      "detail": [
+        "peer_label_swap_reentry_control",
+        "active_carrier_update_carryover_control",
+        "native_conductance_memory_relabel_control",
+        "peer_label_swap_reentry_control",
+        "active_carrier_update_carryover_control",
+        "native_conductance_memory_relabel_control",
+        "peer_label_swap_reentry_control",
+        "active_carrier_update_carryover_control",
+        "native_conductance_memory_relabel_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_flags_all_false",
+      "detail": "all rows",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": "relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_carrier_transfer_reentry_probe.py",
+  "experiment": "N22",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "This is a provisional producer-mediated SU5 carrier-transfer candidate pending I7 controls. It does not supersede the existing I6 packet-readout result, does not support native conductance memory, and does not support SU6, final N22, the N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, or Phase 8.",
+    "short_read": "I6-A shows that the I5-C edge/conductance carriers remain present through delayed target re-entry and peer-corridor flux followed by target re-entry. No new carrier update is applied after loading the I5-C snapshots."
+  },
+  "iteration": "6-A",
+  "iteration6a_summary": {
+    "existing_i6_superseded": false,
+    "final_n22_supported": false,
+    "i5c_branch_status": "provisional_producer_mediated_SU5_candidate_pending_I7",
+    "n21_nd6_bridge_status": "not_supported",
+    "native_route_conductance_memory_supported": false,
+    "packet_readout_branch_status": "unchanged_consumptive_SU3_transfer_readout_expression_only",
+    "positive_context_count_per_row": 2,
+    "provisional_su5_carrier_candidate_count": 3,
+    "ready_for_iteration_7_control_matrix": true,
+    "source_i5c_su4_candidate_count": 3,
+    "su5_supported": false,
+    "su6_supported": false
+  },
+  "output_digest": "e919277fbf8b3d40a3da977be9bafba38675cd0af893ef7f594bc25659009678",
+  "purpose": "transfer and later re-entry over I5-C producer-mediated non-consumptive carrier rows",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_producer_mediated_non_consumptive_carrier_candidate_native_gap_preserved",
+      "output_digest": "b2bc2089b24ba5e945e861b0e2fd93974c1a7d882905fcaa75f24d3f6ba0bfed",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe.json",
+      "sha256": "a944464675fc2bb42b1e24417a511073a6ef2d491334aff9f590ca970f9296a3",
+      "source_role": "i5c_alternative_non_consumptive_carrier_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "transfer_rows": [
+    {
+      "carrier_family": "route_conductance_geometry_carrier",
+      "claim_ceiling": "provisional producer-mediated carrier transfer candidate pending I7; not native conductance memory, semantic learning, agency, native support, SU6, final N22, or N21 ND6 bridge",
+      "context_records": [
+        {
+          "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_after_readback_snapshot.json",
+          "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot.json",
+          "context_id": "delayed_target_reentry_then_readback",
+          "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_events.jsonl",
+          "gate": {
+            "budget_result": "preserved",
+            "carrier_delta_after_transfer_readback": 0.17999999999999994,
+            "carrier_loss_after_transfer_readback": 0.0,
+            "carrier_preserved_after_transfer": true,
+            "carrier_transfer_ratio": 1.0,
+            "coherence_floor_result": "preserved",
+            "context_id": "delayed_target_reentry_then_readback",
+            "new_carrier_update_after_loaded_snapshot": false,
+            "peer_same_budget_target_edge_delta": 0.0,
+            "same_budget_peer_separated": true,
+            "source_i5c_carrier_delta": 0.17999999999999994,
+            "support_floor_result": "preserved",
+            "target_over_peer_margin": 0.17999999999999994
+          },
+          "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_loaded_snapshot.json",
+          "passed": true,
+          "readback_record": {
+            "after_state_signature_digest": "b101d9d179f28eed45392b77e5a9f2f22944a683160894acf98d11e798b99e8f",
+            "before_state_signature_digest": "c5042884e6dc2d21f317637a24992e5c77327ef2ebf24698cf96709dc9766662",
+            "candidate_count": 1,
+            "carrier_update_count_after": 1,
+            "carrier_update_count_before": 1,
+            "column_h": [
+              -0.5183999999999966,
+              1.480000000000004,
+              -2.3049999999999984
+            ],
+            "column_h_branch_hit": true,
+            "compact_candidate_events": [
+              {
+                "column_h": [
+                  -0.5183999999999966,
+                  1.480000000000004,
+                  -2.3049999999999984
+                ],
+                "column_h_branch_hit": true,
+                "column_h_threshold_hit": true,
+                "event_id": "lgrc9v3-causal-spark-candidate-3-0-0",
+                "gate_reasons": [
+                  "column_h_threshold_hit"
+                ],
+                "kind": "lgrc9v3_causal_spark_candidate",
+                "min_abs_column_h": 0.5183999999999966,
+                "min_abs_column_h_column": 1,
+                "phase": "post_transfer_readback",
+                "run_role": "route_conductance_geometry_carrier_delayed_target_reentry_then_readback",
+                "spark_lane": "grc9v3_column_h_assisted"
+              }
+            ],
+            "min_abs_column_h": 0.5183999999999966,
+            "new_carrier_update_during_readback": false,
+            "phase": "post_transfer_readback",
+            "readback_digest": "98b8d69d2169ff4e321b28a045d75e4486278d3e3745841ec60f18db401aee2b",
+            "target_edge_base_conductance_after": 0.6799999999999999,
+            "target_edge_base_conductance_before": 0.6799999999999999
+          },
+          "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_delayed_target_reentry_then_readback_run.json"
+        },
+        {
+          "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot.json",
+          "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot.json",
+          "context_id": "peer_corridor_flux_then_target_reentry_readback",
+          "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_events.jsonl",
+          "gate": {
+            "budget_result": "preserved",
+            "carrier_delta_after_transfer_readback": 0.17999999999999994,
+            "carrier_loss_after_transfer_readback": 0.0,
+            "carrier_preserved_after_transfer": true,
+            "carrier_transfer_ratio": 1.0,
+            "coherence_floor_result": "preserved",
+            "context_id": "peer_corridor_flux_then_target_reentry_readback",
+            "new_carrier_update_after_loaded_snapshot": false,
+            "peer_same_budget_target_edge_delta": 0.0,
+            "same_budget_peer_separated": true,
+            "source_i5c_carrier_delta": 0.17999999999999994,
+            "support_floor_result": "preserved",
+            "target_over_peer_margin": 0.17999999999999994
+          },
+          "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot.json",
+          "passed": true,
+          "readback_record": {
+            "after_state_signature_digest": "80afa6e01ab917769dc2a3d02e0fa38d9ee1ab8b7dedd1990b4ab9efca726f08",
+            "before_state_signature_digest": "e851dcc2ed64a8e633fa4211b836cea6bfff59d71fa7a405f97c3da51c1f387b",
+            "candidate_count": 1,
+            "carrier_update_count_after": 1,
+            "carrier_update_count_before": 1,
+            "column_h": [
+              -0.5851999999999951,
+              1.390000000000006,
+              -2.3374999999999977
+            ],
+            "column_h_branch_hit": true,
+            "compact_candidate_events": [
+              {
+                "column_h": [
+                  -0.5851999999999951,
+                  1.390000000000006,
+                  -2.3374999999999977
+                ],
+                "column_h_branch_hit": true,
+                "column_h_threshold_hit": true,
+                "event_id": "lgrc9v3-causal-spark-candidate-4-0-0",
+                "gate_reasons": [
+                  "column_h_threshold_hit"
+                ],
+                "kind": "lgrc9v3_causal_spark_candidate",
+                "min_abs_column_h": 0.5851999999999951,
+                "min_abs_column_h_column": 1,
+                "phase": "post_transfer_readback",
+                "run_role": "route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback",
+                "spark_lane": "grc9v3_column_h_assisted"
+              }
+            ],
+            "min_abs_column_h": 0.5851999999999951,
+            "new_carrier_update_during_readback": false,
+            "phase": "post_transfer_readback",
+            "readback_digest": "b04e6b83edf71f178cbe2a5b3e1c10ebd21cb27c84377159e58a9bd437e99d15",
+            "target_edge_base_conductance_after": 0.6799999999999999,
+            "target_edge_base_conductance_before": 0.6799999999999999
+          },
+          "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_corridor_flux_then_target_reentry_readback_run.json"
+        }
+      ],
+      "controls": [
+        {
+          "claim_allowed": false,
+          "control_id": "peer_label_swap_reentry_control",
+          "control_record": {
+            "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_after_readback_snapshot.json",
+            "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_after_transfer_snapshot.json",
+            "context_id": "peer_label_swap_reentry_control",
+            "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_events.jsonl",
+            "gate": {
+              "budget_result": "preserved",
+              "carrier_delta_after_transfer_readback": 0.0,
+              "carrier_loss_after_transfer_readback": 1.0,
+              "carrier_preserved_after_transfer": false,
+              "carrier_transfer_ratio": 0.0,
+              "coherence_floor_result": "preserved",
+              "context_id": "peer_label_swap_reentry_control",
+              "new_carrier_update_after_loaded_snapshot": false,
+              "peer_same_budget_target_edge_delta": 0.0,
+              "same_budget_peer_separated": false,
+              "source_i5c_carrier_delta": 0.17999999999999994,
+              "support_floor_result": "preserved",
+              "target_over_peer_margin": 0.0
+            },
+            "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_loaded_snapshot.json",
+            "passed": false,
+            "readback_record": {
+              "after_state_signature_digest": "785d1bcff54b26442dcb4305a0a4c4681c408ce4b341f1be3b14b79c2d4e2e92",
+              "before_state_signature_digest": "eb00127ce25819d03833b2f1b622ec049561c4c52005116eb5f8367ff1e2185f",
+              "candidate_count": 0,
+              "carrier_update_count_after": 1,
+              "carrier_update_count_before": 1,
+              "column_h": null,
+              "column_h_branch_hit": false,
+              "compact_candidate_events": [],
+              "min_abs_column_h": null,
+              "new_carrier_update_during_readback": false,
+              "phase": "post_transfer_readback",
+              "readback_digest": "765e7155323b89a7fd29f36a2e0d817743a23f225bea07f5cfecdbbd2d63c0d2",
+              "target_edge_base_conductance_after": 0.5,
+              "target_edge_base_conductance_before": 0.5
+            },
+            "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/route_conductance_geometry_carrier_peer_label_swap_reentry_control_run.json"
+          },
+          "primary_blocker": "peer_target_edge_delta_missing",
+          "reason": "Peer snapshot lacks the target carrier delta and cannot satisfy I6-A transfer.",
+          "status": "failed_closed"
+        },
+        {
+          "claim_allowed": false,
+          "control_id": "active_carrier_update_carryover_control",
+          "primary_blocker": "producer_carrier_update_after_loaded_snapshot_blocked",
+          "reason": "I6-A records no new carrier update after loading I5-C snapshots.",
+          "status": "failed_closed"
+        },
+        {
+          "claim_allowed": false,
+          "control_id": "native_conductance_memory_relabel_control",
+          "primary_blocker": "native_route_conductance_memory_policy_missing",
+          "reason": "I5-C/I6-A carrier deltas remain producer-mediated naturalization debt.",
+          "status": "failed_closed"
+        }
+      ],
+      "decision_scope": "producer_mediated_carrier_transfer_candidate_pending_I7_controls",
+      "native_route_conductance_memory_supported": false,
+      "provisional_su_ladder_rung": "SU5_producer_mediated_carrier_transfer_candidate_pending_I7",
+      "row_decision": "partial",
+      "row_digest": "89e81e7e1deae7f85d1d6115633973c74eaa74c04ee1eb8267121439068892d6",
+      "row_id": "n22_i6a_row_route_conductance_geometry_carrier",
+      "source_i5c_row_id": "n22_i5c_row_route_conductance_geometry_carrier",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su5_candidate": true,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "variable_classification": {
+        "carrier_delta": "producer_mediated",
+        "native_route_conductance_memory": "naturalization_debt",
+        "readback_events": "substrate_carried",
+        "semantic_learning": "blocked_relabel"
+      }
+    },
+    {
+      "carrier_family": "neutral_reservoir_buffered_carrier",
+      "claim_ceiling": "provisional producer-mediated carrier transfer candidate pending I7; not native conductance memory, semantic learning, agency, native support, SU6, final N22, or N21 ND6 bridge",
+      "context_records": [
+        {
+          "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_after_readback_snapshot.json",
+          "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot.json",
+          "context_id": "delayed_target_reentry_then_readback",
+          "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_events.jsonl",
+          "gate": {
+            "budget_result": "preserved",
+            "carrier_delta_after_transfer_readback": 0.12,
+            "carrier_loss_after_transfer_readback": 0.0,
+            "carrier_preserved_after_transfer": true,
+            "carrier_transfer_ratio": 1.0,
+            "coherence_floor_result": "preserved",
+            "context_id": "delayed_target_reentry_then_readback",
+            "new_carrier_update_after_loaded_snapshot": false,
+            "peer_same_budget_target_edge_delta": 0.0,
+            "same_budget_peer_separated": true,
+            "source_i5c_carrier_delta": 0.12,
+            "support_floor_result": "preserved",
+            "target_over_peer_margin": 0.12
+          },
+          "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_loaded_snapshot.json",
+          "passed": true,
+          "readback_record": {
+            "after_state_signature_digest": "c4b97aec1532a87991441e255a078c89d1668f2ef4beb2a97f627082f4fc57e5",
+            "before_state_signature_digest": "f8ca8ebaa720c362a7f2a017c6dd1448190e6624c2b495fd1f3b34e4a5b0f5d7",
+            "candidate_count": 1,
+            "carrier_update_count_after": 1,
+            "carrier_update_count_before": 1,
+            "column_h": [
+              -0.7055999999999965,
+              1.480000000000004,
+              -2.3049999999999984
+            ],
+            "column_h_branch_hit": true,
+            "compact_candidate_events": [
+              {
+                "column_h": [
+                  -0.7055999999999965,
+                  1.480000000000004,
+                  -2.3049999999999984
+                ],
+                "column_h_branch_hit": true,
+                "column_h_threshold_hit": true,
+                "event_id": "lgrc9v3-causal-spark-candidate-3-0-0",
+                "gate_reasons": [
+                  "column_h_threshold_hit"
+                ],
+                "kind": "lgrc9v3_causal_spark_candidate",
+                "min_abs_column_h": 0.7055999999999965,
+                "min_abs_column_h_column": 1,
+                "phase": "post_transfer_readback",
+                "run_role": "neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback",
+                "spark_lane": "grc9v3_column_h_assisted"
+              }
+            ],
+            "min_abs_column_h": 0.7055999999999965,
+            "new_carrier_update_during_readback": false,
+            "phase": "post_transfer_readback",
+            "readback_digest": "2c99552efb33371e55cdebd335bd5194311bf19fb49826911af7cae5ff92432a",
+            "target_edge_base_conductance_after": 0.62,
+            "target_edge_base_conductance_before": 0.62
+          },
+          "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_delayed_target_reentry_then_readback_run.json"
+        },
+        {
+          "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot.json",
+          "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot.json",
+          "context_id": "peer_corridor_flux_then_target_reentry_readback",
+          "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_events.jsonl",
+          "gate": {
+            "budget_result": "preserved",
+            "carrier_delta_after_transfer_readback": 0.12,
+            "carrier_loss_after_transfer_readback": 0.0,
+            "carrier_preserved_after_transfer": true,
+            "carrier_transfer_ratio": 1.0,
+            "coherence_floor_result": "preserved",
+            "context_id": "peer_corridor_flux_then_target_reentry_readback",
+            "new_carrier_update_after_loaded_snapshot": false,
+            "peer_same_budget_target_edge_delta": 0.0,
+            "same_budget_peer_separated": true,
+            "source_i5c_carrier_delta": 0.12,
+            "support_floor_result": "preserved",
+            "target_over_peer_margin": 0.12
+          },
+          "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot.json",
+          "passed": true,
+          "readback_record": {
+            "after_state_signature_digest": "996583a403ff23c6bc5ade1a61d00d886e6a70b904e5fa887118f39192c0e4e9",
+            "before_state_signature_digest": "d2ff7dae12187bc5a86c8b5a7f41d4bc51b55b42f641fcec84772583ef3adbb7",
+            "candidate_count": 1,
+            "carrier_update_count_after": 1,
+            "carrier_update_count_before": 1,
+            "column_h": [
+              -0.7717999999999949,
+              1.390000000000006,
+              -2.3374999999999977
+            ],
+            "column_h_branch_hit": true,
+            "compact_candidate_events": [
+              {
+                "column_h": [
+                  -0.7717999999999949,
+                  1.390000000000006,
+                  -2.3374999999999977
+                ],
+                "column_h_branch_hit": true,
+                "column_h_threshold_hit": true,
+                "event_id": "lgrc9v3-causal-spark-candidate-4-0-0",
+                "gate_reasons": [
+                  "column_h_threshold_hit"
+                ],
+                "kind": "lgrc9v3_causal_spark_candidate",
+                "min_abs_column_h": 0.7717999999999949,
+                "min_abs_column_h_column": 1,
+                "phase": "post_transfer_readback",
+                "run_role": "neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback",
+                "spark_lane": "grc9v3_column_h_assisted"
+              }
+            ],
+            "min_abs_column_h": 0.7717999999999949,
+            "new_carrier_update_during_readback": false,
+            "phase": "post_transfer_readback",
+            "readback_digest": "2b266f5fb13cc379fee701afaf85af1bc5c6e33481a8e04b935f58689ed6e000",
+            "target_edge_base_conductance_after": 0.62,
+            "target_edge_base_conductance_before": 0.62
+          },
+          "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_corridor_flux_then_target_reentry_readback_run.json"
+        }
+      ],
+      "controls": [
+        {
+          "claim_allowed": false,
+          "control_id": "peer_label_swap_reentry_control",
+          "control_record": {
+            "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_after_readback_snapshot.json",
+            "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_after_transfer_snapshot.json",
+            "context_id": "peer_label_swap_reentry_control",
+            "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_events.jsonl",
+            "gate": {
+              "budget_result": "preserved",
+              "carrier_delta_after_transfer_readback": 0.0,
+              "carrier_loss_after_transfer_readback": 1.0,
+              "carrier_preserved_after_transfer": false,
+              "carrier_transfer_ratio": 0.0,
+              "coherence_floor_result": "preserved",
+              "context_id": "peer_label_swap_reentry_control",
+              "new_carrier_update_after_loaded_snapshot": false,
+              "peer_same_budget_target_edge_delta": 0.0,
+              "same_budget_peer_separated": false,
+              "source_i5c_carrier_delta": 0.12,
+              "support_floor_result": "preserved",
+              "target_over_peer_margin": 0.0
+            },
+            "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_loaded_snapshot.json",
+            "passed": false,
+            "readback_record": {
+              "after_state_signature_digest": "7ad987ef551f0991a777227ec4fe01aad2bf979c8ebdb398dc51e672d5f3324e",
+              "before_state_signature_digest": "b045ff7de52994785b8ad8df8a114a5a1869cbe2fa612688f90ac444a630cf05",
+              "candidate_count": 0,
+              "carrier_update_count_after": 1,
+              "carrier_update_count_before": 1,
+              "column_h": null,
+              "column_h_branch_hit": false,
+              "compact_candidate_events": [],
+              "min_abs_column_h": null,
+              "new_carrier_update_during_readback": false,
+              "phase": "post_transfer_readback",
+              "readback_digest": "f89a84538c3326e5f6f029d4dce5c08b95ebed9409b891d251c63d7d9ebdb92d",
+              "target_edge_base_conductance_after": 0.5,
+              "target_edge_base_conductance_before": 0.5
+            },
+            "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/neutral_reservoir_buffered_carrier_peer_label_swap_reentry_control_run.json"
+          },
+          "primary_blocker": "peer_target_edge_delta_missing",
+          "reason": "Peer snapshot lacks the target carrier delta and cannot satisfy I6-A transfer.",
+          "status": "failed_closed"
+        },
+        {
+          "claim_allowed": false,
+          "control_id": "active_carrier_update_carryover_control",
+          "primary_blocker": "producer_carrier_update_after_loaded_snapshot_blocked",
+          "reason": "I6-A records no new carrier update after loading I5-C snapshots.",
+          "status": "failed_closed"
+        },
+        {
+          "claim_allowed": false,
+          "control_id": "native_conductance_memory_relabel_control",
+          "primary_blocker": "native_route_conductance_memory_policy_missing",
+          "reason": "I5-C/I6-A carrier deltas remain producer-mediated naturalization debt.",
+          "status": "failed_closed"
+        }
+      ],
+      "decision_scope": "producer_mediated_carrier_transfer_candidate_pending_I7_controls",
+      "native_route_conductance_memory_supported": false,
+      "provisional_su_ladder_rung": "SU5_producer_mediated_carrier_transfer_candidate_pending_I7",
+      "row_decision": "partial",
+      "row_digest": "f83ad3a80f856aacf288d904bec2eb4b069f86ada9537040ee733a0e304fdb72",
+      "row_id": "n22_i6a_row_neutral_reservoir_buffered_carrier",
+      "source_i5c_row_id": "n22_i5c_row_neutral_reservoir_buffered_carrier",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su5_candidate": true,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "variable_classification": {
+        "carrier_delta": "producer_mediated",
+        "native_route_conductance_memory": "naturalization_debt",
+        "readback_events": "substrate_carried",
+        "semantic_learning": "blocked_relabel"
+      }
+    },
+    {
+      "carrier_family": "band_buffered_return_carrier",
+      "claim_ceiling": "provisional producer-mediated carrier transfer candidate pending I7; not native conductance memory, semantic learning, agency, native support, SU6, final N22, or N21 ND6 bridge",
+      "context_records": [
+        {
+          "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_after_readback_snapshot.json",
+          "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_after_transfer_snapshot.json",
+          "context_id": "delayed_target_reentry_then_readback",
+          "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_events.jsonl",
+          "gate": {
+            "budget_result": "preserved",
+            "carrier_delta_after_transfer_readback": 0.07000000000000006,
+            "carrier_loss_after_transfer_readback": 0.0,
+            "carrier_preserved_after_transfer": true,
+            "carrier_transfer_ratio": 1.0,
+            "coherence_floor_result": "preserved",
+            "context_id": "delayed_target_reentry_then_readback",
+            "new_carrier_update_after_loaded_snapshot": false,
+            "peer_same_budget_target_edge_delta": 0.0,
+            "same_budget_peer_separated": true,
+            "source_i5c_carrier_delta": 0.07000000000000006,
+            "support_floor_result": "preserved",
+            "target_over_peer_margin": 0.07000000000000006
+          },
+          "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_loaded_snapshot.json",
+          "passed": true,
+          "readback_record": {
+            "after_state_signature_digest": "acbb2f36482e094848bd7976d92d06e849a3dfda91e36f14571972c2381e1444",
+            "before_state_signature_digest": "1375af39dcf3dac695530bdc569d1b590df45236061c6fd3c33e1315ee4ba2c0",
+            "candidate_count": 1,
+            "carrier_update_count_after": 1,
+            "carrier_update_count_before": 1,
+            "column_h": [
+              -0.8615999999999961,
+              1.480000000000004,
+              -2.3049999999999984
+            ],
+            "column_h_branch_hit": true,
+            "compact_candidate_events": [
+              {
+                "column_h": [
+                  -0.8615999999999961,
+                  1.480000000000004,
+                  -2.3049999999999984
+                ],
+                "column_h_branch_hit": true,
+                "column_h_threshold_hit": true,
+                "event_id": "lgrc9v3-causal-spark-candidate-3-0-0",
+                "gate_reasons": [
+                  "column_h_threshold_hit"
+                ],
+                "kind": "lgrc9v3_causal_spark_candidate",
+                "min_abs_column_h": 0.8615999999999961,
+                "min_abs_column_h_column": 1,
+                "phase": "post_transfer_readback",
+                "run_role": "band_buffered_return_carrier_delayed_target_reentry_then_readback",
+                "spark_lane": "grc9v3_column_h_assisted"
+              }
+            ],
+            "min_abs_column_h": 0.8615999999999961,
+            "new_carrier_update_during_readback": false,
+            "phase": "post_transfer_readback",
+            "readback_digest": "7860cc8b10b5366ea44d47e7d41b8c805448850b79a38ca900b26326f6ea8c50",
+            "target_edge_base_conductance_after": 0.5700000000000001,
+            "target_edge_base_conductance_before": 0.5700000000000001
+          },
+          "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_delayed_target_reentry_then_readback_run.json"
+        },
+        {
+          "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_after_readback_snapshot.json",
+          "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_after_transfer_snapshot.json",
+          "context_id": "peer_corridor_flux_then_target_reentry_readback",
+          "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_events.jsonl",
+          "gate": {
+            "budget_result": "preserved",
+            "carrier_delta_after_transfer_readback": 0.07000000000000006,
+            "carrier_loss_after_transfer_readback": 0.0,
+            "carrier_preserved_after_transfer": true,
+            "carrier_transfer_ratio": 1.0,
+            "coherence_floor_result": "preserved",
+            "context_id": "peer_corridor_flux_then_target_reentry_readback",
+            "new_carrier_update_after_loaded_snapshot": false,
+            "peer_same_budget_target_edge_delta": 0.0,
+            "same_budget_peer_separated": true,
+            "source_i5c_carrier_delta": 0.07000000000000006,
+            "support_floor_result": "preserved",
+            "target_over_peer_margin": 0.07000000000000006
+          },
+          "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_loaded_snapshot.json",
+          "passed": true,
+          "readback_record": {
+            "after_state_signature_digest": "91522354781564a32d54abc1f46b4d5c10031bc80cde8d10ef0d09d75566ca68",
+            "before_state_signature_digest": "f838fde710f96cc6a5bd54423a294033e49d8c2589ee1547d46761db3ef327e0",
+            "candidate_count": 1,
+            "carrier_update_count_after": 1,
+            "carrier_update_count_before": 1,
+            "column_h": [
+              -0.9272999999999949,
+              1.390000000000006,
+              -2.3374999999999977
+            ],
+            "column_h_branch_hit": true,
+            "compact_candidate_events": [
+              {
+                "column_h": [
+                  -0.9272999999999949,
+                  1.390000000000006,
+                  -2.3374999999999977
+                ],
+                "column_h_branch_hit": true,
+                "column_h_threshold_hit": true,
+                "event_id": "lgrc9v3-causal-spark-candidate-4-0-0",
+                "gate_reasons": [
+                  "column_h_threshold_hit"
+                ],
+                "kind": "lgrc9v3_causal_spark_candidate",
+                "min_abs_column_h": 0.9272999999999949,
+                "min_abs_column_h_column": 1,
+                "phase": "post_transfer_readback",
+                "run_role": "band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback",
+                "spark_lane": "grc9v3_column_h_assisted"
+              }
+            ],
+            "min_abs_column_h": 0.9272999999999949,
+            "new_carrier_update_during_readback": false,
+            "phase": "post_transfer_readback",
+            "readback_digest": "1996a05e4fb1f0afdb5687f7f35c1be6d1a351a7a4f333f0e51ba757251c5f72",
+            "target_edge_base_conductance_after": 0.5700000000000001,
+            "target_edge_base_conductance_before": 0.5700000000000001
+          },
+          "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_corridor_flux_then_target_reentry_readback_run.json"
+        }
+      ],
+      "controls": [
+        {
+          "claim_allowed": false,
+          "control_id": "peer_label_swap_reentry_control",
+          "control_record": {
+            "after_readback_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_after_readback_snapshot.json",
+            "after_transfer_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_after_transfer_snapshot.json",
+            "context_id": "peer_label_swap_reentry_control",
+            "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_events.jsonl",
+            "gate": {
+              "budget_result": "preserved",
+              "carrier_delta_after_transfer_readback": 0.0,
+              "carrier_loss_after_transfer_readback": 1.0,
+              "carrier_preserved_after_transfer": false,
+              "carrier_transfer_ratio": 0.0,
+              "coherence_floor_result": "preserved",
+              "context_id": "peer_label_swap_reentry_control",
+              "new_carrier_update_after_loaded_snapshot": false,
+              "peer_same_budget_target_edge_delta": 0.0,
+              "same_budget_peer_separated": false,
+              "source_i5c_carrier_delta": 0.07000000000000006,
+              "support_floor_result": "preserved",
+              "target_over_peer_margin": 0.0
+            },
+            "loaded_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_loaded_snapshot.json",
+            "passed": false,
+            "readback_record": {
+              "after_state_signature_digest": "a154cc17e7c9a20ecf2f551cf22404acf4d297c3ef54d22f8ac69c6104be0480",
+              "before_state_signature_digest": "ca9ea7264b4d1ff44153f8c0cfb3e6337bbb0a31ebbeeaa7f23f4629c7dd5e06",
+              "candidate_count": 0,
+              "carrier_update_count_after": 1,
+              "carrier_update_count_before": 1,
+              "column_h": null,
+              "column_h_branch_hit": false,
+              "compact_candidate_events": [],
+              "min_abs_column_h": null,
+              "new_carrier_update_during_readback": false,
+              "phase": "post_transfer_readback",
+              "readback_digest": "ed0d3ce63e2e30c70be9bd42278960f0ad015ddac2cca55ebb65c7a790ca9890",
+              "target_edge_base_conductance_after": 0.5,
+              "target_edge_base_conductance_before": 0.5
+            },
+            "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_carrier_transfer_reentry_probe_artifacts/band_buffered_return_carrier_peer_label_swap_reentry_control_run.json"
+          },
+          "primary_blocker": "peer_target_edge_delta_missing",
+          "reason": "Peer snapshot lacks the target carrier delta and cannot satisfy I6-A transfer.",
+          "status": "failed_closed"
+        },
+        {
+          "claim_allowed": false,
+          "control_id": "active_carrier_update_carryover_control",
+          "primary_blocker": "producer_carrier_update_after_loaded_snapshot_blocked",
+          "reason": "I6-A records no new carrier update after loading I5-C snapshots.",
+          "status": "failed_closed"
+        },
+        {
+          "claim_allowed": false,
+          "control_id": "native_conductance_memory_relabel_control",
+          "primary_blocker": "native_route_conductance_memory_policy_missing",
+          "reason": "I5-C/I6-A carrier deltas remain producer-mediated naturalization debt.",
+          "status": "failed_closed"
+        }
+      ],
+      "decision_scope": "producer_mediated_carrier_transfer_candidate_pending_I7_controls",
+      "native_route_conductance_memory_supported": false,
+      "provisional_su_ladder_rung": "SU5_producer_mediated_carrier_transfer_candidate_pending_I7",
+      "row_decision": "partial",
+      "row_digest": "ebae02d90a41fe906bb945ee32ee0c9299cc683a9d962338c2a595a9eda5f7ff",
+      "row_id": "n22_i6a_row_band_buffered_return_carrier",
+      "source_i5c_row_id": "n22_i5c_row_band_buffered_return_carrier",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su5_candidate": true,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "variable_classification": {
+        "carrier_delta": "producer_mediated",
+        "native_route_conductance_memory": "naturalization_debt",
+        "readback_events": "substrate_carried",
+        "semantic_learning": "blocked_relabel"
+      }
+    }
+  ]
+}

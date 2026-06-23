@@ -1,0 +1,195 @@
+{
+  "carrier_retune_allowed": false,
+  "config_id": "n22_i6b_carrier_transfer_stress_boundary_runtime_config",
+  "control_contexts": [
+    "peer_label_swap_under_stress_control",
+    "active_carrier_update_carryover_control",
+    "native_conductance_memory_relabel_control",
+    "stress_success_as_final_su5_relabel_control"
+  ],
+  "fixture_source": "I5-C source-current snapshots",
+  "model_family": "LGRC9V3",
+  "producer_carrier_update_after_load_allowed": false,
+  "source_iteration": "I5-C plus I6-A",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "stress_contexts": [
+    {
+      "context_id": "long_idle_delay_target_reentry",
+      "steps": [
+        {
+          "amount": 0.02,
+          "event_time": 12.0,
+          "route": "target",
+          "scheduler_index": 120
+        }
+      ],
+      "stress_role": "longer_delay_before_target_reentry"
+    },
+    {
+      "context_id": "strong_peer_corridor_then_target_reentry",
+      "steps": [
+        {
+          "amount": 0.04,
+          "event_time": 4.0,
+          "route": "peer",
+          "scheduler_index": 40
+        },
+        {
+          "amount": 0.02,
+          "event_time": 8.0,
+          "route": "target",
+          "scheduler_index": 80
+        }
+      ],
+      "stress_role": "stronger_peer_corridor_flux_before_target_reentry"
+    },
+    {
+      "context_id": "repeated_target_reentry_pair",
+      "steps": [
+        {
+          "amount": 0.02,
+          "event_time": 6.0,
+          "route": "target",
+          "scheduler_index": 60
+        },
+        {
+          "amount": 0.02,
+          "event_time": 8.0,
+          "route": "target",
+          "scheduler_index": 80
+        }
+      ],
+      "stress_role": "two_target_reentry_events_before_readback"
+    },
+    {
+      "context_id": "mixed_peer_target_corridor_sequence",
+      "steps": [
+        {
+          "amount": 0.02,
+          "event_time": 4.0,
+          "route": "peer",
+          "scheduler_index": 40
+        },
+        {
+          "amount": 0.02,
+          "event_time": 5.0,
+          "route": "target",
+          "scheduler_index": 50
+        },
+        {
+          "amount": 0.02,
+          "event_time": 7.0,
+          "route": "peer",
+          "scheduler_index": 70
+        },
+        {
+          "amount": 0.02,
+          "event_time": 8.0,
+          "route": "target",
+          "scheduler_index": 80
+        }
+      ],
+      "stress_role": "alternating_peer_and_target_corridor_flux"
+    }
+  ],
+  "thresholds": {
+    "carrier_retune_allowed": false,
+    "coherence_floor": 9.85,
+    "consumes_i5c_and_i6a_only": true,
+    "control_contexts": [
+      "peer_label_swap_under_stress_control",
+      "active_carrier_update_carryover_control",
+      "native_conductance_memory_relabel_control",
+      "stress_success_as_final_su5_relabel_control"
+    ],
+    "declared_before_use": true,
+    "max_budget_error": 1e-09,
+    "max_carrier_loss_after_stress": 0.02,
+    "min_transfer_carrier_ratio": 0.9,
+    "min_transfer_target_over_peer_margin": 0.05,
+    "producer_carrier_update_after_load_allowed": false,
+    "stress_contexts": [
+      {
+        "context_id": "long_idle_delay_target_reentry",
+        "steps": [
+          {
+            "amount": 0.02,
+            "event_time": 12.0,
+            "route": "target",
+            "scheduler_index": 120
+          }
+        ],
+        "stress_role": "longer_delay_before_target_reentry"
+      },
+      {
+        "context_id": "strong_peer_corridor_then_target_reentry",
+        "steps": [
+          {
+            "amount": 0.04,
+            "event_time": 4.0,
+            "route": "peer",
+            "scheduler_index": 40
+          },
+          {
+            "amount": 0.02,
+            "event_time": 8.0,
+            "route": "target",
+            "scheduler_index": 80
+          }
+        ],
+        "stress_role": "stronger_peer_corridor_flux_before_target_reentry"
+      },
+      {
+        "context_id": "repeated_target_reentry_pair",
+        "steps": [
+          {
+            "amount": 0.02,
+            "event_time": 6.0,
+            "route": "target",
+            "scheduler_index": 60
+          },
+          {
+            "amount": 0.02,
+            "event_time": 8.0,
+            "route": "target",
+            "scheduler_index": 80
+          }
+        ],
+        "stress_role": "two_target_reentry_events_before_readback"
+      },
+      {
+        "context_id": "mixed_peer_target_corridor_sequence",
+        "steps": [
+          {
+            "amount": 0.02,
+            "event_time": 4.0,
+            "route": "peer",
+            "scheduler_index": 40
+          },
+          {
+            "amount": 0.02,
+            "event_time": 5.0,
+            "route": "target",
+            "scheduler_index": 50
+          },
+          {
+            "amount": 0.02,
+            "event_time": 7.0,
+            "route": "peer",
+            "scheduler_index": 70
+          },
+          {
+            "amount": 0.02,
+            "event_time": 8.0,
+            "route": "target",
+            "scheduler_index": 80
+          }
+        ],
+        "stress_role": "alternating_peer_and_target_corridor_flux"
+      }
+    ],
+    "su6_or_final_n22_allowed": false,
+    "support_floor": 9.85,
+    "threshold_record_id": "n22_i6b_carrier_transfer_stress_boundary_thresholds"
+  }
+}

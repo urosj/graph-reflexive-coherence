@@ -1,0 +1,2345 @@
+{
+  "acceptance_state": "accepted_transfer_readout_expression_no_su5_due_consumptive_boundary",
+  "artifact_id": "n22_i6_transfer_reentry_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_active_schedule_carryover_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control-checkpoint-00000000.json",
+      "sha256": "ebd3ab00ba51c730f82296c5d6ae1515adba6d360c4bfd4bb34f06548150f630"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_active_schedule_carryover_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control-checkpoint-00000001.json",
+      "sha256": "e76441d2d7bb170d284bd4d250cb9532ab36ab20435235dff59bf37565028451"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_active_schedule_carryover_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_active_schedule_carryover_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control_final_snapshot.json",
+      "sha256": "05a94c88afe459d7fd8ac89b61eda5af0ebeb99c2b3c735fd12b44f2b06f231e"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_active_schedule_carryover_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_active_schedule_carryover_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control_run.json",
+      "sha256": "d29efcc759aaa12f274da0170faa501087e1611b816a93aabfcb0bb061ed55fd"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry-checkpoint-00000000.json",
+      "sha256": "fd89133f187ba902c8158cdc715444943cb0d0d76075afca788a562b4c14adbc"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry-checkpoint-00000001.json",
+      "sha256": "7d96fcb089679dd2773628e2d1f5a7c26f263023fc2618cc1fdcd5873b1a645e"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_events.jsonl",
+      "sha256": "a25a9a0e1ab872ea322c81fcff0beeafa2418c26bc0599489573231bc900d93a"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_final_snapshot.json",
+      "sha256": "1f34ab3df4bc66741c296134b372e92fe7209cd01d2a9a3182b82611fa35275a"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_run.json",
+      "sha256": "c6989977a3018017ef2cc7f00a567f8b2322a5ed69451b8dceb5735bb091856e"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_boundary_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry-checkpoint-00000000.json",
+      "sha256": "7f2185b76938eefeb9a33507a5475a85f7308a455e79d99763cea8eec8f030ee"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_boundary_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry-checkpoint-00000001.json",
+      "sha256": "c7012998d75603d3ee580b88277dfd24e727de1f9d70cc59734a2ffe695bc1ff"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_boundary_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry_events.jsonl",
+      "sha256": "445ce5e5b6e7dee33ec95ee70938287e6c778417c44107f3000deb5b67e61716"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_boundary_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry_final_snapshot.json",
+      "sha256": "d8c475fe74c148e3d5359cee74906964d58ebcafb37da99d89ca5b6bbb58d2f8"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_boundary_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_delayed_boundary_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry_run.json",
+      "sha256": "8c0e9c0febd7c9b0a8f290ef54e8944d78bdde06996e61d4b7e9253963134f74"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_label_swap_peer_reentry_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control-checkpoint-00000000.json",
+      "sha256": "f20032948ab816fe4031f89c8f75a1edaf1542645e000feeef4caa4ad2719bee"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_label_swap_peer_reentry_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control-checkpoint-00000001.json",
+      "sha256": "4a411221b7be15af8000249bbd3b9b3ef2f8c222ff6485f3bcb8d24883de52eb"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_label_swap_peer_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control_events.jsonl",
+      "sha256": "bd44a5898be2a909f30f9c09c9f9d6f4bd0f4cdd69d832964f172bf5f2ac1fb0"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_label_swap_peer_reentry_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control_final_snapshot.json",
+      "sha256": "44a5b3558b073d90833edb7a8f3848caa7b1749bdcb5bad77e898d81d822d91f"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_label_swap_peer_reentry_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control_loaded_post_snapshot.json",
+      "sha256": "203b8d0db159b46a606d553fa7e535ee8ef14ab70250a880e9685f6316eca143"
+    },
+    {
+      "artifact_role": "complementary_split_route_b_adjacent_label_swap_peer_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control_run.json",
+      "sha256": "c7d1548e95c617ba3df4eeaf290bfaa671dda42a62e125a0a5d334ddad29b5fc"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_active_schedule_carryover_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control-checkpoint-00000000.json",
+      "sha256": "327cf17d5c56b6ee67d2d439136d12ffded57c31ad32300c77c53c991cc0ea64"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_active_schedule_carryover_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control-checkpoint-00000001.json",
+      "sha256": "6006dc389ff28103431cf4d019d1db8561d49a1f4a664b107a65c8500f3bd403"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_active_schedule_carryover_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_active_schedule_carryover_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control_final_snapshot.json",
+      "sha256": "eb082f05d27e4e915cd46751c22aa8b37b33d216844f6b787bd1c382be2e8e96"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_active_schedule_carryover_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_active_schedule_carryover_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control_run.json",
+      "sha256": "f3567bde67b268fd0b6986587b237e435503ae37fdc7fab52f6b442e305143ff"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_corridor_peer_flux_then_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry-checkpoint-00000000.json",
+      "sha256": "cbaec29623722ce034dfe645211294cb91ea037a2123557c4a4abb8bb4f2d057"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_corridor_peer_flux_then_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry-checkpoint-00000001.json",
+      "sha256": "cb36d8a751ba7231b3564a6e985f9e852a39b302518e345a0b49be287d05bdc9"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_corridor_peer_flux_then_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry_events.jsonl",
+      "sha256": "727bbf88533339b4be01eafe4795de005f721a31fdd9d26f353d04bb63f2d2e4"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_corridor_peer_flux_then_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry_final_snapshot.json",
+      "sha256": "9bf4da65ba3e8cc0ee51130bcbfe1ea78c444b1963ff30ef45a366272519171c"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_corridor_peer_flux_then_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_corridor_peer_flux_then_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry_run.json",
+      "sha256": "9eb576809754934fe13d173b2e44de1910ccc0252e5a4467cab283f25182d93b"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_boundary_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry-checkpoint-00000000.json",
+      "sha256": "66053f9510eb49f656a9b6e1c7c55014588f051d75bc3d133baf0989a2e75d85"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_boundary_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry-checkpoint-00000001.json",
+      "sha256": "852904dffff85000a1a4ae669384933642781fbbb139f7d14d42bad40911a1d4"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_boundary_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry_events.jsonl",
+      "sha256": "8c03843c0a11d55a1b286b6600444ab84f69b26c637d56ca034c536d867641e5"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_boundary_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry_final_snapshot.json",
+      "sha256": "a041367d6ba4daa7123dbc09b57ac4f74391f6c382d4e0fd72b7f2cea8033652"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_boundary_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_delayed_boundary_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry_run.json",
+      "sha256": "c0c9699444aef618fd20cf5b5797684c944fc409fc39cb181e8cff160dc3f583"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_label_swap_peer_reentry_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control-checkpoint-00000000.json",
+      "sha256": "9d4aea4b2d2f1f141609aba2e75bf02b76032da59d8f4888ea17c07213333c4f"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_label_swap_peer_reentry_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control-checkpoint-00000001.json",
+      "sha256": "fcbee44f4d7eba7775838807cba178875d88d52d678ccfd3d8c05c1979e91367"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_label_swap_peer_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control_events.jsonl",
+      "sha256": "11ee71755f452be60e685f1e180d7c3a9d99c916f4384b1d4fe8b931379ff14a"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_label_swap_peer_reentry_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control_final_snapshot.json",
+      "sha256": "e2f82927eae2225ce4f8dcdb289e51ebb61f58e5730948448d7c699b2b536091"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_label_swap_peer_reentry_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "dose_08_i4_reference_label_swap_peer_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control_run.json",
+      "sha256": "ef0fa3d986e97005ecdfd4908b7425607901843bc96ec57af083dc1f113cab4b"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_active_schedule_carryover_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control-checkpoint-00000000.json",
+      "sha256": "38a8cecdb50c2ca77c145ab2f14bc25f24c34e010a46885753b6e23c1fbac7ac"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_active_schedule_carryover_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control-checkpoint-00000001.json",
+      "sha256": "d0d440f0836e73b2a337879647289abcefc8b72b0a003f62585768dbdfac1256"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_active_schedule_carryover_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_active_schedule_carryover_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control_final_snapshot.json",
+      "sha256": "d9bfc3d0093fc0d88ee8c79c6660dde08c666279a1d26fe5567028ed344ca6a7"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_active_schedule_carryover_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_active_schedule_carryover_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control_run.json",
+      "sha256": "020041bb82021229f8919be532721f019c8ad3e5da27415bd414a41e53d8bcb4"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_corridor_peer_flux_then_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry-checkpoint-00000000.json",
+      "sha256": "27b840ab135a0ebd641ace380abcf9359a2b63aafbe8e0ffaef460b2930aac71"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_corridor_peer_flux_then_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry-checkpoint-00000001.json",
+      "sha256": "d4696eb2ebd27d1972c9d0d48fdb06dacbe52b20c53bf6d3e88fc83634fe82b5"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_corridor_peer_flux_then_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry_events.jsonl",
+      "sha256": "cfd00d1298ba7dde118b590cffe3cb3d0d90203ceba133dd4413f9c19a1ef02f"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_corridor_peer_flux_then_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry_final_snapshot.json",
+      "sha256": "3709a5f64524f1075d88fdebbcca75390f704ac3c89b9c4292a5f9c30d5528e1"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_corridor_peer_flux_then_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_corridor_peer_flux_then_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry_run.json",
+      "sha256": "570f0ae054fab73f2e141f8d575fb6f255951d96e7a13b600091da1c461d09a6"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_boundary_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry-checkpoint-00000000.json",
+      "sha256": "9f96662cfb30d874a8f92bbe9df9daccd35f0b3852bbee77a6483c8d1f33b955"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_boundary_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry-checkpoint-00000001.json",
+      "sha256": "f493f57882ee0be363928a80f267f444c436f7a1411d5d81bb7cbbc1c4de7aa1"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_boundary_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry_events.jsonl",
+      "sha256": "2fcf50df860d8a512acbc2bf2f44a638feb7b517177b447df82a37b24c7b2d87"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_boundary_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry_final_snapshot.json",
+      "sha256": "f2263885f52492888c77c9c76263104addc7ae64ca4537d1d5fc9c8ff7987d2f"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_boundary_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_delayed_boundary_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry_run.json",
+      "sha256": "90d1f759704b8fc1ca18646dfd8698acbf494613a0eb411f19d9345240d229a6"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_label_swap_peer_reentry_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control-checkpoint-00000000.json",
+      "sha256": "02136b98a490d6daa617a9e9f98ce611d33787a953f2988c73e5ad6cda8b6b20"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_label_swap_peer_reentry_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control-checkpoint-00000001.json",
+      "sha256": "a08811a645111971865d74f1919c4cef8d34135d69de4c1a899a330d58f65980"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_label_swap_peer_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control_events.jsonl",
+      "sha256": "2fc25c7c21a2cd7e428131367a30e9e23ded7d5988f5196674b9aee9f930deff"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_label_swap_peer_reentry_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control_final_snapshot.json",
+      "sha256": "e853a9e3770fdba61949a26416814a8b45d0225e9f39582d8c6a70f9c9f8addc"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_label_swap_peer_reentry_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control_loaded_post_snapshot.json",
+      "sha256": "8e95d5d81dda71acfd7d7c67e732de1f30ff7ee5247a1532df66ff2ca5711e77"
+    },
+    {
+      "artifact_role": "dose_14_stronger_bounded_label_swap_peer_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control_run.json",
+      "sha256": "b0347c76b3fc3d8a3b3377c2e27ff79194f378e66e47dbc22d37a4391580f630"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_active_schedule_carryover_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control-checkpoint-00000000.json",
+      "sha256": "026691b68b0413bf314bca521355b0f7e90f83a282527be43a5e30709f790e3f"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_active_schedule_carryover_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control-checkpoint-00000001.json",
+      "sha256": "9cdcd24ba7b216aa7168e5f3e9845e048ab7fd04b0d19781e3a0ef0104734907"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_active_schedule_carryover_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_active_schedule_carryover_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control_final_snapshot.json",
+      "sha256": "eb082f05d27e4e915cd46751c22aa8b37b33d216844f6b787bd1c382be2e8e96"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_active_schedule_carryover_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_active_schedule_carryover_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control_run.json",
+      "sha256": "ccb812f98900040379a71f99d4d2cd76ba25696f26ebe66e3f4365d0bd4a7fa8"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_corridor_peer_flux_then_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry-checkpoint-00000000.json",
+      "sha256": "2ee3af5fae11fce516adcfa0ac0d7685000185344be9530c0a3009662d4cbd15"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_corridor_peer_flux_then_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry-checkpoint-00000001.json",
+      "sha256": "1d0edd4dee5145072b6e7eb0fc0ee3c7981de592b98714f924d09b4b1879f0c3"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_corridor_peer_flux_then_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry_events.jsonl",
+      "sha256": "f63c38ba5d85d7083258c81bf96641f00c3a1a86add97349f0fe5083e553bd0f"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_corridor_peer_flux_then_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry_final_snapshot.json",
+      "sha256": "9bf4da65ba3e8cc0ee51130bcbfe1ea78c444b1963ff30ef45a366272519171c"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_corridor_peer_flux_then_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_corridor_peer_flux_then_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry_run.json",
+      "sha256": "bbe61a5b2f220f5e9d36fdefb0048f69d62486194e1f238572c57516ce1b5485"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_boundary_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry-checkpoint-00000000.json",
+      "sha256": "392fcdee3c692c2d32871e1dc3f5641e8c2daff4ad31d4d095043863b8c581e5"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_boundary_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry-checkpoint-00000001.json",
+      "sha256": "9a35adb948f7c2b29c4f55536076b58dafc100256a8b7583161c68a9e5e15495"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_boundary_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry_events.jsonl",
+      "sha256": "4312999c20565bb02977847ce0b971d8b515c6ac9c5e1e52812dbd70a4cab3fc"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_boundary_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry_final_snapshot.json",
+      "sha256": "a041367d6ba4daa7123dbc09b57ac4f74391f6c382d4e0fd72b7f2cea8033652"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_boundary_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_delayed_boundary_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry_run.json",
+      "sha256": "239b25abfbeb3290ee9474fb064fa0b6b8a235dd759e8c20610953d2a21f7ed4"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_label_swap_peer_reentry_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control-checkpoint-00000000.json",
+      "sha256": "e4495298c64eedafccf682ed436443afd20bd977b179eb5a26856612e3d07a6f"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_label_swap_peer_reentry_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control-checkpoint-00000001.json",
+      "sha256": "e3b465fc69abe0a5834a1bddeb62d3bf2881959ded55e979a0c47f2056722967"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_label_swap_peer_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control_events.jsonl",
+      "sha256": "b78f13ae22a1a2dbda2f9344323f714eedce78d6f29144704dfe8edc4d3c106a"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_label_swap_peer_reentry_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control_final_snapshot.json",
+      "sha256": "e2f82927eae2225ce4f8dcdb289e51ebb61f58e5730948448d7c699b2b536091"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_label_swap_peer_reentry_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control_loaded_post_snapshot.json",
+      "sha256": "e06b473217b53776ad523020a89cd5c7e26fb4b6f6f731cd1759765b2374839d"
+    },
+    {
+      "artifact_role": "i4_minimal_route_b_label_swap_peer_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control_run.json",
+      "sha256": "e28258f80ad7b89889008c166c9fbe68cf6d1fc55374555b2b103be644e79518"
+    },
+    {
+      "artifact_role": "thresholds_declared_before_use",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/n22_i6_thresholds_declared_before_use.json",
+      "sha256": "2fcfa5afd1010c974bb27fd4125f8aad013a8f77f0ea3249f73095bd10f4551e"
+    },
+    {
+      "artifact_role": "single_route_b_reference_active_schedule_carryover_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control-checkpoint-00000000.json",
+      "sha256": "1bdb4cf071325bd9e2f20242bcb595174c1234379428cb5e825fa00876125f58"
+    },
+    {
+      "artifact_role": "single_route_b_reference_active_schedule_carryover_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control-checkpoint-00000001.json",
+      "sha256": "c040a691af291ffc912bbb89246926d2d01e82a0ebec322d328a2d7b858dfb7d"
+    },
+    {
+      "artifact_role": "single_route_b_reference_active_schedule_carryover_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "single_route_b_reference_active_schedule_carryover_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control_final_snapshot.json",
+      "sha256": "39c7ff5fcc75f6810c609d39bd88b894126f4d42f60e826e358b46493a6f236a"
+    },
+    {
+      "artifact_role": "single_route_b_reference_active_schedule_carryover_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_active_schedule_carryover_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control_run.json",
+      "sha256": "cdcac6daf6eadfa142cdfebb92236863192dbf700d5e917ca4d905cf5531b2b3"
+    },
+    {
+      "artifact_role": "single_route_b_reference_corridor_peer_flux_then_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry-checkpoint-00000000.json",
+      "sha256": "d89f5e93db417f8b03112269f2fd4c814d00fc5defff8e52173cd26d5982be72"
+    },
+    {
+      "artifact_role": "single_route_b_reference_corridor_peer_flux_then_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry-checkpoint-00000001.json",
+      "sha256": "44ba20622f444aa56d63e01918a6b1d015ceee9ab3461aacc024c2374578ff76"
+    },
+    {
+      "artifact_role": "single_route_b_reference_corridor_peer_flux_then_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry_events.jsonl",
+      "sha256": "9da66d8ba0d053333b9cbbcabb4920deec80633bb2a3b1b5b71319066d739b3c"
+    },
+    {
+      "artifact_role": "single_route_b_reference_corridor_peer_flux_then_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry_final_snapshot.json",
+      "sha256": "1ddfdc5b0aec00c8eb7a0ea9127e265569e2146baa7cc2af82000409baf7326b"
+    },
+    {
+      "artifact_role": "single_route_b_reference_corridor_peer_flux_then_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_corridor_peer_flux_then_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry_run.json",
+      "sha256": "d369a9512ce4a67e323449f7f838dd3df819bc9bf937ab7e4c2f3bb5cc3269e0"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_boundary_reentry_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry-checkpoint-00000000.json",
+      "sha256": "b31e0719518dafeffcdacea279b5c48f7347dbea394bd40af8b5c837468b5243"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_boundary_reentry_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry-checkpoint-00000001.json",
+      "sha256": "9a16f7cd5e355438336f751923e43dbb19a646b9d9b0ffabb41f0d1b1257186b"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_boundary_reentry_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry_events.jsonl",
+      "sha256": "2f109f5e25751054157ddf39dc121abd81bd7233f568632f48f4f9e674a10e5f"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_boundary_reentry_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry_final_snapshot.json",
+      "sha256": "bba6e3a28424536d0fd0bd0a532584326414decbd32da15aad6c89c16f3a72c5"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_boundary_reentry_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_delayed_boundary_reentry_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry_run.json",
+      "sha256": "f1abeaf00a7b7999473174d2c85fa480faa8bf5938885cddc6b19e823652e407"
+    },
+    {
+      "artifact_role": "single_route_b_reference_label_swap_peer_reentry_control_initial_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control-checkpoint-00000000.json",
+      "sha256": "7110d7011b13d4e57c50489192e6a2f26109d735c8b82415a382f880094e8067"
+    },
+    {
+      "artifact_role": "single_route_b_reference_label_swap_peer_reentry_control_final_checkpoint",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control-checkpoint-00000001.json",
+      "sha256": "ebeb733bb28462a8b50e5e1fafbe6afbc3d389073be066f4a7c56b3f81c3624c"
+    },
+    {
+      "artifact_role": "single_route_b_reference_label_swap_peer_reentry_control_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control_events.jsonl",
+      "sha256": "9a957d9df38053024a260a2b0dab64e85bb2596b40088f88828612edeb22a646"
+    },
+    {
+      "artifact_role": "single_route_b_reference_label_swap_peer_reentry_control_final_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control_final_snapshot.json",
+      "sha256": "413b653b803a3eaf3723fd03b99026a3e841c121de0cef47eaa370b7d438016d"
+    },
+    {
+      "artifact_role": "single_route_b_reference_label_swap_peer_reentry_control_loaded_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control_loaded_post_snapshot.json",
+      "sha256": "d04973dc6175c5e346799acc2922a0fcd7d376f3d4b4595710af7d99e581f557"
+    },
+    {
+      "artifact_role": "single_route_b_reference_label_swap_peer_reentry_control_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control_run.json",
+      "sha256": "12cf2beb021c9302daadeb3db04596fe8bbeef0f05832411243d4807ab348230"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i5_passed",
+      "detail": "accepted_replay_backed_su3_candidates_pending_i7_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5a_passed",
+      "detail": "accepted_replay_stress_limited_su3_candidates_pending_i7_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5b_passed",
+      "detail": "accepted_consumptive_readout_boundary_no_nonconsumptive_durability",
+      "passed": true
+    },
+    {
+      "check_id": "i5_su3_candidate_count",
+      "detail": [
+        "n22_i5_row_i4_minimal_route_b",
+        "n22_i5_row_dose_08_i4_reference",
+        "n22_i5_row_dose_14_stronger_bounded",
+        "n22_i5_row_single_route_b_reference",
+        "n22_i5_row_complementary_split_route_b_adjacent"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i5a_rows_cover_i5_rows",
+      "detail": [
+        "n22_i5_row_i4_minimal_route_b",
+        "n22_i5_row_dose_08_i4_reference",
+        "n22_i5_row_dose_14_stronger_bounded",
+        "n22_i5_row_single_route_b_reference",
+        "n22_i5_row_complementary_split_route_b_adjacent"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "i5b_rows_cover_i5_rows",
+      "detail": [
+        "n22_i5_row_i4_minimal_route_b",
+        "n22_i5_row_dose_08_i4_reference",
+        "n22_i5_row_dose_14_stronger_bounded",
+        "n22_i5_row_single_route_b_reference",
+        "n22_i5_row_complementary_split_route_b_adjacent"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "thresholds_declared_before_use",
+      "detail": {
+        "boundary_active_degree_floor": 9,
+        "coherence_floor": 9.85,
+        "consumes_i5a_depletion_boundary": true,
+        "consumes_i5b_consumptive_readout_boundary": true,
+        "control_contexts": [
+          "label_swap_peer_reentry_control",
+          "active_schedule_carryover_control"
+        ],
+        "declared_before_use": true,
+        "inherits_i5_threshold_policy": true,
+        "max_budget_error": 1e-09,
+        "mild_peer_flux_amount": 0.01,
+        "min_transfer_delta_persistence_ratio": 0.45,
+        "min_transfer_target_over_peer_margin": 0.03,
+        "positive_transfer_contexts": [
+          "delayed_boundary_reentry",
+          "corridor_peer_flux_then_reentry"
+        ],
+        "reentry_packet_amount": 0.04,
+        "su6_or_stronger_allowed": false,
+        "support_floor": 9.85,
+        "threshold_record_id": "n22_i6_transfer_reentry_thresholds"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": 121,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": 121,
+      "passed": true
+    },
+    {
+      "check_id": "non_narrow_rows_positive_transfer_contexts_passed",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "narrow_complementary_row_demoted_without_overclaim",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_rows_controls_failed_closed",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "repeated_boundary_preserved_for_all_rows",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "consumptive_boundary_preserved_for_all_rows",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "transfer_readout_expression_subset_recorded",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "narrow_complementary_row_tracked",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_claims_still_blocked",
+      "detail": [
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_i4_minimal_route_b",
+          "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+          "source_iteration": "I4",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_08_i4_reference",
+          "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_dose_14_stronger_bounded",
+          "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+          "source_iteration": "I4-A",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+          "narrow_margin_candidate": false,
+          "positive_transfer_contexts_demoted": [],
+          "positive_transfer_contexts_passed": true,
+          "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_single_route_b_reference",
+          "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": true
+        },
+        {
+          "consumptive_readout_boundary_preserved": true,
+          "control_contexts_failed_closed": true,
+          "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+          "narrow_margin_candidate": true,
+          "positive_transfer_contexts_demoted": [
+            "delayed_boundary_reentry",
+            "corridor_peer_flux_then_reentry"
+          ],
+          "positive_transfer_contexts_passed": false,
+          "provisional_su_ladder_rung": "demoted_before_SU5",
+          "repeated_reentry_depletion_boundary_preserved": true,
+          "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+          "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+          "source_iteration": "I4-B",
+          "transfer_readout_expression": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_flags_all_false",
+      "detail": "all transfer rows",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": "relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_transfer_reentry_probe.py",
+  "experiment": "N22",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "I6 supports only transfer/readout expression of consumptive SU3-limited rows pending I7 controls. It does not support SU5, SU6, final N22, the N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation.",
+    "short_read": "I6 turns the I5/I5-A replay-backed route_b susceptibility signal into local transfer/readout expression for four rows, but I5-B prevents promotion to SU5 because the readout is consumptive rather than non-consumptive durable geometry. The narrow complementary split row still demotes on target-over-peer separation.",
+    "what_changed_from_i5a": "I5-A showed stress-limited SU3 preservation and a repeated re-entry depletion boundary. I6 consumes that boundary, then asks whether the same source-current route_b delta is expressed through declared later re-entry contexts rather than only clean replay. The positive contexts are delayed boundary re-entry and corridor peer-flux followed by route_b re-entry. The single route and bounded-dose rows express the readout, but I5-B shows that repeated readout consumes the residual below the non-consumptive floor. The complementary split row is demoted because its adjacent-path component prevents a route_b-specific transfer margin."
+  },
+  "iteration": "6",
+  "iteration6_boundary": {
+    "agency_supported": false,
+    "choice_supported": false,
+    "control_context_count_per_row": 2,
+    "demoted_before_su5_count": 1,
+    "demoted_rows": [
+      "n22_i6_row_complementary_split_route_b_adjacent"
+    ],
+    "final_n22_supported": false,
+    "n21_nd6_bridge_status": "not_supported",
+    "n22_closeout_ladder_rung_assigned": false,
+    "narrow_margin_candidate_count": 1,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "positive_transfer_context_count_per_row": 2,
+    "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+    "ready_for_iteration_7_control_matrix": true,
+    "repeated_reentry_depletion_boundary_count": 5,
+    "semantic_learning_supported": false,
+    "sentience_supported": false,
+    "source_i5_su3_candidate_count": 5,
+    "source_i5a_stress_limited_candidate_count": 5,
+    "source_i5b_consumptive_boundary_count": 5,
+    "su5_blocked_by_i5b_consumptive_readout_count": 4,
+    "su5_supported": false,
+    "su6_or_stronger_supported": false,
+    "transfer_readout_expression_count": 4,
+    "transfer_reentry_su5_candidate_count": 0
+  },
+  "output_digest": "00263f30abb5cfcf224bd7b61d72ffae31472efb4e334f707a2de1ff9854da95",
+  "purpose": "transfer and later re-entry probe over I5/I5-A SU3 candidates",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_replay_backed_su3_candidates_pending_i7_controls",
+      "output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_durability_replay_probe.json",
+      "sha256": "fabc510447d3a98c1545c1a2b4c00acb79112c1aec9c47f015af9b4694ba3af0",
+      "source_role": "n22_i5_durability_replay_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_stress_limited_su3_candidates_pending_i7_controls",
+      "output_digest": "2602c7b3fb99b19521b5a72f0615f0ff401aa2cb532674df7eeae2875c48ff27",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_replay_durability_stress_probe.json",
+      "sha256": "c7da8eb8349a6f6bc9331b309fffe623269ddbe840b516e9d7d7d042b050df8d",
+      "source_role": "n22_i5a_replay_durability_stress_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_consumptive_readout_boundary_no_nonconsumptive_durability",
+      "output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe.json",
+      "sha256": "4b303bac0c24f2fef0f5b77201ee3e5bde9c8e1081ff38201b1685fc455def88",
+      "source_role": "n22_i5b_residual_nonconsumptive_durability_probe",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "transfer_policy": {
+    "control_contexts": [
+      "label_swap_peer_reentry_control",
+      "active_schedule_carryover_control"
+    ],
+    "full_i7_control_matrix_run": false,
+    "i5b_consumptive_readout_boundary_consumed_as_su5_blocker": true,
+    "positive_transfer_contexts": [
+      "delayed_boundary_reentry",
+      "corridor_peer_flux_then_reentry"
+    ],
+    "repeated_reentry_depletion_boundary_consumed_as_blocker": true,
+    "su6_or_stronger_allowed": false,
+    "threshold_policy_changed_from_i5": false
+  },
+  "transfer_rows": [
+    {
+      "claim_ceiling": "transfer/readout expression of a consumptive SU3-limited route_b state pending I7 controls; I5-B blocks non-consumptive durable SU4 and transfer SU5; no SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "consumptive_readout_boundary_preserved": true,
+      "control_context_count": 2,
+      "control_contexts_failed_closed": true,
+      "durable_geometry_modification_supported": false,
+      "final_n22_supported": false,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_available": false,
+      "output_digest": "d4945128b8547758492110e90c1f6c908c48c6d4182f16ad4acfa61ef510b995",
+      "positive_transfer_context_count": 2,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_decision": "partial",
+      "row_id": "n22_i6_row_i4_minimal_route_b",
+      "source_candidate_row_id": "n22_i4_row_01_minimal_route_b_susceptibility_update_probe",
+      "source_i5_output_digest": "9bee91dba55414c1be3b63dd299b9d3c2629743adf2796cbf4da911a3db769ae",
+      "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_i4_minimal_route_b",
+      "source_i5b_output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "source_i5b_row_id": "n22_i5b_row_i4_minimal_route_b",
+      "source_iteration": "I4",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_minimal_susceptibility_update_probe_artifacts/target_route_b_prior_post_interaction_snapshot.json",
+      "source_values": {
+        "pre_peer_route_node_coherence": 9.0,
+        "pre_target_route_node_coherence": 13.0,
+        "source_reentry_route_delta_from_pre": 0.040000000000000924,
+        "source_target_route_delta": 0.08000000000000007
+      },
+      "su5_blocked_by_i5b_consumptive_readout": true,
+      "su5_candidate_supported_before_i5b": true,
+      "su5_supported": false,
+      "su6_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "transfer_readout_expression": true,
+      "transfer_results": [
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "808aff9844fc9ad2c8230c5bd0aa2d02371fb458568dedc43b6bc8a2f562e095",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_delayed_boundary_reentry_run.json",
+          "transfer_context": "delayed_boundary_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.10999999999999943,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "d08bc2991d9b169c8bd917ec4ea16e9ae8dc0339a942713b9b818276ad4aabc4",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.040000000000000924,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "delayed_boundary_reentry"
+          }
+        },
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "e0260e518f37c2c69ec808cc959f1c955d71164df26714d9bfecd49f0e88f6de",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_corridor_peer_flux_then_reentry_run.json",
+          "transfer_context": "corridor_peer_flux_then_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.09999999999999964,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "12f24ab9ce2c3df1d6b77e35f185feae154a381ace86a723ec23dff9cb2ff6ad",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.009999999999999787,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.030000000000001137,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "corridor_peer_flux_then_reentry"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "cbfbe84662fbaf7e8a2ce003c3b1ec00068489606cad4b46986c676176372a08",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_label_swap_peer_reentry_control_run.json",
+          "transfer_context": "label_swap_peer_reentry_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.10999999999999943,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "149bfb8fa88b33bdbb572298ddee3f9b711fc94ddcf3c6d3487bb081a281f8bf",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": -0.03999999999999915,
+            "peer_reentry_event_present": true,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.11999999999999922,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "label_swap_peer_reentry_control"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "3bcdb4a91c3deeb860d808d5d0f3bf37e23e4c57be64361ebce96d3132f9a614",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/i4_minimal_route_b_active_schedule_carryover_control_run.json",
+          "transfer_context": "active_schedule_carryover_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": false,
+            "boundary_margin": 0,
+            "budget_error": 0.0,
+            "coherence_margin": 0.07000000000000028,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "6073f8d453a90f239bfedd9a65ef8e3672ef9c4db0ea68e33c8829c62e5ddc51",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 1,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.08000000000000007,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "active_schedule_carryover_control"
+          }
+        }
+      ],
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "transfer/readout expression of a consumptive SU3-limited route_b state pending I7 controls; I5-B blocks non-consumptive durable SU4 and transfer SU5; no SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "consumptive_readout_boundary_preserved": true,
+      "control_context_count": 2,
+      "control_contexts_failed_closed": true,
+      "durable_geometry_modification_supported": false,
+      "final_n22_supported": false,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_available": false,
+      "output_digest": "2d4c72aa0483379acdfea4e72d460946f56b33def86441c029f89b5c119144f1",
+      "positive_transfer_context_count": 2,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_decision": "partial",
+      "row_id": "n22_i6_row_dose_08_i4_reference",
+      "source_candidate_row_id": "n22_i4a_row_dose_08_i4_reference",
+      "source_i5_output_digest": "bfc7856e5685fab47383f3e03e0311f6f140841667a5f36a75b7e6f2b5cd5d6d",
+      "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_dose_08_i4_reference",
+      "source_i5b_output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "source_i5b_row_id": "n22_i5b_row_dose_08_i4_reference",
+      "source_iteration": "I4-A",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_dose_boundary_probe_artifacts/dose_08_i4_reference_target_route_b_post_interaction_snapshot.json",
+      "source_values": {
+        "pre_peer_route_node_coherence": 9.0,
+        "pre_target_route_node_coherence": 13.0,
+        "source_reentry_route_delta_from_pre": 0.040000000000000924,
+        "source_target_route_delta": 0.08000000000000007
+      },
+      "su5_blocked_by_i5b_consumptive_readout": true,
+      "su5_candidate_supported_before_i5b": true,
+      "su5_supported": false,
+      "su6_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "transfer_readout_expression": true,
+      "transfer_results": [
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "a708fd1cc05e9e2ea0d8ec6299495c9c45c69913edb21b552464309181355b13",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_delayed_boundary_reentry_run.json",
+          "transfer_context": "delayed_boundary_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.10999999999999943,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "d08bc2991d9b169c8bd917ec4ea16e9ae8dc0339a942713b9b818276ad4aabc4",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.040000000000000924,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "delayed_boundary_reentry"
+          }
+        },
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "82990a1c944306915f830e313b4bab3ea899fbf5220902e4cbcc159027c5aa3a",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_corridor_peer_flux_then_reentry_run.json",
+          "transfer_context": "corridor_peer_flux_then_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.09999999999999964,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "12f24ab9ce2c3df1d6b77e35f185feae154a381ace86a723ec23dff9cb2ff6ad",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.009999999999999787,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.030000000000001137,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "corridor_peer_flux_then_reentry"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "439cb3175e25073c31b987d2ff44144785322119903d987b21eb3840c2114277",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_label_swap_peer_reentry_control_run.json",
+          "transfer_context": "label_swap_peer_reentry_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.10999999999999943,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "149bfb8fa88b33bdbb572298ddee3f9b711fc94ddcf3c6d3487bb081a281f8bf",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": -0.03999999999999915,
+            "peer_reentry_event_present": true,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.11999999999999922,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "label_swap_peer_reentry_control"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "0a40100d52808dd326950aede5662ba59caf027ff9ac4f54b60d57aaa42c06cc",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_08_i4_reference_active_schedule_carryover_control_run.json",
+          "transfer_context": "active_schedule_carryover_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": false,
+            "boundary_margin": 0,
+            "budget_error": 0.0,
+            "coherence_margin": 0.07000000000000028,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "6073f8d453a90f239bfedd9a65ef8e3672ef9c4db0ea68e33c8829c62e5ddc51",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 1,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.08000000000000007,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "active_schedule_carryover_control"
+          }
+        }
+      ],
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "transfer/readout expression of a consumptive SU3-limited route_b state pending I7 controls; I5-B blocks non-consumptive durable SU4 and transfer SU5; no SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "consumptive_readout_boundary_preserved": true,
+      "control_context_count": 2,
+      "control_contexts_failed_closed": true,
+      "durable_geometry_modification_supported": false,
+      "final_n22_supported": false,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_available": false,
+      "output_digest": "38fc437097cb1718a75119b3598786451ecef91d38dc8aec86bdc0815fae1700",
+      "positive_transfer_context_count": 2,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_decision": "partial",
+      "row_id": "n22_i6_row_dose_14_stronger_bounded",
+      "source_candidate_row_id": "n22_i4a_row_dose_14_stronger_bounded",
+      "source_i5_output_digest": "bfc7856e5685fab47383f3e03e0311f6f140841667a5f36a75b7e6f2b5cd5d6d",
+      "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_dose_14_stronger_bounded",
+      "source_i5b_output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "source_i5b_row_id": "n22_i5b_row_dose_14_stronger_bounded",
+      "source_iteration": "I4-A",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_susceptibility_dose_boundary_probe_artifacts/dose_14_stronger_bounded_target_route_b_post_interaction_snapshot.json",
+      "source_values": {
+        "pre_peer_route_node_coherence": 9.0,
+        "pre_target_route_node_coherence": 13.0,
+        "source_reentry_route_delta_from_pre": 0.10000000000000142,
+        "source_target_route_delta": 0.14000000000000057
+      },
+      "su5_blocked_by_i5b_consumptive_readout": true,
+      "su5_candidate_supported_before_i5b": true,
+      "su5_supported": false,
+      "su6_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "transfer_readout_expression": true,
+      "transfer_results": [
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "b77d3040e51cd7333d0c85eb6651040bdcd14dd355ceede08bf68c5fda168d4f",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_delayed_boundary_reentry_run.json",
+          "transfer_context": "delayed_boundary_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.049999999999998934,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.7142857142857215,
+            "gate_digest": "71cf346352ca3174aec3c7393aaf05a5ce9e9e07ec1cc6089fc8c74a0b3ab96e",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.10000000000000142,
+            "target_reentry_delta_from_pre": 0.10000000000000142,
+            "target_reentry_event_present": true,
+            "transfer_context": "delayed_boundary_reentry"
+          }
+        },
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "1c9a1d1cc68a3a0ee5904afaca711c79afc5a787226a498624b40d8c7295b574",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_corridor_peer_flux_then_reentry_run.json",
+          "transfer_context": "corridor_peer_flux_then_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.03999999999999915,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.7142857142857215,
+            "gate_digest": "9bf6a5a3f3326e13619b2ee0487fb267a46f0925b5d6784747c0a49cd03af760",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.009999999999999787,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.09000000000000163,
+            "target_reentry_delta_from_pre": 0.10000000000000142,
+            "target_reentry_event_present": true,
+            "transfer_context": "corridor_peer_flux_then_reentry"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "28e7ff52e70efffa56a90823390476b28971aa078556d6122f3f42a574ece9f2",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_label_swap_peer_reentry_control_run.json",
+          "transfer_context": "label_swap_peer_reentry_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.049999999999998934,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "55279dd43027a4786f9cdf73517d3004784a8b15ebe9f37e6e0edb802e2074a4",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": -0.03999999999999915,
+            "peer_reentry_event_present": true,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.17999999999999972,
+            "target_reentry_delta_from_pre": 0.14000000000000057,
+            "target_reentry_event_present": false,
+            "transfer_context": "label_swap_peer_reentry_control"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "c438f8e415df9f5923036223bf95d0be5322be9cb660db767c935bd84347c2b3",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/dose_14_stronger_bounded_active_schedule_carryover_control_run.json",
+          "transfer_context": "active_schedule_carryover_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": false,
+            "boundary_margin": 0,
+            "budget_error": 0.0,
+            "coherence_margin": 0.009999999999999787,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "cd38c336503ca834b5aaffd4359be0389b4f7e366069315de4337d1bd7e6d2bb",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 1,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.14000000000000057,
+            "target_reentry_delta_from_pre": 0.14000000000000057,
+            "target_reentry_event_present": false,
+            "transfer_context": "active_schedule_carryover_control"
+          }
+        }
+      ],
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "transfer/readout expression of a consumptive SU3-limited route_b state pending I7 controls; I5-B blocks non-consumptive durable SU4 and transfer SU5; no SU6, final N22, N21 ND6 bridge, semantic learning, choice, agency, native support, sentience, Phase 8, or ant-ecology implementation",
+      "consumptive_readout_boundary_preserved": true,
+      "control_context_count": 2,
+      "control_contexts_failed_closed": true,
+      "durable_geometry_modification_supported": false,
+      "final_n22_supported": false,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": false,
+      "non_consumptive_durability_available": false,
+      "output_digest": "855d62d2413d943637701dbd8bc0ec45715a3412cd1a3eca275ae6a0043eb34b",
+      "positive_transfer_context_count": 2,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_decision": "partial",
+      "row_id": "n22_i6_row_single_route_b_reference",
+      "source_candidate_row_id": "n22_i4b_row_single_route_b_reference",
+      "source_i5_output_digest": "4ac32cc56502ebc9f4723f171fdc40bb2b059e6a5c167f0d1e837b873064f266",
+      "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_single_route_b_reference",
+      "source_i5b_output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "source_i5b_row_id": "n22_i5b_row_single_route_b_reference",
+      "source_iteration": "I4-B",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/single_route_b_reference_target_post_interaction_snapshot.json",
+      "source_values": {
+        "pre_peer_route_node_coherence": 9.0,
+        "pre_target_route_node_coherence": 13.0,
+        "source_reentry_route_delta_from_pre": 0.040000000000000924,
+        "source_target_route_delta": 0.08000000000000007
+      },
+      "su5_blocked_by_i5b_consumptive_readout": true,
+      "su5_candidate_supported_before_i5b": true,
+      "su5_supported": false,
+      "su6_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "transfer_readout_expression": true,
+      "transfer_results": [
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "e85b9c27eff3027786dd853db738af74d92554b0255b6e0d02314fa29ca57c9e",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_delayed_boundary_reentry_run.json",
+          "transfer_context": "delayed_boundary_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.10999999999999943,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "d08bc2991d9b169c8bd917ec4ea16e9ae8dc0339a942713b9b818276ad4aabc4",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.040000000000000924,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "delayed_boundary_reentry"
+          }
+        },
+        {
+          "status": "passed",
+          "transfer_artifact_digest": "aa5248cfa39e54dc5205e6b64696622aec8723779f07cb50e2d6c67a2fb479e4",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_corridor_peer_flux_then_reentry_run.json",
+          "transfer_context": "corridor_peer_flux_then_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.09999999999999964,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "12f24ab9ce2c3df1d6b77e35f185feae154a381ace86a723ec23dff9cb2ff6ad",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.009999999999999787,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": true,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.030000000000001137,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "corridor_peer_flux_then_reentry"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "44443cbe1dda759ea6acbb33de3d4308e89333439c13cced28962f533e828502",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_label_swap_peer_reentry_control_run.json",
+          "transfer_context": "label_swap_peer_reentry_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.10999999999999943,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "149bfb8fa88b33bdbb572298ddee3f9b711fc94ddcf3c6d3487bb081a281f8bf",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": -0.03999999999999915,
+            "peer_reentry_event_present": true,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.11999999999999922,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "label_swap_peer_reentry_control"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "99002b37c1f78871e33caf7c77348a02ecc6a2428fa606be2cae5ac2d2ba2b38",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/single_route_b_reference_active_schedule_carryover_control_run.json",
+          "transfer_context": "active_schedule_carryover_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": false,
+            "boundary_margin": 0,
+            "budget_error": 0.0,
+            "coherence_margin": 0.07000000000000028,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "6073f8d453a90f239bfedd9a65ef8e3672ef9c4db0ea68e33c8829c62e5ddc51",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 1,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.08000000000000007,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "active_schedule_carryover_control"
+          }
+        }
+      ],
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "claim_ceiling": "transfer/re-entry probe demoted before SU5; no susceptibility support",
+      "consumptive_readout_boundary_preserved": true,
+      "control_context_count": 2,
+      "control_contexts_failed_closed": true,
+      "durable_geometry_modification_supported": false,
+      "final_n22_supported": false,
+      "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+      "n21_nd6_bridge_status": "not_supported",
+      "narrow_margin_candidate": true,
+      "non_consumptive_durability_available": false,
+      "output_digest": "d0eb10e15221193ba225f628d735e012327a60a6c9889f2353f0eb05cc335e56",
+      "positive_transfer_context_count": 2,
+      "positive_transfer_contexts_demoted": [
+        "delayed_boundary_reentry",
+        "corridor_peer_flux_then_reentry"
+      ],
+      "positive_transfer_contexts_passed": false,
+      "provisional_su_ladder_rung": "demoted_before_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_decision": "blocked",
+      "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+      "source_candidate_row_id": "n22_i4b_row_complementary_split_route_b_adjacent",
+      "source_i5_output_digest": "4ac32cc56502ebc9f4723f171fdc40bb2b059e6a5c167f0d1e837b873064f266",
+      "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+      "source_i5a_output_digest": "f46306e4550bf4e172a4dae074ccba3096cfdd2e65730fe68c0858b1fee41177",
+      "source_i5a_row_id": "n22_i5a_row_complementary_split_route_b_adjacent",
+      "source_i5b_output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "source_i5b_row_id": "n22_i5b_row_complementary_split_route_b_adjacent",
+      "source_iteration": "I4-B",
+      "source_post_interaction_snapshot_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_multipath_susceptibility_shape_probe_artifacts/complementary_split_route_b_adjacent_target_post_interaction_snapshot.json",
+      "source_values": {
+        "pre_peer_route_node_coherence": 9.0,
+        "pre_target_route_node_coherence": 13.0,
+        "source_reentry_route_delta_from_pre": 0.040000000000000924,
+        "source_target_route_delta": 0.08000000000000007
+      },
+      "su5_blocked_by_i5b_consumptive_readout": false,
+      "su5_candidate_supported_before_i5b": false,
+      "su5_supported": false,
+      "su6_or_stronger_supported": false,
+      "susceptibility_update_claim_allowed": false,
+      "transfer_readout_expression": false,
+      "transfer_results": [
+        {
+          "status": "demoted",
+          "transfer_artifact_digest": "1575b5c4797d3ea41ee73119cec5455c981d91ae5773a30016503e13523fc3d2",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_delayed_boundary_reentry_run.json",
+          "transfer_context": "delayed_boundary_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.049999999999998934,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "9eccda0b4b5980acbba3a2c7d412f90ac81b45fad691dc037bd964643e04a7b2",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0600000000000005,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": -0.019999999999999574,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "delayed_boundary_reentry"
+          }
+        },
+        {
+          "status": "demoted",
+          "transfer_artifact_digest": "ba7159d5b1f2204b6e4942ce5126d77bc0f3d46787e69ecf933b39efefa6e858",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_corridor_peer_flux_then_reentry_run.json",
+          "transfer_context": "corridor_peer_flux_then_reentry",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.03999999999999915,
+            "control_failed_closed": false,
+            "delta_persistence_ratio_against_source": 0.5000000000000111,
+            "gate_digest": "c4dcd6d7ebdbddbc5d13068d66380d73f6b3b92b436b00920b4e6b808fe915f0",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.07000000000000028,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": -0.02999999999999936,
+            "target_reentry_delta_from_pre": 0.040000000000000924,
+            "target_reentry_event_present": true,
+            "transfer_context": "corridor_peer_flux_then_reentry"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "6726c9496e4d6a99e11aae6131e265f678eb1da987432e4d4e478d126b12d715",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_label_swap_peer_reentry_control_run.json",
+          "transfer_context": "label_swap_peer_reentry_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": true,
+            "boundary_margin": 0,
+            "budget_error": 1.4210854715202004e-14,
+            "coherence_margin": 0.049999999999998934,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "12026b383ad5d978eecd91fc926f7189712a807aaf1cc07ca1a3bfdcc8a91136",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.02000000000000135,
+            "peer_reentry_event_present": true,
+            "positive_context_passed": false,
+            "queued_packet_count": 0,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.05999999999999872,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "label_swap_peer_reentry_control"
+          }
+        },
+        {
+          "status": "failed_closed",
+          "transfer_artifact_digest": "2aa169d465dc98b4f23168af68d5d2a3db1ddda243a16e24b76acc38f1e07f91",
+          "transfer_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_transfer_reentry_probe_artifacts/complementary_split_route_b_adjacent_active_schedule_carryover_control_run.json",
+          "transfer_context": "active_schedule_carryover_control",
+          "transfer_gate": {
+            "active_reinforcement_queue_empty_before_reentry": false,
+            "boundary_margin": 0,
+            "budget_error": 0.0,
+            "coherence_margin": 0.009999999999999787,
+            "control_failed_closed": true,
+            "delta_persistence_ratio_against_source": 1.0,
+            "gate_digest": "3cd92f33f322af0a1656482e4a3ed8bfda759e3a67be4e5cc36e082180a56219",
+            "in_flight_packet_total": 0.0,
+            "initial_queue_empty": true,
+            "peer_reentry_delta_from_pre": 0.0600000000000005,
+            "peer_reentry_event_present": false,
+            "positive_context_passed": false,
+            "queued_packet_count": 1,
+            "support_margin": 0.15000000000000036,
+            "target_over_peer_margin": 0.019999999999999574,
+            "target_reentry_delta_from_pre": 0.08000000000000007,
+            "target_reentry_event_present": false,
+            "transfer_context": "active_schedule_carryover_control"
+          }
+        }
+      ],
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "transfer_summary": [
+    {
+      "consumptive_readout_boundary_preserved": true,
+      "control_contexts_failed_closed": true,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_id": "n22_i6_row_i4_minimal_route_b",
+      "source_i5_row_id": "n22_i5_row_i4_minimal_route_b",
+      "source_iteration": "I4",
+      "transfer_readout_expression": true
+    },
+    {
+      "consumptive_readout_boundary_preserved": true,
+      "control_contexts_failed_closed": true,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_id": "n22_i6_row_dose_08_i4_reference",
+      "source_i5_row_id": "n22_i5_row_dose_08_i4_reference",
+      "source_iteration": "I4-A",
+      "transfer_readout_expression": true
+    },
+    {
+      "consumptive_readout_boundary_preserved": true,
+      "control_contexts_failed_closed": true,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_id": "n22_i6_row_dose_14_stronger_bounded",
+      "source_i5_row_id": "n22_i5_row_dose_14_stronger_bounded",
+      "source_iteration": "I4-A",
+      "transfer_readout_expression": true
+    },
+    {
+      "consumptive_readout_boundary_preserved": true,
+      "control_contexts_failed_closed": true,
+      "i6_consumable_role": "transfer_readout_expression_boundary_pending_I7_controls",
+      "narrow_margin_candidate": false,
+      "positive_transfer_contexts_demoted": [],
+      "positive_transfer_contexts_passed": true,
+      "provisional_su_ladder_rung": "SU3_transfer_readout_expression_no_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_id": "n22_i6_row_single_route_b_reference",
+      "source_i5_row_id": "n22_i5_row_single_route_b_reference",
+      "source_iteration": "I4-B",
+      "transfer_readout_expression": true
+    },
+    {
+      "consumptive_readout_boundary_preserved": true,
+      "control_contexts_failed_closed": true,
+      "i6_consumable_role": "transfer_reentry_failed_or_demoted",
+      "narrow_margin_candidate": true,
+      "positive_transfer_contexts_demoted": [
+        "delayed_boundary_reentry",
+        "corridor_peer_flux_then_reentry"
+      ],
+      "positive_transfer_contexts_passed": false,
+      "provisional_su_ladder_rung": "demoted_before_SU5",
+      "repeated_reentry_depletion_boundary_preserved": true,
+      "row_id": "n22_i6_row_complementary_split_route_b_adjacent",
+      "source_i5_row_id": "n22_i5_row_complementary_split_route_b_adjacent",
+      "source_iteration": "I4-B",
+      "transfer_readout_expression": false
+    }
+  ]
+}

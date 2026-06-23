@@ -1,0 +1,14 @@
+{
+  "boundary_active_degree_floor": 9,
+  "coherence_floor": 9.85,
+  "consumes_i5a_repeated_reentry_boundary": true,
+  "declared_before_use": true,
+  "durable_su4_or_stronger_allowed": false,
+  "inherits_i5_threshold_policy": true,
+  "max_budget_error": 1e-09,
+  "max_ratio_loss_after_second_readout": 0.1,
+  "min_residual_delta_persistence_ratio": 0.45,
+  "reentry_packet_amount": 0.04,
+  "support_floor": 9.85,
+  "threshold_record_id": "n22_i5b_residual_nonconsumptive_thresholds"
+}

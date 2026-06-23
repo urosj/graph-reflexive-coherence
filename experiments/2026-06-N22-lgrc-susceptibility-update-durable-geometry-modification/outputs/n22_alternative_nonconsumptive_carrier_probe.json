@@ -1,0 +1,1307 @@
+{
+  "acceptance_state": "accepted_producer_mediated_non_consumptive_carrier_candidate_native_gap_preserved",
+  "artifact_id": "n22_i5c_alternative_nonconsumptive_carrier_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "band_buffered_return_carrier_first_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_first_readback_snapshot.json",
+      "sha256": "0e1dcab84ad97149eb9b939671228da09333016a235e08745ecc7cd0ba2c02ab"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_packet_events.jsonl",
+      "sha256": "e22581f37cfa16e6889ea240101c3527ebb974db691c5ba89c8f68898e1c4a0f"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_peer_post_snapshot.json",
+      "sha256": "8a1f3d88d33cedacf6b977ee051e8812d7eb55d88a1d0daf0d670ef50e5fd740"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_peer_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_peer_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_peer_readback_snapshot.json",
+      "sha256": "26fcac35be7b8bc012decf6aabc592f6d66dfbe5ab8d12438c4c1d19fd17a7f5"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_run.json",
+      "sha256": "fef986b527512d0dc87ef7143cb60786d68717dc03cd2700837a6a8cdac068ac"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_second_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_second_readback_snapshot.json",
+      "sha256": "aa974b44deaf8096888055d118ee14506477db979725e41205775f8d83a69ed1"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_target_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_target_post_snapshot.json",
+      "sha256": "5c242a034393c97cb05425a05e09bbd69bbe7a00896ccc4aa4c2569239132e1e"
+    },
+    {
+      "artifact_role": "band_buffered_return_carrier_target_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_target_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "runtime_config",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/n22_i5c_runtime_config.json",
+      "sha256": "b509828ca02d1565398e23d5c569cba398a5c1689b3592fec1951e85bec45108"
+    },
+    {
+      "artifact_role": "threshold_record",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/n22_i5c_thresholds_declared_before_use.json",
+      "sha256": "82f9d50ab0f64247934143a85584e61089422139257f5f78e351d069b309734c"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_first_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_first_readback_snapshot.json",
+      "sha256": "caea36fd831df0e358b75425d5ed2dee1894a6eac8ab0822aa72a9d38c646cfe"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_packet_events.jsonl",
+      "sha256": "ee937dbab2ec37f603f22264f8d8a6ca38970789d0032d10e997e715945ba18a"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_peer_post_snapshot.json",
+      "sha256": "add23fb94c9facccd27115b37135bb66209411939f0af8c935fced611a68c28a"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_peer_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_peer_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_peer_readback_snapshot.json",
+      "sha256": "f99450e22daccb54db702bb7c72305c674f0d8fd971c69adb6994bbb4aed2a79"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_run.json",
+      "sha256": "a6f1de1acf42896ed31eb9d376505df4731ea3a28dfb55536ea34c0312268ae2"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_second_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_second_readback_snapshot.json",
+      "sha256": "90173ac8106eb6cd6879c494563f559a91e6b8d7c4ab9f1e7e9535404e8f4d2a"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_target_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_target_post_snapshot.json",
+      "sha256": "330d85bc9185f600ca02f928df48c19ea04be2769be80758c470c7a09133373f"
+    },
+    {
+      "artifact_role": "neutral_reservoir_buffered_carrier_target_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_target_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "reduced_packet_readout_dose_boundary_first_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_first_readout_snapshot.json",
+      "sha256": "49532f08d4f228108764aa9c96b73152bfe8b4b0d1089d9efdd0f1b118bfedcc"
+    },
+    {
+      "artifact_role": "reduced_packet_readout_dose_boundary_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_packet_events.jsonl",
+      "sha256": "d689fc16f960f66d31e7ac9b7fc451a27a5bc42b37b5d71cefd5457a4a2bd782"
+    },
+    {
+      "artifact_role": "reduced_packet_readout_dose_boundary_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_post_snapshot.json",
+      "sha256": "af1fae59ca93334b05032156bcd6857bebde6dac46bdbc104733b97095d77d52"
+    },
+    {
+      "artifact_role": "reduced_packet_readout_dose_boundary_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "reduced_packet_readout_dose_boundary_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_run.json",
+      "sha256": "c68cb0e534df02188583b6d349555a38e84dd793f41e596fe2a6ad918d081bb5"
+    },
+    {
+      "artifact_role": "reduced_packet_readout_dose_boundary_second_readout_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_second_readout_snapshot.json",
+      "sha256": "9edf4b498b8c8cbeabf7a338115e3e23e4a338a9c7e44aa9802ef7a95537b5cd"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_first_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_first_readback_snapshot.json",
+      "sha256": "66f9101037c5744a34d395af6207f056d163d758a8229b6ee907a3319d0fba06"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_event_log",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_packet_events.jsonl",
+      "sha256": "8acfd74a125e4a987b8255e8cd9b40f3b7a9eadd6cab13ecb2a13a933e2da664"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_peer_post_snapshot.json",
+      "sha256": "d820885285918078911453c96335c717b708a1a364c680e8a31f428d3d0101a9"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_peer_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_peer_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_peer_readback_snapshot.json",
+      "sha256": "b8657811285a5a9830e18cde3be4630ce02338f593b338746afbd68a1ec9e079"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_run",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_run.json",
+      "sha256": "3d215c82979956cafed8ba9e34768cd66e924d4b52ab7c70f0dca5a88f8fda76"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_second_readback_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_second_readback_snapshot.json",
+      "sha256": "5a7abf50d63fc58ba97614c426d2ae29f714c05f33713c9b15ea4bfa1a8a72bb"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_target_post_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_target_post_snapshot.json",
+      "sha256": "8718f2f211356e2fef44188f8de2d57efeb467f3c4242bc3a57fd057aae9dbcc"
+    },
+    {
+      "artifact_role": "route_conductance_geometry_carrier_target_pre_snapshot",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_target_pre_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    }
+  ],
+  "carrier_policy": {
+    "existing_i6_replaced": false,
+    "i5b_replaced": false,
+    "native_route_conductance_memory_policy_available": false,
+    "positive_rows_are_producer_mediated": true,
+    "su5_or_su6_allowed": false,
+    "uses_previous_experiments_as_design_precedent_not_direct_support": true
+  },
+  "carrier_rows": [
+    {
+      "carrier_family": "route_conductance_geometry_carrier",
+      "carrier_gate": {
+        "budget_result": "preserved",
+        "carrier_loss_after_second_readback": 0.0,
+        "carrier_not_consumed_by_readback": true,
+        "coherence_floor_result": "preserved",
+        "peer_same_budget_target_edge_delta": 0.0,
+        "second_readback_delta": 0.17999999999999994,
+        "second_readback_ratio": 1.0,
+        "support_floor_result": "preserved",
+        "target_carrier_delta": 0.17999999999999994,
+        "target_over_peer_margin": 0.17999999999999994
+      },
+      "claim_ceiling": "producer-mediated non-consumptive carrier candidate pending I7 controls; not native conductance memory, semantic learning, agency, or native support",
+      "decision_scope": "producer_mediated_non_consumptive_carrier_candidate_pending_I7_controls",
+      "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_packet_events.jsonl",
+      "native_route_conductance_memory_policy_available": false,
+      "native_route_conductance_memory_supported": false,
+      "peer_update_record": {
+        "after": {
+          "base_conductance": 1.0,
+          "conductance": 99.0,
+          "edge_id": 1,
+          "flux_uv": -999.0,
+          "node_u": 0,
+          "node_v": 2,
+          "port_u": 2,
+          "port_v": 8
+        },
+        "before": {
+          "base_conductance": 1.0,
+          "conductance": 99.0,
+          "edge_id": 1,
+          "flux_uv": -999.0,
+          "node_u": 0,
+          "node_v": 2,
+          "port_u": 2,
+          "port_v": 8
+        },
+        "delta": 0.0,
+        "edge_id": 1,
+        "native_route_conductance_memory_policy_available": false,
+        "policy_id": "same_budget_peer_no_target_conductance_update",
+        "producer_mediated": true,
+        "run_role": "route_conductance_geometry_carrier",
+        "state_mutation_owner": "n22_iteration_5c_experiment_local_producer",
+        "update_digest": "30226846bf3c05c81ca91ffc5e8bf3b526a05f915178edcb17bbb5fcf8f50cf7"
+      },
+      "producer_residue": {
+        "blocked_relabels": [
+          "producer_conductance_update_as_native_learning",
+          "carrier_readback_as_semantic_choice",
+          "native_support_by_reservoir_label"
+        ],
+        "naturalization_debt": [
+          "native_route_conductance_memory_policy",
+          "native_non_consumptive_carrier_update_policy"
+        ],
+        "producer_mediated_fields": [
+          "target_edge_base_conductance_delta",
+          "target_edge_port_conductance_delta"
+        ]
+      },
+      "provisional_su_ladder_rung": "SU4_producer_mediated_non_consumptive_carrier_candidate_pending_I7",
+      "readback_records": {
+        "first": {
+          "after_state_signature_digest": "c07db7f77e53e88edca6a4e32c35247e6432d9d5016345dd99a6a921532697e3",
+          "before_state_signature_digest": "04d3a2a6f77ef8dc1e54a39ed45b22cf060bf6080ab37806704ca477a5d3521b",
+          "candidate_count": 1,
+          "column_h": [
+            -0.37119999999999953,
+            1.6400000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.37119999999999953,
+                1.6400000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-2-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.37119999999999953,
+              "min_abs_column_h_column": 1,
+              "phase": "first_carrier_readback",
+              "run_role": "route_conductance_geometry_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.37119999999999953,
+          "phase": "first_carrier_readback",
+          "readback_digest": "a85525e13936645713cb32fa1f3ca042b16c377cab7e654d8d7db5fb073e3ab5",
+          "state_mutated_by_readback": false
+        },
+        "peer": {
+          "after_state_signature_digest": "f34427991eec814fdeff5d1d8d44064b2161adb41c989943dc47029c6df5bace",
+          "before_state_signature_digest": "65aaa4b04a31fd9c18fb8b6854e6fc58b0c172531a3845d03c68d3bd27e43955",
+          "candidate_count": 1,
+          "column_h": [
+            -0.9799999999999995,
+            1.7200000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.9799999999999995,
+                1.7200000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-2-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.9799999999999995,
+              "min_abs_column_h_column": 1,
+              "phase": "peer_readback",
+              "run_role": "route_conductance_geometry_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.9799999999999995,
+          "phase": "peer_readback",
+          "readback_digest": "97aad6ca282d7033c0e423c21106d75299e2c5fa7bc3a3a763f9a29a13b90f95",
+          "state_mutated_by_readback": false
+        },
+        "second": {
+          "after_state_signature_digest": "a7d415049b11d4176358ddebedec7840d4e4a95134a9aa3720c98a4c57cf1fad",
+          "before_state_signature_digest": "b85a40d06c677e7c5c186c5c3031cf807eb111fb0b55b62633f5082e1f457b42",
+          "candidate_count": 1,
+          "column_h": [
+            -0.37119999999999953,
+            1.6400000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.37119999999999953,
+                1.6400000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-3-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.37119999999999953,
+              "min_abs_column_h_column": 1,
+              "phase": "second_carrier_readback",
+              "run_role": "route_conductance_geometry_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.37119999999999953,
+          "phase": "second_carrier_readback",
+          "readback_digest": "af1f34c4946fdc674abc73bee11d1cc1fa9edfc5e86c1bae97788a6bdaa310b0",
+          "state_mutated_by_readback": false
+        }
+      },
+      "reservoir_record": null,
+      "row_decision": "partial",
+      "row_digest": "d2b53eb6d2b739a341bc465990e58d92f97d0d7319dc7e6d0f67cd03abd58f46",
+      "row_id": "n22_i5c_row_route_conductance_geometry_carrier",
+      "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_run.json",
+      "snapshots": {
+        "first_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_first_readback_snapshot.json",
+        "peer_post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_peer_post_snapshot.json",
+        "peer_pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_peer_pre_snapshot.json",
+        "peer_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_peer_readback_snapshot.json",
+        "second_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_second_readback_snapshot.json",
+        "target_post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_target_post_snapshot.json",
+        "target_pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/route_conductance_geometry_carrier_target_pre_snapshot.json"
+      },
+      "source_current_inputs": [
+        "target_pre_interaction_snapshot",
+        "target_prior_packet_events",
+        "target_post_carrier_snapshot",
+        "carrier_readback_events",
+        "peer_same_budget_snapshot"
+      ],
+      "source_precedent": "N08 positive geometry route response plus N10 native conductance gap",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su4_candidate": true,
+      "susceptibility_update_claim_allowed": false,
+      "target_update_record": {
+        "after": {
+          "base_conductance": 0.6799999999999999,
+          "conductance": 99.18,
+          "edge_id": 0,
+          "flux_uv": 999.0,
+          "node_u": 0,
+          "node_v": 1,
+          "port_u": 1,
+          "port_v": 9
+        },
+        "before": {
+          "base_conductance": 0.5,
+          "conductance": 99.0,
+          "edge_id": 0,
+          "flux_uv": 999.0,
+          "node_u": 0,
+          "node_v": 1,
+          "port_u": 1,
+          "port_v": 9
+        },
+        "delta": 0.18,
+        "edge_id": 0,
+        "native_route_conductance_memory_policy_available": false,
+        "policy_id": "n08_style_route_conductance_update_candidate",
+        "producer_mediated": true,
+        "run_role": "route_conductance_geometry_carrier",
+        "state_mutation_owner": "n22_iteration_5c_experiment_local_producer",
+        "update_digest": "96a1ce51ee604196604ea895943faccd7925833aaf7dfa28379b548c76814106"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "variable_classification": {
+        "carrier_delta": "producer_mediated",
+        "native_route_conductance_memory": "naturalization_debt",
+        "readback_events": "substrate_carried",
+        "semantic_learning": "blocked_relabel"
+      }
+    },
+    {
+      "carrier_family": "neutral_reservoir_buffered_carrier",
+      "carrier_gate": {
+        "budget_result": "preserved",
+        "carrier_loss_after_second_readback": 0.0,
+        "carrier_not_consumed_by_readback": true,
+        "coherence_floor_result": "preserved",
+        "peer_same_budget_target_edge_delta": 0.0,
+        "second_readback_delta": 0.12,
+        "second_readback_ratio": 1.0,
+        "support_floor_result": "preserved",
+        "target_carrier_delta": 0.12,
+        "target_over_peer_margin": 0.12
+      },
+      "claim_ceiling": "producer-mediated non-consumptive carrier candidate pending I7 controls; not native conductance memory, semantic learning, agency, or native support",
+      "decision_scope": "producer_mediated_non_consumptive_carrier_candidate_pending_I7_controls",
+      "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_packet_events.jsonl",
+      "native_route_conductance_memory_policy_available": false,
+      "native_route_conductance_memory_supported": false,
+      "peer_update_record": {
+        "after": {
+          "base_conductance": 1.02,
+          "conductance": 99.02,
+          "edge_id": 1,
+          "flux_uv": -999.0,
+          "node_u": 0,
+          "node_v": 2,
+          "port_u": 2,
+          "port_v": 8
+        },
+        "before": {
+          "base_conductance": 1.0,
+          "conductance": 99.0,
+          "edge_id": 1,
+          "flux_uv": -999.0,
+          "node_u": 0,
+          "node_v": 2,
+          "port_u": 2,
+          "port_v": 8
+        },
+        "delta": 0.02,
+        "edge_id": 1,
+        "native_route_conductance_memory_policy_available": false,
+        "policy_id": "same_budget_peer_absorbed_away_from_target_edge",
+        "producer_mediated": true,
+        "run_role": "neutral_reservoir_buffered_carrier",
+        "state_mutation_owner": "n22_iteration_5c_experiment_local_producer",
+        "update_digest": "4be7e784a9435e21e39d3c49b89a72d32812f50e3c1362dfcb2914a89c5e9e42"
+      },
+      "producer_residue": {
+        "blocked_relabels": [
+          "producer_conductance_update_as_native_learning",
+          "carrier_readback_as_semantic_choice",
+          "native_support_by_reservoir_label"
+        ],
+        "naturalization_debt": [
+          "native_route_conductance_memory_policy",
+          "native_non_consumptive_carrier_update_policy"
+        ],
+        "producer_mediated_fields": [
+          "target_edge_base_conductance_delta",
+          "target_edge_port_conductance_delta"
+        ]
+      },
+      "provisional_su_ladder_rung": "SU4_producer_mediated_non_consumptive_carrier_candidate_pending_I7",
+      "readback_records": {
+        "first": {
+          "after_state_signature_digest": "94c3b8a18a9ad51a8a6ef8931dda3573b5cb322ad9d03e1dfba078226b2f4200",
+          "before_state_signature_digest": "61c10ff3bd0741fb5660a75f18c91e64b31df2734eb2a357ced6221ddc53c6ea",
+          "candidate_count": 1,
+          "column_h": [
+            -0.5607999999999995,
+            1.6400000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.5607999999999995,
+                1.6400000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-2-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.5607999999999995,
+              "min_abs_column_h_column": 1,
+              "phase": "first_carrier_readback",
+              "run_role": "neutral_reservoir_buffered_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.5607999999999995,
+          "phase": "first_carrier_readback",
+          "readback_digest": "0ac2550636fc0f6075d7531955091b52f1e71c406bb0d3ff1e1d5e084c93149d",
+          "state_mutated_by_readback": false
+        },
+        "peer": {
+          "after_state_signature_digest": "c97f3a066ce70f25b2998c8e60db8e4c6374f4e1d6cc807be0f8c6bf097d73e2",
+          "before_state_signature_digest": "9289d15d6f091e157176841a11185f998f65248215c9e68c0d6cf45e14a5b613",
+          "candidate_count": 1,
+          "column_h": [
+            -0.9799999999999995,
+            1.7032000000000007,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.9799999999999995,
+                1.7032000000000007,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-2-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.9799999999999995,
+              "min_abs_column_h_column": 1,
+              "phase": "peer_readback",
+              "run_role": "neutral_reservoir_buffered_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.9799999999999995,
+          "phase": "peer_readback",
+          "readback_digest": "729146c36322b567ea60be853471d1367b9309c252c98320e36562e9bd7aecaf",
+          "state_mutated_by_readback": false
+        },
+        "second": {
+          "after_state_signature_digest": "06ca40b4226320c08100505d9811c1f88c65da553f977286281361ebe9ec8b39",
+          "before_state_signature_digest": "76fbe531efaade8abf4fb0f7ace5a740470749f63567a0989d7ff4550a6810ad",
+          "candidate_count": 1,
+          "column_h": [
+            -0.5607999999999995,
+            1.6400000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.5607999999999995,
+                1.6400000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-3-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.5607999999999995,
+              "min_abs_column_h_column": 1,
+              "phase": "second_carrier_readback",
+              "run_role": "neutral_reservoir_buffered_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.5607999999999995,
+          "phase": "second_carrier_readback",
+          "readback_digest": "a0c4b3b87e8759fe212a8cd25d2fd773121b8d52b7c7ea28d9fac24562b28954",
+          "state_mutated_by_readback": false
+        }
+      },
+      "reservoir_record": {
+        "absorption_fraction": 0.85,
+        "hidden_routing_allowed": false,
+        "reservoir_policy": "neutral_absorber_reservoir_v1_derived_method_only",
+        "source_scope": "method precedent, not native support"
+      },
+      "row_decision": "partial",
+      "row_digest": "ff28f60f25c474205f41eb167cba65ba96cd46c622636ed527a80ee999c59179",
+      "row_id": "n22_i5c_row_neutral_reservoir_buffered_carrier",
+      "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_run.json",
+      "snapshots": {
+        "first_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_first_readback_snapshot.json",
+        "peer_post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_peer_post_snapshot.json",
+        "peer_pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_peer_pre_snapshot.json",
+        "peer_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_peer_readback_snapshot.json",
+        "second_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_second_readback_snapshot.json",
+        "target_post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_target_post_snapshot.json",
+        "target_pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/neutral_reservoir_buffered_carrier_target_pre_snapshot.json"
+      },
+      "source_current_inputs": [
+        "target_pre_interaction_snapshot",
+        "target_prior_packet_events",
+        "target_post_carrier_snapshot",
+        "carrier_readback_events",
+        "peer_same_budget_snapshot"
+      ],
+      "source_precedent": "N07 neutral absorber bounded non-destructive exchange",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su4_candidate": true,
+      "susceptibility_update_claim_allowed": false,
+      "target_update_record": {
+        "after": {
+          "base_conductance": 0.62,
+          "conductance": 99.12,
+          "edge_id": 0,
+          "flux_uv": 999.0,
+          "node_u": 0,
+          "node_v": 1,
+          "port_u": 1,
+          "port_v": 9
+        },
+        "before": {
+          "base_conductance": 0.5,
+          "conductance": 99.0,
+          "edge_id": 0,
+          "flux_uv": 999.0,
+          "node_u": 0,
+          "node_v": 1,
+          "port_u": 1,
+          "port_v": 9
+        },
+        "delta": 0.12,
+        "edge_id": 0,
+        "native_route_conductance_memory_policy_available": false,
+        "policy_id": "n07_style_neutral_absorber_buffered_conductance_update",
+        "producer_mediated": true,
+        "run_role": "neutral_reservoir_buffered_carrier",
+        "state_mutation_owner": "n22_iteration_5c_experiment_local_producer",
+        "update_digest": "2eb2cd37c8053483937748e0b2c168eda1448e62d18691fe18310c0989a5ceba"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "variable_classification": {
+        "carrier_delta": "producer_mediated",
+        "native_route_conductance_memory": "naturalization_debt",
+        "readback_events": "substrate_carried",
+        "semantic_learning": "blocked_relabel"
+      }
+    },
+    {
+      "carrier_family": "band_buffered_return_carrier",
+      "carrier_gate": {
+        "budget_result": "preserved",
+        "carrier_loss_after_second_readback": 0.0,
+        "carrier_not_consumed_by_readback": true,
+        "coherence_floor_result": "preserved",
+        "peer_same_budget_target_edge_delta": 0.0,
+        "second_readback_delta": 0.07000000000000006,
+        "second_readback_ratio": 1.0,
+        "support_floor_result": "preserved",
+        "target_carrier_delta": 0.07000000000000006,
+        "target_over_peer_margin": 0.07000000000000006
+      },
+      "claim_ceiling": "producer-mediated non-consumptive carrier candidate pending I7 controls; not native conductance memory, semantic learning, agency, or native support",
+      "decision_scope": "producer_mediated_non_consumptive_carrier_candidate_pending_I7_controls",
+      "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_packet_events.jsonl",
+      "native_route_conductance_memory_policy_available": false,
+      "native_route_conductance_memory_supported": false,
+      "peer_update_record": {
+        "after": {
+          "base_conductance": 1.01,
+          "conductance": 99.01,
+          "edge_id": 1,
+          "flux_uv": -999.0,
+          "node_u": 0,
+          "node_v": 2,
+          "port_u": 2,
+          "port_v": 8
+        },
+        "before": {
+          "base_conductance": 1.0,
+          "conductance": 99.0,
+          "edge_id": 1,
+          "flux_uv": -999.0,
+          "node_u": 0,
+          "node_v": 2,
+          "port_u": 2,
+          "port_v": 8
+        },
+        "delta": 0.01,
+        "edge_id": 1,
+        "native_route_conductance_memory_policy_available": false,
+        "policy_id": "same_budget_peer_band_buffer_outside_target_edge",
+        "producer_mediated": true,
+        "run_role": "band_buffered_return_carrier",
+        "state_mutation_owner": "n22_iteration_5c_experiment_local_producer",
+        "update_digest": "06d50f01394cf2b918d5b3c7b254f322a8d5e599ac43de20a8af4cb5a6906881"
+      },
+      "producer_residue": {
+        "blocked_relabels": [
+          "producer_conductance_update_as_native_learning",
+          "carrier_readback_as_semantic_choice",
+          "native_support_by_reservoir_label"
+        ],
+        "naturalization_debt": [
+          "native_route_conductance_memory_policy",
+          "native_non_consumptive_carrier_update_policy"
+        ],
+        "producer_mediated_fields": [
+          "target_edge_base_conductance_delta",
+          "target_edge_port_conductance_delta"
+        ]
+      },
+      "provisional_su_ladder_rung": "SU4_producer_mediated_non_consumptive_carrier_candidate_pending_I7",
+      "readback_records": {
+        "first": {
+          "after_state_signature_digest": "a7c5a077837bd0f08b8daf240dd93cb73b157cdb544a1e2f1ac74e99fa353a55",
+          "before_state_signature_digest": "1bee825eddc697ac0154c2b85ad01d0a9ec2d7ddc71b92513a57be4f6979504e",
+          "candidate_count": 1,
+          "column_h": [
+            -0.718799999999999,
+            1.6400000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.718799999999999,
+                1.6400000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-2-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.718799999999999,
+              "min_abs_column_h_column": 1,
+              "phase": "first_carrier_readback",
+              "run_role": "band_buffered_return_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.718799999999999,
+          "phase": "first_carrier_readback",
+          "readback_digest": "16e53013e75f98b2c869b526a65204283a5323e34c55443422693997ddb31324",
+          "state_mutated_by_readback": false
+        },
+        "peer": {
+          "after_state_signature_digest": "c2fe7f19060c99ccd81111464f7772a18a020cc592b74e07c6f00ffc87e19c81",
+          "before_state_signature_digest": "cc3004975cf0158df68444d858aaea53352d7455cbdc2671e5a1d85aa90eba07",
+          "candidate_count": 1,
+          "column_h": [
+            -0.9799999999999995,
+            1.7116000000000007,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.9799999999999995,
+                1.7116000000000007,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-2-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.9799999999999995,
+              "min_abs_column_h_column": 1,
+              "phase": "peer_readback",
+              "run_role": "band_buffered_return_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.9799999999999995,
+          "phase": "peer_readback",
+          "readback_digest": "2577ec4b781e6ea65d0a1d3cad5b5544f33ac13d5bd5df2881b76f84d7a41a54",
+          "state_mutated_by_readback": false
+        },
+        "second": {
+          "after_state_signature_digest": "29fef74a80dea151c135d988e341097d4b4d0f66e496ba7bed1a5f6ecdba2100",
+          "before_state_signature_digest": "0045dac5933a0cbff6e54fdfc807abe8b14aeab11c7bd2ad69a60d9f68bbe37f",
+          "candidate_count": 1,
+          "column_h": [
+            -0.718799999999999,
+            1.6400000000000006,
+            -2.2399999999999998
+          ],
+          "column_h_branch_hit": true,
+          "compact_candidate_events": [
+            {
+              "column_h": [
+                -0.718799999999999,
+                1.6400000000000006,
+                -2.2399999999999998
+              ],
+              "column_h_branch_hit": true,
+              "column_h_threshold_hit": true,
+              "event_id": "lgrc9v3-causal-spark-candidate-3-0-0",
+              "gate_reasons": [
+                "column_h_threshold_hit"
+              ],
+              "kind": "lgrc9v3_causal_spark_candidate",
+              "min_abs_column_h": 0.718799999999999,
+              "min_abs_column_h_column": 1,
+              "phase": "second_carrier_readback",
+              "run_role": "band_buffered_return_carrier",
+              "spark_lane": "grc9v3_column_h_assisted",
+              "topology_signature": null
+            }
+          ],
+          "min_abs_column_h": 0.718799999999999,
+          "phase": "second_carrier_readback",
+          "readback_digest": "823d40e7ca4c2ac0cdf93b5105a9c5a620aa0363391374401d706eec79ae66ac",
+          "state_mutated_by_readback": false
+        }
+      },
+      "reservoir_record": null,
+      "row_decision": "partial",
+      "row_digest": "772119d5d97b2ceb1b5c4dcac8817724681c93664fb14ba281672951917dbcfe",
+      "row_id": "n22_i5c_row_band_buffered_return_carrier",
+      "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_run.json",
+      "snapshots": {
+        "first_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_first_readback_snapshot.json",
+        "peer_post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_peer_post_snapshot.json",
+        "peer_pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_peer_pre_snapshot.json",
+        "peer_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_peer_readback_snapshot.json",
+        "second_readback": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_second_readback_snapshot.json",
+        "target_post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_target_post_snapshot.json",
+        "target_pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/band_buffered_return_carrier_target_pre_snapshot.json"
+      },
+      "source_current_inputs": [
+        "target_pre_interaction_snapshot",
+        "target_prior_packet_events",
+        "target_post_carrier_snapshot",
+        "carrier_readback_events",
+        "peer_same_budget_snapshot"
+      ],
+      "source_precedent": "N09 finite-envelope band-buffered return scaffold",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su4_candidate": true,
+      "susceptibility_update_claim_allowed": false,
+      "target_update_record": {
+        "after": {
+          "base_conductance": 0.5700000000000001,
+          "conductance": 99.07,
+          "edge_id": 0,
+          "flux_uv": 999.0,
+          "node_u": 0,
+          "node_v": 1,
+          "port_u": 1,
+          "port_v": 9
+        },
+        "before": {
+          "base_conductance": 0.5,
+          "conductance": 99.0,
+          "edge_id": 0,
+          "flux_uv": 999.0,
+          "node_u": 0,
+          "node_v": 1,
+          "port_u": 1,
+          "port_v": 9
+        },
+        "delta": 0.07,
+        "edge_id": 0,
+        "native_route_conductance_memory_policy_available": false,
+        "policy_id": "n09_style_band_buffered_carrier_update",
+        "producer_mediated": true,
+        "run_role": "band_buffered_return_carrier",
+        "state_mutation_owner": "n22_iteration_5c_experiment_local_producer",
+        "update_digest": "961d0227fe417470cc8d5c4271228fc2c81f1eaeaff10f0278e7f632ddfa36b1"
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "variable_classification": {
+        "carrier_delta": "producer_mediated",
+        "native_route_conductance_memory": "naturalization_debt",
+        "readback_events": "substrate_carried",
+        "semantic_learning": "blocked_relabel"
+      }
+    },
+    {
+      "carrier_family": "reduced_packet_readout_boundary",
+      "carrier_gate": {
+        "after_second_reduced_readout_delta": 0.0600000000000005,
+        "after_second_reduced_readout_ratio": 0.7500000000000056,
+        "initial_route_node_delta": 0.08000000000000007,
+        "non_consumptive_carrier_supported": false,
+        "readout_is_still_packet_spending": true
+      },
+      "claim_ceiling": "readout-dose boundary only; useful control against mistaking lower packet dose for non-consumptive durable susceptibility",
+      "decision_scope": "readout_dose_boundary_only_not_non_consumptive_carrier",
+      "event_log_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_packet_events.jsonl",
+      "native_route_conductance_memory_supported": false,
+      "provisional_su_ladder_rung": "SU3_reduced_readout_boundary_no_SU4",
+      "row_decision": "partial",
+      "row_digest": "d8abd3cc3bc54a9e8d9d4ffd240e69e125d197249f546b869e0e29c68e40732c",
+      "row_id": "n22_i5c_row_reduced_packet_readout_dose_boundary",
+      "run_artifact_path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_run.json",
+      "snapshots": {
+        "first_readout": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_first_readout_snapshot.json",
+        "post": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_post_snapshot.json",
+        "pre": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_pre_snapshot.json",
+        "second_readout": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_alternative_nonconsumptive_carrier_probe_artifacts/reduced_packet_readout_dose_boundary_second_readout_snapshot.json"
+      },
+      "source_precedent": "I5-B route_b readout boundary",
+      "su5_supported": false,
+      "su6_supported": false,
+      "supporting_su4_candidate": false,
+      "susceptibility_update_claim_allowed": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i5b_consumptive_boundary_consumed",
+      "detail": {
+        "agency_supported": false,
+        "choice_supported": false,
+        "consumptive_readout_detected_count": 5,
+        "durable_geometry_modification_supported": false,
+        "first_residual_present_count": 5,
+        "i6_su5_requires_reclassification": true,
+        "idle_residual_stable_count": 5,
+        "n21_nd6_bridge_status": "not_supported",
+        "n22_closeout_ladder_rung_assigned": false,
+        "narrow_margin_candidate_count": 1,
+        "native_support_supported": false,
+        "non_consumptive_durability_supported_count": 0,
+        "phase8_opened": false,
+        "provisional_su_ladder_rung": "SU3_consumptive_readout_limited",
+        "ready_for_iteration_6_reclassification": true,
+        "ready_for_iteration_7_control_matrix": true,
+        "semantic_learning_supported": false,
+        "sentience_supported": false,
+        "source_i5_su3_candidate_count": 5,
+        "source_i5a_stress_limited_candidate_count": 5,
+        "su4_or_stronger_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "thresholds_declared_before_use",
+      "detail": {
+        "coherence_floor": 9.85,
+        "declared_before_use": true,
+        "i5b_threshold_policy_not_relaxed": true,
+        "max_budget_error": 1e-09,
+        "max_second_readback_loss": 0.02,
+        "min_carrier_delta": 0.05,
+        "min_carrier_target_over_peer_margin": 0.05,
+        "min_second_readback_ratio": 0.9,
+        "native_conductance_memory_policy_available": false,
+        "su5_or_su6_allowed": false,
+        "support_floor": 9.85,
+        "threshold_record_id": "n22_i5c_alternative_nonconsumptive_carrier_thresholds"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": 35,
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": 35,
+      "passed": true
+    },
+    {
+      "check_id": "at_least_one_alternative_carrier_candidate",
+      "detail": [
+        "n22_i5c_row_route_conductance_geometry_carrier",
+        "n22_i5c_row_neutral_reservoir_buffered_carrier",
+        "n22_i5c_row_band_buffered_return_carrier"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "same_budget_peer_margin_preserved_for_su4_rows",
+      "detail": [
+        {
+          "margin": 0.17999999999999994,
+          "row_id": "n22_i5c_row_route_conductance_geometry_carrier"
+        },
+        {
+          "margin": 0.12,
+          "row_id": "n22_i5c_row_neutral_reservoir_buffered_carrier"
+        },
+        {
+          "margin": 0.07000000000000006,
+          "row_id": "n22_i5c_row_band_buffered_return_carrier"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "second_readback_non_consumptive_for_su4_rows",
+      "detail": [
+        {
+          "loss": 0.0,
+          "ratio": 1.0,
+          "row_id": "n22_i5c_row_route_conductance_geometry_carrier"
+        },
+        {
+          "loss": 0.0,
+          "ratio": 1.0,
+          "row_id": "n22_i5c_row_neutral_reservoir_buffered_carrier"
+        },
+        {
+          "loss": 0.0,
+          "ratio": 1.0,
+          "row_id": "n22_i5c_row_band_buffered_return_carrier"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "reduced_readout_dose_not_promoted",
+      "detail": [
+        "n22_i5c_row_reduced_packet_readout_dose_boundary"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "native_conductance_memory_still_blocked",
+      "detail": "N08/N10 native conductance gap preserved",
+      "passed": true
+    },
+    {
+      "check_id": "controls_fail_closed",
+      "detail": [
+        "n05_cyclic_packet_activity_as_susceptibility_relabel",
+        "n06_route_selection_label_as_susceptibility_relabel",
+        "n08_producer_memory_as_native_conductance_relabel",
+        "n07_reservoir_policy_as_native_support_relabel",
+        "n10_n11_native_policy_gap_bypass",
+        "hidden_carrier_write",
+        "same_budget_peer_equivalent_delta"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_flags_all_false",
+      "detail": "all rows",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_repository_relative",
+      "detail": "relative paths only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/scripts/build_n22_alternative_nonconsumptive_carrier_probe.py",
+  "controls": [
+    {
+      "claim_allowed": false,
+      "control_id": "n05_cyclic_packet_activity_as_susceptibility_relabel",
+      "primary_blocker": "n05_cyclic_packet_activity_as_susceptibility_relabel",
+      "reason": "N05 cyclic/self-rearm packet activity is not durable susceptibility by itself.",
+      "status": "failed_closed"
+    },
+    {
+      "claim_allowed": false,
+      "control_id": "n06_route_selection_label_as_susceptibility_relabel",
+      "primary_blocker": "n06_route_selection_label_as_susceptibility_relabel",
+      "reason": "N06 repeated route selection is context selection, not source-current durable carrier update.",
+      "status": "failed_closed"
+    },
+    {
+      "claim_allowed": false,
+      "control_id": "n08_producer_memory_as_native_conductance_relabel",
+      "primary_blocker": "n08_producer_memory_as_native_conductance_relabel",
+      "reason": "N08 positive geometry route response remains blocked as native conductance memory.",
+      "status": "failed_closed"
+    },
+    {
+      "claim_allowed": false,
+      "control_id": "n07_reservoir_policy_as_native_support_relabel",
+      "primary_blocker": "n07_reservoir_policy_as_native_support_relabel",
+      "reason": "N07 neutral reservoir is a non-destructive exchange method, not native support.",
+      "status": "failed_closed"
+    },
+    {
+      "claim_allowed": false,
+      "control_id": "n10_n11_native_policy_gap_bypass",
+      "primary_blocker": "n10_n11_native_policy_gap_bypass",
+      "reason": "Native route-conductance memory and native integration gaps cannot be bypassed by I5-C.",
+      "status": "failed_closed"
+    },
+    {
+      "claim_allowed": false,
+      "control_id": "hidden_carrier_write",
+      "primary_blocker": "hidden_carrier_write",
+      "reason": "Carrier deltas must be recorded as producer-mediated source-current state mutations.",
+      "status": "failed_closed"
+    },
+    {
+      "claim_allowed": false,
+      "control_id": "same_budget_peer_equivalent_delta",
+      "primary_blocker": "same_budget_peer_equivalent_delta",
+      "reason": "If the same-budget peer shows the same target carrier delta, SU4 support is blocked.",
+      "status": "failed_closed"
+    }
+  ],
+  "experiment": "N22",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "The positive I5-C rows are producer-mediated carrier candidates. They do not prove native route-conductance memory, semantic learning, choice, agency, native support, final N22, SU5/SU6, or the N21 ND6 bridge. N08/N10/N11 native conductance and integration gaps remain load-bearing.",
+    "short_read": "I5-C finds an alternative non-consumptive carrier path by moving the durable quantity from route-b packet residue into serialized edge/conductance geometry. Repeated Lane-B readback does not spend that carrier, unlike the I5-B packet readout path."
+  },
+  "iteration": "5-C",
+  "iteration5c_summary": {
+    "candidate_row_count": 4,
+    "existing_i6_superseded": false,
+    "final_n22_supported": false,
+    "i6_rerun_or_i7_controls_required": true,
+    "n21_nd6_bridge_status": "not_supported",
+    "native_route_conductance_memory_supported": false,
+    "producer_mediated_non_consumptive_carrier_candidate_count": 3,
+    "reduced_readout_boundary_count": 1,
+    "su5_supported": false,
+    "su6_supported": false
+  },
+  "output_digest": "b2bc2089b24ba5e945e861b0e2fd93974c1a7d882905fcaa75f24d3f6ba0bfed",
+  "purpose": "alternative carrier probe after I5-B consumptive readout boundary",
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_consumptive_readout_boundary_no_nonconsumptive_durability",
+      "output_digest": "f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f",
+      "path": "experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_residual_nonconsumptive_durability_probe.json",
+      "sha256": "4b303bac0c24f2fef0f5b77201ee3e5bde9c8e1081ff38201b1685fc455def88",
+      "source_role": "i5b_consumptive_readout_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "2907ea12a71f12f25c60ea13fb0a53053aceca3b070480a84f88871606d1e759",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_11a_positive_geometry_route_arbitration.json",
+      "sha256": "8e4c752625edc9607309f772f0aa229001550552cbaabc5b8b1641bf19e0b5da",
+      "source_role": "n08_geometry_route_response_method",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "not_recorded",
+      "path": "experiments/2026-05-N08-lgrc-memory-trail-affordance/outputs/n08_iteration_13_native_geometry_trail_closeout.json",
+      "sha256": "505181543e19f2e046b40399cb1e1441ad9d3f13077a607d3232d9639f457bfa",
+      "source_role": "n08_native_conductance_gap_boundary",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "not_recorded",
+      "path": "experiments/2026-05-N07-rc-identity-attractor-invariance/outputs/n07_iteration_11b_neutral_absorber_reservoir.json",
+      "sha256": "0a45dfa122bc2f727501208ed3731444907060f67c79a3ea56921e71f1b2a497",
+      "source_role": "n07_non_destructive_exchange_method",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "achieved",
+      "output_digest": "not_recorded",
+      "path": "experiments/2026-05-N09-lgrc-goal-proxy-regulation/outputs/n09_iteration_11b_band_buffered_return_scaffold_probe.json",
+      "sha256": "d3bb8d934a7838414afb720236e63d7a9433b009068371687b5870d5166464b7",
+      "source_role": "n09_band_buffered_return_method",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "96ac54b9f1db55fcbe8c1d7e7fde7f9726d68db428ec9a2fbe50a1a42df30f89",
+      "path": "experiments/2026-05-N10-lgrc-agentic-like-integration/outputs/n10_iteration_13_hypothesis_c_native_policy_gap_inventory.json",
+      "sha256": "2261c45053f177105418483db649ca01abcfe5201c84bb98c8e48ca8e39bf693",
+      "source_role": "n10_native_policy_gap_guardrail",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "82d1a3eedc0aebacdceae79e2be37bb96b7fff4cbfacbae00da912f3975c3e52",
+      "path": "experiments/2026-05-N11-lgrc-general-agentic-like-integration/outputs/n11_iteration_11_hypothesis_c_native_generalization_gap.json",
+      "sha256": "876455ec8b5cdd084c8b3a247d33a0313dd11d5421a693e9ebe5bef63600d8d6",
+      "source_role": "n11_native_generalization_gap_guardrail",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

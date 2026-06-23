@@ -496,12 +496,101 @@ reports/n22_replay_durability_stress_probe.md
 scripts/build_n22_replay_durability_stress_probe.py
 ```
 
+### Iteration 5-B. Residual / Non-Consumptive Durability Probe
+
+Test whether the I5/I5-A route-local susceptibility signal is durable geometry
+or consumptive readout. Start from the saved post-interaction state, perform a
+first route_b readout, checkpoint the residual state, idle-check it, then perform
+a second route_b readout.
+
+The probe must distinguish:
+
+```text
+first residual remains visible
+idle residual remains stable
+second readout preserves residual above floor
+```
+
+from:
+
+```text
+first residual remains visible
+idle residual remains stable
+second readout spends the residual below floor
+```
+
+Only the first pattern can support non-consumptive durable geometry. The second
+pattern is consumptive-readout evidence and blocks `SU4`, `SU5`, `SU6`, final
+N22, and the N21 `ND6` bridge.
+
+Expected artifacts:
+
+```text
+outputs/n22_residual_nonconsumptive_durability_probe.json
+reports/n22_residual_nonconsumptive_durability_probe.md
+scripts/build_n22_residual_nonconsumptive_durability_probe.py
+```
+
+### Iteration 5-C. Alternative Non-Consumptive Carrier Probe
+
+After I5-B classifies the route-b packet readout path as consumptive, test a
+different carrier family instead of retuning the same packet residue. Use prior
+experiments only as design precedents:
+
+```text
+N08 = route-conductance / positive-geometry carrier direction
+N07 = neutral-reservoir bounded non-destructive exchange discipline
+N09 = finite band-buffered return comparison
+N05/N06 = relabel controls for cycles and route selection
+N10/N11 = native-policy gap blockers
+```
+
+The probe must distinguish:
+
+```text
+source-current carrier is serialized in LGRC-visible state
+readback is non-consumptive across repeated readback
+same-budget peer does not show the same target carrier delta
+native route-conductance memory remains blocked
+```
+
+from:
+
+```text
+lower packet readout dose merely drains more slowly
+producer-mediated conductance update is relabeled as native memory
+reservoir method is relabeled as native support
+route selection or cyclic packet activity is relabeled as susceptibility
+```
+
+I5-C may support only producer-mediated non-consumptive carrier candidates
+pending I7 controls. It must not replace I5-B, must not supersede the existing
+I6 transfer/readout-expression result, and must not assign `SU5`, `SU6`, final
+N22, or the N21 `ND6` bridge.
+
+Expected artifacts:
+
+```text
+outputs/n22_alternative_nonconsumptive_carrier_probe.json
+reports/n22_alternative_nonconsumptive_carrier_probe.md
+scripts/build_n22_alternative_nonconsumptive_carrier_probe.py
+```
+
 ### Iteration 6. Transfer / Re-entry Probe
 
 Test whether the susceptibility delta is expressed in a declared later route,
-boundary, corridor, or region re-entry context. Consume I5 and I5-A explicitly,
-including the repeated-reentry depletion boundary. This may remain local and
-bounded; it must not claim general learning.
+boundary, corridor, or region re-entry context. Consume I5, I5-A, and I5-B
+explicitly, including the repeated-reentry depletion boundary and the residual
+consumptive-readout boundary. This may remain local and bounded; it must not
+claim general learning.
+
+I6 may support a bounded `SU5` subset rather than every I5 row. Rows that lose
+route-specific target-over-peer separation in the later context must be demoted
+or blocked, not averaged into the supported subset.
+
+If I5-B shows consumptive readout rather than non-consumptive durable geometry,
+I6 must not assign `SU5`. It may only record transfer/readout expression and
+carry the consumptive boundary into I7.
 
 Expected artifacts:
 
@@ -511,10 +600,97 @@ reports/n22_transfer_reentry_probe.md
 scripts/build_n22_transfer_reentry_probe.py
 ```
 
+### Iteration 6-A. Carrier Transfer / Re-entry Probe
+
+After I5-C identifies producer-mediated non-consumptive carrier candidates,
+test whether those carriers remain available through later transfer/re-entry
+contexts. I6-A must consume I5-C only for the carrier branch and must not
+reinterpret the I5/I5-A/I5-B/I6 packet-readout branch.
+
+The positive contexts are:
+
+```text
+delayed target re-entry followed by carrier readback
+peer-corridor flux followed by target re-entry and carrier readback
+```
+
+The controls are:
+
+```text
+peer label swap as target re-entry -> fail closed
+active carrier update carryover -> fail closed
+native conductance memory relabel -> fail closed
+```
+
+I6-A may record only a provisional producer-mediated `SU5` carrier-transfer
+candidate pending I7 controls. It must not supersede the existing I6 packet
+readout-expression result, and it must not support final `SU5`, `SU6`, final
+N22, the N21 `ND6` bridge, native route-conductance memory, semantic learning,
+choice, agency, native support, sentience, Phase 8, or ant-ecology
+implementation.
+
+Expected artifacts:
+
+```text
+outputs/n22_carrier_transfer_reentry_probe.json
+reports/n22_carrier_transfer_reentry_probe.md
+scripts/build_n22_carrier_transfer_reentry_probe.py
+```
+
+### Iteration 6-B. Carrier Transfer Stress-Boundary Probe
+
+Stress the I5-C/I6-A carrier branch without retuning it. I6-B must reuse the
+I5-C source-current carrier snapshots, preserve the I6-A threshold policy, and
+apply only transfer/re-entry stress events after load. It must not add a new
+carrier producer update, change carrier magnitude, lower thresholds, or reopen
+the packet-readout branch.
+
+The stress contexts are:
+
+```text
+longer idle delay before target re-entry
+stronger peer-corridor flux before target re-entry
+repeated target re-entry before readback
+mixed peer/target corridor sequence before readback
+```
+
+I6-B may strengthen the carrier branch only as:
+
+```text
+bounded producer-mediated SU5 stress-boundary candidate pending I7 controls
+```
+
+It must not turn I6-A into final `SU5`, must not support `SU6`, final N22, the
+N21 `ND6` bridge, native route-conductance memory, semantic learning, choice,
+agency, native support, sentience, Phase 8, or ant-ecology implementation. A
+pass should be interpreted as stress survival of a producer-mediated serialized
+carrier, not as native route-conductance memory.
+
+Expected artifacts:
+
+```text
+outputs/n22_carrier_transfer_stress_boundary_probe.json
+reports/n22_carrier_transfer_stress_boundary_probe.md
+scripts/build_n22_carrier_transfer_stress_boundary_probe.py
+```
+
 ### Iteration 7. Replay And Control Matrix
 
 Consume all provisional rows and controls. Assign I7-consumable SU rungs only
 after replay and negative controls pass or fail closed.
+
+I7 must consume both branches without merging them:
+
+```text
+I5/I5-A/I5-B/I6 = route-b packet readout branch, SU3 transfer/readout expression only
+I5-C/I6-A/I6-B = producer-mediated non-consumptive carrier branch, provisional SU4/SU5 pending controls
+```
+
+If I7 cannot replay or control the I5-C/I6-A/I6-B producer-mediated carrier
+rows, they remain provisional and cannot support final `SU5`, `SU6`, final N22,
+or the N21 `ND6` bridge. I7 must preserve the original I6 packet-readout result
+as unchanged consumptive `SU3` transfer/readout expression, even if the I6-A or
+I6-B carrier branch survives its local transfer contexts.
 
 Expected artifacts:
 

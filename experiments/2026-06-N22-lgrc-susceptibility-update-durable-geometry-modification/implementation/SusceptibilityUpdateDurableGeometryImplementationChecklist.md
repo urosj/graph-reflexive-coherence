@@ -858,18 +858,208 @@ bridge, semantic learning, choice, agency, native support, sentience, Phase 8,
 or ant-ecology implementation.
 ```
 
+## Iteration 5-B. Residual / Non-Consumptive Durability Probe
+
+- [x] Consume all five I5 replay-backed SU3 candidates.
+- [x] Consume I5-A repeated-reentry depletion boundary.
+- [x] Keep the I5/I5-A threshold policy unchanged.
+- [x] Start from each saved post-interaction state.
+- [x] Run first route_b readout.
+- [x] Checkpoint residual state after first readout.
+- [x] Run idle residual stability check.
+- [x] Run second route_b readout.
+- [x] Measure residual ratio after first readout.
+- [x] Measure residual ratio after idle window.
+- [x] Measure residual ratio after second readout.
+- [x] Distinguish non-consumptive durability from consumptive readout.
+- [x] Record source-current residual artifacts and SHA-256 manifest.
+- [x] Track narrow-margin complementary row.
+- [x] Keep all rows SU3 consumptive-readout limited.
+- [x] Keep SU4, transfer SU5, SU6, final N22, and N21 ND6 bridge blocked.
+- [x] Keep semantic learning, choice, agency, native support, sentience,
+      Phase 8, and ant-ecology implementation blocked.
+
+Expected artifacts:
+
+```text
+outputs/n22_residual_nonconsumptive_durability_probe.json
+reports/n22_residual_nonconsumptive_durability_probe.md
+scripts/build_n22_residual_nonconsumptive_durability_probe.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_consumptive_readout_boundary_no_nonconsumptive_durability
+output_digest = f946824e63737323e44611623c97f37df84f1795168c0013c44b8ef7765e3f0f
+check_count = 17
+failed_checks = []
+source_i5_su3_candidate_count = 5
+source_i5a_stress_limited_candidate_count = 5
+first_residual_present_count = 5
+idle_residual_stable_count = 5
+consumptive_readout_detected_count = 5
+non_consumptive_durability_supported_count = 0
+narrow_margin_candidate_count = 1
+i4_minimal_route_b = SU3_consumptive_readout_limited, after_first = 0.500000, after_second = 0.000000
+dose_08_i4_reference = SU3_consumptive_readout_limited, after_first = 0.500000, after_second = 0.000000
+dose_14_stronger_bounded = SU3_consumptive_readout_limited, after_first = 0.714286, after_second = 0.428571
+single_route_b_reference = SU3_consumptive_readout_limited, after_first = 0.500000, after_second = 0.000000
+complementary_split_route_b_adjacent = SU3_consumptive_readout_limited, after_first = 0.500000, after_second = 0.000000
+su4_or_stronger_supported = false
+durable_geometry_modification_supported = false
+i6_su5_requires_reclassification = true
+n22_closeout_ladder_rung_assigned = false
+n21_nd6_bridge_status = not_supported
+ready_for_iteration_6_reclassification = true
+ready_for_iteration_7_control_matrix = true
+```
+
+Artifact hashes:
+
+```text
+4b303bac0c24f2fef0f5b77201ee3e5bde9c8e1081ff38201b1685fc455def88  outputs/n22_residual_nonconsumptive_durability_probe.json
+20191f3fd518b24e882bf38d23a188b65747af887eaeb07811db12961b3085a0  reports/n22_residual_nonconsumptive_durability_probe.md
+d876286673fc6b44427e35f3673a6b536ea9ff98a9f240857f5135c2fd96407a  scripts/build_n22_residual_nonconsumptive_durability_probe.py
+```
+
+Interpretation:
+
+```text
+Iteration 5-B corrects the I5-A reading. I5-A showed that the route_b signal
+can be expressed by re-entry, but it also showed drainage under repeated
+re-entry. I5-B measures that directly.
+
+Geometrically, every row starts from the saved post-interaction state. The
+first route_b readout leaves a residual route_b delta above the persistence
+floor, and that residual is stable across an idle window. But the second
+route_b readout spends the residual below the non-consumptive floor for every
+candidate. The 0.14 dose row retains the largest residual after the second
+readout, but its residual ratio is 0.428571, still below the 0.45 floor.
+
+The result is not durable geometry modification. It is a consumptive readout
+boundary: the route_b state can be read/expressed once with residual, but the
+evidence does not show non-consumptive reusable susceptibility. I5-B therefore
+blocks SU4 and requires I6 to avoid treating transfer/readout expression as
+SU5.
+
+I5-B supports only SU3 consumptive-readout-limited evidence. It does not support
+durable SU4, transfer SU5, SU6, final N22, the N21 ND6 bridge, semantic
+learning, choice, agency, native support, sentience, Phase 8, or ant-ecology
+implementation.
+```
+
+## Iteration 5-C. Alternative Non-Consumptive Carrier Probe
+
+- [x] Consume I5-B as the route-b packet readout consumptive boundary.
+- [x] Review N05-N11 for alternative carrier precedents before constructing
+      the probe.
+- [x] Use N08 route-conductance / positive-geometry response as the main
+      carrier direction.
+- [x] Use N07 neutral absorber / bounded non-destructive exchange as method
+      precedent.
+- [x] Use N09 band-buffered return as finite-envelope comparison only.
+- [x] Keep N05 cyclic packet activity and N06 route selection as relabel
+      controls, not positive susceptibility evidence.
+- [x] Preserve N10/N11 native policy gaps as blockers.
+- [x] Declare thresholds before use.
+- [x] Record source-current LGRC snapshots, packet events, readback events,
+      and SHA-256 artifact manifest.
+- [x] Distinguish producer-mediated carrier deltas from substrate-carried
+      readback events.
+- [x] Require same-budget peer rows to lack equivalent target carrier delta.
+- [x] Require repeated carrier readback to be non-consumptive.
+- [x] Keep reduced packet readout dose as a boundary/control, not a
+      non-consumptive carrier.
+- [x] Keep native route-conductance memory, semantic learning, choice, agency,
+      native support, sentience, Phase 8, final N22, SU5/SU6, and the N21 ND6
+      bridge blocked.
+
+Expected artifacts:
+
+```text
+outputs/n22_alternative_nonconsumptive_carrier_probe.json
+reports/n22_alternative_nonconsumptive_carrier_probe.md
+scripts/build_n22_alternative_nonconsumptive_carrier_probe.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_producer_mediated_non_consumptive_carrier_candidate_native_gap_preserved
+output_digest = b2bc2089b24ba5e945e861b0e2fd93974c1a7d882905fcaa75f24d3f6ba0bfed
+check_count = 12
+failed_checks = []
+artifact_manifest_count = 35
+candidate_row_count = 4
+producer_mediated_non_consumptive_carrier_candidate_count = 3
+reduced_readout_boundary_count = 1
+existing_i6_superseded = false
+i6_rerun_or_i7_controls_required = true
+su5_supported = false
+su6_supported = false
+final_n22_supported = false
+n21_nd6_bridge_status = not_supported
+native_route_conductance_memory_supported = false
+route_conductance_geometry_carrier = SU4_producer_mediated_non_consumptive_carrier_candidate_pending_I7, delta = 0.180000, peer_margin = 0.180000, second_readback_ratio = 1.000000
+neutral_reservoir_buffered_carrier = SU4_producer_mediated_non_consumptive_carrier_candidate_pending_I7, delta = 0.120000, peer_margin = 0.120000, second_readback_ratio = 1.000000
+band_buffered_return_carrier = SU4_producer_mediated_non_consumptive_carrier_candidate_pending_I7, delta = 0.070000, peer_margin = 0.070000, second_readback_ratio = 1.000000
+reduced_packet_readout_dose_boundary = SU3_reduced_readout_boundary_no_SU4, initial_delta = 0.080000, after_second_ratio = 0.750000
+```
+
+Artifact hashes:
+
+```text
+a944464675fc2bb42b1e24417a511073a6ef2d491334aff9f590ca970f9296a3  outputs/n22_alternative_nonconsumptive_carrier_probe.json
+b9c3cb9397a1955bb15a99bc0caafd0c7f0bda1bbcfe2c6e5eda983d8202de19  reports/n22_alternative_nonconsumptive_carrier_probe.md
+f5d511e21175d1fb75244fa99b00f88d38ded09bebd0ba99d1324cc5e04b748b  scripts/build_n22_alternative_nonconsumptive_carrier_probe.py
+```
+
+Interpretation:
+
+```text
+I5-C does not rescue the original I5-B route-b packet-residue path. I5-B remains
+the correct result for that path: packet readout is consumptive and blocks SU4+
+for the route-b residue branch.
+
+I5-C tests a different geometry: the durable quantity is moved from packet
+residue into serialized edge/conductance carrier state. The carrier rows are
+source-current in the sense that the mutated conductance/edge state is present
+in LGRC snapshots and read back through Lane-B column-H diagnostic events. The
+readback itself does not spend the carrier: the second readback ratio is 1.0
+for the three carrier rows.
+
+The result is still not native route-conductance memory. The carrier delta is
+classified as producer_mediated, readback events are substrate_carried, native
+route-conductance memory remains naturalization_debt, and semantic learning is
+a blocked relabel. N08 and N10/N11 remain load-bearing blockers because current
+LGRC still lacks a native route-conductance memory policy.
+
+The reduced packet-readout row is intentionally not promoted. It shows that
+lowering packet dose drains more slowly, but it remains packet spending, not a
+non-consumptive carrier.
+
+I5-C therefore supports only provisional producer-mediated non-consumptive SU4
+carrier candidates pending I7 controls. It does not support SU5, SU6, final
+N22, the N21 ND6 bridge, semantic learning, choice, agency, native support,
+sentience, Phase 8, or ant-ecology implementation.
+```
+
 ## Iteration 6. Transfer / Re-entry Probe
 
-- [ ] Declare later route, boundary, corridor, or region re-entry context.
-- [ ] Consume I5 replay-backed SU3 rows and I5-A stress-limited SU3 rows.
-- [ ] Preserve repeated-reentry depletion as a boundary, not a success.
-- [ ] Test whether susceptibility delta is expressed in later re-entry.
-- [ ] Confirm same-budget peer route/region does not show the same delta unless
-      the row is demoted to global drift.
-- [ ] Confirm re-entry result is not a label swap.
-- [ ] Confirm re-entry result is not producer schedule carryover.
-- [ ] Confirm replay and same-basin gates remain in scope.
-- [ ] Keep general learning, choice, agency, native support, and Phase 8
+- [x] Declare later route, boundary, corridor, or region re-entry context.
+- [x] Consume I5 replay-backed SU3 rows and I5-A stress-limited SU3 rows.
+- [x] Consume I5-B consumptive readout boundary.
+- [x] Preserve repeated-reentry depletion as a boundary, not a success.
+- [x] Test whether susceptibility delta is expressed in later re-entry.
+- [x] Confirm same-budget peer route/region does not show the same delta unless
+      the row is demoted to global drift or route-specific margin failure.
+- [x] Confirm re-entry result is not a label swap.
+- [x] Confirm re-entry result is not producer schedule carryover.
+- [x] Confirm replay and same-basin gates remain in scope.
+- [x] Keep general learning, choice, agency, native support, and Phase 8
       blocked.
 
 Expected artifacts:
@@ -880,9 +1070,318 @@ reports/n22_transfer_reentry_probe.md
 scripts/build_n22_transfer_reentry_probe.py
 ```
 
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_transfer_readout_expression_no_su5_due_consumptive_boundary
+output_digest = 00263f30abb5cfcf224bd7b61d72ffae31472efb4e334f707a2de1ff9854da95
+check_count = 19
+failed_checks = []
+source_i5_su3_candidate_count = 5
+source_i5a_stress_limited_candidate_count = 5
+source_i5b_consumptive_boundary_count = 5
+transfer_readout_expression_count = 4
+transfer_reentry_su5_candidate_count = 0
+su5_blocked_by_i5b_consumptive_readout_count = 4
+demoted_before_su5_count = 1
+demoted_rows = [n22_i6_row_complementary_split_route_b_adjacent]
+positive_transfer_context_count_per_row = 2
+control_context_count_per_row = 2
+repeated_reentry_depletion_boundary_count = 5
+narrow_margin_candidate_count = 1
+i4_minimal_route_b = SU3_transfer_readout_expression_no_SU5
+dose_08_i4_reference = SU3_transfer_readout_expression_no_SU5
+dose_14_stronger_bounded = SU3_transfer_readout_expression_no_SU5
+single_route_b_reference = SU3_transfer_readout_expression_no_SU5
+complementary_split_route_b_adjacent = demoted_before_SU5
+label_swap_peer_reentry_control = failed_closed for all rows
+active_schedule_carryover_control = failed_closed for all rows
+su5_supported = false
+su6_or_stronger_supported = false
+final_n22_supported = false
+n22_closeout_ladder_rung_assigned = false
+n21_nd6_bridge_status = not_supported
+ready_for_iteration_7_control_matrix = true
+```
+
+Artifact hashes:
+
+```text
+eb6d4d65c93390edf5c4b19493bca78dc7d8009e3c426040fa1df2f362398083  outputs/n22_transfer_reentry_probe.json
+9e939b8f6ca37229b16c32e5f4b52956ae6c4406293882dac2cd584bd6da3fb2  reports/n22_transfer_reentry_probe.md
+195e00c7344213871071524853a488adc578ae036bbe776bf84bfafff8ff6e2b  scripts/build_n22_transfer_reentry_probe.py
+```
+
+Interpretation:
+
+```text
+Iteration 6 consumes the I5 replay-backed SU3 rows, the I5-A stress-limited
+rows, and the I5-B consumptive-readout boundary. It does not rerun the
+repeated-reentry boundary as a success path; it preserves that boundary and
+the I5-B residual result as the reason SU5, SU6, and final N22 remain blocked.
+
+Geometrically, I6 asks whether the route_b susceptibility delta is expressed
+through declared later re-entry contexts rather than only clean replay. The two
+positive contexts are delayed boundary re-entry and corridor peer-flux followed
+by route_b re-entry. The four single-route / bounded-dose rows keep the route_b
+delta above the transfer persistence floor and keep target-over-peer separation
+positive:
+
+minimal / dose_08 / single_route:
+  delayed boundary margin = 0.04
+  corridor margin = 0.03
+
+dose_14:
+  delayed boundary margin = 0.10
+  corridor margin = 0.09
+
+The complementary split row is correctly demoted. Its route_b delta still has
+a 0.5 persistence ratio, but the adjacent path component makes target-over-peer
+separation negative:
+
+complementary split:
+  delayed boundary margin = -0.02
+  corridor margin = -0.03
+
+That means it is not route_b-specific transfer/re-entry evidence. It remains a
+limit/blocker for I7 rather than becoming part of the readout-expression subset.
+
+The label-swap peer re-entry control fails closed because a peer-route event
+cannot satisfy the required route_b re-entry leg. The active-schedule carryover
+control fails closed because a queued route_b packet remains in flight instead
+of source-current re-entry being fully expressed.
+
+I6 therefore supports only transfer/readout expression of consumptive
+SU3-limited rows pending I7 controls. Because I5-B shows the route_b state is
+spent by repeated readout, I6 does not support transfer SU5, SU6, final N22,
+the N21 ND6 bridge, semantic learning, choice, agency, native support,
+sentience, Phase 8, or ant-ecology implementation.
+```
+
+## Iteration 6-A. Carrier Transfer / Re-entry Probe
+
+- [x] Consume I5-C producer-mediated non-consumptive carrier candidates.
+- [x] Keep I5/I5-A/I5-B/I6 packet-readout branch unchanged as consumptive
+      SU3 transfer/readout expression only.
+- [x] Declare I6-A thresholds before use.
+- [x] Test delayed target re-entry followed by carrier readback.
+- [x] Test peer-corridor flux followed by target re-entry and carrier readback.
+- [x] Confirm no new producer carrier update is applied after loading I5-C
+      snapshots.
+- [x] Require target-over-peer separation in each positive context.
+- [x] Require same-basin support, coherence, and budget gates to remain
+      preserved.
+- [x] Run peer-label-swap, active-carrier-update-carryover, and
+      native-conductance-memory relabel controls.
+- [x] Keep the result provisional pending I7 controls.
+- [x] Keep final SU5, SU6, final N22, the N21 ND6 bridge, native
+      route-conductance memory, semantic learning, choice, agency, native
+      support, sentience, Phase 8, and ant-ecology implementation blocked.
+
+Expected artifacts:
+
+```text
+outputs/n22_carrier_transfer_reentry_probe.json
+reports/n22_carrier_transfer_reentry_probe.md
+scripts/build_n22_carrier_transfer_reentry_probe.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_producer_mediated_carrier_transfer_candidates_pending_i7_no_final_su5
+output_digest = e919277fbf8b3d40a3da977be9bafba38675cd0af893ef7f594bc25659009678
+check_count = 13
+failed_checks = []
+artifact_manifest_count = 47
+source_i5c_su4_candidate_count = 3
+provisional_su5_carrier_candidate_count = 3
+positive_context_count_per_row = 2
+existing_i6_superseded = false
+packet_readout_branch_status = unchanged_consumptive_SU3_transfer_readout_expression_only
+i5c_branch_status = provisional_producer_mediated_SU5_candidate_pending_I7
+su5_supported = false
+su6_supported = false
+final_n22_supported = false
+n21_nd6_bridge_status = not_supported
+native_route_conductance_memory_supported = false
+ready_for_iteration_7_control_matrix = true
+route_conductance_geometry_carrier = SU5_producer_mediated_carrier_transfer_candidate_pending_I7, delayed_ratio = 1.000000, corridor_ratio = 1.000000, target_over_peer_margin = 0.180000
+neutral_reservoir_buffered_carrier = SU5_producer_mediated_carrier_transfer_candidate_pending_I7, delayed_ratio = 1.000000, corridor_ratio = 1.000000, target_over_peer_margin = 0.120000
+band_buffered_return_carrier = SU5_producer_mediated_carrier_transfer_candidate_pending_I7, delayed_ratio = 1.000000, corridor_ratio = 1.000000, target_over_peer_margin = 0.070000
+peer_label_swap_reentry_control = failed_closed for all rows
+active_carrier_update_carryover_control = failed_closed for all rows
+native_conductance_memory_relabel_control = failed_closed for all rows
+```
+
+Artifact hashes:
+
+```text
+df49bc138786189f83d19c114d9532a02a1fe26f36107d695848c76bca5bd9e4  outputs/n22_carrier_transfer_reentry_probe.json
+b8e73fd472694432a7c8bc5cdb8967a80a00618348a7f58c83efdec4fa6d4ba4  reports/n22_carrier_transfer_reentry_probe.md
+9c229a9d6d63e9baf99c92369503d5db653582fc68500df8cf310d9ba7ad5595  scripts/build_n22_carrier_transfer_reentry_probe.py
+```
+
+Interpretation:
+
+```text
+Iteration 6-A is not a rerun of the packet-readout transfer result. It consumes
+the I5-C carrier snapshots and asks whether those producer-mediated
+edge/conductance carrier deltas can remain present through later re-entry
+contexts without a new producer carrier update.
+
+Geometrically, the durable quantity is the target edge/base-conductance carrier
+delta, not a packet residue. Each positive row starts from the serialized I5-C
+post-carrier state, then passes through two later contexts: delayed target
+re-entry and peer-corridor flux before target re-entry. In both contexts, the
+target carrier delta remains at a 1.0 persistence ratio after readback. The
+same-budget peer lacks the equivalent target carrier delta, so target-over-peer
+separation remains positive for all three carrier families.
+
+This is stronger than I5-C because the carrier is not only reusable under
+repeated readback; it is also expressed after later transfer/re-entry contexts.
+It is still weaker than final SU5 because I7 replay and control classification
+has not run. It is also producer-mediated: the carrier delta exists because the
+I5-C producer wrote a conductance carrier into serialized LGRC state. The
+current native LGRC implementation still lacks native route-conductance memory.
+
+I6-A therefore supports only provisional producer-mediated carrier-transfer
+evidence pending I7. It does not rescue or replace the I6 packet-readout branch,
+does not support native conductance memory, and does not support final SU5,
+SU6, final N22, the N21 ND6 bridge, semantic learning, choice, agency, native
+support, sentience, Phase 8, or ant-ecology implementation.
+```
+
+## Iteration 6-B. Carrier Transfer Stress-Boundary Probe
+
+- [x] Consume I5-C producer-mediated non-consumptive carrier candidates.
+- [x] Consume I6-A as the immediate carrier transfer/re-entry precedent.
+- [x] Keep I6-A as the primary carrier transfer result, not replaced.
+- [x] Keep I5/I5-A/I5-B/I6 packet-readout branch unchanged as consumptive
+      SU3 transfer/readout expression only.
+- [x] Reuse I5-C snapshots without carrier retuning.
+- [x] Declare stress-boundary thresholds before use.
+- [x] Test longer idle delay before target re-entry.
+- [x] Test stronger peer-corridor flux before target re-entry.
+- [x] Test repeated target re-entry before readback.
+- [x] Test mixed peer/target corridor sequence before readback.
+- [x] Confirm no new producer carrier update is applied after loading I5-C
+      snapshots.
+- [x] Require target-over-peer separation in each stress context.
+- [x] Require same-basin support, coherence, and budget gates to remain
+      preserved.
+- [x] Run peer-label-swap-under-stress, active-carrier-update-carryover,
+      native-conductance-memory relabel, and final-SU5 relabel controls.
+- [x] Keep the result provisional pending I7 controls.
+- [x] Keep final SU5, SU6, final N22, the N21 ND6 bridge, native
+      route-conductance memory, semantic learning, choice, agency, native
+      support, sentience, Phase 8, and ant-ecology implementation blocked.
+
+Expected artifacts:
+
+```text
+outputs/n22_carrier_transfer_stress_boundary_probe.json
+reports/n22_carrier_transfer_stress_boundary_probe.md
+scripts/build_n22_carrier_transfer_stress_boundary_probe.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_producer_mediated_carrier_transfer_stress_boundary_pending_i7_no_final_su5
+output_digest = 3ee5f391766d9d75db6d794f8fe0f33341e5dfd96eee4e4bca6254ec5be7e9a6
+check_count = 16
+failed_checks = []
+artifact_manifest_count = 77
+source_i5c_su4_candidate_count = 3
+source_i6a_su5_candidate_count = 3
+provisional_su5_stress_candidate_count = 3
+stress_context_count_per_row = 4
+stress_context_pass_count = 12
+min_carrier_transfer_ratio_observed = 1.000000
+min_target_over_peer_margin_observed = 0.070000
+max_carrier_loss_after_stress_observed = 0.000000
+i6a_replaced = false
+existing_i6_superseded = false
+packet_readout_branch_status = unchanged_consumptive_SU3_transfer_readout_expression_only
+i5c_i6a_branch_status = provisional_producer_mediated_SU5_stress_boundary_candidate_pending_I7
+su5_supported = false
+su6_supported = false
+final_n22_supported = false
+n21_nd6_bridge_status = not_supported
+native_route_conductance_memory_supported = false
+ready_for_iteration_7_control_matrix = true
+route_conductance_geometry_carrier = SU5_producer_mediated_carrier_transfer_stress_boundary_candidate_pending_I7, stress_contexts = 4/4, min_ratio = 1.000000, min_margin = 0.180000
+neutral_reservoir_buffered_carrier = SU5_producer_mediated_carrier_transfer_stress_boundary_candidate_pending_I7, stress_contexts = 4/4, min_ratio = 1.000000, min_margin = 0.120000
+band_buffered_return_carrier = SU5_producer_mediated_carrier_transfer_stress_boundary_candidate_pending_I7, stress_contexts = 4/4, min_ratio = 1.000000, min_margin = 0.070000
+peer_label_swap_under_stress_control = failed_closed for all rows
+active_carrier_update_carryover_control = failed_closed for all rows
+native_conductance_memory_relabel_control = failed_closed for all rows
+stress_success_as_final_su5_relabel_control = failed_closed for all rows
+```
+
+Artifact hashes:
+
+```text
+0496b4e751bfd5ab2add2d0e91000dfa69522a5284e81e5ac9ce61e88d66704e  outputs/n22_carrier_transfer_stress_boundary_probe.json
+e9f02034706e1f8475d2d3d997b2b120e144a731facd92ca350b83a17cff95b6  reports/n22_carrier_transfer_stress_boundary_probe.md
+3a31559a7cdecf9fc35b5b379430aa8b8c335383de5f00a9f1d3b503644c410b  scripts/build_n22_carrier_transfer_stress_boundary_probe.py
+```
+
+Interpretation:
+
+```text
+Iteration 6-B strengthens the I5-C/I6-A carrier branch by adding stress
+contexts rather than a new carrier producer. It reuses the I5-C post-carrier
+snapshots and applies longer delay, stronger peer-corridor flux, repeated
+target re-entry, and mixed peer/target corridor events before carrier readback.
+
+Geometrically, the tested quantity is still the target edge/base-conductance
+carrier delta. The stress events move packets through the target and peer
+corridors, but they do not rewrite the carrier. After the stress sequence and
+readback, the target carrier delta remains at a 1.0 transfer ratio for all
+three carrier families. The same-budget peer lacks the equivalent target-edge
+carrier delta, so target-over-peer separation stays positive. The weakest
+stress margin is the band-buffered carrier at 0.070000, so the result is
+bounded and still close to the declared margin floor.
+
+The pass is useful because I6-A was a two-context transfer result, while I6-B
+shows the same carrier branch surviving a wider local stress envelope. The pass
+also exposes the naturalization debt clearly: the carrier is stable because it
+is a serialized producer-mediated edge/conductance field. Current LGRC still
+lacks native route-conductance memory or a native policy that would write this
+carrier without producer code.
+
+I6-B therefore supports only bounded producer-mediated SU5 stress-boundary
+evidence pending I7. It does not replace I6-A, does not rescue the packet
+readout branch, does not support native conductance memory, and does not
+support final SU5, SU6, final N22, the N21 ND6 bridge, semantic learning,
+choice, agency, native support, sentience, Phase 8, or ant-ecology
+implementation.
+```
+
 ## Iteration 7. Replay And Control Matrix
 
 - [ ] Consume all provisional N22 candidate rows.
+- [ ] Consume the I6 transfer/readout-expression subset and the complementary
+      split demotion.
+- [ ] Preserve the I5-B consumptive-readout boundary as an SU5/SU6 blocker.
+- [ ] Consume I5-C as a separate producer-mediated non-consumptive carrier
+      branch, not as a replacement for I5-B or I6.
+- [ ] Consume I6-A as the I5-C-derived carrier transfer/re-entry branch,
+      provisional pending controls.
+- [ ] Preserve I6-A as producer-mediated carrier evidence, not native
+      route-conductance memory.
+- [ ] Keep the existing I6 packet-readout branch unchanged and separate from
+      I6-A.
+- [ ] Consume I6-B as the carrier transfer stress-boundary branch, provisional
+      pending controls.
+- [ ] Preserve I6-B as a bounded stress envelope over producer-mediated carrier
+      state, not final SU5 or native route-conductance memory.
+- [ ] Keep I5-C native route-conductance memory naturalization debt visible.
 - [ ] Consume all active-null and failure-baseline rows.
 - [ ] Run required replay and negative controls.
 - [ ] Record every required control status as `passed`, `failed_closed`,
