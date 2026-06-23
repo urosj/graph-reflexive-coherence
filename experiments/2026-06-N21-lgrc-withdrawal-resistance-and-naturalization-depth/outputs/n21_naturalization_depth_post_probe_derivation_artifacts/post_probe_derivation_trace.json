@@ -1,0 +1,112 @@
+{
+  "active_probe_residue_record": {
+    "active_probe_packet_records_in_replay": 0,
+    "active_probe_queue_empty": true,
+    "active_probe_schedule_disabled": true,
+    "historical_probe_provenance_allowed": true,
+    "historical_probe_provenance_present": true,
+    "in_flight_probe_budget": 0.0,
+    "probe_support_not_used_as_evidence": true
+  },
+  "artifact_id": "n21_i5a_post_probe_derivation_trace",
+  "claim_scope_clarification": {
+    "general_naturalization_depth_supported": false,
+    "native_support_supported": false,
+    "post_probe_aftereffect_persistence_supported": true,
+    "supported_scope": "provisional_post_probe_derived_nd3_candidate"
+  },
+  "eventful_post_probe_continuation": false,
+  "multi_window_replay_trace": {
+    "declared_window_count": 3,
+    "post_probe_final_state_digest": "5f98c9ebb4110dab0762fd13fc7aacb6d86c449d89179dd6fea4edacbbbf96c9",
+    "post_probe_initial_state_digest": "5f98c9ebb4110dab0762fd13fc7aacb6d86c449d89179dd6fea4edacbbbf96c9",
+    "status": "passed"
+  },
+  "post_probe_boundary_trace": {
+    "active_degree_floor": 9,
+    "post_probe_active_degree": 9,
+    "status": "preserved",
+    "topology_signature_same": true
+  },
+  "post_probe_coherence_floor_trace": {
+    "coherence_margin": 0.08999999999999986,
+    "post_probe_center_coherence": 10.04,
+    "post_probe_coherence_floor": 9.95,
+    "status": "preserved"
+  },
+  "post_probe_derived_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/post_probe_derived_events.jsonl",
+  "post_probe_derived_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/post_probe_derived_run.json",
+  "post_probe_flux_or_leakage_trace": {
+    "active_probe_packet_records_in_replay": 0,
+    "historical_probe_packet_record_count": 1,
+    "max_budget_error": 1e-09,
+    "post_probe_budget_error": 1.4210854715202004e-14,
+    "post_probe_in_flight_packet_total": 0.0,
+    "status": "preserved"
+  },
+  "post_probe_same_basin_comparison": {
+    "active_degree_same": true,
+    "basin_member_count_same": true,
+    "center_basin_id_same": true,
+    "center_node_id_same": true,
+    "topology_signature_same": true
+  },
+  "post_probe_same_basin_continuation_status": "preserved",
+  "post_probe_support_floor_trace": {
+    "post_probe_support_floor": 9.95,
+    "post_probe_support_score": 10.0,
+    "status": "preserved",
+    "support_margin": 0.05000000000000071
+  },
+  "probe_effect_trace": {
+    "center_coherence_delta": 0.03999999999999915,
+    "packet_count_delta": 1,
+    "pre_probe_state_digest": "aa560ca1ae707821257ce9f3d3388871efabbf6dbb2ccca1a20b8c612094054e",
+    "probe_effect_delta_digest": "8f3ed3b6152d315772fbe0e1dab9c09ccb354cfbd09498ce2c99701d3c77ff3a",
+    "probe_effect_detected": true,
+    "probe_effect_fields": [
+      "center_node_coherence",
+      "source_node_coherence",
+      "packet_records",
+      "local_update_count",
+      "causal_spark_diagnostic_count"
+    ],
+    "probe_event_count": 5,
+    "probe_present_final_state_digest": "5f98c9ebb4110dab0762fd13fc7aacb6d86c449d89179dd6fea4edacbbbf96c9",
+    "source_coherence_delta": -0.03999999999999915
+  },
+  "probe_present_baseline_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/probe_present_baseline_run.json",
+  "probe_present_event_log_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/probe_present_baseline_events.jsonl",
+  "probe_schedule": {
+    "active_probe_schedule_disabled": true,
+    "baseline_probe_packet_amount": 0.04,
+    "edge_id": 0,
+    "kind": "packetized_probe_scaffold",
+    "post_probe_replay_windows": 3,
+    "post_probe_state_derivation_source": "probe_present_final_snapshot",
+    "probe_absent_replay_starts_from_derived_post_probe_state": true,
+    "probe_present_in_baseline": true,
+    "source_node_id": 1,
+    "target_node_id": 0
+  },
+  "replay_kind": "static_post_probe_snapshot_replay",
+  "reset_to_initial_no_probe_control": {
+    "control_interpretation": "I5 already supports initial no-probe replay, but 5-A starts from the probe-present final state and preserves a different derived state signature.",
+    "derived_state_differs_from_initial_no_probe_state": true,
+    "initial_no_probe_candidate_supported": true,
+    "initial_no_probe_state_digest": "ac27c6bfae255bf87440b1329637d79e0b698279cc192e37601725d2b838e868",
+    "post_probe_derived_state_digest": "5f98c9ebb4110dab0762fd13fc7aacb6d86c449d89179dd6fea4edacbbbf96c9",
+    "source_i5_output": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_probe.json"
+  },
+  "runtime_config_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/runtime_config.json",
+  "state_derivation_record": {
+    "post_probe_state_carried_into_probe_absent_run": true,
+    "post_probe_state_derivation_digest": "5f98c9ebb4110dab0762fd13fc7aacb6d86c449d89179dd6fea4edacbbbf96c9",
+    "post_probe_state_derivation_source": "probe_present_final_snapshot",
+    "probe_absent_initial_state_digest": "5f98c9ebb4110dab0762fd13fc7aacb6d86c449d89179dd6fea4edacbbbf96c9",
+    "probe_absent_initial_state_matches_derived_post_probe_state": true,
+    "source_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_post_probe_derivation_artifacts/probe_present_baseline_final_snapshot.json",
+    "state_derivation_digest": "1440a81727bea11cc9132322360f421184b115273b6c57ce43f05d7937d948ac"
+  },
+  "trace_digest": "1b266999adf837529b54192df04db93ed3258d771d7b8c891b83b1898f510526"
+}

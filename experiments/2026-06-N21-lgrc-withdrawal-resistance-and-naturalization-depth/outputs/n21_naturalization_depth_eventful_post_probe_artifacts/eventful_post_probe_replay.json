@@ -1,0 +1,29 @@
+{
+  "all_replay_modes_passed": true,
+  "artifact_id": "n21_i5b_eventful_post_probe_replay",
+  "artifact_replay": {
+    "artifact_path_exists": true,
+    "source_run_artifact_digest": "5f2907610ed8cfd6723590bd8ec22b52f0e4f0b2dad32b0416b75bf3d5bc3a21",
+    "status": "passed"
+  },
+  "duplicate_eventful_replay": {
+    "duplicate_geometry_digest": "cef5db3b1b9e068aec1c632f6ea15120b9e1081071c161a5b2cd89069dfc61aa",
+    "original_geometry_digest": "cef5db3b1b9e068aec1c632f6ea15120b9e1081071c161a5b2cd89069dfc61aa",
+    "status": "passed"
+  },
+  "duplicate_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe_duplicate_run.json",
+  "eventful_post_probe_replay": {
+    "active_original_probe_packet_records_in_eventful_window": 0,
+    "event_count": 5,
+    "status": "passed",
+    "window_count": 3
+  },
+  "replay_digest": "f51d39859b0d3870aed371e785b183d10e6beee37586774eac312f12d1d9b2e5",
+  "snapshot_load_replay": {
+    "loaded_snapshot_geometry_digest": "cef5db3b1b9e068aec1c632f6ea15120b9e1081071c161a5b2cd89069dfc61aa",
+    "original_geometry_digest": "cef5db3b1b9e068aec1c632f6ea15120b9e1081071c161a5b2cd89069dfc61aa",
+    "status": "passed"
+  },
+  "source_final_snapshot_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe_final_snapshot.json",
+  "source_run_artifact_path": "experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_naturalization_depth_eventful_post_probe_artifacts/eventful_post_probe_run.json"
+}

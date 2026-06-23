@@ -1,0 +1,986 @@
+{
+  "acceptance_state": "accepted_source_contract_inventory_no_primitive_evidence",
+  "artifact_id": "n21_source_contract_inventory",
+  "blocked_claims": [
+    "agency",
+    "semantic_action",
+    "semantic_perception",
+    "semantic_goal_ownership",
+    "semantic_intention",
+    "semantic_choice",
+    "selfhood",
+    "identity_acceptance",
+    "native_support",
+    "phase8_implementation",
+    "fully_native_integration",
+    "organism_life",
+    "sentience",
+    "consciousness",
+    "native_ant_agency",
+    "native_colony_agency",
+    "unrestricted_autonomy"
+  ],
+  "checks": [
+    {
+      "check_id": "n20_closeout_passed_and_ready_for_n21",
+      "detail": {
+        "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+        "ready_for_n21": true,
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n21_handoff_scope_matches_required_primitives",
+      "detail": [
+        "withdrawal_resistance",
+        "naturalization_depth"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "readiness_gate_matches_expected",
+      "detail": {
+        "may_redefine_n20_contract_to_pass": false,
+        "must_consume_i5_contract": true,
+        "must_declare_row_specific_thresholds_before_use": true,
+        "must_fail_closed_on_hidden_support": true,
+        "must_fail_closed_on_proxy_only_success": true,
+        "must_keep_agency_native_phase8_sentience_claims_blocked": true,
+        "must_keep_primitive_evidence_separate_from_contract": true,
+        "must_produce_source_backed_pass_fail_evidence": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n20_i5_contract_artifact_passed",
+      "detail": {
+        "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "required_i5_contract_rows_present",
+      "detail": [
+        "naturalization_depth",
+        "withdrawal_resistance"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "required_i5_rows_contract_complete",
+      "detail": {
+        "naturalization_depth": "complete",
+        "withdrawal_resistance": "complete"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "contract_rows_consumed_without_redefinition",
+      "detail": {
+        "naturalization_depth": true,
+        "withdrawal_resistance": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "primitive_evidence_not_opened",
+      "detail": {
+        "n20_closeout": false,
+        "n20_i5": false,
+        "n21_rows": {
+          "naturalization_depth": false,
+          "withdrawal_resistance": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "primitive_support_not_claimed",
+      "detail": {
+        "naturalization_depth": false,
+        "withdrawal_resistance": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ladder_rungs_not_assigned_by_contract_inventory",
+      "detail": {
+        "naturalization_depth": {
+          "nd_ladder_rung": "not_assigned_contract_inventory_only",
+          "wr_ladder_rung": "not_applicable"
+        },
+        "withdrawal_resistance": {
+          "nd_ladder_rung": "not_applicable",
+          "wr_ladder_rung": "not_assigned_contract_inventory_only"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_current_fields_recorded",
+      "detail": {
+        "naturalization_depth": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace",
+          "naturalization_depth.multi_window_replay_trace"
+        ],
+        "withdrawal_resistance": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.withdrawal_window_trace"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_and_debt_fields_recorded",
+      "detail": {
+        "naturalization_depth": {
+          "naturalization_debt_fields": [
+            "naturalization_depth.source_current_producer_removal_observation",
+            "naturalization_depth.multi_window_without_probe_replay",
+            "naturalization_depth.naturalization_depth_budget_surface"
+          ],
+          "producer_mediated_fields": [
+            "naturalization_depth.naturalization_depth_score_formula",
+            "naturalization_depth.support_source_annotation",
+            "naturalization_depth.depth_rank_label"
+          ]
+        },
+        "withdrawal_resistance": {
+          "naturalization_debt_fields": [
+            "withdrawal_resistance.source_current_support_withdrawal_surface",
+            "withdrawal_resistance.producer_independent_withdrawal_replay",
+            "withdrawal_resistance.native_support_decay_owner"
+          ],
+          "producer_mediated_fields": [
+            "withdrawal_resistance.declared_withdrawal_schedule",
+            "withdrawal_resistance.withdrawal_amount_policy",
+            "withdrawal_resistance.pass_fail_threshold_label"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "blocked_relabel_fields_recorded",
+      "detail": {
+        "naturalization_depth": 19,
+        "withdrawal_resistance": 19
+      },
+      "passed": true
+    },
+    {
+      "check_id": "required_controls_recorded",
+      "detail": {
+        "naturalization_depth": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "probe_present_only_control",
+          "probe_residue_control",
+          "support_source_annotation_relabel_control"
+        ],
+        "withdrawal_resistance": [
+          "label_only_success_control",
+          "proxy_only_success_control",
+          "hidden_producer_support_control",
+          "post_hoc_trace_construction_control",
+          "semantic_relabel_control",
+          "native_support_relabel_control",
+          "phase8_relabel_control",
+          "withdrawal_schedule_removed_control",
+          "hidden_support_margin_control",
+          "support_floor_crossing_control"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "global_unsafe_claim_flags_cover_blocked_claims",
+      "detail": {
+        "naturalization_depth": [
+          "agency",
+          "consciousness",
+          "fully_native_integration",
+          "identity_acceptance",
+          "native_ant_agency",
+          "native_colony_agency",
+          "native_support",
+          "organism_life",
+          "phase8_implementation",
+          "selfhood",
+          "semantic_action",
+          "semantic_choice",
+          "semantic_goal_ownership",
+          "semantic_intention",
+          "semantic_perception",
+          "sentience",
+          "unrestricted_autonomy"
+        ],
+        "withdrawal_resistance": [
+          "agency",
+          "consciousness",
+          "fully_native_integration",
+          "identity_acceptance",
+          "native_ant_agency",
+          "native_colony_agency",
+          "native_support",
+          "organism_life",
+          "phase8_implementation",
+          "selfhood",
+          "semantic_action",
+          "semantic_choice",
+          "semantic_goal_ownership",
+          "semantic_intention",
+          "semantic_perception",
+          "sentience",
+          "unrestricted_autonomy"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "global_and_source_unsafe_claim_flags_false_per_row",
+      "detail": {
+        "naturalization_depth": {
+          "global_unsafe_claim_flags": {
+            "agency": false,
+            "consciousness": false,
+            "fully_native_integration": false,
+            "identity_acceptance": false,
+            "native_ant_agency": false,
+            "native_colony_agency": false,
+            "native_support": false,
+            "organism_life": false,
+            "phase8_implementation": false,
+            "selfhood": false,
+            "semantic_action": false,
+            "semantic_choice": false,
+            "semantic_goal_ownership": false,
+            "semantic_intention": false,
+            "semantic_perception": false,
+            "sentience": false,
+            "unrestricted_autonomy": false
+          },
+          "row_specific_blocked_relabel_count": 19,
+          "source_unsafe_claim_flags": {
+            "agency": false,
+            "consciousness": false,
+            "identity_acceptance": false,
+            "native_ant_agency": false,
+            "native_colony_agency": false,
+            "native_support": false,
+            "organism_life": false,
+            "phase8_implementation": false,
+            "selfhood": false,
+            "semantic_action": false,
+            "semantic_choice": false,
+            "semantic_goal_ownership": false,
+            "semantic_intention": false,
+            "semantic_perception": false,
+            "sentience": false,
+            "unrestricted_autonomy": false
+          }
+        },
+        "withdrawal_resistance": {
+          "global_unsafe_claim_flags": {
+            "agency": false,
+            "consciousness": false,
+            "fully_native_integration": false,
+            "identity_acceptance": false,
+            "native_ant_agency": false,
+            "native_colony_agency": false,
+            "native_support": false,
+            "organism_life": false,
+            "phase8_implementation": false,
+            "selfhood": false,
+            "semantic_action": false,
+            "semantic_choice": false,
+            "semantic_goal_ownership": false,
+            "semantic_intention": false,
+            "semantic_perception": false,
+            "sentience": false,
+            "unrestricted_autonomy": false
+          },
+          "row_specific_blocked_relabel_count": 19,
+          "source_unsafe_claim_flags": {
+            "agency": false,
+            "consciousness": false,
+            "identity_acceptance": false,
+            "native_ant_agency": false,
+            "native_colony_agency": false,
+            "native_support": false,
+            "organism_life": false,
+            "phase8_implementation": false,
+            "selfhood": false,
+            "semantic_action": false,
+            "semantic_choice": false,
+            "semantic_goal_ownership": false,
+            "semantic_intention": false,
+            "semantic_perception": false,
+            "sentience": false,
+            "unrestricted_autonomy": false
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "row_specific_blocked_relabels_separated_from_global_flags",
+      "detail": {
+        "naturalization_depth": {
+          "global_unsafe_claim_flags": "N21-wide unsafe claim family; every listed claim is forced false.",
+          "row_specific_blocked_relabels": "Primitive-specific blocked relabel fields inherited from N20; they are not required to appear as global unsafe flag keys."
+        },
+        "withdrawal_resistance": {
+          "global_unsafe_claim_flags": "N21-wide unsafe claim family; every listed claim is forced false.",
+          "row_specific_blocked_relabels": "Primitive-specific blocked relabel fields inherited from N20; they are not required to appear as global unsafe flag keys."
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "inventory_decision_uses_standard_row_decision",
+      "detail": {
+        "naturalization_depth": {
+          "inventory_decision": "supported_as_contract_input_only",
+          "row_decision": "not_applicable"
+        },
+        "withdrawal_resistance": {
+          "inventory_decision": "supported_as_contract_input_only",
+          "row_decision": "not_applicable"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "controls_declared_not_executed_in_inventory",
+      "detail": {
+        "naturalization_depth": {
+          "control_execution_status": "not_run",
+          "controls_declared_fail_closed_in_contract": true
+        },
+        "withdrawal_resistance": {
+          "control_execution_status": "not_run",
+          "controls_declared_fail_closed_in_contract": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "agency_native_phase8_sentience_ant_ecology_unopened",
+      "detail": {
+        "agency_claim_opened": false,
+        "ant_ecology_spec_opened": false,
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "sentience_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_local_absolute_paths",
+      "detail": "payload uses repository-relative paths and source IDs only",
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/scripts/build_n21_source_contract_inventory.py",
+  "evidence_admissibility_contract": {
+    "derived_report_only_true_blocks_positive_support": true,
+    "iteration_1_role": "inventory_only",
+    "ladder_rungs_require_source_backed_n21_evidence": true,
+    "n20_contract_completeness_assigns_ladder_rungs": false,
+    "positive_evidence_requires_future_run_artifacts": true,
+    "required_future_run_artifact_fields": [
+      "run_artifact_id",
+      "source_commit_or_source_digest",
+      "runtime_config_digest",
+      "source_contract_row_digest",
+      "baseline_artifact_path",
+      "withdrawn_or_probe_absent_artifact_path",
+      "event_log_or_trace_path",
+      "snapshot_or_replay_artifact_path",
+      "artifact_digest",
+      "derived_report_only"
+    ],
+    "source_current_definition": "emitted by the LGRC runtime or replay from declared run artifacts, not invented by a report builder, label, post-hoc parser, or producer-only policy"
+  },
+  "experiment": "2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth",
+  "failed_checks": [],
+  "generated_at": "2026-06-23T00:00:00+00:00",
+  "iteration": 1,
+  "iteration1_boundary": {
+    "n21_closeout_ladder_rung_assigned": false,
+    "naturalization_depth_supported": false,
+    "nd_ladder_rung_assigned": false,
+    "positive_run_artifacts_consumed": false,
+    "primitive_evidence_opened": false,
+    "ready_for_iteration_2_schema_freeze": true,
+    "source_contract_inventory_only": true,
+    "withdrawal_resistance_supported": false,
+    "wr_ladder_rung_assigned": false
+  },
+  "output_digest": "d7b7a37bc0781aedbe6f83c5b55ff8805bf559fe7d684c5e1d2a9be8a7cef3ee",
+  "purpose": "Inventory N20 closeout and I5 contract rows for N21 without opening withdrawal-resistance or naturalization-depth primitive evidence.",
+  "schema_version": "n21_source_contract_inventory_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+      "output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+      "sha256": "f6897b0bd39d716e3f8de33ff1818d7b71cf59d9da957197dccd247e7ec438e9",
+      "source_role": "n20_closeout_and_n21_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_role": "n20_i5_same_basin_contract",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "sha256": "2a26c4600a0c55e36f42812548a60e4ea5cf6bfc7b44c1c25ad0301d1c7f4c80",
+      "source_role": "n20_n29_handoff"
+    },
+    {
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "sha256": "3939f9945d5656d7720e517d106b3c3cd1533f1f8505c339dfd4192940418e84",
+      "source_role": "n20_n29_roadmap"
+    }
+  ],
+  "source_closeout_summary": {
+    "blockers": [
+      "missing I5 same-basin rule",
+      "missing declared support/coherence floor",
+      "missing boundary integrity check",
+      "hidden support preserves margin",
+      "proxy-only success",
+      "label-only continuation",
+      "post-hoc replay construction",
+      "producer-mediated state relabeled as native support",
+      "semantic agency or sentience relabel"
+    ],
+    "handoff_scope": [
+      "withdrawal_resistance",
+      "naturalization_depth"
+    ],
+    "n20_acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+    "n20_output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+    "n20_status": "passed",
+    "readiness_gate": {
+      "may_redefine_n20_contract_to_pass": false,
+      "must_consume_i5_contract": true,
+      "must_declare_row_specific_thresholds_before_use": true,
+      "must_fail_closed_on_hidden_support": true,
+      "must_fail_closed_on_proxy_only_success": true,
+      "must_keep_agency_native_phase8_sentience_claims_blocked": true,
+      "must_keep_primitive_evidence_separate_from_contract": true,
+      "must_produce_source_backed_pass_fail_evidence": true
+    },
+    "ready_for_n21": true
+  },
+  "source_context_boundary": {
+    "markdown_sources_context_only": [
+      "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md"
+    ],
+    "markdown_sources_may_consume_as": [
+      "context",
+      "boundary",
+      "roadmap"
+    ],
+    "markdown_sources_must_not_consume_as": [
+      "source_current_run_artifact",
+      "positive_primitive_evidence",
+      "WR_or_ND_ladder_rung_assignment_source"
+    ]
+  },
+  "source_contract_rows": [
+    {
+      "allowed_next_assignment_source": "source_backed_N21_evidence_rows_only",
+      "blocked_claims_carried_forward": [
+        "agency",
+        "semantic_action",
+        "semantic_perception",
+        "semantic_goal_ownership",
+        "semantic_intention",
+        "semantic_choice",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "phase8_implementation",
+        "fully_native_integration",
+        "organism_life",
+        "sentience",
+        "consciousness",
+        "native_ant_agency",
+        "native_colony_agency",
+        "unrestricted_autonomy"
+      ],
+      "blocked_relabel_fields": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "claim_ceiling": "source contract input only; no N21 primitive evidence, agency, native support, Phase 8, sentience, or ant-ecology implementation",
+      "contract_consumed_without_redefinition": true,
+      "control_execution_status": "not_run",
+      "controls_declared_fail_closed_in_contract": true,
+      "global_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "global_unsafe_claim_flags_all_false": true,
+      "handoff_inputs": {
+        "coherence_floor": "coherence remains above declared withdrawal floor",
+        "declared_supports": [
+          "support_coherence_floor_trace",
+          "boundary_integrity_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "withdrawal_resistance",
+        "probe_absent_condition": "declared support/scaffold weakened or absent after withdrawal",
+        "probe_present_condition": "declared support/scaffold present before withdrawal",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "support remains above declared withdrawal floor",
+        "withdrawal_condition": "declared support is weakened or removed in a bounded window"
+      },
+      "inventory_decision": "supported_as_contract_input_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n20_source_status_note": "Inherited from the N20 source artifact; this is not an N21 iteration status.",
+      "n21_inventory_role": "source_contract_input_only",
+      "n21_ladder_rung_assigned": false,
+      "n21_primitive_evidence_opened": false,
+      "n21_primitive_supported": false,
+      "naturalization_debt_fields": [
+        "withdrawal_resistance.source_current_support_withdrawal_surface",
+        "withdrawal_resistance.producer_independent_withdrawal_replay",
+        "withdrawal_resistance.native_support_decay_owner"
+      ],
+      "nd_ladder_rung": "not_applicable",
+      "primitive_id": "withdrawal_resistance",
+      "primitive_name": "Withdrawal Resistance",
+      "producer_mediated_fields": [
+        "withdrawal_resistance.declared_withdrawal_schedule",
+        "withdrawal_resistance.withdrawal_amount_policy",
+        "withdrawal_resistance.pass_fail_threshold_label"
+      ],
+      "required_control_ids": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "withdrawal_schedule_removed_control",
+        "hidden_support_margin_control",
+        "support_floor_crossing_control"
+      ],
+      "row_decision": "not_applicable",
+      "row_id": "n21_i1_row_01_withdrawal_resistance",
+      "row_specific_blocked_relabels": [
+        "withdrawal_resistance.blocked.agency",
+        "withdrawal_resistance.blocked.consciousness",
+        "withdrawal_resistance.blocked.identity_acceptance",
+        "withdrawal_resistance.blocked.native_ant_agency",
+        "withdrawal_resistance.blocked.native_colony_agency",
+        "withdrawal_resistance.blocked.native_support",
+        "withdrawal_resistance.blocked.organism_life",
+        "withdrawal_resistance.blocked.phase8_implementation",
+        "withdrawal_resistance.blocked.resilience_as_identity",
+        "withdrawal_resistance.blocked.selfhood",
+        "withdrawal_resistance.blocked.semantic_action",
+        "withdrawal_resistance.blocked.semantic_choice",
+        "withdrawal_resistance.blocked.semantic_goal",
+        "withdrawal_resistance.blocked.semantic_goal_ownership",
+        "withdrawal_resistance.blocked.semantic_intention",
+        "withdrawal_resistance.blocked.semantic_perception",
+        "withdrawal_resistance.blocked.sentience",
+        "withdrawal_resistance.blocked.unrestricted_autonomy",
+        "withdrawal_resistance.blocked.willpower"
+      ],
+      "same_basin_rule": {
+        "basin_signature_fields": [
+          "withdrawal_resistance.basin_signature_trace",
+          "withdrawal_resistance.boundary_integrity_trace",
+          "withdrawal_resistance.support_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "boundary remains distinguishable during withdrawal",
+        "failure_modes": [
+          "basin signature changes",
+          "support floor crosses below declared floor",
+          "coherence floor crosses below declared floor",
+          "hidden support preserves margin",
+          "label-only resistance"
+        ],
+        "flux_balance_bounds": "leakage cannot explain apparent persistence under support reduction",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "withdrawal run replays from declared support schedule without hidden producer support",
+        "required_coherence_floor": "coherence remains above declared withdrawal floor",
+        "required_support_floor": "support remains above declared withdrawal floor",
+        "rule_id": "n20_i5_withdrawal_resistance_same_basin_rule"
+      },
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "source_contract_row": "n20_i5_row_01_withdrawal_resistance",
+      "source_contract_row_digest": "db8c2f0e93f81971f8b4316dda04c5f556aa0fbda691a8255713d86f209adee5",
+      "source_contract_status": "complete",
+      "source_current_fields": [
+        "withdrawal_resistance.basin_signature_trace",
+        "withdrawal_resistance.support_coherence_floor_trace",
+        "withdrawal_resistance.boundary_integrity_trace",
+        "withdrawal_resistance.withdrawal_window_trace"
+      ],
+      "source_primitive_evidence_opened": false,
+      "source_primitive_supported": false,
+      "source_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "source_unsafe_claim_flags_all_false": true,
+      "support_scaffold": {
+        "declared_supports": [
+          "withdrawal_resistance.support_coherence_floor_trace",
+          "withdrawal_resistance.boundary_integrity_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "withdrawal_resistance.declared_withdrawal_schedule",
+          "withdrawal_resistance.withdrawal_amount_policy"
+        ],
+        "required_supports": [
+          "support floor",
+          "coherence floor",
+          "boundary integrity floor"
+        ],
+        "support_id": "n20_i4_withdrawal_resistance_support_scaffold",
+        "withdrawable_supports": [
+          "declared support surface"
+        ]
+      },
+      "unsafe_claim_flag_scope": {
+        "global_unsafe_claim_flags": "N21-wide unsafe claim family; every listed claim is forced false.",
+        "row_specific_blocked_relabels": "Primitive-specific blocked relabel fields inherited from N20; they are not required to appear as global unsafe flag keys."
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "wr_ladder_rung": "not_assigned_contract_inventory_only"
+    },
+    {
+      "allowed_next_assignment_source": "source_backed_N21_evidence_rows_only",
+      "blocked_claims_carried_forward": [
+        "agency",
+        "semantic_action",
+        "semantic_perception",
+        "semantic_goal_ownership",
+        "semantic_intention",
+        "semantic_choice",
+        "selfhood",
+        "identity_acceptance",
+        "native_support",
+        "phase8_implementation",
+        "fully_native_integration",
+        "organism_life",
+        "sentience",
+        "consciousness",
+        "native_ant_agency",
+        "native_colony_agency",
+        "unrestricted_autonomy"
+      ],
+      "blocked_relabel_fields": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "source contract input only; no N21 primitive evidence, agency, native support, Phase 8, sentience, or ant-ecology implementation",
+      "contract_consumed_without_redefinition": true,
+      "control_execution_status": "not_run",
+      "controls_declared_fail_closed_in_contract": true,
+      "global_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "global_unsafe_claim_flags_all_false": true,
+      "handoff_inputs": {
+        "coherence_floor": "post-probe coherence remains above declared residual floor",
+        "declared_supports": [
+          "post_probe_support_floor_trace",
+          "post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "primitive_id": "naturalization_depth",
+        "probe_absent_condition": "original probe/scaffold absent with residual replay",
+        "probe_present_condition": "original probe/scaffold present",
+        "proxy_only_success_blocker": "proxy improves while basin continuation fails -> primitive not supported",
+        "support_floor": "post-probe support remains above declared residual floor",
+        "withdrawal_condition": "original probe/scaffold is removed or disabled"
+      },
+      "inventory_decision": "supported_as_contract_input_only",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n20_source_status_note": "Inherited from the N20 source artifact; this is not an N21 iteration status.",
+      "n21_inventory_role": "source_contract_input_only",
+      "n21_ladder_rung_assigned": false,
+      "n21_primitive_evidence_opened": false,
+      "n21_primitive_supported": false,
+      "naturalization_debt_fields": [
+        "naturalization_depth.source_current_producer_removal_observation",
+        "naturalization_depth.multi_window_without_probe_replay",
+        "naturalization_depth.naturalization_depth_budget_surface"
+      ],
+      "nd_ladder_rung": "not_assigned_contract_inventory_only",
+      "primitive_id": "naturalization_depth",
+      "primitive_name": "Naturalization Depth",
+      "producer_mediated_fields": [
+        "naturalization_depth.naturalization_depth_score_formula",
+        "naturalization_depth.support_source_annotation",
+        "naturalization_depth.depth_rank_label"
+      ],
+      "required_control_ids": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "probe_present_only_control",
+        "probe_residue_control",
+        "support_source_annotation_relabel_control"
+      ],
+      "row_decision": "not_applicable",
+      "row_id": "n21_i1_row_02_naturalization_depth",
+      "row_specific_blocked_relabels": [
+        "naturalization_depth.blocked.agency",
+        "naturalization_depth.blocked.consciousness",
+        "naturalization_depth.blocked.identity_acceptance",
+        "naturalization_depth.blocked.native_absorption_by_label",
+        "naturalization_depth.blocked.native_ant_agency",
+        "naturalization_depth.blocked.native_colony_agency",
+        "naturalization_depth.blocked.native_support",
+        "naturalization_depth.blocked.organism_life",
+        "naturalization_depth.blocked.phase8_implementation",
+        "naturalization_depth.blocked.selfhood",
+        "naturalization_depth.blocked.semantic_action",
+        "naturalization_depth.blocked.semantic_choice",
+        "naturalization_depth.blocked.semantic_goal",
+        "naturalization_depth.blocked.semantic_goal_ownership",
+        "naturalization_depth.blocked.semantic_intention",
+        "naturalization_depth.blocked.semantic_perception",
+        "naturalization_depth.blocked.sentience",
+        "naturalization_depth.blocked.support_memory_as_selfhood",
+        "naturalization_depth.blocked.unrestricted_autonomy"
+      ],
+      "same_basin_rule": {
+        "basin_signature_fields": [
+          "naturalization_depth.post_probe_basin_signature_trace",
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "boundary_integrity_floor": "post-probe boundary remains distinguishable",
+        "failure_modes": [
+          "probe residue preserves row",
+          "post-probe signature absent",
+          "support annotation replaces source-current support",
+          "depth score without replay"
+        ],
+        "flux_balance_bounds": "residual persistence cannot be imported by hidden support flux",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "multi-window replay without original probe/scaffold",
+        "required_coherence_floor": "post-probe coherence remains above residual floor",
+        "required_support_floor": "post-probe support remains above residual floor",
+        "rule_id": "n20_i5_naturalization_depth_same_basin_rule"
+      },
+      "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "source_contract_row": "n20_i5_row_02_naturalization_depth",
+      "source_contract_row_digest": "9b12a96f64a9a2da181437389cd1315820b6f4c817868590785ba951bac5afda",
+      "source_contract_status": "complete",
+      "source_current_fields": [
+        "naturalization_depth.post_probe_basin_signature_trace",
+        "naturalization_depth.post_probe_support_floor_trace",
+        "naturalization_depth.post_probe_coherence_floor_trace",
+        "naturalization_depth.multi_window_replay_trace"
+      ],
+      "source_primitive_evidence_opened": false,
+      "source_primitive_supported": false,
+      "source_unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "source_unsafe_claim_flags_all_false": true,
+      "support_scaffold": {
+        "declared_supports": [
+          "naturalization_depth.post_probe_support_floor_trace",
+          "naturalization_depth.post_probe_coherence_floor_trace"
+        ],
+        "hidden_support_allowed": false,
+        "hidden_support_blocker": "fail closed if support or scaffold is preserved by an undeclared producer surface",
+        "producer_role": "producer may declare, schedule, or expose the support/scaffold surface, but producer support cannot count as native support",
+        "producer_supplied_scaffolds": [
+          "naturalization_depth.naturalization_depth_score_formula",
+          "naturalization_depth.depth_rank_label"
+        ],
+        "required_supports": [
+          "post-probe support floor",
+          "post-probe coherence floor",
+          "multi-window replay trace"
+        ],
+        "support_id": "n20_i4_naturalization_depth_support_scaffold",
+        "withdrawable_supports": [
+          "original probe/scaffold"
+        ]
+      },
+      "unsafe_claim_flag_scope": {
+        "global_unsafe_claim_flags": "N21-wide unsafe claim family; every listed claim is forced false.",
+        "row_specific_blocked_relabels": "Primitive-specific blocked relabel fields inherited from N20; they are not required to appear as global unsafe flag keys."
+      },
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "wr_ladder_rung": "not_applicable"
+    }
+  ],
+  "status": "passed"
+}

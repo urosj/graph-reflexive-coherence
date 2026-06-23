@@ -1,8 +1,9 @@
 # N20-N29 LGRC Becoming-Agency Ecology Roadmap
 
 This roadmap defines the active experiment arc after the closed N12-N19
-agency-prerequisite and native-readiness stack. N20 is now closed as the
-translation-contract entry point, and N21 is the next experiment.
+agency-prerequisite and native-readiness stack. N20 is closed as the
+translation-contract entry point, N21 is closed as the first bounded
+becoming-primitive evidence experiment, and N22 is the next experiment.
 
 It is not a Phase 8 implementation plan, not an ant ecology specification, and
 not an agency claim. Its purpose is to ground the deeper "agency of becoming"
@@ -227,10 +228,12 @@ Active handoff:
 Status:
 
 ```text
-next
-must_consume_i5_contract = true
-may_redefine_n20_contract_to_pass = false
-must_produce_source_backed_pass_fail_evidence = true
+closed
+final_supported_status = bounded_artifact_level_withdrawal_and_naturalization_candidate
+withdrawal_resistance_ladder_rung = WR6
+naturalization_depth_ladder_rung = ND5
+n21_closeout_ladder_rung = N21-C6
+ready_for_n22 = true
 ```
 
 Question:
@@ -250,6 +253,18 @@ naturalization depth as persistence without the original probe
 This is the first primitive because agency-of-becoming starts with persistence
 capacity, not semantic choice.
 
+Closeout:
+
+```text
+withdrawal resistance = bounded artifact-level WR6 candidate
+naturalization depth = bounded N21-local ND5 candidate
+N21 closeout = N22-ready bounded primitive evidence
+```
+
+N21 does not support robust withdrawal resistance, support-removal resistance,
+general naturalization depth, `ND6`, susceptibility update, learning, agency,
+native support, sentience, Phase 8, or ant-ecology implementation.
+
 Blocked claims:
 
 ```text
@@ -261,6 +276,16 @@ unrestricted autonomy
 ```
 
 ## N22. Susceptibility Update / Durable Geometry Modification
+
+Status:
+
+```text
+next
+must_consume_n20_i5_susceptibility_update_contract = true
+must_consume_n21_closeout_as_context_only = true
+must_produce_new_source_backed_durable_geometry_deltas = true
+may_treat_n21_wr_nd_as_susceptibility_evidence = false
+```
 
 Question:
 
@@ -307,6 +332,24 @@ L6 = new basin formation candidate, deferred to N25
 N22 should contribute to the AP4/AP5 gap story by producing source-current
 susceptibility evidence, but it should not try to prove choice/collapse or
 new-basin formation.
+
+N22 source boundary:
+
+```text
+N20 source contract row = n20_i5_row_03_susceptibility_update
+N21 closeout context = WR6, ND5, N21-C6, ready_for_n22
+```
+
+N22 must preserve the AP gap split:
+
+```text
+route-conditioned susceptibility update:
+    carry AP4 dependency row-locally.
+
+proxy-conditioned susceptibility update:
+    carry conditional AP5 dependency when proxy derivation or target formation
+    participates.
+```
 
 Blocked claims:
 
