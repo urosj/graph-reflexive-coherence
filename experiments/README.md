@@ -45,7 +45,7 @@ machine-local state.
 | [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Closed limited artifact-level AP8 long-horizon agentic-like closure candidate over the narrow h4/L5 stress envelope, with general AP8, Phase 8, native support, agency, and identity claims blocked. | README, then closeout handoff, I9 classification matrix, stress artifacts, hypotheses, and implementation checklist. |
 | [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Closed N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 stack; records 12 NAT4 surfaces while blocking full native ladder generation on AP4/AP5 NAT4 gaps. | README, then closeout handoff, candidate matrix, Phase 8 readiness matrix, implementation checklist, and hypotheses. |
 | [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Closed contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, continuation-function descriptors, proxy blockers, same-basin controls, and the N21 handoff without claiming primitive evidence. | README, then closeout handoff, same-basin contract, producer residue ledger, function/proxy contract, implementation checklist, and hypotheses. |
-| [N21 withdrawal resistance and naturalization depth](2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md) | Open becoming-primitive experiment consuming N20 I5 contracts to test support withdrawal and post-probe persistence without redefining same-basin continuation or opening agency/native claims. | README, then implementation plan/checklist, hypotheses, source contract inventory, withdrawal/naturalization probes, controls, and closeout handoff. |
+| [N21 withdrawal resistance and naturalization depth](2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md) | Closed bounded becoming-primitive evidence experiment: WR6 artifact-level withdrawal-resistance candidate plus bounded N21-local ND5 naturalization-depth candidate, with agency, native support, sentience, Phase 8, ant ecology, robust withdrawal, support-removal resistance, and general naturalization depth blocked. | README, then closeout handoff, replay/control matrix, withdrawal and naturalization probes, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -192,11 +192,31 @@ spark/new-basin formation, proxy collapse, transfer, generative persistence,
 agency, Phase 8, native support, sentience, organism/life, or ant-ecology
 implementation.
 
-N21 is now open as the next experiment. It must consume the N20 I5 contract rows
-for `withdrawal_resistance` and `naturalization_depth`, declare row-specific
-thresholds before use, produce source-backed pass/fail evidence, and fail closed
-on hidden support and proxy-only success. It may not redefine the N20 contract
-to pass.
+N21 closes as the first becoming-primitive evidence experiment:
+
+```text
+final_supported_status = bounded_artifact_level_withdrawal_and_naturalization_candidate
+withdrawal_resistance_status = withdrawal_resistance_supported_artifact_level_candidate
+withdrawal_resistance_ladder_rung = WR6
+naturalization_depth_status = naturalization_depth_supported_bounded_N21_candidate
+naturalization_depth_ladder_rung = ND5
+n21_closeout_ladder_rung = N21-C6
+ready_for_n22 = true
+```
+
+N21 supports bounded artifact-level withdrawal-resistance evidence and bounded
+N21-local naturalization-depth evidence. The withdrawal side is scoped to
+declared support weakening, transfer/schedule-shape rows, and explicit
+floor/removal fail-closed boundaries; it does not support robust withdrawal
+resistance or support-removal resistance. The naturalization side is scoped to
+initial no-probe replay, static post-probe-derived persistence, and eventful
+post-probe-derived persistence; it does not support general naturalization
+depth or `ND6`.
+
+N22 is now the next experiment. It must consume the N20 I5
+`susceptibility_update` contract and the N21 closeout handoff, then produce new
+source-backed durable geometry modification evidence. N21 WR/ND evidence is
+prerequisite context only; it cannot satisfy N22 susceptibility update.
 
 The N20-N29 arc keeps three paths distinct until N29:
 
@@ -214,8 +234,10 @@ agentic ecology / ants project:
 N20-N28 stay inside this repository and ground becoming-style primitives:
 withdrawal resistance, naturalization depth, susceptibility update, live
 continuation collapse, surplus-supported optionality, spark/new-basin
-formation, proxy divergence, transfer, and generative persistence. N29 is the
-first formal convergence bridge into the agentic ecology project, where
+formation, proxy divergence, transfer, and generative persistence. N21 has now
+closed the first two primitives; N22 is the active next durable-geometry
+modification / susceptibility update lane. N29 is the first formal convergence
+bridge into the agentic ecology project, where
 producer residue, medium debt, and first applied ant-ecology probes can be
 specified. Phase 8, native support,
 native ant agency, biological agency, and unrestricted agency remain unopened.

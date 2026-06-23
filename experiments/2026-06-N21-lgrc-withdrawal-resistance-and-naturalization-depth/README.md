@@ -1,9 +1,23 @@
 # N21 - LGRC Withdrawal Resistance And Naturalization Depth
 
-N21 is the first becoming-primitive evidence experiment after the N20 contract.
-It consumes the N20 Iteration 5 same-basin continuation contract and asks
-whether a basin signature can persist when declared support is weakened,
-removed, or no longer supplied by the original probe.
+N21 is closed. It is the first becoming-primitive evidence experiment after
+the N20 contract. It consumes the N20 Iteration 5 same-basin continuation
+contract and asks whether a basin signature can persist when declared support
+is weakened, removed, or no longer supplied by the original probe.
+
+Closeout state:
+
+```text
+status = passed
+acceptance_state = closed_n21_bounded_wr_nd_candidate_and_n22_handoff
+final_supported_status = bounded_artifact_level_withdrawal_and_naturalization_candidate
+withdrawal_resistance_status = withdrawal_resistance_supported_artifact_level_candidate
+withdrawal_resistance_ladder_rung = WR6
+naturalization_depth_status = naturalization_depth_supported_bounded_N21_candidate
+naturalization_depth_ladder_rung = ND5
+n21_closeout_ladder_rung = N21-C6
+ready_for_n22 = true
+```
 
 The core questions are:
 
@@ -20,6 +34,19 @@ primitives:
 withdrawal_resistance
 naturalization_depth
 ```
+
+Final claim ceiling:
+
+```text
+bounded artifact-level WR6 withdrawal candidate plus bounded N21-local ND5
+naturalization-depth candidate; no agency, native support, sentience, Phase 8,
+or ant-ecology implementation
+```
+
+N21 does not support robust withdrawal resistance, support-removal resistance,
+general naturalization depth, `ND6`, susceptibility update, learning, choice,
+agency, semantic action/perception, native support, sentience, Phase 8,
+organism/life, or ant-ecology implementation.
 
 ## Evidence Standard
 
@@ -90,6 +117,18 @@ experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md
 
 N21 may not redefine the N20 basin signature, continuation condition,
 proxy-only success blocker, or producer-residue classification in order to pass.
+
+Closeout and N22 handoff artifacts:
+
+```text
+outputs/n21_closeout_and_n22_handoff.json
+reports/n21_closeout_and_n22_handoff.md
+scripts/build_n21_closeout_and_n22_handoff.py
+```
+
+N22 must consume the N20 I5 `susceptibility_update` contract and this N21
+closeout as prerequisite context. N21 WR/ND evidence cannot satisfy N22
+susceptibility update or durable geometry modification.
 
 ## Fixed Readiness Gate
 
@@ -355,7 +394,7 @@ unrestricted autonomy
 
 ## Expected Output Shape
 
-Initial planned artifacts:
+Final artifacts:
 
 ```text
 outputs/n21_source_contract_inventory.json
@@ -387,5 +426,7 @@ reports/n21_closeout_and_n22_handoff.md
 scripts/build_n21_closeout_and_n22_handoff.py
 ```
 
-These names are provisional until each iteration freezes its exact artifact
-schema.
+Additional extension artifacts were generated for the severity/removal
+boundary probe, transfer/schedule-shape probe, post-probe-derived persistence
+probe, and eventful post-probe continuation probe. See the implementation
+checklist and closeout report for the full reconstruction order.

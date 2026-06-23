@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N20. It replaces the
+This handoff is the current pickup note after N21. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -14,7 +14,8 @@ N05-N11 artifact-level agentic-like foundation = closed
 N12-N18 artifact-level agency-prerequisite tranche = closed
 N19 native-readiness review = closed
 N20 becoming-primitive translation contract = closed
-current next experiment = N21_withdrawal_resistance_and_naturalization_depth
+N21 withdrawal resistance and naturalization depth = closed
+current next experiment = N22_susceptibility_update_durable_geometry_modification
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -41,6 +42,25 @@ proxy collapse, configuration/substrate transfer, generative/extractive
 persistence, agency, semantic action/perception, native support, Phase 8,
 sentience, organism/life, or ant ecology implementation.
 
+N21 closed as the first becoming-primitive evidence experiment:
+
+```text
+status = passed
+acceptance_state = closed_n21_bounded_wr_nd_candidate_and_n22_handoff
+final_supported_status = bounded_artifact_level_withdrawal_and_naturalization_candidate
+withdrawal_resistance_status = withdrawal_resistance_supported_artifact_level_candidate
+withdrawal_resistance_ladder_rung = WR6
+naturalization_depth_status = naturalization_depth_supported_bounded_N21_candidate
+naturalization_depth_ladder_rung = ND5
+n21_closeout_ladder_rung = N21-C6
+ready_for_n22 = true
+```
+
+N21 does not support robust withdrawal resistance, support-removal resistance,
+general naturalization depth, `ND6`, susceptibility update, learning, choice,
+agency, semantic action/perception, native support, Phase 8, sentience,
+organism/life, or ant ecology implementation.
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -49,6 +69,9 @@ Use this handoff together with:
 - `experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md`
 - `experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/reports/n20_closeout_and_n21_handoff.md`
 - `experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json`
+- `experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md`
+- `experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/reports/n21_closeout_and_n22_handoff.md`
+- `experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_closeout_and_n22_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -124,68 +147,116 @@ proxy_conditioned_susceptibility_update:
   AP5 is required when proxy derivation or target formation participates.
 ```
 
-## N21 Handoff
+## N21 Closeout Evidence
 
-N21 is the next experiment. It should test the first two becoming primitives:
-
-```text
-withdrawal_resistance
-naturalization_depth
-```
-
-N21 must consume the N20 I5 contract rows:
+Primary N21 closeout artifact:
 
 ```text
-withdrawal_resistance source row = n20_i5_row_01_withdrawal_resistance
-naturalization_depth source row = n20_i5_row_02_naturalization_depth
+artifact = experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_closeout_and_n22_handoff.json
+report = experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/reports/n21_closeout_and_n22_handoff.md
+script = experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/scripts/build_n21_closeout_and_n22_handoff.py
+output_digest = dce76d6bd2f9ebda65111c1324e2a51f0553e428ae1675a22ff6dcc36efb7e10
+artifact_sha256 = 91e7799c1a75ff2839cd5c64b0ca89ba584e8f1e69395f03b69f3565791fd47d
+report_sha256 = 80ec12366b4cc7e1b3cbc52ef5c697660613af4f4d72e8229e5354888ffd5977
+script_sha256 = d084b4333bf616926fd7373fa99a1021ea7ebd6d01bae4bdeb4846c1778f11e4
 ```
 
-N21 readiness gate:
+N21 I6 replay/control source consumed by closeout:
 
 ```text
-must_consume_i5_contract = true
-may_redefine_n20_contract_to_pass = false
-must_declare_row_specific_thresholds_before_use = true
-must_produce_source_backed_pass_fail_evidence = true
-must_fail_closed_on_hidden_support = true
-must_fail_closed_on_proxy_only_success = true
-must_keep_primitive_evidence_separate_from_contract = true
-must_keep_agency_native_phase8_sentience_claims_blocked = true
+artifact = experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/outputs/n21_replay_and_control_matrix.json
+report = experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/reports/n21_replay_and_control_matrix.md
+script = experiments/2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/scripts/build_n21_replay_and_control_matrix.py
+output_digest = d4b25c36f84d0300dd7a41f19cbdcfe47d771281ba9a25fbac30b16d346b941f
+artifact_sha256 = c06bcc82fcee643d437a942e32fe20d105264fd6c0a7d3a77dd9f33b2045f63e
 ```
 
-N21 should ask:
+N21 final claim ceiling:
 
 ```text
-Can a basin signature persist when declared support is weakened or removed?
-
-Can the basin persist without the original probe or scaffold?
+bounded artifact-level WR6 withdrawal candidate plus bounded N21-local ND5
+naturalization-depth candidate; no agency, native support, sentience, Phase 8,
+or ant-ecology implementation
 ```
 
-N21 must distinguish:
+## N22 Handoff
+
+N22 is the next experiment. It should test the next becoming primitive:
 
 ```text
-same-basin continuation
-support/coherence floor preservation
-boundary integrity preservation
-hidden producer support
-proxy-only success
-label-only continuation
-post-hoc trace construction
-producer-mediated state relabeled as native support
-semantic agency or sentience relabel
+susceptibility_update
+durable_geometry_modification
 ```
 
-## Blocked Claims Carried Into N21
+N22 must consume the N20 I5 contract row:
 
-N21 must keep these blocked unless a later source-backed experiment explicitly
+```text
+susceptibility_update source row = n20_i5_row_03_susceptibility_update
+```
+
+N22 must also consume N21 closeout as prerequisite context:
+
+```text
+N21 withdrawal_resistance_ladder_rung = WR6
+N21 naturalization_depth_ladder_rung = ND5
+N21 n21_closeout_ladder_rung = N21-C6
+N21 ready_for_n22 = true
+```
+
+N22 must ask:
+
+```text
+Can prior interaction durably alter later basin geometry without becoming a
+semantic learning label?
+```
+
+N22 required source-current fields:
+
+```text
+susceptibility_update.pre_interaction_geometry_trace
+susceptibility_update.post_interaction_geometry_trace
+susceptibility_update.susceptibility_delta_trace
+susceptibility_update.route_or_region_reentry_trace
+```
+
+N22 required inputs:
+
+```text
+susceptibility_fields
+replay_requirement
+durable_geometry_modification_controls
+AP4_gap_dependency_if_route_conditioned
+AP5_gap_dependency_if_proxy_conditioned
+```
+
+N22 readiness gate:
+
+```text
+must_consume_n20_i5_susceptibility_update_contract = true
+must_consume_n21_closeout_as_context_only = true
+may_treat_n21_wr_nd_as_susceptibility_evidence = false
+must_produce_new_source_backed_durable_geometry_deltas = true
+must_keep_AP4_dependency_row_local_when_route_conditioned = true
+must_keep_conditional_AP5_dependency_when_proxy_or_target_conditioned = true
+must_fail_closed_on_route_label_only_success = true
+must_fail_closed_on_reinforcement_schedule_hidden_support = true
+must_fail_closed_on_semantic_learning_choice_agency_relabels = true
+must_keep_phase8_native_support_sentience_ant_ecology_claims_blocked = true
+```
+
+## Blocked Claims Carried Into N22
+
+N22 must keep these blocked unless a later source-backed experiment explicitly
 supports a narrower claim:
 
 ```text
-primitive support before N21 evidence
 agency
 semantic action
 semantic perception
 semantic goal ownership
+semantic learning
+semantic choice
+free will
 selfhood
 identity acceptance
 native support
@@ -206,5 +277,5 @@ N20-N28 remain in this repository and test becoming primitives close to LGRC
 implementation surfaces. N29 is the first formal convergence bridge into the
 agentic ecology project.
 
-Do not specify formal ant-ecology implementation inside N21-N28. The agentic
+Do not specify formal ant-ecology implementation inside N22-N28. The agentic
 ecology project remains context until N29.
