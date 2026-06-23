@@ -45,6 +45,7 @@ machine-local state.
 | [N18 long-horizon agentic-like closure stress test](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/README.md) | Closed limited artifact-level AP8 long-horizon agentic-like closure candidate over the narrow h4/L5 stress envelope, with general AP8, Phase 8, native support, agency, and identity claims blocked. | README, then closeout handoff, I9 classification matrix, stress artifacts, hypotheses, and implementation checklist. |
 | [N19 native naturalization review AP3-AP8](2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/README.md) | Closed N12-style native naturalization and Phase 8 readiness review for the N13-N18 AP3-AP8 stack; records 12 NAT4 surfaces while blocking full native ladder generation on AP4/AP5 NAT4 gaps. | README, then closeout handoff, candidate matrix, Phase 8 readiness matrix, implementation checklist, and hypotheses. |
 | [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Closed contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, continuation-function descriptors, proxy blockers, same-basin controls, and the N21 handoff without claiming primitive evidence. | README, then closeout handoff, same-basin contract, producer residue ledger, function/proxy contract, implementation checklist, and hypotheses. |
+| [N21 withdrawal resistance and naturalization depth](2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md) | Open becoming-primitive experiment consuming N20 I5 contracts to test support withdrawal and post-probe persistence without redefining same-basin continuation or opening agency/native claims. | README, then implementation plan/checklist, hypotheses, source contract inventory, withdrawal/naturalization probes, controls, and closeout handoff. |
 
 ## Current Roadmap State
 
@@ -191,11 +192,11 @@ spark/new-basin formation, proxy collapse, transfer, generative persistence,
 agency, Phase 8, native support, sentience, organism/life, or ant-ecology
 implementation.
 
-N21 is now the next experiment. It must consume the N20 I5 contract rows for
-`withdrawal_resistance` and `naturalization_depth`, declare row-specific
-thresholds before use, produce source-backed pass/fail evidence, and fail
-closed on hidden support and proxy-only success. It may not redefine the N20
-contract to pass.
+N21 is now open as the next experiment. It must consume the N20 I5 contract rows
+for `withdrawal_resistance` and `naturalization_depth`, declare row-specific
+thresholds before use, produce source-backed pass/fail evidence, and fail closed
+on hidden support and proxy-only success. It may not redefine the N20 contract
+to pass.
 
 The N20-N29 arc keeps three paths distinct until N29:
 
