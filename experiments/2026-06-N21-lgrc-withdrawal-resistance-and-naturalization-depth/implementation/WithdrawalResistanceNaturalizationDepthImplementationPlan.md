@@ -75,9 +75,23 @@ artifact_digest
 derived_report_only = false
 ```
 
+Admissibility checks:
+
+```text
+artifact paths must exist
+artifact digest algorithm must be declared
+artifact digests must match file contents
+derived_report_only = true blocks positive support
+missing artifact blocks rung assignment
+```
+
 `derived_report_only = true` blocks positive primitive support. A report can
 summarize evidence, but it cannot be the evidence source for WR or ND rung
 assignment.
+
+Markdown roadmap and handoff sources may be consumed only as context,
+boundary, or roadmap sources. They cannot satisfy source-current run-artifact
+evidence gates.
 
 ## Source Contract
 
@@ -504,11 +518,15 @@ No primitive evidence is allowed in Iteration 1.
 Purpose:
 
 ```text
-Freeze N21 row schema, threshold policy, withdrawal window schema,
-probe-present/probe-absent schema, run-artifact admissibility schema, active
-null comparability rules, replay requirements, and fail-closed control policy
-before any candidate probe runs. Freeze WR, ND, and N21-C ladder assignment and
-demotion rules in the same artifact.
+Freeze the full candidate evidence row schema, threshold policy, withdrawal
+window schema, probe-present/probe-absent schema, run-artifact admissibility
+schema, active null comparability rules, replay requirements, and fail-closed
+control policy before any candidate probe runs. The schema freeze must include
+every required evidence field, including `same_basin_continuation_rule`,
+`primitive_claim_allowed`, and `claim_ceiling`. It must also carry the I1
+same-basin rule, support scaffold, and handoff inputs as read-only references
+so later probes cannot reconstruct or redefine them. Freeze WR, ND, and N21-C
+ladder assignment and demotion rules in the same artifact.
 ```
 
 Expected artifacts:
