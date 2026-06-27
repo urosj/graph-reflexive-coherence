@@ -1048,14 +1048,14 @@ scripts/build_n23_ap4_selection_geometry_robustness_probe.py
 
 ## Iteration 7. Replay And Control Matrix
 
-- [ ] Consume all provisional N23 candidate rows.
-- [ ] Consume all active-null and failure-baseline rows.
-- [ ] Run required replay and negative controls.
-- [ ] Record every required control status as `passed`, `failed_closed`,
+- [x] Consume all provisional N23 candidate rows.
+- [x] Consume all active-null and failure-baseline rows.
+- [x] Run required replay and negative controls.
+- [x] Record every required control status as `passed`, `failed_closed`,
       `failed_open`, `not_run`, or `not_applicable`.
-- [ ] Demote or block rows with failed-open or not-run required controls.
-- [ ] Assign I7-consumable LC rungs only after controls.
-- [ ] Keep closeout pending Iteration 8.
+- [x] Demote or block rows with failed-open or not-run required controls.
+- [x] Assign I7-consumable LC rungs only after controls.
+- [x] Keep closeout pending Iteration 8.
 
 Expected artifacts:
 
@@ -1065,20 +1065,133 @@ reports/n23_replay_and_control_matrix.md
 scripts/build_n23_replay_and_control_matrix.py
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_full_replay_control_matrix_lc5_candidate_pending_i8
+output_digest = 817aa46c8c55e341b329e8c2bfe7c3775043a166e920880f790f37346a066485
+failed_checks = []
+matrix_rows = 7
+primary_lc5_rows_supported = 2
+bounded_stress_rows_supported = 3
+failed_closed_stress_rows = 2
+control_record_count = 47
+control_status_counts = {passed: 6, failed_closed: 41}
+i7_supported_lc_ladder_rung = LC5
+i7_supported_n23_closeout_candidate = N23-C5
+ap4_bridge_status = bridge_candidate_supported
+lc6_supported = false
+n23_c6_supported = false
+final_ap4_supported = false
+final_n23_supported = false
+ready_for_iteration_8_closeout = true
+```
+
+Primary matrix rows:
+
+```text
+n23_i7_row_01_minimal_lc5_full_matrix:
+  source_variant = minimal_two_branch_lc5_path
+  branch_count = 2
+  selected_branch_id = branch_edge_4_node_5
+  selection_reason = support_gradient_dominance
+  score_margin = 0.500000000000
+  row_decision = supported
+  i7_consumable_lc_ladder_rung = LC5
+
+n23_i7_row_02_multibranch_lc5_full_matrix:
+  source_variant = four_branch_lc5_path
+  branch_count = 4
+  selected_branch_id = branch_edge_4_node_5
+  selection_reason = support_gradient_dominance
+  score_margin = 0.500000000000
+  row_decision = supported
+  i7_consumable_lc_ladder_rung = LC5
+```
+
+Stress matrix rows:
+
+```text
+reference_four_branch_geometry:
+  row_decision = supported
+  selected_branch_id = branch_edge_4_node_5
+  score_margin = 0.500000000000
+
+eroded_margin_still_supported:
+  row_decision = supported
+  selected_branch_id = branch_edge_4_node_5
+  score_margin = 0.300000000000
+
+alternate_branch_wins_supported:
+  row_decision = supported
+  selected_branch_id = branch_edge_0_node_1
+  score_margin = 0.500000000000
+
+below_margin_rejected:
+  row_decision = rejected
+  selected_branch_id = branch_edge_4_node_5
+  score_margin = 0.100000000000
+
+equalized_tie_rejected:
+  row_decision = rejected
+  selected_branch_id = branch_edge_4_node_5
+  score_margin = 0.000000000000
+  random_tie_status = random_tie
+```
+
+Control matrix interpretation:
+
+```text
+active nulls: 14/14 failed closed
+minimal replay path: artifact, snapshot/load, and duplicate replay passed;
+  seven LC4 controls failed closed
+multibranch replay path: artifact, snapshot/load, and duplicate replay passed;
+  seven LC4 controls failed closed
+AP4 bridge: eight AP4-specific controls failed closed
+AP4 stress: three bounded stress rows supported; below-margin and equalized-tie
+  rows failed closed
+closeout: LC5/N23-C5 candidate only; LC6/N23-C6 pending I8
+```
+
+Geometric interpretation:
+
+```text
+I7 shows that the N23 collapse candidate is not a selected-branch label. The
+minimal and four-branch paths both preserve source-current branch geometry,
+collapse traces, counterfactual retention, replay stability, and fail-closed
+controls through LC5.
+
+The supported geometry is branch-conditioned: the selected branch wins by
+source-current support-gradient dominance over retained counterfactual branches.
+The stress rows show that selection follows changed geometry when the winning
+branch changes, but fails closed when the source-current margin falls below the
+declared threshold or becomes a tie.
+```
+
+Claim boundary:
+
+```text
+I7 supports only an artifact-level LC5/AP4 bridge candidate pending I8.
+It does not support LC6, final AP4, final N23, semantic choice, semantic
+intention, agency, native support, sentience, Phase 8, or ant-ecology
+implementation.
+```
+
 ## Iteration 8. Closeout And N24 Handoff
 
-- [ ] Classify final N23 live-continuation collapse result.
-- [ ] Record final LC ladder rung.
-- [ ] Record AP4 bridge status.
-- [ ] Record producer residue.
-- [ ] Record naturalization debt.
-- [ ] Record AP4/AP5 dependency status.
-- [ ] Record final claim ceiling.
-- [ ] Record unsafe claim blockers.
-- [ ] Confirm semantic choice, intention, agency, native support, sentience,
+- [x] Classify final N23 live-continuation collapse result.
+- [x] Record final LC ladder rung.
+- [x] Record AP4 bridge status.
+- [x] Record producer residue.
+- [x] Record naturalization debt.
+- [x] Record AP4/AP5 dependency status.
+- [x] Record final claim ceiling.
+- [x] Record unsafe claim blockers.
+- [x] Confirm semantic choice, intention, agency, native support, sentience,
       Phase 8, and ant-ecology implementation remain blocked.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Record N24 handoff for abundance / surplus-supported optionality.
+- [x] Confirm `src_diff_empty`.
+- [x] Record N24 handoff for abundance / surplus-supported optionality.
 
 Expected artifacts:
 
@@ -1086,4 +1199,105 @@ Expected artifacts:
 outputs/n23_closeout_and_n24_handoff.json
 reports/n23_closeout_and_n24_handoff.md
 scripts/build_n23_closeout_and_n24_handoff.py
+```
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_n23_lc6_closeout_n24_handoff_ready
+output_digest = f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1
+failed_checks = []
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+ap4_bridge_status = bridge_candidate_supported
+ap4_bridge_candidate_supported = true
+final_ap4_supported = false
+final_n23_supported = true
+ready_for_n24 = true
+src_diff_empty = true
+```
+
+Closeout interpretation:
+
+```text
+I8 closes N23 at LC6/N23-C6 because I7 validated the minimal and four-branch
+live-continuation collapse paths, AP4 bridge candidate evidence, bounded stress
+rows, and fail-closed controls without opening unsafe claims or modifying src.
+
+N23 produced source-current live branch sets, collapse traces from those branch
+sets into one continuation, immutable counterfactual retention for non-selected
+branches, replay-stable collapse records, and AP4-relevant branch selection
+geometry.
+```
+
+Final claim ceiling:
+
+```text
+bounded artifact-level live-continuation collapse / selection-geometry
+evidence, N24-ready
+```
+
+Blocked claims:
+
+```text
+semantic choice = false
+semantic intention = false
+semantic action/perception = false
+semantic goal ownership = false
+free will = false
+agency = false
+selfhood = false
+identity acceptance = false
+native support = false
+native route conductance memory = false
+sentience = false
+consciousness = false
+organism/life = false
+fully native integration = false
+unrestricted autonomy = false
+Phase 8 implementation = false
+ant ecology implementation = false
+```
+
+AP gap closeout:
+
+```text
+ap4_gap_status =
+  bridge_candidate_supported_by_n23_source_current_selection_geometry
+
+ap4_nat4_gap_resolved_for_n23_scope = true
+ap4_final_general_status = not_finalized_here
+ap5_dependency_status = not_applicable_no_proxy_or_target_formation
+n19_reclassification_required_for_global_ap4_change = true
+```
+
+Producer residue:
+
+```text
+bounded_test_configuration
+producer_script_generates_probe_artifacts
+support_gradient_selection_rule_declared_in_producer
+branch_stress_case_generation
+collapse_packet_schedule
+```
+
+Naturalization debt:
+
+```text
+source_current_counterfactual_branch_records
+route_conditioned_selection_policy
+proxy_independent_branch_valuation
+native_branch_selection_margin_gate
+native_multibranch_optional_continuation_generation
+```
+
+N24 handoff:
+
+```text
+next_experiment = N24
+handoff_focus = abundance / surplus-supported optionality
+consumable_n23_result =
+  LC6/N23-C6 bounded live-continuation collapse evidence with AP4 bridge
+  candidate support and unsafe promotions blocked
 ```
