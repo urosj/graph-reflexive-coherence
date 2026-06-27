@@ -1,0 +1,752 @@
+{
+  "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+  "artifact_id": "n24_i1_source_handoff_inventory",
+  "checks": [
+    {
+      "check": "n20_i5_surplus_contract_present_and_complete",
+      "detail": {
+        "contract_status": "complete",
+        "downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+        "row_id": "n20_i5_row_05_surplus_supported_optionality",
+        "source_i4_row_id": "n20_i4_row_05_surplus_supported_optionality"
+      },
+      "passed": true
+    },
+    {
+      "check": "n20_i4_surplus_descriptor_present",
+      "detail": {
+        "contract_status": "incomplete_missing_same_basin_rule",
+        "row_decision": "supported",
+        "row_id": "n20_i4_row_05_surplus_supported_optionality"
+      },
+      "passed": true
+    },
+    {
+      "check": "n20_closeout_boundary_parsed",
+      "detail": {
+        "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+        "final_claim_ceiling": "artifact_level_becoming_primitive_translation_contract_only",
+        "final_supported_status": "N20_contract_closed_no_primitive_evidence",
+        "n20_contract_complete": true,
+        "n24_consumption_role": "standing_primitive_contract_context_only",
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "primitive_evidence_opened": false,
+        "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check": "source_current_fields_match_contract",
+      "detail": {
+        "expected": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.optional_continuation_set_trace",
+          "surplus_supported_optionality.maintenance_floor_trace",
+          "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+        ],
+        "native_function_contract": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.optional_continuation_set_trace",
+          "surplus_supported_optionality.maintenance_floor_trace",
+          "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+        ],
+        "same_basin_contract": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.optional_continuation_set_trace",
+          "surplus_supported_optionality.maintenance_floor_trace",
+          "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "required_n24_inputs_match_handoff",
+      "detail": {
+        "contract": [
+          "surplus_support_condition",
+          "optional_continuation_space",
+          "floor_crossing_controls",
+          "hidden_budget_relief_control"
+        ],
+        "expected": [
+          "surplus_support_condition",
+          "optional_continuation_space",
+          "floor_crossing_controls",
+          "hidden_budget_relief_control"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "n23_closeout_required_and_validated",
+      "detail": {
+        "claim_ceiling": "bounded artifact-level live-continuation collapse / selection-geometry evidence, N24-ready; not semantic choice, agency, native support, sentience, Phase 8, or ant ecology implementation",
+        "consumption_boundary": "bounded LC6/N23-C6 selection-geometry context only; not N24 surplus, optionality, reward, choice, agency, native support, sentience, Phase 8, or ant ecology evidence",
+        "final_global_ap4_reclassification_supported": false,
+        "final_n23_closeout_ladder_rung": "N23-C6",
+        "final_supported_lc_ladder_rung": "LC6",
+        "n23_ap4_bridge_status": "bridge_candidate_supported",
+        "n23_closeout_artifact_present": true,
+        "n23_closeout_required": true,
+        "n23_closeout_validated": true,
+        "n23_context_consumption": "n23_bridge_candidate_consumed",
+        "n23_source_ap4_bridge_status": "bridge_candidate_supported",
+        "n23_source_closeout_acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+        "n23_source_closeout_status": "passed",
+        "n24_claim_ceiling": "source inventory only; bounded N23 bridge context available",
+        "n24_may_consume_as": [
+          "bounded_live_branch_set_and_collapse_evidence",
+          "counterfactual_retention_evidence",
+          "ap4_bridge_candidate_context",
+          "bounded_selection_geometry_context"
+        ],
+        "n24_must_not_consume_as": [
+          "semantic_choice",
+          "semantic_intention",
+          "agency",
+          "free_will",
+          "native_support",
+          "sentience",
+          "Phase8_implementation",
+          "ant_ecology_implementation"
+        ],
+        "ready_for_n24": true,
+        "source_artifact": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json"
+      },
+      "passed": true
+    },
+    {
+      "check": "ap_gap_boundary_preserved",
+      "detail": {
+        "ap4_context_status": "n23_bridge_candidate_consumed",
+        "ap5_dependency_status": "conditional_required_when_proxy_reward_target_participates",
+        "ap_levels_lacking_nat4_evidence": [
+          "AP4",
+          "AP5"
+        ],
+        "claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+        "current_implementation_can_generate_claimed_ap_ladder": false,
+        "final_global_ap4_reclassification_supported": false,
+        "n19_source_artifact": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+        "n19_status": "passed",
+        "n23_ap4_bridge_candidate_supported": true,
+        "n23_ap4_bridge_status": "bridge_candidate_supported",
+        "n24_boundary": "consume N23 AP4 bridge as local context only; keep final global AP4 reclassification false and carry AP5 dependency when proxy, reward, or target formation participates"
+      },
+      "passed": true
+    },
+    {
+      "check": "required_controls_recorded",
+      "detail": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "floor_crossing_control",
+        "hidden_budget_relief_control",
+        "optional_branch_label_only_control"
+      ],
+      "passed": true
+    },
+    {
+      "check": "planned_canonical_controls_ready_for_i2_i3",
+      "detail": [
+        "hidden_budget_relief_control",
+        "floor_crossing_as_abundance_control",
+        "surplus_without_optional_continuation_control",
+        "optionality_without_surplus_control",
+        "proxy_only_optional_branch_gain_control",
+        "optional_branch_label_only_control",
+        "single_optional_branch_relabel_control",
+        "independent_run_optional_assembly_control",
+        "maintenance_basin_shift_control",
+        "floor_renormalization_as_surplus_control",
+        "post_hoc_surplus_construction_control",
+        "n23_selection_context_relabel_as_abundance_control",
+        "reward_maximization_relabel_control",
+        "semantic_choice_relabel_control",
+        "agency_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "ap4_final_reclassification_relabel_control",
+        "ap5_proxy_gap_omission_control"
+      ],
+      "passed": true
+    },
+    {
+      "check": "producer_and_debt_fields_recorded",
+      "detail": {
+        "blocked_relabel_fields": [
+          "surplus_supported_optionality.blocked.abundance_as_goal",
+          "surplus_supported_optionality.blocked.agency",
+          "surplus_supported_optionality.blocked.consciousness",
+          "surplus_supported_optionality.blocked.identity_acceptance",
+          "surplus_supported_optionality.blocked.native_ant_agency",
+          "surplus_supported_optionality.blocked.native_colony_agency",
+          "surplus_supported_optionality.blocked.native_support",
+          "surplus_supported_optionality.blocked.organism_life",
+          "surplus_supported_optionality.blocked.phase8_implementation",
+          "surplus_supported_optionality.blocked.reward_maximization",
+          "surplus_supported_optionality.blocked.selfhood",
+          "surplus_supported_optionality.blocked.semantic_action",
+          "surplus_supported_optionality.blocked.semantic_choice",
+          "surplus_supported_optionality.blocked.semantic_goal",
+          "surplus_supported_optionality.blocked.semantic_goal_ownership",
+          "surplus_supported_optionality.blocked.semantic_intention",
+          "surplus_supported_optionality.blocked.semantic_perception",
+          "surplus_supported_optionality.blocked.sentience",
+          "surplus_supported_optionality.blocked.unrestricted_autonomy"
+        ],
+        "naturalization_debt_fields": [
+          "surplus_supported_optionality.source_current_optional_branch_telemetry",
+          "surplus_supported_optionality.surplus_budget_owner",
+          "surplus_supported_optionality.hidden_budget_relief_control"
+        ],
+        "producer_mediated_fields": [
+          "surplus_supported_optionality.optionality_enumerator",
+          "surplus_supported_optionality.exploration_schedule",
+          "surplus_supported_optionality.reward_or_proxy_label"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "no_surplus_optionality_evidence_opened",
+      "detail": {
+        "ab_ladder_rung_assigned": false,
+        "abundance_evidence_opened": false,
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "n24_closeout_ladder_rung": "N24-C0_inventory_only",
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "reward_maximization_supported": false,
+        "semantic_choice_supported": false,
+        "sentience_supported": false,
+        "surplus_supported_optionality_supported": false,
+        "unsafe_claim_flags": {
+          "agency": false,
+          "ant_ecology_implementation": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "reward_maximization": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": {
+        "n20_source_unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        "n23_unsafe_claim_flags": {
+          "agency": false,
+          "ant_ecology_implementation": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        "n24_unsafe_claim_flags": {
+          "agency": false,
+          "ant_ecology_implementation": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "reward_maximization": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check": "inventory_decision_uses_standard_row_decision",
+      "detail": {
+        "inventory_decision": "supported_as_contract_input_only",
+        "row_decision": "not_applicable"
+      },
+      "passed": true
+    },
+    {
+      "check": "controls_declared_not_executed_in_inventory",
+      "detail": {
+        "all_controls_fail_closed_in_contract": true,
+        "control_execution_status": "not_run_inventory_only"
+      },
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths",
+      "detail": "all stored paths are repository-relative",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "ab_ladder_rung_assigned": false,
+    "abundance_evidence_opened": false,
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "n24_closeout_ladder_rung": "N24-C0_inventory_only",
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "reward_maximization_supported": false,
+    "semantic_choice_supported": false,
+    "sentience_supported": false,
+    "surplus_supported_optionality_supported": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology_implementation": false,
+      "consciousness": false,
+      "free_will": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "reward_maximization": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_source_handoff_inventory.py",
+  "contract_inventory_rows": [
+    {
+      "ab_ladder_rung": "not_assigned_contract_inventory_only",
+      "all_controls_fail_closed_in_contract": true,
+      "blocked_relabel_fields": [
+        "surplus_supported_optionality.blocked.abundance_as_goal",
+        "surplus_supported_optionality.blocked.agency",
+        "surplus_supported_optionality.blocked.consciousness",
+        "surplus_supported_optionality.blocked.identity_acceptance",
+        "surplus_supported_optionality.blocked.native_ant_agency",
+        "surplus_supported_optionality.blocked.native_colony_agency",
+        "surplus_supported_optionality.blocked.native_support",
+        "surplus_supported_optionality.blocked.organism_life",
+        "surplus_supported_optionality.blocked.phase8_implementation",
+        "surplus_supported_optionality.blocked.reward_maximization",
+        "surplus_supported_optionality.blocked.selfhood",
+        "surplus_supported_optionality.blocked.semantic_action",
+        "surplus_supported_optionality.blocked.semantic_choice",
+        "surplus_supported_optionality.blocked.semantic_goal",
+        "surplus_supported_optionality.blocked.semantic_goal_ownership",
+        "surplus_supported_optionality.blocked.semantic_intention",
+        "surplus_supported_optionality.blocked.semantic_perception",
+        "surplus_supported_optionality.blocked.sentience",
+        "surplus_supported_optionality.blocked.unrestricted_autonomy"
+      ],
+      "claim_ceiling": "source contract input only; no N24 abundance, optionality, reward, choice, agency, native support, sentience, Phase 8, or ant ecology",
+      "control_execution_status": "not_run_inventory_only",
+      "inventory_decision": "supported_as_contract_input_only",
+      "minimum_control_ids": [
+        "label_only_success_control",
+        "proxy_only_success_control",
+        "hidden_producer_support_control",
+        "post_hoc_trace_construction_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control",
+        "floor_crossing_control",
+        "hidden_budget_relief_control",
+        "optional_branch_label_only_control"
+      ],
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n24_closeout_ladder_rung": "N24-C0_inventory_only",
+      "naturalization_debt_fields": [
+        "surplus_supported_optionality.source_current_optional_branch_telemetry",
+        "surplus_supported_optionality.surplus_budget_owner",
+        "surplus_supported_optionality.hidden_budget_relief_control"
+      ],
+      "primitive_evidence_opened": false,
+      "primitive_id": "surplus_supported_optionality",
+      "primitive_specific_consumption_inputs": [
+        "surplus_support_condition",
+        "optional_continuation_space",
+        "floor_crossing_controls",
+        "hidden_budget_relief_control"
+      ],
+      "producer_mediated_fields": [
+        "surplus_supported_optionality.optionality_enumerator",
+        "surplus_supported_optionality.exploration_schedule",
+        "surplus_supported_optionality.reward_or_proxy_label"
+      ],
+      "row_decision": "not_applicable",
+      "row_id": "n24_i1_row_01_surplus_supported_optionality_contract_input",
+      "same_basin_rule": {
+        "allowed_drift": "optional branches may open only while maintenance basin remains above floor",
+        "basin_signature_fields": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.optional_continuation_set_trace",
+          "surplus_supported_optionality.maintenance_floor_trace"
+        ],
+        "blocked_relabels": [
+          "surplus_supported_optionality.blocked.abundance_as_goal",
+          "surplus_supported_optionality.blocked.agency",
+          "surplus_supported_optionality.blocked.consciousness",
+          "surplus_supported_optionality.blocked.identity_acceptance",
+          "surplus_supported_optionality.blocked.native_ant_agency",
+          "surplus_supported_optionality.blocked.native_colony_agency",
+          "surplus_supported_optionality.blocked.native_support",
+          "surplus_supported_optionality.blocked.organism_life",
+          "surplus_supported_optionality.blocked.phase8_implementation",
+          "surplus_supported_optionality.blocked.reward_maximization",
+          "surplus_supported_optionality.blocked.selfhood",
+          "surplus_supported_optionality.blocked.semantic_action",
+          "surplus_supported_optionality.blocked.semantic_choice",
+          "surplus_supported_optionality.blocked.semantic_goal",
+          "surplus_supported_optionality.blocked.semantic_goal_ownership",
+          "surplus_supported_optionality.blocked.semantic_intention",
+          "surplus_supported_optionality.blocked.semantic_perception",
+          "surplus_supported_optionality.blocked.sentience",
+          "surplus_supported_optionality.blocked.unrestricted_autonomy"
+        ],
+        "boundary_integrity_floor": "boundary remains coherent while optional branches are open",
+        "failure_modes": [
+          "hidden budget relief",
+          "maintenance floor crossing",
+          "optional branch label without geometry",
+          "reward/proxy gain mistaken for abundance"
+        ],
+        "flux_balance_bounds": "optional branch flux cannot drain maintenance support below floor",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "surplus and optional branch set replay under same budget surface",
+        "required_coherence_floor": "maintenance coherence floor preserved",
+        "required_support_floor": "maintenance support floor preserved",
+        "rule_id": "n20_i5_surplus_supported_optionality_same_basin_rule",
+        "source_contract_row": "n20_i4_row_05_surplus_supported_optionality"
+      },
+      "same_basin_rule_id": "n20_i5_surplus_supported_optionality_same_basin_rule",
+      "source_consumable_contract_row": "n20_i5_row_05_surplus_supported_optionality",
+      "source_contract_row": "n20_i4_row_05_surplus_supported_optionality",
+      "source_current_fields": [
+        "surplus_supported_optionality.support_surplus_margin_trace",
+        "surplus_supported_optionality.optional_continuation_set_trace",
+        "surplus_supported_optionality.maintenance_floor_trace",
+        "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+      ],
+      "source_i4_contract_status": "incomplete_missing_same_basin_rule",
+      "source_i4_row_decision": "supported",
+      "source_i5_contract_status": "complete",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "evidence_boundary": {
+    "ab_ladder_rung_assigned": false,
+    "n24_closeout_ladder_rung": "N24-C0_inventory_only",
+    "optional_continuation_set_supported": false,
+    "ready_for_iteration_2_schema_freeze": true,
+    "surplus_margin_supported": false,
+    "surplus_supported_optionality_evidence_opened": false
+  },
+  "experiment": "N24",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "iteration": 1,
+  "n19_ap_gap_boundary": {
+    "ap4_context_status": "n23_bridge_candidate_consumed",
+    "ap5_dependency_status": "conditional_required_when_proxy_reward_target_participates",
+    "ap_levels_lacking_nat4_evidence": [
+      "AP4",
+      "AP5"
+    ],
+    "claimed_ladder_generation_status": "blocked_by_ap4_ap5_nat4_evidence_gaps",
+    "current_implementation_can_generate_claimed_ap_ladder": false,
+    "final_global_ap4_reclassification_supported": false,
+    "n19_source_artifact": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+    "n19_status": "passed",
+    "n23_ap4_bridge_candidate_supported": true,
+    "n23_ap4_bridge_status": "bridge_candidate_supported",
+    "n24_boundary": "consume N23 AP4 bridge as local context only; keep final global AP4 reclassification false and carry AP5 dependency when proxy, reward, or target formation participates"
+  },
+  "n20_closeout_boundary": {
+    "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+    "final_claim_ceiling": "artifact_level_becoming_primitive_translation_contract_only",
+    "final_supported_status": "N20_contract_closed_no_primitive_evidence",
+    "n20_contract_complete": true,
+    "n24_consumption_role": "standing_primitive_contract_context_only",
+    "native_support_opened": false,
+    "phase8_opened": false,
+    "primitive_evidence_opened": false,
+    "source_artifact": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+    "status": "passed"
+  },
+  "n23_context_boundary": {
+    "claim_ceiling": "bounded artifact-level live-continuation collapse / selection-geometry evidence, N24-ready; not semantic choice, agency, native support, sentience, Phase 8, or ant ecology implementation",
+    "consumption_boundary": "bounded LC6/N23-C6 selection-geometry context only; not N24 surplus, optionality, reward, choice, agency, native support, sentience, Phase 8, or ant ecology evidence",
+    "final_global_ap4_reclassification_supported": false,
+    "final_n23_closeout_ladder_rung": "N23-C6",
+    "final_supported_lc_ladder_rung": "LC6",
+    "n23_ap4_bridge_status": "bridge_candidate_supported",
+    "n23_closeout_artifact_present": true,
+    "n23_closeout_required": true,
+    "n23_closeout_validated": true,
+    "n23_context_consumption": "n23_bridge_candidate_consumed",
+    "n23_source_ap4_bridge_status": "bridge_candidate_supported",
+    "n23_source_closeout_acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+    "n23_source_closeout_status": "passed",
+    "n24_claim_ceiling": "source inventory only; bounded N23 bridge context available",
+    "n24_may_consume_as": [
+      "bounded_live_branch_set_and_collapse_evidence",
+      "counterfactual_retention_evidence",
+      "ap4_bridge_candidate_context",
+      "bounded_selection_geometry_context"
+    ],
+    "n24_must_not_consume_as": [
+      "semantic_choice",
+      "semantic_intention",
+      "agency",
+      "free_will",
+      "native_support",
+      "sentience",
+      "Phase8_implementation",
+      "ant_ecology_implementation"
+    ],
+    "ready_for_n24": true,
+    "source_artifact": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json"
+  },
+  "no_absolute_paths": true,
+  "operational_i2_freeze_targets": {
+    "ap4_context_status_enum": [
+      "n23_bridge_candidate_consumed",
+      "lower_n23_context_consumed",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "ap_dependency_status_enum": [
+      "required_recorded",
+      "conditional_required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "optionality_acceptance_targets": [
+      "original optional continuation set must be same-source-current-run",
+      "declared replay family may validate but not create AB3 optional set",
+      "AB3 requires optional_continuation_availability_count >= 2",
+      "AB5 requires jointly_admissible_optional_continuation_count >= 2",
+      "optional_branch_record schema must be frozen",
+      "hidden budget relief blocks positive support",
+      "maintenance basin shift and floor renormalization fail closed"
+    ],
+    "planned_canonical_controls": [
+      "hidden_budget_relief_control",
+      "floor_crossing_as_abundance_control",
+      "surplus_without_optional_continuation_control",
+      "optionality_without_surplus_control",
+      "proxy_only_optional_branch_gain_control",
+      "optional_branch_label_only_control",
+      "single_optional_branch_relabel_control",
+      "independent_run_optional_assembly_control",
+      "maintenance_basin_shift_control",
+      "floor_renormalization_as_surplus_control",
+      "post_hoc_surplus_construction_control",
+      "n23_selection_context_relabel_as_abundance_control",
+      "reward_maximization_relabel_control",
+      "semantic_choice_relabel_control",
+      "agency_relabel_control",
+      "native_support_relabel_control",
+      "phase8_relabel_control",
+      "ap4_final_reclassification_relabel_control",
+      "ap5_proxy_gap_omission_control"
+    ],
+    "surplus_budget_owner_enum": [
+      "source_current_geometry",
+      "declared_producer_surface",
+      "mixed_declared",
+      "hidden_budget_relief_blocks_row",
+      "not_recorded_blocks_row"
+    ],
+    "surplus_formulas_to_freeze": {
+      "coherence_surplus_margin": "observed_coherence - coherence_floor_value",
+      "optional_flux_drain_margin": "flux_or_leakage_bound - observed_optional_flux_drain",
+      "residual_coherence_margin_under_optionality": "min_coherence_during_optionality_window - coherence_floor_value",
+      "residual_support_margin_under_optionality": "min_support_during_optionality_window - support_floor_value",
+      "support_surplus_margin": "observed_support - support_floor_value"
+    }
+  },
+  "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+  "purpose": "source handoff inventory only; no N24 primitive evidence",
+  "required_future_candidate_fields": [
+    "source_current_inputs",
+    "row_specific_thresholds_declared_before_use",
+    "maintenance_floor_policy",
+    "support_floor_value",
+    "coherence_floor_value",
+    "boundary_integrity_floor_value",
+    "flux_or_leakage_bound",
+    "optionality_window",
+    "support_surplus_margin_trace",
+    "coherence_surplus_margin_trace",
+    "residual_support_margin_under_optionality",
+    "residual_coherence_margin_under_optionality",
+    "optional_flux_drain_margin",
+    "maintenance_floor_trace",
+    "optional_continuation_set_trace",
+    "optional_continuation_availability_count",
+    "jointly_admissible_optional_continuation_count",
+    "optional_branch_records",
+    "boundary_integrity_under_optionality_trace",
+    "optional_flux_does_not_drain_maintenance_support",
+    "surplus_budget_owner",
+    "hidden_budget_relief_absent",
+    "same_basin_continuation_rule",
+    "artifact_manifest",
+    "artifact_sha256",
+    "all_artifact_sha256_match_file_contents"
+  ],
+  "schema_version": "n24_source_handoff_inventory_v1",
+  "source_artifact_statuses_purpose": "validate N20 contract rows, conditional N23 closeout consumption, and AP gap boundary before N24 evidence opens",
+  "source_artifacts": [
+    {
+      "acceptance_state": "closed_n20_contract_and_n21_handoff_no_primitive_evidence",
+      "output_digest": "1f28287546b42bc258778b6020226a45e68d8dc6665639debbeb7fb96b6fd621",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_closeout_and_n21_handoff.json",
+      "sha256": "f6897b0bd39d716e3f8de33ff1818d7b71cf59d9da957197dccd247e7ec438e9",
+      "source_role": "n20_closeout_and_handoff_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+      "output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_role": "n20_i4_native_function_proxy_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_role": "n20_i5_same_basin_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+      "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+      "source_role": "n23_closeout_and_n24_handoff_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "not_recorded",
+      "output_digest": "233743dd8e71f2d55d374025ebb4ac7563a924e667d73f85da8860b7dda85afe",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/outputs/n19_closeout_and_handoff.json",
+      "sha256": "7b586dbbe4644e75d9f9da0ca4bf8ed48dce6c03aba2fc2e09b364f917b8a51e",
+      "source_role": "n19_native_readiness_boundary",
+      "status": "passed"
+    },
+    {
+      "parseable_json": false,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "sha256": "994bda4702db4b96633202c7256ad0bf94821e8cfb46a2c4428d4082285fac24",
+      "source_role": "n20_n29_handoff",
+      "status": "markdown_context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "sha256": "a9e004c6026cbc1e706548dd163b229750373973896c54f28514d608ae31c638",
+      "source_role": "n20_n29_roadmap",
+      "status": "markdown_context_only"
+    }
+  ],
+  "status": "passed"
+}
