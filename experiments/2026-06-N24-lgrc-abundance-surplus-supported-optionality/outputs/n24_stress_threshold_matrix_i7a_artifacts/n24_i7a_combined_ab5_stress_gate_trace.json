@@ -1,0 +1,342 @@
+{
+  "artifact_id": "n24_i7_combined_ab5_stress_gate_trace",
+  "best_passing_row": {
+    "classification": "combined_narrow_ab5_candidate",
+    "combined_ab5_gate_passes": true,
+    "flux_bound_preserved": true,
+    "max_jointly_admissible_by_support_budget": 2,
+    "nonzero_stress": true,
+    "optional_flux_stress": 1e-09,
+    "per_branch_support_cost": 0.5
+  },
+  "combined_ab5_gate_supported": true,
+  "combined_rows": [
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": false,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.0
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.0
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.0
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.0
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.1
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.1
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.1
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.1
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.2
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.2
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.2
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.2
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.3
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.3
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.3
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.3
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.38
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.38
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.38
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 3,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.38
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.4
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.4
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.4
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.4
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.5
+    },
+    {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.5
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.5
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.5
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.576
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.576
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.576
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.576
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 0.0,
+      "per_branch_support_cost": 0.6
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.6
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-08,
+      "per_branch_support_cost": 0.6
+    },
+    {
+      "classification": "combined_ab5_gate_blocked",
+      "combined_ab5_gate_passes": false,
+      "flux_bound_preserved": false,
+      "max_jointly_admissible_by_support_budget": 1,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-06,
+      "per_branch_support_cost": 0.6
+    }
+  ],
+  "narrow_boundary_reason": "the strongest passing row uses flux stress at the frozen 1e-9 bound; stress above that bound fails closed",
+  "passing_row_count": 13,
+  "trace_digest": "578549557fb0f76d8cb1e79bc41ac64784cbe1f966db9a4f47873e689ec984fa"
+}

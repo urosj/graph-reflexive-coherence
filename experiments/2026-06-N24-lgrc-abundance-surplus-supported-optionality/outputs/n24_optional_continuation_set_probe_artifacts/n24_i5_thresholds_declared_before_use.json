@@ -1,0 +1,31 @@
+{
+  "ab3_minimum_availability_count": 2,
+  "ab5_minimum_jointly_admissible_count": 2,
+  "boundary_integrity_floor_value": "maintenance basin node set and topology signature preserved",
+  "coherence_floor_value": 9.85,
+  "declared_before_use": true,
+  "field_specific_acceptance": {
+    "boundary_integrity_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ],
+    "coherence_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ],
+    "flux_or_leakage_result": [
+      "preserved",
+      "changed_within_bound"
+    ],
+    "support_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ]
+  },
+  "flux_or_leakage_bound": 1e-09,
+  "minimum_coherence_surplus_margin": 0.1,
+  "minimum_support_surplus_margin": 0.1,
+  "support_floor_value": 9.85,
+  "threshold_record_digest": "bff3adfc4cb8d1c0eaac759ac88f8d05e987b6cce2e2671b505dfdbba5759afa",
+  "threshold_record_id": "n24_i5_thresholds_declared_before_use"
+}

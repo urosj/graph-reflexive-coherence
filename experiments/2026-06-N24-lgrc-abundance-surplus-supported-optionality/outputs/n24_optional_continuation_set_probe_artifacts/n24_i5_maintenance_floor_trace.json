@@ -1,0 +1,13 @@
+{
+  "artifact_id": "n24_i5_maintenance_floor_trace",
+  "payload": {
+    "coherence_floor_value": 9.85,
+    "declared_before_use": true,
+    "maintenance_basin_id": "n24_i4_core_support_maintenance_basin",
+    "support_floor_value": 9.85,
+    "threshold_record_digest": "bff3adfc4cb8d1c0eaac759ac88f8d05e987b6cce2e2671b505dfdbba5759afa"
+  },
+  "trace_digest": "511c293f50d261c39098f0d7473a7c5a5c626d2a128ccd747a1c90249331d31c",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

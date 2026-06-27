@@ -1,0 +1,28 @@
+{
+  "artifact_id": "n24_i5a_optional_continuation_set_trace",
+  "payload": {
+    "branch_ids": [
+      "n24_i5a_branch_01_to_node_1",
+      "n24_i5a_branch_02_to_node_5",
+      "n24_i5a_branch_03_to_node_9"
+    ],
+    "declared_replay_family_may_validate_but_not_create_original_set": true,
+    "joint_admissibility_status": "not_run_until_i7a_stress_threshold_matrix",
+    "jointly_admissible_optional_continuation_count": 0,
+    "optional_branch_records_digest": "01935a893d11228bf95bcc18386a6c0202fd4007098a93385ecba0ac9a204d88",
+    "optional_continuation_availability_count": 3,
+    "optional_continuation_count": 3,
+    "optionality_window": {
+      "end_step": 0,
+      "maintenance_floor_declared_before_window": true,
+      "start_step": 0,
+      "window_id": "n24_i5a_source_current_optionality_window",
+      "window_role": "alternative same-run optionality window; validates a high-margin target-supported maintenance basin without replacing I5"
+    },
+    "same_declared_optionality_window": true,
+    "same_source_current_run": true
+  },
+  "trace_digest": "69ebd4a322c4bdbb63eedb1a1b70c061ffae9944349bfed49284ab3464f925db",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

@@ -1,0 +1,35 @@
+{
+  "acts_by": [
+    "split_attempted_optional_flux_into_source_visible_windows",
+    "cap_each_conditioned_window_at_native_flux_or_leakage_bound",
+    "record_window_schedule_and_flux_ledger_before_claim_evaluation"
+  ],
+  "classification": "producer_mediated",
+  "coherence_added": 0.0,
+  "declared_before_use": true,
+  "does_not_retroactively_replace_i7b": true,
+  "floor_relaxation_allowed": false,
+  "hidden_budget_relief_allowed": false,
+  "hidden_support_allowed": false,
+  "max_conditioning_windows": 10,
+  "native_flux_or_leakage_bound": 1e-09,
+  "native_n24c6_relabel_allowed": false,
+  "naturalization_debt": "native_flux_routing_or_rate_limiting_surface",
+  "observes_only": [
+    "source_current_optional_branch_records",
+    "residual_support_margin_under_optionality",
+    "jointly_admissible_optional_continuation_count",
+    "flux_or_leakage_bound",
+    "attempted_optional_flux_stress"
+  ],
+  "post_hoc_conditioning_allowed": false,
+  "producer_contract_digest": "3083081e8f1f429362cf0d4e0b157d26218c5c064bcd790ca57e0bff7032dccb",
+  "producer_id": "n24_i7c_declared_flux_conditioning_producer",
+  "producer_kind": "rc_compatible_packet_schedule_manager",
+  "producer_role": "producer_mediated_flux_conditioning_surface",
+  "reward_or_proxy_scoring_allowed": false,
+  "semantic_choice_allowed": false,
+  "substrate_carried_native_evidence": false,
+  "support_added": 0.0,
+  "thresholds_unchanged": true
+}

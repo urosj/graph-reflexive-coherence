@@ -1,0 +1,28 @@
+{
+  "artifact_id": "n24_i5_optional_continuation_set_trace",
+  "payload": {
+    "branch_ids": [
+      "n24_i5_branch_01_to_node_1",
+      "n24_i5_branch_02_to_node_5",
+      "n24_i5_branch_03_to_node_9"
+    ],
+    "declared_replay_family_may_validate_but_not_create_original_set": true,
+    "joint_admissibility_status": "not_run_until_stress_threshold_matrix",
+    "jointly_admissible_optional_continuation_count": 0,
+    "optional_branch_records_digest": "b77a8df0d8c3a328b62f04198ca5944fc2371ce68395b08e5ff6d8b2febf987a",
+    "optional_continuation_availability_count": 3,
+    "optional_continuation_count": 3,
+    "optionality_window": {
+      "end_step": 0,
+      "maintenance_floor_declared_before_window": true,
+      "start_step": 0,
+      "window_id": "n24_i5_source_current_optionality_window",
+      "window_role": "same source-current availability window; no deterministic replay or stress validation yet"
+    },
+    "same_declared_optionality_window": true,
+    "same_source_current_run": true
+  },
+  "trace_digest": "a18164fba37be82a38b911e8ade9eb91d293b4c763b00c706ad49dda2199fdc7",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

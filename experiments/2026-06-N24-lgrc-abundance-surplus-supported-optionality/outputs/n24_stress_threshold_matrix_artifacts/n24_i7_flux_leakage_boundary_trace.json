@@ -1,0 +1,40 @@
+{
+  "any_nonzero_flux_stress_preserves_bound": true,
+  "artifact_id": "n24_i7_flux_leakage_boundary_trace",
+  "flux_or_leakage_bound": 1e-09,
+  "flux_rows": [
+    {
+      "classification": "quiet_or_at_bound",
+      "flux_bound_preserved": true,
+      "flux_or_leakage_bound": 1e-09,
+      "optional_flux_stress": 0.0,
+      "stress_is_nonzero": false
+    },
+    {
+      "classification": "quiet_or_at_bound",
+      "flux_bound_preserved": true,
+      "flux_or_leakage_bound": 1e-09,
+      "optional_flux_stress": 1e-09,
+      "stress_is_nonzero": true
+    },
+    {
+      "classification": "flux_leakage_fail_closed",
+      "flux_bound_preserved": false,
+      "flux_or_leakage_bound": 1e-09,
+      "optional_flux_stress": 1e-08,
+      "stress_is_nonzero": true
+    },
+    {
+      "classification": "flux_leakage_fail_closed",
+      "flux_bound_preserved": false,
+      "flux_or_leakage_bound": 1e-09,
+      "optional_flux_stress": 1e-06,
+      "stress_is_nonzero": true
+    }
+  ],
+  "highest_nonzero_flux_stress_preserving_bound": 1e-09,
+  "i5_optional_flux_drain_margin": 1e-09,
+  "positive_flux_stress_blocker": "The frozen quiet leakage bound is 1e-9. At-bound nonzero flux stress can pass, but any stress above that bound fails closed, so I7 can support only a narrow threshold AB5 candidate, not broad flux robustness.",
+  "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+  "trace_digest": "ed31bc1005fcb3e726e2756c056794407ed610ea1e81a9a91948672b31cf9c9b"
+}

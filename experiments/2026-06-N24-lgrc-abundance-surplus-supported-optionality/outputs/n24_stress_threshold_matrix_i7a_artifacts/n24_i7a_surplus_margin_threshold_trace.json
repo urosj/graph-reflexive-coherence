@@ -1,0 +1,77 @@
+{
+  "artifact_id": "n24_i7_surplus_margin_threshold_trace",
+  "base_coherence_margin": 1.1500000000000004,
+  "base_support_margin": 1.1500000000000004,
+  "coherence_floor": 9.85,
+  "highest_stress_preserving_floor": 1.15,
+  "highest_stress_preserving_minimum_surplus_margin": 1.05,
+  "minimum_surplus_margin": 0.1,
+  "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+  "stress_rows": [
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 1.1500000000000004,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.0,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 1.1500000000000004
+    },
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 1.0500000000000003,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.1,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 1.0500000000000003
+    },
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 0.6500000000000004,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.5,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 0.6500000000000004
+    },
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 0.15000000000000036,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 1.0,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 0.15000000000000036
+    },
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 0.10000000000000031,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 1.05,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 0.10000000000000031
+    },
+    {
+      "classification": "passes_floor_only",
+      "coherence_margin_after_stress": 4.440892098500626e-16,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 1.15,
+      "minimum_surplus_margin_preserved": false,
+      "positive_residual_margin_preserved": false,
+      "support_margin_after_stress": 4.440892098500626e-16
+    },
+    {
+      "classification": "floor_crossing_fail_closed",
+      "coherence_margin_after_stress": -0.0009999999999996678,
+      "floor_preserved": false,
+      "maintenance_drain_stress": 1.151,
+      "minimum_surplus_margin_preserved": false,
+      "positive_residual_margin_preserved": false,
+      "support_margin_after_stress": -0.0009999999999996678
+    }
+  ],
+  "support_floor": 9.85,
+  "trace_digest": "80764f0756c4b3e456ac01708a90df52396d6c49bcb3d6a052e05e0933fafebe"
+}

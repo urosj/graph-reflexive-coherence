@@ -1,0 +1,67 @@
+{
+  "claim_boundary": {
+    "ab4_replay_control_required_later": true,
+    "i5_replaced": false,
+    "max_iteration5a_rung": "AB3",
+    "surplus_supported_optionality_claim_allowed": false
+  },
+  "config_id": "n24_i5a_optional_continuation_runtime_config",
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "maintenance_basin": {
+    "maintenance_basin_id": "n24_i5a_high_margin_target_supported_basin",
+    "node_ids": [
+      1,
+      5,
+      9
+    ],
+    "support_aggregation_method": "min",
+    "support_measurement_scope": "maintenance_basin_node_set"
+  },
+  "model_family": "LGRC9V3",
+  "optional_branch_target_node_ids": [
+    1,
+    5,
+    9
+  ],
+  "optionality_window": {
+    "end_step": 0,
+    "maintenance_floor_declared_before_window": true,
+    "start_step": 0,
+    "window_id": "n24_i5a_source_current_optionality_window",
+    "window_role": "alternative same-run optionality window; validates a high-margin target-supported maintenance basin without replacing I5"
+  },
+  "runtime_config_builder": "make_config",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "thresholds": {
+    "ab3_minimum_availability_count": 2,
+    "ab5_minimum_jointly_admissible_count": 2,
+    "boundary_integrity_floor_value": "maintenance basin node set and topology signature preserved",
+    "coherence_floor_value": 9.85,
+    "declared_before_use": true,
+    "field_specific_acceptance": {
+      "boundary_integrity_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ],
+      "coherence_floor_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ],
+      "flux_or_leakage_result": [
+        "preserved",
+        "changed_within_bound"
+      ],
+      "support_floor_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ]
+    },
+    "flux_or_leakage_bound": 1e-09,
+    "minimum_coherence_surplus_margin": 0.1,
+    "minimum_support_surplus_margin": 0.1,
+    "support_floor_value": 9.85,
+    "threshold_record_digest": "3e46e8888cda9be69defdf95af71f6dd07e7715070252746eac6d076c45c5d60",
+    "threshold_record_id": "n24_i5a_thresholds_declared_before_use"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "artifact_id": "n24_i5_optional_branch_support_coherence_traces",
+  "payload": {
+    "branch_records": [
+      {
+        "admissibility_status": "admissible",
+        "boundary_integrity_result": "preserved",
+        "branch_id": "n24_i5_branch_01_to_node_1",
+        "coherence_after_or_projected_after": 13.0,
+        "coherence_before": 13.0,
+        "coherence_surplus_margin_after": 3.1500000000000004,
+        "coherence_surplus_margin_before": 3.1500000000000004,
+        "edge_id_or_route_id": "edge_0",
+        "flux_or_leakage_result": "preserved",
+        "maintenance_floor_preserved": true,
+        "optional_flux_cost": 0.0,
+        "optionality_window_step_range": {
+          "end_step": 0,
+          "start_step": 0,
+          "window_id": "n24_i5_source_current_optionality_window"
+        },
+        "producer_enumeration_used": false,
+        "reward_or_proxy_label_used": false,
+        "source_node_id": 0,
+        "support_after_or_projected_after": 13.0,
+        "support_before": 13.0,
+        "support_surplus_margin_after": 3.1500000000000004,
+        "support_surplus_margin_before": 3.1500000000000004,
+        "target_node_id": 1,
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      {
+        "admissibility_status": "admissible",
+        "boundary_integrity_result": "preserved",
+        "branch_id": "n24_i5_branch_02_to_node_5",
+        "coherence_after_or_projected_after": 11.0,
+        "coherence_before": 11.0,
+        "coherence_surplus_margin_after": 1.1500000000000004,
+        "coherence_surplus_margin_before": 1.1500000000000004,
+        "edge_id_or_route_id": "edge_4",
+        "flux_or_leakage_result": "preserved",
+        "maintenance_floor_preserved": true,
+        "optional_flux_cost": 0.0,
+        "optionality_window_step_range": {
+          "end_step": 0,
+          "start_step": 0,
+          "window_id": "n24_i5_source_current_optionality_window"
+        },
+        "producer_enumeration_used": false,
+        "reward_or_proxy_label_used": false,
+        "source_node_id": 0,
+        "support_after_or_projected_after": 11.0,
+        "support_before": 11.0,
+        "support_surplus_margin_after": 1.1500000000000004,
+        "support_surplus_margin_before": 1.1500000000000004,
+        "target_node_id": 5,
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      {
+        "admissibility_status": "admissible",
+        "boundary_integrity_result": "preserved",
+        "branch_id": "n24_i5_branch_03_to_node_9",
+        "coherence_after_or_projected_after": 12.0,
+        "coherence_before": 12.0,
+        "coherence_surplus_margin_after": 2.1500000000000004,
+        "coherence_surplus_margin_before": 2.1500000000000004,
+        "edge_id_or_route_id": "edge_8",
+        "flux_or_leakage_result": "preserved",
+        "maintenance_floor_preserved": true,
+        "optional_flux_cost": 0.0,
+        "optionality_window_step_range": {
+          "end_step": 0,
+          "start_step": 0,
+          "window_id": "n24_i5_source_current_optionality_window"
+        },
+        "producer_enumeration_used": false,
+        "reward_or_proxy_label_used": false,
+        "source_node_id": 0,
+        "support_after_or_projected_after": 12.0,
+        "support_before": 12.0,
+        "support_surplus_margin_after": 2.1500000000000004,
+        "support_surplus_margin_before": 2.1500000000000004,
+        "target_node_id": 9,
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      }
+    ],
+    "branch_specific_support_coherence_traces_present": true,
+    "optionality_window": {
+      "end_step": 0,
+      "maintenance_floor_declared_before_window": true,
+      "start_step": 0,
+      "window_id": "n24_i5_source_current_optionality_window",
+      "window_role": "same source-current availability window; no deterministic replay or stress validation yet"
+    },
+    "residual_coherence_margin_under_optionality": 0.15000000000000036,
+    "residual_margin_scope": "maintenance_basin_node_set_min_during_optionality_window",
+    "residual_support_margin_under_optionality": 0.15000000000000036
+  },
+  "trace_digest": "81440afa7fae1e3b4c26d3359f6743fb7644f810ec0f644614eb0958addfbfca",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

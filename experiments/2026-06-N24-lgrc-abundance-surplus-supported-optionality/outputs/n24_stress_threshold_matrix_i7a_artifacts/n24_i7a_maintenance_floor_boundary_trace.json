@@ -1,0 +1,55 @@
+{
+  "artifact_id": "n24_i7a_maintenance_floor_boundary_trace",
+  "declared_coherence_floor": 9.85,
+  "declared_support_floor": 9.85,
+  "floor_crossing_control_fail_closed_at": [
+    11.001
+  ],
+  "floor_rows": [
+    {
+      "candidate_floor": 9.85,
+      "classification": "surplus_preserved",
+      "coherence_margin": 1.1500000000000004,
+      "floor_preserved": true,
+      "positive_surplus_preserved": true,
+      "support_margin": 1.1500000000000004
+    },
+    {
+      "candidate_floor": 10.0,
+      "classification": "surplus_preserved",
+      "coherence_margin": 1.0,
+      "floor_preserved": true,
+      "positive_surplus_preserved": true,
+      "support_margin": 1.0
+    },
+    {
+      "candidate_floor": 10.5,
+      "classification": "surplus_preserved",
+      "coherence_margin": 0.5,
+      "floor_preserved": true,
+      "positive_surplus_preserved": true,
+      "support_margin": 0.5
+    },
+    {
+      "candidate_floor": 11.0,
+      "classification": "at_floor_edge",
+      "coherence_margin": 0.0,
+      "floor_preserved": true,
+      "positive_surplus_preserved": false,
+      "support_margin": 0.0
+    },
+    {
+      "candidate_floor": 11.001,
+      "classification": "floor_crossing_fail_closed",
+      "coherence_margin": -0.0009999999999994458,
+      "floor_preserved": false,
+      "positive_surplus_preserved": false,
+      "support_margin": -0.0009999999999994458
+    }
+  ],
+  "highest_floor_with_positive_surplus": 10.5,
+  "observed_min_coherence": 11.0,
+  "observed_min_support": 11.0,
+  "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+  "trace_digest": "6fb96f0e482a27e60a0b26f031433e825ddbde4c081b8932403017e32700c064"
+}

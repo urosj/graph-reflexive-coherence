@@ -1,0 +1,142 @@
+{
+  "artifact_id": "n24_i6_negative_control_matrix",
+  "control_matrix_digest": "875d4664ee01ba95ec5809c35eebfcab0ee89b277b467e4a453b0b60f152a30e",
+  "control_rows": [
+    {
+      "blocked_condition": "blocks agency",
+      "claim_allowed_when_triggered": false,
+      "control_id": "agency_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks final global AP4 reclassification",
+      "claim_allowed_when_triggered": false,
+      "control_id": "ap4_final_reclassification_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks proxy/reward rows missing AP5 dependency",
+      "claim_allowed_when_triggered": false,
+      "control_id": "ap5_proxy_gap_omission_control",
+      "interpretation": "AP5 is not applicable for non-proxy N24 I6 rows; a proxy/reward variant would be rejected if it omitted AP5 dependency",
+      "status": "not_applicable"
+    },
+    {
+      "blocked_condition": "blocks AB2+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "floor_crossing_as_abundance_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks surplus claim",
+      "claim_allowed_when_triggered": false,
+      "control_id": "floor_renormalization_as_surplus_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks positive support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "hidden_budget_relief_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks original AB3 optional set",
+      "claim_allowed_when_triggered": false,
+      "control_id": "independent_run_optional_assembly_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks surplus claim",
+      "claim_allowed_when_triggered": false,
+      "control_id": "maintenance_basin_shift_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks N23 context relabel",
+      "claim_allowed_when_triggered": false,
+      "control_id": "n23_selection_context_relabel_as_abundance_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks native support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "native_support_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB3+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "optional_branch_label_only_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB2+ and AB3+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "optionality_without_surplus_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks Phase 8",
+      "claim_allowed_when_triggered": false,
+      "control_id": "phase8_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB2+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "post_hoc_surplus_construction_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks optionality support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "proxy_only_optional_branch_gain_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks reward/goal overclaim",
+      "claim_allowed_when_triggered": false,
+      "control_id": "reward_maximization_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks semantic choice",
+      "claim_allowed_when_triggered": false,
+      "control_id": "semantic_choice_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB3+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "single_optional_branch_relabel_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "allows AB2 but blocks AB3+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "surplus_without_optional_continuation_control",
+      "interpretation": "blocker triggered and the overclaim was rejected",
+      "status": "failed_closed"
+    }
+  ],
+  "failed_closed_meaning": "blocker triggered and claim was correctly rejected",
+  "failed_open_meaning": "blocker triggered but claim still passed",
+  "status": "passed"
+}

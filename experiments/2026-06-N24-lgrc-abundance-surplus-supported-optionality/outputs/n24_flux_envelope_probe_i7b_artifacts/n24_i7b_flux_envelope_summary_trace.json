@@ -1,0 +1,221 @@
+{
+  "all_candidates_fail_above_bound": true,
+  "all_candidates_pass_at_bound": true,
+  "any_candidate_widens_flux_envelope": false,
+  "artifact_id": "n24_i7b_flux_envelope_summary_trace",
+  "candidate_flux_traces": [
+    {
+      "above_bound_flux_passes": false,
+      "at_bound_flux_passes": true,
+      "base_residual_support_margin": 0.15000000000000036,
+      "best_flux_stress_preserving_bound": 1e-09,
+      "candidate_id": "I7",
+      "first_above_bound_failure": 1.01e-09,
+      "flux_rows": [
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "quiet_baseline",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 0.0,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "at_or_below_bound_pass",
+          "combined_gate_passes": true,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 2.5e-10,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "at_or_below_bound_pass",
+          "combined_gate_passes": true,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 5e-10,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "at_or_below_bound_pass",
+          "combined_gate_passes": true,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1e-09,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1.01e-09,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 2e-09,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1e-08,
+          "per_branch_support_cost": 0.05
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1e-06,
+          "per_branch_support_cost": 0.05
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 2,
+      "per_branch_support_cost": 0.05,
+      "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+      "source_stress_output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+      "trace_digest": "38b2cadcef2f714f6b19e26cfbbd3fda803ea26837ce126af3909a3129d6d542",
+      "widens_flux_envelope": false
+    },
+    {
+      "above_bound_flux_passes": false,
+      "at_bound_flux_passes": true,
+      "base_residual_support_margin": 1.1500000000000004,
+      "best_flux_stress_preserving_bound": 1e-09,
+      "candidate_id": "I7-A",
+      "first_above_bound_failure": 1.01e-09,
+      "flux_rows": [
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "quiet_baseline",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 0.0,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "at_or_below_bound_pass",
+          "combined_gate_passes": true,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 2.5e-10,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "at_or_below_bound_pass",
+          "combined_gate_passes": true,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 5e-10,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": false,
+          "classification": "at_or_below_bound_pass",
+          "combined_gate_passes": true,
+          "flux_bound_preserved": true,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1e-09,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1.01e-09,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 2e-09,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1e-08,
+          "per_branch_support_cost": 0.5
+        },
+        {
+          "ab5_count_gate_met": true,
+          "above_bound": true,
+          "classification": "above_bound_flux_fail_closed",
+          "combined_gate_passes": false,
+          "flux_bound_preserved": false,
+          "flux_or_leakage_bound": 1e-09,
+          "max_jointly_admissible_by_support_budget": 2,
+          "optional_flux_stress": 1e-06,
+          "per_branch_support_cost": 0.5
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 2,
+      "per_branch_support_cost": 0.5,
+      "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+      "source_stress_output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+      "trace_digest": "becc9402ac5e64482516337401f9d19588fe8a73bf525d444c57e98ec3cda448",
+      "widens_flux_envelope": false
+    }
+  ],
+  "classification": "flux_envelope_not_widened",
+  "flux_or_leakage_bound": 1e-09,
+  "n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+  "n24_c6_flux_readiness_supported": false,
+  "trace_digest": "e000379c9f2ad4509427aad825f85e39f27eb8a7a4070fbeeabf6e18ee2bb987"
+}

@@ -1,0 +1,21 @@
+{
+  "ab5_blocker": "none",
+  "ab5_candidate_supported": true,
+  "artifact_id": "n24_i7a_stress_threshold_summary_trace",
+  "classification": "higher_margin_support_axis_flux_at_bound_ab5_candidate",
+  "combined_ab5_gate_supported": true,
+  "combined_best_passing_row": {
+    "classification": "combined_narrow_ab5_candidate",
+    "combined_ab5_gate_passes": true,
+    "flux_bound_preserved": true,
+    "max_jointly_admissible_by_support_budget": 2,
+    "nonzero_stress": true,
+    "optional_flux_stress": 1e-09,
+    "per_branch_support_cost": 0.5
+  },
+  "does_not_replace_i7": true,
+  "i6a_source_output_digest": "6a57579a029dd7a5c08bb995e3c455dc44db556f96201dd88db53c78d14169e3",
+  "nonzero_flux_stress_clean": true,
+  "support_budget_count_gate_met": true,
+  "trace_digest": "f67ad199bbb61afbd3f1aa32794ee39739fe46a273060c0866a2355de1af1ef1"
+}

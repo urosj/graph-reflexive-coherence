@@ -1,0 +1,78 @@
+{
+  "artifact_id": "n24_i7b_flux_envelope_control_matrix",
+  "control_matrix_digest": "2d69e02096c9903233f4f7aabcbc71708aa0c977747c0d8dd8a8190e932ba94c",
+  "control_rows": [
+    {
+      "blocked_condition": "blocks positive support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "hidden_budget_relief_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB2+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "floor_crossing_as_abundance_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks optionality support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "proxy_only_optional_branch_gain_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB3+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "optional_branch_label_only_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB2+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "post_hoc_surplus_construction_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks reward/goal overclaim",
+      "claim_allowed_when_triggered": false,
+      "control_id": "reward_maximization_relabel_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks semantic choice",
+      "claim_allowed_when_triggered": false,
+      "control_id": "semantic_choice_relabel_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks agency",
+      "claim_allowed_when_triggered": false,
+      "control_id": "agency_relabel_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks native support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "native_support_relabel_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks Phase 8",
+      "claim_allowed_when_triggered": false,
+      "control_id": "phase8_relabel_control",
+      "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+      "status": "failed_closed"
+    }
+  ],
+  "failed_open_controls": [],
+  "status": "passed"
+}

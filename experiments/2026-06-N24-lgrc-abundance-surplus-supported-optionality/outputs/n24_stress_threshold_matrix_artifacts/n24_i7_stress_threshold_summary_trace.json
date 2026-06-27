@@ -1,0 +1,20 @@
+{
+  "ab5_blocker": "none",
+  "ab5_candidate_supported": true,
+  "artifact_id": "n24_i7_stress_threshold_summary_trace",
+  "classification": "narrow_at_bound_stress_threshold_backed_ab5_candidate",
+  "combined_ab5_gate_supported": true,
+  "combined_best_passing_row": {
+    "classification": "combined_narrow_ab5_candidate",
+    "combined_ab5_gate_passes": true,
+    "flux_bound_preserved": true,
+    "max_jointly_admissible_by_support_budget": 2,
+    "nonzero_stress": true,
+    "optional_flux_stress": 1e-09,
+    "per_branch_support_cost": 0.05
+  },
+  "i6_source_output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+  "nonzero_flux_stress_clean": true,
+  "support_budget_count_gate_met": true,
+  "trace_digest": "61487304a5fe218de8f65df4c4c2092b9a1dedcfd7b1e908446243251448c382"
+}

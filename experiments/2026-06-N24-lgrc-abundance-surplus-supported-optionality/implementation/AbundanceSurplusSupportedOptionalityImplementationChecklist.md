@@ -52,12 +52,12 @@
 - [x] Record `ap4_condition_reason` and `ap5_condition_reason` per row.
 - [x] Freeze maintenance floors before positive probes.
 - [x] Require surplus above maintenance floor for AB2+.
-- [ ] Require optional continuation set trace for AB3+.
-- [ ] Require maintenance support/coherence floors to remain preserved while
+- [x] Require optional continuation set trace for AB3+.
+- [x] Require maintenance support/coherence floors to remain preserved while
       optional branches are open.
-- [ ] Require boundary integrity under optionality for AB3+.
-- [ ] Require optional flux not to drain maintenance support for AB3+.
-- [ ] Require `optionality_not_label_reassignment = true`.
+- [x] Require boundary integrity under optionality for AB3+.
+- [x] Require optional flux not to drain maintenance support for AB3+.
+- [x] Require `optionality_not_label_reassignment = true`.
 - [x] Block hidden budget relief, floor crossing, proxy-only gain, optional
       label-only rows, post-hoc surplus, N23 relabel, reward relabel, agency
       relabel, native-support relabel, and Phase 8 relabel controls.
@@ -526,15 +526,16 @@ evidence.
 
 ## Iteration 5. Optional Continuation Set Probe
 
-- [ ] Run optional continuation set probe.
-- [ ] Record optional continuation set trace.
-- [ ] Record optional branch support/coherence traces.
-- [ ] Record optional branch boundary/flux traces.
-- [ ] Confirm maintenance support/coherence floors remain preserved.
-- [ ] Confirm optional flux does not drain maintenance support below floor.
-- [ ] Confirm optional branches are not labels, reward/proxy scores, or N23
+- [x] Run optional continuation set probe.
+- [x] Record optional continuation set trace.
+- [x] Record optional branch support/coherence traces.
+- [x] Record optional branch boundary/flux traces.
+- [x] Confirm maintenance support/coherence floors remain preserved.
+- [x] Confirm optional flux does not drain maintenance support below floor.
+- [x] Confirm optional branches are not labels, reward/proxy scores, or N23
       relabels.
-- [ ] Assign at most provisional AB3 pending replay/control matrix.
+- [x] Normalize artifact manifest roles against the I2 artifact-role enum.
+- [x] Assign at most provisional AB3 pending replay/control matrix.
 
 Expected artifacts:
 
@@ -544,21 +545,144 @@ reports/n24_optional_continuation_set_probe.md
 scripts/build_n24_optional_continuation_set_probe.py
 ```
 
+Iteration 5 result:
+
+```text
+status = passed
+acceptance_state = accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4
+failed_checks = []
+output_digest = 77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb
+candidate_row_count = 1
+provisional_ab_ladder_rung = AB3
+ab4_or_stronger_supported = false
+ab5_or_stronger_supported = false
+source_current_optional_continuation_set_observed = true
+optional_continuation_availability_count = 3
+jointly_admissible_optional_continuation_count = 0
+surplus_supported_optionality_claim_allowed = false
+ready_for_iteration_6_replay_control_matrix = true
+```
+
+Iteration 5 measured optionality:
+
+```text
+model_family = LGRC9V3
+fixture = examples/grc9v3/_fixtures.py::make_column_h_state
+maintenance_basin_id = n24_i4_core_support_maintenance_basin
+maintenance_node_ids = [0, 1, 5, 6, 7, 8, 9]
+optional_branch_target_node_ids = [1, 5, 9]
+support_floor = 9.85
+coherence_floor = 9.85
+observed_min_support = 10.0
+observed_min_coherence = 10.0
+support_surplus_margin = 0.15000000000000036
+coherence_surplus_margin = 0.15000000000000036
+residual_support_margin_under_optionality = 0.15000000000000036
+residual_coherence_margin_under_optionality = 0.15000000000000036
+optional_flux_drain_margin = 1e-09
+ap4_dependency_status = required_recorded
+ap5_dependency_status = not_applicable
+```
+
+Iteration 5 interpretation:
+
+```text
+I5 is the first positive N24 optionality row. It supports only provisional
+AB3 source-current optional continuation evidence.
+
+The optionality is geometric: three center-to-neighbor LGRC edge continuations
+to nodes [1, 5, 9] are recorded in the same source-current runtime snapshot
+and optionality window. Each branch has source-current support/coherence and
+boundary/flux traces, no reward/proxy label, no producer enumeration, and no
+independent-run assembly.
+
+The residual support/coherence margins are intentionally conservative. They
+use the declared maintenance-basin node-set minimum during the optionality
+window, not the stronger branch-target margins.
+
+I5 supports availability, not replay-backed persistence or stress-backed joint
+admissibility:
+  optional_continuation_availability_count = 3
+  jointly_admissible_optional_continuation_count = 0
+  replay = not_run
+
+So AB4+ remains blocked until I6 replay/control validation, and AB5+ remains
+blocked until stress/threshold evidence.
+
+Because I5 claims route/branch-conditioned optionality, AP4 is load-bearing
+as local bridge context:
+  ap4_context_status = n23_bridge_candidate_consumed
+  ap4_dependency_status = required_recorded
+
+This still does not make final global AP4 reclassification, semantic choice,
+reward maximization, agency, native support, sentience, Phase 8, or ant
+ecology claims.
+```
+
+Iteration 5 review follow-up:
+
+```text
+Artifact roles are normalized to the frozen I2 artifact-role enum:
+  optional branch support/coherence trace -> optional_branch_trace
+  optional branch boundary/flux trace -> optional_branch_trace
+  boundary under optionality trace -> boundary_integrity_trace
+
+The row-level trace objects keep more specific subtypes:
+  artifact_subtype = optional_branch_support_coherence_trace
+  artifact_subtype = optional_branch_boundary_flux_trace
+  artifact_subtype = boundary_integrity_under_optionality_trace
+
+I5 now validates this directly:
+  artifact_manifest_roles_allowed_by_i2 = true
+
+I5 records the current digest chain:
+  i2_output_digest_consumed = df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503
+  i3_output_digest_consumed = 4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df
+  i4_output_digest_consumed = 2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3
+
+I5 source snapshot reuse is audited:
+  n24_i5_snapshot_sha256 = 9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4
+  n23_i4_pre_collapse_snapshot_sha256 = 9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4
+  n23_snapshot_consumed_as_n24_optionality_evidence = false
+
+The shared hash means the same LGRC fixture state is re-emitted by N24, not
+that N23 evidence is relabeled as N24 optionality.
+
+surplus_without_optional_continuation_rejected_or_demoted = true means the
+control is satisfied because the bad condition is absent in I5. It does not
+mean I5 lacks optionality.
+
+I6 must test the availability record rather than merely restate it:
+  artifact_replay = passed
+  snapshot_load_replay = passed
+  duplicate_replay = passed
+  optional continuation set survives replay
+  branch records remain same-run / same-window
+  residual support/coherence margins stay positive
+  boundary/flux preservation survives replay
+```
+
 ## Iteration 6. Replay And Control Matrix
 
-- [ ] Replay positive/provisional candidate rows.
-- [ ] Run hidden budget relief control.
-- [ ] Run floor-crossing control.
-- [ ] Run proxy-only optional branch gain control.
-- [ ] Run optional branch label-only control.
-- [ ] Run single-branch relabel control.
-- [ ] Run post-hoc surplus construction control.
-- [ ] Run N23 context relabel control.
-- [ ] Run reward maximization relabel control.
-- [ ] Run AP4/AP5 gap controls.
-- [ ] Run unsafe claim relabel controls.
-- [ ] Demote rows when replay or controls fail.
-- [ ] Determine AB4 eligibility.
+- [x] Replay positive/provisional candidate rows.
+- [x] Confirm I5 availability evidence survives artifact replay.
+- [x] Confirm I5 availability evidence survives snapshot/load replay.
+- [x] Confirm I5 availability evidence survives duplicate replay.
+- [x] Confirm replayed optional branch records remain same-run / same-window.
+- [x] Confirm replayed residual support/coherence margins stay positive.
+- [x] Confirm replayed boundary/flux preservation remains clean.
+- [x] Run hidden budget relief control.
+- [x] Run floor-crossing control.
+- [x] Run proxy-only optional branch gain control.
+- [x] Run optional branch label-only control.
+- [x] Run single-branch relabel control.
+- [x] Run post-hoc surplus construction control.
+- [x] Run N23 context relabel control.
+- [x] Run reward maximization relabel control.
+- [x] Run AP4/AP5 gap controls.
+- [x] Run unsafe claim relabel controls.
+- [x] Demote rows when replay or controls fail.
+- [x] Determine AB4 eligibility.
 
 Expected artifacts:
 
@@ -568,15 +692,78 @@ reports/n24_replay_and_control_matrix.md
 scripts/build_n24_replay_and_control_matrix.py
 ```
 
+Iteration 6 result:
+
+```text
+status = passed
+acceptance_state = accepted_replay_control_backed_ab4_candidate_no_ab5
+failed_checks = []
+output_digest = da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455
+artifact_replay_passed = true
+snapshot_load_replay_passed = true
+duplicate_replay_passed = true
+i4_final_consumable_rung = AB2
+i5_final_consumable_rung = AB4
+provisional_ab_ladder_rung = AB4
+ab4_candidate_supported = true
+ab5_or_stronger_supported = false
+n24_closeout_ladder_rung_assigned = false
+provisional_n24_closeout_ceiling = N24-C4
+surplus_supported_optionality_claim_allowed = false
+ready_for_iteration_7_stress_threshold_matrix = true
+```
+
+Iteration 6 replay matrix:
+
+```text
+I4:
+  candidate = n24_i4_row_01_minimal_source_current_surplus_probe
+  artifact_replay = passed
+  snapshot_load_replay = passed
+  duplicate_replay = passed
+  optional_set_survival_replay = not_applicable
+  final_consumable_rung = AB2
+
+I5:
+  candidate = n24_i5_row_01_source_current_optional_continuation_set_probe
+  artifact_replay = passed
+  snapshot_load_replay = passed
+  duplicate_replay = passed
+  optional_set_survival_replay = passed
+  final_consumable_rung = AB4
+```
+
+Iteration 6 geometric interpretation:
+
+```text
+I6 validates that the I5 optional branches are not merely labels. The same
+LGRC snapshot reloads, the same maintenance-basin signature reappears, the
+same three branch records remain in one source-current window, and
+support/coherence margins remain positive.
+
+I4 is replay-stable AB2 surplus evidence only. Its surplus margin replays from
+the snapshot, but it has no optional set, so it cannot become AB4 by replay
+alone.
+
+I5 becomes a provisional AB4 candidate because the AB3 optional set survives
+artifact, snapshot/load, and duplicate replay while hidden-budget,
+floor-crossing, proxy-only, label-only, post-hoc, N23 relabel, reward,
+AP-gap, and unsafe relabel controls stay closed.
+
+AB5 remains blocked because stress/threshold backing and joint admissibility
+under stress are I7 scope. The row is not reward maximization, semantic choice,
+agency, native support, sentience, Phase 8, or ant ecology.
+```
+
 ## Iteration 7. Stress And Threshold Matrix
 
-- [ ] Map surplus margin thresholds.
-- [ ] Map optional branch capacity thresholds.
-- [ ] Map maintenance floor boundary.
-- [ ] Map flux/leakage stress boundary.
-- [ ] Confirm hidden-budget, proxy-only, floor-crossing, and label-only
+- [x] Map surplus margin thresholds.
+- [x] Map optional branch capacity thresholds.
+- [x] Map maintenance floor boundary.
+- [x] Map flux/leakage stress boundary.
+- [x] Confirm hidden-budget, proxy-only, floor-crossing, and label-only
       controls remain fail-closed under stress.
-- [ ] Determine whether AB5 is supported or only a narrow AB4 edge case.
+- [x] Determine whether AB5 is supported or only a narrow AB4 edge case.
 
 Expected artifacts:
 
@@ -586,20 +773,382 @@ reports/n24_stress_threshold_matrix.md
 scripts/build_n24_stress_threshold_matrix.py
 ```
 
+Iteration 7 result:
+
+```text
+status = passed
+acceptance_state = accepted_narrow_at_bound_stress_threshold_backed_ab5_candidate
+failed_checks = []
+output_digest = 03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f
+provisional_ab_ladder_rung = AB5
+ab4_candidate_supported = true
+ab5_candidate_supported = true
+ab5_or_stronger_supported = true
+n24_closeout_ladder_rung_assigned = false
+provisional_n24_closeout_ceiling = N24-C5
+surplus_supported_optionality_claim_allowed = false
+ready_for_iteration_8_closeout = true
+```
+
+Iteration 7 stress boundary:
+
+```text
+base_support_margin = 0.15000000000000036
+base_coherence_margin = 0.15000000000000036
+highest_stress_preserving_minimum_surplus_margin = 0.05
+highest_stress_preserving_floor = 0.15
+
+best_combined_per_branch_support_cost = 0.05
+best_combined_optional_flux_stress = 1e-09
+best_combined_joint_count = 2
+```
+
+Iteration 7 interpretation:
+
+```text
+I7 supports a narrow, at-bound AB5 candidate. The support-budget axis can
+tolerate a small joint branch cost: with per-branch support cost 0.05, two
+optional branches remain jointly admissible above the maintenance floor.
+
+The limiting axis is flux/leakage. The frozen flux/leakage bound is 1e-9.
+A combined row passes only at that bound:
+  optional_flux_stress = 1e-09
+
+Stress above that bound fails closed, so this is not broad abundance
+robustness. The correct ceiling is narrow artifact-level threshold-backed
+AB5 candidate pending I8 closeout, not reward maximization, semantic choice,
+agency, native support, sentience, Phase 8, or ant ecology.
+```
+
+## Iteration 5-A. Alternative High-Margin Optionality Probe
+
+- [x] Add an alternative source-current optionality variant.
+- [x] Keep the same floor, AB rules, claim boundary, and unsafe blockers.
+- [x] Confirm original I5/I6/I7 are not replaced.
+- [x] Record the alternative maintenance basin and optional branch set.
+- [x] Confirm the alternative margin is higher than I5.
+- [x] Assign at most provisional AB3 pending I6-A replay/control.
+
+Expected artifacts:
+
+```text
+outputs/n24_optional_continuation_set_probe_i5a.json
+reports/n24_optional_continuation_set_probe_i5a.md
+scripts/build_n24_optional_continuation_set_probe_i5a.py
+```
+
+Iteration 5-A result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_high_margin_ab3_optional_continuation_candidate_pending_i6a
+failed_checks = []
+output_digest = 694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44
+variant_id = i5a_high_margin_target_supported_optional_set
+i5_replaced = false
+i6_replaced = false
+i7_replaced = false
+provisional_ab_ladder_rung = AB3
+ready_for_iteration_6a_replay_control_matrix = true
+```
+
+Iteration 5-A measured margin:
+
+```text
+maintenance_basin_id = n24_i5a_high_margin_target_supported_basin
+maintenance_node_ids = [1, 5, 9]
+optional_branch_target_node_ids = [1, 5, 9]
+support_floor = 9.85
+coherence_floor = 9.85
+observed_min_support = 11.0
+observed_min_coherence = 11.0
+support_surplus_margin = 1.1500000000000004
+coherence_surplus_margin = 1.1500000000000004
+```
+
+Iteration 5-A interpretation:
+
+```text
+I5-A reuses the same LGRC fixture family but declares a different source-current
+maintenance basin over high-support optional target nodes [1, 5, 9]. This
+raises the support/coherence margin from I5's 0.15 to 1.15 without changing the
+floor, AB ladder, AP boundary, or unsafe claim rules.
+
+This is additional evidence only. It does not replace I5, does not relabel I5,
+and does not open AB4/AB5 until replay/control and stress testing run.
+```
+
+## Iteration 6-A. Alternative Replay And Control Matrix
+
+- [x] Replay the I5-A high-margin optionality variant.
+- [x] Confirm artifact replay passes.
+- [x] Confirm snapshot/load replay uses the I5-A maintenance-basin signature.
+- [x] Confirm duplicate replay passes.
+- [x] Confirm optional set survival replay passes.
+- [x] Confirm controls accept the I5-A candidate with no failed-open controls.
+- [x] Assign I5-A at most AB4 pending I7-A stress.
+
+Expected artifacts:
+
+```text
+outputs/n24_replay_and_control_matrix_i6a.json
+reports/n24_replay_and_control_matrix_i6a.md
+scripts/build_n24_replay_and_control_matrix_i6a.py
+```
+
+Iteration 6-A result:
+
+```text
+status = passed
+acceptance_state = accepted_i5a_replay_control_backed_ab4_candidate_pending_i7a
+failed_checks = []
+output_digest = 6a57579a029dd7a5c08bb995e3c455dc44db556f96201dd88db53c78d14169e3
+artifact_replay = passed
+snapshot_load_replay = passed
+duplicate_replay = passed
+optional_set_survival_replay = passed
+i5a_final_consumable_rung = AB4
+ab4_candidate_supported = true
+ab5_or_stronger_supported = false
+does_not_replace_i6 = true
+ready_for_iteration_7a_stress_threshold_matrix = true
+```
+
+Iteration 6-A interpretation:
+
+```text
+I6-A confirms the high-margin I5-A optional set survives artifact, snapshot/load,
+duplicate, and optional-set replay under the same control discipline as I6.
+
+The snapshot/load replay uses the I5-A maintenance-basin signature, not the
+original I5 maintenance basin. This avoids silently validating the wrong basin.
+
+This is an alternative AB4 candidate only. It does not replace I6 and does not
+open AB5, reward, semantic choice, agency, native support, sentience, Phase 8,
+or ant ecology.
+```
+
+## Iteration 7-A. Alternative Stress And Threshold Matrix
+
+- [x] Stress-test the I5-A/I6-A high-margin variant.
+- [x] Confirm support-budget axis is stronger than I7.
+- [x] Confirm the flux/leakage bottleneck remains at the frozen bound.
+- [x] Confirm AB5 support is corroborating additional evidence, not replacement.
+- [x] Preserve all claim-boundary blockers.
+
+Expected artifacts:
+
+```text
+outputs/n24_stress_threshold_matrix_i7a.json
+reports/n24_stress_threshold_matrix_i7a.md
+scripts/build_n24_stress_threshold_matrix_i7a.py
+```
+
+Iteration 7-A result:
+
+```text
+status = passed
+acceptance_state = accepted_alternative_higher_margin_ab5_candidate_flux_bottleneck_remains
+failed_checks = []
+output_digest = ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e
+provisional_ab_ladder_rung = AB5
+ab4_candidate_supported = true
+ab5_candidate_supported = true
+ab5_or_stronger_supported = true
+does_not_replace_i7 = true
+support_axis_stronger_than_i7 = true
+flux_axis_bottleneck_remains = true
+ready_for_iteration_8_closeout = true
+```
+
+Iteration 7-A stress boundary:
+
+```text
+best_combined_per_branch_support_cost = 0.5
+best_combined_optional_flux_stress = 1e-09
+best_combined_joint_count = 2
+```
+
+Iteration 7-A interpretation:
+
+```text
+I7-A strengthens the support-budget side of N24: the alternative variant keeps
+two branches jointly admissible at per-branch cost 0.5, much wider than I7's
+0.05.
+
+However, I7-A does not broaden the flux result. The flux axis still only passes
+at the frozen 1e-9 bound, and stress above that bound fails closed.
+
+So the strengthened final N24 state is:
+  original I7 = narrow at-bound AB5 candidate
+  I7-A = higher-margin support-axis AB5 corroboration
+  remaining bottleneck = flux/leakage bound
+
+This still does not support reward maximization, semantic choice, agency,
+native support, sentience, Phase 8, or ant ecology.
+```
+
+## Iteration 7-B. Flux Envelope Probe
+
+- [x] Probe whether current N24 AB5 candidates widen the flux envelope above
+      the frozen `1e-9` bound.
+- [x] Keep thresholds, support rules, and control policy unchanged.
+- [x] Confirm no hidden budget relief, proxy, label-only, or reward relabel can
+      create flux readiness.
+- [x] Determine whether N24-C6 flux readiness is supported or blocked.
+
+Expected artifacts:
+
+```text
+outputs/n24_flux_envelope_probe_i7b.json
+reports/n24_flux_envelope_probe_i7b.md
+scripts/build_n24_flux_envelope_probe_i7b.py
+```
+
+Iteration 7-B result:
+
+```text
+status = passed
+acceptance_state = accepted_flux_envelope_not_widened_n24c6_flux_blocker_recorded
+failed_checks = []
+output_digest = 09387f3989903bdb95b58679e9d45c2f93e1ead1788f29dd68977b75224cfe6a
+ab5_candidate_supported_from_i7 = true
+ab5_candidate_supported_from_i7a = true
+flux_envelope_widened = false
+n24_c6_flux_readiness_supported = false
+n24_c6_blocker = flux_envelope_not_widened_above_1e-9
+ready_for_iteration_8_closeout = true
+```
+
+Iteration 7-B flux envelope:
+
+```text
+flux_or_leakage_bound = 1e-09
+all_candidates_pass_at_bound = true
+all_candidates_fail_above_bound = true
+any_candidate_widens_flux_envelope = false
+
+I7:
+  best_preserved_flux = 1e-09
+  first_above_bound_failure = 1.01e-09
+
+I7-A:
+  best_preserved_flux = 1e-09
+  first_above_bound_failure = 1.01e-09
+```
+
+Iteration 7-B interpretation:
+
+```text
+I7-B confirms the current N24 AB5 candidates pass at the frozen 1e-9 flux bound
+but do not widen the flux envelope above it.
+
+This means another I5-B/I6-B/I7-C candidate would need a genuinely different
+source-current flux geometry, not just more support margin. The current N24
+evidence supports AB5, but it does not support N24-C6 readiness because the
+flux/leakage envelope remains unwidened.
+
+The correct closeout target is therefore:
+  final_ab_ladder_rung = AB5
+  final_n24_closeout_rung = N24-C5
+  N25 handoff = explicit flux/leakage debt
+
+This still does not support reward maximization, semantic choice, agency,
+native support, sentience, Phase 8, or ant ecology.
+```
+
+## Iteration 7-C. Producer-Mediated Flux Conditioning Probe
+
+- [x] Add a declared RC-compatible flux-conditioning producer.
+- [x] Keep the native `1e-9` flux/leakage bound unchanged.
+- [x] Require source-visible conditioning windows and intervention ledger.
+- [x] Confirm the producer adds no support/coherence and does not relax floors.
+- [x] Confirm native N24-C6 remains blocked.
+- [x] Record producer-mediated flux scaffold as naturalization debt, not native
+      abundance robustness.
+
+Expected artifacts:
+
+```text
+outputs/n24_producer_flux_conditioning_probe_i7c.json
+reports/n24_producer_flux_conditioning_probe_i7c.md
+scripts/build_n24_producer_flux_conditioning_probe_i7c.py
+```
+
+Iteration 7-C result:
+
+```text
+status = passed
+acceptance_state = accepted_producer_mediated_flux_conditioning_scaffold_native_c6_still_blocked
+failed_checks = []
+output_digest = 8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de
+producer_mediated_flux_scaffold_supported = true
+producer_mediated_flux_envelope_widened = true
+highest_producer_conditioned_attempted_flux = 1e-08
+native_n24_c6_flux_readiness_supported = false
+native_n24_c6_blocker_preserved = flux_envelope_not_widened_above_1e-9
+ready_for_iteration_8_closeout = true
+```
+
+Iteration 7-C producer contract:
+
+```text
+producer_role = producer_mediated_flux_conditioning_surface
+producer_kind = rc_compatible_packet_schedule_manager
+classification = producer_mediated
+substrate_carried_native_evidence = false
+max_conditioning_windows = 10
+native_flux_or_leakage_bound = 1e-09
+thresholds_unchanged = true
+support_added = 0.0
+coherence_added = 0.0
+hidden_budget_relief_allowed = false
+floor_relaxation_allowed = false
+native_n24c6_relabel_allowed = false
+```
+
+Iteration 7-C geometric interpretation:
+
+```text
+I7-C shows that the N24 flux bottleneck can be helped by a declared producer
+that splits attempted optional flux into source-visible windows. Each
+conditioned window remains under the native 1e-9 per-window leakage bound.
+
+This does not make native N24-C6 true. The original I7-B blocker remains:
+unconditioned N24 optionality still fails above the 1e-9 flux envelope.
+
+The result is useful because it identifies a precise naturalization target:
+native LGRC would need a source-current flux routing or rate-limiting surface
+to turn this producer result into native flux readiness.
+```
+
+Iteration 7-C closeout effect:
+
+```text
+native N24 closeout target remains:
+  final_ab_ladder_rung = AB5
+  final_n24_closeout_rung = N24-C5
+
+additional producer-mediated handoff:
+  producer_assisted_n25_flux_scaffold_candidate = true
+  native_flux_leakage_debt = still open
+  naturalization_debt = native_flux_routing_or_rate_limiting_surface
+```
+
 ## Iteration 8. Closeout And N25 Handoff
 
-- [ ] Classify final AB ladder rung.
-- [ ] Classify final N24-C closeout rung.
-- [ ] Preserve AP4/AP5 ledger.
-- [ ] Preserve N23 context boundary.
-- [ ] Confirm final global AP4 reclassification remains unsupported unless a
+- [x] Classify final AB ladder rung.
+- [x] Classify final N24-C closeout rung.
+- [x] Preserve AP4/AP5 ledger.
+- [x] Preserve N23 context boundary.
+- [x] Confirm final global AP4 reclassification remains unsupported unless a
       source-backed later review explicitly changes it.
-- [ ] Confirm reward maximization remains unsupported.
-- [ ] Confirm semantic choice and agency remain unsupported.
-- [ ] Confirm native support remains unsupported.
-- [ ] Confirm sentience, Phase 8, and ant ecology remain unopened.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Record N25 handoff.
+- [x] Confirm reward maximization remains unsupported.
+- [x] Confirm semantic choice and agency remain unsupported.
+- [x] Confirm native support remains unsupported.
+- [x] Confirm sentience, Phase 8, and ant ecology remain unopened.
+- [x] Confirm `src_diff_empty`.
+- [x] Record N25 handoff.
 
 Expected artifacts:
 
@@ -607,4 +1156,67 @@ Expected artifacts:
 outputs/n24_closeout_and_n25_handoff.json
 reports/n24_closeout_and_n25_handoff.md
 scripts/build_n24_closeout_and_n25_handoff.py
+```
+
+Iteration 8 result:
+
+```text
+status = passed
+acceptance_state = accepted_ab5_n24c5_closeout_with_producer_flux_scaffold_n25_handoff
+failed_checks = []
+output_digest = 2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0
+final_ab_ladder_rung = AB5
+final_n24_closeout_rung = N24-C5
+native_n24_c6_supported = false
+native_n24_c6_blocker = flux_envelope_not_widened_above_1e-9
+producer_mediated_flux_scaffold_supported = true
+producer_assisted_n25_flux_scaffold_candidate = true
+src_diff_empty = true
+```
+
+Final interpretation:
+
+```text
+N24 closes natively at AB5 / N24-C5. It supports bounded artifact-level
+surplus-supported optionality with replay/control and stress-backed jointly
+admissible optional branches.
+
+Native N24-C6 remains blocked because flux/leakage does not widen above the
+frozen 1e-9 bound. I7-C adds a producer-mediated scaffold that can condition
+attempted optional flux up to 1e-8, but that result remains producer-mediated
+and cannot be relabeled as native N24-C6.
+```
+
+N25 handoff:
+
+```text
+next_experiment = N25_spark_sub_basin_new_basin_formation
+handoff_status = ready_with_native_flux_debt_and_producer_scaffold
+
+native_lane:
+  consumable_result = AB5_N24-C5_surplus_supported_optionality
+  blocking_debt = native_flux_leakage_envelope_not_widened_above_1e-9
+  question = Can one N24 optional continuation become a distinguishable
+             sub-basin or new-basin candidate while preserving the inherited
+             native 1e-9 flux/leakage bound?
+
+producer_assisted_lane:
+  consumable_result = producer_mediated_flux_conditioning_scaffold
+  naturalization_target = native_flux_routing_or_rate_limiting_surface
+  question = Does producer-mediated flux conditioning permit a sub-basin or
+             new-basin candidate, and can that mechanism be specified as
+             future native LGRC naturalization debt?
+```
+
+Claim boundary:
+
+```text
+reward_maximization_supported = false
+semantic_choice_supported = false
+agency_supported = false
+native_support_supported = false
+sentience_supported = false
+phase8_opened = false
+ant_ecology_implementation_opened = false
+producer_assisted_success_does_not_overwrite_native_failure = true
 ```
