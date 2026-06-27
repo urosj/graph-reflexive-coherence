@@ -1,0 +1,32 @@
+{
+  "artifact_id": "n23_i4_counterfactual_branch_retention_trace",
+  "continued_dynamic_activity_after_collapse_required": false,
+  "meaning": "immutable_pre_collapse_audit_record",
+  "retained_non_selected_branch_records": [
+    {
+      "base_conductance": 0.5,
+      "boundary_distinguishable": true,
+      "boundary_edge_id": 0,
+      "branch_id": "branch_edge_0_node_1",
+      "branch_record_digest": "8f9d906cc5b435bb797f09283a279dac93dc048f2eced056383701a9f0024b8b",
+      "center_basin_mass": 10.0,
+      "center_node_coherence": 10.0,
+      "coherence_delta_to_center": 3.0,
+      "coherence_floor_margin": 3.1500000000000004,
+      "edge_id": 0,
+      "route_label": "edge_0_neighbor_1_to_center",
+      "source_node_basin_mass": 13.0,
+      "source_node_coherence": 13.0,
+      "source_node_id": 1,
+      "support_floor_margin": 3.1500000000000004,
+      "support_gradient_score": 1.5,
+      "target_node_id": 0,
+      "trace_origin": "source_current_same_run"
+    }
+  ],
+  "retention_blocks_single_path_history_relabel": true,
+  "selected_branch_id": "branch_edge_4_node_5",
+  "trace_digest": "5732c51eab69f75dd6dfafb5b6a09206f0612097085206db781cc708b59d6dac",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

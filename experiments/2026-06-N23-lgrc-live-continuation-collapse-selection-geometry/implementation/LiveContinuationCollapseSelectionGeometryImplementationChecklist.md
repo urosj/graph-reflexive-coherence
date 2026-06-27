@@ -247,20 +247,20 @@ evidence.
 
 ## Iteration 3. Active Nulls And Failure Baselines
 
-- [ ] Instantiate fake-alternative active null.
-- [ ] Instantiate single-branch relabel active null.
-- [ ] Instantiate post-hoc selected branch active null.
-- [ ] Instantiate producer preference injection active null.
-- [ ] Instantiate random-tie-as-collapse active null.
-- [ ] Instantiate missing-counterfactual-retention active null.
-- [ ] Instantiate N22-susceptibility-as-choice relabel active null.
-- [ ] Instantiate route-conditioned missing-AP4 active null.
-- [ ] Instantiate proxy-conditioned missing-AP5 active null.
-- [ ] Instantiate AP-gap prose-only active null.
-- [ ] Instantiate semantic-choice relabel active null.
-- [ ] Instantiate agency/native-support/Phase-8 relabel active nulls.
-- [ ] Confirm all active nulls fail closed.
-- [ ] Confirm no LC rung is assigned above null/control scope.
+- [x] Instantiate fake-alternative active null.
+- [x] Instantiate single-branch relabel active null.
+- [x] Instantiate post-hoc selected branch active null.
+- [x] Instantiate producer preference injection active null.
+- [x] Instantiate random-tie-as-collapse active null.
+- [x] Instantiate missing-counterfactual-retention active null.
+- [x] Instantiate N22-susceptibility-as-choice relabel active null.
+- [x] Instantiate route-conditioned missing-AP4 active null.
+- [x] Instantiate proxy-conditioned missing-AP5 active null.
+- [x] Instantiate AP-gap prose-only active null.
+- [x] Instantiate semantic-choice relabel active null.
+- [x] Instantiate agency/native-support/Phase-8 relabel active nulls.
+- [x] Confirm all active nulls fail closed.
+- [x] Confirm no LC rung is assigned above null/control scope.
 
 Expected artifacts:
 
@@ -270,16 +270,155 @@ reports/n23_active_nulls_and_failure_baselines.md
 scripts/build_n23_active_nulls_and_failure_baselines.py
 ```
 
+Iteration 3 result:
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_evidence
+failed_checks = []
+check_count = 22
+active_null_row_count = 14
+failed_closed_rows = 14
+failed_open_rows = 0
+candidate_required_field_count = 80
+active_null_extension_field_count = 24
+positive_live_continuation_evidence_opened = false
+lc_ladder_rung_assigned_above_control_scope = false
+n23_closeout_ceiling = N23-C1_active_null_control_discipline_established
+n23_closeout_ladder_rung_assigned = false
+ap4_bridge_status = not_supported
+ready_for_iteration_4_positive_probe = true
+output_digest = 05b65af917c90a8b16286c9c8b78386199188a23fa4dffa1ea3d503c165777dd
+```
+
+Iteration 3 interpretation:
+
+```text
+I3 instantiates the frozen I2 schema as pre-positive active nulls only. The
+rows can reject false-positive paths, but they do not provide source-current
+live branch evidence, collapse evidence, counterfactual retention, replay-
+backed LC rungs, AP4 bridge support, semantic choice, agency, native support,
+sentience, Phase 8, or ant-ecology implementation.
+
+failed_closed means the false-positive blocker triggered and the unsafe/null
+claim was rejected. It satisfies the negative-control gate and does not
+automatically demote future positive rows.
+
+Rows that contain source-current-shaped traces are active-null fixtures only:
+`trace_admissibility = active_null_fixture_only_not_positive_evidence`,
+`positive_evidence_admissible = false`, and `control_execution_kind =
+schema_instantiation_only`. They cannot be consumed as LC2/LC3 source-current
+evidence by I4/I7.
+
+I3 rows use all 80 I2 candidate fields plus 24 declared active-null metadata
+extension fields. The artifact validates exact row field-set equality against
+`I2 required fields U active_null_extension_fields`, so active-null metadata is
+acknowledged and bounded rather than silent schema drift.
+```
+
+Iteration 3 geometric reading:
+
+```text
+The active nulls show what is not enough geometrically: alternative labels are
+not branch geometry; one branch is not a live branch set; post-hoc selection is
+not in-collapse selection; producer preference and random ties are not source-
+current geometric dominance; missing counterfactual retention makes collapse
+indistinguishable from a single-path history; inherited N22 susceptibility is
+context, not N23 branch-choice evidence; AP4/AP5 dependencies must be row-
+local; semantic choice, agency, native support, and Phase 8 labels add no LGRC
+branch/collapse geometry.
+```
+
 ## Iteration 4. Minimal Live-Branch Collapse Probe
 
-- [ ] Build the first source-current live branch set probe.
-- [ ] Record at least two live branch alternatives.
-- [ ] Record branch support/coherence traces.
-- [ ] Record branch boundary/flux traces.
-- [ ] Record collapse from live branch set to one continuation.
-- [ ] Record counterfactual branch retention.
-- [ ] Keep result provisional pending replay/control validation.
-- [ ] Keep semantic choice, intention, agency, and native support blocked.
+- [x] Build the first source-current live branch set probe.
+- [x] Record at least two live branch alternatives.
+- [x] Record branch support/coherence traces.
+- [x] Record branch boundary/flux traces.
+- [x] Record collapse from live branch set to one continuation.
+- [x] Record counterfactual branch retention.
+- [x] Keep result provisional pending replay/control validation.
+- [x] Keep semantic choice, intention, agency, and native support blocked.
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_minimal_source_current_lc3_candidate_pending_replay_controls
+output_digest = 720890f8a556409625b83bdade1f3d21fa92368a2ffc5a7ce87dd35148220626
+candidate_rows = 1
+failed_checks = []
+row_decision = partial
+provisional_lc_ladder_rung = LC3
+live_continuation_collapse_claim_allowed = false
+ready_for_iteration_5_replay_controls = true
+```
+
+Geometric interpretation:
+
+I4 creates a live branch set inside one LGRC9V3 runtime state rather than
+constructing a branch set after the fact. Two distinct candidate continuations
+are recorded:
+
+```text
+branch_edge_0_node_1:
+  edge_id = 0
+  source_node_coherence = 13.000000000000
+  support_gradient_score = 1.500000000000
+
+branch_edge_4_node_5:
+  edge_id = 4
+  source_node_coherence = 11.000000000000
+  support_gradient_score = 2.000000000000
+```
+
+The selected continuation is `branch_edge_4_node_5`, because its
+source-current support-gradient score exceeds the runner-up by the frozen
+margin:
+
+```text
+selection_reason = support_gradient_dominance
+selected_branch_score = 2.000000000000
+runner_up_score = 1.500000000000
+score_margin = 0.500000000000
+minimum_required_margin = 0.250000000000
+selected_packet_amount = 0.060000000000
+```
+
+The producer schedules one packet along the selected branch and records the
+actual departure, arrival, eligibility, local update, and causal-spark events.
+The non-selected branch remains as an immutable pre-collapse counterfactual
+record, so I4 has both:
+
+```text
+source-current live branch set exists before collapse
+one branch collapses into the continued trace
+non-selected branch remains auditable as a counterfactual record
+```
+
+The geometric gates pass only at provisional LC3 scope:
+
+```text
+support_floor_result = changed_within_allowed_delta_above_floor
+coherence_floor_result = changed_within_allowed_delta_above_floor
+boundary_integrity_result = preserved
+flux_or_leakage_result = preserved
+collapse_persistence_ratio = 1.000000000000
+```
+
+Claim boundary:
+
+```text
+LC4/LC5/LC6 = blocked pending I5 replay and I7 controls
+AP4 bridge = not supported
+semantic choice = false
+semantic intention = false
+agency = false
+native support = false
+sentience = false
+Phase 8 = false
+ant ecology implementation = false
+```
 
 Expected artifacts:
 
