@@ -1,0 +1,25 @@
+{
+  "artifact_id": "n24_i6_i4_artifact_replay_trace",
+  "artifact_paths": [
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_boundary_flux_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_lgrc9v3_minimal_surplus_run.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_maintenance_floor_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_runtime_config.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_source_current_snapshot.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_support_surplus_margin_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_thresholds_declared_before_use.json"
+  ],
+  "candidate_row_id": "n24_i4_row_01_minimal_source_current_surplus_probe",
+  "derived_report_only": false,
+  "manifest_artifacts_parseable": true,
+  "manifest_entry_count": 7,
+  "manifest_sha256_match_file_contents": true,
+  "replay_digest": "d3e00b7340f3867de4f0c6438a318401c1e6b5ffe9e320798bec2e63d7633e39",
+  "result": "passed",
+  "source_current_inputs_present": true,
+  "source_iteration": 4,
+  "source_output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+  "source_output_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe.json",
+  "source_output_sha256": "53986a0f034920a798067768e97cc46bcea6c95e242d7def1015183f761bd0bb",
+  "source_row_output_digest": "d38ee952b72037372e3439ad63796386f63d833e266d36e706c3ec8de1cbc486"
+}

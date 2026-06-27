@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N23. It replaces the
+This handoff is the current pickup note after N24. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -17,7 +17,8 @@ N20 becoming-primitive translation contract = closed
 N21 withdrawal resistance and naturalization depth = closed
 N22 susceptibility update and durable geometry modification = closed
 N23 live-continuation collapse and selection geometry = closed
-current next experiment = N24_abundance_surplus_supported_optionality
+N24 abundance and surplus-supported optionality = closed
+current next experiment = N25_spark_sub_basin_new_basin_formation
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -104,6 +105,27 @@ does not support semantic choice, semantic intention, agency, native support,
 sentience, Phase 8, ant ecology implementation, or a final global AP4
 reclassification.
 
+N24 closed as bounded abundance / surplus-supported optionality evidence:
+
+```text
+status = passed
+acceptance_state = accepted_ab5_n24c5_closeout_with_producer_flux_scaffold_n25_handoff
+final_ab_ladder_rung = AB5
+final_n24_closeout_rung = N24-C5
+native_n24_c6_supported = false
+native_n24_c6_blocker = flux_envelope_not_widened_above_1e-9
+producer_mediated_flux_scaffold_supported = true
+producer_assisted_n25_flux_scaffold_candidate = true
+ready_for_n25 = true
+```
+
+N24 supports bounded artifact-level surplus-supported optionality. It does not
+support broad abundance robustness, native N24-C6, reward maximization,
+semantic choice, agency, native support, sentience, Phase 8, ant ecology
+implementation, or a final global AP4 reclassification. I7-C records a
+producer-mediated flux-conditioning scaffold as a separate extension lane and
+naturalization target, not as native support or native N24-C6.
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -121,6 +143,9 @@ Use this handoff together with:
 - `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md`
 - `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/reports/n23_closeout_and_n24_handoff.md`
 - `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json`
+- `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md`
+- `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/reports/n24_closeout_and_n25_handoff.md`
+- `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -363,46 +388,137 @@ native_branch_selection_margin_gate
 native_multibranch_optional_continuation_generation
 ```
 
-N23 closes the live-continuation collapse / selection-geometry lane and makes
-N24 the next active becoming-primitive experiment.
+N23 closes the live-continuation collapse / selection-geometry lane. N24 has
+now consumed that handoff and closed the abundance / surplus-supported
+optionality lane.
 
-## N24 Handoff
+## N24 Closeout Evidence
 
-N24 is the next experiment. It should test the next becoming primitive:
+Primary N24 closeout artifact:
 
 ```text
-abundance
-surplus_supported_optionality
+artifact = experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json
+report = experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/reports/n24_closeout_and_n25_handoff.md
+script = experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_closeout_and_n25_handoff.py
+output_digest = 2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0
+artifact_sha256 = 60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c
+report_sha256 = 84fdada68127b671cc2877ae6af3c27947d8d88b48ae753b27fdc7459d01a343
+script_sha256 = 19f3304609f74b08500612f62482febcf800fbb32e92ec82d8cf596e6f7f3d85
 ```
 
-N24 must consume N20 as the standing primitive contract and N23 as bounded
-live-continuation collapse / selection-geometry evidence:
+Primary N24 producer-assisted extension artifact:
+
+```text
+artifact = experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_producer_flux_conditioning_probe_i7c.json
+report = experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/reports/n24_producer_flux_conditioning_probe_i7c.md
+script = experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_producer_flux_conditioning_probe_i7c.py
+output_digest = 8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de
+artifact_sha256 = d432a39e2bc88e83e25ba7e98edb5270284b12f3c124a68b709b8e8a0ecbdb46
+```
+
+N24 final classification:
+
+```text
+final_ab_ladder_rung = AB5
+final_n24_closeout_rung = N24-C5
+native_n24_c6_supported = false
+native_n24_c6_blocker = flux_envelope_not_widened_above_1e-9
+producer_mediated_flux_scaffold_supported = true
+producer_assisted_n25_flux_scaffold_candidate = true
+```
+
+N24 native lane:
+
+```text
+consumable_result = AB5_N24-C5_surplus_supported_optionality
+evidence = source-current surplus, optional branch availability,
+           replay/control validation, stress-backed jointly admissible
+           optional branches
+blocking_debt = native_flux_leakage_envelope_not_widened_above_1e-9
+```
+
+N24 producer-assisted lane:
+
+```text
+consumable_result = producer_mediated_flux_conditioning_scaffold
+highest_conditioned_attempted_flux = 1e-8
+naturalization_target = native_flux_routing_or_rate_limiting_surface
+producer_assisted_success_does_not_overwrite_native_failure = true
+```
+
+N24 final claim ceiling:
+
+```text
+bounded artifact-level AB5 surplus-supported optionality candidate with
+producer-mediated flux-scaffold extension; native N24-C6 remains blocked by
+flux/leakage debt
+```
+
+## N25 Handoff
+
+N25 is the next experiment. It should test the next becoming primitive:
+
+```text
+spark / sub-basin / new-basin formation
+```
+
+N25 must ask:
+
+```text
+Can becoming pressure produce a new distinguishable basin or sub-basin, rather
+than only reinforcing an existing basin?
+```
+
+N25 must consume N20 as the standing primitive contract and N24 as two
+separate lanes:
 
 ```text
 must_consume_n20_contract = true
-must_consume_n23_as_bounded_lc6_selection_geometry_context = true
-must_not_consume_n23_as_semantic_choice_or_agency = true
+must_consume_n24_native_lane_first = true
+must_consume_n24_producer_extension_as_separate_lane = true
 must_preserve_AP4_AP5_gap_ledger = true
 ```
 
-N24 must ask:
+N25 native lane question:
 
 ```text
-Can surplus support above the maintenance floor open optional continuations
-without collapsing basin integrity?
+Can one N24 optional continuation become a distinguishable sub-basin or
+new-basin candidate while preserving the inherited native 1e-9 flux/leakage
+bound?
 ```
 
-N24 should use N23 only as:
+N25 producer-assisted lane question:
 
 ```text
-bounded_live_branch_set_and_collapse_evidence
-counterfactual_retention_evidence
-ap4_bridge_candidate_context
-bounded_selection_geometry_context
-producer_residue_and_naturalization_debt_ledger
+Does producer-mediated flux conditioning permit a sub-basin or new-basin
+candidate, and can that mechanism be specified as future native LGRC
+naturalization debt?
 ```
 
-N24 must not consume N23 as:
+N25 should distinguish:
+
+```text
+reinforced old basin
+reshaped old boundary
+sub-basin differentiation
+new basin formation candidate
+transient fluctuation misread as basin
+producer-assisted new-basin scaffold
+```
+
+N25 required controls:
+
+```text
+label-only new basin rejected
+single-basin thickening relabel rejected
+merge/leakage masquerading as new basin rejected
+non-replayable transient rejected
+hidden producer insertion rejected
+producer-assisted success does not overwrite native failure
+native flux debt remains row-local
+```
+
+N25 must not consume N24 as:
 
 ```text
 semantic_choice
@@ -414,16 +530,13 @@ sentience
 phase8_implementation
 ant_ecology_specification
 final_global_AP4_reclassification
+native_n24_c6
+general_abundance_robustness
 ```
 
-N24 should distinguish abundance from reward maximization, proxy gain, hidden
-budget relief, and floor-crossing survival. A positive row should show surplus
-support/coherence creating optional continuation space while preserving
-maintenance floors, boundary integrity, and replay/control discipline.
+## Blocked Claims Carried Into N25
 
-## Blocked Claims Carried Into N24
-
-N24 must keep these blocked unless a later source-backed experiment explicitly
+N25 must keep these blocked unless a later source-backed experiment explicitly
 supports a narrower claim:
 
 ```text

@@ -1,0 +1,1282 @@
+{
+  "acceptance_state": "accepted_flux_envelope_not_widened_n24c6_flux_blocker_recorded",
+  "artifact_id": "n24_flux_envelope_probe_i7b",
+  "artifact_manifest": [
+    {
+      "artifact_role": "negative_control_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b_artifacts/n24_i7b_flux_envelope_control_matrix.json",
+      "sha256": "023fb6e29d833113a3f02579767b7b1cf202ba83a4fa4f31698b6cbc86288fca"
+    },
+    {
+      "artifact_role": "flux_leakage_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b_artifacts/n24_i7b_flux_envelope_summary_trace.json",
+      "sha256": "fb6f37908de69459f79dde04333384261b1938a1b295d508461f85c0e2b35d7e"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_passed",
+      "detail": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i7_and_i7a_ready",
+      "detail": {
+        "i7_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+        "i7a_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "at_bound_flux_passes_for_both_candidates",
+      "detail": {
+        "all_candidates_fail_above_bound": true,
+        "all_candidates_pass_at_bound": true,
+        "any_candidate_widens_flux_envelope": false,
+        "artifact_id": "n24_i7b_flux_envelope_summary_trace",
+        "candidate_flux_traces": [
+          {
+            "above_bound_flux_passes": false,
+            "at_bound_flux_passes": true,
+            "base_residual_support_margin": 0.15000000000000036,
+            "best_flux_stress_preserving_bound": 1e-09,
+            "candidate_id": "I7",
+            "first_above_bound_failure": 1.01e-09,
+            "flux_rows": [
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "quiet_baseline",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 0.0,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2.5e-10,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 5e-10,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1.01e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-08,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-06,
+                "per_branch_support_cost": 0.05
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.05,
+            "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+            "source_stress_output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+            "trace_digest": "38b2cadcef2f714f6b19e26cfbbd3fda803ea26837ce126af3909a3129d6d542",
+            "widens_flux_envelope": false
+          },
+          {
+            "above_bound_flux_passes": false,
+            "at_bound_flux_passes": true,
+            "base_residual_support_margin": 1.1500000000000004,
+            "best_flux_stress_preserving_bound": 1e-09,
+            "candidate_id": "I7-A",
+            "first_above_bound_failure": 1.01e-09,
+            "flux_rows": [
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "quiet_baseline",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 0.0,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2.5e-10,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 5e-10,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1.01e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-08,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-06,
+                "per_branch_support_cost": 0.5
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.5,
+            "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+            "source_stress_output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+            "trace_digest": "becc9402ac5e64482516337401f9d19588fe8a73bf525d444c57e98ec3cda448",
+            "widens_flux_envelope": false
+          }
+        ],
+        "classification": "flux_envelope_not_widened",
+        "flux_or_leakage_bound": 1e-09,
+        "n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "n24_c6_flux_readiness_supported": false,
+        "trace_digest": "e000379c9f2ad4509427aad825f85e39f27eb8a7a4070fbeeabf6e18ee2bb987"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "above_bound_flux_fails_closed_for_both_candidates",
+      "detail": {
+        "all_candidates_fail_above_bound": true,
+        "all_candidates_pass_at_bound": true,
+        "any_candidate_widens_flux_envelope": false,
+        "artifact_id": "n24_i7b_flux_envelope_summary_trace",
+        "candidate_flux_traces": [
+          {
+            "above_bound_flux_passes": false,
+            "at_bound_flux_passes": true,
+            "base_residual_support_margin": 0.15000000000000036,
+            "best_flux_stress_preserving_bound": 1e-09,
+            "candidate_id": "I7",
+            "first_above_bound_failure": 1.01e-09,
+            "flux_rows": [
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "quiet_baseline",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 0.0,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2.5e-10,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 5e-10,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1.01e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-08,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-06,
+                "per_branch_support_cost": 0.05
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.05,
+            "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+            "source_stress_output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+            "trace_digest": "38b2cadcef2f714f6b19e26cfbbd3fda803ea26837ce126af3909a3129d6d542",
+            "widens_flux_envelope": false
+          },
+          {
+            "above_bound_flux_passes": false,
+            "at_bound_flux_passes": true,
+            "base_residual_support_margin": 1.1500000000000004,
+            "best_flux_stress_preserving_bound": 1e-09,
+            "candidate_id": "I7-A",
+            "first_above_bound_failure": 1.01e-09,
+            "flux_rows": [
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "quiet_baseline",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 0.0,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2.5e-10,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 5e-10,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1.01e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-08,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-06,
+                "per_branch_support_cost": 0.5
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.5,
+            "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+            "source_stress_output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+            "trace_digest": "becc9402ac5e64482516337401f9d19588fe8a73bf525d444c57e98ec3cda448",
+            "widens_flux_envelope": false
+          }
+        ],
+        "classification": "flux_envelope_not_widened",
+        "flux_or_leakage_bound": 1e-09,
+        "n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "n24_c6_flux_readiness_supported": false,
+        "trace_digest": "e000379c9f2ad4509427aad825f85e39f27eb8a7a4070fbeeabf6e18ee2bb987"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "flux_envelope_not_widened",
+      "detail": {
+        "all_candidates_fail_above_bound": true,
+        "all_candidates_pass_at_bound": true,
+        "any_candidate_widens_flux_envelope": false,
+        "artifact_id": "n24_i7b_flux_envelope_summary_trace",
+        "candidate_flux_traces": [
+          {
+            "above_bound_flux_passes": false,
+            "at_bound_flux_passes": true,
+            "base_residual_support_margin": 0.15000000000000036,
+            "best_flux_stress_preserving_bound": 1e-09,
+            "candidate_id": "I7",
+            "first_above_bound_failure": 1.01e-09,
+            "flux_rows": [
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "quiet_baseline",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 0.0,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2.5e-10,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 5e-10,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1.01e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2e-09,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-08,
+                "per_branch_support_cost": 0.05
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-06,
+                "per_branch_support_cost": 0.05
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.05,
+            "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+            "source_stress_output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+            "trace_digest": "38b2cadcef2f714f6b19e26cfbbd3fda803ea26837ce126af3909a3129d6d542",
+            "widens_flux_envelope": false
+          },
+          {
+            "above_bound_flux_passes": false,
+            "at_bound_flux_passes": true,
+            "base_residual_support_margin": 1.1500000000000004,
+            "best_flux_stress_preserving_bound": 1e-09,
+            "candidate_id": "I7-A",
+            "first_above_bound_failure": 1.01e-09,
+            "flux_rows": [
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "quiet_baseline",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 0.0,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2.5e-10,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 5e-10,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": false,
+                "classification": "at_or_below_bound_pass",
+                "combined_gate_passes": true,
+                "flux_bound_preserved": true,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1.01e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 2e-09,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-08,
+                "per_branch_support_cost": 0.5
+              },
+              {
+                "ab5_count_gate_met": true,
+                "above_bound": true,
+                "classification": "above_bound_flux_fail_closed",
+                "combined_gate_passes": false,
+                "flux_bound_preserved": false,
+                "flux_or_leakage_bound": 1e-09,
+                "max_jointly_admissible_by_support_budget": 2,
+                "optional_flux_stress": 1e-06,
+                "per_branch_support_cost": 0.5
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.5,
+            "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+            "source_stress_output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+            "trace_digest": "becc9402ac5e64482516337401f9d19588fe8a73bf525d444c57e98ec3cda448",
+            "widens_flux_envelope": false
+          }
+        ],
+        "classification": "flux_envelope_not_widened",
+        "flux_or_leakage_bound": 1e-09,
+        "n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "n24_c6_flux_readiness_supported": false,
+        "trace_digest": "e000379c9f2ad4509427aad825f85e39f27eb8a7a4070fbeeabf6e18ee2bb987"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "controls_fail_closed",
+      "detail": {
+        "artifact_id": "n24_i7b_flux_envelope_control_matrix",
+        "control_matrix_digest": "2d69e02096c9903233f4f7aabcbc71708aa0c977747c0d8dd8a8190e932ba94c",
+        "control_rows": [
+          {
+            "blocked_condition": "blocks positive support",
+            "claim_allowed_when_triggered": false,
+            "control_id": "hidden_budget_relief_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks AB2+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "floor_crossing_as_abundance_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks optionality support",
+            "claim_allowed_when_triggered": false,
+            "control_id": "proxy_only_optional_branch_gain_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks AB3+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "optional_branch_label_only_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks AB2+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "post_hoc_surplus_construction_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks reward/goal overclaim",
+            "claim_allowed_when_triggered": false,
+            "control_id": "reward_maximization_relabel_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks semantic choice",
+            "claim_allowed_when_triggered": false,
+            "control_id": "semantic_choice_relabel_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks agency",
+            "claim_allowed_when_triggered": false,
+            "control_id": "agency_relabel_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks native support",
+            "claim_allowed_when_triggered": false,
+            "control_id": "native_support_relabel_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          },
+          {
+            "blocked_condition": "blocks Phase 8",
+            "claim_allowed_when_triggered": false,
+            "control_id": "phase8_relabel_control",
+            "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+            "status": "failed_closed"
+          }
+        ],
+        "failed_open_controls": [],
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty_and_sha_match",
+      "detail": [
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b_artifacts/n24_i7b_flux_envelope_control_matrix.json",
+          "sha256": "023fb6e29d833113a3f02579767b7b1cf202ba83a4fa4f31698b6cbc86288fca"
+        },
+        {
+          "artifact_role": "flux_leakage_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b_artifacts/n24_i7b_flux_envelope_summary_trace.json",
+          "sha256": "fb6f37908de69459f79dde04333384261b1938a1b295d508461f85c0e2b35d7e"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology_implementation": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "reward_maximization": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": true,
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "ant_ecology_implementation_opened": false,
+    "artifact_level_ab5_candidate_supported": true,
+    "final_global_ap4_reclassification_supported": false,
+    "n24_c6_flux_readiness_supported": false,
+    "native_support_claim_allowed": false,
+    "phase8_opened": false,
+    "reward_maximization_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "surplus_supported_optionality_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology_implementation": false,
+      "consciousness": false,
+      "free_will": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "reward_maximization": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_flux_envelope_probe_i7b.py",
+  "experiment": "N24_lgrc_abundance_surplus_supported_optionality",
+  "failed_checks": [],
+  "flux_envelope_control_matrix": {
+    "artifact_id": "n24_i7b_flux_envelope_control_matrix",
+    "control_matrix_digest": "2d69e02096c9903233f4f7aabcbc71708aa0c977747c0d8dd8a8190e932ba94c",
+    "control_rows": [
+      {
+        "blocked_condition": "blocks positive support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "hidden_budget_relief_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB2+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "floor_crossing_as_abundance_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks optionality support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "proxy_only_optional_branch_gain_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "optional_branch_label_only_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB2+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "post_hoc_surplus_construction_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks reward/goal overclaim",
+        "claim_allowed_when_triggered": false,
+        "control_id": "reward_maximization_relabel_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks semantic choice",
+        "claim_allowed_when_triggered": false,
+        "control_id": "semantic_choice_relabel_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks agency",
+        "claim_allowed_when_triggered": false,
+        "control_id": "agency_relabel_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks native support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "native_support_relabel_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks Phase 8",
+        "claim_allowed_when_triggered": false,
+        "control_id": "phase8_relabel_control",
+        "interpretation": "flux-envelope widening by relabel or hidden budget is rejected",
+        "status": "failed_closed"
+      }
+    ],
+    "failed_open_controls": [],
+    "status": "passed"
+  },
+  "flux_envelope_summary_trace": {
+    "all_candidates_fail_above_bound": true,
+    "all_candidates_pass_at_bound": true,
+    "any_candidate_widens_flux_envelope": false,
+    "artifact_id": "n24_i7b_flux_envelope_summary_trace",
+    "candidate_flux_traces": [
+      {
+        "above_bound_flux_passes": false,
+        "at_bound_flux_passes": true,
+        "base_residual_support_margin": 0.15000000000000036,
+        "best_flux_stress_preserving_bound": 1e-09,
+        "candidate_id": "I7",
+        "first_above_bound_failure": 1.01e-09,
+        "flux_rows": [
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "quiet_baseline",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 0.0,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "at_or_below_bound_pass",
+            "combined_gate_passes": true,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 2.5e-10,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "at_or_below_bound_pass",
+            "combined_gate_passes": true,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 5e-10,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "at_or_below_bound_pass",
+            "combined_gate_passes": true,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1e-09,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1.01e-09,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 2e-09,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1e-08,
+            "per_branch_support_cost": 0.05
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1e-06,
+            "per_branch_support_cost": 0.05
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 2,
+        "per_branch_support_cost": 0.05,
+        "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+        "source_stress_output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+        "trace_digest": "38b2cadcef2f714f6b19e26cfbbd3fda803ea26837ce126af3909a3129d6d542",
+        "widens_flux_envelope": false
+      },
+      {
+        "above_bound_flux_passes": false,
+        "at_bound_flux_passes": true,
+        "base_residual_support_margin": 1.1500000000000004,
+        "best_flux_stress_preserving_bound": 1e-09,
+        "candidate_id": "I7-A",
+        "first_above_bound_failure": 1.01e-09,
+        "flux_rows": [
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "quiet_baseline",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 0.0,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "at_or_below_bound_pass",
+            "combined_gate_passes": true,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 2.5e-10,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "at_or_below_bound_pass",
+            "combined_gate_passes": true,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 5e-10,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": false,
+            "classification": "at_or_below_bound_pass",
+            "combined_gate_passes": true,
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1e-09,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1.01e-09,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 2e-09,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1e-08,
+            "per_branch_support_cost": 0.5
+          },
+          {
+            "ab5_count_gate_met": true,
+            "above_bound": true,
+            "classification": "above_bound_flux_fail_closed",
+            "combined_gate_passes": false,
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "max_jointly_admissible_by_support_budget": 2,
+            "optional_flux_stress": 1e-06,
+            "per_branch_support_cost": 0.5
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 2,
+        "per_branch_support_cost": 0.5,
+        "source_candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+        "source_stress_output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+        "trace_digest": "becc9402ac5e64482516337401f9d19588fe8a73bf525d444c57e98ec3cda448",
+        "widens_flux_envelope": false
+      }
+    ],
+    "classification": "flux_envelope_not_widened",
+    "flux_or_leakage_bound": 1e-09,
+    "n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+    "n24_c6_flux_readiness_supported": false,
+    "trace_digest": "e000379c9f2ad4509427aad825f85e39f27eb8a7a4070fbeeabf6e18ee2bb987"
+  },
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "geometric_interpretation": {
+    "closeout_effect": "This supports closing N24 as AB5/N24-C5 with explicit flux debt, not N24-C6. A future primitive must naturalize or widen the flux/leakage envelope before N24-style optionality can become N25-ready without that constraint.",
+    "short_read": "I7-B confirms the current N24 AB5 candidates pass at the frozen 1e-9 flux bound but do not widen the flux envelope above it."
+  },
+  "iteration": "7-B",
+  "iteration7b_boundary": {
+    "ab5_candidate_supported_from_i7": true,
+    "ab5_candidate_supported_from_i7a": true,
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "final_global_ap4_reclassification_supported": false,
+    "flux_envelope_widened": false,
+    "n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+    "n24_c6_flux_readiness_supported": false,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "ready_for_iteration_8_closeout": true,
+    "reward_maximization_supported": false,
+    "semantic_choice_supported": false,
+    "sentience_supported": false,
+    "surplus_supported_optionality_claim_allowed": false
+  },
+  "no_absolute_paths": true,
+  "output_digest": "09387f3989903bdb95b58679e9d45c2f93e1ead1788f29dd68977b75224cfe6a",
+  "purpose": "test whether current N24 AB5 candidates have legal flux room above the frozen 1e-9 bound without changing thresholds or hiding budget",
+  "schema_version": "n24_flux_envelope_probe_i7b_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_source_handoff_inventory.json",
+      "sha256": "ee62e0c2152019d0731ff7c40fd9068ca3c5f610c9fc45bf24c0dd7026462627",
+      "source_role": "n24_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_schema_and_controls.json",
+      "sha256": "9f3c7a53412b5cbdc845158d27ee7f6c539d584ba4c07fbacc299ff5ac5aa543",
+      "source_role": "n24_i2_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_active_nulls_and_failure_baselines.json",
+      "sha256": "158e1633bbacef1b5d34dd8931a7aedc44d8889441d5bf6c0e67b71f9fd6c110",
+      "source_role": "n24_i3_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4",
+      "output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe.json",
+      "sha256": "e4dbddde2e2b5ebeba0b79a76c2cc78d5d94dd3928e3fa16abc18f4c7256dff3",
+      "source_role": "n24_i5_original_optional_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_high_margin_ab3_optional_continuation_candidate_pending_i6a",
+      "output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+      "sha256": "1bbcaca01a42ae217dc339fe444d883f95c382cef6c4628b9e08fca8d88d891f",
+      "source_role": "n24_i5a_alternative_optional_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_narrow_at_bound_stress_threshold_backed_ab5_candidate",
+      "output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix.json",
+      "sha256": "faff593ec02a01a24f2b90a2d0701f4782303d5d0cdc68bc345a464ec410c847",
+      "source_role": "n24_i7_original_stress_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_higher_margin_ab5_candidate_flux_bottleneck_remains",
+      "output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_i7a.json",
+      "sha256": "b88f835b357e8ca0d7137db3995782992ba814f13864bd7b2d50208e5e725610",
+      "source_role": "n24_i7a_alternative_stress_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+      "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+      "source_role": "n23_closeout_and_n24_handoff_context",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "trace_paths": {
+    "flux_envelope_control_matrix_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b_artifacts/n24_i7b_flux_envelope_control_matrix.json",
+    "flux_envelope_summary_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b_artifacts/n24_i7b_flux_envelope_summary_trace.json"
+  }
+}

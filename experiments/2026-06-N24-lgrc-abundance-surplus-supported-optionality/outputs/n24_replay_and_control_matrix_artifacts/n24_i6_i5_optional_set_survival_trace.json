@@ -1,0 +1,26 @@
+{
+  "all_branch_records_admissible": true,
+  "all_branches_same_declared_window": true,
+  "all_branches_same_run_source_current": true,
+  "artifact_id": "n24_i6_i5_optional_set_survival_trace",
+  "boundary_integrity_status": "preserved",
+  "branch_count": 3,
+  "branch_window_ids": [
+    "n24_i5_source_current_optionality_window"
+  ],
+  "candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+  "flux_or_leakage_status": "preserved",
+  "jointly_admissible_optional_continuation_count": 0,
+  "no_branch_uses_producer_enumeration": true,
+  "no_branch_uses_reward_or_proxy_label": true,
+  "optional_continuation_availability_count": 3,
+  "optional_continuation_count": 3,
+  "optional_flux_status": "preserved",
+  "replay_digest": "ccdf80a0e64912af23e10d2c7c923a7a4c576d899527fb2bae05247259e71b48",
+  "residual_coherence_margin_under_optionality": 0.15000000000000036,
+  "residual_margins_positive": true,
+  "residual_support_margin_under_optionality": 0.15000000000000036,
+  "result": "passed",
+  "source_iteration": 5,
+  "source_output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb"
+}

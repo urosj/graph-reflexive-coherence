@@ -1,0 +1,191 @@
+{
+  "artifact_id": "n24_i7_optional_branch_capacity_trace",
+  "available_branch_count": 3,
+  "available_branch_ids": [
+    "n24_i5_branch_01_to_node_1",
+    "n24_i5_branch_02_to_node_5",
+    "n24_i5_branch_03_to_node_9"
+  ],
+  "base_coherence_margin": 0.15000000000000036,
+  "base_support_margin": 0.15000000000000036,
+  "interpretation": "Support-budget capacity alone can leave at least two branches jointly admissible under small nonzero branch costs, but AB5 also requires flux/leakage stress to remain clean.",
+  "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+  "stress_rows": [
+    {
+      "ab5_count_gate_met_by_support_budget": true,
+      "joint_admissibility_rows": [
+        {
+          "branch_count": 1,
+          "coherence_margin_after_cost": 0.15000000000000036,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.15000000000000036,
+          "total_support_cost": 0.0
+        },
+        {
+          "branch_count": 2,
+          "coherence_margin_after_cost": 0.15000000000000036,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.15000000000000036,
+          "total_support_cost": 0.0
+        },
+        {
+          "branch_count": 3,
+          "coherence_margin_after_cost": 0.15000000000000036,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.15000000000000036,
+          "total_support_cost": 0.0
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 3,
+      "per_branch_support_cost": 0.0,
+      "stress_is_nonzero": false
+    },
+    {
+      "ab5_count_gate_met_by_support_budget": true,
+      "joint_admissibility_rows": [
+        {
+          "branch_count": 1,
+          "coherence_margin_after_cost": 0.12500000000000036,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.12500000000000036,
+          "total_support_cost": 0.025
+        },
+        {
+          "branch_count": 2,
+          "coherence_margin_after_cost": 0.10000000000000035,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.10000000000000035,
+          "total_support_cost": 0.05
+        },
+        {
+          "branch_count": 3,
+          "coherence_margin_after_cost": 0.07500000000000034,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.07500000000000034,
+          "total_support_cost": 0.07500000000000001
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 3,
+      "per_branch_support_cost": 0.025,
+      "stress_is_nonzero": true
+    },
+    {
+      "ab5_count_gate_met_by_support_budget": true,
+      "joint_admissibility_rows": [
+        {
+          "branch_count": 1,
+          "coherence_margin_after_cost": 0.10000000000000035,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.10000000000000035,
+          "total_support_cost": 0.05
+        },
+        {
+          "branch_count": 2,
+          "coherence_margin_after_cost": 0.05000000000000035,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.05000000000000035,
+          "total_support_cost": 0.1
+        },
+        {
+          "branch_count": 3,
+          "coherence_margin_after_cost": 3.3306690738754696e-16,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": 3.3306690738754696e-16,
+          "total_support_cost": 0.15000000000000002
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 2,
+      "per_branch_support_cost": 0.05,
+      "stress_is_nonzero": true
+    },
+    {
+      "ab5_count_gate_met_by_support_budget": false,
+      "joint_admissibility_rows": [
+        {
+          "branch_count": 1,
+          "coherence_margin_after_cost": 0.07500000000000036,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.07500000000000036,
+          "total_support_cost": 0.075
+        },
+        {
+          "branch_count": 2,
+          "coherence_margin_after_cost": 3.608224830031759e-16,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": 3.608224830031759e-16,
+          "total_support_cost": 0.15
+        },
+        {
+          "branch_count": 3,
+          "coherence_margin_after_cost": -0.07499999999999962,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": -0.07499999999999962,
+          "total_support_cost": 0.22499999999999998
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 1,
+      "per_branch_support_cost": 0.075,
+      "stress_is_nonzero": true
+    },
+    {
+      "ab5_count_gate_met_by_support_budget": false,
+      "joint_admissibility_rows": [
+        {
+          "branch_count": 1,
+          "coherence_margin_after_cost": 0.07400000000000036,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.07400000000000036,
+          "total_support_cost": 0.076
+        },
+        {
+          "branch_count": 2,
+          "coherence_margin_after_cost": -0.001999999999999641,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": -0.001999999999999641,
+          "total_support_cost": 0.152
+        },
+        {
+          "branch_count": 3,
+          "coherence_margin_after_cost": -0.07799999999999963,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": -0.07799999999999963,
+          "total_support_cost": 0.22799999999999998
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 1,
+      "per_branch_support_cost": 0.076,
+      "stress_is_nonzero": true
+    },
+    {
+      "ab5_count_gate_met_by_support_budget": false,
+      "joint_admissibility_rows": [
+        {
+          "branch_count": 1,
+          "coherence_margin_after_cost": 0.05000000000000035,
+          "joint_floor_preserved": true,
+          "support_margin_after_cost": 0.05000000000000035,
+          "total_support_cost": 0.1
+        },
+        {
+          "branch_count": 2,
+          "coherence_margin_after_cost": -0.049999999999999656,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": -0.049999999999999656,
+          "total_support_cost": 0.2
+        },
+        {
+          "branch_count": 3,
+          "coherence_margin_after_cost": -0.1499999999999997,
+          "joint_floor_preserved": false,
+          "support_margin_after_cost": -0.1499999999999997,
+          "total_support_cost": 0.30000000000000004
+        }
+      ],
+      "max_jointly_admissible_by_support_budget": 1,
+      "per_branch_support_cost": 0.1,
+      "stress_is_nonzero": true
+    }
+  ],
+  "support_budget_can_reach_ab5_count_gate_under_nonzero_stress": true,
+  "trace_digest": "e62b1ee46212667862833c55c25df91f1b3a965b47f07b7d90c532d8c8d2b8e7"
+}

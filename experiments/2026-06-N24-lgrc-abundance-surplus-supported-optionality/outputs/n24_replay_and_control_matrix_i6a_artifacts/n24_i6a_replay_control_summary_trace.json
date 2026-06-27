@@ -1,0 +1,11 @@
+{
+  "ab4_candidate_supported": true,
+  "ab5_or_stronger_supported": false,
+  "artifact_id": "n24_i6a_replay_control_summary_trace",
+  "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+  "does_not_replace_i6": true,
+  "final_consumable_rung": "AB4",
+  "negative_control_matrix_digest": "875d4664ee01ba95ec5809c35eebfcab0ee89b277b467e4a453b0b60f152a30e",
+  "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+  "trace_digest": "56d49e6bd90168c10b0b6eeb5a7dd9926656d61c54a342524df54eccd700f5b1"
+}

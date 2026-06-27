@@ -1,0 +1,8 @@
+{
+  "artifact_id": "n24_i6_i4_optional_set_survival_trace",
+  "candidate_row_id": "n24_i4_row_01_minimal_source_current_surplus_probe",
+  "replay_digest": "dae138a5d8ad08be31dfe826d3383ae2e83925cd0c1fa18a3656a509d2e4c3fb",
+  "result": "not_applicable",
+  "scope_reason": "I4 is surplus-only and has no optional continuation set",
+  "source_iteration": 4
+}

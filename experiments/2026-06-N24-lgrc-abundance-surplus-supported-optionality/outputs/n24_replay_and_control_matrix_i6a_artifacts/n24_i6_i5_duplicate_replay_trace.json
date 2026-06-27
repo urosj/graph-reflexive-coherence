@@ -1,0 +1,14 @@
+{
+  "artifact_id": "n24_i6_i5_duplicate_replay_trace",
+  "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+  "duplicate_digest_matches": true,
+  "git_metadata_excluded": true,
+  "local_absolute_paths_excluded": true,
+  "recomputed_row_output_digest": "f70f1f24abf936b7f9d7b02f8769436e5b62f802de97220e94364cac6f216d27",
+  "replay_digest": "d7ac22074b7abfafdd83eca4863e99740429535fe25966bea85091bb1cb1ff77",
+  "result": "passed",
+  "source_iteration": 5,
+  "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+  "source_row_output_digest": "f70f1f24abf936b7f9d7b02f8769436e5b62f802de97220e94364cac6f216d27",
+  "timestamp_independent": true
+}

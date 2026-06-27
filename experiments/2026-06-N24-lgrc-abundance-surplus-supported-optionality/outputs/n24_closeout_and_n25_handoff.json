@@ -1,0 +1,549 @@
+{
+  "acceptance_state": "accepted_ab5_n24c5_closeout_with_producer_flux_scaffold_n25_handoff",
+  "artifact_id": "n24_closeout_and_n25_handoff",
+  "checks": [
+    {
+      "check_id": "all_source_iterations_passed",
+      "detail": [
+        {
+          "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+          "failed_check_count": 0,
+          "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+          "failed_check_count": 0,
+          "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+          "failed_check_count": 0,
+          "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+          "failed_check_count": 0,
+          "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4",
+          "failed_check_count": 0,
+          "output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_replay_control_backed_ab4_candidate_no_ab5",
+          "failed_check_count": 0,
+          "output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_narrow_at_bound_stress_threshold_backed_ab5_candidate",
+          "failed_check_count": 0,
+          "output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_alternative_high_margin_ab3_optional_continuation_candidate_pending_i6a",
+          "failed_check_count": 0,
+          "output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_i5a_replay_control_backed_ab4_candidate_pending_i7a",
+          "failed_check_count": 0,
+          "output_digest": "6a57579a029dd7a5c08bb995e3c455dc44db556f96201dd88db53c78d14169e3",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_alternative_higher_margin_ab5_candidate_flux_bottleneck_remains",
+          "failed_check_count": 0,
+          "output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_flux_envelope_not_widened_n24c6_flux_blocker_recorded",
+          "failed_check_count": 0,
+          "output_digest": "09387f3989903bdb95b58679e9d45c2f93e1ead1788f29dd68977b75224cfe6a",
+          "status": "passed"
+        },
+        {
+          "acceptance_state": "accepted_producer_mediated_flux_conditioning_scaffold_native_c6_still_blocked",
+          "failed_check_count": 0,
+          "output_digest": "8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de",
+          "status": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_source_output_digests_valid",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "native_ab5_supported",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "ap5_dependency_status": "not_applicable_to_n24_positive_rows_no_proxy_reward_or_target_formation",
+        "final_ab_ladder_rung": "AB5",
+        "final_claim_ceiling": "bounded artifact-level AB5 surplus-supported optionality candidate with producer-mediated flux-scaffold extension; native N24-C6 remains blocked by flux/leakage debt",
+        "final_global_ap4_reclassification_supported": false,
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "producer_assisted_n25_flux_scaffold_candidate": true,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08,
+        "reward_maximization_supported": false,
+        "semantic_choice_supported": false,
+        "sentience_supported": false,
+        "src_diff_empty": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_n24_c6_remains_blocked",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "ap5_dependency_status": "not_applicable_to_n24_positive_rows_no_proxy_reward_or_target_formation",
+        "final_ab_ladder_rung": "AB5",
+        "final_claim_ceiling": "bounded artifact-level AB5 surplus-supported optionality candidate with producer-mediated flux-scaffold extension; native N24-C6 remains blocked by flux/leakage debt",
+        "final_global_ap4_reclassification_supported": false,
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "producer_assisted_n25_flux_scaffold_candidate": true,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08,
+        "reward_maximization_supported": false,
+        "semantic_choice_supported": false,
+        "sentience_supported": false,
+        "src_diff_empty": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_scaffold_recorded_separately",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "ap5_dependency_status": "not_applicable_to_n24_positive_rows_no_proxy_reward_or_target_formation",
+        "final_ab_ladder_rung": "AB5",
+        "final_claim_ceiling": "bounded artifact-level AB5 surplus-supported optionality candidate with producer-mediated flux-scaffold extension; native N24-C6 remains blocked by flux/leakage debt",
+        "final_global_ap4_reclassification_supported": false,
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "producer_assisted_n25_flux_scaffold_candidate": true,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08,
+        "reward_maximization_supported": false,
+        "semantic_choice_supported": false,
+        "sentience_supported": false,
+        "src_diff_empty": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_not_reclassified_as_native",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_implementation_opened": false,
+        "artifact_level_ab5_candidate_supported": true,
+        "final_global_ap4_reclassification_supported": false,
+        "native_n24_c6_flux_readiness_supported": false,
+        "native_support_claim_allowed": false,
+        "phase8_opened": false,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "reward_maximization_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "surplus_supported_optionality_claim_allowed": false,
+        "unsafe_claim_flags": {
+          "agency": false,
+          "ant_ecology_implementation": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "reward_maximization": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_handoff_has_two_lanes",
+      "detail": {
+        "handoff_status": "ready_with_native_flux_debt_and_producer_scaffold",
+        "must_consume_n20_contract": true,
+        "must_consume_n24_native_lane_first": true,
+        "must_consume_n24_producer_extension_as_separate_lane": true,
+        "must_not_consume_n24_as": [
+          "semantic_choice",
+          "reward_maximization",
+          "proxy_gain",
+          "agency",
+          "native_support",
+          "sentience",
+          "phase8_implementation",
+          "ant_ecology_specification",
+          "native_n24_c6",
+          "general_abundance_robustness"
+        ],
+        "native_lane": {
+          "blocking_debt": "native_flux_leakage_envelope_not_widened_above_1e-9",
+          "consumable_result": "AB5_N24-C5_surplus_supported_optionality",
+          "n25_native_start_question": "Can one N24 optional continuation become a distinguishable sub-basin or new-basin candidate while preserving the inherited native 1e-9 flux/leakage bound?",
+          "positive_capability": "source-current surplus-supported optionality with replay/control and stress-backed jointly admissible optional branches",
+          "source_artifacts": [
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe.json",
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix.json",
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix.json",
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a.json",
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_i7a.json",
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b.json"
+          ]
+        },
+        "next_experiment": "N25_spark_sub_basin_new_basin_formation",
+        "producer_assisted_lane": {
+          "consumable_result": "producer_mediated_flux_conditioning_scaffold",
+          "highest_conditioned_attempted_flux": 1e-08,
+          "n25_extension_question": "Does producer-mediated flux conditioning permit a sub-basin or new-basin candidate, and can that mechanism be specified as future native LGRC naturalization debt?",
+          "naturalization_target": "native_flux_routing_or_rate_limiting_surface",
+          "positive_capability": "declared producer splits attempted optional flux into source-visible windows capped by the native per-window bound",
+          "source_artifacts": [
+            "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_producer_flux_conditioning_probe_i7c.json"
+          ]
+        },
+        "required_n25_controls": [
+          "label_only_new_basin_rejected",
+          "single_basin_thickening_relabel_rejected",
+          "merge_leakage_masquerading_as_new_basin_rejected",
+          "non_replayable_transient_rejected",
+          "hidden_producer_insertion_rejected",
+          "producer_assisted_success_does_not_overwrite_native_failure",
+          "native_flux_debt_remains_row_local"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology_implementation": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "reward_maximization": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "src_diff_empty",
+      "detail": true,
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": true,
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "ant_ecology_implementation_opened": false,
+    "final_global_ap4_reclassification_supported": false,
+    "native_ab5_supported": true,
+    "native_n24_c6_supported": false,
+    "native_support_claim_allowed": false,
+    "phase8_opened": false,
+    "producer_mediated_claim_allowed_as_native": false,
+    "producer_mediated_flux_scaffold_supported": true,
+    "reward_maximization_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology_implementation": false,
+      "consciousness": false,
+      "free_will": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "reward_maximization": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_closeout_and_n25_handoff.py",
+  "experiment": "N24_lgrc_abundance_surplus_supported_optionality",
+  "failed_checks": [],
+  "final_classification": {
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "ap5_dependency_status": "not_applicable_to_n24_positive_rows_no_proxy_reward_or_target_formation",
+    "final_ab_ladder_rung": "AB5",
+    "final_claim_ceiling": "bounded artifact-level AB5 surplus-supported optionality candidate with producer-mediated flux-scaffold extension; native N24-C6 remains blocked by flux/leakage debt",
+    "final_global_ap4_reclassification_supported": false,
+    "final_n24_closeout_rung": "N24-C5",
+    "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+    "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+    "native_n24_c6_supported": false,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "producer_assisted_n25_flux_scaffold_candidate": true,
+    "producer_mediated_claim_allowed_as_native": false,
+    "producer_mediated_flux_scaffold_supported": true,
+    "producer_mediated_highest_conditioned_attempted_flux": 1e-08,
+    "reward_maximization_supported": false,
+    "semantic_choice_supported": false,
+    "sentience_supported": false,
+    "src_diff_empty": true
+  },
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "interpretation": {
+    "main_read": "N24 closes natively at AB5/N24-C5. It establishes bounded surplus-supported optionality, including replay/control and stress evidence, but it does not support native N24-C6 because flux/leakage does not widen above the frozen 1e-9 bound.",
+    "n25_consequence": "N25 should test spark/sub-basin/new-basin formation first under the native N24 lane, then separately under the producer-assisted lane. Producer-assisted success may identify a minimal missing mechanism, but cannot retroactively upgrade native N24-C6.",
+    "producer_extension_read": "I7-C adds a useful producer-mediated extension: a declared RC-compatible flux conditioner can split attempted optional flux into source-visible windows and carry attempted flux up to 1e-8. This is a scaffold and naturalization target, not native support."
+  },
+  "iteration": "8",
+  "n25_handoff": {
+    "handoff_status": "ready_with_native_flux_debt_and_producer_scaffold",
+    "must_consume_n20_contract": true,
+    "must_consume_n24_native_lane_first": true,
+    "must_consume_n24_producer_extension_as_separate_lane": true,
+    "must_not_consume_n24_as": [
+      "semantic_choice",
+      "reward_maximization",
+      "proxy_gain",
+      "agency",
+      "native_support",
+      "sentience",
+      "phase8_implementation",
+      "ant_ecology_specification",
+      "native_n24_c6",
+      "general_abundance_robustness"
+    ],
+    "native_lane": {
+      "blocking_debt": "native_flux_leakage_envelope_not_widened_above_1e-9",
+      "consumable_result": "AB5_N24-C5_surplus_supported_optionality",
+      "n25_native_start_question": "Can one N24 optional continuation become a distinguishable sub-basin or new-basin candidate while preserving the inherited native 1e-9 flux/leakage bound?",
+      "positive_capability": "source-current surplus-supported optionality with replay/control and stress-backed jointly admissible optional branches",
+      "source_artifacts": [
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_i7a.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b.json"
+      ]
+    },
+    "next_experiment": "N25_spark_sub_basin_new_basin_formation",
+    "producer_assisted_lane": {
+      "consumable_result": "producer_mediated_flux_conditioning_scaffold",
+      "highest_conditioned_attempted_flux": 1e-08,
+      "n25_extension_question": "Does producer-mediated flux conditioning permit a sub-basin or new-basin candidate, and can that mechanism be specified as future native LGRC naturalization debt?",
+      "naturalization_target": "native_flux_routing_or_rate_limiting_surface",
+      "positive_capability": "declared producer splits attempted optional flux into source-visible windows capped by the native per-window bound",
+      "source_artifacts": [
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_producer_flux_conditioning_probe_i7c.json"
+      ]
+    },
+    "required_n25_controls": [
+      "label_only_new_basin_rejected",
+      "single_basin_thickening_relabel_rejected",
+      "merge_leakage_masquerading_as_new_basin_rejected",
+      "non_replayable_transient_rejected",
+      "hidden_producer_insertion_rejected",
+      "producer_assisted_success_does_not_overwrite_native_failure",
+      "native_flux_debt_remains_row_local"
+    ]
+  },
+  "no_absolute_paths": true,
+  "output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+  "purpose": "close N24, preserve native/producer-assisted distinction, and hand off to N25 spark/sub-basin/new-basin formation",
+  "schema_version": "n24_closeout_and_n25_handoff_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "failed_check_count": 0,
+      "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_source_handoff_inventory.json",
+      "sha256": "ee62e0c2152019d0731ff7c40fd9068ca3c5f610c9fc45bf24c0dd7026462627",
+      "source_role": "n24_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "failed_check_count": 0,
+      "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_schema_and_controls.json",
+      "sha256": "9f3c7a53412b5cbdc845158d27ee7f6c539d584ba4c07fbacc299ff5ac5aa543",
+      "source_role": "n24_i2_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "failed_check_count": 0,
+      "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_active_nulls_and_failure_baselines.json",
+      "sha256": "158e1633bbacef1b5d34dd8931a7aedc44d8889441d5bf6c0e67b71f9fd6c110",
+      "source_role": "n24_i3_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+      "failed_check_count": 0,
+      "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe.json",
+      "sha256": "53986a0f034920a798067768e97cc46bcea6c95e242d7def1015183f761bd0bb",
+      "source_role": "n24_i4_minimal_surplus_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4",
+      "failed_check_count": 0,
+      "output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe.json",
+      "sha256": "e4dbddde2e2b5ebeba0b79a76c2cc78d5d94dd3928e3fa16abc18f4c7256dff3",
+      "source_role": "n24_i5_optional_continuation_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_ab4_candidate_no_ab5",
+      "failed_check_count": 0,
+      "output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix.json",
+      "sha256": "d60cc33180aa7129b9d6c52af731a61543935afd92a47223220d76418ed5709c",
+      "source_role": "n24_i6_replay_control_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_narrow_at_bound_stress_threshold_backed_ab5_candidate",
+      "failed_check_count": 0,
+      "output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix.json",
+      "sha256": "faff593ec02a01a24f2b90a2d0701f4782303d5d0cdc68bc345a464ec410c847",
+      "source_role": "n24_i7_native_stress_threshold_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_high_margin_ab3_optional_continuation_candidate_pending_i6a",
+      "failed_check_count": 0,
+      "output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+      "sha256": "1bbcaca01a42ae217dc339fe444d883f95c382cef6c4628b9e08fca8d88d891f",
+      "source_role": "n24_i5a_high_margin_optional_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_i5a_replay_control_backed_ab4_candidate_pending_i7a",
+      "failed_check_count": 0,
+      "output_digest": "6a57579a029dd7a5c08bb995e3c455dc44db556f96201dd88db53c78d14169e3",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a.json",
+      "sha256": "3c1d382017ac42c55f82312064b35fce1027c905c64a4cde54f9692fd7eb584a",
+      "source_role": "n24_i6a_high_margin_replay_control_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_higher_margin_ab5_candidate_flux_bottleneck_remains",
+      "failed_check_count": 0,
+      "output_digest": "ea9893c6ec5b195f0ebd11eb20d57f92ea3eb4494495e2f45eb27b9a187f248e",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_i7a.json",
+      "sha256": "b88f835b357e8ca0d7137db3995782992ba814f13864bd7b2d50208e5e725610",
+      "source_role": "n24_i7a_high_margin_stress_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_flux_envelope_not_widened_n24c6_flux_blocker_recorded",
+      "failed_check_count": 0,
+      "output_digest": "09387f3989903bdb95b58679e9d45c2f93e1ead1788f29dd68977b75224cfe6a",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_flux_envelope_probe_i7b.json",
+      "sha256": "dc675b4e0c5501fd8e4bc46c34c7e6cf6c49e5e77eb6f44489a8d3b8c15a9b9a",
+      "source_role": "n24_i7b_native_flux_blocker",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_flux_conditioning_scaffold_native_c6_still_blocked",
+      "failed_check_count": 0,
+      "output_digest": "8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_producer_flux_conditioning_probe_i7c.json",
+      "sha256": "d432a39e2bc88e83e25ba7e98edb5270284b12f3c124a68b709b8e8a0ecbdb46",
+      "source_role": "n24_i7c_producer_flux_conditioning_extension",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+      "failed_check_count": 0,
+      "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+      "source_role": "n23_closeout_and_n24_handoff_context",
+      "status": "passed"
+    }
+  ],
+  "status": "passed"
+}

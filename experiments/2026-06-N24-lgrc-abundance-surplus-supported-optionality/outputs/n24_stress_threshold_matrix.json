@@ -1,0 +1,1560 @@
+{
+  "acceptance_state": "accepted_narrow_at_bound_stress_threshold_backed_ab5_candidate",
+  "artifact_id": "n24_stress_threshold_matrix",
+  "artifact_manifest": [
+    {
+      "artifact_role": "replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_combined_ab5_stress_gate_trace.json",
+      "sha256": "9c3af5fd3f6343221868793f693588a7f9e491f3acbddf6f09aa39f013ba1e17"
+    },
+    {
+      "artifact_role": "flux_leakage_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_flux_leakage_boundary_trace.json",
+      "sha256": "f2c1636b3f909619a8b64e8fcb6eae8f3b38639c67e1a3417b49630ceadcc343"
+    },
+    {
+      "artifact_role": "maintenance_floor_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_maintenance_floor_boundary_trace.json",
+      "sha256": "37a421906da46713e880135b83278ba5317e81f49570d6103098bd377208b278"
+    },
+    {
+      "artifact_role": "optional_branch_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_optional_branch_capacity_trace.json",
+      "sha256": "cf07886a2261bd32017540e384bab8d555a1e448c2db80cd9aac4a6e98d9c8e0"
+    },
+    {
+      "artifact_role": "negative_control_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_stress_control_matrix.json",
+      "sha256": "9a40a4e4d9ad7b634d1446c561fc3165a3868145b48e49337ffec2a6763fcd1c"
+    },
+    {
+      "artifact_role": "replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_stress_threshold_summary_trace.json",
+      "sha256": "49043ed15b63d105cf90bb2f01ae4f076fd950e4d38f306e6663842f6a8e88c9"
+    },
+    {
+      "artifact_role": "surplus_margin_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_surplus_margin_threshold_trace.json",
+      "sha256": "48a78567414bcfa5dfb4cf805631e5477b9eb888d7c12eef1280f4fa5d16f6f7"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+        "failed_check_count": 0,
+        "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": {
+        "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+        "failed_check_count": 0,
+        "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_passed",
+      "detail": {
+        "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+        "failed_check_count": 0,
+        "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i4_surplus_probe_passed",
+      "detail": {
+        "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+        "failed_check_count": 0,
+        "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5_optional_probe_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4",
+        "failed_check_count": 0,
+        "output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i6_ab4_candidate_ready",
+      "detail": {
+        "acceptance_state": "accepted_replay_control_backed_ab4_candidate_no_ab5",
+        "failed_check_count": 0,
+        "output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "surplus_margin_thresholds_mapped",
+      "detail": {
+        "artifact_id": "n24_i7_surplus_margin_threshold_trace",
+        "base_coherence_margin": 0.15000000000000036,
+        "base_support_margin": 0.15000000000000036,
+        "coherence_floor": 9.85,
+        "highest_stress_preserving_floor": 0.15,
+        "highest_stress_preserving_minimum_surplus_margin": 0.05,
+        "minimum_surplus_margin": 0.1,
+        "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+        "stress_rows": [
+          {
+            "classification": "passes_minimum_surplus_margin",
+            "coherence_margin_after_stress": 0.15000000000000036,
+            "floor_preserved": true,
+            "maintenance_drain_stress": 0.0,
+            "minimum_surplus_margin_preserved": true,
+            "positive_residual_margin_preserved": true,
+            "support_margin_after_stress": 0.15000000000000036
+          },
+          {
+            "classification": "passes_minimum_surplus_margin",
+            "coherence_margin_after_stress": 0.10000000000000035,
+            "floor_preserved": true,
+            "maintenance_drain_stress": 0.05,
+            "minimum_surplus_margin_preserved": true,
+            "positive_residual_margin_preserved": true,
+            "support_margin_after_stress": 0.10000000000000035
+          },
+          {
+            "classification": "passes_floor_only",
+            "coherence_margin_after_stress": 0.05000000000000035,
+            "floor_preserved": true,
+            "maintenance_drain_stress": 0.1,
+            "minimum_surplus_margin_preserved": false,
+            "positive_residual_margin_preserved": true,
+            "support_margin_after_stress": 0.05000000000000035
+          },
+          {
+            "classification": "passes_floor_only",
+            "coherence_margin_after_stress": 3.608224830031759e-16,
+            "floor_preserved": true,
+            "maintenance_drain_stress": 0.15,
+            "minimum_surplus_margin_preserved": false,
+            "positive_residual_margin_preserved": false,
+            "support_margin_after_stress": 3.608224830031759e-16
+          },
+          {
+            "classification": "floor_crossing_fail_closed",
+            "coherence_margin_after_stress": -0.00099999999999964,
+            "floor_preserved": false,
+            "maintenance_drain_stress": 0.151,
+            "minimum_surplus_margin_preserved": false,
+            "positive_residual_margin_preserved": false,
+            "support_margin_after_stress": -0.00099999999999964
+          }
+        ],
+        "support_floor": 9.85,
+        "trace_digest": "aee5344d309c3823bbec50f6ade1828669a0b7ecf613a9582bba6f1f6fe2d4db"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "optional_branch_capacity_thresholds_mapped",
+      "detail": {
+        "artifact_id": "n24_i7_optional_branch_capacity_trace",
+        "available_branch_count": 3,
+        "available_branch_ids": [
+          "n24_i5_branch_01_to_node_1",
+          "n24_i5_branch_02_to_node_5",
+          "n24_i5_branch_03_to_node_9"
+        ],
+        "base_coherence_margin": 0.15000000000000036,
+        "base_support_margin": 0.15000000000000036,
+        "interpretation": "Support-budget capacity alone can leave at least two branches jointly admissible under small nonzero branch costs, but AB5 also requires flux/leakage stress to remain clean.",
+        "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+        "stress_rows": [
+          {
+            "ab5_count_gate_met_by_support_budget": true,
+            "joint_admissibility_rows": [
+              {
+                "branch_count": 1,
+                "coherence_margin_after_cost": 0.15000000000000036,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.15000000000000036,
+                "total_support_cost": 0.0
+              },
+              {
+                "branch_count": 2,
+                "coherence_margin_after_cost": 0.15000000000000036,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.15000000000000036,
+                "total_support_cost": 0.0
+              },
+              {
+                "branch_count": 3,
+                "coherence_margin_after_cost": 0.15000000000000036,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.15000000000000036,
+                "total_support_cost": 0.0
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 3,
+            "per_branch_support_cost": 0.0,
+            "stress_is_nonzero": false
+          },
+          {
+            "ab5_count_gate_met_by_support_budget": true,
+            "joint_admissibility_rows": [
+              {
+                "branch_count": 1,
+                "coherence_margin_after_cost": 0.12500000000000036,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.12500000000000036,
+                "total_support_cost": 0.025
+              },
+              {
+                "branch_count": 2,
+                "coherence_margin_after_cost": 0.10000000000000035,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.10000000000000035,
+                "total_support_cost": 0.05
+              },
+              {
+                "branch_count": 3,
+                "coherence_margin_after_cost": 0.07500000000000034,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.07500000000000034,
+                "total_support_cost": 0.07500000000000001
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 3,
+            "per_branch_support_cost": 0.025,
+            "stress_is_nonzero": true
+          },
+          {
+            "ab5_count_gate_met_by_support_budget": true,
+            "joint_admissibility_rows": [
+              {
+                "branch_count": 1,
+                "coherence_margin_after_cost": 0.10000000000000035,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.10000000000000035,
+                "total_support_cost": 0.05
+              },
+              {
+                "branch_count": 2,
+                "coherence_margin_after_cost": 0.05000000000000035,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.05000000000000035,
+                "total_support_cost": 0.1
+              },
+              {
+                "branch_count": 3,
+                "coherence_margin_after_cost": 3.3306690738754696e-16,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": 3.3306690738754696e-16,
+                "total_support_cost": 0.15000000000000002
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 2,
+            "per_branch_support_cost": 0.05,
+            "stress_is_nonzero": true
+          },
+          {
+            "ab5_count_gate_met_by_support_budget": false,
+            "joint_admissibility_rows": [
+              {
+                "branch_count": 1,
+                "coherence_margin_after_cost": 0.07500000000000036,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.07500000000000036,
+                "total_support_cost": 0.075
+              },
+              {
+                "branch_count": 2,
+                "coherence_margin_after_cost": 3.608224830031759e-16,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": 3.608224830031759e-16,
+                "total_support_cost": 0.15
+              },
+              {
+                "branch_count": 3,
+                "coherence_margin_after_cost": -0.07499999999999962,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": -0.07499999999999962,
+                "total_support_cost": 0.22499999999999998
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 1,
+            "per_branch_support_cost": 0.075,
+            "stress_is_nonzero": true
+          },
+          {
+            "ab5_count_gate_met_by_support_budget": false,
+            "joint_admissibility_rows": [
+              {
+                "branch_count": 1,
+                "coherence_margin_after_cost": 0.07400000000000036,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.07400000000000036,
+                "total_support_cost": 0.076
+              },
+              {
+                "branch_count": 2,
+                "coherence_margin_after_cost": -0.001999999999999641,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": -0.001999999999999641,
+                "total_support_cost": 0.152
+              },
+              {
+                "branch_count": 3,
+                "coherence_margin_after_cost": -0.07799999999999963,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": -0.07799999999999963,
+                "total_support_cost": 0.22799999999999998
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 1,
+            "per_branch_support_cost": 0.076,
+            "stress_is_nonzero": true
+          },
+          {
+            "ab5_count_gate_met_by_support_budget": false,
+            "joint_admissibility_rows": [
+              {
+                "branch_count": 1,
+                "coherence_margin_after_cost": 0.05000000000000035,
+                "joint_floor_preserved": true,
+                "support_margin_after_cost": 0.05000000000000035,
+                "total_support_cost": 0.1
+              },
+              {
+                "branch_count": 2,
+                "coherence_margin_after_cost": -0.049999999999999656,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": -0.049999999999999656,
+                "total_support_cost": 0.2
+              },
+              {
+                "branch_count": 3,
+                "coherence_margin_after_cost": -0.1499999999999997,
+                "joint_floor_preserved": false,
+                "support_margin_after_cost": -0.1499999999999997,
+                "total_support_cost": 0.30000000000000004
+              }
+            ],
+            "max_jointly_admissible_by_support_budget": 1,
+            "per_branch_support_cost": 0.1,
+            "stress_is_nonzero": true
+          }
+        ],
+        "support_budget_can_reach_ab5_count_gate_under_nonzero_stress": true,
+        "trace_digest": "e62b1ee46212667862833c55c25df91f1b3a965b47f07b7d90c532d8c8d2b8e7"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "maintenance_floor_boundary_mapped",
+      "detail": {
+        "artifact_id": "n24_i7_maintenance_floor_boundary_trace",
+        "declared_coherence_floor": 9.85,
+        "declared_support_floor": 9.85,
+        "floor_crossing_control_fail_closed_at": [
+          10.001
+        ],
+        "floor_rows": [
+          {
+            "candidate_floor": 9.7,
+            "classification": "surplus_preserved",
+            "coherence_margin": 0.3000000000000007,
+            "floor_preserved": true,
+            "positive_surplus_preserved": true,
+            "support_margin": 0.3000000000000007
+          },
+          {
+            "candidate_floor": 9.8,
+            "classification": "surplus_preserved",
+            "coherence_margin": 0.1999999999999993,
+            "floor_preserved": true,
+            "positive_surplus_preserved": true,
+            "support_margin": 0.1999999999999993
+          },
+          {
+            "candidate_floor": 9.85,
+            "classification": "surplus_preserved",
+            "coherence_margin": 0.15000000000000036,
+            "floor_preserved": true,
+            "positive_surplus_preserved": true,
+            "support_margin": 0.15000000000000036
+          },
+          {
+            "candidate_floor": 9.9,
+            "classification": "surplus_preserved",
+            "coherence_margin": 0.09999999999999964,
+            "floor_preserved": true,
+            "positive_surplus_preserved": true,
+            "support_margin": 0.09999999999999964
+          },
+          {
+            "candidate_floor": 10.0,
+            "classification": "at_floor_edge",
+            "coherence_margin": 0.0,
+            "floor_preserved": true,
+            "positive_surplus_preserved": false,
+            "support_margin": 0.0
+          },
+          {
+            "candidate_floor": 10.001,
+            "classification": "floor_crossing_fail_closed",
+            "coherence_margin": -0.0009999999999994458,
+            "floor_preserved": false,
+            "positive_surplus_preserved": false,
+            "support_margin": -0.0009999999999994458
+          }
+        ],
+        "highest_floor_with_positive_surplus": 9.9,
+        "observed_min_coherence": 10.0,
+        "observed_min_support": 10.0,
+        "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+        "trace_digest": "802c99604f5dcdf5662f7355fa1ff3b786f532294bce8395479de625c988aaf5"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "flux_leakage_boundary_mapped",
+      "detail": {
+        "any_nonzero_flux_stress_preserves_bound": true,
+        "artifact_id": "n24_i7_flux_leakage_boundary_trace",
+        "flux_or_leakage_bound": 1e-09,
+        "flux_rows": [
+          {
+            "classification": "quiet_or_at_bound",
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "optional_flux_stress": 0.0,
+            "stress_is_nonzero": false
+          },
+          {
+            "classification": "quiet_or_at_bound",
+            "flux_bound_preserved": true,
+            "flux_or_leakage_bound": 1e-09,
+            "optional_flux_stress": 1e-09,
+            "stress_is_nonzero": true
+          },
+          {
+            "classification": "flux_leakage_fail_closed",
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "optional_flux_stress": 1e-08,
+            "stress_is_nonzero": true
+          },
+          {
+            "classification": "flux_leakage_fail_closed",
+            "flux_bound_preserved": false,
+            "flux_or_leakage_bound": 1e-09,
+            "optional_flux_stress": 1e-06,
+            "stress_is_nonzero": true
+          }
+        ],
+        "highest_nonzero_flux_stress_preserving_bound": 1e-09,
+        "i5_optional_flux_drain_margin": 1e-09,
+        "positive_flux_stress_blocker": "The frozen quiet leakage bound is 1e-9. At-bound nonzero flux stress can pass, but any stress above that bound fails closed, so I7 can support only a narrow threshold AB5 candidate, not broad flux robustness.",
+        "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+        "trace_digest": "ed31bc1005fcb3e726e2756c056794407ed610ea1e81a9a91948672b31cf9c9b"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "stress_controls_fail_closed_or_scope_clean",
+      "detail": {
+        "artifact_id": "n24_i7_stress_control_matrix",
+        "control_matrix_digest": "1e6227f500bf0011d29adc9628dddaa5a55ef9f5cb4a70fa43a5155a1c120ff4",
+        "control_rows": [
+          {
+            "blocked_condition": "blocks positive support",
+            "claim_allowed_when_triggered": false,
+            "control_id": "hidden_budget_relief_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks AB2+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "floor_crossing_as_abundance_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks optionality support",
+            "claim_allowed_when_triggered": false,
+            "control_id": "proxy_only_optional_branch_gain_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks AB3+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "optional_branch_label_only_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks AB3+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "single_optional_branch_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks AB2+",
+            "claim_allowed_when_triggered": false,
+            "control_id": "post_hoc_surplus_construction_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks N23 context relabel",
+            "claim_allowed_when_triggered": false,
+            "control_id": "n23_selection_context_relabel_as_abundance_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks reward/goal overclaim",
+            "claim_allowed_when_triggered": false,
+            "control_id": "reward_maximization_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks final global AP4 reclassification",
+            "claim_allowed_when_triggered": false,
+            "control_id": "ap4_final_reclassification_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks proxy/reward rows missing AP5 dependency",
+            "claim_allowed_when_triggered": false,
+            "control_id": "ap5_proxy_gap_omission_control",
+            "interpretation": "AP5 remains not applicable because no proxy/reward/target field participates; a proxy-conditioned variant would be rejected",
+            "status": "not_applicable",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks semantic choice",
+            "claim_allowed_when_triggered": false,
+            "control_id": "semantic_choice_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks agency",
+            "claim_allowed_when_triggered": false,
+            "control_id": "agency_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks native support",
+            "claim_allowed_when_triggered": false,
+            "control_id": "native_support_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          },
+          {
+            "blocked_condition": "blocks Phase 8",
+            "claim_allowed_when_triggered": false,
+            "control_id": "phase8_relabel_control",
+            "interpretation": "stress overclaim rejected fail-closed",
+            "status": "failed_closed",
+            "stress_control_accepts_matrix": true
+          }
+        ],
+        "failed_closed_meaning": "blocker triggered and claim was correctly rejected",
+        "failed_open_controls": [],
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ab5_classification_narrow_at_bound",
+      "detail": {
+        "ab5_blocker": "none",
+        "ab5_candidate_supported": true,
+        "artifact_id": "n24_i7_stress_threshold_summary_trace",
+        "classification": "narrow_at_bound_stress_threshold_backed_ab5_candidate",
+        "combined_ab5_gate_supported": true,
+        "combined_best_passing_row": {
+          "classification": "combined_narrow_ab5_candidate",
+          "combined_ab5_gate_passes": true,
+          "flux_bound_preserved": true,
+          "max_jointly_admissible_by_support_budget": 2,
+          "nonzero_stress": true,
+          "optional_flux_stress": 1e-09,
+          "per_branch_support_cost": 0.05
+        },
+        "i6_source_output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+        "nonzero_flux_stress_clean": true,
+        "support_budget_count_gate_met": true,
+        "trace_digest": "61487304a5fe218de8f65df4c4c2092b9a1dedcfd7b1e908446243251448c382"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty_and_sha_match",
+      "detail": [
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_combined_ab5_stress_gate_trace.json",
+          "sha256": "9c3af5fd3f6343221868793f693588a7f9e491f3acbddf6f09aa39f013ba1e17"
+        },
+        {
+          "artifact_role": "flux_leakage_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_flux_leakage_boundary_trace.json",
+          "sha256": "f2c1636b3f909619a8b64e8fcb6eae8f3b38639c67e1a3417b49630ceadcc343"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_maintenance_floor_boundary_trace.json",
+          "sha256": "37a421906da46713e880135b83278ba5317e81f49570d6103098bd377208b278"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_optional_branch_capacity_trace.json",
+          "sha256": "cf07886a2261bd32017540e384bab8d555a1e448c2db80cd9aac4a6e98d9c8e0"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_stress_control_matrix.json",
+          "sha256": "9a40a4e4d9ad7b634d1446c561fc3165a3868145b48e49337ffec2a6763fcd1c"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_stress_threshold_summary_trace.json",
+          "sha256": "49043ed15b63d105cf90bb2f01ae4f076fd950e4d38f306e6663842f6a8e88c9"
+        },
+        {
+          "artifact_role": "surplus_margin_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_surplus_margin_threshold_trace.json",
+          "sha256": "48a78567414bcfa5dfb4cf805631e5477b9eb888d7c12eef1280f4fa5d16f6f7"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology_implementation": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "reward_maximization": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": true,
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "ant_ecology_implementation_opened": false,
+    "artifact_level_ab4_candidate_supported": true,
+    "artifact_level_ab5_candidate_supported": true,
+    "final_global_ap4_reclassification_supported": false,
+    "native_support_claim_allowed": false,
+    "phase8_opened": false,
+    "reward_maximization_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "surplus_supported_optionality_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology_implementation": false,
+      "consciousness": false,
+      "free_will": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "reward_maximization": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "combined_ab5_stress_gate_trace": {
+    "artifact_id": "n24_i7_combined_ab5_stress_gate_trace",
+    "best_passing_row": {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.05
+    },
+    "combined_ab5_gate_supported": true,
+    "combined_rows": [
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": false,
+        "optional_flux_stress": 0.0,
+        "per_branch_support_cost": 0.0
+      },
+      {
+        "classification": "combined_narrow_ab5_candidate",
+        "combined_ab5_gate_passes": true,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-09,
+        "per_branch_support_cost": 0.0
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-08,
+        "per_branch_support_cost": 0.0
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-06,
+        "per_branch_support_cost": 0.0
+      },
+      {
+        "classification": "combined_narrow_ab5_candidate",
+        "combined_ab5_gate_passes": true,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 0.0,
+        "per_branch_support_cost": 0.025
+      },
+      {
+        "classification": "combined_narrow_ab5_candidate",
+        "combined_ab5_gate_passes": true,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-09,
+        "per_branch_support_cost": 0.025
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-08,
+        "per_branch_support_cost": 0.025
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 3,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-06,
+        "per_branch_support_cost": 0.025
+      },
+      {
+        "classification": "combined_narrow_ab5_candidate",
+        "combined_ab5_gate_passes": true,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 2,
+        "nonzero_stress": true,
+        "optional_flux_stress": 0.0,
+        "per_branch_support_cost": 0.05
+      },
+      {
+        "classification": "combined_narrow_ab5_candidate",
+        "combined_ab5_gate_passes": true,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 2,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-09,
+        "per_branch_support_cost": 0.05
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 2,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-08,
+        "per_branch_support_cost": 0.05
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 2,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-06,
+        "per_branch_support_cost": 0.05
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 0.0,
+        "per_branch_support_cost": 0.075
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-09,
+        "per_branch_support_cost": 0.075
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-08,
+        "per_branch_support_cost": 0.075
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-06,
+        "per_branch_support_cost": 0.075
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 0.0,
+        "per_branch_support_cost": 0.076
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-09,
+        "per_branch_support_cost": 0.076
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-08,
+        "per_branch_support_cost": 0.076
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-06,
+        "per_branch_support_cost": 0.076
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 0.0,
+        "per_branch_support_cost": 0.1
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": true,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-09,
+        "per_branch_support_cost": 0.1
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-08,
+        "per_branch_support_cost": 0.1
+      },
+      {
+        "classification": "combined_ab5_gate_blocked",
+        "combined_ab5_gate_passes": false,
+        "flux_bound_preserved": false,
+        "max_jointly_admissible_by_support_budget": 1,
+        "nonzero_stress": true,
+        "optional_flux_stress": 1e-06,
+        "per_branch_support_cost": 0.1
+      }
+    ],
+    "narrow_boundary_reason": "the strongest passing row uses flux stress at the frozen 1e-9 bound; stress above that bound fails closed",
+    "passing_row_count": 5,
+    "trace_digest": "553b205582cb22f4d2ada94d5b79bf957a426d948a8e2314ced76b2f003f23bd"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_stress_threshold_matrix.py",
+  "experiment": "N24_lgrc_abundance_surplus_supported_optionality",
+  "failed_checks": [],
+  "flux_leakage_boundary_trace": {
+    "any_nonzero_flux_stress_preserves_bound": true,
+    "artifact_id": "n24_i7_flux_leakage_boundary_trace",
+    "flux_or_leakage_bound": 1e-09,
+    "flux_rows": [
+      {
+        "classification": "quiet_or_at_bound",
+        "flux_bound_preserved": true,
+        "flux_or_leakage_bound": 1e-09,
+        "optional_flux_stress": 0.0,
+        "stress_is_nonzero": false
+      },
+      {
+        "classification": "quiet_or_at_bound",
+        "flux_bound_preserved": true,
+        "flux_or_leakage_bound": 1e-09,
+        "optional_flux_stress": 1e-09,
+        "stress_is_nonzero": true
+      },
+      {
+        "classification": "flux_leakage_fail_closed",
+        "flux_bound_preserved": false,
+        "flux_or_leakage_bound": 1e-09,
+        "optional_flux_stress": 1e-08,
+        "stress_is_nonzero": true
+      },
+      {
+        "classification": "flux_leakage_fail_closed",
+        "flux_bound_preserved": false,
+        "flux_or_leakage_bound": 1e-09,
+        "optional_flux_stress": 1e-06,
+        "stress_is_nonzero": true
+      }
+    ],
+    "highest_nonzero_flux_stress_preserving_bound": 1e-09,
+    "i5_optional_flux_drain_margin": 1e-09,
+    "positive_flux_stress_blocker": "The frozen quiet leakage bound is 1e-9. At-bound nonzero flux stress can pass, but any stress above that bound fails closed, so I7 can support only a narrow threshold AB5 candidate, not broad flux robustness.",
+    "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+    "trace_digest": "ed31bc1005fcb3e726e2756c056794407ed610ea1e81a9a91948672b31cf9c9b"
+  },
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "AB5 is supported only as a narrow artifact-level threshold candidate pending I8 closeout, with reward, semantic choice, agency, native support, sentience, Phase 8, and ant ecology blocked.",
+    "flux_axis": "The flux/leakage bound remains 1e-9. The original I5 optional set is quiet at zero drain, and one at-bound stress row remains clean. Stress above that bound fails closed, making the AB5 claim narrow.",
+    "short_read": "I7 supports a narrow, at-bound AB5 candidate. The support-budget axis can tolerate small joint branch costs, and a combined row passes when flux stress is exactly at the frozen 1e-9 bound. Stress above that bound fails closed, so this is not broad abundance robustness.",
+    "support_axis": "The maintenance basin has only 0.15 support/coherence margin over the floor. It can absorb small support-cost stress and even leave two branches jointly admissible under a support-budget-only view, but the margin is narrow."
+  },
+  "iteration": 7,
+  "iteration7_boundary": {
+    "ab4_candidate_supported": true,
+    "ab5_blocker": "none",
+    "ab5_candidate_supported": true,
+    "ab5_or_stronger_supported": true,
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "final_global_ap4_reclassification_supported": false,
+    "n24_closeout_ladder_rung_assigned": false,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "provisional_ab_ladder_rung": "AB5",
+    "provisional_n24_closeout_ceiling": "N24-C5",
+    "ready_for_iteration_8_closeout": true,
+    "reward_maximization_supported": false,
+    "semantic_choice_supported": false,
+    "sentience_supported": false,
+    "surplus_supported_optionality_claim_allowed": false
+  },
+  "maintenance_floor_boundary_trace": {
+    "artifact_id": "n24_i7_maintenance_floor_boundary_trace",
+    "declared_coherence_floor": 9.85,
+    "declared_support_floor": 9.85,
+    "floor_crossing_control_fail_closed_at": [
+      10.001
+    ],
+    "floor_rows": [
+      {
+        "candidate_floor": 9.7,
+        "classification": "surplus_preserved",
+        "coherence_margin": 0.3000000000000007,
+        "floor_preserved": true,
+        "positive_surplus_preserved": true,
+        "support_margin": 0.3000000000000007
+      },
+      {
+        "candidate_floor": 9.8,
+        "classification": "surplus_preserved",
+        "coherence_margin": 0.1999999999999993,
+        "floor_preserved": true,
+        "positive_surplus_preserved": true,
+        "support_margin": 0.1999999999999993
+      },
+      {
+        "candidate_floor": 9.85,
+        "classification": "surplus_preserved",
+        "coherence_margin": 0.15000000000000036,
+        "floor_preserved": true,
+        "positive_surplus_preserved": true,
+        "support_margin": 0.15000000000000036
+      },
+      {
+        "candidate_floor": 9.9,
+        "classification": "surplus_preserved",
+        "coherence_margin": 0.09999999999999964,
+        "floor_preserved": true,
+        "positive_surplus_preserved": true,
+        "support_margin": 0.09999999999999964
+      },
+      {
+        "candidate_floor": 10.0,
+        "classification": "at_floor_edge",
+        "coherence_margin": 0.0,
+        "floor_preserved": true,
+        "positive_surplus_preserved": false,
+        "support_margin": 0.0
+      },
+      {
+        "candidate_floor": 10.001,
+        "classification": "floor_crossing_fail_closed",
+        "coherence_margin": -0.0009999999999994458,
+        "floor_preserved": false,
+        "positive_surplus_preserved": false,
+        "support_margin": -0.0009999999999994458
+      }
+    ],
+    "highest_floor_with_positive_surplus": 9.9,
+    "observed_min_coherence": 10.0,
+    "observed_min_support": 10.0,
+    "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+    "trace_digest": "802c99604f5dcdf5662f7355fa1ff3b786f532294bce8395479de625c988aaf5"
+  },
+  "no_absolute_paths": true,
+  "optional_branch_capacity_trace": {
+    "artifact_id": "n24_i7_optional_branch_capacity_trace",
+    "available_branch_count": 3,
+    "available_branch_ids": [
+      "n24_i5_branch_01_to_node_1",
+      "n24_i5_branch_02_to_node_5",
+      "n24_i5_branch_03_to_node_9"
+    ],
+    "base_coherence_margin": 0.15000000000000036,
+    "base_support_margin": 0.15000000000000036,
+    "interpretation": "Support-budget capacity alone can leave at least two branches jointly admissible under small nonzero branch costs, but AB5 also requires flux/leakage stress to remain clean.",
+    "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+    "stress_rows": [
+      {
+        "ab5_count_gate_met_by_support_budget": true,
+        "joint_admissibility_rows": [
+          {
+            "branch_count": 1,
+            "coherence_margin_after_cost": 0.15000000000000036,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.15000000000000036,
+            "total_support_cost": 0.0
+          },
+          {
+            "branch_count": 2,
+            "coherence_margin_after_cost": 0.15000000000000036,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.15000000000000036,
+            "total_support_cost": 0.0
+          },
+          {
+            "branch_count": 3,
+            "coherence_margin_after_cost": 0.15000000000000036,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.15000000000000036,
+            "total_support_cost": 0.0
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 3,
+        "per_branch_support_cost": 0.0,
+        "stress_is_nonzero": false
+      },
+      {
+        "ab5_count_gate_met_by_support_budget": true,
+        "joint_admissibility_rows": [
+          {
+            "branch_count": 1,
+            "coherence_margin_after_cost": 0.12500000000000036,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.12500000000000036,
+            "total_support_cost": 0.025
+          },
+          {
+            "branch_count": 2,
+            "coherence_margin_after_cost": 0.10000000000000035,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.10000000000000035,
+            "total_support_cost": 0.05
+          },
+          {
+            "branch_count": 3,
+            "coherence_margin_after_cost": 0.07500000000000034,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.07500000000000034,
+            "total_support_cost": 0.07500000000000001
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 3,
+        "per_branch_support_cost": 0.025,
+        "stress_is_nonzero": true
+      },
+      {
+        "ab5_count_gate_met_by_support_budget": true,
+        "joint_admissibility_rows": [
+          {
+            "branch_count": 1,
+            "coherence_margin_after_cost": 0.10000000000000035,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.10000000000000035,
+            "total_support_cost": 0.05
+          },
+          {
+            "branch_count": 2,
+            "coherence_margin_after_cost": 0.05000000000000035,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.05000000000000035,
+            "total_support_cost": 0.1
+          },
+          {
+            "branch_count": 3,
+            "coherence_margin_after_cost": 3.3306690738754696e-16,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": 3.3306690738754696e-16,
+            "total_support_cost": 0.15000000000000002
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 2,
+        "per_branch_support_cost": 0.05,
+        "stress_is_nonzero": true
+      },
+      {
+        "ab5_count_gate_met_by_support_budget": false,
+        "joint_admissibility_rows": [
+          {
+            "branch_count": 1,
+            "coherence_margin_after_cost": 0.07500000000000036,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.07500000000000036,
+            "total_support_cost": 0.075
+          },
+          {
+            "branch_count": 2,
+            "coherence_margin_after_cost": 3.608224830031759e-16,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": 3.608224830031759e-16,
+            "total_support_cost": 0.15
+          },
+          {
+            "branch_count": 3,
+            "coherence_margin_after_cost": -0.07499999999999962,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": -0.07499999999999962,
+            "total_support_cost": 0.22499999999999998
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 1,
+        "per_branch_support_cost": 0.075,
+        "stress_is_nonzero": true
+      },
+      {
+        "ab5_count_gate_met_by_support_budget": false,
+        "joint_admissibility_rows": [
+          {
+            "branch_count": 1,
+            "coherence_margin_after_cost": 0.07400000000000036,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.07400000000000036,
+            "total_support_cost": 0.076
+          },
+          {
+            "branch_count": 2,
+            "coherence_margin_after_cost": -0.001999999999999641,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": -0.001999999999999641,
+            "total_support_cost": 0.152
+          },
+          {
+            "branch_count": 3,
+            "coherence_margin_after_cost": -0.07799999999999963,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": -0.07799999999999963,
+            "total_support_cost": 0.22799999999999998
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 1,
+        "per_branch_support_cost": 0.076,
+        "stress_is_nonzero": true
+      },
+      {
+        "ab5_count_gate_met_by_support_budget": false,
+        "joint_admissibility_rows": [
+          {
+            "branch_count": 1,
+            "coherence_margin_after_cost": 0.05000000000000035,
+            "joint_floor_preserved": true,
+            "support_margin_after_cost": 0.05000000000000035,
+            "total_support_cost": 0.1
+          },
+          {
+            "branch_count": 2,
+            "coherence_margin_after_cost": -0.049999999999999656,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": -0.049999999999999656,
+            "total_support_cost": 0.2
+          },
+          {
+            "branch_count": 3,
+            "coherence_margin_after_cost": -0.1499999999999997,
+            "joint_floor_preserved": false,
+            "support_margin_after_cost": -0.1499999999999997,
+            "total_support_cost": 0.30000000000000004
+          }
+        ],
+        "max_jointly_admissible_by_support_budget": 1,
+        "per_branch_support_cost": 0.1,
+        "stress_is_nonzero": true
+      }
+    ],
+    "support_budget_can_reach_ab5_count_gate_under_nonzero_stress": true,
+    "trace_digest": "e62b1ee46212667862833c55c25df91f1b3a965b47f07b7d90c532d8c8d2b8e7"
+  },
+  "output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+  "purpose": "map surplus, optional branch capacity, maintenance floor, and flux/leakage stress boundaries for AB5 eligibility",
+  "schema_version": "n24_stress_threshold_matrix_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_source_handoff_inventory.json",
+      "sha256": "ee62e0c2152019d0731ff7c40fd9068ca3c5f610c9fc45bf24c0dd7026462627",
+      "source_role": "n24_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_schema_and_controls.json",
+      "sha256": "9f3c7a53412b5cbdc845158d27ee7f6c539d584ba4c07fbacc299ff5ac5aa543",
+      "source_role": "n24_i2_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_active_nulls_and_failure_baselines.json",
+      "sha256": "158e1633bbacef1b5d34dd8931a7aedc44d8889441d5bf6c0e67b71f9fd6c110",
+      "source_role": "n24_i3_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+      "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe.json",
+      "sha256": "53986a0f034920a798067768e97cc46bcea6c95e242d7def1015183f761bd0bb",
+      "source_role": "n24_i4_minimal_surplus_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4",
+      "output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe.json",
+      "sha256": "e4dbddde2e2b5ebeba0b79a76c2cc78d5d94dd3928e3fa16abc18f4c7256dff3",
+      "source_role": "n24_i5_optional_continuation_set_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_ab4_candidate_no_ab5",
+      "output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix.json",
+      "sha256": "d60cc33180aa7129b9d6c52af731a61543935afd92a47223220d76418ed5709c",
+      "source_role": "n24_i6_replay_control_matrix",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+      "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+      "source_role": "n23_closeout_and_n24_handoff_context",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "stress_control_matrix": {
+    "artifact_id": "n24_i7_stress_control_matrix",
+    "control_matrix_digest": "1e6227f500bf0011d29adc9628dddaa5a55ef9f5cb4a70fa43a5155a1c120ff4",
+    "control_rows": [
+      {
+        "blocked_condition": "blocks positive support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "hidden_budget_relief_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks AB2+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "floor_crossing_as_abundance_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks optionality support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "proxy_only_optional_branch_gain_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "optional_branch_label_only_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "single_optional_branch_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks AB2+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "post_hoc_surplus_construction_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks N23 context relabel",
+        "claim_allowed_when_triggered": false,
+        "control_id": "n23_selection_context_relabel_as_abundance_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks reward/goal overclaim",
+        "claim_allowed_when_triggered": false,
+        "control_id": "reward_maximization_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks final global AP4 reclassification",
+        "claim_allowed_when_triggered": false,
+        "control_id": "ap4_final_reclassification_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks proxy/reward rows missing AP5 dependency",
+        "claim_allowed_when_triggered": false,
+        "control_id": "ap5_proxy_gap_omission_control",
+        "interpretation": "AP5 remains not applicable because no proxy/reward/target field participates; a proxy-conditioned variant would be rejected",
+        "status": "not_applicable",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks semantic choice",
+        "claim_allowed_when_triggered": false,
+        "control_id": "semantic_choice_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks agency",
+        "claim_allowed_when_triggered": false,
+        "control_id": "agency_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks native support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "native_support_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      },
+      {
+        "blocked_condition": "blocks Phase 8",
+        "claim_allowed_when_triggered": false,
+        "control_id": "phase8_relabel_control",
+        "interpretation": "stress overclaim rejected fail-closed",
+        "status": "failed_closed",
+        "stress_control_accepts_matrix": true
+      }
+    ],
+    "failed_closed_meaning": "blocker triggered and claim was correctly rejected",
+    "failed_open_controls": [],
+    "status": "passed"
+  },
+  "stress_threshold_summary_trace": {
+    "ab5_blocker": "none",
+    "ab5_candidate_supported": true,
+    "artifact_id": "n24_i7_stress_threshold_summary_trace",
+    "classification": "narrow_at_bound_stress_threshold_backed_ab5_candidate",
+    "combined_ab5_gate_supported": true,
+    "combined_best_passing_row": {
+      "classification": "combined_narrow_ab5_candidate",
+      "combined_ab5_gate_passes": true,
+      "flux_bound_preserved": true,
+      "max_jointly_admissible_by_support_budget": 2,
+      "nonzero_stress": true,
+      "optional_flux_stress": 1e-09,
+      "per_branch_support_cost": 0.05
+    },
+    "i6_source_output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+    "nonzero_flux_stress_clean": true,
+    "support_budget_count_gate_met": true,
+    "trace_digest": "61487304a5fe218de8f65df4c4c2092b9a1dedcfd7b1e908446243251448c382"
+  },
+  "surplus_margin_threshold_trace": {
+    "artifact_id": "n24_i7_surplus_margin_threshold_trace",
+    "base_coherence_margin": 0.15000000000000036,
+    "base_support_margin": 0.15000000000000036,
+    "coherence_floor": 9.85,
+    "highest_stress_preserving_floor": 0.15,
+    "highest_stress_preserving_minimum_surplus_margin": 0.05,
+    "minimum_surplus_margin": 0.1,
+    "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+    "stress_rows": [
+      {
+        "classification": "passes_minimum_surplus_margin",
+        "coherence_margin_after_stress": 0.15000000000000036,
+        "floor_preserved": true,
+        "maintenance_drain_stress": 0.0,
+        "minimum_surplus_margin_preserved": true,
+        "positive_residual_margin_preserved": true,
+        "support_margin_after_stress": 0.15000000000000036
+      },
+      {
+        "classification": "passes_minimum_surplus_margin",
+        "coherence_margin_after_stress": 0.10000000000000035,
+        "floor_preserved": true,
+        "maintenance_drain_stress": 0.05,
+        "minimum_surplus_margin_preserved": true,
+        "positive_residual_margin_preserved": true,
+        "support_margin_after_stress": 0.10000000000000035
+      },
+      {
+        "classification": "passes_floor_only",
+        "coherence_margin_after_stress": 0.05000000000000035,
+        "floor_preserved": true,
+        "maintenance_drain_stress": 0.1,
+        "minimum_surplus_margin_preserved": false,
+        "positive_residual_margin_preserved": true,
+        "support_margin_after_stress": 0.05000000000000035
+      },
+      {
+        "classification": "passes_floor_only",
+        "coherence_margin_after_stress": 3.608224830031759e-16,
+        "floor_preserved": true,
+        "maintenance_drain_stress": 0.15,
+        "minimum_surplus_margin_preserved": false,
+        "positive_residual_margin_preserved": false,
+        "support_margin_after_stress": 3.608224830031759e-16
+      },
+      {
+        "classification": "floor_crossing_fail_closed",
+        "coherence_margin_after_stress": -0.00099999999999964,
+        "floor_preserved": false,
+        "maintenance_drain_stress": 0.151,
+        "minimum_surplus_margin_preserved": false,
+        "positive_residual_margin_preserved": false,
+        "support_margin_after_stress": -0.00099999999999964
+      }
+    ],
+    "support_floor": 9.85,
+    "trace_digest": "aee5344d309c3823bbec50f6ade1828669a0b7ecf613a9582bba6f1f6fe2d4db"
+  },
+  "trace_paths": {
+    "combined_ab5_stress_gate_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_combined_ab5_stress_gate_trace.json",
+    "flux_leakage_boundary_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_flux_leakage_boundary_trace.json",
+    "maintenance_floor_boundary_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_maintenance_floor_boundary_trace.json",
+    "optional_branch_capacity_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_optional_branch_capacity_trace.json",
+    "stress_control_matrix_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_stress_control_matrix.json",
+    "stress_threshold_summary_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_stress_threshold_summary_trace.json",
+    "surplus_margin_threshold_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix_artifacts/n24_i7_surplus_margin_threshold_trace.json"
+  }
+}

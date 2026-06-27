@@ -1,0 +1,113 @@
+{
+  "artifact_id": "n24_i7c_producer_flux_conditioning_control_matrix",
+  "control_matrix_digest": "5a94013c3b5bd6cc690cc952e15778ec3414203d15276c747671262d9bdd5fa6",
+  "control_rows": [
+    {
+      "blocked_condition": "blocks positive support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "hidden_budget_relief_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB2+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "floor_crossing_as_abundance_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks optionality support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "proxy_only_optional_branch_gain_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB3+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "optional_branch_label_only_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks AB2+",
+      "claim_allowed_when_triggered": false,
+      "control_id": "post_hoc_surplus_construction_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "conditioned flux without source-visible ledger blocks I7-C",
+      "claim_allowed_when_triggered": false,
+      "control_id": "unlogged_flux_conditioning_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "changing the 1e-9 bound or maintenance floors blocks I7-C",
+      "claim_allowed_when_triggered": false,
+      "control_id": "threshold_relaxation_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "conditioning schedule assembled after outcome inspection blocks I7-C",
+      "claim_allowed_when_triggered": false,
+      "control_id": "post_hoc_conditioning_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "producer-mediated flux conditioning cannot relabel native N24-C6 as supported",
+      "claim_allowed_when_triggered": false,
+      "control_id": "native_n24c6_relabel_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "merge or leakage counted as successful routing blocks I7-C",
+      "claim_allowed_when_triggered": false,
+      "control_id": "merge_leakage_as_conditioned_flux_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks reward/goal overclaim",
+      "claim_allowed_when_triggered": false,
+      "control_id": "reward_maximization_relabel_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks semantic choice",
+      "claim_allowed_when_triggered": false,
+      "control_id": "semantic_choice_relabel_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks agency",
+      "claim_allowed_when_triggered": false,
+      "control_id": "agency_relabel_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks native support",
+      "claim_allowed_when_triggered": false,
+      "control_id": "native_support_relabel_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    },
+    {
+      "blocked_condition": "blocks Phase 8",
+      "claim_allowed_when_triggered": false,
+      "control_id": "phase8_relabel_control",
+      "interpretation": "producer-mediated flux help is admissible only when the producer is declared, source-visible, budget-neutral, threshold-preserving, and not relabeled as native support",
+      "status": "failed_closed"
+    }
+  ],
+  "failed_open_controls": [],
+  "status": "passed"
+}

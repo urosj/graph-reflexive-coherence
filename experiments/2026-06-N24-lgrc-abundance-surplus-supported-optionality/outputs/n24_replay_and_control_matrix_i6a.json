@@ -1,0 +1,783 @@
+{
+  "acceptance_state": "accepted_i5a_replay_control_backed_ab4_candidate_pending_i7a",
+  "artifact_id": "n24_replay_and_control_matrix_i6a",
+  "artifact_manifest": [
+    {
+      "artifact_role": "replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_artifact_replay_trace.json",
+      "sha256": "872e001f7bf5c6a416f87de186e539d02e2c9a6a8508842c8667116d5de830f4"
+    },
+    {
+      "artifact_role": "duplicate_replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_duplicate_replay_trace.json",
+      "sha256": "bb9c8fcca5688ba79839311002d826fd2a874007ccd69b6bb9bdc4ad163b7ee1"
+    },
+    {
+      "artifact_role": "replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_optional_set_survival_trace.json",
+      "sha256": "7a73044fd93709c68676d4eeadaffc5e7eb1064db68093ce23dc985c53c39b81"
+    },
+    {
+      "artifact_role": "snapshot_load_replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_snapshot_load_replay_trace.json",
+      "sha256": "37045e273496190e7ef4ea9ab4087d9c4b7a2ef0f28db971f782959cac135258"
+    },
+    {
+      "artifact_role": "negative_control_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6a_negative_control_matrix.json",
+      "sha256": "7bfc26d0450b86aedadbabd4320167c6f6b326fead9991e53294245a39c88745"
+    },
+    {
+      "artifact_role": "replay_trace",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6a_replay_control_summary_trace.json",
+      "sha256": "582ae9207daec4a96813e63c63e9ee71d1e131ee9fc853fd35ebc7a561b3c84a"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+        "failed_check_count": 0,
+        "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": {
+        "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+        "failed_check_count": 0,
+        "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_passed",
+      "detail": {
+        "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+        "failed_check_count": 0,
+        "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i4_surplus_probe_passed",
+      "detail": {
+        "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+        "failed_check_count": 0,
+        "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5a_alternative_probe_ready",
+      "detail": {
+        "acceptance_state": "accepted_alternative_high_margin_ab3_optional_continuation_candidate_pending_i6a",
+        "failed_check_count": 0,
+        "output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "original_i6_i7_preserved",
+      "detail": {
+        "i6_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+        "i6_replaced": false,
+        "i7_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+        "i7_replaced": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5a_replay_modes_passed",
+      "detail": {
+        "artifact": "passed",
+        "duplicate": "passed",
+        "optional": "passed",
+        "snapshot": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5a_controls_accept_candidate",
+      "detail": {
+        "controls_accept_candidate": true,
+        "failed_open_controls": []
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i5a_ab4_candidate_supported",
+      "detail": "replay/control-backed AB4 candidate for the I5-A high-margin alternative; AB5 stress/threshold backing remains pending I7-A",
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty_and_sha_match",
+      "detail": [
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_artifact_replay_trace.json",
+          "sha256": "872e001f7bf5c6a416f87de186e539d02e2c9a6a8508842c8667116d5de830f4"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_duplicate_replay_trace.json",
+          "sha256": "bb9c8fcca5688ba79839311002d826fd2a874007ccd69b6bb9bdc4ad163b7ee1"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_optional_set_survival_trace.json",
+          "sha256": "7a73044fd93709c68676d4eeadaffc5e7eb1064db68093ce23dc985c53c39b81"
+        },
+        {
+          "artifact_role": "snapshot_load_replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_snapshot_load_replay_trace.json",
+          "sha256": "37045e273496190e7ef4ea9ab4087d9c4b7a2ef0f28db971f782959cac135258"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6a_negative_control_matrix.json",
+          "sha256": "7bfc26d0450b86aedadbabd4320167c6f6b326fead9991e53294245a39c88745"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6a_replay_control_summary_trace.json",
+          "sha256": "582ae9207daec4a96813e63c63e9ee71d1e131ee9fc853fd35ebc7a561b3c84a"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology_implementation": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "reward_maximization": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths",
+      "detail": true,
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "ant_ecology_implementation_opened": false,
+    "artifact_level_ab4_candidate_supported": true,
+    "final_global_ap4_reclassification_supported": false,
+    "native_support_claim_allowed": false,
+    "phase8_opened": false,
+    "reward_maximization_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "surplus_supported_optionality_claim_allowed": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology_implementation": false,
+      "consciousness": false,
+      "free_will": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "native_ant_agency": false,
+      "native_colony_agency": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation": false,
+      "reward_maximization": false,
+      "selfhood": false,
+      "semantic_action": false,
+      "semantic_choice": false,
+      "semantic_goal": false,
+      "semantic_goal_ownership": false,
+      "semantic_intention": false,
+      "semantic_perception": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_replay_and_control_matrix_i6a.py",
+  "experiment": "N24_lgrc_abundance_surplus_supported_optionality",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "This is an alternative AB4 candidate only. It does not replace I6 and does not open AB5, reward, semantic choice, agency, native support, sentience, Phase 8, or ant ecology.",
+    "short_read": "I6-A confirms the high-margin I5-A optional set survives artifact, snapshot/load, duplicate, and optional-set replay under the same control discipline as I6."
+  },
+  "iteration": "6-A",
+  "iteration6a_boundary": {
+    "ab4_candidate_supported": true,
+    "ab5_or_stronger_supported": false,
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "does_not_replace_i6": true,
+    "final_global_ap4_reclassification_supported": false,
+    "i5a_final_consumable_rung": "AB4",
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "provisional_ab_ladder_rung": "AB4",
+    "ready_for_iteration_7a_stress_threshold_matrix": true,
+    "reward_maximization_supported": false,
+    "semantic_choice_supported": false,
+    "sentience_supported": false,
+    "surplus_supported_optionality_claim_allowed": false
+  },
+  "negative_control_matrix": {
+    "artifact_id": "n24_i6_negative_control_matrix",
+    "control_matrix_digest": "875d4664ee01ba95ec5809c35eebfcab0ee89b277b467e4a453b0b60f152a30e",
+    "control_rows": [
+      {
+        "blocked_condition": "blocks agency",
+        "claim_allowed_when_triggered": false,
+        "control_id": "agency_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks final global AP4 reclassification",
+        "claim_allowed_when_triggered": false,
+        "control_id": "ap4_final_reclassification_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks proxy/reward rows missing AP5 dependency",
+        "claim_allowed_when_triggered": false,
+        "control_id": "ap5_proxy_gap_omission_control",
+        "interpretation": "AP5 is not applicable for non-proxy N24 I6 rows; a proxy/reward variant would be rejected if it omitted AP5 dependency",
+        "status": "not_applicable"
+      },
+      {
+        "blocked_condition": "blocks AB2+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "floor_crossing_as_abundance_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks surplus claim",
+        "claim_allowed_when_triggered": false,
+        "control_id": "floor_renormalization_as_surplus_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks positive support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "hidden_budget_relief_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks original AB3 optional set",
+        "claim_allowed_when_triggered": false,
+        "control_id": "independent_run_optional_assembly_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks surplus claim",
+        "claim_allowed_when_triggered": false,
+        "control_id": "maintenance_basin_shift_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks N23 context relabel",
+        "claim_allowed_when_triggered": false,
+        "control_id": "n23_selection_context_relabel_as_abundance_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks native support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "native_support_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "optional_branch_label_only_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB2+ and AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "optionality_without_surplus_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks Phase 8",
+        "claim_allowed_when_triggered": false,
+        "control_id": "phase8_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB2+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "post_hoc_surplus_construction_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks optionality support",
+        "claim_allowed_when_triggered": false,
+        "control_id": "proxy_only_optional_branch_gain_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks reward/goal overclaim",
+        "claim_allowed_when_triggered": false,
+        "control_id": "reward_maximization_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks semantic choice",
+        "claim_allowed_when_triggered": false,
+        "control_id": "semantic_choice_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "blocks AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "single_optional_branch_relabel_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      },
+      {
+        "blocked_condition": "allows AB2 but blocks AB3+",
+        "claim_allowed_when_triggered": false,
+        "control_id": "surplus_without_optional_continuation_control",
+        "interpretation": "blocker triggered and the overclaim was rejected",
+        "status": "failed_closed"
+      }
+    ],
+    "failed_closed_meaning": "blocker triggered and claim was correctly rejected",
+    "failed_open_meaning": "blocker triggered but claim still passed",
+    "status": "passed"
+  },
+  "no_absolute_paths": true,
+  "output_digest": "6a57579a029dd7a5c08bb995e3c455dc44db556f96201dd88db53c78d14169e3",
+  "purpose": "replay/control the I5-A high-margin optionality variant without replacing I6",
+  "row_replay_control_matrix": [
+    {
+      "ab4_candidate_supported": true,
+      "ab5_or_stronger_supported": false,
+      "artifact_replay": {
+        "artifact_id": "n24_i6_i5_artifact_replay_trace",
+        "artifact_paths": [
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_boundary_integrity_under_optionality_trace.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_lgrc9v3_optional_continuation_set_run.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_maintenance_floor_trace.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_optional_branch_boundary_flux_traces.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_optional_branch_support_coherence_traces.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_optional_continuation_set_trace.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_runtime_config.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_source_current_snapshot.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_support_surplus_margin_trace.json",
+          "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_thresholds_declared_before_use.json"
+        ],
+        "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+        "derived_report_only": false,
+        "manifest_artifacts_parseable": true,
+        "manifest_entry_count": 10,
+        "manifest_sha256_match_file_contents": true,
+        "replay_digest": "8402c4a92f77cd853c8b5ad6e3e26826865d96d01a32fb46cca2d894ba281e82",
+        "result": "passed",
+        "source_current_inputs_present": true,
+        "source_iteration": 5,
+        "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+        "source_output_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+        "source_output_sha256": "1bbcaca01a42ae217dc339fe444d883f95c382cef6c4628b9e08fca8d88d891f",
+        "source_row_output_digest": "f70f1f24abf936b7f9d7b02f8769436e5b62f802de97220e94364cac6f216d27"
+      },
+      "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+      "claim_scope": "replay/control-backed AB4 candidate for the I5-A high-margin alternative; AB5 stress/threshold backing remains pending I7-A",
+      "control_results": [
+        {
+          "blocked_condition": "hidden producer/budget relief supplies surplus",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "hidden_budget_relief_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks positive support if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "support or coherence floor crossed",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "floor_crossing_as_abundance_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB2+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "surplus appears without optional continuation set",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "surplus_without_optional_continuation_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB3+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "optional branch exists without surplus",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "optionality_without_surplus_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB3+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "proxy gain replaces geometry",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "proxy_only_optional_branch_gain_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks optionality support if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "optional branch label replaces branch geometry",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "optional_branch_label_only_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB3+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "single branch relabeled as optionality",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "single_optional_branch_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB3+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "independent runs assembled as one optional set",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "independent_run_optional_assembly_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB3+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "floor and surplus measured on different basins",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "maintenance_basin_shift_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks surplus/optionality support if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "floor retuned after outcome inspection",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "floor_renormalization_as_surplus_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks surplus claim if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "surplus or optionality assembled after the fact",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "post_hoc_surplus_construction_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks AB3+ if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "N23 selection context relabeled as abundance",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "n23_selection_context_relabel_as_abundance_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks N23 context relabel if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "reward score relabeled as abundance",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "reward_maximization_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks reward overclaim if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "semantic choice relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "semantic_choice_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks unsafe claims if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "agency relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "agency_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks unsafe claims if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "native support relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "native_support_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks unsafe claims if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "Phase 8 implementation relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "phase8_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks unsafe claims if triggered",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "final global AP4 reclassification relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "ap4_final_reclassification_relabel_control",
+          "i6_control_status": "passed",
+          "rung_effect": "blocks final global AP4 reclassification",
+          "scope_reason": "source row control passed",
+          "source_control_status": "passed"
+        },
+        {
+          "blocked_condition": "proxy/reward/target row omits AP5",
+          "claim_allowed_when_control_triggers": false,
+          "control_accepts_candidate": true,
+          "control_id": "ap5_proxy_gap_omission_control",
+          "i6_control_status": "not_applicable",
+          "rung_effect": "not applicable for non-proxy I5 row",
+          "scope_reason": "AP5 is not applicable because no proxy/reward/target participates",
+          "source_control_status": "not_applicable"
+        }
+      ],
+      "controls_accept_candidate": true,
+      "duplicate_replay": {
+        "artifact_id": "n24_i6_i5_duplicate_replay_trace",
+        "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+        "duplicate_digest_matches": true,
+        "git_metadata_excluded": true,
+        "local_absolute_paths_excluded": true,
+        "recomputed_row_output_digest": "f70f1f24abf936b7f9d7b02f8769436e5b62f802de97220e94364cac6f216d27",
+        "replay_digest": "d7ac22074b7abfafdd83eca4863e99740429535fe25966bea85091bb1cb1ff77",
+        "result": "passed",
+        "source_iteration": 5,
+        "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+        "source_row_output_digest": "f70f1f24abf936b7f9d7b02f8769436e5b62f802de97220e94364cac6f216d27",
+        "timestamp_independent": true
+      },
+      "failed_open_controls": [],
+      "final_consumable_rung": "AB4",
+      "optional_set_survival_replay": {
+        "all_branch_records_admissible": true,
+        "all_branches_same_declared_window": true,
+        "all_branches_same_run_source_current": true,
+        "artifact_id": "n24_i6_i5_optional_set_survival_trace",
+        "boundary_integrity_status": "preserved",
+        "branch_count": 3,
+        "branch_window_ids": [
+          "n24_i5a_source_current_optionality_window"
+        ],
+        "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+        "flux_or_leakage_status": "preserved",
+        "jointly_admissible_optional_continuation_count": 0,
+        "no_branch_uses_producer_enumeration": true,
+        "no_branch_uses_reward_or_proxy_label": true,
+        "optional_continuation_availability_count": 3,
+        "optional_continuation_count": 3,
+        "optional_flux_status": "preserved",
+        "replay_digest": "e450b93134c2ebe28274ea00da602d508eed0fd6bd93902bd2def84533aca36c",
+        "residual_coherence_margin_under_optionality": 1.1500000000000004,
+        "residual_margins_positive": true,
+        "residual_support_margin_under_optionality": 1.1500000000000004,
+        "result": "passed",
+        "source_iteration": 5,
+        "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44"
+      },
+      "optionality_supported": true,
+      "replay_passed": true,
+      "row_decision": "supported",
+      "row_replay_control_digest": "4dc0a566b147f9169c6782b0efe50cebd8d0aed16dfedaa380ae3dc1db173cbe",
+      "snapshot_load_replay": {
+        "artifact_id": "n24_i6a_i5a_snapshot_load_replay_trace",
+        "boundary_signature_preserved": true,
+        "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+        "coherence_floor": 9.85,
+        "coherence_margin": 1.1500000000000004,
+        "coherence_margin_preserved": true,
+        "loaded_maintenance_basin_signature_digest": "905636581da37b80ea0efd5482159171d170ce34047ba4787c279cacb9279dcf",
+        "loaded_model_family": "LGRC9V3",
+        "observed_min_coherence": 11.0,
+        "observed_min_support": 11.0,
+        "replay_digest": "be15d3a95c95483f78f0cc794e3157ceec4c0ccb6ec8d52c2a9f1e6d132996fd",
+        "result": "passed",
+        "snapshot_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a_artifacts/n24_i5a_source_current_snapshot.json",
+        "snapshot_sha256_matches_manifest": true,
+        "source_iteration": "5-A",
+        "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+        "source_row_maintenance_basin_signature_digest": "905636581da37b80ea0efd5482159171d170ce34047ba4787c279cacb9279dcf",
+        "support_floor": 9.85,
+        "support_margin": 1.1500000000000004,
+        "support_margin_preserved": true
+      },
+      "source_iteration": 5,
+      "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+      "source_output_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+      "source_row_output_digest": "f70f1f24abf936b7f9d7b02f8769436e5b62f802de97220e94364cac6f216d27",
+      "starting_rung": "AB3",
+      "surplus_supported_optionality_claim_allowed": false,
+      "trace_paths": {
+        "artifact_replay_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_artifact_replay_trace.json",
+        "duplicate_replay_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_duplicate_replay_trace.json",
+        "optional_set_survival_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_optional_set_survival_trace.json",
+        "snapshot_load_replay_trace_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix_i6a_artifacts/n24_i6_i5_snapshot_load_replay_trace.json"
+      }
+    }
+  ],
+  "schema_version": "n24_replay_and_control_matrix_i6a_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_source_handoff_inventory.json",
+      "sha256": "ee62e0c2152019d0731ff7c40fd9068ca3c5f610c9fc45bf24c0dd7026462627",
+      "source_role": "n24_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_schema_and_controls.json",
+      "sha256": "9f3c7a53412b5cbdc845158d27ee7f6c539d584ba4c07fbacc299ff5ac5aa543",
+      "source_role": "n24_i2_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_active_nulls_and_failure_baselines.json",
+      "sha256": "158e1633bbacef1b5d34dd8931a7aedc44d8889441d5bf6c0e67b71f9fd6c110",
+      "source_role": "n24_i3_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+      "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe.json",
+      "sha256": "53986a0f034920a798067768e97cc46bcea6c95e242d7def1015183f761bd0bb",
+      "source_role": "n24_i4_minimal_surplus_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_alternative_high_margin_ab3_optional_continuation_candidate_pending_i6a",
+      "output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+      "sha256": "1bbcaca01a42ae217dc339fe444d883f95c382cef6c4628b9e08fca8d88d891f",
+      "source_role": "n24_i5a_alternative_optional_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_replay_control_backed_ab4_candidate_no_ab5",
+      "output_digest": "da1d7e517c69e3b8e652291f097d973d7a3eea686a7d3245e78e3a05de82a455",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_replay_and_control_matrix.json",
+      "sha256": "d60cc33180aa7129b9d6c52af731a61543935afd92a47223220d76418ed5709c",
+      "source_role": "n24_i6_original_replay_control_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_narrow_at_bound_stress_threshold_backed_ab5_candidate",
+      "output_digest": "03ec855cec08cc8838599b77356d9b8d132245a68eec276987b15273c663060f",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_stress_threshold_matrix.json",
+      "sha256": "faff593ec02a01a24f2b90a2d0701f4782303d5d0cdc68bc345a464ec410c847",
+      "source_role": "n24_i7_original_stress_context",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+      "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+      "source_role": "n23_closeout_and_n24_handoff_context",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "summary_trace": {
+    "ab4_candidate_supported": true,
+    "ab5_or_stronger_supported": false,
+    "artifact_id": "n24_i6a_replay_control_summary_trace",
+    "candidate_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set",
+    "does_not_replace_i6": true,
+    "final_consumable_rung": "AB4",
+    "negative_control_matrix_digest": "875d4664ee01ba95ec5809c35eebfcab0ee89b277b467e4a453b0b60f152a30e",
+    "source_output_digest": "694994ac8393f7e8a8cd148706d6d8e7caf71da4b9c46fd6e9abc53eb60b6c44",
+    "trace_digest": "56d49e6bd90168c10b0b6eeb5a7dd9926656d61c54a342524df54eccd700f5b1"
+  }
+}

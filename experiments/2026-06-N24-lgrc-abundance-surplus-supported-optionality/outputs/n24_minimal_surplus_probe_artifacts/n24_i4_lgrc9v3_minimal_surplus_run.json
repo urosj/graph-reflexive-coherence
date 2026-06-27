@@ -1,0 +1,424 @@
+{
+  "artifact_id": "n24_i4_lgrc9v3_minimal_surplus_run",
+  "boundary_flux_trace": {
+    "artifact_id": "n24_i4_boundary_flux_trace",
+    "payload": {
+      "boundary_integrity_result": "preserved",
+      "flux_or_leakage_bound": 1e-09,
+      "flux_or_leakage_result": "preserved",
+      "in_flight_packet_total": 0.0,
+      "maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+      "packet_budget_error": 0.0,
+      "topology_signature": {
+        "edge_records": [
+          {
+            "edge_id": 0,
+            "endpoints": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                8
+              ]
+            ]
+          },
+          {
+            "edge_id": 1,
+            "endpoints": [
+              [
+                2,
+                7
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": 2,
+            "endpoints": [
+              [
+                0,
+                2
+              ],
+              [
+                3,
+                6
+              ]
+            ]
+          },
+          {
+            "edge_id": 3,
+            "endpoints": [
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ]
+          },
+          {
+            "edge_id": 4,
+            "endpoints": [
+              [
+                0,
+                4
+              ],
+              [
+                5,
+                4
+              ]
+            ]
+          },
+          {
+            "edge_id": 5,
+            "endpoints": [
+              [
+                6,
+                3
+              ],
+              [
+                0,
+                5
+              ]
+            ]
+          },
+          {
+            "edge_id": 6,
+            "endpoints": [
+              [
+                0,
+                6
+              ],
+              [
+                7,
+                2
+              ]
+            ]
+          },
+          {
+            "edge_id": 7,
+            "endpoints": [
+              [
+                8,
+                1
+              ],
+              [
+                0,
+                7
+              ]
+            ]
+          },
+          {
+            "edge_id": 8,
+            "endpoints": [
+              [
+                0,
+                8
+              ],
+              [
+                9,
+                0
+              ]
+            ]
+          }
+        ],
+        "node_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    "trace_digest": "d4a77c0e326ce77b4b447bb13a824737f3081eeca23fe21b7c738126523e4091",
+    "trace_origin": "source_current_same_run",
+    "trace_status": "present"
+  },
+  "derived_report_only": false,
+  "event_counts_by_kind": {},
+  "fixture": "make_column_h_state",
+  "maintenance_basin_signature": {
+    "coherence_sum": 76.25,
+    "incident_edge_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "maintenance_basin_id": "n24_i4_core_support_maintenance_basin",
+    "maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+    "maintenance_node_ids": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "min_coherence": 10.0,
+    "min_support": 10.0,
+    "node_metrics": [
+      {
+        "basin_id": "root",
+        "basin_mass": 10.0,
+        "coherence": 10.0,
+        "coherence_margin": 0.15000000000000036,
+        "node_id": 0,
+        "support_margin": 0.15000000000000036,
+        "support_value": 10.0
+      },
+      {
+        "basin_id": 1,
+        "basin_mass": 13.0,
+        "coherence": 13.0,
+        "coherence_margin": 3.1500000000000004,
+        "node_id": 1,
+        "support_margin": 3.1500000000000004,
+        "support_value": 13.0
+      },
+      {
+        "basin_id": 5,
+        "basin_mass": 11.0,
+        "coherence": 11.0,
+        "coherence_margin": 1.1500000000000004,
+        "node_id": 5,
+        "support_margin": 1.1500000000000004,
+        "support_value": 11.0
+      },
+      {
+        "basin_id": 6,
+        "basin_mass": 10.0,
+        "coherence": 10.0,
+        "coherence_margin": 0.15000000000000036,
+        "node_id": 6,
+        "support_margin": 0.15000000000000036,
+        "support_value": 10.0
+      },
+      {
+        "basin_id": 7,
+        "basin_mass": 10.25,
+        "coherence": 10.25,
+        "coherence_margin": 0.40000000000000036,
+        "node_id": 7,
+        "support_margin": 0.40000000000000036,
+        "support_value": 10.25
+      },
+      {
+        "basin_id": 8,
+        "basin_mass": 10.0,
+        "coherence": 10.0,
+        "coherence_margin": 0.15000000000000036,
+        "node_id": 8,
+        "support_margin": 0.15000000000000036,
+        "support_value": 10.0
+      },
+      {
+        "basin_id": 9,
+        "basin_mass": 12.0,
+        "coherence": 12.0,
+        "coherence_margin": 2.1500000000000004,
+        "node_id": 9,
+        "support_margin": 2.1500000000000004,
+        "support_value": 12.0
+      }
+    ],
+    "support_aggregation_method": "min",
+    "support_measurement_scope": "maintenance_basin_node_set",
+    "support_sum": 76.25,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "maintenance_floor_trace": {
+    "artifact_id": "n24_i4_maintenance_floor_trace",
+    "payload": {
+      "coherence_floor_value": 9.85,
+      "declared_before_use": true,
+      "maintenance_basin_id": "n24_i4_core_support_maintenance_basin",
+      "support_floor_value": 9.85,
+      "threshold_record_digest": "174f3facd4138f8d40baeabb8719776eed96e41517d73cf788ffd4727a31d0a0"
+    },
+    "trace_digest": "434af494416b44da0f3442854cb2d46b912902617488171057876527fc29fd07",
+    "trace_origin": "source_current_same_run",
+    "trace_status": "present"
+  },
+  "model_family": "LGRC9V3",
+  "optional_continuation_set_trace": {
+    "reason": "I4 tests minimal source-current surplus only; I5 tests optional continuation set",
+    "trace_status": "not_run"
+  },
+  "run_artifact_digest": "a07d6dc8288f19f2116dc1f5302639a38dfdd8a4394bf81c4ce381f6a45225d3",
+  "run_id": "n24_i4_minimal_source_current_surplus",
+  "runtime_config_digest": "06717e876ba0dd3d3b6a376cb5b182d424098295018014a3a03698a9f0b98e7d",
+  "snapshot_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe_artifacts/n24_i4_source_current_snapshot.json",
+  "source_current_inputs_emitted": true,
+  "support_surplus_margin_trace": {
+    "artifact_id": "n24_i4_support_surplus_margin_trace",
+    "payload": {
+      "coherence_floor_value": 9.85,
+      "coherence_formula": "observed_coherence - coherence_floor_value",
+      "coherence_surplus_margin": 0.15000000000000036,
+      "formula": "observed_support - support_floor_value",
+      "minimum_coherence_surplus_margin": 0.1,
+      "minimum_support_surplus_margin": 0.1,
+      "observed_coherence": 10.0,
+      "observed_support": 10.0,
+      "support_aggregation_method": "min",
+      "support_floor_value": 9.85,
+      "support_measurement_scope": "maintenance_basin_node_set",
+      "support_surplus_margin": 0.15000000000000036
+    },
+    "trace_digest": "168508216637acc16aadf64bafb9a38de657ea7db5abeb8d02d60f98131bc471",
+    "trace_origin": "source_current_same_run",
+    "trace_status": "present"
+  }
+}

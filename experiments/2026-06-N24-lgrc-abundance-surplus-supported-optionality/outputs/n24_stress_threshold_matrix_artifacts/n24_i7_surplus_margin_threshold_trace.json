@@ -1,0 +1,59 @@
+{
+  "artifact_id": "n24_i7_surplus_margin_threshold_trace",
+  "base_coherence_margin": 0.15000000000000036,
+  "base_support_margin": 0.15000000000000036,
+  "coherence_floor": 9.85,
+  "highest_stress_preserving_floor": 0.15,
+  "highest_stress_preserving_minimum_surplus_margin": 0.05,
+  "minimum_surplus_margin": 0.1,
+  "source_candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+  "stress_rows": [
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 0.15000000000000036,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.0,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 0.15000000000000036
+    },
+    {
+      "classification": "passes_minimum_surplus_margin",
+      "coherence_margin_after_stress": 0.10000000000000035,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.05,
+      "minimum_surplus_margin_preserved": true,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 0.10000000000000035
+    },
+    {
+      "classification": "passes_floor_only",
+      "coherence_margin_after_stress": 0.05000000000000035,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.1,
+      "minimum_surplus_margin_preserved": false,
+      "positive_residual_margin_preserved": true,
+      "support_margin_after_stress": 0.05000000000000035
+    },
+    {
+      "classification": "passes_floor_only",
+      "coherence_margin_after_stress": 3.608224830031759e-16,
+      "floor_preserved": true,
+      "maintenance_drain_stress": 0.15,
+      "minimum_surplus_margin_preserved": false,
+      "positive_residual_margin_preserved": false,
+      "support_margin_after_stress": 3.608224830031759e-16
+    },
+    {
+      "classification": "floor_crossing_fail_closed",
+      "coherence_margin_after_stress": -0.00099999999999964,
+      "floor_preserved": false,
+      "maintenance_drain_stress": 0.151,
+      "minimum_surplus_margin_preserved": false,
+      "positive_residual_margin_preserved": false,
+      "support_margin_after_stress": -0.00099999999999964
+    }
+  ],
+  "support_floor": 9.85,
+  "trace_digest": "aee5344d309c3823bbec50f6ade1828669a0b7ecf613a9582bba6f1f6fe2d4db"
+}

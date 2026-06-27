@@ -1,0 +1,20 @@
+{
+  "artifact_id": "n24_i5a_support_surplus_margin_trace",
+  "payload": {
+    "coherence_floor_value": 9.85,
+    "coherence_formula": "observed_coherence - coherence_floor_value",
+    "coherence_surplus_margin": 1.1500000000000004,
+    "formula": "observed_support - support_floor_value",
+    "minimum_coherence_surplus_margin": 0.1,
+    "minimum_support_surplus_margin": 0.1,
+    "observed_coherence": 11.0,
+    "observed_support": 11.0,
+    "support_aggregation_method": "min",
+    "support_floor_value": 9.85,
+    "support_measurement_scope": "maintenance_basin_node_set",
+    "support_surplus_margin": 1.1500000000000004
+  },
+  "trace_digest": "7ba400c28987425af5a479930967f79c7a90d7d43be4d07849e9b2266e2a7e1c",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

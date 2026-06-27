@@ -1,0 +1,28 @@
+{
+  "artifact_id": "n24_i6_i5_artifact_replay_trace",
+  "artifact_paths": [
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_lgrc9v3_optional_continuation_set_run.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_runtime_config.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+    "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json"
+  ],
+  "candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+  "derived_report_only": false,
+  "manifest_artifacts_parseable": true,
+  "manifest_entry_count": 10,
+  "manifest_sha256_match_file_contents": true,
+  "replay_digest": "4f7b08567af0c79bd72fb9ec5cd9d8f6b22c1f3df6b37014a044ec8f63b79d88",
+  "result": "passed",
+  "source_current_inputs_present": true,
+  "source_iteration": 5,
+  "source_output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+  "source_output_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe.json",
+  "source_output_sha256": "e4dbddde2e2b5ebeba0b79a76c2cc78d5d94dd3928e3fa16abc18f4c7256dff3",
+  "source_row_output_digest": "8d659e534fc332292f0ab43992a0992b97a33bc7b5e877c1b237fc4a39d28955"
+}

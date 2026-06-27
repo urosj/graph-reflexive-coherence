@@ -1,0 +1,14 @@
+{
+  "artifact_id": "n24_i6_i4_duplicate_replay_trace",
+  "candidate_row_id": "n24_i4_row_01_minimal_source_current_surplus_probe",
+  "duplicate_digest_matches": true,
+  "git_metadata_excluded": true,
+  "local_absolute_paths_excluded": true,
+  "recomputed_row_output_digest": "d38ee952b72037372e3439ad63796386f63d833e266d36e706c3ec8de1cbc486",
+  "replay_digest": "03443eb9002393468f30fbed49248400007eb3080e80655bb234d11ec4b145e2",
+  "result": "passed",
+  "source_iteration": 4,
+  "source_output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+  "source_row_output_digest": "d38ee952b72037372e3439ad63796386f63d833e266d36e706c3ec8de1cbc486",
+  "timestamp_independent": true
+}

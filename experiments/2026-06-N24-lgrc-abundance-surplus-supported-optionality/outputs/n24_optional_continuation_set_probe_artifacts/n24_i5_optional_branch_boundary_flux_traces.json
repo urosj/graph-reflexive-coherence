@@ -1,0 +1,25 @@
+{
+  "artifact_id": "n24_i5_optional_branch_boundary_flux_traces",
+  "payload": {
+    "boundary_integrity_result": "preserved",
+    "branch_ids": [
+      "n24_i5_branch_01_to_node_1",
+      "n24_i5_branch_02_to_node_5",
+      "n24_i5_branch_03_to_node_9"
+    ],
+    "branch_specific_boundary_flux_traces_present": true,
+    "flux_or_leakage_result": "preserved",
+    "observed_optional_flux_drain": 0.0,
+    "optional_flux_drain_margin": 1e-09,
+    "optionality_window": {
+      "end_step": 0,
+      "maintenance_floor_declared_before_window": true,
+      "start_step": 0,
+      "window_id": "n24_i5_source_current_optionality_window",
+      "window_role": "same source-current availability window; no deterministic replay or stress validation yet"
+    }
+  },
+  "trace_digest": "97c1f84c09232cc6d629616c1dbe2c94f0b7618bd98533ffa3981240bb957af3",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}

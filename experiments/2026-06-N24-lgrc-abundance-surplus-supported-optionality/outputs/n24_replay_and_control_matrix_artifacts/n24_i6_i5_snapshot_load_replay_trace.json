@@ -1,0 +1,22 @@
+{
+  "artifact_id": "n24_i6_i5_snapshot_load_replay_trace",
+  "boundary_signature_preserved": true,
+  "candidate_row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+  "coherence_floor": 9.85,
+  "coherence_margin": 0.15000000000000036,
+  "coherence_margin_preserved": true,
+  "loaded_maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+  "loaded_model_family": "LGRC9V3",
+  "observed_min_coherence": 10.0,
+  "observed_min_support": 10.0,
+  "replay_digest": "3df866c855a30d77c1c3126afec541f7acc8e6851070465c246ef09f6004aa9b",
+  "result": "passed",
+  "snapshot_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+  "snapshot_sha256_matches_manifest": true,
+  "source_iteration": 5,
+  "source_output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+  "source_row_maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+  "support_floor": 9.85,
+  "support_margin": 0.15000000000000036,
+  "support_margin_preserved": true
+}

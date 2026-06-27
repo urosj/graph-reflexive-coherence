@@ -1,0 +1,1524 @@
+{
+  "acceptance_state": "accepted_source_current_ab3_optional_continuation_candidate_pending_replay_controls_no_ab4",
+  "artifact_id": "n24_optional_continuation_set_probe",
+  "candidate_rows": [
+    {
+      "agency_claim_allowed": false,
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_condition_reason": "I5 claims route/branch-conditioned optionality, so N23 AP4 bridge context is recorded as a load-bearing local dependency; final global AP4 reclassification remains false.",
+      "ap4_context_status": "n23_bridge_candidate_consumed",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy, reward, or target formation participates in I5 optionality measurement.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "boundary_integrity_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json",
+          "sha256": "6ee27be5ee8bb0fc857651f141e55808f27d1804eeb4cac36c5e4868b770a762"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_lgrc9v3_optional_continuation_set_run.json",
+          "sha256": "b2d888eb7814eabb64a735a20a916fd295f824084c4146e6fdc67255c0738f3a"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json",
+          "sha256": "f1e5258c4a1d7b8a6011b86e3792450bc37905773cb9eb70e80eb273f55aeeca"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json",
+          "sha256": "1e75d28e81ab6e97baf382b09c3b6256b6360dde2a1a605783a0990c41ccdd56"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json",
+          "sha256": "5c6379eff948100ad884fa555942331468deff914d6f0fe190dc591efbcec7f6"
+        },
+        {
+          "artifact_role": "optional_continuation_set_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+          "sha256": "267a39dfcca2d39e3de2a64a095565b9e7da755a0765d77ab74489a8e257fa77"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_runtime_config.json",
+          "sha256": "23cf8eb4729728a23c707d15cabf4af048bc7852cbb33a5b7872d98b32980a50"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "surplus_margin_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+          "sha256": "ddb1103ffea5fab5e5d30b39e7475c0371d4989cc5e582bcf774a2b2f3c999d1"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json",
+          "sha256": "f5ce31042c8533cef0f2e7fc336d77ac538447e61d59227c6acc0de676dbde75"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_lgrc9v3_optional_continuation_set_run.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_runtime_config.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json"
+      ],
+      "artifact_paths_equal_manifest_paths": true,
+      "artifact_sha256": {
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json": "6ee27be5ee8bb0fc857651f141e55808f27d1804eeb4cac36c5e4868b770a762",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_lgrc9v3_optional_continuation_set_run.json": "b2d888eb7814eabb64a735a20a916fd295f824084c4146e6fdc67255c0738f3a",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json": "f1e5258c4a1d7b8a6011b86e3792450bc37905773cb9eb70e80eb273f55aeeca",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json": "1e75d28e81ab6e97baf382b09c3b6256b6360dde2a1a605783a0990c41ccdd56",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json": "5c6379eff948100ad884fa555942331468deff914d6f0fe190dc591efbcec7f6",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json": "267a39dfcca2d39e3de2a64a095565b9e7da755a0765d77ab74489a8e257fa77",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_runtime_config.json": "23cf8eb4729728a23c707d15cabf4af048bc7852cbb33a5b7872d98b32980a50",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json": "ddb1103ffea5fab5e5d30b39e7475c0371d4989cc5e582bcf774a2b2f3c999d1",
+        "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json": "f5ce31042c8533cef0f2e7fc336d77ac538447e61d59227c6acc0de676dbde75"
+      },
+      "artifact_sha256_equal_manifest_sha256": true,
+      "blocked_relabel_fields": [
+        "surplus_supported_optionality.blocked.abundance_as_goal",
+        "surplus_supported_optionality.blocked.agency",
+        "surplus_supported_optionality.blocked.consciousness",
+        "surplus_supported_optionality.blocked.identity_acceptance",
+        "surplus_supported_optionality.blocked.native_ant_agency",
+        "surplus_supported_optionality.blocked.native_colony_agency",
+        "surplus_supported_optionality.blocked.native_support",
+        "surplus_supported_optionality.blocked.organism_life",
+        "surplus_supported_optionality.blocked.phase8_implementation",
+        "surplus_supported_optionality.blocked.reward_maximization",
+        "surplus_supported_optionality.blocked.selfhood",
+        "surplus_supported_optionality.blocked.semantic_action",
+        "surplus_supported_optionality.blocked.semantic_choice",
+        "surplus_supported_optionality.blocked.semantic_goal",
+        "surplus_supported_optionality.blocked.semantic_goal_ownership",
+        "surplus_supported_optionality.blocked.semantic_intention",
+        "surplus_supported_optionality.blocked.semantic_perception",
+        "surplus_supported_optionality.blocked.sentience",
+        "surplus_supported_optionality.blocked.unrestricted_autonomy"
+      ],
+      "boundary_integrity_floor_value": "maintenance basin node set and topology signature preserved",
+      "boundary_integrity_result": {
+        "maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+        "maintenance_node_ids": [
+          0,
+          1,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "status": "preserved",
+        "topology_signature": {
+          "edge_records": [
+            {
+              "edge_id": 0,
+              "endpoints": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  8
+                ]
+              ]
+            },
+            {
+              "edge_id": 1,
+              "endpoints": [
+                [
+                  2,
+                  7
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            },
+            {
+              "edge_id": 2,
+              "endpoints": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  6
+                ]
+              ]
+            },
+            {
+              "edge_id": 3,
+              "endpoints": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  3
+                ]
+              ]
+            },
+            {
+              "edge_id": 4,
+              "endpoints": [
+                [
+                  0,
+                  4
+                ],
+                [
+                  5,
+                  4
+                ]
+              ]
+            },
+            {
+              "edge_id": 5,
+              "endpoints": [
+                [
+                  6,
+                  3
+                ],
+                [
+                  0,
+                  5
+                ]
+              ]
+            },
+            {
+              "edge_id": 6,
+              "endpoints": [
+                [
+                  0,
+                  6
+                ],
+                [
+                  7,
+                  2
+                ]
+              ]
+            },
+            {
+              "edge_id": 7,
+              "endpoints": [
+                [
+                  8,
+                  1
+                ],
+                [
+                  0,
+                  7
+                ]
+              ]
+            },
+            {
+              "edge_id": 8,
+              "endpoints": [
+                [
+                  0,
+                  8
+                ],
+                [
+                  9,
+                  0
+                ]
+              ]
+            }
+          ],
+          "node_ids": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      },
+      "boundary_integrity_under_optionality_trace": {
+        "artifact_role": "boundary_integrity_trace",
+        "artifact_subtype": "boundary_integrity_under_optionality_trace",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json",
+        "trace_digest": "5ee09d95d69d14fe54195427687acccfc4a28fa3a97252558010bd9d5a4d6c14",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "claim_ceiling": "provisional source-current AB3 optional continuation candidate pending replay/control matrix; reward maximization, semantic choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked",
+      "coherence_floor_result": {
+        "coherence_floor": 9.85,
+        "coherence_surplus_margin": 0.15000000000000036,
+        "observed_coherence": 10.0,
+        "status": "preserved"
+      },
+      "coherence_floor_value": 9.85,
+      "coherence_surplus_margin_trace": {
+        "artifact_role": "surplus_margin_trace",
+        "coherence_surplus_margin": 0.15000000000000036,
+        "minimum_coherence_surplus_margin": 0.1,
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+        "trace_digest": "48b2efaa20f29c5d493bbdff6f03eb5898f258189986af80395a45a6d14b0000",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "control_results": [
+        {
+          "actual_result": "surplus and optionality are measured from LGRC source-current geometry",
+          "blocked_condition": "hidden producer/budget relief supplies surplus",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_budget_relief_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks positive support if triggered"
+        },
+        {
+          "actual_result": "support/coherence floors remain preserved during optionality window",
+          "blocked_condition": "support or coherence floor crossed",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "floor_crossing_as_abundance_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB2+ if triggered"
+        },
+        {
+          "actual_result": "optional_continuation_availability_count=3",
+          "blocked_condition": "surplus appears without optional continuation set",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "surplus_without_optional_continuation_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB3+ if triggered"
+        },
+        {
+          "actual_result": "support/coherence surplus margins remain positive",
+          "blocked_condition": "optional branch exists without surplus",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "optionality_without_surplus_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB3+ if triggered"
+        },
+        {
+          "actual_result": "reward/proxy labels absent on every branch",
+          "blocked_condition": "proxy gain replaces geometry",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "proxy_only_optional_branch_gain_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks optionality support if triggered"
+        },
+        {
+          "actual_result": "branch-specific source-current support/coherence and boundary/flux traces present",
+          "blocked_condition": "optional branch label replaces branch geometry",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "optional_branch_label_only_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB3+ if triggered"
+        },
+        {
+          "actual_result": "three same-window source-current branches are present",
+          "blocked_condition": "single branch relabeled as optionality",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "single_optional_branch_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB3+ if triggered"
+        },
+        {
+          "actual_result": "all branches originate in the same source-current run and window",
+          "blocked_condition": "independent runs assembled as one optional set",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "independent_run_optional_assembly_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB3+ if triggered"
+        },
+        {
+          "actual_result": "single declared maintenance basin signature used",
+          "blocked_condition": "floor and surplus measured on different basins",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "maintenance_basin_shift_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks surplus/optionality support if triggered"
+        },
+        {
+          "actual_result": "row-specific threshold record declared_before_use=true",
+          "blocked_condition": "floor retuned after outcome inspection",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "floor_renormalization_as_surplus_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks surplus claim if triggered"
+        },
+        {
+          "actual_result": "surplus and optional branch traces emitted as source-current artifacts",
+          "blocked_condition": "surplus or optionality assembled after the fact",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "post_hoc_surplus_construction_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks AB3+ if triggered"
+        },
+        {
+          "actual_result": "N23 context remains AP4 bridge context only",
+          "blocked_condition": "N23 selection context relabeled as abundance",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "n23_selection_context_relabel_as_abundance_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks N23 context relabel if triggered"
+        },
+        {
+          "actual_result": "reward_maximization_claim_allowed=false",
+          "blocked_condition": "reward score relabeled as abundance",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reward_maximization_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks reward overclaim if triggered"
+        },
+        {
+          "actual_result": "semantic choice remains blocked",
+          "blocked_condition": "semantic choice relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_choice_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks unsafe claims if triggered"
+        },
+        {
+          "actual_result": "agency remains blocked",
+          "blocked_condition": "agency relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks unsafe claims if triggered"
+        },
+        {
+          "actual_result": "native support remains blocked",
+          "blocked_condition": "native support relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks unsafe claims if triggered"
+        },
+        {
+          "actual_result": "Phase 8 remains blocked",
+          "blocked_condition": "Phase 8 implementation relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks unsafe claims if triggered"
+        },
+        {
+          "actual_result": "AP4 bridge context remains local and final global AP4 remains false",
+          "blocked_condition": "final global AP4 reclassification relabel",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap4_final_reclassification_relabel_control",
+          "control_satisfied_for_positive_row": true,
+          "control_status": "passed",
+          "expected_result": "blocker absent and claim ceiling preserved",
+          "rung_effect": "blocks final global AP4 reclassification"
+        },
+        {
+          "actual_result": "ap5_dependency_status=not_applicable",
+          "blocked_condition": "proxy/reward/target row omits AP5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap5_proxy_gap_omission_control",
+          "control_satisfied_for_positive_row": false,
+          "control_status": "not_applicable",
+          "expected_result": "not applicable when proxy/reward/target absent",
+          "rung_effect": "not applicable for non-proxy I5 row"
+        }
+      ],
+      "derived_report_only": false,
+      "final_global_ap4_reclassification_supported": false,
+      "floor_crossing_rejected": true,
+      "floor_renormalization_rejected": true,
+      "flux_or_leakage_bound": 1e-09,
+      "flux_or_leakage_result": {
+        "flux_or_leakage_bound": 1e-09,
+        "in_flight_packet_total": 0.0,
+        "packet_budget_error": 0.0,
+        "status": "preserved"
+      },
+      "hidden_budget_relief_absent": true,
+      "hidden_budget_relief_rejected": true,
+      "independent_run_optional_assembly_rejected": true,
+      "jointly_admissible_optional_continuation_count": 0,
+      "maintenance_basin_id": "n24_i4_core_support_maintenance_basin",
+      "maintenance_basin_shift_rejected": true,
+      "maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+      "maintenance_floor_policy": "predeclared_support_and_coherence_floors_required",
+      "maintenance_floor_trace": {
+        "artifact_role": "maintenance_floor_trace",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json",
+        "trace_digest": "511c293f50d261c39098f0d7473a7c5a5c626d2a128ccd747a1c90249331d31c",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "maintenance_floor_trace_digest": "511c293f50d261c39098f0d7473a7c5a5c626d2a128ccd747a1c90249331d31c",
+      "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+      "n23_ap4_bridge_status": "bridge_candidate_supported",
+      "n23_closeout_required": true,
+      "n23_context_consumption": "n23_bridge_candidate_consumed",
+      "n23_context_relabel_rejected": true,
+      "n23_source_closeout_status": "passed",
+      "native_support_claim_allowed": false,
+      "naturalization_debt_fields": [
+        "surplus_supported_optionality.source_current_optional_branch_telemetry",
+        "surplus_supported_optionality.surplus_budget_owner",
+        "surplus_supported_optionality.hidden_budget_relief_control"
+      ],
+      "optional_branch_boundary_flux_traces": {
+        "artifact_role": "optional_branch_trace",
+        "artifact_subtype": "optional_branch_boundary_flux_trace",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json",
+        "trace_digest": "97c1f84c09232cc6d629616c1dbe2c94f0b7618bd98533ffa3981240bb957af3",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "optional_branch_evidence_mode": "source_current_available_unexecuted",
+      "optional_branch_label_only_rejected": true,
+      "optional_branch_persistence_ratio": 1.0,
+      "optional_branch_records": [
+        {
+          "admissibility_status": "admissible",
+          "boundary_integrity_result": "preserved",
+          "branch_id": "n24_i5_branch_01_to_node_1",
+          "coherence_after_or_projected_after": 13.0,
+          "coherence_before": 13.0,
+          "coherence_surplus_margin_after": 3.1500000000000004,
+          "coherence_surplus_margin_before": 3.1500000000000004,
+          "edge_id_or_route_id": "edge_0",
+          "flux_or_leakage_result": "preserved",
+          "maintenance_floor_preserved": true,
+          "optional_flux_cost": 0.0,
+          "optionality_window_step_range": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n24_i5_source_current_optionality_window"
+          },
+          "producer_enumeration_used": false,
+          "reward_or_proxy_label_used": false,
+          "source_node_id": 0,
+          "support_after_or_projected_after": 13.0,
+          "support_before": 13.0,
+          "support_surplus_margin_after": 3.1500000000000004,
+          "support_surplus_margin_before": 3.1500000000000004,
+          "target_node_id": 1,
+          "trace_origin": "source_current_same_run",
+          "trace_status": "present"
+        },
+        {
+          "admissibility_status": "admissible",
+          "boundary_integrity_result": "preserved",
+          "branch_id": "n24_i5_branch_02_to_node_5",
+          "coherence_after_or_projected_after": 11.0,
+          "coherence_before": 11.0,
+          "coherence_surplus_margin_after": 1.1500000000000004,
+          "coherence_surplus_margin_before": 1.1500000000000004,
+          "edge_id_or_route_id": "edge_4",
+          "flux_or_leakage_result": "preserved",
+          "maintenance_floor_preserved": true,
+          "optional_flux_cost": 0.0,
+          "optionality_window_step_range": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n24_i5_source_current_optionality_window"
+          },
+          "producer_enumeration_used": false,
+          "reward_or_proxy_label_used": false,
+          "source_node_id": 0,
+          "support_after_or_projected_after": 11.0,
+          "support_before": 11.0,
+          "support_surplus_margin_after": 1.1500000000000004,
+          "support_surplus_margin_before": 1.1500000000000004,
+          "target_node_id": 5,
+          "trace_origin": "source_current_same_run",
+          "trace_status": "present"
+        },
+        {
+          "admissibility_status": "admissible",
+          "boundary_integrity_result": "preserved",
+          "branch_id": "n24_i5_branch_03_to_node_9",
+          "coherence_after_or_projected_after": 12.0,
+          "coherence_before": 12.0,
+          "coherence_surplus_margin_after": 2.1500000000000004,
+          "coherence_surplus_margin_before": 2.1500000000000004,
+          "edge_id_or_route_id": "edge_8",
+          "flux_or_leakage_result": "preserved",
+          "maintenance_floor_preserved": true,
+          "optional_flux_cost": 0.0,
+          "optionality_window_step_range": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n24_i5_source_current_optionality_window"
+          },
+          "producer_enumeration_used": false,
+          "reward_or_proxy_label_used": false,
+          "source_node_id": 0,
+          "support_after_or_projected_after": 12.0,
+          "support_before": 12.0,
+          "support_surplus_margin_after": 2.1500000000000004,
+          "support_surplus_margin_before": 2.1500000000000004,
+          "target_node_id": 9,
+          "trace_origin": "source_current_same_run",
+          "trace_status": "present"
+        }
+      ],
+      "optional_branch_support_coherence_traces": {
+        "artifact_role": "optional_branch_trace",
+        "artifact_subtype": "optional_branch_support_coherence_trace",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json",
+        "trace_digest": "81440afa7fae1e3b4c26d3359f6743fb7644f810ec0f644614eb0958addfbfca",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "optional_continuation_availability_count": 3,
+      "optional_continuation_count": 3,
+      "optional_continuation_set_trace": {
+        "artifact_role": "optional_continuation_set_trace",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+        "same_declared_optionality_window": true,
+        "same_source_current_run": true,
+        "trace_digest": "a18164fba37be82a38b911e8ade9eb91d293b4c763b00c706ad49dda2199fdc7",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "optional_continuation_trace_digest": "a18164fba37be82a38b911e8ade9eb91d293b4c763b00c706ad49dda2199fdc7",
+      "optional_flux_does_not_drain_maintenance_support": true,
+      "optional_flux_does_not_drain_maintenance_support_status": "preserved",
+      "optional_flux_drain_margin": 1e-09,
+      "optionality_not_label_reassignment": true,
+      "optionality_threshold_or_rule": {
+        "ab3_minimum_availability_count": 2,
+        "ab5_minimum_jointly_admissible_count": 2,
+        "boundary_integrity_floor_value": "maintenance basin node set and topology signature preserved",
+        "coherence_floor_value": 9.85,
+        "declared_before_use": true,
+        "field_specific_acceptance": {
+          "boundary_integrity_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "coherence_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "flux_or_leakage_result": [
+            "preserved",
+            "changed_within_bound"
+          ],
+          "support_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ]
+        },
+        "flux_or_leakage_bound": 1e-09,
+        "minimum_coherence_surplus_margin": 0.1,
+        "minimum_support_surplus_margin": 0.1,
+        "support_floor_value": 9.85,
+        "threshold_record_digest": "bff3adfc4cb8d1c0eaac759ac88f8d05e987b6cce2e2671b505dfdbba5759afa",
+        "threshold_record_id": "n24_i5_thresholds_declared_before_use"
+      },
+      "optionality_window": {
+        "end_step": 0,
+        "maintenance_floor_declared_before_window": true,
+        "start_step": 0,
+        "window_id": "n24_i5_source_current_optionality_window",
+        "window_role": "same source-current availability window; no deterministic replay or stress validation yet"
+      },
+      "optionality_without_surplus_rejected": true,
+      "out_of_scope_drift_blocks_row": true,
+      "output_digest": "8d659e534fc332292f0ab43992a0992b97a33bc7b5e877c1b237fc4a39d28955",
+      "post_hoc_surplus_rejected": true,
+      "pre_surplus_geometry_trace": {
+        "artifact_role": "runtime_trace",
+        "maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "producer_residue_fields": [
+        "surplus_supported_optionality.optionality_enumerator",
+        "surplus_supported_optionality.exploration_schedule",
+        "surplus_supported_optionality.reward_or_proxy_label"
+      ],
+      "proxy_only_success_rejected": true,
+      "replay_optionality_digest": "not_run_until_iteration_6",
+      "replay_result": {
+        "affected_rungs": [
+          "AB4",
+          "AB5",
+          "AB6",
+          "N24-C4",
+          "N24-C5",
+          "N24-C6"
+        ],
+        "artifact_replay": "not_run",
+        "duplicate_replay": "not_run",
+        "not_run_reason": "I5 opens the first source-current optional set; replay/control-backed AB4+ evidence remains I6 scope",
+        "snapshot_load_replay": "not_run"
+      },
+      "replay_surplus_digest": "not_run_until_iteration_6",
+      "residual_coherence_margin_under_optionality": 0.15000000000000036,
+      "residual_support_margin_under_optionality": 0.15000000000000036,
+      "reward_maximization_claim_allowed": false,
+      "reward_or_proxy_label_absent_or_blocked": true,
+      "row_decision": "partial",
+      "row_id": "n24_i5_row_01_source_current_optional_continuation_set_probe",
+      "row_specific_thresholds_declared_before_use": {
+        "declared_before_use": true,
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json",
+        "sha256": "f5ce31042c8533cef0f2e7fc336d77ac538447e61d59227c6acc0de676dbde75",
+        "threshold_record": {
+          "ab3_minimum_availability_count": 2,
+          "ab5_minimum_jointly_admissible_count": 2,
+          "boundary_integrity_floor_value": "maintenance basin node set and topology signature preserved",
+          "coherence_floor_value": 9.85,
+          "declared_before_use": true,
+          "field_specific_acceptance": {
+            "boundary_integrity_result": [
+              "preserved",
+              "changed_within_allowed_delta_above_floor"
+            ],
+            "coherence_floor_result": [
+              "preserved",
+              "changed_within_allowed_delta_above_floor"
+            ],
+            "flux_or_leakage_result": [
+              "preserved",
+              "changed_within_bound"
+            ],
+            "support_floor_result": [
+              "preserved",
+              "changed_within_allowed_delta_above_floor"
+            ]
+          },
+          "flux_or_leakage_bound": 1e-09,
+          "minimum_coherence_surplus_margin": 0.1,
+          "minimum_support_surplus_margin": 0.1,
+          "support_floor_value": 9.85,
+          "threshold_record_digest": "bff3adfc4cb8d1c0eaac759ac88f8d05e987b6cce2e2671b505dfdbba5759afa",
+          "threshold_record_id": "n24_i5_thresholds_declared_before_use"
+        }
+      },
+      "run_artifact_id": "n24_i5_lgrc9v3_optional_continuation_set_run",
+      "runtime_config_digest": "5b75e09804309bbdff2d03513ff13c32a905a6990a1a965e10469df01cc0e177",
+      "same_basin_continuation_rule": {
+        "allowed_drift": "optional branches may open only while maintenance basin remains above floor",
+        "basin_signature_fields": [
+          "surplus_supported_optionality.support_surplus_margin_trace",
+          "surplus_supported_optionality.optional_continuation_set_trace",
+          "surplus_supported_optionality.maintenance_floor_trace"
+        ],
+        "blocked_relabels": [
+          "surplus_supported_optionality.blocked.abundance_as_goal",
+          "surplus_supported_optionality.blocked.agency",
+          "surplus_supported_optionality.blocked.consciousness",
+          "surplus_supported_optionality.blocked.identity_acceptance",
+          "surplus_supported_optionality.blocked.native_ant_agency",
+          "surplus_supported_optionality.blocked.native_colony_agency",
+          "surplus_supported_optionality.blocked.native_support",
+          "surplus_supported_optionality.blocked.organism_life",
+          "surplus_supported_optionality.blocked.phase8_implementation",
+          "surplus_supported_optionality.blocked.reward_maximization",
+          "surplus_supported_optionality.blocked.selfhood",
+          "surplus_supported_optionality.blocked.semantic_action",
+          "surplus_supported_optionality.blocked.semantic_choice",
+          "surplus_supported_optionality.blocked.semantic_goal",
+          "surplus_supported_optionality.blocked.semantic_goal_ownership",
+          "surplus_supported_optionality.blocked.semantic_intention",
+          "surplus_supported_optionality.blocked.semantic_perception",
+          "surplus_supported_optionality.blocked.sentience",
+          "surplus_supported_optionality.blocked.unrestricted_autonomy"
+        ],
+        "boundary_integrity_floor": "boundary remains coherent while optional branches are open",
+        "failure_modes": [
+          "hidden budget relief",
+          "maintenance floor crossing",
+          "optional branch label without geometry",
+          "reward/proxy gain mistaken for abundance"
+        ],
+        "flux_balance_bounds": "optional branch flux cannot drain maintenance support below floor",
+        "hidden_producer_support_allowed": false,
+        "label_only_continuation_allowed": false,
+        "proxy_only_success_allowed": false,
+        "replay_requirement": "surplus and optional branch set replay under same budget surface",
+        "required_coherence_floor": "maintenance coherence floor preserved",
+        "required_support_floor": "maintenance support floor preserved",
+        "rule_id": "n20_i5_surplus_supported_optionality_same_basin_rule",
+        "source_contract_row": "n20_i4_row_05_surplus_supported_optionality"
+      },
+      "same_basin_invariant_fields": [
+        "surplus_supported_optionality.support_surplus_margin_trace",
+        "surplus_supported_optionality.optional_continuation_set_trace",
+        "surplus_supported_optionality.maintenance_floor_trace"
+      ],
+      "semantic_choice_claim_allowed": false,
+      "source_commit_or_source_digest": {
+        "script_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_optional_continuation_set_probe.py",
+        "script_sha256": "a751738a556c13ce90f9930165706fdfa60aa7b48467442003cab53cfc67a4ba"
+      },
+      "source_consumable_contract_row": "n20_i5_row_05_surplus_supported_optionality",
+      "source_consumable_contract_row_digest": "daf53d4eed625cbdda0c391a5371748859f89552ce4bd3bd8aff6f55132e3233",
+      "source_contract_row": "n20_i4_row_05_surplus_supported_optionality",
+      "source_contract_row_digest": "7f962755c36a8ae6b0acdc831bbdcbecdc6ed6169ac8d7176954cbd900cede84",
+      "source_current_inputs": [
+        "LGRC9V3 source-current runtime snapshot",
+        "LGRC9V3 maintenance-basin node metrics",
+        "source-current support/coherence surplus margin trace",
+        "source-current optional continuation set trace",
+        "source-current optional branch support/coherence traces",
+        "source-current optional branch boundary/flux traces",
+        "source-current boundary under optionality trace"
+      ],
+      "source_current_required_fields": [
+        "surplus_supported_optionality.support_surplus_margin_trace",
+        "surplus_supported_optionality.optional_continuation_set_trace",
+        "surplus_supported_optionality.maintenance_floor_trace",
+        "surplus_supported_optionality.boundary_integrity_under_optionality_trace"
+      ],
+      "source_output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+      "support_aggregation_method": "min",
+      "support_floor_result": {
+        "observed_support": 10.0,
+        "status": "preserved",
+        "support_floor": 9.85,
+        "support_surplus_margin": 0.15000000000000036
+      },
+      "support_floor_value": 9.85,
+      "support_measurement_scope": "maintenance_basin_node_set",
+      "support_surplus_margin_trace": {
+        "artifact_role": "surplus_margin_trace",
+        "minimum_support_surplus_margin": 0.1,
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+        "support_surplus_margin": 0.15000000000000036,
+        "trace_digest": "48b2efaa20f29c5d493bbdff6f03eb5898f258189986af80395a45a6d14b0000",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "surplus_budget_owner": "source_current_geometry",
+      "surplus_channel_policy": "support_surplus_required_and_coherence_floor_preserved",
+      "surplus_persistence_ratio": 1.0,
+      "surplus_supported_optionality_claim_allowed": false,
+      "surplus_threshold_or_rule": {
+        "ab3_minimum_availability_count": 2,
+        "ab5_minimum_jointly_admissible_count": 2,
+        "boundary_integrity_floor_value": "maintenance basin node set and topology signature preserved",
+        "coherence_floor_value": 9.85,
+        "declared_before_use": true,
+        "field_specific_acceptance": {
+          "boundary_integrity_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "coherence_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "flux_or_leakage_result": [
+            "preserved",
+            "changed_within_bound"
+          ],
+          "support_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ]
+        },
+        "flux_or_leakage_bound": 1e-09,
+        "minimum_coherence_surplus_margin": 0.1,
+        "minimum_support_surplus_margin": 0.1,
+        "support_floor_value": 9.85,
+        "threshold_record_digest": "bff3adfc4cb8d1c0eaac759ac88f8d05e987b6cce2e2671b505dfdbba5759afa",
+        "threshold_record_id": "n24_i5_thresholds_declared_before_use"
+      },
+      "surplus_trace_digest": "48b2efaa20f29c5d493bbdff6f03eb5898f258189986af80395a45a6d14b0000",
+      "surplus_without_optional_continuation_rejected_or_demoted": true,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "ant_ecology_implementation": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "reward_maximization": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_ready",
+      "detail": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i4_ab2_surplus_ready",
+      "detail": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+      "passed": true
+    },
+    {
+      "check_id": "candidate_row_field_set_matches_i2_required_fields",
+      "detail": {
+        "candidate_count": 104,
+        "extra": [],
+        "missing": [],
+        "required_count": 104
+      },
+      "passed": true
+    },
+    {
+      "check_id": "derived_report_only_false",
+      "detail": false,
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_present",
+      "detail": [
+        "LGRC9V3 source-current runtime snapshot",
+        "LGRC9V3 maintenance-basin node metrics",
+        "source-current support/coherence surplus margin trace",
+        "source-current optional continuation set trace",
+        "source-current optional branch support/coherence traces",
+        "source-current optional branch boundary/flux traces",
+        "source-current boundary under optionality trace"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_non_empty",
+      "detail": [
+        {
+          "artifact_role": "boundary_integrity_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json",
+          "sha256": "6ee27be5ee8bb0fc857651f141e55808f27d1804eeb4cac36c5e4868b770a762"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_lgrc9v3_optional_continuation_set_run.json",
+          "sha256": "b2d888eb7814eabb64a735a20a916fd295f824084c4146e6fdc67255c0738f3a"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json",
+          "sha256": "f1e5258c4a1d7b8a6011b86e3792450bc37905773cb9eb70e80eb273f55aeeca"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json",
+          "sha256": "1e75d28e81ab6e97baf382b09c3b6256b6360dde2a1a605783a0990c41ccdd56"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json",
+          "sha256": "5c6379eff948100ad884fa555942331468deff914d6f0fe190dc591efbcec7f6"
+        },
+        {
+          "artifact_role": "optional_continuation_set_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+          "sha256": "267a39dfcca2d39e3de2a64a095565b9e7da755a0765d77ab74489a8e257fa77"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_runtime_config.json",
+          "sha256": "23cf8eb4729728a23c707d15cabf4af048bc7852cbb33a5b7872d98b32980a50"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "surplus_margin_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+          "sha256": "ddb1103ffea5fab5e5d30b39e7475c0371d4989cc5e582bcf774a2b2f3c999d1"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json",
+          "sha256": "f5ce31042c8533cef0f2e7fc336d77ac538447e61d59227c6acc0de676dbde75"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_roles_allowed_by_i2",
+      "detail": [
+        {
+          "artifact_role": "boundary_integrity_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_boundary_integrity_under_optionality_trace.json",
+          "sha256": "6ee27be5ee8bb0fc857651f141e55808f27d1804eeb4cac36c5e4868b770a762"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_lgrc9v3_optional_continuation_set_run.json",
+          "sha256": "b2d888eb7814eabb64a735a20a916fd295f824084c4146e6fdc67255c0738f3a"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_maintenance_floor_trace.json",
+          "sha256": "f1e5258c4a1d7b8a6011b86e3792450bc37905773cb9eb70e80eb273f55aeeca"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_boundary_flux_traces.json",
+          "sha256": "1e75d28e81ab6e97baf382b09c3b6256b6360dde2a1a605783a0990c41ccdd56"
+        },
+        {
+          "artifact_role": "optional_branch_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_branch_support_coherence_traces.json",
+          "sha256": "5c6379eff948100ad884fa555942331468deff914d6f0fe190dc591efbcec7f6"
+        },
+        {
+          "artifact_role": "optional_continuation_set_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+          "sha256": "267a39dfcca2d39e3de2a64a095565b9e7da755a0765d77ab74489a8e257fa77"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_runtime_config.json",
+          "sha256": "23cf8eb4729728a23c707d15cabf4af048bc7852cbb33a5b7872d98b32980a50"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "surplus_margin_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_support_surplus_margin_trace.json",
+          "sha256": "ddb1103ffea5fab5e5d30b39e7475c0371d4989cc5e582bcf774a2b2f3c999d1"
+        },
+        {
+          "artifact_role": "maintenance_floor_trace",
+          "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_thresholds_declared_before_use.json",
+          "sha256": "f5ce31042c8533cef0f2e7fc336d77ac538447e61d59227c6acc0de676dbde75"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_current_optional_set_present",
+      "detail": {
+        "artifact_role": "optional_continuation_set_trace",
+        "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_optional_continuation_set_trace.json",
+        "same_declared_optionality_window": true,
+        "same_source_current_run": true,
+        "trace_digest": "a18164fba37be82a38b911e8ade9eb91d293b4c763b00c706ad49dda2199fdc7",
+        "trace_origin": "source_current_same_run",
+        "trace_status": "present"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ab3_availability_count_met",
+      "detail": {
+        "availability_count": 3,
+        "optional_count": 3
+      },
+      "passed": true
+    },
+    {
+      "check_id": "maintenance_floors_preserved_under_optionality",
+      "detail": {
+        "residual_coherence_margin": 0.15000000000000036,
+        "residual_support_margin": 0.15000000000000036
+      },
+      "passed": true
+    },
+    {
+      "check_id": "boundary_flux_and_optional_drain_preserved",
+      "detail": {
+        "boundary": {
+          "maintenance_basin_signature_digest": "958615245d0d70ddf2ce8ef7708416af3e0835a5fffde63f3cc9c21abedecb22",
+          "maintenance_node_ids": [
+            0,
+            1,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "status": "preserved",
+          "topology_signature": {
+            "edge_records": [
+              {
+                "edge_id": 0,
+                "endpoints": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    8
+                  ]
+                ]
+              },
+              {
+                "edge_id": 1,
+                "endpoints": [
+                  [
+                    2,
+                    7
+                  ],
+                  [
+                    0,
+                    1
+                  ]
+                ]
+              },
+              {
+                "edge_id": 2,
+                "endpoints": [
+                  [
+                    0,
+                    2
+                  ],
+                  [
+                    3,
+                    6
+                  ]
+                ]
+              },
+              {
+                "edge_id": 3,
+                "endpoints": [
+                  [
+                    4,
+                    5
+                  ],
+                  [
+                    0,
+                    3
+                  ]
+                ]
+              },
+              {
+                "edge_id": 4,
+                "endpoints": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    5,
+                    4
+                  ]
+                ]
+              },
+              {
+                "edge_id": 5,
+                "endpoints": [
+                  [
+                    6,
+                    3
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ]
+              },
+              {
+                "edge_id": 6,
+                "endpoints": [
+                  [
+                    0,
+                    6
+                  ],
+                  [
+                    7,
+                    2
+                  ]
+                ]
+              },
+              {
+                "edge_id": 7,
+                "endpoints": [
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    0,
+                    7
+                  ]
+                ]
+              },
+              {
+                "edge_id": 8,
+                "endpoints": [
+                  [
+                    0,
+                    8
+                  ],
+                  [
+                    9,
+                    0
+                  ]
+                ]
+              }
+            ],
+            "node_ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        },
+        "flux": {
+          "flux_or_leakage_bound": 1e-09,
+          "in_flight_packet_total": 0.0,
+          "packet_budget_error": 0.0,
+          "status": "preserved"
+        },
+        "optional_flux_status": "preserved"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "branch_records_are_source_current_not_labels",
+      "detail": [
+        {
+          "admissibility_status": "admissible",
+          "boundary_integrity_result": "preserved",
+          "branch_id": "n24_i5_branch_01_to_node_1",
+          "coherence_after_or_projected_after": 13.0,
+          "coherence_before": 13.0,
+          "coherence_surplus_margin_after": 3.1500000000000004,
+          "coherence_surplus_margin_before": 3.1500000000000004,
+          "edge_id_or_route_id": "edge_0",
+          "flux_or_leakage_result": "preserved",
+          "maintenance_floor_preserved": true,
+          "optional_flux_cost": 0.0,
+          "optionality_window_step_range": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n24_i5_source_current_optionality_window"
+          },
+          "producer_enumeration_used": false,
+          "reward_or_proxy_label_used": false,
+          "source_node_id": 0,
+          "support_after_or_projected_after": 13.0,
+          "support_before": 13.0,
+          "support_surplus_margin_after": 3.1500000000000004,
+          "support_surplus_margin_before": 3.1500000000000004,
+          "target_node_id": 1,
+          "trace_origin": "source_current_same_run",
+          "trace_status": "present"
+        },
+        {
+          "admissibility_status": "admissible",
+          "boundary_integrity_result": "preserved",
+          "branch_id": "n24_i5_branch_02_to_node_5",
+          "coherence_after_or_projected_after": 11.0,
+          "coherence_before": 11.0,
+          "coherence_surplus_margin_after": 1.1500000000000004,
+          "coherence_surplus_margin_before": 1.1500000000000004,
+          "edge_id_or_route_id": "edge_4",
+          "flux_or_leakage_result": "preserved",
+          "maintenance_floor_preserved": true,
+          "optional_flux_cost": 0.0,
+          "optionality_window_step_range": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n24_i5_source_current_optionality_window"
+          },
+          "producer_enumeration_used": false,
+          "reward_or_proxy_label_used": false,
+          "source_node_id": 0,
+          "support_after_or_projected_after": 11.0,
+          "support_before": 11.0,
+          "support_surplus_margin_after": 1.1500000000000004,
+          "support_surplus_margin_before": 1.1500000000000004,
+          "target_node_id": 5,
+          "trace_origin": "source_current_same_run",
+          "trace_status": "present"
+        },
+        {
+          "admissibility_status": "admissible",
+          "boundary_integrity_result": "preserved",
+          "branch_id": "n24_i5_branch_03_to_node_9",
+          "coherence_after_or_projected_after": 12.0,
+          "coherence_before": 12.0,
+          "coherence_surplus_margin_after": 2.1500000000000004,
+          "coherence_surplus_margin_before": 2.1500000000000004,
+          "edge_id_or_route_id": "edge_8",
+          "flux_or_leakage_result": "preserved",
+          "maintenance_floor_preserved": true,
+          "optional_flux_cost": 0.0,
+          "optionality_window_step_range": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n24_i5_source_current_optionality_window"
+          },
+          "producer_enumeration_used": false,
+          "reward_or_proxy_label_used": false,
+          "source_node_id": 0,
+          "support_after_or_projected_after": 12.0,
+          "support_before": 12.0,
+          "support_surplus_margin_after": 2.1500000000000004,
+          "support_surplus_margin_before": 2.1500000000000004,
+          "target_node_id": 9,
+          "trace_origin": "source_current_same_run",
+          "trace_status": "present"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ab3_only_pending_i6",
+      "detail": "provisional source-current AB3 optional continuation candidate pending replay/control matrix; reward maximization, semantic choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked",
+      "passed": true
+    },
+    {
+      "check_id": "ap4_required_ap5_not_applicable",
+      "detail": {
+        "ap4": "required_recorded",
+        "ap4_context": "n23_bridge_candidate_consumed",
+        "ap5": "not_applicable",
+        "final_global_ap4_reclassification_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_all_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology_implementation": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "reward_maximization": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/build_n24_optional_continuation_set_probe.py",
+  "experiment": "N24_lgrc_abundance_surplus_supported_optionality",
+  "failed_checks": [],
+  "fixture_reuse_audit": {
+    "compared_n23_fixture_snapshot_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_pre_collapse_snapshot.json",
+    "compared_n23_fixture_snapshot_sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+    "interpretation": "N24 I5 re-emits the same LGRC fixture state through its own runtime artifact; the N23 snapshot is compared only to audit fixture reuse and is not consumed as N24 optionality evidence.",
+    "n23_snapshot_consumed_as_n24_optionality_evidence": false,
+    "n24_snapshot_path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_artifacts/n24_i5_source_current_snapshot.json",
+    "n24_snapshot_sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+    "snapshot_hash_matches_n23_pre_collapse_fixture": true
+  },
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "geometric_interpretation": {
+    "availability_vs_admissibility": "I5 supports availability, not stress-backed joint admissibility. jointly_admissible_optional_continuation_count remains 0 until stress/threshold validation.",
+    "claim_boundary": "This supports only provisional AB3 source-current optional continuation evidence. AB4+ requires I6 replay/control validation; AB5+ requires later stress/threshold evidence.",
+    "control_field_semantics": "surplus_without_optional_continuation_rejected_or_demoted=true means the surplus-without-optionality control is satisfied because the bad condition is absent in I5; the field name is inherited from the frozen row schema.",
+    "optionality": "The optionality is geometric rather than semantic: the branch records are LGRC center-to-neighbor edge continuations in the same runtime snapshot, with branch-specific support/coherence and boundary/flux traces.",
+    "persistence_boundary": "surplus_persistence_ratio and optional_branch_persistence_ratio are single-window descriptive placeholders, not replay-backed persistence evidence.",
+    "short_read": "I5 records three source-current available continuations inside one optionality window while the maintenance basin remains above support/coherence floors."
+  },
+  "inherited_n23_context": {
+    "consumption_boundary": "local AP4 bridge context for branch-conditioned optionality; not final global AP4",
+    "n23_ap4_bridge_status": "bridge_candidate_supported",
+    "n23_context_consumption": "n23_bridge_candidate_consumed",
+    "n23_source_closeout_status": "passed",
+    "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json"
+  },
+  "iteration": 5,
+  "iteration5_boundary": {
+    "ab4_or_stronger_supported": false,
+    "ab5_or_stronger_supported": false,
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "boundary_integrity_preserved": true,
+    "final_global_ap4_reclassification_supported": false,
+    "flux_or_leakage_preserved": true,
+    "jointly_admissible_optional_continuation_count": 0,
+    "maintenance_basin_preserved": true,
+    "n24_closeout_ladder_rung_assigned": false,
+    "native_support_supported": false,
+    "optional_continuation_availability_count": 3,
+    "phase8_opened": false,
+    "positive_run_artifacts_consumed": true,
+    "provisional_ab_ladder_rung": "AB3",
+    "ready_for_iteration_6_replay_control_matrix": true,
+    "reward_maximization_supported": false,
+    "semantic_choice_supported": false,
+    "sentience_supported": false,
+    "source_current_inputs_opened": true,
+    "source_current_optional_continuation_set_observed": true,
+    "surplus_supported_optionality_claim_allowed": false
+  },
+  "output_digest": "77a9c3027bb8913a6443379cde883d29157026a8fba21aee8aac1795741e75cb",
+  "purpose": "produce source-current optional continuation set evidence while maintenance floors hold",
+  "schema_version": "n24_optional_continuation_set_probe_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_surplus_optionality_evidence",
+      "output_digest": "f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_source_handoff_inventory.json",
+      "sha256": "ee62e0c2152019d0731ff7c40fd9068ca3c5f610c9fc45bf24c0dd7026462627",
+      "source_role": "n24_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence",
+      "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_schema_and_controls.json",
+      "sha256": "9f3c7a53412b5cbdc845158d27ee7f6c539d584ba4c07fbacc299ff5ac5aa543",
+      "source_role": "n24_i2_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_active_nulls_and_failure_baselines.json",
+      "sha256": "158e1633bbacef1b5d34dd8931a7aedc44d8889441d5bf6c0e67b71f9fd6c110",
+      "source_role": "n24_i3_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls",
+      "output_digest": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3",
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_minimal_surplus_probe.json",
+      "sha256": "53986a0f034920a798067768e97cc46bcea6c95e242d7def1015183f761bd0bb",
+      "source_role": "n24_i4_minimal_surplus_probe",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_n23_lc6_closeout_n24_handoff_ready",
+      "output_digest": "f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef",
+      "source_role": "n23_closeout_and_n24_handoff_context",
+      "status": "passed"
+    }
+  ],
+  "source_backed_probe": {
+    "coherence_floor": 9.85,
+    "coherence_surplus_margin": 0.15000000000000036,
+    "fixture": "examples/grc9v3/_fixtures.py::make_column_h_state",
+    "jointly_admissible_optional_continuation_count": 0,
+    "maintenance_basin_id": "n24_i4_core_support_maintenance_basin",
+    "maintenance_node_ids": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "model_family": "LGRC9V3",
+    "observed_min_coherence": 10.0,
+    "observed_min_support": 10.0,
+    "optional_branch_target_node_ids": [
+      1,
+      5,
+      9
+    ],
+    "optional_continuation_availability_count": 3,
+    "residual_coherence_margin_under_optionality": 0.15000000000000036,
+    "residual_support_margin_under_optionality": 0.15000000000000036,
+    "support_aggregation_method": "min",
+    "support_floor": 9.85,
+    "support_measurement_scope": "maintenance_basin_node_set",
+    "support_surplus_margin": 0.15000000000000036
+  },
+  "source_digest_chain_audit": {
+    "digest_chain_interpretation": "I5 consumes the current repo I2/I3/I4 output digests; regenerate I4/I5 after any I2 or I3 schema change.",
+    "i2_output_digest_consumed": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
+    "i3_output_digest_consumed": "4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df",
+    "i4_output_digest_consumed": "2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3"
+  },
+  "status": "passed"
+}
