@@ -29,14 +29,14 @@
 - [x] Record `n20_source_downstream_consumption_status` when inherited.
 - [x] Record `n23_source_closeout_status` when inherited.
 - [x] Record `n23_ap4_bridge_status` when inherited.
-- [ ] Declare row-specific thresholds before positive evidence use.
-- [ ] Record `source_current_inputs` in every candidate row.
-- [ ] Require `artifact_manifest` in every candidate row.
-- [ ] Require `all_artifact_sha256_match_file_contents = true` for positive
+- [x] Declare row-specific thresholds before positive evidence use.
+- [x] Record `source_current_inputs` in every candidate row.
+- [x] Require `artifact_manifest` in every candidate row.
+- [x] Require `all_artifact_sha256_match_file_contents = true` for positive
       support.
-- [ ] Require actual LGRC/source-current run artifacts for positive N24
+- [x] Require actual LGRC/source-current run artifacts for positive N24
       evidence.
-- [ ] Reject report-only or synthetic-row success as insufficient evidence.
+- [x] Reject report-only or synthetic-row success as insufficient evidence.
 - [x] Separate source-current optionality geometry from branch labels, reward
       labels, and producer enumeration.
 - [x] Treat producer-mediated optionality enumeration or exploration schedules
@@ -49,16 +49,16 @@
 - [x] Carry conditional AP5 dependency when proxy/reward/target formation
       participates.
 - [x] Use closed AP4/AP5 dependency status enums.
-- [ ] Record `ap4_condition_reason` and `ap5_condition_reason` per row.
-- [ ] Freeze maintenance floors before positive probes.
-- [ ] Require surplus above maintenance floor for AB2+.
+- [x] Record `ap4_condition_reason` and `ap5_condition_reason` per row.
+- [x] Freeze maintenance floors before positive probes.
+- [x] Require surplus above maintenance floor for AB2+.
 - [ ] Require optional continuation set trace for AB3+.
 - [ ] Require maintenance support/coherence floors to remain preserved while
       optional branches are open.
 - [ ] Require boundary integrity under optionality for AB3+.
 - [ ] Require optional flux not to drain maintenance support for AB3+.
 - [ ] Require `optionality_not_label_reassignment = true`.
-- [ ] Block hidden budget relief, floor crossing, proxy-only gain, optional
+- [x] Block hidden budget relief, floor crossing, proxy-only gain, optional
       label-only rows, post-hoc surplus, N23 relabel, reward relabel, agency
       relabel, native-support relabel, and Phase 8 relabel controls.
 - [x] Force unsafe claim flags false in every row.
@@ -222,11 +222,11 @@ Iteration 2 result:
 status = passed
 acceptance_state = accepted_abundance_schema_and_controls_frozen_no_surplus_optionality_evidence
 failed_checks = []
-output_digest = d4f82aeebdcd975e02058ce85b6682ee6e6a687ea5f65ae45e49966761012d22
+output_digest = df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503
 i1_output_digest = f9293344b8ca23ec14438c3762cd681d9543aaa528f45182b638631af7abde57
 source_contract_row_digest = 7f962755c36a8ae6b0acdc831bbdcbecdc6ed6169ac8d7176954cbd900cede84
 source_consumable_contract_row_digest = daf53d4eed625cbdda0c391a5371748859f89552ce4bd3bd8aff6f55132e3233
-candidate_evidence_required_field_count = 103
+candidate_evidence_required_field_count = 104
 AB_ladder_frozen = true
 N24_C_ladder_frozen = true
 surplus_formulas_frozen = true
@@ -252,6 +252,10 @@ reward_maximization_claim_allowed = false is row-local.
 final_global_ap4_reclassification_supported = false is row-local.
 N23/AP4 context cross-field invariants are frozen.
 support measurement scope and aggregation method are frozen.
+optional_flux_does_not_drain_maintenance_support_status is frozen so AB2-only
+rows can record optional flux as not_run instead of a misleading failed gate.
+row_specific_thresholds_declared_before_use is frozen as the expanded threshold
+record object with nested declared_before_use=true, not as a bare boolean.
 ```
 
 Iteration 2 second review follow-up:
@@ -282,6 +286,14 @@ output_digest is computed over the final artifact state with output_digest
 itself excluded.
 ```
 
+Iteration 2 third review follow-up:
+
+```text
+support_measurement_scope now uses maintenance_basin_node_set rather than
+maintenance_basin_total. The scope names the declared maintenance-basin node
+set; support_aggregation_method = min names the statistic over that set.
+```
+
 Iteration 2 interpretation:
 
 ```text
@@ -297,28 +309,28 @@ ecology. No positive N24 evidence is opened.
 
 ## Iteration 3. Active Nulls And Failure Baselines
 
-- [ ] Build active-null/failure-baseline artifact.
-- [ ] Instantiate `hidden_budget_relief_as_surplus`.
-- [ ] Instantiate `floor_crossing_as_abundance`.
-- [ ] Instantiate `surplus_without_optional_continuation`.
-- [ ] Instantiate `optionality_without_surplus`.
-- [ ] Instantiate `proxy_only_optional_branch_gain`.
-- [ ] Instantiate `optional_branch_label_only`.
-- [ ] Instantiate `single_branch_relabel_as_optionality`.
-- [ ] Instantiate `independent_run_optional_assembly`.
-- [ ] Instantiate `maintenance_basin_shift_as_surplus`.
-- [ ] Instantiate `floor_renormalization_as_surplus`.
-- [ ] Instantiate `post_hoc_surplus_construction`.
-- [ ] Instantiate `n23_selection_context_relabel_as_abundance`.
-- [ ] Instantiate `reward_maximization_relabel`.
-- [ ] Instantiate `missing_maintenance_floor`.
-- [ ] Instantiate `missing_boundary_integrity_trace`.
-- [ ] Instantiate `optional_flux_drains_maintenance_support`.
-- [ ] Instantiate `ap4_final_reclassification_relabel`.
-- [ ] Instantiate `ap5_proxy_gap_omission`.
-- [ ] Instantiate unsafe semantic/agency/native-support/Phase-8 relabel rows.
-- [ ] Confirm every active null fails closed.
-- [ ] Confirm no AB rung above null/control scope is assigned.
+- [x] Build active-null/failure-baseline artifact.
+- [x] Instantiate `hidden_budget_relief_as_surplus`.
+- [x] Instantiate `floor_crossing_as_abundance`.
+- [x] Instantiate `surplus_without_optional_continuation`.
+- [x] Instantiate `optionality_without_surplus`.
+- [x] Instantiate `proxy_only_optional_branch_gain`.
+- [x] Instantiate `optional_branch_label_only`.
+- [x] Instantiate `single_branch_relabel_as_optionality`.
+- [x] Instantiate `independent_run_optional_assembly`.
+- [x] Instantiate `maintenance_basin_shift_as_surplus`.
+- [x] Instantiate `floor_renormalization_as_surplus`.
+- [x] Instantiate `post_hoc_surplus_construction`.
+- [x] Instantiate `n23_selection_context_relabel_as_abundance`.
+- [x] Instantiate `reward_maximization_relabel`.
+- [x] Instantiate `missing_maintenance_floor`.
+- [x] Instantiate `missing_boundary_integrity_trace`.
+- [x] Instantiate `optional_flux_drains_maintenance_support`.
+- [x] Instantiate `ap4_final_reclassification_relabel`.
+- [x] Instantiate `ap5_proxy_gap_omission`.
+- [x] Instantiate unsafe semantic/agency/native-support/Phase-8 relabel rows.
+- [x] Confirm every active null fails closed.
+- [x] Confirm no AB rung above null/control scope is assigned.
 
 Expected artifacts:
 
@@ -328,16 +340,87 @@ reports/n24_active_nulls_and_failure_baselines.md
 scripts/build_n24_active_nulls_and_failure_baselines.py
 ```
 
+Iteration 3 result:
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_evidence
+failed_checks = []
+output_digest = 4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df
+row_count = 19
+failed_closed_rows = 19
+failed_open_rows = 0
+positive_abundance_evidence_opened = false
+surplus_supported_optionality_supported = false
+ab_ladder_rung_assigned_above_control_scope = false
+n24_closeout_ladder_rung_assigned = false
+n24_closeout_ceiling = N24-C1_active_null_control_discipline_established
+final_global_ap4_reclassification_supported = false
+ready_for_iteration_4_positive_probe = true
+```
+
+Iteration 3 review follow-up:
+
+```text
+I3 source chain is reproducible against the current committed I2 artifact:
+source_schema_output_digest = df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503.
+
+A control_alias_map documents the broader canonical controls used by:
+  missing_maintenance_floor -> floor_crossing_as_abundance_control
+  missing_boundary_integrity_trace -> optional_branch_label_only_control
+  optional_flux_drains_maintenance_support -> floor_crossing_as_abundance_control
+
+optional_flux_drain_status distinguishes:
+  preserved
+  failed
+  missing
+  not_applicable
+
+This keeps optional-flux interpretation scoped for rows where optionality is
+absent, while the original boolean remains a required candidate-row gate for
+future positive AB3+ rows.
+
+The report groups rows by blocker family:
+  surplus blockers
+  optionality blockers
+  artifact/provenance blockers
+  AP blockers
+  unsafe relabel blockers
+```
+
+Iteration 3 geometric interpretation:
+
+```text
+I3 does not show an abundant basin. It shows what cannot count as abundance.
+
+The geometric blockers are:
+  hidden support injected from a producer channel is not surplus;
+  branch opening below the maintenance floor is depletion, not abundance;
+  surplus without same-window alternatives is only spare support;
+  branch labels, proxy gains, reward scores, and independent-run assembly are
+  not source-current optional continuation geometry;
+  maintenance-basin shifts and floor renormalization create false margins;
+  N23 selection context is not N24 surplus evidence;
+  missing boundary/flux traces mean the basin did not preserve itself while
+  branches were available;
+  AP4/AP5 omissions and unsafe semantic/native/Phase-8 relabels remain blocked.
+
+So I3 establishes fail-closed control discipline only:
+  N24-C1 active-null/control discipline established,
+  no AB evidence opened,
+  no surplus-supported optionality supported.
+```
+
 ## Iteration 4. Minimal Source-Current Surplus Probe
 
-- [ ] Run minimal source-current surplus probe.
-- [ ] Declare maintenance floors before use.
-- [ ] Record support surplus margin trace.
-- [ ] Record coherence surplus margin trace if applicable.
-- [ ] Record maintenance floor trace.
-- [ ] Record boundary/flux state.
-- [ ] Confirm hidden budget relief is absent or declared as producer residue.
-- [ ] Assign at most AB2/provisional AB3 pending optionality/replay/control
+- [x] Run minimal source-current surplus probe.
+- [x] Declare maintenance floors before use.
+- [x] Record support surplus margin trace.
+- [x] Record coherence surplus margin trace if applicable.
+- [x] Record maintenance floor trace.
+- [x] Record boundary/flux state.
+- [x] Confirm hidden budget relief is absent or declared as producer residue.
+- [x] Assign at most AB2/provisional AB3 pending optionality/replay/control
       evidence.
 
 Expected artifacts:
@@ -346,6 +429,99 @@ Expected artifacts:
 outputs/n24_minimal_surplus_probe.json
 reports/n24_minimal_surplus_probe.md
 scripts/build_n24_minimal_surplus_probe.py
+```
+
+Iteration 4 result:
+
+```text
+status = passed
+acceptance_state = accepted_minimal_source_current_ab2_surplus_candidate_pending_optionality_replay_controls
+failed_checks = []
+output_digest = 2898f018c650a9d3fe6b93f82a540ae67d8ce8947081573b1e581e6e99afe9a3
+candidate_row_count = 1
+provisional_ab_ladder_rung = AB2
+ab3_or_stronger_supported = false
+source_current_surplus_above_floor_observed = true
+positive_run_artifacts_consumed = true
+source_current_inputs_opened = true
+surplus_supported_optionality_claim_allowed = false
+ready_for_iteration_5_optional_continuation_probe = true
+```
+
+Iteration 4 measured surplus:
+
+```text
+model_family = LGRC9V3
+fixture = examples/grc9v3/_fixtures.py::make_column_h_state
+maintenance_basin_id = n24_i4_core_support_maintenance_basin
+maintenance_node_ids = [0, 1, 5, 6, 7, 8, 9]
+support_measurement_scope = maintenance_basin_node_set
+support_aggregation_method = min
+support_floor = 9.85
+coherence_floor = 9.85
+observed_min_support = 10.0
+observed_min_coherence = 10.0
+support_surplus_margin = 0.15000000000000036
+coherence_surplus_margin = 0.15000000000000036
+boundary_integrity_result = preserved
+flux_or_leakage_result = preserved
+```
+
+Iteration 4 interpretation:
+
+```text
+I4 is the first positive N24 source-current row, but it supports only AB2
+surplus input evidence.
+
+The surplus is geometric: it is computed from an LGRC9V3 runtime snapshot over
+a declared maintenance-basin node set, using the frozen min aggregation method
+and predeclared support/coherence floors.
+
+It does not yet support surplus-supported optionality because no same-window
+optional continuation set is opened. The surplus-without-optionality control
+therefore fails closed as a cap: AB2 may be retained, but AB3+ remains blocked
+until I5.
+
+N23 context is recorded directly and remains inherited AP4/context only, not
+N24 surplus evidence. AP5 is not applicable because no proxy/reward/target
+formation participates.
+```
+
+Iteration 4 review follow-up:
+
+```text
+I4 records the current source digest chain explicitly:
+  i2_output_digest_consumed = df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503
+  i3_output_digest_consumed = 4748bb45748339f13c4ce437b917f7c2f0e33c401cfc058cf211b9393e2494df
+
+The N24 source-current snapshot intentionally matches the N23 I4 pre-collapse
+fixture snapshot hash:
+  n24_snapshot_sha256 = 9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4
+  n23_pre_collapse_snapshot_sha256 = 9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4
+
+This is fixture reuse, not evidence relabeling. N24 re-emits the LGRC state
+through its own runtime artifact and does not consume the N23 snapshot as N24
+surplus evidence.
+
+For I4, optional flux is not a failed gate:
+  optional_flux_does_not_drain_maintenance_support = not_applicable_until_I5
+  optional_flux_does_not_drain_maintenance_support_status = not_run
+
+For I4, AP4 is contextual rather than load-bearing:
+  ap4_context_status = n23_bridge_candidate_consumed
+  ap4_dependency_status = not_applicable
+  AP4 becomes load-bearing in I5 rows that actually claim route/branch optionality.
+
+The threshold declaration field now matches the schema:
+  row_specific_thresholds_declared_before_use = threshold record object
+  row_specific_thresholds_declared_before_use.declared_before_use = true
+
+False rejection flags for optional_branch_label_only_rejected and
+independent_run_optional_assembly_rejected mean those controls were not
+applicable before optionality was opened, not that those relabel paths are
+allowed. surplus_persistence_ratio = 1.0 is a single-snapshot descriptive
+placeholder for the preserved surplus row, not replay-backed persistence
+evidence.
 ```
 
 ## Iteration 5. Optional Continuation Set Probe

@@ -87,7 +87,7 @@ OPTIONAL_BRANCH_EVIDENCE_MODE_VALUES = [
     "deterministic_replay_validation",
 ]
 SUPPORT_MEASUREMENT_SCOPE_VALUES = [
-    "maintenance_basin_total",
+    "maintenance_basin_node_set",
     "maintenance_basin_min_node",
     "declared_support_region",
     "route_local_support",
@@ -229,6 +229,7 @@ CANDIDATE_EVIDENCE_FIELDS = [
     "optional_branch_boundary_flux_traces",
     "boundary_integrity_under_optionality_trace",
     "optional_flux_does_not_drain_maintenance_support",
+    "optional_flux_does_not_drain_maintenance_support_status",
     "surplus_budget_owner",
     "hidden_budget_relief_absent",
     "reward_or_proxy_label_absent_or_blocked",
@@ -437,9 +438,19 @@ def candidate_evidence_row_schema(i1: dict[str, Any], i4_digest: str, i5_digest:
                 ),
             },
             "row_specific_thresholds_declared_before_use": {
-                "type": "boolean",
-                "required_value": True,
-                "constraint": "false blocks AB2+ support",
+                "type": "object",
+                "required_fields": [
+                    "path",
+                    "sha256",
+                    "declared_before_use",
+                    "threshold_record",
+                ],
+                "required_nested_values": {"declared_before_use": True},
+                "constraint": (
+                    "candidate rows must carry the predeclared threshold "
+                    "record artifact; missing object or declared_before_use=false "
+                    "blocks AB2+ support"
+                ),
             },
             "n20_source_downstream_consumption_status": {
                 "type": "string",
@@ -493,7 +504,11 @@ def candidate_evidence_row_schema(i1: dict[str, Any], i4_digest: str, i5_digest:
             "support_measurement_scope": {
                 "type": "enum",
                 "allowed_values": SUPPORT_MEASUREMENT_SCOPE_VALUES,
-                "constraint": "freezes the support locus before support surplus is computed",
+                "constraint": (
+                    "freezes the support locus before support surplus is computed; "
+                    "maintenance_basin_node_set means the full declared basin node "
+                    "set, with aggregation method recorded separately"
+                ),
             },
             "support_aggregation_method": {
                 "type": "enum",
@@ -630,6 +645,29 @@ def candidate_evidence_row_schema(i1: dict[str, Any], i4_digest: str, i5_digest:
                 "type": "boolean",
                 "required_value": True,
                 "constraint": "false blocks AB3+ support",
+            },
+            "optional_flux_does_not_drain_maintenance_support": {
+                "type": "boolean_or_scope_status",
+                "required_value_for_ab3_plus": True,
+                "allowed_non_ab3_values": ["not_applicable_until_I5", "not_run"],
+                "constraint": (
+                    "AB3+ requires true; AB2-only surplus rows should mark "
+                    "optional flux as not applicable/not run rather than false"
+                ),
+            },
+            "optional_flux_does_not_drain_maintenance_support_status": {
+                "type": "enum",
+                "allowed_values": [
+                    "preserved",
+                    "failed",
+                    "not_run",
+                    "not_applicable",
+                    "missing",
+                ],
+                "constraint": (
+                    "positive AB3+ rows require preserved; AB2-only rows may "
+                    "record not_run until optionality is opened"
+                ),
             },
             "support_floor_result": {
                 "type": "enum",
@@ -1317,7 +1355,7 @@ def build_output() -> dict[str, Any]:
                 "maintenance_basin_signature_digest_required"
             ]
             is True
-            and "maintenance_basin_total"
+            and "maintenance_basin_node_set"
             in output["support_measurement_schema"]["support_measurement_scope_values"],
             "detail": output["support_measurement_schema"],
         },

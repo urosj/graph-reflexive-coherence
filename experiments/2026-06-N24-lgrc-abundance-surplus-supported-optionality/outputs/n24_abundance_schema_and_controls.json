@@ -470,8 +470,24 @@
         "type": "recorded"
       },
       "optional_flux_does_not_drain_maintenance_support": {
-        "constraint": "required for candidate rows",
-        "type": "recorded"
+        "allowed_non_ab3_values": [
+          "not_applicable_until_I5",
+          "not_run"
+        ],
+        "constraint": "AB3+ requires true; AB2-only surplus rows should mark optional flux as not applicable/not run rather than false",
+        "required_value_for_ab3_plus": true,
+        "type": "boolean_or_scope_status"
+      },
+      "optional_flux_does_not_drain_maintenance_support_status": {
+        "allowed_values": [
+          "preserved",
+          "failed",
+          "not_run",
+          "not_applicable",
+          "missing"
+        ],
+        "constraint": "positive AB3+ rows require preserved; AB2-only rows may record not_run until optionality is opened",
+        "type": "enum"
       },
       "optional_flux_drain_margin": {
         "constraint": "AB3 requires optional flux not to drain maintenance support",
@@ -584,9 +600,17 @@
         "type": "recorded"
       },
       "row_specific_thresholds_declared_before_use": {
-        "constraint": "false blocks AB2+ support",
-        "required_value": true,
-        "type": "boolean"
+        "constraint": "candidate rows must carry the predeclared threshold record artifact; missing object or declared_before_use=false blocks AB2+ support",
+        "required_fields": [
+          "path",
+          "sha256",
+          "declared_before_use",
+          "threshold_record"
+        ],
+        "required_nested_values": {
+          "declared_before_use": true
+        },
+        "type": "object"
       },
       "run_artifact_id": {
         "constraint": "required for candidate rows",
@@ -730,12 +754,12 @@
       },
       "support_measurement_scope": {
         "allowed_values": [
-          "maintenance_basin_total",
+          "maintenance_basin_node_set",
           "maintenance_basin_min_node",
           "declared_support_region",
           "route_local_support"
         ],
-        "constraint": "freezes the support locus before support surplus is computed",
+        "constraint": "freezes the support locus before support surplus is computed; maintenance_basin_node_set means the full declared basin node set, with aggregation method recorded separately",
         "type": "enum"
       },
       "support_surplus_margin_trace": {
@@ -837,6 +861,7 @@
       "optional_branch_boundary_flux_traces",
       "boundary_integrity_under_optionality_trace",
       "optional_flux_does_not_drain_maintenance_support",
+      "optional_flux_does_not_drain_maintenance_support_status",
       "surplus_budget_owner",
       "hidden_budget_relief_absent",
       "reward_or_proxy_label_absent_or_blocked",
@@ -983,7 +1008,7 @@
           "artifact_sha256",
           "all_artifact_sha256_match_file_contents"
         ],
-        "required_field_count": 103
+        "required_field_count": 104
       },
       "passed": true
     },
@@ -1231,7 +1256,7 @@
           "declared_rule"
         ],
         "support_measurement_scope_values": [
-          "maintenance_basin_total",
+          "maintenance_basin_node_set",
           "maintenance_basin_min_node",
           "declared_support_region",
           "route_local_support"
@@ -1976,7 +2001,7 @@
       "must_not_be_label_only": true
     }
   },
-  "output_digest": "d4f82aeebdcd975e02058ce85b6682ee6e6a687ea5f65ae45e49966761012d22",
+  "output_digest": "df1725c0e726ad233bd57751393e7aa6b0bcf18f7a0d67cdf220e8e3e0e6c503",
   "purpose": "schema, ladder, and control freeze only; no N24 primitive evidence",
   "replay_requirements": {
     "ab3_without_replay_status": "provisional_source_current_optionality_candidate",
@@ -2160,7 +2185,7 @@
       "declared_rule"
     ],
     "support_measurement_scope_values": [
-      "maintenance_basin_total",
+      "maintenance_basin_node_set",
       "maintenance_basin_min_node",
       "declared_support_region",
       "route_local_support"
