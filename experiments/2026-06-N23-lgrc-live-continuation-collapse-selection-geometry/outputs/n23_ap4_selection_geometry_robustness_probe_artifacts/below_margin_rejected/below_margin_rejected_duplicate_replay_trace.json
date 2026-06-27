@@ -1,0 +1,33 @@
+{
+  "artifact_id": "below_margin_rejected_duplicate_replay_trace",
+  "event_counts_by_kind": {},
+  "observable_digest_matched": true,
+  "recomputed_selection": {
+    "min_score_margin": 0.25,
+    "non_selected_branch_ids": [
+      "branch_edge_0_node_1",
+      "branch_edge_6_node_7",
+      "branch_edge_8_node_9"
+    ],
+    "producer_preference_used": false,
+    "producer_selected_branch_label_used": false,
+    "random_tie_status": "not_random_tie",
+    "runner_up_branch_id": "branch_edge_0_node_1",
+    "runner_up_score": 1.9000000000000004,
+    "score_margin": 0.09999999999999964,
+    "selected_branch_id": "branch_edge_4_node_5",
+    "selected_score": 2.0,
+    "selection_admitted_for_collapse": false,
+    "selection_digest": "74128e6b7a52f34cec95cc58958663c7f6176ded30180b7071de42654f8ef51e",
+    "selection_margin_passed": false,
+    "selection_reason": "support_gradient_dominance"
+  },
+  "replay_digest": "3042314b6a853739f077ece29d4f546017e60d093978446bfe625e0d80bfa323",
+  "replay_mode": "duplicate_replay",
+  "replay_observable_digest": "fa32d74b3c4c560679124ff4652c0f3190f5fd8f62a9e7b2e75528d63209c6c1",
+  "selection_recomputed_matches_source": true,
+  "source_branch_trace_digest": "d1dbaddb4979ec5c68be77e5db1ecac7370286ea977573cfc9a5005b12fbf840",
+  "source_case_id": "below_margin_rejected",
+  "source_observable_digest": "fa32d74b3c4c560679124ff4652c0f3190f5fd8f62a9e7b2e75528d63209c6c1",
+  "step_summaries": []
+}

@@ -249,6 +249,10 @@ outputs/n23_ap4_selection_geometry_probe.json
 reports/n23_ap4_selection_geometry_probe.md
 scripts/build_n23_ap4_selection_geometry_probe.py
 
+outputs/n23_ap4_selection_geometry_robustness_probe.json
+reports/n23_ap4_selection_geometry_robustness_probe.md
+scripts/build_n23_ap4_selection_geometry_robustness_probe.py
+
 outputs/n23_replay_and_control_matrix.json
 reports/n23_replay_and_control_matrix.md
 scripts/build_n23_replay_and_control_matrix.py

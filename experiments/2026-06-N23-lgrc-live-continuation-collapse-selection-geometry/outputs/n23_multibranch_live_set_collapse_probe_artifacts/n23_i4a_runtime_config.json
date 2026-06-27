@@ -1,0 +1,82 @@
+{
+  "branch_candidates": [
+    {
+      "branch_id": "branch_edge_0_node_1",
+      "edge_id": 0,
+      "route_label": "edge_0_neighbor_1_to_center",
+      "source_node_id": 1,
+      "target_node_id": 0
+    },
+    {
+      "branch_id": "branch_edge_4_node_5",
+      "edge_id": 4,
+      "route_label": "edge_4_neighbor_5_to_center",
+      "source_node_id": 5,
+      "target_node_id": 0
+    },
+    {
+      "branch_id": "branch_edge_6_node_7",
+      "edge_id": 6,
+      "route_label": "edge_6_neighbor_7_to_center",
+      "source_node_id": 7,
+      "target_node_id": 0
+    },
+    {
+      "branch_id": "branch_edge_8_node_9",
+      "edge_id": 8,
+      "route_label": "edge_8_neighbor_9_to_center",
+      "source_node_id": 9,
+      "target_node_id": 0
+    }
+  ],
+  "collapse_packet": {
+    "departure_event_time_key": 1.0,
+    "direction": "selected_branch_source_node_to_center",
+    "packet_amount": 0.06,
+    "scheduler_event_index": 1
+  },
+  "collapse_policy": {
+    "branch_score": "base_conductance(edge) * max(source_node_coherence - center_node_coherence, 0)",
+    "min_branch_score_margin": 0.25,
+    "policy_id": "support_gradient_dominance",
+    "producer_selected_branch_label_as_input_allowed": false,
+    "random_tie_allowed": false,
+    "selected_branch": "max_score_with_margin"
+  },
+  "config_id": "n23_i4a_multibranch_live_set_runtime_config",
+  "fixture": "make_column_h_state",
+  "fixture_source": "examples/grc9v3/_fixtures.py",
+  "model_family": "LGRC9V3",
+  "runtime_config_builder": "make_config",
+  "spark_lane": "grc9v3_column_h_assisted",
+  "thresholds": {
+    "boundary_integrity_floor_value": "at_least_four_distinct_source_current_branch_edges",
+    "branch_distinguishability_threshold": 0.25,
+    "coherence_floor_value": 9.85,
+    "collapse_persistence_ratio_threshold": 1.0,
+    "declared_before_use": true,
+    "field_specific_acceptance": {
+      "boundary_integrity_result": [
+        "preserved",
+        "changed_within_allowed_delta"
+      ],
+      "coherence_floor_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ],
+      "flux_or_leakage_result": [
+        "preserved",
+        "changed_within_bound"
+      ],
+      "support_floor_result": [
+        "preserved",
+        "changed_within_allowed_delta_above_floor"
+      ]
+    },
+    "flux_or_leakage_bound": 1e-09,
+    "same_basin_drift_bound": "topology signature and center basin identity must remain preserved",
+    "support_floor_value": 9.85,
+    "supporting_interpretation": "I4-A may assign only provisional LC3 multi-branch candidate evidence. Replay-backed LC4, AP4-relevant LC5, and handoff LC6 remain blocked.",
+    "threshold_record_id": "n23_i4a_multibranch_live_set_thresholds"
+  }
+}

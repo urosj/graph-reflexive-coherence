@@ -1,0 +1,709 @@
+{
+  "acceptance_state": "accepted_ap4_selection_geometry_lc5_candidate_pending_i7",
+  "ap4_selection_geometry_rows": [
+    {
+      "all_replay_controls_failed_closed": true,
+      "all_replay_modes_passed": true,
+      "ap4_bridge_candidate_supported": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_gates": {
+        "ap4_dependency_status_required_recorded": true,
+        "ap5_not_applicable_when_no_proxy_or_target": true,
+        "branch_window_order_valid": true,
+        "counterfactual_retention": true,
+        "n22_context_not_used_as_selection_proof": true,
+        "producer_preference_absent": true,
+        "random_tie_absent": true,
+        "replay_and_controls_pass": true,
+        "route_or_branch_conditioned_source_current_reason": true,
+        "score_margin_valid": true,
+        "source_current_collapse_trace": true,
+        "source_current_live_branch_set": true
+      },
+      "ap4_bridge_status": "bridge_candidate_supported",
+      "ap4_condition_reason": "The source candidate is branch-conditioned and uses source-current selection geometry, so AP4 gap status is recorded row-locally.",
+      "ap4_dependency_status": "required_recorded",
+      "ap4_negative_control_trace_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_ap4_negative_control_trace.json",
+      "ap5_condition_reason": "No proxy derivation or target formation participates; AP5 remains not applicable.",
+      "ap5_dependency_status": "not_applicable",
+      "blocked_relabel_fields": [
+        "semantic_choice",
+        "semantic_intention",
+        "agency",
+        "free_will",
+        "native_support",
+        "producer_preference_as_selection",
+        "random_tie_as_collapse",
+        "N22_susceptibility_context_as_selection_proof",
+        "Phase8_implementation",
+        "ant_ecology_implementation"
+      ],
+      "branch_count": 2,
+      "branch_window_precedes_collapse_window": true,
+      "claim_ceiling": "provisional artifact-level AP4-relevant selection-geometry bridge candidate pending I7 full replay/control matrix",
+      "counterfactual_retention_trace_present": true,
+      "derived_report_only": false,
+      "final_n23_supported": false,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "output_digest": "ac385951ce0eeb914f75576e002b5885546b44aad38f70c4691233acd17e52f7",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC5",
+      "random_tie_status": "not_random_tie",
+      "retained_non_selected_branch_count": 1,
+      "row_decision": "partial",
+      "row_id": "n23_i6_row_01_minimal_ap4_selection_geometry_bridge",
+      "row_schema_role": "ap4_selection_geometry_bridge_record_by_reference",
+      "runner_up_branch_id": "branch_edge_0_node_1",
+      "runner_up_support_gradient_score": 1.5,
+      "score_margin": 0.5,
+      "selected_branch_id": "branch_edge_4_node_5",
+      "selected_route_label": "edge_4_neighbor_5_to_center",
+      "selected_support_gradient_score": 2.0,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "source_candidate_output_digest": "720890f8a556409625b83bdade1f3d21fa92368a2ffc5a7ce87dd35148220626",
+      "source_candidate_row_id": "n23_i4_row_01_minimal_live_branch_collapse_probe",
+      "source_current_inputs": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_counterfactual_retention_trace.json",
+        "n23_i5_row_01_i4_minimal_collapse_replay_controls"
+      ],
+      "source_current_inputs_consumed_by_reference": true,
+      "source_iteration": "I4_I5",
+      "source_replay_output_digest": "cf4be49967d53453a71659e9a1db182f41d63db78a1d88ea4fcc9206646114b7",
+      "source_replay_row_id": "n23_i5_row_01_i4_minimal_collapse_replay_controls",
+      "source_trace_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_minimal_ap4_selection_geometry_trace.json",
+      "source_variant": "minimal_two_branch_replay_backed_collapse",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "all_replay_controls_failed_closed": true,
+      "all_replay_modes_passed": true,
+      "ap4_bridge_candidate_supported": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_gates": {
+        "ap4_dependency_status_required_recorded": true,
+        "ap5_not_applicable_when_no_proxy_or_target": true,
+        "branch_window_order_valid": true,
+        "counterfactual_retention": true,
+        "n22_context_not_used_as_selection_proof": true,
+        "producer_preference_absent": true,
+        "random_tie_absent": true,
+        "replay_and_controls_pass": true,
+        "route_or_branch_conditioned_source_current_reason": true,
+        "score_margin_valid": true,
+        "source_current_collapse_trace": true,
+        "source_current_live_branch_set": true
+      },
+      "ap4_bridge_status": "bridge_candidate_supported",
+      "ap4_condition_reason": "The source candidate is branch-conditioned and uses source-current selection geometry, so AP4 gap status is recorded row-locally.",
+      "ap4_dependency_status": "required_recorded",
+      "ap4_negative_control_trace_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_ap4_negative_control_trace.json",
+      "ap5_condition_reason": "No proxy derivation or target formation participates; AP5 remains not applicable.",
+      "ap5_dependency_status": "not_applicable",
+      "blocked_relabel_fields": [
+        "semantic_choice",
+        "semantic_intention",
+        "agency",
+        "free_will",
+        "native_support",
+        "producer_preference_as_selection",
+        "random_tie_as_collapse",
+        "N22_susceptibility_context_as_selection_proof",
+        "Phase8_implementation",
+        "ant_ecology_implementation"
+      ],
+      "branch_count": 4,
+      "branch_window_precedes_collapse_window": true,
+      "claim_ceiling": "provisional artifact-level AP4-relevant selection-geometry bridge candidate pending I7 full replay/control matrix",
+      "counterfactual_retention_trace_present": true,
+      "derived_report_only": false,
+      "final_n23_supported": false,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "output_digest": "899826cc2f09122e145d7b070f7f956f11670bc6fb25ce4aefd751e5291052f6",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC5",
+      "random_tie_status": "not_random_tie",
+      "retained_non_selected_branch_count": 3,
+      "row_decision": "partial",
+      "row_id": "n23_i6_row_02_multibranch_ap4_selection_geometry_bridge",
+      "row_schema_role": "ap4_selection_geometry_bridge_record_by_reference",
+      "runner_up_branch_id": "branch_edge_0_node_1",
+      "runner_up_support_gradient_score": 1.5,
+      "score_margin": 0.5,
+      "selected_branch_id": "branch_edge_4_node_5",
+      "selected_route_label": "edge_4_neighbor_5_to_center",
+      "selected_support_gradient_score": 2.0,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "source_candidate_output_digest": "1c52af46ebbedadf8cd0bee091ad14785c58b21e412f8c01a06c315261ce5339",
+      "source_candidate_row_id": "n23_i4a_row_01_multibranch_live_set_collapse_probe",
+      "source_current_inputs": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_counterfactual_retention_trace.json",
+        "n23_i5a_row_01_i4a_multibranch_collapse_replay_controls"
+      ],
+      "source_current_inputs_consumed_by_reference": true,
+      "source_iteration": "I4A_I5A",
+      "source_replay_output_digest": "1f2ba760cb372fb27f50380adf61ef46c1e89b770b469f3f863c3e2d1d489773",
+      "source_replay_row_id": "n23_i5a_row_01_i4a_multibranch_collapse_replay_controls",
+      "source_trace_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_multibranch_ap4_selection_geometry_trace.json",
+      "source_variant": "four_branch_replay_backed_collapse",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "artifact_id": "n23_i6_ap4_selection_geometry_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "replay_trace",
+      "artifact_subrole": "minimal_ap4_selection_geometry_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_minimal_ap4_selection_geometry_trace.json",
+      "sha256": "84fe52666d74b68a2129d604018c5500b1b392f31c093676a8cbe66e856e6e9e"
+    },
+    {
+      "artifact_role": "replay_trace",
+      "artifact_subrole": "multibranch_ap4_selection_geometry_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_multibranch_ap4_selection_geometry_trace.json",
+      "sha256": "71e676d4792e62513cdf2194b6309f1c1ce8a5e3dd496995f7d5e2d9f12d4127"
+    },
+    {
+      "artifact_role": "negative_control_trace",
+      "artifact_subrole": "ap4_negative_control_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_ap4_negative_control_trace.json",
+      "sha256": "6e78fedb7e9ee907797d2a23b0186f1d3bff1a66b35ee4f5e7e856cd7ce84082"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "source_inputs_passed",
+      "detail": {
+        "i4": "passed",
+        "i4a": "passed",
+        "i5": "passed",
+        "i5a": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "two_ap4_bridge_rows_supported",
+      "detail": [
+        "bridge_candidate_supported",
+        "bridge_candidate_supported"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "minimal_and_multibranch_lc5_candidates",
+      "detail": [
+        "LC5",
+        "LC5"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "row_local_ap4_dependency_recorded",
+      "detail": [
+        "required_recorded",
+        "required_recorded"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ap5_not_applicable_without_proxy_or_target",
+      "detail": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "selection_geometry_is_source_current_and_branch_conditioned",
+      "detail": [
+        {
+          "branch_count": 2,
+          "row_id": "n23_i6_row_01_minimal_ap4_selection_geometry_bridge",
+          "score_margin": 0.5,
+          "selection_reason": "support_gradient_dominance"
+        },
+        {
+          "branch_count": 4,
+          "row_id": "n23_i6_row_02_multibranch_ap4_selection_geometry_bridge",
+          "score_margin": 0.5,
+          "selection_reason": "support_gradient_dominance"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "counterfactual_branches_auditable",
+      "detail": [
+        {
+          "retained_non_selected_branch_count": 1,
+          "row_id": "n23_i6_row_01_minimal_ap4_selection_geometry_bridge"
+        },
+        {
+          "retained_non_selected_branch_count": 3,
+          "row_id": "n23_i6_row_02_multibranch_ap4_selection_geometry_bridge"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "replay_and_controls_backing_present",
+      "detail": [
+        {
+          "all_replay_controls_failed_closed": true,
+          "all_replay_modes_passed": true,
+          "row_id": "n23_i6_row_01_minimal_ap4_selection_geometry_bridge"
+        },
+        {
+          "all_replay_controls_failed_closed": true,
+          "all_replay_modes_passed": true,
+          "row_id": "n23_i6_row_02_multibranch_ap4_selection_geometry_bridge"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ap4_negative_controls_fail_closed",
+      "detail": [
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_selection_reason": "producer_preference",
+              "source_selection_reason": "support_gradient_dominance"
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "producer preference supplies selected branch",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "producer_preference_as_selection_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks LC5 if producer preference replaces source-current geometry"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_random_tie_status": "random_tie",
+              "mutated_score_margin": 0.0,
+              "required_minimum_score_margin": 0.25
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "random tie relabeled as source-current selection geometry",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "random_tie_as_selection_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks LC5 if score margin is absent"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_branch_record_origin": "label_only",
+              "required_branch_count_minimum": 2,
+              "required_branch_record_origin": "source_current_same_run"
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "selected branch label appears without branch geometry",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "branch_label_only_selection_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks LC5 if branch identity is label-only"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_ap4_dependency_status": "missing_blocks_row",
+              "required_ap4_dependency_status": "required_recorded"
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "route/branch-conditioned row omits AP4 dependency",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "missing_ap4_dependency_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks AP4 bridge if AP4 dependency is not row-local"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_n22_inherited_delta_used_as_selection_evidence": true,
+              "required_value": false
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "N22 susceptibility context is reused as N23 branch selection proof",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "n22_susceptibility_as_selection_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks LC5 if inherited N22 context supplies selection"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_semantic_choice_claim_allowed": true,
+              "required_semantic_choice_claim_allowed": false
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "semantic choice label is used as evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "semantic_choice_label_as_selection_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks all unsafe claim promotion"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "mutated_all_replay_modes_passed": false,
+              "required_replay_modes": [
+                "artifact_replay",
+                "snapshot_load_replay",
+                "duplicate_replay"
+              ]
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "LC5 asserted without LC4 replay/control backing",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "missing_replay_control_backing_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks LC5 if replay/control-backed LC4 is absent"
+        },
+        {
+          "actual_result": {
+            "ap4_bridge_claim_allowed": false,
+            "scenario": {
+              "minimal_source_retained_non_selected_branch_count": 1,
+              "multibranch_source_retained_non_selected_branch_count": 3,
+              "mutated_retained_non_selected_branch_count": 0
+            },
+            "semantic_choice_claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "non-selected branch audit is missing",
+          "claim_allowed_when_control_triggers": false,
+          "control_execution_kind": "constructed_ap4_bridge_negative_control",
+          "control_id": "missing_counterfactual_retention_control",
+          "control_status": "failed_closed",
+          "expected_result": "selection_geometry_claim_rejected",
+          "rung_effect": "blocks LC5 if AP4 selection geometry lacks auditable alternatives"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "semantic_choice_and_agency_blocked",
+      "detail": [
+        {
+          "ap4_bridge_claim_allowed": false,
+          "live_continuation_collapse_claim_allowed": false,
+          "row_id": "n23_i6_row_01_minimal_ap4_selection_geometry_bridge",
+          "semantic_choice_claim_allowed": false
+        },
+        {
+          "ap4_bridge_claim_allowed": false,
+          "live_continuation_collapse_claim_allowed": false,
+          "row_id": "n23_i6_row_02_multibranch_ap4_selection_geometry_bridge",
+          "semantic_choice_claim_allowed": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_hashes_match",
+      "detail": [
+        {
+          "artifact_role": "replay_trace",
+          "artifact_subrole": "minimal_ap4_selection_geometry_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_minimal_ap4_selection_geometry_trace.json",
+          "sha256": "84fe52666d74b68a2129d604018c5500b1b392f31c093676a8cbe66e856e6e9e"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "artifact_subrole": "multibranch_ap4_selection_geometry_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_multibranch_ap4_selection_geometry_trace.json",
+          "sha256": "71e676d4792e62513cdf2194b6309f1c1ce8a5e3dd496995f7d5e2d9f12d4127"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "artifact_subrole": "ap4_negative_control_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_ap4_negative_control_trace.json",
+          "sha256": "6e78fedb7e9ee907797d2a23b0186f1d3bff1a66b35ee4f5e7e856cd7ce84082"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_roles_match_i2_frozen_enum",
+      "detail": [
+        {
+          "artifact_role": "replay_trace",
+          "artifact_subrole": "minimal_ap4_selection_geometry_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_minimal_ap4_selection_geometry_trace.json",
+          "sha256": "84fe52666d74b68a2129d604018c5500b1b392f31c093676a8cbe66e856e6e9e"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "artifact_subrole": "multibranch_ap4_selection_geometry_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_multibranch_ap4_selection_geometry_trace.json",
+          "sha256": "71e676d4792e62513cdf2194b6309f1c1ce8a5e3dd496995f7d5e2d9f12d4127"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "artifact_subrole": "ap4_negative_control_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_ap4_negative_control_trace.json",
+          "sha256": "6e78fedb7e9ee907797d2a23b0186f1d3bff1a66b35ee4f5e7e856cd7ce84082"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_are_portable",
+      "detail": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_minimal_ap4_selection_geometry_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_multibranch_ap4_selection_geometry_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe_artifacts/n23_i6_ap4_negative_control_trace.json"
+      ],
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_ap4_selection_geometry_probe.py",
+  "experiment": "N23_lgrc_live_continuation_collapse_selection_geometry",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "The result supports provisional LC5/AP4-relevant selection-geometry candidate evidence pending I7. It does not support LC6, final AP4, semantic choice, intention, agency, native support, sentience, Phase 8, or ant ecology implementation.",
+    "geometry_summary": "minimal: 2 branches, selected branch_edge_4_node_5 over branch_edge_0_node_1 by support-gradient margin 0.5\nmultibranch: 4 branches, selected branch_edge_4_node_5 over three retained counterfactual branches by the same source-current support-gradient rule\nAP4 bridge: candidate-supported because route/branch-conditioned selection is source-current, replay-backed, control-backed, row-local AP4 dependency is recorded, and producer/semantic relabels fail closed",
+    "main_read": "I6 does not claim semantic choice. It shows that the selected continuation in both the minimal and four-branch cases is conditioned by source-current branch geometry: branch-specific coherence, conductance, support-gradient score, margin over the runner-up, and retained counterfactual branch records."
+  },
+  "iteration": "6",
+  "iteration6_boundary": {
+    "ap4_bridge_candidate_supported": true,
+    "ap4_bridge_status": "bridge_candidate_supported",
+    "final_ap4_supported": false,
+    "final_n23_supported": false,
+    "n23_closeout_rung_candidate": "N23-C5",
+    "provisional_lc_ladder_rung": "LC5",
+    "ready_for_iteration_7_full_control_matrix": true
+  },
+  "output_digest": "ff20018f3546c0567a03d840c14d2e924b9aca162ff25e74b912579c33a24422",
+  "purpose": "Test whether replay-backed live-continuation collapse can be classified as AP4-relevant route/branch selection geometry without semantic choice promotion.",
+  "schema_version": "1.0",
+  "selection_geometry_policy": {
+    "ap5_required_only_for_proxy_or_target_conditioned_rows": true,
+    "final_ap4_claim_allowed": false,
+    "full_matrix_validation_deferred_to_iteration7": true,
+    "i6_extension_fields": [
+      "row_schema_role",
+      "source_current_inputs_consumed_by_reference",
+      "ap4_bridge_claim_allowed"
+    ],
+    "requires_lc4_replay_control_backing": true,
+    "requires_row_local_ap4_dependency": true,
+    "requires_source_current_branch_geometry": true,
+    "row_schema_role": "ap4_bridge_record_by_reference",
+    "row_schema_role_declared_as_i6_extension": true
+  },
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_live_continuation_evidence",
+      "output_digest": "f200216f3f81d1ff4abe0bf4967774cd1e3575c365a3a8f21c680d356cfd60bc",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_source_handoff_inventory.json",
+      "sha256": "17d52c81b6d09ba8824b42fc35845ac31e808ddf0cd2311758b659a1b5cd3430",
+      "source_role": "n23_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_live_continuation_schema_frozen_no_positive_evidence",
+      "output_digest": "71de40c448a031ea352b94723cb538b9a333aa3e66d88080c2218338a23278e4",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_live_continuation_schema_and_controls.json",
+      "sha256": "33f229f65bbc58c5211c1f146fa1c6e2697d6fead6102ebf9ca48074ac672d54",
+      "source_role": "n23_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "05b65af917c90a8b16286c9c8b78386199188a23fa4dffa1ea3d503c165777dd",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_active_nulls_and_failure_baselines.json",
+      "sha256": "74a0d1075d47aacdfa274599748eb98b148fc813f10b67ffa80b3f9cc1f94ea9",
+      "source_role": "n23_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_lc3_candidate_pending_replay_controls",
+      "output_digest": "720890f8a556409625b83bdade1f3d21fa92368a2ffc5a7ce87dd35148220626",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe.json",
+      "sha256": "fdb40746fabce3ba3124f559b220eb78f6c3059494566de9ea26e84817825369",
+      "source_role": "minimal_live_branch_lc3_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_collapse_replay_controls_lc4_candidate_pending_i6_i7",
+      "output_digest": "cf4be49967d53453a71659e9a1db182f41d63db78a1d88ea4fcc9206646114b7",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_collapse_replay_and_counterfactual_controls.json",
+      "sha256": "821c5f531de33f3b482066a6a9238fcd7a3c77c50f734b1a87d59be124309945",
+      "source_role": "minimal_lc4_replay_control_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multibranch_source_current_lc3_candidate_pending_i5a",
+      "output_digest": "1c52af46ebbedadf8cd0bee091ad14785c58b21e412f8c01a06c315261ce5339",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe.json",
+      "sha256": "8a1de6033491e288d8dc3592964c161ab88745330ee9e736c9865ad5eaa392d8",
+      "source_role": "multibranch_live_set_lc3_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multibranch_collapse_replay_controls_lc4_candidate_pending_i6_i7",
+      "output_digest": "1f2ba760cb372fb27f50380adf61ef46c1e89b770b469f3f863c3e2d1d489773",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_collapse_replay_and_controls.json",
+      "sha256": "4caec40836807b38d992d3e6814e2c1ce653ee21321d3acf8b37e266129f9393",
+      "source_role": "multibranch_lc4_replay_control_source",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_ap4_selection_geometry_probe.py",
+      "sha256": "a328fca6fd7e9a87eed726c64592530e40228d0ac443e0fc130796c96bb34baa",
+      "source_role": "producer_script"
+    }
+  ],
+  "status": "passed"
+}

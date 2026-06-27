@@ -1,0 +1,151 @@
+{
+  "artifact_id": "n23_i5a_negative_control_trace",
+  "control_digest": "75b42833f73c5cbe4f44bdff979b53bc3d0a521f6c3393f552fd761136109075",
+  "control_rows": [
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "branch_window": {
+            "end_step": 0,
+            "start_step": 0,
+            "window_id": "n23_i4a_branch_window"
+          },
+          "collapse_window": {
+            "end_step": 2,
+            "start_step": 1,
+            "window_id": "n23_i4a_collapse_window"
+          },
+          "mutated_order": "collapse_before_branch_window"
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "collapse event is placed before branch-window evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "order_inversion_control",
+      "control_status": "failed_closed",
+      "expected_result": "inverted ordering rejected",
+      "rung_effect": "blocks LC4+ if order inversion passes open"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "mutated_branch_record_origin": "post_hoc_report_selection",
+          "source_branch_record_origin": "source_current_same_run"
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "four-branch set assembled after observing selected collapse",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "post_hoc_stitching_control",
+      "control_status": "failed_closed",
+      "expected_result": "post-hoc branch stitching rejected",
+      "rung_effect": "blocks LC4+ if post-hoc stitching passes open"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "mutated_branch_record_origin": "report_side_label_only",
+          "source_branch_count": 4
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "producer/report alternatives without source-current branch records",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "fake_alternative_control",
+      "control_status": "failed_closed",
+      "expected_result": "fake alternatives rejected",
+      "rung_effect": "blocks LC2+ if fake alternatives pass open"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "minimum_branch_count_for_i4a": 4,
+          "mutated_branch_count": 1,
+          "source_branch_count": 4
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "single branch relabeled as four-branch live set",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "single_branch_relabel_control",
+      "control_status": "failed_closed",
+      "expected_result": "single branch relabel rejected",
+      "rung_effect": "blocks LC2+ if single-branch relabel passes open"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "mutated_retained_non_selected_branch_count": 0,
+          "source_retained_non_selected_branch_count": 3
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "non-selected branch audit missing",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "missing_counterfactual_retention_control",
+      "control_status": "failed_closed",
+      "expected_result": "missing counterfactual retention rejected",
+      "rung_effect": "blocks LC3+ if counterfactual retention passes open"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "mutated_producer_preference_used": true,
+          "mutated_selection_reason": "producer_preference",
+          "source_selection_reason": "support_gradient_dominance"
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "producer preference supplies selected branch",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "producer_preference_injection_control",
+      "control_status": "failed_closed",
+      "expected_result": "producer preference rejected",
+      "rung_effect": "blocks LC3+ if producer preference passes open"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "scenario": {
+          "minimum_required_margin": 0.25,
+          "mutated_random_tie_status": "random_tie",
+          "mutated_score_margin": 0.0,
+          "source_random_tie_status": "not_random_tie",
+          "source_score_margin": 0.5
+        },
+        "violation_detected": true
+      },
+      "blocked_condition": "random tie is relabeled as collapse",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_negative_control_evaluation",
+      "control_id": "random_tie_as_collapse_control",
+      "control_status": "failed_closed",
+      "expected_result": "random tie relabel rejected",
+      "rung_effect": "blocks LC3+ if random tie passes open"
+    }
+  ],
+  "failed_closed_count": 7,
+  "failed_open_rows": [],
+  "negative_controls_run": [
+    "order_inversion_control",
+    "post_hoc_stitching_control",
+    "fake_alternative_control",
+    "single_branch_relabel_control",
+    "missing_counterfactual_retention_control",
+    "producer_preference_injection_control",
+    "random_tie_as_collapse_control"
+  ],
+  "source_candidate_row_id": "n23_i4a_row_01_multibranch_live_set_collapse_probe"
+}

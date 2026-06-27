@@ -1,0 +1,149 @@
+{
+  "artifact_id": "eroded_margin_still_supported_duplicate_replay_trace",
+  "event_counts_by_kind": {
+    "lgrc9v3_causal_spark_candidate": 1,
+    "lgrc9v3_local_update": 1,
+    "lgrc9v3_packet_arrival": 1,
+    "lgrc9v3_packet_arrival_eligibility": 1,
+    "lgrc9v3_packet_departure": 1
+  },
+  "observable_digest_matched": true,
+  "recomputed_selection": {
+    "min_score_margin": 0.25,
+    "non_selected_branch_ids": [
+      "branch_edge_0_node_1",
+      "branch_edge_6_node_7",
+      "branch_edge_8_node_9"
+    ],
+    "producer_preference_used": false,
+    "producer_selected_branch_label_used": false,
+    "random_tie_status": "not_random_tie",
+    "runner_up_branch_id": "branch_edge_0_node_1",
+    "runner_up_score": 1.7000000000000002,
+    "score_margin": 0.2999999999999998,
+    "selected_branch_id": "branch_edge_4_node_5",
+    "selected_score": 2.0,
+    "selection_admitted_for_collapse": true,
+    "selection_digest": "13913594e92368aa15f75e3abe5d8efdfc655d68940d9bd7c04f2684a6df70f9",
+    "selection_margin_passed": true,
+    "selection_reason": "support_gradient_dominance"
+  },
+  "replay_digest": "bf4793e25e935a773079ae1d6f248702af252ec585d772f5d06f08cbd845ca4f",
+  "replay_mode": "duplicate_replay",
+  "replay_observable_digest": "70404cd7a07ca9e80e9f3cdcd56d07f35fa60f256325498aabbbffbe231dec22",
+  "selection_recomputed_matches_source": true,
+  "source_branch_trace_digest": "7edd5a0e529af97dddfa5d77562159f28fa245b10959a3dab310240ff99fc440",
+  "source_case_id": "eroded_margin_still_supported",
+  "source_observable_digest": "70404cd7a07ca9e80e9f3cdcd56d07f35fa60f256325498aabbbffbe231dec22",
+  "step_summaries": [
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "causal_flux_events_processed": 1,
+        "causal_pulse_substrate_surface_rows": 0,
+        "causal_spark_diagnostic_events": 0,
+        "causal_spark_evaluation_index": 0,
+        "causal_topology_integration_events": 0,
+        "checkpoint_index": 1,
+        "delayed_evaluation_applied": false,
+        "event_time_key": 1.0,
+        "local_update_eligibility_events": 0,
+        "local_update_events": 0,
+        "packetized_flux_applied": true,
+        "processed_event_id": "lgrc9v3-packet-event-3a55bca240ca9201",
+        "processed_event_kind": "lgrc9v3_packet_departure",
+        "queue_length_after": 1,
+        "queue_length_before": 1,
+        "scheduler_event_index": 1,
+        "step_order": [
+          "order_event_queue",
+          "process_packet_event",
+          "emit_causal_pulse_substrate_surface_row",
+          "route_arrival_eligibility",
+          "apply_packetized_local_update",
+          "evaluate_causal_spark_diagnostics",
+          "checkpoint_runtime_state"
+        ],
+        "topology_events_routed": 0
+      },
+      "event_kinds": [
+        "lgrc9v3_packet_departure"
+      ],
+      "observables": {
+        "arrival_eligibility_count": 0.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 0.0,
+        "checkpoint_index": 1.0,
+        "conserved_budget_total": 100.65,
+        "edge_count": 9.0,
+        "event_queue_length": 1.0,
+        "event_time_key": 1.0,
+        "in_flight_packet_total": 0.06,
+        "local_update_count": 0.0,
+        "node_count": 10.0,
+        "packet_count": 1.0,
+        "scheduler_event_index": 1.0,
+        "topology_event_count": 0.0
+      },
+      "step_index": 1,
+      "time": 1.0
+    },
+    {
+      "bookkeeping": {
+        "boundary_birth_trial_queue_after": 0,
+        "boundary_birth_trial_queue_before": 0,
+        "causal_flux_events_processed": 1,
+        "causal_pulse_substrate_surface_rows": 0,
+        "causal_spark_diagnostic_events": 1,
+        "causal_spark_evaluation_index": 1,
+        "causal_topology_integration_events": 0,
+        "checkpoint_index": 2,
+        "delayed_evaluation_applied": false,
+        "event_time_key": 2.0,
+        "local_update_eligibility_events": 1,
+        "local_update_events": 1,
+        "packetized_flux_applied": true,
+        "processed_event_id": "lgrc9v3-packet-event-1ca21b73bfe7acfa",
+        "processed_event_kind": "lgrc9v3_packet_arrival",
+        "queue_length_after": 0,
+        "queue_length_before": 1,
+        "scheduler_event_index": 2,
+        "step_order": [
+          "order_event_queue",
+          "process_packet_event",
+          "emit_causal_pulse_substrate_surface_row",
+          "route_arrival_eligibility",
+          "apply_packetized_local_update",
+          "evaluate_causal_spark_diagnostics",
+          "checkpoint_runtime_state"
+        ],
+        "topology_events_routed": 0
+      },
+      "event_kinds": [
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update",
+        "lgrc9v3_causal_spark_candidate"
+      ],
+      "observables": {
+        "arrival_eligibility_count": 1.0,
+        "boundary_birth_trial_queue_length": 0.0,
+        "causal_spark_diagnostic_count": 1.0,
+        "checkpoint_index": 2.0,
+        "conserved_budget_total": 100.65,
+        "edge_count": 9.0,
+        "event_queue_length": 0.0,
+        "event_time_key": 2.0,
+        "in_flight_packet_total": 0.0,
+        "local_update_count": 1.0,
+        "node_count": 10.0,
+        "packet_count": 1.0,
+        "scheduler_event_index": 2.0,
+        "topology_event_count": 0.0
+      },
+      "step_index": 2,
+      "time": 2.0
+    }
+  ]
+}

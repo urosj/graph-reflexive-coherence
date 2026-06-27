@@ -1,0 +1,75 @@
+{
+  "artifact_id": "n23_i5_artifact_replay_trace",
+  "manifest_check_count": 9,
+  "manifest_checks": [
+    {
+      "actual_sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78",
+      "artifact_role": "collapse_trace",
+      "expected_sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_collapse_events.jsonl"
+    },
+    {
+      "actual_sha256": "ce00906716a858cf3a28ea85e4814602cb4bd163dda84d6141730e49b6a1c899",
+      "artifact_role": "collapse_trace",
+      "expected_sha256": "ce00906716a858cf3a28ea85e4814602cb4bd163dda84d6141730e49b6a1c899",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_collapsed_continuation_trace.json"
+    },
+    {
+      "actual_sha256": "c110776685ffdae3ddfd03ecb68f56562fa2008e80c2eead1c55a21e73fb8917",
+      "artifact_role": "counterfactual_retention_trace",
+      "expected_sha256": "c110776685ffdae3ddfd03ecb68f56562fa2008e80c2eead1c55a21e73fb8917",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_counterfactual_retention_trace.json"
+    },
+    {
+      "actual_sha256": "b0c30f3e2be58085b3cd0a2b465da20bfde1d2ea4bd751a2f465f70d49153253",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "b0c30f3e2be58085b3cd0a2b465da20bfde1d2ea4bd751a2f465f70d49153253",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_lgrc9v3_minimal_live_branch_run.json"
+    },
+    {
+      "actual_sha256": "6145afded680cb2bc50654fdbe14734c9f9477b43b691675be500eadb6ec724e",
+      "artifact_role": "branch_set_trace",
+      "expected_sha256": "6145afded680cb2bc50654fdbe14734c9f9477b43b691675be500eadb6ec724e",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_live_branch_set_trace.json"
+    },
+    {
+      "actual_sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_post_collapse_snapshot.json"
+    },
+    {
+      "actual_sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_pre_collapse_snapshot.json"
+    },
+    {
+      "actual_sha256": "29529f1c8e107c135b8cfa8a3cbeeff6678e1970db144718e35edb74991dc8a8",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "29529f1c8e107c135b8cfa8a3cbeeff6678e1970db144718e35edb74991dc8a8",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_runtime_config.json"
+    },
+    {
+      "actual_sha256": "4bc392239bf24d69082a71ab6bab8c1d695e25e052e4a002689f6413831baead",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "4bc392239bf24d69082a71ab6bab8c1d695e25e052e4a002689f6413831baead",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe_artifacts/n23_i4_thresholds_declared_before_use.json"
+    }
+  ],
+  "replay_digest": "a2caaa423b6770d05619410eb2cf5bd82c458dc0f4a4162b04818e98a8b9e26f",
+  "replay_mode": "artifact_replay",
+  "source_candidate_row_id": "n23_i4_row_01_minimal_live_branch_collapse_probe",
+  "source_output_digest": "720890f8a556409625b83bdade1f3d21fa92368a2ffc5a7ce87dd35148220626",
+  "source_row_output_digest": "4daedfc504cdd80329eca44cd71747fb8329b54ed64442a61b48843051d833ab",
+  "status": "passed"
+}

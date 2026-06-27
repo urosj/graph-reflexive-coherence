@@ -379,10 +379,36 @@ reports/n23_minimal_live_branch_collapse_probe.md
 scripts/build_n23_minimal_live_branch_collapse_probe.py
 ```
 
+### Iteration 4-A. Multi-Branch Live-Set Collapse Probe
+
+Add breadth without replacing Iteration 4 by producing a source-current
+live-branch set with three or more branch alternatives in the same basin.
+Keep the result provisional pending its own replay/control validation.
+
+Expected artifacts:
+
+```text
+outputs/n23_multibranch_live_set_collapse_probe.json
+reports/n23_multibranch_live_set_collapse_probe.md
+scripts/build_n23_multibranch_live_set_collapse_probe.py
+```
+
 ### Iteration 5. Collapse Replay And Counterfactual Controls
 
 Replay the minimal collapse row, run order/post-hoc/producer-preference
 controls, and decide whether LC4 is supported.
+
+Iteration 5 replay rows are replay/control records, not new 80-field candidate
+evidence rows. They must consume the full Iteration 4 candidate row by
+reference, record that schema role explicitly, and defer full candidate-schema
+revalidation to the Iteration 7 matrix.
+
+The local I5 control suite is intentionally narrower than the full I7 matrix,
+but it must include constructed negative-control evaluations for order
+inversion, post-hoc stitching, fake alternatives, single-branch relabeling,
+missing counterfactual retention, producer preference injection, and
+random-tie-as-collapse. Unsafe claim relabels remain false in the replay row
+and are revalidated in the full I7 matrix.
 
 Expected artifacts:
 
@@ -392,10 +418,43 @@ reports/n23_collapse_replay_and_counterfactual_controls.md
 scripts/build_n23_collapse_replay_and_counterfactual_controls.py
 ```
 
+### Iteration 5-A. Multi-Branch Collapse Replay And Controls
+
+Replay the Iteration 4-A multi-branch collapse row without changing the
+minimal Iteration 5 result. This is additive breadth evidence: it can support
+a multi-branch provisional LC4 candidate, but it must not close AP4, LC5, LC6,
+semantic choice, agency, or native support.
+
+Iteration 5-A follows the same replay-row schema policy as Iteration 5:
+replay rows are replay/control records, not new 80-field candidate evidence
+rows. The full Iteration 4-A candidate row remains the referenced evidence
+row, and Iteration 7 performs the full matrix-level revalidation.
+
+Expected artifacts:
+
+```text
+outputs/n23_multibranch_collapse_replay_and_controls.json
+reports/n23_multibranch_collapse_replay_and_controls.md
+scripts/build_n23_multibranch_collapse_replay_and_controls.py
+```
+
 ### Iteration 6. AP4-Relevant Selection Geometry Probe
 
 Test whether route/branch selection is source-current and geometry-conditioned
 enough to support an AP4 bridge candidate without semantic choice promotion.
+
+Iteration 6 consumes the replay/control-backed Iteration 5 and 5-A rows by
+reference. It does not create a fresh live-branch run. Its bridge rows must
+show that LC4-backed branch collapse was selected by source-current branch
+geometry, with AP4 dependency recorded row-locally, AP5 not applicable unless
+proxy/target formation is used, and producer/semantic relabels failing closed.
+I6 may support provisional LC5 / N23-C5 candidate status, but LC6, final AP4,
+semantic choice, agency, native support, Phase 8, and ant-ecology claims remain
+blocked pending I7/I8.
+
+I6 bridge-by-reference records may use `row_schema_role` as an explicitly
+declared I6 extension field. I6 artifacts must still use the Iteration 2 frozen
+artifact-role enum, with `artifact_subrole` for AP4-specific trace names.
 
 Expected artifacts:
 
@@ -403,6 +462,28 @@ Expected artifacts:
 outputs/n23_ap4_selection_geometry_probe.json
 reports/n23_ap4_selection_geometry_probe.md
 scripts/build_n23_ap4_selection_geometry_probe.py
+```
+
+### Iteration 6-A. AP4 Selection-Geometry Robustness Probe
+
+Stress-test the Iteration 6 AP4 bridge candidate before the full matrix. This
+iteration must not replace I6 or claim general AP4 robustness. It should vary
+bounded source-current branch geometry and classify whether selection follows
+geometry under margin erosion and alternate-winner conditions while failing
+closed under below-margin or tie conditions.
+
+I6-A robustness rows may use `row_schema_role` and `stress_case_role` as
+explicitly declared I6-A extension fields. I6-A artifacts must use the Iteration
+2 frozen artifact-role enum, with `artifact_subrole` for stress-specific
+snapshots, event logs, branch traces, collapse traces, duplicate replays, and
+negative controls.
+
+Expected artifacts:
+
+```text
+outputs/n23_ap4_selection_geometry_robustness_probe.json
+reports/n23_ap4_selection_geometry_robustness_probe.md
+scripts/build_n23_ap4_selection_geometry_robustness_probe.py
 ```
 
 ### Iteration 7. Replay And Control Matrix

@@ -1,0 +1,30 @@
+{
+  "boundary_integrity_floor_value": "at_least_four_distinct_source_current_branch_edges",
+  "branch_distinguishability_threshold": 0.25,
+  "coherence_floor_value": 9.85,
+  "collapse_persistence_ratio_threshold": 1.0,
+  "declared_before_use": true,
+  "field_specific_acceptance": {
+    "boundary_integrity_result": [
+      "preserved",
+      "changed_within_allowed_delta"
+    ],
+    "coherence_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ],
+    "flux_or_leakage_result": [
+      "preserved",
+      "changed_within_bound"
+    ],
+    "support_floor_result": [
+      "preserved",
+      "changed_within_allowed_delta_above_floor"
+    ]
+  },
+  "flux_or_leakage_bound": 1e-09,
+  "same_basin_drift_bound": "topology signature and center basin identity must remain preserved",
+  "support_floor_value": 9.85,
+  "supporting_interpretation": "I4-A may assign only provisional LC3 multi-branch candidate evidence. Replay-backed LC4, AP4-relevant LC5, and handoff LC6 remain blocked.",
+  "threshold_record_id": "n23_i4a_multibranch_live_set_thresholds"
+}

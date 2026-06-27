@@ -1,0 +1,268 @@
+{
+  "artifact_id": "eroded_margin_still_supported_live_branch_set_trace",
+  "branch_count": 4,
+  "branch_record_origin": "source_current_same_run",
+  "branch_records": [
+    {
+      "base_conductance": 0.5,
+      "boundary_distinguishable": true,
+      "boundary_edge_id": 0,
+      "branch_id": "branch_edge_0_node_1",
+      "branch_record_digest": "69c20e13e5626946cc29b8b0b926c804a57ae465e176f51ef613c64a2a684a35",
+      "center_basin_mass": 10.0,
+      "center_node_coherence": 10.0,
+      "coherence_delta_to_center": 3.4000000000000004,
+      "coherence_floor_margin": 3.5500000000000007,
+      "edge_id": 0,
+      "route_label": "edge_0_neighbor_1_to_center",
+      "source_node_basin_mass": 13.4,
+      "source_node_coherence": 13.4,
+      "source_node_id": 1,
+      "support_floor_margin": 3.5500000000000007,
+      "support_gradient_score": 1.7000000000000002,
+      "target_node_id": 0,
+      "trace_origin": "source_current_same_run"
+    },
+    {
+      "base_conductance": 2.0,
+      "boundary_distinguishable": true,
+      "boundary_edge_id": 4,
+      "branch_id": "branch_edge_4_node_5",
+      "branch_record_digest": "c49e5c5d8f1496f7683661b7a89e43b8b46573497b31f94022df4c9ad1616293",
+      "center_basin_mass": 10.0,
+      "center_node_coherence": 10.0,
+      "coherence_delta_to_center": 1.0,
+      "coherence_floor_margin": 1.1500000000000004,
+      "edge_id": 4,
+      "route_label": "edge_4_neighbor_5_to_center",
+      "source_node_basin_mass": 11.0,
+      "source_node_coherence": 11.0,
+      "source_node_id": 5,
+      "support_floor_margin": 1.1500000000000004,
+      "support_gradient_score": 2.0,
+      "target_node_id": 0,
+      "trace_origin": "source_current_same_run"
+    },
+    {
+      "base_conductance": 4.0,
+      "boundary_distinguishable": true,
+      "boundary_edge_id": 6,
+      "branch_id": "branch_edge_6_node_7",
+      "branch_record_digest": "7b3615f792be10335c5d60a24287b02fec01d3dd159078b3c2556519aa0243f9",
+      "center_basin_mass": 10.0,
+      "center_node_coherence": 10.0,
+      "coherence_delta_to_center": 0.25,
+      "coherence_floor_margin": 0.40000000000000036,
+      "edge_id": 6,
+      "route_label": "edge_6_neighbor_7_to_center",
+      "source_node_basin_mass": 10.25,
+      "source_node_coherence": 10.25,
+      "source_node_id": 7,
+      "support_floor_margin": 0.40000000000000036,
+      "support_gradient_score": 1.0,
+      "target_node_id": 0,
+      "trace_origin": "source_current_same_run"
+    },
+    {
+      "base_conductance": 0.25,
+      "boundary_distinguishable": true,
+      "boundary_edge_id": 8,
+      "branch_id": "branch_edge_8_node_9",
+      "branch_record_digest": "b2bab636f0d356c13593861ea76156931b4a824610e712ef4ac19f963cbf0263",
+      "center_basin_mass": 10.0,
+      "center_node_coherence": 10.0,
+      "coherence_delta_to_center": 2.0,
+      "coherence_floor_margin": 2.1500000000000004,
+      "edge_id": 8,
+      "route_label": "edge_8_neighbor_9_to_center",
+      "source_node_basin_mass": 12.0,
+      "source_node_coherence": 12.0,
+      "source_node_id": 9,
+      "support_floor_margin": 2.1500000000000004,
+      "support_gradient_score": 0.5,
+      "target_node_id": 0,
+      "trace_origin": "source_current_same_run"
+    }
+  ],
+  "branch_window": {
+    "end_step": 0,
+    "start_step": 0,
+    "window_id": "eroded_margin_still_supported_branch_window"
+  },
+  "case_id": "eroded_margin_still_supported",
+  "pre_collapse_basin_signature": {
+    "active_degree": 9,
+    "basin_members": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "basin_signature_digest": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+    "center_basin_id": "root",
+    "center_basin_mass": 10.0,
+    "center_coherence": 10.0,
+    "center_depth": 0,
+    "center_node_id": 0,
+    "edge_count": 9,
+    "incident_edge_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "node_count": 10,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "stress_config": {
+    "node_1_coherence": 13.4,
+    "producer_role": "bounded_test_configuration",
+    "selection_inputs_remain_source_current": true
+  },
+  "trace_digest": "7edd5a0e529af97dddfa5d77562159f28fa245b10959a3dab310240ff99fc440",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "present"
+}
