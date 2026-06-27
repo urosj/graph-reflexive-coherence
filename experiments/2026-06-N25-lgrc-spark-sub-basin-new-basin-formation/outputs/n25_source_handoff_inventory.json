@@ -152,6 +152,15 @@
       "passed": true
     },
     {
+      "check_id": "existing_lgrc9v3_spark_examples_available",
+      "detail": [
+        "examples/lgrc9v3/README.md",
+        "examples/lgrc9v3/causal_spark_diagnostics.py",
+        "examples/lgrc9v3/refinement_packet_transport.py"
+      ],
+      "passed": true
+    },
+    {
       "check_id": "no_positive_n25_evidence_opened",
       "detail": "I1 is source inventory only; BF rung remains unassigned.",
       "passed": true
@@ -205,7 +214,18 @@
   },
   "n25_closeout_ladder_rung": "N25-C0_inventory_only",
   "native_lane_failure_overwritten": false,
-  "output_digest": "c7ec4d1f1ca359863dab19dac831ac4f6b3a43c712d41715b07c3601ac1aced4",
+  "native_spark_source_policy": {
+    "example_sources": [
+      "examples/lgrc9v3/README.md",
+      "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "examples/lgrc9v3/refinement_packet_transport.py"
+    ],
+    "existing_examples_must_be_considered_before_new_producer_code": true,
+    "existing_lgrc_spark_behavior_expected": true,
+    "new_producer_code_allowed_only_if_needed": true,
+    "producer_extension_must_signal_missing_native_mechanism": true
+  },
+  "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
   "primitive_id": "spark_sub_basin_new_basin_formation",
   "producer_assisted_result_can_upgrade_native": false,
   "ready_for_iteration_2_schema_freeze": true,
@@ -259,17 +279,38 @@
     },
     {
       "parseable_json": false,
+      "path": "examples/lgrc9v3/README.md",
+      "sha256": "4d36dc8bcb248fcf75f19a096d4435ac13b80c1c0f983bd19540180cc80af233",
+      "source_role": "lgrc9v3_native_spark_example_index",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "sha256": "065e6fb59618aa7a138b86e8b3221ba7f7e4de10e8b7dbbfe3baa72deb35ab93",
+      "source_role": "lgrc9v3_causal_spark_candidate_example",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/refinement_packet_transport.py",
+      "sha256": "f70c3e53a68d83f8315a77e4b411d6ccad74bc998c281d5acd1a36f65e362b13",
+      "source_role": "lgrc9v3_refinement_transport_sparkish_example",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
       "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
       "sha256": "3e6820d183716faa18139dd3b91ca3397a259ced422da36f0dc8313f19b9bd83",
       "source_role": "n20_n29_handoff_context",
-      "status": "markdown_context_only"
+      "status": "context_only"
     },
     {
       "parseable_json": false,
       "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
       "sha256": "a9e004c6026cbc1e706548dd163b229750373973896c54f28514d608ae31c638",
       "source_role": "n20_n29_roadmap_context",
-      "status": "markdown_context_only"
+      "status": "context_only"
     }
   ],
   "status": "passed",

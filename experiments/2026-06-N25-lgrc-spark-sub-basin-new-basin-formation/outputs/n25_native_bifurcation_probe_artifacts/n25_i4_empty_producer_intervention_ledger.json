@@ -1,0 +1,9 @@
+{
+  "ledger_id": "n25_i4_native_only_empty_producer_intervention_ledger",
+  "producer_flux_conditioning_present": false,
+  "producer_hidden_support_present": false,
+  "producer_intervention_used": false,
+  "producer_schedule_present": false,
+  "producer_threshold_relaxation_present": false,
+  "scope_reason": "I4 is native-only and reuses existing LGRC9V3 spark/topology integration."
+}

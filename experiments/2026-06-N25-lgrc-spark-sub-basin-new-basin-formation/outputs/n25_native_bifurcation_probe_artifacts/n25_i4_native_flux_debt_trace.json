@@ -1,0 +1,8 @@
+{
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_debt_not_overwritten": true,
+  "native_flux_debt_status": "preserved",
+  "native_flux_debt_widened": false,
+  "packet_amount": 1e-09,
+  "packet_amount_within_bound": true
+}

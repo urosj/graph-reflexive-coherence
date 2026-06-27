@@ -40,6 +40,9 @@ N24_PRODUCER_PATH = (
 )
 N20_HANDOFF_PATH = "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md"
 N20_ROADMAP_PATH = "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md"
+LGRC9V3_EXAMPLES_README_PATH = "examples/lgrc9v3/README.md"
+LGRC9V3_CAUSAL_SPARK_EXAMPLE_PATH = "examples/lgrc9v3/causal_spark_diagnostics.py"
+LGRC9V3_REFINEMENT_TRANSPORT_EXAMPLE_PATH = "examples/lgrc9v3/refinement_packet_transport.py"
 
 SOURCE_CONTRACT_ROW = "n20_i4_row_06_spark_sub_basin_new_basin_formation"
 CONSUMABLE_CONTRACT_ROW = "n20_i5_row_06_spark_sub_basin_new_basin_formation"
@@ -139,7 +142,7 @@ def source_record(path: str, role: str) -> dict[str, Any]:
         record["output_digest"] = str(data.get("output_digest", "not_recorded"))
     else:
         record["parseable_json"] = False
-        record["status"] = "markdown_context_only"
+        record["status"] = "context_only"
     return record
 
 
@@ -244,6 +247,15 @@ def build_output() -> dict[str, Any]:
         source_record(N20_SAME_BASIN_PATH, "n20_same_basin_continuation_contract"),
         source_record(N24_CLOSEOUT_PATH, "n24_ab5_n24c5_native_lane_and_handoff"),
         source_record(N24_PRODUCER_PATH, "n24_i7c_producer_flux_conditioning_scaffold"),
+        source_record(LGRC9V3_EXAMPLES_README_PATH, "lgrc9v3_native_spark_example_index"),
+        source_record(
+            LGRC9V3_CAUSAL_SPARK_EXAMPLE_PATH,
+            "lgrc9v3_causal_spark_candidate_example",
+        ),
+        source_record(
+            LGRC9V3_REFINEMENT_TRANSPORT_EXAMPLE_PATH,
+            "lgrc9v3_refinement_transport_sparkish_example",
+        ),
         source_record(N20_HANDOFF_PATH, "n20_n29_handoff_context"),
         source_record(N20_ROADMAP_PATH, "n20_n29_roadmap_context"),
     ]
@@ -296,6 +308,22 @@ def build_output() -> dict[str, Any]:
             producer_summary,
         ),
         check(
+            "existing_lgrc9v3_spark_examples_available",
+            all(
+                (ROOT / path).exists()
+                for path in [
+                    LGRC9V3_EXAMPLES_README_PATH,
+                    LGRC9V3_CAUSAL_SPARK_EXAMPLE_PATH,
+                    LGRC9V3_REFINEMENT_TRANSPORT_EXAMPLE_PATH,
+                ]
+            ),
+            [
+                LGRC9V3_EXAMPLES_README_PATH,
+                LGRC9V3_CAUSAL_SPARK_EXAMPLE_PATH,
+                LGRC9V3_REFINEMENT_TRANSPORT_EXAMPLE_PATH,
+            ],
+        ),
+        check(
             "no_positive_n25_evidence_opened",
             True,
             "I1 is source inventory only; BF rung remains unassigned.",
@@ -332,6 +360,17 @@ def build_output() -> dict[str, Any]:
             "status": "producer_mediated_flux_conditioning_scaffold",
             "consumption_rule": "separate_lane_missing_native_mechanism_probe_only",
             "summary": producer_summary,
+        },
+        "native_spark_source_policy": {
+            "existing_lgrc_spark_behavior_expected": True,
+            "existing_examples_must_be_considered_before_new_producer_code": True,
+            "example_sources": [
+                LGRC9V3_EXAMPLES_README_PATH,
+                LGRC9V3_CAUSAL_SPARK_EXAMPLE_PATH,
+                LGRC9V3_REFINEMENT_TRANSPORT_EXAMPLE_PATH,
+            ],
+            "new_producer_code_allowed_only_if_needed": True,
+            "producer_extension_must_signal_missing_native_mechanism": True,
         },
         "required_future_source_current_fields": EXPECTED_SOURCE_CURRENT_FIELDS,
         "expected_naturalization_debt": EXPECTED_NATURALIZATION_DEBT,
@@ -372,6 +411,7 @@ def write_report(output: dict[str, Any]) -> None:
         "- Native C6: blocked by `flux_envelope_not_widened_above_1e-9`.",
         "- Producer lane: separate I7-C flux-conditioning scaffold.",
         "- Producer-assisted success cannot upgrade native BF or N24 native C6.",
+        "- Existing LGRC9V3 spark examples must be considered before adding new producer code.",
         "",
         "## Checks",
         "",
@@ -384,8 +424,11 @@ def write_report(output: dict[str, Any]) -> None:
             "",
             "## Claim Boundary",
             "",
-            "I1 opens no positive N25 evidence, assigns no BF rung, and keeps semantic",
-            "learning, choice, agency, native support, sentience, Phase 8, and ant ecology blocked.",
+        "I1 opens no positive N25 evidence, assigns no BF rung, and keeps semantic",
+        "learning, choice, agency, native support, sentience, Phase 8, and ant ecology blocked.",
+        "It also records that LGRC is already expected to emit spark-like evidence,",
+        "so N25 must start from native LGRC/LGRC9V3 spark mechanisms and examples",
+        "before introducing any producer-assisted extension.",
             "",
             "## Result",
             "",

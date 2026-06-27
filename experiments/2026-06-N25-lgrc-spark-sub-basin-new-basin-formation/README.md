@@ -41,6 +41,22 @@ is not merely old-basin thickening, label assignment, transient fluctuation,
 merge/leakage, or hidden producer insertion
 ```
 
+Important implementation constraint:
+
+```text
+LGRC is already expected to generate spark-like evidence.
+Existing native LGRC/LGRC9V3 spark mechanisms and examples must be inspected
+and reused before N25 introduces additional producer code.
+```
+
+Relevant existing examples:
+
+```text
+examples/lgrc9v3/README.md
+examples/lgrc9v3/causal_spark_diagnostics.py
+examples/lgrc9v3/refinement_packet_transport.py
+```
+
 ## Source Boundary
 
 Primary source artifacts:
@@ -95,6 +111,9 @@ artifact_paths_equal_manifest_paths
 artifact_sha256_equal_manifest_sha256
 output_digest
 row_specific_thresholds_declared_before_use
+existing_lgrc_spark_sources_considered
+native_spark_mechanism_reuse_status
+new_producer_code_justification
 lane
 lane_success_can_upgrade_native
 native_lane_failure_overwritten

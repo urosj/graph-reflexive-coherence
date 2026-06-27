@@ -1,0 +1,147 @@
+{
+  "event_kinds": [
+    "lgrc9v3_packet_departure",
+    "lgrc9v3_packet_arrival",
+    "lgrc9v3_packet_arrival_eligibility",
+    "lgrc9v3_local_update",
+    "lgrc9v3_causal_spark_candidate",
+    "hybrid_mechanical_expansion",
+    "lgrc9v3_refinement_packet_transport",
+    "lgrc9v3_proper_time_inheritance"
+  ],
+  "existing_source_examples_reused": [
+    "examples/lgrc9v3/causal_spark_diagnostics.py",
+    "examples/lgrc9v3/refinement_packet_transport.py"
+  ],
+  "mechanical_expansion": {
+    "amount_total": null,
+    "budget_after": 100.25,
+    "budget_before": 100.25,
+    "budget_error": 0.0,
+    "candidate_event_id": null,
+    "column_h": null,
+    "column_h_branch_hit": null,
+    "event_time_key": 2.0,
+    "expansion_id": "hybrid-spark-0-0",
+    "gate_reasons": [
+      "column_h_threshold_hit"
+    ],
+    "identity_acceptance_emitted": false,
+    "internal_edge_ids": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "kind": "hybrid_mechanical_expansion",
+    "mechanical_expansion_emitted": true,
+    "module_node_ids": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "scheduler_event_index": 2,
+    "source_candidate_event_id": "lgrc9v3-causal-spark-candidate-1-0-0",
+    "spark_lane": null,
+    "topology_event_id": null,
+    "topology_mutated": true
+  },
+  "packet_amount": 1e-09,
+  "packet_amount_equals_native_flux_debt_bound": true,
+  "proper_time_inheritance": {
+    "amount_total": null,
+    "budget_after": null,
+    "budget_before": null,
+    "budget_error": null,
+    "candidate_event_id": null,
+    "column_h": null,
+    "column_h_branch_hit": null,
+    "event_time_key": 2.0,
+    "expansion_id": null,
+    "gate_reasons": null,
+    "identity_acceptance_emitted": false,
+    "internal_edge_ids": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "kind": "lgrc9v3_proper_time_inheritance",
+    "mechanical_expansion_emitted": false,
+    "module_node_ids": null,
+    "scheduler_event_index": 2,
+    "source_candidate_event_id": "lgrc9v3-causal-spark-candidate-1-0-0",
+    "spark_lane": null,
+    "topology_event_id": "lgrc9v3-topology-ee001824be317870",
+    "topology_mutated": false
+  },
+  "refinement_packet_transport": {
+    "amount_total": 0.0,
+    "budget_after": 100.25,
+    "budget_before": 100.25,
+    "budget_error": 0.0,
+    "candidate_event_id": null,
+    "column_h": null,
+    "column_h_branch_hit": null,
+    "event_time_key": 2.0,
+    "expansion_id": null,
+    "gate_reasons": null,
+    "identity_acceptance_emitted": false,
+    "internal_edge_ids": null,
+    "kind": "lgrc9v3_refinement_packet_transport",
+    "mechanical_expansion_emitted": false,
+    "module_node_ids": null,
+    "scheduler_event_index": 0,
+    "source_candidate_event_id": "lgrc9v3-causal-spark-candidate-1-0-0",
+    "spark_lane": null,
+    "topology_event_id": "lgrc9v3-topology-a5acb0900c3caff4",
+    "topology_mutated": false
+  },
+  "runtime_family": "LGRC9V3",
+  "spark_candidate": {
+    "amount_total": null,
+    "budget_after": null,
+    "budget_before": null,
+    "budget_error": null,
+    "candidate_event_id": "lgrc9v3-causal-spark-candidate-1-0-0",
+    "column_h": [
+      -1.5000000070000006,
+      0.9999999919999993,
+      -2.5000000032500003
+    ],
+    "column_h_branch_hit": true,
+    "event_time_key": 2.0,
+    "expansion_id": null,
+    "gate_reasons": [
+      "column_h_threshold_hit"
+    ],
+    "identity_acceptance_emitted": false,
+    "internal_edge_ids": null,
+    "kind": "lgrc9v3_causal_spark_candidate",
+    "mechanical_expansion_emitted": false,
+    "module_node_ids": null,
+    "scheduler_event_index": 2,
+    "source_candidate_event_id": null,
+    "spark_lane": "grc9v3_column_h_assisted",
+    "topology_event_id": null,
+    "topology_mutated": false
+  },
+  "step_trace": [
+    {
+      "causal_spark_diagnostic_events": 0,
+      "causal_topology_integration_events": 0,
+      "event_time_key": 1.0,
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "topology_events_routed": 0
+    },
+    {
+      "causal_spark_diagnostic_events": 1,
+      "causal_topology_integration_events": 3,
+      "event_time_key": 2.0,
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "topology_events_routed": 3
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 Status: `passed`
 Acceptance state: `accepted_source_handoff_inventory_no_basin_formation_evidence`
-Output digest: `c7ec4d1f1ca359863dab19dac831ac4f6b3a43c712d41715b07c3601ac1aced4`
+Output digest: `f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2`
 
 ## Source Rows
 
@@ -16,6 +16,7 @@ Output digest: `c7ec4d1f1ca359863dab19dac831ac4f6b3a43c712d41715b07c3601ac1aced4
 - Native C6: blocked by `flux_envelope_not_widened_above_1e-9`.
 - Producer lane: separate I7-C flux-conditioning scaffold.
 - Producer-assisted success cannot upgrade native BF or N24 native C6.
+- Existing LGRC9V3 spark examples must be considered before adding new producer code.
 
 ## Checks
 
@@ -30,12 +31,16 @@ Output digest: `c7ec4d1f1ca359863dab19dac831ac4f6b3a43c712d41715b07c3601ac1aced4
 - PASS: `native_n24c6_blocked`
 - PASS: `producer_scaffold_available_separate_lane`
 - PASS: `producer_i7c_contract_declared`
+- PASS: `existing_lgrc9v3_spark_examples_available`
 - PASS: `no_positive_n25_evidence_opened`
 
 ## Claim Boundary
 
 I1 opens no positive N25 evidence, assigns no BF rung, and keeps semantic
 learning, choice, agency, native support, sentience, Phase 8, and ant ecology blocked.
+It also records that LGRC is already expected to emit spark-like evidence,
+so N25 must start from native LGRC/LGRC9V3 spark mechanisms and examples
+before introducing any producer-assisted extension.
 
 ## Result
 

@@ -2,7 +2,7 @@
 
 Status: `passed`
 Acceptance state: `accepted_basin_formation_schema_controls_frozen_no_positive_evidence`
-Output digest: `eef875053c66bc84f0df7b4c3d206d8f342be0e473c9730f328fcc488c9a72ce`
+Output digest: `17511cc4a21aee172d0f80600c55636701e97af4c1c46f6578411b4e97c7192f`
 
 ## Frozen Schema
 
@@ -10,8 +10,10 @@ Output digest: `eef875053c66bc84f0df7b4c3d206d8f342be0e473c9730f328fcc488c9a72ce
 - Row-level lane ceilings prevent producer-assisted success from upgrading native BF or N24 native C6.
 - Formation class and formation source are closed enums.
 - Native rows must preserve `native_flux_debt_bound = 1e-9` and `native_flux_debt_widened = false`.
+- Native probes must consider existing LGRC/LGRC9V3 spark mechanisms before adding producer code.
 - Producer-assisted rows cap conditioned flux at `1e-8` across at most 10 windows.
 - Active-null controls expect `failed_closed`; positive candidate controls expect blocker absence as `passed`.
+- Positive candidate rows must carry full `control_results`; active-null sentinel values are fixture-only.
 - Candidate rows must carry source digests, artifact path/SHA equality, temporal windows, and basin signature digests.
 - Artifact manifests must use formation-specific roles, not generic runtime traces.
 
@@ -34,9 +36,12 @@ Output digest: `eef875053c66bc84f0df7b4c3d206d8f342be0e473c9730f328fcc488c9a72ce
 - PASS: `formation_class_and_source_frozen`
 - PASS: `distinguishability_metrics_required`
 - PASS: `native_flux_debt_policy_frozen`
+- PASS: `native_spark_source_policy_frozen`
 - PASS: `producer_flux_bounds_frozen`
 - PASS: `artifact_roles_frozen`
 - PASS: `control_status_semantics_frozen`
+- PASS: `control_results_schema_frozen`
+- PASS: `active_null_sentinel_policy_frozen`
 - PASS: `i1_i2_control_alias_map_frozen`
 - PASS: `lane_cross_field_invariants_frozen`
 - PASS: `temporal_window_fields_required`

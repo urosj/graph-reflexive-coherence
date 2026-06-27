@@ -1,0 +1,46 @@
+{
+  "causal_modes": {
+    "causal_collapse_reabsorption_allowed": false,
+    "causal_identity_acceptance_allowed": false,
+    "causal_layer_mode": "topology_changing_causal_history",
+    "causal_proper_time_inheritance_allowed": true,
+    "causal_refinement_packet_transport_allowed": true,
+    "causal_spark_expansion_allowed": true,
+    "causal_topology_integration_allowed": true,
+    "edge_delay_policy": "constant_delay",
+    "event_time_policy": "explicit_event_time_key",
+    "lapse_policy": "unit",
+    "lgrc_runtime_level": "lgrc3",
+    "proper_time_accumulation_policy": "local_event_frontier"
+  },
+  "event_kinds": [
+    "lgrc9v3_packet_departure",
+    "lgrc9v3_packet_arrival",
+    "lgrc9v3_packet_arrival_eligibility",
+    "lgrc9v3_local_update",
+    "lgrc9v3_causal_spark_candidate",
+    "hybrid_mechanical_expansion",
+    "lgrc9v3_refinement_packet_transport",
+    "lgrc9v3_proper_time_inheritance"
+  ],
+  "producer_intervention_used": false,
+  "runtime_family": "LGRC9V3",
+  "source_current_runtime_path": "LGRC9V3 packet arrival -> local update -> causal spark diagnostic -> active topology integration",
+  "step_trace": [
+    {
+      "causal_spark_diagnostic_events": 0,
+      "causal_topology_integration_events": 0,
+      "event_time_key": 1.0,
+      "processed_event_kind": "lgrc9v3_packet_departure",
+      "topology_events_routed": 0
+    },
+    {
+      "causal_spark_diagnostic_events": 1,
+      "causal_topology_integration_events": 3,
+      "event_time_key": 2.0,
+      "processed_event_kind": "lgrc9v3_packet_arrival",
+      "topology_events_routed": 3
+    }
+  ],
+  "trace_id": "n25_i4_lgrc9v3_runtime_trace"
+}

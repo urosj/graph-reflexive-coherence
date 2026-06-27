@@ -1,0 +1,10 @@
+{
+  "budget_after": 100.25,
+  "budget_before": 100.25,
+  "budget_error": 0.0,
+  "budget_error_within_native_flux_debt_bound": true,
+  "merge_leakage_control_status": "deferred_to_iteration_5",
+  "merge_leakage_margin": 1e-09,
+  "refinement_packet_transport_amount_total": 0.0,
+  "transport_amount_total_interpretation": "The refinement packet transport event is structurally present but carries no residual packet amount in this run; the packet-triggered spark and mechanical expansion remain source-current, and budget conservation is tracked by budget_error."
+}

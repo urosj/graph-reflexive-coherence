@@ -10,6 +10,7 @@ Expected support:
 ```text
 N24 I7-C producer contract consumed
 producer-mediated lane declared before use
+native/example spark path insufficiency declared before producer extension
 producer intervention ledger source-visible
 native thresholds and floors unchanged
 conditioned flux windows remain capped by declared per-window bound
@@ -26,6 +27,7 @@ Failure conditions:
 
 ```text
 producer inserts a basin without source-current trace
+producer is introduced before native LGRC/LGRC9V3 spark examples are considered
 producer adds hidden support or relaxes thresholds
 producer-assisted result is relabeled as native BF evidence
 producer-assisted result overwrites native lane failure

@@ -1,0 +1,146 @@
+{
+  "canonical_signature": {
+    "bifurcation_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+    "budget_error": 0.0,
+    "event_kinds": [
+      "lgrc9v3_packet_departure",
+      "lgrc9v3_packet_arrival",
+      "lgrc9v3_packet_arrival_eligibility",
+      "lgrc9v3_local_update",
+      "lgrc9v3_causal_spark_candidate",
+      "hybrid_mechanical_expansion",
+      "lgrc9v3_refinement_packet_transport",
+      "lgrc9v3_proper_time_inheritance"
+    ],
+    "internal_edge_ids": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "merge_leakage_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+    "module_node_ids": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "native_flux_debt_bound": 1e-09,
+    "native_flux_debt_trace_digest": "99cf507a23c414165839de6c2d64fe4613fe17bedbc5852b5289a6c8da20135e",
+    "new_boundary_candidate_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+    "old_basin_relation_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+    "packet_amount": 1e-09,
+    "support_coherence_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+  },
+  "distinct_signature_count": 1,
+  "interpretation": "The LGRC9V3 native active-topology run replays to the same event sequence, module nodes, boundary digest, support/coherence trace, old-basin relation, merge/leakage trace, and flux-debt trace.",
+  "replay_count": 3,
+  "replay_mode": "duplicate_runtime_replay",
+  "replay_signatures": [
+    {
+      "bifurcation_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+      "budget_error": 0.0,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update",
+        "lgrc9v3_causal_spark_candidate",
+        "hybrid_mechanical_expansion",
+        "lgrc9v3_refinement_packet_transport",
+        "lgrc9v3_proper_time_inheritance"
+      ],
+      "internal_edge_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "merge_leakage_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+      "module_node_ids": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_trace_digest": "99cf507a23c414165839de6c2d64fe4613fe17bedbc5852b5289a6c8da20135e",
+      "new_boundary_candidate_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+      "old_basin_relation_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+      "packet_amount": 1e-09,
+      "support_coherence_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+    },
+    {
+      "bifurcation_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+      "budget_error": 0.0,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update",
+        "lgrc9v3_causal_spark_candidate",
+        "hybrid_mechanical_expansion",
+        "lgrc9v3_refinement_packet_transport",
+        "lgrc9v3_proper_time_inheritance"
+      ],
+      "internal_edge_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "merge_leakage_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+      "module_node_ids": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_trace_digest": "99cf507a23c414165839de6c2d64fe4613fe17bedbc5852b5289a6c8da20135e",
+      "new_boundary_candidate_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+      "old_basin_relation_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+      "packet_amount": 1e-09,
+      "support_coherence_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+    },
+    {
+      "bifurcation_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+      "budget_error": 0.0,
+      "event_kinds": [
+        "lgrc9v3_packet_departure",
+        "lgrc9v3_packet_arrival",
+        "lgrc9v3_packet_arrival_eligibility",
+        "lgrc9v3_local_update",
+        "lgrc9v3_causal_spark_candidate",
+        "hybrid_mechanical_expansion",
+        "lgrc9v3_refinement_packet_transport",
+        "lgrc9v3_proper_time_inheritance"
+      ],
+      "internal_edge_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "merge_leakage_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+      "module_node_ids": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_trace_digest": "99cf507a23c414165839de6c2d64fe4613fe17bedbc5852b5289a6c8da20135e",
+      "new_boundary_candidate_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+      "old_basin_relation_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+      "packet_amount": 1e-09,
+      "support_coherence_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+    }
+  ],
+  "replay_stable": true,
+  "trace_id": "n25_i5_duplicate_runtime_replay_trace"
+}

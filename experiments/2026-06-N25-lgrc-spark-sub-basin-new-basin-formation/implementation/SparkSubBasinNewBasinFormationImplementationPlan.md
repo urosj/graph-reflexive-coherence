@@ -21,6 +21,21 @@ producer-assisted lane:
 Producer-assisted success is useful as a missing-mechanism probe, but it cannot
 retroactively upgrade native N24-C6 or native N25 formation evidence.
 
+N25 must not invent spark machinery unless needed. LGRC is already expected to
+emit spark-like evidence, and `examples/lgrc9v3` already contains native
+spark-ish cases:
+
+```text
+examples/lgrc9v3/README.md
+examples/lgrc9v3/causal_spark_diagnostics.py
+examples/lgrc9v3/refinement_packet_transport.py
+```
+
+The native lane should start by reusing existing LGRC/LGRC9V3 spark mechanisms
+or examples. New producer code is allowed only as a declared extension when the
+native/example path is insufficient, and must record the missing native
+mechanism as naturalization debt.
+
 ## Source Rules
 
 N25 may consume:
@@ -72,8 +87,12 @@ artifact_sha256
 artifact_paths_equal_manifest_paths
 artifact_sha256_equal_manifest_sha256
 all_artifact_sha256_match_file_contents
+row_digest
 output_digest
 row_specific_thresholds_declared_before_use
+existing_lgrc_spark_sources_considered
+native_spark_mechanism_reuse_status
+new_producer_code_justification
 lane = native | producer_assisted
 lane_success_can_upgrade_native
 native_lane_failure_overwritten
@@ -131,6 +150,8 @@ row_decision
 basin_formation_claim_allowed
 claim_ceiling
 unsafe_claim_flags
+n25_closeout_ceiling
+n25_closeout_ladder_rung_assigned
 ```
 
 ## Formation Classification
@@ -231,6 +252,15 @@ max_conditioning_windows = 10
 producer_threshold_relaxation_rejected = true
 ```
 
+Native spark source policy:
+
+```text
+existing_lgrc_spark_behavior_expected = true
+existing_examples_must_be_considered_before_new_producer_code = true
+new_producer_code_allowed_only_if_needed = true
+producer_extension_must_signal_missing_native_mechanism = true
+```
+
 Lane cross-field invariants:
 
 ```text
@@ -325,6 +355,8 @@ producer_threshold_relaxation_control
 producer_basin_insertion_without_trace_control
 producer_success_as_native_relabel_control
 producer_success_overwrites_native_failure_control
+native_spark_source_policy_rejected
+producer_before_native_spark_path_rejected
 ap4_gap_prose_only_rejected
 ap5_proxy_target_omission_rejected_when_applicable
 semantic_learning_relabel_rejected
@@ -349,6 +381,32 @@ positive candidate rows:
   not_run blocks dependent rung
   not_applicable requires scope reason
 ```
+
+Positive-row control result schema:
+
+```text
+control_results = [
+  {
+    control_id
+    control_status
+    blocked_condition
+    expected_result
+    actual_result
+    claim_allowed_when_control_triggers
+    rung_effect
+  }
+]
+```
+
+Active-null sentinel values such as `not_applicable_active_null_fixture` are
+allowed only when:
+
+```text
+schema_instantiation_only = true
+positive_evidence_admissible = false
+```
+
+Positive rows must use strict boolean values for artifact path/SHA validation.
 
 I1 control-name aliases:
 
@@ -391,8 +449,17 @@ n24_optionality_relabel
 producer_assisted_native_upgrade_relabel
 native_flux_debt_omitted
 ap_gap_prose_only
-unsafe_claim_relabels
+unsafe_semantic_learning_relabel
+unsafe_choice_agency_native_support_phase8_relabels
+existing_lgrc9v3_spark_examples_skipped
+producer_before_native_spark_path
 ```
+
+The unsafe-claim umbrella is deliberately split into semantic-learning and
+choice/agency/native-support/Phase-8 relabel rows so I3 can show each blocker
+family failing closed. The final two rows come from the native-spark-first
+global guard: N25 must not bypass existing LGRC9V3 spark examples or introduce
+producer spark scaffolds before the native spark path is evaluated.
 
 All must fail closed.
 

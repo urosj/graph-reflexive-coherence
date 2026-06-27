@@ -8,6 +8,8 @@ Expected support:
 ```text
 N20 spark/sub-basin/new-basin contract consumed
 N24 native AB5/N24-C5 lane consumed as surplus-supported optionality context
+existing LGRC/LGRC9V3 spark examples considered before new producer code
+native spark mechanism reuse status recorded
 row-specific thresholds declared before use
 bifurcation trace recorded
 new boundary candidate trace recorded
@@ -30,6 +32,7 @@ merge/leakage is counted as formation
 candidate does not replay
 native flux debt is omitted or widened by prose
 hidden producer insertion participates in a native row
+native LGRC/LGRC9V3 spark examples are skipped without justification
 formation source is label-only, old-basin thickening, merge/leakage, or report-derived
 semantic learning, choice, agency, native support, sentience, Phase 8, or ant ecology opens
 ```

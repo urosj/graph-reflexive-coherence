@@ -33,6 +33,7 @@ PRODUCER_ASSISTED_RESULT_CLASS_VALUES = [
     "missing_native_mechanism_probe",
 ]
 FORMATION_CLASS_VALUES = [
+    "bifurcation_partial",
     "reinforced_old_basin",
     "reshaped_old_boundary",
     "sub_basin_candidate",
@@ -130,6 +131,8 @@ CONTROL_IDS = [
     "producer_basin_insertion_without_trace_control",
     "producer_success_as_native_relabel_control",
     "producer_success_overwrites_native_failure_control",
+    "native_spark_source_policy_rejected",
+    "producer_before_native_spark_path_rejected",
     "ap4_gap_prose_only_rejected",
     "ap5_proxy_target_omission_rejected_when_applicable",
     "semantic_learning_relabel_rejected",
@@ -191,8 +194,12 @@ CANDIDATE_EVIDENCE_FIELDS = [
     "artifact_paths_equal_manifest_paths",
     "artifact_sha256_equal_manifest_sha256",
     "all_artifact_sha256_match_file_contents",
+    "row_digest",
     "output_digest",
     "row_specific_thresholds_declared_before_use",
+    "existing_lgrc_spark_sources_considered",
+    "native_spark_mechanism_reuse_status",
+    "new_producer_code_justification",
     "lane",
     "lane_success_can_upgrade_native",
     "native_lane_failure_overwritten",
@@ -241,6 +248,7 @@ CANDIDATE_EVIDENCE_FIELDS = [
     "coherence_floor_result",
     "boundary_integrity_result",
     "flux_or_leakage_result",
+    "control_results",
     "producer_residue_classification",
     "naturalization_debt",
     "ap4_dependency_status",
@@ -251,6 +259,8 @@ CANDIDATE_EVIDENCE_FIELDS = [
     "row_decision",
     "basin_formation_claim_allowed",
     "claim_ceiling",
+    "n25_closeout_ceiling",
+    "n25_closeout_ladder_rung_assigned",
     "unsafe_claim_flags",
 ]
 
@@ -333,6 +343,7 @@ def build_output() -> dict[str, Any]:
         "native": {
             "formation_source_required": "native_source_current_bifurcation",
             "producer_assisted_result_class_required": "not_applicable",
+            "n24_producer_lane_status_required": "not_used_in_native_row",
             "lane_success_can_upgrade_native_required": False,
             "native_lane_failure_overwritten_required": False,
             "native_flux_debt_bound_required": 1e-9,
@@ -351,6 +362,11 @@ def build_output() -> dict[str, Any]:
         },
     }
     formation_definitions = {
+        "bifurcation_partial": {
+            "spark_or_bifurcation_trace_observed": True,
+            "distinguishable_basin_not_yet_stable": True,
+            "bf_ceiling": "BF2",
+        },
         "sub_basin_candidate": {
             "boundary_distinguishable_region": "inside_or_attached_to_old_basin",
             "old_basin_relation_required": True,
@@ -379,6 +395,26 @@ def build_output() -> dict[str, Any]:
             "producer_threshold_relaxation_rejected_required": True,
         },
     }
+    native_spark_source_policy = {
+        "existing_lgrc_spark_behavior_expected": True,
+        "existing_examples_must_be_considered_before_new_producer_code": True,
+        "source_examples": [
+            "examples/lgrc9v3/README.md",
+            "examples/lgrc9v3/causal_spark_diagnostics.py",
+            "examples/lgrc9v3/refinement_packet_transport.py",
+        ],
+        "native_probe_order": [
+            "reuse_existing_lgrc9v3_causal_spark_diagnostics",
+            "reuse_existing_grc9v3_lane_b_spark_or_refinement_transport_where_applicable",
+            "add_producer_extension_only_if_native_sources_are_insufficient",
+        ],
+        "new_producer_code_policy": {
+            "allowed_only_if_needed": True,
+            "must_declare_why_existing_native_spark_path_is_insufficient": True,
+            "must_record_naturalization_debt": True,
+            "must_not_insert_new_basin_without_source_current_trace": True,
+        },
+    }
     control_status_policy = {
         "active_null_rows": {
             "expected_status": "failed_closed",
@@ -391,6 +427,31 @@ def build_output() -> dict[str, Any]:
             "not_run_effect": "blocks dependent rung",
             "not_applicable_requirement": "scope reason required",
         },
+    }
+    control_result_schema = {
+        "required_fields": [
+            "control_id",
+            "control_status",
+            "blocked_condition",
+            "expected_result",
+            "actual_result",
+            "claim_allowed_when_control_triggers",
+            "rung_effect",
+        ],
+        "positive_candidate_rows_require_full_list": True,
+        "active_null_rows_may_carry_single_control_status_summary": True,
+    }
+    active_null_sentinel_policy = {
+        "sentinel_values_allowed_only_when": {
+            "schema_instantiation_only": True,
+            "positive_evidence_admissible": False,
+        },
+        "positive_row_boolean_fields": [
+            "all_artifact_sha256_match_file_contents",
+            "artifact_paths_equal_manifest_paths",
+            "artifact_sha256_equal_manifest_sha256",
+        ],
+        "positive_rows_must_use_strict_booleans": True,
     }
     temporal_window_policy = {
         "required_fields": [
@@ -452,6 +513,7 @@ def build_output() -> dict[str, Any]:
         check(
             "formation_class_and_source_frozen",
             "sub_basin_candidate" in FORMATION_CLASS_VALUES
+            and "bifurcation_partial" in FORMATION_CLASS_VALUES
             and "new_basin_candidate" in FORMATION_CLASS_VALUES
             and "native_source_current_bifurcation" in FORMATION_SOURCE_VALUES
             and "producer_flux_conditioned" in FORMATION_SOURCE_VALUES,
@@ -477,6 +539,12 @@ def build_output() -> dict[str, Any]:
             native_flux_debt_policy["native_rows"]["native_flux_debt_bound"] == 1e-9
             and native_flux_debt_policy["native_rows"]["native_flux_debt_widened_required_value"] is False,
             native_flux_debt_policy,
+        ),
+        check(
+            "native_spark_source_policy_frozen",
+            native_spark_source_policy["existing_lgrc_spark_behavior_expected"] is True
+            and native_spark_source_policy["existing_examples_must_be_considered_before_new_producer_code"] is True,
+            native_spark_source_policy,
         ),
         check(
             "producer_flux_bounds_frozen",
@@ -509,6 +577,27 @@ def build_output() -> dict[str, Any]:
             control_status_policy,
         ),
         check(
+            "control_results_schema_frozen",
+            all(
+                field in control_result_schema["required_fields"]
+                for field in [
+                    "control_id",
+                    "control_status",
+                    "blocked_condition",
+                    "expected_result",
+                    "actual_result",
+                    "claim_allowed_when_control_triggers",
+                    "rung_effect",
+                ]
+            ),
+            control_result_schema,
+        ),
+        check(
+            "active_null_sentinel_policy_frozen",
+            active_null_sentinel_policy["positive_rows_must_use_strict_booleans"] is True,
+            active_null_sentinel_policy,
+        ),
+        check(
             "i1_i2_control_alias_map_frozen",
             all(
                 key in CONTROL_ALIAS_MAP
@@ -523,6 +612,7 @@ def build_output() -> dict[str, Any]:
         check(
             "lane_cross_field_invariants_frozen",
             lane_cross_field_invariants["native"]["formation_source_required"] == "native_source_current_bifurcation"
+            and lane_cross_field_invariants["native"]["n24_producer_lane_status_required"] == "not_used_in_native_row"
             and lane_cross_field_invariants["producer_assisted"]["formation_source_required"] == "producer_flux_conditioned",
             lane_cross_field_invariants,
         ),
@@ -578,7 +668,10 @@ def build_output() -> dict[str, Any]:
         "lane_ceiling_policy": lane_ceiling_policy,
         "lane_cross_field_invariants": lane_cross_field_invariants,
         "native_flux_debt_policy": native_flux_debt_policy,
+        "native_spark_source_policy": native_spark_source_policy,
         "control_status_policy": control_status_policy,
+        "control_result_schema": control_result_schema,
+        "active_null_sentinel_policy": active_null_sentinel_policy,
         "control_alias_map": CONTROL_ALIAS_MAP,
         "temporal_window_policy": temporal_window_policy,
         "basin_digest_policy": basin_digest_policy,
@@ -626,8 +719,10 @@ def write_report(output: dict[str, Any]) -> None:
         "- Row-level lane ceilings prevent producer-assisted success from upgrading native BF or N24 native C6.",
         "- Formation class and formation source are closed enums.",
         "- Native rows must preserve `native_flux_debt_bound = 1e-9` and `native_flux_debt_widened = false`.",
+        "- Native probes must consider existing LGRC/LGRC9V3 spark mechanisms before adding producer code.",
         "- Producer-assisted rows cap conditioned flux at `1e-8` across at most 10 windows.",
         "- Active-null controls expect `failed_closed`; positive candidate controls expect blocker absence as `passed`.",
+        "- Positive candidate rows must carry full `control_results`; active-null sentinel values are fixture-only.",
         "- Candidate rows must carry source digests, artifact path/SHA equality, temporal windows, and basin signature digests.",
         "- Artifact manifests must use formation-specific roles, not generic runtime traces.",
         "",

@@ -1,5 +1,17 @@
 {
   "acceptance_state": "accepted_basin_formation_schema_controls_frozen_no_positive_evidence",
+  "active_null_sentinel_policy": {
+    "positive_row_boolean_fields": [
+      "all_artifact_sha256_match_file_contents",
+      "artifact_paths_equal_manifest_paths",
+      "artifact_sha256_equal_manifest_sha256"
+    ],
+    "positive_rows_must_use_strict_booleans": true,
+    "sentinel_values_allowed_only_when": {
+      "positive_evidence_admissible": false,
+      "schema_instantiation_only": true
+    }
+  },
   "ap_gap_policy": {
     "ap4_dependency_status_values": [
       "required_recorded",
@@ -97,6 +109,7 @@
       "report"
     ],
     "formation_class_values": [
+      "bifurcation_partial",
       "reinforced_old_basin",
       "reshaped_old_boundary",
       "sub_basin_candidate",
@@ -156,8 +169,12 @@
       "artifact_paths_equal_manifest_paths",
       "artifact_sha256_equal_manifest_sha256",
       "all_artifact_sha256_match_file_contents",
+      "row_digest",
       "output_digest",
       "row_specific_thresholds_declared_before_use",
+      "existing_lgrc_spark_sources_considered",
+      "native_spark_mechanism_reuse_status",
+      "new_producer_code_justification",
       "lane",
       "lane_success_can_upgrade_native",
       "native_lane_failure_overwritten",
@@ -206,6 +223,7 @@
       "coherence_floor_result",
       "boundary_integrity_result",
       "flux_or_leakage_result",
+      "control_results",
       "producer_residue_classification",
       "naturalization_debt",
       "ap4_dependency_status",
@@ -216,6 +234,8 @@
       "row_decision",
       "basin_formation_claim_allowed",
       "claim_ceiling",
+      "n25_closeout_ceiling",
+      "n25_closeout_ladder_rung_assigned",
       "unsafe_claim_flags"
     ],
     "row_decision_values": [
@@ -231,9 +251,9 @@
       "check_id": "i1_inventory_passed",
       "detail": {
         "acceptance_state": "accepted_source_handoff_inventory_no_basin_formation_evidence",
-        "output_digest": "c7ec4d1f1ca359863dab19dac831ac4f6b3a43c712d41715b07c3601ac1aced4",
+        "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
         "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_source_handoff_inventory.json",
-        "sha256": "5c1d81216f4cf4fa79d1a4f66d8ae0337177ac0f1346df4ae65769bfa712a2b8",
+        "sha256": "b738072dd8922dcfcc5d5be1ab3efc27b5f43b0738c7f8ea41ae09880b4cdf18",
         "status": "passed"
       },
       "passed": true
@@ -256,8 +276,12 @@
         "artifact_paths_equal_manifest_paths",
         "artifact_sha256_equal_manifest_sha256",
         "all_artifact_sha256_match_file_contents",
+        "row_digest",
         "output_digest",
         "row_specific_thresholds_declared_before_use",
+        "existing_lgrc_spark_sources_considered",
+        "native_spark_mechanism_reuse_status",
+        "new_producer_code_justification",
         "lane",
         "lane_success_can_upgrade_native",
         "native_lane_failure_overwritten",
@@ -306,6 +330,7 @@
         "coherence_floor_result",
         "boundary_integrity_result",
         "flux_or_leakage_result",
+        "control_results",
         "producer_residue_classification",
         "naturalization_debt",
         "ap4_dependency_status",
@@ -316,6 +341,8 @@
         "row_decision",
         "basin_formation_claim_allowed",
         "claim_ceiling",
+        "n25_closeout_ceiling",
+        "n25_closeout_ladder_rung_assigned",
         "unsafe_claim_flags"
       ],
       "passed": true
@@ -357,6 +384,7 @@
       "check_id": "formation_class_and_source_frozen",
       "detail": {
         "formation_class": [
+          "bifurcation_partial",
           "reinforced_old_basin",
           "reshaped_old_boundary",
           "sub_basin_candidate",
@@ -403,6 +431,30 @@
           "producer_flux_window_declared_before_use_required": true,
           "producer_threshold_relaxation_rejected_required": true
         }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_spark_source_policy_frozen",
+      "detail": {
+        "existing_examples_must_be_considered_before_new_producer_code": true,
+        "existing_lgrc_spark_behavior_expected": true,
+        "native_probe_order": [
+          "reuse_existing_lgrc9v3_causal_spark_diagnostics",
+          "reuse_existing_grc9v3_lane_b_spark_or_refinement_transport_where_applicable",
+          "add_producer_extension_only_if_native_sources_are_insufficient"
+        ],
+        "new_producer_code_policy": {
+          "allowed_only_if_needed": true,
+          "must_declare_why_existing_native_spark_path_is_insufficient": true,
+          "must_not_insert_new_basin_without_source_current_trace": true,
+          "must_record_naturalization_debt": true
+        },
+        "source_examples": [
+          "examples/lgrc9v3/README.md",
+          "examples/lgrc9v3/causal_spark_diagnostics.py",
+          "examples/lgrc9v3/refinement_packet_transport.py"
+        ]
       },
       "passed": true
     },
@@ -462,6 +514,39 @@
       "passed": true
     },
     {
+      "check_id": "control_results_schema_frozen",
+      "detail": {
+        "active_null_rows_may_carry_single_control_status_summary": true,
+        "positive_candidate_rows_require_full_list": true,
+        "required_fields": [
+          "control_id",
+          "control_status",
+          "blocked_condition",
+          "expected_result",
+          "actual_result",
+          "claim_allowed_when_control_triggers",
+          "rung_effect"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_null_sentinel_policy_frozen",
+      "detail": {
+        "positive_row_boolean_fields": [
+          "all_artifact_sha256_match_file_contents",
+          "artifact_paths_equal_manifest_paths",
+          "artifact_sha256_equal_manifest_sha256"
+        ],
+        "positive_rows_must_use_strict_booleans": true,
+        "sentinel_values_allowed_only_when": {
+          "positive_evidence_admissible": false,
+          "schema_instantiation_only": true
+        }
+      },
+      "passed": true
+    },
+    {
       "check_id": "i1_i2_control_alias_map_frozen",
       "detail": {
         "hidden_producer_insertion_control": "hidden_producer_insertion_rejected",
@@ -482,6 +567,7 @@
         "native": {
           "formation_source_required": "native_source_current_bifurcation",
           "lane_success_can_upgrade_native_required": false,
+          "n24_producer_lane_status_required": "not_used_in_native_row",
           "native_flux_debt_bound_required": 1e-09,
           "native_flux_debt_status_required": "preserved",
           "native_flux_debt_widened_required": false,
@@ -546,6 +632,8 @@
         "producer_basin_insertion_without_trace_control",
         "producer_success_as_native_relabel_control",
         "producer_success_overwrites_native_failure_control",
+        "native_spark_source_policy_rejected",
+        "producer_before_native_spark_path_rejected",
         "ap4_gap_prose_only_rejected",
         "ap5_proxy_target_omission_rejected_when_applicable",
         "semantic_learning_relabel_rejected",
@@ -601,6 +689,19 @@
     "semantic_relabel_control": [
       "semantic_choice_relabel_rejected",
       "semantic_learning_relabel_rejected"
+    ]
+  },
+  "control_result_schema": {
+    "active_null_rows_may_carry_single_control_status_summary": true,
+    "positive_candidate_rows_require_full_list": true,
+    "required_fields": [
+      "control_id",
+      "control_status",
+      "blocked_condition",
+      "expected_result",
+      "actual_result",
+      "claim_allowed_when_control_triggers",
+      "rung_effect"
     ]
   },
   "control_status_policy": {
@@ -754,6 +855,24 @@
     },
     {
       "active_null_expected_status": "failed_closed",
+      "control_id": "native_spark_source_policy_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_before_native_spark_path_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
       "control_id": "ap4_gap_prose_only_rejected",
       "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
       "failed_open_effect": "blocks_row_and_closeout_upgrade",
@@ -828,6 +947,11 @@
   "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
   "failed_checks": [],
   "formation_definitions": {
+    "bifurcation_partial": {
+      "bf_ceiling": "BF2",
+      "distinguishable_basin_not_yet_stable": true,
+      "spark_or_bifurcation_trace_observed": true
+    },
     "new_basin_candidate": {
       "boundary_distinguishable_region_with_replayable_floor": true,
       "merge_leakage_controls_clean": true,
@@ -867,6 +991,7 @@
     "native": {
       "formation_source_required": "native_source_current_bifurcation",
       "lane_success_can_upgrade_native_required": false,
+      "n24_producer_lane_status_required": "not_used_in_native_row",
       "native_flux_debt_bound_required": 1e-09,
       "native_flux_debt_status_required": "preserved",
       "native_flux_debt_widened_required": false,
@@ -914,7 +1039,27 @@
       "producer_threshold_relaxation_rejected_required": true
     }
   },
-  "output_digest": "eef875053c66bc84f0df7b4c3d206d8f342be0e473c9730f328fcc488c9a72ce",
+  "native_spark_source_policy": {
+    "existing_examples_must_be_considered_before_new_producer_code": true,
+    "existing_lgrc_spark_behavior_expected": true,
+    "native_probe_order": [
+      "reuse_existing_lgrc9v3_causal_spark_diagnostics",
+      "reuse_existing_grc9v3_lane_b_spark_or_refinement_transport_where_applicable",
+      "add_producer_extension_only_if_native_sources_are_insufficient"
+    ],
+    "new_producer_code_policy": {
+      "allowed_only_if_needed": true,
+      "must_declare_why_existing_native_spark_path_is_insufficient": true,
+      "must_not_insert_new_basin_without_source_current_trace": true,
+      "must_record_naturalization_debt": true
+    },
+    "source_examples": [
+      "examples/lgrc9v3/README.md",
+      "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "examples/lgrc9v3/refinement_packet_transport.py"
+    ]
+  },
+  "output_digest": "17511cc4a21aee172d0f80600c55636701e97af4c1c46f6578411b4e97c7192f",
   "ready_for_iteration_3_active_nulls": true,
   "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_basin_formation_schema_and_controls.py",
   "rung_support_policy": {
@@ -944,9 +1089,9 @@
   "source_contract_row": "n20_i4_row_06_spark_sub_basin_new_basin_formation",
   "source_inventory": {
     "acceptance_state": "accepted_source_handoff_inventory_no_basin_formation_evidence",
-    "output_digest": "c7ec4d1f1ca359863dab19dac831ac4f6b3a43c712d41715b07c3601ac1aced4",
+    "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
     "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_source_handoff_inventory.json",
-    "sha256": "5c1d81216f4cf4fa79d1a4f66d8ae0337177ac0f1346df4ae65769bfa712a2b8",
+    "sha256": "b738072dd8922dcfcc5d5be1ab3efc27b5f43b0738c7f8ea41ae09880b4cdf18",
     "status": "passed"
   },
   "status": "passed",

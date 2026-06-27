@@ -1,0 +1,109 @@
+{
+  "all_artifact_sha256_match_file_contents": true,
+  "all_trace_digests_match_i4_row": true,
+  "artifact_sha_results": [
+    {
+      "actual_sha256": "85a87d328e6928659abea7b5e2bd206471f907fdc8cc3f4b0262c5957addbe30",
+      "artifact_role": "bifurcation_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_lgrc9v3_bifurcation_trace.json",
+      "recorded_sha256": "85a87d328e6928659abea7b5e2bd206471f907fdc8cc3f4b0262c5957addbe30",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "58ca7c4ea7f40553b1b56bb67b8ba450e6065fbebb5d6e403c1d88db3f5fd34d",
+      "artifact_role": "merge_leakage_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json",
+      "recorded_sha256": "58ca7c4ea7f40553b1b56bb67b8ba450e6065fbebb5d6e403c1d88db3f5fd34d",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "1268840cfea4f060db3bdc963b33c3f61cd36cf0bf9bf133d42199058006312c",
+      "artifact_role": "native_flux_debt_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_native_flux_debt_trace.json",
+      "recorded_sha256": "1268840cfea4f060db3bdc963b33c3f61cd36cf0bf9bf133d42199058006312c",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "175624a622ce257793e24c6d294b9a157cf55fc43f9d5da492a9a467d74194fb",
+      "artifact_role": "new_basin_support_coherence_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_region_support_coherence_trace.json",
+      "recorded_sha256": "175624a622ce257793e24c6d294b9a157cf55fc43f9d5da492a9a467d74194fb",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "a8bdcfa49c2a34d53694c2ef2fe5c84b215e94360631d6a88fd4a4d51e170de0",
+      "artifact_role": "new_boundary_candidate_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_boundary_candidate_trace.json",
+      "recorded_sha256": "a8bdcfa49c2a34d53694c2ef2fe5c84b215e94360631d6a88fd4a4d51e170de0",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "9091961b5970f9334b4dcdc9224e592ace30b68b8ddd0ed6cab05609111d8306",
+      "artifact_role": "old_basin_relation_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_old_basin_relation_trace.json",
+      "recorded_sha256": "9091961b5970f9334b4dcdc9224e592ace30b68b8ddd0ed6cab05609111d8306",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "8b1d94c724048e13ebd0e2179e3ea906d206b30c878fdf3445e368250544f992",
+      "artifact_role": "producer_intervention_ledger",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_empty_producer_intervention_ledger.json",
+      "recorded_sha256": "8b1d94c724048e13ebd0e2179e3ea906d206b30c878fdf3445e368250544f992",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "f34170166ffd067b660f7a6a3feba1acc460548a3039f237d55a530789f87417",
+      "artifact_role": "runtime_trace",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_runtime_trace.json",
+      "recorded_sha256": "f34170166ffd067b660f7a6a3feba1acc460548a3039f237d55a530789f87417",
+      "sha256_match": true
+    },
+    {
+      "actual_sha256": "d44422a76280d72c5ac6fdc516bfa9cfcabb7a9477e7acb2c4b146cb4848a1c0",
+      "artifact_role": "threshold_record",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_thresholds_declared_before_use.json",
+      "recorded_sha256": "d44422a76280d72c5ac6fdc516bfa9cfcabb7a9477e7acb2c4b146cb4848a1c0",
+      "sha256_match": true
+    }
+  ],
+  "interpretation": "Artifact-only reconstruction confirms the I4 trace files still match their manifest SHA-256 values and row-level trace digests.",
+  "source_i4_output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+  "trace_digest_results": [
+    {
+      "actual_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+      "artifact_role": "bifurcation_trace",
+      "digest_match": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_lgrc9v3_bifurcation_trace.json",
+      "recorded_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f"
+    },
+    {
+      "actual_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+      "artifact_role": "new_boundary_candidate_trace",
+      "digest_match": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_boundary_candidate_trace.json",
+      "recorded_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0"
+    },
+    {
+      "actual_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e",
+      "artifact_role": "new_basin_support_coherence_trace",
+      "digest_match": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_region_support_coherence_trace.json",
+      "recorded_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+    },
+    {
+      "actual_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+      "artifact_role": "old_basin_relation_trace",
+      "digest_match": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_old_basin_relation_trace.json",
+      "recorded_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d"
+    },
+    {
+      "actual_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+      "artifact_role": "merge_leakage_trace",
+      "digest_match": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json",
+      "recorded_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5"
+    }
+  ],
+  "trace_id": "n25_i5_artifact_reconstruction_trace"
+}
