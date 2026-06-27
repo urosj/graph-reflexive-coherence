@@ -47,6 +47,7 @@ machine-local state.
 | [N20 becoming-primitive producer translation contract](2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/README.md) | Closed contract experiment defining LGRC-visible becoming primitives, producer residue, naturalization debt, continuation-function descriptors, proxy blockers, same-basin controls, and the N21 handoff without claiming primitive evidence. | README, then closeout handoff, same-basin contract, producer residue ledger, function/proxy contract, implementation checklist, and hypotheses. |
 | [N21 withdrawal resistance and naturalization depth](2026-06-N21-lgrc-withdrawal-resistance-and-naturalization-depth/README.md) | Closed bounded becoming-primitive evidence experiment: WR6 artifact-level withdrawal-resistance candidate plus bounded N21-local ND5 naturalization-depth candidate, with agency, native support, sentience, Phase 8, ant ecology, robust withdrawal, support-removal resistance, and general naturalization depth blocked. | README, then closeout handoff, replay/control matrix, withdrawal and naturalization probes, implementation checklist, and hypotheses. |
 | [N22 susceptibility update and durable geometry modification](2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md) | Closed bounded artifact-level susceptibility-update candidate: producer-mediated SU5 durable geometry modification evidence with N22-C6/N23 handoff, while native route-conductance memory, semantic learning, choice, agency, native support, sentience, Phase 8, ant ecology, and SU6 remain blocked. | README, then closeout handoff, replay/control matrix, carrier and packet probes, implementation checklist, and hypotheses. |
+| [N23 live-continuation collapse and selection geometry](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md) | Closed bounded artifact-level LC6 live-continuation collapse / selection-geometry evidence with N23-C6/N24 handoff and AP4 bridge candidate support, while final AP4, semantic choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked. | README, then closeout handoff, replay/control matrix, AP4 selection geometry probes, live-branch collapse probes, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -252,6 +253,37 @@ proxy/target-dependent rows. N22 does not resolve those gaps.
 The N21 `ND6` bridge is recorded only as a bounded producer-mediated bridge
 candidate. N21 remains closed and is not retroactively upgraded.
 
+N23 closes as the bounded live-continuation collapse / selection-geometry
+experiment:
+
+```text
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+n23_closeout_supported = true
+source_backed_live_branch_set_evidence = true
+source_backed_collapse_trace_evidence = true
+counterfactual_retention_evidence = true
+replay_and_control_matrix_clean = true
+ap4_bridge_status = bridge_candidate_supported
+ap4_bridge_candidate_supported = true
+ap4_nat4_gap_resolved_for_n23_scope = true
+ap4_final_general_status = not_finalized_here
+ap5_dependency_status = not_applicable_no_proxy_or_target_formation
+semantic_choice_supported = false
+agency_supported = false
+native_support_supported = false
+phase8_opened = false
+ant_ecology_opened = false
+ready_for_n24 = true
+```
+
+N23 supports bounded artifact-level collapse/selection geometry: source-current
+live branch sets, collapse traces into one continuation, immutable
+counterfactual retention for non-selected branches, replay-stable collapse
+records, and AP4-relevant branch selection geometry. It remains below semantic
+choice, agency, native support, sentience, Phase 8, ant ecology, and final
+global AP4 reclassification.
+
 The N20-N29 arc keeps three paths distinct until N29:
 
 ```text
@@ -270,12 +302,13 @@ withdrawal resistance, naturalization depth, susceptibility update, live
 continuation collapse, surplus-supported optionality, spark/new-basin
 formation, proxy divergence, transfer, and generative persistence. N21 closed
 the first two primitives, N22 closed bounded producer-mediated susceptibility
-update / durable geometry modification, and N23 is now the next
-live-continuation collapse / selection geometry lane. N29 is the first formal
-convergence bridge into the agentic ecology project, where
+update / durable geometry modification, and N23 closed bounded
+live-continuation collapse / selection geometry with N24-ready LC6 evidence.
+N24 is now the next abundance / surplus-supported optionality lane. N29 is the
+first formal convergence bridge into the agentic ecology project, where
 producer residue, medium debt, and first applied ant-ecology probes can be
-specified. Phase 8, native support,
-native ant agency, biological agency, and unrestricted agency remain unopened.
+specified. Phase 8, native support, native ant agency, biological agency, and
+unrestricted agency remain unopened.
 The agency-specific essay sources include `From Structural Abundance to
 Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
 Read-Back`; the last is a boundary source for separating agency from sentience,

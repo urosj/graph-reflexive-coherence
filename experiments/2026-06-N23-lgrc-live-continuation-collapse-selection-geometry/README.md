@@ -1,20 +1,27 @@
 # N23 - LGRC Live-Continuation Collapse And Selection Geometry
 
-N23 is the next becoming-primitive experiment after N22. It consumes the N20
+N23 is a closed becoming-primitive experiment after N22. It consumes the N20
 contract row for `live_continuation_collapse` and the N22 closeout only as
-bounded producer-mediated susceptibility-update context, then asks whether
+bounded producer-mediated susceptibility-update context, then tests whether
 multiple live continuation branches can resolve into one selected continuation
 without semantic choice labels or producer-side selection.
 
 Current state:
 
 ```text
-status = initialized
+status = closed
+acceptance_state = accepted_n23_lc6_closeout_n24_handoff_ready
 source_contract_row = n20_i4_row_04_live_continuation_collapse
 n20_contract_status = complete
 n22_context = N22-C6, producer-mediated SU5 susceptibility-update context
 target_primitive = live_continuation_collapse
 target_reading = selection_geometry
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+ap4_bridge_status = bridge_candidate_supported
+final_ap4_supported = false
+ready_for_n24 = true
+next_experiment = N24_abundance_surplus_supported_optionality
 ```
 
 Core question:

@@ -4,7 +4,8 @@ This roadmap defines the active experiment arc after the closed N12-N19
 agency-prerequisite and native-readiness stack. N20 is closed as the
 translation-contract entry point, N21 is closed as the first bounded
 becoming-primitive evidence experiment, N22 is closed as the bounded
-susceptibility-update / durable geometry modification experiment, and N23 is
+susceptibility-update / durable geometry modification experiment, N23 is closed
+as bounded live-continuation collapse / selection-geometry evidence, and N24 is
 the next experiment.
 
 It is not a Phase 8 implementation plan, not an ant ecology specification, and
@@ -396,11 +397,13 @@ Active handoff:
 Status:
 
 ```text
-next
-must_consume_n20_contract = true
-must_consume_n22_as_producer_mediated_susceptibility_context = true
-must_not_consume_n22_as_semantic_learning_or_native_memory = true
-must_preserve_ap4_ap5_gap_ledger = true
+closed
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+ap4_bridge_status = bridge_candidate_supported
+ap4_bridge_candidate_supported = true
+final_ap4_supported = false
+ready_for_n24 = true
 ```
 
 Question:
@@ -421,9 +424,11 @@ In generated artifacts, the primary label should be `live-continuation
 collapse` or `selection geometry`. `Choice` remains interpretive shorthand
 only.
 
-N23 should directly address the AP4/N14 NAT4 gap by making route or branch
-selection source-current and geometry-conditioned, not merely a constructed
-followout, declared preference, or label.
+N23 directly addressed the AP4/N14 NAT4 gap for its own scope by making route
+or branch selection source-current and geometry-conditioned, not merely a
+constructed followout, declared preference, or label. This supports an AP4
+bridge candidate, but it does not globally finalize AP4 or retroactively
+reclassify N14/N19 without a later review.
 
 Expected controls:
 
@@ -436,10 +441,37 @@ random tie masquerading as collapse blocked
 semantic choice / intention relabel blocked
 ```
 
-N23 should not claim agency, free will, semantic choice, or intention. It is a
-collapse/selection geometry experiment.
+N23 does not claim agency, free will, semantic choice, or intention. It is a
+closed collapse/selection geometry experiment.
+
+Closeout:
+
+```text
+minimal live branch path = LC5 after full replay/control matrix
+four-branch live set path = LC5 after full replay/control matrix
+bounded AP4 stress rows supported = 3
+below-margin and equalized-tie stress rows = failed_closed
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+```
+
+Active handoff:
+
+- `experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md`
+- `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/reports/n23_closeout_and_n24_handoff.md`
+- `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json`
 
 ## N24. Abundance As Surplus-Supported Optionality
+
+Status:
+
+```text
+next
+must_consume_n20_contract = true
+must_consume_n23_as_bounded_lc6_selection_geometry_context = true
+must_not_consume_n23_as_semantic_choice_or_agency = true
+must_preserve_ap4_ap5_gap_ledger = true
+```
 
 Question:
 
