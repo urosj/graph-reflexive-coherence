@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N22. It replaces the
+This handoff is the current pickup note after N23. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -16,7 +16,8 @@ N19 native-readiness review = closed
 N20 becoming-primitive translation contract = closed
 N21 withdrawal resistance and naturalization depth = closed
 N22 susceptibility update and durable geometry modification = closed
-current next experiment = N23_live_continuation_collapse_selection_geometry
+N23 live-continuation collapse and selection geometry = closed
+current next experiment = N24_abundance_surplus_supported_optionality
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -83,6 +84,26 @@ support, sentience, Phase 8, ant ecology implementation, native
 route-conductance memory, native non-consumptive carrier update policy, or
 native `SU6`.
 
+N23 closed as bounded live-continuation collapse / selection-geometry evidence:
+
+```text
+status = passed
+acceptance_state = accepted_n23_lc6_closeout_n24_handoff_ready
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+ap4_bridge_status = bridge_candidate_supported
+ap4_bridge_candidate_supported = true
+final_ap4_supported = false
+final_n23_supported = true
+ready_for_n24 = true
+```
+
+N23 supports bounded artifact-level live-continuation collapse /
+selection-geometry evidence and an AP4 bridge candidate for the N23 scope. It
+does not support semantic choice, semantic intention, agency, native support,
+sentience, Phase 8, ant ecology implementation, or a final global AP4
+reclassification.
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -97,6 +118,9 @@ Use this handoff together with:
 - `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md`
 - `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/reports/n22_closeout_and_n23_handoff.md`
 - `experiments/2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/outputs/n22_closeout_and_n23_handoff.json`
+- `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md`
+- `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/reports/n23_closeout_and_n24_handoff.md`
+- `experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -266,62 +290,140 @@ native_nd6_supported = false
 retroactive_n21_upgrade_allowed = false
 ```
 
-## N23 Handoff
+## N23 Closeout Evidence
 
-N23 is the next experiment. It should test the next becoming primitive:
+Primary N23 closeout artifact:
 
 ```text
-live_continuation_collapse
-selection_geometry
+artifact = experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json
+report = experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/reports/n23_closeout_and_n24_handoff.md
+script = experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_closeout_and_n24_handoff.py
+output_digest = f890de4685a08a1735cc1cac8e752b2f98d0cc7ab26ec268a6e516b47e2a5ef1
+artifact_sha256 = 469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef
+report_sha256 = f4f344cff4f5bc65517a58a411b140d208a2887147600e156b8a088d96d510b7
+script_sha256 = d3741407b4cd078d0d0f085d7af7740a3269cdd71c86795354120412ccad539d
 ```
 
-N23 must consume N20 as the standing primitive contract and N22 as bounded
-producer-mediated susceptibility-update context:
+N23 I7 replay/control source consumed by closeout:
+
+```text
+artifact = experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_replay_and_control_matrix.json
+report = experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/reports/n23_replay_and_control_matrix.md
+script = experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_replay_and_control_matrix.py
+output_digest = 817aa46c8c55e341b329e8c2bfe7c3775043a166e920880f790f37346a066485
+artifact_sha256 = 0fa911f8a57afcf68c41ac51d36924e86479868dc0794f2f935c06c8423b80ff
+```
+
+N23 final claim ceiling:
+
+```text
+bounded artifact-level live-continuation collapse / selection-geometry
+evidence, N24-ready; not semantic choice, agency, native support, sentience,
+Phase 8, or ant ecology implementation
+```
+
+N23 branch closeout:
+
+```text
+minimal live branch path = LC5 after full replay/control matrix
+four-branch live set path = LC5 after full replay/control matrix
+bounded AP4 stress rows supported = 3
+below-margin and equalized-tie stress rows = failed_closed
+final_supported_lc_ladder_rung = LC6
+final_n23_closeout_ladder_rung = N23-C6
+```
+
+N23 AP gap closeout:
+
+```text
+ap4_gap_status = bridge_candidate_supported_by_n23_source_current_selection_geometry
+ap4_nat4_gap_resolved_for_n23_scope = true
+ap4_final_general_status = not_finalized_here
+ap5_dependency_status = not_applicable_no_proxy_or_target_formation
+n19_reclassification_required_for_global_ap4_change = true
+```
+
+N23 producer residue:
+
+```text
+bounded_test_configuration
+producer_script_generates_probe_artifacts
+support_gradient_selection_rule_declared_in_producer
+branch_stress_case_generation
+collapse_packet_schedule
+```
+
+N23 naturalization debt:
+
+```text
+source_current_counterfactual_branch_records
+route_conditioned_selection_policy
+proxy_independent_branch_valuation
+native_branch_selection_margin_gate
+native_multibranch_optional_continuation_generation
+```
+
+N23 closes the live-continuation collapse / selection-geometry lane and makes
+N24 the next active becoming-primitive experiment.
+
+## N24 Handoff
+
+N24 is the next experiment. It should test the next becoming primitive:
+
+```text
+abundance
+surplus_supported_optionality
+```
+
+N24 must consume N20 as the standing primitive contract and N23 as bounded
+live-continuation collapse / selection-geometry evidence:
 
 ```text
 must_consume_n20_contract = true
-must_consume_n22_as_producer_mediated_susceptibility_context = true
-must_not_consume_n22_as_semantic_learning_or_native_memory = true
+must_consume_n23_as_bounded_lc6_selection_geometry_context = true
+must_not_consume_n23_as_semantic_choice_or_agency = true
 must_preserve_AP4_AP5_gap_ledger = true
 ```
 
-N23 must ask:
+N24 must ask:
 
 ```text
-Can multiple live continuation branches resolve into one selected continuation
-without semantic choice labels or producer-side selection?
+Can surplus support above the maintenance floor open optional continuations
+without collapsing basin integrity?
 ```
 
-N23 should use N22 only as:
+N24 should use N23 only as:
 
 ```text
-bounded_producer_mediated_susceptibility_update_context
-durable_geometry_modification_candidate
+bounded_live_branch_set_and_collapse_evidence
+counterfactual_retention_evidence
+ap4_bridge_candidate_context
+bounded_selection_geometry_context
 producer_residue_and_naturalization_debt_ledger
-AP4_AP5_gap_propagation_context
 ```
 
-N23 must not consume N22 as:
+N24 must not consume N23 as:
 
 ```text
-semantic_learning
 semantic_choice
+semantic_intention
 agency
+free_will
 native_support
-native_route_conductance_memory
 sentience
 phase8_implementation
 ant_ecology_specification
+final_global_AP4_reclassification
 ```
 
-N23 should directly address the AP4/N14 NAT4 gap by making route or branch
-selection source-current and geometry-conditioned, not merely a constructed
-followout, declared preference, or label. AP5 remains conditional for rows
-that use proxy derivation or target formation.
+N24 should distinguish abundance from reward maximization, proxy gain, hidden
+budget relief, and floor-crossing survival. A positive row should show surplus
+support/coherence creating optional continuation space while preserving
+maintenance floors, boundary integrity, and replay/control discipline.
 
-## Blocked Claims Carried Into N23
+## Blocked Claims Carried Into N24
 
-N23 must keep these blocked unless a later source-backed experiment explicitly
+N24 must keep these blocked unless a later source-backed experiment explicitly
 supports a narrower claim:
 
 ```text

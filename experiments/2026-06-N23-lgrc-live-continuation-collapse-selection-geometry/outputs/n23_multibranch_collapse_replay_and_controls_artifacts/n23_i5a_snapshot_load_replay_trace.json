@@ -1,0 +1,18 @@
+{
+  "artifact_id": "n23_i5a_snapshot_load_replay_trace",
+  "post_basin_signature_digest_loaded": "9483e20912d0f72067da32e5caabf9719cd3eb2f655a62281e37dd93e11fd587",
+  "post_basin_signature_digest_source": "9483e20912d0f72067da32e5caabf9719cd3eb2f655a62281e37dd93e11fd587",
+  "post_digest_matched": true,
+  "post_snapshot_loaded": true,
+  "post_snapshot_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_post_collapse_snapshot.json",
+  "pre_basin_signature_digest_loaded": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+  "pre_basin_signature_digest_source": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+  "pre_digest_matched": true,
+  "pre_snapshot_loaded": true,
+  "pre_snapshot_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_pre_collapse_snapshot.json",
+  "replay_digest": "7ee81922f7ebe0345e550bfb9d5168d344de167fa6dc2f0a71db0b85035cdd2e",
+  "replay_mode": "snapshot_load_replay",
+  "source_candidate_row_id": "n23_i4a_row_01_multibranch_live_set_collapse_probe",
+  "status": "passed",
+  "topology_preserved_after_load": true
+}

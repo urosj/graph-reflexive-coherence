@@ -1,0 +1,2011 @@
+{
+  "acceptance_state": "accepted_ap4_selection_geometry_robustness_stress_evidence_pending_i7",
+  "artifact_id": "n23_i6a_ap4_selection_geometry_robustness_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "pre_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_pre_collapse_snapshot.json",
+      "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "post_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_post_collapse_snapshot.json",
+      "sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856"
+    },
+    {
+      "artifact_role": "branch_set_trace",
+      "artifact_subrole": "reference_four_branch_geometry_branch_set_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_live_branch_set_trace.json",
+      "sha256": "14834b321c5cf8b119fdb28f84b86b383398c0c8fe03e886d315f82a420a85fb"
+    },
+    {
+      "artifact_role": "counterfactual_retention_trace",
+      "artifact_subrole": "reference_four_branch_geometry_counterfactual_retention_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_counterfactual_retention_trace.json",
+      "sha256": "e27a9f90a820068a20e4f4d5ee166aeb5dbcd294cb69100a041b9600ccdd78e7"
+    },
+    {
+      "artifact_role": "collapse_trace",
+      "artifact_subrole": "reference_four_branch_geometry_collapse_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapsed_continuation_trace.json",
+      "sha256": "77edcff99ab2d6434ab9b32744fa06cc6a337c9594d64ef06c6e9331e2caab05"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "collapse_event_log",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapse_events.jsonl",
+      "sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78"
+    },
+    {
+      "artifact_role": "duplicate_replay_trace",
+      "artifact_subrole": "reference_four_branch_geometry_duplicate_replay_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_duplicate_replay_trace.json",
+      "sha256": "5cf0afe401f84b3aadf899cfdd3d430546617996bf77e8b10eaf8cd16e30f96d"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "pre_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+      "sha256": "0ff43d1c0140c6964fe147143058e366228bd7f9602f0b15d066065c7ce3096d"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "post_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+      "sha256": "35bdd168b3e820ed37113787bd10221cba3f34d971f2627ca9f180c2c0088a03"
+    },
+    {
+      "artifact_role": "branch_set_trace",
+      "artifact_subrole": "eroded_margin_still_supported_branch_set_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+      "sha256": "b680731d5b8d48f2672f22af93813b7ba36391e1fee22ebff100922830bb4187"
+    },
+    {
+      "artifact_role": "counterfactual_retention_trace",
+      "artifact_subrole": "eroded_margin_still_supported_counterfactual_retention_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+      "sha256": "e7280db6aec2c04a54ae8d911a447f835dbaac0d3f51c77ea0dad2c00e9d5bc4"
+    },
+    {
+      "artifact_role": "collapse_trace",
+      "artifact_subrole": "eroded_margin_still_supported_collapse_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+      "sha256": "904eebf07d4ebe3f37028594a41175d8639fafe2e359754d914acd75711598e0"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "collapse_event_log",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+      "sha256": "7a3becc48deda2231a8dc0196a543a6c837d2af93921f081d18700f32933e209"
+    },
+    {
+      "artifact_role": "duplicate_replay_trace",
+      "artifact_subrole": "eroded_margin_still_supported_duplicate_replay_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json",
+      "sha256": "02c1cfcf109f39d3309b004816083d495910fe1b44f7dd58e2d41861ee498452"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "pre_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_pre_collapse_snapshot.json",
+      "sha256": "5733cc3f631a6aa7b86c0a86f3eec62f4a19add30dba8547babcf6a617485b57"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "post_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_post_collapse_snapshot.json",
+      "sha256": "b3ac9ee4c04cd2416ca7bce26a4909161f942ffdab72bb292a291bdd85ad2189"
+    },
+    {
+      "artifact_role": "branch_set_trace",
+      "artifact_subrole": "alternate_branch_wins_supported_branch_set_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_live_branch_set_trace.json",
+      "sha256": "092bc8aa22b8a4eb0f9849cc2cd36522f7f09e0453ce2c924a66b30f804cf3c6"
+    },
+    {
+      "artifact_role": "counterfactual_retention_trace",
+      "artifact_subrole": "alternate_branch_wins_supported_counterfactual_retention_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_counterfactual_retention_trace.json",
+      "sha256": "d5e996431f0c5e70c8f16507ff565073c99b81c0943d8e57ec0519780582bc35"
+    },
+    {
+      "artifact_role": "collapse_trace",
+      "artifact_subrole": "alternate_branch_wins_supported_collapse_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapsed_continuation_trace.json",
+      "sha256": "143c0646510e93ab866a8cec9c7231e7559360fc7d0ded44b4fb90e44179ef09"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "collapse_event_log",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapse_events.jsonl",
+      "sha256": "bf60aa89f06b33583df760828f0595341b754567e08d907808d358f8fdf50b30"
+    },
+    {
+      "artifact_role": "duplicate_replay_trace",
+      "artifact_subrole": "alternate_branch_wins_supported_duplicate_replay_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_duplicate_replay_trace.json",
+      "sha256": "a1fc07262857cb18a28adf790f7adbdd43a0f5f5791b2263fe660e4d205f4aef"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "pre_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+      "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "post_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+      "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+    },
+    {
+      "artifact_role": "branch_set_trace",
+      "artifact_subrole": "below_margin_rejected_branch_set_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+      "sha256": "eb729368571aabe12fa476ec2c716893515bbc5db05a7c07a0d381264e182100"
+    },
+    {
+      "artifact_role": "counterfactual_retention_trace",
+      "artifact_subrole": "below_margin_rejected_counterfactual_retention_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+      "sha256": "be64fc6b778688b63cc25761ca259a1b3f435763be2323f00fc238b8bc171c7b"
+    },
+    {
+      "artifact_role": "collapse_trace",
+      "artifact_subrole": "below_margin_rejected_collapse_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+      "sha256": "9a26d415bee2100ea1d69fbf645ba93e2210e1d0d8520dda694562c6ba7577c1"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "collapse_event_log",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "duplicate_replay_trace",
+      "artifact_subrole": "below_margin_rejected_duplicate_replay_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json",
+      "sha256": "3addd3b497e4e064ca8dd32856c6f5c5ae5462a2f28352961a204475932f7ade"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "pre_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+      "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "post_collapse_snapshot",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+      "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+    },
+    {
+      "artifact_role": "branch_set_trace",
+      "artifact_subrole": "equalized_tie_rejected_branch_set_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+      "sha256": "0fba064149ac41211c79d57a43af384411cbb0847d9ac89ba6ee1a1b06ba3036"
+    },
+    {
+      "artifact_role": "counterfactual_retention_trace",
+      "artifact_subrole": "equalized_tie_rejected_counterfactual_retention_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+      "sha256": "121685b6abb12aff8c0c5e9c7a176c6d8b00a9c1d9279539adce7ed00acd46eb"
+    },
+    {
+      "artifact_role": "collapse_trace",
+      "artifact_subrole": "equalized_tie_rejected_collapse_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+      "sha256": "228bcc6671b77cdcee34bf8f167e7125c860e6786a464216ef99cbb7086dacdc"
+    },
+    {
+      "artifact_role": "runtime_trace",
+      "artifact_subrole": "collapse_event_log",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "artifact_role": "duplicate_replay_trace",
+      "artifact_subrole": "equalized_tie_rejected_duplicate_replay_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json",
+      "sha256": "63c98d719a4514b9196f1466023ed95dc8abd364b0e03c115fd9a96bb5c55063"
+    },
+    {
+      "artifact_role": "negative_control_trace",
+      "artifact_subrole": "robustness_negative_control_trace",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/n23_i6a_robustness_negative_control_trace.json",
+      "sha256": "5028c52a2bdf32f92559271559a5357c52b475c2a89ef175f8c07fb83da2c662"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i6_source_passed",
+      "detail": "passed",
+      "passed": true
+    },
+    {
+      "check_id": "three_supported_stress_rows",
+      "detail": [
+        "reference_four_branch_geometry",
+        "eroded_margin_still_supported",
+        "alternate_branch_wins_supported"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "two_fail_closed_stress_rows",
+      "detail": [
+        "below_margin_rejected",
+        "equalized_tie_rejected"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "alternate_winner_changes_with_geometry",
+      "detail": [
+        {
+          "case_id": "reference_four_branch_geometry",
+          "selected_branch_id": "branch_edge_4_node_5"
+        },
+        {
+          "case_id": "eroded_margin_still_supported",
+          "selected_branch_id": "branch_edge_4_node_5"
+        },
+        {
+          "case_id": "alternate_branch_wins_supported",
+          "selected_branch_id": "branch_edge_0_node_1"
+        },
+        {
+          "case_id": "below_margin_rejected",
+          "selected_branch_id": "branch_edge_4_node_5"
+        },
+        {
+          "case_id": "equalized_tie_rejected",
+          "selected_branch_id": "branch_edge_4_node_5"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "eroded_margin_remains_above_threshold",
+      "detail": {
+        "all_artifact_sha256_match_file_contents": true,
+        "ap4_bridge_claim_allowed": false,
+        "ap4_bridge_status": "robustness_stress_supported",
+        "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+        "ap4_dependency_status": "required_recorded",
+        "ap5_condition_reason": "No proxy derivation or target formation participates.",
+        "ap5_dependency_status": "not_applicable",
+        "artifact_manifest": [
+          {
+            "artifact_role": "runtime_trace",
+            "artifact_subrole": "pre_collapse_snapshot",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+            "sha256": "0ff43d1c0140c6964fe147143058e366228bd7f9602f0b15d066065c7ce3096d"
+          },
+          {
+            "artifact_role": "runtime_trace",
+            "artifact_subrole": "post_collapse_snapshot",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+            "sha256": "35bdd168b3e820ed37113787bd10221cba3f34d971f2627ca9f180c2c0088a03"
+          },
+          {
+            "artifact_role": "branch_set_trace",
+            "artifact_subrole": "eroded_margin_still_supported_branch_set_trace",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+            "sha256": "b680731d5b8d48f2672f22af93813b7ba36391e1fee22ebff100922830bb4187"
+          },
+          {
+            "artifact_role": "counterfactual_retention_trace",
+            "artifact_subrole": "eroded_margin_still_supported_counterfactual_retention_trace",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+            "sha256": "e7280db6aec2c04a54ae8d911a447f835dbaac0d3f51c77ea0dad2c00e9d5bc4"
+          },
+          {
+            "artifact_role": "collapse_trace",
+            "artifact_subrole": "eroded_margin_still_supported_collapse_trace",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+            "sha256": "904eebf07d4ebe3f37028594a41175d8639fafe2e359754d914acd75711598e0"
+          },
+          {
+            "artifact_role": "runtime_trace",
+            "artifact_subrole": "collapse_event_log",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+            "sha256": "7a3becc48deda2231a8dc0196a543a6c837d2af93921f081d18700f32933e209"
+          },
+          {
+            "artifact_role": "duplicate_replay_trace",
+            "artifact_subrole": "eroded_margin_still_supported_duplicate_replay_trace",
+            "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json",
+            "sha256": "02c1cfcf109f39d3309b004816083d495910fe1b44f7dd58e2d41861ee498452"
+          }
+        ],
+        "artifact_paths": [
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+          "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json"
+        ],
+        "branch_count": 4,
+        "case_id": "eroded_margin_still_supported",
+        "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+        "collapse_persistence_ratio": 1.0,
+        "collapse_trace_status": "present",
+        "counterfactual_retention_trace_present": true,
+        "description": "Runner-up branch is strengthened, but selected branch still clears the predeclared margin.",
+        "duplicate_replay_observable_digest_matched": true,
+        "live_continuation_collapse_claim_allowed": false,
+        "minimum_score_margin": 0.25,
+        "n22_inherited_delta_used_as_selection_evidence": false,
+        "node_1_coherence": 13.4,
+        "output_digest": "8c28046f8aa7b7df255ed7c889e3666207c04a893e8e467226e44cdc6f07f917",
+        "producer_preference_used": false,
+        "producer_selected_branch_label_used": false,
+        "provisional_lc_ladder_rung": "LC5",
+        "random_tie_status": "not_random_tie",
+        "retained_non_selected_branch_count": 3,
+        "row_decision": "supported",
+        "row_id": "n23_i6a_row_02_eroded_margin_still_supported",
+        "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+        "runner_up_branch_id": "branch_edge_0_node_1",
+        "runner_up_score": 1.7000000000000002,
+        "score_margin": 0.2999999999999998,
+        "selected_branch_id": "branch_edge_4_node_5",
+        "selected_score": 2.0,
+        "selection_admitted_for_collapse": true,
+        "selection_margin_passed": true,
+        "selection_reason": "support_gradient_dominance",
+        "semantic_choice_claim_allowed": false,
+        "stress_case_role": "narrow_margin_pass",
+        "unsafe_claim_flags": {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "below_margin_and_tie_fail_closed",
+      "detail": [
+        {
+          "all_artifact_sha256_match_file_contents": true,
+          "ap4_bridge_claim_allowed": false,
+          "ap4_bridge_status": "failed_closed",
+          "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+          "ap4_dependency_status": "required_recorded",
+          "ap5_condition_reason": "No proxy derivation or target formation participates.",
+          "ap5_dependency_status": "not_applicable",
+          "artifact_manifest": [
+            {
+              "artifact_role": "runtime_trace",
+              "artifact_subrole": "pre_collapse_snapshot",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+              "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+            },
+            {
+              "artifact_role": "runtime_trace",
+              "artifact_subrole": "post_collapse_snapshot",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+              "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+            },
+            {
+              "artifact_role": "branch_set_trace",
+              "artifact_subrole": "below_margin_rejected_branch_set_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+              "sha256": "eb729368571aabe12fa476ec2c716893515bbc5db05a7c07a0d381264e182100"
+            },
+            {
+              "artifact_role": "counterfactual_retention_trace",
+              "artifact_subrole": "below_margin_rejected_counterfactual_retention_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+              "sha256": "be64fc6b778688b63cc25761ca259a1b3f435763be2323f00fc238b8bc171c7b"
+            },
+            {
+              "artifact_role": "collapse_trace",
+              "artifact_subrole": "below_margin_rejected_collapse_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+              "sha256": "9a26d415bee2100ea1d69fbf645ba93e2210e1d0d8520dda694562c6ba7577c1"
+            },
+            {
+              "artifact_role": "runtime_trace",
+              "artifact_subrole": "collapse_event_log",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "artifact_role": "duplicate_replay_trace",
+              "artifact_subrole": "below_margin_rejected_duplicate_replay_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json",
+              "sha256": "3addd3b497e4e064ca8dd32856c6f5c5ae5462a2f28352961a204475932f7ade"
+            }
+          ],
+          "artifact_paths": [
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json"
+          ],
+          "branch_count": 4,
+          "case_id": "below_margin_rejected",
+          "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+          "collapse_persistence_ratio": 0.0,
+          "collapse_trace_status": "blocked",
+          "counterfactual_retention_trace_present": true,
+          "description": "Selected branch remains branch_edge_4_node_5, but score margin is below the predeclared AP4 bridge threshold.",
+          "duplicate_replay_observable_digest_matched": true,
+          "live_continuation_collapse_claim_allowed": false,
+          "minimum_score_margin": 0.25,
+          "n22_inherited_delta_used_as_selection_evidence": false,
+          "node_1_coherence": 13.8,
+          "output_digest": "a6c09c3ef61eb3ab011ed2a8e61c93216452132c1fa81579004faa01ee464e0b",
+          "producer_preference_used": false,
+          "producer_selected_branch_label_used": false,
+          "provisional_lc_ladder_rung": "LC4",
+          "random_tie_status": "not_random_tie",
+          "retained_non_selected_branch_count": 3,
+          "row_decision": "rejected",
+          "row_id": "n23_i6a_row_04_below_margin_rejected",
+          "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+          "runner_up_branch_id": "branch_edge_0_node_1",
+          "runner_up_score": 1.9000000000000004,
+          "score_margin": 0.09999999999999964,
+          "selected_branch_id": "branch_edge_4_node_5",
+          "selected_score": 2.0,
+          "selection_admitted_for_collapse": false,
+          "selection_margin_passed": false,
+          "selection_reason": "support_gradient_dominance",
+          "semantic_choice_claim_allowed": false,
+          "stress_case_role": "margin_gate_fail",
+          "unsafe_claim_flags": {
+            "agency": false,
+            "consciousness": false,
+            "free_will": false,
+            "fully_native_integration": false,
+            "identity_acceptance": false,
+            "native_ant_agency": false,
+            "native_colony_agency": false,
+            "native_route_conductance_memory": false,
+            "native_support": false,
+            "organism_life": false,
+            "phase8_implementation": false,
+            "producer_preference_as_selection": false,
+            "random_tie_as_collapse": false,
+            "selfhood": false,
+            "semantic_action": false,
+            "semantic_choice": false,
+            "semantic_goal_ownership": false,
+            "semantic_intention": false,
+            "semantic_learning": false,
+            "semantic_perception": false,
+            "sentience": false,
+            "unrestricted_autonomy": false
+          }
+        },
+        {
+          "all_artifact_sha256_match_file_contents": true,
+          "ap4_bridge_claim_allowed": false,
+          "ap4_bridge_status": "failed_closed",
+          "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+          "ap4_dependency_status": "required_recorded",
+          "ap5_condition_reason": "No proxy derivation or target formation participates.",
+          "ap5_dependency_status": "not_applicable",
+          "artifact_manifest": [
+            {
+              "artifact_role": "runtime_trace",
+              "artifact_subrole": "pre_collapse_snapshot",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+              "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+            },
+            {
+              "artifact_role": "runtime_trace",
+              "artifact_subrole": "post_collapse_snapshot",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+              "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+            },
+            {
+              "artifact_role": "branch_set_trace",
+              "artifact_subrole": "equalized_tie_rejected_branch_set_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+              "sha256": "0fba064149ac41211c79d57a43af384411cbb0847d9ac89ba6ee1a1b06ba3036"
+            },
+            {
+              "artifact_role": "counterfactual_retention_trace",
+              "artifact_subrole": "equalized_tie_rejected_counterfactual_retention_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+              "sha256": "121685b6abb12aff8c0c5e9c7a176c6d8b00a9c1d9279539adce7ed00acd46eb"
+            },
+            {
+              "artifact_role": "collapse_trace",
+              "artifact_subrole": "equalized_tie_rejected_collapse_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+              "sha256": "228bcc6671b77cdcee34bf8f167e7125c860e6786a464216ef99cbb7086dacdc"
+            },
+            {
+              "artifact_role": "runtime_trace",
+              "artifact_subrole": "collapse_event_log",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "artifact_role": "duplicate_replay_trace",
+              "artifact_subrole": "equalized_tie_rejected_duplicate_replay_trace",
+              "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json",
+              "sha256": "63c98d719a4514b9196f1466023ed95dc8abd364b0e03c115fd9a96bb5c55063"
+            }
+          ],
+          "artifact_paths": [
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+            "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json"
+          ],
+          "branch_count": 4,
+          "case_id": "equalized_tie_rejected",
+          "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+          "collapse_persistence_ratio": 0.0,
+          "collapse_trace_status": "blocked",
+          "counterfactual_retention_trace_present": true,
+          "description": "Two branches have equal support-gradient scores; random-tie promotion must fail closed.",
+          "duplicate_replay_observable_digest_matched": true,
+          "live_continuation_collapse_claim_allowed": false,
+          "minimum_score_margin": 0.25,
+          "n22_inherited_delta_used_as_selection_evidence": false,
+          "node_1_coherence": 14.0,
+          "output_digest": "23004422897b46877299fc9573ed8ef7dc28b41f2774c8eca2c4ed2dab271ac1",
+          "producer_preference_used": false,
+          "producer_selected_branch_label_used": false,
+          "provisional_lc_ladder_rung": "LC4",
+          "random_tie_status": "random_tie",
+          "retained_non_selected_branch_count": 3,
+          "row_decision": "rejected",
+          "row_id": "n23_i6a_row_05_equalized_tie_rejected",
+          "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+          "runner_up_branch_id": "branch_edge_0_node_1",
+          "runner_up_score": 2.0,
+          "score_margin": 0.0,
+          "selected_branch_id": "branch_edge_4_node_5",
+          "selected_score": 2.0,
+          "selection_admitted_for_collapse": false,
+          "selection_margin_passed": false,
+          "selection_reason": "support_gradient_dominance",
+          "semantic_choice_claim_allowed": false,
+          "stress_case_role": "tie_gate_fail",
+          "unsafe_claim_flags": {
+            "agency": false,
+            "consciousness": false,
+            "free_will": false,
+            "fully_native_integration": false,
+            "identity_acceptance": false,
+            "native_ant_agency": false,
+            "native_colony_agency": false,
+            "native_route_conductance_memory": false,
+            "native_support": false,
+            "organism_life": false,
+            "phase8_implementation": false,
+            "producer_preference_as_selection": false,
+            "random_tie_as_collapse": false,
+            "selfhood": false,
+            "semantic_action": false,
+            "semantic_choice": false,
+            "semantic_goal_ownership": false,
+            "semantic_intention": false,
+            "semantic_learning": false,
+            "semantic_perception": false,
+            "sentience": false,
+            "unrestricted_autonomy": false
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_stable_for_supported_rows",
+      "detail": [
+        {
+          "case_id": "reference_four_branch_geometry",
+          "duplicate_replay_observable_digest_matched": true
+        },
+        {
+          "case_id": "eroded_margin_still_supported",
+          "duplicate_replay_observable_digest_matched": true
+        },
+        {
+          "case_id": "alternate_branch_wins_supported",
+          "duplicate_replay_observable_digest_matched": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": [
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        },
+        {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "robustness_controls_fail_closed",
+      "detail": [
+        {
+          "actual_result": {
+            "alternate_geometry_selected_branch": "branch_edge_0_node_1",
+            "claim_allowed": false,
+            "violation_detected": true
+          },
+          "blocked_condition": "selection remains fixed to branch_edge_4_node_5 after geometry flips",
+          "control_execution_kind": "constructed_i6a_robustness_control",
+          "control_id": "fixed_selected_branch_label_control",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks robustness if selected label ignores geometry"
+        },
+        {
+          "actual_result": {
+            "claim_allowed": false,
+            "minimum_score_margin": 0.25,
+            "row_decision": "rejected",
+            "score_margin": 0.09999999999999964
+          },
+          "blocked_condition": "AP4 bridge accepted below the predeclared score margin",
+          "control_execution_kind": "constructed_i6a_robustness_control",
+          "control_id": "below_margin_ap4_bridge_control",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks LC5 if margin gate does not fail closed"
+        },
+        {
+          "actual_result": {
+            "claim_allowed": false,
+            "random_tie_status": "random_tie",
+            "row_decision": "rejected"
+          },
+          "blocked_condition": "random tie accepted as source-current selection geometry",
+          "control_execution_kind": "constructed_i6a_robustness_control",
+          "control_id": "equalized_tie_ap4_bridge_control",
+          "control_status": "failed_closed",
+          "rung_effect": "blocks LC5 if random tie is promoted"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_hashes_match",
+      "detail": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_pre_collapse_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_post_collapse_snapshot.json",
+          "sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "reference_four_branch_geometry_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_live_branch_set_trace.json",
+          "sha256": "14834b321c5cf8b119fdb28f84b86b383398c0c8fe03e886d315f82a420a85fb"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "reference_four_branch_geometry_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_counterfactual_retention_trace.json",
+          "sha256": "e27a9f90a820068a20e4f4d5ee166aeb5dbcd294cb69100a041b9600ccdd78e7"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "reference_four_branch_geometry_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapsed_continuation_trace.json",
+          "sha256": "77edcff99ab2d6434ab9b32744fa06cc6a337c9594d64ef06c6e9331e2caab05"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapse_events.jsonl",
+          "sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "reference_four_branch_geometry_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_duplicate_replay_trace.json",
+          "sha256": "5cf0afe401f84b3aadf899cfdd3d430546617996bf77e8b10eaf8cd16e30f96d"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+          "sha256": "0ff43d1c0140c6964fe147143058e366228bd7f9602f0b15d066065c7ce3096d"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+          "sha256": "35bdd168b3e820ed37113787bd10221cba3f34d971f2627ca9f180c2c0088a03"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "eroded_margin_still_supported_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+          "sha256": "b680731d5b8d48f2672f22af93813b7ba36391e1fee22ebff100922830bb4187"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "eroded_margin_still_supported_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+          "sha256": "e7280db6aec2c04a54ae8d911a447f835dbaac0d3f51c77ea0dad2c00e9d5bc4"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "eroded_margin_still_supported_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+          "sha256": "904eebf07d4ebe3f37028594a41175d8639fafe2e359754d914acd75711598e0"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+          "sha256": "7a3becc48deda2231a8dc0196a543a6c837d2af93921f081d18700f32933e209"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "eroded_margin_still_supported_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json",
+          "sha256": "02c1cfcf109f39d3309b004816083d495910fe1b44f7dd58e2d41861ee498452"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_pre_collapse_snapshot.json",
+          "sha256": "5733cc3f631a6aa7b86c0a86f3eec62f4a19add30dba8547babcf6a617485b57"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_post_collapse_snapshot.json",
+          "sha256": "b3ac9ee4c04cd2416ca7bce26a4909161f942ffdab72bb292a291bdd85ad2189"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_live_branch_set_trace.json",
+          "sha256": "092bc8aa22b8a4eb0f9849cc2cd36522f7f09e0453ce2c924a66b30f804cf3c6"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_counterfactual_retention_trace.json",
+          "sha256": "d5e996431f0c5e70c8f16507ff565073c99b81c0943d8e57ec0519780582bc35"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapsed_continuation_trace.json",
+          "sha256": "143c0646510e93ab866a8cec9c7231e7559360fc7d0ded44b4fb90e44179ef09"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapse_events.jsonl",
+          "sha256": "bf60aa89f06b33583df760828f0595341b754567e08d907808d358f8fdf50b30"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_duplicate_replay_trace.json",
+          "sha256": "a1fc07262857cb18a28adf790f7adbdd43a0f5f5791b2263fe660e4d205f4aef"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+          "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+          "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "below_margin_rejected_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+          "sha256": "eb729368571aabe12fa476ec2c716893515bbc5db05a7c07a0d381264e182100"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "below_margin_rejected_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+          "sha256": "be64fc6b778688b63cc25761ca259a1b3f435763be2323f00fc238b8bc171c7b"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "below_margin_rejected_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+          "sha256": "9a26d415bee2100ea1d69fbf645ba93e2210e1d0d8520dda694562c6ba7577c1"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "below_margin_rejected_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json",
+          "sha256": "3addd3b497e4e064ca8dd32856c6f5c5ae5462a2f28352961a204475932f7ade"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+          "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+          "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "equalized_tie_rejected_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+          "sha256": "0fba064149ac41211c79d57a43af384411cbb0847d9ac89ba6ee1a1b06ba3036"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "equalized_tie_rejected_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+          "sha256": "121685b6abb12aff8c0c5e9c7a176c6d8b00a9c1d9279539adce7ed00acd46eb"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "equalized_tie_rejected_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+          "sha256": "228bcc6671b77cdcee34bf8f167e7125c860e6786a464216ef99cbb7086dacdc"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "equalized_tie_rejected_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json",
+          "sha256": "63c98d719a4514b9196f1466023ed95dc8abd364b0e03c115fd9a96bb5c55063"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "artifact_subrole": "robustness_negative_control_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/n23_i6a_robustness_negative_control_trace.json",
+          "sha256": "5028c52a2bdf32f92559271559a5357c52b475c2a89ef175f8c07fb83da2c662"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_roles_match_i2_frozen_enum",
+      "detail": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_pre_collapse_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_post_collapse_snapshot.json",
+          "sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "reference_four_branch_geometry_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_live_branch_set_trace.json",
+          "sha256": "14834b321c5cf8b119fdb28f84b86b383398c0c8fe03e886d315f82a420a85fb"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "reference_four_branch_geometry_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_counterfactual_retention_trace.json",
+          "sha256": "e27a9f90a820068a20e4f4d5ee166aeb5dbcd294cb69100a041b9600ccdd78e7"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "reference_four_branch_geometry_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapsed_continuation_trace.json",
+          "sha256": "77edcff99ab2d6434ab9b32744fa06cc6a337c9594d64ef06c6e9331e2caab05"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapse_events.jsonl",
+          "sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "reference_four_branch_geometry_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_duplicate_replay_trace.json",
+          "sha256": "5cf0afe401f84b3aadf899cfdd3d430546617996bf77e8b10eaf8cd16e30f96d"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+          "sha256": "0ff43d1c0140c6964fe147143058e366228bd7f9602f0b15d066065c7ce3096d"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+          "sha256": "35bdd168b3e820ed37113787bd10221cba3f34d971f2627ca9f180c2c0088a03"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "eroded_margin_still_supported_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+          "sha256": "b680731d5b8d48f2672f22af93813b7ba36391e1fee22ebff100922830bb4187"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "eroded_margin_still_supported_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+          "sha256": "e7280db6aec2c04a54ae8d911a447f835dbaac0d3f51c77ea0dad2c00e9d5bc4"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "eroded_margin_still_supported_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+          "sha256": "904eebf07d4ebe3f37028594a41175d8639fafe2e359754d914acd75711598e0"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+          "sha256": "7a3becc48deda2231a8dc0196a543a6c837d2af93921f081d18700f32933e209"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "eroded_margin_still_supported_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json",
+          "sha256": "02c1cfcf109f39d3309b004816083d495910fe1b44f7dd58e2d41861ee498452"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_pre_collapse_snapshot.json",
+          "sha256": "5733cc3f631a6aa7b86c0a86f3eec62f4a19add30dba8547babcf6a617485b57"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_post_collapse_snapshot.json",
+          "sha256": "b3ac9ee4c04cd2416ca7bce26a4909161f942ffdab72bb292a291bdd85ad2189"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_live_branch_set_trace.json",
+          "sha256": "092bc8aa22b8a4eb0f9849cc2cd36522f7f09e0453ce2c924a66b30f804cf3c6"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_counterfactual_retention_trace.json",
+          "sha256": "d5e996431f0c5e70c8f16507ff565073c99b81c0943d8e57ec0519780582bc35"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapsed_continuation_trace.json",
+          "sha256": "143c0646510e93ab866a8cec9c7231e7559360fc7d0ded44b4fb90e44179ef09"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapse_events.jsonl",
+          "sha256": "bf60aa89f06b33583df760828f0595341b754567e08d907808d358f8fdf50b30"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_duplicate_replay_trace.json",
+          "sha256": "a1fc07262857cb18a28adf790f7adbdd43a0f5f5791b2263fe660e4d205f4aef"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+          "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+          "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "below_margin_rejected_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+          "sha256": "eb729368571aabe12fa476ec2c716893515bbc5db05a7c07a0d381264e182100"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "below_margin_rejected_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+          "sha256": "be64fc6b778688b63cc25761ca259a1b3f435763be2323f00fc238b8bc171c7b"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "below_margin_rejected_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+          "sha256": "9a26d415bee2100ea1d69fbf645ba93e2210e1d0d8520dda694562c6ba7577c1"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "below_margin_rejected_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json",
+          "sha256": "3addd3b497e4e064ca8dd32856c6f5c5ae5462a2f28352961a204475932f7ade"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+          "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+          "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "equalized_tie_rejected_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+          "sha256": "0fba064149ac41211c79d57a43af384411cbb0847d9ac89ba6ee1a1b06ba3036"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "equalized_tie_rejected_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+          "sha256": "121685b6abb12aff8c0c5e9c7a176c6d8b00a9c1d9279539adce7ed00acd46eb"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "equalized_tie_rejected_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+          "sha256": "228bcc6671b77cdcee34bf8f167e7125c860e6786a464216ef99cbb7086dacdc"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "equalized_tie_rejected_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json",
+          "sha256": "63c98d719a4514b9196f1466023ed95dc8abd364b0e03c115fd9a96bb5c55063"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "artifact_subrole": "robustness_negative_control_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/n23_i6a_robustness_negative_control_trace.json",
+          "sha256": "5028c52a2bdf32f92559271559a5357c52b475c2a89ef175f8c07fb83da2c662"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_paths_are_portable",
+      "detail": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_duplicate_replay_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_duplicate_replay_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/n23_i6a_robustness_negative_control_trace.json"
+      ],
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_ap4_selection_geometry_robustness_probe.py",
+  "experiment": "N23_lgrc_live_continuation_collapse_selection_geometry",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "geometric_interpretation": {
+    "claim_boundary": "I6-A strengthens confidence in the AP4 bridge candidate, but it does not claim general AP4 robustness, semantic choice, agency, native support, or final N23 support.",
+    "main_read": "I6-A shows that the I6 AP4 candidate is stronger than a single fixed selected-label result: selection follows branch geometry when the winning branch changes, but fails closed when the score margin is too narrow or tied.",
+    "stress_result": "reference: branch_edge_4_node_5 wins by margin 0.5\neroded margin: branch_edge_4_node_5 still wins by margin 0.3\nalternate winner: branch_edge_0_node_1 wins when its source-current support-gradient rises to 2.5\nbelow margin: rejected at margin 0.1\nequalized tie: rejected at margin 0.0"
+  },
+  "iteration": "6-A",
+  "iteration6a_boundary": {
+    "ap4_bridge_robustness_status": "bounded_stress_evidence_supported",
+    "failed_closed_stress_rows": 2,
+    "final_ap4_supported": false,
+    "final_n23_supported": false,
+    "general_ap4_robustness_supported": false,
+    "i6_replaced": false,
+    "ready_for_iteration_7_full_control_matrix": true,
+    "supported_stress_rows": 3
+  },
+  "negative_control_trace": {
+    "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/n23_i6a_robustness_negative_control_trace.json",
+    "sha256": "5028c52a2bdf32f92559271559a5357c52b475c2a89ef175f8c07fb83da2c662",
+    "trace_digest": "3efa91cefc9a4b09372c15a9b9d78ab7a0ab0a877e825e8cf8508e8543d25db7"
+  },
+  "output_digest": "69541623939689724ca04c248125995f4c2ab5a5a51faf2e8e9153b62a18e0f5",
+  "purpose": "Stress-test how robust the I6 AP4 bridge candidate is under bounded source-current branch-geometry variations.",
+  "robustness_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_status": "robustness_stress_supported",
+      "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy derivation or target formation participates.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_pre_collapse_snapshot.json",
+          "sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_post_collapse_snapshot.json",
+          "sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "reference_four_branch_geometry_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_live_branch_set_trace.json",
+          "sha256": "14834b321c5cf8b119fdb28f84b86b383398c0c8fe03e886d315f82a420a85fb"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "reference_four_branch_geometry_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_counterfactual_retention_trace.json",
+          "sha256": "e27a9f90a820068a20e4f4d5ee166aeb5dbcd294cb69100a041b9600ccdd78e7"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "reference_four_branch_geometry_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapsed_continuation_trace.json",
+          "sha256": "77edcff99ab2d6434ab9b32744fa06cc6a337c9594d64ef06c6e9331e2caab05"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapse_events.jsonl",
+          "sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "reference_four_branch_geometry_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_duplicate_replay_trace.json",
+          "sha256": "5cf0afe401f84b3aadf899cfdd3d430546617996bf77e8b10eaf8cd16e30f96d"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/reference_four_branch_geometry/reference_four_branch_geometry_duplicate_replay_trace.json"
+      ],
+      "branch_count": 4,
+      "case_id": "reference_four_branch_geometry",
+      "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+      "collapse_persistence_ratio": 1.0,
+      "collapse_trace_status": "present",
+      "counterfactual_retention_trace_present": true,
+      "description": "Original four-branch geometry from I4-A/I6.",
+      "duplicate_replay_observable_digest_matched": true,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "node_1_coherence": 13.0,
+      "output_digest": "e4a9c3e0c9a749d283838fa7a8a8e827fc9c641c7635e9bdb2b1d1343216b503",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC5",
+      "random_tie_status": "not_random_tie",
+      "retained_non_selected_branch_count": 3,
+      "row_decision": "supported",
+      "row_id": "n23_i6a_row_01_reference_four_branch_geometry",
+      "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+      "runner_up_branch_id": "branch_edge_0_node_1",
+      "runner_up_score": 1.5,
+      "score_margin": 0.5,
+      "selected_branch_id": "branch_edge_4_node_5",
+      "selected_score": 2.0,
+      "selection_admitted_for_collapse": true,
+      "selection_margin_passed": true,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "stress_case_role": "reference_pass",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_status": "robustness_stress_supported",
+      "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy derivation or target formation participates.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+          "sha256": "0ff43d1c0140c6964fe147143058e366228bd7f9602f0b15d066065c7ce3096d"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+          "sha256": "35bdd168b3e820ed37113787bd10221cba3f34d971f2627ca9f180c2c0088a03"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "eroded_margin_still_supported_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+          "sha256": "b680731d5b8d48f2672f22af93813b7ba36391e1fee22ebff100922830bb4187"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "eroded_margin_still_supported_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+          "sha256": "e7280db6aec2c04a54ae8d911a447f835dbaac0d3f51c77ea0dad2c00e9d5bc4"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "eroded_margin_still_supported_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+          "sha256": "904eebf07d4ebe3f37028594a41175d8639fafe2e359754d914acd75711598e0"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+          "sha256": "7a3becc48deda2231a8dc0196a543a6c837d2af93921f081d18700f32933e209"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "eroded_margin_still_supported_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json",
+          "sha256": "02c1cfcf109f39d3309b004816083d495910fe1b44f7dd58e2d41861ee498452"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/eroded_margin_still_supported/eroded_margin_still_supported_duplicate_replay_trace.json"
+      ],
+      "branch_count": 4,
+      "case_id": "eroded_margin_still_supported",
+      "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+      "collapse_persistence_ratio": 1.0,
+      "collapse_trace_status": "present",
+      "counterfactual_retention_trace_present": true,
+      "description": "Runner-up branch is strengthened, but selected branch still clears the predeclared margin.",
+      "duplicate_replay_observable_digest_matched": true,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "node_1_coherence": 13.4,
+      "output_digest": "8c28046f8aa7b7df255ed7c889e3666207c04a893e8e467226e44cdc6f07f917",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC5",
+      "random_tie_status": "not_random_tie",
+      "retained_non_selected_branch_count": 3,
+      "row_decision": "supported",
+      "row_id": "n23_i6a_row_02_eroded_margin_still_supported",
+      "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+      "runner_up_branch_id": "branch_edge_0_node_1",
+      "runner_up_score": 1.7000000000000002,
+      "score_margin": 0.2999999999999998,
+      "selected_branch_id": "branch_edge_4_node_5",
+      "selected_score": 2.0,
+      "selection_admitted_for_collapse": true,
+      "selection_margin_passed": true,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "stress_case_role": "narrow_margin_pass",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_status": "robustness_stress_supported",
+      "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy derivation or target formation participates.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_pre_collapse_snapshot.json",
+          "sha256": "5733cc3f631a6aa7b86c0a86f3eec62f4a19add30dba8547babcf6a617485b57"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_post_collapse_snapshot.json",
+          "sha256": "b3ac9ee4c04cd2416ca7bce26a4909161f942ffdab72bb292a291bdd85ad2189"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_live_branch_set_trace.json",
+          "sha256": "092bc8aa22b8a4eb0f9849cc2cd36522f7f09e0453ce2c924a66b30f804cf3c6"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_counterfactual_retention_trace.json",
+          "sha256": "d5e996431f0c5e70c8f16507ff565073c99b81c0943d8e57ec0519780582bc35"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapsed_continuation_trace.json",
+          "sha256": "143c0646510e93ab866a8cec9c7231e7559360fc7d0ded44b4fb90e44179ef09"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapse_events.jsonl",
+          "sha256": "bf60aa89f06b33583df760828f0595341b754567e08d907808d358f8fdf50b30"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "alternate_branch_wins_supported_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_duplicate_replay_trace.json",
+          "sha256": "a1fc07262857cb18a28adf790f7adbdd43a0f5f5791b2263fe660e4d205f4aef"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/alternate_branch_wins_supported/alternate_branch_wins_supported_duplicate_replay_trace.json"
+      ],
+      "branch_count": 4,
+      "case_id": "alternate_branch_wins_supported",
+      "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+      "collapse_persistence_ratio": 1.0,
+      "collapse_trace_status": "present",
+      "counterfactual_retention_trace_present": true,
+      "description": "Geometry flips so branch_edge_0_node_1 wins; selection should follow geometry rather than fixed branch label.",
+      "duplicate_replay_observable_digest_matched": true,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "node_1_coherence": 15.0,
+      "output_digest": "639b8b10b5bb9a74698dfc18775d07cb8ba38162b9c5b89865eba23a4be9c587",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC5",
+      "random_tie_status": "not_random_tie",
+      "retained_non_selected_branch_count": 3,
+      "row_decision": "supported",
+      "row_id": "n23_i6a_row_03_alternate_branch_wins_supported",
+      "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+      "runner_up_branch_id": "branch_edge_4_node_5",
+      "runner_up_score": 2.0,
+      "score_margin": 0.5,
+      "selected_branch_id": "branch_edge_0_node_1",
+      "selected_score": 2.5,
+      "selection_admitted_for_collapse": true,
+      "selection_margin_passed": true,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "stress_case_role": "alternate_winner_pass",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_status": "failed_closed",
+      "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy derivation or target formation participates.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+          "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+          "sha256": "1c3771e8d56522608eeed38b0b0b059fd7a963bf986504a59d664e293fb939ef"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "below_margin_rejected_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+          "sha256": "eb729368571aabe12fa476ec2c716893515bbc5db05a7c07a0d381264e182100"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "below_margin_rejected_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+          "sha256": "be64fc6b778688b63cc25761ca259a1b3f435763be2323f00fc238b8bc171c7b"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "below_margin_rejected_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+          "sha256": "9a26d415bee2100ea1d69fbf645ba93e2210e1d0d8520dda694562c6ba7577c1"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "below_margin_rejected_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json",
+          "sha256": "3addd3b497e4e064ca8dd32856c6f5c5ae5462a2f28352961a204475932f7ade"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_duplicate_replay_trace.json"
+      ],
+      "branch_count": 4,
+      "case_id": "below_margin_rejected",
+      "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+      "collapse_persistence_ratio": 0.0,
+      "collapse_trace_status": "blocked",
+      "counterfactual_retention_trace_present": true,
+      "description": "Selected branch remains branch_edge_4_node_5, but score margin is below the predeclared AP4 bridge threshold.",
+      "duplicate_replay_observable_digest_matched": true,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "node_1_coherence": 13.8,
+      "output_digest": "a6c09c3ef61eb3ab011ed2a8e61c93216452132c1fa81579004faa01ee464e0b",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC4",
+      "random_tie_status": "not_random_tie",
+      "retained_non_selected_branch_count": 3,
+      "row_decision": "rejected",
+      "row_id": "n23_i6a_row_04_below_margin_rejected",
+      "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+      "runner_up_branch_id": "branch_edge_0_node_1",
+      "runner_up_score": 1.9000000000000004,
+      "score_margin": 0.09999999999999964,
+      "selected_branch_id": "branch_edge_4_node_5",
+      "selected_score": 2.0,
+      "selection_admitted_for_collapse": false,
+      "selection_margin_passed": false,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "stress_case_role": "margin_gate_fail",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_bridge_claim_allowed": false,
+      "ap4_bridge_status": "failed_closed",
+      "ap4_condition_reason": "I6-A stress row remains route/branch conditioned and uses source-current branch geometry.",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "No proxy derivation or target formation participates.",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "pre_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+          "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "post_collapse_snapshot",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+          "sha256": "5363a1119e12b9769243655d31cd4ad8b6eca39bfb3f2553829ea0e11d24c7c3"
+        },
+        {
+          "artifact_role": "branch_set_trace",
+          "artifact_subrole": "equalized_tie_rejected_branch_set_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+          "sha256": "0fba064149ac41211c79d57a43af384411cbb0847d9ac89ba6ee1a1b06ba3036"
+        },
+        {
+          "artifact_role": "counterfactual_retention_trace",
+          "artifact_subrole": "equalized_tie_rejected_counterfactual_retention_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+          "sha256": "121685b6abb12aff8c0c5e9c7a176c6d8b00a9c1d9279539adce7ed00acd46eb"
+        },
+        {
+          "artifact_role": "collapse_trace",
+          "artifact_subrole": "equalized_tie_rejected_collapse_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+          "sha256": "228bcc6671b77cdcee34bf8f167e7125c860e6786a464216ef99cbb7086dacdc"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "artifact_subrole": "collapse_event_log",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "artifact_role": "duplicate_replay_trace",
+          "artifact_subrole": "equalized_tie_rejected_duplicate_replay_trace",
+          "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json",
+          "sha256": "63c98d719a4514b9196f1466023ed95dc8abd364b0e03c115fd9a96bb5c55063"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_pre_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_post_collapse_snapshot.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_live_branch_set_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_counterfactual_retention_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapsed_continuation_trace.json",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_collapse_events.jsonl",
+        "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/equalized_tie_rejected/equalized_tie_rejected_duplicate_replay_trace.json"
+      ],
+      "branch_count": 4,
+      "case_id": "equalized_tie_rejected",
+      "claim_ceiling": "I6-A stress evidence for AP4-relevant selection geometry; full matrix validation remains pending I7",
+      "collapse_persistence_ratio": 0.0,
+      "collapse_trace_status": "blocked",
+      "counterfactual_retention_trace_present": true,
+      "description": "Two branches have equal support-gradient scores; random-tie promotion must fail closed.",
+      "duplicate_replay_observable_digest_matched": true,
+      "live_continuation_collapse_claim_allowed": false,
+      "minimum_score_margin": 0.25,
+      "n22_inherited_delta_used_as_selection_evidence": false,
+      "node_1_coherence": 14.0,
+      "output_digest": "23004422897b46877299fc9573ed8ef7dc28b41f2774c8eca2c4ed2dab271ac1",
+      "producer_preference_used": false,
+      "producer_selected_branch_label_used": false,
+      "provisional_lc_ladder_rung": "LC4",
+      "random_tie_status": "random_tie",
+      "retained_non_selected_branch_count": 3,
+      "row_decision": "rejected",
+      "row_id": "n23_i6a_row_05_equalized_tie_rejected",
+      "row_schema_role": "ap4_selection_geometry_robustness_stress_row",
+      "runner_up_branch_id": "branch_edge_0_node_1",
+      "runner_up_score": 2.0,
+      "score_margin": 0.0,
+      "selected_branch_id": "branch_edge_4_node_5",
+      "selected_score": 2.0,
+      "selection_admitted_for_collapse": false,
+      "selection_margin_passed": false,
+      "selection_reason": "support_gradient_dominance",
+      "semantic_choice_claim_allowed": false,
+      "stress_case_role": "tie_gate_fail",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    }
+  ],
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_live_continuation_evidence",
+      "output_digest": "f200216f3f81d1ff4abe0bf4967774cd1e3575c365a3a8f21c680d356cfd60bc",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_source_handoff_inventory.json",
+      "sha256": "17d52c81b6d09ba8824b42fc35845ac31e808ddf0cd2311758b659a1b5cd3430",
+      "source_role": "n23_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_live_continuation_schema_frozen_no_positive_evidence",
+      "output_digest": "71de40c448a031ea352b94723cb538b9a333aa3e66d88080c2218338a23278e4",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_live_continuation_schema_and_controls.json",
+      "sha256": "33f229f65bbc58c5211c1f146fa1c6e2697d6fead6102ebf9ca48074ac672d54",
+      "source_role": "n23_schema_control_freeze",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_active_nulls_fail_closed_no_positive_evidence",
+      "output_digest": "05b65af917c90a8b16286c9c8b78386199188a23fa4dffa1ea3d503c165777dd",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_active_nulls_and_failure_baselines.json",
+      "sha256": "74a0d1075d47aacdfa274599748eb98b148fc813f10b67ffa80b3f9cc1f94ea9",
+      "source_role": "n23_active_nulls",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_minimal_source_current_lc3_candidate_pending_replay_controls",
+      "output_digest": "720890f8a556409625b83bdade1f3d21fa92368a2ffc5a7ce87dd35148220626",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_minimal_live_branch_collapse_probe.json",
+      "sha256": "fdb40746fabce3ba3124f559b220eb78f6c3059494566de9ea26e84817825369",
+      "source_role": "minimal_live_branch_lc3_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_collapse_replay_controls_lc4_candidate_pending_i6_i7",
+      "output_digest": "cf4be49967d53453a71659e9a1db182f41d63db78a1d88ea4fcc9206646114b7",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_collapse_replay_and_counterfactual_controls.json",
+      "sha256": "821c5f531de33f3b482066a6a9238fcd7a3c77c50f734b1a87d59be124309945",
+      "source_role": "minimal_lc4_replay_control_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multibranch_source_current_lc3_candidate_pending_i5a",
+      "output_digest": "1c52af46ebbedadf8cd0bee091ad14785c58b21e412f8c01a06c315261ce5339",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe.json",
+      "sha256": "8a1de6033491e288d8dc3592964c161ab88745330ee9e736c9865ad5eaa392d8",
+      "source_role": "multibranch_live_set_lc3_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_multibranch_collapse_replay_controls_lc4_candidate_pending_i6_i7",
+      "output_digest": "1f2ba760cb372fb27f50380adf61ef46c1e89b770b469f3f863c3e2d1d489773",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_collapse_replay_and_controls.json",
+      "sha256": "4caec40836807b38d992d3e6814e2c1ce653ee21321d3acf8b37e266129f9393",
+      "source_role": "multibranch_lc4_replay_control_source",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_ap4_selection_geometry_lc5_candidate_pending_i7",
+      "output_digest": "ff20018f3546c0567a03d840c14d2e924b9aca162ff25e74b912579c33a24422",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_probe.json",
+      "sha256": "74016fb1ebc4a7ba006d93ba5f5f39794d090ff2a9f5dfb74c9ba25c18ca2f69",
+      "source_role": "i6_ap4_bridge_candidate_source",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_ap4_selection_geometry_robustness_probe.py",
+      "sha256": "f34e8ba36d1dc6fa158d5d56cef7a8d21cd05924560536adf04c47e54047dd72",
+      "source_role": "producer_script"
+    }
+  ],
+  "status": "passed",
+  "stress_policy": {
+    "below_margin_or_tie_rows_fail_closed": true,
+    "bounded_stress_field": "node_1_coherence",
+    "final_ap4_supported": false,
+    "final_n23_supported": false,
+    "i6_replaced": false,
+    "i6a_extension_fields": [
+      "row_schema_role",
+      "stress_case_role",
+      "ap4_bridge_claim_allowed"
+    ],
+    "i6a_role": "robustness_stress_evidence_only",
+    "minimum_score_margin": 0.25,
+    "row_schema_role_declared_as_i6a_extension": true,
+    "selection_policy": "support_gradient_dominance",
+    "supported_rows_require_duplicate_replay": true,
+    "topology_family_preserved": true
+  }
+}

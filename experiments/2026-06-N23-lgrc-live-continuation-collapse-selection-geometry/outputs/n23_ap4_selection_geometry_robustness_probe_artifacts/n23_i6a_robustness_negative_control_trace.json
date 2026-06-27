@@ -1,0 +1,45 @@
+{
+  "all_controls_failed_closed": true,
+  "artifact_id": "n23_i6a_robustness_negative_control_trace",
+  "controls": [
+    {
+      "actual_result": {
+        "alternate_geometry_selected_branch": "branch_edge_0_node_1",
+        "claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "selection remains fixed to branch_edge_4_node_5 after geometry flips",
+      "control_execution_kind": "constructed_i6a_robustness_control",
+      "control_id": "fixed_selected_branch_label_control",
+      "control_status": "failed_closed",
+      "rung_effect": "blocks robustness if selected label ignores geometry"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "minimum_score_margin": 0.25,
+        "row_decision": "rejected",
+        "score_margin": 0.09999999999999964
+      },
+      "blocked_condition": "AP4 bridge accepted below the predeclared score margin",
+      "control_execution_kind": "constructed_i6a_robustness_control",
+      "control_id": "below_margin_ap4_bridge_control",
+      "control_status": "failed_closed",
+      "rung_effect": "blocks LC5 if margin gate does not fail closed"
+    },
+    {
+      "actual_result": {
+        "claim_allowed": false,
+        "random_tie_status": "random_tie",
+        "row_decision": "rejected"
+      },
+      "blocked_condition": "random tie accepted as source-current selection geometry",
+      "control_execution_kind": "constructed_i6a_robustness_control",
+      "control_id": "equalized_tie_ap4_bridge_control",
+      "control_status": "failed_closed",
+      "rung_effect": "blocks LC5 if random tie is promoted"
+    }
+  ],
+  "trace_digest": "3efa91cefc9a4b09372c15a9b9d78ab7a0ab0a877e825e8cf8508e8543d25db7",
+  "trace_status": "present"
+}

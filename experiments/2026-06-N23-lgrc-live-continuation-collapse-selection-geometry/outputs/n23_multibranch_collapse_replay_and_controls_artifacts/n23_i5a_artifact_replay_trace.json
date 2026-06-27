@@ -1,0 +1,75 @@
+{
+  "artifact_id": "n23_i5a_artifact_replay_trace",
+  "manifest_check_count": 9,
+  "manifest_checks": [
+    {
+      "actual_sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78",
+      "artifact_role": "collapse_trace",
+      "expected_sha256": "27983d224eee88799395fba4ba78b56c3669f371e60e652ebadfba71d89cef78",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_collapse_events.jsonl"
+    },
+    {
+      "actual_sha256": "5d4c0a6b38e4685e04270a8b6620fa34be5cad940375a38b958d68321b93820d",
+      "artifact_role": "collapse_trace",
+      "expected_sha256": "5d4c0a6b38e4685e04270a8b6620fa34be5cad940375a38b958d68321b93820d",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_collapsed_continuation_trace.json"
+    },
+    {
+      "actual_sha256": "eb31c68feaeaa78e217efa4a00dee3c53511f60430cdc860a1f25406d67d72b8",
+      "artifact_role": "counterfactual_retention_trace",
+      "expected_sha256": "eb31c68feaeaa78e217efa4a00dee3c53511f60430cdc860a1f25406d67d72b8",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_counterfactual_retention_trace.json"
+    },
+    {
+      "actual_sha256": "81862cc9888e8b8d2f48318f2cc495d1c20c36696871630bc70dfc7ad9a51c90",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "81862cc9888e8b8d2f48318f2cc495d1c20c36696871630bc70dfc7ad9a51c90",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_lgrc9v3_multibranch_live_set_run.json"
+    },
+    {
+      "actual_sha256": "d9665d82650aa1c2d8bc23f5d5192a5dd64df458964b9b73edd3203feb01c49b",
+      "artifact_role": "branch_set_trace",
+      "expected_sha256": "d9665d82650aa1c2d8bc23f5d5192a5dd64df458964b9b73edd3203feb01c49b",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_live_branch_set_trace.json"
+    },
+    {
+      "actual_sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "4143a66a632d487c4bcce2094d5fbd41d7bcb604b75ded54346177d5f2a90856",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_post_collapse_snapshot.json"
+    },
+    {
+      "actual_sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "9df7da8c3b53c1c2bf1d5488c28fbdaa61fa8b5fa3a934885c7ff6484f5b22d4",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_pre_collapse_snapshot.json"
+    },
+    {
+      "actual_sha256": "d1a08207654c27768d0baef7ef422aa5ea57455963729e17154c214d9f488fa9",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "d1a08207654c27768d0baef7ef422aa5ea57455963729e17154c214d9f488fa9",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_runtime_config.json"
+    },
+    {
+      "actual_sha256": "e474a74394f8d3bf98aa0bcadf692ec4712cf17280c8bbb79bb4fbb60bdc1a3d",
+      "artifact_role": "runtime_trace",
+      "expected_sha256": "e474a74394f8d3bf98aa0bcadf692ec4712cf17280c8bbb79bb4fbb60bdc1a3d",
+      "matched": true,
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe_artifacts/n23_i4a_thresholds_declared_before_use.json"
+    }
+  ],
+  "replay_digest": "e3b37c1587e2c592643de25b720336e2e71193eed84dd8db37e950070f3e4abb",
+  "replay_mode": "artifact_replay",
+  "source_candidate_row_id": "n23_i4a_row_01_multibranch_live_set_collapse_probe",
+  "source_output_digest": "1c52af46ebbedadf8cd0bee091ad14785c58b21e412f8c01a06c315261ce5339",
+  "source_row_output_digest": "38669991699946afe680b4c92ae9aaf7ea7ac339002c89f21c510a3fe078c30c",
+  "status": "passed"
+}

@@ -1,0 +1,2157 @@
+{
+  "acceptance_state": "accepted_live_continuation_schema_frozen_no_positive_evidence",
+  "artifact_id": "n23_i2_live_continuation_schema_and_controls",
+  "checks": [
+    {
+      "check_id": "source_i1_inventory_passed",
+      "detail": {
+        "failed_checks": [],
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i1_boundary_kept_no_live_continuation_evidence",
+      "detail": {
+        "agency_supported": false,
+        "ant_ecology_implementation_opened": false,
+        "ap4_bridge_status": "not_supported_inventory_only",
+        "ap5_dependency_status": "conditional_pending_future_rows",
+        "collapse_supported": false,
+        "counterfactual_retention_supported": false,
+        "lc_ladder_rung_assigned": false,
+        "live_branch_set_supported": false,
+        "live_continuation_collapse_evidence_opened": false,
+        "n23_closeout_ladder_rung": "N23-C0_inventory_only",
+        "n23_closeout_ladder_rung_assigned": false,
+        "native_support_supported": false,
+        "phase8_opened": false,
+        "positive_run_artifacts_consumed": false,
+        "semantic_choice_supported": false,
+        "semantic_intention_supported": false,
+        "sentience_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "candidate_evidence_row_schema_complete",
+      "detail": {
+        "required_field_count": 80,
+        "threshold_fields": [
+          "support_floor_value",
+          "coherence_floor_value",
+          "boundary_integrity_floor_value",
+          "flux_or_leakage_bound",
+          "collapse_persistence_ratio_threshold",
+          "branch_distinguishability_threshold",
+          "same_basin_drift_bound"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n19_boundary_only_schema_frozen",
+      "detail": {
+        "allowed_value": "ap_gap_boundary_only"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "prefixed_source_status_fields_frozen",
+      "detail": {
+        "n20_source_downstream_consumption_status": "contract_complete_pending_iteration6_closeout",
+        "n22_source_closeout_status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_row_digests_split_frozen",
+      "detail": {
+        "source_consumable_contract_row": "n20_i5_row_04_live_continuation_collapse",
+        "source_contract_row": "n20_i4_row_04_live_continuation_collapse"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "live_branch_acceptance_frozen",
+      "detail": {
+        "blocked_origins": [
+          "replay_fork",
+          "producer_label",
+          "report_derived",
+          "independent_run_assembly"
+        ],
+        "definition": "original LC2 branch evidence emitted by the same source-current LGRC runtime run, or deterministic replay of that same already-recorded runtime trace, inside the declared branch window, before collapse-window start, with branch-specific support/coherence and boundary/flux traces",
+        "deterministic_replay_of_same_recorded_runtime_trace_allowed_for_audit": true,
+        "minimum_branch_count_for_lc2": 2,
+        "must_be_boundary_distinguishable": true,
+        "must_have_branch_specific_boundary_flux_traces": true,
+        "must_have_branch_specific_support_coherence_traces": true,
+        "replay_forks_may_audit_counterfactuals": true,
+        "replay_forks_may_create_original_live_branches": false,
+        "required_origin": "source_current_same_run"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "trace_status_fields_frozen",
+      "detail": {
+        "trace_origin_values": [
+          "source_current_same_run",
+          "deterministic_replay_of_source_run",
+          "replay_fork",
+          "report_derived",
+          "producer_label",
+          "independent_run_assembly"
+        ],
+        "trace_status_values": [
+          "present",
+          "missing",
+          "not_applicable"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "branch_record_origin_enum_frozen",
+      "detail": [
+        "source_current_same_run",
+        "replay_fork",
+        "producer_label",
+        "report_derived",
+        "independent_run_assembly"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "run_artifact_admissibility_fail_closed",
+      "detail": {
+        "all_artifact_sha256_match_file_contents_required": true,
+        "artifact_digests_must_match_file_contents": true,
+        "artifact_manifest_schema": {
+          "artifact_role_values": [
+            "source_contract",
+            "inherited_context",
+            "runtime_trace",
+            "branch_set_trace",
+            "collapse_trace",
+            "counterfactual_retention_trace",
+            "replay_trace",
+            "snapshot_load_replay_trace",
+            "duplicate_replay_trace",
+            "negative_control_trace",
+            "active_null_trace",
+            "report",
+            "closeout"
+          ],
+          "digest_algorithm": "sha256",
+          "path_policy": "repository_relative_paths_only",
+          "required_item_fields": [
+            "path",
+            "sha256",
+            "artifact_role"
+          ],
+          "type": "list[object]"
+        },
+        "artifact_paths_equal_manifest_paths_required": true,
+        "artifact_paths_must_exist": true,
+        "artifact_sha256_equal_manifest_sha256_required": true,
+        "derived_report_only_true_blocks_positive_support": true,
+        "digest_mismatch_blocks_lc_assignment": true,
+        "fail_closed_on_missing_or_mismatch": true,
+        "missing_required_artifact_blocks_lc_assignment": true,
+        "positive_lc_support_forbidden_if_only_artifact_roles": [
+          "report",
+          "inherited_context",
+          "source_contract",
+          "closeout"
+        ],
+        "report_only_artifacts_may_summarize_but_not_assign_lc_rungs": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_crosschecks_frozen",
+      "detail": {
+        "all_artifact_sha256_match_file_contents_required": true,
+        "artifact_digests_must_match_file_contents": true,
+        "artifact_manifest_schema": {
+          "artifact_role_values": [
+            "source_contract",
+            "inherited_context",
+            "runtime_trace",
+            "branch_set_trace",
+            "collapse_trace",
+            "counterfactual_retention_trace",
+            "replay_trace",
+            "snapshot_load_replay_trace",
+            "duplicate_replay_trace",
+            "negative_control_trace",
+            "active_null_trace",
+            "report",
+            "closeout"
+          ],
+          "digest_algorithm": "sha256",
+          "path_policy": "repository_relative_paths_only",
+          "required_item_fields": [
+            "path",
+            "sha256",
+            "artifact_role"
+          ],
+          "type": "list[object]"
+        },
+        "artifact_paths_equal_manifest_paths_required": true,
+        "artifact_paths_must_exist": true,
+        "artifact_sha256_equal_manifest_sha256_required": true,
+        "derived_report_only_true_blocks_positive_support": true,
+        "digest_mismatch_blocks_lc_assignment": true,
+        "fail_closed_on_missing_or_mismatch": true,
+        "missing_required_artifact_blocks_lc_assignment": true,
+        "positive_lc_support_forbidden_if_only_artifact_roles": [
+          "report",
+          "inherited_context",
+          "source_contract",
+          "closeout"
+        ],
+        "report_only_artifacts_may_summarize_but_not_assign_lc_rungs": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_role_enum_and_positive_restrictions_frozen",
+      "detail": {
+        "artifact_role_values": [
+          "source_contract",
+          "inherited_context",
+          "runtime_trace",
+          "branch_set_trace",
+          "collapse_trace",
+          "counterfactual_retention_trace",
+          "replay_trace",
+          "snapshot_load_replay_trace",
+          "duplicate_replay_trace",
+          "negative_control_trace",
+          "active_null_trace",
+          "report",
+          "closeout"
+        ],
+        "positive_lc_support_forbidden_if_only_roles": [
+          "report",
+          "inherited_context",
+          "source_contract",
+          "closeout"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "branch_collapse_temporal_ordering_frozen",
+      "detail": {
+        "branch_window_end_lte_collapse_window_start_required": true,
+        "branch_window_required_fields": [
+          "window_id",
+          "start_step",
+          "end_step"
+        ],
+        "collapse_window_required_fields": [
+          "window_id",
+          "start_step",
+          "end_step"
+        ],
+        "collapsed_continuation_trace_step_range_subset_collapse_window": true,
+        "post_report_selection_reason_allowed": false,
+        "pre_collapse_live_branch_set_trace_step_range_subset_branch_window": true,
+        "selected_branch_reason_uses_only_pre_or_in_collapse_traces": true,
+        "unordered_cooccurrence_blocks_lc3_plus": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "counterfactual_retention_schema_frozen",
+      "detail": {
+        "continued_dynamic_activity_after_collapse_required": false,
+        "labels_sufficient": false,
+        "meaning": "immutable_pre_collapse_audit_record",
+        "missing_retention_blocks": [
+          "LC3",
+          "LC4",
+          "LC5",
+          "LC6",
+          "N23-C3+"
+        ],
+        "producer_alternatives_sufficient": false,
+        "replay_created_branches_sufficient": false,
+        "report_reconstruction_sufficient": false,
+        "required_for_lc3_plus": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "selected_branch_reason_enum_frozen",
+      "detail": {
+        "allowed_values": [
+          "support_gradient_dominance",
+          "coherence_floor_dominance",
+          "boundary_integrity_dominance",
+          "flux_leakage_minimization",
+          "susceptibility_delta_conditioned",
+          "route_cost_or_conductance_dominance",
+          "multi_channel_geometry_dominance",
+          "not_supported"
+        ],
+        "ap4_relevant_reason_requires": [
+          "route_or_branch_conditioned_true",
+          "peer_or_counterfactual_comparison_present",
+          "same_horizon_or_same_budget_comparison_when_applicable",
+          "AP4_dependency_status_required_recorded"
+        ],
+        "ap4_relevant_reason_values": [
+          "route_cost_or_conductance_dominance",
+          "multi_channel_geometry_dominance_if_route_or_branch_conditioned",
+          "support_gradient_dominance_if_branch_conditioned",
+          "coherence_floor_dominance_if_branch_conditioned",
+          "boundary_integrity_dominance_if_branch_conditioned",
+          "flux_leakage_minimization_if_branch_conditioned",
+          "susceptibility_delta_conditioned_with_n23_source_current_expression"
+        ],
+        "blocked_values": [
+          "producer_label",
+          "producer_preference",
+          "random_tie",
+          "post_hoc_report_selection",
+          "single_branch_relabel",
+          "semantic_choice_label"
+        ],
+        "blocked_values_fail_closed": true,
+        "n22_inherited_delta_used_as_selection_evidence_required_value": false,
+        "n23_susceptibility_expression_trace_required_when_conditioned": true,
+        "producer_preference_allowed": false,
+        "random_tie_as_collapse_allowed": false,
+        "semantic_choice_label_allowed": false,
+        "susceptibility_delta_conditioned_cannot_use_only_inherited_n22_delta": true,
+        "susceptibility_delta_conditioned_requires_n23_source_current_expression": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "ap4_relevant_reason_subset_frozen",
+      "detail": {
+        "allowed_values": [
+          "support_gradient_dominance",
+          "coherence_floor_dominance",
+          "boundary_integrity_dominance",
+          "flux_leakage_minimization",
+          "susceptibility_delta_conditioned",
+          "route_cost_or_conductance_dominance",
+          "multi_channel_geometry_dominance",
+          "not_supported"
+        ],
+        "ap4_relevant_reason_requires": [
+          "route_or_branch_conditioned_true",
+          "peer_or_counterfactual_comparison_present",
+          "same_horizon_or_same_budget_comparison_when_applicable",
+          "AP4_dependency_status_required_recorded"
+        ],
+        "ap4_relevant_reason_values": [
+          "route_cost_or_conductance_dominance",
+          "multi_channel_geometry_dominance_if_route_or_branch_conditioned",
+          "support_gradient_dominance_if_branch_conditioned",
+          "coherence_floor_dominance_if_branch_conditioned",
+          "boundary_integrity_dominance_if_branch_conditioned",
+          "flux_leakage_minimization_if_branch_conditioned",
+          "susceptibility_delta_conditioned_with_n23_source_current_expression"
+        ],
+        "blocked_values": [
+          "producer_label",
+          "producer_preference",
+          "random_tie",
+          "post_hoc_report_selection",
+          "single_branch_relabel",
+          "semantic_choice_label"
+        ],
+        "blocked_values_fail_closed": true,
+        "n22_inherited_delta_used_as_selection_evidence_required_value": false,
+        "n23_susceptibility_expression_trace_required_when_conditioned": true,
+        "producer_preference_allowed": false,
+        "random_tie_as_collapse_allowed": false,
+        "semantic_choice_label_allowed": false,
+        "susceptibility_delta_conditioned_cannot_use_only_inherited_n22_delta": true,
+        "susceptibility_delta_conditioned_requires_n23_source_current_expression": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n22_susceptibility_inheritance_blocker_frozen",
+      "detail": {
+        "allowed_values": [
+          "support_gradient_dominance",
+          "coherence_floor_dominance",
+          "boundary_integrity_dominance",
+          "flux_leakage_minimization",
+          "susceptibility_delta_conditioned",
+          "route_cost_or_conductance_dominance",
+          "multi_channel_geometry_dominance",
+          "not_supported"
+        ],
+        "ap4_relevant_reason_requires": [
+          "route_or_branch_conditioned_true",
+          "peer_or_counterfactual_comparison_present",
+          "same_horizon_or_same_budget_comparison_when_applicable",
+          "AP4_dependency_status_required_recorded"
+        ],
+        "ap4_relevant_reason_values": [
+          "route_cost_or_conductance_dominance",
+          "multi_channel_geometry_dominance_if_route_or_branch_conditioned",
+          "support_gradient_dominance_if_branch_conditioned",
+          "coherence_floor_dominance_if_branch_conditioned",
+          "boundary_integrity_dominance_if_branch_conditioned",
+          "flux_leakage_minimization_if_branch_conditioned",
+          "susceptibility_delta_conditioned_with_n23_source_current_expression"
+        ],
+        "blocked_values": [
+          "producer_label",
+          "producer_preference",
+          "random_tie",
+          "post_hoc_report_selection",
+          "single_branch_relabel",
+          "semantic_choice_label"
+        ],
+        "blocked_values_fail_closed": true,
+        "n22_inherited_delta_used_as_selection_evidence_required_value": false,
+        "n23_susceptibility_expression_trace_required_when_conditioned": true,
+        "producer_preference_allowed": false,
+        "random_tie_as_collapse_allowed": false,
+        "semantic_choice_label_allowed": false,
+        "susceptibility_delta_conditioned_cannot_use_only_inherited_n22_delta": true,
+        "susceptibility_delta_conditioned_requires_n23_source_current_expression": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n23_susceptibility_expression_trace_required",
+      "detail": {
+        "constraint": "required when selected reason is susceptibility_delta_conditioned",
+        "required_trace_fields": [
+          "trace_status",
+          "trace_origin"
+        ],
+        "trace_status_values": [
+          "present",
+          "missing",
+          "not_applicable"
+        ],
+        "type": "object"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_preference_absence_schema_frozen",
+      "detail": {
+        "preference_or_label_may_be_recorded_only_as_producer_residue": true,
+        "producer_label_as_selected_reason_blocks_row": true,
+        "producer_preference_as_selected_reason_blocks_row": true,
+        "producer_preference_injection_absent_required_for_support": true,
+        "producer_selected_branch_label_absent_required_for_support": true,
+        "random_tie_as_collapse_blocks_row": true,
+        "random_tie_status_allowed_values": [
+          "not_applicable",
+          "not_random_tie",
+          "random_tie_rejected",
+          "random_tie_blocks_row"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "canonical_control_ids_frozen",
+      "detail": [
+        "fake_alternative_control",
+        "single_branch_relabel_control",
+        "post_hoc_selected_branch_control",
+        "producer_preference_injection_control",
+        "random_tie_as_collapse_control",
+        "missing_counterfactual_retention_control",
+        "N22_susceptibility_as_choice_relabel_control",
+        "route_conditioned_row_missing_AP4",
+        "proxy_conditioned_row_missing_AP5",
+        "AP_gap_prose_only",
+        "semantic_choice_relabel",
+        "agency_relabel",
+        "native_support_relabel",
+        "phase8_relabel"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "threshold_policy_declared_before_use",
+      "detail": {
+        "failure_policy": "missing_or_post_hoc_threshold_blocks_lc_support",
+        "outcome_inspection_before_threshold_declaration_allowed": false,
+        "required_threshold_fields": [
+          "support_floor_value",
+          "coherence_floor_value",
+          "boundary_integrity_floor_value",
+          "flux_or_leakage_bound",
+          "collapse_persistence_ratio_threshold",
+          "branch_distinguishability_threshold",
+          "same_basin_drift_bound"
+        ],
+        "retune_after_outcome_allowed": false,
+        "row_specific_thresholds_declared_before_use": true,
+        "threshold_record_required_fields": [
+          "threshold_id",
+          "source_contract_row",
+          "source_consumable_contract_row",
+          "source_contract_row_digest",
+          "source_consumable_contract_row_digest",
+          "threshold_declared_before_use",
+          "threshold_value_or_rule",
+          "threshold_owner",
+          "failure_policy"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "support_coherence_boundary_flux_schema_frozen",
+      "detail": {
+        "changed_status_requires_declared_floor_or_bound_preserved": true,
+        "field_specific_acceptance": {
+          "boundary_integrity_result": [
+            "preserved",
+            "changed_within_allowed_delta"
+          ],
+          "coherence_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ],
+          "flux_or_leakage_result": [
+            "preserved",
+            "changed_within_bound"
+          ],
+          "support_floor_result": [
+            "preserved",
+            "changed_within_allowed_delta_above_floor"
+          ]
+        },
+        "floor_crossing_blocks_support": true,
+        "flux_bound_exceeded_blocks_support": true,
+        "missing_result_blocks_support": true,
+        "not_applicable_blocks_lc2_plus": {
+          "boundary_integrity_result": true,
+          "coherence_floor_result": true,
+          "flux_or_leakage_result": true,
+          "support_floor_result": true
+        },
+        "out_of_scope_boundary_change_blocks_support": true,
+        "required_result_fields": [
+          "support_floor_result",
+          "coherence_floor_result",
+          "boundary_integrity_result",
+          "flux_or_leakage_result"
+        ],
+        "result_status_values": [
+          "preserved",
+          "changed_within_allowed_delta",
+          "changed_within_allowed_delta_above_floor",
+          "changed_within_bound",
+          "crossed_floor",
+          "exceeded_bound",
+          "missing",
+          "not_applicable"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "replay_control_schema_frozen",
+      "detail": {
+        "canonical_control_ids": [
+          "fake_alternative_control",
+          "single_branch_relabel_control",
+          "post_hoc_selected_branch_control",
+          "producer_preference_injection_control",
+          "random_tie_as_collapse_control",
+          "missing_counterfactual_retention_control",
+          "N22_susceptibility_as_choice_relabel_control",
+          "route_conditioned_row_missing_AP4",
+          "proxy_conditioned_row_missing_AP5",
+          "AP_gap_prose_only",
+          "semantic_choice_relabel",
+          "agency_relabel",
+          "native_support_relabel",
+          "phase8_relabel"
+        ],
+        "control_satisfied_for_positive_row_when_expected_and_actual_failed_closed": true,
+        "failed_closed_blocks_only_control_null_unsafe_claim_by_default": true,
+        "failed_closed_demotes_positive_candidate_only_when_rung_effect_declares": true,
+        "failed_closed_is_expected_good_result_for_negative_controls": true,
+        "failed_closed_satisfies_required_negative_control": true,
+        "failed_open_invalidates_row": true,
+        "not_applicable_requires_scope_reason": true,
+        "not_run_blocks_dependent_rung": true,
+        "required_control_record_fields": [
+          "control_id",
+          "control_status",
+          "blocked_condition",
+          "expected_result",
+          "actual_result",
+          "claim_allowed_when_control_triggers",
+          "rung_effect"
+        ],
+        "required_replay_modes": {
+          "LC4": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay"
+          ],
+          "LC5": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay",
+            "order_inversion_control",
+            "post_hoc_stitching_control"
+          ],
+          "LC6": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay",
+            "order_inversion_control",
+            "post_hoc_stitching_control",
+            "handoff_reconstruction_replay"
+          ]
+        },
+        "status_enum": [
+          "passed",
+          "failed_closed",
+          "failed_open",
+          "not_run",
+          "not_applicable"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "failed_closed_negative_control_semantics_frozen",
+      "detail": {
+        "demotion_precedence": {
+          "control_failed_closed_blocks_unsafe_control_claim": true,
+          "control_failed_closed_demotes_positive_candidate_only_with_explicit_rung_effect": true,
+          "control_failed_closed_satisfies_required_negative_control": true,
+          "control_failed_open_invalidates_row": true,
+          "final_lc_and_n23_c_rungs_assigned_after_control_matrix_only": true,
+          "hypothesis_c_failure_demotes_or_blocks_a_b": true,
+          "iteration4_candidate_rungs_are_provisional_until_controls": true,
+          "missing_ap_dependency_blocks_dependent_row": true,
+          "missing_collapse_trace_blocks_lc3_plus": true,
+          "missing_counterfactual_retention_blocks_lc3_plus": true,
+          "missing_live_branch_set_blocks_lc2_plus": true,
+          "not_run_blocks_dependent_rung": true,
+          "replay_failure_blocks_lc4_plus": true
+        },
+        "replay_control_schema": {
+          "canonical_control_ids": [
+            "fake_alternative_control",
+            "single_branch_relabel_control",
+            "post_hoc_selected_branch_control",
+            "producer_preference_injection_control",
+            "random_tie_as_collapse_control",
+            "missing_counterfactual_retention_control",
+            "N22_susceptibility_as_choice_relabel_control",
+            "route_conditioned_row_missing_AP4",
+            "proxy_conditioned_row_missing_AP5",
+            "AP_gap_prose_only",
+            "semantic_choice_relabel",
+            "agency_relabel",
+            "native_support_relabel",
+            "phase8_relabel"
+          ],
+          "control_satisfied_for_positive_row_when_expected_and_actual_failed_closed": true,
+          "failed_closed_blocks_only_control_null_unsafe_claim_by_default": true,
+          "failed_closed_demotes_positive_candidate_only_when_rung_effect_declares": true,
+          "failed_closed_is_expected_good_result_for_negative_controls": true,
+          "failed_closed_satisfies_required_negative_control": true,
+          "failed_open_invalidates_row": true,
+          "not_applicable_requires_scope_reason": true,
+          "not_run_blocks_dependent_rung": true,
+          "required_control_record_fields": [
+            "control_id",
+            "control_status",
+            "blocked_condition",
+            "expected_result",
+            "actual_result",
+            "claim_allowed_when_control_triggers",
+            "rung_effect"
+          ],
+          "required_replay_modes": {
+            "LC4": [
+              "artifact_replay",
+              "snapshot_load_replay",
+              "duplicate_replay"
+            ],
+            "LC5": [
+              "artifact_replay",
+              "snapshot_load_replay",
+              "duplicate_replay",
+              "order_inversion_control",
+              "post_hoc_stitching_control"
+            ],
+            "LC6": [
+              "artifact_replay",
+              "snapshot_load_replay",
+              "duplicate_replay",
+              "order_inversion_control",
+              "post_hoc_stitching_control",
+              "handoff_reconstruction_replay"
+            ]
+          },
+          "status_enum": [
+            "passed",
+            "failed_closed",
+            "failed_open",
+            "not_run",
+            "not_applicable"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_null_comparability_frozen",
+      "detail": {
+        "expected_result": "failed_closed",
+        "same_basin_signature_fields": true,
+        "same_branch_and_collapse_window_policy": true,
+        "same_budget_schedule_digest_where_applicable": true,
+        "same_route_or_branch_scope_where_applicable": true,
+        "same_runtime_envelope_digest": true,
+        "same_seed_or_declared_seed_pairing_rule": true,
+        "same_source_consumable_contract_row": true,
+        "same_source_contract_row": true,
+        "same_source_contract_row_digest": true,
+        "same_topology_config_family": true,
+        "weak_or_noncomparable_null_blocks_null_use": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "lc_ladder_complete",
+      "detail": [
+        {
+          "meaning": "no_source_current_live_continuation_evidence",
+          "rung": "LC0"
+        },
+        {
+          "meaning": "run_artifact_with_possible_branch_collapse_context",
+          "rung": "LC1"
+        },
+        {
+          "meaning": "source_current_live_branch_set_with_at_least_two_real_alternatives",
+          "rung": "LC2"
+        },
+        {
+          "meaning": "source_current_collapse_trace_from_live_branch_set_to_one_continuation",
+          "rung": "LC3"
+        },
+        {
+          "meaning": "replay_control_backed_live_continuation_collapse_candidate",
+          "rung": "LC4"
+        },
+        {
+          "meaning": "ap4_relevant_route_branch_selection_geometry_candidate",
+          "rung": "LC5"
+        },
+        {
+          "meaning": "n24_ready_bounded_live_continuation_collapse_evidence",
+          "rung": "LC6"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n23_closeout_ladder_complete",
+      "detail": [
+        {
+          "meaning": "contract_only_closeout",
+          "rung": "N23-C0"
+        },
+        {
+          "meaning": "active_null_control_discipline_established",
+          "rung": "N23-C1"
+        },
+        {
+          "meaning": "live_branch_partial",
+          "rung": "N23-C2"
+        },
+        {
+          "meaning": "source_current_collapse_candidate",
+          "rung": "N23-C3"
+        },
+        {
+          "meaning": "replay_control_backed_collapse_candidate",
+          "rung": "N23-C4"
+        },
+        {
+          "meaning": "ap4_relevant_selection_geometry_candidate",
+          "rung": "N23-C5"
+        },
+        {
+          "meaning": "n24_ready_bounded_live_continuation_collapse_evidence",
+          "rung": "N23-C6"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ap_dependency_enums_frozen",
+      "detail": {
+        "ap4_bridge_candidate_requires": [
+          "LC5_or_LC6_cleanly_supported",
+          "source_current_live_branch_set",
+          "source_current_collapse_trace",
+          "counterfactual_retention",
+          "replay_and_controls_pass",
+          "route_or_branch_conditioned_source_current_reason",
+          "AP4_dependency_status_required_recorded",
+          "unsafe_claims_blocked"
+        ],
+        "ap4_bridge_status_initial": "not_supported",
+        "ap4_bridge_status_values": [
+          "not_supported",
+          "bridge_candidate_supported",
+          "blocked_by_live_branch_set",
+          "blocked_by_single_live_branch",
+          "blocked_by_counterfactual_retention",
+          "blocked_by_same_basin_floor",
+          "blocked_by_report_only_evidence",
+          "blocked_by_artifact_manifest",
+          "blocked_by_not_route_or_branch_conditioned",
+          "blocked_by_replay",
+          "blocked_by_controls",
+          "blocked_by_producer_preference",
+          "blocked_by_ap_gap"
+        ],
+        "ap4_condition_reason_required": true,
+        "ap4_dependency_status_values": [
+          "required_recorded",
+          "not_applicable",
+          "missing_blocks_row"
+        ],
+        "ap5_condition_reason_required": true,
+        "ap5_dependency_status_values": [
+          "conditional_required_recorded",
+          "not_applicable",
+          "missing_blocks_row"
+        ],
+        "ap_gap_prose_only_not_sufficient": true,
+        "inventory_meta_status_values_invalid_for_candidate_rows": [
+          "not_supported_inventory_only",
+          "conditional_pending_future_rows",
+          "required_local_gap_dependency"
+        ],
+        "missing_blocks_row_status": "missing_blocks_row",
+        "proxy_or_target_conditioned_rows_require_ap5": true,
+        "route_or_branch_conditioned_rows_require_ap4": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "inventory_meta_ap_values_invalid_for_candidate_rows",
+      "detail": [
+        "not_supported_inventory_only",
+        "conditional_pending_future_rows",
+        "required_local_gap_dependency"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "ap4_bridge_status_enum_frozen",
+      "detail": [
+        "not_supported",
+        "bridge_candidate_supported",
+        "blocked_by_live_branch_set",
+        "blocked_by_single_live_branch",
+        "blocked_by_counterfactual_retention",
+        "blocked_by_same_basin_floor",
+        "blocked_by_report_only_evidence",
+        "blocked_by_artifact_manifest",
+        "blocked_by_not_route_or_branch_conditioned",
+        "blocked_by_replay",
+        "blocked_by_controls",
+        "blocked_by_producer_preference",
+        "blocked_by_ap_gap"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "row_decision_policy_frozen",
+      "detail": {
+        "allowed_values": [
+          "supported",
+          "partial",
+          "blocked",
+          "rejected",
+          "not_applicable"
+        ],
+        "blocked_forces_claim_allowed_false": true,
+        "not_applicable_requires_scope_reason": true,
+        "partial_blocks_final_lc_claim": true,
+        "rejected_forces_claim_allowed_false": true,
+        "semantic_choice_claim_allowed_always_false": true,
+        "supported_does_not_automatically_allow_lc_claim": true,
+        "supported_requires_lc_gate_passes_for_claim_allowed": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "claim_boundary_schema_frozen",
+      "detail": {
+        "all_unsafe_claim_flags_must_be_false": true,
+        "allowed_claim_ceiling": "bounded artifact-level live-continuation collapse / selection-geometry candidate",
+        "ant_ecology_implementation_opened": false,
+        "blocked_claims": [
+          "agency",
+          "consciousness",
+          "free_will",
+          "fully_native_integration",
+          "identity_acceptance",
+          "native_ant_agency",
+          "native_colony_agency",
+          "native_route_conductance_memory",
+          "native_support",
+          "organism_life",
+          "phase8_implementation",
+          "producer_preference_as_selection",
+          "random_tie_as_collapse",
+          "selfhood",
+          "semantic_action",
+          "semantic_choice",
+          "semantic_goal_ownership",
+          "semantic_intention",
+          "semantic_learning",
+          "semantic_perception",
+          "sentience",
+          "unrestricted_autonomy",
+          "ant_ecology_specification",
+          "N22_susceptibility_as_choice"
+        ],
+        "native_support_opened": false,
+        "phase8_opened": false,
+        "sentience_opened": false,
+        "unsafe_claim_flags_required": {
+          "agency": false,
+          "consciousness": false,
+          "free_will": false,
+          "fully_native_integration": false,
+          "identity_acceptance": false,
+          "native_ant_agency": false,
+          "native_colony_agency": false,
+          "native_route_conductance_memory": false,
+          "native_support": false,
+          "organism_life": false,
+          "phase8_implementation": false,
+          "producer_preference_as_selection": false,
+          "random_tie_as_collapse": false,
+          "selfhood": false,
+          "semantic_action": false,
+          "semantic_choice": false,
+          "semantic_goal_ownership": false,
+          "semantic_intention": false,
+          "semantic_learning": false,
+          "semantic_perception": false,
+          "sentience": false,
+          "unrestricted_autonomy": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "demotion_precedence_frozen",
+      "detail": {
+        "control_failed_closed_blocks_unsafe_control_claim": true,
+        "control_failed_closed_demotes_positive_candidate_only_with_explicit_rung_effect": true,
+        "control_failed_closed_satisfies_required_negative_control": true,
+        "control_failed_open_invalidates_row": true,
+        "final_lc_and_n23_c_rungs_assigned_after_control_matrix_only": true,
+        "hypothesis_c_failure_demotes_or_blocks_a_b": true,
+        "iteration4_candidate_rungs_are_provisional_until_controls": true,
+        "missing_ap_dependency_blocks_dependent_row": true,
+        "missing_collapse_trace_blocks_lc3_plus": true,
+        "missing_counterfactual_retention_blocks_lc3_plus": true,
+        "missing_live_branch_set_blocks_lc2_plus": true,
+        "not_run_blocks_dependent_rung": true,
+        "replay_failure_blocks_lc4_plus": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_evidence_opened",
+      "detail": {
+        "ap4_bridge_status": "not_supported",
+        "candidate_rows_classified": false,
+        "lc_ladder_rung_assigned": false,
+        "live_continuation_collapse_evidence_opened": false,
+        "n23_closeout_ladder_rung_assigned": false,
+        "positive_run_artifacts_consumed": false
+      },
+      "passed": true
+    }
+  ],
+  "command": ".venv/bin/python experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/build_n23_live_continuation_schema_and_controls.py",
+  "evidence_boundary": {
+    "agency_supported": false,
+    "ant_ecology_implementation_opened": false,
+    "ap4_bridge_status": "not_supported",
+    "ap5_dependency_status": "conditional_pending_future_rows",
+    "candidate_rows_classified": false,
+    "lc_ladder_rung_assigned": false,
+    "live_continuation_collapse_evidence_opened": false,
+    "n23_closeout_ceiling": "N23-C0_schema_freeze_only",
+    "n23_closeout_ladder_rung_assigned": false,
+    "native_support_supported": false,
+    "phase8_opened": false,
+    "positive_run_artifacts_consumed": false,
+    "semantic_choice_supported": false,
+    "semantic_intention_supported": false,
+    "sentience_supported": false
+  },
+  "experiment": "N23_lgrc_live_continuation_collapse_selection_geometry",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "iteration": 2,
+  "output_digest": "71de40c448a031ea352b94723cb538b9a333aa3e66d88080c2218338a23278e4",
+  "purpose": "freeze schema, ladders, controls, AP rules, and claim boundaries before N23 positive probes",
+  "schema": {
+    "active_null_comparability_rule": {
+      "expected_result": "failed_closed",
+      "same_basin_signature_fields": true,
+      "same_branch_and_collapse_window_policy": true,
+      "same_budget_schedule_digest_where_applicable": true,
+      "same_route_or_branch_scope_where_applicable": true,
+      "same_runtime_envelope_digest": true,
+      "same_seed_or_declared_seed_pairing_rule": true,
+      "same_source_consumable_contract_row": true,
+      "same_source_contract_row": true,
+      "same_source_contract_row_digest": true,
+      "same_topology_config_family": true,
+      "weak_or_noncomparable_null_blocks_null_use": true
+    },
+    "ap_dependency_schema": {
+      "ap4_bridge_candidate_requires": [
+        "LC5_or_LC6_cleanly_supported",
+        "source_current_live_branch_set",
+        "source_current_collapse_trace",
+        "counterfactual_retention",
+        "replay_and_controls_pass",
+        "route_or_branch_conditioned_source_current_reason",
+        "AP4_dependency_status_required_recorded",
+        "unsafe_claims_blocked"
+      ],
+      "ap4_bridge_status_initial": "not_supported",
+      "ap4_bridge_status_values": [
+        "not_supported",
+        "bridge_candidate_supported",
+        "blocked_by_live_branch_set",
+        "blocked_by_single_live_branch",
+        "blocked_by_counterfactual_retention",
+        "blocked_by_same_basin_floor",
+        "blocked_by_report_only_evidence",
+        "blocked_by_artifact_manifest",
+        "blocked_by_not_route_or_branch_conditioned",
+        "blocked_by_replay",
+        "blocked_by_controls",
+        "blocked_by_producer_preference",
+        "blocked_by_ap_gap"
+      ],
+      "ap4_condition_reason_required": true,
+      "ap4_dependency_status_values": [
+        "required_recorded",
+        "not_applicable",
+        "missing_blocks_row"
+      ],
+      "ap5_condition_reason_required": true,
+      "ap5_dependency_status_values": [
+        "conditional_required_recorded",
+        "not_applicable",
+        "missing_blocks_row"
+      ],
+      "ap_gap_prose_only_not_sufficient": true,
+      "inventory_meta_status_values_invalid_for_candidate_rows": [
+        "not_supported_inventory_only",
+        "conditional_pending_future_rows",
+        "required_local_gap_dependency"
+      ],
+      "missing_blocks_row_status": "missing_blocks_row",
+      "proxy_or_target_conditioned_rows_require_ap5": true,
+      "route_or_branch_conditioned_rows_require_ap4": true
+    },
+    "artifact_role_schema": {
+      "artifact_role_values": [
+        "source_contract",
+        "inherited_context",
+        "runtime_trace",
+        "branch_set_trace",
+        "collapse_trace",
+        "counterfactual_retention_trace",
+        "replay_trace",
+        "snapshot_load_replay_trace",
+        "duplicate_replay_trace",
+        "negative_control_trace",
+        "active_null_trace",
+        "report",
+        "closeout"
+      ],
+      "positive_lc_support_forbidden_if_only_roles": [
+        "report",
+        "inherited_context",
+        "source_contract",
+        "closeout"
+      ]
+    },
+    "branch_collapse_window_schema": {
+      "branch_window_end_lte_collapse_window_start_required": true,
+      "branch_window_required_fields": [
+        "window_id",
+        "start_step",
+        "end_step"
+      ],
+      "collapse_window_required_fields": [
+        "window_id",
+        "start_step",
+        "end_step"
+      ],
+      "collapsed_continuation_trace_step_range_subset_collapse_window": true,
+      "post_report_selection_reason_allowed": false,
+      "pre_collapse_live_branch_set_trace_step_range_subset_branch_window": true,
+      "selected_branch_reason_uses_only_pre_or_in_collapse_traces": true,
+      "unordered_cooccurrence_blocks_lc3_plus": true
+    },
+    "candidate_evidence_row_schema": {
+      "claim_allowed_false_for_non_supported_rows": true,
+      "claim_allowed_false_if_unsafe_claim_requested": true,
+      "field_constraints": {
+        "all_artifact_sha256_match_file_contents": {
+          "constraint": "false blocks support",
+          "required_value_for_positive_support": true,
+          "type": "boolean"
+        },
+        "ap4_condition_reason": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "ap4_dependency_status": {
+          "allowed_values": [
+            "required_recorded",
+            "not_applicable",
+            "missing_blocks_row"
+          ],
+          "blocked_values": [
+            "not_supported_inventory_only",
+            "conditional_pending_future_rows",
+            "required_local_gap_dependency"
+          ],
+          "constraint": "inventory/meta AP values are invalid for candidate rows",
+          "type": "enum"
+        },
+        "ap5_condition_reason": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "ap5_dependency_status": {
+          "allowed_values": [
+            "conditional_required_recorded",
+            "not_applicable",
+            "missing_blocks_row"
+          ],
+          "blocked_values": [
+            "not_supported_inventory_only",
+            "conditional_pending_future_rows",
+            "required_local_gap_dependency"
+          ],
+          "constraint": "inventory/meta AP values are invalid for candidate rows",
+          "type": "enum"
+        },
+        "artifact_manifest": {
+          "allowed_artifact_roles": [
+            "source_contract",
+            "inherited_context",
+            "runtime_trace",
+            "branch_set_trace",
+            "collapse_trace",
+            "counterfactual_retention_trace",
+            "replay_trace",
+            "snapshot_load_replay_trace",
+            "duplicate_replay_trace",
+            "negative_control_trace",
+            "active_null_trace",
+            "report",
+            "closeout"
+          ],
+          "constraint": "positive LC support cannot be report/context/contract/closeout only",
+          "required_item_fields": [
+            "path",
+            "sha256",
+            "artifact_role"
+          ],
+          "type": "list[object]"
+        },
+        "artifact_paths": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "artifact_paths_equal_manifest_paths": {
+          "constraint": "parallel artifact path list must match manifest paths",
+          "required_value_for_positive_support": true,
+          "type": "boolean"
+        },
+        "artifact_sha256": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "artifact_sha256_equal_manifest_sha256": {
+          "constraint": "parallel artifact hash list must match manifest sha256 values",
+          "required_value_for_positive_support": true,
+          "type": "boolean"
+        },
+        "blocked_relabel_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "boundary_integrity_floor_value": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "boundary_integrity_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "branch_boundary_flux_traces": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "branch_counterfactual_records": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "branch_distinguishability_threshold": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "branch_record_origin": {
+          "allowed_values": [
+            "source_current_same_run",
+            "replay_fork",
+            "producer_label",
+            "report_derived",
+            "independent_run_assembly"
+          ],
+          "constraint": "replay/report/producer/independent alternatives cannot create LC2",
+          "required_value_for_lc2_plus": "source_current_same_run",
+          "type": "enum"
+        },
+        "branch_support_coherence_traces": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "branch_window": {
+          "constraint": "declared before collapse-window outcome inspection",
+          "required_fields": [
+            "start_step",
+            "end_step",
+            "window_id"
+          ],
+          "type": "object"
+        },
+        "claim_ceiling": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "coherence_floor_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "coherence_floor_value": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "collapse_persistence_ratio": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "collapse_persistence_ratio_threshold": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "collapse_threshold_or_rule": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "collapse_trace_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "collapse_window": {
+          "constraint": "must start after branch window ends",
+          "required_fields": [
+            "start_step",
+            "end_step",
+            "window_id"
+          ],
+          "type": "object"
+        },
+        "collapsed_continuation_trace": {
+          "constraint": "source-current collapse trace required for LC3+",
+          "required_trace_fields": [
+            "trace_status",
+            "trace_origin",
+            "missing_blocks_rungs"
+          ],
+          "trace_origin_values": [
+            "source_current_same_run",
+            "deterministic_replay_of_source_run",
+            "replay_fork",
+            "report_derived",
+            "producer_label",
+            "independent_run_assembly"
+          ],
+          "trace_status_values": [
+            "present",
+            "missing",
+            "not_applicable"
+          ],
+          "type": "object"
+        },
+        "control_results": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "counterfactual_branch_retention_trace": {
+          "constraint": "immutable pre-collapse audit evidence, not continued active branch",
+          "required_trace_fields": [
+            "trace_status",
+            "trace_origin",
+            "missing_blocks_rungs"
+          ],
+          "trace_origin_values": [
+            "source_current_same_run",
+            "deterministic_replay_of_source_run",
+            "replay_fork",
+            "report_derived",
+            "producer_label",
+            "independent_run_assembly"
+          ],
+          "trace_status_values": [
+            "present",
+            "missing",
+            "not_applicable"
+          ],
+          "type": "object"
+        },
+        "counterfactual_retention_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "derived_report_only": {
+          "constraint": "true blocks positive LC support",
+          "required_value_for_positive_support": false,
+          "type": "boolean"
+        },
+        "fake_alternatives_rejected": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "flux_or_leakage_bound": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "flux_or_leakage_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "live_branch_set_trace": {
+          "constraint": "at least two source-current same-run branch records required for LC2+",
+          "required_trace_fields": [
+            "trace_status",
+            "trace_origin",
+            "missing_blocks_rungs"
+          ],
+          "trace_origin_values": [
+            "source_current_same_run",
+            "deterministic_replay_of_source_run",
+            "replay_fork",
+            "report_derived",
+            "producer_label",
+            "independent_run_assembly"
+          ],
+          "trace_status_values": [
+            "present",
+            "missing",
+            "not_applicable"
+          ],
+          "type": "object"
+        },
+        "live_continuation_collapse_claim_allowed": {
+          "constraint": "true only when all LC/AP/replay/control gates pass",
+          "type": "boolean"
+        },
+        "n19_native_readiness_boundary_consumption": {
+          "allowed_values": [
+            "ap_gap_boundary_only"
+          ],
+          "constraint": "N19 is AP-gap boundary only, not evidence",
+          "type": "enum"
+        },
+        "n20_source_downstream_consumption_status": {
+          "constraint": "prefixed inherited source status required",
+          "required_value": "contract_complete_pending_iteration6_closeout",
+          "type": "string"
+        },
+        "n22_inherited_delta_used_as_selection_evidence": {
+          "constraint": "inherited N22 delta may provide context but cannot be N23 selection evidence",
+          "required_value": false,
+          "type": "boolean"
+        },
+        "n22_source_closeout_status": {
+          "constraint": "prefixed inherited N22 closeout status required",
+          "required_value": "passed",
+          "type": "string"
+        },
+        "n23_susceptibility_expression_trace": {
+          "constraint": "required when selected reason is susceptibility_delta_conditioned",
+          "required_trace_fields": [
+            "trace_status",
+            "trace_origin"
+          ],
+          "trace_status_values": [
+            "present",
+            "missing",
+            "not_applicable"
+          ],
+          "type": "object"
+        },
+        "naturalization_debt_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "out_of_scope_drift_blocks_row": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "output_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "peer_or_counterfactual_comparison": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "peer_or_counterfactual_scope_reason": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "post_hoc_selection_rejected": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "pre_collapse_geometry_trace": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "producer_preference_injection_absent": {
+          "constraint": "false blocks selection-geometry support",
+          "required_value_for_support": true,
+          "type": "boolean"
+        },
+        "producer_preference_rejected": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "producer_residue_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "producer_selected_branch_label_absent": {
+          "constraint": "false demotes or blocks LC support",
+          "required_value_for_support": true,
+          "type": "boolean"
+        },
+        "random_tie_as_collapse_rejected": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "random_tie_status": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "replay_collapse_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "replay_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "route_or_branch_conditioned": {
+          "constraint": "true requires AP4 row-local dependency status",
+          "type": "boolean"
+        },
+        "row_decision": {
+          "allowed_values": [
+            "supported",
+            "partial",
+            "blocked",
+            "rejected",
+            "not_applicable"
+          ],
+          "constraint": "supported alone does not allow unsafe claims",
+          "type": "enum"
+        },
+        "row_id": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "row_specific_thresholds_declared_before_use": {
+          "constraint": "false blocks positive LC support",
+          "required_value": true,
+          "type": "boolean"
+        },
+        "run_artifact_id": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "runtime_config_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "same_basin_continuation_rule": {
+          "constraint": "must be consumed without redefinition",
+          "required_source": "N20 I5 same-basin rule from I1",
+          "type": "object"
+        },
+        "same_basin_drift_bound": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "same_basin_invariant_fields": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "selected_branch_source_current_reason": {
+          "allowed_values": [
+            "support_gradient_dominance",
+            "coherence_floor_dominance",
+            "boundary_integrity_dominance",
+            "flux_leakage_minimization",
+            "susceptibility_delta_conditioned",
+            "route_cost_or_conductance_dominance",
+            "multi_channel_geometry_dominance",
+            "not_supported"
+          ],
+          "blocked_values": [
+            "producer_label",
+            "producer_preference",
+            "random_tie",
+            "post_hoc_report_selection",
+            "single_branch_relabel",
+            "semantic_choice_label"
+          ],
+          "constraint": "must be computed from pre/in-collapse traces",
+          "type": "enum"
+        },
+        "selection_not_label_reassignment": {
+          "constraint": "false blocks LC2+ support",
+          "required_value": true,
+          "type": "boolean"
+        },
+        "semantic_choice_claim_allowed": {
+          "constraint": "semantic choice remains blocked in every row",
+          "required_value": false,
+          "type": "boolean"
+        },
+        "single_branch_relabel_rejected": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "source_commit_or_source_digest": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "source_consumable_contract_row": {
+          "constraint": "same-basin/control contract row must not drift",
+          "required_value": "n20_i5_row_04_live_continuation_collapse",
+          "type": "string"
+        },
+        "source_consumable_contract_row_digest": {
+          "constraint": "must match I1 digest over N20 I5 same-basin/control contract row",
+          "required_value": "f2043b8ef396489036249387e67d0e67840b5dffbae0a90e24dadc27942417d6",
+          "type": "sha256_string"
+        },
+        "source_contract_row": {
+          "constraint": "primitive contract source row must not drift",
+          "required_value": "n20_i4_row_04_live_continuation_collapse",
+          "type": "string"
+        },
+        "source_contract_row_digest": {
+          "constraint": "must match I1 digest over N20 I4 primitive contract row",
+          "required_value": "29815e9d26a87a48767e1d368eb8638bb679ec6c857d6a463980ab8a46aca83a",
+          "type": "sha256_string"
+        },
+        "source_current_inputs": {
+          "constraint": "must be LGRC runtime or replay emitted, not report-built",
+          "type": "list[string]"
+        },
+        "source_output_digest": {
+          "constraint": "records the source I1 inventory digest consumed",
+          "required_value": "f200216f3f81d1ff4abe0bf4967774cd1e3575c365a3a8f21c680d356cfd60bc",
+          "type": "sha256_string"
+        },
+        "support_floor_result": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        },
+        "support_floor_value": {
+          "constraint": "must be frozen before positive probe",
+          "type": "number_or_declared_rule"
+        },
+        "unsafe_claim_flags": {
+          "constraint": "required for candidate rows",
+          "type": "recorded"
+        }
+      },
+      "missing_required_field_blocks_candidate_admissibility": true,
+      "required_fields": [
+        "row_id",
+        "source_contract_row",
+        "source_consumable_contract_row",
+        "source_contract_row_digest",
+        "source_consumable_contract_row_digest",
+        "source_output_digest",
+        "run_artifact_id",
+        "source_commit_or_source_digest",
+        "runtime_config_digest",
+        "source_current_inputs",
+        "row_specific_thresholds_declared_before_use",
+        "n19_native_readiness_boundary_consumption",
+        "n20_source_downstream_consumption_status",
+        "n22_source_closeout_status",
+        "branch_window",
+        "collapse_window",
+        "pre_collapse_geometry_trace",
+        "live_branch_set_trace",
+        "branch_support_coherence_traces",
+        "branch_boundary_flux_traces",
+        "branch_counterfactual_records",
+        "collapsed_continuation_trace",
+        "counterfactual_branch_retention_trace",
+        "branch_record_origin",
+        "selected_branch_source_current_reason",
+        "n22_inherited_delta_used_as_selection_evidence",
+        "n23_susceptibility_expression_trace",
+        "producer_selected_branch_label_absent",
+        "producer_preference_injection_absent",
+        "random_tie_status",
+        "support_floor_value",
+        "coherence_floor_value",
+        "boundary_integrity_floor_value",
+        "flux_or_leakage_bound",
+        "collapse_persistence_ratio_threshold",
+        "branch_distinguishability_threshold",
+        "same_basin_drift_bound",
+        "same_basin_continuation_rule",
+        "same_basin_invariant_fields",
+        "out_of_scope_drift_blocks_row",
+        "selection_not_label_reassignment",
+        "route_or_branch_conditioned",
+        "peer_or_counterfactual_comparison",
+        "peer_or_counterfactual_scope_reason",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result",
+        "replay_result",
+        "control_results",
+        "ap4_dependency_status",
+        "ap5_dependency_status",
+        "ap4_condition_reason",
+        "ap5_condition_reason",
+        "collapse_trace_digest",
+        "replay_collapse_digest",
+        "counterfactual_retention_digest",
+        "collapse_persistence_ratio",
+        "collapse_threshold_or_rule",
+        "fake_alternatives_rejected",
+        "single_branch_relabel_rejected",
+        "post_hoc_selection_rejected",
+        "producer_preference_rejected",
+        "random_tie_as_collapse_rejected",
+        "producer_residue_fields",
+        "naturalization_debt_fields",
+        "blocked_relabel_fields",
+        "claim_ceiling",
+        "unsafe_claim_flags",
+        "row_decision",
+        "live_continuation_collapse_claim_allowed",
+        "semantic_choice_claim_allowed",
+        "derived_report_only",
+        "artifact_manifest",
+        "artifact_paths",
+        "artifact_sha256",
+        "artifact_paths_equal_manifest_paths",
+        "artifact_sha256_equal_manifest_sha256",
+        "all_artifact_sha256_match_file_contents",
+        "output_digest"
+      ],
+      "same_basin_rule_must_use_i1_reference": true,
+      "source_consumable_contract_row_must_equal_i1": true,
+      "source_contract_row_must_equal_i1": true
+    },
+    "claim_boundary_schema": {
+      "all_unsafe_claim_flags_must_be_false": true,
+      "allowed_claim_ceiling": "bounded artifact-level live-continuation collapse / selection-geometry candidate",
+      "ant_ecology_implementation_opened": false,
+      "blocked_claims": [
+        "agency",
+        "consciousness",
+        "free_will",
+        "fully_native_integration",
+        "identity_acceptance",
+        "native_ant_agency",
+        "native_colony_agency",
+        "native_route_conductance_memory",
+        "native_support",
+        "organism_life",
+        "phase8_implementation",
+        "producer_preference_as_selection",
+        "random_tie_as_collapse",
+        "selfhood",
+        "semantic_action",
+        "semantic_choice",
+        "semantic_goal_ownership",
+        "semantic_intention",
+        "semantic_learning",
+        "semantic_perception",
+        "sentience",
+        "unrestricted_autonomy",
+        "ant_ecology_specification",
+        "N22_susceptibility_as_choice"
+      ],
+      "native_support_opened": false,
+      "phase8_opened": false,
+      "sentience_opened": false,
+      "unsafe_claim_flags_required": {
+        "agency": false,
+        "consciousness": false,
+        "free_will": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "native_ant_agency": false,
+        "native_colony_agency": false,
+        "native_route_conductance_memory": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation": false,
+        "producer_preference_as_selection": false,
+        "random_tie_as_collapse": false,
+        "selfhood": false,
+        "semantic_action": false,
+        "semantic_choice": false,
+        "semantic_goal_ownership": false,
+        "semantic_intention": false,
+        "semantic_learning": false,
+        "semantic_perception": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      }
+    },
+    "counterfactual_retention_schema": {
+      "continued_dynamic_activity_after_collapse_required": false,
+      "labels_sufficient": false,
+      "meaning": "immutable_pre_collapse_audit_record",
+      "missing_retention_blocks": [
+        "LC3",
+        "LC4",
+        "LC5",
+        "LC6",
+        "N23-C3+"
+      ],
+      "producer_alternatives_sufficient": false,
+      "replay_created_branches_sufficient": false,
+      "report_reconstruction_sufficient": false,
+      "required_for_lc3_plus": true
+    },
+    "demotion_precedence": {
+      "control_failed_closed_blocks_unsafe_control_claim": true,
+      "control_failed_closed_demotes_positive_candidate_only_with_explicit_rung_effect": true,
+      "control_failed_closed_satisfies_required_negative_control": true,
+      "control_failed_open_invalidates_row": true,
+      "final_lc_and_n23_c_rungs_assigned_after_control_matrix_only": true,
+      "hypothesis_c_failure_demotes_or_blocks_a_b": true,
+      "iteration4_candidate_rungs_are_provisional_until_controls": true,
+      "missing_ap_dependency_blocks_dependent_row": true,
+      "missing_collapse_trace_blocks_lc3_plus": true,
+      "missing_counterfactual_retention_blocks_lc3_plus": true,
+      "missing_live_branch_set_blocks_lc2_plus": true,
+      "not_run_blocks_dependent_rung": true,
+      "replay_failure_blocks_lc4_plus": true
+    },
+    "ladder_schema": {
+      "lc6_is_handoff_rung_not_agency_or_semantic_choice": true,
+      "live_continuation_ladder": [
+        {
+          "meaning": "no_source_current_live_continuation_evidence",
+          "rung": "LC0"
+        },
+        {
+          "meaning": "run_artifact_with_possible_branch_collapse_context",
+          "rung": "LC1"
+        },
+        {
+          "meaning": "source_current_live_branch_set_with_at_least_two_real_alternatives",
+          "rung": "LC2"
+        },
+        {
+          "meaning": "source_current_collapse_trace_from_live_branch_set_to_one_continuation",
+          "rung": "LC3"
+        },
+        {
+          "meaning": "replay_control_backed_live_continuation_collapse_candidate",
+          "rung": "LC4"
+        },
+        {
+          "meaning": "ap4_relevant_route_branch_selection_geometry_candidate",
+          "rung": "LC5"
+        },
+        {
+          "meaning": "n24_ready_bounded_live_continuation_collapse_evidence",
+          "rung": "LC6"
+        }
+      ],
+      "n20_contract_completeness_assigns_lc_rungs": false,
+      "n22_closeout_assigns_lc_rungs": false,
+      "n23_c_rungs_cannot_open_unsafe_claims": true,
+      "n23_c_rungs_classify_tranche_not_individual_row_labels": true,
+      "n23_closeout_ladder": [
+        {
+          "meaning": "contract_only_closeout",
+          "rung": "N23-C0"
+        },
+        {
+          "meaning": "active_null_control_discipline_established",
+          "rung": "N23-C1"
+        },
+        {
+          "meaning": "live_branch_partial",
+          "rung": "N23-C2"
+        },
+        {
+          "meaning": "source_current_collapse_candidate",
+          "rung": "N23-C3"
+        },
+        {
+          "meaning": "replay_control_backed_collapse_candidate",
+          "rung": "N23-C4"
+        },
+        {
+          "meaning": "ap4_relevant_selection_geometry_candidate",
+          "rung": "N23-C5"
+        },
+        {
+          "meaning": "n24_ready_bounded_live_continuation_collapse_evidence",
+          "rung": "N23-C6"
+        }
+      ],
+      "rows_below_lc3_cannot_support_collapse": true,
+      "rows_below_lc4_cannot_support_replay_control_backed_selection_geometry": true,
+      "rungs_require_source_backed_n23_evidence_rows": true
+    },
+    "producer_preference_absence_schema": {
+      "preference_or_label_may_be_recorded_only_as_producer_residue": true,
+      "producer_label_as_selected_reason_blocks_row": true,
+      "producer_preference_as_selected_reason_blocks_row": true,
+      "producer_preference_injection_absent_required_for_support": true,
+      "producer_selected_branch_label_absent_required_for_support": true,
+      "random_tie_as_collapse_blocks_row": true,
+      "random_tie_status_allowed_values": [
+        "not_applicable",
+        "not_random_tie",
+        "random_tie_rejected",
+        "random_tie_blocks_row"
+      ]
+    },
+    "replay_control_schema": {
+      "canonical_control_ids": [
+        "fake_alternative_control",
+        "single_branch_relabel_control",
+        "post_hoc_selected_branch_control",
+        "producer_preference_injection_control",
+        "random_tie_as_collapse_control",
+        "missing_counterfactual_retention_control",
+        "N22_susceptibility_as_choice_relabel_control",
+        "route_conditioned_row_missing_AP4",
+        "proxy_conditioned_row_missing_AP5",
+        "AP_gap_prose_only",
+        "semantic_choice_relabel",
+        "agency_relabel",
+        "native_support_relabel",
+        "phase8_relabel"
+      ],
+      "control_satisfied_for_positive_row_when_expected_and_actual_failed_closed": true,
+      "failed_closed_blocks_only_control_null_unsafe_claim_by_default": true,
+      "failed_closed_demotes_positive_candidate_only_when_rung_effect_declares": true,
+      "failed_closed_is_expected_good_result_for_negative_controls": true,
+      "failed_closed_satisfies_required_negative_control": true,
+      "failed_open_invalidates_row": true,
+      "not_applicable_requires_scope_reason": true,
+      "not_run_blocks_dependent_rung": true,
+      "required_control_record_fields": [
+        "control_id",
+        "control_status",
+        "blocked_condition",
+        "expected_result",
+        "actual_result",
+        "claim_allowed_when_control_triggers",
+        "rung_effect"
+      ],
+      "required_replay_modes": {
+        "LC4": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay"
+        ],
+        "LC5": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay",
+          "order_inversion_control",
+          "post_hoc_stitching_control"
+        ],
+        "LC6": [
+          "artifact_replay",
+          "snapshot_load_replay",
+          "duplicate_replay",
+          "order_inversion_control",
+          "post_hoc_stitching_control",
+          "handoff_reconstruction_replay"
+        ]
+      },
+      "status_enum": [
+        "passed",
+        "failed_closed",
+        "failed_open",
+        "not_run",
+        "not_applicable"
+      ]
+    },
+    "row_decision_policy": {
+      "allowed_values": [
+        "supported",
+        "partial",
+        "blocked",
+        "rejected",
+        "not_applicable"
+      ],
+      "blocked_forces_claim_allowed_false": true,
+      "not_applicable_requires_scope_reason": true,
+      "partial_blocks_final_lc_claim": true,
+      "rejected_forces_claim_allowed_false": true,
+      "semantic_choice_claim_allowed_always_false": true,
+      "supported_does_not_automatically_allow_lc_claim": true,
+      "supported_requires_lc_gate_passes_for_claim_allowed": true
+    },
+    "run_artifact_admissibility_schema": {
+      "all_artifact_sha256_match_file_contents_required": true,
+      "artifact_digests_must_match_file_contents": true,
+      "artifact_manifest_schema": {
+        "artifact_role_values": [
+          "source_contract",
+          "inherited_context",
+          "runtime_trace",
+          "branch_set_trace",
+          "collapse_trace",
+          "counterfactual_retention_trace",
+          "replay_trace",
+          "snapshot_load_replay_trace",
+          "duplicate_replay_trace",
+          "negative_control_trace",
+          "active_null_trace",
+          "report",
+          "closeout"
+        ],
+        "digest_algorithm": "sha256",
+        "path_policy": "repository_relative_paths_only",
+        "required_item_fields": [
+          "path",
+          "sha256",
+          "artifact_role"
+        ],
+        "type": "list[object]"
+      },
+      "artifact_paths_equal_manifest_paths_required": true,
+      "artifact_paths_must_exist": true,
+      "artifact_sha256_equal_manifest_sha256_required": true,
+      "derived_report_only_true_blocks_positive_support": true,
+      "digest_mismatch_blocks_lc_assignment": true,
+      "fail_closed_on_missing_or_mismatch": true,
+      "missing_required_artifact_blocks_lc_assignment": true,
+      "positive_lc_support_forbidden_if_only_artifact_roles": [
+        "report",
+        "inherited_context",
+        "source_contract",
+        "closeout"
+      ],
+      "report_only_artifacts_may_summarize_but_not_assign_lc_rungs": true
+    },
+    "selected_branch_reason_schema": {
+      "allowed_values": [
+        "support_gradient_dominance",
+        "coherence_floor_dominance",
+        "boundary_integrity_dominance",
+        "flux_leakage_minimization",
+        "susceptibility_delta_conditioned",
+        "route_cost_or_conductance_dominance",
+        "multi_channel_geometry_dominance",
+        "not_supported"
+      ],
+      "ap4_relevant_reason_requires": [
+        "route_or_branch_conditioned_true",
+        "peer_or_counterfactual_comparison_present",
+        "same_horizon_or_same_budget_comparison_when_applicable",
+        "AP4_dependency_status_required_recorded"
+      ],
+      "ap4_relevant_reason_values": [
+        "route_cost_or_conductance_dominance",
+        "multi_channel_geometry_dominance_if_route_or_branch_conditioned",
+        "support_gradient_dominance_if_branch_conditioned",
+        "coherence_floor_dominance_if_branch_conditioned",
+        "boundary_integrity_dominance_if_branch_conditioned",
+        "flux_leakage_minimization_if_branch_conditioned",
+        "susceptibility_delta_conditioned_with_n23_source_current_expression"
+      ],
+      "blocked_values": [
+        "producer_label",
+        "producer_preference",
+        "random_tie",
+        "post_hoc_report_selection",
+        "single_branch_relabel",
+        "semantic_choice_label"
+      ],
+      "blocked_values_fail_closed": true,
+      "n22_inherited_delta_used_as_selection_evidence_required_value": false,
+      "n23_susceptibility_expression_trace_required_when_conditioned": true,
+      "producer_preference_allowed": false,
+      "random_tie_as_collapse_allowed": false,
+      "semantic_choice_label_allowed": false,
+      "susceptibility_delta_conditioned_cannot_use_only_inherited_n22_delta": true,
+      "susceptibility_delta_conditioned_requires_n23_source_current_expression": true
+    },
+    "source_current_branch_definition": {
+      "blocked_origins": [
+        "replay_fork",
+        "producer_label",
+        "report_derived",
+        "independent_run_assembly"
+      ],
+      "definition": "original LC2 branch evidence emitted by the same source-current LGRC runtime run, or deterministic replay of that same already-recorded runtime trace, inside the declared branch window, before collapse-window start, with branch-specific support/coherence and boundary/flux traces",
+      "deterministic_replay_of_same_recorded_runtime_trace_allowed_for_audit": true,
+      "minimum_branch_count_for_lc2": 2,
+      "must_be_boundary_distinguishable": true,
+      "must_have_branch_specific_boundary_flux_traces": true,
+      "must_have_branch_specific_support_coherence_traces": true,
+      "replay_forks_may_audit_counterfactuals": true,
+      "replay_forks_may_create_original_live_branches": false,
+      "required_origin": "source_current_same_run"
+    },
+    "support_coherence_boundary_flux_schema": {
+      "changed_status_requires_declared_floor_or_bound_preserved": true,
+      "field_specific_acceptance": {
+        "boundary_integrity_result": [
+          "preserved",
+          "changed_within_allowed_delta"
+        ],
+        "coherence_floor_result": [
+          "preserved",
+          "changed_within_allowed_delta_above_floor"
+        ],
+        "flux_or_leakage_result": [
+          "preserved",
+          "changed_within_bound"
+        ],
+        "support_floor_result": [
+          "preserved",
+          "changed_within_allowed_delta_above_floor"
+        ]
+      },
+      "floor_crossing_blocks_support": true,
+      "flux_bound_exceeded_blocks_support": true,
+      "missing_result_blocks_support": true,
+      "not_applicable_blocks_lc2_plus": {
+        "boundary_integrity_result": true,
+        "coherence_floor_result": true,
+        "flux_or_leakage_result": true,
+        "support_floor_result": true
+      },
+      "out_of_scope_boundary_change_blocks_support": true,
+      "required_result_fields": [
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result"
+      ],
+      "result_status_values": [
+        "preserved",
+        "changed_within_allowed_delta",
+        "changed_within_allowed_delta_above_floor",
+        "changed_within_bound",
+        "crossed_floor",
+        "exceeded_bound",
+        "missing",
+        "not_applicable"
+      ]
+    },
+    "threshold_declaration_policy": {
+      "failure_policy": "missing_or_post_hoc_threshold_blocks_lc_support",
+      "outcome_inspection_before_threshold_declaration_allowed": false,
+      "required_threshold_fields": [
+        "support_floor_value",
+        "coherence_floor_value",
+        "boundary_integrity_floor_value",
+        "flux_or_leakage_bound",
+        "collapse_persistence_ratio_threshold",
+        "branch_distinguishability_threshold",
+        "same_basin_drift_bound"
+      ],
+      "retune_after_outcome_allowed": false,
+      "row_specific_thresholds_declared_before_use": true,
+      "threshold_record_required_fields": [
+        "threshold_id",
+        "source_contract_row",
+        "source_consumable_contract_row",
+        "source_contract_row_digest",
+        "source_consumable_contract_row_digest",
+        "threshold_declared_before_use",
+        "threshold_value_or_rule",
+        "threshold_owner",
+        "failure_policy"
+      ]
+    }
+  },
+  "schema_version": "n23_i2_live_continuation_schema_and_controls_v1",
+  "source_artifacts": [
+    {
+      "acceptance_state": "accepted_source_handoff_inventory_no_live_continuation_evidence",
+      "output_digest": "f200216f3f81d1ff4abe0bf4967774cd1e3575c365a3a8f21c680d356cfd60bc",
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_source_handoff_inventory.json",
+      "sha256": "17d52c81b6d09ba8824b42fc35845ac31e808ddf0cd2311758b659a1b5cd3430",
+      "source_role": "n23_i1_source_handoff_inventory",
+      "status": "passed"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/reports/n23_source_handoff_inventory.md",
+      "sha256": "8f0cd16783414a5ca91fd771b47962985c32c21beea5bacc1f930d7e0b73dac9",
+      "source_role": "n23_i1_source_handoff_report"
+    }
+  ],
+  "source_i1_artifact_sha256": "17d52c81b6d09ba8824b42fc35845ac31e808ddf0cd2311758b659a1b5cd3430",
+  "source_i1_output_digest": "f200216f3f81d1ff4abe0bf4967774cd1e3575c365a3a8f21c680d356cfd60bc",
+  "status": "passed"
+}

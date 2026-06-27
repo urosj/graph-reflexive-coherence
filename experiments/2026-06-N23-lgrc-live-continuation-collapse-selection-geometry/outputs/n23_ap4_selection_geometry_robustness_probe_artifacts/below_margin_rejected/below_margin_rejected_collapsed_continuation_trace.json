@@ -1,0 +1,210 @@
+{
+  "artifact_id": "below_margin_rejected_collapsed_continuation_trace",
+  "blocked_before_collapse_reason": "score_margin_below_threshold",
+  "case_id": "below_margin_rejected",
+  "center_node_coherence_after": 10.0,
+  "collapse_persistence_ratio": 0.0,
+  "collapse_window": {
+    "end_step": 1,
+    "start_step": 1,
+    "window_id": "below_margin_rejected_collapse_window"
+  },
+  "event_counts_by_kind": {},
+  "event_log_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_ap4_selection_geometry_robustness_probe_artifacts/below_margin_rejected/below_margin_rejected_collapse_events.jsonl",
+  "in_flight_packet_total": 0.0,
+  "observable_digest": "fa32d74b3c4c560679124ff4652c0f3190f5fd8f62a9e7b2e75528d63209c6c1",
+  "packet_budget_error": 0.0,
+  "post_collapse_basin_signature": {
+    "active_degree": 9,
+    "basin_members": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "basin_signature_digest": "21bf9b715eeef36a40aa7fc7751d9f5c2a6384724725ccba37540a6f1c155854",
+    "center_basin_id": "root",
+    "center_basin_mass": 10.0,
+    "center_coherence": 10.0,
+    "center_depth": 0,
+    "center_node_id": 0,
+    "edge_count": 9,
+    "incident_edge_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "node_count": 10,
+    "topology_signature": {
+      "edge_records": [
+        {
+          "edge_id": 0,
+          "endpoints": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              8
+            ]
+          ]
+        },
+        {
+          "edge_id": 1,
+          "endpoints": [
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "edge_id": 2,
+          "endpoints": [
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              6
+            ]
+          ]
+        },
+        {
+          "edge_id": 3,
+          "endpoints": [
+            [
+              4,
+              5
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        {
+          "edge_id": 4,
+          "endpoints": [
+            [
+              0,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ]
+        },
+        {
+          "edge_id": 5,
+          "endpoints": [
+            [
+              6,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        {
+          "edge_id": 6,
+          "endpoints": [
+            [
+              0,
+              6
+            ],
+            [
+              7,
+              2
+            ]
+          ]
+        },
+        {
+          "edge_id": 7,
+          "endpoints": [
+            [
+              8,
+              1
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        },
+        {
+          "edge_id": 8,
+          "endpoints": [
+            [
+              0,
+              8
+            ],
+            [
+              9,
+              0
+            ]
+          ]
+        }
+      ],
+      "node_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "scheduled_packet": null,
+  "selected_source_node_coherence_after": 11.0,
+  "selection": {
+    "min_score_margin": 0.25,
+    "non_selected_branch_ids": [
+      "branch_edge_0_node_1",
+      "branch_edge_6_node_7",
+      "branch_edge_8_node_9"
+    ],
+    "producer_preference_used": false,
+    "producer_selected_branch_label_used": false,
+    "random_tie_status": "not_random_tie",
+    "runner_up_branch_id": "branch_edge_0_node_1",
+    "runner_up_score": 1.9000000000000004,
+    "score_margin": 0.09999999999999964,
+    "selected_branch_id": "branch_edge_4_node_5",
+    "selected_score": 2.0,
+    "selection_admitted_for_collapse": false,
+    "selection_digest": "74128e6b7a52f34cec95cc58958663c7f6176ded30180b7071de42654f8ef51e",
+    "selection_margin_passed": false,
+    "selection_reason": "support_gradient_dominance"
+  },
+  "step_summaries": [],
+  "trace_digest": "e739ee594171b06706858780d38a30055473af9f6e6e3dc5550c5563895140c6",
+  "trace_origin": "source_current_same_run",
+  "trace_status": "blocked"
+}

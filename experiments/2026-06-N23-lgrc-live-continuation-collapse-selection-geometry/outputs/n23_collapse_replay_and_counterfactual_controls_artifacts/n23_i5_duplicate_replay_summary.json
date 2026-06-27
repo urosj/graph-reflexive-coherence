@@ -1,0 +1,13 @@
+{
+  "artifact_id": "n23_i5_duplicate_replay_summary",
+  "duplicate_collapse_observable_digest": "c0718c9d958d6e67dec8688cabedb280044b60254f61c617c61b8f9d875127ee",
+  "duplicate_event_log_path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_collapse_replay_and_counterfactual_controls_artifacts/n23_i5_duplicate_replay_events.jsonl",
+  "full_trace_digest": "474e749aca6ff1ea233f9d1466810c102069b3e79d9450138f4221b789912d5d",
+  "observable_digest_matched": true,
+  "replay_mode": "duplicate_replay",
+  "selection_recomputed_matches_source": true,
+  "source_candidate_row_id": "n23_i4_row_01_minimal_live_branch_collapse_probe",
+  "source_collapse_observable_digest": "c0718c9d958d6e67dec8688cabedb280044b60254f61c617c61b8f9d875127ee",
+  "status": "passed",
+  "summary_digest": "773eeaf2b84d97301a2006cda5e55e4f29dd0a96facfc344bbc74888d3813717"
+}

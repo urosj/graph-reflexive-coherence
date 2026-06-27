@@ -1,0 +1,161 @@
+{
+  "all_controls_constructed": true,
+  "all_controls_failed_closed": true,
+  "artifact_id": "n23_i6_ap4_negative_control_trace",
+  "control_count": 8,
+  "controls": [
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_selection_reason": "producer_preference",
+          "source_selection_reason": "support_gradient_dominance"
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "producer preference supplies selected branch",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "producer_preference_as_selection_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks LC5 if producer preference replaces source-current geometry"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_random_tie_status": "random_tie",
+          "mutated_score_margin": 0.0,
+          "required_minimum_score_margin": 0.25
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "random tie relabeled as source-current selection geometry",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "random_tie_as_selection_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks LC5 if score margin is absent"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_branch_record_origin": "label_only",
+          "required_branch_count_minimum": 2,
+          "required_branch_record_origin": "source_current_same_run"
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "selected branch label appears without branch geometry",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "branch_label_only_selection_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks LC5 if branch identity is label-only"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_ap4_dependency_status": "missing_blocks_row",
+          "required_ap4_dependency_status": "required_recorded"
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "route/branch-conditioned row omits AP4 dependency",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "missing_ap4_dependency_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks AP4 bridge if AP4 dependency is not row-local"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_n22_inherited_delta_used_as_selection_evidence": true,
+          "required_value": false
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "N22 susceptibility context is reused as N23 branch selection proof",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "n22_susceptibility_as_selection_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks LC5 if inherited N22 context supplies selection"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_semantic_choice_claim_allowed": true,
+          "required_semantic_choice_claim_allowed": false
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "semantic choice label is used as evidence",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "semantic_choice_label_as_selection_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks all unsafe claim promotion"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "mutated_all_replay_modes_passed": false,
+          "required_replay_modes": [
+            "artifact_replay",
+            "snapshot_load_replay",
+            "duplicate_replay"
+          ]
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "LC5 asserted without LC4 replay/control backing",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "missing_replay_control_backing_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks LC5 if replay/control-backed LC4 is absent"
+    },
+    {
+      "actual_result": {
+        "ap4_bridge_claim_allowed": false,
+        "scenario": {
+          "minimal_source_retained_non_selected_branch_count": 1,
+          "multibranch_source_retained_non_selected_branch_count": 3,
+          "mutated_retained_non_selected_branch_count": 0
+        },
+        "semantic_choice_claim_allowed": false,
+        "violation_detected": true
+      },
+      "blocked_condition": "non-selected branch audit is missing",
+      "claim_allowed_when_control_triggers": false,
+      "control_execution_kind": "constructed_ap4_bridge_negative_control",
+      "control_id": "missing_counterfactual_retention_control",
+      "control_status": "failed_closed",
+      "expected_result": "selection_geometry_claim_rejected",
+      "rung_effect": "blocks LC5 if AP4 selection geometry lacks auditable alternatives"
+    }
+  ],
+  "trace_digest": "0e348673e05a8b89e627edef948f748c35e0f39159eae74c65d2d8209d794de7",
+  "trace_status": "present"
+}
