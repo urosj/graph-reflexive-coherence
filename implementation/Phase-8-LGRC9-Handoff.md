@@ -1274,12 +1274,22 @@ Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.json
 The closeout supports an MB5 control-backed native multi-basin formation
 candidate through default-off runtime surfaces, replay validation,
 merge/leakage controls, telemetry, visual examples, and a front-capacity-gated
-boundary-birth companion. It does not support MB6, N26-ready unscoped
-multi-basin substrate evidence, BF6, independent new-basin formation as a
-general native capacity, native support, agency, semantic learning, semantic
-choice, sentience, ant ecology, or Phase 8 completion.
+boundary-birth companion. It does not by itself support MB6, N26-ready
+unscoped multi-basin substrate evidence, BF6, independent new-basin formation
+as a general native capacity, native support, agency, semantic learning,
+semantic choice, sentience, ant ecology, or Phase 8 completion.
 
-The next step is a scoped N25.2 bridge before N26. N25.2 should consume N25
-BF5, N25.1 requirements, Phase 8 MB5/I88-A evidence, and remaining MB6 blockers
-to state exactly what is still missing for N26-ready multi-basin substrate
-evidence.
+The scoped N25.2 validation bridge is now closed. N25.2 consumes N25 BF5,
+N25.1 requirements, Phase 8 MB5/I88-A evidence, replay/control/stress evidence,
+and the MB6 gate matrix, then closes at:
+
+```text
+final_mb_ladder_rung = MB6_N26_ready_multi_basin_substrate_evidence
+final_n25_2_closeout_rung = N25.2-C6_closeout_and_N26_handoff_complete
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_unscoped_multi_basin_consumption_allowed = false
+```
+
+The current experiment handoff is therefore N26, with scoped multi-basin
+substrate evidence allowed and unscoped multi-basin, native support, agency,
+sentience, ant ecology, and Phase 8 completion claims still blocked.

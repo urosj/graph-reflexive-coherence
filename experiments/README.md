@@ -49,9 +49,7 @@ machine-local state.
 | [N22 susceptibility update and durable geometry modification](2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md) | Closed bounded artifact-level susceptibility-update candidate: producer-mediated SU5 durable geometry modification evidence with N22-C6/N23 handoff, while native route-conductance memory, semantic learning, choice, agency, native support, sentience, Phase 8, ant ecology, and SU6 remain blocked. | README, then closeout handoff, replay/control matrix, carrier and packet probes, implementation checklist, and hypotheses. |
 | [N23 live-continuation collapse and selection geometry](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md) | Closed bounded artifact-level LC6 live-continuation collapse / selection-geometry evidence with N23-C6/N24 handoff and AP4 bridge candidate support, while final AP4, semantic choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked. | README, then closeout handoff, replay/control matrix, AP4 selection geometry probes, live-branch collapse probes, implementation checklist, and hypotheses. |
 | [N24 abundance and surplus-supported optionality](2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md) | Closed bounded artifact-level AB5 surplus-supported optionality candidate with native N24-C5 closeout, explicit flux/leakage debt, and a separate producer-mediated flux-conditioning scaffold for N25. | README, then closeout handoff, native and producer flux probes, replay/control matrices, optional-continuation probes, implementation checklist, and hypotheses. |
-| [N25 spark / sub-basin / new-basin formation](2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md) | Closed scoped native BF5 high-margin core / sub-basin formation with N25-C6 handoff readiness and producer-assisted BF5 scaffold context; independent new-basin, BF6, and native LGRC9V3 multi-basin formation remain blocked. | README, then closeout handoff, native BF5 core probes, producer-assisted scaffold probe, replay/control matrices, implementation checklist, and hypotheses. |
-| [N25.1 LGRC9V3 multi-basin formation extension requirements](2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md) | Closed requirements/spec bridge that opened the Phase 8 LGRC9V3 multi-basin formation tranche; the implementation tranche now closes at MB5 while MB6/N26-ready unscoped substrate evidence remains blocked pending N25.2. | README, then closeout handoff, extension requirement matrix, active-null matrix, source crosswalk, implementation checklist, hypotheses, and Phase 8 multi-basin closeout. |
-| [N25.2 LGRC9V3 MB6 validation bridge](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md) | Initialized validation bridge after the Phase 8 multi-basin tranche: tests whether MB5 evidence can support MB6 / N26-ready substrate evidence, or records exact blockers while preserving claim boundaries. | README, then source inventory, MB6 gate schema, Phase 8 MB5 evidence audit, MB6 support/blocker matrix, closeout handoff, implementation checklist, and hypotheses. |
+| N25 basin formation arc: [N25](2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md), [N25.1](2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md), [N25.2](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md) | Closed three-step formation arc: N25 reached scoped native BF5 high-margin core/sub-basin evidence, N25.1 specified the missing LGRC9V3 multi-basin runtime surfaces, and the Phase 8 plus N25.2 validation path closed MB6 as scoped N26-ready multi-basin substrate evidence. Unscoped N26 consumption, native support, agency, sentience, ant ecology implementation, and Phase 8 completion remain blocked. | Read N25 for BF5 formation evidence, N25.1 for the extension contract, N25.2 for MB6 validation and N26 handoff, plus the Phase 8 multi-basin closeout. |
 
 ## Current Roadmap State
 
@@ -329,14 +327,12 @@ the first two primitives, N22 closed bounded producer-mediated susceptibility
 update / durable geometry modification, N23 closed bounded live-continuation
 collapse / selection geometry, N24 closed bounded surplus-supported optionality
 with a producer-assisted flux scaffold, N25 closed scoped high-margin
-core/sub-basin formation with N25-C6 handoff readiness, and N25.1 closed the
-requirements bridge for Phase 8 LGRC9V3 multi-basin formation. The Phase 8
-implementation tranche now closes at MB5: control-backed native multi-basin
-formation candidate evidence is available, while MB6 and N26-ready unscoped
-multi-basin substrate evidence remain blocked. N25.2 is initialized as the
-scoped validation bridge that consumes N25 BF5, N25.1 requirements, Phase 8
-MB5/I88-A evidence, and remaining MB6 blockers before N26. N29 is the first
-formal convergence bridge
+core/sub-basin formation with N25-C6 handoff readiness, N25.1 closed the
+requirements bridge for Phase 8 LGRC9V3 multi-basin formation, and N25.2
+closed the MB6 validation bridge. N26 may now consume scoped multi-basin
+substrate evidence from N25.2, while unscoped multi-basin consumption, native
+support, agency, sentience, ant ecology implementation, and Phase 8 completion
+remain blocked. N29 is the first formal convergence bridge
 into the agentic ecology project, where producer residue, medium debt, and
 first applied ant-ecology probes can be specified. Native support, native ant
 agency, biological agency, and unrestricted agency remain unopened.
