@@ -21,6 +21,7 @@ n26_same_route_score_dose_divergence_probe.md
 n26_proxy_collapse_perturbation_matrix.md
 n26_replay_controls_and_ap5_gate.md
 n26_closeout_and_n27_handoff.md
+n26_proxy_divergence_collapse_visualization.md
 ```
 
 Planned reports mirror `outputs/`:

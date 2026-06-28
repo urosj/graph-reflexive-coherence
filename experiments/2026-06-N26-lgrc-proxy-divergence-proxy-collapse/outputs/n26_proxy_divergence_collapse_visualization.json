@@ -1,0 +1,85 @@
+{
+  "ap5_nat4_gap_resolved": false,
+  "artifact_id": "n26_proxy_divergence_collapse_visualization",
+  "basin_deepened_path_survives_challenge": true,
+  "basin_delta": 0.0,
+  "basin_support_advantage": 0.5,
+  "claim_boundary": "controlled artifact-level PD6 proxy divergence / proxy collapse closeout with scoped artifact AP5 bridge candidate; not native AP5, native support, semantic goal, choice, agency, sentience, Phase 8 completion, ant ecology, or unscoped multi-basin substrate",
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/render_n26_proxy_divergence_collapse_visualization.py",
+  "final_n26_closeout_rung": "N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout",
+  "final_supported_pd_ladder_rung": "PD6_N27_ready_bounded_proxy_divergence_collapse_evidence",
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "native_ap5_bridge_supported": false,
+  "output_digest": "3374d00bfd5b0f4281c1a2594c27e4ecbc48f4f59d7e88e84f4f60159cc7e89c",
+  "proxy_delta": 0.3999999999999999,
+  "proxy_path_survives_challenge": false,
+  "proxy_score_advantage": 0.3999999999999999,
+  "renderer_boundary": "visualizes source artifact structure and sequence; does not execute LGRC runtime and does not add native AP5 or agency evidence",
+  "scoped_artifact_ap5_bridge_candidate_supported": true,
+  "source_artifacts": [
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe.json",
+      "sha256": "ed9eab572197a9de2d13b7a549659f65ea56c7eb135666943f06b7399af2bbb0"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+      "sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_replay_controls_and_ap5_gate.json",
+      "sha256": "b2892b7bdae9d8536e1a42c3fb91f08a3ff4ea1bb168b3eb862198bffd56b065"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json",
+      "sha256": "58eb9cc97a980ba6c30e8f6027f28876393a802623c7fec2cfb814ddc7c7b9f3"
+    }
+  ],
+  "unsafe_claims_supported": false,
+  "visual_outputs": [
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_graph.png",
+      "role": "n26_proxy_divergence_collapse_graph",
+      "sha256": "e0b7a52b36d2bc082ad23a478176dfcb72529238e7487c217a6e283902a41126"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_sequence.png",
+      "role": "n26_proxy_divergence_collapse_sequence",
+      "sha256": "b360fb95fc78c8a22a45e5664d5879a43835c502304cd810188007fca9a4c0b3"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_animation.gif",
+      "role": "n26_proxy_divergence_collapse_animation",
+      "sha256": "107d9cf21c3458c2d79965f6452712e7e66e5ebec48cdc19a1e047372d9237ea"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/frames/n26_proxy_divergence_collapse_frame_00.png",
+      "role": "n26_proxy_divergence_collapse_frame_00",
+      "sha256": "0f7f3f882ef99f92f6d9b85a4aff02d12e4525e1763f2a78f872ac99ffe29b56"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/frames/n26_proxy_divergence_collapse_frame_01.png",
+      "role": "n26_proxy_divergence_collapse_frame_01",
+      "sha256": "ebbf8a63f496c682e37bdd5a2669a84d9ffe887338ee229d2932c1c5e937c788"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/frames/n26_proxy_divergence_collapse_frame_02.png",
+      "role": "n26_proxy_divergence_collapse_frame_02",
+      "sha256": "f951310b227c0efaa7b13713b8ed1e916210107e6c94b97ad120f8f84ac1a588"
+    },
+    {
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/frames/n26_proxy_divergence_collapse_frame_03.png",
+      "role": "n26_proxy_divergence_collapse_frame_03",
+      "sha256": "7921e29657053f4bdd679f8744921a69c5f1abfb95e609e1875edb0301e90692"
+    }
+  ],
+  "visual_proof_allowed": false,
+  "visual_status": "supporting_artifact_level_visualization_only",
+  "visualized_collapse_row_ids": [
+    "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse",
+    "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse"
+  ],
+  "visualized_divergence_row_ids": [
+    "n26_i5c_same_route_score_dose_sink0_fixed_route",
+    "n26_i5c_same_route_score_dose_sink2_fixed_route"
+  ]
+}

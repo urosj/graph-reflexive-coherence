@@ -24,6 +24,8 @@ n26_proxy_collapse_perturbation_matrix.json
 n26_proxy_collapse_perturbation_matrix_artifacts/
 n26_replay_controls_and_ap5_gate.json
 n26_closeout_and_n27_handoff.json
+n26_proxy_divergence_collapse_visualization.json
+n26_proxy_divergence_collapse_visualization/
 ```
 
 Planned outputs:

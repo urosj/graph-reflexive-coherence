@@ -17,6 +17,7 @@ build_n26_same_route_score_dose_divergence_probe.py
 build_n26_proxy_collapse_perturbation_matrix.py
 build_n26_replay_controls_and_ap5_gate.py
 build_n26_closeout_and_n27_handoff.py
+render_n26_proxy_divergence_collapse_visualization.py
 ```
 
 Scripts should:

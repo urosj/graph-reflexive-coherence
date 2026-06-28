@@ -147,12 +147,13 @@ N18 Iteration 8 supporting visualization:
 
 | Stress-relation graph | B4/C5 source geometry | Source-row sequence |
 | --- | --- | --- |
-| [![N18 I8 stress-relation graph](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif) | [![N18 I8 B4/C5 source geometry](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif) | ![N18 I8 shared-medium sequence](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png) |
+| [![N18 I8 stress-relation graph](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_animation.gif) | [![N18 I8 B4/C5 source geometry](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_graph.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_b4c5_source_geometry_animation.gif) | [![N18 I8 shared-medium sequence](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png)](2026-06-N18-lgrc-long-horizon-agentic-like-closure-stress-test/outputs/n18_iteration8_shared_medium_visualization/n18_i8_shared_medium_sequence.png) |
 
-Click either graph image to open its animation. The stress graph shows how the
-I8 evidence axes relate to each other; the geometry graph shows the
-source-backed B4/C5 artifact geometry constructed from basin nodes, side
-assignments, and boundary edges. The visuals are supporting artifact-level
+Click either graph image to open its animation; click the sequence image to
+open the full panel for zooming. The stress graph shows how the I8 evidence
+axes relate to each other; the geometry graph shows the source-backed B4/C5
+artifact geometry constructed from basin nodes, side assignments, and boundary
+edges. The visuals are supporting artifact-level
 inspection aids, not native LGRC telemetry or additional evidence.
 
 N19 closes as the N12-style native naturalization review for the N13-N18
@@ -335,16 +336,16 @@ N23-N25.2 supporting visualizations:
 
 | Experiment | Static image linked to animation | Sequence image |
 | --- | --- | --- |
-| N23 selection/collapse | [![N23 selection/collapse graph](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_graph.png)](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_animation.gif) | ![N23 selection/collapse sequence](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_sequence.png) |
-| N24 surplus/optionality | [![N24 abundance/optionality graph](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_graph.png)](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_animation.gif) | ![N24 abundance/optionality sequence](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_sequence.png) |
-| N25.2 MB6 validation bridge | MB5 surface: [![N25.2 native MB5 final snapshot](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_after_controls.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_animation.gif)<br>Topology-birth companion: [![N25.2 front-capacity topology-birth final snapshot](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_after_birth.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_animation.gif) | MB5 surface: ![N25.2 native MB5 multi-basin sequence](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_sequence.png)<br>Topology-birth companion: ![N25.2 front-capacity topology-birth sequence](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_sequence.png) |
+| N23 selection/collapse | [![N23 selection/collapse graph](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_graph.png)](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_animation.gif) | [![N23 selection/collapse sequence](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_sequence.png)](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_sequence.png) |
+| N24 surplus/optionality | [![N24 abundance/optionality graph](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_graph.png)](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_animation.gif) | [![N24 abundance/optionality sequence](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_sequence.png)](2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_sequence.png) |
+| N25.2 MB6 validation bridge | MB5 surface: [![N25.2 native MB5 final snapshot](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_after_controls.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_animation.gif)<br>Topology-birth companion: [![N25.2 front-capacity topology-birth final snapshot](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_after_birth.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_animation.gif) | MB5 surface: [![N25.2 native MB5 multi-basin sequence](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_sequence.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_sequence.png)<br>Topology-birth companion: [![N25.2 front-capacity topology-birth sequence](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_sequence.png)](2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_sequence.png) |
 
-Click a static image to open its animation. N23 and N24 use N18-style
-artifact-level explanatory visuals generated from source-backed experiment
-records. N25.2 uses copied native LGRC9V3 visual outputs with source/copy
-hashes recorded in the gallery manifest. These visuals are inspection aids; the
-supporting claims remain grounded in the JSON artifacts, replay/control
-records, and closeout gates.
+Click a static image to open its animation; click a sequence image to open the
+full panel for zooming. N23 and N24 use N18-style artifact-level explanatory
+visuals generated from source-backed experiment records. N25.2 uses copied
+native LGRC9V3 visual outputs with source/copy hashes recorded in the gallery
+manifest. These visuals are inspection aids; the supporting claims remain
+grounded in the JSON artifacts, replay/control records, and closeout gates.
 
 N26 closed as bounded artifact-level `PD6` proxy divergence / proxy collapse
 evidence on scoped N25.2 MB6 multi-basin substrate:
@@ -366,6 +367,18 @@ semantic goal ownership, choice, agency, sentience, Phase 8 completion, ant
 ecology, or unscoped multi-basin substrate. N27 is next and should test
 configuration/substrate transfer as a new source-current question, not as a
 proxy-score relabel or hidden producer carryover.
+
+N26 supporting visualization:
+
+| Static image linked to animation | Sequence image |
+| --- | --- |
+| [![N26 proxy divergence/collapse graph](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_graph.png)](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_animation.gif) | [![N26 proxy divergence/collapse sequence](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_sequence.png)](2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_sequence.png) |
+
+Click the static image to open its animation; click the sequence image to open
+the full panel for zooming. The N26 visual is generated from the proxy
+divergence/collapse source records and is an inspection aid only; the
+supporting claims remain grounded in the JSON artifacts, replay/control
+records, and closeout gates.
 
 The N20-N29 arc keeps three paths distinct until N29:
 

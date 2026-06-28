@@ -1012,6 +1012,45 @@ reports/n26_closeout_and_n27_handoff.md
 scripts/build_n26_closeout_and_n27_handoff.py
 ```
 
+## Supporting Visualization
+
+- [x] Generate N26 proxy divergence / proxy collapse graph.
+- [x] Generate N26 proxy divergence / proxy collapse sequence panel.
+- [x] Generate N26 proxy divergence / proxy collapse animation.
+- [x] Record source artifact hashes and visual output hashes in a manifest.
+- [x] Keep visualization as inspection aid only.
+
+Result:
+
+```text
+visualization_artifact = n26_proxy_divergence_collapse_visualization
+source_artifacts =
+  outputs/n26_same_route_score_dose_divergence_probe.json
+  outputs/n26_proxy_collapse_perturbation_matrix.json
+  outputs/n26_replay_controls_and_ap5_gate.json
+  outputs/n26_closeout_and_n27_handoff.json
+visual_status = supporting_artifact_level_visualization_only
+visual_proof_allowed = false
+unsafe_claims_supported = false
+```
+
+Interpretation: the visualization shows the N26 source-backed structure: proxy
+score improves while basin persistence capacity stalls, then the
+proxy-optimized path collapses under the perturbation where the basin-deepened
+path survives. It does not add evidence beyond the source artifacts and does
+not support native AP5, AP5 NAT4 gap resolution, semantic goal, choice, agency,
+native support, sentience, Phase 8 completion, ant ecology, or unscoped
+multi-basin substrate.
+
+Artifacts:
+
+```text
+outputs/n26_proxy_divergence_collapse_visualization.json
+outputs/n26_proxy_divergence_collapse_visualization/
+reports/n26_proxy_divergence_collapse_visualization.md
+scripts/render_n26_proxy_divergence_collapse_visualization.py
+```
+
 ## Claim Boundary
 
 N26 must not support:

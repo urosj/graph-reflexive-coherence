@@ -165,6 +165,23 @@ N26-C5 = controlled proxy divergence / collapse candidate supported
 N26-C6 = N27-ready bounded proxy divergence / collapse closeout
 ```
 
+## Supporting Visualization
+
+N26 includes a supporting explanatory visualization generated from the I5-C,
+I6, I7, and I8 source artifacts:
+
+| Static image linked to animation | Sequence image |
+| --- | --- |
+| [![N26 proxy divergence / proxy collapse graph](outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_graph.png)](outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_animation.gif) | [![N26 proxy divergence / proxy collapse sequence](outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_sequence.png)](outputs/n26_proxy_divergence_collapse_visualization/n26_proxy_divergence_collapse_sequence.png) |
+
+The graph shows the source-backed contrast: proxy score increases while basin
+persistence capacity stalls, then the proxy-optimized path fails under the same
+perturbation where the basin-deepened path survives. This visual is an
+inspection aid only; it does not add evidence beyond the JSON artifacts and
+does not support native AP5, AP5 NAT4 gap resolution, semantic goal, choice,
+agency, native support, sentience, Phase 8 completion, ant ecology, or
+unscoped multi-basin substrate.
+
 ## Claim Boundary
 
 Allowed maximum claim after successful closeout:
