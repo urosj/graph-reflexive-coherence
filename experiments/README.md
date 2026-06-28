@@ -330,12 +330,15 @@ collapse / selection geometry, N24 closed bounded surplus-supported optionality
 with a producer-assisted flux scaffold, N25 closed scoped high-margin
 core/sub-basin formation with N25-C6 handoff readiness, and N25.1 closed the
 requirements bridge for a future Phase 8 LGRC9V3 multi-basin formation
-extension. N25.1 keeps the runtime ceiling at MB0, opens no multi-basin
-evidence, and leaves N26 to proceed in scoped mode unless a future Phase 8
-extension reaches MB6. N29 is the first formal convergence bridge into the
-agentic ecology project, where producer residue, medium debt, and first applied
-ant-ecology probes can be specified. Phase 8, native support, native ant agency,
-biological agency, and unrestricted agency remain unopened.
+extension. N25.1 keeps the runtime ceiling at MB0 and opens no multi-basin
+evidence. The next branch should be a Phase 8 implementation tranche for
+LGRC9V3 multi-basin formation from causal refinement, consuming N25/N25.1 as
+frozen source evidence. N26 remains downstream: it may proceed in scoped N25
+mode, but any unscoped multi-basin substrate claim must wait for Phase 8
+extension evidence reaching MB6. N29 is the first formal convergence bridge
+into the agentic ecology project, where producer residue, medium debt, and
+first applied ant-ecology probes can be specified. Native support, native ant
+agency, biological agency, and unrestricted agency remain unopened.
 The agency-specific essay sources include `From Structural Abundance to
 Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
 Read-Back`; the last is a boundary source for separating agency from sentience,

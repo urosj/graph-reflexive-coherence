@@ -95,12 +95,16 @@ phase8_extension_implemented = false
 multi_basin_evidence_opened = false
 native_multi_basin_formation_supported = false
 BF6_supported = false
-next_primitive_experiment = N26_proxy_divergence_proxy_collapse
+next_implementation_tranche = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+downstream_primitive_experiment = N26_proxy_divergence_proxy_collapse
+N26_unscoped_multi_basin_mode = blocked_until_future_MB6
 ```
 
-N26 may proceed with scoped N25 sub-basin evidence, but any N26 claim requiring
-independent multi-basin substrate must wait for a Phase 8 extension based on
-this requirements bridge.
+The next branch should implement the Phase 8 LGRC9V3 multi-basin formation
+extension against this requirements bridge. N26 remains downstream: it may
+proceed with scoped N25 sub-basin evidence, but any N26 claim requiring
+independent multi-basin substrate must wait for Phase 8 extension evidence
+reaching `MB6`.
 
 Closeout artifact:
 

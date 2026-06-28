@@ -20,7 +20,9 @@ N23 live-continuation collapse and selection geometry = closed
 N24 abundance and surplus-supported optionality = closed
 N25 spark / sub-basin / new-basin formation = closed
 N25.1 LGRC9V3 multi-basin formation extension requirements = closed
-current next primitive experiment = N26_proxy_divergence_proxy_collapse
+current next implementation tranche = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+downstream primitive experiment = N26_proxy_divergence_proxy_collapse
+N26_unscoped_multi_basin_mode = blocked_until_future_MB6
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -168,7 +170,9 @@ ready_for_n26_scoped_mode = true
 
 N25.1 does not implement the runtime extension and does not claim multi-basin
 evidence. It defines the Phase 8 extension requirements, MB0...MB6 ladder,
-replay/control contract, and N26 consumption constraints.
+replay/control contract, and N26 consumption constraints. The immediate next
+branch should be a Phase 8 implementation tranche that consumes N25/N25.1 as
+frozen source evidence before unscoped N26 multi-basin use is allowed.
 
 ## Active Roadmap Source
 
@@ -562,6 +566,17 @@ phase8_extension_implemented = false
 multi_basin_evidence_opened = false
 native_multi_basin_formation_supported = false
 BF6_supported = false
+```
+
+Immediate implementation handoff:
+
+```text
+next_branch_role = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+consume_as_frozen_sources = N25_closeout, N25.1_closeout
+must_not_reopen_N25_or_N25.1_claims = true
+must_implement_against_N25_1_surfaces = true
+target_ladder = MB1...MB6
+initial_claim_ceiling = implementation_tranche_pending_runtime_evidence
 ```
 
 N26 may proceed after N25.1 in one of two modes:

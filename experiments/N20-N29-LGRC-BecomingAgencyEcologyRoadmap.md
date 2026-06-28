@@ -5,13 +5,17 @@ agency-prerequisite and native-readiness stack. N20 is closed as the
 translation-contract entry point, N21 is closed as the first bounded
 becoming-primitive evidence experiment, N22 is closed as the bounded
 susceptibility-update / durable geometry modification experiment, N23 is closed
-as bounded live-continuation collapse / selection-geometry evidence, and N24 is
-the next experiment.
+as bounded live-continuation collapse / selection-geometry evidence, N24 is
+closed as bounded surplus-supported optionality evidence, N25 is closed as
+scoped BF5 high-margin core / sub-basin formation evidence, and N25.1 is closed
+as the LGRC9V3 multi-basin formation extension requirements bridge.
 
-It is not a Phase 8 implementation plan, not an ant ecology specification, and
-not an agency claim. Its purpose is to ground the deeper "agency of becoming"
-question in LGRC-visible producer artifacts before any applied ecology work is
-specified.
+This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
+specification, and not an agency claim. Its purpose is to ground the deeper
+"agency of becoming" question in LGRC-visible producer artifacts before any
+applied ecology work is specified. After N25.1, the immediate implementation
+handoff is a separate Phase 8 LGRC9V3 multi-basin formation tranche consuming
+N25/N25.1 as frozen source evidence.
 
 ## Starting Boundary
 
@@ -24,8 +28,9 @@ claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
 ```
 
 Therefore N20-N29 must not assume that the AP3-AP8 stack is natively
-generatable. AP4/N14 and AP5/N15 remain the key native-readiness gaps, and
-Phase 8 remains unopened.
+generatable. AP4/N14 and AP5/N15 remain the key native-readiness gaps. Phase 8
+stays outside this roadmap except where explicitly branched from N25.1 as the
+next implementation tranche for LGRC9V3 multi-basin formation.
 
 The next question is not:
 
@@ -531,6 +536,31 @@ non-replayable transient rejected
 hidden producer insertion rejected
 ```
 
+## N25.1. LGRC9V3 Multi-Basin Formation Extension Requirements
+
+N25.1 is closed as a requirements/spec bridge, not a runtime evidence
+experiment:
+
+```text
+final_n25_1_closeout_rung = N25.1-C4_closeout_and_phase8_handoff_complete
+final_mb_ladder_ceiling = MB0_requirements_bridge_only_no_runtime_evidence
+phase8_extension_ready_to_implement = true
+runtime_implementation_opened = false
+multi_basin_evidence_opened = false
+BF6_supported = false
+```
+
+Its role is to define the Phase 8 extension contract for:
+
+```text
+LGRC9V3 multi-basin formation from causal refinement
+```
+
+N26 may consume N25 scoped BF5 context and N25.1 requirements context, but
+unscoped multi-basin substrate, independent new-basin substrate, native
+LGRC9V3 multi-basin formation, and BF6 remain blocked until a future Phase 8
+extension supplies MB6 runtime evidence.
+
 ## N26. Proxy Divergence / Proxy Collapse
 
 Question:
@@ -729,7 +759,7 @@ basin signature, continuation-function descriptor, or proxy-only success
 negative controls fail closed with named blockers
 AP4/AP5 NAT4 gaps are tracked rather than bypassed
 N22 learning, N23 choice/collapse, N24 abundance, N25 spark/new-basin
-formation, N26 proxy divergence, and N27 transfer remain separate evidence
-targets
-Phase 8 remains unopened unless explicitly branched later
+formation, N25.1 Phase 8 requirements, N26 proxy divergence, and N27 transfer
+remain separate evidence targets
+Phase 8 opens only through the explicit post-N25.1 implementation branch
 ```
