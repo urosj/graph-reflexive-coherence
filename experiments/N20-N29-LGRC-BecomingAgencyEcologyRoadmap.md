@@ -8,14 +8,16 @@ susceptibility-update / durable geometry modification experiment, N23 is closed
 as bounded live-continuation collapse / selection-geometry evidence, N24 is
 closed as bounded surplus-supported optionality evidence, N25 is closed as
 scoped BF5 high-margin core / sub-basin formation evidence, and N25.1 is closed
-as the LGRC9V3 multi-basin formation extension requirements bridge.
+as the LGRC9V3 multi-basin formation extension requirements bridge. The Phase 8
+multi-basin implementation tranche is closed at MB5, and N25.2 is closed as
+the validation bridge supporting MB6 / scoped N26-ready substrate evidence.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
 "agency of becoming" question in LGRC-visible producer artifacts before any
-applied ecology work is specified. After N25.1, the immediate implementation
-handoff is a separate Phase 8 LGRC9V3 multi-basin formation tranche consuming
-N25/N25.1 as frozen source evidence.
+applied ecology work is specified. After N25.1, the separate Phase 8 LGRC9V3
+multi-basin formation tranche consumed N25/N25.1 as frozen source evidence,
+and N25.2 validated that tranche into scoped MB6 handoff evidence for N26.
 
 ## Starting Boundary
 
@@ -29,8 +31,8 @@ claimed_ladder_generation_status = blocked_by_ap4_ap5_nat4_evidence_gaps
 
 Therefore N20-N29 must not assume that the AP3-AP8 stack is natively
 generatable. AP4/N14 and AP5/N15 remain the key native-readiness gaps. Phase 8
-stays outside this roadmap except where explicitly branched from N25.1 as the
-next implementation tranche for LGRC9V3 multi-basin formation.
+stays outside this roadmap except where explicitly branched from N25.1 and
+returned as MB5 implementation evidence for N25.2 validation.
 
 The next question is not:
 
@@ -110,7 +112,9 @@ replay and digest practice
 ```
 
 N20-N28 should remain here and test becoming primitives close to existing LGRC
-implementation surfaces.
+implementation surfaces. N25.2 validated the Phase 8 MB5 evidence into scoped
+MB6 multi-basin substrate evidence, which N26 may now consume under the
+recorded claim ceiling.
 
 ### 3. Agentic Ecology / Ants Project
 
@@ -188,7 +192,7 @@ Which agency-of-becoming diagnostics can be expressed as LGRC-visible state,
 and which require new producer surfaces?
 ```
 
-Expected output:
+Produced artifacts:
 
 ```text
 becoming primitive inventory
@@ -556,10 +560,51 @@ Its role is to define the Phase 8 extension contract for:
 LGRC9V3 multi-basin formation from causal refinement
 ```
 
-N26 may consume N25 scoped BF5 context and N25.1 requirements context, but
-unscoped multi-basin substrate, independent new-basin substrate, native
-LGRC9V3 multi-basin formation, and BF6 remain blocked until a future Phase 8
-extension supplies MB6 runtime evidence.
+The Phase 8 LGRC9V3 multi-basin implementation tranche supplies MB5 candidate
+evidence, and N25.2 validated that evidence into scoped MB6 substrate evidence.
+N26 may consume N25 scoped BF5 context, N25.1 requirements context, and N25.2
+scoped MB6 substrate evidence. Unscoped multi-basin substrate, native support,
+agency, sentience, ant ecology implementation, Phase 8 completion, independent
+new-basin substrate as a general capacity, and BF6 remain blocked.
+
+## N25.2. LGRC9V3 MB6 Validation Bridge
+
+Status:
+
+```text
+closed
+experiment_kind = validation_bridge
+phase8_implementation_already_closed = true
+final_mb_ladder_rung = MB6_N26_ready_multi_basin_substrate_evidence
+final_n25_2_closeout_rung = N25.2-C6_closeout_and_N26_handoff_complete
+mb6_supported = true
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_scoped_context_consumption_allowed = true
+n26_unscoped_consumption_allowed = false
+```
+
+Question:
+
+```text
+Does the Phase 8 LGRC9V3 multi-basin formation tranche provide source-backed,
+replay-clean, control-clean, claim-clean evidence that N26 may consume as
+N26-ready multi-basin substrate evidence?
+```
+
+Produced artifacts:
+
+```text
+source inventory and admissibility audit
+MB6 gate schema and controls
+Phase 8 MB5 evidence-chain audit
+MB6 support/blocker matrix
+N26 consumption classification
+closeout and N26 handoff
+```
+
+N25.2 does not add new runtime producer code. Its closeout allows scoped N26
+multi-basin substrate consumption only; unscoped consumption and all
+agency/native-support/sentience/ant-ecology promotions remain blocked.
 
 ## N26. Proxy Divergence / Proxy Collapse
 

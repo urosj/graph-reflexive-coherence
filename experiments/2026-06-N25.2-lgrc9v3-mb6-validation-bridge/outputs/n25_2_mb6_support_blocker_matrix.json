@@ -1,0 +1,543 @@
+{
+  "acceptance_state": "accepted_mb6_supported_scoped_n26_consumption",
+  "artifact_id": "n25_2_mb6_support_blocker_matrix",
+  "artifact_manifest_scope": "embedded_payloads_only",
+  "checks": [
+    {
+      "check_id": "i7_ready_for_mb6_gate",
+      "detail": {
+        "i7_output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_mb6_gates_evaluated",
+      "detail": {
+        "gate_count": 17,
+        "schema_gate_count": 17
+      },
+      "passed": true
+    },
+    {
+      "check_id": "all_required_mb6_gates_passed",
+      "detail": {
+        "blocked_gate_count": 0,
+        "blocked_gate_ids": [],
+        "gate_count": 17,
+        "mb5_demoted": false,
+        "mb6_supported": true,
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "passed_gate_count": 17
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n26_consumption_scope_is_explicit_and_scoped",
+      "detail": {
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_multi_basin_consumption_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n25_2_closeout_rung_remains_separate_from_mb_support",
+      "detail": {
+        "mb6_supported": true,
+        "n25_2_c6_closeout_pending_iteration_9": true,
+        "n25_2_closeout_ceiling": "N25.2-C5_N26_consumption_classification_complete_pending_closeout"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "existing_runtime_executed_without_source_edits",
+      "detail": {
+        "defect_disposition": "record_as_blocker_or_repair_target_only",
+        "defect_fix_attempted": false,
+        "example_diff_observed": false,
+        "implementation_diff_observed": false,
+        "implementation_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "observed_diff_paths": [],
+        "runtime_execution_from_closed_implementation": true,
+        "spec_diff_observed": false,
+        "src_diff_observed": false,
+        "test_diff_observed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "embedded_artifact_manifest_has_json_pointers",
+      "detail": [
+        {
+          "artifact_role": "mb6_gate_matrix",
+          "digest": "c0dbbaf4a3e9736b28ff2fefa8f35ee6315be6920e6e8898732a9e62583397c0",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/gate_rows"
+        },
+        {
+          "artifact_role": "n26_consumption_classification",
+          "digest": "a36ff1e8966b69b697ae6f745fe7f968bc4c23314affffd55fec408187850339",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/n26_consumption_scope"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "claim_allowed": "MB6_N26_ready_multi_basin_substrate_evidence",
+    "claim_blocked": [
+      "native_support",
+      "semantic_learning",
+      "semantic_choice",
+      "agency",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ant_ecology_implementation",
+      "phase8_completion",
+      "unrestricted_autonomy",
+      "unscoped_N26_consumption"
+    ]
+  },
+  "claim_ceiling": "MB6 N26-ready multi-basin substrate evidence with scoped N26 consumption; not native support, agency, sentience, Phase 8 completion, or unscoped N26 consumption",
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_mb6_support_blocker_matrix.py",
+  "embedded_artifact_manifest": [
+    {
+      "artifact_role": "mb6_gate_matrix",
+      "digest": "c0dbbaf4a3e9736b28ff2fefa8f35ee6315be6920e6e8898732a9e62583397c0",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/gate_rows"
+    },
+    {
+      "artifact_role": "n26_consumption_classification",
+      "digest": "a36ff1e8966b69b697ae6f745fe7f968bc4c23314affffd55fec408187850339",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/n26_consumption_scope"
+    }
+  ],
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "gate_matrix_scope": {
+    "automatic_mb6_from_mb5_allowed": false,
+    "gate_count": 17,
+    "gate_rows_include_blockers": true,
+    "runtime_implementation_modified": false,
+    "schema_source": "I2 MB6 support gates"
+  },
+  "gate_rows": [
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "i1_output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26"
+      },
+      "evidence_sources": [
+        "I1"
+      ],
+      "gate_id": "source_inventory_admissible",
+      "gate_status": "passed",
+      "required_evidence": "I1 source inventory passed with no failed checks.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "i3_output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d",
+        "mb5_demoted": false,
+        "phase8_mb5_evidence_chain_status": "mb5_validated_for_runtime_probe"
+      },
+      "evidence_sources": [
+        "I3"
+      ],
+      "gate_id": "phase8_mb5_chain_validated",
+      "gate_status": "passed",
+      "required_evidence": "I3 validates Phase 8 MB5 evidence chain without demotion.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "i4_flow_window_record_count": 1,
+        "i4a_flow_window_record_count": 1,
+        "i7_source_current_stress": true
+      },
+      "evidence_sources": [
+        "I4",
+        "I4-A",
+        "I7"
+      ],
+      "gate_id": "source_backed_multi_basin_runtime_surfaces",
+      "gate_status": "passed",
+      "required_evidence": "source-backed runtime surfaces for multi-basin formation, not report-only or visual-only evidence",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "i4_child_basin_core_ids": [
+          0
+        ],
+        "i4_topology_signatures_recorded": true,
+        "i4a_child_basin_core_ids": [
+          2
+        ],
+        "i4a_topology_signatures_recorded": true
+      },
+      "evidence_sources": [
+        "I4",
+        "I4-A"
+      ],
+      "gate_id": "source_backed_child_basin_state_records",
+      "gate_status": "passed",
+      "required_evidence": "child-basin records include core ids, membership, boundary edges, support/coherence margins, and parent/neighbor relations",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "declared_replay_window_count": 3,
+        "i5a_output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+        "i7_extended_multi_window_pass_count": 4,
+        "multi_window_passed_candidate_count": 2
+      },
+      "evidence_sources": [
+        "I5",
+        "I5-A",
+        "I7"
+      ],
+      "gate_id": "replay_backed_child_basin_persistence",
+      "gate_status": "passed",
+      "required_evidence": "multi-basin state persists across declared replay windows.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "i5_all_candidate_replays_passed": true,
+        "i5_duplicate_replay_digest_stable_by_row": [
+          true,
+          true
+        ],
+        "i5a_duplicate_replay_suppression_observed": true
+      },
+      "evidence_sources": [
+        "I5",
+        "I5-A"
+      ],
+      "gate_id": "artifact_snapshot_duplicate_replay_clean",
+      "gate_status": "passed",
+      "required_evidence": "artifact replay, snapshot/load replay, and duplicate replay all pass",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "control_record_count_per_candidate": [
+          21,
+          21
+        ],
+        "failed_open_control_count": 0
+      },
+      "evidence_sources": [
+        "I6"
+      ],
+      "gate_id": "merge_leakage_controls_fail_closed",
+      "gate_status": "passed",
+      "required_evidence": "merge, leakage, and old-basin-thickening controls reject false positives.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "hidden_producer_basin_insertion_allowed": false,
+        "producer_success_can_upgrade_native": false,
+        "runtime_mutation_owner": "LGRC9V3_runtime_transition"
+      },
+      "evidence_sources": [
+        "I4",
+        "I6",
+        "I7"
+      ],
+      "gate_id": "producer_native_mutation_ownership_clean",
+      "gate_status": "passed",
+      "required_evidence": "producer audit passes, runtime mutation is LGRC9V3-owned, and producer success is not native support",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "front_capacity_can_backfill_mb6": false,
+        "front_capacity_scope": "passed_as_boundary_scope"
+      },
+      "evidence_sources": [
+        "I4-A",
+        "I6",
+        "I7"
+      ],
+      "gate_id": "front_capacity_boundary_birth_provenance_when_used",
+      "gate_status": "passed",
+      "required_evidence": "front-capacity or boundary-birth companion evidence is recorded when used and cannot backfill MB6 by label",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "control_id": "hidden_producer_basin_insertion"
+      },
+      "evidence_sources": [
+        "I6"
+      ],
+      "gate_id": "hidden_producer_basin_insertion_rejected",
+      "gate_status": "passed",
+      "required_evidence": "hidden producer basin insertion control fails closed.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "control_id": "label_only_child_basin"
+      },
+      "evidence_sources": [
+        "I6"
+      ],
+      "gate_id": "label_only_basin_formation_rejected",
+      "gate_status": "passed",
+      "required_evidence": "label-only basin formation control fails closed.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "control_id": "old_basin_thickening_as_child_basin"
+      },
+      "evidence_sources": [
+        "I6"
+      ],
+      "gate_id": "old_basin_thickening_relabel_rejected",
+      "gate_status": "passed",
+      "required_evidence": "old-basin thickening relabel control fails closed.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "control_id": "transient_flow_sink_as_child_basin"
+      },
+      "evidence_sources": [
+        "I6"
+      ],
+      "gate_id": "transient_flow_sink_relabel_rejected",
+      "gate_status": "passed",
+      "required_evidence": "transient flow-sink relabel control fails closed.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "control_id": "graph_visual_only_success_control"
+      },
+      "evidence_sources": [
+        "I6"
+      ],
+      "gate_id": "graph_visual_only_success_rejected",
+      "gate_status": "passed",
+      "required_evidence": "graph visual-only success control fails closed.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "front_capacity_can_backfill_mb6": false,
+        "i4_visual_evidence_used": false
+      },
+      "evidence_sources": [
+        "I4",
+        "I7"
+      ],
+      "gate_id": "visual_evidence_corroboration_only",
+      "gate_status": "passed",
+      "required_evidence": "visual examples are corroboration only and cannot satisfy gates.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "n26_consumption_effect_if_mb6_supported": {
+          "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+          "n26_scoped_context_consumption_allowed": true,
+          "n26_unscoped_multi_basin_consumption_allowed": false
+        },
+        "n26_unscoped_consumption_allowed": false
+      },
+      "evidence_sources": [
+        "I2",
+        "I8"
+      ],
+      "gate_id": "n26_consumption_rule_explicit",
+      "gate_status": "passed",
+      "required_evidence": "N26 consumption scope is explicit and derived from gate result.",
+      "required_for_mb6": true
+    },
+    {
+      "blocker": null,
+      "claim_effect": "supports_MB6_gate",
+      "evidence_detail": {
+        "unsafe_claim_flags": {
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false,
+          "unrestricted_autonomy_claim_allowed": false
+        }
+      },
+      "evidence_sources": [
+        "I4",
+        "I4-A",
+        "I5",
+        "I5-A",
+        "I6",
+        "I7"
+      ],
+      "gate_id": "unsafe_claim_flags_false",
+      "gate_status": "passed",
+      "required_evidence": "all unsafe claim flags remain false.",
+      "required_for_mb6": true
+    }
+  ],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "implementation_no_mutation_proof": {
+    "defect_disposition": "record_as_blocker_or_repair_target_only",
+    "defect_fix_attempted": false,
+    "example_diff_observed": false,
+    "implementation_diff_observed": false,
+    "implementation_modification_allowed": false,
+    "implementation_source_modification_observed": false,
+    "observed_diff_paths": [],
+    "runtime_execution_from_closed_implementation": true,
+    "spec_diff_observed": false,
+    "src_diff_observed": false,
+    "test_diff_observed": false
+  },
+  "iteration": 8,
+  "matrix_summary": {
+    "blocked_gate_count": 0,
+    "blocked_gate_ids": [],
+    "gate_count": 17,
+    "mb5_demoted": false,
+    "mb6_supported": true,
+    "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+    "n26_scoped_context_consumption_allowed": true,
+    "n26_unscoped_multi_basin_consumption_allowed": false,
+    "passed_gate_count": 17
+  },
+  "mb5_demoted": false,
+  "mb5_remains_valid": true,
+  "mb6_blockers": [],
+  "mb6_claim_allowed": true,
+  "mb6_gate_status": "supported",
+  "mb6_supported": true,
+  "mb_ladder_result": "MB6_N26_ready_multi_basin_substrate_evidence",
+  "n25_2_c6_closeout_pending_iteration_9": true,
+  "n25_2_closeout_ceiling": "N25.2-C5_N26_consumption_classification_complete_pending_closeout",
+  "n26_consumption_scope": {
+    "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+    "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+    "n26_scoped_context_consumption_allowed": true,
+    "n26_unscoped_consumption_allowed": false,
+    "n26_unscoped_multi_basin_consumption_allowed": false
+  },
+  "n26_unscoped_consumption_allowed": false,
+  "output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+  "producer_native_discipline": {
+    "hidden_producer_basin_insertion_allowed": false,
+    "producer_residue_status": "not_load_bearing_for_claim",
+    "producer_success_can_upgrade_native": false,
+    "producer_success_overwrites_native_failure": false,
+    "runtime_mutation_owner": "LGRC9V3_runtime_transition",
+    "source_current_status": "MB6_gate_classified_over_closed_records"
+  },
+  "ready_for_iteration_9_closeout_and_n26_handoff": true,
+  "row_decision": "supported",
+  "source_chain": {
+    "i1_artifact_sha256": "585accaf91af0dc4d569912bb3e5b0d436fe9f54642578436e1e694b9b583d70",
+    "i1_output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26",
+    "i2_artifact_sha256": "ad3a04cc84cd230f8cb30ed0828133e62c45577c41a4aaa20fbb1fb91d7fdaae",
+    "i2_output_digest": "fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f",
+    "i3_artifact_sha256": "e45535c28076553b64862469922f41d0c6f692a68d8f043528a03f93b001da29",
+    "i3_output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d",
+    "i4_artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+    "i4_output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+    "i4a_artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+    "i4a_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+    "i5_artifact_sha256": "58146a72e5e67b840505041fe8a3f33f987fba8bf3987d5130792a1d50d33de7",
+    "i5_output_digest": "8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699",
+    "i5a_artifact_sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+    "i5a_output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+    "i6_artifact_sha256": "09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea",
+    "i6_output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011",
+    "i7_artifact_sha256": "ad303bb671707d877d80f4a2baa05b99f4d28d658f99f65a28c266fab96462b5",
+    "i7_output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627"
+  },
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "acceptance_state": "accepted_stress_variant_matrix_mb5_retained_multi_window_ready_pending_gate",
+  "artifact_id": "n25_2_stress_variant_matrix",
+  "artifact_manifest_scope": "embedded_payloads_only",
+  "checks": [
+    {
+      "check_id": "i6_control_matrix_ready_for_stress",
+      "detail": {
+        "i6_output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "flow_window_thresholds_stressed",
+      "detail": {
+        "source_threshold_pass_count": 2,
+        "tightened_threshold_fail_closed_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check_id": "merge_leakage_pressure_stressed",
+      "detail": {
+        "injected_pressure_fail_closed_count": 2,
+        "source_merge_leakage_pass_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check_id": "child_basin_persistence_window_stressed",
+      "detail": {
+        "extended_multi_window_blocker_count": 0,
+        "extended_multi_window_pass_count": 4,
+        "source_one_window_replay_pass_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check_id": "front_capacity_boundary_birth_scope_preserved",
+      "detail": {
+        "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+        "claim_effect": "provenance context only; cannot satisfy child-basin stress gates",
+        "front_capacity_can_backfill_child_basin_stress": false,
+        "front_capacity_can_backfill_mb6": false,
+        "source_iteration": "I4-A",
+        "source_scope": {
+          "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+          "child_basin_control_consumption_allowed": false,
+          "front_capacity_backfill_control_status": "failed_closed",
+          "i5_replay_scope": "not_applicable",
+          "i6_control_scope": "provenance_context_only",
+          "mb5_or_mb6_backfill_allowed": false,
+          "reason_code": "front_capacity_topology_birth_cannot_backfill_child_basin_controls",
+          "source_iteration": "I4-A"
+        },
+        "status": "passed_as_boundary_scope",
+        "stress_axis": "front_capacity_boundary_birth_provenance"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_backed_variant_axis_recorded",
+      "detail": {
+        "not_retuned_copy": true,
+        "reference_candidate_id": "i4_reference_child_basin_core_0",
+        "reference_core_ids": [
+          0
+        ],
+        "same_runtime_fixture_family": true,
+        "variant_axis_tested": "source_current_child_core_route_variant",
+        "variant_candidate_id": "i4a_route_variant_child_basin_core_2",
+        "variant_core_ids": [
+          2
+        ],
+        "variant_does_not_replace_i5a_multi_window_same_child_persistence": true,
+        "variant_does_not_replace_reference": true,
+        "variant_strengthens_source_variety": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb5_retained_and_mb6_blocker_recorded",
+      "detail": {
+        "extended_multi_window_blocker_count": 0,
+        "extended_multi_window_pass_count": 4,
+        "front_capacity_boundary_scope_preserved": true,
+        "injected_pressure_fail_closed_count": 2,
+        "mb5_retained_candidate_count": 2,
+        "mb6_supported": false,
+        "source_merge_leakage_pass_count": 2,
+        "source_one_window_replay_pass_count": 2,
+        "source_threshold_pass_count": 2,
+        "stress_candidate_count": 2,
+        "stress_matrix_result": "MB5_retained_with_multi_window_replay_input_ready_for_MB6_gate",
+        "tightened_threshold_fail_closed_count": 2,
+        "unexpected_failed_open_stress_count": 0,
+        "variant_axis_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_unexpected_failed_open_stress",
+      "detail": {
+        "unexpected_failed_open_stress_count": 0
+      },
+      "passed": true
+    },
+    {
+      "check_id": "existing_runtime_executed_without_source_edits",
+      "detail": {
+        "defect_disposition": "record_as_blocker_or_repair_target_only",
+        "defect_fix_attempted": false,
+        "example_diff_observed": false,
+        "implementation_diff_observed": false,
+        "implementation_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "observed_diff_paths": [],
+        "runtime_execution_from_closed_implementation": true,
+        "spec_diff_observed": false,
+        "src_diff_observed": false,
+        "test_diff_observed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "embedded_artifact_manifest_has_json_pointers",
+      "detail": [
+        {
+          "artifact_role": "stress_variant_trace",
+          "digest": "a720684d80c4c4ee17dbe23dc79a2227765955811a8c8b285fa28d4da9b5dc80",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/stress_rows/0"
+        },
+        {
+          "artifact_role": "stress_variant_trace",
+          "digest": "1e16217215d9aa97b789434f81e27f1c1112f68f2758c46d209e20977209648b",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/stress_rows/1"
+        },
+        {
+          "artifact_role": "stress_variant_trace",
+          "digest": "315c28732d3c21dfc533716bca7d4fa794b9d702e0a24956e6fa232fbeb6e27d",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/front_capacity_stress_scope"
+        },
+        {
+          "artifact_role": "stress_variant_trace",
+          "digest": "bb8f7d49e12635684f2412e997e9eff60a482e356693b856551e8fcbff6b90ef",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/variant_stress_scope"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "stress-bounded MB5 candidate with multi-window replay input; MB6 pending I8 gate classification",
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_stress_variant_matrix.py",
+  "embedded_artifact_manifest": [
+    {
+      "artifact_role": "stress_variant_trace",
+      "digest": "a720684d80c4c4ee17dbe23dc79a2227765955811a8c8b285fa28d4da9b5dc80",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/stress_rows/0"
+    },
+    {
+      "artifact_role": "stress_variant_trace",
+      "digest": "1e16217215d9aa97b789434f81e27f1c1112f68f2758c46d209e20977209648b",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/stress_rows/1"
+    },
+    {
+      "artifact_role": "stress_variant_trace",
+      "digest": "315c28732d3c21dfc533716bca7d4fa794b9d702e0a24956e6fa232fbeb6e27d",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/front_capacity_stress_scope"
+    },
+    {
+      "artifact_role": "stress_variant_trace",
+      "digest": "bb8f7d49e12635684f2412e997e9eff60a482e356693b856551e8fcbff6b90ef",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/variant_stress_scope"
+    }
+  ],
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "front_capacity_stress_scope": {
+    "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+    "claim_effect": "provenance context only; cannot satisfy child-basin stress gates",
+    "front_capacity_can_backfill_child_basin_stress": false,
+    "front_capacity_can_backfill_mb6": false,
+    "source_iteration": "I4-A",
+    "source_scope": {
+      "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+      "child_basin_control_consumption_allowed": false,
+      "front_capacity_backfill_control_status": "failed_closed",
+      "i5_replay_scope": "not_applicable",
+      "i6_control_scope": "provenance_context_only",
+      "mb5_or_mb6_backfill_allowed": false,
+      "reason_code": "front_capacity_topology_birth_cannot_backfill_child_basin_controls",
+      "source_iteration": "I4-A"
+    },
+    "status": "passed_as_boundary_scope",
+    "stress_axis": "front_capacity_boundary_birth_provenance"
+  },
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "implementation_no_mutation_proof": {
+    "defect_disposition": "record_as_blocker_or_repair_target_only",
+    "defect_fix_attempted": false,
+    "example_diff_observed": false,
+    "implementation_diff_observed": false,
+    "implementation_modification_allowed": false,
+    "implementation_source_modification_observed": false,
+    "observed_diff_paths": [],
+    "runtime_execution_from_closed_implementation": true,
+    "spec_diff_observed": false,
+    "src_diff_observed": false,
+    "test_diff_observed": false
+  },
+  "iteration": 7,
+  "matrix_summary": {
+    "extended_multi_window_blocker_count": 0,
+    "extended_multi_window_pass_count": 4,
+    "front_capacity_boundary_scope_preserved": true,
+    "injected_pressure_fail_closed_count": 2,
+    "mb5_retained_candidate_count": 2,
+    "mb6_supported": false,
+    "source_merge_leakage_pass_count": 2,
+    "source_one_window_replay_pass_count": 2,
+    "source_threshold_pass_count": 2,
+    "stress_candidate_count": 2,
+    "stress_matrix_result": "MB5_retained_with_multi_window_replay_input_ready_for_MB6_gate",
+    "tightened_threshold_fail_closed_count": 2,
+    "unexpected_failed_open_stress_count": 0,
+    "variant_axis_supported": true
+  },
+  "mb5_demoted": false,
+  "mb5_retained_after_i7": true,
+  "mb6_blockers": [
+    "mb6_gate_pending_iteration_8"
+  ],
+  "mb6_claim_allowed": false,
+  "mb6_gate_status": "not_applied",
+  "mb6_supported": false,
+  "mb_ladder_candidate": "MB5_stress_bounded_native_multi_basin_candidate",
+  "n26_consumption_effect": "unscoped_consumption_blocked",
+  "n26_unscoped_consumption_allowed": false,
+  "output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+  "producer_native_discipline": {
+    "hidden_producer_basin_insertion_allowed": false,
+    "producer_residue_status": "not_load_bearing_for_claim",
+    "producer_success_can_upgrade_native": false,
+    "producer_success_overwrites_native_failure": false,
+    "runtime_mutation_owner": "LGRC9V3_runtime_transition",
+    "source_current_status": "native_runtime_stress_matrix_over_closed_records"
+  },
+  "ready_for_iteration_8_mb6_support_blocker_matrix": true,
+  "repair_targets_or_naturalization_targets": [
+    "declared_child_basin_stress_envelope_runtime_validator"
+  ],
+  "row_decision": "supported",
+  "source_chain": {
+    "i4_artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+    "i4_output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+    "i4a_artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+    "i4a_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+    "i5_artifact_sha256": "58146a72e5e67b840505041fe8a3f33f987fba8bf3987d5130792a1d50d33de7",
+    "i5_output_digest": "8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699",
+    "i5a_artifact_sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+    "i5a_output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+    "i6_artifact_sha256": "09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea",
+    "i6_output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011"
+  },
+  "status": "passed",
+  "stress_matrix_scope": {
+    "runtime_implementation_modified": false,
+    "stress_axes": [
+      "flow_window_threshold_variation",
+      "merge_leakage_pressure",
+      "child_basin_persistence_window_variation",
+      "front_capacity_boundary_birth_provenance",
+      "source_backed_route_variant"
+    ],
+    "stress_rows_are_derived_from_source_current_runtime_records": true,
+    "stress_rows_are_not_new_runtime_implementation": true
+  },
+  "stress_rows": [
+    {
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "child_basin_core_ids": [
+        0
+      ],
+      "child_basin_membership_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+      "claim_ceiling": "I7 stress-bounded MB5 candidate; not MB6",
+      "extended_window_blocker_count": 0,
+      "extended_window_pass_count": 2,
+      "flow_window_observed": {
+        "edge_flux_trace_total": 0.0,
+        "node_coherence_trace_min": 1.1,
+        "node_plus_packet_budget_trace": {
+          "node_plus_packet_budget_after": 6.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "node_support_trace_min": 1.1,
+        "packet_flux_trace": {
+          "event_queue_record_count": 0.0,
+          "in_flight_packet_total": 0.0,
+          "packet_record_count": 1.0
+        },
+        "window_end_event_time_key": 1.0,
+        "window_scheduler_indices": [
+          1,
+          1
+        ],
+        "window_start_event_time_key": 1.0
+      },
+      "mb5_retained_after_i7": true,
+      "mb6_or_stronger_supported": false,
+      "merge_leakage_stress_rows": [
+        {
+          "claim_effect": "source merge/leakage ceiling preserved",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.0,
+          "status": "passed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "source_merge_leakage_ceiling"
+        },
+        {
+          "claim_effect": "non-source pressure would block stronger claim",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.1,
+          "status": "failed_closed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "injected_merge_leakage_pressure_fail_closed"
+        }
+      ],
+      "persistence_window_stress_rows": [
+        {
+          "claim_effect": "supports replay-backed MB4 and consumed MB5 control row",
+          "observed_window_count": 1.0,
+          "required_window_count": 1.0,
+          "status": "passed",
+          "stress_axis": "child_basin_persistence_window",
+          "stress_id": "source_one_window_replay"
+        },
+        {
+          "blocker": null,
+          "claim_effect": "supports multi-window replay stress input for I8 gate",
+          "native_replay_record_window_count": 1.0,
+          "observed_window_count": 3.0,
+          "required_window_count": 2.0,
+          "status": "passed",
+          "stress_axis": "child_basin_persistence_window",
+          "stress_id": "multi_window_2_persistence_replay"
+        },
+        {
+          "blocker": null,
+          "claim_effect": "supports multi-window replay stress input for I8 gate",
+          "native_replay_record_window_count": 1.0,
+          "observed_window_count": 3.0,
+          "required_window_count": 3.0,
+          "status": "passed",
+          "stress_axis": "child_basin_persistence_window",
+          "stress_id": "multi_window_3_persistence_replay"
+        }
+      ],
+      "row_decision": "supported",
+      "source_artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+      "source_child_basin_state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+      "source_control_record_count": 21,
+      "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+      "source_iteration": "I4",
+      "source_level_stress_clean": true,
+      "source_multi_window_replay_trace_digest": "b7962e16fefdbd882039b38bff454161c17998ab83fd30ef2f1a3686da4e3140",
+      "source_output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+      "source_replay_validation_digest": "fab53c21405e54a4eefb76d25632807d25f448f622880fb3479fbd6219d5f303",
+      "stress_result": "mb5_retained_with_multi_window_replay_input_ready_for_i8_gate",
+      "threshold_stress_rows": [
+        {
+          "claim_effect": "source threshold preserved for MB5 candidate",
+          "declared_threshold": 1.1,
+          "observed_coherence_floor": 1.1,
+          "observed_support_floor": 1.1,
+          "status": "passed",
+          "stress_axis": "flow_window_threshold",
+          "stress_id": "source_threshold_replay"
+        },
+        {
+          "claim_effect": "weaker threshold does not add MB6 evidence",
+          "declared_threshold": 1.0,
+          "observed_coherence_floor": 1.1,
+          "observed_support_floor": 1.1,
+          "status": "passed",
+          "stress_axis": "flow_window_threshold",
+          "stress_id": "relaxed_threshold_replay"
+        },
+        {
+          "claim_effect": "tightened threshold blocks stronger claim",
+          "declared_threshold": 1.2000000000000002,
+          "observed_coherence_floor": 1.1,
+          "observed_support_floor": 1.1,
+          "status": "failed_closed",
+          "stress_axis": "flow_window_threshold",
+          "stress_id": "tightened_threshold_fail_closed"
+        }
+      ],
+      "topology_provenance_shape": "collapse_reabsorption_shaped_existing_graph",
+      "unexpected_failed_open_stress_count": 0,
+      "variant_axis": "reference_route_sink0"
+    },
+    {
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "child_basin_core_ids": [
+        2
+      ],
+      "child_basin_membership_digest": "376154b4a3c009ca84ca53d005cfa9d628f749d61217a143a2f9a711c9ce8def",
+      "claim_ceiling": "I7 stress-bounded MB5 candidate; not MB6",
+      "extended_window_blocker_count": 0,
+      "extended_window_pass_count": 2,
+      "flow_window_observed": {
+        "edge_flux_trace_total": 0.0,
+        "node_coherence_trace_min": 1.0,
+        "node_plus_packet_budget_trace": {
+          "node_plus_packet_budget_after": 6.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "node_support_trace_min": 1.0,
+        "packet_flux_trace": {
+          "event_queue_record_count": 0.0,
+          "in_flight_packet_total": 0.0,
+          "packet_record_count": 1.0
+        },
+        "window_end_event_time_key": 1.0,
+        "window_scheduler_indices": [
+          1,
+          1
+        ],
+        "window_start_event_time_key": 1.0
+      },
+      "mb5_retained_after_i7": true,
+      "mb6_or_stronger_supported": false,
+      "merge_leakage_stress_rows": [
+        {
+          "claim_effect": "source merge/leakage ceiling preserved",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.0,
+          "status": "passed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "source_merge_leakage_ceiling"
+        },
+        {
+          "claim_effect": "non-source pressure would block stronger claim",
+          "declared_ceiling": 0.0,
+          "incident_metric_count": 2.0,
+          "observed_absolute_incident_flux": 0.1,
+          "status": "failed_closed",
+          "stress_axis": "merge_leakage_pressure",
+          "stress_id": "injected_merge_leakage_pressure_fail_closed"
+        }
+      ],
+      "persistence_window_stress_rows": [
+        {
+          "claim_effect": "supports replay-backed MB4 and consumed MB5 control row",
+          "observed_window_count": 1.0,
+          "required_window_count": 1.0,
+          "status": "passed",
+          "stress_axis": "child_basin_persistence_window",
+          "stress_id": "source_one_window_replay"
+        },
+        {
+          "blocker": null,
+          "claim_effect": "supports multi-window replay stress input for I8 gate",
+          "native_replay_record_window_count": 1.0,
+          "observed_window_count": 3.0,
+          "required_window_count": 2.0,
+          "status": "passed",
+          "stress_axis": "child_basin_persistence_window",
+          "stress_id": "multi_window_2_persistence_replay"
+        },
+        {
+          "blocker": null,
+          "claim_effect": "supports multi-window replay stress input for I8 gate",
+          "native_replay_record_window_count": 1.0,
+          "observed_window_count": 3.0,
+          "required_window_count": 3.0,
+          "status": "passed",
+          "stress_axis": "child_basin_persistence_window",
+          "stress_id": "multi_window_3_persistence_replay"
+        }
+      ],
+      "row_decision": "supported",
+      "source_artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+      "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+      "source_control_record_count": 21,
+      "source_flow_window_digest": "2e193a6afab8971da75108ef9ae5ac0307333a891ee6fbb2fa1790f446f3af27",
+      "source_iteration": "I4-A",
+      "source_level_stress_clean": true,
+      "source_multi_window_replay_trace_digest": "19a9b150d775ed8aff8a76c1e60c03376ebe1eecc8921e4d5a68091a0915e94f",
+      "source_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+      "source_replay_validation_digest": "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+      "stress_result": "mb5_retained_with_multi_window_replay_input_ready_for_i8_gate",
+      "threshold_stress_rows": [
+        {
+          "claim_effect": "source threshold preserved for MB5 candidate",
+          "declared_threshold": 3.1,
+          "observed_coherence_floor": 3.1,
+          "observed_support_floor": 3.1,
+          "status": "passed",
+          "stress_axis": "flow_window_threshold",
+          "stress_id": "source_threshold_replay"
+        },
+        {
+          "claim_effect": "weaker threshold does not add MB6 evidence",
+          "declared_threshold": 3.0,
+          "observed_coherence_floor": 3.1,
+          "observed_support_floor": 3.1,
+          "status": "passed",
+          "stress_axis": "flow_window_threshold",
+          "stress_id": "relaxed_threshold_replay"
+        },
+        {
+          "claim_effect": "tightened threshold blocks stronger claim",
+          "declared_threshold": 3.2,
+          "observed_coherence_floor": 3.1,
+          "observed_support_floor": 3.1,
+          "status": "failed_closed",
+          "stress_axis": "flow_window_threshold",
+          "stress_id": "tightened_threshold_fail_closed"
+        }
+      ],
+      "topology_provenance_shape": "collapse_reabsorption_shaped_existing_graph",
+      "unexpected_failed_open_stress_count": 0,
+      "variant_axis": "route_variant_sink2"
+    }
+  ],
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  },
+  "variant_stress_scope": {
+    "not_retuned_copy": true,
+    "reference_candidate_id": "i4_reference_child_basin_core_0",
+    "reference_core_ids": [
+      0
+    ],
+    "same_runtime_fixture_family": true,
+    "variant_axis_tested": "source_current_child_core_route_variant",
+    "variant_candidate_id": "i4a_route_variant_child_basin_core_2",
+    "variant_core_ids": [
+      2
+    ],
+    "variant_does_not_replace_i5a_multi_window_same_child_persistence": true,
+    "variant_does_not_replace_reference": true,
+    "variant_strengthens_source_variety": true
+  }
+}

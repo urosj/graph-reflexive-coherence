@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N25.1. It replaces the
+This handoff is the current pickup note for N26. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -20,9 +20,11 @@ N23 live-continuation collapse and selection geometry = closed
 N24 abundance and surplus-supported optionality = closed
 N25 spark / sub-basin / new-basin formation = closed
 N25.1 LGRC9V3 multi-basin formation extension requirements = closed
-current next implementation tranche = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
-downstream primitive experiment = N26_proxy_divergence_proxy_collapse
-N26_unscoped_multi_basin_mode = blocked_until_future_MB6
+Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement = closed_at_MB5
+N25.2 LGRC9V3 MB6 validation bridge = closed
+current primitive experiment = N26_proxy_divergence_proxy_collapse
+N26_scoped_multi_basin_substrate_consumption = allowed_from_N25_2_MB6
+N26_unscoped_multi_basin_mode = blocked
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -150,8 +152,8 @@ N25 supports scoped native high-margin core / sub-basin formation and a
 separate producer-assisted BF5 scaffold. It does not support independent
 new-basin formation, BF6, or native LGRC9V3 multi-basin formation.
 
-N25.1 closed as a requirements/spec bridge for a future Phase 8 LGRC9V3
-multi-basin formation extension:
+N25.1 closed as a requirements/spec bridge for a Phase 8 LGRC9V3 multi-basin
+formation extension:
 
 ```text
 status = passed
@@ -170,9 +172,40 @@ ready_for_n26_scoped_mode = true
 
 N25.1 does not implement the runtime extension and does not claim multi-basin
 evidence. It defines the Phase 8 extension requirements, MB0...MB6 ladder,
-replay/control contract, and N26 consumption constraints. The immediate next
-branch should be a Phase 8 implementation tranche that consumes N25/N25.1 as
-frozen source evidence before unscoped N26 multi-basin use is allowed.
+replay/control contract, and N26 consumption constraints.
+
+The Phase 8 LGRC9V3 multi-basin implementation tranche closed at MB5:
+
+```text
+status = closed
+supported_ceiling = MB5_control_backed_native_multi_basin_formation_candidate
+mb5_control_backed_candidate_allowed = true
+mb6_or_stronger_supported = false
+native_lgrc_multi_basin_formation_supported = false
+n26_unscoped_consumption_allowed = false
+phase8_closeout_next_step = N25.2_scoped_missing_mechanism_bridge_before_N26
+n25_2_consumer_status = closed_at_MB6_scoped_N26_handoff
+```
+
+N25.2 then closed the validation bridge:
+
+```text
+status = passed
+acceptance_state = accepted_n25_2_c6_closeout_scoped_n26_handoff
+final_mb_ladder_rung = MB6_N26_ready_multi_basin_substrate_evidence
+final_n25_2_closeout_rung = N25.2-C6_closeout_and_N26_handoff_complete
+mb6_supported = true
+mb5_remains_valid = true
+mb5_demoted = false
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_scoped_context_consumption_allowed = true
+n26_unscoped_multi_basin_consumption_allowed = false
+```
+
+N26 may consume N25.2 as scoped multi-basin substrate evidence. It must not
+consume N25.2 as unscoped multi-basin substrate, native support, agency,
+sentience, ant ecology implementation, organism/life evidence, Phase 8
+completion, or unrestricted autonomy.
 
 ## Active Roadmap Source
 
@@ -200,6 +233,11 @@ Use this handoff together with:
 - `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md`
 - `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/reports/n25_1_closeout_and_phase8_extension_handoff.md`
 - `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json`
+- `implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md`
+- `implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json`
+- `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md`
+- `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md`
+- `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -568,25 +606,56 @@ native_multi_basin_formation_supported = false
 BF6_supported = false
 ```
 
-Immediate implementation handoff:
+Immediate implementation handoff, now completed by the Phase 8 multi-basin
+tranche and N25.2 validation bridge:
 
 ```text
-next_branch_role = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+implementation_branch_role = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+validation_branch_role = N25.2_LGRC9V3_MB6_validation_bridge
 consume_as_frozen_sources = N25_closeout, N25.1_closeout
 must_not_reopen_N25_or_N25.1_claims = true
 must_implement_against_N25_1_surfaces = true
 target_ladder = MB1...MB6
-initial_claim_ceiling = implementation_tranche_pending_runtime_evidence
+implementation_tranche_result = MB5_control_backed_native_multi_basin_formation_candidate
+validation_bridge_result = MB6_N26_ready_multi_basin_substrate_evidence
 ```
 
-N26 may proceed after N25.1 in one of two modes:
+## N25.2 Closeout Evidence
+
+Primary N25.2 closeout artifact:
+
+```text
+artifact = experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json
+report = experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md
+script = experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_closeout_and_n26_handoff.py
+output_digest = b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03
+artifact_sha256 = 7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328
+report_sha256 = e3682bfb8b40f91a4647f5acbb5961932642ebbb58dcebf282e711314320f35d
+script_sha256 = 583b64186c7cf5706e91d545e621fe1110e97312c5984eb04b9cd074b03318d5
+```
+
+N25.2 final classification:
+
+```text
+final_mb_ladder_rung = MB6_N26_ready_multi_basin_substrate_evidence
+final_n25_2_closeout_rung = N25.2-C6_closeout_and_N26_handoff_complete
+mb6_supported = true
+mb5_remains_valid = true
+mb5_demoted = false
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_scoped_context_consumption_allowed = true
+n26_unscoped_multi_basin_consumption_allowed = false
+```
+
+N26 may now proceed after N25.2 in scoped MB6 mode:
 
 ```text
 scoped mode:
-  consume N25 sub-basin / high-margin core evidence only
+  consume N25 sub-basin / high-margin core evidence as historical context
+  consume N25.2 MB6 as scoped multi-basin substrate evidence
 
-multi-basin mode:
-  wait for Phase 8 extension evidence reaching MB6
+unscoped mode:
+  blocked
 ```
 
 N25 consumed N20 as the standing primitive contract and N24 as two
