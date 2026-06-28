@@ -1,0 +1,1310 @@
+{
+  "acceptance_state": "accepted_phase8_mb5_evidence_chain_validated_ready_for_i4_no_mb6",
+  "artifact_id": "n25_2_phase8_mb5_evidence_chain_audit",
+  "artifact_manifest": [
+    {
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_source_inventory_and_admissibility_audit.json",
+      "role": "n25_2_i1_source_inventory",
+      "sha256": "585accaf91af0dc4d569912bb3e5b0d436fe9f54642578436e1e694b9b583d70"
+    },
+    {
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_gate_schema_and_controls.json",
+      "role": "n25_2_i2_mb6_schema",
+      "sha256": "ad3a04cc84cd230f8cb30ed0828133e62c45577c41a4aaa20fbb1fb91d7fdaae"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json",
+      "role": "phase8_mb5_closeout",
+      "sha256": "627c28111f771db3d62b83935d49596a1d981bb9d35c17688dfc9a0154f9dfa9"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.md",
+      "role": "phase8_mb5_closeout_report",
+      "sha256": "4189ceb9437f4a8a819d2f58d6f7cc009c70ba6e0ff8180fb28e0113ab8d472f"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.json",
+      "role": "phase8_contract_schema",
+      "sha256": "1c320db0fc2fcebbd1ce72c1aae92e57fc76a603332a54b590492e250d881948"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.md",
+      "role": "phase8_contract_schema_report",
+      "sha256": "06699407d084e30934c2089487e9ee0404c4b5f735073f3cfdee1ff5daf2e2d9"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationPlan.md",
+      "role": "phase8_plan_context",
+      "sha256": "9719de469866cdb731a4d879a4658c802fe0d28a5650ce6ee145b46a07145334"
+    },
+    {
+      "path": "implementation/Phase-8-LGRC9-MultiBasinFormationChecklist.md",
+      "role": "phase8_checklist_context",
+      "sha256": "131fac96961decf595d735135ab8647e96cf10d6f03aef2688a77e39238b53f6"
+    }
+  ],
+  "chain_audit_rows": [
+    {
+      "chain_component": "phase8_closeout",
+      "claim_ceiling": "MB5 input only; MB6 remains pending N25.2 gate",
+      "mb5_chain_contribution": "closed MB5 ceiling confirmed",
+      "mb6_contribution": "none",
+      "observed_state": {
+        "mb5_control_backed_candidate_allowed": true,
+        "mb6_or_stronger_supported": false,
+        "n26_unscoped_consumption_allowed": false,
+        "phase8_status": "closed",
+        "supported_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate"
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_01_phase8_closeout_mb5_ceiling",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    },
+    {
+      "chain_component": "runtime_surfaces",
+      "claim_ceiling": "admissible MB5 surface context, not positive MB6",
+      "mb5_chain_contribution": "runtime surfaces available for I4 probing",
+      "mb6_contribution": "none until N25.2 runtime/replay/control matrix",
+      "observed_state": {
+        "default_causal_mode_flags": {
+          "native_lgrc_multi_basin_formation_enabled": false,
+          "native_lgrc_multi_basin_formation_policy": "disabled",
+          "native_lgrc_multi_basin_formation_supported": false,
+          "native_lgrc_multi_basin_formation_validated": false
+        },
+        "front_capacity_boundary_birth_companion_available": true,
+        "merge_leakage_control_matrix_available": true,
+        "multi_basin_replay_validation_available": true,
+        "multi_basin_runtime_surfaces_exposed": true,
+        "runtime_source_backed_surfaces_checked": [
+          "src/pygrc/models/lgrc_9_v3_contract.py",
+          "src/pygrc/models/lgrc_9_v3_runtime.py",
+          "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+          "src/pygrc/telemetry/lgrc9v3_contract.py"
+        ],
+        "runtime_surface_not_active_by_default": true
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_02_runtime_surfaces_exposed",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    },
+    {
+      "chain_component": "contract_schema",
+      "claim_ceiling": "schema admissibility context",
+      "mb5_chain_contribution": "flow, child-basin, replay, and control record schemas present",
+      "mb6_contribution": "schemas only; source-current I4+ artifacts still required",
+      "observed_state": {
+        "child_basin_directive_field_map": {
+          "basin_signature_digest": {
+            "matched_phase8_fields": [
+              "child_basin_membership_digest",
+              "child_basin_state_digest"
+            ],
+            "satisfied": true
+          },
+          "birth_or_detection_step": {
+            "matched_phase8_fields": [
+              "source_flow_window_digest",
+              "window_start_event_time_key",
+              "window_end_event_time_key"
+            ],
+            "satisfied": true
+          },
+          "boundary_birth_or_refinement_provenance": {
+            "matched_phase8_fields": [
+              "old_basin_relation_trace",
+              "refinement_lineage_map",
+              "source_topology_event_digest"
+            ],
+            "satisfied": true
+          },
+          "child_basin_id": {
+            "matched_phase8_fields": [
+              "child_basin_state_record_id",
+              "child_basin_core_ids",
+              "child_basin_membership_digest"
+            ],
+            "satisfied": true
+          },
+          "coherence_core_nodes": {
+            "matched_phase8_fields": [
+              "child_basin_coherence_floor_records"
+            ],
+            "satisfied": true
+          },
+          "flow_window_id": {
+            "matched_phase8_fields": [
+              "source_flow_window_digest"
+            ],
+            "satisfied": true
+          },
+          "merge_leakage_status": {
+            "matched_phase8_fields": [
+              "merge_leakage_trace"
+            ],
+            "satisfied": true
+          },
+          "parent_or_source_basin_id": {
+            "matched_phase8_fields": [
+              "old_basin_relation_trace",
+              "source_flow_window_digest"
+            ],
+            "satisfied": true
+          },
+          "producer_native_mutation_owner": {
+            "matched_phase8_fields": [
+              "producer_residue_classification",
+              "runtime_visible_inputs"
+            ],
+            "satisfied": true
+          },
+          "support_core_nodes": {
+            "matched_phase8_fields": [
+              "child_basin_support_floor_records"
+            ],
+            "satisfied": true
+          },
+          "topology_signature_after": {
+            "matched_phase8_fields": [
+              "post_refinement_topology_signature"
+            ],
+            "satisfied": true
+          },
+          "topology_signature_before": {
+            "matched_phase8_fields": [
+              "pre_refinement_topology_signature"
+            ],
+            "satisfied": true
+          },
+          "trace_digest": {
+            "matched_phase8_fields": [
+              "child_basin_state_digest",
+              "source_flow_window_digest"
+            ],
+            "satisfied": true
+          }
+        },
+        "contract_record_kinds": [
+          "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+          "lgrc9v3_child_basin_state_record",
+          "lgrc9v3_multi_basin_replay_validation_record",
+          "lgrc9v3_multi_basin_merge_leakage_control_record"
+        ],
+        "required_contract_record_kinds": [
+          "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+          "lgrc9v3_child_basin_state_record",
+          "lgrc9v3_multi_basin_replay_validation_record",
+          "lgrc9v3_multi_basin_merge_leakage_control_record"
+        ]
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_03_contract_record_types_present",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationContractSchema.json"
+    },
+    {
+      "chain_component": "replay_and_controls",
+      "claim_ceiling": "MB5 replay/control chain input only",
+      "mb5_chain_contribution": "Phase 8 reports replay and merge/leakage controls available",
+      "mb6_contribution": "none until N25.2 applies replay/control matrix to I4 artifacts",
+      "observed_state": {
+        "merge_control_record_minimum_fields": [
+          "artifact_kind",
+          "artifact_schema_version",
+          "control_record_id",
+          "schema_version",
+          "native_multi_basin_policy_id",
+          "native_multi_basin_enabled",
+          "source_child_basin_state_digest",
+          "control_id",
+          "control_status",
+          "blocked_condition",
+          "expected_result",
+          "actual_result",
+          "claim_allowed_when_control_triggers",
+          "rung_effect",
+          "merge_leakage_metrics",
+          "lgrc_runtime_level",
+          "causal_layer_mode",
+          "claim_flags"
+        ],
+        "merge_leakage_control_matrix_available": true,
+        "multi_basin_replay_validation_available": true,
+        "replay_creates_original_child_basin_evidence": false,
+        "replay_record_minimum_fields": [
+          "artifact_kind",
+          "artifact_schema_version",
+          "replay_validation_id",
+          "schema_version",
+          "native_multi_basin_policy_id",
+          "native_multi_basin_enabled",
+          "source_child_basin_state_digest",
+          "artifact_replay_result",
+          "snapshot_load_replay_result",
+          "duplicate_replay_result",
+          "time_order_replay_result",
+          "membership_persistence_ratio",
+          "support_persistence_ratio",
+          "coherence_persistence_ratio",
+          "boundary_persistence_ratio",
+          "flux_persistence_ratio",
+          "replay_window",
+          "replay_failure_modes",
+          "lgrc_runtime_level",
+          "causal_layer_mode",
+          "claim_flags"
+        ]
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_04_replay_and_merge_control_available",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    },
+    {
+      "chain_component": "producer_native_discipline",
+      "claim_ceiling": "producer-compatible MB5 context, not native support",
+      "mb5_chain_contribution": "producer compatibility audit passed",
+      "mb6_contribution": "producer audit does not upgrade native capacity",
+      "observed_state": {
+        "native_capacity_upgraded_from_producer_schedule": false,
+        "producer_audit_status": "passed",
+        "semantic_content_injection_allowed": false,
+        "third_party_observer_content_management_opened": false
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_05_producer_compatibility_audit",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    },
+    {
+      "chain_component": "implementation_verification",
+      "claim_ceiling": "verification context only",
+      "mb5_chain_contribution": "Phase 8 verification suite recorded as passed",
+      "mb6_contribution": "test pass does not replace N25.2 runtime evidence",
+      "observed_state": {
+        "diff_check": "passed",
+        "examples": {
+          "front_capacity_topology_birth_visual_bundle": "passed",
+          "multi_basin_formation_bundle": "passed",
+          "topology_birth_refinement_visual_bundle": "passed"
+        },
+        "focused_suite_result": "333 passed, 81 subtests passed",
+        "ruff_result": "All checks passed",
+        "tests_do_not_open_mb6": true,
+        "tests_do_not_replace_runtime_artifacts": true,
+        "visualization_suite_result": "5 passed, 63 deselected"
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_06_verification_suite",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    },
+    {
+      "chain_component": "telemetry_examples",
+      "claim_ceiling": "corroboration only",
+      "mb5_chain_contribution": "examples corroborate runtime surfaces",
+      "mb6_contribution": "visual/example evidence remains corroboration only",
+      "observed_state": {
+        "examples": {
+          "front_capacity_topology_birth_visual_bundle": "passed",
+          "multi_basin_formation_bundle": "passed",
+          "topology_birth_refinement_visual_bundle": "passed"
+        },
+        "must_not_consume_as": [
+          "MB5_proof",
+          "MB6_proof",
+          "replay_evidence",
+          "runtime_surface_evidence"
+        ],
+        "visual_evidence_role": "corroboration_only",
+        "visual_graph_growth_supports_mb6": false
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_07_visual_and_example_limits",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    },
+    {
+      "chain_component": "claim_boundary",
+      "claim_ceiling": "MB5 chain audit only",
+      "mb5_chain_contribution": "unsafe claims remain blocked",
+      "mb6_contribution": "none",
+      "observed_state": {
+        "contract_schema_claim_boundary": {
+          "BF6_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "blocked_claim_keys": [
+            "native_support",
+            "agency",
+            "semantic_learning",
+            "semantic_choice",
+            "independent_new_basin",
+            "BF6",
+            "sentience",
+            "organism_life",
+            "ant_ecology",
+            "unrestricted_autonomy",
+            "phase8_completion"
+          ],
+          "implementation_forbidden_claim_flag_keys": [
+            "BF6_claim_allowed",
+            "adaptive_topology_entry_allowed",
+            "agency_claim_allowed",
+            "ant_ecology_claim_allowed",
+            "biological_claim_allowed",
+            "choice_or_agency_claim_allowed",
+            "claim_promotion",
+            "identity_acceptance_claim_allowed",
+            "independent_new_basin_claim_allowed",
+            "locomotion_like_claim_allowed",
+            "loop_driven_movement_claim_allowed",
+            "movement_claim_allowed",
+            "native_lgrc_choice_selection_claim_allowed",
+            "native_m6",
+            "native_multi_basin_formation_claim_allowed",
+            "native_support_claim_allowed",
+            "organism_life_claim_allowed",
+            "phase8_completion_claim_allowed",
+            "rc_identity_collapse_claim_allowed",
+            "rc_identity_through_topology_claim_allowed",
+            "semantic_choice_claim_allowed",
+            "semantic_learning_claim_allowed",
+            "sentience_claim_allowed",
+            "topology_mutating_movement_claim_allowed",
+            "unrestricted_autonomy_claim_allowed",
+            "unrestricted_movement_claim_allowed"
+          ],
+          "independent_new_basin_claim_allowed": false,
+          "native_multi_basin_formation_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false,
+          "unsafe_claim_flags_rejected": true
+        },
+        "phase8_claim_boundary": {
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false
+        }
+      },
+      "row_decision": "supported",
+      "row_id": "n25_2_i3_row_08_claim_boundary",
+      "source_artifact_path": "implementation/Phase-8-LGRC9-MultiBasinFormationCloseout.json"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": {
+        "i1_output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": {
+        "i2_output_digest": "fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "source_chain_integrity_validated",
+      "detail": {
+        "all_json_source_artifacts_parse": true,
+        "all_required_source_artifacts_exist": true,
+        "all_source_paths_repo_relative": true,
+        "all_source_record_hashes_match_file_contents": true,
+        "i1_output_digest_matches_i2_reference": true,
+        "markdown_and_example_sources_context_limited": true,
+        "no_stale_regenerated_artifact_mismatch": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_closeout_exists_and_parses",
+      "detail": {
+        "phase8_closeout_status": "closed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_closeout_reports_mb5_not_mb6",
+      "detail": {
+        "mb5_control_backed_candidate_allowed": true,
+        "mb6_or_stronger_supported": false,
+        "n26_unscoped_consumption_allowed": false,
+        "native_lgrc_multi_basin_formation_supported": false,
+        "supported_ceiling": "MB5_control_backed_native_multi_basin_formation_candidate"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_supported_capabilities_present",
+      "detail": {
+        "front_capacity_boundary_birth_companion_available": true,
+        "merge_leakage_control_matrix_available": true,
+        "multi_basin_replay_validation_available": true,
+        "multi_basin_runtime_surfaces_exposed": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "runtime_surfaces_default_off_and_source_backed",
+      "detail": {
+        "default_off_policy_recorded": true,
+        "enablement_gate_recorded": true,
+        "runtime_surface_matches_phase8_contract_schema": true,
+        "runtime_surface_not_active_by_default": true,
+        "runtime_surface_records_present": true,
+        "telemetry_contract_can_serialize_surface": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_contract_schema_exists_and_parses",
+      "detail": {
+        "schema_status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "contract_record_types_include_required",
+      "detail": {
+        "contract_record_kinds": [
+          "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+          "lgrc9v3_child_basin_state_record",
+          "lgrc9v3_multi_basin_replay_validation_record",
+          "lgrc9v3_multi_basin_merge_leakage_control_record"
+        ],
+        "required_contract_record_kinds": [
+          "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+          "lgrc9v3_child_basin_state_record",
+          "lgrc9v3_multi_basin_replay_validation_record",
+          "lgrc9v3_multi_basin_merge_leakage_control_record"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "child_basin_state_records_present",
+      "detail": {
+        "child_basin_state_record_schema_present": true,
+        "directive_field_map": {
+          "basin_signature_digest": {
+            "matched_phase8_fields": [
+              "child_basin_membership_digest",
+              "child_basin_state_digest"
+            ],
+            "satisfied": true
+          },
+          "birth_or_detection_step": {
+            "matched_phase8_fields": [
+              "source_flow_window_digest",
+              "window_start_event_time_key",
+              "window_end_event_time_key"
+            ],
+            "satisfied": true
+          },
+          "boundary_birth_or_refinement_provenance": {
+            "matched_phase8_fields": [
+              "old_basin_relation_trace",
+              "refinement_lineage_map",
+              "source_topology_event_digest"
+            ],
+            "satisfied": true
+          },
+          "child_basin_id": {
+            "matched_phase8_fields": [
+              "child_basin_state_record_id",
+              "child_basin_core_ids",
+              "child_basin_membership_digest"
+            ],
+            "satisfied": true
+          },
+          "coherence_core_nodes": {
+            "matched_phase8_fields": [
+              "child_basin_coherence_floor_records"
+            ],
+            "satisfied": true
+          },
+          "flow_window_id": {
+            "matched_phase8_fields": [
+              "source_flow_window_digest"
+            ],
+            "satisfied": true
+          },
+          "merge_leakage_status": {
+            "matched_phase8_fields": [
+              "merge_leakage_trace"
+            ],
+            "satisfied": true
+          },
+          "parent_or_source_basin_id": {
+            "matched_phase8_fields": [
+              "old_basin_relation_trace",
+              "source_flow_window_digest"
+            ],
+            "satisfied": true
+          },
+          "producer_native_mutation_owner": {
+            "matched_phase8_fields": [
+              "producer_residue_classification",
+              "runtime_visible_inputs"
+            ],
+            "satisfied": true
+          },
+          "support_core_nodes": {
+            "matched_phase8_fields": [
+              "child_basin_support_floor_records"
+            ],
+            "satisfied": true
+          },
+          "topology_signature_after": {
+            "matched_phase8_fields": [
+              "post_refinement_topology_signature"
+            ],
+            "satisfied": true
+          },
+          "topology_signature_before": {
+            "matched_phase8_fields": [
+              "pre_refinement_topology_signature"
+            ],
+            "satisfied": true
+          },
+          "trace_digest": {
+            "matched_phase8_fields": [
+              "child_basin_state_digest",
+              "source_flow_window_digest"
+            ],
+            "satisfied": true
+          }
+        },
+        "directive_field_map_satisfied": true,
+        "example_runtime_record_use_present": true,
+        "label_only_child_basin_rejected_by_schema": true,
+        "old_basin_thickening_rejected_by_schema": true,
+        "runtime_emitter_present": true,
+        "transient_sink_rejected_by_schema": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "topology_refinement_provenance_present",
+      "detail": {
+        "matched_phase8_fields": [
+          "old_basin_relation_trace",
+          "refinement_lineage_map",
+          "source_topology_event_digest"
+        ],
+        "satisfied": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "replay_evidence_present",
+      "detail": {
+        "artifact_replay_present": true,
+        "child_basin_persistence_replay_present": true,
+        "duplicate_replay_present": true,
+        "replay_does_not_create_original_child_basin_records": true,
+        "replay_validates_runtime_emitted_records_only": true,
+        "snapshot_load_replay_present": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "merge_leakage_controls_present_and_fail_closed",
+      "detail": {
+        "control_ids_present": [
+          "label_only_multi_basin_relabel",
+          "old_basin_thickening_as_new_basin",
+          "transient_flow_sink_as_child_basin",
+          "collapse_reabsorption_relabel",
+          "graph_visual_only_success"
+        ],
+        "control_record_fields_present": true,
+        "controls_are_schema_backed": true,
+        "failed_open_blocks_mb6": true,
+        "merge_leakage_control_present": true,
+        "schema_blockers_present": [
+          "label_only_child_basin",
+          "old_basin_thickening_as_child_basin",
+          "transient_flow_sink_as_child_basin",
+          "merge_leakage_as_success",
+          "hidden_producer_basin_insertion"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "default_multi_basin_flags_do_not_claim_native_support",
+      "detail": {
+        "native_lgrc_multi_basin_formation_enabled": false,
+        "native_lgrc_multi_basin_formation_policy": "disabled",
+        "native_lgrc_multi_basin_formation_supported": false,
+        "native_lgrc_multi_basin_formation_validated": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_compatibility_audit_passed",
+      "detail": {
+        "audited_producers": [
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "causal_flux_routes",
+              "source_node_coherence",
+              "packet_ledger_event_queue"
+            ],
+            "producer_policy": "packet_departure_from_flux_route",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "route_aspect_surplus_trigger_config",
+              "route_aspect_pole_mass",
+              "eligible_channel"
+            ],
+            "producer_policy": "packet_departure_from_route_surplus",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "committed_causal_pulse_substrate_surface_row",
+              "surface_lineage_currentness",
+              "topology_state_reabsorption_record"
+            ],
+            "producer_policy": "packet_departure_from_pulse_substrate_coupling",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "committed_feedback_eligibility_surface_row",
+              "feedback_coupled_pulse_config",
+              "surface_lineage_currentness"
+            ],
+            "producer_policy": "packet_departure_from_feedback_eligibility",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "front_capacity_partial_metadata_fails_closed": true,
+            "mutation_owner": "apply_causal_boundary_birth_trial_consumed_by_step",
+            "observed_runtime_surfaces": [
+              "causal_boundary_birth_allowed",
+              "causal_boundary_birth_policy",
+              "causal_boundary_birth_parent_eligibility",
+              "inactive_ports",
+              "outward_flux_pressure",
+              "grcl9v3_front_growth_eligible_ports",
+              "grcl9v3_growth_parent_capacity_sources"
+            ],
+            "producer_policy": "boundary_birth_trial",
+            "scheduled_event_kind": "lgrc9v3_causal_boundary_birth_trial"
+          }
+        ],
+        "native_capacity_upgraded_from_producer_schedule": false,
+        "producer_audit_status": "passed",
+        "producer_rule": "producers observe declared runtime-visible LGRC/RC surfaces, record evidence, and schedule declared work; LGRC9V3 runtime transitions own coherence, topology, packet-ledger, replay/control, and claim-state mutation",
+        "semantic_content_injection_allowed": false,
+        "third_party_observer_content_management_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_compatibility_audit_present",
+      "detail": {
+        "producer_audit_status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_native_mutation_ownership_clean",
+      "detail": {
+        "audited_producers": [
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "causal_flux_routes",
+              "source_node_coherence",
+              "packet_ledger_event_queue"
+            ],
+            "producer_policy": "packet_departure_from_flux_route",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "route_aspect_surplus_trigger_config",
+              "route_aspect_pole_mass",
+              "eligible_channel"
+            ],
+            "producer_policy": "packet_departure_from_route_surplus",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "committed_causal_pulse_substrate_surface_row",
+              "surface_lineage_currentness",
+              "topology_state_reabsorption_record"
+            ],
+            "producer_policy": "packet_departure_from_pulse_substrate_coupling",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "mutation_owner": "packet_event_processing_in_step",
+            "observed_runtime_surfaces": [
+              "committed_feedback_eligibility_surface_row",
+              "feedback_coupled_pulse_config",
+              "surface_lineage_currentness"
+            ],
+            "producer_policy": "packet_departure_from_feedback_eligibility",
+            "scheduled_event_kind": "lgrc9v3_packet_departure"
+          },
+          {
+            "direct_claim_write_allowed": false,
+            "direct_coherence_mutation_allowed": false,
+            "direct_topology_mutation_allowed": false,
+            "front_capacity_partial_metadata_fails_closed": true,
+            "mutation_owner": "apply_causal_boundary_birth_trial_consumed_by_step",
+            "observed_runtime_surfaces": [
+              "causal_boundary_birth_allowed",
+              "causal_boundary_birth_policy",
+              "causal_boundary_birth_parent_eligibility",
+              "inactive_ports",
+              "outward_flux_pressure",
+              "grcl9v3_front_growth_eligible_ports",
+              "grcl9v3_growth_parent_capacity_sources"
+            ],
+            "producer_policy": "boundary_birth_trial",
+            "scheduled_event_kind": "lgrc9v3_causal_boundary_birth_trial"
+          }
+        ],
+        "native_capacity_upgraded_from_producer_schedule": false,
+        "producer_audit_status": "passed",
+        "producer_rule": "producers observe declared runtime-visible LGRC/RC surfaces, record evidence, and schedule declared work; LGRC9V3 runtime transitions own coherence, topology, packet-ledger, replay/control, and claim-state mutation",
+        "semantic_content_injection_allowed": false,
+        "third_party_observer_content_management_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "verification_results_passed",
+      "detail": {
+        "diff_check": "passed",
+        "diff_check_command": "git diff --check",
+        "examples": {
+          "front_capacity_topology_birth_visual_bundle": "passed",
+          "multi_basin_formation_bundle": "passed",
+          "topology_birth_refinement_visual_bundle": "passed"
+        },
+        "focused_suite_command": ".venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py -q",
+        "focused_suite_result": "333 passed, 81 subtests passed",
+        "ruff_command": ".venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_contract.py src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/__init__.py src/pygrc/telemetry/lgrc9v3_contract.py src/pygrc/visualization/render.py src/pygrc/visualization/graph_render.py tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py tests/models/test_lgrc_9_v3_autonomy_contract.py tests/telemetry/test_lgrc9v3_contract.py tests/visualization/test_visualization.py examples/lgrc9v3/multi_basin_formation_bundle.py examples/lgrc9v3/topology_birth_refinement_visual_bundle.py examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py",
+        "ruff_result": "All checks passed",
+        "visualization_suite_command": ".venv/bin/python -m pytest tests/visualization/test_visualization.py -q -k \"lgrc9v3\"",
+        "visualization_suite_result": "5 passed, 63 deselected"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "telemetry_examples_correspond_to_closeout",
+      "detail": {
+        "front_capacity_topology_birth_visual_bundle": "passed",
+        "multi_basin_formation_bundle": "passed",
+        "topology_birth_refinement_visual_bundle": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "visual_evidence_not_used_as_proof",
+      "detail": "examples and visual sources are corroboration-only",
+      "passed": true
+    },
+    {
+      "check_id": "tests_or_prior_results_source_backed",
+      "detail": {
+        "focused_tests_present_or_prior_test_results_source_backed": true,
+        "test_scope_matches_phase8_claim": true,
+        "tests_do_not_open_mb6": true,
+        "tests_do_not_patch_runtime_or_relax_specs": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_claim_boundary_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "schema_claim_boundary_false",
+      "detail": {
+        "BF6_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "blocked_claim_keys": [
+          "native_support",
+          "agency",
+          "semantic_learning",
+          "semantic_choice",
+          "independent_new_basin",
+          "BF6",
+          "sentience",
+          "organism_life",
+          "ant_ecology",
+          "unrestricted_autonomy",
+          "phase8_completion"
+        ],
+        "implementation_forbidden_claim_flag_keys": [
+          "BF6_claim_allowed",
+          "adaptive_topology_entry_allowed",
+          "agency_claim_allowed",
+          "ant_ecology_claim_allowed",
+          "biological_claim_allowed",
+          "choice_or_agency_claim_allowed",
+          "claim_promotion",
+          "identity_acceptance_claim_allowed",
+          "independent_new_basin_claim_allowed",
+          "locomotion_like_claim_allowed",
+          "loop_driven_movement_claim_allowed",
+          "movement_claim_allowed",
+          "native_lgrc_choice_selection_claim_allowed",
+          "native_m6",
+          "native_multi_basin_formation_claim_allowed",
+          "native_support_claim_allowed",
+          "organism_life_claim_allowed",
+          "phase8_completion_claim_allowed",
+          "rc_identity_collapse_claim_allowed",
+          "rc_identity_through_topology_claim_allowed",
+          "semantic_choice_claim_allowed",
+          "semantic_learning_claim_allowed",
+          "sentience_claim_allowed",
+          "topology_mutating_movement_claim_allowed",
+          "unrestricted_autonomy_claim_allowed",
+          "unrestricted_movement_claim_allowed"
+        ],
+        "independent_new_basin_claim_allowed": false,
+        "native_multi_basin_formation_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unsafe_claim_flags_rejected": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb5_chain_not_demoted",
+      "detail": {
+        "demotion_policy": "record_as_blocker_or_repair_target_only",
+        "demotion_reasons": []
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb6_not_applied",
+      "detail": {
+        "mb6_blockers": [
+          "not_applied_until_iteration_8"
+        ],
+        "mb6_gate_applied": false,
+        "mb6_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n26_unscoped_consumption_blocked",
+      "detail": {
+        "n26_consumption_effect": "unscoped_consumption_blocked",
+        "n26_unscoped_consumption_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "repair_targets_recorded_if_any",
+      "detail": {
+        "repair_target_count": 0,
+        "repair_target_schema": {
+          "effect_on_mb5": "none | blocker | demotion",
+          "effect_on_mb6": "blocked | demotion",
+          "effect_on_n26_consumption": "blocked | scoped_only",
+          "expected_condition": "required condition",
+          "gap_class": "missing_source_artifact | digest_or_parse_failure | default_off_surface_missing | runtime_surface_mismatch | child_basin_state_record_missing | child_basin_provenance_missing | replay_missing_or_unstable | control_missing_or_failed_open | producer_native_ownership_ambiguous | visual_only_evidence | test_scope_gap | unsafe_claim_boundary_violation | mb5_as_mb6_relabel",
+          "gap_id": "stable identifier",
+          "observed_condition": "observed condition",
+          "repair_requires_new_implementation_tranche": "boolean",
+          "repair_target": "required repair action",
+          "source_artifact": "repo-relative source path",
+          "source_field_or_section": "field or section that failed"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "runtime_execution_not_performed_in_i3",
+      "detail": "I3 audits closed Phase 8 chain only; I4 runs runtime probe",
+      "passed": true
+    },
+    {
+      "check_id": "implementation_modification_blocked",
+      "detail": {
+        "defect_disposition": "record_as_blocker_or_repair_target_only",
+        "implementation_source_modification_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "implementation_sources_unmodified",
+      "detail": {
+        "defect_fix_attempted": false,
+        "example_diff_observed": false,
+        "implementation_source_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "spec_diff_observed": false,
+        "src_diff_observed": false,
+        "test_diff_observed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "child_basin_record_audit": {
+    "child_basin_state_record_schema_present": true,
+    "directive_field_map": {
+      "basin_signature_digest": {
+        "matched_phase8_fields": [
+          "child_basin_membership_digest",
+          "child_basin_state_digest"
+        ],
+        "satisfied": true
+      },
+      "birth_or_detection_step": {
+        "matched_phase8_fields": [
+          "source_flow_window_digest",
+          "window_start_event_time_key",
+          "window_end_event_time_key"
+        ],
+        "satisfied": true
+      },
+      "boundary_birth_or_refinement_provenance": {
+        "matched_phase8_fields": [
+          "old_basin_relation_trace",
+          "refinement_lineage_map",
+          "source_topology_event_digest"
+        ],
+        "satisfied": true
+      },
+      "child_basin_id": {
+        "matched_phase8_fields": [
+          "child_basin_state_record_id",
+          "child_basin_core_ids",
+          "child_basin_membership_digest"
+        ],
+        "satisfied": true
+      },
+      "coherence_core_nodes": {
+        "matched_phase8_fields": [
+          "child_basin_coherence_floor_records"
+        ],
+        "satisfied": true
+      },
+      "flow_window_id": {
+        "matched_phase8_fields": [
+          "source_flow_window_digest"
+        ],
+        "satisfied": true
+      },
+      "merge_leakage_status": {
+        "matched_phase8_fields": [
+          "merge_leakage_trace"
+        ],
+        "satisfied": true
+      },
+      "parent_or_source_basin_id": {
+        "matched_phase8_fields": [
+          "old_basin_relation_trace",
+          "source_flow_window_digest"
+        ],
+        "satisfied": true
+      },
+      "producer_native_mutation_owner": {
+        "matched_phase8_fields": [
+          "producer_residue_classification",
+          "runtime_visible_inputs"
+        ],
+        "satisfied": true
+      },
+      "support_core_nodes": {
+        "matched_phase8_fields": [
+          "child_basin_support_floor_records"
+        ],
+        "satisfied": true
+      },
+      "topology_signature_after": {
+        "matched_phase8_fields": [
+          "post_refinement_topology_signature"
+        ],
+        "satisfied": true
+      },
+      "topology_signature_before": {
+        "matched_phase8_fields": [
+          "pre_refinement_topology_signature"
+        ],
+        "satisfied": true
+      },
+      "trace_digest": {
+        "matched_phase8_fields": [
+          "child_basin_state_digest",
+          "source_flow_window_digest"
+        ],
+        "satisfied": true
+      }
+    },
+    "directive_field_map_satisfied": true,
+    "example_runtime_record_use_present": true,
+    "label_only_child_basin_rejected_by_schema": true,
+    "old_basin_thickening_rejected_by_schema": true,
+    "runtime_emitter_present": true,
+    "transient_sink_rejected_by_schema": true
+  },
+  "claim_boundary": {
+    "agency_claim_allowed": false,
+    "contract_schema_claim_boundary": {
+      "BF6_claim_allowed": false,
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "blocked_claim_keys": [
+        "native_support",
+        "agency",
+        "semantic_learning",
+        "semantic_choice",
+        "independent_new_basin",
+        "BF6",
+        "sentience",
+        "organism_life",
+        "ant_ecology",
+        "unrestricted_autonomy",
+        "phase8_completion"
+      ],
+      "implementation_forbidden_claim_flag_keys": [
+        "BF6_claim_allowed",
+        "adaptive_topology_entry_allowed",
+        "agency_claim_allowed",
+        "ant_ecology_claim_allowed",
+        "biological_claim_allowed",
+        "choice_or_agency_claim_allowed",
+        "claim_promotion",
+        "identity_acceptance_claim_allowed",
+        "independent_new_basin_claim_allowed",
+        "locomotion_like_claim_allowed",
+        "loop_driven_movement_claim_allowed",
+        "movement_claim_allowed",
+        "native_lgrc_choice_selection_claim_allowed",
+        "native_m6",
+        "native_multi_basin_formation_claim_allowed",
+        "native_support_claim_allowed",
+        "organism_life_claim_allowed",
+        "phase8_completion_claim_allowed",
+        "rc_identity_collapse_claim_allowed",
+        "rc_identity_through_topology_claim_allowed",
+        "semantic_choice_claim_allowed",
+        "semantic_learning_claim_allowed",
+        "sentience_claim_allowed",
+        "topology_mutating_movement_claim_allowed",
+        "unrestricted_autonomy_claim_allowed",
+        "unrestricted_movement_claim_allowed"
+      ],
+      "independent_new_basin_claim_allowed": false,
+      "native_multi_basin_formation_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unsafe_claim_flags_rejected": true
+    },
+    "mb6_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "phase8_claim_boundary": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false
+    },
+    "phase8_completion_claim_allowed": false,
+    "sentience_claim_allowed": false
+  },
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_phase8_mb5_evidence_chain_audit.py",
+  "defect_disposition": "blocker_or_repair_target_only",
+  "defect_fix_attempted": false,
+  "example_diff_observed": false,
+  "existing_lgrc9v3_runtime_execution_allowed": true,
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "i3_mb5_chain_status": "mb5_chain_validated_for_runtime_probe",
+  "i4_runtime_probe_cannot_retroactively_fix_i3_chain_flaw": true,
+  "implementation_source_modification_allowed": false,
+  "implementation_source_modification_observed": false,
+  "iteration": 3,
+  "mb5_chain_validated_for_runtime_probe": true,
+  "mb5_demoted": false,
+  "mb5_remains_supported": true,
+  "mb5_repair_required": false,
+  "mb5_repair_targets": [],
+  "mb6_blockers": [
+    "not_applied_until_iteration_8"
+  ],
+  "mb6_claim_allowed": false,
+  "mb6_gate_applied": false,
+  "mb6_gate_status": "not_applied",
+  "mb6_supported": false,
+  "merge_control_audit": {
+    "control_ids_present": [
+      "label_only_multi_basin_relabel",
+      "old_basin_thickening_as_new_basin",
+      "transient_flow_sink_as_child_basin",
+      "collapse_reabsorption_relabel",
+      "graph_visual_only_success"
+    ],
+    "control_record_fields_present": true,
+    "controls_are_schema_backed": true,
+    "failed_open_blocks_mb6": true,
+    "merge_leakage_control_present": true,
+    "schema_blockers_present": [
+      "label_only_child_basin",
+      "old_basin_thickening_as_child_basin",
+      "transient_flow_sink_as_child_basin",
+      "merge_leakage_as_success",
+      "hidden_producer_basin_insertion"
+    ]
+  },
+  "n25_2_closeout_ceiling": "N25.2-C3_MB6_gate_schema_and_active_blockers_frozen_with_Phase_8_MB5_chain_validated",
+  "n25_2_closeout_ladder_rung_assigned": false,
+  "n26_consumption_blocker": "blocked_pending_mb6_gate",
+  "n26_consumption_effect": "unscoped_consumption_blocked",
+  "n26_unscoped_consumption_allowed": false,
+  "native_runtime_positive_probe_opened": false,
+  "output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d",
+  "phase8_mb5_chain_defects_found": [],
+  "phase8_mb5_chain_safe_for_i4_runtime_probe": true,
+  "phase8_mb5_evidence_chain_audited": true,
+  "phase8_mb5_evidence_chain_status": "mb5_validated_for_runtime_probe",
+  "ready_for_iteration_4_native_runtime_positive_probe": true,
+  "repair_target_schema": {
+    "effect_on_mb5": "none | blocker | demotion",
+    "effect_on_mb6": "blocked | demotion",
+    "effect_on_n26_consumption": "blocked | scoped_only",
+    "expected_condition": "required condition",
+    "gap_class": "missing_source_artifact | digest_or_parse_failure | default_off_surface_missing | runtime_surface_mismatch | child_basin_state_record_missing | child_basin_provenance_missing | replay_missing_or_unstable | control_missing_or_failed_open | producer_native_ownership_ambiguous | visual_only_evidence | test_scope_gap | unsafe_claim_boundary_violation | mb5_as_mb6_relabel",
+    "gap_id": "stable identifier",
+    "observed_condition": "observed condition",
+    "repair_requires_new_implementation_tranche": "boolean",
+    "repair_target": "required repair action",
+    "source_artifact": "repo-relative source path",
+    "source_field_or_section": "field or section that failed"
+  },
+  "replay_audit": {
+    "artifact_replay_present": true,
+    "child_basin_persistence_replay_present": true,
+    "duplicate_replay_present": true,
+    "replay_does_not_create_original_child_basin_records": true,
+    "replay_validates_runtime_emitted_records_only": true,
+    "snapshot_load_replay_present": true
+  },
+  "runtime_execution_deferred_to_iteration_4": true,
+  "runtime_execution_performed": false,
+  "runtime_implementation_opened": false,
+  "runtime_surface_audit": {
+    "default_off_policy_recorded": true,
+    "enablement_gate_recorded": true,
+    "runtime_surface_matches_phase8_contract_schema": true,
+    "runtime_surface_not_active_by_default": true,
+    "runtime_surface_records_present": true,
+    "telemetry_contract_can_serialize_surface": true
+  },
+  "source_chain": {
+    "i1_output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26",
+    "i1_output_digest_matches_i2_reference": true,
+    "i2_output_digest": "fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f",
+    "phase8_closeout_sha256": "627c28111f771db3d62b83935d49596a1d981bb9d35c17688dfc9a0154f9dfa9",
+    "phase8_contract_schema_sha256": "1c320db0fc2fcebbd1ce72c1aae92e57fc76a603332a54b590492e250d881948"
+  },
+  "source_chain_integrity": {
+    "all_json_source_artifacts_parse": true,
+    "all_required_source_artifacts_exist": true,
+    "all_source_paths_repo_relative": true,
+    "all_source_record_hashes_match_file_contents": true,
+    "i1_output_digest_matches_i2_reference": true,
+    "markdown_and_example_sources_context_limited": true,
+    "no_stale_regenerated_artifact_mismatch": true
+  },
+  "spec_diff_observed": false,
+  "src_diff_observed": false,
+  "status": "passed",
+  "test_diff_observed": false,
+  "tests_audit": {
+    "focused_tests_present_or_prior_test_results_source_backed": true,
+    "test_scope_matches_phase8_claim": true,
+    "tests_do_not_open_mb6": true,
+    "tests_do_not_patch_runtime_or_relax_specs": true
+  }
+}

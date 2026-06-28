@@ -210,7 +210,7 @@ passed
 
 ## Iteration 3. Phase 8 MB5 Evidence Chain Audit
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -219,28 +219,100 @@ before new N25.2 runtime probes.
 
 ### Checks
 
-- [ ] Validate runtime surfaces.
-- [ ] Validate child-basin state records.
-- [ ] Validate replay evidence.
-- [ ] Validate merge/leakage control evidence.
-- [ ] Validate producer compatibility audit.
-- [ ] Validate telemetry/example interpretations.
-- [ ] Classify MB5 chain status as one of:
+- [x] Validate runtime surfaces.
+- [x] Validate child-basin state records.
+- [x] Validate replay evidence.
+- [x] Validate merge/leakage control evidence.
+- [x] Validate producer compatibility audit.
+- [x] Validate telemetry/example interpretations.
+- [x] Classify MB5 chain status as one of:
       `mb5_chain_validated_for_runtime_probe`,
       `mb5_chain_validated_with_blockers`,
       `mb5_demoted_repair_required`, or
       `mb5_chain_unreadable_blocks_runtime_probe`.
-- [ ] Confirm MB5 remains supported, remains usable only with blockers, or is
+- [x] Confirm MB5 remains supported, remains usable only with blockers, or is
       demoted with repair target.
-- [ ] Confirm I4 runtime probes cannot retroactively fix an I3 MB5-chain flaw.
-- [ ] Confirm MB6 remains unassigned until the MB6 matrix.
-- [ ] Confirm no implementation source is modified.
+- [x] Confirm I4 runtime probes cannot retroactively fix an I3 MB5-chain flaw.
+- [x] Confirm MB6 remains unassigned until the MB6 matrix.
+- [x] Confirm no implementation source is modified.
 
 Expected artifacts:
 
 ```text
 outputs/n25_2_phase8_mb5_evidence_chain_audit.json
 reports/n25_2_phase8_mb5_evidence_chain_audit.md
+```
+
+### Result
+
+```text
+status = passed
+acceptance_state = accepted_phase8_mb5_evidence_chain_validated_ready_for_i4_no_mb6
+i1_output_digest = 3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26
+i2_output_digest = fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f
+failed_checks = []
+i3_mb5_chain_status = mb5_chain_validated_for_runtime_probe
+phase8_mb5_evidence_chain_status = mb5_validated_for_runtime_probe
+phase8_mb5_evidence_chain_audited = true
+phase8_mb5_chain_safe_for_i4_runtime_probe = true
+mb5_remains_supported = true
+mb5_repair_targets = []
+mb5_demoted = false
+mb5_repair_required = false
+mb6_gate_applied = false
+mb6_gate_status = not_applied
+mb6_supported = false
+mb6_claim_allowed = false
+mb6_blockers = [not_applied_until_iteration_8]
+n26_unscoped_consumption_allowed = false
+n26_consumption_effect = unscoped_consumption_blocked
+n26_consumption_blocker = blocked_pending_mb6_gate
+runtime_execution_performed = false
+runtime_execution_deferred_to_iteration_4 = true
+runtime_implementation_opened = false
+native_runtime_positive_probe_opened = false
+implementation_source_modification_allowed = false
+implementation_source_modification_observed = false
+src_diff_observed = false
+spec_diff_observed = false
+test_diff_observed = false
+example_diff_observed = false
+defect_fix_attempted = false
+defect_disposition = blocker_or_repair_target_only
+i4_runtime_probe_cannot_retroactively_fix_i3_chain_flaw = true
+n25_2_closeout_ceiling = N25.2-C3_MB6_gate_schema_and_active_blockers_frozen_with_Phase_8_MB5_chain_validated
+n25_2_closeout_ladder_rung_assigned = false
+ready_for_iteration_4_native_runtime_positive_probe = true
+output_digest = 7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d
+artifact_sha256 = e45535c28076553b64862469922f41d0c6f692a68d8f043528a03f93b001da29
+report_sha256 = 35a5d6cc2f8181d49c04fec0519da228e1612b14429bd2b45e87755422b4d559
+```
+
+### Interpretation
+
+Iteration 3 validates the closed Phase 8 MB5 chain as admissible input for the
+next N25.2 runtime probe. It confirms the Phase 8 closeout remains MB5-only,
+with runtime surfaces exposed, child-basin state schema present, replay and
+merge/leakage control schemas present, producer compatibility audit passed,
+verification results recorded, visual/example artifacts limited to
+corroboration, and unsafe claims blocked.
+
+It also records directive-level source-chain integrity, default-off runtime
+surface checks, child-basin field mapping, replay/control non-prose checks,
+producer/native mutation ownership, tests-as-admissibility-only limits, and
+structured repair-target schema. No repair targets were emitted.
+
+This is not a positive N25.2 runtime probe. It does not run the runtime, does
+not apply the MB6 gate, does not support MB6, and does not open N26 unscoped
+multi-basin substrate consumption. If a Phase 8 chain defect had been found in
+I3, later runtime probes could only identify a repair target; they could not
+retroactively make the I3 chain clean.
+
+### Verification
+
+```text
+.venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_phase8_mb5_evidence_chain_audit.py
+passed
 ```
 
 ## Iteration 4. Native LGRC9V3 Runtime Positive Probe
