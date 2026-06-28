@@ -1,0 +1,40 @@
+{
+  "comparison": {
+    "native_lane_can_upgrade_from_producer": false,
+    "native_lane_failure_overwritten": false,
+    "producer_does_not_help_axes": [
+      "support_floor_margin",
+      "coherence_floor_margin",
+      "new_basin_independence"
+    ],
+    "producer_helps_axis": "flux_windowing_only",
+    "same_native_geometry_object": true
+  },
+  "interpretation": "I7 compares one native BF4 row with one producer-assisted BF4 scaffold. Both rows retain the same zero-margin support/coherence geometry; the producer only changes the admissible attempted-flux schedule by windowing.",
+  "native_lane": {
+    "bf_ladder_rung": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+    "boundary_distinguishability_margin": 4,
+    "coherence_floor_margin_new_region": 0.0,
+    "formation_class": "sub_basin_candidate",
+    "formation_source": "native_source_current_bifurcation",
+    "merge_leakage_margin": 1e-09,
+    "native_flux_debt_bound": 1e-09,
+    "producer_assisted_result_class": "not_applicable",
+    "source_row_id": "n25_i5_native_replay_and_control_matrix",
+    "support_floor_margin_new_region": 0.0
+  },
+  "producer_assisted_lane": {
+    "bf_ladder_rung": "BF4_producer_assisted_flux_conditioned_scaffold_candidate",
+    "boundary_distinguishability_margin": 4,
+    "coherence_floor_margin_new_region": 0.0,
+    "formation_class": "producer_assisted_scaffold",
+    "formation_source": "producer_flux_conditioned",
+    "merge_leakage_margin": 1e-09,
+    "producer_assisted_result_class": "producer_mediated_scaffold_candidate",
+    "producer_flux_window_bound": 1e-08,
+    "producer_flux_window_count_bound": 10,
+    "source_row_id": "n25_i6_producer_assisted_flux_conditioned_formation_probe",
+    "support_floor_margin_new_region": 0.0
+  },
+  "trace_id": "n25_i7_lane_comparison_trace"
+}

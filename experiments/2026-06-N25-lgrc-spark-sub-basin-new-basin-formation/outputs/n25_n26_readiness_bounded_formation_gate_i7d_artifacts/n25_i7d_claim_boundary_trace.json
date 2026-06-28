@@ -1,0 +1,30 @@
+{
+  "agency_supported": false,
+  "ant_ecology_opened": false,
+  "basin_formation_claim_allowed": false,
+  "bounded_formation_handoff_allowed": true,
+  "final_closeout_claim_pending_i8": true,
+  "independent_new_basin_supported": false,
+  "native_bf5_supported": true,
+  "native_bf6_supported": false,
+  "native_support_supported": false,
+  "phase8_opened": false,
+  "semantic_choice_supported": false,
+  "semantic_learning_supported": false,
+  "sentience_supported": false,
+  "trace_id": "n25_i7d_claim_boundary_trace",
+  "unsafe_claim_flags": {
+    "agency": false,
+    "ant_ecology": false,
+    "fully_native_integration": false,
+    "identity_acceptance": false,
+    "intention": false,
+    "native_support": false,
+    "organism_life": false,
+    "phase8": false,
+    "selfhood": false,
+    "semantic_choice": false,
+    "semantic_learning": false,
+    "sentience": false
+  }
+}

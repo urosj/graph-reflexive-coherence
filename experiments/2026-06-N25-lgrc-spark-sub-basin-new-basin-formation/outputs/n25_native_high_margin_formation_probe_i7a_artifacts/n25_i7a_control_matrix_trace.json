@@ -1,0 +1,83 @@
+[
+  {
+    "actual_result": "full_module_zero_margin_preserved = true",
+    "blocked_condition": "positive core partition erases the full-module zero-margin record",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "positive_core_post_hoc_relabel_control",
+    "control_status": "passed",
+    "expected_result": "full-module zero-margin remains explicit and BF5 remains blocked",
+    "rung_effect": "I7-A may support core-axis margin only"
+  },
+  {
+    "actual_result": "support carrier set contains only coherence-positive nodes",
+    "blocked_condition": "zero-coherence shell nodes are counted as support carriers",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "boundary_shell_as_support_relabel_control",
+    "control_status": "passed",
+    "expected_result": "shell nodes are retained only as boundary shell",
+    "rung_effect": "support/coherence margin remains core-scoped"
+  },
+  {
+    "actual_result": "positive core remains attached to boundary shell and old-basin refinement",
+    "blocked_condition": "core-shell sub-basin is relabeled as independent new basin",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "new_basin_independence_relabel_control",
+    "control_status": "passed",
+    "expected_result": "new_basin_independence_supported = false",
+    "rung_effect": "new-basin claim remains blocked"
+  },
+  {
+    "actual_result": "I7-A consumes native I4/I5 artifacts only for the core partition",
+    "blocked_condition": "producer lane supplies the high-margin native core",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "producer_intervention_used = false",
+    "rung_effect": "producer-to-native relabel blocked"
+  },
+  {
+    "actual_result": "native_flux_debt_bound = 1e-9",
+    "blocked_condition": "high-margin probe widens native flux debt",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "native flux debt remains 1e-9",
+    "rung_effect": "native flux debt preserved"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_learning = false",
+    "blocked_condition": "positive core partition is relabeled as semantic learning",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_learning_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic learning claim flag remains false",
+    "rung_effect": "semantic learning relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.agency = false",
+    "blocked_condition": "positive core partition is relabeled as agency",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "agency_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "agency claim flag remains false",
+    "rung_effect": "agency relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.native_support = false",
+    "blocked_condition": "positive core partition is relabeled as native support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_support_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "native support claim flag remains false",
+    "rung_effect": "native support relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.phase8 = false",
+    "blocked_condition": "positive core partition is relabeled as Phase 8",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "phase8_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "phase8 claim flag remains false",
+    "rung_effect": "Phase 8 relabel blocked"
+  }
+]

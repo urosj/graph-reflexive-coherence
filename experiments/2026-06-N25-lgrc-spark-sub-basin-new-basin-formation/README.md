@@ -9,7 +9,7 @@ reinforcing or thickening an existing basin.
 Current state:
 
 ```text
-status = initialized
+status = closed
 source_contract_row = n20_i4_row_06_spark_sub_basin_new_basin_formation
 source_consumable_contract_row = n20_i5_row_06_spark_sub_basin_new_basin_formation
 n20_contract_status = complete
@@ -20,7 +20,17 @@ target_primitive = spark_sub_basin_new_basin_formation
 target_reading = spark / sub-basin / new-basin formation
 local_ladder = BF0...BF6
 closeout_ladder = N25-C0...N25-C6
-next_experiment = N26_proxy_divergence_proxy_collapse
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+n25_1_requirements_bridge_needed = true
+next_requirements_bridge = N25.1_lgrc9v3_multi_basin_formation_extension_requirements
+next_experiment_if_scoped_sub_basin_is_sufficient = N26_proxy_divergence_proxy_collapse
 ```
 
 Core question:
@@ -29,6 +39,17 @@ Core question:
 Can becoming pressure produce a new distinguishable basin or sub-basin, rather
 than only reinforcing an existing basin?
 ```
+
+Closeout answer:
+
+```text
+bounded sub-basin / high-margin core formation = supported
+independent new-basin formation = blocked
+native LGRC9V3 multi-basin formation = blocked
+```
+
+N25.1 is the follow-up requirements bridge for the missing Phase 8 extension:
+native LGRC9V3 multi-basin formation from causal refinement.
 
 N25 is not a semantic learning, semantic choice, agency, native support,
 sentience, Phase 8, or ant-ecology experiment. `Spark` and `new basin` may be

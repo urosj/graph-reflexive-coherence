@@ -1,0 +1,137 @@
+[
+  {
+    "actual_result": "N24 I7-C producer contract declared_before_use = true and consumed by digest",
+    "blocked_condition": "producer schedule assembled after outcome inspection",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_schedule_post_hoc_control",
+    "control_status": "passed",
+    "expected_result": "producer contract and window schedule are source-backed and declared before use",
+    "rung_effect": "producer-assisted lane remains admissible only as declared scaffold"
+  },
+  {
+    "actual_result": "support_added = 0.0; coherence_added = 0.0",
+    "blocked_condition": "producer silently adds support or coherence",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_hidden_support_control",
+    "control_status": "passed",
+    "expected_result": "support_added = 0 and coherence_added = 0",
+    "rung_effect": "hidden support remains blocked"
+  },
+  {
+    "actual_result": "thresholds_unchanged = true; per_window_bound = 1e-09",
+    "blocked_condition": "producer lane relaxes thresholds, floors, or native flux bound",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_threshold_relaxation_control",
+    "control_status": "passed",
+    "expected_result": "thresholds unchanged and native per-window bound remains 1e-9",
+    "rung_effect": "threshold relaxation blocked"
+  },
+  {
+    "actual_result": "I6 candidate trace references the I5 BF4 row and row digest",
+    "blocked_condition": "producer inserts basin-like record without native formation trace",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_basin_insertion_without_trace_control",
+    "control_status": "passed",
+    "expected_result": "I6 consumes I5 replay-backed native formation trace",
+    "rung_effect": "producer insertion without source-current formation trace blocked"
+  },
+  {
+    "actual_result": "native_bf5_supported = false and native_bf6_supported = false",
+    "blocked_condition": "producer-assisted success is relabeled as native BF",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "native BF ceiling remains the I5 BF4 ceiling",
+    "rung_effect": "producer success cannot upgrade native BF"
+  },
+  {
+    "actual_result": "native_zero_margin_support_coherence_debt = true",
+    "blocked_condition": "producer-assisted success overwrites native zero-margin debt",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_overwrites_native_failure_control",
+    "control_status": "passed",
+    "expected_result": "native lane failure/debt fields are preserved",
+    "rung_effect": "native debt remains visible for I7 comparison"
+  },
+  {
+    "actual_result": "both invariants are false-preserving",
+    "blocked_condition": "producer-assisted row changes native-lane result",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+    "control_status": "passed",
+    "expected_result": "lane_success_can_upgrade_native = false and native_lane_failure_overwritten = false",
+    "rung_effect": "native and producer-assisted lanes remain separated"
+  },
+  {
+    "actual_result": "native_flux_debt_bound = 1e-09",
+    "blocked_condition": "native flux debt is omitted or overwritten",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "native flux debt bound remains 1e-9",
+    "rung_effect": "native flux debt remains row-local under producer lane"
+  },
+  {
+    "actual_result": "formation trace still comes from N25 I5, producer trace only windows flux",
+    "blocked_condition": "N24 producer optionality is relabeled as N25 formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "n24_optionality_relabel_as_formation_rejected",
+    "control_status": "passed",
+    "expected_result": "I6 consumes N24 I7-C only as producer flux scaffold",
+    "rung_effect": "N24 remains context/scaffold only"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_learning = false",
+    "blocked_condition": "producer-assisted formation is relabeled as semantic learning",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_learning_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic learning claim flag remains false",
+    "rung_effect": "semantic learning relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_choice = false",
+    "blocked_condition": "producer-conditioned flux is relabeled as choice",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_choice_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic choice claim flag remains false",
+    "rung_effect": "semantic choice relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.agency = false",
+    "blocked_condition": "producer-conditioned formation is relabeled as agency",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "agency_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "agency claim flag remains false",
+    "rung_effect": "agency relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.native_support = false",
+    "blocked_condition": "producer-mediated scaffold is relabeled as native support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_support_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "native support claim flag remains false",
+    "rung_effect": "native support relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.phase8 = false",
+    "blocked_condition": "producer-mediated scaffold is relabeled as Phase 8 implementation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "phase8_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "phase8 claim flag remains false",
+    "rung_effect": "Phase 8 relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.ant_ecology = false",
+    "blocked_condition": "producer-assisted scaffold is relabeled as ant ecology",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "ant_ecology_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "ant ecology claim flag remains false",
+    "rung_effect": "ant ecology relabel blocked"
+  }
+]

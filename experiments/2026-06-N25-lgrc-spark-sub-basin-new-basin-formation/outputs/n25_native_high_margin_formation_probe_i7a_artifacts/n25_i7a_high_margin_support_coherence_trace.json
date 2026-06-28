@@ -1,0 +1,17 @@
+{
+  "bf5_support_coherence_blocker_removed_for_core_axis": true,
+  "bf5_support_coherence_blocker_removed_for_full_module": false,
+  "coherence_floor_margin_new_region": 3.3333333336666664,
+  "core_coherence_floor": 0.0,
+  "core_node_count_margin": 0,
+  "full_module_zero_margin_preserved": true,
+  "interpretation": "I7-A removes the support/coherence zero-margin blocker only for the positive-core axis. It does not erase the full-module zero-margin record and does not close BF5 by itself.",
+  "minimum_core_node_count": 3,
+  "positive_core_mean_coherence": 3.333333333666667,
+  "positive_core_min_coherence": 3.3333333336666664,
+  "positive_core_total_coherence": 10.000000001,
+  "positive_support_coherence_margin_supported": true,
+  "selection_rule": "positive_core_nodes_with_boundary_shell_retained",
+  "support_floor_margin_new_region": 10.000000001,
+  "trace_id": "n25_i7a_high_margin_support_coherence_trace"
+}

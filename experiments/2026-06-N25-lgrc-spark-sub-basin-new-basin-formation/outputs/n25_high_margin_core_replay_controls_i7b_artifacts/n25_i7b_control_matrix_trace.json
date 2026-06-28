@@ -1,0 +1,101 @@
+[
+  {
+    "actual_result": "I7-A threshold record and I7-B reconstruction preserve full-module zero-margin",
+    "blocked_condition": "core partition is assembled after outcome inspection and treated as full-module BF5",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "positive_core_post_hoc_relabel_control",
+    "control_status": "passed",
+    "expected_result": "full-module zero-margin remains recorded and core scope is explicit",
+    "rung_effect": "core remains stress-eligible but scope-limited"
+  },
+  {
+    "actual_result": "distinct_signature_count = 1",
+    "blocked_condition": "positive core partition is not replay stable",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "core_partition_replay_control",
+    "control_status": "passed",
+    "expected_result": "core signature replays identically from artifact state",
+    "rung_effect": "positive_core_replay_control_pending removed"
+  },
+  {
+    "actual_result": "core signature separates positive_core_node_ids from boundary_shell_node_ids",
+    "blocked_condition": "zero-coherence shell is counted as positive support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "boundary_shell_as_support_relabel_control",
+    "control_status": "passed",
+    "expected_result": "support carrier set excludes shell nodes",
+    "rung_effect": "support/coherence margin remains core-scoped"
+  },
+  {
+    "actual_result": "core remains shell-attached; independent new basin still blocked",
+    "blocked_condition": "core-shell sub-basin is relabeled as independent new basin",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "new_basin_independence_relabel_control",
+    "control_status": "passed",
+    "expected_result": "new-basin independence remains false until stress proves otherwise",
+    "rung_effect": "independent new-basin claim remains blocked"
+  },
+  {
+    "actual_result": "core_replay_stable = true",
+    "blocked_condition": "positive core is a non-replayable transient",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "non_replayable_transient_rejected",
+    "control_status": "passed",
+    "expected_result": "I5 runtime replay plus I7-B core replay are stable",
+    "rung_effect": "transient interpretation blocked"
+  },
+  {
+    "actual_result": "producer_assisted_result_class = not_applicable",
+    "blocked_condition": "producer lane supplies the high-margin core",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "I7-B consumes native I7-A artifacts only",
+    "rung_effect": "producer-to-native relabel blocked"
+  },
+  {
+    "actual_result": "native_flux_debt_bound = 1e-9",
+    "blocked_condition": "core replay widens native flux debt",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "native flux debt remains 1e-9",
+    "rung_effect": "native flux debt preserved"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_learning = false",
+    "blocked_condition": "core replay is relabeled as semantic learning",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_learning_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic learning claim flag remains false",
+    "rung_effect": "semantic learning relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.agency = false",
+    "blocked_condition": "core replay is relabeled as agency",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "agency_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "agency claim flag remains false",
+    "rung_effect": "agency relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.native_support = false",
+    "blocked_condition": "core replay is relabeled as native support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_support_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "native support claim flag remains false",
+    "rung_effect": "native support relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.phase8 = false",
+    "blocked_condition": "core replay is relabeled as Phase 8",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "phase8_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "phase8 claim flag remains false",
+    "rung_effect": "Phase 8 relabel blocked"
+  }
+]

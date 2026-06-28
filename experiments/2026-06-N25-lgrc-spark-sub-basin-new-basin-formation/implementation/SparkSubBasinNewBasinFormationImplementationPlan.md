@@ -408,6 +408,43 @@ positive_evidence_admissible = false
 
 Positive rows must use strict boolean values for artifact path/SHA validation.
 
+## Extension Tranche After I7
+
+I7 showed that the original comparative matrix remains BF4 because the full
+formed module is zero-margin on support/coherence. Before closeout, N25 may add
+a targeted native unlock tranche:
+
+```text
+I7-A = native high-margin core formation probe
+  Re-examine the source-current LGRC9V3 emitted module as a core/shell
+  partition. Positive-coherence nodes may count as a high-margin support core
+  only if the zero-coherence shell remains recorded as shell, the full-module
+  zero-margin record remains visible, native flux debt is unchanged, and no
+  producer lane contributes.
+
+I7-B = high-margin core replay/control matrix
+  If I7-A supports a core candidate, replay and control that core-specific
+  partition.
+
+I7-C = BF5 stress gate
+  If I7-B passes, test whether the core candidate survives stress strongly
+  enough to support a scoped BF5 core/sub-basin candidate. New-basin
+  independence remains a separate blocker and cannot be inferred from core BF5.
+
+I7-D = N26 readiness gate
+  If I7-C passes, package the scoped BF5 result as N26-ready bounded formation
+  evidence. This may support N25-C6 as a handoff/readiness ceiling, but it must
+  not upgrade the BF evidence ceiling to BF6 or independent new-basin formation.
+
+I7-E = producer-assisted high-margin scaffold probe
+  Combine the I6 producer flux-windowing surface with the I7-C high-margin core
+  geometry. Test whether the producer-assisted lane can support a BF5 scaffold
+  candidate under larger attempted flux while keeping the result producer
+  mediated, non-native, and non-BF6.
+```
+
+I7-A alone cannot close BF5.
+
 I1 control-name aliases:
 
 ```text
@@ -483,6 +520,68 @@ recording producer residue and naturalization debt.
 
 Compare native and producer-assisted candidates under stress. Determine whether
 the producer-assisted lane identifies a minimal missing native mechanism.
+
+### Iteration 7-D. N26 Readiness And Bounded Formation Evidence Gate
+
+Consume I7-C and the I6-I7-C lineage. Decide whether the scoped BF5 result is
+complete enough for N26 as bounded formation prerequisite evidence.
+
+Allowed:
+
+```text
+N25-C6_n26_ready_bounded_basin_formation_evidence
+final_supported_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+N26 handoff ready
+```
+
+Blocked:
+
+```text
+BF6
+independent new-basin formation
+general native basin formation
+native support
+semantic learning / choice / agency
+Phase 8
+ant ecology
+producer-assisted success overwriting native evidence
+native flux routing above 1e-9
+```
+
+I7-D is a closeout/readiness gate, not a new formation-strength probe.
+
+### Iteration 7-E. Producer-Assisted High-Margin Scaffold Probe
+
+Consume the I6 producer-assisted flux-windowing contract and the I7-C native
+high-margin core. Test whether a producer-mediated flux scaffold can carry the
+high-margin core under larger attempted flux without adding hidden
+support/coherence and without upgrading native BF.
+
+Allowed:
+
+```text
+producer_assisted_BF5_scaffold_candidate
+missing_native_mechanism_probe
+native flux-routing / rate-limiting naturalization target
+```
+
+Blocked:
+
+```text
+native BF upgrade
+BF6
+independent new-basin formation
+hidden support/coherence producer
+threshold relaxation
+producer success overwriting native evidence
+native support
+semantic learning / choice / agency
+Phase 8
+ant ecology
+```
+
+I7-E is additional producer-assisted evidence for I8 closeout. It must not
+replace I7-D and must not widen the native `1e-9` flux debt.
 
 ### Iteration 8. Closeout And N26 Handoff
 

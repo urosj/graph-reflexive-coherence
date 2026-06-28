@@ -1,0 +1,13 @@
+{
+  "bf5_closeout_allowed_from_i7a_alone": false,
+  "core_coherence_floor": 0.0,
+  "declared_before_use": true,
+  "full_module_zero_margin_must_remain_recorded": true,
+  "minimum_core_node_count": 3,
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_debt_widened_allowed": false,
+  "probe_kind": "native_positive_core_shell_partition",
+  "producer_intervention_allowed": false,
+  "selection_rule": "Within the source-current I4 emitted module, select support carrier nodes with coherence > 0 as the positive core and retain coherence = 0 module nodes as boundary shell, not as support carriers.",
+  "trace_id": "n25_i7a_threshold_record"
+}

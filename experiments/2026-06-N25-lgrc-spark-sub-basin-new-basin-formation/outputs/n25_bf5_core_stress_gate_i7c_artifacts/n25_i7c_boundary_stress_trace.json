@@ -1,0 +1,31 @@
+{
+  "boundary_distinguishability_margin": 4,
+  "boundary_stress_supported": true,
+  "first_fail_closed_boundary_stress": 5,
+  "interpretation": "The core/shell candidate retains boundary distinguishability through the recorded margin and fails closed beyond it.",
+  "stress_kind": "positive_core_boundary_distinguishability_stress",
+  "stress_rows": [
+    {
+      "boundary_passes": true,
+      "boundary_stress_level": 0,
+      "rung_effect": "inside supported BF5 boundary stress envelope"
+    },
+    {
+      "boundary_passes": true,
+      "boundary_stress_level": 2,
+      "rung_effect": "inside supported BF5 boundary stress envelope"
+    },
+    {
+      "boundary_passes": true,
+      "boundary_stress_level": 4,
+      "rung_effect": "inside supported BF5 boundary stress envelope"
+    },
+    {
+      "boundary_passes": false,
+      "boundary_stress_level": 5,
+      "rung_effect": "outside supported BF5 boundary stress envelope"
+    }
+  ],
+  "supported_boundary_stress_ceiling": 4,
+  "trace_id": "n25_i7c_boundary_stress_trace"
+}

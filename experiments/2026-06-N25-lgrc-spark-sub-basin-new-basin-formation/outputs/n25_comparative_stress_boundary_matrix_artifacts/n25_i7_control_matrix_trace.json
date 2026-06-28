@@ -1,0 +1,110 @@
+[
+  {
+    "actual_result": "I7 records separate native and producer-assisted stress ceilings",
+    "blocked_condition": "producer-assisted stress result overwrites native BF ceiling",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+    "control_status": "passed",
+    "expected_result": "native BF ceiling remains BF4 and BF5/BF6 remain false",
+    "rung_effect": "native BF5/BF6 remain blocked"
+  },
+  {
+    "actual_result": "native_flux_envelope_widened = false",
+    "blocked_condition": "producer flux windowing widens native 1e-9 bound",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "native flux bound remains 1e-9",
+    "rung_effect": "producer flux help stays producer-mediated"
+  },
+  {
+    "actual_result": "producer lane supports scaffold and naturalization target only",
+    "blocked_condition": "producer-assisted scaffold is relabeled as native basin formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "producer result remains producer_mediated_scaffold_candidate",
+    "rung_effect": "producer-to-native relabel blocked"
+  },
+  {
+    "actual_result": "I7 keeps new_basin_candidate_not_established as BF5 blocker",
+    "blocked_condition": "merge/leakage stress is counted as new-basin independence",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+    "control_status": "passed",
+    "expected_result": "flux/window stress remains distinct from new-basin claim",
+    "rung_effect": "new-basin overclaim blocked"
+  },
+  {
+    "actual_result": "replay_distinction_persistence_ratio = 1.0",
+    "blocked_condition": "stress matrix treats non-replayable transient as formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "non_replayable_transient_rejected",
+    "control_status": "passed",
+    "expected_result": "I7 consumes I5 replay/control-backed row",
+    "rung_effect": "transient overclaim blocked"
+  },
+  {
+    "actual_result": "positive support/coherence buffer remains unsupported",
+    "blocked_condition": "producer lane relaxes support/coherence floors",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_threshold_relaxation_control",
+    "control_status": "passed",
+    "expected_result": "support/coherence zero margin remains visible",
+    "rung_effect": "threshold relaxation blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_learning = false",
+    "blocked_condition": "stress-backed comparison is relabeled as semantic learning",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_learning_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic learning claim flag remains false",
+    "rung_effect": "semantic learning relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_choice = false",
+    "blocked_condition": "formation comparison is relabeled as semantic choice",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_choice_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic choice claim flag remains false",
+    "rung_effect": "semantic choice relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.agency = false",
+    "blocked_condition": "formation comparison is relabeled as agency",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "agency_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "agency claim flag remains false",
+    "rung_effect": "agency relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.native_support = false",
+    "blocked_condition": "producer scaffold is relabeled as native support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_support_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "native support claim flag remains false",
+    "rung_effect": "native support relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.phase8 = false",
+    "blocked_condition": "N25 comparison is relabeled as Phase 8 implementation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "phase8_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "phase8 claim flag remains false",
+    "rung_effect": "Phase 8 relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.ant_ecology = false",
+    "blocked_condition": "N25 comparison is relabeled as ant ecology",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "ant_ecology_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "ant ecology claim flag remains false",
+    "rung_effect": "ant ecology relabel blocked"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "interpretation": "I6 converts the N24 I7-C flux producer into an N25 missing-native-mechanism probe: native LGRC would need a substrate-carried flux routing/rate-limiting surface before this scaffold could count as native basin-formation stress evidence.",
+  "missing_native_mechanism_probe_supported": true,
+  "native_bf_ceiling_preserved": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+  "native_lane_upgrade_allowed": false,
+  "native_n24_c6_upgrade_allowed": false,
+  "naturalization_debt": [
+    "native_flux_routing_or_rate_limiting_surface",
+    "native_basin_formation_flux_windowing_surface",
+    "native_stress_threshold_margin_for_zero_margin_candidate"
+  ],
+  "producer_assisted_result_class": "producer_mediated_scaffold_candidate",
+  "producer_residue_classification": "producer_mediated_flux_conditioning_surface",
+  "trace_id": "n25_i6_producer_residue_naturalization_debt_trace"
+}

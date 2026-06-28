@@ -1,0 +1,40 @@
+{
+  "handoff_status": "ready_with_scope_constraints",
+  "n25_1_recommended": true,
+  "n25_1_scope": "requirements/spec bridge for LGRC9V3 multi-basin formation from causal refinement before N26 can consume independent multi-basin substrate evidence",
+  "n26_may_consume_as": [
+    "scoped_sub_basin_high_margin_core_substrate",
+    "bounded_basin_formation_prerequisite",
+    "producer_assisted_missing_native_mechanism_context"
+  ],
+  "n26_must_not_consume_as": [
+    "independent_new_basin_formation",
+    "LGRC9V3_multi_basin_native_formation",
+    "BF6",
+    "native_support",
+    "semantic_learning",
+    "semantic_choice",
+    "agency",
+    "sentience",
+    "phase8",
+    "ant_ecology"
+  ],
+  "next_experiment": "N26_proxy_divergence_proxy_collapse",
+  "phase8_extension_required_for": "native LGRC9V3 causal-refinement multi-basin formation",
+  "producer_assisted_naturalization_targets": [
+    "native_flux_routing_or_rate_limiting_surface_for_high_margin_core",
+    "native_attempted_flux_windowing_without_producer",
+    "native_high_margin_core_preservation_under_larger_flux"
+  ],
+  "required_n26_constraints": [
+    "proxy_divergence_must_be_scoped_to_sub_basin_or_high_margin_core",
+    "independent_new_basin_claims_require_new_multi_basin_evidence",
+    "carry_native_flux_debt_bound_1e-9",
+    "carry_BF5_scope_not_BF6",
+    "carry_producer_flux_windowing_as_naturalization_target_only",
+    "do_not_use_I7E_to_upgrade_native_BF",
+    "preserve_AP4_AP5_gap_ledger_when_route_or_proxy_dependencies_appear",
+    "keep_unsafe_claim_flags_false"
+  ],
+  "trace_id": "n25_i8_n26_handoff_trace"
+}

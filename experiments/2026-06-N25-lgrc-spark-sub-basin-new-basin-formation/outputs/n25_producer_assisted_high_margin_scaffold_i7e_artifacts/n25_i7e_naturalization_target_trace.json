@@ -1,0 +1,17 @@
+{
+  "missing_native_mechanism_probe_supported": true,
+  "n26_consumption_note": "N26 may use this as producer-assisted missing-mechanism context, not as native proxy-collapse or independent basin evidence.",
+  "naturalization_targets": [
+    "native_flux_routing_or_rate_limiting_surface_for_high_margin_core",
+    "native_attempted_flux_windowing_without_producer",
+    "native_high_margin_core_preservation_under_larger_flux"
+  ],
+  "not_naturalized": [
+    "producer_flux_windowing_surface",
+    "native_flux_routing_above_1e-9",
+    "independent_new_basin_formation",
+    "BF6"
+  ],
+  "producer_assisted_result_class": "producer_mediated_scaffold_candidate",
+  "trace_id": "n25_i7e_naturalization_target_trace"
+}

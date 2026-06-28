@@ -1,0 +1,88 @@
+{
+  "canonical_signature": {
+    "boundary_shell_node_ids": [
+      10,
+      14
+    ],
+    "coherence_floor_margin_new_region": 3.3333333336666664,
+    "core_external_edge_count": 8,
+    "core_shell_edge_count": 4,
+    "full_module_zero_margin_preserved": true,
+    "positive_core_min_coherence": 3.3333333336666664,
+    "positive_core_node_ids": [
+      11,
+      12,
+      13
+    ],
+    "positive_core_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+    "support_floor_margin_new_region": 10.000000001
+  },
+  "core_partition_digest": "d7f173c378d5443baa905942f9b6a9e2521478e591bc1e8be66fbbde232216ed",
+  "core_replay_stable": true,
+  "core_shell_boundary_digest": "670b6bfdf8b4572472f48c879c1f6be5cea442b0eb00df9f000a7eb272212d90",
+  "distinct_signature_count": 1,
+  "full_module_zero_margin_preserved": true,
+  "i5_runtime_replay_consumed": true,
+  "interpretation": "The I7-A core/shell partition replays from the same source artifact to the same positive-core signature. Runtime replay is inherited from I5 for the underlying LGRC9V3 spark-to-expansion trace.",
+  "replay_count": 3,
+  "replay_mode": "artifact_core_partition_replay_plus_i5_runtime_replay",
+  "replay_signatures": [
+    {
+      "boundary_shell_node_ids": [
+        10,
+        14
+      ],
+      "coherence_floor_margin_new_region": 3.3333333336666664,
+      "core_external_edge_count": 8,
+      "core_shell_edge_count": 4,
+      "full_module_zero_margin_preserved": true,
+      "positive_core_min_coherence": 3.3333333336666664,
+      "positive_core_node_ids": [
+        11,
+        12,
+        13
+      ],
+      "positive_core_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+      "support_floor_margin_new_region": 10.000000001
+    },
+    {
+      "boundary_shell_node_ids": [
+        10,
+        14
+      ],
+      "coherence_floor_margin_new_region": 3.3333333336666664,
+      "core_external_edge_count": 8,
+      "core_shell_edge_count": 4,
+      "full_module_zero_margin_preserved": true,
+      "positive_core_min_coherence": 3.3333333336666664,
+      "positive_core_node_ids": [
+        11,
+        12,
+        13
+      ],
+      "positive_core_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+      "support_floor_margin_new_region": 10.000000001
+    },
+    {
+      "boundary_shell_node_ids": [
+        10,
+        14
+      ],
+      "coherence_floor_margin_new_region": 3.3333333336666664,
+      "core_external_edge_count": 8,
+      "core_shell_edge_count": 4,
+      "full_module_zero_margin_preserved": true,
+      "positive_core_min_coherence": 3.3333333336666664,
+      "positive_core_node_ids": [
+        11,
+        12,
+        13
+      ],
+      "positive_core_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+      "support_floor_margin_new_region": 10.000000001
+    }
+  ],
+  "source_i7a_row_digest": "1b0de57d792b3963069d81c8e1cbd95aecb7bb4ebb0e4835a458d929e8d73ba3",
+  "support_coherence_digest": "a929f5812346827bd978bcc8dadbf89943747343fdfcee5ab0deca7cadeb0a25",
+  "trace_id": "n25_i7b_high_margin_core_replay_trace"
+}

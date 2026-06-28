@@ -1,0 +1,541 @@
+{
+  "acceptance_state": "accepted_native_high_margin_core_candidate_bf5_pending_replay_stress",
+  "artifact_id": "n25_native_high_margin_formation_probe_i7a",
+  "basin_formation_claim_allowed": false,
+  "bf5_or_stronger_supported": false,
+  "bf_ceiling": "BF4_native_high_margin_core_sub_basin_candidate_pending_replay_stress",
+  "bf_ladder_rung_assigned": false,
+  "checks": [
+    {
+      "check_id": "i4_native_probe_passed",
+      "detail": "accepted_native_source_current_bf2_bifurcation_partial_pending_i5_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5_native_matrix_passed",
+      "detail": "accepted_native_bf4_replay_control_backed_sub_basin_candidate_zero_margin",
+      "passed": true
+    },
+    {
+      "check_id": "i7_comparative_matrix_passed",
+      "detail": "accepted_comparative_bf4_boundary_matrix_bf5_blocked_n26_ready",
+      "passed": true
+    },
+    {
+      "check_id": "positive_core_margin_supported",
+      "detail": {
+        "coherence_margin": 3.3333333336666664,
+        "support_margin": 10.000000001
+      },
+      "passed": true
+    },
+    {
+      "check_id": "full_module_zero_margin_preserved",
+      "detail": "I7-A does not erase the I4/I5 zero-margin full-module record.",
+      "passed": true
+    },
+    {
+      "check_id": "native_lane_only",
+      "detail": "native",
+      "passed": true
+    },
+    {
+      "check_id": "bf5_still_blocked",
+      "detail": [
+        "full_module_zero_margin_preserved",
+        "positive_core_replay_control_pending",
+        "new_basin_candidate_not_established",
+        "native_flux_routing_or_rate_limiting_surface_not_naturalized"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "controls_clean",
+      "detail": [
+        {
+          "actual_result": "full_module_zero_margin_preserved = true",
+          "blocked_condition": "positive core partition erases the full-module zero-margin record",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "positive_core_post_hoc_relabel_control",
+          "control_status": "passed",
+          "expected_result": "full-module zero-margin remains explicit and BF5 remains blocked",
+          "rung_effect": "I7-A may support core-axis margin only"
+        },
+        {
+          "actual_result": "support carrier set contains only coherence-positive nodes",
+          "blocked_condition": "zero-coherence shell nodes are counted as support carriers",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "boundary_shell_as_support_relabel_control",
+          "control_status": "passed",
+          "expected_result": "shell nodes are retained only as boundary shell",
+          "rung_effect": "support/coherence margin remains core-scoped"
+        },
+        {
+          "actual_result": "positive core remains attached to boundary shell and old-basin refinement",
+          "blocked_condition": "core-shell sub-basin is relabeled as independent new basin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "new_basin_independence_relabel_control",
+          "control_status": "passed",
+          "expected_result": "new_basin_independence_supported = false",
+          "rung_effect": "new-basin claim remains blocked"
+        },
+        {
+          "actual_result": "I7-A consumes native I4/I5 artifacts only for the core partition",
+          "blocked_condition": "producer lane supplies the high-margin native core",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "producer_intervention_used = false",
+          "rung_effect": "producer-to-native relabel blocked"
+        },
+        {
+          "actual_result": "native_flux_debt_bound = 1e-9",
+          "blocked_condition": "high-margin probe widens native flux debt",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "native flux debt remains 1e-9",
+          "rung_effect": "native flux debt preserved"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "positive core partition is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "positive core partition is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "positive core partition is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "positive core partition is relabeled as Phase 8",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_valid",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_high_margin_support_coherence_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_core_shell_boundary_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_naturalization_update_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_positive_core_partition_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_threshold_record.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_non_circular",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      },
+      "passed": true
+    }
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "full_module_zero_margin_preserved": true,
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I7-A",
+  "n25_closeout_ceiling": "N25-C4_native_high_margin_core_candidate_pending_replay_stress",
+  "n25_closeout_ladder_rung_assigned": false,
+  "native_bf5_supported": false,
+  "native_bf6_supported": false,
+  "native_high_margin_core_candidate_supported": true,
+  "native_high_margin_row_count": 1,
+  "native_high_margin_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_condition_reason": "N25 remains downstream of N24 AP4 optionality context",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "no proxy/target formation row in I7-A native high-margin core probe",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_control_matrix_trace.json",
+          "sha256": "2fd5fc3d08c4ce8d84b4a98b6fa133d82e76ad28a40bb7a828f9f93f8f3f7bfd"
+        },
+        {
+          "artifact_role": "new_basin_support_coherence_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_high_margin_support_coherence_trace.json",
+          "sha256": "7f4ddfb531b12bebb224f728fd710de881a581413ebe39e78e742e1c17b3046e"
+        },
+        {
+          "artifact_role": "new_boundary_candidate_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_core_shell_boundary_trace.json",
+          "sha256": "71babd58507e81b2ed613a280e88f014cc34d0f97495396558c8d5357dd86ecb"
+        },
+        {
+          "artifact_role": "producer_intervention_ledger",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_naturalization_update_trace.json",
+          "sha256": "b4398dcb8a4a8ba5848c45de98ec75cd2e599acabbba78c84cf552b0818dc8f8"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_positive_core_partition_trace.json",
+          "sha256": "07728e2c7e4a41b1341ca148aa34a451ef5397c5498da659c7d9a46b2db8f9c6"
+        },
+        {
+          "artifact_role": "threshold_record",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_threshold_record.json",
+          "sha256": "f9eb33c3efcd7cf07255b08bc7e3d66f75c05c988dc1633b8aa22a286659409b"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_high_margin_support_coherence_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_core_shell_boundary_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_naturalization_update_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_positive_core_partition_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_threshold_record.json"
+      ],
+      "artifact_paths_equal_manifest_paths": true,
+      "artifact_sha256": {
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_control_matrix_trace.json": "2fd5fc3d08c4ce8d84b4a98b6fa133d82e76ad28a40bb7a828f9f93f8f3f7bfd",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_core_shell_boundary_trace.json": "71babd58507e81b2ed613a280e88f014cc34d0f97495396558c8d5357dd86ecb",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_high_margin_support_coherence_trace.json": "7f4ddfb531b12bebb224f728fd710de881a581413ebe39e78e742e1c17b3046e",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_naturalization_update_trace.json": "b4398dcb8a4a8ba5848c45de98ec75cd2e599acabbba78c84cf552b0818dc8f8",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_positive_core_partition_trace.json": "07728e2c7e4a41b1341ca148aa34a451ef5397c5498da659c7d9a46b2db8f9c6",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_threshold_record.json": "f9eb33c3efcd7cf07255b08bc7e3d66f75c05c988dc1633b8aa22a286659409b"
+      },
+      "artifact_sha256_equal_manifest_sha256": true,
+      "basin_formation_claim_allowed": false,
+      "bf_ladder_rung": "BF4_native_high_margin_core_sub_basin_candidate_pending_replay_stress",
+      "bf_ladder_rung_status": "candidate_ceiling_not_final_closeout",
+      "bifurcation_trace": {
+        "digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_lgrc9v3_bifurcation_trace.json",
+        "summary": "causal spark candidate followed by active topology mechanical expansion"
+      },
+      "bifurcation_window": {
+        "end_step": 1,
+        "event_kind": "lgrc9v3_causal_spark_candidate",
+        "event_time_key": 2.0,
+        "start_step": 1
+      },
+      "bifurcation_window_order_valid": true,
+      "boundary_candidate_window": {
+        "end_step": 1,
+        "event_kind": "hybrid_mechanical_expansion",
+        "event_time_key": 2.0,
+        "start_step": 1
+      },
+      "boundary_distinguishability_margin": 4,
+      "boundary_integrity_result": "core_shell_boundary_trace_source_current",
+      "boundary_shell_node_count": 2,
+      "candidate_basin_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+      "candidate_boundary_signature_digest": "b82aa347face8db87a20d776af10e8011002d214a2bb751b5c6b259738e260cc",
+      "claim_ceiling": "native high-margin positive-core sub-basin candidate; BF5/BF6 pending core-specific replay/control and new-basin stress",
+      "coherence_floor_margin_new_region": 3.3333333336666664,
+      "coherence_floor_result": "positive_core_margin_supported_full_module_zero_margin_preserved",
+      "control_results": [
+        {
+          "actual_result": "full_module_zero_margin_preserved = true",
+          "blocked_condition": "positive core partition erases the full-module zero-margin record",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "positive_core_post_hoc_relabel_control",
+          "control_status": "passed",
+          "expected_result": "full-module zero-margin remains explicit and BF5 remains blocked",
+          "rung_effect": "I7-A may support core-axis margin only"
+        },
+        {
+          "actual_result": "support carrier set contains only coherence-positive nodes",
+          "blocked_condition": "zero-coherence shell nodes are counted as support carriers",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "boundary_shell_as_support_relabel_control",
+          "control_status": "passed",
+          "expected_result": "shell nodes are retained only as boundary shell",
+          "rung_effect": "support/coherence margin remains core-scoped"
+        },
+        {
+          "actual_result": "positive core remains attached to boundary shell and old-basin refinement",
+          "blocked_condition": "core-shell sub-basin is relabeled as independent new basin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "new_basin_independence_relabel_control",
+          "control_status": "passed",
+          "expected_result": "new_basin_independence_supported = false",
+          "rung_effect": "new-basin claim remains blocked"
+        },
+        {
+          "actual_result": "I7-A consumes native I4/I5 artifacts only for the core partition",
+          "blocked_condition": "producer lane supplies the high-margin native core",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "producer_intervention_used = false",
+          "rung_effect": "producer-to-native relabel blocked"
+        },
+        {
+          "actual_result": "native_flux_debt_bound = 1e-9",
+          "blocked_condition": "high-margin probe widens native flux debt",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "native flux debt remains 1e-9",
+          "rung_effect": "native flux debt preserved"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "positive core partition is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "positive core partition is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "positive core partition is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "positive core partition is relabeled as Phase 8",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        }
+      ],
+      "core_shell_boundary_trace": {
+        "digest": "670b6bfdf8b4572472f48c879c1f6be5cea442b0eb00df9f000a7eb272212d90",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_core_shell_boundary_trace.json"
+      },
+      "existing_lgrc_spark_sources_considered": true,
+      "flux_or_leakage_result": "native_1e-9_bound_preserved",
+      "formation_class": "sub_basin_candidate",
+      "formation_source": "native_source_current_bifurcation",
+      "formation_window": {
+        "end_event_time_key": 2.0,
+        "end_step": 1,
+        "start_event_time_key": 1.0,
+        "start_step": 0
+      },
+      "full_module_zero_margin_preserved": true,
+      "geometric_interpretation": "I7-A does not change the LGRC9V3 run. It re-examines the native source-current module emitted by the I4/I5 spark-to-expansion path and partitions it into a positive-coherence core plus zero-coherence boundary shell. The core has positive support/coherence margin, so the zero-margin blocker is removed for this core axis. The full module zero-margin record remains, and the core is still attached to the shell/old-basin refinement relation, so this is not BF5 or new-basin formation yet.",
+      "high_margin_support_coherence_trace": {
+        "digest": "a929f5812346827bd978bcc8dadbf89943747343fdfcee5ab0deca7cadeb0a25",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_high_margin_support_coherence_trace.json"
+      },
+      "label_only_rejected": true,
+      "lane": "native",
+      "lane_success_can_upgrade_native": false,
+      "merge_leakage_margin": 1e-09,
+      "merge_leakage_rejected": true,
+      "merge_leakage_trace": {
+        "budget_error": 0.0,
+        "digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+        "merge_leakage_control_status": "deferred_to_iteration_5",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json"
+      },
+      "n25_closeout_ceiling": "N25-C4_native_high_margin_core_candidate_pending_replay_stress",
+      "n25_closeout_ladder_rung_assigned": false,
+      "native_bf5_supported": false,
+      "native_bf6_supported": false,
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_not_overwritten": true,
+      "native_flux_debt_status": "preserved",
+      "native_flux_debt_widened": false,
+      "native_high_margin_core_candidate_supported": true,
+      "native_lane_failure_overwritten": false,
+      "native_spark_mechanism_reuse_status": "reused_existing_lgrc9v3_causal_spark_and_active_topology_integration",
+      "naturalization_debt": [
+        "full_module_zero_margin_preserved",
+        "positive_core_replay_control_pending",
+        "new_basin_candidate_not_established",
+        "native_flux_routing_or_rate_limiting_surface_not_naturalized"
+      ],
+      "new_basin_support_coherence_trace": {
+        "candidate_node_count": 5,
+        "digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e",
+        "min_candidate_coherence": 0.0,
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_region_support_coherence_trace.json",
+        "positive_node_count": 3
+      },
+      "new_boundary_candidate_trace": {
+        "boundary_external_edge_count": 9,
+        "digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+        "internal_edge_ids": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "module_node_ids": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_boundary_candidate_trace.json"
+      },
+      "new_producer_code_justification": "not_applicable_native_positive_core_probe",
+      "old_basin_reference_window": {
+        "event_time_key": 1.0,
+        "topology_digest": "36e6104b85169e3632467499a86f5c7a94daa0b3f36c7d655cec2f2a8be313b9"
+      },
+      "old_basin_relation_trace": {
+        "digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+        "old_center_removed_after_expansion": true,
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_old_basin_relation_trace.json"
+      },
+      "old_basin_separation_margin": 1.0,
+      "old_basin_signature_digest": "36e6104b85169e3632467499a86f5c7a94daa0b3f36c7d655cec2f2a8be313b9",
+      "old_basin_thickening_rejected": true,
+      "old_to_candidate_separation_digest": "40747fcbc0eae8c5a717ce1a283ca27384a9a175f3509a2a47f68e60011c434d",
+      "output_digest": "1b0de57d792b3963069d81c8e1cbd95aecb7bb4ebb0e4835a458d929e8d73ba3",
+      "positive_core_node_count": 3,
+      "positive_core_partition_trace": {
+        "digest": "d7f173c378d5443baa905942f9b6a9e2521478e591bc1e8be66fbbde232216ed",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a_artifacts/n25_i7a_positive_core_partition_trace.json"
+      },
+      "producer_assisted_result_class": "not_applicable",
+      "producer_flux_window_bound": "not_applicable_native_lane",
+      "producer_flux_window_declared_before_use": "not_applicable_native_lane",
+      "producer_intervention_used": false,
+      "producer_residue_classification": "not_applicable_native_row",
+      "replay_distinction_persistence_ratio": 1.0,
+      "replay_window": {
+        "mode": "duplicate_runtime_replay_and_artifact_reconstruction",
+        "replay_count": 3
+      },
+      "replayable_distinction_trace": {
+        "artifact_reconstruction_stable": true,
+        "artifact_reconstruction_trace_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json",
+        "replay_distinction_persistence_ratio": 1.0,
+        "runtime_replay_stable": true,
+        "runtime_replay_trace_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json"
+      },
+      "reshaped_old_boundary_rejected": true,
+      "row_decision": "partial",
+      "row_digest": "1b0de57d792b3963069d81c8e1cbd95aecb7bb4ebb0e4835a458d929e8d73ba3",
+      "row_id": "n25_i7a_native_high_margin_core_formation_probe",
+      "row_specific_thresholds_declared_before_use": {
+        "bf5_closeout_allowed_from_i7a_alone": false,
+        "core_coherence_floor": 0.0,
+        "declared_before_use": true,
+        "full_module_zero_margin_must_remain_recorded": true,
+        "minimum_core_node_count": 3,
+        "native_flux_debt_bound": 1e-09,
+        "native_flux_debt_widened_allowed": false,
+        "probe_kind": "native_positive_core_shell_partition",
+        "producer_intervention_allowed": false,
+        "selection_rule": "Within the source-current I4 emitted module, select support carrier nodes with coherence > 0 as the positive core and retain coherence = 0 module nodes as boundary shell, not as support carriers.",
+        "trace_id": "n25_i7a_threshold_record"
+      },
+      "run_artifact_id": "n25_i7a_native_high_margin_core_formation_probe",
+      "runtime_config_digest": "60478be49bfeb7d2b18fa4bff6f76f11e16daccfb14a298ba366b464b05a7a75",
+      "source_commit_or_source_digest": "736fe9a8b4d129d1e4945d5aa2c65302dc35c49e4d6558cbf10b4a27d08402ed",
+      "source_comparative_i7_output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+      "source_current_inputs": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json"
+      ],
+      "source_iteration": "I7-A_native_high_margin_core_formation_probe",
+      "source_native_i4_output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+      "source_native_i5_output_digest": "b922ab52e616e94231905e626087c07258aeb2d9adfcee349ab270a386a300db",
+      "source_output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+      "support_floor_margin_new_region": 10.000000001,
+      "support_floor_result": "positive_core_margin_supported_full_module_zero_margin_preserved",
+      "thresholds_declared_before_bifurcation_window": true,
+      "transient_rejected": true,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      }
+    }
+  ],
+  "output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+  "ready_for_iteration_7b_high_margin_replay_controls": true,
+  "ready_for_iteration_8_closeout_and_n26_handoff": false,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_native_high_margin_formation_probe_i7a.py",
+  "source_digest_chain_audit": {
+    "i4": {
+      "output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+      "sha256": "98ee8337fb926e492ab800fd1ff464bbdf8fe9543b63ec459f0eecdaa61a39fa"
+    },
+    "i5": {
+      "output_digest": "b922ab52e616e94231905e626087c07258aeb2d9adfcee349ab270a386a300db",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix.json",
+      "sha256": "aca3c13a7647f77abdb5f6c6fd030fa8b09503c3c329a9e6aa4d864d5939c13d"
+    },
+    "i7": {
+      "output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json",
+      "sha256": "ac74f4eacc57d7922b03fb1d17f2cd6ab9151ba2717d464f91f323cc6900170d"
+    }
+  },
+  "status": "passed"
+}

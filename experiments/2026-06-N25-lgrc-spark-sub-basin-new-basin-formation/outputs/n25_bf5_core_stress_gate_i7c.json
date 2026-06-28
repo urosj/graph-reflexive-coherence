@@ -1,0 +1,541 @@
+{
+  "acceptance_state": "accepted_scoped_native_bf5_high_margin_core_sub_basin_stress_candidate",
+  "artifact_id": "n25_bf5_core_stress_gate_i7c",
+  "basin_formation_claim_allowed": false,
+  "bf5_core_stress_row_count": 1,
+  "bf5_core_stress_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "artifact_manifest": [
+        {
+          "artifact_role": "merge_leakage_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_flux_merge_leakage_stress_trace.json",
+          "sha256": "7e8b675ebff58e6ad1b89efe7fa87e81a67f82d1dbeff6094607d2a8cf59add3"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_control_matrix_trace.json",
+          "sha256": "09e3c97664c5c2153ce9a0168cec0215f92c9363f890b9ceee060fa2cbe153c0"
+        },
+        {
+          "artifact_role": "new_basin_support_coherence_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_support_coherence_stress_trace.json",
+          "sha256": "6c9bbb78bee11489d7fc6aef288355c733ff719caa197b4d510d54baf5dc711f"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_bf5_classification_trace.json",
+          "sha256": "5dbd8cd06f8f45f18ddb598454cf6bd30d34fe647cbc7cde51ebd0ac3a449905"
+        },
+        {
+          "artifact_role": "stress_boundary_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_boundary_stress_trace.json",
+          "sha256": "458fb350d8141cf259fed0ded74ad52c63d9183e077719627c5a97178a7f2288"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_flux_merge_leakage_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_support_coherence_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_bf5_classification_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_boundary_stress_trace.json"
+      ],
+      "artifact_paths_equal_manifest_paths": true,
+      "artifact_sha256": {
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_bf5_classification_trace.json": "5dbd8cd06f8f45f18ddb598454cf6bd30d34fe647cbc7cde51ebd0ac3a449905",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_boundary_stress_trace.json": "458fb350d8141cf259fed0ded74ad52c63d9183e077719627c5a97178a7f2288",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_control_matrix_trace.json": "09e3c97664c5c2153ce9a0168cec0215f92c9363f890b9ceee060fa2cbe153c0",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_flux_merge_leakage_stress_trace.json": "7e8b675ebff58e6ad1b89efe7fa87e81a67f82d1dbeff6094607d2a8cf59add3",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_support_coherence_stress_trace.json": "6c9bbb78bee11489d7fc6aef288355c733ff719caa197b4d510d54baf5dc711f"
+      },
+      "artifact_sha256_equal_manifest_sha256": true,
+      "basin_formation_claim_allowed": false,
+      "bf5_scope": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+      "bf_ladder_rung": "BF5_native_high_margin_core_sub_basin_stress_candidate",
+      "bf_ladder_rung_status": "scoped_candidate_ceiling_not_final_closeout",
+      "boundary_shell_node_count": 2,
+      "boundary_stress_supported": true,
+      "claim_ceiling": "scoped native BF5 high-margin core sub-basin stress candidate inside the inherited 1e-9 flux envelope; not independent new-basin formation, not BF6, not native support",
+      "coherence_floor_margin_new_region": 3.3333333336666664,
+      "control_results": [
+        {
+          "actual_result": "BF5 scope is high-margin core sub-basin within native 1e-9 envelope",
+          "blocked_condition": "scoped core BF5 is relabeled as general independent new-basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "bf5_scope_control",
+          "control_status": "passed",
+          "expected_result": "independent_new_basin_supported remains false",
+          "rung_effect": "BF5 remains scoped; independent new-basin claim blocked"
+        },
+        {
+          "actual_result": "supported buffer ceiling recorded; 3.5 buffer fails closed",
+          "blocked_condition": "positive core fails nonzero support/coherence buffer stress",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "support_coherence_stress_control",
+          "control_status": "passed",
+          "expected_result": "core survives nonzero buffer and fails closed beyond margin",
+          "rung_effect": "support/coherence stress gate supports scoped BF5"
+        },
+        {
+          "actual_result": "boundary stress ceiling = 4; stress 5 fails closed",
+          "blocked_condition": "boundary distinguishability fails stress",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "boundary_stress_control",
+          "control_status": "passed",
+          "expected_result": "boundary survives through recorded margin and fails closed beyond it",
+          "rung_effect": "boundary stress gate supports scoped BF5"
+        },
+        {
+          "actual_result": "2e-9 native flux stress fails closed",
+          "blocked_condition": "merge/leakage or flux beyond native bound is counted as BF5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "BF5 is bounded to native 1e-9 flux envelope",
+          "rung_effect": "broad flux robustness remains blocked"
+        },
+        {
+          "actual_result": "producer_assisted_result_class = not_applicable",
+          "blocked_condition": "producer-assisted flux scaffold is used to support native BF5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "I7-C consumes native I7-B core only",
+          "rung_effect": "producer-to-native relabel blocked"
+        },
+        {
+          "actual_result": "native_flux_envelope_widened = false",
+          "blocked_condition": "BF5 stress widens native 1e-9 bound",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "native flux envelope remains 1e-9",
+          "rung_effect": "native flux debt preserved"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "BF5 core formation is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "BF5 core formation is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "BF5 core formation is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "BF5 core formation is relabeled as Phase 8",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        }
+      ],
+      "formation_class": "sub_basin_candidate",
+      "formation_source": "native_source_current_bifurcation",
+      "full_module_zero_margin_preserved": true,
+      "geometric_interpretation": "I7-C upgrades N25 to a scoped BF5: stress/threshold-backed native high-margin core sub-basin formation inside the inherited 1e-9 flux envelope. It does not support independent new-basin formation or BF6.",
+      "independent_new_basin_supported": false,
+      "lane": "native",
+      "merge_leakage_controls_clean": true,
+      "n25_closeout_ceiling": "N25-C5_native_high_margin_core_sub_basin_stress_candidate",
+      "n25_closeout_ladder_rung_assigned": false,
+      "native_bf5_supported": true,
+      "native_bf6_supported": false,
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_not_overwritten": true,
+      "native_flux_debt_status": "preserved",
+      "native_flux_debt_widened": false,
+      "native_flux_stress_above_bound_supported": false,
+      "native_flux_stress_supported_at_bound": true,
+      "naturalization_debt": [
+        "independent_new_basin_not_supported",
+        "native_flux_routing_above_1e-9_not_naturalized",
+        "full_module_zero_margin_preserved"
+      ],
+      "output_digest": "4d7843fe4e2b5987836f2016a814152074e92b41126e8d6d299d68347c83a577",
+      "positive_core_node_count": 3,
+      "producer_assisted_result_class": "not_applicable",
+      "producer_intervention_used": false,
+      "row_decision": "supported",
+      "row_digest": "4d7843fe4e2b5987836f2016a814152074e92b41126e8d6d299d68347c83a577",
+      "row_id": "n25_i7c_bf5_core_stress_gate",
+      "run_artifact_id": "n25_i7c_bf5_core_stress_gate",
+      "runtime_config_digest": "60478be49bfeb7d2b18fa4bff6f76f11e16daccfb14a298ba366b464b05a7a75",
+      "source_commit_or_source_digest": "736fe9a8b4d129d1e4945d5aa2c65302dc35c49e4d6558cbf10b4a27d08402ed",
+      "source_current_inputs": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json"
+      ],
+      "source_i7a_output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+      "source_i7b_output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+      "source_iteration": "I7-C_bf5_core_stress_gate",
+      "source_output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+      "support_coherence_stress_supported": true,
+      "support_floor_margin_new_region": 10.000000001,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      }
+    }
+  ],
+  "bf5_or_stronger_supported": true,
+  "bf_ceiling": "BF5_native_high_margin_core_sub_basin_stress_candidate",
+  "bf_ladder_rung_assigned": false,
+  "checks": [
+    {
+      "check_id": "i7a_high_margin_probe_passed",
+      "detail": "accepted_native_high_margin_core_candidate_bf5_pending_replay_stress",
+      "passed": true
+    },
+    {
+      "check_id": "i7b_core_replay_controls_passed",
+      "detail": "accepted_high_margin_core_replay_control_backed_bf5_stress_ready",
+      "passed": true
+    },
+    {
+      "check_id": "support_coherence_stress_supported",
+      "detail": {
+        "coherence_margin": 3.3333333336666664,
+        "first_fail_closed_buffer": 3.5,
+        "interpretation": "The positive core has enough margin to survive nonzero floor-buffer stress up to the declared core coherence margin. The 3.5 buffer fails closed.",
+        "stress_kind": "positive_core_support_coherence_buffer_stress",
+        "stress_rows": [
+          {
+            "coherence_margin": 3.3333333336666664,
+            "passes": true,
+            "required_positive_buffer": 0.0,
+            "rung_effect": "inside supported BF5 core stress envelope",
+            "support_margin": 10.000000001
+          },
+          {
+            "coherence_margin": 3.3333333336666664,
+            "passes": true,
+            "required_positive_buffer": 1.0,
+            "rung_effect": "inside supported BF5 core stress envelope",
+            "support_margin": 10.000000001
+          },
+          {
+            "coherence_margin": 3.3333333336666664,
+            "passes": true,
+            "required_positive_buffer": 3.0,
+            "rung_effect": "inside supported BF5 core stress envelope",
+            "support_margin": 10.000000001
+          },
+          {
+            "coherence_margin": 3.3333333336666664,
+            "passes": true,
+            "required_positive_buffer": 3.3333333336666664,
+            "rung_effect": "inside supported BF5 core stress envelope",
+            "support_margin": 10.000000001
+          },
+          {
+            "coherence_margin": 3.3333333336666664,
+            "passes": false,
+            "required_positive_buffer": 3.5,
+            "rung_effect": "outside supported BF5 core stress envelope",
+            "support_margin": 10.000000001
+          }
+        ],
+        "support_coherence_stress_supported": true,
+        "support_margin": 10.000000001,
+        "supported_buffer_ceiling": 3.3333333336666664,
+        "trace_id": "n25_i7c_support_coherence_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "boundary_stress_supported",
+      "detail": {
+        "boundary_distinguishability_margin": 4,
+        "boundary_stress_supported": true,
+        "first_fail_closed_boundary_stress": 5,
+        "interpretation": "The core/shell candidate retains boundary distinguishability through the recorded margin and fails closed beyond it.",
+        "stress_kind": "positive_core_boundary_distinguishability_stress",
+        "stress_rows": [
+          {
+            "boundary_passes": true,
+            "boundary_stress_level": 0,
+            "rung_effect": "inside supported BF5 boundary stress envelope"
+          },
+          {
+            "boundary_passes": true,
+            "boundary_stress_level": 2,
+            "rung_effect": "inside supported BF5 boundary stress envelope"
+          },
+          {
+            "boundary_passes": true,
+            "boundary_stress_level": 4,
+            "rung_effect": "inside supported BF5 boundary stress envelope"
+          },
+          {
+            "boundary_passes": false,
+            "boundary_stress_level": 5,
+            "rung_effect": "outside supported BF5 boundary stress envelope"
+          }
+        ],
+        "supported_boundary_stress_ceiling": 4,
+        "trace_id": "n25_i7c_boundary_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "merge_leakage_clean_at_native_bound",
+      "detail": {
+        "attempted_flux_rows": [
+          {
+            "attempted_flux": 1e-09,
+            "merge_leakage_clean": true,
+            "native_flux_passes": true,
+            "reason": "inside inherited native flux debt bound"
+          },
+          {
+            "attempted_flux": 2e-09,
+            "merge_leakage_clean": false,
+            "native_flux_passes": false,
+            "reason": "native flux routing above 1e-9 not naturalized"
+          }
+        ],
+        "first_fail_closed_attempted_flux": 2e-09,
+        "interpretation": "I7-C supports BF5 only inside the inherited native 1e-9 flux envelope. Broader native flux routing remains naturalization debt.",
+        "merge_leakage_controls_clean_at_bound": true,
+        "native_flux_debt_bound": 1e-09,
+        "native_flux_envelope_widened": false,
+        "native_flux_stress_above_bound_supported": false,
+        "native_flux_stress_supported_at_bound": true,
+        "stress_kind": "native_flux_bound_and_merge_leakage_stress",
+        "trace_id": "n25_i7c_flux_merge_leakage_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_flux_above_bound_fails_closed",
+      "detail": {
+        "attempted_flux_rows": [
+          {
+            "attempted_flux": 1e-09,
+            "merge_leakage_clean": true,
+            "native_flux_passes": true,
+            "reason": "inside inherited native flux debt bound"
+          },
+          {
+            "attempted_flux": 2e-09,
+            "merge_leakage_clean": false,
+            "native_flux_passes": false,
+            "reason": "native flux routing above 1e-9 not naturalized"
+          }
+        ],
+        "first_fail_closed_attempted_flux": 2e-09,
+        "interpretation": "I7-C supports BF5 only inside the inherited native 1e-9 flux envelope. Broader native flux routing remains naturalization debt.",
+        "merge_leakage_controls_clean_at_bound": true,
+        "native_flux_debt_bound": 1e-09,
+        "native_flux_envelope_widened": false,
+        "native_flux_stress_above_bound_supported": false,
+        "native_flux_stress_supported_at_bound": true,
+        "stress_kind": "native_flux_bound_and_merge_leakage_stress",
+        "trace_id": "n25_i7c_flux_merge_leakage_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "scoped_bf5_supported",
+      "detail": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+      "passed": true
+    },
+    {
+      "check_id": "bf6_still_blocked",
+      "detail": [
+        "independent_new_basin_not_supported",
+        "native_flux_routing_above_1e-9_not_naturalized",
+        "full_module_zero_margin_preserved"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "controls_clean",
+      "detail": [
+        {
+          "actual_result": "BF5 scope is high-margin core sub-basin within native 1e-9 envelope",
+          "blocked_condition": "scoped core BF5 is relabeled as general independent new-basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "bf5_scope_control",
+          "control_status": "passed",
+          "expected_result": "independent_new_basin_supported remains false",
+          "rung_effect": "BF5 remains scoped; independent new-basin claim blocked"
+        },
+        {
+          "actual_result": "supported buffer ceiling recorded; 3.5 buffer fails closed",
+          "blocked_condition": "positive core fails nonzero support/coherence buffer stress",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "support_coherence_stress_control",
+          "control_status": "passed",
+          "expected_result": "core survives nonzero buffer and fails closed beyond margin",
+          "rung_effect": "support/coherence stress gate supports scoped BF5"
+        },
+        {
+          "actual_result": "boundary stress ceiling = 4; stress 5 fails closed",
+          "blocked_condition": "boundary distinguishability fails stress",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "boundary_stress_control",
+          "control_status": "passed",
+          "expected_result": "boundary survives through recorded margin and fails closed beyond it",
+          "rung_effect": "boundary stress gate supports scoped BF5"
+        },
+        {
+          "actual_result": "2e-9 native flux stress fails closed",
+          "blocked_condition": "merge/leakage or flux beyond native bound is counted as BF5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "BF5 is bounded to native 1e-9 flux envelope",
+          "rung_effect": "broad flux robustness remains blocked"
+        },
+        {
+          "actual_result": "producer_assisted_result_class = not_applicable",
+          "blocked_condition": "producer-assisted flux scaffold is used to support native BF5",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "I7-C consumes native I7-B core only",
+          "rung_effect": "producer-to-native relabel blocked"
+        },
+        {
+          "actual_result": "native_flux_envelope_widened = false",
+          "blocked_condition": "BF5 stress widens native 1e-9 bound",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "native flux envelope remains 1e-9",
+          "rung_effect": "native flux debt preserved"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "BF5 core formation is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "BF5 core formation is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "BF5 core formation is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "BF5 core formation is relabeled as Phase 8",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_valid",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_flux_merge_leakage_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_support_coherence_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_bf5_classification_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c_artifacts/n25_i7c_boundary_stress_trace.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_non_circular",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      },
+      "passed": true
+    }
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "independent_new_basin_supported": false,
+  "iteration": "I7-C",
+  "n25_closeout_ceiling": "N25-C5_native_high_margin_core_sub_basin_stress_candidate",
+  "n25_closeout_ladder_rung_assigned": false,
+  "native_bf5_supported": true,
+  "native_bf6_supported": false,
+  "output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+  "ready_for_iteration_8_closeout_and_n26_handoff": true,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_bf5_core_stress_gate_i7c.py",
+  "source_digest_chain_audit": {
+    "i7a": {
+      "output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+      "sha256": "efb3c0af0ef8aab146a97a444a28aef3f55da60421f34ab825a2be6d691cc1a3"
+    },
+    "i7b": {
+      "output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json",
+      "sha256": "9428cddc69ab5c3f9733e5f9722314616ba9ae7c8a530d02c75c8d102e4b05b8"
+    }
+  },
+  "status": "passed"
+}

@@ -1,0 +1,49 @@
+{
+  "acts_by": [
+    "split_attempted_optional_flux_into_source_visible_windows",
+    "cap_each_conditioned_window_at_native_flux_or_leakage_bound",
+    "record_window_schedule_and_flux_ledger_before_claim_evaluation"
+  ],
+  "coherence_added": 0.0,
+  "floor_relaxation_allowed": false,
+  "hidden_budget_relief_allowed": false,
+  "hidden_support_allowed": false,
+  "interpretation": "The producer is a declared packet/window schedule surface. It helps by splitting attempted flux into source-visible windows capped at the inherited native 1e-9 bound; it does not add support or coherence, and it cannot relabel the native BF result.",
+  "native_bf_ceiling_before_i6": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+  "native_flux_debt_not_overwritten": true,
+  "native_flux_or_leakage_bound": 1e-09,
+  "native_lane_failure_overwritten": false,
+  "native_support_coherence_debt_preserved": true,
+  "naturalization_debt": [
+    "native_flux_routing_or_rate_limiting_surface",
+    "native_basin_formation_flux_windowing_surface",
+    "native_stress_threshold_margin_for_zero_margin_candidate"
+  ],
+  "observes_only": [
+    "source_current_optional_branch_records",
+    "residual_support_margin_under_optionality",
+    "jointly_admissible_optional_continuation_count",
+    "flux_or_leakage_bound",
+    "attempted_optional_flux_stress"
+  ],
+  "post_hoc_conditioning_allowed": false,
+  "producer_assisted_success_does_not_overwrite_native_failure": true,
+  "producer_classification": "producer_mediated",
+  "producer_contract_declared_before_use": true,
+  "producer_id": "n24_i7c_declared_flux_conditioning_producer",
+  "producer_intervention_used": true,
+  "producer_kind": "rc_compatible_packet_schedule_manager",
+  "producer_mediated_flux_window_bound": 1e-08,
+  "producer_residue_classification": "producer_mediated_flux_conditioning_surface",
+  "producer_role": "producer_mediated_flux_conditioning_surface",
+  "producer_window_cap": 10,
+  "reward_or_proxy_scoring_allowed": false,
+  "semantic_choice_allowed": false,
+  "source_artifact_id": "n24_producer_flux_conditioning_probe_i7c",
+  "source_contract_digest": "3083081e8f1f429362cf0d4e0b157d26218c5c064bcd790ca57e0bff7032dccb",
+  "source_output_digest": "8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de",
+  "substrate_carried_native_evidence": false,
+  "support_added": 0.0,
+  "thresholds_unchanged": true,
+  "trace_id": "n25_i6_producer_intervention_ledger"
+}

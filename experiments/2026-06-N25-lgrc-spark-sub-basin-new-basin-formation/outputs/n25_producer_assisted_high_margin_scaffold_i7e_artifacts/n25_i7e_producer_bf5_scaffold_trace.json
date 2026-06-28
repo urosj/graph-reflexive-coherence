@@ -1,0 +1,20 @@
+{
+  "boundary_distinguishability_stress_source": "I7-C",
+  "boundary_shell_node_count": 2,
+  "coherence_buffer_passes": true,
+  "coherence_floor_margin_new_region": 3.3333333336666664,
+  "formation_class": "producer_assisted_scaffold",
+  "formation_source": "producer_flux_conditioned_native_high_margin_core",
+  "independent_new_basin_supported": false,
+  "interpretation": "I7-E combines the I7-C high-margin core with I6 producer flux windowing. This supports a producer-assisted BF5 scaffold candidate under larger attempted flux, but the support/coherence margin comes from the already source-backed native core and the larger-flux admissibility comes from a producer-mediated windowing surface.",
+  "merge_leakage_control_source": "I7-C_at_native_flux_bound_plus_I6_windowing",
+  "native_high_margin_source_row_id": "n25_i7c_bf5_core_stress_gate",
+  "positive_core_node_count": 3,
+  "producer_assisted_bf5_scaffold_supported": true,
+  "producer_assisted_bf6_supported": false,
+  "producer_source_row_id": "n25_i6_producer_assisted_flux_conditioned_formation_probe",
+  "required_stress_buffer": 3.0,
+  "support_buffer_passes": true,
+  "support_floor_margin_new_region": 10.000000001,
+  "trace_id": "n25_i7e_producer_bf5_scaffold_trace"
+}

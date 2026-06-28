@@ -1,0 +1,30 @@
+{
+  "lineage_interpretation": "I7-E uses I6 as the producer flux-windowing contract and I7-C as the high-margin core geometry. I7-D remains the native C6 readiness gate and is not replaced.",
+  "sources": {
+    "i6_producer_flux_windowing": {
+      "acceptance_state": "accepted_producer_assisted_flux_conditioned_bf4_scaffold_candidate_native_bf_unchanged",
+      "artifact_id": "n25_producer_assisted_formation_probe",
+      "output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+      "sha256": "08e0f78523f129d134046f58e765b0dfb08e4431f17dbf726584fe934723b22c",
+      "status": "passed"
+    },
+    "i7c_native_high_margin_core_bf5": {
+      "acceptance_state": "accepted_scoped_native_bf5_high_margin_core_sub_basin_stress_candidate",
+      "artifact_id": "n25_bf5_core_stress_gate_i7c",
+      "output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c.json",
+      "sha256": "1f5f3800ed3690d45ab69e93c8d81bbca37684ce4f2d73bc7e92ac23ffbd869c",
+      "status": "passed"
+    },
+    "i7d_n26_readiness_gate": {
+      "acceptance_state": "accepted_n26_ready_bounded_formation_evidence_c6_bf5_scoped",
+      "artifact_id": "n25_n26_readiness_bounded_formation_gate_i7d",
+      "output_digest": "616d948629d7c27a23b8668bb5560dca2fff7e190748951e414b7ba608b76404",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d.json",
+      "sha256": "d9fc2593113e80fe4c3e889e96485dbecf435a3d2f4fbdeab6b801103ac59443",
+      "status": "passed"
+    }
+  },
+  "trace_id": "n25_i7e_source_lineage_trace"
+}

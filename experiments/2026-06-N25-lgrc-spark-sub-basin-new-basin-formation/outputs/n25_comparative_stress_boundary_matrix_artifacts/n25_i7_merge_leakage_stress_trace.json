@@ -1,0 +1,46 @@
+{
+  "attempted_flux_rows": [
+    {
+      "attempted_flux": 1e-09,
+      "native_lane_passes": true,
+      "producer_lane_passes": true,
+      "reason": "within native per-window bound"
+    },
+    {
+      "attempted_flux": 2e-09,
+      "native_lane_passes": false,
+      "producer_lane_passes": true,
+      "producer_window_count": 2,
+      "reason": "producer windows the attempt into native-bound windows"
+    },
+    {
+      "attempted_flux": 1e-08,
+      "native_lane_passes": false,
+      "producer_lane_passes": true,
+      "producer_window_count": 10,
+      "reason": "producer reaches declared window cap"
+    },
+    {
+      "attempted_flux": 2e-08,
+      "native_lane_passes": false,
+      "producer_lane_passes": false,
+      "producer_window_count": 20,
+      "reason": "producer window cap fails closed"
+    }
+  ],
+  "bf5_flux_axis_only": true,
+  "bf5_overall_supported": false,
+  "interpretation": "The native lane remains capped at 1e-9. The producer-assisted lane can carry larger attempted flux by source-visible windowing up to 1e-8, with 2e-8 failing closed. This supports a producer-scaffold naturalization target, not native BF5.",
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_envelope_widened": false,
+  "native_flux_stress_ceiling": 1e-09,
+  "native_merge_leakage_margin": 1e-09,
+  "producer_flux_help_supported": true,
+  "producer_flux_stress_ceiling": 1e-08,
+  "producer_flux_window_bound": 1e-08,
+  "producer_flux_window_cap_fail_closed": true,
+  "producer_flux_window_count_bound": 10,
+  "producer_merge_leakage_margin": 1e-09,
+  "stress_kind": "flux_leakage_and_window_cap_stress",
+  "trace_id": "n25_i7_merge_leakage_stress_trace"
+}

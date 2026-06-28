@@ -1,0 +1,99 @@
+{
+  "all_conditioned_windows_preserve_native_bound": true,
+  "interpretation": "The producer does not raise the per-window native bound. It widens the producer-mediated attempted-flux envelope by converting larger attempts into multiple native-bound windows, with the 20-window case failing closed at the declared cap.",
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_envelope_widened": false,
+  "producer_conditioned_fail_closed_row_count": 2,
+  "producer_conditioned_positive_row_count": 4,
+  "producer_flux_window_bound": 1e-08,
+  "producer_flux_window_count_bound": 10,
+  "producer_flux_window_declared_before_use": true,
+  "producer_flux_window_first_fail_closed": 2e-08,
+  "producer_flux_window_per_window_bound": 1e-09,
+  "producer_mediated_flux_envelope_widened": true,
+  "selected_conditioning_rows": [
+    {
+      "attempted_flux": 1e-09,
+      "classification": "native_bound_row",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 1,
+      "producer_conditioning_gate_passes": true,
+      "producer_conditioning_required": false,
+      "source_candidate_id": "I7"
+    },
+    {
+      "attempted_flux": 2e-09,
+      "classification": "producer_conditioned_flux_pass",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 2,
+      "producer_conditioning_gate_passes": true,
+      "producer_conditioning_required": true,
+      "source_candidate_id": "I7"
+    },
+    {
+      "attempted_flux": 1e-08,
+      "classification": "producer_conditioned_flux_pass",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 10,
+      "producer_conditioning_gate_passes": true,
+      "producer_conditioning_required": true,
+      "source_candidate_id": "I7"
+    },
+    {
+      "attempted_flux": 2e-08,
+      "classification": "producer_conditioning_window_cap_fail_closed",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 20,
+      "producer_conditioning_gate_passes": false,
+      "producer_conditioning_required": true,
+      "source_candidate_id": "I7"
+    },
+    {
+      "attempted_flux": 1e-09,
+      "classification": "native_bound_row",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 1,
+      "producer_conditioning_gate_passes": true,
+      "producer_conditioning_required": false,
+      "source_candidate_id": "I7-A"
+    },
+    {
+      "attempted_flux": 2e-09,
+      "classification": "producer_conditioned_flux_pass",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 2,
+      "producer_conditioning_gate_passes": true,
+      "producer_conditioning_required": true,
+      "source_candidate_id": "I7-A"
+    },
+    {
+      "attempted_flux": 1e-08,
+      "classification": "producer_conditioned_flux_pass",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 10,
+      "producer_conditioning_gate_passes": true,
+      "producer_conditioning_required": true,
+      "source_candidate_id": "I7-A"
+    },
+    {
+      "attempted_flux": 2e-08,
+      "classification": "producer_conditioning_window_cap_fail_closed",
+      "conditioned_flux_per_window": 1e-09,
+      "conditioned_windows_preserve_native_bound": true,
+      "conditioning_window_count": 20,
+      "producer_conditioning_gate_passes": false,
+      "producer_conditioning_required": true,
+      "source_candidate_id": "I7-A"
+    }
+  ],
+  "source_artifact_id": "n24_producer_flux_conditioning_probe_i7c",
+  "source_output_digest": "8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de",
+  "trace_id": "n25_i6_producer_flux_window_trace"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "actual_result": "C6 supported as handoff/readiness while BF ceiling remains scoped BF5",
+    "blocked_condition": "N25-C6 handoff readiness is relabeled as BF6",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "c6_is_not_bf6_control",
+    "control_status": "passed",
+    "expected_result": "native_bf6_supported remains false",
+    "rung_effect": "N25-C6 may pass without BF6 upgrade"
+  },
+  {
+    "actual_result": "handoff constraints require bounded BF5-only consumption",
+    "blocked_condition": "N26 consumes N25 as general basin formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "n26_handoff_scope_control",
+    "control_status": "passed",
+    "expected_result": "N26 consumption is bounded to scoped BF5 prerequisite evidence",
+    "rung_effect": "N26-ready handoff allowed only inside recorded scope"
+  },
+  {
+    "actual_result": "independent new basin remains explicit naturalization debt",
+    "blocked_condition": "high-margin core sub-basin is relabeled as independent new basin",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "independent_new_basin_relabel_control",
+    "control_status": "passed",
+    "expected_result": "independent_new_basin_supported remains false",
+    "rung_effect": "BF5 scope preserved"
+  },
+  {
+    "actual_result": "native_flux_debt_bound = 1e-9 and native_flux_debt_widened = false",
+    "blocked_condition": "native flux routing above 1e-9 is treated as naturalized",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_above_bound_relabel_control",
+    "control_status": "passed",
+    "expected_result": "native flux debt remains carried forward",
+    "rung_effect": "flux debt preserved for N26"
+  },
+  {
+    "actual_result": "producer_assisted_success_does_not_overwrite_native_failure = true",
+    "blocked_condition": "I6 producer-assisted flux scaffold upgrades native BF evidence",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_scaffold_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "producer-assisted result stays naturalization target only",
+    "rung_effect": "native and producer-assisted lanes remain separated"
+  },
+  {
+    "actual_result": "N26 consumption constraints carry AP4/AP5 ledger forward",
+    "blocked_condition": "AP4/AP5 dependencies disappear from N26 handoff",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "ap_gap_ledger_carry_forward_control",
+    "control_status": "passed",
+    "expected_result": "handoff requires AP4/AP5 ledger where route or proxy dependencies appear",
+    "rung_effect": "gap discipline preserved"
+  },
+  {
+    "actual_result": "unsafe_claim_flags all false",
+    "blocked_condition": "BF5/C6 handoff is relabeled as learning, choice, agency, native support, Phase 8, or ant ecology",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "unsafe_claims_relabel_control",
+    "control_status": "passed",
+    "expected_result": "all unsafe claim flags remain false",
+    "rung_effect": "claim boundary preserved"
+  }
+]

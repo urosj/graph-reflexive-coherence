@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N24. It replaces the
+This handoff is the current pickup note after N25. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -18,7 +18,9 @@ N21 withdrawal resistance and naturalization depth = closed
 N22 susceptibility update and durable geometry modification = closed
 N23 live-continuation collapse and selection geometry = closed
 N24 abundance and surplus-supported optionality = closed
-current next experiment = N25_spark_sub_basin_new_basin_formation
+N25 spark / sub-basin / new-basin formation = closed
+current next bridge = N25.1_lgrc9v3_multi_basin_formation_extension_requirements
+next primitive experiment after bridge = N26_proxy_divergence_proxy_collapse
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -456,7 +458,7 @@ flux/leakage debt
 
 ## N25 Handoff
 
-N25 is the next experiment. It should test the next becoming primitive:
+N25 closed the next becoming primitive:
 
 ```text
 spark / sub-basin / new-basin formation
@@ -469,7 +471,48 @@ Can becoming pressure produce a new distinguishable basin or sub-basin, rather
 than only reinforcing an existing basin?
 ```
 
-N25 must consume N20 as the standing primitive contract and N24 as two
+N25 closeout result:
+
+```text
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+```
+
+N25 supports bounded sub-basin / high-margin core formation and a separate
+producer-assisted BF5 scaffold/missing-native-mechanism probe. It does not
+support independent new-basin formation, BF6, or native LGRC9V3 multi-basin
+formation.
+
+## N25.1 Handoff
+
+N25.1 is the active bridge before N26 if N26 needs independent multi-basin
+substrate evidence. It should define the Phase 8 extension requirements for:
+
+```text
+LGRC9V3 multi-basin formation from causal refinement
+```
+
+N25.1 must not implement the runtime extension or claim multi-basin evidence.
+It should produce a source crosswalk, MB0...MB6 ladder, extension requirement
+matrix, replay/control contract, and N26 consumption constraints.
+
+N26 may proceed after N25.1 in one of two modes:
+
+```text
+scoped mode:
+  consume N25 sub-basin / high-margin core evidence only
+
+multi-basin mode:
+  wait for Phase 8 extension evidence reaching MB6
+```
+
+N25 consumed N20 as the standing primitive contract and N24 as two
 separate lanes:
 
 ```text
@@ -479,7 +522,7 @@ must_consume_n24_producer_extension_as_separate_lane = true
 must_preserve_AP4_AP5_gap_ledger = true
 ```
 
-N25 native lane question:
+N25 native lane question was:
 
 ```text
 Can one N24 optional continuation become a distinguishable sub-basin or
@@ -487,7 +530,7 @@ new-basin candidate while preserving the inherited native 1e-9 flux/leakage
 bound?
 ```
 
-N25 producer-assisted lane question:
+N25 producer-assisted lane question was:
 
 ```text
 Does producer-mediated flux conditioning permit a sub-basin or new-basin
@@ -495,7 +538,7 @@ candidate, and can that mechanism be specified as future native LGRC
 naturalization debt?
 ```
 
-N25 should distinguish:
+N25 distinguished:
 
 ```text
 reinforced old basin
@@ -506,7 +549,7 @@ transient fluctuation misread as basin
 producer-assisted new-basin scaffold
 ```
 
-N25 required controls:
+N25 required controls were:
 
 ```text
 label-only new basin rejected
@@ -518,7 +561,7 @@ producer-assisted success does not overwrite native failure
 native flux debt remains row-local
 ```
 
-N25 must not consume N24 as:
+N25 did not consume N24 as:
 
 ```text
 semantic_choice

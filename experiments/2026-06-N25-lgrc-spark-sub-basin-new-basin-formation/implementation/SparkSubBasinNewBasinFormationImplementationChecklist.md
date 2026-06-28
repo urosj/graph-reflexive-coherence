@@ -398,19 +398,19 @@ zero-margin and no stress/threshold matrix has been run.
 
 ## Iteration 6. Producer-Assisted Flux-Conditioned Formation Probe
 
-- [ ] Consume N24 I7-C producer contract.
-- [ ] Keep thresholds and floors unchanged.
-- [ ] Record producer intervention ledger.
-- [ ] Record producer flux window bound.
-- [ ] Confirm producer flux window was declared before use.
-- [ ] Test producer-assisted bifurcation/sub-basin candidate.
-- [ ] Record producer residue and naturalization debt.
-- [ ] Run producer schedule post-hoc control.
-- [ ] Run producer hidden-support control.
-- [ ] Run producer threshold-relaxation control.
-- [ ] Run producer basin-insertion-without-trace control.
-- [ ] Run producer-success-as-native relabel control.
-- [ ] Confirm producer-assisted success does not overwrite native failure.
+- [x] Consume N24 I7-C producer contract.
+- [x] Keep thresholds and floors unchanged.
+- [x] Record producer intervention ledger.
+- [x] Record producer flux window bound.
+- [x] Confirm producer flux window was declared before use.
+- [x] Test producer-assisted bifurcation/sub-basin candidate.
+- [x] Record producer residue and naturalization debt.
+- [x] Run producer schedule post-hoc control.
+- [x] Run producer hidden-support control.
+- [x] Run producer threshold-relaxation control.
+- [x] Run producer basin-insertion-without-trace control.
+- [x] Run producer-success-as-native relabel control.
+- [x] Confirm producer-assisted success does not overwrite native failure.
 
 Expected artifacts:
 
@@ -420,15 +420,54 @@ reports/n25_producer_assisted_formation_probe.md
 scripts/build_n25_producer_assisted_formation_probe.py
 ```
 
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_producer_assisted_flux_conditioned_bf4_scaffold_candidate_native_bf_unchanged
+output_digest = 84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780
+
+producer_assisted_lane_opened = true
+producer_assisted_bf4_candidate_supported = true
+producer_assisted_bf5_supported = false
+producer_assisted_bf6_supported = false
+native_bf_ceiling_preserved = BF4_native_replay_control_backed_sub_basin_differentiation_candidate
+native_bf5_supported = false
+native_bf6_supported = false
+native_lane_failure_overwritten = false
+producer_assisted_success_does_not_overwrite_native_failure = true
+missing_native_mechanism_probe_supported = true
+basin_formation_claim_allowed = false
+ready_for_iteration_7_comparative_stress_boundary_matrix = true
+```
+
+Geometric interpretation:
+
+```text
+I6 keeps the I5 spark-to-expansion sub-basin trace as the native object. The
+module boundary, old-center replacement, replay-stable distinction trace, and
+zero-margin support/coherence surface are unchanged. The added producer is not
+a basin generator and does not add support or coherence. It is a declared flux
+windowing surface, consumed from N24 I7-C, that splits larger attempted flux
+into source-visible windows capped at the inherited native 1e-9 per-window
+bound.
+
+The producer-assisted lane therefore supports only a BF4 producer-mediated
+scaffold candidate and a missing-native-mechanism probe. It identifies
+`native_flux_routing_or_rate_limiting_surface` as naturalization debt. It does
+not upgrade native BF, native N24-C6, native support, semantic learning, choice,
+agency, Phase 8, or ant ecology.
+```
+
 ## Iteration 7. Comparative Stress And Formation Boundary Matrix
 
-- [ ] Compare native and producer-assisted candidates.
-- [ ] Preserve native and producer-assisted row ceilings.
-- [ ] Stress boundary distinguishability.
-- [ ] Stress support/coherence floors.
-- [ ] Stress merge/leakage controls.
-- [ ] Identify whether producer scaffold points to native naturalization target.
-- [ ] Keep unsafe claims false.
+- [x] Compare native and producer-assisted candidates.
+- [x] Preserve native and producer-assisted row ceilings.
+- [x] Stress boundary distinguishability.
+- [x] Stress support/coherence floors.
+- [x] Stress merge/leakage controls.
+- [x] Identify whether producer scaffold points to native naturalization target.
+- [x] Keep unsafe claims false.
 
 Expected artifacts:
 
@@ -438,17 +477,360 @@ reports/n25_comparative_stress_boundary_matrix.md
 scripts/build_n25_comparative_stress_boundary_matrix.py
 ```
 
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_comparative_bf4_boundary_matrix_bf5_blocked_n26_ready
+output_digest = 0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79
+
+native_bf4_candidate_supported = true
+native_bf5_supported = false
+native_bf6_supported = false
+producer_assisted_bf4_candidate_supported = true
+producer_assisted_bf5_supported = false
+producer_assisted_bf6_supported = false
+bf5_or_stronger_supported = false
+bf6_supported = false
+bf_ceiling = BF4_comparative_native_and_producer_scaffold_boundary
+n25_closeout_ceiling = N25-C4_comparative_bf4_with_producer_scaffold_debt
+n25_closeout_ladder_rung_assigned = false
+ready_for_iteration_8_closeout_and_n26_handoff = true
+```
+
+Stress-axis interpretation:
+
+```text
+I7 separates the axes rather than merging the native and producer-assisted
+results into one stronger claim.
+
+Boundary distinguishability has margin and merge/leakage controls remain clean.
+The producer-assisted lane improves only the flux-scheduling axis by windowing
+larger attempted flux into native-bound packets. The native flux envelope is
+still not widened above 1e-9.
+
+The support/coherence axis blocks BF5/BF6. Both the native I5 row and the
+producer-assisted I6 row remain exactly at the support/coherence floor, so any
+positive floor-buffer stress fails. The producer does not create a
+substrate-carried new basin and does not solve support/coherence margin.
+
+I7 therefore strengthens the diagnosis rather than upgrading the claim. N25 has
+a replay/control-backed BF4 native sub-basin differentiation candidate plus a
+producer-assisted flux scaffold. BF5/BF6 remain blocked by:
+
+  zero_margin_support_coherence_floor
+  producer_flux_help_not_native
+  new_basin_candidate_not_established
+
+The naturalization targets carried to closeout are:
+
+  native_flux_routing_or_rate_limiting_surface
+  positive_support_coherence_margin_for_formed_region
+  new_basin_independence_beyond_sub_basin_differentiation
+```
+
+## Iteration 7-A. Native High-Margin Formation Probe
+
+- [x] Consume the I4/I5 native source-current emitted module.
+- [x] Preserve the full-module zero-margin support/coherence record.
+- [x] Declare the core/shell partition rule before use.
+- [x] Select positive-coherence core nodes only as support carriers.
+- [x] Retain zero-coherence emitted module nodes as boundary shell.
+- [x] Confirm support/coherence margins are positive for the core axis.
+- [x] Confirm no producer-assisted lane contributes.
+- [x] Preserve native `1e-9` flux debt.
+- [x] Block positive-core relabel as full-module BF5.
+- [x] Block core/shell relabel as independent new basin.
+- [x] Keep unsafe claims false.
+
+Expected artifacts:
+
+```text
+outputs/n25_native_high_margin_formation_probe_i7a.json
+reports/n25_native_high_margin_formation_probe_i7a.md
+scripts/build_n25_native_high_margin_formation_probe_i7a.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_native_high_margin_core_candidate_bf5_pending_replay_stress
+output_digest = f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3
+
+native_high_margin_core_candidate_supported = true
+positive_core_node_count = 3
+boundary_shell_node_count = 2
+support_floor_margin_new_region = 10.000000001
+coherence_floor_margin_new_region = 3.3333333336666664
+full_module_zero_margin_preserved = true
+native_bf5_supported = false
+bf5_or_stronger_supported = false
+bf_ceiling = BF4_native_high_margin_core_sub_basin_candidate_pending_replay_stress
+n25_closeout_ceiling = N25-C4_native_high_margin_core_candidate_pending_replay_stress
+ready_for_iteration_7b_high_margin_replay_controls = true
+```
+
+Geometric interpretation:
+
+```text
+I7-A does not change the LGRC9V3 run. It re-examines the native source-current
+module emitted by the I4/I5 spark-to-expansion path and partitions it into a
+positive-coherence core plus zero-coherence boundary shell.
+
+This removes the zero-margin support/coherence blocker only for the
+positive-core axis. The full emitted module remains zero-margin, and the core
+remains attached to the boundary shell and old-basin refinement relation. I7-A
+therefore supports a native high-margin core sub-basin candidate, not BF5,
+independent new-basin formation, native support, semantic learning, choice,
+agency, Phase 8, or ant ecology.
+
+Remaining blockers:
+
+  full_module_zero_margin_preserved
+  positive_core_replay_control_pending
+  new_basin_candidate_not_established
+  native_flux_routing_or_rate_limiting_surface_not_naturalized
+```
+
+## Iteration 7-B. High-Margin Core Replay And Controls
+
+- [x] Consume I7-A native high-margin core row.
+- [x] Replay the core/shell partition.
+- [x] Validate I7-A artifact reconstruction.
+- [x] Confirm core replay stability.
+- [x] Run positive-core post-hoc relabel control.
+- [x] Run boundary-shell-as-support relabel control.
+- [x] Run independent-new-basin relabel control.
+- [x] Run transient control.
+- [x] Preserve native flux debt.
+- [x] Keep producer lane out of native core support.
+- [x] Keep unsafe claims false.
+
+Expected artifacts:
+
+```text
+outputs/n25_high_margin_core_replay_controls_i7b.json
+reports/n25_high_margin_core_replay_controls_i7b.md
+scripts/build_n25_high_margin_core_replay_controls_i7b.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_high_margin_core_replay_control_backed_bf5_stress_ready
+output_digest = dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce
+
+native_high_margin_core_replay_control_supported = true
+core_replay_stable = true
+artifact_reconstruction_stable = true
+support_floor_margin_new_region = 10.000000001
+coherence_floor_margin_new_region = 3.3333333336666664
+native_bf5_supported = false
+bf5_or_stronger_supported = false
+bf_ceiling = BF4_native_high_margin_core_replay_control_backed_candidate
+n25_closeout_ceiling = N25-C4_native_high_margin_core_replay_control_candidate_pending_stress
+ready_for_iteration_7c_bf5_stress_gate = true
+```
+
+Geometric interpretation:
+
+```text
+I7-B replays and reconstructs the I7-A positive-core partition. The same three
+coherence-positive core nodes, two zero-coherence shell nodes, and core/shell
+boundary relation are recovered. This removes the core replay/control blocker,
+but does not by itself run the BF5 stress gate.
+```
+
+## Iteration 7-C. BF5 Core Stress Gate
+
+- [x] Consume I7-A and I7-B.
+- [x] Stress positive-core support/coherence margins.
+- [x] Stress boundary distinguishability.
+- [x] Stress native flux/merge-leakage within inherited `1e-9` envelope.
+- [x] Confirm native flux above `1e-9` fails closed.
+- [x] Scope BF5 to high-margin core/sub-basin formation.
+- [x] Block independent-new-basin relabel.
+- [x] Keep BF6 false.
+- [x] Keep producer-assisted lane out of native BF5.
+- [x] Keep unsafe claims false.
+
+Expected artifacts:
+
+```text
+outputs/n25_bf5_core_stress_gate_i7c.json
+reports/n25_bf5_core_stress_gate_i7c.md
+scripts/build_n25_bf5_core_stress_gate_i7c.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_scoped_native_bf5_high_margin_core_sub_basin_stress_candidate
+output_digest = 2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858
+
+native_bf5_supported = true
+native_bf6_supported = false
+bf5_or_stronger_supported = true
+bf_ceiling = BF5_native_high_margin_core_sub_basin_stress_candidate
+n25_closeout_ceiling = N25-C5_native_high_margin_core_sub_basin_stress_candidate
+independent_new_basin_supported = false
+ready_for_iteration_8_closeout_and_n26_handoff = true
+
+bf5_scope = bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope
+support_floor_margin_new_region = 10.000000001
+coherence_floor_margin_new_region = 3.3333333336666664
+native_flux_stress_above_bound_supported = false
+```
+
+Geometric interpretation:
+
+```text
+I7-C upgrades N25 to a scoped BF5: stress/threshold-backed native high-margin
+core sub-basin formation inside the inherited 1e-9 flux envelope. The core
+survives nonzero support/coherence buffer stress, boundary distinguishability
+stress, and merge/leakage checks at the native flux bound.
+
+The result remains scoped. It does not support independent new-basin formation,
+native flux routing above 1e-9, BF6, native support, semantic learning, choice,
+agency, Phase 8, or ant ecology.
+
+Remaining limitations:
+
+  independent_new_basin_not_supported
+  native_flux_routing_above_1e-9_not_naturalized
+  full_module_zero_margin_preserved
+```
+
+## Iteration 7-D. N26 Readiness And Bounded Formation Evidence Gate
+
+- [x] Consume I6, I7, I7-A, I7-B, and I7-C lineage.
+- [x] Treat I7-C scoped BF5 as the final BF evidence ceiling.
+- [x] Support N25-C6 as a handoff/readiness ceiling, not a BF6 upgrade.
+- [x] Record N26 handoff constraints.
+- [x] Preserve native flux debt at `1e-9`.
+- [x] Carry independent-new-basin, full-module zero-margin, and producer-scaffold debts forward.
+- [x] Confirm producer-assisted success does not overwrite native evidence.
+- [x] Keep AP4/AP5 ledger carry-forward visible.
+- [x] Keep independent-new-basin, BF6, native support, semantic learning, choice, agency, Phase 8, and ant ecology blocked.
+- [x] Keep final closeout claim pending Iteration 8.
+
+Expected artifacts:
+
+```text
+outputs/n25_n26_readiness_bounded_formation_gate_i7d.json
+reports/n25_n26_readiness_bounded_formation_gate_i7d.md
+scripts/build_n25_n26_readiness_bounded_formation_gate_i7d.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_n26_ready_bounded_formation_evidence_c6_bf5_scoped
+output_digest = 616d948629d7c27a23b8668bb5560dca2fff7e190748951e414b7ba608b76404
+
+n25_c6_supported = true
+final_supported_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+n25_closeout_ceiling = N25-C6_n26_ready_bounded_basin_formation_evidence
+ready_for_iteration_8_closeout_and_n26_handoff = true
+
+bf5_scope = bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope
+bounded_formation_handoff_allowed = true
+basin_formation_claim_allowed = false
+```
+
+Geometric interpretation:
+
+```text
+I7-D does not change the geometry discovered by I7-C. It packages the
+high-margin core/shell sub-basin as bounded formation substrate that N26 may
+consume for proxy-divergence work.
+
+The source geometry remains scoped BF5: a high-margin core inside the inherited
+native 1e-9 flux envelope. C6 means the evidence is complete enough for handoff,
+not that BF6 or independent new-basin formation has been shown.
+
+The carried-forward limitations are:
+
+  independent_new_basin_not_supported
+  native_flux_routing_above_1e-9_not_naturalized
+  full_module_zero_margin_preserved
+  producer_flux_scaffold_not_native
+  BF5_scope_not_BF6
+```
+
+## Iteration 7-E. Producer-Assisted High-Margin Scaffold Probe
+
+- [x] Consume I6 producer-assisted flux-windowing contract.
+- [x] Consume I7-C native high-margin core geometry.
+- [x] Confirm I7-D C6 readiness remains preserved and not replaced.
+- [x] Test larger attempted flux through producer-mediated windowing.
+- [x] Keep conditioned flux per window inside native `1e-9` bound.
+- [x] Confirm producer adds no hidden support or coherence.
+- [x] Confirm support/coherence margin comes from I7-C source geometry.
+- [x] Support only producer-assisted BF5 scaffold candidate.
+- [x] Record missing native mechanism / naturalization targets.
+- [x] Block producer-assisted result as native BF upgrade.
+- [x] Block producer-assisted BF6 and independent new-basin relabels.
+- [x] Keep unsafe claims false.
+
+Expected artifacts:
+
+```text
+outputs/n25_producer_assisted_high_margin_scaffold_i7e.json
+reports/n25_producer_assisted_high_margin_scaffold_i7e.md
+scripts/build_n25_producer_assisted_high_margin_scaffold_i7e.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_producer_assisted_high_margin_bf5_scaffold_candidate_native_unchanged
+output_digest = c1de0efc13c8ad1a6bb12c1296bc58d34a89552d7ef6bd51ba2e44c45139844e
+
+producer_assisted_bf5_scaffold_supported = true
+producer_assisted_bf5_supported = true
+producer_assisted_bf6_supported = false
+native_bf_upgraded_by_producer = false
+independent_new_basin_supported = false
+n25_closeout_ceiling = N25-C6_n26_ready_bounded_basin_formation_evidence
+```
+
+Geometric interpretation:
+
+```text
+I7-E combines I6 producer flux windowing with the I7-C high-margin core. The
+producer does not create the core and does not add support/coherence. It exposes
+larger attempted flux as declared source-visible windows that each remain within
+the inherited native 1e-9 bound.
+
+This supports a producer-assisted BF5 scaffold candidate and identifies the
+missing native mechanism: LGRC would need a native flux routing / rate-limiting
+surface that can preserve a high-margin core under larger attempted flux without
+producer mediation.
+
+The result does not upgrade native BF, does not replace I7-D, does not support
+BF6, and does not support independent new-basin formation.
+```
+
 ## Iteration 8. Closeout And N26 Handoff
 
-- [ ] Classify final BF ladder rung.
-- [ ] Classify final N25-C closeout rung.
-- [ ] Preserve AP4/AP5 ledger.
-- [ ] Preserve N24 native and producer-assisted lane separation.
-- [ ] Confirm producer-assisted success does not overwrite native BF or native N24-C6.
-- [ ] Confirm final formation classes and sources are recorded.
-- [ ] Confirm semantic learning, choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked.
-- [ ] Confirm `src_diff_empty`.
-- [ ] Record N26 proxy divergence / proxy collapse handoff.
+- [x] Classify final BF ladder rung.
+- [x] Classify final N25-C closeout rung.
+- [x] Preserve AP4/AP5 ledger.
+- [x] Preserve N24 native and producer-assisted lane separation.
+- [x] Confirm producer-assisted success does not overwrite native BF or native N24-C6.
+- [x] Confirm final formation classes and sources are recorded.
+- [x] Confirm semantic learning, choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked.
+- [x] Confirm `src_diff_empty`.
+- [x] Record N26 proxy divergence / proxy collapse handoff.
 
 Expected artifacts:
 
@@ -456,4 +838,41 @@ Expected artifacts:
 outputs/n25_closeout_and_n26_handoff.json
 reports/n25_closeout_and_n26_handoff.md
 scripts/build_n25_closeout_and_n26_handoff.py
+```
+
+Implementation record:
+
+```text
+status = passed
+acceptance_state = accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context
+output_digest = 2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f
+
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+n25_1_requirements_bridge_needed = true
+ready_for_n26_with_scope_constraints = true
+```
+
+Closeout interpretation:
+
+```text
+N25 closes as scoped native BF5 and N25-C6 readiness. It supports bounded
+sub-basin / high-margin core formation, not independent new-basin formation,
+BF6, or native LGRC9V3 multi-basin formation.
+
+I7-E remains producer-assisted missing-mechanism evidence. It identifies the
+native mechanism that would be needed later: LGRC9V3 flux routing /
+rate-limiting able to preserve high-margin core formation under larger
+attempted flux without producer mediation.
+
+N26 may consume N25 only as scoped sub-basin / high-margin core substrate and
+producer-assisted naturalization-target context. If N26 needs independent
+multi-basin substrate evidence, a Phase 8 LGRC9V3 multi-basin formation
+extension is required first.
 ```

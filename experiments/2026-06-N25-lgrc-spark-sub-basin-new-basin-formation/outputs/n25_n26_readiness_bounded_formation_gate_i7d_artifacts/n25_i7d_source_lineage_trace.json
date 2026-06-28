@@ -1,0 +1,47 @@
+{
+  "lineage_interpretation": "N26 may consume the I7-C scoped BF5 result only through the recorded I6-I7-C lineage. Producer-assisted flux evidence remains a separate naturalization-debt lane and does not overwrite the native BF5 scope.",
+  "lineage_role": "n26_readiness_source_chain",
+  "sources": {
+    "i6_producer_assisted_flux_scaffold": {
+      "acceptance_state": "accepted_producer_assisted_flux_conditioned_bf4_scaffold_candidate_native_bf_unchanged",
+      "artifact_id": "n25_producer_assisted_formation_probe",
+      "output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+      "sha256": "08e0f78523f129d134046f58e765b0dfb08e4431f17dbf726584fe934723b22c",
+      "status": "passed"
+    },
+    "i7_comparative_stress_boundary_matrix": {
+      "acceptance_state": "accepted_comparative_bf4_boundary_matrix_bf5_blocked_n26_ready",
+      "artifact_id": "n25_comparative_stress_boundary_matrix",
+      "output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json",
+      "sha256": "ac74f4eacc57d7922b03fb1d17f2cd6ab9151ba2717d464f91f323cc6900170d",
+      "status": "passed"
+    },
+    "i7a_native_high_margin_core": {
+      "acceptance_state": "accepted_native_high_margin_core_candidate_bf5_pending_replay_stress",
+      "artifact_id": "n25_native_high_margin_formation_probe_i7a",
+      "output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+      "sha256": "efb3c0af0ef8aab146a97a444a28aef3f55da60421f34ab825a2be6d691cc1a3",
+      "status": "passed"
+    },
+    "i7b_high_margin_core_replay_controls": {
+      "acceptance_state": "accepted_high_margin_core_replay_control_backed_bf5_stress_ready",
+      "artifact_id": "n25_high_margin_core_replay_controls_i7b",
+      "output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json",
+      "sha256": "9428cddc69ab5c3f9733e5f9722314616ba9ae7c8a530d02c75c8d102e4b05b8",
+      "status": "passed"
+    },
+    "i7c_bf5_core_stress_gate": {
+      "acceptance_state": "accepted_scoped_native_bf5_high_margin_core_sub_basin_stress_candidate",
+      "artifact_id": "n25_bf5_core_stress_gate_i7c",
+      "output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c.json",
+      "sha256": "1f5f3800ed3690d45ab69e93c8d81bbca37684ce4f2d73bc7e92ac23ffbd869c",
+      "status": "passed"
+    }
+  },
+  "trace_id": "n25_i7d_source_lineage_trace"
+}

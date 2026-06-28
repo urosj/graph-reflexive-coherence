@@ -1,0 +1,192 @@
+{
+  "boundary_shell_node_count": 2,
+  "boundary_shell_node_ids": [
+    10,
+    14
+  ],
+  "candidate_region_node_ids": [
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "core_connected_through_boundary_shell": true,
+  "core_external_edge_count": 8,
+  "core_external_edges": [
+    {
+      "edge_id": 0,
+      "endpoints": [
+        [
+          11,
+          0
+        ],
+        [
+          1,
+          8
+        ]
+      ]
+    },
+    {
+      "edge_id": 1,
+      "endpoints": [
+        [
+          12,
+          1
+        ],
+        [
+          2,
+          7
+        ]
+      ]
+    },
+    {
+      "edge_id": 2,
+      "endpoints": [
+        [
+          13,
+          2
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    },
+    {
+      "edge_id": 3,
+      "endpoints": [
+        [
+          11,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "edge_id": 5,
+      "endpoints": [
+        [
+          13,
+          5
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "edge_id": 6,
+      "endpoints": [
+        [
+          11,
+          6
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "edge_id": 7,
+      "endpoints": [
+        [
+          12,
+          7
+        ],
+        [
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "edge_id": 8,
+      "endpoints": [
+        [
+          13,
+          8
+        ],
+        [
+          9,
+          0
+        ]
+      ]
+    }
+  ],
+  "core_shell_edge_count": 4,
+  "core_shell_edges": [
+    {
+      "edge_id": 9,
+      "endpoints": [
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          4
+        ]
+      ]
+    },
+    {
+      "edge_id": 10,
+      "endpoints": [
+        [
+          10,
+          4
+        ],
+        [
+          12,
+          4
+        ]
+      ]
+    },
+    {
+      "edge_id": 11,
+      "endpoints": [
+        [
+          10,
+          7
+        ],
+        [
+          13,
+          4
+        ]
+      ]
+    },
+    {
+      "edge_id": 12,
+      "endpoints": [
+        [
+          12,
+          0
+        ],
+        [
+          14,
+          4
+        ]
+      ]
+    }
+  ],
+  "full_module_min_coherence": 0.0,
+  "full_module_zero_margin_preserved": true,
+  "interpretation": "The full emitted module remains zero-margin, but the same native source-current artifact contains a positive-coherence core. I7-A tests whether that core can be used as a high-margin sub-basin support carrier while the zero-coherence nodes remain boundary shell.",
+  "positive_core_mean_coherence": 3.333333333666667,
+  "positive_core_min_coherence": 3.3333333336666664,
+  "positive_core_node_count": 3,
+  "positive_core_node_ids": [
+    11,
+    12,
+    13
+  ],
+  "positive_core_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+  "positive_core_total_coherence": 10.000000001,
+  "source_trace": "n25_i4_new_region_support_coherence_trace",
+  "trace_id": "n25_i7a_positive_core_partition_trace"
+}
