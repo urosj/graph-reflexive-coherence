@@ -14,12 +14,8 @@ n25_2_mb6_gate_schema_and_controls.json
 n25_2_phase8_mb5_evidence_chain_audit.json
 n25_2_native_runtime_positive_probe.json
 n25_2_native_runtime_variant_probe.json
-```
-
-Planned outputs:
-
-```text
 n25_2_replay_persistence_matrix.json
+n25_2_multi_window_persistence_replay.json
 n25_2_fail_closed_control_matrix.json
 n25_2_stress_variant_matrix.json
 n25_2_mb6_support_blocker_matrix.json

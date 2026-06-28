@@ -1,0 +1,472 @@
+{
+  "acceptance_state": "accepted_n25_2_c6_closeout_scoped_n26_handoff",
+  "artifact_id": "n25_2_closeout_and_n26_handoff",
+  "checks": [
+    {
+      "check_id": "all_source_artifacts_passed",
+      "detail": {
+        "source_chain": [
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_source_inventory_and_admissibility_audit.json",
+            "artifact_sha256": "585accaf91af0dc4d569912bb3e5b0d436fe9f54642578436e1e694b9b583d70",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I1",
+            "output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_gate_schema_and_controls.json",
+            "artifact_sha256": "ad3a04cc84cd230f8cb30ed0828133e62c45577c41a4aaa20fbb1fb91d7fdaae",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I2",
+            "output_digest": "fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_phase8_mb5_evidence_chain_audit.json",
+            "artifact_sha256": "e45535c28076553b64862469922f41d0c6f692a68d8f043528a03f93b001da29",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I3",
+            "output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+            "artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I4",
+            "output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_variant_probe.json",
+            "artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I4-A",
+            "output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_replay_persistence_matrix.json",
+            "artifact_sha256": "58146a72e5e67b840505041fe8a3f33f987fba8bf3987d5130792a1d50d33de7",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I5",
+            "output_digest": "8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+            "artifact_sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I5-A",
+            "output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_fail_closed_control_matrix.json",
+            "artifact_sha256": "09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I6",
+            "output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+            "artifact_sha256": "ad303bb671707d877d80f4a2baa05b99f4d28d658f99f65a28c266fab96462b5",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I7",
+            "output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+            "status": "passed"
+          },
+          {
+            "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_support_blocker_matrix.json",
+            "artifact_sha256": "c05826b383c2df29b565eee22138ee2cc8587bcdd4452f38cde16db65467e199",
+            "consumed_as": "source_chain_input",
+            "failed_check_count": 0,
+            "iteration": "I8",
+            "output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+            "status": "passed"
+          }
+        ],
+        "source_failed_checks_pass": true,
+        "source_statuses_pass": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i8_mb6_supported",
+      "detail": {
+        "i8_output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+        "mb6_blockers": [],
+        "mb6_gate_status": "supported",
+        "mb6_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "final_mb_status_recorded",
+      "detail": {
+        "final_mb_ladder_rung": "MB6_N26_ready_multi_basin_substrate_evidence",
+        "mb5_demoted": false,
+        "mb5_demotion_reason": null,
+        "mb5_remains_valid": true,
+        "mb6_blockers": [],
+        "mb6_source_iteration": "I8",
+        "mb6_source_output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+        "mb6_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "final_n25_2_c6_recorded",
+      "detail": {
+        "final_n25_2_closeout_rung": "N25.2-C6_closeout_and_N26_handoff_complete",
+        "n25_2_c6_does_not_expand_claim_ceiling": true,
+        "n25_2_c6_requires_mb6": true,
+        "n25_2_c6_source_iteration": "I9",
+        "n25_2_c6_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n26_consumption_permission_scoped",
+      "detail": {
+        "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_handoff_status": "ready_with_scoped_mb6_substrate_consumption",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "required_n26_boundary": [
+          "consume N25.2 as scoped multi-basin substrate evidence only",
+          "do not treat MB6 as native support",
+          "do not treat MB6 as agency, sentience, or ant ecology implementation",
+          "do not use front-capacity companion evidence as an unscoped backfill",
+          "preserve source-current runtime and replay/control discipline"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "remaining_mb6_blockers_empty",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check_id": "implementation_sources_unmodified",
+      "detail": {
+        "implementation_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "observed_diff_paths": [],
+        "runtime_defect_recorded": false,
+        "runtime_defect_repair_target": null,
+        "runtime_fix_attempted_inside_experiment": false,
+        "validation_experiment_only": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "runtime_defects_absent_or_recorded_only",
+      "detail": {
+        "implementation_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "observed_diff_paths": [],
+        "runtime_defect_recorded": false,
+        "runtime_defect_repair_target": null,
+        "runtime_fix_attempted_inside_experiment": false,
+        "validation_experiment_only": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "closeout_manifest_has_json_pointers",
+      "detail": [
+        {
+          "artifact_role": "final_mb_status",
+          "digest": "d83be3df560d1b9e1bee396d9de4c75cc7fcbb283cf52c0a78372f2d2312e7c5",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/final_mb_status"
+        },
+        {
+          "artifact_role": "n26_handoff",
+          "digest": "9bb302da37b93a91a52d71f557e6a6e4264590132ff3628ca7e5aad1c77e664a",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/n26_handoff"
+        },
+        {
+          "artifact_role": "claim_boundary",
+          "digest": "d280b9e2c9becdd4769408819c1b1cb5b51f5c65b808b912c7103e77799caeaa",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/claim_boundary"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claim": "MB6 N26-ready multi-basin substrate evidence with scoped N26 consumption",
+    "blocked_claims": [
+      "unscoped_N26_multi_basin_consumption",
+      "native_support",
+      "semantic_learning",
+      "semantic_choice",
+      "agency",
+      "identity_acceptance",
+      "sentience",
+      "organism_life",
+      "ant_ecology_implementation",
+      "Phase_8_completion",
+      "unrestricted_autonomy"
+    ],
+    "claim_ceiling": "validation-backed LGRC9V3 multi-basin substrate handoff; not native support, agency, sentience, ant ecology implementation, Phase 8 completion, or unscoped N26 substrate consumption",
+    "unsafe_claim_flags": {
+      "agency_claim_allowed": false,
+      "ant_ecology_claim_allowed": false,
+      "identity_acceptance_claim_allowed": false,
+      "native_support_claim_allowed": false,
+      "organism_life_claim_allowed": false,
+      "phase8_completion_claim_allowed": false,
+      "semantic_choice_claim_allowed": false,
+      "semantic_learning_claim_allowed": false,
+      "sentience_claim_allowed": false,
+      "unrestricted_autonomy_claim_allowed": false
+    }
+  },
+  "claim_ceiling": "validation-backed LGRC9V3 multi-basin substrate handoff; not native support, agency, sentience, ant ecology implementation, Phase 8 completion, or unscoped N26 substrate consumption",
+  "closeout_manifest_scope": "embedded_payloads_only",
+  "closeout_scope": {
+    "mb6_support_source": "I8",
+    "mb_ladder_and_n25_2_closeout_ladder_separate": true,
+    "n25_2_c6_closeout_source": "I9",
+    "runtime_implementation_modified": false,
+    "validation_experiment_complete": true
+  },
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_closeout_and_n26_handoff.py",
+  "embedded_closeout_manifest": [
+    {
+      "artifact_role": "final_mb_status",
+      "digest": "d83be3df560d1b9e1bee396d9de4c75cc7fcbb283cf52c0a78372f2d2312e7c5",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/final_mb_status"
+    },
+    {
+      "artifact_role": "n26_handoff",
+      "digest": "9bb302da37b93a91a52d71f557e6a6e4264590132ff3628ca7e5aad1c77e664a",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/n26_handoff"
+    },
+    {
+      "artifact_role": "claim_boundary",
+      "digest": "d280b9e2c9becdd4769408819c1b1cb5b51f5c65b808b912c7103e77799caeaa",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/claim_boundary"
+    }
+  ],
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "final_closeout_status": {
+    "final_n25_2_closeout_rung": "N25.2-C6_closeout_and_N26_handoff_complete",
+    "n25_2_c6_does_not_expand_claim_ceiling": true,
+    "n25_2_c6_requires_mb6": true,
+    "n25_2_c6_source_iteration": "I9",
+    "n25_2_c6_supported": true
+  },
+  "final_mb_status": {
+    "final_mb_ladder_rung": "MB6_N26_ready_multi_basin_substrate_evidence",
+    "mb5_demoted": false,
+    "mb5_demotion_reason": null,
+    "mb5_remains_valid": true,
+    "mb6_blockers": [],
+    "mb6_source_iteration": "I8",
+    "mb6_source_output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+    "mb6_supported": true
+  },
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "implementation_boundary": {
+    "implementation_modification_allowed": false,
+    "implementation_source_modification_observed": false,
+    "observed_diff_paths": [],
+    "runtime_defect_recorded": false,
+    "runtime_defect_repair_target": null,
+    "runtime_fix_attempted_inside_experiment": false,
+    "validation_experiment_only": true
+  },
+  "iteration": 9,
+  "n26_handoff": {
+    "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+    "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+    "n26_handoff_status": "ready_with_scoped_mb6_substrate_consumption",
+    "n26_scoped_context_consumption_allowed": true,
+    "n26_unscoped_consumption_allowed": false,
+    "n26_unscoped_multi_basin_consumption_allowed": false,
+    "required_n26_boundary": [
+      "consume N25.2 as scoped multi-basin substrate evidence only",
+      "do not treat MB6 as native support",
+      "do not treat MB6 as agency, sentience, or ant ecology implementation",
+      "do not use front-capacity companion evidence as an unscoped backfill",
+      "preserve source-current runtime and replay/control discipline"
+    ]
+  },
+  "next_handoff": {
+    "do_not_consume_as": [
+      "unscoped multi-basin substrate",
+      "native support",
+      "agency",
+      "sentience",
+      "ant ecology implementation",
+      "Phase 8 completion"
+    ],
+    "handoff_consumption": "scoped MB6 substrate evidence only",
+    "handoff_readiness": "ready",
+    "next_experiment": "N26"
+  },
+  "output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+  "remaining_blockers": {
+    "agency_sentience_phase8_blocker": "N25.2 does not open semantic agency, sentience, ant ecology, or Phase 8 completion",
+    "mb6_blockers": [],
+    "n26_unscoped_consumption_blocker": "N25.2 supports scoped multi-basin substrate consumption only",
+    "native_support_blocker": "MB6 substrate evidence is not native support"
+  },
+  "row_decision": "supported",
+  "source_chain": [
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_source_inventory_and_admissibility_audit.json",
+      "artifact_sha256": "585accaf91af0dc4d569912bb3e5b0d436fe9f54642578436e1e694b9b583d70",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I1",
+      "output_digest": "3134b384b529b8c04bb6d78aff18f287884ef1cba536ed39637727157f25dd26",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_gate_schema_and_controls.json",
+      "artifact_sha256": "ad3a04cc84cd230f8cb30ed0828133e62c45577c41a4aaa20fbb1fb91d7fdaae",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I2",
+      "output_digest": "fe84d14ccf3f71f96453cc67653d080e3b3d172776ccc7ffaa061a6c4716485f",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_phase8_mb5_evidence_chain_audit.json",
+      "artifact_sha256": "e45535c28076553b64862469922f41d0c6f692a68d8f043528a03f93b001da29",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I3",
+      "output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+      "artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I4",
+      "output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_variant_probe.json",
+      "artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I4-A",
+      "output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_replay_persistence_matrix.json",
+      "artifact_sha256": "58146a72e5e67b840505041fe8a3f33f987fba8bf3987d5130792a1d50d33de7",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I5",
+      "output_digest": "8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+      "artifact_sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I5-A",
+      "output_digest": "c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_fail_closed_control_matrix.json",
+      "artifact_sha256": "09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I6",
+      "output_digest": "62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+      "artifact_sha256": "ad303bb671707d877d80f4a2baa05b99f4d28d658f99f65a28c266fab96462b5",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I7",
+      "output_digest": "1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627",
+      "status": "passed"
+    },
+    {
+      "artifact_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_mb6_support_blocker_matrix.json",
+      "artifact_sha256": "c05826b383c2df29b565eee22138ee2cc8587bcdd4452f38cde16db65467e199",
+      "consumed_as": "source_chain_input",
+      "failed_check_count": 0,
+      "iteration": "I8",
+      "output_digest": "06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

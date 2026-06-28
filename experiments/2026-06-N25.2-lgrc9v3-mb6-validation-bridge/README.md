@@ -150,6 +150,25 @@ mb6_validation_opened = false
 n26_unscoped_consumption_allowed = false
 ```
 
+## Closeout Status
+
+```text
+status = closed
+final_mb_ladder_rung = MB6_N26_ready_multi_basin_substrate_evidence
+final_n25_2_closeout_rung = N25.2-C6_closeout_and_N26_handoff_complete
+mb6_supported = true
+mb5_remains_valid = true
+mb5_demoted = false
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_scoped_context_consumption_allowed = true
+n26_unscoped_multi_basin_consumption_allowed = false
+```
+
+N26 may consume N25.2 as scoped multi-basin substrate evidence only. N25.2
+does not support unscoped multi-basin substrate consumption, native support,
+agency, sentience, ant ecology implementation, organism/life claims, Phase 8
+completion, or unrestricted autonomy.
+
 ## Expected Artifacts
 
 ```text

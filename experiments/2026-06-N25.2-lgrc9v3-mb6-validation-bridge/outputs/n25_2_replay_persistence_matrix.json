@@ -1,0 +1,539 @@
+{
+  "acceptance_state": "accepted_replay_persistence_matrix_mb4_candidates_no_mb5_no_mb6",
+  "artifact_id": "n25_2_replay_persistence_matrix",
+  "artifact_manifest_scope": "embedded_payloads_only",
+  "checks": [
+    {
+      "check_id": "i4_and_i4a_sources_ready_for_replay",
+      "detail": {
+        "i4_output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+        "i4a_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_snapshot_duplicate_and_time_order_replay_passed",
+      "detail": [
+        {
+          "artifact_replay_result": "passed",
+          "duplicate_replay_result": "passed",
+          "snapshot_load_replay_result": "passed",
+          "time_order_replay_result": "passed"
+        },
+        {
+          "artifact_replay_result": "passed",
+          "duplicate_replay_result": "passed",
+          "snapshot_load_replay_result": "passed",
+          "time_order_replay_result": "passed"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "persistence_ratios_exact_for_all_child_basin_candidates",
+      "detail": [
+        {
+          "boundary_persistence_ratio": 1.0,
+          "coherence_persistence_ratio": 1.0,
+          "flux_persistence_ratio": 1.0,
+          "membership_persistence_ratio": 1.0,
+          "support_persistence_ratio": 1.0
+        },
+        {
+          "boundary_persistence_ratio": 1.0,
+          "coherence_persistence_ratio": 1.0,
+          "flux_persistence_ratio": 1.0,
+          "membership_persistence_ratio": 1.0,
+          "support_persistence_ratio": 1.0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_replay_stable_for_all_child_basin_candidates",
+      "detail": [
+        {
+          "candidate_id": "i4_reference_child_basin_core_0",
+          "first_emitted": true,
+          "second_emitted": false
+        },
+        {
+          "candidate_id": "i4a_route_variant_child_basin_core_2",
+          "first_emitted": true,
+          "second_emitted": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "runtime_emitted_records_only",
+      "detail": {
+        "front_capacity_scope": {
+          "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+          "child_basin_replay_consumption_allowed": false,
+          "mb4_replay_candidate_allowed": false,
+          "mb5_or_stronger_supported": false,
+          "mb6_supported": false,
+          "reason_code": "front_capacity_companion_emits_topology_birth_not_child_basin_state_record",
+          "replay_scope": "not_applicable",
+          "source_iteration": "I4-A"
+        },
+        "replayed_candidates": [
+          "i4_reference_child_basin_core_0",
+          "i4a_route_variant_child_basin_core_2"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "front_capacity_companion_not_replayed_as_child_basin",
+      "detail": {
+        "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+        "child_basin_replay_consumption_allowed": false,
+        "mb4_replay_candidate_allowed": false,
+        "mb5_or_stronger_supported": false,
+        "mb6_supported": false,
+        "reason_code": "front_capacity_companion_emits_topology_birth_not_child_basin_state_record",
+        "replay_scope": "not_applicable",
+        "source_iteration": "I4-A"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "missing_or_failed_replay_would_block_mb6",
+      "detail": "I5 can permit MB4 replay candidates only; controls/stress/MB6 gate remain pending",
+      "passed": true
+    },
+    {
+      "check_id": "existing_runtime_executed_without_source_edits",
+      "detail": {
+        "defect_disposition": "record_as_blocker_or_repair_target_only",
+        "defect_fix_attempted": false,
+        "example_diff_observed": false,
+        "implementation_diff_observed": false,
+        "implementation_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "observed_diff_paths": [],
+        "runtime_execution_from_closed_implementation": true,
+        "spec_diff_observed": false,
+        "src_diff_observed": false,
+        "test_diff_observed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "embedded_artifact_manifest_has_json_pointers",
+      "detail": [
+        {
+          "artifact_role": "i4_replay_record",
+          "digest": "66b48ee494bf9d81ab5273d52084618ce30d53c70ad17ba9ee124d8471078c67",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/replay_rows/0"
+        },
+        {
+          "artifact_role": "i4a_route_variant_replay_record",
+          "digest": "f1f89bd914aa4b248703578c2a4d1a56cb4c4eaa0af158dc72ca44c10d4a4004",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/replay_rows/1"
+        },
+        {
+          "artifact_role": "front_capacity_scope_record",
+          "digest": "bdbf9ee49097fd690ba46097fcde0415106f255862aee1da4dee730390df4b43",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/front_capacity_companion_scope"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "global_unsafe_claim_flags": {
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false,
+          "unrestricted_autonomy_claim_allowed": false
+        },
+        "replay_row_claim_flags_false": [
+          true,
+          true
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_ceiling": "MB4 replay-backed candidates only; not MB5, not MB6",
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_replay_persistence_matrix.py",
+  "embedded_artifact_manifest": [
+    {
+      "artifact_role": "i4_replay_record",
+      "digest": "66b48ee494bf9d81ab5273d52084618ce30d53c70ad17ba9ee124d8471078c67",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/replay_rows/0"
+    },
+    {
+      "artifact_role": "i4a_route_variant_replay_record",
+      "digest": "f1f89bd914aa4b248703578c2a4d1a56cb4c4eaa0af158dc72ca44c10d4a4004",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/replay_rows/1"
+    },
+    {
+      "artifact_role": "front_capacity_scope_record",
+      "digest": "bdbf9ee49097fd690ba46097fcde0415106f255862aee1da4dee730390df4b43",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/front_capacity_companion_scope"
+    }
+  ],
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "front_capacity_companion_scope": {
+    "candidate_id": "i4a_front_capacity_boundary_birth_companion",
+    "child_basin_replay_consumption_allowed": false,
+    "mb4_replay_candidate_allowed": false,
+    "mb5_or_stronger_supported": false,
+    "mb6_supported": false,
+    "reason_code": "front_capacity_companion_emits_topology_birth_not_child_basin_state_record",
+    "replay_scope": "not_applicable",
+    "source_iteration": "I4-A"
+  },
+  "front_capacity_scope_carry_forward": {
+    "carry_forward_to_i6_i7_as": "provenance_context_only",
+    "child_basin_replay_consumption_allowed": false,
+    "mb4_replay_candidate_allowed": false,
+    "mb5_or_mb6_backfill_allowed": false
+  },
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "implementation_no_mutation_proof": {
+    "defect_disposition": "record_as_blocker_or_repair_target_only",
+    "defect_fix_attempted": false,
+    "example_diff_observed": false,
+    "implementation_diff_observed": false,
+    "implementation_modification_allowed": false,
+    "implementation_source_modification_observed": false,
+    "observed_diff_paths": [],
+    "runtime_execution_from_closed_implementation": true,
+    "spec_diff_observed": false,
+    "src_diff_observed": false,
+    "test_diff_observed": false
+  },
+  "iteration": 5,
+  "matrix_summary": {
+    "all_candidate_replays_passed": true,
+    "candidate_row_count": 2,
+    "duplicate_replay_semantics": "first replay emits the validation record; second replay suppresses a duplicate and returns the same digest",
+    "extended_multi_window_survival_under_stress_supported": false,
+    "front_capacity_companion_replay_scope": "not_applicable",
+    "long_horizon_persistence_supported": false,
+    "matrix_window_count": 2,
+    "mb4_replay_candidate_count": 2,
+    "multi_window_child_basin_persistence_replay_status": "passed",
+    "multi_window_scope_note": "I5 matrix covers two source-current child-basin candidate windows; each native replay record remains a one-window runtime replay. This is not long-horizon persistence or stress-window survival.",
+    "persistence_claim_kind": "replay_persistence_of_emitted_child_basin_records",
+    "runtime_record_window_count_per_row": [
+      1.0,
+      1.0
+    ]
+  },
+  "mb4_supported_candidate_count": 2,
+  "mb5_or_stronger_supported": false,
+  "mb6_blockers": [
+    "control_matrix_pending_iteration_6",
+    "stress_matrix_pending_iteration_7",
+    "mb6_gate_pending_iteration_8"
+  ],
+  "mb6_claim_allowed": false,
+  "mb6_gate_status": "not_applied",
+  "mb6_supported": false,
+  "mb_ladder_candidate": "MB4_replay_backed_child_basin_persistence_candidate",
+  "n26_consumption_effect": "unscoped_consumption_blocked",
+  "n26_unscoped_consumption_allowed": false,
+  "output_digest": "8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699",
+  "producer_native_discipline": {
+    "hidden_producer_basin_insertion_allowed": false,
+    "producer_residue_status": "not_load_bearing_for_claim",
+    "producer_success_can_upgrade_native": false,
+    "producer_success_overwrites_native_failure": false,
+    "runtime_mutation_owner": "LGRC9V3_runtime_transition",
+    "source_current_status": "native_runtime_replay_validated"
+  },
+  "ready_for_iteration_6_fail_closed_control_matrix": true,
+  "replay_matrix_scope": {
+    "excluded_context_rows": [
+      "i4a_front_capacity_boundary_birth_companion"
+    ],
+    "exclusion_reason": "front_capacity_companion_emits_topology_birth_not_child_basin_state_record",
+    "included_child_basin_candidates": [
+      "i4_reference_child_basin_core_0",
+      "i4a_route_variant_child_basin_core_2"
+    ]
+  },
+  "replay_rows": [
+    {
+      "all_persistence_ratios_exact": true,
+      "all_required_replay_modes_passed": true,
+      "artifact_replay_passed": true,
+      "candidate_id": "i4_reference_child_basin_core_0",
+      "claim_ceiling": "MB4 replay-backed child-basin persistence candidate; not MB5, not MB6",
+      "claim_flags": {
+        "BF6_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "independent_new_basin_claim_allowed": false,
+        "native_multi_basin_formation_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "derived_report_only": false,
+      "duplicate_replay_digest_stable": true,
+      "duplicate_replay_first_emitted": true,
+      "duplicate_replay_passed": true,
+      "duplicate_replay_second_emitted": false,
+      "loaded_snapshot_digest": "04a4bf6508f6dbc121db41ca14a077d0241353e317a2f88f873e8f6f2cd3bc70",
+      "mb4_replay_candidate_allowed": true,
+      "mb5_or_stronger_supported": false,
+      "mb6_supported": false,
+      "persistence_ratios": {
+        "boundary_persistence_ratio": 1.0,
+        "coherence_persistence_ratio": 1.0,
+        "flux_persistence_ratio": 1.0,
+        "membership_persistence_ratio": 1.0,
+        "support_persistence_ratio": 1.0
+      },
+      "replay_results": {
+        "artifact_replay_result": "passed",
+        "duplicate_replay_result": "passed",
+        "snapshot_load_replay_result": "passed",
+        "time_order_replay_result": "passed"
+      },
+      "replay_validation_digest": "fab53c21405e54a4eefb76d25632807d25f448f622880fb3479fbd6219d5f303",
+      "replay_validation_record": {
+        "artifact_kind": "lgrc9v3_multi_basin_replay_validation_record",
+        "artifact_replay_result": "passed",
+        "artifact_schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+        "boundary_persistence_ratio": 1.0,
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "BF6_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "independent_new_basin_claim_allowed": false,
+          "native_multi_basin_formation_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false
+        },
+        "coherence_persistence_ratio": 1.0,
+        "duplicate_replay_result": "passed",
+        "evidence_class": "multi_basin_formation",
+        "flux_persistence_ratio": 1.0,
+        "lgrc_runtime_level": "lgrc3",
+        "membership_persistence_ratio": 1.0,
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_multi_basin_enabled": true,
+        "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+        "replay_failure_modes": [],
+        "replay_validation_digest": "fab53c21405e54a4eefb76d25632807d25f448f622880fb3479fbd6219d5f303",
+        "replay_validation_id": "multi-basin-replay:a2d1b64b98da8d584c9c8f736e450349",
+        "replay_window": {
+          "window_count": 1.0,
+          "window_end_event_time_key": 1.0,
+          "window_start_event_time_key": 1.0
+        },
+        "runtime_family": "LGRC9V3",
+        "schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+        "snapshot_load_replay_result": "passed",
+        "source_child_basin_state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+        "support_persistence_ratio": 1.0,
+        "time_order_replay_result": "passed"
+      },
+      "row_decision": "supported",
+      "runtime_emitted_child_record_only": true,
+      "snapshot_load_replay_passed": true,
+      "source_artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+      "source_child_basin_state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+      "source_iteration": "I4",
+      "source_output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+      "source_snapshot_digest": "5471b8a051054547c5a4c9456a918465a7d18449e37b1946486e88a0d65e3960",
+      "time_order_replay_passed": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    },
+    {
+      "all_persistence_ratios_exact": true,
+      "all_required_replay_modes_passed": true,
+      "artifact_replay_passed": true,
+      "candidate_id": "i4a_route_variant_child_basin_core_2",
+      "claim_ceiling": "MB4 replay-backed child-basin persistence candidate; not MB5, not MB6",
+      "claim_flags": {
+        "BF6_claim_allowed": false,
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "independent_new_basin_claim_allowed": false,
+        "native_multi_basin_formation_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false
+      },
+      "derived_report_only": false,
+      "duplicate_replay_digest_stable": true,
+      "duplicate_replay_first_emitted": true,
+      "duplicate_replay_passed": true,
+      "duplicate_replay_second_emitted": false,
+      "loaded_snapshot_digest": "2dfe389a4e87d40b880a7888eefc109f9859f7941224ee188cff1da20d74f22d",
+      "mb4_replay_candidate_allowed": true,
+      "mb5_or_stronger_supported": false,
+      "mb6_supported": false,
+      "persistence_ratios": {
+        "boundary_persistence_ratio": 1.0,
+        "coherence_persistence_ratio": 1.0,
+        "flux_persistence_ratio": 1.0,
+        "membership_persistence_ratio": 1.0,
+        "support_persistence_ratio": 1.0
+      },
+      "replay_results": {
+        "artifact_replay_result": "passed",
+        "duplicate_replay_result": "passed",
+        "snapshot_load_replay_result": "passed",
+        "time_order_replay_result": "passed"
+      },
+      "replay_validation_digest": "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+      "replay_validation_record": {
+        "artifact_kind": "lgrc9v3_multi_basin_replay_validation_record",
+        "artifact_replay_result": "passed",
+        "artifact_schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+        "boundary_persistence_ratio": 1.0,
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "BF6_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "independent_new_basin_claim_allowed": false,
+          "native_multi_basin_formation_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false
+        },
+        "coherence_persistence_ratio": 1.0,
+        "duplicate_replay_result": "passed",
+        "evidence_class": "multi_basin_formation",
+        "flux_persistence_ratio": 1.0,
+        "lgrc_runtime_level": "lgrc3",
+        "membership_persistence_ratio": 1.0,
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_multi_basin_enabled": true,
+        "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+        "replay_failure_modes": [],
+        "replay_validation_digest": "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+        "replay_validation_id": "multi-basin-replay:51a23e105d32a15f61f794b2901ab3a4",
+        "replay_window": {
+          "window_count": 1.0,
+          "window_end_event_time_key": 1.0,
+          "window_start_event_time_key": 1.0
+        },
+        "runtime_family": "LGRC9V3",
+        "schema_version": "lgrc9v3_multi_basin_replay_validation_record_v1",
+        "snapshot_load_replay_result": "passed",
+        "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+        "support_persistence_ratio": 1.0,
+        "time_order_replay_result": "passed"
+      },
+      "row_decision": "supported",
+      "runtime_emitted_child_record_only": true,
+      "snapshot_load_replay_passed": true,
+      "source_artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+      "source_child_basin_state_digest": "51a23e105d32a15f61f794b2901ab3a44cc78e124798bf591bb30dc18eb3aca7",
+      "source_iteration": "I4-A",
+      "source_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07",
+      "source_snapshot_digest": "abeca40f09c25dc4bf7d624aea59512851c91d4f12a6a9e1561f16cb2ef6fb9f",
+      "time_order_replay_passed": true,
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false
+      }
+    }
+  ],
+  "required_iteration_6_controls": [
+    "label_only_basin_formation_control",
+    "old_basin_thickening_relabel_control",
+    "transient_flow_sink_relabel_control",
+    "collapse_reabsorption_relabel_control",
+    "graph_visual_only_success_control",
+    "hidden_producer_basin_insertion_control",
+    "producer_success_as_native_support_control",
+    "front_capacity_backfill_control",
+    "mb5_as_mb6_relabel_control",
+    "unsafe_semantic_agency_native_support_relabel_controls"
+  ],
+  "row_decision": "supported",
+  "source_chain": {
+    "i4_artifact_sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304",
+    "i4_output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+    "i4a_artifact_sha256": "1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7",
+    "i4a_output_digest": "f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07"
+  },
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  }
+}

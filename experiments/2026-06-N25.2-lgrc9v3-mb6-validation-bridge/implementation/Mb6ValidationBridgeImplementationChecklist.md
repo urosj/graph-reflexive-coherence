@@ -534,7 +534,7 @@ passed
 
 ## Iteration 5. Replay And Persistence Matrix
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -542,14 +542,14 @@ Replay I4/I4-A runtime-emitted artifacts and validate child-basin persistence.
 
 ### Checks
 
-- [ ] Run artifact replay.
-- [ ] Run snapshot/load replay.
-- [ ] Run duplicate replay.
-- [ ] Run multi-window child-basin persistence replay.
-- [ ] Confirm reconstruction validates runtime-emitted records only.
-- [ ] Confirm missing or failed replay blocks MB6.
-- [ ] Confirm no implementation source is modified.
-- [ ] Confirm unsafe claims remain false.
+- [x] Run artifact replay.
+- [x] Run snapshot/load replay.
+- [x] Run duplicate replay.
+- [x] Run multi-window child-basin persistence replay.
+- [x] Confirm reconstruction validates runtime-emitted records only.
+- [x] Confirm missing or failed replay blocks MB6.
+- [x] Confirm no implementation source is modified.
+- [x] Confirm unsafe claims remain false.
 
 Expected artifacts:
 
@@ -558,9 +558,187 @@ outputs/n25_2_replay_persistence_matrix.json
 reports/n25_2_replay_persistence_matrix.md
 ```
 
+### Result
+
+```text
+status = passed
+acceptance_state = accepted_replay_persistence_matrix_mb4_candidates_no_mb5_no_mb6
+i4_output_digest = 1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1
+i4a_output_digest = f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07
+failed_checks = []
+candidate_row_count = 2
+mb4_replay_candidate_count = 2
+multi_window_child_basin_persistence_replay_status = passed
+persistence_claim_kind = replay_persistence_of_emitted_child_basin_records
+long_horizon_persistence_supported = false
+extended_multi_window_survival_under_stress_supported = false
+matrix_window_count = 2
+runtime_record_window_count_per_row = [1.0, 1.0]
+replay_rows = [i4_reference_child_basin_core_0, i4a_route_variant_child_basin_core_2]
+i4_reference_child_basin_core_0_replay_modes = passed/passed/passed/passed
+i4_reference_child_basin_core_0_duplicate_first_second_emitted = true/false
+i4_reference_child_basin_core_0_ratios = 1.0/1.0/1.0/1.0/1.0
+i4a_route_variant_child_basin_core_2_replay_modes = passed/passed/passed/passed
+i4a_route_variant_child_basin_core_2_duplicate_first_second_emitted = true/false
+i4a_route_variant_child_basin_core_2_ratios = 1.0/1.0/1.0/1.0/1.0
+front_capacity_companion_replay_scope = not_applicable
+front_capacity_companion_child_basin_replay_consumption_allowed = false
+front_capacity_companion_carry_forward_to_i6_i7_as = provenance_context_only
+mb_ladder_candidate = MB4_replay_backed_child_basin_persistence_candidate
+mb5_or_stronger_supported = false
+required_iteration_6_control_count = 10
+mb6_gate_status = not_applied
+mb6_supported = false
+mb6_claim_allowed = false
+n26_unscoped_consumption_allowed = false
+n26_consumption_effect = unscoped_consumption_blocked
+ready_for_iteration_6_fail_closed_control_matrix = true
+output_digest = 8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699
+artifact_sha256 = 58146a72e5e67b840505041fe8a3f33f987fba8bf3987d5130792a1d50d33de7
+report_sha256 = bba38d472012481ec603aa38870a526f14744c6cb410aad81e63d5e01e84943a
+```
+
+### Interpretation
+
+Iteration 5 validates replay-backed persistence for the two runtime-emitted
+child-basin candidates:
+
+```text
+I4 reference child-basin core [0]
+I4-A route-variant child-basin core [2]
+```
+
+Both rows pass the native replay validator with artifact replay,
+snapshot/load replay, duplicate replay, and time-order replay all `passed`.
+Their membership, support, coherence, boundary, and flux persistence ratios
+are all exactly `1.0`.
+
+The matrix-level multi-window result means I5 covers two source-current
+child-basin candidate windows. Each runtime replay validation record remains a
+one-window native replay row, which is the current runtime contract. I5
+therefore supports replay persistence of emitted child-basin records, not
+extended multi-window survival under stress or long-horizon child-basin
+persistence. I7 must test stress and window variation.
+
+For duplicate replay, `first_emitted = true` and `second_emitted = false`
+means idempotency worked: the first replay emitted the validation record, while
+the second replay suppressed a duplicate and returned the same digest.
+
+The I4-A front-capacity boundary-birth companion is intentionally not replayed
+as a child-basin row. It remains topology-growth companion evidence only and
+cannot backfill child-basin persistence, MB5, or MB6. I6/I7 should carry it
+forward only as provenance context.
+
+I5 supports only:
+
+```text
+MB4 replay-backed child-basin persistence candidate
+```
+
+It does not run fail-closed controls, does not support MB5, does not apply the
+MB6 gate, and does not open N26 unscoped consumption. I6 must still fail-close
+label-only basin formation, old-basin thickening, transient sink,
+collapse/reabsorption relabel, visual-only success, hidden producer insertion,
+producer-as-native, front-capacity backfill, MB5-as-MB6, and unsafe relabel
+controls.
+
+### Verification
+
+```text
+.venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_replay_persistence_matrix.py
+passed
+```
+
+## Iteration 5-A. Multi-Window Persistence Replay
+
+Status: passed.
+
+### Goal
+
+Obtain explicit multi-window child-basin persistence replay evidence from the
+closed LGRC9V3 runtime before the I6 control matrix and I7 stress matrix consume
+the candidates.
+
+### Checks
+
+- [x] Load closed I4/I4-A runtime snapshots.
+- [x] Replay each emitted child-basin candidate across three runtime snapshot
+      windows.
+- [x] Confirm child-basin state records remain present in every replay window.
+- [x] Confirm replay modes pass in every replay window.
+- [x] Confirm persistence ratios remain exact in every replay window.
+- [x] Confirm duplicate replay suppression remains stable.
+- [x] Confirm the aggregate trace is replay evidence, not a runtime
+      implementation change.
+- [x] Confirm no implementation source is modified.
+- [x] Confirm unsafe claims remain false.
+
+Expected artifacts:
+
+```text
+outputs/n25_2_multi_window_persistence_replay.json
+reports/n25_2_multi_window_persistence_replay.md
+```
+
+### Result
+
+```text
+status = passed
+acceptance_state = accepted_multi_window_persistence_replay_mb4_extension_no_mb6
+i5_output_digest = 8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699
+failed_checks = []
+candidate_count = 2
+declared_replay_window_count = 3
+runtime_snapshot_window_count_per_candidate = [3, 3]
+multi_window_passed_candidate_count = 2
+all_window_child_basin_records_present = true
+all_window_replay_results_passed = true
+all_window_replay_ratios_exact = true
+duplicate_replay_suppression_observed = true
+eventful_stress_window_supported = false
+
+mb_ladder_candidate = MB4_multi_window_replay_backed_child_basin_persistence_candidate
+mb5_or_stronger_supported = false
+mb6_supported = false
+n26_unscoped_consumption_allowed = false
+ready_for_iteration_6_fail_closed_control_matrix = true
+ready_for_iteration_7_stress_variant_matrix = true
+output_digest = c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a
+artifact_sha256 = 018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7
+report_sha256 = f09e3886713a43fefca295118668ef8d5845e350556ba96c700faf7e7b3f0455
+```
+
+### Interpretation
+
+Iteration 5-A supplies the missing multi-window replay evidence for the two
+runtime-emitted child-basin candidates. Each candidate is replayed across three
+closed-runtime snapshot windows; in every window, the child-basin state record
+remains present and replay ratios remain exactly `1.0`.
+
+This corrects the earlier I7 limitation. The native replay validator still
+emits one-window validation records, but I5-A provides an aggregate
+source-current multi-window replay trace built from repeated closed-runtime
+snapshots. It can be consumed by I8 as multi-window persistence replay evidence.
+
+The claim remains bounded:
+
+```text
+multi-window replay-backed child-basin persistence candidate
+```
+
+It is not eventful stress persistence, MB5 by itself, MB6 by itself, native
+support, agency, or Phase 8 completion.
+
+### Verification
+
+```text
+.venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_multi_window_persistence_replay.py
+passed
+```
+
 ## Iteration 6. Fail-Closed Control Matrix
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -568,20 +746,20 @@ Run fail-closed controls against runtime-emitted candidates.
 
 ### Checks
 
-- [ ] Run label-only basin formation control.
-- [ ] Run old-basin thickening relabel control.
-- [ ] Run transient flow sink relabel control.
-- [ ] Run collapse/reabsorption relabel control.
-- [ ] Run graph-visual-only success control.
-- [ ] Run hidden producer basin insertion control.
-- [ ] Run producer success as native support control.
-- [ ] Run front-capacity backfill control.
-- [ ] Run MB5-as-MB6 relabel control.
-- [ ] Run unsafe semantic / agency / native-support relabel controls.
-- [ ] Confirm controls fail closed.
-- [ ] Confirm failed-open controls block MB6.
-- [ ] Confirm no implementation source is modified.
-- [ ] Confirm unsafe claims remain false.
+- [x] Run label-only basin formation control.
+- [x] Run old-basin thickening relabel control.
+- [x] Run transient flow sink relabel control.
+- [x] Run collapse/reabsorption relabel control.
+- [x] Run graph-visual-only success control.
+- [x] Run hidden producer basin insertion control.
+- [x] Run producer success as native support control.
+- [x] Run front-capacity backfill control.
+- [x] Run MB5-as-MB6 relabel control.
+- [x] Run unsafe semantic / agency / native-support relabel controls.
+- [x] Confirm controls fail closed.
+- [x] Confirm failed-open controls block MB6.
+- [x] Confirm no implementation source is modified.
+- [x] Confirm unsafe claims remain false.
 
 Expected artifacts:
 
@@ -590,9 +768,90 @@ outputs/n25_2_fail_closed_control_matrix.json
 reports/n25_2_fail_closed_control_matrix.md
 ```
 
+### Result
+
+```text
+status = passed
+acceptance_state = accepted_fail_closed_controls_mb5_candidates_no_mb6
+i5_output_digest = 8d9163901e664ba8217ebe72389f99c34141dfbff76c81ee5f57f6e4e4484699
+i5a_output_digest = c297e0ef20296c37d54717df4d4d0adc3c44944e5fc2f828fd22ff789e67ec0a
+failed_checks = []
+control_candidate_count = 2
+mb5_control_backed_candidate_count = 2
+runtime_required_control_count = 17
+supplemental_experiment_control_count = 4
+multi_window_replay_passed_candidate_count = 2
+multi_window_replay_window_count_per_candidate = [3, 3]
+control_record_count_per_candidate = [21, 21]
+failed_open_control_count = 0
+all_controls_failed_closed = true
+i4_reference_child_basin_core_0_control_record_count = 21
+i4_reference_child_basin_core_0_clean_replay_present = true
+i4_reference_child_basin_core_0_mb5_control_backed_candidate_allowed = true
+i4a_route_variant_child_basin_core_2_control_record_count = 21
+i4a_route_variant_child_basin_core_2_clean_replay_present = true
+i4a_route_variant_child_basin_core_2_mb5_control_backed_candidate_allowed = true
+front_capacity_control_scope = provenance_context_only
+front_capacity_backfill_control_status = failed_closed
+front_capacity_mb5_or_mb6_backfill_allowed = false
+mb_ladder_candidate = MB5_control_backed_native_multi_basin_candidate
+mb6_gate_status = not_applied
+mb6_supported = false
+mb6_claim_allowed = false
+n26_unscoped_consumption_allowed = false
+n26_consumption_effect = unscoped_consumption_blocked
+ready_for_iteration_7_stress_variant_matrix = true
+output_digest = 62d1213a2a31b2704a064cb53a23cf1838e08850b92508a5cf6b592cfeee4011
+artifact_sha256 = 09c92e5f7c52bb0edfb89a3012e0544a6ad9d905ea1416c764b3c7d8e88e27ea
+report_sha256 = c177c83496cc433458b946f6e843020b64f035b0c1c72981853fdab781c18e4f
+```
+
+### Interpretation
+
+Iteration 6 consumes the I5 replay-backed child-basin candidates and runs the
+fail-closed control matrix against both:
+
+```text
+I4 reference child-basin core [0]
+I4-A route-variant child-basin core [2]
+```
+
+For each candidate, the matrix records the 17 runtime-required controls plus 4
+N25.2 supplemental controls:
+
+```text
+collapse/reabsorption relabel control
+graph-visual-only success control
+front-capacity backfill control
+MB5-as-MB6 relabel control
+```
+
+All controls fail closed, no failed-open controls appear, clean I5 replay and
+I5-A multi-window replay are present for each candidate, and control idempotency
+is stable. This is the first N25.2 point that supports:
+
+```text
+MB5 control-backed native multi-basin candidate
+```
+
+The result remains bounded. It is not MB6, not N26 substrate consumption, not
+native support, not agency, and not Phase 8 completion. I7 must still test
+stress/window variation, and I8 must still apply the MB6 gate.
+
+The I4-A front-capacity topology-birth companion remains provenance context
+only. Its backfill control fails closed, so it cannot be used as child-basin
+control evidence or as an MB5/MB6 upgrade.
+
+### Verification
+
+```text
+.venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_fail_closed_control_matrix.py
+passed
+```
+
 ## Iteration 7. Stress / Threshold / Variant Matrix
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -601,15 +860,15 @@ modifying runtime implementation.
 
 ### Checks
 
-- [ ] Stress flow-window thresholds.
-- [ ] Stress merge/leakage pressure.
-- [ ] Stress child-basin persistence window.
-- [ ] Stress front-capacity / boundary-birth provenance where applicable.
-- [ ] Stress seed or topology fixture variation where source-backed.
-- [ ] Record whether evidence remains MB5, strengthens toward MB6, or exposes
+- [x] Stress flow-window thresholds.
+- [x] Stress merge/leakage pressure.
+- [x] Stress child-basin persistence window.
+- [x] Stress front-capacity / boundary-birth provenance where applicable.
+- [x] Stress seed or topology fixture variation where source-backed.
+- [x] Record whether evidence remains MB5, strengthens toward MB6, or exposes
       repair target.
-- [ ] Confirm no implementation source is modified.
-- [ ] Confirm unsafe claims remain false.
+- [x] Confirm no implementation source is modified.
+- [x] Confirm unsafe claims remain false.
 
 Expected artifacts:
 
@@ -618,9 +877,78 @@ outputs/n25_2_stress_variant_matrix.json
 reports/n25_2_stress_variant_matrix.md
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_stress_variant_matrix_mb5_retained_multi_window_ready_pending_gate
+output_digest = 1759dbb4d8c85c27bc056108f04fea3cfcc1c59b5ee9518ebb7f641e60949627
+artifact_sha256 = ad303bb671707d877d80f4a2baa05b99f4d28d658f99f65a28c266fab96462b5
+report_sha256 = ca1d8ee65578789a5ab96d7cc3c3ee4bd9b11d9cabeae91549f854c97794d8de
+
+stress_candidate_count = 2
+mb5_retained_candidate_count = 2
+source_threshold_pass_count = 2
+tightened_threshold_fail_closed_count = 2
+source_merge_leakage_pass_count = 2
+injected_pressure_fail_closed_count = 2
+source_one_window_replay_pass_count = 2
+extended_multi_window_pass_count = 4
+extended_multi_window_blocker_count = 0
+unexpected_failed_open_stress_count = 0
+variant_axis_supported = true
+front_capacity_boundary_scope_preserved = true
+
+mb_ladder_candidate = MB5_stress_bounded_native_multi_basin_candidate
+mb5_retained_after_i7 = true
+mb5_demoted = false
+mb6_supported = false
+mb6_blockers = [
+  mb6_gate_pending_iteration_8
+]
+n26_unscoped_consumption_allowed = false
+ready_for_iteration_8_mb6_support_blocker_matrix = true
+```
+
+Interpretation:
+
+Iteration 7 keeps both I6 MB5 candidates alive under stress. The reference
+I4 child-basin core `[0]` and I4-A route-variant child-basin core `[2]` both
+preserve their source-threshold replay, source merge/leakage ceiling, one-window
+replay, and fail-closed behavior under tightened-threshold and injected-pressure
+stress.
+
+This strengthens the MB5 record, but it does not support MB6 by itself because
+I8 still has to apply the MB6 gate. I7 now consumes I5-A multi-window replay
+evidence: each candidate has a three-window closed-runtime persistence trace
+with exact replay ratios. The previous missing multi-window replay blocker is
+therefore removed from I7 and replaced by the narrower pending-I8 gate blocker.
+
+The front-capacity / boundary-birth companion remains provenance context only.
+It cannot backfill child-basin stress, MB5, MB6, or N26 substrate consumption.
+
+Allowed claim:
+
+```text
+stress-bounded MB5 native multi-basin candidate
+```
+
+Blocked claims:
+
+```text
+MB6 support
+N26 unscoped substrate consumption
+native support
+agency
+semantic learning or choice
+sentience
+Phase 8 completion
+ant ecology implementation
+```
+
 ## Iteration 8. MB6 Support / Blocker Matrix
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -628,14 +956,14 @@ Apply the MB6 gate and classify N26 consumption.
 
 ### Checks
 
-- [ ] Apply all MB6 gates to I3-I7 evidence.
-- [ ] Record support/blocker status per gate.
-- [ ] Record whether MB6 is supported.
-- [ ] Record exact blocker list if MB6 is blocked.
-- [ ] Record N26 consumption effect.
-- [ ] Confirm N25.2-C closeout rung remains separate from MB ladder support.
-- [ ] Confirm no implementation source is modified.
-- [ ] Confirm unsafe claims remain false.
+- [x] Apply all MB6 gates to I3-I7 evidence.
+- [x] Record support/blocker status per gate.
+- [x] Record whether MB6 is supported.
+- [x] Record exact blocker list if MB6 is blocked.
+- [x] Record N26 consumption effect.
+- [x] Confirm N25.2-C closeout rung remains separate from MB ladder support.
+- [x] Confirm no implementation source is modified.
+- [x] Confirm unsafe claims remain false.
 
 Expected artifacts:
 
@@ -644,9 +972,88 @@ outputs/n25_2_mb6_support_blocker_matrix.json
 reports/n25_2_mb6_support_blocker_matrix.md
 ```
 
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_mb6_supported_scoped_n26_consumption
+output_digest = 06439fce5f6fa7baee0047e259f66ad12e5fb77d32f7f20750a2d4f23318c728
+artifact_sha256 = c05826b383c2df29b565eee22138ee2cc8587bcdd4452f38cde16db65467e199
+report_sha256 = 7d1bf3be29a4dfaa433b9a4b817f2ef982b8b5dfc6c4166a2e0ef49ba669ed46
+
+gate_count = 17
+passed_gate_count = 17
+blocked_gate_count = 0
+blocked_gate_ids = []
+mb5_demoted = false
+mb6_supported = true
+mb6_gate_status = supported
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_scoped_context_consumption_allowed = true
+n26_unscoped_multi_basin_consumption_allowed = false
+n25_2_closeout_ceiling = N25.2-C5_N26_consumption_classification_complete_pending_closeout
+n25_2_c6_closeout_pending_iteration_9 = true
+ready_for_iteration_9_closeout_and_n26_handoff = true
+```
+
+Interpretation:
+
+Iteration 8 applies the I2 MB6 gate to the full I3-I7 evidence chain. All
+17 required MB6 gates pass:
+
+```text
+source inventory admissible
+Phase 8 MB5 chain validated
+source-backed multi-basin runtime surfaces
+source-backed child-basin state records
+multi-window child-basin persistence replay
+artifact/snapshot/duplicate replay clean
+merge/leakage controls fail closed
+producer/native mutation ownership clean
+front-capacity provenance bounded when used
+hidden producer insertion rejected
+label-only basin formation rejected
+old-basin thickening relabel rejected
+transient flow-sink relabel rejected
+graph-visual-only success rejected
+visual evidence remains corroboration-only
+N26 consumption rule explicit
+unsafe claim flags false
+```
+
+Allowed claim:
+
+```text
+MB6 N26-ready multi-basin substrate evidence
+```
+
+N26 consumption is explicitly scoped:
+
+```text
+scoped multi-basin substrate evidence only
+```
+
+Blocked claims remain:
+
+```text
+unscoped N26 consumption
+native support
+semantic learning or choice
+agency
+identity acceptance
+sentience
+organism/life
+ant ecology implementation
+Phase 8 completion
+unrestricted autonomy
+```
+
+N25.2-C6 remains pending for Iteration 9 closeout. The N25.2 closeout rung is
+not the same thing as MB6 support.
+
 ## Iteration 9. Closeout And N26 Handoff
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -654,16 +1061,16 @@ Close N25.2 and hand off to N26 with explicit MB status.
 
 ### Checks
 
-- [ ] Record final MB status.
-- [ ] Record final N25.2-C rung.
-- [ ] Record final N26 consumption permission.
-- [ ] Record whether MB6 is supported or blocked.
-- [ ] Record whether MB5 remains valid or was demoted.
-- [ ] Record all remaining blockers.
-- [ ] Confirm source artifacts are repo-relative.
-- [ ] Confirm unsafe claims remain false.
-- [ ] Confirm no implementation source was modified.
-- [ ] Record any implementation defect as blocker or repair target only.
+- [x] Record final MB status.
+- [x] Record final N25.2-C rung.
+- [x] Record final N26 consumption permission.
+- [x] Record whether MB6 is supported or blocked.
+- [x] Record whether MB5 remains valid or was demoted.
+- [x] Record all remaining blockers.
+- [x] Confirm source artifacts are repo-relative.
+- [x] Confirm unsafe claims remain false.
+- [x] Confirm no implementation source was modified.
+- [x] Record any implementation defect as blocker or repair target only.
 
 Expected artifacts:
 
@@ -671,3 +1078,40 @@ Expected artifacts:
 outputs/n25_2_closeout_and_n26_handoff.json
 reports/n25_2_closeout_and_n26_handoff.md
 ```
+
+Result:
+
+```text
+status = passed
+acceptance_state = accepted_n25_2_c6_closeout_scoped_n26_handoff
+output_digest = b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03
+artifact_sha256 = 7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328
+report_sha256 = e3682bfb8b40f91a4647f5acbb5961932642ebbb58dcebf282e711314320f35d
+
+final_mb_ladder_rung = MB6_N26_ready_multi_basin_substrate_evidence
+mb6_supported = true
+mb5_remains_valid = true
+mb5_demoted = false
+mb6_blockers = []
+final_n25_2_closeout_rung = N25.2-C6_closeout_and_N26_handoff_complete
+n26_consumption_effect = scoped_mb6_substrate_consumption_allowed
+n26_scoped_context_consumption_allowed = true
+n26_unscoped_multi_basin_consumption_allowed = false
+```
+
+Interpretation:
+
+Iteration 9 closes N25.2. The final MB ladder status is `MB6`, because I8
+passed all MB6 gates. The final N25.2 closeout rung is `N25.2-C6`, because
+the MB6 result and the scoped N26 handoff are now recorded.
+
+The handoff to N26 is intentionally scoped:
+
+```text
+N26 may consume N25.2 as scoped multi-basin substrate evidence.
+N26 may not consume N25.2 as unscoped multi-basin substrate, native support,
+agency, sentience, ant ecology implementation, or Phase 8 completion.
+```
+
+The Phase 8 MB5 evidence remains valid and is not demoted. No implementation
+defect was found or repaired inside N25.2.
