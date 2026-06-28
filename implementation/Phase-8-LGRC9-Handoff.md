@@ -1248,6 +1248,8 @@ handoff as the current Phase 8 continuation index:
 - [`Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md`](./Phase-8-LGRC9-TopologyStateReabsorptionCloseout.md)
 - [`Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md`](./Phase-8-LGRC9-TimeScopedLineageReplayCloseout.md)
 - [`Phase-8-LGRC9-NativeRouteArbitrationCloseout.md`](./Phase-8-LGRC9-NativeRouteArbitrationCloseout.md)
+- [`Phase-8-LGRC9-MultiBasinFormationPlan.md`](./Phase-8-LGRC9-MultiBasinFormationPlan.md)
+- [`Phase-8-LGRC9-MultiBasinFormationChecklist.md`](./Phase-8-LGRC9-MultiBasinFormationChecklist.md)
 
 Current N04 return target after the route-arbitration closeout:
 
@@ -1259,3 +1261,20 @@ These continuations remain runtime-support closeouts. They do not promote
 semantic choice, agency, RC identity collapse, identity acceptance,
 locomotion-like behavior, biological behavior, unrestricted movement, or
 claim-promotion flags.
+
+The current N25.1-driven continuation is open as the multi-basin formation
+implementation tranche. Iteration 83 freezes the baseline in:
+
+```text
+Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.md
+Phase-8-LGRC9-MultiBasinFormationBaselineFreeze.json
+```
+
+The baseline records that GRC9V3 already has child-stabilization source context
+through `evaluate_child_basin_stabilization(...)` and
+`hybrid_spark_completed`, while LGRC9V3 still lacks dedicated replayable
+multi-basin runtime surfaces. Native multi-basin formation, BF6, independent
+new-basin formation, native support, agency, semantic learning, semantic
+choice, sentience, ant ecology, and Phase 8 completion remain blocked until the
+multi-basin extension passes contract, runtime emission, replay, controls, and
+closeout.

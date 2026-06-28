@@ -971,6 +971,107 @@ mechanical_expansion_is_identity_acceptance = false
 refinement_packet_transport_is_identity_transfer = false
 ```
 
+### LGRC-3: Default-Off Multi-Basin Formation Contract
+
+The N25.1-driven Phase 8 continuation defines a default-off contract surface for
+multi-basin formation from causal refinement. The contract does not emit runtime
+evidence by itself. It freezes the artifact names, policy flags, digest fields,
+and fail-closed guards required before LGRC9V3 can expose replayable
+multi-basin formation evidence.
+
+Default flags:
+
+```text
+native_lgrc_multi_basin_formation_enabled = false
+native_lgrc_multi_basin_formation_policy = "disabled"
+native_lgrc_multi_basin_formation_validated = false
+native_lgrc_multi_basin_formation_supported = false
+```
+
+The active v1 policy name is:
+
+```text
+post_refinement_child_basin_replay
+```
+
+When enabled, the policy requires:
+
+```text
+lgrc_runtime_level = "lgrc3"
+causal_layer_mode = "topology_changing_causal_history"
+causal_topology_integration_allowed = true
+```
+
+The v1 contract defines four passive artifact types:
+
+```text
+lgrc9v3_multi_basin_post_refinement_flow_window_record
+lgrc9v3_child_basin_state_record
+lgrc9v3_multi_basin_replay_validation_record
+lgrc9v3_multi_basin_merge_leakage_control_record
+```
+
+The post-refinement flow-window record cites a committed topology/refinement
+source and serializes:
+
+```text
+source_topology_event_id
+source_topology_event_digest
+source_expansion_id
+pre_refinement_topology_signature
+post_refinement_topology_signature
+refinement_lineage_map
+refinement_lineage_map_digest
+window_start_event_time_key
+window_end_event_time_key
+window_scheduler_indices
+node_support_trace
+node_coherence_trace
+edge_flux_trace
+packet_flux_trace
+node_plus_packet_budget_trace
+runtime_visible_inputs
+claim_flags
+post_refinement_flow_window_digest
+```
+
+The child-basin state record cites the flow-window digest and serializes:
+
+```text
+child_basin_core_ids
+child_basin_membership_by_core
+child_basin_membership_digest
+child_basin_support_floor_records
+child_basin_coherence_floor_records
+child_basin_boundary_records
+child_basin_flux_records
+old_basin_relation_trace
+merge_leakage_trace
+producer_residue_classification
+runtime_visible_inputs
+claim_flags
+child_basin_state_digest
+```
+
+The replay validation record cites the child-basin state digest and serializes
+artifact replay, snapshot/load replay, duplicate replay, time-order replay,
+persistence ratios, replay window, and replay failure modes. Replay result
+statuses are `passed`, `failed_closed`, `failed_open`, and `not_run`.
+
+The merge/leakage control record cites the child-basin state digest and
+serializes one fail-closed control result, including blocked condition,
+expected/actual result, rung effect, and merge/leakage metrics.
+
+These records must reject hidden fixture inputs, label-only child basins,
+old-basin thickening, transient flow sinks, merge/leakage-as-success,
+hidden producer basin insertion, producer-assisted success as native upgrade,
+post-hoc membership selection, and claim promotion. The implementation also
+rejects existing native-route hidden-input aliases and legacy claim-promotion
+keys as a defensive superset, but those aliases do not broaden the positive
+multi-basin claim. These records do not mutate runtime state, schedule packets,
+commit topology events, or open BF6 / native support / agency / semantic
+learning / semantic choice / sentience / ant-ecology claims.
+
 ## State Specification
 
 Iteration 24 chooses a composed runtime-state bundle rather than subclassing

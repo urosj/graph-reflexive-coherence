@@ -351,6 +351,30 @@ LGRC9V3_NATIVE_ROUTE_ARBITRATION_RECORD_KIND: Final[str] = (
 LGRC9V3_NATIVE_ROUTE_ARBITRATION_RECORD_SCHEMA_VERSION: Final[str] = (
     "lgrc9v3_native_route_arbitration_record_v1"
 )
+LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_KIND: Final[str] = (
+    "lgrc9v3_multi_basin_post_refinement_flow_window_record"
+)
+LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION: Final[str] = (
+    "lgrc9v3_multi_basin_post_refinement_flow_window_record_v1"
+)
+LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND: Final[str] = (
+    "lgrc9v3_child_basin_state_record"
+)
+LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION: Final[str] = (
+    "lgrc9v3_child_basin_state_record_v1"
+)
+LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_KIND: Final[str] = (
+    "lgrc9v3_multi_basin_replay_validation_record"
+)
+LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION: Final[str] = (
+    "lgrc9v3_multi_basin_replay_validation_record_v1"
+)
+LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND: Final[str] = (
+    "lgrc9v3_multi_basin_merge_leakage_control_record"
+)
+LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION: Final[str] = (
+    "lgrc9v3_multi_basin_merge_leakage_control_record_v1"
+)
 LGRC9V3_ROUTE_ASPECT_KIND: Final[str] = "lgrc9v3_route_aspect"
 LGRC9V3_ROUTE_ASPECT_SCHEMA_VERSION: Final[str] = "lgrc9v3_route_aspect_v1"
 LGRC9V3_ROUTE_ASPECT_EVIDENCE_CLASS: Final[str] = "route_aspect_contract"
@@ -472,6 +496,10 @@ LGRC9V3_NATIVE_ROUTE_ARBITRATION_POLICY_DISABLED: Final[str] = "disabled"
 LGRC9V3_NATIVE_ROUTE_ARBITRATION_POLICY_SCORE_ORDERED_CANDIDATES: Final[str] = (
     "score_ordered_topology_route_candidates"
 )
+LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED: Final[str] = "disabled"
+LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY: Final[str] = (
+    "post_refinement_child_basin_replay"
+)
 LGRC9V3_NATIVE_ROUTE_ARBITRATION_REASON_SELECTED_HIGHEST_SCORE: Final[str] = (
     "native_route_arbitration_selected_highest_score"
 )
@@ -511,6 +539,22 @@ LGRC9V3_NATIVE_ROUTE_INTENT_REABSORB: Final[str] = "reabsorb"
 LGRC9V3_NATIVE_ROUTE_INTENT_SPLIT: Final[str] = "split"
 LGRC9V3_NATIVE_ROUTE_INTENT_MERGE: Final[str] = "merge"
 LGRC9V3_NATIVE_ROUTE_INTENT_REDIRECT: Final[str] = "redirect"
+LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED: Final[str] = "passed"
+LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED: Final[str] = "failed_closed"
+LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_OPEN: Final[str] = "failed_open"
+LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN: Final[str] = "not_run"
+LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED: Final[str] = "failed_closed"
+LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN: Final[str] = "failed_open"
+LGRC9V3_MULTI_BASIN_CONTROL_STATUS_PASSED: Final[str] = "passed"
+LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT: Final[str] = (
+    "native_source_current"
+)
+LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_PRODUCER_ASSISTED: Final[str] = (
+    "producer_assisted"
+)
+LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATURALIZATION_DEBT: Final[str] = (
+    "naturalization_debt"
+)
 LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_UPDATE_POLICY_REPLAY_DECLARED: Final[str] = (
     "replay_declared_surface_update_policy"
 )
@@ -702,6 +746,12 @@ LGRC9V3_NATIVE_ROUTE_ARBITRATION_POLICIES: Final[frozenset[str]] = frozenset(
         LGRC9V3_NATIVE_ROUTE_ARBITRATION_POLICY_SCORE_ORDERED_CANDIDATES,
     }
 )
+LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICIES: Final[frozenset[str]] = frozenset(
+    {
+        LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED,
+        LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY,
+    }
+)
 LGRC9V3_NATIVE_ROUTE_ARBITRATION_REASON_CODES: Final[frozenset[str]] = frozenset(
     {
         LGRC9V3_NATIVE_ROUTE_ARBITRATION_REASON_SELECTED_HIGHEST_SCORE,
@@ -754,6 +804,75 @@ LGRC9V3_NATIVE_ROUTE_ARBITRATION_FORBIDDEN_INPUTS: Final[frozenset[str]] = (
             "report_code",
         }
     )
+)
+LGRC9V3_MULTI_BASIN_REPLAY_STATUSES: Final[frozenset[str]] = frozenset(
+    {
+        LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
+        LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED,
+        LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_OPEN,
+        LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN,
+    }
+)
+LGRC9V3_MULTI_BASIN_CONTROL_STATUSES: Final[frozenset[str]] = frozenset(
+    {
+        LGRC9V3_MULTI_BASIN_CONTROL_STATUS_PASSED,
+        LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+        LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN,
+    }
+)
+LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_CLASSES: Final[frozenset[str]] = frozenset(
+    {
+        LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT,
+        LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_PRODUCER_ASSISTED,
+        LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATURALIZATION_DEBT,
+    }
+)
+LGRC9V3_MULTI_BASIN_FORBIDDEN_INPUTS: Final[frozenset[str]] = frozenset(
+    set(LGRC9V3_NATIVE_ROUTE_ARBITRATION_FORBIDDEN_INPUTS)
+    | {
+        "hidden_fixture_basin",
+        "label_only_child_basin",
+        "old_basin_thickening_as_child_basin",
+        "old_basin_thickening_only",
+        "transient_flow_sink_as_child_basin",
+        "transient_flow_sink",
+        "merge_leakage_as_success",
+        "hidden_producer_basin_insertion",
+        "producer_assisted_success_as_native_upgrade",
+        "producer_success_as_native_upgrade",
+        "post_hoc_membership_selection",
+        "posthoc_membership_selection",
+    }
+)
+LGRC9V3_MULTI_BASIN_FORBIDDEN_CLAIM_KEYS: Final[frozenset[str]] = frozenset(
+    {
+        "claim_promotion",
+        "movement_claim_allowed",
+        "loop_driven_movement_claim_allowed",
+        "locomotion_like_claim_allowed",
+        "adaptive_topology_entry_allowed",
+        "native_m6",
+        "biological_claim_allowed",
+        "agency_claim_allowed",
+        "semantic_choice_claim_allowed",
+        "choice_or_agency_claim_allowed",
+        "native_lgrc_choice_selection_claim_allowed",
+        "rc_identity_collapse_claim_allowed",
+        "rc_identity_through_topology_claim_allowed",
+        "identity_acceptance_claim_allowed",
+        "topology_mutating_movement_claim_allowed",
+        "unrestricted_movement_claim_allowed",
+        "native_multi_basin_formation_claim_allowed",
+        "BF6_claim_allowed",
+        "independent_new_basin_claim_allowed",
+        "semantic_learning_claim_allowed",
+        "native_support_claim_allowed",
+        "sentience_claim_allowed",
+        "organism_life_claim_allowed",
+        "ant_ecology_claim_allowed",
+        "unrestricted_autonomy_claim_allowed",
+        "phase8_completion_claim_allowed",
+    }
 )
 LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_KINDS: Final[frozenset[str]] = frozenset(
     {
@@ -1629,6 +1748,12 @@ LGRC9V3_DEFAULT_CAUSAL_MODES: Final[dict[str, Any]] = {
     ),
     "native_lgrc_route_arbitration_validated": False,
     "native_lgrc_route_arbitration_supported": False,
+    "native_lgrc_multi_basin_formation_enabled": False,
+    "native_lgrc_multi_basin_formation_policy": (
+        LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED
+    ),
+    "native_lgrc_multi_basin_formation_validated": False,
+    "native_lgrc_multi_basin_formation_supported": False,
 }
 LGRC9V3_CAUSAL_MODE_KEYS: Final[frozenset[str]] = frozenset(
     LGRC9V3_DEFAULT_CAUSAL_MODES
@@ -1790,6 +1915,15 @@ def validate_lgrc9v3_causal_modes(
     native_route_arbitration_supported = resolved[
         "native_lgrc_route_arbitration_supported"
     ]
+    native_multi_basin_enabled = resolved[
+        "native_lgrc_multi_basin_formation_enabled"
+    ]
+    native_multi_basin_validated = resolved[
+        "native_lgrc_multi_basin_formation_validated"
+    ]
+    native_multi_basin_supported = resolved[
+        "native_lgrc_multi_basin_formation_supported"
+    ]
     for key, value in (
         ("causal_topology_integration_allowed", topology_integration_allowed),
         ("causal_spark_expansion_allowed", spark_expansion_allowed),
@@ -1838,6 +1972,18 @@ def validate_lgrc9v3_causal_modes(
             "native_lgrc_route_arbitration_supported",
             native_route_arbitration_supported,
         ),
+        (
+            "native_lgrc_multi_basin_formation_enabled",
+            native_multi_basin_enabled,
+        ),
+        (
+            "native_lgrc_multi_basin_formation_validated",
+            native_multi_basin_validated,
+        ),
+        (
+            "native_lgrc_multi_basin_formation_supported",
+            native_multi_basin_supported,
+        ),
     ):
         if not isinstance(value, bool):
             raise InvalidParamsError(f"{key} must be a boolean")
@@ -1860,6 +2006,11 @@ def validate_lgrc9v3_causal_modes(
         resolved,
         key="native_lgrc_route_arbitration_policy",
         allowed=LGRC9V3_NATIVE_ROUTE_ARBITRATION_POLICIES,
+    )
+    native_multi_basin_policy = _require_choice(
+        resolved,
+        key="native_lgrc_multi_basin_formation_policy",
+        allowed=LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICIES,
     )
     if pulse_surface_enabled and (
         pulse_surface_policy == LGRC9V3_CAUSAL_PULSE_SUBSTRATE_SURFACE_POLICY_DISABLED
@@ -2010,6 +2161,43 @@ def validate_lgrc9v3_causal_modes(
     if native_route_arbitration_enabled and not topology_state_reabsorption_supported:
         raise InvalidParamsError(
             "native route arbitration requires supported topology-state reabsorption"
+        )
+    if native_multi_basin_enabled and (
+        native_multi_basin_policy
+        == LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED
+    ):
+        raise InvalidParamsError(
+            "native_lgrc_multi_basin_formation_enabled=true requires an "
+            "active multi-basin formation policy"
+        )
+    if (
+        not native_multi_basin_enabled
+        and native_multi_basin_policy
+        != LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED
+    ):
+        raise InvalidParamsError(
+            "active native_lgrc_multi_basin_formation_policy requires "
+            "native_lgrc_multi_basin_formation_enabled=true"
+        )
+    if native_multi_basin_validated and not native_multi_basin_enabled:
+        raise InvalidParamsError(
+            "native_lgrc_multi_basin_formation_validated=true requires "
+            "native_lgrc_multi_basin_formation_enabled=true"
+        )
+    if native_multi_basin_supported and not native_multi_basin_validated:
+        raise InvalidParamsError(
+            "native_lgrc_multi_basin_formation_supported=true requires "
+            "multi-basin formation validation"
+        )
+    if native_multi_basin_enabled and (
+        runtime_level != LGRC_RUNTIME_LEVEL_LGRC3
+        or causal_layer_mode != CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+    ):
+        raise InvalidParamsError("native_lgrc_multi_basin_formation_requires_lgrc3")
+    if native_multi_basin_enabled and not topology_integration_allowed:
+        raise InvalidParamsError(
+            "native multi-basin formation requires "
+            "causal_topology_integration_allowed=true"
         )
     if pulse_surface_enabled and (
         causal_layer_mode != CAUSAL_LAYER_MODE_PACKETIZED_FIXED_TOPOLOGY
@@ -3213,6 +3401,52 @@ def build_lgrc9v3_native_route_arbitration_idempotency_key(
     )
 
 
+def build_lgrc9v3_multi_basin_flow_window_record_digest(
+    flow_window_record: Mapping[str, Any],
+) -> str:
+    """Return the stable canonical digest for one post-refinement flow window."""
+
+    payload = dict(flow_window_record)
+    payload.pop("post_refinement_flow_window_digest", None)
+    return digest_canonical_data(
+        {"lgrc9v3_multi_basin_post_refinement_flow_window_record": payload}
+    )
+
+
+def build_lgrc9v3_child_basin_state_record_digest(
+    child_basin_record: Mapping[str, Any],
+) -> str:
+    """Return the stable canonical digest for one child-basin state record."""
+
+    payload = dict(child_basin_record)
+    payload.pop("child_basin_state_digest", None)
+    return digest_canonical_data({"lgrc9v3_child_basin_state_record": payload})
+
+
+def build_lgrc9v3_multi_basin_replay_validation_record_digest(
+    replay_record: Mapping[str, Any],
+) -> str:
+    """Return the stable canonical digest for one multi-basin replay record."""
+
+    payload = dict(replay_record)
+    payload.pop("replay_validation_digest", None)
+    return digest_canonical_data(
+        {"lgrc9v3_multi_basin_replay_validation_record": payload}
+    )
+
+
+def build_lgrc9v3_multi_basin_control_record_digest(
+    control_record: Mapping[str, Any],
+) -> str:
+    """Return the stable canonical digest for one merge/leakage control record."""
+
+    payload = dict(control_record)
+    payload.pop("control_record_digest", None)
+    return digest_canonical_data(
+        {"lgrc9v3_multi_basin_merge_leakage_control_record": payload}
+    )
+
+
 @dataclass(frozen=True)
 class LGRC9V3CausalPulseSubstrateSurfaceLineageRecord:
     """Evidence transport or supersession for a surface row after topology.
@@ -3994,6 +4228,146 @@ def _lineage_transfer_map_digest(lineage_transfer_map: Mapping[str, str]) -> str
     )
 
 
+def _validate_multi_basin_runtime_context(
+    *,
+    enabled: bool,
+    policy_id: str,
+    lgrc_runtime_level: str,
+    causal_layer_mode: str,
+    context: str,
+) -> None:
+    if not isinstance(enabled, bool):
+        raise ValueError(f"{context} enabled flag must be boolean")
+    if policy_id not in LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICIES:
+        raise ValueError("unsupported native multi-basin formation policy")
+    if not enabled:
+        raise ValueError(f"{context} requires native multi-basin formation enabled")
+    if policy_id == LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED:
+        raise ValueError(f"{context} requires active multi-basin formation policy")
+    if lgrc_runtime_level != LGRC_RUNTIME_LEVEL_LGRC3:
+        raise ValueError("native_lgrc_multi_basin_formation_requires_lgrc3")
+    if causal_layer_mode != CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY:
+        raise ValueError("native_lgrc_multi_basin_formation_requires_lgrc3")
+
+
+def _validate_multi_basin_claim_flags(
+    claim_flags: Mapping[str, bool],
+    *,
+    context: str,
+) -> None:
+    for key, value in claim_flags.items():
+        if not isinstance(key, str) or not isinstance(value, bool):
+            raise ValueError(f"{context} claim_flags must map strings to booleans")
+        if key in LGRC9V3_MULTI_BASIN_FORBIDDEN_CLAIM_KEYS and value:
+            raise ValueError(f"{context} cannot promote claim flag: {key}")
+
+
+def _validate_multi_basin_inputs(
+    inputs: Sequence[str],
+    *,
+    context: str,
+) -> tuple[str, ...]:
+    if not isinstance(inputs, Sequence) or isinstance(inputs, (str, bytes)):
+        raise ValueError(f"{context} must be a sequence")
+    resolved = tuple(_nonempty_string(str(value), context=f"{context}[]") for value in inputs)
+    if not resolved:
+        raise ValueError(f"{context} must not be empty")
+    forbidden = set(resolved).intersection(LGRC9V3_MULTI_BASIN_FORBIDDEN_INPUTS)
+    if forbidden:
+        raise ValueError(
+            "multi-basin formation inputs contain hidden or relabel inputs: "
+            f"{sorted(forbidden)}"
+        )
+    return resolved
+
+
+def _validate_multi_basin_budget_trace(
+    budget_trace: Mapping[str, float],
+    *,
+    context: str,
+) -> dict[str, float]:
+    required = {
+        "node_plus_packet_budget_before",
+        "node_plus_packet_budget_after",
+        "node_plus_packet_budget_error",
+    }
+    missing = required - set(budget_trace)
+    if missing:
+        raise ValueError(f"{context} missing fields: {sorted(missing)}")
+    resolved = {
+        _nonempty_string(str(key), context=f"{context}.key"): _finite_float(
+            value,
+            context=f"{context}[{key}]",
+        )
+        for key, value in budget_trace.items()
+    }
+    before = resolved["node_plus_packet_budget_before"]
+    after = resolved["node_plus_packet_budget_after"]
+    error = resolved["node_plus_packet_budget_error"]
+    if abs((after - before) - error) > 1e-9:
+        raise ValueError(f"{context} error must equal after-before")
+    return dict(sorted(resolved.items()))
+
+
+def _validate_multi_basin_float_map(
+    values: Mapping[Any, Any],
+    *,
+    context: str,
+) -> dict[str, float]:
+    if not isinstance(values, Mapping):
+        raise ValueError(f"{context} must be a mapping")
+    resolved = {
+        _nonempty_string(str(key), context=f"{context}.key"): _finite_float(
+            value,
+            context=f"{context}[{key}]",
+        )
+        for key, value in values.items()
+    }
+    if not resolved:
+        raise ValueError(f"{context} must not be empty")
+    return dict(sorted(resolved.items()))
+
+
+def _validate_multi_basin_sequence_map(
+    values: Mapping[Any, Sequence[int]],
+    *,
+    context: str,
+) -> dict[str, tuple[int, ...]]:
+    if not isinstance(values, Mapping):
+        raise ValueError(f"{context} must be a mapping")
+    resolved = {
+        _nonempty_string(str(key), context=f"{context}.key"): _nonnegative_int_tuple(
+            tuple(int(value) for value in sequence),
+            context=f"{context}[{key}]",
+        )
+        for key, sequence in values.items()
+    }
+    if not resolved:
+        raise ValueError(f"{context} must not be empty")
+    return dict(sorted(resolved.items()))
+
+
+def _validate_multi_basin_ratio(value: Any, *, context: str) -> float:
+    resolved = _finite_float(value, context=context)
+    if resolved < 0.0 or resolved > 1.0:
+        raise ValueError(f"{context} must be in [0, 1]")
+    return resolved
+
+
+def _validate_multi_basin_replay_status(value: str, *, context: str) -> str:
+    resolved = _nonempty_string(value, context=context)
+    if resolved not in LGRC9V3_MULTI_BASIN_REPLAY_STATUSES:
+        raise ValueError(f"{context} must be a declared replay status")
+    return resolved
+
+
+def _validate_multi_basin_control_status(value: str, *, context: str) -> str:
+    resolved = _nonempty_string(value, context=context)
+    if resolved not in LGRC9V3_MULTI_BASIN_CONTROL_STATUSES:
+        raise ValueError(f"{context} must be a declared control status")
+    return resolved
+
+
 @dataclass(frozen=True)
 class LGRC9V3NativeRouteCandidateRecord:
     """One topology-route candidate before native route arbitration."""
@@ -4077,11 +4451,11 @@ class LGRC9V3NativeRouteCandidateRecord:
             tuple(int(value) for value in self.candidate_transferred_node_ids),
             context="candidate_transferred_node_ids",
         )
-        source_nodes = _nonnegative_int_tuple(
+        _nonnegative_int_tuple(
             tuple(int(value) for value in self.candidate_source_node_ids),
             context="candidate_source_node_ids",
         )
-        target_nodes = _nonnegative_int_tuple(
+        _nonnegative_int_tuple(
             tuple(int(value) for value in self.candidate_target_node_ids),
             context="candidate_target_node_ids",
         )
@@ -4555,6 +4929,1048 @@ class LGRC9V3NativeRouteArbitrationRecord:
                 self.native_route_arbitration_digest
             )
         return artifact
+
+
+@dataclass(frozen=True)
+class LGRC9V3MultiBasinFlowWindowRecord:
+    """Post-refinement runtime window for later child-basin extraction."""
+
+    post_refinement_flow_window_id: str
+    native_multi_basin_policy_id: str
+    native_multi_basin_enabled: bool
+    source_topology_event_id: str
+    source_topology_event_digest: str
+    source_expansion_id: str
+    pre_refinement_topology_signature: str
+    post_refinement_topology_signature: str
+    refinement_lineage_map: Mapping[str, str]
+    window_start_event_time_key: float
+    window_end_event_time_key: float
+    window_scheduler_indices: Sequence[int]
+    node_support_trace: Mapping[Any, Any]
+    node_coherence_trace: Mapping[Any, Any]
+    edge_flux_trace: Mapping[Any, Any]
+    packet_flux_trace: Mapping[Any, Any]
+    node_plus_packet_budget_trace: Mapping[str, float]
+    runtime_visible_inputs: Sequence[str]
+    lgrc_runtime_level: str = LGRC_RUNTIME_LEVEL_LGRC3
+    causal_layer_mode: str = CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+    claim_flags: Mapping[str, bool] = field(default_factory=dict)
+    schema_version: str = LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION
+    post_refinement_flow_window_digest: str | None = None
+
+    def __post_init__(self) -> None:
+        for field_name in (
+            "post_refinement_flow_window_id",
+            "native_multi_basin_policy_id",
+            "source_topology_event_id",
+            "source_topology_event_digest",
+            "source_expansion_id",
+            "pre_refinement_topology_signature",
+            "post_refinement_topology_signature",
+        ):
+            _nonempty_string(getattr(self, field_name), context=field_name)
+        if self.schema_version != LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION:
+            raise ValueError("unsupported multi-basin flow-window schema")
+        _validate_multi_basin_runtime_context(
+            enabled=self.native_multi_basin_enabled,
+            policy_id=self.native_multi_basin_policy_id,
+            lgrc_runtime_level=self.lgrc_runtime_level,
+            causal_layer_mode=self.causal_layer_mode,
+            context="multi-basin flow window",
+        )
+        if not self.refinement_lineage_map:
+            raise ValueError("refinement_lineage_map must not be empty")
+        for key, value in self.refinement_lineage_map.items():
+            _nonempty_string(str(key), context="refinement_lineage_map.key")
+            _nonempty_string(str(value), context=f"refinement_lineage_map[{key}]")
+        start = _nonnegative_float(
+            self.window_start_event_time_key,
+            context="window_start_event_time_key",
+        )
+        end = _nonnegative_float(
+            self.window_end_event_time_key,
+            context="window_end_event_time_key",
+        )
+        if end < start:
+            raise ValueError("window_end_event_time_key must be >= start")
+        _nonnegative_int_tuple(
+            tuple(int(value) for value in self.window_scheduler_indices),
+            context="window_scheduler_indices",
+        )
+        _validate_multi_basin_float_map(
+            self.node_support_trace,
+            context="node_support_trace",
+        )
+        _validate_multi_basin_float_map(
+            self.node_coherence_trace,
+            context="node_coherence_trace",
+        )
+        _validate_multi_basin_float_map(self.edge_flux_trace, context="edge_flux_trace")
+        _validate_multi_basin_float_map(
+            self.packet_flux_trace,
+            context="packet_flux_trace",
+        )
+        _validate_multi_basin_budget_trace(
+            self.node_plus_packet_budget_trace,
+            context="node_plus_packet_budget_trace",
+        )
+        _validate_multi_basin_inputs(
+            self.runtime_visible_inputs,
+            context="runtime_visible_inputs",
+        )
+        _validate_multi_basin_claim_flags(
+            self.claim_flags,
+            context="multi-basin flow window",
+        )
+        expected_digest = build_lgrc9v3_multi_basin_flow_window_record_digest(
+            self.to_artifact(include_digest=False)
+        )
+        if self.post_refinement_flow_window_digest is None:
+            object.__setattr__(
+                self,
+                "post_refinement_flow_window_digest",
+                expected_digest,
+            )
+        elif self.post_refinement_flow_window_digest != expected_digest:
+            raise ValueError(
+                "post_refinement_flow_window_digest does not match canonical digest"
+            )
+
+    def to_artifact(self, *, include_digest: bool = True) -> dict[str, Any]:
+        artifact: dict[str, Any] = {
+            "artifact_kind": LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_KIND,
+            "artifact_schema_version": (
+                LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION
+            ),
+            "mode_version": LGRC9V3_LGRC3_MODE_VERSION,
+            "runtime_family": LGRC9V3_RUNTIME_FAMILY,
+            "evidence_class": "multi_basin_formation",
+            "post_refinement_flow_window_id": self.post_refinement_flow_window_id,
+            "schema_version": self.schema_version,
+            "native_multi_basin_policy_id": self.native_multi_basin_policy_id,
+            "native_multi_basin_enabled": self.native_multi_basin_enabled,
+            "source_topology_event_id": self.source_topology_event_id,
+            "source_topology_event_digest": self.source_topology_event_digest,
+            "source_expansion_id": self.source_expansion_id,
+            "pre_refinement_topology_signature": self.pre_refinement_topology_signature,
+            "post_refinement_topology_signature": (
+                self.post_refinement_topology_signature
+            ),
+            "refinement_lineage_map": dict(
+                sorted((str(key), str(value)) for key, value in self.refinement_lineage_map.items())
+            ),
+            "refinement_lineage_map_digest": _lineage_transfer_map_digest(
+                {
+                    str(key): str(value)
+                    for key, value in self.refinement_lineage_map.items()
+                }
+            ),
+            "window_start_event_time_key": float(self.window_start_event_time_key),
+            "window_end_event_time_key": float(self.window_end_event_time_key),
+            "window_scheduler_indices": [
+                int(value) for value in self.window_scheduler_indices
+            ],
+            "node_support_trace": {
+                str(key): float(value)
+                for key, value in sorted(self.node_support_trace.items(), key=lambda item: str(item[0]))
+            },
+            "node_coherence_trace": {
+                str(key): float(value)
+                for key, value in sorted(self.node_coherence_trace.items(), key=lambda item: str(item[0]))
+            },
+            "edge_flux_trace": {
+                str(key): float(value)
+                for key, value in sorted(self.edge_flux_trace.items(), key=lambda item: str(item[0]))
+            },
+            "packet_flux_trace": {
+                str(key): float(value)
+                for key, value in sorted(self.packet_flux_trace.items(), key=lambda item: str(item[0]))
+            },
+            "node_plus_packet_budget_trace": {
+                str(key): float(value)
+                for key, value in sorted(self.node_plus_packet_budget_trace.items())
+            },
+            "runtime_visible_inputs": [
+                str(value) for value in self.runtime_visible_inputs
+            ],
+            "lgrc_runtime_level": self.lgrc_runtime_level,
+            "causal_layer_mode": self.causal_layer_mode,
+            "claim_flags": dict(sorted(self.claim_flags.items())),
+        }
+        if include_digest:
+            artifact["post_refinement_flow_window_digest"] = (
+                self.post_refinement_flow_window_digest
+            )
+        return artifact
+
+
+@dataclass(frozen=True)
+class LGRC9V3ChildBasinStateRecord:
+    """Source-current child-basin candidate extracted from a flow window."""
+
+    child_basin_state_record_id: str
+    native_multi_basin_policy_id: str
+    native_multi_basin_enabled: bool
+    source_flow_window_digest: str
+    child_basin_core_ids: Sequence[int]
+    child_basin_membership_by_core: Mapping[Any, Sequence[int]]
+    child_basin_support_floor_records: Mapping[Any, Any]
+    child_basin_coherence_floor_records: Mapping[Any, Any]
+    child_basin_boundary_records: Mapping[Any, Any]
+    child_basin_flux_records: Mapping[Any, Any]
+    old_basin_relation_trace: Mapping[str, str]
+    merge_leakage_trace: Mapping[Any, Any]
+    producer_residue_classification: str
+    runtime_visible_inputs: Sequence[str]
+    lgrc_runtime_level: str = LGRC_RUNTIME_LEVEL_LGRC3
+    causal_layer_mode: str = CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+    claim_flags: Mapping[str, bool] = field(default_factory=dict)
+    schema_version: str = LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION
+    child_basin_membership_digest: str | None = None
+    child_basin_state_digest: str | None = None
+
+    def __post_init__(self) -> None:
+        for field_name in (
+            "child_basin_state_record_id",
+            "native_multi_basin_policy_id",
+            "source_flow_window_digest",
+        ):
+            _nonempty_string(getattr(self, field_name), context=field_name)
+        if self.schema_version != LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION:
+            raise ValueError("unsupported child-basin state schema")
+        _validate_multi_basin_runtime_context(
+            enabled=self.native_multi_basin_enabled,
+            policy_id=self.native_multi_basin_policy_id,
+            lgrc_runtime_level=self.lgrc_runtime_level,
+            causal_layer_mode=self.causal_layer_mode,
+            context="child-basin state",
+        )
+        cores = _nonnegative_int_tuple(
+            tuple(int(value) for value in self.child_basin_core_ids),
+            context="child_basin_core_ids",
+        )
+        membership = _validate_multi_basin_sequence_map(
+            self.child_basin_membership_by_core,
+            context="child_basin_membership_by_core",
+        )
+        for core_id in cores:
+            key = str(core_id)
+            if key not in membership:
+                raise ValueError("child_basin_membership_by_core must cover cores")
+            if core_id not in membership[key]:
+                raise ValueError("child membership for each core must include the core")
+        for field_name in (
+            "child_basin_support_floor_records",
+            "child_basin_coherence_floor_records",
+            "child_basin_boundary_records",
+            "child_basin_flux_records",
+            "merge_leakage_trace",
+        ):
+            _validate_multi_basin_float_map(
+                getattr(self, field_name),
+                context=field_name,
+            )
+        if not self.old_basin_relation_trace:
+            raise ValueError("old_basin_relation_trace must not be empty")
+        for key, value in self.old_basin_relation_trace.items():
+            _nonempty_string(str(key), context="old_basin_relation_trace.key")
+            _nonempty_string(str(value), context=f"old_basin_relation_trace[{key}]")
+        if (
+            self.producer_residue_classification
+            not in LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_CLASSES
+        ):
+            raise ValueError("unsupported producer_residue_classification")
+        _validate_multi_basin_inputs(
+            self.runtime_visible_inputs,
+            context="runtime_visible_inputs",
+        )
+        _validate_multi_basin_claim_flags(
+            self.claim_flags,
+            context="child-basin state",
+        )
+        expected_membership_digest = digest_canonical_data(
+            {"child_basin_membership_by_core": membership}
+        )
+        if self.child_basin_membership_digest is None:
+            object.__setattr__(
+                self,
+                "child_basin_membership_digest",
+                expected_membership_digest,
+            )
+        elif self.child_basin_membership_digest != expected_membership_digest:
+            raise ValueError(
+                "child_basin_membership_digest does not match canonical membership"
+            )
+        expected_digest = build_lgrc9v3_child_basin_state_record_digest(
+            self.to_artifact(include_digest=False)
+        )
+        if self.child_basin_state_digest is None:
+            object.__setattr__(self, "child_basin_state_digest", expected_digest)
+        elif self.child_basin_state_digest != expected_digest:
+            raise ValueError(
+                "child_basin_state_digest does not match canonical record digest"
+            )
+
+    def to_artifact(self, *, include_digest: bool = True) -> dict[str, Any]:
+        membership = {
+            str(key): [int(value) for value in values]
+            for key, values in sorted(
+                self.child_basin_membership_by_core.items(),
+                key=lambda item: str(item[0]),
+            )
+        }
+        artifact: dict[str, Any] = {
+            "artifact_kind": LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND,
+            "artifact_schema_version": LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION,
+            "mode_version": LGRC9V3_LGRC3_MODE_VERSION,
+            "runtime_family": LGRC9V3_RUNTIME_FAMILY,
+            "evidence_class": "multi_basin_formation",
+            "child_basin_state_record_id": self.child_basin_state_record_id,
+            "schema_version": self.schema_version,
+            "native_multi_basin_policy_id": self.native_multi_basin_policy_id,
+            "native_multi_basin_enabled": self.native_multi_basin_enabled,
+            "source_flow_window_digest": self.source_flow_window_digest,
+            "child_basin_core_ids": [
+                int(value) for value in self.child_basin_core_ids
+            ],
+            "child_basin_membership_by_core": membership,
+            "child_basin_membership_digest": self.child_basin_membership_digest,
+            "child_basin_support_floor_records": {
+                str(key): float(value)
+                for key, value in sorted(self.child_basin_support_floor_records.items(), key=lambda item: str(item[0]))
+            },
+            "child_basin_coherence_floor_records": {
+                str(key): float(value)
+                for key, value in sorted(self.child_basin_coherence_floor_records.items(), key=lambda item: str(item[0]))
+            },
+            "child_basin_boundary_records": {
+                str(key): float(value)
+                for key, value in sorted(self.child_basin_boundary_records.items(), key=lambda item: str(item[0]))
+            },
+            "child_basin_flux_records": {
+                str(key): float(value)
+                for key, value in sorted(self.child_basin_flux_records.items(), key=lambda item: str(item[0]))
+            },
+            "old_basin_relation_trace": dict(sorted(self.old_basin_relation_trace.items())),
+            "merge_leakage_trace": {
+                str(key): float(value)
+                for key, value in sorted(self.merge_leakage_trace.items(), key=lambda item: str(item[0]))
+            },
+            "producer_residue_classification": self.producer_residue_classification,
+            "runtime_visible_inputs": [
+                str(value) for value in self.runtime_visible_inputs
+            ],
+            "lgrc_runtime_level": self.lgrc_runtime_level,
+            "causal_layer_mode": self.causal_layer_mode,
+            "claim_flags": dict(sorted(self.claim_flags.items())),
+        }
+        if include_digest:
+            artifact["child_basin_state_digest"] = self.child_basin_state_digest
+        return artifact
+
+
+@dataclass(frozen=True)
+class LGRC9V3MultiBasinReplayValidationRecord:
+    """Artifact replay and persistence result for one child-basin state."""
+
+    replay_validation_id: str
+    native_multi_basin_policy_id: str
+    native_multi_basin_enabled: bool
+    source_child_basin_state_digest: str
+    artifact_replay_result: str
+    snapshot_load_replay_result: str
+    duplicate_replay_result: str
+    time_order_replay_result: str
+    membership_persistence_ratio: float
+    support_persistence_ratio: float
+    coherence_persistence_ratio: float
+    boundary_persistence_ratio: float
+    flux_persistence_ratio: float
+    replay_window: Mapping[Any, Any]
+    replay_failure_modes: Sequence[str]
+    lgrc_runtime_level: str = LGRC_RUNTIME_LEVEL_LGRC3
+    causal_layer_mode: str = CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+    claim_flags: Mapping[str, bool] = field(default_factory=dict)
+    schema_version: str = LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION
+    replay_validation_digest: str | None = None
+
+    def __post_init__(self) -> None:
+        for field_name in (
+            "replay_validation_id",
+            "native_multi_basin_policy_id",
+            "source_child_basin_state_digest",
+        ):
+            _nonempty_string(getattr(self, field_name), context=field_name)
+        if (
+            self.schema_version
+            != LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION
+        ):
+            raise ValueError("unsupported multi-basin replay schema")
+        _validate_multi_basin_runtime_context(
+            enabled=self.native_multi_basin_enabled,
+            policy_id=self.native_multi_basin_policy_id,
+            lgrc_runtime_level=self.lgrc_runtime_level,
+            causal_layer_mode=self.causal_layer_mode,
+            context="multi-basin replay validation",
+        )
+        for field_name in (
+            "artifact_replay_result",
+            "snapshot_load_replay_result",
+            "duplicate_replay_result",
+            "time_order_replay_result",
+        ):
+            _validate_multi_basin_replay_status(
+                getattr(self, field_name),
+                context=field_name,
+            )
+        for field_name in (
+            "membership_persistence_ratio",
+            "support_persistence_ratio",
+            "coherence_persistence_ratio",
+            "boundary_persistence_ratio",
+            "flux_persistence_ratio",
+        ):
+            _validate_multi_basin_ratio(getattr(self, field_name), context=field_name)
+        _validate_multi_basin_float_map(self.replay_window, context="replay_window")
+        for value in self.replay_failure_modes:
+            _nonempty_string(str(value), context="replay_failure_modes[]")
+        _validate_multi_basin_claim_flags(
+            self.claim_flags,
+            context="multi-basin replay validation",
+        )
+        expected_digest = build_lgrc9v3_multi_basin_replay_validation_record_digest(
+            self.to_artifact(include_digest=False)
+        )
+        if self.replay_validation_digest is None:
+            object.__setattr__(self, "replay_validation_digest", expected_digest)
+        elif self.replay_validation_digest != expected_digest:
+            raise ValueError(
+                "replay_validation_digest does not match canonical record digest"
+            )
+
+    def to_artifact(self, *, include_digest: bool = True) -> dict[str, Any]:
+        artifact: dict[str, Any] = {
+            "artifact_kind": LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_KIND,
+            "artifact_schema_version": (
+                LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION
+            ),
+            "mode_version": LGRC9V3_LGRC3_MODE_VERSION,
+            "runtime_family": LGRC9V3_RUNTIME_FAMILY,
+            "evidence_class": "multi_basin_formation",
+            "replay_validation_id": self.replay_validation_id,
+            "schema_version": self.schema_version,
+            "native_multi_basin_policy_id": self.native_multi_basin_policy_id,
+            "native_multi_basin_enabled": self.native_multi_basin_enabled,
+            "source_child_basin_state_digest": self.source_child_basin_state_digest,
+            "artifact_replay_result": self.artifact_replay_result,
+            "snapshot_load_replay_result": self.snapshot_load_replay_result,
+            "duplicate_replay_result": self.duplicate_replay_result,
+            "time_order_replay_result": self.time_order_replay_result,
+            "membership_persistence_ratio": float(self.membership_persistence_ratio),
+            "support_persistence_ratio": float(self.support_persistence_ratio),
+            "coherence_persistence_ratio": float(self.coherence_persistence_ratio),
+            "boundary_persistence_ratio": float(self.boundary_persistence_ratio),
+            "flux_persistence_ratio": float(self.flux_persistence_ratio),
+            "replay_window": {
+                str(key): float(value)
+                for key, value in sorted(self.replay_window.items(), key=lambda item: str(item[0]))
+            },
+            "replay_failure_modes": [
+                str(value) for value in self.replay_failure_modes
+            ],
+            "lgrc_runtime_level": self.lgrc_runtime_level,
+            "causal_layer_mode": self.causal_layer_mode,
+            "claim_flags": dict(sorted(self.claim_flags.items())),
+        }
+        if include_digest:
+            artifact["replay_validation_digest"] = self.replay_validation_digest
+        return artifact
+
+
+@dataclass(frozen=True)
+class LGRC9V3MultiBasinControlRecord:
+    """One fail-closed merge/leakage or relabel control result."""
+
+    control_record_id: str
+    native_multi_basin_policy_id: str
+    native_multi_basin_enabled: bool
+    source_child_basin_state_digest: str
+    control_id: str
+    control_status: str
+    blocked_condition: str
+    expected_result: str
+    actual_result: str
+    claim_allowed_when_control_triggers: bool
+    rung_effect: str
+    merge_leakage_metrics: Mapping[Any, Any]
+    lgrc_runtime_level: str = LGRC_RUNTIME_LEVEL_LGRC3
+    causal_layer_mode: str = CAUSAL_LAYER_MODE_TOPOLOGY_CHANGING_CAUSAL_HISTORY
+    claim_flags: Mapping[str, bool] = field(default_factory=dict)
+    schema_version: str = LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION
+    control_record_digest: str | None = None
+
+    def __post_init__(self) -> None:
+        for field_name in (
+            "control_record_id",
+            "native_multi_basin_policy_id",
+            "source_child_basin_state_digest",
+            "control_id",
+            "blocked_condition",
+            "expected_result",
+            "actual_result",
+            "rung_effect",
+        ):
+            _nonempty_string(getattr(self, field_name), context=field_name)
+        if self.schema_version != LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION:
+            raise ValueError("unsupported multi-basin control schema")
+        _validate_multi_basin_runtime_context(
+            enabled=self.native_multi_basin_enabled,
+            policy_id=self.native_multi_basin_policy_id,
+            lgrc_runtime_level=self.lgrc_runtime_level,
+            causal_layer_mode=self.causal_layer_mode,
+            context="multi-basin control",
+        )
+        status = _validate_multi_basin_control_status(
+            self.control_status,
+            context="control_status",
+        )
+        if not isinstance(self.claim_allowed_when_control_triggers, bool):
+            raise ValueError("claim_allowed_when_control_triggers must be boolean")
+        if status != LGRC9V3_MULTI_BASIN_CONTROL_STATUS_PASSED and (
+            self.claim_allowed_when_control_triggers
+        ):
+            raise ValueError("triggered controls cannot allow multi-basin claims")
+        _validate_multi_basin_float_map(
+            self.merge_leakage_metrics,
+            context="merge_leakage_metrics",
+        )
+        _validate_multi_basin_claim_flags(
+            self.claim_flags,
+            context="multi-basin control",
+        )
+        expected_digest = build_lgrc9v3_multi_basin_control_record_digest(
+            self.to_artifact(include_digest=False)
+        )
+        if self.control_record_digest is None:
+            object.__setattr__(self, "control_record_digest", expected_digest)
+        elif self.control_record_digest != expected_digest:
+            raise ValueError(
+                "control_record_digest does not match canonical record digest"
+            )
+
+    def to_artifact(self, *, include_digest: bool = True) -> dict[str, Any]:
+        artifact: dict[str, Any] = {
+            "artifact_kind": LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND,
+            "artifact_schema_version": (
+                LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION
+            ),
+            "mode_version": LGRC9V3_LGRC3_MODE_VERSION,
+            "runtime_family": LGRC9V3_RUNTIME_FAMILY,
+            "evidence_class": "multi_basin_formation",
+            "control_record_id": self.control_record_id,
+            "schema_version": self.schema_version,
+            "native_multi_basin_policy_id": self.native_multi_basin_policy_id,
+            "native_multi_basin_enabled": self.native_multi_basin_enabled,
+            "source_child_basin_state_digest": self.source_child_basin_state_digest,
+            "control_id": self.control_id,
+            "control_status": self.control_status,
+            "blocked_condition": self.blocked_condition,
+            "expected_result": self.expected_result,
+            "actual_result": self.actual_result,
+            "claim_allowed_when_control_triggers": (
+                self.claim_allowed_when_control_triggers
+            ),
+            "rung_effect": self.rung_effect,
+            "merge_leakage_metrics": {
+                str(key): float(value)
+                for key, value in sorted(self.merge_leakage_metrics.items(), key=lambda item: str(item[0]))
+            },
+            "lgrc_runtime_level": self.lgrc_runtime_level,
+            "causal_layer_mode": self.causal_layer_mode,
+            "claim_flags": dict(sorted(self.claim_flags.items())),
+        }
+        if include_digest:
+            artifact["control_record_digest"] = self.control_record_digest
+        return artifact
+
+
+def restore_lgrc9v3_multi_basin_flow_window_record_artifact(
+    artifact: Mapping[str, Any],
+) -> LGRC9V3MultiBasinFlowWindowRecord:
+    """Restore one post-refinement flow-window record."""
+
+    mapping = _require_artifact_mapping(artifact, context="multi_basin_flow_window")
+    if (
+        _artifact_string(mapping.get("artifact_kind"), context="artifact_kind")
+        != LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_KIND
+    ):
+        raise SnapshotCompatibilityError("unsupported multi-basin flow-window kind")
+    if (
+        _artifact_string(
+            mapping.get("artifact_schema_version"),
+            context="artifact_schema_version",
+        )
+        != LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION
+    ):
+        raise SnapshotCompatibilityError("unsupported multi-basin flow-window schema")
+    return LGRC9V3MultiBasinFlowWindowRecord(
+        post_refinement_flow_window_id=_artifact_string(
+            mapping.get("post_refinement_flow_window_id"),
+            context="post_refinement_flow_window_id",
+        ),
+        schema_version=_artifact_string(
+            mapping.get("schema_version"),
+            context="schema_version",
+        ),
+        native_multi_basin_policy_id=_artifact_string(
+            mapping.get("native_multi_basin_policy_id"),
+            context="native_multi_basin_policy_id",
+        ),
+        native_multi_basin_enabled=_artifact_bool(
+            mapping.get("native_multi_basin_enabled"),
+            context="native_multi_basin_enabled",
+        ),
+        source_topology_event_id=_artifact_string(
+            mapping.get("source_topology_event_id"),
+            context="source_topology_event_id",
+        ),
+        source_topology_event_digest=_artifact_string(
+            mapping.get("source_topology_event_digest"),
+            context="source_topology_event_digest",
+        ),
+        source_expansion_id=_artifact_string(
+            mapping.get("source_expansion_id"),
+            context="source_expansion_id",
+        ),
+        pre_refinement_topology_signature=_artifact_string(
+            mapping.get("pre_refinement_topology_signature"),
+            context="pre_refinement_topology_signature",
+        ),
+        post_refinement_topology_signature=_artifact_string(
+            mapping.get("post_refinement_topology_signature"),
+            context="post_refinement_topology_signature",
+        ),
+        refinement_lineage_map={
+            _artifact_string(key, context="refinement_lineage_map.key"): (
+                _artifact_string(value, context=f"refinement_lineage_map[{key}]")
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("refinement_lineage_map"),
+                context="refinement_lineage_map",
+            ).items()
+        },
+        window_start_event_time_key=_artifact_float(
+            mapping.get("window_start_event_time_key"),
+            context="window_start_event_time_key",
+        ),
+        window_end_event_time_key=_artifact_float(
+            mapping.get("window_end_event_time_key"),
+            context="window_end_event_time_key",
+        ),
+        window_scheduler_indices=tuple(
+            _artifact_int(value, context="window_scheduler_indices[]")
+            for value in mapping.get("window_scheduler_indices", [])
+        ),
+        node_support_trace=dict(
+            _require_artifact_mapping(
+                mapping.get("node_support_trace"),
+                context="node_support_trace",
+            )
+        ),
+        node_coherence_trace=dict(
+            _require_artifact_mapping(
+                mapping.get("node_coherence_trace"),
+                context="node_coherence_trace",
+            )
+        ),
+        edge_flux_trace=dict(
+            _require_artifact_mapping(
+                mapping.get("edge_flux_trace"),
+                context="edge_flux_trace",
+            )
+        ),
+        packet_flux_trace=dict(
+            _require_artifact_mapping(
+                mapping.get("packet_flux_trace"),
+                context="packet_flux_trace",
+            )
+        ),
+        node_plus_packet_budget_trace={
+            _artifact_string(key, context="node_plus_packet_budget_trace.key"): (
+                _artifact_float(value, context=f"node_plus_packet_budget_trace[{key}]")
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("node_plus_packet_budget_trace"),
+                context="node_plus_packet_budget_trace",
+            ).items()
+        },
+        runtime_visible_inputs=tuple(
+            _artifact_string(value, context="runtime_visible_inputs[]")
+            for value in mapping.get("runtime_visible_inputs", [])
+        ),
+        lgrc_runtime_level=_artifact_string(
+            mapping.get("lgrc_runtime_level"),
+            context="lgrc_runtime_level",
+        ),
+        causal_layer_mode=_artifact_string(
+            mapping.get("causal_layer_mode"),
+            context="causal_layer_mode",
+        ),
+        claim_flags={
+            _artifact_string(key, context="claim_flags.key"): _artifact_bool(
+                value,
+                context=f"claim_flags[{key}]",
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("claim_flags", {}),
+                context="claim_flags",
+            ).items()
+        },
+        post_refinement_flow_window_digest=_artifact_string(
+            mapping.get("post_refinement_flow_window_digest"),
+            context="post_refinement_flow_window_digest",
+        ),
+    )
+
+
+def restore_lgrc9v3_child_basin_state_record_artifact(
+    artifact: Mapping[str, Any],
+) -> LGRC9V3ChildBasinStateRecord:
+    """Restore one child-basin state record."""
+
+    mapping = _require_artifact_mapping(artifact, context="child_basin_state")
+    if (
+        _artifact_string(mapping.get("artifact_kind"), context="artifact_kind")
+        != LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND
+    ):
+        raise SnapshotCompatibilityError("unsupported child-basin state kind")
+    if (
+        _artifact_string(
+            mapping.get("artifact_schema_version"),
+            context="artifact_schema_version",
+        )
+        != LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION
+    ):
+        raise SnapshotCompatibilityError("unsupported child-basin state schema")
+    return LGRC9V3ChildBasinStateRecord(
+        child_basin_state_record_id=_artifact_string(
+            mapping.get("child_basin_state_record_id"),
+            context="child_basin_state_record_id",
+        ),
+        schema_version=_artifact_string(
+            mapping.get("schema_version"),
+            context="schema_version",
+        ),
+        native_multi_basin_policy_id=_artifact_string(
+            mapping.get("native_multi_basin_policy_id"),
+            context="native_multi_basin_policy_id",
+        ),
+        native_multi_basin_enabled=_artifact_bool(
+            mapping.get("native_multi_basin_enabled"),
+            context="native_multi_basin_enabled",
+        ),
+        source_flow_window_digest=_artifact_string(
+            mapping.get("source_flow_window_digest"),
+            context="source_flow_window_digest",
+        ),
+        child_basin_core_ids=tuple(
+            _artifact_int(value, context="child_basin_core_ids[]")
+            for value in mapping.get("child_basin_core_ids", [])
+        ),
+        child_basin_membership_by_core={
+            _artifact_string(key, context="child_basin_membership_by_core.key"): (
+                tuple(
+                    _artifact_int(
+                        value,
+                        context=f"child_basin_membership_by_core[{key}][]",
+                    )
+                    for value in values
+                )
+            )
+            for key, values in _require_artifact_mapping(
+                mapping.get("child_basin_membership_by_core"),
+                context="child_basin_membership_by_core",
+            ).items()
+        },
+        child_basin_support_floor_records=dict(
+            _require_artifact_mapping(
+                mapping.get("child_basin_support_floor_records"),
+                context="child_basin_support_floor_records",
+            )
+        ),
+        child_basin_coherence_floor_records=dict(
+            _require_artifact_mapping(
+                mapping.get("child_basin_coherence_floor_records"),
+                context="child_basin_coherence_floor_records",
+            )
+        ),
+        child_basin_boundary_records=dict(
+            _require_artifact_mapping(
+                mapping.get("child_basin_boundary_records"),
+                context="child_basin_boundary_records",
+            )
+        ),
+        child_basin_flux_records=dict(
+            _require_artifact_mapping(
+                mapping.get("child_basin_flux_records"),
+                context="child_basin_flux_records",
+            )
+        ),
+        old_basin_relation_trace={
+            _artifact_string(key, context="old_basin_relation_trace.key"): (
+                _artifact_string(value, context=f"old_basin_relation_trace[{key}]")
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("old_basin_relation_trace"),
+                context="old_basin_relation_trace",
+            ).items()
+        },
+        merge_leakage_trace=dict(
+            _require_artifact_mapping(
+                mapping.get("merge_leakage_trace"),
+                context="merge_leakage_trace",
+            )
+        ),
+        producer_residue_classification=_artifact_string(
+            mapping.get("producer_residue_classification"),
+            context="producer_residue_classification",
+        ),
+        runtime_visible_inputs=tuple(
+            _artifact_string(value, context="runtime_visible_inputs[]")
+            for value in mapping.get("runtime_visible_inputs", [])
+        ),
+        lgrc_runtime_level=_artifact_string(
+            mapping.get("lgrc_runtime_level"),
+            context="lgrc_runtime_level",
+        ),
+        causal_layer_mode=_artifact_string(
+            mapping.get("causal_layer_mode"),
+            context="causal_layer_mode",
+        ),
+        claim_flags={
+            _artifact_string(key, context="claim_flags.key"): _artifact_bool(
+                value,
+                context=f"claim_flags[{key}]",
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("claim_flags", {}),
+                context="claim_flags",
+            ).items()
+        },
+        child_basin_membership_digest=_artifact_string(
+            mapping.get("child_basin_membership_digest"),
+            context="child_basin_membership_digest",
+        ),
+        child_basin_state_digest=_artifact_string(
+            mapping.get("child_basin_state_digest"),
+            context="child_basin_state_digest",
+        ),
+    )
+
+
+def restore_lgrc9v3_multi_basin_replay_validation_record_artifact(
+    artifact: Mapping[str, Any],
+) -> LGRC9V3MultiBasinReplayValidationRecord:
+    """Restore one multi-basin replay validation record."""
+
+    mapping = _require_artifact_mapping(artifact, context="multi_basin_replay")
+    if (
+        _artifact_string(mapping.get("artifact_kind"), context="artifact_kind")
+        != LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_KIND
+    ):
+        raise SnapshotCompatibilityError("unsupported multi-basin replay kind")
+    if (
+        _artifact_string(
+            mapping.get("artifact_schema_version"),
+            context="artifact_schema_version",
+        )
+        != LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION
+    ):
+        raise SnapshotCompatibilityError("unsupported multi-basin replay schema")
+    return LGRC9V3MultiBasinReplayValidationRecord(
+        replay_validation_id=_artifact_string(
+            mapping.get("replay_validation_id"),
+            context="replay_validation_id",
+        ),
+        schema_version=_artifact_string(
+            mapping.get("schema_version"),
+            context="schema_version",
+        ),
+        native_multi_basin_policy_id=_artifact_string(
+            mapping.get("native_multi_basin_policy_id"),
+            context="native_multi_basin_policy_id",
+        ),
+        native_multi_basin_enabled=_artifact_bool(
+            mapping.get("native_multi_basin_enabled"),
+            context="native_multi_basin_enabled",
+        ),
+        source_child_basin_state_digest=_artifact_string(
+            mapping.get("source_child_basin_state_digest"),
+            context="source_child_basin_state_digest",
+        ),
+        artifact_replay_result=_artifact_string(
+            mapping.get("artifact_replay_result"),
+            context="artifact_replay_result",
+        ),
+        snapshot_load_replay_result=_artifact_string(
+            mapping.get("snapshot_load_replay_result"),
+            context="snapshot_load_replay_result",
+        ),
+        duplicate_replay_result=_artifact_string(
+            mapping.get("duplicate_replay_result"),
+            context="duplicate_replay_result",
+        ),
+        time_order_replay_result=_artifact_string(
+            mapping.get("time_order_replay_result"),
+            context="time_order_replay_result",
+        ),
+        membership_persistence_ratio=_artifact_float(
+            mapping.get("membership_persistence_ratio"),
+            context="membership_persistence_ratio",
+        ),
+        support_persistence_ratio=_artifact_float(
+            mapping.get("support_persistence_ratio"),
+            context="support_persistence_ratio",
+        ),
+        coherence_persistence_ratio=_artifact_float(
+            mapping.get("coherence_persistence_ratio"),
+            context="coherence_persistence_ratio",
+        ),
+        boundary_persistence_ratio=_artifact_float(
+            mapping.get("boundary_persistence_ratio"),
+            context="boundary_persistence_ratio",
+        ),
+        flux_persistence_ratio=_artifact_float(
+            mapping.get("flux_persistence_ratio"),
+            context="flux_persistence_ratio",
+        ),
+        replay_window=dict(
+            _require_artifact_mapping(
+                mapping.get("replay_window"),
+                context="replay_window",
+            )
+        ),
+        replay_failure_modes=tuple(
+            _artifact_string(value, context="replay_failure_modes[]")
+            for value in mapping.get("replay_failure_modes", [])
+        ),
+        lgrc_runtime_level=_artifact_string(
+            mapping.get("lgrc_runtime_level"),
+            context="lgrc_runtime_level",
+        ),
+        causal_layer_mode=_artifact_string(
+            mapping.get("causal_layer_mode"),
+            context="causal_layer_mode",
+        ),
+        claim_flags={
+            _artifact_string(key, context="claim_flags.key"): _artifact_bool(
+                value,
+                context=f"claim_flags[{key}]",
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("claim_flags", {}),
+                context="claim_flags",
+            ).items()
+        },
+        replay_validation_digest=_artifact_string(
+            mapping.get("replay_validation_digest"),
+            context="replay_validation_digest",
+        ),
+    )
+
+
+def restore_lgrc9v3_multi_basin_control_record_artifact(
+    artifact: Mapping[str, Any],
+) -> LGRC9V3MultiBasinControlRecord:
+    """Restore one multi-basin merge/leakage control record."""
+
+    mapping = _require_artifact_mapping(artifact, context="multi_basin_control")
+    if (
+        _artifact_string(mapping.get("artifact_kind"), context="artifact_kind")
+        != LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND
+    ):
+        raise SnapshotCompatibilityError("unsupported multi-basin control kind")
+    if (
+        _artifact_string(
+            mapping.get("artifact_schema_version"),
+            context="artifact_schema_version",
+        )
+        != LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION
+    ):
+        raise SnapshotCompatibilityError("unsupported multi-basin control schema")
+    return LGRC9V3MultiBasinControlRecord(
+        control_record_id=_artifact_string(
+            mapping.get("control_record_id"),
+            context="control_record_id",
+        ),
+        schema_version=_artifact_string(
+            mapping.get("schema_version"),
+            context="schema_version",
+        ),
+        native_multi_basin_policy_id=_artifact_string(
+            mapping.get("native_multi_basin_policy_id"),
+            context="native_multi_basin_policy_id",
+        ),
+        native_multi_basin_enabled=_artifact_bool(
+            mapping.get("native_multi_basin_enabled"),
+            context="native_multi_basin_enabled",
+        ),
+        source_child_basin_state_digest=_artifact_string(
+            mapping.get("source_child_basin_state_digest"),
+            context="source_child_basin_state_digest",
+        ),
+        control_id=_artifact_string(mapping.get("control_id"), context="control_id"),
+        control_status=_artifact_string(
+            mapping.get("control_status"),
+            context="control_status",
+        ),
+        blocked_condition=_artifact_string(
+            mapping.get("blocked_condition"),
+            context="blocked_condition",
+        ),
+        expected_result=_artifact_string(
+            mapping.get("expected_result"),
+            context="expected_result",
+        ),
+        actual_result=_artifact_string(
+            mapping.get("actual_result"),
+            context="actual_result",
+        ),
+        claim_allowed_when_control_triggers=_artifact_bool(
+            mapping.get("claim_allowed_when_control_triggers"),
+            context="claim_allowed_when_control_triggers",
+        ),
+        rung_effect=_artifact_string(mapping.get("rung_effect"), context="rung_effect"),
+        merge_leakage_metrics=dict(
+            _require_artifact_mapping(
+                mapping.get("merge_leakage_metrics"),
+                context="merge_leakage_metrics",
+            )
+        ),
+        lgrc_runtime_level=_artifact_string(
+            mapping.get("lgrc_runtime_level"),
+            context="lgrc_runtime_level",
+        ),
+        causal_layer_mode=_artifact_string(
+            mapping.get("causal_layer_mode"),
+            context="causal_layer_mode",
+        ),
+        claim_flags={
+            _artifact_string(key, context="claim_flags.key"): _artifact_bool(
+                value,
+                context=f"claim_flags[{key}]",
+            )
+            for key, value in _require_artifact_mapping(
+                mapping.get("claim_flags", {}),
+                context="claim_flags",
+            ).items()
+        },
+        control_record_digest=_artifact_string(
+            mapping.get("control_record_digest"),
+            context="control_record_digest",
+        ),
+    )
 
 
 def restore_lgrc9v3_native_route_candidate_record_artifact(
@@ -6408,6 +7824,10 @@ __all__ = [
     'LGRC9V3NativeRouteCandidateRecord',
     'LGRC9V3NativeRouteCandidateSetFieldNames',
     'LGRC9V3NativeRouteCandidateSetRecord',
+    'LGRC9V3ChildBasinStateRecord',
+    'LGRC9V3MultiBasinControlRecord',
+    'LGRC9V3MultiBasinFlowWindowRecord',
+    'LGRC9V3MultiBasinReplayValidationRecord',
     'LGRC9V3PacketFieldNames',
     'LGRC9V3PacketLedgerFieldNames',
     'LGRC9V3PacketTransportFieldNames',
@@ -6555,6 +7975,32 @@ __all__ = [
     'LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICIES',
     'LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_DECLARED_TIEBREAKER',
     'LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED',
+    'LGRC9V3_CHILD_BASIN_STATE_RECORD_KIND',
+    'LGRC9V3_CHILD_BASIN_STATE_RECORD_SCHEMA_VERSION',
+    'LGRC9V3_MULTI_BASIN_CONTROL_RECORD_KIND',
+    'LGRC9V3_MULTI_BASIN_CONTROL_RECORD_SCHEMA_VERSION',
+    'LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED',
+    'LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN',
+    'LGRC9V3_MULTI_BASIN_CONTROL_STATUS_PASSED',
+    'LGRC9V3_MULTI_BASIN_CONTROL_STATUSES',
+    'LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_KIND',
+    'LGRC9V3_MULTI_BASIN_FLOW_WINDOW_RECORD_SCHEMA_VERSION',
+    'LGRC9V3_MULTI_BASIN_FORBIDDEN_CLAIM_KEYS',
+    'LGRC9V3_MULTI_BASIN_FORBIDDEN_INPUTS',
+    'LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_CLASSES',
+    'LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT',
+    'LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATURALIZATION_DEBT',
+    'LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_PRODUCER_ASSISTED',
+    'LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED',
+    'LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_OPEN',
+    'LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN',
+    'LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED',
+    'LGRC9V3_MULTI_BASIN_REPLAY_STATUSES',
+    'LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_KIND',
+    'LGRC9V3_MULTI_BASIN_REPLAY_VALIDATION_RECORD_SCHEMA_VERSION',
+    'LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICIES',
+    'LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_DISABLED',
+    'LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY',
     'LGRC9V3_IDENTITY_CLOCK_POLICIES',
     'LGRC9V3_IDENTITY_CLOCK_POLICY_BASIN_AGGREGATE',
     'LGRC9V3_IDENTITY_CLOCK_POLICY_CAUSAL_FRONTIER',
@@ -6725,6 +8171,10 @@ __all__ = [
     'build_lgrc9v3_causal_pulse_substrate_surface_lineage_record_digest',
     'build_lgrc9v3_disabled_autonomous_production_result',
     'build_lgrc9v3_disabled_causal_pulse_substrate_surface_policy',
+    'build_lgrc9v3_child_basin_state_record_digest',
+    'build_lgrc9v3_multi_basin_control_record_digest',
+    'build_lgrc9v3_multi_basin_flow_window_record_digest',
+    'build_lgrc9v3_multi_basin_replay_validation_record_digest',
     'build_lgrc9v3_native_route_arbitration_idempotency_key',
     'build_lgrc9v3_native_route_arbitration_record_digest',
     'build_lgrc9v3_native_route_candidate_record_digest',
@@ -6740,6 +8190,10 @@ __all__ = [
     'restore_lgrc9v3_causal_pulse_substrate_surface_policy_artifact',
     'restore_lgrc9v3_causal_pulse_substrate_surface_lineage_record_artifact',
     'restore_lgrc9v3_causal_pulse_substrate_surface_row_artifact',
+    'restore_lgrc9v3_child_basin_state_record_artifact',
+    'restore_lgrc9v3_multi_basin_control_record_artifact',
+    'restore_lgrc9v3_multi_basin_flow_window_record_artifact',
+    'restore_lgrc9v3_multi_basin_replay_validation_record_artifact',
     'restore_lgrc9v3_native_route_arbitration_record_artifact',
     'restore_lgrc9v3_native_route_candidate_record_artifact',
     'restore_lgrc9v3_native_route_candidate_set_record_artifact',
