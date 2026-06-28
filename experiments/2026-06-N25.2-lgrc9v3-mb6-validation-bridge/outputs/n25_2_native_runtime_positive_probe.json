@@ -1,0 +1,4708 @@
+{
+  "acceptance_state": "accepted_native_runtime_positive_mb3_candidate_pending_replay_controls_no_mb6",
+  "artifact_id": "n25_2_native_runtime_positive_probe",
+  "artifact_manifest": [
+    {
+      "artifact_role": "runtime_execution_trace",
+      "digest": "57861bed8236c58fc734dcd8bfef9422a7643c6fa056cb592aec6cd73d82e965"
+    },
+    {
+      "artifact_role": "flow_window_records",
+      "digest": "17e5b1f64c1c341be9aa58a5cb88cd6e077182d720a0f5cffe3b3ec3a54bbb63"
+    },
+    {
+      "artifact_role": "child_basin_state_records",
+      "digest": "1a9caa44657f5093377f8db6347103dfa601ef8108f2316a0cf76a00f3c532d6"
+    },
+    {
+      "artifact_role": "topology_refinement_provenance",
+      "digest": "1b830ae18c96064d003d57f39b997e4c6e31c7ca8247ef97e4c936776a716eb4"
+    },
+    {
+      "artifact_role": "runtime_snapshot",
+      "digest": "5471b8a051054547c5a4c9456a918465a7d18449e37b1946486e88a0d65e3960"
+    }
+  ],
+  "artifact_manifest_scope": "embedded_payloads_only",
+  "checks": [
+    {
+      "check_id": "i3_mb5_chain_validated",
+      "detail": {
+        "i3_output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "existing_runtime_executed_without_source_edits",
+      "detail": {
+        "defect_disposition": "record_as_blocker_or_repair_target_only",
+        "defect_fix_attempted": false,
+        "example_diff_observed": false,
+        "implementation_diff_observed": false,
+        "implementation_modification_allowed": false,
+        "implementation_source_modification_observed": false,
+        "observed_diff_paths": [],
+        "runtime_execution_from_closed_implementation": true,
+        "spec_diff_observed": false,
+        "src_diff_observed": false,
+        "test_diff_observed": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "runtime_execution_trace_emitted",
+      "detail": {
+        "arbitration_emitted": true,
+        "candidate_emitted": true,
+        "commit_committed": true,
+        "step_event_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check_id": "flow_window_records_emitted",
+      "detail": {
+        "flow_window_record_count": 1
+      },
+      "passed": true
+    },
+    {
+      "check_id": "child_basin_state_records_emitted",
+      "detail": {
+        "child_basin_core_ids": [
+          0
+        ],
+        "child_basin_record_count": 1
+      },
+      "passed": true
+    },
+    {
+      "check_id": "snapshot_contains_runtime_emitted_records",
+      "detail": "snapshot runtime logs match source-current emitted records",
+      "passed": true
+    },
+    {
+      "check_id": "topology_refinement_provenance_present",
+      "detail": {
+        "selected_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+        "topology_event_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check_id": "collapse_reabsorption_shape_recorded_and_controls_deferred",
+      "detail": {
+        "required_i6_controls": [
+          "collapse_reabsorption_relabel_control",
+          "old_basin_thickening_relabel_control",
+          "transient_flow_sink_relabel_control",
+          "label_only_basin_formation_control"
+        ],
+        "topology_provenance_shape": "collapse_reabsorption_shaped_existing_graph"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_native_mutation_ownership_recorded",
+      "detail": {
+        "producer_residue_classification": "native_source_current",
+        "runtime_visible_inputs": [
+          "post_refinement_flow_window_digest",
+          "child_basin_core_ids",
+          "source_current_child_membership",
+          "active_node_state",
+          "active_edge_state",
+          "packet_ledger"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "implementation_digests_recorded",
+      "detail": {
+        "lgrc9v3_contract_file_sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+        "lgrc9v3_runtime_file_sha256": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+        "lgrc9v3_runtime_state_file_sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+        "runtime_config_digest": "a9e588afc04aac1cf752c2526883df5ebad0d78773d5e6cfb76971bad0625025",
+        "runtime_source_digest": "1ee0ef4af80fc56288696aad6581b21ae2db6a96b60bfd3c2c951a668be7968f",
+        "source_file_sha256": {
+          "examples/lgrc9v3/multi_basin_formation_bundle.py": "cca72d4ba956fdba2bbb37527e5009a97d559427d3f47ea8572f6fefafd37793",
+          "src/pygrc/models/lgrc_9_v3_contract.py": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+          "src/pygrc/models/lgrc_9_v3_runtime.py": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+          "src/pygrc/models/lgrc_9_v3_runtime_state.py": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+          "src/pygrc/telemetry/lgrc9v3_contract.py": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+        },
+        "telemetry_contract_file_sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "child_basin_required_fields_recorded",
+      "detail": {
+        "basin_signature_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+        "birth_or_detection_step": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+        "boundary_birth_or_refinement_provenance": {
+          "candidate_ceiling": "MB3_candidate_emission_only",
+          "mb4_or_stronger_supported": "false",
+          "relation": "post_refinement_child_candidate_from_committed_topology_event",
+          "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+          "source_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49"
+        },
+        "child_basin_id": "child-basin-state:556450a8434944316a25f18c2eb05eb6",
+        "coherence_core_nodes": {
+          "0": 1.1
+        },
+        "flow_window_id": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+        "merge_leakage_status": {
+          "0:absolute_incident_flux": 0.0,
+          "0:incident_edge_count": 2.0
+        },
+        "parent_or_source_basin_id": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+        "producer_native_mutation_owner": "native_source_current",
+        "producer_residue_status": "not_load_bearing_for_claim",
+        "source_current_status": "native_runtime_emitted",
+        "support_core_nodes": {
+          "0": 1.1
+        },
+        "trace_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+        "trace_origin": "LGRC9V3_runtime_commit_native_route_arbitration_selection"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "embedded_artifact_manifest_has_json_pointers",
+      "detail": [
+        {
+          "artifact_role": "runtime_execution_trace",
+          "digest": "57861bed8236c58fc734dcd8bfef9422a7643c6fa056cb592aec6cd73d82e965",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/runtime_execution_trace"
+        },
+        {
+          "artifact_role": "flow_window_records",
+          "digest": "17e5b1f64c1c341be9aa58a5cb88cd6e077182d720a0f5cffe3b3ec3a54bbb63",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/runtime_surface_evidence/flow_window_records"
+        },
+        {
+          "artifact_role": "child_basin_state_records",
+          "digest": "1a9caa44657f5093377f8db6347103dfa601ef8108f2316a0cf76a00f3c532d6",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/child_basin_state_records/records"
+        },
+        {
+          "artifact_role": "topology_refinement_provenance",
+          "digest": "1b830ae18c96064d003d57f39b997e4c6e31c7ca8247ef97e4c936776a716eb4",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/topology_refinement_provenance/topology_events"
+        },
+        {
+          "artifact_role": "runtime_snapshot",
+          "digest": "5471b8a051054547c5a4c9456a918465a7d18449e37b1946486e88a0d65e3960",
+          "digest_algorithm": "sha256_canonical_json",
+          "digest_matches_embedded_payload": true,
+          "json_pointer": "#/runtime_snapshot_artifact"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "replay_controls_stress_mb6_and_n26_pending",
+      "detail": {
+        "control_record_count": 0,
+        "replay_record_count": 0,
+        "supported_flag": false,
+        "validated_flag": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "child_claim_flags_false": true,
+        "flow_claim_flags_false": true,
+        "global_unsafe_claim_flags": {
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false,
+          "unrestricted_autonomy_claim_allowed": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "child_basin_state_record_schema": {
+    "candidate_name_mapping": "N25.2 child_basin_id maps to Phase 8 child_basin_state_record_id/core/membership digest",
+    "schema_basis": "Phase_8_contract_schema_and_runtime_record"
+  },
+  "child_basin_state_records": {
+    "record_count": 1,
+    "records": [
+      {
+        "artifact_kind": "lgrc9v3_child_basin_state_record",
+        "artifact_schema_version": "lgrc9v3_child_basin_state_record_v1",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "child_basin_boundary_records": {
+          "0": 2.0
+        },
+        "child_basin_coherence_floor_records": {
+          "0": 1.1
+        },
+        "child_basin_core_ids": [
+          0
+        ],
+        "child_basin_flux_records": {
+          "0": 0.0
+        },
+        "child_basin_membership_by_core": {
+          "0": [
+            0,
+            1,
+            2
+          ]
+        },
+        "child_basin_membership_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+        "child_basin_state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+        "child_basin_state_record_id": "child-basin-state:556450a8434944316a25f18c2eb05eb6",
+        "child_basin_support_floor_records": {
+          "0": 1.1
+        },
+        "claim_flags": {
+          "BF6_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "independent_new_basin_claim_allowed": false,
+          "native_multi_basin_formation_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false
+        },
+        "evidence_class": "multi_basin_formation",
+        "lgrc_runtime_level": "lgrc3",
+        "merge_leakage_trace": {
+          "0:absolute_incident_flux": 0.0,
+          "0:incident_edge_count": 2.0
+        },
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_multi_basin_enabled": true,
+        "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+        "old_basin_relation_trace": {
+          "candidate_ceiling": "MB3_candidate_emission_only",
+          "mb4_or_stronger_supported": "false",
+          "relation": "post_refinement_child_candidate_from_committed_topology_event",
+          "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+          "source_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49"
+        },
+        "producer_residue_classification": "native_source_current",
+        "runtime_family": "LGRC9V3",
+        "runtime_visible_inputs": [
+          "post_refinement_flow_window_digest",
+          "child_basin_core_ids",
+          "source_current_child_membership",
+          "active_node_state",
+          "active_edge_state",
+          "packet_ledger"
+        ],
+        "schema_version": "lgrc9v3_child_basin_state_record_v1",
+        "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84"
+      }
+    ],
+    "required_field_summary": [
+      {
+        "basin_signature_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+        "birth_or_detection_step": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+        "boundary_birth_or_refinement_provenance": {
+          "candidate_ceiling": "MB3_candidate_emission_only",
+          "mb4_or_stronger_supported": "false",
+          "relation": "post_refinement_child_candidate_from_committed_topology_event",
+          "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+          "source_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49"
+        },
+        "child_basin_id": "child-basin-state:556450a8434944316a25f18c2eb05eb6",
+        "coherence_core_nodes": {
+          "0": 1.1
+        },
+        "flow_window_id": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+        "merge_leakage_status": {
+          "0:absolute_incident_flux": 0.0,
+          "0:incident_edge_count": 2.0
+        },
+        "parent_or_source_basin_id": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+        "producer_native_mutation_owner": "native_source_current",
+        "producer_residue_status": "not_load_bearing_for_claim",
+        "source_current_status": "native_runtime_emitted",
+        "support_core_nodes": {
+          "0": 1.1
+        },
+        "trace_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+        "trace_origin": "LGRC9V3_runtime_commit_native_route_arbitration_selection"
+      }
+    ]
+  },
+  "claim_ceiling": "source-current MB3 child-basin candidate pending replay/control/stress; not MB5, not MB6",
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_native_runtime_positive_probe.py",
+  "control_evidence": {
+    "records": [],
+    "status": "not_run_until_iteration_6"
+  },
+  "defect_disposition": "record_as_blocker_or_repair_target_only",
+  "defect_fix_attempted": false,
+  "embedded_artifact_manifest": [
+    {
+      "artifact_role": "runtime_execution_trace",
+      "digest": "57861bed8236c58fc734dcd8bfef9422a7643c6fa056cb592aec6cd73d82e965",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/runtime_execution_trace"
+    },
+    {
+      "artifact_role": "flow_window_records",
+      "digest": "17e5b1f64c1c341be9aa58a5cb88cd6e077182d720a0f5cffe3b3ec3a54bbb63",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/runtime_surface_evidence/flow_window_records"
+    },
+    {
+      "artifact_role": "child_basin_state_records",
+      "digest": "1a9caa44657f5093377f8db6347103dfa601ef8108f2316a0cf76a00f3c532d6",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/child_basin_state_records/records"
+    },
+    {
+      "artifact_role": "topology_refinement_provenance",
+      "digest": "1b830ae18c96064d003d57f39b997e4c6e31c7ca8247ef97e4c936776a716eb4",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/topology_refinement_provenance/topology_events"
+    },
+    {
+      "artifact_role": "runtime_snapshot",
+      "digest": "5471b8a051054547c5a4c9456a918465a7d18449e37b1946486e88a0d65e3960",
+      "digest_algorithm": "sha256_canonical_json",
+      "digest_matches_embedded_payload": true,
+      "json_pointer": "#/runtime_snapshot_artifact"
+    }
+  ],
+  "experiment": "N25.2",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "implementation_digest_bundle": {
+    "lgrc9v3_contract_file_sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+    "lgrc9v3_runtime_file_sha256": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+    "lgrc9v3_runtime_state_file_sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+    "runtime_config_digest": "a9e588afc04aac1cf752c2526883df5ebad0d78773d5e6cfb76971bad0625025",
+    "runtime_source_digest": "1ee0ef4af80fc56288696aad6581b21ae2db6a96b60bfd3c2c951a668be7968f",
+    "source_file_sha256": {
+      "examples/lgrc9v3/multi_basin_formation_bundle.py": "cca72d4ba956fdba2bbb37527e5009a97d559427d3f47ea8572f6fefafd37793",
+      "src/pygrc/models/lgrc_9_v3_contract.py": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "src/pygrc/models/lgrc_9_v3_runtime.py": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+      "src/pygrc/models/lgrc_9_v3_runtime_state.py": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "src/pygrc/telemetry/lgrc9v3_contract.py": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+    },
+    "telemetry_contract_file_sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+  },
+  "implementation_no_mutation_proof": {
+    "defect_disposition": "record_as_blocker_or_repair_target_only",
+    "defect_fix_attempted": false,
+    "example_diff_observed": false,
+    "implementation_diff_observed": false,
+    "implementation_modification_allowed": false,
+    "implementation_source_modification_observed": false,
+    "observed_diff_paths": [],
+    "runtime_execution_from_closed_implementation": true,
+    "spec_diff_observed": false,
+    "src_diff_observed": false,
+    "test_diff_observed": false
+  },
+  "iteration": 4,
+  "may_consume_as": [
+    "MB3_source_current_child_basin_candidate",
+    "I5_replay_input",
+    "I6_control_input"
+  ],
+  "mb6_blockers": [
+    "replay_matrix_pending_iteration_5",
+    "control_matrix_pending_iteration_6",
+    "stress_matrix_pending_iteration_7",
+    "mb6_gate_pending_iteration_8"
+  ],
+  "mb6_claim_allowed": false,
+  "mb6_gate_results": [],
+  "mb6_gate_status": "not_applied",
+  "mb6_supported": false,
+  "mb_ladder_candidate": "MB3_source_current_child_basin_candidate_emission",
+  "mb_ladder_input": "Phase_8_MB5_chain_validated_for_runtime_probe",
+  "multi_basin_substrate_persistence": {
+    "status": "pending_iteration_5_replay",
+    "supporting_i4_evidence": "source_current_child_basin_state_record_emitted"
+  },
+  "must_not_consume_as": [
+    "MB5_control_backed_candidate",
+    "MB6",
+    "N26_unscoped_consumption",
+    "native_support",
+    "agency"
+  ],
+  "n25_2_closeout_candidate": "pending_I5_I8",
+  "n26_consumption_effect": "unscoped_consumption_blocked",
+  "n26_consumption_scope": {
+    "scoped_consumption_status": "pending_iteration_8",
+    "unscoped_multi_basin_consumption_allowed": false
+  },
+  "n26_unscoped_consumption_allowed": false,
+  "native_runtime_execution_evidence": {
+    "arbitration_result": {
+      "emitted": true,
+      "reason_code": "native_route_arbitration_selected_highest_score",
+      "route_arbitration_record": {
+        "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+        "arbitration_rule": "highest_score",
+        "arbitration_runtime_visible_inputs": [
+          "candidate_route_score",
+          "candidate_order_key",
+          "candidate_set_order_key"
+        ],
+        "arbitration_score": 0.75,
+        "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+        "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+        "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "7f5ea90736aa2c7481603995a6cab50dcea20ceb738d587e79d1da737475079c",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_digest": "f5480b6ff55f6b8ec7b3f7c48965e6ae71907bd905969a26079ee922fa95bf6f",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "native_route_arbitration_record_id": "native-route-arbitration:9a365d80523046b2a5413f9c5920c10a",
+        "rejected_candidate_route_digests": [
+          "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e"
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+        "selected_candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+        "selected_candidate_route_id": "candidate:high",
+        "selected_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+        "selected_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b"
+      }
+    },
+    "candidate_result": {
+      "candidate_records": [
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            0,
+            2
+          ],
+          "candidate_lineage_transfer_map": {
+            "1": "0",
+            "2": "0"
+          },
+          "candidate_lineage_transfer_map_digest": "6fcfa081d57156cfe044aa0355e336f9da6a8b42835b93819709ee8b71667a4c",
+          "candidate_losing_sink_ids": [
+            2
+          ],
+          "candidate_order_key": "candidate:high",
+          "candidate_retired_edge_ids": [
+            1
+          ],
+          "candidate_retired_node_ids": [
+            2
+          ],
+          "candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+          "candidate_route_id": "candidate:high",
+          "candidate_route_score": 0.75,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "surface_pulse_contact",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "surface_pulse_contact": 0.75
+          },
+          "candidate_selected_sink_id": 0,
+          "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+          "candidate_source_edge_ids": [
+            1
+          ],
+          "candidate_source_node_ids": [
+            1,
+            2
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0
+          ],
+          "candidate_target_node_ids": [
+            0
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            1,
+            2
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        },
+        {
+          "artifact_kind": "lgrc9v3_native_route_candidate_record",
+          "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+          "candidate_budget_prediction": {
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0
+          },
+          "candidate_competing_sink_ids": [
+            0,
+            2
+          ],
+          "candidate_lineage_transfer_map": {
+            "1": "2",
+            "2": "2"
+          },
+          "candidate_lineage_transfer_map_digest": "eeeba2a699b714e2722d5320a4c97ae061de1b6bdedf2d1ef198ee03bcdfd10a",
+          "candidate_losing_sink_ids": [
+            0
+          ],
+          "candidate_order_key": "candidate:low",
+          "candidate_retired_edge_ids": [
+            1
+          ],
+          "candidate_retired_node_ids": [
+            0
+          ],
+          "candidate_route_digest": "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e",
+          "candidate_route_id": "candidate:low",
+          "candidate_route_score": 0.25,
+          "candidate_runtime_visible_inputs": [
+            "candidate_source_surface_digest",
+            "surface_pulse_contact",
+            "serialized_route_arbitration_policy"
+          ],
+          "candidate_score_components": {
+            "surface_pulse_contact": 0.25
+          },
+          "candidate_selected_sink_id": 2,
+          "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+          "candidate_source_edge_ids": [
+            1
+          ],
+          "candidate_source_node_ids": [
+            1,
+            2
+          ],
+          "candidate_source_producer_record_id": null,
+          "candidate_source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+          "candidate_source_topology_state_reabsorption_digest": null,
+          "candidate_target_edge_ids": [
+            0
+          ],
+          "candidate_target_node_ids": [
+            2
+          ],
+          "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+          "candidate_transferred_node_ids": [
+            1,
+            2
+          ],
+          "causal_layer_mode": "topology_changing_causal_history",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "adaptive_topology_movement_claim_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_lgrc_choice_selection_claim_allowed": false,
+            "native_m6": false,
+            "rc_identity_collapse_claim_allowed": false,
+            "semantic_choice_claim_allowed": false,
+            "topology_mutating_movement_claim_allowed": false,
+            "unrestricted_movement_claim_allowed": false
+          },
+          "event_time_key": 1.0,
+          "evidence_class": "native_route_arbitration",
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_enabled": true,
+          "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+          "route_intent": "collapse",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+        }
+      ],
+      "candidate_set_record": {
+        "arbitration_window_id": "window:n25-2-i4-reference",
+        "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "candidate_route_digests": [
+          "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+          "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e"
+        ],
+        "candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+        "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+        "candidate_set_order_key": "score_desc_then_candidate_id",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "idempotency_key": "500fa533636cd8404d056e16c58399b310d612e2f21805c01ad79cbea0403273",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+        "unresolved_tie_policy": "fail_closed"
+      },
+      "emitted": true,
+      "reason_code": "native_route_candidate_set_emitted"
+    },
+    "commit_result": {
+      "child_basin_record_count": 1,
+      "committed": true,
+      "flow_record_count": 1,
+      "reason_code": "native_route_arbitration_selected_highest_score",
+      "selected_candidate_route_record": {
+        "artifact_kind": "lgrc9v3_native_route_candidate_record",
+        "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+        "candidate_budget_prediction": {
+          "node_plus_packet_budget_after": 6.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "candidate_competing_sink_ids": [
+          0,
+          2
+        ],
+        "candidate_lineage_transfer_map": {
+          "1": "0",
+          "2": "0"
+        },
+        "candidate_lineage_transfer_map_digest": "6fcfa081d57156cfe044aa0355e336f9da6a8b42835b93819709ee8b71667a4c",
+        "candidate_losing_sink_ids": [
+          2
+        ],
+        "candidate_order_key": "candidate:high",
+        "candidate_retired_edge_ids": [
+          1
+        ],
+        "candidate_retired_node_ids": [
+          2
+        ],
+        "candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+        "candidate_route_id": "candidate:high",
+        "candidate_route_score": 0.75,
+        "candidate_runtime_visible_inputs": [
+          "candidate_source_surface_digest",
+          "surface_pulse_contact",
+          "serialized_route_arbitration_policy"
+        ],
+        "candidate_score_components": {
+          "surface_pulse_contact": 0.75
+        },
+        "candidate_selected_sink_id": 0,
+        "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+        "candidate_source_edge_ids": [
+          1
+        ],
+        "candidate_source_node_ids": [
+          1,
+          2
+        ],
+        "candidate_source_producer_record_id": null,
+        "candidate_source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+        "candidate_source_topology_state_reabsorption_digest": null,
+        "candidate_target_edge_ids": [
+          0
+        ],
+        "candidate_target_node_ids": [
+          0
+        ],
+        "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+        "candidate_transferred_node_ids": [
+          1,
+          2
+        ],
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "adaptive_topology_entry_allowed": false,
+          "adaptive_topology_movement_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "biological_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "locomotion_like_claim_allowed": false,
+          "loop_driven_movement_claim_allowed": false,
+          "movement_claim_allowed": false,
+          "native_lgrc_choice_selection_claim_allowed": false,
+          "native_m6": false,
+          "rc_identity_collapse_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "topology_mutating_movement_claim_allowed": false,
+          "unrestricted_movement_claim_allowed": false
+        },
+        "event_time_key": 1.0,
+        "evidence_class": "native_route_arbitration",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_route_arbitration_enabled": true,
+        "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+        "route_intent": "collapse",
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+      },
+      "selected_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+      "surface_lineage_record_count": 1,
+      "topology_state_reabsorption_record_count": 1
+    },
+    "fixture_source": "examples/lgrc9v3/multi_basin_formation_bundle.py",
+    "params_hash": "a9e588afc04aac1cf752c2526883df5ebad0d78773d5e6cfb76971bad0625025"
+  },
+  "native_runtime_positive_probe_opened": true,
+  "output_digest": "1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1",
+  "producer_audit_evidence": {
+    "hidden_producer_basin_insertion_allowed": false,
+    "producer_residue_classification": "native_source_current",
+    "producer_residue_status": "not_load_bearing_for_claim",
+    "producer_success_as_native_support_allowed": false,
+    "runtime_mutation_owner": "LGRC9V3_runtime_transition",
+    "source_current_status": "native_runtime_emitted"
+  },
+  "producer_native_discipline": {
+    "hidden_producer_basin_insertion_allowed": false,
+    "producer_success_can_upgrade_native": false,
+    "producer_success_overwrites_native_failure": false
+  },
+  "ready_for_iteration_4a_variant_probe": true,
+  "ready_for_iteration_5_replay_persistence_matrix": true,
+  "replay_evidence": {
+    "records": [],
+    "status": "not_run_until_iteration_5"
+  },
+  "row_decision": "supported",
+  "row_id": "n25_2_i4_native_runtime_positive_probe",
+  "runtime_execution_from_closed_implementation": true,
+  "runtime_execution_performed": true,
+  "runtime_execution_trace": {
+    "event_count": 2,
+    "events": [
+      {
+        "kind": "lgrc9v3_packet_departure",
+        "payload": {
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "checkpoint_index": 1,
+          "event_schema_version": "lgrc9v3_runtime_event_v1",
+          "event_time_key": 1.0,
+          "identity_acceptance_emitted": false,
+          "mechanical_expansion_emitted": false,
+          "packet_record": {
+            "amount": 0.1,
+            "arrival_event_id": "lgrc9v3-packet-event-8a0ca570e8e78cab",
+            "arrival_event_time_key": 2.0,
+            "arrival_scheduler_event_index": 2,
+            "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "departure_event_time_key": 1.0,
+            "departure_scheduler_event_index": 1,
+            "edge_id": 1,
+            "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 1,
+            "target_lineage_id": null,
+            "target_node_id": 2
+          },
+          "processed_event": {
+            "amount": 0.1,
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 1.0,
+            "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "scheduler_event_index": 1,
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 1.0,
+            "lapse": 1.0,
+            "node_id": 1,
+            "node_proper_time": 1.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "spark_event_emitted": false,
+          "state_mutated": true,
+          "topology_mutated": false
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 1
+      },
+      {
+        "kind": "lgrc9v3_causal_pulse_substrate_surface_row",
+        "payload": {
+          "artifact_kind": "lgrc9v3_causal_pulse_substrate_surface_row",
+          "artifact_schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_m6": false
+          },
+          "contact_amount": 0.1,
+          "event_time_key": 1.0,
+          "evidence_class": "causal_pulse_substrate_surface",
+          "lgrc_runtime_level": "lgrc3",
+          "lineage_status": "fixed_topology",
+          "mode_version": "lgrc9v3_causal_pulse_substrate_surface_v1",
+          "node_proper_time": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0
+          },
+          "producer_records": [],
+          "pulse_channel_id": "edge:1",
+          "pulse_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+          "pulse_event_kind": "lgrc9v3_packet_departure",
+          "pulse_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+          "pulse_route_step": 0,
+          "route_aspect_digest": "2447cb647c9ed74784fd763bb334964fe0178194662689d127008ba45fceb777",
+          "route_aspect_id": "unbound_lgrc2_packet_contact",
+          "runtime_family": "LGRC9V3",
+          "runtime_visible_inputs": [
+            "committed_packet_event",
+            "route_aspect_digest",
+            "pulse_channel_id"
+          ],
+          "scheduler_event_index": 2,
+          "schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+          "source_node_id": 1,
+          "surface_budget_after": 0.0,
+          "surface_budget_before": 0.0,
+          "surface_budget_error": 0.0,
+          "surface_budget_surface": "derived_surface_accounting",
+          "surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+          "surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+          "surface_kind": "route_local_pulse_contact",
+          "surface_nodes": [
+            1,
+            2
+          ],
+          "surface_policy_enabled": true,
+          "surface_policy_id": "emit_committed_packet_contact_rows",
+          "surface_policy_validated": true,
+          "surface_state_digest": "5a4976ee43f8127d05d0b091d31b61f9251746a4857cd3a20e5d70a1e8f93f25",
+          "surface_state_id": "surface-state:lgrc9v3-packet-event-287874bcf245713b:1",
+          "surface_update_policy": {
+            "activation_gate": "committed_packet_event",
+            "allowed_surface_kinds": [
+              "route_local_pulse_contact"
+            ],
+            "policy_id": "replay_declared_surface_update_policy",
+            "version": "surface_update_policy_v1"
+          },
+          "surface_values_after": {
+            "committed_packet_event_observed": true,
+            "source_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "surface_contact_mass": 0.1
+          },
+          "surface_values_before": {
+            "committed_packet_event_observed": false,
+            "surface_contact_mass": 0.0
+          },
+          "target_node_id": 2
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 2
+      }
+    ],
+    "step_index": 1,
+    "time": 1.0
+  },
+  "runtime_mutation_owner": "LGRC9V3_runtime_transition",
+  "runtime_snapshot_artifact": {
+    "basin_attributes": {
+      "expansion_registry": {},
+      "hierarchy": {},
+      "nodes": {
+        "0": {
+          "basin_id": 0,
+          "basin_mass": 0.0,
+          "coherence": 1.1,
+          "depth": 0,
+          "gradient_row_basis": [],
+          "net_flux_summary": [],
+          "parent_id": null,
+          "signed_hessian_row_basis": []
+        },
+        "1": {
+          "basin_id": 0,
+          "basin_mass": 0.0,
+          "coherence": 1.9,
+          "depth": 0,
+          "gradient_row_basis": [],
+          "net_flux_summary": [],
+          "parent_id": null,
+          "signed_hessian_row_basis": []
+        },
+        "2": {
+          "basin_id": 0,
+          "basin_mass": 0.0,
+          "coherence": 3.0,
+          "depth": 0,
+          "gradient_row_basis": [],
+          "net_flux_summary": [],
+          "parent_id": null,
+          "signed_hessian_row_basis": []
+        }
+      }
+    },
+    "caches": {
+      "base_grc9v3_snapshot": {
+        "basin_attributes": {
+          "expansion_registry": {},
+          "hierarchy": {},
+          "nodes": {
+            "0": {
+              "basin_id": 0,
+              "basin_mass": 0.0,
+              "coherence": 1.1,
+              "depth": 0,
+              "gradient_row_basis": [],
+              "net_flux_summary": [],
+              "parent_id": null,
+              "signed_hessian_row_basis": []
+            },
+            "1": {
+              "basin_id": 0,
+              "basin_mass": 0.0,
+              "coherence": 1.9,
+              "depth": 0,
+              "gradient_row_basis": [],
+              "net_flux_summary": [],
+              "parent_id": null,
+              "signed_hessian_row_basis": []
+            },
+            "2": {
+              "basin_id": 0,
+              "basin_mass": 0.0,
+              "coherence": 3.0,
+              "depth": 0,
+              "gradient_row_basis": [],
+              "net_flux_summary": [],
+              "parent_id": null,
+              "signed_hessian_row_basis": []
+            }
+          }
+        },
+        "caches": {
+          "coarse_cache": {}
+        },
+        "dynamics": {
+          "state": {
+            "base_conductance": {
+              "0": 1.0,
+              "1": 1.0,
+              "2": 1.0
+            },
+            "basins": {},
+            "budget_target": 0.0,
+            "cached_quantities": {},
+            "choice_registry": {},
+            "coarse_cache": {},
+            "collapse_registry": {},
+            "edge_label_computation_mode": {},
+            "edge_label_params": {},
+            "event_log": [],
+            "expansion_registry": {},
+            "flux_coupling": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "geometric_length": {
+              "0": 1.0,
+              "1": 1.0,
+              "2": 1.0
+            },
+            "hierarchy": {},
+            "nodes": {
+              "0": {
+                "basin_id": 0,
+                "basin_mass": 0.0,
+                "coherence": 1.1,
+                "depth": 0,
+                "gradient_row_basis": [],
+                "net_flux_summary": [],
+                "parent_id": null,
+                "signed_hessian_row_basis": []
+              },
+              "1": {
+                "basin_id": 0,
+                "basin_mass": 0.0,
+                "coherence": 1.9,
+                "depth": 0,
+                "gradient_row_basis": [],
+                "net_flux_summary": [],
+                "parent_id": null,
+                "signed_hessian_row_basis": []
+              },
+              "2": {
+                "basin_id": 0,
+                "basin_mass": 0.0,
+                "coherence": 3.0,
+                "depth": 0,
+                "gradient_row_basis": [],
+                "net_flux_summary": [],
+                "parent_id": null,
+                "signed_hessian_row_basis": []
+              }
+            },
+            "observables": {},
+            "params_identity": null,
+            "port_edges": {
+              "0": {
+                "conductance": 1.0,
+                "flux_uv": 0.0,
+                "node_u": 0,
+                "node_v": 1,
+                "port_u": 1,
+                "port_v": 1
+              },
+              "1": {
+                "conductance": 1.0,
+                "flux_uv": 0.0,
+                "node_u": 1,
+                "node_v": 2,
+                "port_u": 2,
+                "port_v": 1
+              },
+              "2": {
+                "conductance": 1.0,
+                "flux_uv": 0.0,
+                "node_u": 0,
+                "node_v": 2,
+                "port_u": 2,
+                "port_v": 2
+              }
+            },
+            "potential": {},
+            "remainder": 0.0,
+            "rng_state": null,
+            "sink_set": [],
+            "step_index": 0,
+            "temporal_delay": {
+              "0": 1.0,
+              "1": 1.0,
+              "2": 1.0
+            },
+            "time": 0.0
+          }
+        },
+        "edge_labels": {
+          "base_conductance": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "edge_label_computation_mode": {},
+          "edge_label_params": {},
+          "flux_coupling": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0
+          },
+          "geometric_length": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "temporal_delay": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          }
+        },
+        "events": [],
+        "metadata": {
+          "capabilities": [
+            "basin_attributes",
+            "choice_collapse_semantics",
+            "column_coarse_graining",
+            "hierarchy_tracking",
+            "intrinsic_frame",
+            "mechanical_refinement",
+            "multi_metric_edges",
+            "port_graph",
+            "quadrature_budget"
+          ],
+          "model_family": "GRC9V3",
+          "next_edge_id": 3,
+          "next_node_id": 3,
+          "params": {
+            "constitutive_semantic_modes": {
+              "backend_selections": {
+                "budget": {
+                  "name": "simplex_projection",
+                  "params": {
+                    "quadrature_mode": "unit_measure"
+                  }
+                },
+                "choice": {
+                  "name": "sink_compatibility",
+                  "params": {}
+                },
+                "curvature": {
+                  "name": "none",
+                  "params": {}
+                },
+                "geometry": {
+                  "name": "fixed_port_chart",
+                  "params": {}
+                },
+                "hessian": {
+                  "name": "row_basis_diagonal",
+                  "params": {}
+                },
+                "spark": {
+                  "name": "saturation_signed_hessian",
+                  "params": {
+                    "column_h_sign_crossing_mode": "theory_product",
+                    "enable_column_h_sign_crossing": false,
+                    "enable_column_h_threshold": true,
+                    "signed_crossing": false,
+                    "spark_lane": "current_hybrid_signed_hessian"
+                  }
+                }
+              },
+              "boundary_mode": "prune",
+              "budget_correction_method": "simplex_projection",
+              "choice_backend": "sink_compatibility",
+              "column_h_sign_crossing_mode": "theory_product",
+              "curvature_backend": "none",
+              "default_evolution_provenance": {
+                "D_eff_target": "GRC9 mechanical expansion default",
+                "alpha": "GRCV3 metric law default",
+                "alpha_seed": "GRC9 growth seed-transfer default",
+                "beta": "GRCV3 metric law default",
+                "compatibility_score_params": "GRCV3 choice/collapse defaults",
+                "delta": "GRCV3 metric law default",
+                "eps_column_h": "GRC9 column-H proxy threshold for opt-in GRC9V3 Lane B",
+                "eps_column_h_crossing_zero": "GRC9V3 Lane B optional column-H sign-crossing zero band",
+                "eps_gradient": "GRCV3 basin/spark semantic threshold",
+                "eps_hessian": "GRCV3 basin/spark semantic threshold",
+                "eps_spark": "GRCV3 signed-Hessian spark threshold",
+                "eps_tau": "GRCV3 temporal-label default",
+                "eta": "GRCV3 transport default",
+                "gamma": "GRCV3 metric law default",
+                "hessian_regularization": "GRCV3 weighted least-squares comparison backend",
+                "kappa_c": "GRCV3/GRC9 potential default",
+                "lambda_birth": "GRC9 growth default",
+                "lambda_c": "GRCV3 tensor default",
+                "rho": "GRCV3 temporal-label default",
+                "rng_seed": "GRC9 deterministic RNG default",
+                "site_potential_params": "GRCV3/GRC9 potential default",
+                "site_potential_selection": "GRCV3/GRC9 potential default",
+                "tau_instability": "GRC9 instability diagnostic threshold",
+                "v0": "GRCV3 temporal-label default",
+                "w_bond": "GRC9 expansion/growth bond default",
+                "xi_c": "GRCV3 tensor default",
+                "zeta_c": "GRCV3 tensor default"
+              },
+              "edge_label_selection": "all",
+              "enable_column_h_sign_crossing": false,
+              "enable_column_h_threshold": true,
+              "enable_near_saturation": false,
+              "expansion_distribution_mode": "equal",
+              "frame_mode": "fixed_port_chart",
+              "hessian_backend": "row_basis_diagonal",
+              "near_saturation_degree": 8,
+              "quadrature_mode": "unit_measure",
+              "require_active_degree_9": true,
+              "require_sink_for_column_h_spark": true,
+              "spark_lane": "current_hybrid_signed_hessian",
+              "spark_signed_crossing": false,
+              "store_previous_column_h": false
+            },
+            "dt": 1.0,
+            "evolution": {
+              "D_eff_target": 30,
+              "alpha": 1.0,
+              "alpha_seed": 0.1,
+              "beta": 1.0,
+              "compatibility_score_params": {
+                "epsilon_choice": 0.001,
+                "epsilon_collapse": 0.001
+              },
+              "delta": 1.0,
+              "eps_column_h": 0.001,
+              "eps_column_h_crossing_zero": 0.0,
+              "eps_gradient": 0.001,
+              "eps_hessian": 0.001,
+              "eps_spark": 0.001,
+              "eps_tau": 1e-09,
+              "eta": 1.0,
+              "gamma": 1.0,
+              "hessian_regularization": 1e-09,
+              "kappa_c": 1.0,
+              "lambda_birth": 0.0,
+              "lambda_c": 1.0,
+              "rho": 1.0,
+              "rng_seed": 0,
+              "site_potential_params": {
+                "mu": 0.0,
+                "scale": 1.0
+              },
+              "site_potential_selection": "quadratic",
+              "tau_instability": 0.5,
+              "v0": 1.0,
+              "w_bond": 1.0,
+              "xi_c": 1.0,
+              "zeta_c": 1.0
+            },
+            "numerical_backend": {}
+          },
+          "params_hash": "a9e588afc04aac1cf752c2526883df5ebad0d78773d5e6cfb76971bad0625025",
+          "resolved_params": {
+            "constitutive_semantic_modes": {
+              "backend_selections": {
+                "budget": {
+                  "name": "simplex_projection",
+                  "params": {
+                    "quadrature_mode": "unit_measure"
+                  }
+                },
+                "choice": {
+                  "name": "sink_compatibility",
+                  "params": {}
+                },
+                "curvature": {
+                  "name": "none",
+                  "params": {}
+                },
+                "geometry": {
+                  "name": "fixed_port_chart",
+                  "params": {}
+                },
+                "hessian": {
+                  "name": "row_basis_diagonal",
+                  "params": {}
+                },
+                "spark": {
+                  "name": "saturation_signed_hessian",
+                  "params": {
+                    "column_h_sign_crossing_mode": "theory_product",
+                    "enable_column_h_sign_crossing": false,
+                    "enable_column_h_threshold": true,
+                    "signed_crossing": false,
+                    "spark_lane": "current_hybrid_signed_hessian"
+                  }
+                }
+              },
+              "boundary_mode": "prune",
+              "budget_correction_method": "simplex_projection",
+              "choice_backend": "sink_compatibility",
+              "column_h_sign_crossing_mode": "theory_product",
+              "curvature_backend": "none",
+              "default_evolution_provenance": {
+                "D_eff_target": "GRC9 mechanical expansion default",
+                "alpha": "GRCV3 metric law default",
+                "alpha_seed": "GRC9 growth seed-transfer default",
+                "beta": "GRCV3 metric law default",
+                "compatibility_score_params": "GRCV3 choice/collapse defaults",
+                "delta": "GRCV3 metric law default",
+                "eps_column_h": "GRC9 column-H proxy threshold for opt-in GRC9V3 Lane B",
+                "eps_column_h_crossing_zero": "GRC9V3 Lane B optional column-H sign-crossing zero band",
+                "eps_gradient": "GRCV3 basin/spark semantic threshold",
+                "eps_hessian": "GRCV3 basin/spark semantic threshold",
+                "eps_spark": "GRCV3 signed-Hessian spark threshold",
+                "eps_tau": "GRCV3 temporal-label default",
+                "eta": "GRCV3 transport default",
+                "gamma": "GRCV3 metric law default",
+                "hessian_regularization": "GRCV3 weighted least-squares comparison backend",
+                "kappa_c": "GRCV3/GRC9 potential default",
+                "lambda_birth": "GRC9 growth default",
+                "lambda_c": "GRCV3 tensor default",
+                "rho": "GRCV3 temporal-label default",
+                "rng_seed": "GRC9 deterministic RNG default",
+                "site_potential_params": "GRCV3/GRC9 potential default",
+                "site_potential_selection": "GRCV3/GRC9 potential default",
+                "tau_instability": "GRC9 instability diagnostic threshold",
+                "v0": "GRCV3 temporal-label default",
+                "w_bond": "GRC9 expansion/growth bond default",
+                "xi_c": "GRCV3 tensor default",
+                "zeta_c": "GRCV3 tensor default"
+              },
+              "edge_label_selection": "all",
+              "enable_column_h_sign_crossing": false,
+              "enable_column_h_threshold": true,
+              "enable_near_saturation": false,
+              "expansion_distribution_mode": "equal",
+              "frame_mode": "fixed_port_chart",
+              "hessian_backend": "row_basis_diagonal",
+              "near_saturation_degree": 8,
+              "quadrature_mode": "unit_measure",
+              "require_active_degree_9": true,
+              "require_sink_for_column_h_spark": true,
+              "spark_lane": "current_hybrid_signed_hessian",
+              "spark_signed_crossing": false,
+              "store_previous_column_h": false
+            },
+            "dt": 1.0,
+            "evolution": {
+              "D_eff_target": 30,
+              "alpha": 1.0,
+              "alpha_seed": 0.1,
+              "beta": 1.0,
+              "compatibility_score_params": {
+                "epsilon_choice": 0.001,
+                "epsilon_collapse": 0.001
+              },
+              "delta": 1.0,
+              "eps_column_h": 0.001,
+              "eps_column_h_crossing_zero": 0.0,
+              "eps_gradient": 0.001,
+              "eps_hessian": 0.001,
+              "eps_spark": 0.001,
+              "eps_tau": 1e-09,
+              "eta": 1.0,
+              "gamma": 1.0,
+              "hessian_regularization": 1e-09,
+              "kappa_c": 1.0,
+              "lambda_birth": 0.0,
+              "lambda_c": 1.0,
+              "rho": 1.0,
+              "rng_seed": 0,
+              "site_potential_params": {
+                "mu": 0.0,
+                "scale": 1.0
+              },
+              "site_potential_selection": "quadratic",
+              "tau_instability": 0.5,
+              "v0": 1.0,
+              "w_bond": 1.0,
+              "xi_c": 1.0,
+              "zeta_c": 1.0
+            },
+            "numerical_backend": {}
+          },
+          "snapshot_schema": "pygrc.snapshot",
+          "snapshot_version": 1,
+          "step_index": 0
+        },
+        "observables": {
+          "active_basin_count": 0.0,
+          "choice_regime_count": 0.0,
+          "collapse_event_count": 0.0,
+          "edge_count": 3.0,
+          "max_hierarchy_depth": 0.0,
+          "node_count": 3.0
+        },
+        "topology": {
+          "edges": [
+            {
+              "edge_id": 0,
+              "endpoint_a": {
+                "node_id": 0,
+                "slot": 0
+              },
+              "endpoint_b": {
+                "node_id": 1,
+                "slot": 0
+              },
+              "payload": {
+                "kind": "01"
+              }
+            },
+            {
+              "edge_id": 1,
+              "endpoint_a": {
+                "node_id": 1,
+                "slot": 1
+              },
+              "endpoint_b": {
+                "node_id": 2,
+                "slot": 0
+              },
+              "payload": {
+                "kind": "12"
+              }
+            },
+            {
+              "edge_id": 2,
+              "endpoint_a": {
+                "node_id": 0,
+                "slot": 1
+              },
+              "endpoint_b": {
+                "node_id": 2,
+                "slot": 1
+              },
+              "payload": {
+                "kind": "02"
+              }
+            }
+          ],
+          "incidence": {
+            "0": [
+              0,
+              2
+            ],
+            "1": [
+              0,
+              1
+            ],
+            "2": [
+              1,
+              2
+            ]
+          },
+          "nodes": [
+            {
+              "node_id": 0,
+              "payload": {
+                "label": "source"
+              }
+            },
+            {
+              "node_id": 1,
+              "payload": {
+                "label": "middle"
+              }
+            },
+            {
+              "node_id": 2,
+              "payload": {
+                "label": "target"
+              }
+            }
+          ],
+          "port_structure": {
+            "0": {
+              "ports": [
+                {
+                  "column": 0,
+                  "edge_id": 0,
+                  "occupied": true,
+                  "row": 0,
+                  "slot": 0
+                },
+                {
+                  "column": 1,
+                  "edge_id": 2,
+                  "occupied": true,
+                  "row": 0,
+                  "slot": 1
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 0,
+                  "slot": 2
+                },
+                {
+                  "column": 0,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 3
+                },
+                {
+                  "column": 1,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 4
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 5
+                },
+                {
+                  "column": 0,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 6
+                },
+                {
+                  "column": 1,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 7
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 8
+                }
+              ]
+            },
+            "1": {
+              "ports": [
+                {
+                  "column": 0,
+                  "edge_id": 0,
+                  "occupied": true,
+                  "row": 0,
+                  "slot": 0
+                },
+                {
+                  "column": 1,
+                  "edge_id": 1,
+                  "occupied": true,
+                  "row": 0,
+                  "slot": 1
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 0,
+                  "slot": 2
+                },
+                {
+                  "column": 0,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 3
+                },
+                {
+                  "column": 1,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 4
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 5
+                },
+                {
+                  "column": 0,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 6
+                },
+                {
+                  "column": 1,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 7
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 8
+                }
+              ]
+            },
+            "2": {
+              "ports": [
+                {
+                  "column": 0,
+                  "edge_id": 1,
+                  "occupied": true,
+                  "row": 0,
+                  "slot": 0
+                },
+                {
+                  "column": 1,
+                  "edge_id": 2,
+                  "occupied": true,
+                  "row": 0,
+                  "slot": 1
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 0,
+                  "slot": 2
+                },
+                {
+                  "column": 0,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 3
+                },
+                {
+                  "column": 1,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 4
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 1,
+                  "slot": 5
+                },
+                {
+                  "column": 0,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 6
+                },
+                {
+                  "column": 1,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 7
+                },
+                {
+                  "column": 2,
+                  "edge_id": null,
+                  "occupied": false,
+                  "row": 2,
+                  "slot": 8
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "dynamics": {
+      "base_grc9v3_model_family": "GRC9V3",
+      "lgrc9v3_runtime": {
+        "arrival_eligibility_log": [],
+        "artifact_kind": "lgrc9v3_runtime_state",
+        "artifact_schema_version": "lgrc9v3_runtime_state_v1",
+        "boundary_birth_trial_queue": [],
+        "cached_quantities": {
+          "lgrc9v3_causal_pulse_substrate_surface_idempotency_keys": [
+            "5a53c787bbb6678c0b6d1705536ccd889e4326183ca6984e1430c089dee0ba64"
+          ],
+          "lgrc9v3_causal_pulse_substrate_surface_lineage_idempotency_keys": [
+            "f7e7ed994e8ea4f120568badc31f8ce0714d7198823e5fb5e1a5be912f5bea9c"
+          ],
+          "lgrc9v3_child_basin_state_idempotency_keys": [
+            "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37"
+          ],
+          "lgrc9v3_native_route_arbitration_idempotency_keys": [
+            "7f5ea90736aa2c7481603995a6cab50dcea20ceb738d587e79d1da737475079c"
+          ],
+          "lgrc9v3_native_route_candidate_idempotency_keys": [
+            "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+            "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e"
+          ],
+          "lgrc9v3_native_route_candidate_set_idempotency_keys": [
+            "500fa533636cd8404d056e16c58399b310d612e2f21805c01ad79cbea0403273"
+          ],
+          "lgrc9v3_post_refinement_flow_window_idempotency_keys": [
+            "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84"
+          ],
+          "lgrc9v3_self_rearm_evidence_log": [],
+          "lgrc9v3_topology_state_reabsorption_idempotency_keys": [
+            "1b6c8aeb20527a88f91ef4aabff11f2cd31d62d707ef3036e0f3a0fe62926052"
+          ]
+        },
+        "causal_flux_routes": {},
+        "causal_layer_mode": "topology_changing_causal_history",
+        "causal_modes": {
+          "causal_basin_core_policy": "derived_annotation",
+          "causal_boundary_birth_allowed": false,
+          "causal_boundary_birth_coherence_source": "parent_debit",
+          "causal_boundary_birth_edge_delay_policy": "explicit_or_tau0",
+          "causal_boundary_birth_parent_eligibility": "legacy_any_inactive_port",
+          "causal_boundary_birth_policy": "disabled",
+          "causal_collapse_reabsorption_allowed": true,
+          "causal_cone_policy": "bounded_shortest_path",
+          "causal_distance_policy": "edge_delay_shortest_path",
+          "causal_identity_acceptance_allowed": false,
+          "causal_layer_mode": "topology_changing_causal_history",
+          "causal_proper_time_inheritance_allowed": true,
+          "causal_pulse_substrate_surface_enabled": true,
+          "causal_pulse_substrate_surface_lineage_transport_enabled": true,
+          "causal_pulse_substrate_surface_lineage_transport_policy": "transport_or_supersede_committed_topology_events",
+          "causal_pulse_substrate_surface_lineage_transport_supported": true,
+          "causal_pulse_substrate_surface_lineage_transport_validated": true,
+          "causal_pulse_substrate_surface_policy": "emit_committed_packet_contact_rows",
+          "causal_pulse_substrate_surface_validated": true,
+          "causal_refinement_packet_transport_allowed": true,
+          "causal_spark_expansion_allowed": true,
+          "causal_topology_integration_allowed": true,
+          "causal_topology_state_reabsorption_enabled": true,
+          "causal_topology_state_reabsorption_policy": "lineage_rebase_active_state_and_packet_ledger",
+          "causal_topology_state_reabsorption_supported": true,
+          "causal_topology_state_reabsorption_validated": true,
+          "edge_delay_policy": "constant_delay",
+          "event_time_policy": "explicit_event_time_key",
+          "lapse_policy": "unit",
+          "lgrc_runtime_level": "lgrc3",
+          "native_lgrc_multi_basin_formation_enabled": true,
+          "native_lgrc_multi_basin_formation_policy": "post_refinement_child_basin_replay",
+          "native_lgrc_multi_basin_formation_supported": false,
+          "native_lgrc_multi_basin_formation_validated": false,
+          "native_lgrc_route_arbitration_enabled": true,
+          "native_lgrc_route_arbitration_policy": "score_ordered_topology_route_candidates",
+          "native_lgrc_route_arbitration_supported": false,
+          "native_lgrc_route_arbitration_validated": false,
+          "proper_time_accumulation_policy": "local_event_frontier",
+          "require_fixed_topology_for_lgrc1": true,
+          "require_fixed_topology_for_lgrc2": true
+        },
+        "causal_pulse_substrate_surface_lineage_log": [
+          {
+            "artifact_kind": "lgrc9v3_causal_pulse_substrate_surface_lineage_record",
+            "artifact_schema_version": "lgrc9v3_causal_pulse_substrate_surface_lineage_record_v1",
+            "causal_layer_mode": "topology_changing_causal_history",
+            "checkpoint_index": 1,
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_m6": false
+            },
+            "event_time_key": 1.0,
+            "evidence_class": "causal_pulse_substrate_surface",
+            "idempotency_key": "f7e7ed994e8ea4f120568badc31f8ce0714d7198823e5fb5e1a5be912f5bea9c",
+            "lgrc_runtime_level": "lgrc3",
+            "lineage_action": "transported",
+            "lineage_record_digest": "e50b3a272962863e67d316607c4bed391989e006d7b0cde4faa968235e15bb96",
+            "lineage_status": "transported_topology_lineage",
+            "lineage_transfer_map": {
+              "1": "0",
+              "2": "0"
+            },
+            "mode_version": "lgrc9v3_causal_pulse_substrate_surface_v1",
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0,
+            "producer_stale_read_blocker": null,
+            "runtime_family": "LGRC9V3",
+            "scheduler_event_index": 3,
+            "schema_version": "lgrc9v3_causal_pulse_substrate_surface_lineage_record_v1",
+            "source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+            "source_surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+            "source_surface_nodes": [
+              1,
+              2
+            ],
+            "source_surface_ports": null,
+            "superseded_surface_id": null,
+            "surface_budget_after": 0.0,
+            "surface_budget_before": 0.0,
+            "surface_budget_error": 0.0,
+            "surface_budget_surface": "derived_surface_accounting",
+            "surface_lineage_policy_id": "transport_or_supersede_committed_topology_events",
+            "surface_lineage_record_id": "surface-lineage:e17335ac06f6f002b17c9e4f40d16498",
+            "surface_lineage_transport_enabled": true,
+            "surface_lineage_transport_validated": true,
+            "target_surface_nodes": [
+              0
+            ],
+            "target_surface_ports": null,
+            "topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+            "topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+            "topology_event_kind": "lgrc9v3_causal_collapse",
+            "transported_surface_digest": "17c83bcc49b1b052655913a90aafdd6138817f22828e4b8a62cee2714e7724f0",
+            "transported_surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-b0b44cd9d03b9e1b"
+          }
+        ],
+        "causal_pulse_substrate_surface_log": [
+          {
+            "artifact_kind": "lgrc9v3_causal_pulse_substrate_surface_row",
+            "artifact_schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_m6": false
+            },
+            "contact_amount": 0.1,
+            "event_time_key": 1.0,
+            "evidence_class": "causal_pulse_substrate_surface",
+            "lgrc_runtime_level": "lgrc3",
+            "lineage_status": "fixed_topology",
+            "mode_version": "lgrc9v3_causal_pulse_substrate_surface_v1",
+            "node_proper_time": {
+              "0": 0.0,
+              "1": 1.0,
+              "2": 0.0
+            },
+            "producer_records": [],
+            "pulse_channel_id": "edge:1",
+            "pulse_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "pulse_event_kind": "lgrc9v3_packet_departure",
+            "pulse_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "pulse_route_step": 0,
+            "route_aspect_digest": "2447cb647c9ed74784fd763bb334964fe0178194662689d127008ba45fceb777",
+            "route_aspect_id": "unbound_lgrc2_packet_contact",
+            "runtime_family": "LGRC9V3",
+            "runtime_visible_inputs": [
+              "committed_packet_event",
+              "route_aspect_digest",
+              "pulse_channel_id"
+            ],
+            "scheduler_event_index": 2,
+            "schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+            "source_node_id": 1,
+            "surface_budget_after": 0.0,
+            "surface_budget_before": 0.0,
+            "surface_budget_error": 0.0,
+            "surface_budget_surface": "derived_surface_accounting",
+            "surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+            "surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+            "surface_kind": "route_local_pulse_contact",
+            "surface_nodes": [
+              1,
+              2
+            ],
+            "surface_policy_enabled": true,
+            "surface_policy_id": "emit_committed_packet_contact_rows",
+            "surface_policy_validated": true,
+            "surface_state_digest": "5a4976ee43f8127d05d0b091d31b61f9251746a4857cd3a20e5d70a1e8f93f25",
+            "surface_state_id": "surface-state:lgrc9v3-packet-event-287874bcf245713b:1",
+            "surface_update_policy": {
+              "activation_gate": "committed_packet_event",
+              "allowed_surface_kinds": [
+                "route_local_pulse_contact"
+              ],
+              "policy_id": "replay_declared_surface_update_policy",
+              "version": "surface_update_policy_v1"
+            },
+            "surface_values_after": {
+              "committed_packet_event_observed": true,
+              "source_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+              "surface_contact_mass": 0.1
+            },
+            "surface_values_before": {
+              "committed_packet_event_observed": false,
+              "surface_contact_mass": 0.0
+            },
+            "target_node_id": 2
+          },
+          {
+            "artifact_kind": "lgrc9v3_causal_pulse_substrate_surface_row",
+            "artifact_schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_m6": false
+            },
+            "contact_amount": 0.1,
+            "event_time_key": 1.0,
+            "evidence_class": "causal_pulse_substrate_surface",
+            "lgrc_runtime_level": "lgrc3",
+            "lineage_status": "fixed_topology",
+            "mode_version": "lgrc9v3_causal_pulse_substrate_surface_v1",
+            "node_proper_time": {
+              "0": 0.0,
+              "1": 1.0,
+              "2": 0.0
+            },
+            "producer_records": [],
+            "pulse_channel_id": "edge:1",
+            "pulse_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "pulse_event_kind": "lgrc9v3_packet_departure",
+            "pulse_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "pulse_route_step": 0,
+            "route_aspect_digest": "2447cb647c9ed74784fd763bb334964fe0178194662689d127008ba45fceb777",
+            "route_aspect_id": "unbound_lgrc2_packet_contact",
+            "runtime_family": "LGRC9V3",
+            "runtime_visible_inputs": [
+              "committed_packet_event",
+              "route_aspect_digest",
+              "pulse_channel_id",
+              "committed_topology_event",
+              "lineage_transfer_map"
+            ],
+            "scheduler_event_index": 3,
+            "schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+            "source_node_id": 0,
+            "surface_budget_after": 0.0,
+            "surface_budget_before": 0.0,
+            "surface_budget_error": 0.0,
+            "surface_budget_surface": "derived_surface_accounting",
+            "surface_digest": "17c83bcc49b1b052655913a90aafdd6138817f22828e4b8a62cee2714e7724f0",
+            "surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact:transported:lgrc9v3-topology-b0b44cd9d03b9e1b",
+            "surface_kind": "route_local_pulse_contact",
+            "surface_nodes": [
+              0
+            ],
+            "surface_policy_enabled": true,
+            "surface_policy_id": "emit_committed_packet_contact_rows",
+            "surface_policy_validated": true,
+            "surface_state_digest": "ae769575b8e8aeb25e07d1b80f55f23eb1d504f99c901fa959e9734ba98d1038",
+            "surface_state_id": "surface-state:lgrc9v3-packet-event-287874bcf245713b:1:transported:lgrc9v3-topology-b0b44cd9d03b9e1b",
+            "surface_update_policy": {
+              "activation_gate": "committed_packet_event",
+              "allowed_surface_kinds": [
+                "route_local_pulse_contact"
+              ],
+              "lineage_transport_policy": "transport_or_supersede_committed_topology_events",
+              "policy_id": "replay_declared_surface_update_policy",
+              "version": "surface_update_policy_v1"
+            },
+            "surface_values_after": {
+              "committed_packet_event_observed": true,
+              "source_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+              "source_surface_nodes": [
+                1,
+                2
+              ],
+              "surface_contact_mass": 0.1,
+              "target_surface_nodes": [
+                0
+              ],
+              "transported_by_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+              "transported_by_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+              "transported_from_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+              "transported_from_surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+              "transported_surface_current": true
+            },
+            "surface_values_before": {
+              "topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+              "topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+              "transported_from_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+              "transported_from_surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact"
+            },
+            "target_node_id": 0
+          }
+        ],
+        "causal_spark_diagnostic_log": [],
+        "causal_spark_evaluation_index": 0,
+        "checkpoint_index": 1,
+        "child_basin_state_log": [
+          {
+            "artifact_kind": "lgrc9v3_child_basin_state_record",
+            "artifact_schema_version": "lgrc9v3_child_basin_state_record_v1",
+            "causal_layer_mode": "topology_changing_causal_history",
+            "child_basin_boundary_records": {
+              "0": 2.0
+            },
+            "child_basin_coherence_floor_records": {
+              "0": 1.1
+            },
+            "child_basin_core_ids": [
+              0
+            ],
+            "child_basin_flux_records": {
+              "0": 0.0
+            },
+            "child_basin_membership_by_core": {
+              "0": [
+                0,
+                1,
+                2
+              ]
+            },
+            "child_basin_membership_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+            "child_basin_state_digest": "a2d1b64b98da8d584c9c8f736e4503495376330fd6313bb5811ab34901ab5e37",
+            "child_basin_state_record_id": "child-basin-state:556450a8434944316a25f18c2eb05eb6",
+            "child_basin_support_floor_records": {
+              "0": 1.1
+            },
+            "claim_flags": {
+              "BF6_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "ant_ecology_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "independent_new_basin_claim_allowed": false,
+              "native_multi_basin_formation_claim_allowed": false,
+              "native_support_claim_allowed": false,
+              "organism_life_claim_allowed": false,
+              "phase8_completion_claim_allowed": false,
+              "semantic_choice_claim_allowed": false,
+              "semantic_learning_claim_allowed": false,
+              "sentience_claim_allowed": false
+            },
+            "evidence_class": "multi_basin_formation",
+            "lgrc_runtime_level": "lgrc3",
+            "merge_leakage_trace": {
+              "0:absolute_incident_flux": 0.0,
+              "0:incident_edge_count": 2.0
+            },
+            "mode_version": "lgrc3_topology_contract_v1",
+            "native_multi_basin_enabled": true,
+            "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+            "old_basin_relation_trace": {
+              "candidate_ceiling": "MB3_candidate_emission_only",
+              "mb4_or_stronger_supported": "false",
+              "relation": "post_refinement_child_candidate_from_committed_topology_event",
+              "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+              "source_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49"
+            },
+            "producer_residue_classification": "native_source_current",
+            "runtime_family": "LGRC9V3",
+            "runtime_visible_inputs": [
+              "post_refinement_flow_window_digest",
+              "child_basin_core_ids",
+              "source_current_child_membership",
+              "active_node_state",
+              "active_edge_state",
+              "packet_ledger"
+            ],
+            "schema_version": "lgrc9v3_child_basin_state_record_v1",
+            "source_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84"
+          }
+        ],
+        "edge_causal_delay": {
+          "0": 1.0,
+          "1": 1.0,
+          "2": 1.0
+        },
+        "event_queue_records": [],
+        "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+        "event_time_key": 1.0,
+        "evidence_class": "packetized_causal_flux",
+        "lapse": {
+          "0": 1.0,
+          "1": 1.0,
+          "2": 1.0
+        },
+        "lgrc_runtime_level": "lgrc3",
+        "local_update_log": [],
+        "merge_leakage_control_matrix_log": [],
+        "mode_version": "lgrc2_packetized_fixed_topology_v1",
+        "multi_basin_replay_validation_log": [],
+        "native_route_arbitration_log": [
+          {
+            "arbitration_reason_code": "native_route_arbitration_selected_highest_score",
+            "arbitration_rule": "highest_score",
+            "arbitration_runtime_visible_inputs": [
+              "candidate_route_score",
+              "candidate_order_key",
+              "candidate_set_order_key"
+            ],
+            "arbitration_score": 0.75,
+            "artifact_kind": "lgrc9v3_native_route_arbitration_record",
+            "artifact_schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+            "candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+            "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+            "causal_layer_mode": "topology_changing_causal_history",
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "adaptive_topology_movement_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_lgrc_choice_selection_claim_allowed": false,
+              "native_m6": false,
+              "rc_identity_collapse_claim_allowed": false,
+              "semantic_choice_claim_allowed": false,
+              "topology_mutating_movement_claim_allowed": false,
+              "unrestricted_movement_claim_allowed": false
+            },
+            "event_time_key": 1.0,
+            "evidence_class": "native_route_arbitration",
+            "idempotency_key": "7f5ea90736aa2c7481603995a6cab50dcea20ceb738d587e79d1da737475079c",
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc3_topology_contract_v1",
+            "native_route_arbitration_digest": "f5480b6ff55f6b8ec7b3f7c48965e6ae71907bd905969a26079ee922fa95bf6f",
+            "native_route_arbitration_enabled": true,
+            "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+            "native_route_arbitration_record_id": "native-route-arbitration:9a365d80523046b2a5413f9c5920c10a",
+            "rejected_candidate_route_digests": [
+              "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e"
+            ],
+            "runtime_family": "LGRC9V3",
+            "scheduler_event_index": 1,
+            "schema_version": "lgrc9v3_native_route_arbitration_record_v1",
+            "selected_candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+            "selected_candidate_route_id": "candidate:high",
+            "selected_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+            "selected_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b"
+          }
+        ],
+        "native_route_candidate_log": [
+          {
+            "artifact_kind": "lgrc9v3_native_route_candidate_record",
+            "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+            "candidate_budget_prediction": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "candidate_competing_sink_ids": [
+              0,
+              2
+            ],
+            "candidate_lineage_transfer_map": {
+              "1": "0",
+              "2": "0"
+            },
+            "candidate_lineage_transfer_map_digest": "6fcfa081d57156cfe044aa0355e336f9da6a8b42835b93819709ee8b71667a4c",
+            "candidate_losing_sink_ids": [
+              2
+            ],
+            "candidate_order_key": "candidate:high",
+            "candidate_retired_edge_ids": [
+              1
+            ],
+            "candidate_retired_node_ids": [
+              2
+            ],
+            "candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+            "candidate_route_id": "candidate:high",
+            "candidate_route_score": 0.75,
+            "candidate_runtime_visible_inputs": [
+              "candidate_source_surface_digest",
+              "surface_pulse_contact",
+              "serialized_route_arbitration_policy"
+            ],
+            "candidate_score_components": {
+              "surface_pulse_contact": 0.75
+            },
+            "candidate_selected_sink_id": 0,
+            "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+            "candidate_source_edge_ids": [
+              1
+            ],
+            "candidate_source_node_ids": [
+              1,
+              2
+            ],
+            "candidate_source_producer_record_id": null,
+            "candidate_source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+            "candidate_source_topology_state_reabsorption_digest": null,
+            "candidate_target_edge_ids": [
+              0
+            ],
+            "candidate_target_node_ids": [
+              0
+            ],
+            "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+            "candidate_transferred_node_ids": [
+              1,
+              2
+            ],
+            "causal_layer_mode": "topology_changing_causal_history",
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "adaptive_topology_movement_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_lgrc_choice_selection_claim_allowed": false,
+              "native_m6": false,
+              "rc_identity_collapse_claim_allowed": false,
+              "semantic_choice_claim_allowed": false,
+              "topology_mutating_movement_claim_allowed": false,
+              "unrestricted_movement_claim_allowed": false
+            },
+            "event_time_key": 1.0,
+            "evidence_class": "native_route_arbitration",
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc3_topology_contract_v1",
+            "native_route_arbitration_enabled": true,
+            "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+            "route_intent": "collapse",
+            "runtime_family": "LGRC9V3",
+            "scheduler_event_index": 1,
+            "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+          },
+          {
+            "artifact_kind": "lgrc9v3_native_route_candidate_record",
+            "artifact_schema_version": "lgrc9v3_native_route_candidate_record_v1",
+            "candidate_budget_prediction": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "candidate_competing_sink_ids": [
+              0,
+              2
+            ],
+            "candidate_lineage_transfer_map": {
+              "1": "2",
+              "2": "2"
+            },
+            "candidate_lineage_transfer_map_digest": "eeeba2a699b714e2722d5320a4c97ae061de1b6bdedf2d1ef198ee03bcdfd10a",
+            "candidate_losing_sink_ids": [
+              0
+            ],
+            "candidate_order_key": "candidate:low",
+            "candidate_retired_edge_ids": [
+              1
+            ],
+            "candidate_retired_node_ids": [
+              0
+            ],
+            "candidate_route_digest": "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e",
+            "candidate_route_id": "candidate:low",
+            "candidate_route_score": 0.25,
+            "candidate_runtime_visible_inputs": [
+              "candidate_source_surface_digest",
+              "surface_pulse_contact",
+              "serialized_route_arbitration_policy"
+            ],
+            "candidate_score_components": {
+              "surface_pulse_contact": 0.25
+            },
+            "candidate_selected_sink_id": 2,
+            "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+            "candidate_source_edge_ids": [
+              1
+            ],
+            "candidate_source_node_ids": [
+              1,
+              2
+            ],
+            "candidate_source_producer_record_id": null,
+            "candidate_source_surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+            "candidate_source_topology_state_reabsorption_digest": null,
+            "candidate_target_edge_ids": [
+              0
+            ],
+            "candidate_target_node_ids": [
+              2
+            ],
+            "candidate_topology_event_kind": "lgrc9v3_causal_collapse",
+            "candidate_transferred_node_ids": [
+              1,
+              2
+            ],
+            "causal_layer_mode": "topology_changing_causal_history",
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "adaptive_topology_movement_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_lgrc_choice_selection_claim_allowed": false,
+              "native_m6": false,
+              "rc_identity_collapse_claim_allowed": false,
+              "semantic_choice_claim_allowed": false,
+              "topology_mutating_movement_claim_allowed": false,
+              "unrestricted_movement_claim_allowed": false
+            },
+            "event_time_key": 1.0,
+            "evidence_class": "native_route_arbitration",
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc3_topology_contract_v1",
+            "native_route_arbitration_enabled": true,
+            "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+            "route_intent": "collapse",
+            "runtime_family": "LGRC9V3",
+            "scheduler_event_index": 1,
+            "schema_version": "lgrc9v3_native_route_candidate_record_v1"
+          }
+        ],
+        "native_route_candidate_set_log": [
+          {
+            "arbitration_window_id": "window:n25-2-i4-reference",
+            "artifact_kind": "lgrc9v3_native_route_candidate_set_record",
+            "artifact_schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+            "candidate_route_digests": [
+              "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+              "c430ea641dbc12076bc2a411c3efb5e423ff1b45e25dc88d1ac771d154916b2e"
+            ],
+            "candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+            "candidate_set_id": "native-route-candidate-set:09acff7482f1bc72754787b1d4c6ae58",
+            "candidate_set_order_key": "score_desc_then_candidate_id",
+            "causal_layer_mode": "topology_changing_causal_history",
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "adaptive_topology_movement_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_lgrc_choice_selection_claim_allowed": false,
+              "native_m6": false,
+              "rc_identity_collapse_claim_allowed": false,
+              "semantic_choice_claim_allowed": false,
+              "topology_mutating_movement_claim_allowed": false,
+              "unrestricted_movement_claim_allowed": false
+            },
+            "event_time_key": 1.0,
+            "evidence_class": "native_route_arbitration",
+            "idempotency_key": "500fa533636cd8404d056e16c58399b310d612e2f21805c01ad79cbea0403273",
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc3_topology_contract_v1",
+            "native_route_arbitration_enabled": true,
+            "native_route_arbitration_policy_id": "score_ordered_topology_route_candidates",
+            "runtime_family": "LGRC9V3",
+            "scheduler_event_index": 1,
+            "schema_version": "lgrc9v3_native_route_candidate_set_record_v1",
+            "unresolved_tie_policy": "fail_closed"
+          }
+        ],
+        "node_last_update_event_time_key": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0
+        },
+        "node_last_update_proper_time": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0
+        },
+        "node_proper_time": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0
+        },
+        "packet_ledger": {
+          "artifact_kind": "lgrc9v3_packet_ledger",
+          "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "causal_layer_mode": "topology_changing_causal_history",
+          "collapse_allowed": true,
+          "conserved_budget_total": 6.0,
+          "event_queue_records": [],
+          "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+          "evidence_class": "collapse_reabsorption_packet_transport",
+          "fixed_topology": false,
+          "fixed_topology_signature": {
+            "edge_records": [
+              {
+                "edge_id": 0,
+                "endpoints": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ]
+              },
+              {
+                "edge_id": 1,
+                "endpoints": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    0
+                  ]
+                ]
+              },
+              {
+                "edge_id": 2,
+                "endpoints": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ]
+              }
+            ],
+            "node_ids": [
+              0,
+              1,
+              2
+            ]
+          },
+          "identity_acceptance_allowed": false,
+          "in_flight_packet_total": 0.0,
+          "lgrc_runtime_level": "lgrc3",
+          "mode_version": "lgrc2_packetized_fixed_topology_v1",
+          "node_coherence_total": 6.0,
+          "packet_budget_invariant": "sum_node_coherence_plus_packets",
+          "packet_event_records": [
+            {
+              "amount": 0.1,
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "edge_id": 1,
+              "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+              "event_kind": "lgrc9v3_packet_departure",
+              "event_time_key": 1.0,
+              "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+              "scheduler_event_index": 1,
+              "source_node_id": 1,
+              "target_node_id": 2
+            }
+          ],
+          "packet_records": [
+            {
+              "amount": 0.1,
+              "arrival_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b:settled:lgrc9v3-packet-bca7a16af210d34a",
+              "arrival_event_time_key": 2.0,
+              "arrival_scheduler_event_index": 1,
+              "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+              "departure_event_time_key": 1.0,
+              "departure_scheduler_event_index": 1,
+              "edge_id": 1,
+              "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+              "packet_state": "arrived",
+              "source_lineage_id": "0",
+              "source_node_id": 0,
+              "target_lineage_id": "0",
+              "target_node_id": 0
+            }
+          ],
+          "packet_transport_through_topology_change": true,
+          "packetized_flux": true,
+          "policies": {
+            "causal_layer_mode": "topology_changing_causal_history",
+            "collapse_allowed": true,
+            "fixed_topology": false,
+            "lgrc_runtime_level": "lgrc3",
+            "packet_transport_through_topology_change": true,
+            "topology_change_allowed": true
+          },
+          "runtime_family": "LGRC9V3",
+          "topology_change_allowed": true
+        },
+        "packet_processing_log": [
+          {
+            "artifact_kind": "lgrc9v3_packet_processing_result",
+            "artifact_schema_version": "lgrc9v3_packet_processing_result_v1",
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "causal_layer_mode": "packetized_fixed_topology",
+            "evidence_class": "packetized_causal_flux",
+            "identity_acceptance_emitted": false,
+            "ledger": {
+              "artifact_kind": "lgrc9v3_packet_ledger",
+              "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "causal_layer_mode": "packetized_fixed_topology",
+              "collapse_allowed": false,
+              "conserved_budget_total": 6.0,
+              "event_queue_records": [
+                {
+                  "amount": 0.1,
+                  "budget_after": null,
+                  "budget_before": null,
+                  "budget_error": null,
+                  "edge_id": 1,
+                  "event_id": "lgrc9v3-packet-event-8a0ca570e8e78cab",
+                  "event_kind": "lgrc9v3_packet_arrival",
+                  "event_time_key": 2.0,
+                  "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                  "scheduler_event_index": 2,
+                  "source_node_id": 1,
+                  "target_node_id": 2
+                }
+              ],
+              "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+              "evidence_class": "packetized_causal_flux",
+              "fixed_topology": true,
+              "fixed_topology_signature": {
+                "edge_records": [
+                  {
+                    "edge_id": 0,
+                    "endpoints": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        0
+                      ]
+                    ]
+                  },
+                  {
+                    "edge_id": 1,
+                    "endpoints": [
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        2,
+                        0
+                      ]
+                    ]
+                  },
+                  {
+                    "edge_id": 2,
+                    "endpoints": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        2,
+                        1
+                      ]
+                    ]
+                  }
+                ],
+                "node_ids": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              "identity_acceptance_allowed": false,
+              "in_flight_packet_total": 0.1,
+              "lgrc_runtime_level": "lgrc2",
+              "mode_version": "lgrc2_packetized_fixed_topology_v1",
+              "node_coherence_total": 5.9,
+              "packet_budget_invariant": "sum_node_coherence_plus_packets",
+              "packet_event_records": [
+                {
+                  "amount": 0.1,
+                  "budget_after": 6.0,
+                  "budget_before": 6.0,
+                  "budget_error": 0.0,
+                  "edge_id": 1,
+                  "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                  "event_kind": "lgrc9v3_packet_departure",
+                  "event_time_key": 1.0,
+                  "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                  "scheduler_event_index": 1,
+                  "source_node_id": 1,
+                  "target_node_id": 2
+                }
+              ],
+              "packet_records": [
+                {
+                  "amount": 0.1,
+                  "arrival_event_id": "lgrc9v3-packet-event-8a0ca570e8e78cab",
+                  "arrival_event_time_key": 2.0,
+                  "arrival_scheduler_event_index": 2,
+                  "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                  "departure_event_time_key": 1.0,
+                  "departure_scheduler_event_index": 1,
+                  "edge_id": 1,
+                  "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                  "packet_state": "in_flight",
+                  "source_lineage_id": null,
+                  "source_node_id": 1,
+                  "target_lineage_id": null,
+                  "target_node_id": 2
+                }
+              ],
+              "packet_transport_through_topology_change": false,
+              "packetized_flux": true,
+              "policies": {},
+              "runtime_family": "LGRC9V3",
+              "topology_change_allowed": false
+            },
+            "lgrc_runtime_level": "lgrc2",
+            "mechanical_expansion_emitted": false,
+            "mode_version": "lgrc2_packetized_fixed_topology_v1",
+            "packet_record": {
+              "amount": 0.1,
+              "arrival_event_id": "lgrc9v3-packet-event-8a0ca570e8e78cab",
+              "arrival_event_time_key": 2.0,
+              "arrival_scheduler_event_index": 2,
+              "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+              "departure_event_time_key": 1.0,
+              "departure_scheduler_event_index": 1,
+              "edge_id": 1,
+              "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+              "packet_state": "in_flight",
+              "source_lineage_id": null,
+              "source_node_id": 1,
+              "target_lineage_id": null,
+              "target_node_id": 2
+            },
+            "processed_event": {
+              "amount": 0.1,
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "edge_id": 1,
+              "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+              "event_kind": "lgrc9v3_packet_departure",
+              "event_time_key": 1.0,
+              "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+              "scheduler_event_index": 1,
+              "source_node_id": 1,
+              "target_node_id": 2
+            },
+            "runtime_family": "LGRC9V3",
+            "spark_event_emitted": false,
+            "state_mutated": true,
+            "topology_mutated": false,
+            "topology_signature": {
+              "edge_records": [
+                {
+                  "edge_id": 0,
+                  "endpoints": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "edge_id": 1,
+                  "endpoints": [
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "edge_id": 2,
+                  "endpoints": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      2,
+                      1
+                    ]
+                  ]
+                }
+              ],
+              "node_ids": [
+                0,
+                1,
+                2
+              ]
+            }
+          }
+        ],
+        "post_refinement_flow_window_log": [
+          {
+            "artifact_kind": "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+            "artifact_schema_version": "lgrc9v3_multi_basin_post_refinement_flow_window_record_v1",
+            "causal_layer_mode": "topology_changing_causal_history",
+            "claim_flags": {
+              "BF6_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "ant_ecology_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "independent_new_basin_claim_allowed": false,
+              "native_multi_basin_formation_claim_allowed": false,
+              "native_support_claim_allowed": false,
+              "organism_life_claim_allowed": false,
+              "phase8_completion_claim_allowed": false,
+              "semantic_choice_claim_allowed": false,
+              "semantic_learning_claim_allowed": false,
+              "sentience_claim_allowed": false
+            },
+            "edge_flux_trace": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "evidence_class": "multi_basin_formation",
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc3_topology_contract_v1",
+            "native_multi_basin_enabled": true,
+            "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+            "node_coherence_trace": {
+              "0": 1.1,
+              "1": 1.9,
+              "2": 3.0
+            },
+            "node_plus_packet_budget_trace": {
+              "node_plus_packet_budget_after": 6.0,
+              "node_plus_packet_budget_before": 6.0,
+              "node_plus_packet_budget_error": 0.0
+            },
+            "node_support_trace": {
+              "0": 1.1,
+              "1": 1.9,
+              "2": 3.0
+            },
+            "packet_flux_trace": {
+              "event_queue_record_count": 0.0,
+              "in_flight_packet_total": 0.0,
+              "packet_record_count": 1.0
+            },
+            "post_refinement_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+            "post_refinement_flow_window_id": "post-refinement-flow-window:f188db7b607623fdac7aa02e4d092a75",
+            "post_refinement_topology_signature": "5815955d8e781f81522f3137ee624a44942caa556d2373632cc555eefffe4e6c",
+            "pre_refinement_topology_signature": "93fbce46a524a420ddaf34d72830397388f33cad3ab7ba7104f5335a606a5221",
+            "refinement_lineage_map": {
+              "1": "0",
+              "2": "0"
+            },
+            "refinement_lineage_map_digest": "6fcfa081d57156cfe044aa0355e336f9da6a8b42835b93819709ee8b71667a4c",
+            "runtime_family": "LGRC9V3",
+            "runtime_visible_inputs": [
+              "committed_topology_event",
+              "native_route_arbitration_record",
+              "native_route_candidate_record",
+              "refinement_lineage_map",
+              "topology_state_reabsorption_record",
+              "packet_ledger",
+              "active_node_state",
+              "active_edge_state",
+              "topology_state_reabsorption_record_digest:46681f7aa5357d59e694e4003a8ff4f841ef701fcddadded453ea9e5ffdcf54f"
+            ],
+            "schema_version": "lgrc9v3_multi_basin_post_refinement_flow_window_record_v1",
+            "source_expansion_id": "native-route-candidate:candidate:high",
+            "source_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+            "source_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+            "window_end_event_time_key": 1.0,
+            "window_scheduler_indices": [
+              1,
+              1
+            ],
+            "window_start_event_time_key": 1.0
+          }
+        ],
+        "runtime_family": "LGRC9V3",
+        "scheduler_event_index": 1,
+        "topology_event_log": [
+          {
+            "kind": "lgrc9v3_causal_collapse",
+            "payload": {
+              "artifact_kind": "lgrc9v3_collapse_reabsorption_result",
+              "artifact_schema_version": "lgrc9v3_collapse_reabsorption_result_v1",
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "budget_transfer_policy": "budget_conserving_transfer",
+              "causal_layer_mode": "topology_changing_causal_history",
+              "checkpoint_index": 1,
+              "coherence_transfer_amount": 0.0,
+              "collapse_reabsorption_allowed": true,
+              "collapse_reabsorption_processing_implemented": true,
+              "competing_sink_ids": [
+                0,
+                2
+              ],
+              "event_time_key": 1.0,
+              "evidence_class": "collapse_reabsorption",
+              "identity_acceptance_emitted": false,
+              "lgrc_runtime_level": "lgrc3",
+              "lineage_transfer_map": {
+                "1": "0",
+                "2": "0"
+              },
+              "lineage_transfer_policy": "explicit_lineage_transfer_map",
+              "losing_sink_ids": [
+                2
+              ],
+              "mode_version": "lgrc3_topology_contract_v1",
+              "native_route_arbitration_digest": "f5480b6ff55f6b8ec7b3f7c48965e6ae71907bd905969a26079ee922fa95bf6f",
+              "native_route_arbitration_record_id": "native-route-arbitration:9a365d80523046b2a5413f9c5920c10a",
+              "native_route_candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+              "native_route_selected_candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+              "native_route_selected_candidate_route_id": "candidate:high",
+              "node_proper_time": {
+                "0": 0.0,
+                "1": 1.0,
+                "2": 0.0
+              },
+              "packet_transport_emitted": false,
+              "proper_time_transfer_policy": "selected_sink_clock_continuity",
+              "runtime_family": "LGRC9V3",
+              "scheduler_event_index": 1,
+              "selected_sink_id": 0,
+              "source_lineage_ids": {
+                "1": "native-route:4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158:1",
+                "2": "native-route:4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158:2"
+              },
+              "source_packet_ledger_schema_version": "lgrc9v3_packet_ledger_v1",
+              "source_pending_flux_ledger_schema_version": null,
+              "state_mutated": false,
+              "target_lineage_id": "0",
+              "topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+              "topology_event_kind": "lgrc9v3_causal_collapse",
+              "topology_mutated": false,
+              "transferred_node_ids": [
+                1,
+                2
+              ],
+              "transferred_packet_ids": [
+                "lgrc9v3-packet-bca7a16af210d34a"
+              ],
+              "transferred_pending_flux_entry_ids": []
+            },
+            "source_family": "LGRC9V3",
+            "step_index": 1
+          },
+          {
+            "kind": "lgrc9v3_causal_collapse",
+            "payload": {
+              "amount_total": 0.1,
+              "artifact_kind": "lgrc9v3_collapse_reabsorption_packet_transport_result",
+              "artifact_schema_version": "lgrc9v3_collapse_reabsorption_packet_transport_result_v1",
+              "budget_after": 6.0,
+              "budget_before": 6.0,
+              "budget_error": 0.0,
+              "causal_layer_mode": "topology_changing_causal_history",
+              "checkpoint_index": 1,
+              "event_time_key": 1.0,
+              "evidence_class": "collapse_reabsorption_packet_transport",
+              "identity_acceptance_emitted": false,
+              "lgrc_runtime_level": "lgrc3",
+              "lineage_transfer_map": {
+                "1": "0",
+                "2": "0"
+              },
+              "mode_version": "lgrc3_topology_contract_v1",
+              "packet_transport_identity_transfer": false,
+              "packet_transport_records": [
+                {
+                  "amount": 0.1,
+                  "edge_id": 1,
+                  "endpoint_transported": true,
+                  "new_endpoint_column": null,
+                  "new_endpoint_port": null,
+                  "old_parent_column": null,
+                  "old_parent_port": null,
+                  "packet_state": "in_flight",
+                  "source_lineage_id_after": "0",
+                  "source_lineage_id_before": null,
+                  "source_node_id_after": 0,
+                  "source_node_id_before": 1,
+                  "source_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                  "source_pending_flux_entry_ids": [],
+                  "target_lineage_id_after": "0",
+                  "target_lineage_id_before": null,
+                  "target_node_id_after": 0,
+                  "target_node_id_before": 2,
+                  "transport_record_id": "lgrc9v3-packet-transport-60fbbc1fb3fb6aad",
+                  "transported_packet_id": "lgrc9v3-packet-bca7a16af210d34a"
+                }
+              ],
+              "runtime_family": "LGRC9V3",
+              "scheduler_event_index": 1,
+              "selected_sink_id": 0,
+              "settled_amount_total": 0.1,
+              "settled_packet_ids": [
+                "lgrc9v3-packet-bca7a16af210d34a"
+              ],
+              "settled_pending_flux_entry_ids": [],
+              "source_packet_ids": [
+                "lgrc9v3-packet-bca7a16af210d34a"
+              ],
+              "source_packet_ledger_schema_version": "lgrc9v3_packet_ledger_v1",
+              "source_pending_flux_entry_ids": [],
+              "source_pending_flux_ledger_schema_version": null,
+              "source_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+              "source_topology_event_kind": "lgrc9v3_causal_collapse",
+              "state_mutated": false,
+              "target_lineage_id": "0",
+              "topology_mutated": false,
+              "transport_policy": "redirect_to_selected_sink_or_settle_self_loop",
+              "transported_ledger": {
+                "artifact_kind": "lgrc9v3_packet_ledger",
+                "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+                "budget_after": 6.0,
+                "budget_before": 6.0,
+                "budget_error": 0.0,
+                "causal_layer_mode": "topology_changing_causal_history",
+                "collapse_allowed": true,
+                "conserved_budget_total": 6.0,
+                "event_queue_records": [],
+                "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+                "evidence_class": "collapse_reabsorption_packet_transport",
+                "fixed_topology": false,
+                "fixed_topology_signature": {
+                  "edge_records": [
+                    {
+                      "edge_id": 0,
+                      "endpoints": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          1,
+                          0
+                        ]
+                      ]
+                    },
+                    {
+                      "edge_id": 1,
+                      "endpoints": [
+                        [
+                          1,
+                          1
+                        ],
+                        [
+                          2,
+                          0
+                        ]
+                      ]
+                    },
+                    {
+                      "edge_id": 2,
+                      "endpoints": [
+                        [
+                          0,
+                          1
+                        ],
+                        [
+                          2,
+                          1
+                        ]
+                      ]
+                    }
+                  ],
+                  "node_ids": [
+                    0,
+                    1,
+                    2
+                  ]
+                },
+                "identity_acceptance_allowed": false,
+                "in_flight_packet_total": 0.0,
+                "lgrc_runtime_level": "lgrc3",
+                "mode_version": "lgrc2_packetized_fixed_topology_v1",
+                "node_coherence_total": 6.0,
+                "packet_budget_invariant": "sum_node_coherence_plus_packets",
+                "packet_event_records": [
+                  {
+                    "amount": 0.1,
+                    "budget_after": 6.0,
+                    "budget_before": 6.0,
+                    "budget_error": 0.0,
+                    "edge_id": 1,
+                    "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                    "event_kind": "lgrc9v3_packet_departure",
+                    "event_time_key": 1.0,
+                    "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                    "scheduler_event_index": 1,
+                    "source_node_id": 1,
+                    "target_node_id": 2
+                  }
+                ],
+                "packet_records": [
+                  {
+                    "amount": 0.1,
+                    "arrival_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b:settled:lgrc9v3-packet-bca7a16af210d34a",
+                    "arrival_event_time_key": 2.0,
+                    "arrival_scheduler_event_index": 1,
+                    "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                    "departure_event_time_key": 1.0,
+                    "departure_scheduler_event_index": 1,
+                    "edge_id": 1,
+                    "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                    "packet_state": "arrived",
+                    "source_lineage_id": "0",
+                    "source_node_id": 0,
+                    "target_lineage_id": "0",
+                    "target_node_id": 0
+                  }
+                ],
+                "packet_transport_through_topology_change": true,
+                "packetized_flux": true,
+                "policies": {
+                  "causal_layer_mode": "topology_changing_causal_history",
+                  "collapse_allowed": true,
+                  "fixed_topology": false,
+                  "lgrc_runtime_level": "lgrc3",
+                  "packet_transport_through_topology_change": true,
+                  "topology_change_allowed": true
+                },
+                "runtime_family": "LGRC9V3",
+                "topology_change_allowed": true
+              },
+              "transported_packet_ids": [],
+              "transported_pending_flux_entry_ids": [],
+              "transported_pending_flux_ledger": null
+            },
+            "source_family": "LGRC9V3",
+            "step_index": 1
+          }
+        ],
+        "topology_state_reabsorption_log": [
+          {
+            "active_node_state_total_after": 6.0,
+            "active_node_state_total_before": 5.9,
+            "active_state_digest_after": "5815955d8e781f81522f3137ee624a44942caa556d2373632cc555eefffe4e6c",
+            "active_state_digest_before": "93fbce46a524a420ddaf34d72830397388f33cad3ab7ba7104f5335a606a5221",
+            "artifact_kind": "lgrc9v3_topology_state_reabsorption_record",
+            "artifact_schema_version": "lgrc9v3_topology_state_reabsorption_record_v1",
+            "causal_layer_mode": "topology_changing_causal_history",
+            "checkpoint_index": 1,
+            "claim_flags": {
+              "adaptive_topology_entry_allowed": false,
+              "adaptive_topology_movement_claim_allowed": false,
+              "agency_claim_allowed": false,
+              "biological_claim_allowed": false,
+              "identity_acceptance_claim_allowed": false,
+              "locomotion_like_claim_allowed": false,
+              "loop_driven_movement_claim_allowed": false,
+              "movement_claim_allowed": false,
+              "native_m6": false,
+              "topology_mutating_movement_claim_allowed": false
+            },
+            "edge_state_after": {
+              "0": {
+                "0": 0.0,
+                "1": 1.0,
+                "2": 1.0,
+                "3": 1.0,
+                "4": 1.0,
+                "5": 0.0
+              },
+              "1": {
+                "0": 1.0,
+                "1": 2.0,
+                "2": 2.0,
+                "3": 1.0,
+                "4": 1.0,
+                "5": 0.0
+              },
+              "2": {
+                "0": 0.0,
+                "1": 2.0,
+                "2": 2.0,
+                "3": 2.0,
+                "4": 1.0,
+                "5": 0.0
+              }
+            },
+            "edge_state_before": {
+              "0": {
+                "0": 0.0,
+                "1": 1.0,
+                "2": 1.0,
+                "3": 1.0,
+                "4": 1.0,
+                "5": 0.0
+              },
+              "1": {
+                "0": 1.0,
+                "1": 2.0,
+                "2": 2.0,
+                "3": 1.0,
+                "4": 1.0,
+                "5": 0.0
+              },
+              "2": {
+                "0": 0.0,
+                "1": 2.0,
+                "2": 2.0,
+                "3": 2.0,
+                "4": 1.0,
+                "5": 0.0
+              }
+            },
+            "event_time_key": 1.0,
+            "evidence_class": "topology_state_reabsorption",
+            "idempotency_key": "1b6c8aeb20527a88f91ef4aabff11f2cd31d62d707ef3036e0f3a0fe62926052",
+            "lgrc_runtime_level": "lgrc3",
+            "lineage_transfer_map": {
+              "1": "0",
+              "2": "0"
+            },
+            "lineage_transfer_map_digest": "6fcfa081d57156cfe044aa0355e336f9da6a8b42835b93819709ee8b71667a4c",
+            "mode_version": "lgrc3_topology_contract_v1",
+            "node_plus_packet_budget_after": 6.0,
+            "node_plus_packet_budget_before": 6.0,
+            "node_plus_packet_budget_error": 0.0,
+            "node_state_after": {
+              "0": 1.1,
+              "1": 1.9,
+              "2": 3.0
+            },
+            "node_state_before": {
+              "0": 1.0,
+              "1": 1.9,
+              "2": 3.0
+            },
+            "packet_ledger_conserved_budget_total_after": 6.0,
+            "packet_ledger_conserved_budget_total_before": 6.0,
+            "packet_ledger_digest_after": "c1c9420e59f87f7b030352219fbb482373a27f588607ece1b78f3843d4ffe0ff",
+            "packet_ledger_digest_before": "80ca83c4f0a173cae4b12eefbc46564a8fc43c948cbe4888d32f52f52d3114be",
+            "packet_ledger_in_flight_packet_total_after": 0.0,
+            "packet_ledger_in_flight_packet_total_before": 0.1,
+            "packet_ledger_node_total_after": 6.0,
+            "packet_ledger_node_total_before": 5.9,
+            "retired_edge_ids": [
+              1,
+              2
+            ],
+            "retired_node_ids": [
+              2
+            ],
+            "runtime_family": "LGRC9V3",
+            "scheduler_event_index": 1,
+            "schema_version": "lgrc9v3_topology_state_reabsorption_record_v1",
+            "source_edge_ids": [
+              0,
+              1,
+              2
+            ],
+            "source_node_ids": [
+              1,
+              2
+            ],
+            "state_reabsorption_action": "merged",
+            "target_edge_ids": [
+              0,
+              2
+            ],
+            "target_node_ids": [
+              0
+            ],
+            "topology_event_committed": true,
+            "topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+            "topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+            "topology_event_kind": "lgrc9v3_causal_collapse",
+            "topology_state_reabsorption_digest": "46681f7aa5357d59e694e4003a8ff4f841ef701fcddadded453ea9e5ffdcf54f",
+            "topology_state_reabsorption_enabled": true,
+            "topology_state_reabsorption_policy_id": "lineage_rebase_active_state_and_packet_ledger",
+            "topology_state_reabsorption_record_id": "topology-state-reabsorption:0ab2e1b7211b326ef999ecd74120929a",
+            "topology_state_reabsorption_validated": true
+          }
+        ]
+      }
+    },
+    "edge_labels": {
+      "base_conductance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "edge_label_computation_mode": {},
+      "edge_label_params": {},
+      "flux_coupling": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "geometric_length": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "temporal_delay": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      }
+    },
+    "events": [
+      {
+        "kind": "lgrc9v3_packet_departure",
+        "payload": {
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "checkpoint_index": 1,
+          "event_schema_version": "lgrc9v3_runtime_event_v1",
+          "event_time_key": 1.0,
+          "identity_acceptance_emitted": false,
+          "mechanical_expansion_emitted": false,
+          "packet_record": {
+            "amount": 0.1,
+            "arrival_event_id": "lgrc9v3-packet-event-8a0ca570e8e78cab",
+            "arrival_event_time_key": 2.0,
+            "arrival_scheduler_event_index": 2,
+            "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "departure_event_time_key": 1.0,
+            "departure_scheduler_event_index": 1,
+            "edge_id": 1,
+            "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "packet_state": "in_flight",
+            "source_lineage_id": null,
+            "source_node_id": 1,
+            "target_lineage_id": null,
+            "target_node_id": 2
+          },
+          "processed_event": {
+            "amount": 0.1,
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "edge_id": 1,
+            "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "event_kind": "lgrc9v3_packet_departure",
+            "event_time_key": 1.0,
+            "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+            "scheduler_event_index": 1,
+            "source_node_id": 1,
+            "target_node_id": 2
+          },
+          "proper_time_update": {
+            "delta_event_time_key": 1.0,
+            "delta_tau": 1.0,
+            "event_time_key": 1.0,
+            "lapse": 1.0,
+            "node_id": 1,
+            "node_proper_time": 1.0,
+            "previous_event_time_key": 0.0,
+            "previous_node_proper_time": 0.0,
+            "proper_time_accumulation_policy": "local_event_frontier"
+          },
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "spark_event_emitted": false,
+          "state_mutated": true,
+          "topology_mutated": false
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 1
+      },
+      {
+        "kind": "lgrc9v3_causal_pulse_substrate_surface_row",
+        "payload": {
+          "artifact_kind": "lgrc9v3_causal_pulse_substrate_surface_row",
+          "artifact_schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+          "claim_flags": {
+            "adaptive_topology_entry_allowed": false,
+            "agency_claim_allowed": false,
+            "biological_claim_allowed": false,
+            "identity_acceptance_claim_allowed": false,
+            "locomotion_like_claim_allowed": false,
+            "loop_driven_movement_claim_allowed": false,
+            "movement_claim_allowed": false,
+            "native_m6": false
+          },
+          "contact_amount": 0.1,
+          "event_time_key": 1.0,
+          "evidence_class": "causal_pulse_substrate_surface",
+          "lgrc_runtime_level": "lgrc3",
+          "lineage_status": "fixed_topology",
+          "mode_version": "lgrc9v3_causal_pulse_substrate_surface_v1",
+          "node_proper_time": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0
+          },
+          "producer_records": [],
+          "pulse_channel_id": "edge:1",
+          "pulse_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+          "pulse_event_kind": "lgrc9v3_packet_departure",
+          "pulse_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+          "pulse_route_step": 0,
+          "route_aspect_digest": "2447cb647c9ed74784fd763bb334964fe0178194662689d127008ba45fceb777",
+          "route_aspect_id": "unbound_lgrc2_packet_contact",
+          "runtime_family": "LGRC9V3",
+          "runtime_visible_inputs": [
+            "committed_packet_event",
+            "route_aspect_digest",
+            "pulse_channel_id"
+          ],
+          "scheduler_event_index": 2,
+          "schema_version": "lgrc9v3_causal_pulse_substrate_surface_row_v1",
+          "source_node_id": 1,
+          "surface_budget_after": 0.0,
+          "surface_budget_before": 0.0,
+          "surface_budget_error": 0.0,
+          "surface_budget_surface": "derived_surface_accounting",
+          "surface_digest": "1cd1b0b50f096129b79170c084e5937e0407ae600b5d07ea35666a17bbf8ee3c",
+          "surface_id": "surface:lgrc9v3-packet-event-287874bcf245713b:route_local_pulse_contact",
+          "surface_kind": "route_local_pulse_contact",
+          "surface_nodes": [
+            1,
+            2
+          ],
+          "surface_policy_enabled": true,
+          "surface_policy_id": "emit_committed_packet_contact_rows",
+          "surface_policy_validated": true,
+          "surface_state_digest": "5a4976ee43f8127d05d0b091d31b61f9251746a4857cd3a20e5d70a1e8f93f25",
+          "surface_state_id": "surface-state:lgrc9v3-packet-event-287874bcf245713b:1",
+          "surface_update_policy": {
+            "activation_gate": "committed_packet_event",
+            "allowed_surface_kinds": [
+              "route_local_pulse_contact"
+            ],
+            "policy_id": "replay_declared_surface_update_policy",
+            "version": "surface_update_policy_v1"
+          },
+          "surface_values_after": {
+            "committed_packet_event_observed": true,
+            "source_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+            "surface_contact_mass": 0.1
+          },
+          "surface_values_before": {
+            "committed_packet_event_observed": false,
+            "surface_contact_mass": 0.0
+          },
+          "target_node_id": 2
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 2
+      },
+      {
+        "kind": "lgrc9v3_causal_collapse",
+        "payload": {
+          "artifact_kind": "lgrc9v3_collapse_reabsorption_result",
+          "artifact_schema_version": "lgrc9v3_collapse_reabsorption_result_v1",
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "budget_transfer_policy": "budget_conserving_transfer",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "checkpoint_index": 1,
+          "coherence_transfer_amount": 0.0,
+          "collapse_reabsorption_allowed": true,
+          "collapse_reabsorption_processing_implemented": true,
+          "competing_sink_ids": [
+            0,
+            2
+          ],
+          "event_time_key": 1.0,
+          "evidence_class": "collapse_reabsorption",
+          "identity_acceptance_emitted": false,
+          "lgrc_runtime_level": "lgrc3",
+          "lineage_transfer_map": {
+            "1": "0",
+            "2": "0"
+          },
+          "lineage_transfer_policy": "explicit_lineage_transfer_map",
+          "losing_sink_ids": [
+            2
+          ],
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_digest": "f5480b6ff55f6b8ec7b3f7c48965e6ae71907bd905969a26079ee922fa95bf6f",
+          "native_route_arbitration_record_id": "native-route-arbitration:9a365d80523046b2a5413f9c5920c10a",
+          "native_route_candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+          "native_route_selected_candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+          "native_route_selected_candidate_route_id": "candidate:high",
+          "node_proper_time": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0
+          },
+          "packet_transport_emitted": false,
+          "proper_time_transfer_policy": "selected_sink_clock_continuity",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "selected_sink_id": 0,
+          "source_lineage_ids": {
+            "1": "native-route:4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158:1",
+            "2": "native-route:4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158:2"
+          },
+          "source_packet_ledger_schema_version": "lgrc9v3_packet_ledger_v1",
+          "source_pending_flux_ledger_schema_version": null,
+          "state_mutated": false,
+          "target_lineage_id": "0",
+          "topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+          "topology_event_kind": "lgrc9v3_causal_collapse",
+          "topology_mutated": false,
+          "transferred_node_ids": [
+            1,
+            2
+          ],
+          "transferred_packet_ids": [
+            "lgrc9v3-packet-bca7a16af210d34a"
+          ],
+          "transferred_pending_flux_entry_ids": []
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 1
+      },
+      {
+        "kind": "lgrc9v3_causal_collapse",
+        "payload": {
+          "amount_total": 0.1,
+          "artifact_kind": "lgrc9v3_collapse_reabsorption_packet_transport_result",
+          "artifact_schema_version": "lgrc9v3_collapse_reabsorption_packet_transport_result_v1",
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "causal_layer_mode": "topology_changing_causal_history",
+          "checkpoint_index": 1,
+          "event_time_key": 1.0,
+          "evidence_class": "collapse_reabsorption_packet_transport",
+          "identity_acceptance_emitted": false,
+          "lgrc_runtime_level": "lgrc3",
+          "lineage_transfer_map": {
+            "1": "0",
+            "2": "0"
+          },
+          "mode_version": "lgrc3_topology_contract_v1",
+          "packet_transport_identity_transfer": false,
+          "packet_transport_records": [
+            {
+              "amount": 0.1,
+              "edge_id": 1,
+              "endpoint_transported": true,
+              "new_endpoint_column": null,
+              "new_endpoint_port": null,
+              "old_parent_column": null,
+              "old_parent_port": null,
+              "packet_state": "in_flight",
+              "source_lineage_id_after": "0",
+              "source_lineage_id_before": null,
+              "source_node_id_after": 0,
+              "source_node_id_before": 1,
+              "source_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+              "source_pending_flux_entry_ids": [],
+              "target_lineage_id_after": "0",
+              "target_lineage_id_before": null,
+              "target_node_id_after": 0,
+              "target_node_id_before": 2,
+              "transport_record_id": "lgrc9v3-packet-transport-60fbbc1fb3fb6aad",
+              "transported_packet_id": "lgrc9v3-packet-bca7a16af210d34a"
+            }
+          ],
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "selected_sink_id": 0,
+          "settled_amount_total": 0.1,
+          "settled_packet_ids": [
+            "lgrc9v3-packet-bca7a16af210d34a"
+          ],
+          "settled_pending_flux_entry_ids": [],
+          "source_packet_ids": [
+            "lgrc9v3-packet-bca7a16af210d34a"
+          ],
+          "source_packet_ledger_schema_version": "lgrc9v3_packet_ledger_v1",
+          "source_pending_flux_entry_ids": [],
+          "source_pending_flux_ledger_schema_version": null,
+          "source_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+          "source_topology_event_kind": "lgrc9v3_causal_collapse",
+          "state_mutated": false,
+          "target_lineage_id": "0",
+          "topology_mutated": false,
+          "transport_policy": "redirect_to_selected_sink_or_settle_self_loop",
+          "transported_ledger": {
+            "artifact_kind": "lgrc9v3_packet_ledger",
+            "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "causal_layer_mode": "topology_changing_causal_history",
+            "collapse_allowed": true,
+            "conserved_budget_total": 6.0,
+            "event_queue_records": [],
+            "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+            "evidence_class": "collapse_reabsorption_packet_transport",
+            "fixed_topology": false,
+            "fixed_topology_signature": {
+              "edge_records": [
+                {
+                  "edge_id": 0,
+                  "endpoints": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "edge_id": 1,
+                  "endpoints": [
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "edge_id": 2,
+                  "endpoints": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      2,
+                      1
+                    ]
+                  ]
+                }
+              ],
+              "node_ids": [
+                0,
+                1,
+                2
+              ]
+            },
+            "identity_acceptance_allowed": false,
+            "in_flight_packet_total": 0.0,
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc2_packetized_fixed_topology_v1",
+            "node_coherence_total": 6.0,
+            "packet_budget_invariant": "sum_node_coherence_plus_packets",
+            "packet_event_records": [
+              {
+                "amount": 0.1,
+                "budget_after": 6.0,
+                "budget_before": 6.0,
+                "budget_error": 0.0,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                "event_kind": "lgrc9v3_packet_departure",
+                "event_time_key": 1.0,
+                "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                "scheduler_event_index": 1,
+                "source_node_id": 1,
+                "target_node_id": 2
+              }
+            ],
+            "packet_records": [
+              {
+                "amount": 0.1,
+                "arrival_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b:settled:lgrc9v3-packet-bca7a16af210d34a",
+                "arrival_event_time_key": 2.0,
+                "arrival_scheduler_event_index": 1,
+                "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                "departure_event_time_key": 1.0,
+                "departure_scheduler_event_index": 1,
+                "edge_id": 1,
+                "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                "packet_state": "arrived",
+                "source_lineage_id": "0",
+                "source_node_id": 0,
+                "target_lineage_id": "0",
+                "target_node_id": 0
+              }
+            ],
+            "packet_transport_through_topology_change": true,
+            "packetized_flux": true,
+            "policies": {
+              "causal_layer_mode": "topology_changing_causal_history",
+              "collapse_allowed": true,
+              "fixed_topology": false,
+              "lgrc_runtime_level": "lgrc3",
+              "packet_transport_through_topology_change": true,
+              "topology_change_allowed": true
+            },
+            "runtime_family": "LGRC9V3",
+            "topology_change_allowed": true
+          },
+          "transported_packet_ids": [],
+          "transported_pending_flux_entry_ids": [],
+          "transported_pending_flux_ledger": null
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 1
+      }
+    ],
+    "metadata": {
+      "capabilities": [
+        "basin_attributes",
+        "causal_layer",
+        "choice_collapse_semantics",
+        "column_coarse_graining",
+        "hierarchy_tracking",
+        "intrinsic_frame",
+        "mechanical_refinement",
+        "multi_metric_edges",
+        "port_graph",
+        "quadrature_budget"
+      ],
+      "model_family": "LGRC9V3",
+      "params": {
+        "constitutive_semantic_modes": {
+          "backend_selections": {
+            "budget": {
+              "name": "simplex_projection",
+              "params": {
+                "quadrature_mode": "unit_measure"
+              }
+            },
+            "choice": {
+              "name": "sink_compatibility",
+              "params": {}
+            },
+            "curvature": {
+              "name": "none",
+              "params": {}
+            },
+            "geometry": {
+              "name": "fixed_port_chart",
+              "params": {}
+            },
+            "hessian": {
+              "name": "row_basis_diagonal",
+              "params": {}
+            },
+            "spark": {
+              "name": "saturation_signed_hessian",
+              "params": {
+                "column_h_sign_crossing_mode": "theory_product",
+                "enable_column_h_sign_crossing": false,
+                "enable_column_h_threshold": true,
+                "signed_crossing": false,
+                "spark_lane": "current_hybrid_signed_hessian"
+              }
+            }
+          },
+          "boundary_mode": "prune",
+          "budget_correction_method": "simplex_projection",
+          "choice_backend": "sink_compatibility",
+          "column_h_sign_crossing_mode": "theory_product",
+          "curvature_backend": "none",
+          "default_evolution_provenance": {
+            "D_eff_target": "GRC9 mechanical expansion default",
+            "alpha": "GRCV3 metric law default",
+            "alpha_seed": "GRC9 growth seed-transfer default",
+            "beta": "GRCV3 metric law default",
+            "compatibility_score_params": "GRCV3 choice/collapse defaults",
+            "delta": "GRCV3 metric law default",
+            "eps_column_h": "GRC9 column-H proxy threshold for opt-in GRC9V3 Lane B",
+            "eps_column_h_crossing_zero": "GRC9V3 Lane B optional column-H sign-crossing zero band",
+            "eps_gradient": "GRCV3 basin/spark semantic threshold",
+            "eps_hessian": "GRCV3 basin/spark semantic threshold",
+            "eps_spark": "GRCV3 signed-Hessian spark threshold",
+            "eps_tau": "GRCV3 temporal-label default",
+            "eta": "GRCV3 transport default",
+            "gamma": "GRCV3 metric law default",
+            "hessian_regularization": "GRCV3 weighted least-squares comparison backend",
+            "kappa_c": "GRCV3/GRC9 potential default",
+            "lambda_birth": "GRC9 growth default",
+            "lambda_c": "GRCV3 tensor default",
+            "rho": "GRCV3 temporal-label default",
+            "rng_seed": "GRC9 deterministic RNG default",
+            "site_potential_params": "GRCV3/GRC9 potential default",
+            "site_potential_selection": "GRCV3/GRC9 potential default",
+            "tau_instability": "GRC9 instability diagnostic threshold",
+            "v0": "GRCV3 temporal-label default",
+            "w_bond": "GRC9 expansion/growth bond default",
+            "xi_c": "GRCV3 tensor default",
+            "zeta_c": "GRCV3 tensor default"
+          },
+          "edge_label_selection": "all",
+          "enable_column_h_sign_crossing": false,
+          "enable_column_h_threshold": true,
+          "enable_near_saturation": false,
+          "expansion_distribution_mode": "equal",
+          "frame_mode": "fixed_port_chart",
+          "hessian_backend": "row_basis_diagonal",
+          "near_saturation_degree": 8,
+          "quadrature_mode": "unit_measure",
+          "require_active_degree_9": true,
+          "require_sink_for_column_h_spark": true,
+          "spark_lane": "current_hybrid_signed_hessian",
+          "spark_signed_crossing": false,
+          "store_previous_column_h": false
+        },
+        "dt": 1.0,
+        "evolution": {
+          "D_eff_target": 30,
+          "alpha": 1.0,
+          "alpha_seed": 0.1,
+          "beta": 1.0,
+          "compatibility_score_params": {
+            "epsilon_choice": 0.001,
+            "epsilon_collapse": 0.001
+          },
+          "delta": 1.0,
+          "eps_column_h": 0.001,
+          "eps_column_h_crossing_zero": 0.0,
+          "eps_gradient": 0.001,
+          "eps_hessian": 0.001,
+          "eps_spark": 0.001,
+          "eps_tau": 1e-09,
+          "eta": 1.0,
+          "gamma": 1.0,
+          "hessian_regularization": 1e-09,
+          "kappa_c": 1.0,
+          "lambda_birth": 0.0,
+          "lambda_c": 1.0,
+          "rho": 1.0,
+          "rng_seed": 0,
+          "site_potential_params": {
+            "mu": 0.0,
+            "scale": 1.0
+          },
+          "site_potential_selection": "quadratic",
+          "tau_instability": 0.5,
+          "v0": 1.0,
+          "w_bond": 1.0,
+          "xi_c": 1.0,
+          "zeta_c": 1.0
+        },
+        "numerical_backend": {}
+      },
+      "params_hash": "a9e588afc04aac1cf752c2526883df5ebad0d78773d5e6cfb76971bad0625025",
+      "resolved_params": {
+        "constitutive_semantic_modes": {
+          "backend_selections": {
+            "budget": {
+              "name": "simplex_projection",
+              "params": {
+                "quadrature_mode": "unit_measure"
+              }
+            },
+            "choice": {
+              "name": "sink_compatibility",
+              "params": {}
+            },
+            "curvature": {
+              "name": "none",
+              "params": {}
+            },
+            "geometry": {
+              "name": "fixed_port_chart",
+              "params": {}
+            },
+            "hessian": {
+              "name": "row_basis_diagonal",
+              "params": {}
+            },
+            "spark": {
+              "name": "saturation_signed_hessian",
+              "params": {
+                "column_h_sign_crossing_mode": "theory_product",
+                "enable_column_h_sign_crossing": false,
+                "enable_column_h_threshold": true,
+                "signed_crossing": false,
+                "spark_lane": "current_hybrid_signed_hessian"
+              }
+            }
+          },
+          "boundary_mode": "prune",
+          "budget_correction_method": "simplex_projection",
+          "choice_backend": "sink_compatibility",
+          "column_h_sign_crossing_mode": "theory_product",
+          "curvature_backend": "none",
+          "default_evolution_provenance": {
+            "D_eff_target": "GRC9 mechanical expansion default",
+            "alpha": "GRCV3 metric law default",
+            "alpha_seed": "GRC9 growth seed-transfer default",
+            "beta": "GRCV3 metric law default",
+            "compatibility_score_params": "GRCV3 choice/collapse defaults",
+            "delta": "GRCV3 metric law default",
+            "eps_column_h": "GRC9 column-H proxy threshold for opt-in GRC9V3 Lane B",
+            "eps_column_h_crossing_zero": "GRC9V3 Lane B optional column-H sign-crossing zero band",
+            "eps_gradient": "GRCV3 basin/spark semantic threshold",
+            "eps_hessian": "GRCV3 basin/spark semantic threshold",
+            "eps_spark": "GRCV3 signed-Hessian spark threshold",
+            "eps_tau": "GRCV3 temporal-label default",
+            "eta": "GRCV3 transport default",
+            "gamma": "GRCV3 metric law default",
+            "hessian_regularization": "GRCV3 weighted least-squares comparison backend",
+            "kappa_c": "GRCV3/GRC9 potential default",
+            "lambda_birth": "GRC9 growth default",
+            "lambda_c": "GRCV3 tensor default",
+            "rho": "GRCV3 temporal-label default",
+            "rng_seed": "GRC9 deterministic RNG default",
+            "site_potential_params": "GRCV3/GRC9 potential default",
+            "site_potential_selection": "GRCV3/GRC9 potential default",
+            "tau_instability": "GRC9 instability diagnostic threshold",
+            "v0": "GRCV3 temporal-label default",
+            "w_bond": "GRC9 expansion/growth bond default",
+            "xi_c": "GRCV3 tensor default",
+            "zeta_c": "GRCV3 tensor default"
+          },
+          "edge_label_selection": "all",
+          "enable_column_h_sign_crossing": false,
+          "enable_column_h_threshold": true,
+          "enable_near_saturation": false,
+          "expansion_distribution_mode": "equal",
+          "frame_mode": "fixed_port_chart",
+          "hessian_backend": "row_basis_diagonal",
+          "near_saturation_degree": 8,
+          "quadrature_mode": "unit_measure",
+          "require_active_degree_9": true,
+          "require_sink_for_column_h_spark": true,
+          "spark_lane": "current_hybrid_signed_hessian",
+          "spark_signed_crossing": false,
+          "store_previous_column_h": false
+        },
+        "dt": 1.0,
+        "evolution": {
+          "D_eff_target": 30,
+          "alpha": 1.0,
+          "alpha_seed": 0.1,
+          "beta": 1.0,
+          "compatibility_score_params": {
+            "epsilon_choice": 0.001,
+            "epsilon_collapse": 0.001
+          },
+          "delta": 1.0,
+          "eps_column_h": 0.001,
+          "eps_column_h_crossing_zero": 0.0,
+          "eps_gradient": 0.001,
+          "eps_hessian": 0.001,
+          "eps_spark": 0.001,
+          "eps_tau": 1e-09,
+          "eta": 1.0,
+          "gamma": 1.0,
+          "hessian_regularization": 1e-09,
+          "kappa_c": 1.0,
+          "lambda_birth": 0.0,
+          "lambda_c": 1.0,
+          "rho": 1.0,
+          "rng_seed": 0,
+          "site_potential_params": {
+            "mu": 0.0,
+            "scale": 1.0
+          },
+          "site_potential_selection": "quadratic",
+          "tau_instability": 0.5,
+          "v0": 1.0,
+          "w_bond": 1.0,
+          "xi_c": 1.0,
+          "zeta_c": 1.0
+        },
+        "numerical_backend": {}
+      },
+      "snapshot_schema": "pygrc.snapshot",
+      "snapshot_version": 1,
+      "step_index": 1
+    },
+    "observables": {
+      "arrival_eligibility_count": 0.0,
+      "boundary_birth_trial_queue_length": 0.0,
+      "causal_pulse_substrate_surface_count": 2.0,
+      "causal_spark_diagnostic_count": 0.0,
+      "checkpoint_index": 1.0,
+      "conserved_budget_total": 6.0,
+      "edge_count": 3.0,
+      "event_queue_length": 0.0,
+      "event_time_key": 1.0,
+      "in_flight_packet_total": 0.0,
+      "local_update_count": 0.0,
+      "node_count": 3.0,
+      "packet_count": 1.0,
+      "scheduler_event_index": 1.0,
+      "topology_event_count": 2.0
+    },
+    "topology": {
+      "edges": [
+        {
+          "edge_id": 0,
+          "endpoint_a": {
+            "node_id": 0,
+            "slot": 0
+          },
+          "endpoint_b": {
+            "node_id": 1,
+            "slot": 0
+          },
+          "payload": {
+            "kind": "01"
+          }
+        },
+        {
+          "edge_id": 1,
+          "endpoint_a": {
+            "node_id": 1,
+            "slot": 1
+          },
+          "endpoint_b": {
+            "node_id": 2,
+            "slot": 0
+          },
+          "payload": {
+            "kind": "12"
+          }
+        },
+        {
+          "edge_id": 2,
+          "endpoint_a": {
+            "node_id": 0,
+            "slot": 1
+          },
+          "endpoint_b": {
+            "node_id": 2,
+            "slot": 1
+          },
+          "payload": {
+            "kind": "02"
+          }
+        }
+      ],
+      "incidence": {
+        "0": [
+          0,
+          2
+        ],
+        "1": [
+          0,
+          1
+        ],
+        "2": [
+          1,
+          2
+        ]
+      },
+      "nodes": [
+        {
+          "node_id": 0,
+          "payload": {
+            "label": "source"
+          }
+        },
+        {
+          "node_id": 1,
+          "payload": {
+            "label": "middle"
+          }
+        },
+        {
+          "node_id": 2,
+          "payload": {
+            "label": "target"
+          }
+        }
+      ],
+      "port_structure": {
+        "0": {
+          "ports": [
+            {
+              "column": 0,
+              "edge_id": 0,
+              "occupied": true,
+              "row": 0,
+              "slot": 0
+            },
+            {
+              "column": 1,
+              "edge_id": 2,
+              "occupied": true,
+              "row": 0,
+              "slot": 1
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 0,
+              "slot": 2
+            },
+            {
+              "column": 0,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 3
+            },
+            {
+              "column": 1,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 4
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 5
+            },
+            {
+              "column": 0,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 6
+            },
+            {
+              "column": 1,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 7
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 8
+            }
+          ]
+        },
+        "1": {
+          "ports": [
+            {
+              "column": 0,
+              "edge_id": 0,
+              "occupied": true,
+              "row": 0,
+              "slot": 0
+            },
+            {
+              "column": 1,
+              "edge_id": 1,
+              "occupied": true,
+              "row": 0,
+              "slot": 1
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 0,
+              "slot": 2
+            },
+            {
+              "column": 0,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 3
+            },
+            {
+              "column": 1,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 4
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 5
+            },
+            {
+              "column": 0,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 6
+            },
+            {
+              "column": 1,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 7
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 8
+            }
+          ]
+        },
+        "2": {
+          "ports": [
+            {
+              "column": 0,
+              "edge_id": 1,
+              "occupied": true,
+              "row": 0,
+              "slot": 0
+            },
+            {
+              "column": 1,
+              "edge_id": 2,
+              "occupied": true,
+              "row": 0,
+              "slot": 1
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 0,
+              "slot": 2
+            },
+            {
+              "column": 0,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 3
+            },
+            {
+              "column": 1,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 4
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 1,
+              "slot": 5
+            },
+            {
+              "column": 0,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 6
+            },
+            {
+              "column": 1,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 7
+            },
+            {
+              "column": 2,
+              "edge_id": null,
+              "occupied": false,
+              "row": 2,
+              "slot": 8
+            }
+          ]
+        }
+      }
+    }
+  },
+  "runtime_snapshot_digest": "5471b8a051054547c5a4c9456a918465a7d18449e37b1946486e88a0d65e3960",
+  "runtime_surface_evidence": {
+    "child_basin_state_record_count": 1,
+    "flow_window_record_count": 1,
+    "flow_window_records": [
+      {
+        "artifact_kind": "lgrc9v3_multi_basin_post_refinement_flow_window_record",
+        "artifact_schema_version": "lgrc9v3_multi_basin_post_refinement_flow_window_record_v1",
+        "causal_layer_mode": "topology_changing_causal_history",
+        "claim_flags": {
+          "BF6_claim_allowed": false,
+          "agency_claim_allowed": false,
+          "ant_ecology_claim_allowed": false,
+          "identity_acceptance_claim_allowed": false,
+          "independent_new_basin_claim_allowed": false,
+          "native_multi_basin_formation_claim_allowed": false,
+          "native_support_claim_allowed": false,
+          "organism_life_claim_allowed": false,
+          "phase8_completion_claim_allowed": false,
+          "semantic_choice_claim_allowed": false,
+          "semantic_learning_claim_allowed": false,
+          "sentience_claim_allowed": false
+        },
+        "edge_flux_trace": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "evidence_class": "multi_basin_formation",
+        "lgrc_runtime_level": "lgrc3",
+        "mode_version": "lgrc3_topology_contract_v1",
+        "native_multi_basin_enabled": true,
+        "native_multi_basin_policy_id": "post_refinement_child_basin_replay",
+        "node_coherence_trace": {
+          "0": 1.1,
+          "1": 1.9,
+          "2": 3.0
+        },
+        "node_plus_packet_budget_trace": {
+          "node_plus_packet_budget_after": 6.0,
+          "node_plus_packet_budget_before": 6.0,
+          "node_plus_packet_budget_error": 0.0
+        },
+        "node_support_trace": {
+          "0": 1.1,
+          "1": 1.9,
+          "2": 3.0
+        },
+        "packet_flux_trace": {
+          "event_queue_record_count": 0.0,
+          "in_flight_packet_total": 0.0,
+          "packet_record_count": 1.0
+        },
+        "post_refinement_flow_window_digest": "556450a8434944316a25f18c2eb05eb614e12d91858f55183d5d9008052edb84",
+        "post_refinement_flow_window_id": "post-refinement-flow-window:f188db7b607623fdac7aa02e4d092a75",
+        "post_refinement_topology_signature": "5815955d8e781f81522f3137ee624a44942caa556d2373632cc555eefffe4e6c",
+        "pre_refinement_topology_signature": "93fbce46a524a420ddaf34d72830397388f33cad3ab7ba7104f5335a606a5221",
+        "refinement_lineage_map": {
+          "1": "0",
+          "2": "0"
+        },
+        "refinement_lineage_map_digest": "6fcfa081d57156cfe044aa0355e336f9da6a8b42835b93819709ee8b71667a4c",
+        "runtime_family": "LGRC9V3",
+        "runtime_visible_inputs": [
+          "committed_topology_event",
+          "native_route_arbitration_record",
+          "native_route_candidate_record",
+          "refinement_lineage_map",
+          "topology_state_reabsorption_record",
+          "packet_ledger",
+          "active_node_state",
+          "active_edge_state",
+          "topology_state_reabsorption_record_digest:46681f7aa5357d59e694e4003a8ff4f841ef701fcddadded453ea9e5ffdcf54f"
+        ],
+        "schema_version": "lgrc9v3_multi_basin_post_refinement_flow_window_record_v1",
+        "source_expansion_id": "native-route-candidate:candidate:high",
+        "source_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+        "source_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+        "window_end_event_time_key": 1.0,
+        "window_scheduler_indices": [
+          1,
+          1
+        ],
+        "window_start_event_time_key": 1.0
+      }
+    ],
+    "merge_leakage_control_record_count": 0,
+    "replay_validation_record_count": 0
+  },
+  "source_admissibility_decision": "admissible_positive_runtime_candidate",
+  "source_artifact_digest": "1a9caa44657f5093377f8db6347103dfa601ef8108f2316a0cf76a00f3c532d6",
+  "source_artifact_path": "generated_in_this_artifact",
+  "source_chain": {
+    "i3_artifact_sha256": "e45535c28076553b64862469922f41d0c6f692a68d8f043528a03f93b001da29",
+    "i3_mb5_chain_status": "mb5_validated_for_runtime_probe",
+    "i3_output_digest": "7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d"
+  },
+  "source_current_inputs": [
+    "active_edge_state",
+    "active_node_state",
+    "child_basin_core_ids",
+    "committed_topology_event",
+    "native_route_arbitration_record",
+    "native_route_candidate_record",
+    "packet_ledger",
+    "post_refinement_flow_window_digest",
+    "refinement_lineage_map",
+    "source_current_child_membership",
+    "topology_state_reabsorption_record",
+    "topology_state_reabsorption_record_digest:46681f7aa5357d59e694e4003a8ff4f841ef701fcddadded453ea9e5ffdcf54f"
+  ],
+  "source_evidence_kind": "source_current_runtime_execution",
+  "source_role": "n25_2_native_runtime_execution_evidence",
+  "status": "passed",
+  "telemetry_example_evidence": {
+    "consumption_role": "fixture_pattern_only_runtime_artifact_generated_by_N25_2",
+    "fixture_source": "examples/lgrc9v3/multi_basin_formation_bundle.py",
+    "must_not_consume_as": [
+      "proof_by_visualization",
+      "MB6_support"
+    ]
+  },
+  "topology_refinement_provenance": {
+    "event_counts_by_kind": {
+      "lgrc9v3_causal_collapse": 2
+    },
+    "required_i6_controls_for_stronger_claims": [
+      "collapse_reabsorption_relabel_control",
+      "old_basin_thickening_relabel_control",
+      "transient_flow_sink_relabel_control",
+      "label_only_basin_formation_control"
+    ],
+    "selected_topology_event_digest": "f188db7b607623fdac7aa02e4d092a7560099e03cf447307b378e55d91a13c49",
+    "topology_events": [
+      {
+        "kind": "lgrc9v3_causal_collapse",
+        "payload": {
+          "artifact_kind": "lgrc9v3_collapse_reabsorption_result",
+          "artifact_schema_version": "lgrc9v3_collapse_reabsorption_result_v1",
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "budget_transfer_policy": "budget_conserving_transfer",
+          "causal_layer_mode": "topology_changing_causal_history",
+          "checkpoint_index": 1,
+          "coherence_transfer_amount": 0.0,
+          "collapse_reabsorption_allowed": true,
+          "collapse_reabsorption_processing_implemented": true,
+          "competing_sink_ids": [
+            0,
+            2
+          ],
+          "event_time_key": 1.0,
+          "evidence_class": "collapse_reabsorption",
+          "identity_acceptance_emitted": false,
+          "lgrc_runtime_level": "lgrc3",
+          "lineage_transfer_map": {
+            "1": "0",
+            "2": "0"
+          },
+          "lineage_transfer_policy": "explicit_lineage_transfer_map",
+          "losing_sink_ids": [
+            2
+          ],
+          "mode_version": "lgrc3_topology_contract_v1",
+          "native_route_arbitration_digest": "f5480b6ff55f6b8ec7b3f7c48965e6ae71907bd905969a26079ee922fa95bf6f",
+          "native_route_arbitration_record_id": "native-route-arbitration:9a365d80523046b2a5413f9c5920c10a",
+          "native_route_candidate_set_digest": "2bd12643a007f3cb2d5493e47c0331ffeefa20e1016c90a6b6973c2b3f034ca3",
+          "native_route_selected_candidate_route_digest": "4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158",
+          "native_route_selected_candidate_route_id": "candidate:high",
+          "node_proper_time": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0
+          },
+          "packet_transport_emitted": false,
+          "proper_time_transfer_policy": "selected_sink_clock_continuity",
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "selected_sink_id": 0,
+          "source_lineage_ids": {
+            "1": "native-route:4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158:1",
+            "2": "native-route:4a1b5e7f52284c9b2abb30a243902fe626ab83bf9ac291b0b427683b84c7c158:2"
+          },
+          "source_packet_ledger_schema_version": "lgrc9v3_packet_ledger_v1",
+          "source_pending_flux_ledger_schema_version": null,
+          "state_mutated": false,
+          "target_lineage_id": "0",
+          "topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+          "topology_event_kind": "lgrc9v3_causal_collapse",
+          "topology_mutated": false,
+          "transferred_node_ids": [
+            1,
+            2
+          ],
+          "transferred_packet_ids": [
+            "lgrc9v3-packet-bca7a16af210d34a"
+          ],
+          "transferred_pending_flux_entry_ids": []
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 1
+      },
+      {
+        "kind": "lgrc9v3_causal_collapse",
+        "payload": {
+          "amount_total": 0.1,
+          "artifact_kind": "lgrc9v3_collapse_reabsorption_packet_transport_result",
+          "artifact_schema_version": "lgrc9v3_collapse_reabsorption_packet_transport_result_v1",
+          "budget_after": 6.0,
+          "budget_before": 6.0,
+          "budget_error": 0.0,
+          "causal_layer_mode": "topology_changing_causal_history",
+          "checkpoint_index": 1,
+          "event_time_key": 1.0,
+          "evidence_class": "collapse_reabsorption_packet_transport",
+          "identity_acceptance_emitted": false,
+          "lgrc_runtime_level": "lgrc3",
+          "lineage_transfer_map": {
+            "1": "0",
+            "2": "0"
+          },
+          "mode_version": "lgrc3_topology_contract_v1",
+          "packet_transport_identity_transfer": false,
+          "packet_transport_records": [
+            {
+              "amount": 0.1,
+              "edge_id": 1,
+              "endpoint_transported": true,
+              "new_endpoint_column": null,
+              "new_endpoint_port": null,
+              "old_parent_column": null,
+              "old_parent_port": null,
+              "packet_state": "in_flight",
+              "source_lineage_id_after": "0",
+              "source_lineage_id_before": null,
+              "source_node_id_after": 0,
+              "source_node_id_before": 1,
+              "source_packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+              "source_pending_flux_entry_ids": [],
+              "target_lineage_id_after": "0",
+              "target_lineage_id_before": null,
+              "target_node_id_after": 0,
+              "target_node_id_before": 2,
+              "transport_record_id": "lgrc9v3-packet-transport-60fbbc1fb3fb6aad",
+              "transported_packet_id": "lgrc9v3-packet-bca7a16af210d34a"
+            }
+          ],
+          "runtime_family": "LGRC9V3",
+          "scheduler_event_index": 1,
+          "selected_sink_id": 0,
+          "settled_amount_total": 0.1,
+          "settled_packet_ids": [
+            "lgrc9v3-packet-bca7a16af210d34a"
+          ],
+          "settled_pending_flux_entry_ids": [],
+          "source_packet_ids": [
+            "lgrc9v3-packet-bca7a16af210d34a"
+          ],
+          "source_packet_ledger_schema_version": "lgrc9v3_packet_ledger_v1",
+          "source_pending_flux_entry_ids": [],
+          "source_pending_flux_ledger_schema_version": null,
+          "source_topology_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b",
+          "source_topology_event_kind": "lgrc9v3_causal_collapse",
+          "state_mutated": false,
+          "target_lineage_id": "0",
+          "topology_mutated": false,
+          "transport_policy": "redirect_to_selected_sink_or_settle_self_loop",
+          "transported_ledger": {
+            "artifact_kind": "lgrc9v3_packet_ledger",
+            "artifact_schema_version": "lgrc9v3_packet_ledger_v1",
+            "budget_after": 6.0,
+            "budget_before": 6.0,
+            "budget_error": 0.0,
+            "causal_layer_mode": "topology_changing_causal_history",
+            "collapse_allowed": true,
+            "conserved_budget_total": 6.0,
+            "event_queue_records": [],
+            "event_queue_tie_break_policy": "event_time_key_then_scheduler_event_index_then_event_id",
+            "evidence_class": "collapse_reabsorption_packet_transport",
+            "fixed_topology": false,
+            "fixed_topology_signature": {
+              "edge_records": [
+                {
+                  "edge_id": 0,
+                  "endpoints": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "edge_id": 1,
+                  "endpoints": [
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ]
+                },
+                {
+                  "edge_id": 2,
+                  "endpoints": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      2,
+                      1
+                    ]
+                  ]
+                }
+              ],
+              "node_ids": [
+                0,
+                1,
+                2
+              ]
+            },
+            "identity_acceptance_allowed": false,
+            "in_flight_packet_total": 0.0,
+            "lgrc_runtime_level": "lgrc3",
+            "mode_version": "lgrc2_packetized_fixed_topology_v1",
+            "node_coherence_total": 6.0,
+            "packet_budget_invariant": "sum_node_coherence_plus_packets",
+            "packet_event_records": [
+              {
+                "amount": 0.1,
+                "budget_after": 6.0,
+                "budget_before": 6.0,
+                "budget_error": 0.0,
+                "edge_id": 1,
+                "event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                "event_kind": "lgrc9v3_packet_departure",
+                "event_time_key": 1.0,
+                "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                "scheduler_event_index": 1,
+                "source_node_id": 1,
+                "target_node_id": 2
+              }
+            ],
+            "packet_records": [
+              {
+                "amount": 0.1,
+                "arrival_event_id": "lgrc9v3-topology-b0b44cd9d03b9e1b:settled:lgrc9v3-packet-bca7a16af210d34a",
+                "arrival_event_time_key": 2.0,
+                "arrival_scheduler_event_index": 1,
+                "departure_event_id": "lgrc9v3-packet-event-287874bcf245713b",
+                "departure_event_time_key": 1.0,
+                "departure_scheduler_event_index": 1,
+                "edge_id": 1,
+                "packet_id": "lgrc9v3-packet-bca7a16af210d34a",
+                "packet_state": "arrived",
+                "source_lineage_id": "0",
+                "source_node_id": 0,
+                "target_lineage_id": "0",
+                "target_node_id": 0
+              }
+            ],
+            "packet_transport_through_topology_change": true,
+            "packetized_flux": true,
+            "policies": {
+              "causal_layer_mode": "topology_changing_causal_history",
+              "collapse_allowed": true,
+              "fixed_topology": false,
+              "lgrc_runtime_level": "lgrc3",
+              "packet_transport_through_topology_change": true,
+              "topology_change_allowed": true
+            },
+            "runtime_family": "LGRC9V3",
+            "topology_change_allowed": true
+          },
+          "transported_packet_ids": [],
+          "transported_pending_flux_entry_ids": [],
+          "transported_pending_flux_ledger": null
+        },
+        "source_family": "LGRC9V3",
+        "step_index": 1
+      }
+    ],
+    "topology_provenance_shape": "collapse_reabsorption_shaped_existing_graph"
+  },
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false
+  },
+  "variant_comparability": {
+    "reference_probe": true,
+    "variant_probe": false
+  },
+  "visual_evidence_limits": {
+    "visual_evidence_role": "not_used_in_i4_runtime_probe",
+    "visual_evidence_used": false
+  }
+}

@@ -317,7 +317,7 @@ passed
 
 ## Iteration 4. Native LGRC9V3 Runtime Positive Probe
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -326,23 +326,23 @@ source-current positive runtime candidate.
 
 ### Checks
 
-- [ ] Run existing runtime only; no implementation edits.
-- [ ] Emit runtime execution trace.
-- [ ] Emit flow-window records.
-- [ ] Emit child-basin state records.
-- [ ] Emit topology/refinement provenance.
-- [ ] Emit producer/native mutation ownership ledger.
-- [ ] Record implementation source digests and runtime config digest.
-- [ ] Record child-basin fields: id, birth/detection step,
+- [x] Run existing runtime only; no implementation edits.
+- [x] Emit runtime execution trace.
+- [x] Emit flow-window records.
+- [x] Emit child-basin state records.
+- [x] Emit topology/refinement provenance.
+- [x] Emit producer/native mutation ownership ledger.
+- [x] Record implementation source digests and runtime config digest.
+- [x] Record child-basin fields: id, birth/detection step,
       parent/source basin, provenance, support/coherence core nodes, basin
       signature digest, topology before/after, flow-window id, merge/leakage
       status, persistence-window status, mutation owner, trace origin, and
       trace digest.
-- [ ] Record no-modification proof for `src`, `specs`, `tests`, examples, and
+- [x] Record no-modification proof for `src`, `specs`, `tests`, examples, and
       implementation sources.
-- [ ] Record source-current inputs and artifact digests.
-- [ ] Confirm replay, controls, stress, MB6, and N26 remain pending.
-- [ ] Confirm unsafe claims remain false.
+- [x] Record source-current inputs and artifact digests.
+- [x] Confirm replay, controls, stress, MB6, and N26 remain pending.
+- [x] Confirm unsafe claims remain false.
 
 Expected artifacts:
 
@@ -351,9 +351,88 @@ outputs/n25_2_native_runtime_positive_probe.json
 reports/n25_2_native_runtime_positive_probe.md
 ```
 
+### Result
+
+```text
+status = passed
+acceptance_state = accepted_native_runtime_positive_mb3_candidate_pending_replay_controls_no_mb6
+i3_output_digest = 7ef81dc80600d0fee487804efc3b022a2547b71b7a63bacdd761a41691f0dc6d
+failed_checks = []
+runtime_execution_performed = true
+native_runtime_positive_probe_opened = true
+runtime_execution_from_closed_implementation = true
+flow_window_record_count = 1
+child_basin_state_record_count = 1
+replay_validation_record_count = 0
+merge_leakage_control_record_count = 0
+artifact_manifest_scope = embedded_payloads_only
+embedded_artifact_manifest_count = 5
+topology_provenance_shape = collapse_reabsorption_shaped_existing_graph
+producer_residue_status = not_load_bearing_for_claim
+source_current_status = native_runtime_emitted
+mb_ladder_candidate = MB3_source_current_child_basin_candidate_emission
+row_decision = supported
+claim_ceiling = source-current MB3 child-basin candidate pending replay/control/stress; not MB5, not MB6
+mb6_gate_status = not_applied
+mb6_supported = false
+mb6_claim_allowed = false
+mb6_blockers = [replay_matrix_pending_iteration_5, control_matrix_pending_iteration_6, stress_matrix_pending_iteration_7, mb6_gate_pending_iteration_8]
+n26_unscoped_consumption_allowed = false
+n26_consumption_effect = unscoped_consumption_blocked
+implementation_source_modification_allowed = false
+implementation_source_modification_observed = false
+src_diff_observed = false
+spec_diff_observed = false
+test_diff_observed = false
+example_diff_observed = false
+defect_fix_attempted = false
+defect_disposition = record_as_blocker_or_repair_target_only
+ready_for_iteration_5_replay_persistence_matrix = true
+ready_for_iteration_4a_variant_probe = true
+output_digest = 1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1
+artifact_sha256 = 19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304
+report_sha256 = 72d87074fdaf1bd00a7163d29d2adebc2c80b2ad95c032e6656555b89c6e5203
+```
+
+### Interpretation
+
+Iteration 4 is the first N25.2 source-current runtime probe. It runs the closed
+LGRC9V3 implementation with native multi-basin policy enabled and emits one
+post-refinement flow-window record plus one child-basin state record. The
+runtime evidence is embedded in this JSON artifact, so I4 records an embedded
+payload manifest with JSON-pointer fragments and canonical digests rather than
+repo-relative external trace paths. The child-basin record includes
+support/coherence/boundary/flux fields, old-basin relation provenance,
+merge/leakage trace, runtime-visible inputs, non-load-bearing producer-residue
+status, native runtime-emitted source-current status, and a trace digest.
+
+The topology/refinement provenance is explicitly
+`collapse_reabsorption_shaped_existing_graph`: it is admissible for MB3
+candidate emission, but it is not yet independent new-basin formation or
+multi-basin substrate persistence. I6 must fail-close the
+collapse/reabsorption relabel, old-basin thickening relabel,
+transient-flow-sink relabel, and label-only basin formation controls before I4
+can contribute to any stronger claim.
+
+The result is a positive source-current candidate only:
+
+```text
+MB3 source-current child-basin candidate emission
+```
+
+It is not replay-backed MB4, not control-backed MB5, and not MB6. Replay,
+controls, stress, and MB6 gate application remain pending for later iterations.
+
+### Verification
+
+```text
+.venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_native_runtime_positive_probe.py
+passed
+```
+
 ## Iteration 4-A. Native Runtime Variant / Companion Probe
 
-Status: pending.
+Status: passed.
 
 ### Goal
 
@@ -362,22 +441,95 @@ implementation.
 
 ### Checks
 
-- [ ] Run a source-backed variant or companion fixture.
-- [ ] Prefer front-capacity boundary-birth companion and/or topology/seed
+- [x] Run a source-backed variant or companion fixture.
+- [x] Prefer front-capacity boundary-birth companion and/or topology/seed
       variation already supported by the closed runtime.
-- [ ] Confirm the variant is not a retuned copy of I4.
-- [ ] Record declared variant axis and comparability digest.
-- [ ] Confirm variant evidence cannot backfill unrelated MB5 rows.
-- [ ] Emit comparable flow-window and child-basin records.
-- [ ] Preserve producer/native mutation discipline.
-- [ ] Confirm no implementation source is modified.
-- [ ] Confirm unsafe claims remain false.
+- [x] Confirm the variant is not a retuned copy of I4.
+- [x] Record declared variant axis and comparability digest.
+- [x] Confirm variant evidence cannot backfill unrelated MB5 rows.
+- [x] Emit comparable flow-window and child-basin records.
+- [x] Preserve producer/native mutation discipline.
+- [x] Confirm no implementation source is modified.
+- [x] Confirm unsafe claims remain false.
 
 Expected artifacts:
 
 ```text
 outputs/n25_2_native_runtime_variant_probe.json
 reports/n25_2_native_runtime_variant_probe.md
+```
+
+### Result
+
+```text
+status = passed
+acceptance_state = accepted_native_runtime_variant_and_front_capacity_companion_mb3_scope_no_mb6
+i4_output_digest = 1a38c59b8e3149a4cdde1861237e45a0e9f2da8ecca6f548bf462313149527f1
+failed_checks = []
+runtime_execution_performed = true
+runtime_execution_from_closed_implementation = true
+native_runtime_variant_probe_opened = true
+variant_probe_role = additional_runtime_variety_evidence_not_replacement
+i4_replaced = false
+i4_mb5_or_mb6_backfilled = false
+route_variant_candidate = MB3_source_current_child_basin_candidate_emission_variant
+route_variant_child_basin_core_ids = [2]
+route_variant_topology_provenance_shape = collapse_reabsorption_shaped_existing_graph
+front_capacity_companion_candidate = not_assigned_topology_birth_companion_only
+front_capacity_initial_node_count = 13
+front_capacity_final_node_count = 14
+front_capacity_initial_edge_count = 12
+front_capacity_final_edge_count = 13
+front_capacity_visible_topology_growth = true
+front_capacity_parent_eligibility_mode = grcl9v3_front_capacity
+front_capacity_backfill_allowed = false
+variant_evidence_cannot_backfill_unrelated_mb5_rows = true
+artifact_manifest_scope = embedded_payloads_only
+embedded_artifact_manifest_count = 3
+mb6_gate_status = not_applied
+mb6_supported = false
+mb6_claim_allowed = false
+n26_unscoped_consumption_allowed = false
+n26_consumption_effect = unscoped_consumption_blocked
+output_digest = f2a49eab162893564433286d8e12bad8c3f4b3891f2f0007857ec23ae2d83d07
+artifact_sha256 = 1ed05789f0d062e3058a891d55af2da3be7d26a6bd19eb1825bda3af536246f7
+report_sha256 = 962739cca4eaecedaa21aaf8e2bf8c54ed714a4ec252f6cedfaf5966ba589a69
+```
+
+### Interpretation
+
+Iteration 4-A adds runtime variety without replacing I4. It records two
+source-current companion probes from the closed runtime:
+
+```text
+route_child_basin_variant:
+  same compact multi-basin fixture family
+  different selected native route sink
+  comparable flow-window and child-basin state records
+  child-basin core changes from I4 [0] to I4-A [2]
+
+front_capacity_boundary_birth_companion:
+  corrected front-capacity parent eligibility
+  visible topology growth from 13 to 14 nodes and 12 to 13 edges
+  companion context only, not a child-basin persistence row
+```
+
+The route variant strengthens MB3 source-current child-basin candidate emission
+by showing the record family is not confined to the I4 selected sink. The
+front-capacity companion strengthens the provenance story by showing the closed
+runtime can also express source-current topology growth through corrected
+front-capacity boundary birth. It does not backfill the I4/I4-A child-basin
+record, does not upgrade MB5, and does not support MB6.
+
+I4-A remains below replay-backed MB4, control-backed MB5, MB6, and N26
+unscoped consumption. I5 must replay runtime-emitted child-basin records, and
+I6 must still run fail-closed controls.
+
+### Verification
+
+```text
+.venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/build_n25_2_native_runtime_variant_probe.py
+passed
 ```
 
 ## Iteration 5. Replay And Persistence Matrix
