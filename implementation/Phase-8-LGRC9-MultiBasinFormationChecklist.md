@@ -328,7 +328,7 @@ passed
 
 ## Iteration 86. Replay And Persistence Validator
 
-Status: pending.
+Status: complete.
 
 ### Goal
 
@@ -337,13 +337,94 @@ replay.
 
 ### Checks
 
-- [ ] Artifact-only replay reconstructs the refinement -> flow-window ->
+- [x] Artifact-only replay reconstructs the refinement -> flow-window ->
       child-basin-state chain.
-- [ ] Snapshot/load replay preserves multi-basin records and idempotency keys.
-- [ ] Duplicate replay is stable.
-- [ ] Order inversion fails closed.
-- [ ] Missing replay blocks MB4+.
-- [ ] Persistence ratios are computed from serialized state, not report labels.
+- [x] Snapshot/load replay preserves multi-basin records and idempotency keys.
+- [x] Duplicate replay is stable.
+- [x] Order inversion fails closed.
+- [x] Missing replay blocks MB4+.
+- [x] Persistence ratios are computed from serialized state, not report labels.
+
+### Implementation Record
+
+- Added `multi_basin_replay_validation_log` to `LGRC9V3RuntimeState`.
+- Old snapshots remain compatible because missing replay logs restore as empty
+  lists.
+- Added `validate_multi_basin_child_basin_replay(...)` to validate one emitted
+  child-basin state record by digest.
+- Artifact-only replay checks the serialized chain:
+
+```text
+committed topology event
+-> post_refinement_flow_window_log record
+-> child_basin_state_log record
+```
+
+- Snapshot/load replay consumes an actual loaded snapshot artifact and verifies
+  the same flow-window and child-basin records survive serialization.
+- Duplicate replay is digest-idempotent: the same replay validation does not
+  append a second record.
+- Time-order inversion is represented as an explicit fail-closed replay control.
+- Missing snapshot replay records `snapshot_load_replay_result = not_run` and
+  blocks MB4 replay admission.
+- Tampered serialized child-basin state records fail closed when persistence
+  ratios drop below `1.0`.
+
+### Interpretation
+
+Iteration 86 validates replay persistence for the runtime surfaces opened in
+Iteration 85. A clean replay record can support:
+
+```text
+MB4 replay-backed child-basin candidate
+```
+
+only when artifact replay, snapshot/load replay, duplicate replay, time-order
+replay, and serialized persistence ratios all pass. It still does not support:
+
+```text
+MB5
+MB6
+native multi-basin formation support
+BF6
+independent new-basin formation
+native support
+agency
+semantic learning
+semantic choice
+identity acceptance
+sentience
+ant ecology
+Phase 8 completion
+```
+
+The persistence ratios are computed from serialized child-basin records:
+membership, support, coherence, boundary, and flux maps are compared against the
+loaded snapshot artifact. They are not report labels. As in Iteration 85,
+support persistence remains coherence-derived because current LGRC9V3 node
+state does not expose an independent support scalar.
+
+### Verification
+
+```text
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin or native_route_arbitration_commit"
+15 passed, 146 deselected
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q
+161 passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin or native_route or child_basin or active_topology_integration_expands_causal_lane_b_candidate or stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs or snapshot_round_trip"
+74 passed, 220 deselected, 42 subtests passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q
+133 passed, 81 subtests passed
+
+.venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/lgrc_9_v3_runtime_state.py tests/models/test_lgrc_9_v3_runtime.py
+All checks passed
+
+git diff --check
+passed
+```
 
 ## Iteration 87. Merge/Leakage Controls
 

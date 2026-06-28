@@ -50,6 +50,7 @@ from .lgrc_9_v3_contract import (
     LGRC9V3CausalPulseSubstrateSurfaceRow,
     LGRC9V3ChildBasinStateRecord,
     LGRC9V3MultiBasinFlowWindowRecord,
+    LGRC9V3MultiBasinReplayValidationRecord,
     LGRC9V3NativeRouteArbitrationRecord,
     LGRC9V3NativeRouteCandidateRecord,
     LGRC9V3NativeRouteCandidateSetRecord,
@@ -118,6 +119,9 @@ from .lgrc_9_v3_contract import (
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_DECLARED_TIEBREAKER,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
     LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN,
+    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
     LGRC9V3_MULTI_BASIN_PRODUCER_RESIDUE_NATIVE_SOURCE_CURRENT,
     PROPER_TIME_POLICY_LOCAL_EVENT_FRONTIER,
     build_lgrc9v3_autonomous_production_record_id,
@@ -3831,6 +3835,361 @@ class LGRC9V3(GRCModel):
         self._store_post_refinement_flow_window_keys(flow_keys)
         self._store_child_basin_state_keys(child_keys)
         return tuple(new_flow_records), tuple(new_child_records)
+
+    def _multi_basin_replay_validation_keys(self) -> set[str]:
+        raw_keys = self._state.cached_quantities.get(
+            "lgrc9v3_multi_basin_replay_validation_idempotency_keys",
+            [],
+        )
+        if not isinstance(raw_keys, Sequence) or isinstance(raw_keys, str):
+            raise InvalidStateTransitionError(
+                "multi-basin replay validation idempotency cache must be a sequence"
+            )
+        return {str(key) for key in raw_keys}
+
+    def _store_multi_basin_replay_validation_keys(self, keys: set[str]) -> None:
+        self._state.cached_quantities[
+            "lgrc9v3_multi_basin_replay_validation_idempotency_keys"
+        ] = sorted(keys)
+
+    def _multi_basin_child_record_for_digest(
+        self,
+        child_basin_state_digest: str,
+    ) -> LGRC9V3ChildBasinStateRecord | None:
+        for record in reversed(self._state.child_basin_state_log):
+            if record.child_basin_state_digest == child_basin_state_digest:
+                return record
+        return None
+
+    def _multi_basin_flow_window_for_digest(
+        self,
+        flow_window_digest: str,
+    ) -> LGRC9V3MultiBasinFlowWindowRecord | None:
+        for record in reversed(self._state.post_refinement_flow_window_log):
+            if record.post_refinement_flow_window_digest == flow_window_digest:
+                return record
+        return None
+
+    def _multi_basin_topology_event_exists(self, topology_event_digest: str) -> bool:
+        for event in self._state.topology_event_log:
+            payload = self._topology_event_payload(event)
+            if build_lgrc9v3_topology_event_digest(payload) == topology_event_digest:
+                return True
+        return False
+
+    def _runtime_artifact_from_snapshot(
+        self,
+        snapshot_artifact: Mapping[str, Any] | None,
+    ) -> Mapping[str, Any] | None:
+        if snapshot_artifact is None:
+            return None
+        dynamics = snapshot_artifact.get("dynamics")
+        if isinstance(dynamics, Mapping):
+            runtime = dynamics.get("lgrc9v3_runtime")
+            if isinstance(runtime, Mapping):
+                return runtime
+        runtime = snapshot_artifact.get("lgrc9v3_runtime")
+        if isinstance(runtime, Mapping):
+            return runtime
+        if snapshot_artifact.get("artifact_kind") == "lgrc9v3_runtime_state":
+            return snapshot_artifact
+        return None
+
+    def _runtime_child_artifact_for_digest(
+        self,
+        runtime_artifact: Mapping[str, Any],
+        child_basin_state_digest: str,
+    ) -> Mapping[str, Any] | None:
+        raw_records = runtime_artifact.get("child_basin_state_log", [])
+        if not isinstance(raw_records, Sequence) or isinstance(raw_records, (str, bytes)):
+            return None
+        for raw_record in raw_records:
+            if not isinstance(raw_record, Mapping):
+                continue
+            if raw_record.get("child_basin_state_digest") == child_basin_state_digest:
+                return raw_record
+        return None
+
+    def _runtime_flow_artifact_for_digest(
+        self,
+        runtime_artifact: Mapping[str, Any],
+        flow_window_digest: str,
+    ) -> Mapping[str, Any] | None:
+        raw_records = runtime_artifact.get("post_refinement_flow_window_log", [])
+        if not isinstance(raw_records, Sequence) or isinstance(raw_records, (str, bytes)):
+            return None
+        for raw_record in raw_records:
+            if not isinstance(raw_record, Mapping):
+                continue
+            if (
+                raw_record.get("post_refinement_flow_window_digest")
+                == flow_window_digest
+            ):
+                return raw_record
+        return None
+
+    def _multi_basin_exact_mapping_ratio(
+        self,
+        expected: Mapping[Any, Any],
+        observed: Mapping[Any, Any],
+    ) -> float:
+        expected_items = {str(key): expected[key] for key in expected}
+        if not expected_items:
+            return 1.0
+        observed_items = {str(key): observed[key] for key in observed}
+        matches = 0
+        for key, value in expected_items.items():
+            if key not in observed_items:
+                continue
+            try:
+                if float(observed_items[key]) == float(value):
+                    matches += 1
+            except (TypeError, ValueError):
+                if observed_items[key] == value:
+                    matches += 1
+        return float(matches) / float(len(expected_items))
+
+    def _multi_basin_membership_ratio(
+        self,
+        expected: Mapping[Any, Sequence[int]],
+        observed: Mapping[Any, Sequence[int]],
+    ) -> float:
+        expected_items = {
+            str(key): tuple(int(value) for value in values)
+            for key, values in expected.items()
+        }
+        if not expected_items:
+            return 1.0
+        observed_items = {
+            str(key): tuple(int(value) for value in values)
+            for key, values in observed.items()
+        }
+        matches = sum(
+            1
+            for key, values in expected_items.items()
+            if observed_items.get(key) == values
+        )
+        return float(matches) / float(len(expected_items))
+
+    def _multi_basin_snapshot_ratios(
+        self,
+        *,
+        source_child_record: LGRC9V3ChildBasinStateRecord,
+        snapshot_child_artifact: Mapping[str, Any],
+    ) -> dict[str, float]:
+        return {
+            "membership": self._multi_basin_membership_ratio(
+                source_child_record.child_basin_membership_by_core,
+                snapshot_child_artifact.get("child_basin_membership_by_core", {}),
+            ),
+            "support": self._multi_basin_exact_mapping_ratio(
+                source_child_record.child_basin_support_floor_records,
+                snapshot_child_artifact.get("child_basin_support_floor_records", {}),
+            ),
+            "coherence": self._multi_basin_exact_mapping_ratio(
+                source_child_record.child_basin_coherence_floor_records,
+                snapshot_child_artifact.get("child_basin_coherence_floor_records", {}),
+            ),
+            "boundary": self._multi_basin_exact_mapping_ratio(
+                source_child_record.child_basin_boundary_records,
+                snapshot_child_artifact.get("child_basin_boundary_records", {}),
+            ),
+            "flux": self._multi_basin_exact_mapping_ratio(
+                source_child_record.child_basin_flux_records,
+                snapshot_child_artifact.get("child_basin_flux_records", {}),
+            ),
+        }
+
+    def _existing_multi_basin_replay_record(
+        self,
+        replay_validation_digest: str,
+    ) -> LGRC9V3MultiBasinReplayValidationRecord | None:
+        for record in reversed(self._state.multi_basin_replay_validation_log):
+            if record.replay_validation_digest == replay_validation_digest:
+                return record
+        return None
+
+    def validate_multi_basin_child_basin_replay(
+        self,
+        *,
+        source_child_basin_state_digest: str,
+        snapshot_replay_artifact: Mapping[str, Any] | None = None,
+        time_order_inversion_control: bool = False,
+    ) -> dict[str, Any]:
+        """Validate replay persistence for one emitted child-basin candidate."""
+
+        child_record = self._multi_basin_child_record_for_digest(
+            str(source_child_basin_state_digest)
+        )
+        if child_record is None:
+            raise InvalidStateTransitionError(
+                "multi-basin replay requires an emitted child-basin state record"
+            )
+        flow_record = self._multi_basin_flow_window_for_digest(
+            str(child_record.source_flow_window_digest)
+        )
+        failure_modes: list[str] = []
+        artifact_replay_result = LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+        if flow_record is None:
+            artifact_replay_result = LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+            failure_modes.append("missing_flow_window")
+        else:
+            if not self._multi_basin_topology_event_exists(
+                str(flow_record.source_topology_event_digest)
+            ):
+                artifact_replay_result = (
+                    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+                )
+                failure_modes.append("missing_source_topology_event")
+            restored_child = child_record.to_artifact()
+            if (
+                restored_child.get("source_flow_window_digest")
+                != flow_record.post_refinement_flow_window_digest
+            ):
+                artifact_replay_result = (
+                    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+                )
+                failure_modes.append("child_flow_digest_mismatch")
+
+        snapshot_load_replay_result = LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN
+        ratios = {
+            "membership": 0.0,
+            "support": 0.0,
+            "coherence": 0.0,
+            "boundary": 0.0,
+            "flux": 0.0,
+        }
+        runtime_artifact = self._runtime_artifact_from_snapshot(snapshot_replay_artifact)
+        if runtime_artifact is None:
+            failure_modes.append("snapshot_load_replay_not_run")
+        else:
+            snapshot_child = self._runtime_child_artifact_for_digest(
+                runtime_artifact,
+                str(child_record.child_basin_state_digest),
+            )
+            snapshot_flow = (
+                None
+                if flow_record is None
+                else self._runtime_flow_artifact_for_digest(
+                    runtime_artifact,
+                    str(flow_record.post_refinement_flow_window_digest),
+                )
+            )
+            if snapshot_child is None:
+                snapshot_load_replay_result = (
+                    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+                )
+                failure_modes.append("snapshot_missing_child_basin_state")
+            elif snapshot_flow is None:
+                snapshot_load_replay_result = (
+                    LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+                )
+                failure_modes.append("snapshot_missing_flow_window")
+            else:
+                ratios = self._multi_basin_snapshot_ratios(
+                    source_child_record=child_record,
+                    snapshot_child_artifact=snapshot_child,
+                )
+                if all(value == 1.0 for value in ratios.values()):
+                    snapshot_load_replay_result = (
+                        LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+                    )
+                else:
+                    snapshot_load_replay_result = (
+                        LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+                    )
+                    failure_modes.append("snapshot_persistence_ratio_below_one")
+
+        duplicate_replay_result = (
+            LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+            if artifact_replay_result == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+            else LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+        )
+        time_order_replay_result = LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+        if time_order_inversion_control:
+            time_order_replay_result = (
+                LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+            )
+            failure_modes.append("time_order_inversion_control_failed_closed")
+        elif flow_record is not None and (
+            float(flow_record.window_end_event_time_key)
+            < float(flow_record.window_start_event_time_key)
+        ):
+            time_order_replay_result = (
+                LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED
+            )
+            failure_modes.append("flow_window_time_order_invalid")
+
+        replay_window = {
+            "window_start_event_time_key": 0.0
+            if flow_record is None
+            else float(flow_record.window_start_event_time_key),
+            "window_end_event_time_key": 0.0
+            if flow_record is None
+            else float(flow_record.window_end_event_time_key),
+            "window_count": 1.0,
+        }
+        try:
+            record = LGRC9V3MultiBasinReplayValidationRecord(
+                replay_validation_id=(
+                    "multi-basin-replay:"
+                    f"{str(child_record.child_basin_state_digest)[:32]}"
+                    + (":time-order-control" if time_order_inversion_control else "")
+                ),
+                native_multi_basin_policy_id=str(
+                    self._state.causal_modes.get(
+                        "native_lgrc_multi_basin_formation_policy"
+                    )
+                ),
+                native_multi_basin_enabled=True,
+                source_child_basin_state_digest=str(
+                    child_record.child_basin_state_digest
+                ),
+                artifact_replay_result=artifact_replay_result,
+                snapshot_load_replay_result=snapshot_load_replay_result,
+                duplicate_replay_result=duplicate_replay_result,
+                time_order_replay_result=time_order_replay_result,
+                membership_persistence_ratio=ratios["membership"],
+                support_persistence_ratio=ratios["support"],
+                coherence_persistence_ratio=ratios["coherence"],
+                boundary_persistence_ratio=ratios["boundary"],
+                flux_persistence_ratio=ratios["flux"],
+                replay_window=replay_window,
+                replay_failure_modes=tuple(dict.fromkeys(failure_modes)),
+                lgrc_runtime_level=str(self._state.lgrc_runtime_level),
+                causal_layer_mode=str(self._state.causal_layer_mode),
+                claim_flags=self._multi_basin_claim_flags(),
+            )
+        except ValueError as exc:
+            raise InvalidStateTransitionError(str(exc)) from exc
+        keys = self._multi_basin_replay_validation_keys()
+        replay_digest = str(record.replay_validation_digest)
+        existing = self._existing_multi_basin_replay_record(replay_digest)
+        emitted = False
+        if existing is None:
+            keys.add(replay_digest)
+            self._store_multi_basin_replay_validation_keys(keys)
+            self._state.multi_basin_replay_validation_log.append(record)
+            emitted = True
+        else:
+            record = existing
+        all_replay_passed = all(
+            getattr(record, field_name) == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+            for field_name in (
+                "artifact_replay_result",
+                "snapshot_load_replay_result",
+                "duplicate_replay_result",
+                "time_order_replay_result",
+            )
+        )
+        return {
+            "emitted": emitted,
+            "replay_validation_record": record,
+            "replay_validation_digest": record.replay_validation_digest,
+            "mb4_replay_candidate_allowed": bool(all_replay_passed),
+            "mb5_or_stronger_supported": False,
+            "native_multi_basin_formation_supported": False,
+        }
 
     def _emit_topology_state_reabsorption_record(
         self,

@@ -1058,9 +1058,10 @@ The runtime stores emitted candidate records under:
 ```text
 post_refinement_flow_window_log
 child_basin_state_log
+multi_basin_replay_validation_log
 ```
 
-Both logs are empty when the policy is disabled. Missing log fields in older
+All three logs are empty when the policy is disabled. Missing log fields in older
 snapshots restore as empty lists. When the policy is enabled, committed native
 route arbitration topology events may emit one post-refinement flow-window
 record and one child-basin state record from the committed topology event,
@@ -1083,6 +1084,13 @@ The replay validation record cites the child-basin state digest and serializes
 artifact replay, snapshot/load replay, duplicate replay, time-order replay,
 persistence ratios, replay window, and replay failure modes. Replay result
 statuses are `passed`, `failed_closed`, `failed_open`, and `not_run`.
+Runtime replay validation reconstructs the serialized topology-event ->
+flow-window -> child-basin-state chain, compares child-basin membership,
+support, coherence, boundary, and flux maps against a loaded snapshot artifact,
+and appends a digest-idempotent replay record. Missing snapshot replay records
+`not_run` and blocks MB4 admission. Clean replay can support an MB4
+replay-backed child-basin candidate, but does not support MB5/MB6 without
+merge/leakage controls and N26 handoff gates.
 
 The merge/leakage control record cites the child-basin state digest and
 serializes one fail-closed control result, including blocked condition,
