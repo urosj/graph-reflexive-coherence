@@ -656,7 +656,7 @@
     {
       "check_id": "fail_closed_controls_frozen",
       "detail": {
-        "control_count": 25
+        "control_count": 37
       },
       "passed": true
     },
@@ -678,8 +678,11 @@
       "check_id": "source_current_derivation_blockers_frozen",
       "detail": {
         "control_ids": [
+          "source_digest_mismatch_control",
           "lower_stack_input_missing_control",
+          "proxy_metric_trace_missing_control",
           "proxy_metric_not_replayable_control",
+          "basin_persistence_capacity_trace_missing_control",
           "support_coherence_floor_missing_control",
           "proxy_basin_measurement_not_independent_control",
           "scoped_mb6_scope_id_missing_control",
@@ -689,17 +692,26 @@
           "post_hoc_target_digest_control",
           "hidden_proxy_policy_control",
           "proxy_only_improvement_control",
+          "proxy_improves_basin_also_improves_control",
+          "proxy_improves_basin_unmeasured_control",
           "basin_degradation_hidden_by_proxy_control",
           "unscoped_mb6_consumption_control",
           "front_capacity_backfill_control",
           "peer_basin_missing_control",
           "perturbation_mismatch_control",
+          "perturbation_digest_missing_control",
           "basin_deepened_survivor_missing_control",
+          "proxy_collapse_result_trace_missing_control",
           "AP5_gap_prose_only_control",
+          "missing_ap5_dependency_status_control",
+          "n15_context_as_native_ap5_control",
+          "n19_nat3_as_ap5_closeout_control",
           "semantic_goal_relabel_control",
           "semantic_choice_relabel_control",
           "agency_relabel_control",
           "native_support_relabel_control",
+          "n25_2_mb6_as_native_support_control",
+          "n25_2_mb6_as_agency_sentience_ant_ecology_control",
           "sentience_relabel_control",
           "phase8_completion_relabel_control",
           "ant_ecology_relabel_control"
@@ -777,8 +789,11 @@
     "failed_open_effect": "positive_proxy_support_invalidated",
     "not_run_required_control_effect": "PD4_PD5_PD6_blocked",
     "required_control_ids": [
+      "source_digest_mismatch_control",
       "lower_stack_input_missing_control",
+      "proxy_metric_trace_missing_control",
       "proxy_metric_not_replayable_control",
+      "basin_persistence_capacity_trace_missing_control",
       "support_coherence_floor_missing_control",
       "proxy_basin_measurement_not_independent_control",
       "scoped_mb6_scope_id_missing_control",
@@ -788,17 +803,26 @@
       "post_hoc_target_digest_control",
       "hidden_proxy_policy_control",
       "proxy_only_improvement_control",
+      "proxy_improves_basin_also_improves_control",
+      "proxy_improves_basin_unmeasured_control",
       "basin_degradation_hidden_by_proxy_control",
       "unscoped_mb6_consumption_control",
       "front_capacity_backfill_control",
       "peer_basin_missing_control",
       "perturbation_mismatch_control",
+      "perturbation_digest_missing_control",
       "basin_deepened_survivor_missing_control",
+      "proxy_collapse_result_trace_missing_control",
       "AP5_gap_prose_only_control",
+      "missing_ap5_dependency_status_control",
+      "n15_context_as_native_ap5_control",
+      "n19_nat3_as_ap5_closeout_control",
       "semantic_goal_relabel_control",
       "semantic_choice_relabel_control",
       "agency_relabel_control",
       "native_support_relabel_control",
+      "n25_2_mb6_as_native_support_control",
+      "n25_2_mb6_as_agency_sentience_ant_ecology_control",
       "sentience_relabel_control",
       "phase8_completion_relabel_control",
       "ant_ecology_relabel_control"
@@ -840,7 +864,7 @@
     }
   ],
   "n26_closeout_ladder_rung_assigned": false,
-  "output_digest": "753b26b6aec4349851cc80ab69502303532c49ac8c9d06b4b497dd67c9e5fc9c",
+  "output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
   "pd_ladder": [
     {
       "definition": "no source-current proxy evidence",

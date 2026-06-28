@@ -57,11 +57,14 @@ not_applicable is limited to inventory/schema/null rows without proxy or target 
 
 ## Controls
 
-Required control count: `25`
+Required control count: `37`
 
 ```text
+source_digest_mismatch_control
 lower_stack_input_missing_control
+proxy_metric_trace_missing_control
 proxy_metric_not_replayable_control
+basin_persistence_capacity_trace_missing_control
 support_coherence_floor_missing_control
 proxy_basin_measurement_not_independent_control
 scoped_mb6_scope_id_missing_control
@@ -71,17 +74,26 @@ proxy_label_only_control
 post_hoc_target_digest_control
 hidden_proxy_policy_control
 proxy_only_improvement_control
+proxy_improves_basin_also_improves_control
+proxy_improves_basin_unmeasured_control
 basin_degradation_hidden_by_proxy_control
 unscoped_mb6_consumption_control
 front_capacity_backfill_control
 peer_basin_missing_control
 perturbation_mismatch_control
+perturbation_digest_missing_control
 basin_deepened_survivor_missing_control
+proxy_collapse_result_trace_missing_control
 AP5_gap_prose_only_control
+missing_ap5_dependency_status_control
+n15_context_as_native_ap5_control
+n19_nat3_as_ap5_closeout_control
 semantic_goal_relabel_control
 semantic_choice_relabel_control
 agency_relabel_control
 native_support_relabel_control
+n25_2_mb6_as_native_support_control
+n25_2_mb6_as_agency_sentience_ant_ecology_control
 sentience_relabel_control
 phase8_completion_relabel_control
 ant_ecology_relabel_control
@@ -106,9 +118,9 @@ ant_ecology_relabel_control
 | `artifact_roles_by_pd_rung_frozen` | `true` | `{"PD2": ["runtime_trace", "lower_stack_input_trace", "proxy_metric_trace", "basin_persistence_capacity_trace", "support_coherence_floor_trace", "report"], "PD3": ["runtime_trace", "lower_stack_input_trace", "proxy_metric_trace", "basin_persistence_capacity_trace", "support_coherence_floor_trace", "basin_deepening_comparison_trace", "proxy_vs_basin_delta_trace", "replay_trace", "report"], "PD4": ["runtime_trace", "lower_stack_input_trace", "proxy_metric_trace", "basin_persistence_capacity_trace", "support_coherence_floor_trace", "basin_deepening_comparison_trace", "proxy_vs_basin_delta_trace", "peer_or_control_basin_trace", "replay_trace", "control_trace", "report"], "PD5": ["runtime_trace", "lower_stack_input_trace", "proxy_metric_trace", "basin_persistence_capacity_trace", "support_coherence_floor_trace", "basin_deepening_comparison_trace", "proxy_vs_basin_delta_trace", "proxy_optimized_path_trace", "basin_deepened_path_trace", "perturbation_challenge_trace", "proxy_collapse_result_trace", "peer_or_control_basin_trace", "replay_trace", "control_trace", "report"], "PD6": ["runtime_trace", "lower_stack_input_trace", "proxy_metric_trace", "basin_persistence_capacity_trace", "support_coherence_floor_trace", "basin_deepening_comparison_trace", "proxy_vs_basin_delta_trace", "proxy_optimized_path_trace", "basin_deepened_path_trace", "perturbation_challenge_trace", "proxy_collapse_result_trace", "peer_or_control_basin_trace", "replay_trace", "control_trace", "report", "closeout"]}` |
 | `ap5_not_applicable_constrained_for_positive_rows` | `true` | `{"allowed_statuses": ["required_recorded", "missing_blocks_row", "not_applicable"], "ap5_gap_prose_only_control_required": true, "condition_reason_required": true, "missing_status_effect": "row_blocks_at_AP5_gate", "n15_n19_context_counts_as_native_ap5": false, "not_applicable_allowed_only_for": ["inventory_rows", "schema_rows", "active_null_rows_without_proxy_or_target_formation_claim"], "positive_proxy_rungs_require_ap5_dependency": ["PD2", "PD3", "PD4", "PD5", "PD6"]}` |
 | `replay_requirements_frozen` | `true` | `{"pd3_if_any_required_replay_fails": "PD3_or_stronger_blocked", "pd3_required_replay_modes": ["artifact_replay", "snapshot_load_replay", "duplicate_replay", "order_control"], "pd4_pd5_required_control_summary": {"failed_open_controls": 0, "negative_controls_fail_closed": true, "not_run_required_controls": 0}}` |
-| `fail_closed_controls_frozen` | `true` | `{"control_count": 25}` |
+| `fail_closed_controls_frozen` | `true` | `{"control_count": 37}` |
 | `control_satisfied_for_positive_row_frozen` | `true` | `["control_id", "control_status", "blocked_condition", "expected_result", "actual_result", "claim_allowed_when_control_triggers", "rung_effect", "control_satisfied_for_positive_row"]` |
-| `source_current_derivation_blockers_frozen` | `true` | `{"control_ids": ["lower_stack_input_missing_control", "proxy_metric_not_replayable_control", "support_coherence_floor_missing_control", "proxy_basin_measurement_not_independent_control", "scoped_mb6_scope_id_missing_control", "derived_report_only_positive_row_control", "artifact_manifest_failure_control", "proxy_label_only_control", "post_hoc_target_digest_control", "hidden_proxy_policy_control", "proxy_only_improvement_control", "basin_degradation_hidden_by_proxy_control", "unscoped_mb6_consumption_control", "front_capacity_backfill_control", "peer_basin_missing_control", "perturbation_mismatch_control", "basin_deepened_survivor_missing_control", "AP5_gap_prose_only_control", "semantic_goal_relabel_control", "semantic_choice_relabel_control", "agency_relabel_control", "native_support_relabel_control", "sentience_relabel_control", "phase8_completion_relabel_control", "ant_ecology_relabel_control"]}` |
+| `source_current_derivation_blockers_frozen` | `true` | `{"control_ids": ["source_digest_mismatch_control", "lower_stack_input_missing_control", "proxy_metric_trace_missing_control", "proxy_metric_not_replayable_control", "basin_persistence_capacity_trace_missing_control", "support_coherence_floor_missing_control", "proxy_basin_measurement_not_independent_control", "scoped_mb6_scope_id_missing_control", "derived_report_only_positive_row_control", "artifact_manifest_failure_control", "proxy_label_only_control", "post_hoc_target_digest_control", "hidden_proxy_policy_control", "proxy_only_improvement_control", "proxy_improves_basin_also_improves_control", "proxy_improves_basin_unmeasured_control", "basin_degradation_hidden_by_proxy_control", "unscoped_mb6_consumption_control", "front_capacity_backfill_control", "peer_basin_missing_control", "perturbation_mismatch_control", "perturbation_digest_missing_control", "basin_deepened_survivor_missing_control", "proxy_collapse_result_trace_missing_control", "AP5_gap_prose_only_control", "missing_ap5_dependency_status_control", "n15_context_as_native_ap5_control", "n19_nat3_as_ap5_closeout_control", "semantic_goal_relabel_control", "semantic_choice_relabel_control", "agency_relabel_control", "native_support_relabel_control", "n25_2_mb6_as_native_support_control", "n25_2_mb6_as_agency_sentience_ant_ecology_control", "sentience_relabel_control", "phase8_completion_relabel_control", "ant_ecology_relabel_control"]}` |
 | `no_positive_proxy_evidence_opened` | `true` | `"schema freeze only; no proxy derivation/divergence/collapse rows are produced"` |
 | `unsafe_claim_flags_false` | `true` | `{"agency_claim_allowed": false, "ant_ecology_claim_allowed": false, "identity_acceptance_claim_allowed": false, "native_support_claim_allowed": false, "organism_life_claim_allowed": false, "phase8_completion_claim_allowed": false, "semantic_choice_claim_allowed": false, "semantic_goal_claim_allowed": false, "semantic_learning_claim_allowed": false, "semantic_target_ownership_claim_allowed": false, "sentience_claim_allowed": false, "unrestricted_autonomy_claim_allowed": false, "unscoped_multi_basin_claim_allowed": false}` |
 | `no_absolute_paths_in_records` | `true` | `"all paths are repository-relative"` |

@@ -202,8 +202,11 @@ hidden_policy_blocks_row
 Required false-positive controls:
 
 ```text
+source_digest_mismatch_control
 lower_stack_input_missing_control
+proxy_metric_trace_missing_control
 proxy_metric_not_replayable_control
+basin_persistence_capacity_trace_missing_control
 support_coherence_floor_missing_control
 proxy_basin_measurement_not_independent_control
 scoped_mb6_scope_id_missing_control
@@ -213,17 +216,26 @@ proxy_label_only_control
 post_hoc_target_digest_control
 hidden_proxy_policy_control
 proxy_only_improvement_control
+proxy_improves_basin_also_improves_control
+proxy_improves_basin_unmeasured_control
 basin_degradation_hidden_by_proxy_control
 unscoped_mb6_consumption_control
 front_capacity_backfill_control
 peer_basin_missing_control
 perturbation_mismatch_control
+perturbation_digest_missing_control
 basin_deepened_survivor_missing_control
+proxy_collapse_result_trace_missing_control
 AP5_gap_prose_only_control
+missing_ap5_dependency_status_control
+n15_context_as_native_ap5_control
+n19_nat3_as_ap5_closeout_control
 semantic_goal_relabel_control
 semantic_choice_relabel_control
 agency_relabel_control
 native_support_relabel_control
+n25_2_mb6_as_native_support_control
+n25_2_mb6_as_agency_sentience_ant_ecology_control
 sentience_relabel_control
 phase8_completion_relabel_control
 ant_ecology_relabel_control
@@ -283,12 +295,14 @@ ap5_bridge_status = not_supported_schema_only
 
 ### Iteration 3. Active Nulls And Failure Baselines
 
-Instantiate controls before positive probes. Required nulls include label-only
-proxy, post-hoc target, hidden proxy policy, proxy-only improvement, basin
-degradation hidden by proxy score, unscoped MB6 relabel, front-capacity
-backfill, peer-basin missing, perturbation mismatch, missing basin-deepened
-survivor, AP5 prose-only handling, and unsafe semantic/agency/native-support
-relabels.
+Instantiate controls before positive probes. Required nulls include source
+digest mismatch, missing lower-stack/proxy/basin/floor traces, label-only
+proxy, post-hoc target, hidden proxy policy, proxy-only improvement, proxy
+improvement without divergence, basin degradation hidden by proxy score,
+unscoped MB6 relabel, front-capacity backfill, peer-basin missing,
+perturbation mismatch or missing digest, missing basin-deepened survivor,
+missing collapse result trace, AP5 prose-only handling, N15/N19 native-AP5
+relabels, and unsafe semantic/agency/native-support relabels.
 
 Required acceptance state:
 

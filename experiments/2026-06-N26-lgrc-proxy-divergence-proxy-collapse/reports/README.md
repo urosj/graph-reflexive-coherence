@@ -11,6 +11,7 @@ Current reports:
 ```text
 n26_source_inventory_and_scoped_substrate_admission.md
 n26_proxy_divergence_collapse_schema_and_controls.md
+n26_active_nulls_and_failure_baselines.md
 ```
 
 Planned reports mirror `outputs/`:

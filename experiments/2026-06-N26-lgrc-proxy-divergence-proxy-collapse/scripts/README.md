@@ -7,6 +7,7 @@ Current scripts:
 ```text
 build_n26_source_inventory_and_scoped_substrate_admission.py
 build_n26_proxy_divergence_collapse_schema_and_controls.py
+build_n26_active_nulls_and_failure_baselines.py
 ```
 
 Scripts should:

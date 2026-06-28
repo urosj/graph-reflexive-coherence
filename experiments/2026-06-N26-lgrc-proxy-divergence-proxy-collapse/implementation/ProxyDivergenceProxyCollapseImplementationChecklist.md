@@ -156,9 +156,9 @@ proxy_divergence_opened = false
 proxy_collapse_opened = false
 ap5_bridge_status = not_supported_schema_only
 candidate_required_field_count = 38
-required_control_count = 25
+required_control_count = 37
 failed_checks = []
-output_digest = 753b26b6aec4349851cc80ab69502303532c49ac8c9d06b4b497dd67c9e5fc9c
+output_digest = bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070
 ```
 
 Interpretation: I2 freezes the proxy divergence / proxy collapse schema,
@@ -178,31 +178,46 @@ scripts/build_n26_proxy_divergence_collapse_schema_and_controls.py
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
-- [ ] Reject missing lower-stack input rows.
-- [ ] Reject non-replayable proxy metric rows.
-- [ ] Reject missing support/coherence floor rows.
-- [ ] Reject non-independent proxy/basin measurement rows.
-- [ ] Reject missing scoped MB6 scope ID rows.
-- [ ] Reject derived-report-only positive rows.
-- [ ] Reject artifact manifest failure rows.
-- [ ] Reject proxy label-only rows.
-- [ ] Reject post-hoc target digest rows.
-- [ ] Reject hidden proxy policy rows.
-- [ ] Reject proxy-only improvement rows.
-- [ ] Reject basin degradation hidden by proxy score.
-- [ ] Reject unscoped MB6 relabel.
-- [ ] Reject front-capacity companion backfill.
-- [ ] Reject peer-basin missing rows.
-- [ ] Reject perturbation mismatch rows.
-- [ ] Reject missing basin-deepened survivor rows.
-- [ ] Reject AP5 prose-only handling.
-- [ ] Reject unsafe semantic, agency, native-support, sentience, Phase 8, and ant-ecology relabels.
+- [x] Reject source digest mismatch rows.
+- [x] Reject missing lower-stack input rows.
+- [x] Reject missing proxy metric trace rows.
+- [x] Reject non-replayable proxy metric rows.
+- [x] Reject missing basin persistence capacity trace rows.
+- [x] Reject missing support/coherence floor rows.
+- [x] Reject non-independent proxy/basin measurement rows.
+- [x] Reject missing scoped MB6 scope ID rows.
+- [x] Reject derived-report-only positive rows.
+- [x] Reject artifact manifest failure rows.
+- [x] Reject proxy label-only rows.
+- [x] Reject post-hoc target digest rows.
+- [x] Reject hidden proxy policy rows.
+- [x] Reject proxy-only improvement rows.
+- [x] Reject proxy improvement when basin persistence also improves.
+- [x] Reject proxy improvement when basin persistence is unmeasured.
+- [x] Reject basin degradation hidden by proxy score.
+- [x] Reject unscoped MB6 relabel.
+- [x] Reject front-capacity companion backfill.
+- [x] Reject peer-basin missing rows.
+- [x] Reject perturbation mismatch rows.
+- [x] Reject missing perturbation digest rows.
+- [x] Reject missing basin-deepened survivor rows.
+- [x] Reject missing proxy collapse result trace rows.
+- [x] Reject AP5 prose-only handling.
+- [x] Reject missing AP5 dependency status rows.
+- [x] Reject N15 context as native AP5 rows.
+- [x] Reject N19 NAT3 as AP5 closeout rows.
+- [x] Reject N25.2 MB6 as native support rows.
+- [x] Reject N25.2 MB6 as agency/sentience/ant-ecology rows.
+- [x] Reject unsafe semantic, agency, native-support, sentience, Phase 8, and ant-ecology relabels.
 
 Required active-null control IDs:
 
 ```text
+source_digest_mismatch_control
 lower_stack_input_missing_control
+proxy_metric_trace_missing_control
 proxy_metric_not_replayable_control
+basin_persistence_capacity_trace_missing_control
 support_coherence_floor_missing_control
 proxy_basin_measurement_not_independent_control
 scoped_mb6_scope_id_missing_control
@@ -212,17 +227,26 @@ proxy_label_only_control
 post_hoc_target_digest_control
 hidden_proxy_policy_control
 proxy_only_improvement_control
+proxy_improves_basin_also_improves_control
+proxy_improves_basin_unmeasured_control
 basin_degradation_hidden_by_proxy_control
 unscoped_mb6_consumption_control
 front_capacity_backfill_control
 peer_basin_missing_control
 perturbation_mismatch_control
+perturbation_digest_missing_control
 basin_deepened_survivor_missing_control
+proxy_collapse_result_trace_missing_control
 AP5_gap_prose_only_control
+missing_ap5_dependency_status_control
+n15_context_as_native_ap5_control
+n19_nat3_as_ap5_closeout_control
 semantic_goal_relabel_control
 semantic_choice_relabel_control
 agency_relabel_control
 native_support_relabel_control
+n25_2_mb6_as_native_support_control
+n25_2_mb6_as_agency_sentience_ant_ecology_control
 sentience_relabel_control
 phase8_completion_relabel_control
 ant_ecology_relabel_control
@@ -234,7 +258,45 @@ Required I3 result:
 acceptance_state = accepted_active_nulls_fail_closed_no_positive_proxy_evidence
 positive_proxy_evidence_opened = false
 failed_open_controls = 0
-candidate_pd_ladder_rung = active_null_control_scope_only
+candidate_pd_ladder_rung = not_assigned_active_null_control_only
+```
+
+### Iteration 3 Result
+
+```text
+status = passed
+acceptance_state = accepted_active_nulls_fail_closed_no_positive_proxy_evidence
+source_schema_output_digest = bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070
+candidate_pd_ladder_rung = not_assigned_active_null_control_only
+n26_closeout_ceiling = N26-C3_active_nulls_fail_closed
+n26_closeout_ladder_rung_assigned = false
+positive_proxy_evidence_opened = false
+proxy_derivation_opened = false
+proxy_divergence_opened = false
+proxy_collapse_opened = false
+ap5_bridge_status = not_supported_active_null_only
+required_control_count = 37
+active_null_row_count = 37
+failed_open_controls = 0
+failed_checks = []
+output_digest = 90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd
+```
+
+Interpretation: I3 proves that the N26 false-positive paths fail closed before
+positive proxy probes run. The rows are active-null fixtures only:
+`derived_report_only = true`, `trace_admissibility =
+active_null_fixture_only_not_positive_evidence`, and
+`positive_support_admissible = false`. They can block proxy overclaims but
+cannot support PD2, proxy derivation, proxy divergence, proxy collapse, AP5
+bridge status, semantic goal, agency, native support, sentience, Phase 8, ant
+ecology, or unscoped multi-basin substrate claims.
+
+Artifacts:
+
+```text
+outputs/n26_active_nulls_and_failure_baselines.json
+reports/n26_active_nulls_and_failure_baselines.md
+scripts/build_n26_active_nulls_and_failure_baselines.py
 ```
 
 ## Iteration 4 - Source-Current Proxy Derivation Probe
