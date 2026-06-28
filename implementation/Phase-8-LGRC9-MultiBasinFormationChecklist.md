@@ -428,7 +428,7 @@ passed
 
 ## Iteration 87. Merge/Leakage Controls
 
-Status: pending.
+Status: complete.
 
 ### Goal
 
@@ -436,15 +436,109 @@ Reject false-positive multi-basin formation paths.
 
 ### Checks
 
-- [ ] Label-only child-basin relabel fails closed.
-- [ ] Old-basin thickening as child-basin formation fails closed.
-- [ ] Transient flow sink as child-basin formation fails closed.
-- [ ] Merge/leakage as multi-basin success fails closed.
-- [ ] Hidden producer basin insertion fails closed.
-- [ ] Producer-assisted success as native upgrade fails closed.
-- [ ] Post-hoc threshold or membership selection fails closed.
-- [ ] Semantic learning, choice, agency, native support, identity, sentience,
+- [x] Label-only child-basin relabel fails closed.
+- [x] Old-basin thickening as child-basin formation fails closed.
+- [x] Transient flow sink as child-basin formation fails closed.
+- [x] Merge/leakage as multi-basin success fails closed.
+- [x] Hidden producer basin insertion fails closed.
+- [x] Producer-assisted success as native upgrade fails closed.
+- [x] Post-hoc threshold or membership selection fails closed.
+- [x] Semantic learning, choice, agency, native support, identity, sentience,
       organism/life, ant ecology, and Phase 8 completion relabels fail closed.
+
+### Implementation Record
+
+- Added `merge_leakage_control_matrix_log` to `LGRC9V3RuntimeState`.
+- Old snapshots remain compatible because missing control logs restore as empty
+  lists.
+- Added `validate_multi_basin_merge_leakage_controls(...)` to record one
+  digest-idempotent fail-closed control row per required false-positive path.
+- The complete I87 matrix covers:
+
+```text
+label_only_child_basin
+old_basin_thickening_as_child_basin
+transient_flow_sink_as_child_basin
+merge_leakage_as_multi_basin_success
+missing_flow_window
+missing_child_basin_state
+missing_replay
+hidden_producer_basin_insertion
+producer_assisted_success_as_native_upgrade
+post_hoc_threshold_or_membership_selection
+semantic_learning_choice_agency_relabel
+native_support_relabel
+identity_acceptance_relabel
+sentience_relabel
+organism_life_relabel
+ant_ecology_relabel
+phase8_completion_relabel
+```
+
+- A complete fail-closed matrix requires a clean replay record before it can
+  admit an MB5 candidate.
+- Complete controls set
+  `native_lgrc_multi_basin_formation_validated = true`, but preserve
+  `native_lgrc_multi_basin_formation_supported = false` pending I89 closeout.
+- Incomplete control matrices, missing replay, and claim-passing control rows
+  fail closed.
+- Failed-open control records remain blockers for that source child-basin state
+  and cannot be bypassed by rerunning the default matrix.
+- Duplicate control validation is digest-idempotent.
+- Snapshot/load preserves the control matrix log.
+
+### Interpretation
+
+Iteration 87 closes the core merge/leakage control gate for the runtime surfaces
+opened in I85 and replay-validated in I86. The strongest supported ceiling is:
+
+```text
+MB5 control-backed native multi-basin formation candidate
+```
+
+This means the child-basin candidate is now replay-backed and protected against
+the required false-positive paths. It still does not support:
+
+```text
+MB6
+N26-ready unscoped multi-basin substrate evidence
+BF6
+independent new-basin formation
+native support
+agency
+semantic learning
+semantic choice
+identity acceptance
+sentience
+organism/life
+ant ecology
+Phase 8 completion
+```
+
+The control rows are negative controls. Their success means blocker paths are
+rejected, not that those blocker paths are positive evidence.
+
+### Verification
+
+```text
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin"
+17 passed, 151 deselected
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_runtime.py -q
+168 passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py tests/models/test_lgrc_9_v3_runtime.py -q -k "multi_basin or native_route or child_basin or active_topology_integration_expands_causal_lane_b_candidate or stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs or snapshot_round_trip"
+81 passed, 220 deselected, 42 subtests passed
+
+.venv/bin/python -m pytest tests/models/test_lgrc_9_v3_contract.py -q
+133 passed, 81 subtests passed
+
+.venv/bin/python -m ruff check src/pygrc/models/lgrc_9_v3_runtime.py src/pygrc/models/lgrc_9_v3_runtime_state.py tests/models/test_lgrc_9_v3_runtime.py
+All checks passed
+
+git diff --check
+passed
+```
 
 ## Iteration 88. Snapshot, Telemetry, Examples
 

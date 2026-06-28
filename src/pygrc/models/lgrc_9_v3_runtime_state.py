@@ -25,6 +25,7 @@ from .lgrc_9_v3_contract import (
     LGRC9V3CausalPulseSubstrateSurfaceLineageRecord,
     LGRC9V3CausalPulseSubstrateSurfaceRow,
     LGRC9V3ChildBasinStateRecord,
+    LGRC9V3MultiBasinControlRecord,
     LGRC9V3MultiBasinFlowWindowRecord,
     LGRC9V3MultiBasinReplayValidationRecord,
     LGRC9V3NativeRouteArbitrationRecord,
@@ -34,6 +35,7 @@ from .lgrc_9_v3_contract import (
     restore_lgrc9v3_causal_pulse_substrate_surface_lineage_record_artifact,
     restore_lgrc9v3_causal_pulse_substrate_surface_row_artifact,
     restore_lgrc9v3_child_basin_state_record_artifact,
+    restore_lgrc9v3_multi_basin_control_record_artifact,
     restore_lgrc9v3_multi_basin_flow_window_record_artifact,
     restore_lgrc9v3_multi_basin_replay_validation_record_artifact,
     restore_lgrc9v3_native_route_arbitration_record_artifact,
@@ -539,6 +541,18 @@ def restore_lgrc9v3_runtime_state_artifact(
                 context="multi_basin_replay_validation_log",
             )
         ],
+        merge_leakage_control_matrix_log=[
+            restore_lgrc9v3_multi_basin_control_record_artifact(
+                _artifact_mapping(
+                    record,
+                    context="merge_leakage_control_matrix_log.record",
+                )
+            )
+            for record in _artifact_sequence(
+                mapping.get("merge_leakage_control_matrix_log", []),
+                context="merge_leakage_control_matrix_log",
+            )
+        ],
         native_route_candidate_log=[
             restore_lgrc9v3_native_route_candidate_record_artifact(
                 _artifact_mapping(
@@ -661,6 +675,9 @@ class LGRC9V3RuntimeState(GRCState):
     multi_basin_replay_validation_log: list[
         LGRC9V3MultiBasinReplayValidationRecord
     ] = field(default_factory=list)
+    merge_leakage_control_matrix_log: list[LGRC9V3MultiBasinControlRecord] = (
+        field(default_factory=list)
+    )
     native_route_candidate_log: list[LGRC9V3NativeRouteCandidateRecord] = (
         field(default_factory=list)
     )
@@ -755,6 +772,10 @@ class LGRC9V3RuntimeState(GRCState):
             "multi_basin_replay_validation_log": [
                 record.to_artifact()
                 for record in self.multi_basin_replay_validation_log
+            ],
+            "merge_leakage_control_matrix_log": [
+                record.to_artifact()
+                for record in self.merge_leakage_control_matrix_log
             ],
             "native_route_candidate_log": [
                 record.to_artifact() for record in self.native_route_candidate_log

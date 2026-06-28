@@ -49,6 +49,7 @@ from .lgrc_9_v3_contract import (
     LGRC9V3CausalPulseSubstrateSurfaceLineageRecord,
     LGRC9V3CausalPulseSubstrateSurfaceRow,
     LGRC9V3ChildBasinStateRecord,
+    LGRC9V3MultiBasinControlRecord,
     LGRC9V3MultiBasinFlowWindowRecord,
     LGRC9V3MultiBasinReplayValidationRecord,
     LGRC9V3NativeRouteArbitrationRecord,
@@ -119,6 +120,8 @@ from .lgrc_9_v3_contract import (
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_DECLARED_TIEBREAKER,
     LGRC9V3_NATIVE_ROUTE_UNRESOLVED_TIE_POLICY_FAIL_CLOSED,
     LGRC9V3_NATIVE_MULTI_BASIN_FORMATION_POLICY_POST_REFINEMENT_REPLAY,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN,
     LGRC9V3_MULTI_BASIN_REPLAY_STATUS_FAILED_CLOSED,
     LGRC9V3_MULTI_BASIN_REPLAY_STATUS_NOT_RUN,
     LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED,
@@ -213,6 +216,50 @@ LGRC9V3_SELF_REARM_EVIDENCE_EVENT_SCHEMA_VERSION = (
 )
 LGRC9V3_SELF_REARM_EVIDENCE_LOG_KEY = "lgrc9v3_self_rearm_evidence_log"
 LGRC9V3_AUTONOMOUS_PRODUCTION_LOG_KEY = "lgrc9v3_autonomous_production_log"
+LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS: tuple[str, ...] = (
+    "label_only_child_basin",
+    "old_basin_thickening_as_child_basin",
+    "transient_flow_sink_as_child_basin",
+    "merge_leakage_as_multi_basin_success",
+    "missing_flow_window",
+    "missing_child_basin_state",
+    "missing_replay",
+    "hidden_producer_basin_insertion",
+    "producer_assisted_success_as_native_upgrade",
+    "post_hoc_threshold_or_membership_selection",
+    "semantic_learning_choice_agency_relabel",
+    "native_support_relabel",
+    "identity_acceptance_relabel",
+    "sentience_relabel",
+    "organism_life_relabel",
+    "ant_ecology_relabel",
+    "phase8_completion_relabel",
+)
+LGRC9V3_MULTI_BASIN_CONTROL_BLOCKED_CONDITIONS: dict[str, str] = {
+    "label_only_child_basin": "label-only child-basin assignment",
+    "old_basin_thickening_as_child_basin": "old-basin thickening relabel",
+    "transient_flow_sink_as_child_basin": "transient flow sink relabel",
+    "merge_leakage_as_multi_basin_success": "merge/leakage treated as success",
+    "missing_flow_window": "missing post-refinement flow-window record",
+    "missing_child_basin_state": "missing child-basin state record",
+    "missing_replay": "missing replay validation",
+    "hidden_producer_basin_insertion": "hidden producer basin insertion",
+    "producer_assisted_success_as_native_upgrade": (
+        "producer-assisted success as native upgrade"
+    ),
+    "post_hoc_threshold_or_membership_selection": (
+        "post-hoc threshold or membership selection"
+    ),
+    "semantic_learning_choice_agency_relabel": (
+        "semantic learning/choice/agency relabel"
+    ),
+    "native_support_relabel": "native support relabel",
+    "identity_acceptance_relabel": "identity acceptance relabel",
+    "sentience_relabel": "sentience relabel",
+    "organism_life_relabel": "organism/life relabel",
+    "ant_ecology_relabel": "ant ecology relabel",
+    "phase8_completion_relabel": "Phase 8 completion relabel",
+}
 
 
 def _runtime_default_modes(
@@ -4009,6 +4056,46 @@ class LGRC9V3(GRCModel):
                 return record
         return None
 
+    def _clean_multi_basin_replay_record_for_child(
+        self,
+        *,
+        source_child_basin_state_digest: str,
+        replay_validation_digest: str | None = None,
+    ) -> LGRC9V3MultiBasinReplayValidationRecord | None:
+        for record in reversed(self._state.multi_basin_replay_validation_log):
+            if (
+                record.source_child_basin_state_digest
+                != str(source_child_basin_state_digest)
+            ):
+                continue
+            if replay_validation_digest is not None and (
+                record.replay_validation_digest != str(replay_validation_digest)
+            ):
+                continue
+            replay_passed = all(
+                getattr(record, field_name)
+                == LGRC9V3_MULTI_BASIN_REPLAY_STATUS_PASSED
+                for field_name in (
+                    "artifact_replay_result",
+                    "snapshot_load_replay_result",
+                    "duplicate_replay_result",
+                    "time_order_replay_result",
+                )
+            )
+            ratios_passed = all(
+                getattr(record, field_name) == 1.0
+                for field_name in (
+                    "membership_persistence_ratio",
+                    "support_persistence_ratio",
+                    "coherence_persistence_ratio",
+                    "boundary_persistence_ratio",
+                    "flux_persistence_ratio",
+                )
+            )
+            if replay_passed and ratios_passed:
+                return record
+        return None
+
     def validate_multi_basin_child_basin_replay(
         self,
         *,
@@ -4188,6 +4275,230 @@ class LGRC9V3(GRCModel):
             "replay_validation_digest": record.replay_validation_digest,
             "mb4_replay_candidate_allowed": bool(all_replay_passed),
             "mb5_or_stronger_supported": False,
+            "native_multi_basin_formation_supported": False,
+        }
+
+    def _multi_basin_control_keys(self) -> set[str]:
+        raw_keys = self._state.cached_quantities.get(
+            "lgrc9v3_multi_basin_control_record_idempotency_keys",
+            [],
+        )
+        if not isinstance(raw_keys, Sequence) or isinstance(raw_keys, str):
+            raise InvalidStateTransitionError(
+                "multi-basin control idempotency cache must be a sequence"
+            )
+        return {str(key) for key in raw_keys}
+
+    def _store_multi_basin_control_keys(self, keys: set[str]) -> None:
+        self._state.cached_quantities[
+            "lgrc9v3_multi_basin_control_record_idempotency_keys"
+        ] = sorted(keys)
+
+    def _existing_multi_basin_control_record(
+        self,
+        control_record_digest: str,
+    ) -> LGRC9V3MultiBasinControlRecord | None:
+        for record in reversed(self._state.merge_leakage_control_matrix_log):
+            if record.control_record_digest == control_record_digest:
+                return record
+        return None
+
+    def _multi_basin_control_metrics(
+        self,
+        *,
+        child_record: LGRC9V3ChildBasinStateRecord,
+        control_id: str,
+    ) -> dict[str, float]:
+        merge_values: list[float] = []
+        for value in child_record.merge_leakage_trace.values():
+            try:
+                resolved = float(value)
+            except (TypeError, ValueError):
+                continue
+            if math.isfinite(resolved):
+                merge_values.append(resolved)
+        membership_count = sum(
+            len(tuple(members))
+            for members in child_record.child_basin_membership_by_core.values()
+        )
+        return {
+            "child_basin_core_count": float(len(child_record.child_basin_core_ids)),
+            "child_basin_membership_count": float(membership_count),
+            "merge_leakage_metric_count": float(len(child_record.merge_leakage_trace)),
+            "merge_leakage_metric_total": float(sum(merge_values)),
+            "triggered_false_positive_control": 1.0,
+            f"control:{control_id}": 1.0,
+        }
+
+    def validate_multi_basin_merge_leakage_controls(
+        self,
+        *,
+        source_child_basin_state_digest: str,
+        replay_validation_digest: str | None = None,
+        control_scenarios: Sequence[Mapping[str, Any]] | None = None,
+    ) -> dict[str, Any]:
+        """Record fail-closed merge/leakage controls for one child-basin record."""
+
+        child_record = self._multi_basin_child_record_for_digest(
+            str(source_child_basin_state_digest)
+        )
+        if child_record is None:
+            raise InvalidStateTransitionError(
+                "multi-basin controls require an emitted child-basin state record"
+            )
+        clean_replay = self._clean_multi_basin_replay_record_for_child(
+            source_child_basin_state_digest=str(child_record.child_basin_state_digest),
+            replay_validation_digest=replay_validation_digest,
+        )
+        if control_scenarios is None:
+            resolved_scenarios = tuple(
+                {
+                    "control_id": control_id,
+                    "blocked_condition": (
+                        LGRC9V3_MULTI_BASIN_CONTROL_BLOCKED_CONDITIONS[control_id]
+                    ),
+                }
+                for control_id in LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS
+            )
+        else:
+            resolved_scenarios = tuple(dict(scenario) for scenario in control_scenarios)
+        records: list[LGRC9V3MultiBasinControlRecord] = []
+        emitted_records: list[LGRC9V3MultiBasinControlRecord] = []
+        keys = self._multi_basin_control_keys()
+        for scenario in resolved_scenarios:
+            control_id = str(scenario.get("control_id", "")).strip()
+            if not control_id:
+                raise InvalidParamsError("multi-basin control requires control_id")
+            metrics = self._multi_basin_control_metrics(
+                child_record=child_record,
+                control_id=control_id,
+            )
+            for key, value in dict(scenario.get("merge_leakage_metrics", {})).items():
+                metrics[str(key)] = float(value)
+            blocked_condition = str(
+                scenario.get(
+                    "blocked_condition",
+                    LGRC9V3_MULTI_BASIN_CONTROL_BLOCKED_CONDITIONS.get(
+                        control_id,
+                        control_id,
+                    ),
+                )
+            )
+            control_status = str(
+                scenario.get(
+                    "control_status",
+                    LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED,
+                )
+            )
+            try:
+                record = LGRC9V3MultiBasinControlRecord(
+                    control_record_id=(
+                        "multi-basin-control:"
+                        f"{str(child_record.child_basin_state_digest)[:32]}:"
+                        f"{control_id}"
+                    ),
+                    native_multi_basin_policy_id=str(
+                        self._state.causal_modes.get(
+                            "native_lgrc_multi_basin_formation_policy"
+                        )
+                    ),
+                    native_multi_basin_enabled=True,
+                    source_child_basin_state_digest=str(
+                        child_record.child_basin_state_digest
+                    ),
+                    control_id=control_id,
+                    control_status=control_status,
+                    blocked_condition=blocked_condition,
+                    expected_result=str(
+                        scenario.get(
+                            "expected_result",
+                            "multi-basin claim rejected and MB5 blocked",
+                        )
+                    ),
+                    actual_result=str(
+                        scenario.get(
+                            "actual_result",
+                            "control failed closed; claim rejected",
+                        )
+                    ),
+                    claim_allowed_when_control_triggers=bool(
+                        scenario.get("claim_allowed_when_control_triggers", False)
+                    ),
+                    rung_effect=str(
+                        scenario.get(
+                            "rung_effect",
+                            "blocks_MB5_native_multi_basin_formation_candidate",
+                        )
+                    ),
+                    merge_leakage_metrics=metrics,
+                    lgrc_runtime_level=str(self._state.lgrc_runtime_level),
+                    causal_layer_mode=str(self._state.causal_layer_mode),
+                    claim_flags=self._multi_basin_claim_flags(),
+                )
+            except ValueError as exc:
+                raise InvalidStateTransitionError(str(exc)) from exc
+            digest = str(record.control_record_digest)
+            existing = self._existing_multi_basin_control_record(digest)
+            if existing is None:
+                keys.add(digest)
+                self._state.merge_leakage_control_matrix_log.append(record)
+                emitted_records.append(record)
+            else:
+                record = existing
+            records.append(record)
+        self._store_multi_basin_control_keys(keys)
+        failed_closed_ids = {
+            record.control_id
+            for record in records
+            if record.control_status == LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_CLOSED
+        }
+        failed_open_ids = {
+            record.control_id
+            for record in self._state.merge_leakage_control_matrix_log
+            if (
+                record.source_child_basin_state_digest
+                == str(child_record.child_basin_state_digest)
+                and record.control_status
+                == LGRC9V3_MULTI_BASIN_CONTROL_STATUS_FAILED_OPEN
+            )
+        }
+        missing_required_ids = tuple(
+            control_id
+            for control_id in LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS
+            if control_id not in failed_closed_ids
+        )
+        mb5_candidate_allowed = (
+            clean_replay is not None
+            and not missing_required_ids
+            and not failed_open_ids
+        )
+        if mb5_candidate_allowed:
+            self._state.causal_modes[
+                "native_lgrc_multi_basin_formation_validated"
+            ] = True
+            self._state.causal_modes[
+                "native_lgrc_multi_basin_formation_supported"
+            ] = False
+        return {
+            "emitted": bool(emitted_records),
+            "control_records": tuple(records),
+            "emitted_control_records": tuple(emitted_records),
+            "control_record_digests": tuple(
+                str(record.control_record_digest) for record in records
+            ),
+            "required_control_ids": (
+                LGRC9V3_MULTI_BASIN_REQUIRED_FAIL_CLOSED_CONTROL_IDS
+            ),
+            "failed_closed_control_ids": tuple(sorted(failed_closed_ids)),
+            "failed_open_control_ids": tuple(sorted(failed_open_ids)),
+            "missing_required_control_ids": missing_required_ids,
+            "clean_replay_required": True,
+            "clean_replay_present": clean_replay is not None,
+            "source_replay_validation_digest": None
+            if clean_replay is None
+            else clean_replay.replay_validation_digest,
+            "mb5_control_backed_candidate_allowed": bool(mb5_candidate_allowed),
+            "mb6_or_stronger_supported": False,
             "native_multi_basin_formation_supported": False,
         }
 

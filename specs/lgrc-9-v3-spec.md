@@ -1096,6 +1096,22 @@ The merge/leakage control record cites the child-basin state digest and
 serializes one fail-closed control result, including blocked condition,
 expected/actual result, rung effect, and merge/leakage metrics.
 
+Runtime merge/leakage validation appends digest-idempotent control records to
+`merge_leakage_control_matrix_log`. The required control matrix covers
+label-only child-basin relabels, old-basin thickening, transient flow sinks,
+merge/leakage-as-success, missing flow-window/child-state/replay paths, hidden
+producer basin insertion, producer-assisted success as native upgrade, post-hoc
+threshold or membership selection, semantic learning/choice/agency relabels,
+native support relabels, identity/sentience/organism-life/ant-ecology relabels,
+and Phase 8 completion relabels. A clean replay record plus the complete
+fail-closed control matrix may validate the runtime policy at MB5 candidate
+scope only when no failed-open control has been recorded for the source
+child-basin state. Failed-open controls remain blockers for that child-basin
+candidate and cannot be bypassed by rerunning the default matrix. The validator
+does not set final multi-basin support, MB6, BF6, independent new-basin
+formation, native support, agency, semantic learning, semantic choice,
+sentience, ant ecology, or Phase 8 completion.
+
 These records must reject hidden fixture inputs, label-only child basins,
 old-basin thickening, transient flow sinks, merge/leakage-as-success,
 hidden producer basin insertion, producer-assisted success as native upgrade,
