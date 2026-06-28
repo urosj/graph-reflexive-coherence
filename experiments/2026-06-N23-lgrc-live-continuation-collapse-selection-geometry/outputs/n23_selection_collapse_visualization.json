@@ -1,0 +1,58 @@
+{
+  "artifact_id": "n23_selection_collapse_visualization",
+  "branch_count": 4,
+  "claim_boundary": "bounded artifact-level live-continuation collapse / selection-geometry evidence, N24-ready; not semantic choice, agency, native support, sentience, Phase 8, or ant ecology implementation",
+  "command": ".venv/bin/python experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/scripts/render_n23_selection_collapse_visualization.py",
+  "final_n23_closeout_ladder_rung": "N23-C6",
+  "final_supported_lc_ladder_rung": "LC6",
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "output_digest": "2950fce7ae43fca046e6b7a9739d722156bd3e850666f085ba69606f92a35b68",
+  "retained_non_selected_branch_count": 3,
+  "selected_branch_id": "branch_edge_4_node_5",
+  "source_artifacts": [
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_multibranch_live_set_collapse_probe.json",
+      "sha256": "8a1de6033491e288d8dc3592964c161ab88745330ee9e736c9865ad5eaa392d8"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_closeout_and_n24_handoff.json",
+      "sha256": "469f00b25d8bc7d56a582ffd7f9dbbe313d064c8ef9d54eaf98ba86688040eef"
+    }
+  ],
+  "unsafe_claims_supported": false,
+  "visual_outputs": [
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_graph.png",
+      "role": "n23_selection_collapse_graph",
+      "sha256": "1baefc5cf6cda18626c6584ce7916f303c7f1a88f49b12d757f76b1bb361f9ba"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_sequence.png",
+      "role": "n23_selection_collapse_sequence",
+      "sha256": "c9734f7d5ac6a232617067035e4c3141d359cba24f203b2b3af642199fc08161"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/n23_selection_collapse_animation.gif",
+      "role": "n23_selection_collapse_animation",
+      "sha256": "e9386cf99fee7a22f2f10cc5dcdcea1bf7cf250813a235cc291431b11c8796e3"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/frames/n23_selection_collapse_frame_00.png",
+      "role": "n23_selection_collapse_frame_00",
+      "sha256": "cf0eb1da676418abe111a21bf17e110d5b748b42caa8830e1dcb8e18f470489b"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/frames/n23_selection_collapse_frame_01.png",
+      "role": "n23_selection_collapse_frame_01",
+      "sha256": "c08873ba8330a262267d1c8851002faf18f46de128fb9daf172a7f5e41bc037f"
+    },
+    {
+      "path": "experiments/2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/outputs/n23_selection_collapse_visualization/frames/n23_selection_collapse_frame_02.png",
+      "role": "n23_selection_collapse_frame_02",
+      "sha256": "63da7d91668914e53dcb5154cde0731e90c7dd1ba76cd234615d4fca25e20e7e"
+    }
+  ],
+  "visual_proof_allowed": false,
+  "visual_status": "supporting_artifact_level_visualization_only",
+  "visualized_row_id": "n23_i4a_row_01_multibranch_live_set_collapse_probe"
+}

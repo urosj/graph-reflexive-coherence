@@ -20,4 +20,6 @@ n25_2_fail_closed_control_matrix.json
 n25_2_stress_variant_matrix.json
 n25_2_mb6_support_blocker_matrix.json
 n25_2_closeout_and_n26_handoff.json
+n25_2_native_visual_gallery.json
+n25_2_native_visual_gallery/
 ```

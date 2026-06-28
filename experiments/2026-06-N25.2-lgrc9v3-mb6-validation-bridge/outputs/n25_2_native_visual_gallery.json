@@ -1,0 +1,131 @@
+{
+  "artifact_id": "n25_2_native_visual_gallery",
+  "claim_boundary": "scoped MB6 multi-basin substrate validation bridge only; not native support, agency, sentience, ant ecology implementation, or unscoped multi-basin consumption",
+  "command": ".venv/bin/python experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/scripts/render_n25_2_native_visual_gallery.py",
+  "front_capacity_companion_backfill_allowed": false,
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "mb6_supported": true,
+  "multi_window_replay_acceptance_state": "accepted_multi_window_persistence_replay_mb4_extension_no_mb6",
+  "n25_2_acceptance_state": "accepted_n25_2_c6_closeout_scoped_n26_handoff",
+  "n26_consumption_scope": "scoped multi-basin substrate evidence only",
+  "native_visual_bundles": [
+    {
+      "bundle_id": "multi_basin_formation_mb5_surface",
+      "consumption_boundary": "Native LGRC9V3 MB5 visual/telemetry surface; supports inspection of the runtime substrate but visual-only proof remains blocked.",
+      "copied_visuals": [
+        {
+          "copied_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_sequence.png",
+          "copied_sha256": "dd151c3e0e3c0e2b234c4554d25251d4e22a7a0e038723932e4bfb540b50dae0",
+          "image_check": {
+            "format": "PNG",
+            "height": 560,
+            "nonblank": true,
+            "width": 1344
+          },
+          "role": "static_sequence",
+          "source_path": "outputs/examples/lgrc9v3/lgrc9v3-multi-basin-formation-bundle/visualization/graph_sequence.png",
+          "source_sha256": "dd151c3e0e3c0e2b234c4554d25251d4e22a7a0e038723932e4bfb540b50dae0"
+        },
+        {
+          "copied_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_multi_basin_animation.gif",
+          "copied_sha256": "53734426276dfcc321b254c4d29d007dc6b4fb80667394cea28c81d6d0a5bf6b",
+          "image_check": {
+            "format": "GIF",
+            "height": 840,
+            "nonblank": true,
+            "width": 1120
+          },
+          "role": "animation",
+          "source_path": "outputs/examples/lgrc9v3/lgrc9v3-multi-basin-formation-bundle/visualization/graph_animation.gif",
+          "source_sha256": "53734426276dfcc321b254c4d29d007dc6b4fb80667394cea28c81d6d0a5bf6b"
+        },
+        {
+          "copied_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_native_mb5_after_controls.png",
+          "copied_sha256": "7e99c9274d62acc0dc0aa5f90e3bd3126d8b6fbe4e92529f39c8a4886a3ed0bf",
+          "image_check": {
+            "format": "PNG",
+            "height": 840,
+            "nonblank": true,
+            "width": 1120
+          },
+          "role": "final_snapshot",
+          "source_path": "outputs/examples/lgrc9v3/lgrc9v3-multi-basin-formation-bundle/visualization/graph_snapshots/step-000001--time-00001.0000--after_multi_basin_controls.png",
+          "source_sha256": "7e99c9274d62acc0dc0aa5f90e3bd3126d8b6fbe4e92529f39c8a4886a3ed0bf"
+        }
+      ],
+      "source_dir": "outputs/examples/lgrc9v3/lgrc9v3-multi-basin-formation-bundle/visualization",
+      "source_script": "examples/lgrc9v3/multi_basin_formation_bundle.py",
+      "source_script_sha256": "cca72d4ba956fdba2bbb37527e5009a97d559427d3f47ea8572f6fefafd37793",
+      "title": "Native MB5 multi-basin telemetry surface"
+    },
+    {
+      "bundle_id": "front_capacity_topology_birth_companion",
+      "consumption_boundary": "Corrected front-capacity topology-birth visual companion. It is useful for topology-change inspection but cannot backfill MB6 child-basin runtime/replay/control gates.",
+      "copied_visuals": [
+        {
+          "copied_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_sequence.png",
+          "copied_sha256": "71ae2749a6cc59e2e4568b3c41cc783f4599104d9ae0ed5e1332cd1b26f2d3b2",
+          "image_check": {
+            "format": "PNG",
+            "height": 560,
+            "nonblank": true,
+            "width": 1344
+          },
+          "role": "static_sequence",
+          "source_path": "outputs/examples/lgrc9v3/lgrc9v3-front-capacity-topology-birth-visual-bundle/visualization/graph_sequence.png",
+          "source_sha256": "71ae2749a6cc59e2e4568b3c41cc783f4599104d9ae0ed5e1332cd1b26f2d3b2"
+        },
+        {
+          "copied_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_birth_animation.gif",
+          "copied_sha256": "fd3b43ed79ee4fe9f34b6d8ea5319f1fd06ae2e38744e335bd447e620c166a78",
+          "image_check": {
+            "format": "GIF",
+            "height": 840,
+            "nonblank": true,
+            "width": 1120
+          },
+          "role": "animation",
+          "source_path": "outputs/examples/lgrc9v3/lgrc9v3-front-capacity-topology-birth-visual-bundle/visualization/graph_animation.gif",
+          "source_sha256": "fd3b43ed79ee4fe9f34b6d8ea5319f1fd06ae2e38744e335bd447e620c166a78"
+        },
+        {
+          "copied_path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_visual_gallery/n25_2_front_capacity_after_birth.png",
+          "copied_sha256": "a3fbf3771d48eb415d44ccd53b518b0d2488b27e02b53806ace936c480337cb1",
+          "image_check": {
+            "format": "PNG",
+            "height": 840,
+            "nonblank": true,
+            "width": 1120
+          },
+          "role": "final_snapshot",
+          "source_path": "outputs/examples/lgrc9v3/lgrc9v3-front-capacity-topology-birth-visual-bundle/visualization/graph_snapshots/step-000001--time-00000.0000--after_front_capacity_boundary_birth.png",
+          "source_sha256": "a3fbf3771d48eb415d44ccd53b518b0d2488b27e02b53806ace936c480337cb1"
+        }
+      ],
+      "source_dir": "outputs/examples/lgrc9v3/lgrc9v3-front-capacity-topology-birth-visual-bundle/visualization",
+      "source_script": "examples/lgrc9v3/front_capacity_topology_birth_visual_bundle.py",
+      "source_script_sha256": "936f54ab93b20de5d291152220afe81e1bef3c47850c9f57ada228d717cc1bfc",
+      "title": "Front-capacity topology birth visual companion"
+    }
+  ],
+  "output_digest": "429c99957c48389c2d3158cd0cccb34833cfa716b869306a7d1a4697540bf253",
+  "positive_probe_acceptance_state": "accepted_native_runtime_positive_mb3_candidate_pending_replay_controls_no_mb6",
+  "source_artifacts": [
+    {
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json",
+      "sha256": "7cb419ae2ed31b297f65f50654c650cc755f9edc0feaef2acfb2c85225b6e328"
+    },
+    {
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_native_runtime_positive_probe.json",
+      "sha256": "19de5ce2be01e3cac2625ea5e01ee2fa0a302fa98c713e5a2bcd06769c6bd304"
+    },
+    {
+      "path": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_multi_window_persistence_replay.json",
+      "sha256": "018cadd02b547421441f254f2b2f632548bd4bfe97e71c55604d987073efbfd7"
+    }
+  ],
+  "unsafe_claims_supported": false,
+  "visual_only_mb6_gate_satisfied": false,
+  "visual_only_proof_allowed": false,
+  "visual_status": "native_lgrc9v3_visual_corollary_only"
+}

@@ -21,4 +21,9 @@ build_n25_2_fail_closed_control_matrix.py
 build_n25_2_stress_variant_matrix.py
 build_n25_2_mb6_support_blocker_matrix.py
 build_n25_2_closeout_and_n26_handoff.py
+render_n25_2_native_visual_gallery.py
 ```
+
+The native visual gallery script copies selected LGRC9V3 example visual assets
+into experiment-local outputs and records source/copy hashes. It is a
+visualization/provenance helper only; visual-only MB6 proof remains blocked.

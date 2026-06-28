@@ -27,4 +27,8 @@ n25_2_fail_closed_control_matrix.md
 n25_2_stress_variant_matrix.md
 n25_2_mb6_support_blocker_matrix.md
 n25_2_closeout_and_n26_handoff.md
+n25_2_native_visual_gallery.md
 ```
+
+The native visual gallery report is an inspection aid for copied LGRC9V3
+example visuals. It does not replace MB6 runtime, replay, or control evidence.

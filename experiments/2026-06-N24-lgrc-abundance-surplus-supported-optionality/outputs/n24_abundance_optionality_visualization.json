@@ -1,0 +1,60 @@
+{
+  "artifact_id": "n24_abundance_optionality_visualization",
+  "claim_boundary": "bounded artifact-level AB5 surplus-supported optionality candidate with producer-mediated flux-scaffold extension; native N24-C6 remains blocked by flux/leakage debt",
+  "command": ".venv/bin/python experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/scripts/render_n24_abundance_optionality_visualization.py",
+  "final_ab_ladder_rung": "AB5",
+  "final_n24_closeout_rung": "N24-C5",
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "native_n24_c6_supported": false,
+  "optional_continuation_count": 3,
+  "output_digest": "161b540d3c9d4933c40002a456fba3cbb8439e60fd9c4def9524a6625c4d0d2b",
+  "producer_mediated_flux_scaffold_supported": true,
+  "residual_coherence_margin_under_optionality": 1.1500000000000004,
+  "residual_support_margin_under_optionality": 1.1500000000000004,
+  "source_artifacts": [
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_optional_continuation_set_probe_i5a.json",
+      "sha256": "1bbcaca01a42ae217dc339fe444d883f95c382cef6c4628b9e08fca8d88d891f"
+    },
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+      "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c"
+    }
+  ],
+  "unsafe_claims_supported": false,
+  "visual_outputs": [
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_graph.png",
+      "role": "n24_abundance_optionality_graph",
+      "sha256": "d139ad27896ae02af5345bcf289cf45cc89c68b03957ee731d2f9db89094cfa0"
+    },
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_sequence.png",
+      "role": "n24_abundance_optionality_sequence",
+      "sha256": "96378724936522a27b2591761d10ac88418da8a1c88fccb9546879fb393ba826"
+    },
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/n24_abundance_optionality_animation.gif",
+      "role": "n24_abundance_optionality_animation",
+      "sha256": "491f2b7a7dcc10855f826d75b048ba26aec7ce3b87341e9e0c0da434d8baf818"
+    },
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/frames/n24_abundance_optionality_frame_00.png",
+      "role": "n24_abundance_optionality_frame_00",
+      "sha256": "84713e863851523b42fe3b407738604f4556c516ad172be05ce6201e6be89987"
+    },
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/frames/n24_abundance_optionality_frame_01.png",
+      "role": "n24_abundance_optionality_frame_01",
+      "sha256": "e75f2272fc844c715ca14b0294e0746f8c1bd08a1dc9579ca6717d8c60a1609e"
+    },
+    {
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_abundance_optionality_visualization/frames/n24_abundance_optionality_frame_02.png",
+      "role": "n24_abundance_optionality_frame_02",
+      "sha256": "d8bb62af038ed92f6b08ab75b4ab2ed37bce98dfc1c6113e194562758626d892"
+    }
+  ],
+  "visual_proof_allowed": false,
+  "visual_status": "supporting_artifact_level_visualization_only",
+  "visualized_row_id": "n24_i5a_row_01_high_margin_target_supported_optional_set"
+}

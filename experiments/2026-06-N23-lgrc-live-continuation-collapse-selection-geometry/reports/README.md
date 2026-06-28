@@ -15,3 +15,9 @@ no sentience claim
 no Phase 8 implementation claim
 no ant ecology implementation claim
 ```
+
+Supporting visualization report:
+
+```text
+n23_selection_collapse_visualization.md
+```
