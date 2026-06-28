@@ -84,14 +84,27 @@ not agency, native support, or independent biological identity.
 ## Current Status
 
 ```text
-status = initialized
+status = closed
 experiment_kind = requirements_spec_bridge
+acceptance_state = closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence
+final_n25_1_closeout_rung = N25.1-C4_closeout_and_phase8_handoff_complete
+final_mb_ladder_ceiling = MB0_requirements_bridge_only_no_runtime_evidence
+phase8_extension_ready_to_implement = true
 runtime_implementation_opened = false
 phase8_extension_implemented = false
 multi_basin_evidence_opened = false
-next_required_work = source_crosswalk
+native_multi_basin_formation_supported = false
+BF6_supported = false
+next_primitive_experiment = N26_proxy_divergence_proxy_collapse
 ```
 
 N26 may proceed with scoped N25 sub-basin evidence, but any N26 claim requiring
 independent multi-basin substrate must wait for a Phase 8 extension based on
 this requirements bridge.
+
+Closeout artifact:
+
+```text
+outputs/n25_1_closeout_and_phase8_extension_handoff.json
+reports/n25_1_closeout_and_phase8_extension_handoff.md
+```

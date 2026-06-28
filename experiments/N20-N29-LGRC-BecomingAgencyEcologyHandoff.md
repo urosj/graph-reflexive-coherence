@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N25. It replaces the
+This handoff is the current pickup note after N25.1. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -19,8 +19,8 @@ N22 susceptibility update and durable geometry modification = closed
 N23 live-continuation collapse and selection geometry = closed
 N24 abundance and surplus-supported optionality = closed
 N25 spark / sub-basin / new-basin formation = closed
-current next bridge = N25.1_lgrc9v3_multi_basin_formation_extension_requirements
-next primitive experiment after bridge = N26_proxy_divergence_proxy_collapse
+N25.1 LGRC9V3 multi-basin formation extension requirements = closed
+current next primitive experiment = N26_proxy_divergence_proxy_collapse
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -128,6 +128,48 @@ implementation, or a final global AP4 reclassification. I7-C records a
 producer-mediated flux-conditioning scaffold as a separate extension lane and
 naturalization target, not as native support or native N24-C6.
 
+N25 closed as bounded spark / sub-basin / high-margin core formation evidence:
+
+```text
+status = passed
+acceptance_state = accepted_n25_c6_n26_ready_scoped_bf5_with_multibasin_extension_debt
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+ready_for_n25_1_or_n26 = true
+```
+
+N25 supports scoped native high-margin core / sub-basin formation and a
+separate producer-assisted BF5 scaffold. It does not support independent
+new-basin formation, BF6, or native LGRC9V3 multi-basin formation.
+
+N25.1 closed as a requirements/spec bridge for a future Phase 8 LGRC9V3
+multi-basin formation extension:
+
+```text
+status = passed
+acceptance_state = closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence
+final_n25_1_closeout_rung = N25.1-C4_closeout_and_phase8_handoff_complete
+final_mb_ladder_ceiling = MB0_requirements_bridge_only_no_runtime_evidence
+requirements_bridge_closed = true
+phase8_extension_ready_to_implement = true
+runtime_implementation_opened = false
+phase8_extension_implemented = false
+multi_basin_evidence_opened = false
+native_multi_basin_formation_supported = false
+BF6_supported = false
+ready_for_n26_scoped_mode = true
+```
+
+N25.1 does not implement the runtime extension and does not claim multi-basin
+evidence. It defines the Phase 8 extension requirements, MB0...MB6 ladder,
+replay/control contract, and N26 consumption constraints.
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -148,6 +190,12 @@ Use this handoff together with:
 - `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md`
 - `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/reports/n24_closeout_and_n25_handoff.md`
 - `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json`
+- `experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md`
+- `experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/reports/n25_closeout_and_n26_handoff.md`
+- `experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json`
+- `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md`
+- `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/reports/n25_1_closeout_and_phase8_extension_handoff.md`
+- `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -491,16 +539,30 @@ formation.
 
 ## N25.1 Handoff
 
-N25.1 is the active bridge before N26 if N26 needs independent multi-basin
-substrate evidence. It should define the Phase 8 extension requirements for:
+N25.1 closed the requirements bridge before N26 for any future independent
+multi-basin substrate evidence. It defined the Phase 8 extension requirements
+for:
 
 ```text
 LGRC9V3 multi-basin formation from causal refinement
 ```
 
-N25.1 must not implement the runtime extension or claim multi-basin evidence.
-It should produce a source crosswalk, MB0...MB6 ladder, extension requirement
-matrix, replay/control contract, and N26 consumption constraints.
+N25.1 did not implement the runtime extension or claim multi-basin evidence.
+It produced a source crosswalk, MB0...MB6 ladder, extension requirement matrix,
+replay/control contract, and N26 consumption constraints.
+
+N25.1 closeout result:
+
+```text
+final_n25_1_closeout_rung = N25.1-C4_closeout_and_phase8_handoff_complete
+final_mb_ladder_ceiling = MB0_requirements_bridge_only_no_runtime_evidence
+phase8_extension_ready_to_implement = true
+runtime_implementation_opened = false
+phase8_extension_implemented = false
+multi_basin_evidence_opened = false
+native_multi_basin_formation_supported = false
+BF6_supported = false
+```
 
 N26 may proceed after N25.1 in one of two modes:
 

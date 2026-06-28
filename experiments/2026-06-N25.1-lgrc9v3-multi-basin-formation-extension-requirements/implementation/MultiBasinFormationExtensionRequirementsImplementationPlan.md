@@ -79,7 +79,8 @@ blocked relabel.
 ### Iteration 2. Multi-Basin Extension Schema Freeze
 
 Freeze the MB ladder, required fields, child-basin extraction schema,
-merge/leakage controls, replay requirements, and N26 consumption constraints.
+merge/leakage controls, replay requirements, producer-residue blockers, and
+N26 consumption constraints.
 
 ### Iteration 3. Phase 8 Extension Requirement Matrix
 
