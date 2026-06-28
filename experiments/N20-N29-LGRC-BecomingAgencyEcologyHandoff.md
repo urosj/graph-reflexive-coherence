@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note for N26. It replaces the
+This handoff is the current pickup note for N27. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -22,9 +22,10 @@ N25 spark / sub-basin / new-basin formation = closed
 N25.1 LGRC9V3 multi-basin formation extension requirements = closed
 Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement = closed_at_MB5
 N25.2 LGRC9V3 MB6 validation bridge = closed
-current primitive experiment = N26_proxy_divergence_proxy_collapse
-N26_scoped_multi_basin_substrate_consumption = allowed_from_N25_2_MB6
-N26_unscoped_multi_basin_mode = blocked
+N26 proxy divergence / proxy collapse = closed
+current primitive experiment = N27_configuration_substrate_transfer
+N27_may_consume_N26_as = bounded_PD6_proxy_divergence_collapse_evidence
+N27_must_not_consume_N26_as = native_AP5_or_AP5_NAT4_gap_resolution
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -202,10 +203,59 @@ n26_scoped_context_consumption_allowed = true
 n26_unscoped_multi_basin_consumption_allowed = false
 ```
 
-N26 may consume N25.2 as scoped multi-basin substrate evidence. It must not
-consume N25.2 as unscoped multi-basin substrate, native support, agency,
-sentience, ant ecology implementation, organism/life evidence, Phase 8
-completion, or unrestricted autonomy.
+N26 consumed N25.2 as scoped multi-basin substrate evidence. It did not consume
+N25.2 as unscoped multi-basin substrate, native support, agency, sentience, ant
+ecology implementation, organism/life evidence, Phase 8 completion, or
+unrestricted autonomy.
+
+N26 closed as bounded proxy divergence / proxy collapse evidence:
+
+```text
+status = passed
+acceptance_state = accepted_n26_c6_pd6_closeout_and_n27_handoff
+final_supported_pd_ladder_rung = PD6_N27_ready_bounded_proxy_divergence_collapse_evidence
+final_n26_closeout_rung = N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout
+pd6_supported = true
+n26_c6_supported = true
+controlled_proxy_divergence_supported = true
+controlled_proxy_collapse_supported = true
+scoped_artifact_ap5_bridge_candidate_supported = true
+native_ap5_bridge_supported = false
+ap5_nat4_gap_resolved = false
+ready_for_n27 = true
+```
+
+N26 supports source-current, replay/control-clean artifact-level proxy
+divergence and proxy collapse on scoped N25.2 MB6 substrate. It supports only a
+scoped artifact AP5 bridge candidate; native AP5, AP5 NAT4-gap resolution,
+native support, semantic goal ownership, choice, agency, sentience, Phase 8
+completion, ant ecology, and unscoped multi-basin substrate remain blocked.
+
+N27 may consume N26 as:
+
+```text
+bounded_PD6_proxy_divergence_collapse_evidence
+scoped_artifact_AP5_bridge_candidate_context
+proxy_pressure_control_context
+source_current_proxy_basin_contrast_context
+```
+
+N27 must not consume N26 as:
+
+```text
+native_AP5
+AP5_NAT4_gap_resolution
+semantic_goal_or_choice
+agency
+native_support
+sentience
+Phase_8_completion
+ant_ecology
+unscoped_multi_basin_substrate
+```
+
+N27 should treat configuration/substrate transfer as a new source-current
+question, not as a proxy-score relabel or hidden producer carryover.
 
 ## Active Roadmap Source
 
@@ -238,6 +288,9 @@ Use this handoff together with:
 - `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/README.md`
 - `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/reports/n25_2_closeout_and_n26_handoff.md`
 - `experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_closeout_and_n26_handoff.json`
+- `experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/README.md`
+- `experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/reports/n26_closeout_and_n27_handoff.md`
+- `experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_closeout_and_n27_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -647,12 +700,15 @@ n26_scoped_context_consumption_allowed = true
 n26_unscoped_multi_basin_consumption_allowed = false
 ```
 
-N26 may now proceed after N25.2 in scoped MB6 mode:
+N26 consumed N25.2 in scoped MB6 mode and then closed as bounded PD6 proxy
+divergence / proxy collapse evidence. N27 may now consume N26 as bounded proxy
+divergence context:
 
 ```text
 scoped mode:
   consume N25 sub-basin / high-margin core evidence as historical context
-  consume N25.2 MB6 as scoped multi-basin substrate evidence
+  consume N25.2 MB6 as scoped multi-basin substrate evidence through N26
+  consume N26 PD6 as bounded proxy divergence / proxy collapse evidence
 
 unscoped mode:
   blocked
