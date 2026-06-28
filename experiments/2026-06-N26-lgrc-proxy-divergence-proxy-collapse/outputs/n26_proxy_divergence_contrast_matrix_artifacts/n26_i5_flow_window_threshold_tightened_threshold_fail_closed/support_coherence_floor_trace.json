@@ -1,0 +1,8 @@
+{
+  "peer_source_status": "failed_closed",
+  "peer_target_met": false,
+  "reference_source_status": "failed_closed",
+  "reference_target_met": false,
+  "stress_axis": "flow_window_threshold",
+  "trace_id": "n26_i5_flow_window_threshold_tightened_threshold_fail_closed_support_coherence_floor"
+}

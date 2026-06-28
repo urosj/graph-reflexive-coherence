@@ -1,0 +1,28 @@
+{
+  "basin_coherence_delta": 0.5,
+  "basin_deepened_path_basin": {
+    "boundary_value": 2.0,
+    "child_basin_core_ids": [
+      0
+    ],
+    "child_basin_membership_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+    "child_basin_state_digest": "45dee2469e86c39c64d6d10cc2de9423a99232b5137795a94156184ac86f80e2",
+    "coherence_floor": 1.6,
+    "flux_value": 0.0,
+    "support_floor": 1.6
+  },
+  "basin_deepening_observed": true,
+  "basin_support_delta": 0.5,
+  "proxy_path_basin": {
+    "boundary_value": 2.0,
+    "child_basin_core_ids": [
+      0
+    ],
+    "child_basin_membership_digest": "1f712f5dc0717650ade3bd6e2e94f860e6e3323fc320e9ddb7d6be2fb719b535",
+    "child_basin_state_digest": "ba9367f516a49e66aa2e88c17b3416b38de953bf8058a09c70882861e3f85138",
+    "coherence_floor": 1.1,
+    "flux_value": 0.0,
+    "support_floor": 1.1
+  },
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_basin_persistence"
+}

@@ -1,0 +1,8 @@
+{
+  "peer_source_status": "passed",
+  "peer_target_met": true,
+  "reference_source_status": "passed",
+  "reference_target_met": true,
+  "stress_axis": "flow_window_threshold",
+  "trace_id": "n26_i5_flow_window_threshold_relaxed_threshold_replay_support_coherence_floor"
+}

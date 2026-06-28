@@ -11,6 +11,9 @@ scoped BF5 high-margin core / sub-basin formation evidence, and N25.1 is closed
 as the LGRC9V3 multi-basin formation extension requirements bridge. The Phase 8
 multi-basin implementation tranche is closed at MB5, and N25.2 is closed as
 the validation bridge supporting MB6 / scoped N26-ready substrate evidence.
+N26 is closed as bounded PD6 proxy divergence / proxy collapse evidence with a
+scoped artifact AP5 bridge candidate, and N27 configuration/substrate transfer
+is next.
 
 This roadmap is not itself a Phase 8 implementation plan, not an ant ecology
 specification, and not an agency claim. Its purpose is to ground the deeper
@@ -626,6 +629,26 @@ proxy collapse = proxy-optimized success fails under a perturbation that
 N26 should address the AP5/N15 NAT4 gap by making proxy derivation and
 lower-stack inputs source-current under replay, with explicit controls against
 post-hoc target formation, hidden proxy policy, and proxy-only improvement.
+
+Status:
+
+```text
+closed
+final_supported_pd_ladder_rung = PD6_N27_ready_bounded_proxy_divergence_collapse_evidence
+final_n26_closeout_rung = N26-C6_N27_ready_bounded_proxy_divergence_collapse_closeout
+controlled_proxy_divergence_supported = true
+controlled_proxy_collapse_supported = true
+scoped_artifact_ap5_bridge_candidate_supported = true
+native_ap5_bridge_supported = false
+ap5_nat4_gap_resolved = false
+ready_for_n27 = true
+```
+
+N26 supports bounded artifact-level proxy divergence / proxy collapse evidence
+on scoped multi-basin LGRC substrate. It does not resolve native AP5 or AP5
+NAT4 evidence gaps and does not support semantic goal/choice, agency, native
+support, sentience, Phase 8 completion, ant ecology, or unscoped multi-basin
+substrate.
 
 ## N27. Configuration / Substrate Transfer
 

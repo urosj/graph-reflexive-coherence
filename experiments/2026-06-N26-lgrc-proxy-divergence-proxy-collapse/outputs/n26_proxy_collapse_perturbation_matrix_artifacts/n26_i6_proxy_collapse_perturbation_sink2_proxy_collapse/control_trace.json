@@ -1,0 +1,25 @@
+{
+  "controls": [
+    {
+      "control_id": "shared_perturbation_envelope_control",
+      "control_status": "passed",
+      "rung_effect": "allows_PD5_candidate"
+    },
+    {
+      "control_id": "proxy_score_as_native_support_relabel_control",
+      "control_status": "failed_closed",
+      "rung_effect": "blocks_native_support_and_native_AP5_bridge"
+    },
+    {
+      "control_id": "basin_deepening_fixture_variant_as_native_support_control",
+      "control_status": "failed_closed",
+      "rung_effect": "keeps_basin_deepening_source_current_but_producer_declared"
+    },
+    {
+      "control_id": "semantic_goal_relabel_control",
+      "control_status": "failed_closed",
+      "rung_effect": "blocks_semantic_goal_or_choice_claim"
+    }
+  ],
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse_control"
+}

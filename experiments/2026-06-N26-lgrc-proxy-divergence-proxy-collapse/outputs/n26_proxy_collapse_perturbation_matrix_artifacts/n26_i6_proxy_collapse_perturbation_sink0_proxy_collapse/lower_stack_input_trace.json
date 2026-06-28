@@ -1,0 +1,17 @@
+{
+  "basin_deepening_input_owner": "declared_source_current_fixture_geometry_variant",
+  "basin_path_sink_coherence_boost": 0.5,
+  "fixture": "examples/lgrc9v3/multi_basin_formation_bundle.py",
+  "packet_amount": 0.1,
+  "packet_schedule": {
+    "departure_event_time_key": 1.0,
+    "edge_id": 1,
+    "scheduler_event_index": 1,
+    "source_node_id": 1,
+    "target_node_id": 2
+  },
+  "proxy_path_sink_coherence_boost": 0.0,
+  "runtime_family": "LGRC9V3",
+  "selected_sink_id": 0,
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_lower_stack_input"
+}

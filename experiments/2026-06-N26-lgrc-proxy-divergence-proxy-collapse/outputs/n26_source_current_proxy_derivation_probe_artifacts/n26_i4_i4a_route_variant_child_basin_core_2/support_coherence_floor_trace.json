@@ -1,0 +1,12 @@
+{
+  "boundary_floor_preserved": true,
+  "coherence_floor": 1.0,
+  "coherence_floor_preserved": true,
+  "coherence_min": 1.0,
+  "flux_floor_preserved": true,
+  "membership_floor_preserved": true,
+  "support_floor": 1.0,
+  "support_floor_preserved": true,
+  "support_min": 1.0,
+  "trace_id": "n26_i4_i4a_route_variant_child_basin_core_2_support_coherence_floor"
+}

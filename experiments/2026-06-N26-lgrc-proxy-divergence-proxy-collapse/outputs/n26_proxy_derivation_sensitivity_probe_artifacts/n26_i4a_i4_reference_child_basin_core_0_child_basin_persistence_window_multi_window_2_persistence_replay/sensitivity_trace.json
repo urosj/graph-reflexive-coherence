@@ -1,0 +1,22 @@
+{
+  "candidate_id": "i4_reference_child_basin_core_0",
+  "derived_proxy_gap": 0.0,
+  "interpretation": "The proxy remains zero under this source-passing stress row.",
+  "positive_support_allowed": true,
+  "row_decision": "supported",
+  "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+  "source_iteration": "I4",
+  "source_json_pointer": "#/stress_rows/0/persistence_window_stress_rows/1",
+  "stress_axis": "child_basin_persistence_window",
+  "stress_row": {
+    "blocker": null,
+    "claim_effect": "supports multi-window replay stress input for I8 gate",
+    "native_replay_record_window_count": 1.0,
+    "observed_window_count": 3.0,
+    "required_window_count": 2.0,
+    "status": "passed",
+    "stress_axis": "child_basin_persistence_window",
+    "stress_id": "multi_window_2_persistence_replay"
+  },
+  "trace_id": "n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_2_persistence_replay_sensitivity"
+}

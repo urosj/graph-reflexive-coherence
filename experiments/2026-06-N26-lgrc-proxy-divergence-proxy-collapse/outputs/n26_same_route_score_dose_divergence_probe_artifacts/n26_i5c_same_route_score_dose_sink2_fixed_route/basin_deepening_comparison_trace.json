@@ -1,0 +1,7 @@
+{
+  "basin_deepening_delta": 0.0,
+  "basin_deepening_observed": false,
+  "basin_stall_observed": true,
+  "geometry_digest_note": "Child-basin state digests may differ because route-score provenance changes, while membership/support/coherence/boundary/flux geometry remains fixed.",
+  "trace_id": "n26_i5c_same_route_score_dose_sink2_fixed_route_basin_deepening_comparison"
+}

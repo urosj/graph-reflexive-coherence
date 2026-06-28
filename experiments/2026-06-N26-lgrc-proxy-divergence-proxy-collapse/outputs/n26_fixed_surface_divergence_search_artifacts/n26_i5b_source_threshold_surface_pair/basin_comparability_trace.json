@@ -1,0 +1,12 @@
+{
+  "candidate_a": "i4_reference_child_basin_core_0",
+  "candidate_a_declared_threshold": 1.1,
+  "candidate_a_observed_support_floor": 1.1,
+  "candidate_a_source_iteration": "I4",
+  "candidate_b": "i4a_route_variant_child_basin_core_2",
+  "candidate_b_declared_threshold": 3.1,
+  "candidate_b_observed_support_floor": 3.1,
+  "candidate_b_source_iteration": "I4-A",
+  "same_threshold_control_envelope_available": false,
+  "trace_id": "n26_i5b_source_threshold_surface_pair_basin_comparability"
+}

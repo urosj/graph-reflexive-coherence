@@ -1,0 +1,21 @@
+{
+  "candidate_id": "i4a_route_variant_child_basin_core_2",
+  "derived_proxy_gap": 0.0,
+  "interpretation": "The proxy remains zero under this source-passing stress row.",
+  "positive_support_allowed": true,
+  "row_decision": "supported",
+  "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+  "source_iteration": "I4-A",
+  "source_json_pointer": "#/stress_rows/1/threshold_stress_rows/0",
+  "stress_axis": "flow_window_threshold",
+  "stress_row": {
+    "claim_effect": "source threshold preserved for MB5 candidate",
+    "declared_threshold": 3.1,
+    "observed_coherence_floor": 3.1,
+    "observed_support_floor": 3.1,
+    "status": "passed",
+    "stress_axis": "flow_window_threshold",
+    "stress_id": "source_threshold_replay"
+  },
+  "trace_id": "n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_source_threshold_replay_sensitivity"
+}

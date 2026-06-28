@@ -1,0 +1,8 @@
+{
+  "metric_family": "n26_i4_proxy_basin_coupling_gap",
+  "peer_proxy_gap": 0.0,
+  "proxy_gap_delta_reference_minus_peer": 0.0,
+  "proxy_improvement_observed": false,
+  "reference_proxy_gap": 0.0,
+  "trace_id": "n26_i5_child_basin_persistence_window_multi_window_3_persistence_replay_proxy_metric"
+}

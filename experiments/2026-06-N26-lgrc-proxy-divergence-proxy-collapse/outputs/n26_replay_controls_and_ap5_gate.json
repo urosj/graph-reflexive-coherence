@@ -1,0 +1,2251 @@
+{
+  "acceptance_state": "accepted_controlled_pd5_with_scoped_artifact_ap5_bridge_candidate_pending_i8",
+  "ap5_bridge_status": "scoped_artifact_ap5_bridge_candidate_supported_native_ap5_blocked",
+  "ap5_classification": {
+    "nat4_gap_status": "not_resolved",
+    "native_ap5_status": "blocked",
+    "reason": "N26 has source-current proxy divergence and collapse rows with row-local AP5 dependency records, but route-score and basin-deepening surfaces remain producer-mediated or declared fixture variants, so they do not close native AP5.",
+    "status": "scoped_artifact_bridge_candidate_supported"
+  },
+  "ap5_nat4_gap_resolved": false,
+  "artifact_id": "n26_replay_controls_and_ap5_gate",
+  "candidate_pd_ladder_rung": "PD5",
+  "checks": [
+    {
+      "check": "source_chain_digests_match_expected",
+      "detail": [
+        {
+          "actual_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+          "digest_matches_expected": true,
+          "expected_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_inventory_and_scoped_substrate_admission.json",
+          "sha256": "75159bbd2584ab7b97fcce2ece2501df1c14d9ea16793ba48f4115d3e920a31d",
+          "source_id": "i1_inventory"
+        },
+        {
+          "actual_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+          "digest_matches_expected": true,
+          "expected_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_schema_and_controls.json",
+          "sha256": "333cad25f0cc156229c7b61de74c1d30ce0ad7b4c3b150fc8acb958aa1b9c6f4",
+          "source_id": "i2_schema"
+        },
+        {
+          "actual_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+          "digest_matches_expected": true,
+          "expected_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_active_nulls_and_failure_baselines.json",
+          "sha256": "0ca2d57ccfdb077a3ec8493bd70555c2bb0ffa95006ef266d392a53a0b5bbdf8",
+          "source_id": "i3_active_nulls"
+        },
+        {
+          "actual_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+          "digest_matches_expected": true,
+          "expected_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe.json",
+          "sha256": "b33353bd0fcdb41ade28ed2fc2249b1cb8c7ba940dcbda388b0445de461ca548",
+          "source_id": "i4_proxy_derivation"
+        },
+        {
+          "actual_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+          "digest_matches_expected": true,
+          "expected_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe.json",
+          "sha256": "00f8a3ccb244c3eb32de4bc83039f82aa5e1e3ed69db47ce58e56988c6508039",
+          "source_id": "i4a_sensitivity"
+        },
+        {
+          "actual_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+          "digest_matches_expected": true,
+          "expected_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_contrast_matrix.json",
+          "sha256": "09a391bddc9b7d900261e2861f25479f8c71d9a56efb56170e0b6e6c84fc244c",
+          "source_id": "i5_contrast"
+        },
+        {
+          "actual_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+          "digest_matches_expected": true,
+          "expected_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe.json",
+          "sha256": "d0fef3bad9785c2c692393a7ac36d24e7e8dab67aff37f05caf51c76e7813912",
+          "source_id": "i5a_alternative_surface"
+        },
+        {
+          "actual_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+          "digest_matches_expected": true,
+          "expected_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_fixed_surface_divergence_search.json",
+          "sha256": "f75de998d2e24f4ff5d380c81afbcd7e1f0cbd55da4c1dd2d68016fb3264d66d",
+          "source_id": "i5b_fixed_surface_search"
+        },
+        {
+          "actual_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+          "digest_matches_expected": true,
+          "expected_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe.json",
+          "sha256": "ed9eab572197a9de2d13b7a549659f65ea56c7eb135666943f06b7399af2bbb0",
+          "source_id": "i5c_score_dose_divergence"
+        },
+        {
+          "actual_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+          "digest_matches_expected": true,
+          "expected_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+          "sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f",
+          "source_id": "i6_proxy_collapse"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check": "positive_row_manifests_match_file_contents",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check": "positive_row_replay_gate_passed",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check": "negative_controls_fail_closed_no_failed_open",
+      "detail": [],
+      "passed": true
+    },
+    {
+      "check": "post_hoc_target_derivation_blocked",
+      "detail": "all positive rows carry predeclared target/proxy controls",
+      "passed": true
+    },
+    {
+      "check": "hidden_proxy_policy_absent_or_failed_closed",
+      "detail": "proxy policies are visible in row artifacts",
+      "passed": true
+    },
+    {
+      "check": "scoped_ap5_bridge_candidate_classified_native_ap5_blocked",
+      "detail": {
+        "nat4_gap_status": "not_resolved",
+        "native_ap5_status": "blocked",
+        "reason": "N26 has source-current proxy divergence and collapse rows with row-local AP5 dependency records, but route-score and basin-deepening surfaces remain producer-mediated or declared fixture variants, so they do not close native AP5.",
+        "status": "scoped_artifact_bridge_candidate_supported"
+      },
+      "passed": true
+    },
+    {
+      "check": "pd5_supported_pd6_pending_closeout",
+      "detail": {
+        "candidate_pd_ladder_rung": "PD5",
+        "pd6_or_stronger_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": "all unsafe claim flags are false",
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths_in_records",
+      "detail": "repo-relative records only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "native_AP5",
+      "native_support",
+      "semantic_goal",
+      "semantic_choice",
+      "semantic_learning",
+      "agency",
+      "sentience",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate"
+    ],
+    "claim_ceiling": "controlled artifact-level PD5 proxy divergence / proxy collapse on scoped multi-basin LGRC substrate, with scoped artifact AP5 bridge candidate status; final PD6 closeout remains pending I8"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/build_n26_replay_controls_and_ap5_gate.py",
+  "controlled_proxy_collapse_supported": true,
+  "controlled_proxy_divergence_supported": true,
+  "experiment": "N26",
+  "failed_checks": [],
+  "final_n26_supported": false,
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I7",
+  "n26_closeout_ceiling": "N26-C5_controlled_proxy_divergence_and_collapse_supported_pending_i8_closeout",
+  "n26_closeout_ladder_rung_assigned": false,
+  "native_ap5_bridge_supported": false,
+  "output_digest": "a66fe57dbd7f476f9e7b7c17bff7e02834346bc3e276a8a2c2da79fbe38da0a9",
+  "pd5_supported": true,
+  "pd6_or_stronger_supported": false,
+  "positive_row_classifications": [
+    {
+      "ap5_dependency_status": "required_recorded",
+      "ap5_gate_effect": "row_local_dependency_recorded_native_AP5_blocked",
+      "artifact_manifest_validation": {
+        "all_artifact_sha256_match_file_contents": true,
+        "entries": [
+          {
+            "actual_sha256": "2fbfd74c36f53f9b6c894e50935f232e80790458e93ed1b2b8e83271bbae7377",
+            "artifact_role": "runtime_trace",
+            "exists": true,
+            "expected_sha256": "2fbfd74c36f53f9b6c894e50935f232e80790458e93ed1b2b8e83271bbae7377",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4_reference_child_basin_core_0/runtime_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "f98f65e7f0e2c6a5151a4ba3a6ae6bc75bec077665f24ac9d4ab2f861bec5cea",
+            "artifact_role": "lower_stack_input_trace",
+            "exists": true,
+            "expected_sha256": "f98f65e7f0e2c6a5151a4ba3a6ae6bc75bec077665f24ac9d4ab2f861bec5cea",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4_reference_child_basin_core_0/lower_stack_input_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "6d5c84555a6bf745a11a75d1061cf8f9179564a1d3e9844e8c4527bb19e794f6",
+            "artifact_role": "proxy_metric_trace",
+            "exists": true,
+            "expected_sha256": "6d5c84555a6bf745a11a75d1061cf8f9179564a1d3e9844e8c4527bb19e794f6",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4_reference_child_basin_core_0/proxy_metric_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "559f603a1f612304514f934e3934a94c14ea9ef88baed168e406441127dee581",
+            "artifact_role": "basin_persistence_capacity_trace",
+            "exists": true,
+            "expected_sha256": "559f603a1f612304514f934e3934a94c14ea9ef88baed168e406441127dee581",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4_reference_child_basin_core_0/basin_persistence_capacity_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "a2bf3f17519381b0b727806d9bc45e55e01533563312a4c28583bb0726049eca",
+            "artifact_role": "support_coherence_floor_trace",
+            "exists": true,
+            "expected_sha256": "a2bf3f17519381b0b727806d9bc45e55e01533563312a4c28583bb0726049eca",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4_reference_child_basin_core_0/support_coherence_floor_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "459694404bfbf76f03dc19ef79039e030c4a674884cca8a3a58b0076a1450b94",
+            "artifact_role": "report",
+            "exists": true,
+            "expected_sha256": "459694404bfbf76f03dc19ef79039e030c4a674884cca8a3a58b0076a1450b94",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4_reference_child_basin_core_0/report.json",
+            "sha256_matches": true
+          }
+        ],
+        "manifest_entry_count": 6
+      },
+      "claim_ceiling": "source-current PD2 proxy derivation candidate over scoped N25.2 MB6 substrate; no proxy divergence, proxy collapse, AP5 bridge closeout, semantic goal, agency, native support, sentience, Phase 8, ant ecology, or unscoped multi-basin claim",
+      "control_statuses": {
+        "control_count": 42,
+        "control_gate_passed": true,
+        "controls": [
+          {
+            "actual_result": "passed_source_digests_match_frozen_i1_i2_i3_chain",
+            "blocked_condition": "source_digest_mismatch",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "source_digest_mismatch_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_lower_stack_input_trace_present",
+            "blocked_condition": "lower_stack_input_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "lower_stack_input_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_proxy_metric_trace_present",
+            "blocked_condition": "proxy_metric_trace_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_metric_trace_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_metric_is_replay_context_linked_but_pd3_deferred",
+            "blocked_condition": "proxy_metric_not_replayable",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_metric_not_replayable_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_basin_capacity_trace_present",
+            "blocked_condition": "basin_persistence_capacity_trace_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "basin_persistence_capacity_trace_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_support_coherence_floor_trace_present",
+            "blocked_condition": "support_coherence_floor_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "support_coherence_floor_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_basin_contrast",
+            "blocked_condition": "proxy_basin_measurement_not_independent",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_basin_measurement_not_independent_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "passed_scoped_mb6_scope_id_present",
+            "blocked_condition": "scoped_mb6_scope_id_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "scoped_mb6_scope_id_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_derived_report_only_false",
+            "blocked_condition": "derived_report_only_positive_row",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "derived_report_only_positive_row_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_manifest_roles_and_sha256_validated",
+            "blocked_condition": "artifact_manifest_failure",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "artifact_manifest_failure_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_proxy_metric_has_source_current_trace",
+            "blocked_condition": "proxy_label_only",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_label_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_target_digest_declared_before_use",
+            "blocked_condition": "post_hoc_target_digest",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_proxy_policy_is_declared_analysis_policy",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "proxy_only_improvement",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_only_improvement_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "proxy_improves_basin_also_improves",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_improves_basin_also_improves_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "proxy_improves_basin_unmeasured",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_improves_basin_unmeasured_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "basin_degradation_hidden_by_proxy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "basin_degradation_hidden_by_proxy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "passed_scoped_consumption_only",
+            "blocked_condition": "unscoped_mb6_consumption",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "unscoped_mb6_consumption_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_front_capacity_backfill_not_used",
+            "blocked_condition": "front_capacity_backfill",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "front_capacity_backfill_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "deferred_until_i5_peer_or_control_basin_matrix",
+            "blocked_condition": "peer_basin_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "peer_basin_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "perturbation_mismatch",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "perturbation_mismatch_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "perturbation_digest_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "perturbation_digest_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "basin_deepened_survivor_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "basin_deepened_survivor_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "proxy_collapse_result_trace_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_collapse_result_trace_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "passed_row_local_ap5_dependency_recorded",
+            "blocked_condition": "AP5_gap_prose_only",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_ap5_dependency_status_required_recorded",
+            "blocked_condition": "missing_ap5_dependency_status",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "missing_ap5_dependency_status_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n15_context_not_counted_as_native_ap5",
+            "blocked_condition": "n15_context_as_native_ap5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_context_as_native_ap5_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n19_nat3_boundary_not_counted_as_ap5_closeout",
+            "blocked_condition": "n19_nat3_as_ap5_closeout",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n19_nat3_as_ap5_closeout_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_semantic_goal_blocked",
+            "blocked_condition": "semantic_goal_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "semantic_goal_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_semantic_choice_blocked",
+            "blocked_condition": "semantic_choice_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "semantic_choice_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_agency_blocked",
+            "blocked_condition": "agency_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "agency_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_native_support_blocked",
+            "blocked_condition": "native_support_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "native_support_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n25_2_mb6_not_native_support",
+            "blocked_condition": "n25_2_mb6_as_native_support",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n25_2_mb6_as_native_support_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n25_2_mb6_not_agency_sentience_or_ant_ecology",
+            "blocked_condition": "n25_2_mb6_as_agency_sentience_ant_ecology",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n25_2_mb6_as_agency_sentience_ant_ecology_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_sentience_blocked",
+            "blocked_condition": "sentience_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "sentience_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_phase8_completion_blocked",
+            "blocked_condition": "phase8_completion_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "phase8_completion_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_ant_ecology_blocked",
+            "blocked_condition": "ant_ecology_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "ant_ecology_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "row carries predeclared proxy or perturbation target digest",
+            "blocked_condition": "post_hoc_target_or_proxy_derivation",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "target/proxy digest declared before gate",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "route-score or coupling policy is declared in row artifacts",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "proxy policy visible or claim blocked",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "required_recorded",
+            "blocked_condition": "AP5_dependency_handled_only_in_prose",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "row-local AP5 dependency status recorded",
+            "rung_effect": "blocks_PD6_and_native_AP5_if_failed"
+          },
+          {
+            "actual_result": "native_ap5_bridge_supported=False",
+            "blocked_condition": "N15_or_N19_context_counted_as_native_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_n19_native_ap5_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "native AP5 remains blocked",
+            "rung_effect": "keeps_bridge_artifact_scoped"
+          },
+          {
+            "actual_result": "producer-mediated score/deepening boundary preserved",
+            "blocked_condition": "producer_mediated_surface_counted_as_substrate_carried_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "producer_surface_as_substrate_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "producer-mediated surface cannot upgrade native AP5",
+            "rung_effect": "allows_scoped_bridge_only"
+          }
+        ],
+        "failed_open_count": 0,
+        "negative_controls_fail_closed": true,
+        "not_run_required_count": 0
+      },
+      "final_consumable_rung": "PD2",
+      "i7_row_decision": "supported",
+      "replay_statuses": {
+        "artifact_replay": "passed_in_source_context",
+        "duplicate_replay": "passed_in_source_context",
+        "order_control": "passed_in_source_context",
+        "replay_basis": "source_context_replay_record",
+        "replay_gate_passed": true,
+        "snapshot_load_replay": "passed_in_source_context"
+      },
+      "row_id": "n26_i4_i4_reference_child_basin_core_0",
+      "source_candidate_rung": "PD2",
+      "source_iteration": "I4",
+      "source_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "ap5_dependency_status": "required_recorded",
+      "ap5_gate_effect": "row_local_dependency_recorded_native_AP5_blocked",
+      "artifact_manifest_validation": {
+        "all_artifact_sha256_match_file_contents": true,
+        "entries": [
+          {
+            "actual_sha256": "e71ed35227aa7195ff8ba3472c954f7d66c713d19b955a268668a3c69849091e",
+            "artifact_role": "runtime_trace",
+            "exists": true,
+            "expected_sha256": "e71ed35227aa7195ff8ba3472c954f7d66c713d19b955a268668a3c69849091e",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4a_route_variant_child_basin_core_2/runtime_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "a537d5a68b47e73dc7486c92f12203eb93ea96962004db32309cec46f9078e6c",
+            "artifact_role": "lower_stack_input_trace",
+            "exists": true,
+            "expected_sha256": "a537d5a68b47e73dc7486c92f12203eb93ea96962004db32309cec46f9078e6c",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4a_route_variant_child_basin_core_2/lower_stack_input_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "ed1cfe00f4148fbc6bbf01b4c2d068392347e5a5fddcac5980699ac8ee562c1e",
+            "artifact_role": "proxy_metric_trace",
+            "exists": true,
+            "expected_sha256": "ed1cfe00f4148fbc6bbf01b4c2d068392347e5a5fddcac5980699ac8ee562c1e",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4a_route_variant_child_basin_core_2/proxy_metric_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "3e64c1c4c90ceb1cc1483bfe540997338fb0b8fcae5cde452a248d16ed414498",
+            "artifact_role": "basin_persistence_capacity_trace",
+            "exists": true,
+            "expected_sha256": "3e64c1c4c90ceb1cc1483bfe540997338fb0b8fcae5cde452a248d16ed414498",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4a_route_variant_child_basin_core_2/basin_persistence_capacity_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "e995233b7f743590f8a1e2d721b7d03053643969ad66e9f9436f3f4811f60fef",
+            "artifact_role": "support_coherence_floor_trace",
+            "exists": true,
+            "expected_sha256": "e995233b7f743590f8a1e2d721b7d03053643969ad66e9f9436f3f4811f60fef",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4a_route_variant_child_basin_core_2/support_coherence_floor_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "c4604bdc6674731633ef427301f77cf8fac9f877418bd5d7f2ea0378fddd50dd",
+            "artifact_role": "report",
+            "exists": true,
+            "expected_sha256": "c4604bdc6674731633ef427301f77cf8fac9f877418bd5d7f2ea0378fddd50dd",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe_artifacts/n26_i4_i4a_route_variant_child_basin_core_2/report.json",
+            "sha256_matches": true
+          }
+        ],
+        "manifest_entry_count": 6
+      },
+      "claim_ceiling": "source-current PD2 proxy derivation candidate over scoped N25.2 MB6 substrate; no proxy divergence, proxy collapse, AP5 bridge closeout, semantic goal, agency, native support, sentience, Phase 8, ant ecology, or unscoped multi-basin claim",
+      "control_statuses": {
+        "control_count": 42,
+        "control_gate_passed": true,
+        "controls": [
+          {
+            "actual_result": "passed_source_digests_match_frozen_i1_i2_i3_chain",
+            "blocked_condition": "source_digest_mismatch",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "source_digest_mismatch_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_lower_stack_input_trace_present",
+            "blocked_condition": "lower_stack_input_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "lower_stack_input_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_proxy_metric_trace_present",
+            "blocked_condition": "proxy_metric_trace_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_metric_trace_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_metric_is_replay_context_linked_but_pd3_deferred",
+            "blocked_condition": "proxy_metric_not_replayable",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_metric_not_replayable_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_basin_capacity_trace_present",
+            "blocked_condition": "basin_persistence_capacity_trace_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "basin_persistence_capacity_trace_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_support_coherence_floor_trace_present",
+            "blocked_condition": "support_coherence_floor_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "support_coherence_floor_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_basin_contrast",
+            "blocked_condition": "proxy_basin_measurement_not_independent",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_basin_measurement_not_independent_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "passed_scoped_mb6_scope_id_present",
+            "blocked_condition": "scoped_mb6_scope_id_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "scoped_mb6_scope_id_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_derived_report_only_false",
+            "blocked_condition": "derived_report_only_positive_row",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "derived_report_only_positive_row_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_manifest_roles_and_sha256_validated",
+            "blocked_condition": "artifact_manifest_failure",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "artifact_manifest_failure_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_proxy_metric_has_source_current_trace",
+            "blocked_condition": "proxy_label_only",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_label_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_target_digest_declared_before_use",
+            "blocked_condition": "post_hoc_target_digest",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_proxy_policy_is_declared_analysis_policy",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "proxy_only_improvement",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_only_improvement_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "proxy_improves_basin_also_improves",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_improves_basin_also_improves_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "proxy_improves_basin_unmeasured",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_improves_basin_unmeasured_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i5_proxy_divergence_contrast",
+            "blocked_condition": "basin_degradation_hidden_by_proxy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "basin_degradation_hidden_by_proxy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "passed_scoped_consumption_only",
+            "blocked_condition": "unscoped_mb6_consumption",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "unscoped_mb6_consumption_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_front_capacity_backfill_not_used",
+            "blocked_condition": "front_capacity_backfill",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "front_capacity_backfill_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "deferred_until_i5_peer_or_control_basin_matrix",
+            "blocked_condition": "peer_basin_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "peer_basin_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "perturbation_mismatch",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "perturbation_mismatch_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "perturbation_digest_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "perturbation_digest_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "basin_deepened_survivor_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "basin_deepened_survivor_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "deferred_until_i6_proxy_collapse_matrix",
+            "blocked_condition": "proxy_collapse_result_trace_missing",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "proxy_collapse_result_trace_missing_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "not_applicable_for_PD2",
+            "expected_result": "defer_to_later_iteration_without_upgrading_PD2",
+            "rung_effect": "PD3_or_stronger_deferred"
+          },
+          {
+            "actual_result": "passed_row_local_ap5_dependency_recorded",
+            "blocked_condition": "AP5_gap_prose_only",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_ap5_dependency_status_required_recorded",
+            "blocked_condition": "missing_ap5_dependency_status",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "missing_ap5_dependency_status_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n15_context_not_counted_as_native_ap5",
+            "blocked_condition": "n15_context_as_native_ap5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_context_as_native_ap5_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n19_nat3_boundary_not_counted_as_ap5_closeout",
+            "blocked_condition": "n19_nat3_as_ap5_closeout",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n19_nat3_as_ap5_closeout_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_semantic_goal_blocked",
+            "blocked_condition": "semantic_goal_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "semantic_goal_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_semantic_choice_blocked",
+            "blocked_condition": "semantic_choice_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "semantic_choice_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_agency_blocked",
+            "blocked_condition": "agency_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "agency_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_native_support_blocked",
+            "blocked_condition": "native_support_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "native_support_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n25_2_mb6_not_native_support",
+            "blocked_condition": "n25_2_mb6_as_native_support",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n25_2_mb6_as_native_support_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_n25_2_mb6_not_agency_sentience_or_ant_ecology",
+            "blocked_condition": "n25_2_mb6_as_agency_sentience_ant_ecology",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n25_2_mb6_as_agency_sentience_ant_ecology_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_sentience_blocked",
+            "blocked_condition": "sentience_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "sentience_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_phase8_completion_blocked",
+            "blocked_condition": "phase8_completion_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "phase8_completion_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "passed_ant_ecology_blocked",
+            "blocked_condition": "ant_ecology_relabel",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "ant_ecology_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "candidate_clears_control_for_PD2",
+            "rung_effect": "PD2_not_blocked"
+          },
+          {
+            "actual_result": "row carries predeclared proxy or perturbation target digest",
+            "blocked_condition": "post_hoc_target_or_proxy_derivation",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "target/proxy digest declared before gate",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "route-score or coupling policy is declared in row artifacts",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "proxy policy visible or claim blocked",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "required_recorded",
+            "blocked_condition": "AP5_dependency_handled_only_in_prose",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "row-local AP5 dependency status recorded",
+            "rung_effect": "blocks_PD6_and_native_AP5_if_failed"
+          },
+          {
+            "actual_result": "native_ap5_bridge_supported=False",
+            "blocked_condition": "N15_or_N19_context_counted_as_native_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_n19_native_ap5_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "native AP5 remains blocked",
+            "rung_effect": "keeps_bridge_artifact_scoped"
+          },
+          {
+            "actual_result": "producer-mediated score/deepening boundary preserved",
+            "blocked_condition": "producer_mediated_surface_counted_as_substrate_carried_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "producer_surface_as_substrate_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "producer-mediated surface cannot upgrade native AP5",
+            "rung_effect": "allows_scoped_bridge_only"
+          }
+        ],
+        "failed_open_count": 0,
+        "negative_controls_fail_closed": true,
+        "not_run_required_count": 0
+      },
+      "final_consumable_rung": "PD2",
+      "i7_row_decision": "supported",
+      "replay_statuses": {
+        "artifact_replay": "passed_in_source_context",
+        "duplicate_replay": "passed_in_source_context",
+        "order_control": "passed_in_source_context",
+        "replay_basis": "source_context_replay_record",
+        "replay_gate_passed": true,
+        "snapshot_load_replay": "passed_in_source_context"
+      },
+      "row_id": "n26_i4_i4a_route_variant_child_basin_core_2",
+      "source_candidate_rung": "PD2",
+      "source_iteration": "I4",
+      "source_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "ap5_dependency_status": "required_recorded",
+      "ap5_gate_effect": "scoped_artifact_bridge_input_native_AP5_blocked",
+      "artifact_manifest_validation": {
+        "all_artifact_sha256_match_file_contents": true,
+        "entries": [
+          {
+            "actual_sha256": "be3735ee56fc1aeb1d09e1ecb447feeff429c4e045476b0267611ca731d0e9cf",
+            "artifact_role": "basin_deepening_comparison_trace",
+            "exists": true,
+            "expected_sha256": "be3735ee56fc1aeb1d09e1ecb447feeff429c4e045476b0267611ca731d0e9cf",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/basin_deepening_comparison_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "1f8aab7caad9d3e26b15e39110c02bdfea71f32d79e7b843a987a9a347b87821",
+            "artifact_role": "basin_persistence_capacity_trace",
+            "exists": true,
+            "expected_sha256": "1f8aab7caad9d3e26b15e39110c02bdfea71f32d79e7b843a987a9a347b87821",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/basin_persistence_capacity_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "9042daa0d7edf931ecc6a040b6f1503f55689cc779f5f4d0f0a4469c9ca17ab1",
+            "artifact_role": "control_trace",
+            "exists": true,
+            "expected_sha256": "9042daa0d7edf931ecc6a040b6f1503f55689cc779f5f4d0f0a4469c9ca17ab1",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/control_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "cbf7cff72749ff1793b61865474424445b1bb9a2d4539e3581a9f8ff3ffd7273",
+            "artifact_role": "lower_stack_input_trace",
+            "exists": true,
+            "expected_sha256": "cbf7cff72749ff1793b61865474424445b1bb9a2d4539e3581a9f8ff3ffd7273",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/lower_stack_input_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "c509f272e6a7c57cdb851016d2d6587d08e42d20f966a2f84ee46a46f44c2dd6",
+            "artifact_role": "peer_or_control_basin_trace",
+            "exists": true,
+            "expected_sha256": "c509f272e6a7c57cdb851016d2d6587d08e42d20f966a2f84ee46a46f44c2dd6",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/peer_or_control_basin_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "07ead0e3fd2cfbdb35482e3c0202012c8cd97717d9ac1e23ddf7ba1fb5071579",
+            "artifact_role": "proxy_metric_trace",
+            "exists": true,
+            "expected_sha256": "07ead0e3fd2cfbdb35482e3c0202012c8cd97717d9ac1e23ddf7ba1fb5071579",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/proxy_metric_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "971fbce220dc09f1d4250c92a1012245c1106c289c1b6dca95916105797eab25",
+            "artifact_role": "proxy_vs_basin_delta_trace",
+            "exists": true,
+            "expected_sha256": "971fbce220dc09f1d4250c92a1012245c1106c289c1b6dca95916105797eab25",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/proxy_vs_basin_delta_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "018b908ee0b25a1be6665f3625a35b0f8fd79c46d257d4146aa80b2ef2611c04",
+            "artifact_role": "replay_trace",
+            "exists": true,
+            "expected_sha256": "018b908ee0b25a1be6665f3625a35b0f8fd79c46d257d4146aa80b2ef2611c04",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/replay_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "f9f42624d381091fa4abc19bc993b05a81a1460233bce75f9af2bbe159bfdc76",
+            "artifact_role": "runtime_trace",
+            "exists": true,
+            "expected_sha256": "f9f42624d381091fa4abc19bc993b05a81a1460233bce75f9af2bbe159bfdc76",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/runtime_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "dec5fc1caa532722d9db7969516e141c9d44a8e91d42503cacac798ef5b1a03b",
+            "artifact_role": "support_coherence_floor_trace",
+            "exists": true,
+            "expected_sha256": "dec5fc1caa532722d9db7969516e141c9d44a8e91d42503cacac798ef5b1a03b",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink0_fixed_route/support_coherence_floor_trace.json",
+            "sha256_matches": true
+          }
+        ],
+        "manifest_entry_count": 10
+      },
+      "basin_delta": 0.0,
+      "claim_ceiling": "provisional producer-mediated PD4 proxy-divergence candidate; not proxy collapse, native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, or ant ecology",
+      "control_statuses": {
+        "control_count": 9,
+        "control_gate_passed": true,
+        "controls": [
+          {
+            "control_id": "fixed_proxy_surface_control",
+            "control_status": "passed",
+            "rung_effect": "allows_PD4_candidate"
+          },
+          {
+            "control_id": "same_selected_sink_and_packet_schedule_control",
+            "control_status": "passed",
+            "rung_effect": "allows_basin_delta_comparison"
+          },
+          {
+            "control_id": "score_as_native_support_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_native_support_and_native_AP5_bridge"
+          },
+          {
+            "control_id": "semantic_goal_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_semantic_goal_or_choice_claim"
+          },
+          {
+            "actual_result": "row carries predeclared proxy or perturbation target digest",
+            "blocked_condition": "post_hoc_target_or_proxy_derivation",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "target/proxy digest declared before gate",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "route-score or coupling policy is declared in row artifacts",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "proxy policy visible or claim blocked",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "required_recorded",
+            "blocked_condition": "AP5_dependency_handled_only_in_prose",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "row-local AP5 dependency status recorded",
+            "rung_effect": "blocks_PD6_and_native_AP5_if_failed"
+          },
+          {
+            "actual_result": "native_ap5_bridge_supported=False",
+            "blocked_condition": "N15_or_N19_context_counted_as_native_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_n19_native_ap5_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "native AP5 remains blocked",
+            "rung_effect": "keeps_bridge_artifact_scoped"
+          },
+          {
+            "actual_result": "producer-mediated score/deepening boundary preserved",
+            "blocked_condition": "producer_mediated_surface_counted_as_substrate_carried_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "producer_surface_as_substrate_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "producer-mediated surface cannot upgrade native AP5",
+            "rung_effect": "allows_scoped_bridge_only"
+          }
+        ],
+        "failed_open_count": 0,
+        "negative_controls_fail_closed": true,
+        "not_run_required_count": 0
+      },
+      "divergence_shape_preserved": true,
+      "final_consumable_rung": "PD4",
+      "i7_row_decision": "supported",
+      "proxy_delta": 0.3999999999999999,
+      "replay_statuses": {
+        "artifact_replay": "passed",
+        "duplicate_replay": "passed",
+        "high_score_replay_validation_digest": "d6640412a5c73e47e501369d0b30693d96349b668dd17e8e6760e58f54443d4a",
+        "low_score_replay_validation_digest": "94dfc09943b487558165a80f45941e6f418dbcf4b5d9abbe2e3675b03d763417",
+        "order_control": "passed",
+        "replay_basis": "runtime_trace_replay_and_duplicate_records",
+        "replay_gate_passed": true,
+        "snapshot_load_replay": "passed"
+      },
+      "row_id": "n26_i5c_same_route_score_dose_sink0_fixed_route",
+      "source_candidate_rung": "PD4_candidate_pending_I7",
+      "source_iteration": "I5-C",
+      "source_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "ap5_dependency_status": "required_recorded",
+      "ap5_gate_effect": "scoped_artifact_bridge_input_native_AP5_blocked",
+      "artifact_manifest_validation": {
+        "all_artifact_sha256_match_file_contents": true,
+        "entries": [
+          {
+            "actual_sha256": "d91b7c1a81896186f94b7f4ddd77b0a4cecedd8d6f134a2d3c698a595c2c1ebf",
+            "artifact_role": "basin_deepening_comparison_trace",
+            "exists": true,
+            "expected_sha256": "d91b7c1a81896186f94b7f4ddd77b0a4cecedd8d6f134a2d3c698a595c2c1ebf",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/basin_deepening_comparison_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "d9423f7891aeb13c08fb5428b4a3ac5044cd19c3d38fefc21205ce24053f240c",
+            "artifact_role": "basin_persistence_capacity_trace",
+            "exists": true,
+            "expected_sha256": "d9423f7891aeb13c08fb5428b4a3ac5044cd19c3d38fefc21205ce24053f240c",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/basin_persistence_capacity_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "41624d1551197db1b6c2d1044267644243153f8f577f3330ae2ab8d4ca418352",
+            "artifact_role": "control_trace",
+            "exists": true,
+            "expected_sha256": "41624d1551197db1b6c2d1044267644243153f8f577f3330ae2ab8d4ca418352",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/control_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "a1f1c802e4e4edf8571069f8c65882c2ff43a326cbd76833ac7265483c26dfa5",
+            "artifact_role": "lower_stack_input_trace",
+            "exists": true,
+            "expected_sha256": "a1f1c802e4e4edf8571069f8c65882c2ff43a326cbd76833ac7265483c26dfa5",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/lower_stack_input_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "47d52ee5b57a60653d3e972b32a0fc056751e6a7e518e0fb50343a494665de57",
+            "artifact_role": "peer_or_control_basin_trace",
+            "exists": true,
+            "expected_sha256": "47d52ee5b57a60653d3e972b32a0fc056751e6a7e518e0fb50343a494665de57",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/peer_or_control_basin_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "f9bf12b04daf2678b65d04c0645e56732220b2ad72b3a2790f9b1b45d6db9c20",
+            "artifact_role": "proxy_metric_trace",
+            "exists": true,
+            "expected_sha256": "f9bf12b04daf2678b65d04c0645e56732220b2ad72b3a2790f9b1b45d6db9c20",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/proxy_metric_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "d04f8c2eae66d127f8e6a0057432cb54caf93d361125b6bb3e0f8483fbef5226",
+            "artifact_role": "proxy_vs_basin_delta_trace",
+            "exists": true,
+            "expected_sha256": "d04f8c2eae66d127f8e6a0057432cb54caf93d361125b6bb3e0f8483fbef5226",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/proxy_vs_basin_delta_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "ca86e2143d90d0008123839386705df51aef9a6e7a384bbb2115af0fd3d81fa7",
+            "artifact_role": "replay_trace",
+            "exists": true,
+            "expected_sha256": "ca86e2143d90d0008123839386705df51aef9a6e7a384bbb2115af0fd3d81fa7",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/replay_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "9e9607d6388b6e1b7b34850c1f02ef723e9209c74617c69fa19dc8036242eea5",
+            "artifact_role": "runtime_trace",
+            "exists": true,
+            "expected_sha256": "9e9607d6388b6e1b7b34850c1f02ef723e9209c74617c69fa19dc8036242eea5",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/runtime_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "a581b8c17f8ac975f64f93ebd43ec1c2dd12de8fd93badb5884d5a8844377d03",
+            "artifact_role": "support_coherence_floor_trace",
+            "exists": true,
+            "expected_sha256": "a581b8c17f8ac975f64f93ebd43ec1c2dd12de8fd93badb5884d5a8844377d03",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe_artifacts/n26_i5c_same_route_score_dose_sink2_fixed_route/support_coherence_floor_trace.json",
+            "sha256_matches": true
+          }
+        ],
+        "manifest_entry_count": 10
+      },
+      "basin_delta": 0.0,
+      "claim_ceiling": "provisional producer-mediated PD4 proxy-divergence candidate; not proxy collapse, native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, or ant ecology",
+      "control_statuses": {
+        "control_count": 9,
+        "control_gate_passed": true,
+        "controls": [
+          {
+            "control_id": "fixed_proxy_surface_control",
+            "control_status": "passed",
+            "rung_effect": "allows_PD4_candidate"
+          },
+          {
+            "control_id": "same_selected_sink_and_packet_schedule_control",
+            "control_status": "passed",
+            "rung_effect": "allows_basin_delta_comparison"
+          },
+          {
+            "control_id": "score_as_native_support_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_native_support_and_native_AP5_bridge"
+          },
+          {
+            "control_id": "semantic_goal_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_semantic_goal_or_choice_claim"
+          },
+          {
+            "actual_result": "row carries predeclared proxy or perturbation target digest",
+            "blocked_condition": "post_hoc_target_or_proxy_derivation",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "target/proxy digest declared before gate",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "route-score or coupling policy is declared in row artifacts",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "proxy policy visible or claim blocked",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "required_recorded",
+            "blocked_condition": "AP5_dependency_handled_only_in_prose",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "row-local AP5 dependency status recorded",
+            "rung_effect": "blocks_PD6_and_native_AP5_if_failed"
+          },
+          {
+            "actual_result": "native_ap5_bridge_supported=False",
+            "blocked_condition": "N15_or_N19_context_counted_as_native_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_n19_native_ap5_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "native AP5 remains blocked",
+            "rung_effect": "keeps_bridge_artifact_scoped"
+          },
+          {
+            "actual_result": "producer-mediated score/deepening boundary preserved",
+            "blocked_condition": "producer_mediated_surface_counted_as_substrate_carried_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "producer_surface_as_substrate_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "producer-mediated surface cannot upgrade native AP5",
+            "rung_effect": "allows_scoped_bridge_only"
+          }
+        ],
+        "failed_open_count": 0,
+        "negative_controls_fail_closed": true,
+        "not_run_required_count": 0
+      },
+      "divergence_shape_preserved": true,
+      "final_consumable_rung": "PD4",
+      "i7_row_decision": "supported",
+      "proxy_delta": 0.3999999999999999,
+      "replay_statuses": {
+        "artifact_replay": "passed",
+        "duplicate_replay": "passed",
+        "high_score_replay_validation_digest": "71927f30da25b376b40e6db2f9107b756cddf3fec448bb2d92148b9865434224",
+        "low_score_replay_validation_digest": "17bf24e1375d8d246f261f78eace0026b00a489b0da55d25a5ca513e29c3c213",
+        "order_control": "passed",
+        "replay_basis": "runtime_trace_replay_and_duplicate_records",
+        "replay_gate_passed": true,
+        "snapshot_load_replay": "passed"
+      },
+      "row_id": "n26_i5c_same_route_score_dose_sink2_fixed_route",
+      "source_candidate_rung": "PD4_candidate_pending_I7",
+      "source_iteration": "I5-C",
+      "source_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "ap5_dependency_status": "required_recorded",
+      "ap5_gate_effect": "scoped_artifact_bridge_input_native_AP5_blocked",
+      "artifact_manifest_validation": {
+        "all_artifact_sha256_match_file_contents": true,
+        "entries": [
+          {
+            "actual_sha256": "f9af264bbdca54d00cd06733a9a19e3d92164dddf1a223d1d201057e1eadb6a8",
+            "artifact_role": "basin_deepened_path_trace",
+            "exists": true,
+            "expected_sha256": "f9af264bbdca54d00cd06733a9a19e3d92164dddf1a223d1d201057e1eadb6a8",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/basin_deepened_path_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "1f06ef704dcf90126356c18f5fa7e110e09280456a3e3269026d77c3cfc546a1",
+            "artifact_role": "basin_deepening_comparison_trace",
+            "exists": true,
+            "expected_sha256": "1f06ef704dcf90126356c18f5fa7e110e09280456a3e3269026d77c3cfc546a1",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/basin_deepening_comparison_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "66922ece3d2ed3e64463c08aa157b4f036ea0214c1bb930b6da19d6fb9be1d44",
+            "artifact_role": "basin_persistence_capacity_trace",
+            "exists": true,
+            "expected_sha256": "66922ece3d2ed3e64463c08aa157b4f036ea0214c1bb930b6da19d6fb9be1d44",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/basin_persistence_capacity_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "86bb3141b993308195cb6f470f3ce22da42d48f9ba189da1fa717bccea171230",
+            "artifact_role": "control_trace",
+            "exists": true,
+            "expected_sha256": "86bb3141b993308195cb6f470f3ce22da42d48f9ba189da1fa717bccea171230",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/control_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "389542b6e505a70dc73b9be26924cb611b39f568d5075ed072f85d417ba5693f",
+            "artifact_role": "lower_stack_input_trace",
+            "exists": true,
+            "expected_sha256": "389542b6e505a70dc73b9be26924cb611b39f568d5075ed072f85d417ba5693f",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/lower_stack_input_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "33c690adf4014be0922ceca09433fc2def0af75b1fa2897de6747c6a6d35911f",
+            "artifact_role": "peer_or_control_basin_trace",
+            "exists": true,
+            "expected_sha256": "33c690adf4014be0922ceca09433fc2def0af75b1fa2897de6747c6a6d35911f",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/peer_or_control_basin_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "6df5f93ddecbf9f2e40e1212754c8b397d5b8f966ddbaa90d86b30442eb42bbf",
+            "artifact_role": "perturbation_challenge_trace",
+            "exists": true,
+            "expected_sha256": "6df5f93ddecbf9f2e40e1212754c8b397d5b8f966ddbaa90d86b30442eb42bbf",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/perturbation_challenge_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "e30f8b3b8b6386e4c8703323af83ac73ed97129ada78f50b1069334e83eddc94",
+            "artifact_role": "proxy_collapse_result_trace",
+            "exists": true,
+            "expected_sha256": "e30f8b3b8b6386e4c8703323af83ac73ed97129ada78f50b1069334e83eddc94",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_collapse_result_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "9869643787476f10ee2f6435ca7d78335b25c110d81526c639a475ba2ba4168b",
+            "artifact_role": "proxy_metric_trace",
+            "exists": true,
+            "expected_sha256": "9869643787476f10ee2f6435ca7d78335b25c110d81526c639a475ba2ba4168b",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_metric_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "81e4b3bd2ea6f7f56e32cad4f017f792547ded9fa35b84385f44429afd777c65",
+            "artifact_role": "proxy_optimized_path_trace",
+            "exists": true,
+            "expected_sha256": "81e4b3bd2ea6f7f56e32cad4f017f792547ded9fa35b84385f44429afd777c65",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_optimized_path_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "e2e0fe0433d888bcbe72f456a10ad19065a3e5893b75abceabca0ae4684913f1",
+            "artifact_role": "proxy_vs_basin_delta_trace",
+            "exists": true,
+            "expected_sha256": "e2e0fe0433d888bcbe72f456a10ad19065a3e5893b75abceabca0ae4684913f1",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_vs_basin_delta_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "addc6b2f67a62d836756316c48a1845f5b88ca2d213b697b4505dfbcbb35f5d3",
+            "artifact_role": "replay_trace",
+            "exists": true,
+            "expected_sha256": "addc6b2f67a62d836756316c48a1845f5b88ca2d213b697b4505dfbcbb35f5d3",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/replay_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "92d9d460a95069895a852e0ba6cb8fd56a8b27fd8d1deeb9fa54114056ccb1c1",
+            "artifact_role": "runtime_trace",
+            "exists": true,
+            "expected_sha256": "92d9d460a95069895a852e0ba6cb8fd56a8b27fd8d1deeb9fa54114056ccb1c1",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/runtime_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "de095da3ade328495f4214c91ce5372a6c18ff874477aed3a746ce1bd1440a25",
+            "artifact_role": "support_coherence_floor_trace",
+            "exists": true,
+            "expected_sha256": "de095da3ade328495f4214c91ce5372a6c18ff874477aed3a746ce1bd1440a25",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/support_coherence_floor_trace.json",
+            "sha256_matches": true
+          }
+        ],
+        "manifest_entry_count": 14
+      },
+      "basin_deepened_path_survives_challenge": true,
+      "basin_support_advantage": 0.5,
+      "claim_ceiling": "provisional producer-mediated PD5 proxy-collapse candidate; not native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, or ant ecology",
+      "collapse_shape_preserved": true,
+      "control_statuses": {
+        "control_count": 9,
+        "control_gate_passed": true,
+        "controls": [
+          {
+            "control_id": "shared_perturbation_envelope_control",
+            "control_status": "passed",
+            "rung_effect": "allows_PD5_candidate"
+          },
+          {
+            "control_id": "proxy_score_as_native_support_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_native_support_and_native_AP5_bridge"
+          },
+          {
+            "control_id": "basin_deepening_fixture_variant_as_native_support_control",
+            "control_status": "failed_closed",
+            "rung_effect": "keeps_basin_deepening_source_current_but_producer_declared"
+          },
+          {
+            "control_id": "semantic_goal_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_semantic_goal_or_choice_claim"
+          },
+          {
+            "actual_result": "row carries predeclared proxy or perturbation target digest",
+            "blocked_condition": "post_hoc_target_or_proxy_derivation",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "target/proxy digest declared before gate",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "route-score or coupling policy is declared in row artifacts",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "proxy policy visible or claim blocked",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "required_recorded",
+            "blocked_condition": "AP5_dependency_handled_only_in_prose",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "row-local AP5 dependency status recorded",
+            "rung_effect": "blocks_PD6_and_native_AP5_if_failed"
+          },
+          {
+            "actual_result": "native_ap5_bridge_supported=False",
+            "blocked_condition": "N15_or_N19_context_counted_as_native_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_n19_native_ap5_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "native AP5 remains blocked",
+            "rung_effect": "keeps_bridge_artifact_scoped"
+          },
+          {
+            "actual_result": "producer-mediated score/deepening boundary preserved",
+            "blocked_condition": "producer_mediated_surface_counted_as_substrate_carried_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "producer_surface_as_substrate_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "producer-mediated surface cannot upgrade native AP5",
+            "rung_effect": "allows_scoped_bridge_only"
+          }
+        ],
+        "failed_open_count": 0,
+        "negative_controls_fail_closed": true,
+        "not_run_required_count": 0
+      },
+      "final_consumable_rung": "PD5",
+      "i7_row_decision": "supported",
+      "proxy_path_survives_challenge": false,
+      "proxy_score_advantage": 0.3999999999999999,
+      "replay_statuses": {
+        "artifact_replay": "passed",
+        "basin_deepened_path_replay_validation_digest": "44e0a6d53161f5615dfa4973579b37cf050e5061422be18de3e6d11070eff63d",
+        "duplicate_replay": "passed",
+        "order_control": "passed",
+        "proxy_path_replay_validation_digest": "de6f11cfc539f161fa9cbb35b0ab86ec95b8b477966c77a9b2b58ff2771fba0a",
+        "replay_basis": "runtime_trace_replay_and_duplicate_records",
+        "replay_gate_passed": true,
+        "snapshot_load_replay": "passed"
+      },
+      "row_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse",
+      "source_candidate_rung": "PD5_candidate_pending_I7",
+      "source_iteration": "I6",
+      "source_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "ap5_dependency_status": "required_recorded",
+      "ap5_gate_effect": "scoped_artifact_bridge_input_native_AP5_blocked",
+      "artifact_manifest_validation": {
+        "all_artifact_sha256_match_file_contents": true,
+        "entries": [
+          {
+            "actual_sha256": "3bf97e77bbcacb2f06e3bcf46e5b6fa57c40be58ab1b29aecdc6db8cb2a493b7",
+            "artifact_role": "basin_deepened_path_trace",
+            "exists": true,
+            "expected_sha256": "3bf97e77bbcacb2f06e3bcf46e5b6fa57c40be58ab1b29aecdc6db8cb2a493b7",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/basin_deepened_path_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "db451c19fa3647ed3191da0b5df24b1ae425084b9e2209077324f1c5d3ee0a2a",
+            "artifact_role": "basin_deepening_comparison_trace",
+            "exists": true,
+            "expected_sha256": "db451c19fa3647ed3191da0b5df24b1ae425084b9e2209077324f1c5d3ee0a2a",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/basin_deepening_comparison_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "efc011ad75bce18078fd6e84c2f530730f942da3319b6410a96ccf8e4d03dacf",
+            "artifact_role": "basin_persistence_capacity_trace",
+            "exists": true,
+            "expected_sha256": "efc011ad75bce18078fd6e84c2f530730f942da3319b6410a96ccf8e4d03dacf",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/basin_persistence_capacity_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "cc762ae00339e5bfbf49ff98197f8b1b1cb141a2493a61423da39455e2bbe2dc",
+            "artifact_role": "control_trace",
+            "exists": true,
+            "expected_sha256": "cc762ae00339e5bfbf49ff98197f8b1b1cb141a2493a61423da39455e2bbe2dc",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/control_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "f2f9811eb37e9a2caf62a916ccecf75315e99d074d4cb1513a121a9da9b98fe8",
+            "artifact_role": "lower_stack_input_trace",
+            "exists": true,
+            "expected_sha256": "f2f9811eb37e9a2caf62a916ccecf75315e99d074d4cb1513a121a9da9b98fe8",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/lower_stack_input_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "b16721f51164db10d2e608b37d74c56070515f71ab1d6b1e35949107bb77c82c",
+            "artifact_role": "peer_or_control_basin_trace",
+            "exists": true,
+            "expected_sha256": "b16721f51164db10d2e608b37d74c56070515f71ab1d6b1e35949107bb77c82c",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/peer_or_control_basin_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "71f8e9464fabf5923dafcca92dc50bcd24d49a19dfbe6fb8f365c7cfe829afe9",
+            "artifact_role": "perturbation_challenge_trace",
+            "exists": true,
+            "expected_sha256": "71f8e9464fabf5923dafcca92dc50bcd24d49a19dfbe6fb8f365c7cfe829afe9",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/perturbation_challenge_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "9ab91ac07f7b59ac9f5ba45906245c47f03a111a170b049111aec54cb15157fe",
+            "artifact_role": "proxy_collapse_result_trace",
+            "exists": true,
+            "expected_sha256": "9ab91ac07f7b59ac9f5ba45906245c47f03a111a170b049111aec54cb15157fe",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_collapse_result_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "090abad00676651437cbbe0e5d6ccc0fd0586c35e158b88502e9b51a65839db5",
+            "artifact_role": "proxy_metric_trace",
+            "exists": true,
+            "expected_sha256": "090abad00676651437cbbe0e5d6ccc0fd0586c35e158b88502e9b51a65839db5",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_metric_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "f9fcf96ad89cafb6e493c794b490cd5f0512f4f546f252f7a7722a6c55304549",
+            "artifact_role": "proxy_optimized_path_trace",
+            "exists": true,
+            "expected_sha256": "f9fcf96ad89cafb6e493c794b490cd5f0512f4f546f252f7a7722a6c55304549",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_optimized_path_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "4842d0ed0a7dff1e186c737ec6778ac747541df653ed44e7be958a440b6755a4",
+            "artifact_role": "proxy_vs_basin_delta_trace",
+            "exists": true,
+            "expected_sha256": "4842d0ed0a7dff1e186c737ec6778ac747541df653ed44e7be958a440b6755a4",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_vs_basin_delta_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "78693e0a118cc5f54cb3a56900005af45d3aa1581a5b3424338f7606034e6463",
+            "artifact_role": "replay_trace",
+            "exists": true,
+            "expected_sha256": "78693e0a118cc5f54cb3a56900005af45d3aa1581a5b3424338f7606034e6463",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/replay_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "6cfa7c06fb1edeb37989d3f7381a59ae06df8b4cae054e87244950e4aba3d113",
+            "artifact_role": "runtime_trace",
+            "exists": true,
+            "expected_sha256": "6cfa7c06fb1edeb37989d3f7381a59ae06df8b4cae054e87244950e4aba3d113",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/runtime_trace.json",
+            "sha256_matches": true
+          },
+          {
+            "actual_sha256": "3aabc71860ad2fe7ba3a6db571655e29bae6393ce79b55bc2db7b8e6ac3f00d4",
+            "artifact_role": "support_coherence_floor_trace",
+            "exists": true,
+            "expected_sha256": "3aabc71860ad2fe7ba3a6db571655e29bae6393ce79b55bc2db7b8e6ac3f00d4",
+            "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/support_coherence_floor_trace.json",
+            "sha256_matches": true
+          }
+        ],
+        "manifest_entry_count": 14
+      },
+      "basin_deepened_path_survives_challenge": true,
+      "basin_support_advantage": 0.5,
+      "claim_ceiling": "provisional producer-mediated PD5 proxy-collapse candidate; not native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, or ant ecology",
+      "collapse_shape_preserved": true,
+      "control_statuses": {
+        "control_count": 9,
+        "control_gate_passed": true,
+        "controls": [
+          {
+            "control_id": "shared_perturbation_envelope_control",
+            "control_status": "passed",
+            "rung_effect": "allows_PD5_candidate"
+          },
+          {
+            "control_id": "proxy_score_as_native_support_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_native_support_and_native_AP5_bridge"
+          },
+          {
+            "control_id": "basin_deepening_fixture_variant_as_native_support_control",
+            "control_status": "failed_closed",
+            "rung_effect": "keeps_basin_deepening_source_current_but_producer_declared"
+          },
+          {
+            "control_id": "semantic_goal_relabel_control",
+            "control_status": "failed_closed",
+            "rung_effect": "blocks_semantic_goal_or_choice_claim"
+          },
+          {
+            "actual_result": "row carries predeclared proxy or perturbation target digest",
+            "blocked_condition": "post_hoc_target_or_proxy_derivation",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "post_hoc_target_digest_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "target/proxy digest declared before gate",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "route-score or coupling policy is declared in row artifacts",
+            "blocked_condition": "hidden_proxy_policy",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "hidden_proxy_policy_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "proxy policy visible or claim blocked",
+            "rung_effect": "PD4_PD5_not_blocked"
+          },
+          {
+            "actual_result": "required_recorded",
+            "blocked_condition": "AP5_dependency_handled_only_in_prose",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "AP5_gap_prose_only_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "passed",
+            "expected_result": "row-local AP5 dependency status recorded",
+            "rung_effect": "blocks_PD6_and_native_AP5_if_failed"
+          },
+          {
+            "actual_result": "native_ap5_bridge_supported=False",
+            "blocked_condition": "N15_or_N19_context_counted_as_native_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "n15_n19_native_ap5_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "native AP5 remains blocked",
+            "rung_effect": "keeps_bridge_artifact_scoped"
+          },
+          {
+            "actual_result": "producer-mediated score/deepening boundary preserved",
+            "blocked_condition": "producer_mediated_surface_counted_as_substrate_carried_AP5",
+            "claim_allowed_when_control_triggers": false,
+            "control_id": "producer_surface_as_substrate_relabel_control",
+            "control_satisfied_for_positive_row": true,
+            "control_status": "failed_closed",
+            "expected_result": "producer-mediated surface cannot upgrade native AP5",
+            "rung_effect": "allows_scoped_bridge_only"
+          }
+        ],
+        "failed_open_count": 0,
+        "negative_controls_fail_closed": true,
+        "not_run_required_count": 0
+      },
+      "final_consumable_rung": "PD5",
+      "i7_row_decision": "supported",
+      "proxy_path_survives_challenge": false,
+      "proxy_score_advantage": 0.3999999999999999,
+      "replay_statuses": {
+        "artifact_replay": "passed",
+        "basin_deepened_path_replay_validation_digest": "447346033319369d16a732c5de4431dc8ec802c847b947027e2920ae7e60590a",
+        "duplicate_replay": "passed",
+        "order_control": "passed",
+        "proxy_path_replay_validation_digest": "46c7b2c6318835ff5edd4548828e7af771a19705ba8ace9e7812a295258074d0",
+        "replay_basis": "runtime_trace_replay_and_duplicate_records",
+        "replay_gate_passed": true,
+        "snapshot_load_replay": "passed"
+      },
+      "row_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse",
+      "source_candidate_rung": "PD5_candidate_pending_I7",
+      "source_iteration": "I6",
+      "source_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "proxy_collapse_supported": true,
+  "proxy_divergence_supported": true,
+  "ready_for_iteration_8_closeout": true,
+  "row_gate_summary": {
+    "blocked_row_count": 0,
+    "control_failures": [],
+    "manifest_failures": [],
+    "replay_failures": [],
+    "row_count": 6,
+    "supported_row_count": 6
+  },
+  "scoped_artifact_ap5_bridge_candidate_supported": true,
+  "source_chain_records": [
+    {
+      "actual_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+      "digest_matches_expected": true,
+      "expected_output_digest": "b2f2a69f98aefbf3cb949dc834e6dab8c480f30bd580e3e389b301b74a04516a",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_inventory_and_scoped_substrate_admission.json",
+      "sha256": "75159bbd2584ab7b97fcce2ece2501df1c14d9ea16793ba48f4115d3e920a31d",
+      "source_id": "i1_inventory"
+    },
+    {
+      "actual_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+      "digest_matches_expected": true,
+      "expected_output_digest": "bbaf1621f64638b76ab296c4dc5b28bf99be7d5c2369d8e96e110e68972de070",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_collapse_schema_and_controls.json",
+      "sha256": "333cad25f0cc156229c7b61de74c1d30ce0ad7b4c3b150fc8acb958aa1b9c6f4",
+      "source_id": "i2_schema"
+    },
+    {
+      "actual_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+      "digest_matches_expected": true,
+      "expected_output_digest": "90b3adf46add9fd0b98b3022733ce9f9fabbbd1b3695908aefbfb58f7199c2fd",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_active_nulls_and_failure_baselines.json",
+      "sha256": "0ca2d57ccfdb077a3ec8493bd70555c2bb0ffa95006ef266d392a53a0b5bbdf8",
+      "source_id": "i3_active_nulls"
+    },
+    {
+      "actual_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+      "digest_matches_expected": true,
+      "expected_output_digest": "b8c8794ecc8e71c01c7bf9d0e1c369f1630416534741f3fb342c5622775a1680",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe.json",
+      "sha256": "b33353bd0fcdb41ade28ed2fc2249b1cb8c7ba940dcbda388b0445de461ca548",
+      "source_id": "i4_proxy_derivation"
+    },
+    {
+      "actual_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+      "digest_matches_expected": true,
+      "expected_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe.json",
+      "sha256": "00f8a3ccb244c3eb32de4bc83039f82aa5e1e3ed69db47ce58e56988c6508039",
+      "source_id": "i4a_sensitivity"
+    },
+    {
+      "actual_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+      "digest_matches_expected": true,
+      "expected_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_divergence_contrast_matrix.json",
+      "sha256": "09a391bddc9b7d900261e2861f25479f8c71d9a56efb56170e0b6e6c84fc244c",
+      "source_id": "i5_contrast"
+    },
+    {
+      "actual_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+      "digest_matches_expected": true,
+      "expected_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_alternative_proxy_surface_divergence_probe.json",
+      "sha256": "d0fef3bad9785c2c692393a7ac36d24e7e8dab67aff37f05caf51c76e7813912",
+      "source_id": "i5a_alternative_surface"
+    },
+    {
+      "actual_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+      "digest_matches_expected": true,
+      "expected_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_fixed_surface_divergence_search.json",
+      "sha256": "f75de998d2e24f4ff5d380c81afbcd7e1f0cbd55da4c1dd2d68016fb3264d66d",
+      "source_id": "i5b_fixed_surface_search"
+    },
+    {
+      "actual_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+      "digest_matches_expected": true,
+      "expected_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_same_route_score_dose_divergence_probe.json",
+      "sha256": "ed9eab572197a9de2d13b7a549659f65ea56c7eb135666943f06b7399af2bbb0",
+      "source_id": "i5c_score_dose_divergence"
+    },
+    {
+      "actual_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+      "digest_matches_expected": true,
+      "expected_output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+      "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix.json",
+      "sha256": "300b0bc1daa864a1f6ff0976d663f2095e21257191bab1ac00699f18d3dc868f",
+      "source_id": "i6_proxy_collapse"
+    }
+  ],
+  "status": "passed",
+  "supporting_artifact_classifications": [
+    {
+      "final_consumable_rung": "PD2_context",
+      "i7_decision": "consumed_no_rung_upgrade",
+      "i7_role": "derivation_sensitivity_supporting_context",
+      "reason": "source-passing stress rows preserve gap 0.0; failed rows remain blockers",
+      "source_artifact_id": "n26_proxy_derivation_sensitivity_probe",
+      "source_iteration": "I4-A",
+      "source_output_digest": "5dbe325f6ce1ff95434b978e69cf659fdf609e2890960198aca66e2c5c85e414"
+    },
+    {
+      "final_consumable_rung": "PD3",
+      "i7_decision": "supported_as_PD3_context",
+      "i7_role": "replay_backed_proxy_basin_contrast_matrix",
+      "reason": "contrast matrix supports replay-backed contrast but not controlled divergence",
+      "source_artifact_id": "n26_proxy_divergence_contrast_matrix",
+      "source_iteration": "I5",
+      "source_output_digest": "52e7cba79816e840947472d35ee8906f357db1bcf896b59f59bbac243d9ee4a5"
+    },
+    {
+      "final_consumable_rung": "PD3_context",
+      "i7_decision": "consumed_as_fail_closed_context",
+      "i7_role": "alternative_surface_false_positive_context",
+      "reason": "threshold/window-mediated divergence-shaped signals remain blocked",
+      "source_artifact_id": "n26_alternative_proxy_surface_divergence_probe",
+      "source_iteration": "I5-A",
+      "source_output_digest": "108849bf8b5249b97611461a4423d4986030c6d84d83b6580ba03cfc561e8eda"
+    },
+    {
+      "final_consumable_rung": "PD3_context",
+      "i7_decision": "consumed_as_search_boundary",
+      "i7_role": "fixed_surface_search_blocker_context",
+      "reason": "native selected/rejected route pairs lacked admissible paired basin traces",
+      "source_artifact_id": "n26_fixed_surface_divergence_search",
+      "source_iteration": "I5-B",
+      "source_output_digest": "cab31a49994ae2ddf1c031e0e3f30c6c17c9dd169bbb3a9d2ccdc80b1da59c73"
+    }
+  ],
+  "unsafe_claim_flags": {
+    "agency_claim_allowed": false,
+    "ant_ecology_claim_allowed": false,
+    "identity_acceptance_claim_allowed": false,
+    "native_support_claim_allowed": false,
+    "organism_life_claim_allowed": false,
+    "phase8_completion_claim_allowed": false,
+    "semantic_choice_claim_allowed": false,
+    "semantic_goal_claim_allowed": false,
+    "semantic_learning_claim_allowed": false,
+    "semantic_target_ownership_claim_allowed": false,
+    "sentience_claim_allowed": false,
+    "unrestricted_autonomy_claim_allowed": false,
+    "unscoped_multi_basin_claim_allowed": false
+  }
+}

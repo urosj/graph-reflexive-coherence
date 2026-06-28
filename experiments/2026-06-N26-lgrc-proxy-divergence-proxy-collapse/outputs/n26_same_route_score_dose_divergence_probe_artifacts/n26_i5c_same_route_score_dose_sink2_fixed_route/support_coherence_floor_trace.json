@@ -1,0 +1,11 @@
+{
+  "boundary_delta": 0.0,
+  "boundary_value_preserved": true,
+  "coherence_delta": 0.0,
+  "coherence_floor_preserved": true,
+  "flux_delta": 0.0,
+  "flux_value_preserved": true,
+  "support_delta": 0.0,
+  "support_floor_preserved": true,
+  "trace_id": "n26_i5c_same_route_score_dose_sink2_fixed_route_support_coherence_floor"
+}

@@ -1,0 +1,11 @@
+{
+  "high_score": 0.95,
+  "low_score": 0.55,
+  "proxy_delta": 0.3999999999999999,
+  "proxy_improvement_observed": true,
+  "proxy_policy_owner": "producer_mediated_route_candidate_score_runtime_visible",
+  "proxy_surface": "native_route_arbitration_score",
+  "proxy_surface_changed": false,
+  "same_proxy_surface": true,
+  "trace_id": "n26_i5c_same_route_score_dose_sink0_fixed_route_proxy_metric"
+}

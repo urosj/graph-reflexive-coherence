@@ -1,0 +1,8 @@
+{
+  "basin_deepening_observed": false,
+  "comparison_kind": "peer_child_basin_stress_axis_contrast",
+  "peer_child_basin_id": 2,
+  "peer_or_control_basin_present": true,
+  "reference_child_basin_id": 0,
+  "trace_id": "n26_i5_child_basin_persistence_window_source_one_window_replay_basin_deepening_comparison"
+}

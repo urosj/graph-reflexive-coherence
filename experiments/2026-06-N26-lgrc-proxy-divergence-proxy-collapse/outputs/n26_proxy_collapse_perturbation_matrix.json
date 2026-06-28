@@ -1,0 +1,439 @@
+{
+  "acceptance_state": "accepted_provisional_pd5_proxy_collapse_candidate_pending_i7",
+  "ap5_bridge_status": "not_supported_i6_producer_mediated_proxy_and_basin_deepening_surfaces",
+  "artifact_id": "n26_proxy_collapse_perturbation_matrix",
+  "candidate_pd_ladder_rung": "PD5_candidate_pending_I7",
+  "checks": [
+    {
+      "check": "source_chain_ready",
+      "detail": {
+        "i5c": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+        "n25_2_closeout": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03"
+      },
+      "passed": true
+    },
+    {
+      "check": "shared_perturbation_matrix_rows_emitted",
+      "detail": {
+        "row_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "proxy_optimized_paths_fail_under_perturbation",
+      "detail": [
+        {
+          "proxy_path_survives": false,
+          "row_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse"
+        },
+        {
+          "proxy_path_survives": false,
+          "row_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check": "basin_deepened_paths_survive_same_perturbation",
+      "detail": [
+        {
+          "basin_deepened_path_survives": true,
+          "row_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse"
+        },
+        {
+          "basin_deepened_path_survives": true,
+          "row_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check": "pd5_candidates_are_provisional_and_producer_mediated",
+      "detail": {
+        "row_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "native_ap5_bridge_remains_blocked",
+      "detail": "not_supported_i6_producer_mediated_proxy_and_basin_deepening_surfaces",
+      "passed": true
+    },
+    {
+      "check": "scoped_mb6_boundary_preserved",
+      "detail": {
+        "allowed_n26_consumption": "scoped multi-basin substrate evidence only",
+        "n26_consumption_effect": "scoped_mb6_substrate_consumption_allowed",
+        "n26_handoff_status": "ready_with_scoped_mb6_substrate_consumption",
+        "n26_scoped_context_consumption_allowed": true,
+        "n26_unscoped_consumption_allowed": false,
+        "n26_unscoped_multi_basin_consumption_allowed": false,
+        "required_n26_boundary": [
+          "consume N25.2 as scoped multi-basin substrate evidence only",
+          "do not treat MB6 as native support",
+          "do not treat MB6 as agency, sentience, or ant ecology implementation",
+          "do not use front-capacity companion evidence as an unscoped backfill",
+          "preserve source-current runtime and replay/control discipline"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "artifact_sha256_match_file_contents",
+      "detail": {
+        "row_count": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "unsafe_claim_flags_false",
+      "detail": {
+        "claim_count": 13
+      },
+      "passed": true
+    },
+    {
+      "check": "no_absolute_paths_in_records",
+      "detail": {
+        "absolute_path_policy": "repository_relative_paths_only"
+      },
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "blocked_claims": [
+      "native_AP5",
+      "native_support",
+      "agency",
+      "semantic_goal",
+      "semantic_choice",
+      "sentience",
+      "Phase_8_completion",
+      "ant_ecology",
+      "unscoped_multi_basin_substrate"
+    ],
+    "claim_ceiling": "provisional producer-mediated PD5 proxy-collapse candidate; native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, and ant ecology remain blocked"
+  },
+  "command": ".venv/bin/python experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/scripts/build_n26_proxy_collapse_perturbation_matrix.py",
+  "controlled_proxy_collapse_candidate_supported": true,
+  "controlled_proxy_divergence_candidate_supported": true,
+  "experiment": "N26",
+  "failed_checks": [],
+  "final_pd5_supported": false,
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I6",
+  "n26_closeout_ceiling": "N26-C5_provisional_controlled_proxy_divergence_and_collapse_candidate_pending_controls",
+  "n26_closeout_ladder_rung_assigned": false,
+  "native_ap5_bridge_supported": false,
+  "output_digest": "12207d9eed6e206027abc194ec25f11b7b93b39e4cb3671076742a0af8e7012e",
+  "pd5_or_stronger_supported": false,
+  "pd5_support_scope": "producer_mediated_route_score_and_source_current_fixture_geometry_variant",
+  "provisional_pd5_candidate_supported": true,
+  "proxy_collapse_candidate_supported": true,
+  "proxy_collapse_perturbation_matrix_opened": true,
+  "proxy_collapse_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap5_condition_reason": "Proxy target derivation and proxy collapse participate, but route score and basin-deepening variant are producer mediated surfaces and cannot close native AP5.",
+      "ap5_dependency_status": "required_recorded",
+      "artifact_manifest": [
+        {
+          "artifact_role": "basin_deepened_path_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/basin_deepened_path_trace.json",
+          "sha256": "f9af264bbdca54d00cd06733a9a19e3d92164dddf1a223d1d201057e1eadb6a8"
+        },
+        {
+          "artifact_role": "basin_deepening_comparison_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/basin_deepening_comparison_trace.json",
+          "sha256": "1f06ef704dcf90126356c18f5fa7e110e09280456a3e3269026d77c3cfc546a1"
+        },
+        {
+          "artifact_role": "basin_persistence_capacity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/basin_persistence_capacity_trace.json",
+          "sha256": "66922ece3d2ed3e64463c08aa157b4f036ea0214c1bb930b6da19d6fb9be1d44"
+        },
+        {
+          "artifact_role": "control_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/control_trace.json",
+          "sha256": "86bb3141b993308195cb6f470f3ce22da42d48f9ba189da1fa717bccea171230"
+        },
+        {
+          "artifact_role": "lower_stack_input_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/lower_stack_input_trace.json",
+          "sha256": "389542b6e505a70dc73b9be26924cb611b39f568d5075ed072f85d417ba5693f"
+        },
+        {
+          "artifact_role": "peer_or_control_basin_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/peer_or_control_basin_trace.json",
+          "sha256": "33c690adf4014be0922ceca09433fc2def0af75b1fa2897de6747c6a6d35911f"
+        },
+        {
+          "artifact_role": "perturbation_challenge_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/perturbation_challenge_trace.json",
+          "sha256": "6df5f93ddecbf9f2e40e1212754c8b397d5b8f966ddbaa90d86b30442eb42bbf"
+        },
+        {
+          "artifact_role": "proxy_collapse_result_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_collapse_result_trace.json",
+          "sha256": "e30f8b3b8b6386e4c8703323af83ac73ed97129ada78f50b1069334e83eddc94"
+        },
+        {
+          "artifact_role": "proxy_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_metric_trace.json",
+          "sha256": "9869643787476f10ee2f6435ca7d78335b25c110d81526c639a475ba2ba4168b"
+        },
+        {
+          "artifact_role": "proxy_optimized_path_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_optimized_path_trace.json",
+          "sha256": "81e4b3bd2ea6f7f56e32cad4f017f792547ded9fa35b84385f44429afd777c65"
+        },
+        {
+          "artifact_role": "proxy_vs_basin_delta_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/proxy_vs_basin_delta_trace.json",
+          "sha256": "e2e0fe0433d888bcbe72f456a10ad19065a3e5893b75abceabca0ae4684913f1"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/replay_trace.json",
+          "sha256": "addc6b2f67a62d836756316c48a1845f5b88ca2d213b697b4505dfbcbb35f5d3"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/runtime_trace.json",
+          "sha256": "92d9d460a95069895a852e0ba6cb8fd56a8b27fd8d1deeb9fa54114056ccb1c1"
+        },
+        {
+          "artifact_role": "support_coherence_floor_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse/support_coherence_floor_trace.json",
+          "sha256": "de095da3ade328495f4214c91ce5372a6c18ff874477aed3a746ce1bd1440a25"
+        }
+      ],
+      "basin_deepened_path_survives_challenge": true,
+      "basin_deepening_counted_as_native_support": false,
+      "basin_deepening_input_owner": "declared_source_current_fixture_geometry_variant",
+      "basin_ids_or_child_basin_ids": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "basin_support_advantage": 0.5,
+      "candidate_pd_ladder_rung": "PD5_candidate_pending_I7",
+      "claim_ceiling": "provisional producer-mediated PD5 proxy-collapse candidate; not native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, or ant ecology",
+      "front_capacity_companion_backfill_used": false,
+      "multi_basin_scope_id": "sink0_proxy_collapse",
+      "n25_2_unscoped_consumption_allowed": false,
+      "n25_2_unscoped_multi_basin_consumption_allowed": false,
+      "native_ap5_bridge_supported": false,
+      "pd5_candidate_supported_pending_i7": true,
+      "producer_mediated_target_derivation_counted_as_substrate": false,
+      "proxy_collapse_candidate_supported": true,
+      "proxy_derivation_policy_digest": "7a0bd83acf24113dc8bea24c447afe7e6bfcf3519116dd1cd774ed7b77901ef3",
+      "proxy_metric_definition_digest": "8cee763491639004bc3fddfba914d962138110783db0a5b7565ea0cb8623e6f6",
+      "proxy_path_survives_challenge": false,
+      "proxy_policy_owner": "producer_mediated_route_candidate_score_runtime_visible",
+      "proxy_score_advantage": 0.3999999999999999,
+      "proxy_target_digest_declared_before_use": "5c4132543544daec1a8fe3a05f09e9151c7a4d88cf5047954ed85daa9f107c6b",
+      "row_decision": "provisional_supported_pending_iteration_7_controls",
+      "row_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse",
+      "row_specific_thresholds_declared_before_use": {
+        "base_selected_sink_coherence": 1.0,
+        "challenge_floor": 1.35,
+        "challenge_kind": "support_coherence_floor_required_above_proxy_base",
+        "challenge_margin_above_proxy_base": 0.25,
+        "declared_before_use": true,
+        "formula": "base_selected_sink_coherence + packet_amount + challenge_margin_above_proxy_base",
+        "packet_amount": 0.1,
+        "same_challenge_for_proxy_and_basin_paths": true,
+        "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_perturbation_challenge"
+      },
+      "scoped_mb6_substrate_consumption_record": {
+        "n25_2_closeout_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+        "n25_2_consumed_as": "scoped_mb6_substrate_and_runtime_fixture_context",
+        "unscoped_consumption_allowed": false
+      },
+      "source_current_inputs": [
+        "examples/lgrc9v3/multi_basin_formation_bundle.py",
+        "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_contract.py",
+        "src/pygrc/telemetry/lgrc9v3_contract.py"
+      ],
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    },
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap5_condition_reason": "Proxy target derivation and proxy collapse participate, but route score and basin-deepening variant are producer mediated surfaces and cannot close native AP5.",
+      "ap5_dependency_status": "required_recorded",
+      "artifact_manifest": [
+        {
+          "artifact_role": "basin_deepened_path_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/basin_deepened_path_trace.json",
+          "sha256": "3bf97e77bbcacb2f06e3bcf46e5b6fa57c40be58ab1b29aecdc6db8cb2a493b7"
+        },
+        {
+          "artifact_role": "basin_deepening_comparison_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/basin_deepening_comparison_trace.json",
+          "sha256": "db451c19fa3647ed3191da0b5df24b1ae425084b9e2209077324f1c5d3ee0a2a"
+        },
+        {
+          "artifact_role": "basin_persistence_capacity_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/basin_persistence_capacity_trace.json",
+          "sha256": "efc011ad75bce18078fd6e84c2f530730f942da3319b6410a96ccf8e4d03dacf"
+        },
+        {
+          "artifact_role": "control_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/control_trace.json",
+          "sha256": "cc762ae00339e5bfbf49ff98197f8b1b1cb141a2493a61423da39455e2bbe2dc"
+        },
+        {
+          "artifact_role": "lower_stack_input_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/lower_stack_input_trace.json",
+          "sha256": "f2f9811eb37e9a2caf62a916ccecf75315e99d074d4cb1513a121a9da9b98fe8"
+        },
+        {
+          "artifact_role": "peer_or_control_basin_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/peer_or_control_basin_trace.json",
+          "sha256": "b16721f51164db10d2e608b37d74c56070515f71ab1d6b1e35949107bb77c82c"
+        },
+        {
+          "artifact_role": "perturbation_challenge_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/perturbation_challenge_trace.json",
+          "sha256": "71f8e9464fabf5923dafcca92dc50bcd24d49a19dfbe6fb8f365c7cfe829afe9"
+        },
+        {
+          "artifact_role": "proxy_collapse_result_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_collapse_result_trace.json",
+          "sha256": "9ab91ac07f7b59ac9f5ba45906245c47f03a111a170b049111aec54cb15157fe"
+        },
+        {
+          "artifact_role": "proxy_metric_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_metric_trace.json",
+          "sha256": "090abad00676651437cbbe0e5d6ccc0fd0586c35e158b88502e9b51a65839db5"
+        },
+        {
+          "artifact_role": "proxy_optimized_path_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_optimized_path_trace.json",
+          "sha256": "f9fcf96ad89cafb6e493c794b490cd5f0512f4f546f252f7a7722a6c55304549"
+        },
+        {
+          "artifact_role": "proxy_vs_basin_delta_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/proxy_vs_basin_delta_trace.json",
+          "sha256": "4842d0ed0a7dff1e186c737ec6778ac747541df653ed44e7be958a440b6755a4"
+        },
+        {
+          "artifact_role": "replay_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/replay_trace.json",
+          "sha256": "78693e0a118cc5f54cb3a56900005af45d3aa1581a5b3424338f7606034e6463"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/runtime_trace.json",
+          "sha256": "6cfa7c06fb1edeb37989d3f7381a59ae06df8b4cae054e87244950e4aba3d113"
+        },
+        {
+          "artifact_role": "support_coherence_floor_trace",
+          "path": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_collapse_perturbation_matrix_artifacts/n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse/support_coherence_floor_trace.json",
+          "sha256": "3aabc71860ad2fe7ba3a6db571655e29bae6393ce79b55bc2db7b8e6ac3f00d4"
+        }
+      ],
+      "basin_deepened_path_survives_challenge": true,
+      "basin_deepening_counted_as_native_support": false,
+      "basin_deepening_input_owner": "declared_source_current_fixture_geometry_variant",
+      "basin_ids_or_child_basin_ids": [
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "basin_support_advantage": 0.5,
+      "candidate_pd_ladder_rung": "PD5_candidate_pending_I7",
+      "claim_ceiling": "provisional producer-mediated PD5 proxy-collapse candidate; not native AP5, native support, agency, semantic goal, sentience, Phase 8 completion, or ant ecology",
+      "front_capacity_companion_backfill_used": false,
+      "multi_basin_scope_id": "sink2_proxy_collapse",
+      "n25_2_unscoped_consumption_allowed": false,
+      "n25_2_unscoped_multi_basin_consumption_allowed": false,
+      "native_ap5_bridge_supported": false,
+      "pd5_candidate_supported_pending_i7": true,
+      "producer_mediated_target_derivation_counted_as_substrate": false,
+      "proxy_collapse_candidate_supported": true,
+      "proxy_derivation_policy_digest": "32849a71d60e93dd7e763888071748f0e7c1ad383bf6e098f92518d00efb895e",
+      "proxy_metric_definition_digest": "c1b4cd8430cea9b8bebb6f909443a791e446215568c2f6cb006520fec8d3c85a",
+      "proxy_path_survives_challenge": false,
+      "proxy_policy_owner": "producer_mediated_route_candidate_score_runtime_visible",
+      "proxy_score_advantage": 0.3999999999999999,
+      "proxy_target_digest_declared_before_use": "90d9917d13fd9232fbc49eb4583b9ef7189290effc545cc62977ab3ee768c015",
+      "row_decision": "provisional_supported_pending_iteration_7_controls",
+      "row_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse",
+      "row_specific_thresholds_declared_before_use": {
+        "base_selected_sink_coherence": 3.0,
+        "challenge_floor": 3.35,
+        "challenge_kind": "support_coherence_floor_required_above_proxy_base",
+        "challenge_margin_above_proxy_base": 0.25,
+        "declared_before_use": true,
+        "formula": "base_selected_sink_coherence + packet_amount + challenge_margin_above_proxy_base",
+        "packet_amount": 0.1,
+        "same_challenge_for_proxy_and_basin_paths": true,
+        "trace_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse_perturbation_challenge"
+      },
+      "scoped_mb6_substrate_consumption_record": {
+        "n25_2_closeout_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+        "n25_2_consumed_as": "scoped_mb6_substrate_and_runtime_fixture_context",
+        "unscoped_consumption_allowed": false
+      },
+      "source_current_inputs": [
+        "examples/lgrc9v3/multi_basin_formation_bundle.py",
+        "src/pygrc/models/lgrc_9_v3_runtime.py",
+        "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+        "src/pygrc/models/lgrc_9_v3_contract.py",
+        "src/pygrc/telemetry/lgrc9v3_contract.py"
+      ],
+      "unsafe_claim_flags": {
+        "agency_claim_allowed": false,
+        "ant_ecology_claim_allowed": false,
+        "identity_acceptance_claim_allowed": false,
+        "native_support_claim_allowed": false,
+        "organism_life_claim_allowed": false,
+        "phase8_completion_claim_allowed": false,
+        "semantic_choice_claim_allowed": false,
+        "semantic_goal_claim_allowed": false,
+        "semantic_learning_claim_allowed": false,
+        "semantic_target_ownership_claim_allowed": false,
+        "sentience_claim_allowed": false,
+        "unrestricted_autonomy_claim_allowed": false,
+        "unscoped_multi_basin_claim_allowed": false
+      }
+    }
+  ],
+  "proxy_collapse_supported": false,
+  "ready_for_iteration_7_replay_controls_and_ap5_gate": true,
+  "row_count": 2,
+  "source_file_sha256": {
+    "examples/lgrc9v3/multi_basin_formation_bundle.py": "cca72d4ba956fdba2bbb37527e5009a97d559427d3f47ea8572f6fefafd37793",
+    "src/pygrc/models/lgrc_9_v3_contract.py": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+    "src/pygrc/models/lgrc_9_v3_runtime.py": "40e886cd4310b45881c5e9ca22c0594cbb73f1241a63ddfd5ce57ea1373d6552",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+    "src/pygrc/telemetry/lgrc9v3_contract.py": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+  },
+  "source_i5c_output_digest": "5f4c9355645ba39840f860d4544b71195fbfde277ab9ce7b6fd22291c34099ab",
+  "source_n25_2_closeout_output_digest": "b92401da545899c7721ab42692827beb5b357bbd246d8991d7ad56649a6bbf03",
+  "status": "passed"
+}

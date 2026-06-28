@@ -1,0 +1,8 @@
+{
+  "alternative_declared_threshold": 3.0,
+  "baseline_declared_threshold": 3.1,
+  "blocker": "threshold_policy_relaxation_mediated_proxy_improvement",
+  "controlled_proxy_divergence_allowed": false,
+  "threshold_changed": true,
+  "trace_id": "n26_i5a_threshold_margin_i4a_route_variant_child_basin_core_2_blocker"
+}

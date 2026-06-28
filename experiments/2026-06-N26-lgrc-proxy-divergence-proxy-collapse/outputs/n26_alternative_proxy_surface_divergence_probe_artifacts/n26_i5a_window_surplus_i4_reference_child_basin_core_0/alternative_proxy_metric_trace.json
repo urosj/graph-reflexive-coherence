@@ -1,0 +1,12 @@
+{
+  "alternative_window_surplus": 1.0,
+  "baseline_window_surplus": 0.0,
+  "proxy_delta": 1.0,
+  "proxy_improvement_observed": true,
+  "proxy_surface": "window_surplus",
+  "source_rows": [
+    "source_one_window_replay",
+    "multi_window_2_persistence_replay"
+  ],
+  "trace_id": "n26_i5a_window_surplus_i4_reference_child_basin_core_0_alternative_proxy_metric"
+}

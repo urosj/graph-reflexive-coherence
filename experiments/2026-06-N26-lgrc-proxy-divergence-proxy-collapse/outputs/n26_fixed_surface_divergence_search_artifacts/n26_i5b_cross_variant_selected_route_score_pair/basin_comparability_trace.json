@@ -1,0 +1,17 @@
+{
+  "candidate_a_child_basin_core_ids": [
+    0
+  ],
+  "candidate_a_declared_threshold": 1.1,
+  "candidate_a_observed_support_floor": 1.1,
+  "candidate_b_child_basin_core_ids": [
+    2
+  ],
+  "candidate_b_declared_threshold": 3.1,
+  "candidate_b_observed_support_floor": 3.1,
+  "same_basin_metric_available": true,
+  "same_child_basin_scope": false,
+  "same_declared_threshold": false,
+  "same_threshold_control_envelope_available": false,
+  "trace_id": "n26_i5b_cross_variant_selected_route_score_pair_basin_comparability"
+}

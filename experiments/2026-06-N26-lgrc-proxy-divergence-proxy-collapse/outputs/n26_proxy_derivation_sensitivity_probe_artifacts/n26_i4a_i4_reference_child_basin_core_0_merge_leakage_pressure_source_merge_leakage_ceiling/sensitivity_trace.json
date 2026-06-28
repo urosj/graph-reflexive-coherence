@@ -1,0 +1,21 @@
+{
+  "candidate_id": "i4_reference_child_basin_core_0",
+  "derived_proxy_gap": 0.0,
+  "interpretation": "The proxy remains zero under this source-passing stress row.",
+  "positive_support_allowed": true,
+  "row_decision": "supported",
+  "source_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+  "source_iteration": "I4",
+  "source_json_pointer": "#/stress_rows/0/merge_leakage_stress_rows/0",
+  "stress_axis": "merge_leakage_pressure",
+  "stress_row": {
+    "claim_effect": "source merge/leakage ceiling preserved",
+    "declared_ceiling": 0.0,
+    "incident_metric_count": 2.0,
+    "observed_absolute_incident_flux": 0.0,
+    "status": "passed",
+    "stress_axis": "merge_leakage_pressure",
+    "stress_id": "source_merge_leakage_ceiling"
+  },
+  "trace_id": "n26_i4a_i4_reference_child_basin_core_0_merge_leakage_pressure_source_merge_leakage_ceiling_sensitivity"
+}

@@ -1,0 +1,38 @@
+# N26 Outputs
+
+Generated N26 JSON artifacts will be written here.
+
+Current outputs:
+
+```text
+n26_source_inventory_and_scoped_substrate_admission.json
+n26_proxy_divergence_collapse_schema_and_controls.json
+n26_active_nulls_and_failure_baselines.json
+n26_source_current_proxy_derivation_probe.json
+n26_source_current_proxy_derivation_probe_artifacts/
+n26_proxy_derivation_sensitivity_probe.json
+n26_proxy_derivation_sensitivity_probe_artifacts/
+n26_proxy_divergence_contrast_matrix.json
+n26_proxy_divergence_contrast_matrix_artifacts/
+n26_alternative_proxy_surface_divergence_probe.json
+n26_alternative_proxy_surface_divergence_probe_artifacts/
+n26_fixed_surface_divergence_search.json
+n26_fixed_surface_divergence_search_artifacts/
+n26_same_route_score_dose_divergence_probe.json
+n26_same_route_score_dose_divergence_probe_artifacts/
+n26_proxy_collapse_perturbation_matrix.json
+n26_proxy_collapse_perturbation_matrix_artifacts/
+n26_replay_controls_and_ap5_gate.json
+n26_closeout_and_n27_handoff.json
+n26_proxy_divergence_collapse_visualization.json
+n26_proxy_divergence_collapse_visualization/
+```
+
+Planned outputs:
+
+```text
+none
+```
+
+Outputs must use repository-relative paths only. Visuals, summaries, labels,
+or report-only rows cannot satisfy positive proxy evidence.

@@ -1,0 +1,8 @@
+{
+  "n25_2_consumption_scope": "scoped multi-basin substrate evidence only",
+  "peer_source_json_pointer": "#/stress_rows/1/threshold_stress_rows/2",
+  "peer_source_status": "failed_closed",
+  "reference_source_json_pointer": "#/stress_rows/0/threshold_stress_rows/2",
+  "reference_source_status": "failed_closed",
+  "trace_id": "n26_i5_flow_window_threshold_tightened_threshold_fail_closed_lower_stack_input"
+}

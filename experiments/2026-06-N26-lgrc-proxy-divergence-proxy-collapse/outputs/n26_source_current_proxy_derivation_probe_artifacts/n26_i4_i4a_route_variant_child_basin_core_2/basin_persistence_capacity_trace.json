@@ -1,0 +1,39 @@
+{
+  "all_window_child_basin_records_present": true,
+  "all_window_replay_ratios_exact": true,
+  "all_window_replay_results_passed": true,
+  "basin_persistence_capacity_score": 1.0,
+  "ratios_by_axis": {
+    "boundary": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "coherence": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "flux": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "membership": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "support": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "trace_id": "n26_i4_i4a_route_variant_child_basin_core_2_basin_persistence_capacity",
+  "window_replay_validation_digests": [
+    "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+    "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c",
+    "14856a9080bda75c8ac5a4a56d884f9db2b226d6b60457f5af8e6efe3cec2f4c"
+  ]
+}

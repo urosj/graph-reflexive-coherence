@@ -1,0 +1,7 @@
+{
+  "basin_deepened_path_replay_passed": true,
+  "basin_deepened_path_replay_validation_digest": "44e0a6d53161f5615dfa4973579b37cf050e5061422be18de3e6d11070eff63d",
+  "proxy_path_replay_passed": true,
+  "proxy_path_replay_validation_digest": "de6f11cfc539f161fa9cbb35b0ab86ec95b8b477966c77a9b2b58ff2771fba0a",
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_replay"
+}

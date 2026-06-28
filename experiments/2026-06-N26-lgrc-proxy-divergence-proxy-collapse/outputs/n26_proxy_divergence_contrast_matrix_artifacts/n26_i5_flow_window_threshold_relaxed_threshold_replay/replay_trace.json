@@ -1,0 +1,8 @@
+{
+  "artifact_replay": "passed_via_i4_source_replay_context",
+  "duplicate_replay": "passed_via_i4_source_replay_context",
+  "order_control": "passed_via_i4a_stress_order",
+  "replay_backed_contrast_candidate": true,
+  "snapshot_load_replay": "passed_via_i4_source_replay_context",
+  "trace_id": "n26_i5_flow_window_threshold_relaxed_threshold_replay_replay"
+}

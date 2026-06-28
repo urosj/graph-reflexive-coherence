@@ -1,0 +1,8 @@
+{
+  "basin_deepened_coherence_floor": 3.6,
+  "basin_deepened_support_floor": 3.6,
+  "basin_deepening_delta": 0.5,
+  "proxy_path_coherence_floor": 3.1,
+  "proxy_path_support_floor": 3.1,
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink2_proxy_collapse_basin_deepening_comparison"
+}

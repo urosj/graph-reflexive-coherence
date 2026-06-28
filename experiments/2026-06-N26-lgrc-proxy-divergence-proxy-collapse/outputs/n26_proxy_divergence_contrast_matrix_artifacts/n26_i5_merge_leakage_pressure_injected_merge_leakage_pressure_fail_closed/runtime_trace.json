@@ -1,0 +1,11 @@
+{
+  "derived_report_only": false,
+  "peer_candidate_id": "i4a_route_variant_child_basin_core_2",
+  "reference_candidate_id": "i4_reference_child_basin_core_0",
+  "source_i4_artifact": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_source_current_proxy_derivation_probe.json",
+  "source_i4a_artifact": "experiments/2026-06-N26-lgrc-proxy-divergence-proxy-collapse/outputs/n26_proxy_derivation_sensitivity_probe.json",
+  "source_stress_artifact": "experiments/2026-06-N25.2-lgrc9v3-mb6-validation-bridge/outputs/n25_2_stress_variant_matrix.json",
+  "stress_axis": "merge_leakage_pressure",
+  "stress_id": "injected_merge_leakage_pressure_fail_closed",
+  "trace_id": "n26_i5_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed_runtime"
+}

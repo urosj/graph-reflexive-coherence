@@ -1,0 +1,9 @@
+{
+  "alternative_observed_coherence_floor": 3.1,
+  "alternative_observed_support_floor": 3.1,
+  "baseline_observed_coherence_floor": 3.1,
+  "baseline_observed_support_floor": 3.1,
+  "basin_deepening_observed": false,
+  "basin_floor_delta": 0.0,
+  "trace_id": "n26_i5a_threshold_margin_i4a_route_variant_child_basin_core_2_basin_state"
+}

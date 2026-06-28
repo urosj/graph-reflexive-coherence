@@ -1,0 +1,6 @@
+{
+  "controlled_proxy_divergence_allowed": false,
+  "geometric_reading": "The source-threshold replay pair has no proxy-gap improvement and uses different declared support/coherence threshold surfaces. It can remain PD3 contrast context, but cannot become same-surface PD4 divergence.",
+  "pd4_blocker": "no_proxy_improvement_and_threshold_surface_mismatch",
+  "trace_id": "n26_i5b_source_threshold_surface_pair_blocker"
+}

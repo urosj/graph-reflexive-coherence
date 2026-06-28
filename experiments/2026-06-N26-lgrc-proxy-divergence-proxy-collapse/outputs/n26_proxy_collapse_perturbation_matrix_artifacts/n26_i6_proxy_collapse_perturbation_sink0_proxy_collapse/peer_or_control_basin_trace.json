@@ -1,0 +1,7 @@
+{
+  "control_kind": "same_selected_sink_proxy_vs_basin_deepening_pair",
+  "same_packet_schedule": true,
+  "same_perturbation_challenge": true,
+  "same_selected_sink": true,
+  "trace_id": "n26_i6_proxy_collapse_perturbation_sink0_proxy_collapse_peer_or_control_basin"
+}

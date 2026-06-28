@@ -1,0 +1,9 @@
+{
+  "basin_stall_or_degradation_observed": true,
+  "contrast_class": "aligned_nonzero_gap_fail_closed",
+  "controlled_proxy_divergence_supported": false,
+  "independent_measurement_status": "contrast_present_not_independent_enough_for_PD4",
+  "pd4_blocker": "no_proxy_improvement_and_no_independent_positive_divergence_row",
+  "proxy_improvement_observed": false,
+  "trace_id": "n26_i5_flow_window_threshold_tightened_threshold_fail_closed_proxy_vs_basin_delta"
+}

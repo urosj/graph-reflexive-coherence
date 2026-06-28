@@ -1,0 +1,28 @@
+{
+  "basin_deepening_observed": false,
+  "basin_persistence_capacity_delta": 0.0,
+  "high_score_basin": {
+    "boundary_value": 2.0,
+    "child_basin_core_ids": [
+      2
+    ],
+    "child_basin_membership_digest": "376154b4a3c009ca84ca53d005cfa9d628f749d61217a143a2f9a711c9ce8def",
+    "child_basin_state_digest": "01f80069819804f4f033980be307b83adb3a2526f131ab0507b198048f1f725f",
+    "coherence_floor": 3.1,
+    "flux_value": 0.0,
+    "support_floor": 3.1
+  },
+  "low_score_basin": {
+    "boundary_value": 2.0,
+    "child_basin_core_ids": [
+      2
+    ],
+    "child_basin_membership_digest": "376154b4a3c009ca84ca53d005cfa9d628f749d61217a143a2f9a711c9ce8def",
+    "child_basin_state_digest": "5e24859d301cf259155f08f12ef29e8d3cd2dcafbd556290c912bb54bafd0b74",
+    "coherence_floor": 3.1,
+    "flux_value": 0.0,
+    "support_floor": 3.1
+  },
+  "same_geometry": true,
+  "trace_id": "n26_i5c_same_route_score_dose_sink2_fixed_route_basin_persistence"
+}

@@ -1,0 +1,8 @@
+{
+  "peer_source_status": "failed_closed",
+  "peer_target_met": false,
+  "reference_source_status": "failed_closed",
+  "reference_target_met": false,
+  "stress_axis": "merge_leakage_pressure",
+  "trace_id": "n26_i5_merge_leakage_pressure_injected_merge_leakage_pressure_fail_closed_support_coherence_floor"
+}

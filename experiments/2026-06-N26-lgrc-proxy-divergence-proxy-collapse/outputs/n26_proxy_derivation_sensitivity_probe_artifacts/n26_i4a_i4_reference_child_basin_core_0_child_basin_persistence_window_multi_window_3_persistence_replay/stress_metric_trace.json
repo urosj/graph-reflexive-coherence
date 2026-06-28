@@ -1,0 +1,13 @@
+{
+  "axis": "child_basin_persistence_window",
+  "i4a_metric_variant": "stress_normalized_proxy_basin_coupling_gap",
+  "metric_family": "n26_i4_proxy_basin_coupling_gap",
+  "proxy_basin_coupling_gap": 0.0,
+  "source_status": "passed",
+  "source_stress_id": "multi_window_3_persistence_replay",
+  "stress_normalized_capacity_ratio": 1.0,
+  "target_met": true,
+  "target_relation": "<=",
+  "target_value": 0.0,
+  "trace_id": "n26_i4a_i4_reference_child_basin_core_0_child_basin_persistence_window_multi_window_3_persistence_replay_stress_metric"
+}

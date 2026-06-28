@@ -1,0 +1,13 @@
+{
+  "axis": "flow_window_threshold",
+  "i4a_metric_variant": "stress_normalized_proxy_basin_coupling_gap",
+  "metric_family": "n26_i4_proxy_basin_coupling_gap",
+  "proxy_basin_coupling_gap": 0.03125,
+  "source_status": "failed_closed",
+  "source_stress_id": "tightened_threshold_fail_closed",
+  "stress_normalized_capacity_ratio": 0.96875,
+  "target_met": false,
+  "target_relation": "<=",
+  "target_value": 0.0,
+  "trace_id": "n26_i4a_i4a_route_variant_child_basin_core_2_flow_window_threshold_tightened_threshold_fail_closed_stress_metric"
+}
