@@ -1,0 +1,11 @@
+{
+  "artifact_reconstruction_stable": true,
+  "ceiling_interpretation": "I5 upgrades the native path from BF2 partial to a replay/control-backed BF4 candidate because deterministic replay and the required false-positive controls pass. The result remains narrow: the candidate carries zero-margin support/coherence debt and still needs stress/threshold work before BF5/BF6.",
+  "i4_bf_ceiling": "BF2_native_source_current_bifurcation_partial",
+  "n25_closeout_ceiling": "N25-C4_replay_control_backed_sub_basin_differentiation_candidate",
+  "native_bf_ceiling": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+  "positive_control_failures": [],
+  "runtime_replay_stable": true,
+  "trace_id": "n25_i5_native_bf_ceiling_trace",
+  "zero_margin_native_support_coherence_debt": true
+}

@@ -1,0 +1,32 @@
+{
+  "bf6_or_independent_new_basin_supported": false,
+  "consumable_evidence_role": "bounded_basin_formation_prerequisite",
+  "consumable_evidence_scope": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+  "final_supported_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+  "handoff_status": "ready",
+  "handoff_target_experiment": "N26_proxy_divergence_proxy_collapse",
+  "n25_c6_meaning": "N26-ready bounded basin-formation evidence with final BF evidence ceiling held at scoped BF5.",
+  "n25_c6_supported": true,
+  "not_consumable_as": [
+    "BF6_independent_new_basin",
+    "general_native_basin_formation",
+    "native_support",
+    "semantic_learning",
+    "choice",
+    "agency",
+    "sentience",
+    "phase8",
+    "ant_ecology"
+  ],
+  "required_n26_consumption_constraints": [
+    "consume_as_bounded_bf5_prerequisite_only",
+    "preserve_native_flux_debt_bound_1e-9",
+    "carry_independent_new_basin_not_supported",
+    "carry_full_module_zero_margin_preserved",
+    "do_not_import_producer_assisted_flux_scaffold_as_native_success",
+    "do_not_convert_sub_basin_candidate_into_proxy_collapse_by_label",
+    "keep_AP4_AP5_gap_ledger_visible_where_route_or_proxy_dependencies_appear",
+    "keep_all_unsafe_claim_flags_false"
+  ],
+  "trace_id": "n25_i7d_n26_handoff_contract_trace"
+}

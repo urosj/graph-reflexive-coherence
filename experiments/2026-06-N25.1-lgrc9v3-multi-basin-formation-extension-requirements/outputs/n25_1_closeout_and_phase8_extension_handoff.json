@@ -1,0 +1,340 @@
+{
+  "BF6_supported": false,
+  "acceptance_state": "closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence",
+  "artifact_id": "n25_1_closeout_and_phase8_extension_handoff",
+  "checks": [
+    {
+      "check_id": "i3_requirement_matrix_passed",
+      "detail": {
+        "acceptance_state": "accepted_phase8_extension_requirements_matrix_no_runtime_implementation",
+        "failed_checks": [],
+        "output_digest": "7dacf161f9374a9807cc5a67c9885ebede7cf4e3cd7a68031ac749f31742d4fb",
+        "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_phase8_extension_requirements_matrix.json",
+        "sha256": "44fa27eba5f3bed4d940d84b30828c44423188e384928cb0a686ccaed8bb22b3",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "final_closeout_rung_is_c4",
+      "detail": "N25.1-C4_closeout_and_phase8_handoff_complete",
+      "passed": true
+    },
+    {
+      "check_id": "phase8_ready_but_not_implemented",
+      "detail": {
+        "phase8_extension_implemented": false,
+        "phase8_extension_ready_to_implement": true,
+        "runtime_implementation_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "mb_evidence_and_bf6_remain_closed",
+      "detail": {
+        "BF6_supported": false,
+        "multi_basin_evidence_opened": false,
+        "native_multi_basin_formation_supported": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n26_handoff_scoped",
+      "detail": {
+        "handoff_status": "ready_with_scope_constraints",
+        "n26_may_consume_as": [
+          "N25_scoped_BF5_high_margin_core_sub_basin_context",
+          "N25.1_requirements_bridge_context",
+          "Phase8_extension_requirements_context"
+        ],
+        "n26_must_not_consume_as": [
+          "unscoped_multi_basin_substrate",
+          "independent_new_basin_substrate",
+          "native_LGRC9V3_multi_basin_formation",
+          "BF6",
+          "native_support",
+          "semantic_learning",
+          "semantic_choice",
+          "agency",
+          "sentience",
+          "ant_ecology"
+        ],
+        "next_experiment": "N26_proxy_divergence_proxy_collapse",
+        "unscoped_multi_basin_claim_requires": [
+          "future_Phase8_extension_implemented",
+          "MB6_supported_by_runtime_evidence",
+          "replay_and_control_matrix_clean",
+          "merge_leakage_controls_clean",
+          "producer_residue_not_native_upgrade",
+          "unsafe_claim_flags_false"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "phase8_required_surfaces_carried",
+      "detail": [
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB1"
+          ],
+          "implementation_role": "reuse_existing_surface",
+          "surface_id": "causal_refinement_event_surface",
+          "surface_status": "required_specifiable"
+        },
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB2"
+          ],
+          "implementation_role": "new_default_off_processor",
+          "surface_id": "topology_integration_processor",
+          "surface_status": "required_missing"
+        },
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB3"
+          ],
+          "implementation_role": "new_default_off_surface",
+          "surface_id": "post_refinement_flow_window",
+          "surface_status": "required_missing"
+        },
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB3",
+            "MB4"
+          ],
+          "implementation_role": "new_default_off_surface",
+          "surface_id": "child_basin_state_record_surface",
+          "surface_status": "required_missing"
+        },
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB4",
+            "MB6"
+          ],
+          "implementation_role": "new_validator",
+          "surface_id": "replay_and_persistence_validator",
+          "surface_status": "required_missing"
+        },
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB5",
+            "MB6"
+          ],
+          "implementation_role": "new_control_matrix",
+          "surface_id": "merge_leakage_control_matrix",
+          "surface_status": "required_missing"
+        },
+        {
+          "enabled_mb_rungs_if_implemented": [
+            "MB6"
+          ],
+          "implementation_role": "handoff_constraint",
+          "surface_id": "n26_handoff_gate",
+          "surface_status": "required_specifiable"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "bf6_without_mb6": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "independent_new_basin_formation_without_controls": false,
+        "lgrc9v3_native_multi_basin_formation_without_runtime_evidence": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation_complete": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "BF6_supported": false,
+    "native_multi_basin_formation_supported": false,
+    "phase8_extension_implemented": false,
+    "requirements_contract_allowed": true,
+    "runtime_evidence_allowed": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology": false,
+      "bf6_without_mb6": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "independent_new_basin_formation_without_controls": false,
+      "lgrc9v3_native_multi_basin_formation_without_runtime_evidence": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation_complete": false,
+      "semantic_choice": false,
+      "semantic_learning": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "experiment": "N25.1",
+  "experiment_kind": "requirements_spec_bridge",
+  "failed_checks": [],
+  "final_mb_ladder_ceiling": "MB0_requirements_bridge_only_no_runtime_evidence",
+  "final_n25_1_closeout_rung": "N25.1-C4_closeout_and_phase8_handoff_complete",
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "independent_new_basin_supported": false,
+  "iteration": "I4",
+  "mb_ladder_rung_assigned": false,
+  "multi_basin_evidence_opened": false,
+  "n26_handoff": {
+    "handoff_status": "ready_with_scope_constraints",
+    "n26_may_consume_as": [
+      "N25_scoped_BF5_high_margin_core_sub_basin_context",
+      "N25.1_requirements_bridge_context",
+      "Phase8_extension_requirements_context"
+    ],
+    "n26_must_not_consume_as": [
+      "unscoped_multi_basin_substrate",
+      "independent_new_basin_substrate",
+      "native_LGRC9V3_multi_basin_formation",
+      "BF6",
+      "native_support",
+      "semantic_learning",
+      "semantic_choice",
+      "agency",
+      "sentience",
+      "ant_ecology"
+    ],
+    "next_experiment": "N26_proxy_divergence_proxy_collapse",
+    "unscoped_multi_basin_claim_requires": [
+      "future_Phase8_extension_implemented",
+      "MB6_supported_by_runtime_evidence",
+      "replay_and_control_matrix_clean",
+      "merge_leakage_controls_clean",
+      "producer_residue_not_native_upgrade",
+      "unsafe_claim_flags_false"
+    ]
+  },
+  "native_multi_basin_formation_supported": false,
+  "output_digest": "396692475de004ddc8a586a501e1518b8316eebbf8f651304a76abeae25ae09e",
+  "phase8_extension_handoff": {
+    "handoff_status": "ready_to_implement_future_phase8_extension",
+    "handoff_type": "requirements_contract_only",
+    "implementation_sequence": [
+      "reuse_or_expose_causal_refinement_event_surface",
+      "implement_default_off_topology_integration_processor",
+      "emit_post_refinement_flow_window_records",
+      "emit_child_basin_state_records",
+      "add_replay_and_persistence_validator",
+      "add_merge_leakage_control_matrix",
+      "gate_N26_unscoped_consumption_on_MB6"
+    ],
+    "must_not_claim_before_runtime_validation": [
+      "native_multi_basin_formation",
+      "BF6",
+      "independent_new_basin_formation",
+      "native_support",
+      "semantic_learning",
+      "semantic_choice",
+      "agency",
+      "sentience",
+      "ant_ecology"
+    ],
+    "must_preserve": [
+      "default_off_extension_surface",
+      "producer_step_boundary",
+      "node_plus_packet_budget_audit",
+      "causal_event_ordering",
+      "source_current_child_basin_state_records",
+      "merge_leakage_controls",
+      "producer_assisted_results_do_not_upgrade_native",
+      "unsafe_claim_flags_false"
+    ],
+    "required_surfaces": [
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB1"
+        ],
+        "implementation_role": "reuse_existing_surface",
+        "surface_id": "causal_refinement_event_surface",
+        "surface_status": "required_specifiable"
+      },
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB2"
+        ],
+        "implementation_role": "new_default_off_processor",
+        "surface_id": "topology_integration_processor",
+        "surface_status": "required_missing"
+      },
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB3"
+        ],
+        "implementation_role": "new_default_off_surface",
+        "surface_id": "post_refinement_flow_window",
+        "surface_status": "required_missing"
+      },
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB3",
+          "MB4"
+        ],
+        "implementation_role": "new_default_off_surface",
+        "surface_id": "child_basin_state_record_surface",
+        "surface_status": "required_missing"
+      },
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB4",
+          "MB6"
+        ],
+        "implementation_role": "new_validator",
+        "surface_id": "replay_and_persistence_validator",
+        "surface_status": "required_missing"
+      },
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB5",
+          "MB6"
+        ],
+        "implementation_role": "new_control_matrix",
+        "surface_id": "merge_leakage_control_matrix",
+        "surface_status": "required_missing"
+      },
+      {
+        "enabled_mb_rungs_if_implemented": [
+          "MB6"
+        ],
+        "implementation_role": "handoff_constraint",
+        "surface_id": "n26_handoff_gate",
+        "surface_status": "required_specifiable"
+      }
+    ],
+    "source_requirement_matrix_digest": "7dacf161f9374a9807cc5a67c9885ebede7cf4e3cd7a68031ac749f31742d4fb"
+  },
+  "phase8_extension_handoff_status": "ready_to_implement_future_phase8_extension",
+  "phase8_extension_implemented": false,
+  "phase8_extension_ready_to_implement": true,
+  "reproduction_command": ".venv/bin/python experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/scripts/build_n25_1_closeout_and_phase8_extension_handoff.py",
+  "requirements_bridge_closed": true,
+  "runtime_implementation_opened": false,
+  "source_requirement_matrix": {
+    "acceptance_state": "accepted_phase8_extension_requirements_matrix_no_runtime_implementation",
+    "failed_checks": [],
+    "output_digest": "7dacf161f9374a9807cc5a67c9885ebede7cf4e3cd7a68031ac749f31742d4fb",
+    "path": "experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_phase8_extension_requirements_matrix.json",
+    "sha256": "44fa27eba5f3bed4d940d84b30828c44423188e384928cb0a686ccaed8bb22b3",
+    "status": "passed"
+  },
+  "status": "passed"
+}

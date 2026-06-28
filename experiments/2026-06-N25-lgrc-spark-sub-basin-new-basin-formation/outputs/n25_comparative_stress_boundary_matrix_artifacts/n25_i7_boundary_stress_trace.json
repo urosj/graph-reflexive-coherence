@@ -1,0 +1,44 @@
+{
+  "bf5_boundary_axis_only": true,
+  "bf5_overall_supported": false,
+  "boundary_axis_supports_stress_backing": true,
+  "interpretation": "Boundary distinguishability has stress room up to the recorded margin, but boundary margin alone cannot support BF5 while support/coherence margins are zero.",
+  "native_boundary_margin": 4,
+  "native_boundary_stress_ceiling": 4,
+  "producer_boundary_margin": 4,
+  "producer_boundary_stress_ceiling": 4,
+  "stress_kind": "artifact_metric_boundary_margin_stress",
+  "stress_rows": [
+    {
+      "interpretation": "boundary distinguishability retained",
+      "native_boundary_distinguishability_passes": true,
+      "producer_boundary_distinguishability_passes": true,
+      "stress_level": 0
+    },
+    {
+      "interpretation": "boundary distinguishability retained",
+      "native_boundary_distinguishability_passes": true,
+      "producer_boundary_distinguishability_passes": true,
+      "stress_level": 1
+    },
+    {
+      "interpretation": "boundary distinguishability retained",
+      "native_boundary_distinguishability_passes": true,
+      "producer_boundary_distinguishability_passes": true,
+      "stress_level": 2
+    },
+    {
+      "interpretation": "boundary distinguishability retained",
+      "native_boundary_distinguishability_passes": true,
+      "producer_boundary_distinguishability_passes": true,
+      "stress_level": 4
+    },
+    {
+      "interpretation": "boundary distinguishability stress exceeds recorded margin",
+      "native_boundary_distinguishability_passes": false,
+      "producer_boundary_distinguishability_passes": false,
+      "stress_level": 5
+    }
+  ],
+  "trace_id": "n25_i7_boundary_stress_trace"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "actual_result": "ten windows at 1e-9 each for attempted 1e-8 flux",
+    "blocked_condition": "producer flux window is introduced after outcome inspection",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_window_declared_before_use_control",
+    "control_status": "passed",
+    "expected_result": "window count and per-window native bound are declared",
+    "rung_effect": "producer-assisted scaffold remains admissible"
+  },
+  {
+    "actual_result": "producer_support_or_coherence_added = false",
+    "blocked_condition": "producer adds hidden support or coherence",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_hidden_support_control",
+    "control_status": "passed",
+    "expected_result": "producer only windows flux",
+    "rung_effect": "support/coherence margin remains attributed to I7-C source geometry"
+  },
+  {
+    "actual_result": "required_stress_buffer = 3.0 and conditioned_flux_per_window = 1e-9",
+    "blocked_condition": "producer success depends on relaxed BF5 thresholds",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_threshold_relaxation_control",
+    "control_status": "passed",
+    "expected_result": "same stress buffer and native 1e-9 per-window bound are preserved",
+    "rung_effect": "threshold relaxation blocked"
+  },
+  {
+    "actual_result": "native_bf_upgraded_by_producer = false",
+    "blocked_condition": "producer-assisted BF5 scaffold upgrades native BF",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "native BF evidence remains I7-C scoped BF5 only",
+    "rung_effect": "producer result cannot overwrite native result"
+  },
+  {
+    "actual_result": "producer_assisted_bf6_supported = false",
+    "blocked_condition": "producer-assisted BF5 scaffold is relabeled as BF6",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_bf5_as_bf6_relabel_control",
+    "control_status": "passed",
+    "expected_result": "BF6 and independent new-basin remain false",
+    "rung_effect": "BF6 remains blocked"
+  },
+  {
+    "actual_result": "native_flux_debt_bound = 1e-9 and native_flux_debt_widened = false",
+    "blocked_condition": "producer windowing widens native flux debt",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "native flux debt remains 1e-9",
+    "rung_effect": "larger attempted flux remains producer-mediated"
+  },
+  {
+    "actual_result": "unsafe_claim_flags all false",
+    "blocked_condition": "producer-assisted scaffold is relabeled as learning, choice, agency, native support, Phase 8, or ant ecology",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "unsafe_claims_relabel_control",
+    "control_status": "passed",
+    "expected_result": "all unsafe claim flags remain false",
+    "rung_effect": "claim boundary preserved"
+  }
+]

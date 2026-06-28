@@ -1,0 +1,19 @@
+{
+  "bf5_supported_axes": [
+    "positive_core_support_coherence_stress",
+    "core_shell_boundary_stress",
+    "merge_leakage_clean_at_native_flux_bound",
+    "core_replay_control_backed"
+  ],
+  "independent_new_basin_supported": false,
+  "interpretation": "I7-C upgrades N25 to a scoped BF5: stress/threshold-backed native high-margin core sub-basin formation inside the inherited 1e-9 flux envelope. It does not support independent new-basin formation or BF6.",
+  "native_bf5_core_sub_basin_stress_candidate_supported": true,
+  "native_bf5_scope": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+  "native_bf6_supported": false,
+  "remaining_limitations": [
+    "independent_new_basin_not_supported",
+    "native_flux_routing_above_1e-9_not_naturalized",
+    "full_module_zero_margin_preserved"
+  ],
+  "trace_id": "n25_i7c_bf5_classification_trace"
+}

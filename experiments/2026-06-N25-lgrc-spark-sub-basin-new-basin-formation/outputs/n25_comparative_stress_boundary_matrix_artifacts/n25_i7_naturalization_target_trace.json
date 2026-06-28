@@ -1,0 +1,31 @@
+{
+  "bf5_blockers": [
+    "zero_margin_support_coherence_floor",
+    "producer_flux_help_not_native",
+    "new_basin_candidate_not_established"
+  ],
+  "handoff_scope": "N26 can consume N25 as a bounded sub-basin differentiation and producer-scaffold naturalization-target record, not as final new-basin formation or native support.",
+  "interpretation": "I7 makes the native mechanism debt sharper. The producer helps the flux schedule, but the system still lacks native flux routing, positive support/coherence margin, and new-basin independence.",
+  "n26_handoff_ready": true,
+  "native_naturalization_targets": [
+    {
+      "evidence_status": "producer_scaffold_supported",
+      "native_status": "not_naturalized",
+      "source": "I6 producer-assisted flux windowing",
+      "target": "native_flux_routing_or_rate_limiting_surface"
+    },
+    {
+      "evidence_status": "required_for_BF5_BF6",
+      "native_status": "not_supported_zero_margin",
+      "source": "I7 support/coherence stress",
+      "target": "positive_support_coherence_margin_for_formed_region"
+    },
+    {
+      "evidence_status": "required_for_new_basin_candidate",
+      "native_status": "not_supported_sub_basin_candidate_only",
+      "source": "I5/I6 formation class comparison",
+      "target": "new_basin_independence_beyond_sub_basin_differentiation"
+    }
+  ],
+  "trace_id": "n25_i7_naturalization_target_trace"
+}

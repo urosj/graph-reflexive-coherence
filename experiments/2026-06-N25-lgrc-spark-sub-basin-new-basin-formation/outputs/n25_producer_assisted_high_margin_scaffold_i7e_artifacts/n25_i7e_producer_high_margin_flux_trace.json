@@ -1,0 +1,16 @@
+{
+  "attempted_flux": 1e-08,
+  "conditioned_flux_per_window": 1e-09,
+  "conditioned_windows_preserve_native_bound": true,
+  "interpretation": "The producer does not add support or coherence. It only exposes a larger attempted flux as ten declared source-visible windows, each capped at the inherited native 1e-9 bound.",
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_debt_widened": false,
+  "native_unwindowed_attempted_flux_supported": false,
+  "producer_assisted_result_class": "producer_mediated_scaffold_candidate",
+  "producer_flux_window_declared_before_use": true,
+  "producer_source_row_id": "n25_i6_producer_assisted_flux_conditioned_formation_probe",
+  "producer_support_or_coherence_added": false,
+  "producer_window_count": 10,
+  "producer_windowed_attempted_flux_supported": true,
+  "trace_id": "n25_i7e_producer_high_margin_flux_trace"
+}

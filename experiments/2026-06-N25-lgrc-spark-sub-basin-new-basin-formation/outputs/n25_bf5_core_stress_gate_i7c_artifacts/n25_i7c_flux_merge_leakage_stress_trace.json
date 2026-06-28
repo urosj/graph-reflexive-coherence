@@ -1,0 +1,25 @@
+{
+  "attempted_flux_rows": [
+    {
+      "attempted_flux": 1e-09,
+      "merge_leakage_clean": true,
+      "native_flux_passes": true,
+      "reason": "inside inherited native flux debt bound"
+    },
+    {
+      "attempted_flux": 2e-09,
+      "merge_leakage_clean": false,
+      "native_flux_passes": false,
+      "reason": "native flux routing above 1e-9 not naturalized"
+    }
+  ],
+  "first_fail_closed_attempted_flux": 2e-09,
+  "interpretation": "I7-C supports BF5 only inside the inherited native 1e-9 flux envelope. Broader native flux routing remains naturalization debt.",
+  "merge_leakage_controls_clean_at_bound": true,
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_envelope_widened": false,
+  "native_flux_stress_above_bound_supported": false,
+  "native_flux_stress_supported_at_bound": true,
+  "stress_kind": "native_flux_bound_and_merge_leakage_stress",
+  "trace_id": "n25_i7c_flux_merge_leakage_stress_trace"
+}

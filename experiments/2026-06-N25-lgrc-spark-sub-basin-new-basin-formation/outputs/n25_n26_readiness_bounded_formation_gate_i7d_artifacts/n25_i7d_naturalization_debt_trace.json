@@ -1,0 +1,14 @@
+{
+  "n26_requirement": "N26 must treat these debts as input constraints, not as solved formation or proxy-collapse evidence.",
+  "native_flux_debt_bound": 1e-09,
+  "native_flux_debt_widened": false,
+  "naturalization_debt_carried_forward": [
+    "independent_new_basin_not_supported",
+    "native_flux_routing_above_1e-9_not_naturalized",
+    "full_module_zero_margin_preserved",
+    "producer_flux_scaffold_not_native",
+    "BF5_scope_not_BF6"
+  ],
+  "producer_assisted_success_does_not_overwrite_native_failure": true,
+  "trace_id": "n25_i7d_naturalization_debt_trace"
+}

@@ -1,0 +1,13 @@
+{
+  "interpretation": "I7-A creates a native positive-margin core candidate from the source-current emitted module. Replay/control for this core and new-basin stress still remain for I7-B/I7-C.",
+  "ready_for_i7b": true,
+  "ready_for_i7c": false,
+  "remaining_bf5_blockers": [
+    "full_module_zero_margin_preserved",
+    "positive_core_replay_control_pending",
+    "new_basin_candidate_not_established",
+    "native_flux_routing_or_rate_limiting_surface_not_naturalized"
+  ],
+  "removed_blocker_for_core_axis": "zero_margin_support_coherence_floor",
+  "trace_id": "n25_i7a_naturalization_update_trace"
+}

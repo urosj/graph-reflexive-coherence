@@ -1,0 +1,28 @@
+{
+  "bf3_closeout_requires_iteration_5_replay_controls": true,
+  "boundary_distinguishability_margin_formula": "module_node_count - minimum_distinguishable_module_node_count",
+  "declared_before_use": true,
+  "distinguishable_module_node_count_note": "The one-node threshold is only the distinguishability baseline; the I4 candidate gate separately requires the full five-node module.",
+  "minimum_distinguishable_module_node_count": 1,
+  "minimum_internal_edge_count_for_candidate": 4,
+  "minimum_module_node_count_for_candidate": 5,
+  "minimum_positive_coherence_nodes_for_candidate": 3,
+  "native_flux_debt_bound": 1e-09,
+  "old_basin_separation_margin_formula": "1.0 when old center removed by source-current expansion else 0.0",
+  "old_basin_separation_margin_kind": "binary_indicator",
+  "packet_amount": 1e-09,
+  "record_id": "n25_i4_thresholds_declared_before_use",
+  "temporal_window_schema": {
+    "bifurcation_window": [
+      "start_step",
+      "end_step",
+      "event_time_key"
+    ],
+    "boundary_candidate_window": [
+      "start_step",
+      "end_step",
+      "event_time_key"
+    ],
+    "ordering_rule": "bifurcation_window.end_step <= boundary_candidate_window.start_step"
+  }
+}

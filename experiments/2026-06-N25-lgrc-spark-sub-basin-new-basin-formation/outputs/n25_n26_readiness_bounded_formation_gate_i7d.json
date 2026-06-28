@@ -1,0 +1,470 @@
+{
+  "acceptance_state": "accepted_n26_ready_bounded_formation_evidence_c6_bf5_scoped",
+  "artifact_id": "n25_n26_readiness_bounded_formation_gate_i7d",
+  "basin_formation_claim_allowed": false,
+  "bf_ceiling": "BF5_native_high_margin_core_sub_basin_stress_candidate",
+  "bounded_formation_handoff_allowed": true,
+  "checks": [
+    {
+      "check_id": "i6_source_passed",
+      "detail": {
+        "acceptance_state": "accepted_producer_assisted_flux_conditioned_bf4_scaffold_candidate_native_bf_unchanged",
+        "artifact_id": "n25_producer_assisted_formation_probe",
+        "output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+        "sha256": "08e0f78523f129d134046f58e765b0dfb08e4431f17dbf726584fe934723b22c",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i7_source_passed",
+      "detail": {
+        "acceptance_state": "accepted_comparative_bf4_boundary_matrix_bf5_blocked_n26_ready",
+        "artifact_id": "n25_comparative_stress_boundary_matrix",
+        "output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json",
+        "sha256": "ac74f4eacc57d7922b03fb1d17f2cd6ab9151ba2717d464f91f323cc6900170d",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i7a_source_passed",
+      "detail": {
+        "acceptance_state": "accepted_native_high_margin_core_candidate_bf5_pending_replay_stress",
+        "artifact_id": "n25_native_high_margin_formation_probe_i7a",
+        "output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+        "sha256": "efb3c0af0ef8aab146a97a444a28aef3f55da60421f34ab825a2be6d691cc1a3",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i7b_source_passed",
+      "detail": {
+        "acceptance_state": "accepted_high_margin_core_replay_control_backed_bf5_stress_ready",
+        "artifact_id": "n25_high_margin_core_replay_controls_i7b",
+        "output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json",
+        "sha256": "9428cddc69ab5c3f9733e5f9722314616ba9ae7c8a530d02c75c8d102e4b05b8",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i7c_scoped_bf5_ready",
+      "detail": {
+        "acceptance_state": "accepted_scoped_native_bf5_high_margin_core_sub_basin_stress_candidate",
+        "artifact_id": "n25_bf5_core_stress_gate_i7c",
+        "output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c.json",
+        "sha256": "1f5f3800ed3690d45ab69e93c8d81bbca37684ce4f2d73bc7e92ac23ffbd869c",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "c6_supported_without_bf6_upgrade",
+      "detail": "N26-ready bounded basin-formation evidence with final BF evidence ceiling held at scoped BF5.",
+      "passed": true
+    },
+    {
+      "check_id": "final_bf_ceiling_is_scoped_bf5",
+      "detail": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+      "passed": true
+    },
+    {
+      "check_id": "independent_new_basin_still_blocked",
+      "detail": [
+        "independent_new_basin_not_supported",
+        "native_flux_routing_above_1e-9_not_naturalized",
+        "full_module_zero_margin_preserved",
+        "producer_flux_scaffold_not_native",
+        "BF5_scope_not_BF6"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "native_flux_debt_preserved",
+      "detail": "preserved_for_n26",
+      "passed": true
+    },
+    {
+      "check_id": "producer_lane_not_native_upgrade",
+      "detail": "naturalization_debt_context_only",
+      "passed": true
+    },
+    {
+      "check_id": "n26_handoff_constraints_complete",
+      "detail": [
+        "consume_as_bounded_bf5_prerequisite_only",
+        "preserve_native_flux_debt_bound_1e-9",
+        "carry_independent_new_basin_not_supported",
+        "carry_full_module_zero_margin_preserved",
+        "do_not_import_producer_assisted_flux_scaffold_as_native_success",
+        "do_not_convert_sub_basin_candidate_into_proxy_collapse_by_label",
+        "keep_AP4_AP5_gap_ledger_visible_where_route_or_proxy_dependencies_appear",
+        "keep_all_unsafe_claim_flags_false"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "controls_clean",
+      "detail": [
+        {
+          "actual_result": "C6 supported as handoff/readiness while BF ceiling remains scoped BF5",
+          "blocked_condition": "N25-C6 handoff readiness is relabeled as BF6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "c6_is_not_bf6_control",
+          "control_status": "passed",
+          "expected_result": "native_bf6_supported remains false",
+          "rung_effect": "N25-C6 may pass without BF6 upgrade"
+        },
+        {
+          "actual_result": "handoff constraints require bounded BF5-only consumption",
+          "blocked_condition": "N26 consumes N25 as general basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "n26_handoff_scope_control",
+          "control_status": "passed",
+          "expected_result": "N26 consumption is bounded to scoped BF5 prerequisite evidence",
+          "rung_effect": "N26-ready handoff allowed only inside recorded scope"
+        },
+        {
+          "actual_result": "independent new basin remains explicit naturalization debt",
+          "blocked_condition": "high-margin core sub-basin is relabeled as independent new basin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "independent_new_basin_relabel_control",
+          "control_status": "passed",
+          "expected_result": "independent_new_basin_supported remains false",
+          "rung_effect": "BF5 scope preserved"
+        },
+        {
+          "actual_result": "native_flux_debt_bound = 1e-9 and native_flux_debt_widened = false",
+          "blocked_condition": "native flux routing above 1e-9 is treated as naturalized",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_above_bound_relabel_control",
+          "control_status": "passed",
+          "expected_result": "native flux debt remains carried forward",
+          "rung_effect": "flux debt preserved for N26"
+        },
+        {
+          "actual_result": "producer_assisted_success_does_not_overwrite_native_failure = true",
+          "blocked_condition": "I6 producer-assisted flux scaffold upgrades native BF evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_scaffold_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "producer-assisted result stays naturalization target only",
+          "rung_effect": "native and producer-assisted lanes remain separated"
+        },
+        {
+          "actual_result": "N26 consumption constraints carry AP4/AP5 ledger forward",
+          "blocked_condition": "AP4/AP5 dependencies disappear from N26 handoff",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap_gap_ledger_carry_forward_control",
+          "control_status": "passed",
+          "expected_result": "handoff requires AP4/AP5 ledger where route or proxy dependencies appear",
+          "rung_effect": "gap discipline preserved"
+        },
+        {
+          "actual_result": "unsafe_claim_flags all false",
+          "blocked_condition": "BF5/C6 handoff is relabeled as learning, choice, agency, native support, Phase 8, or ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "unsafe_claims_relabel_control",
+          "control_status": "passed",
+          "expected_result": "all unsafe claim flags remain false",
+          "rung_effect": "claim boundary preserved"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_valid",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_claim_boundary_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_naturalization_debt_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_n26_handoff_contract_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_source_lineage_trace.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_non_circular",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      },
+      "passed": true
+    }
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "final_supported_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "independent_new_basin_supported": false,
+  "iteration": "I7-D",
+  "n25_c6_supported": true,
+  "n25_closeout_ceiling": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+  "n25_closeout_ladder_rung_assigned": false,
+  "n26_readiness_row_count": 1,
+  "n26_readiness_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap_gap_ledger_status": "carried_forward_where_route_or_proxy_dependencies_appear",
+      "artifact_manifest": [
+        {
+          "artifact_role": "claim_boundary_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_claim_boundary_trace.json",
+          "sha256": "dffc8466b97bb47185cbba69887cdd3d9b7be12eeffa5500cbaf3f1c809b2906"
+        },
+        {
+          "artifact_role": "naturalization_debt_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_naturalization_debt_trace.json",
+          "sha256": "f956ff6ddbd10a666979081f8b7c39ed3e2fa2cdaec84cfc937f3e0d7f7edec4"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_control_matrix_trace.json",
+          "sha256": "f134203fa8a8bbf3274237cc10cf694b98ea4b9258be39fb7dd9bdfebe2ad085"
+        },
+        {
+          "artifact_role": "source_handoff",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_n26_handoff_contract_trace.json",
+          "sha256": "0e418141439ec1f91a3241effbbdb346f1aa33c61c26633c28a83a988696dcc0"
+        },
+        {
+          "artifact_role": "source_lineage_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_source_lineage_trace.json",
+          "sha256": "6502df1b6b19f07a350e66a9813da0f4b8b87eba281c33689605e5a7c74177e9"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_claim_boundary_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_naturalization_debt_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_n26_handoff_contract_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_source_lineage_trace.json"
+      ],
+      "artifact_paths_equal_manifest_paths": true,
+      "artifact_sha256": {
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_claim_boundary_trace.json": "dffc8466b97bb47185cbba69887cdd3d9b7be12eeffa5500cbaf3f1c809b2906",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_control_matrix_trace.json": "f134203fa8a8bbf3274237cc10cf694b98ea4b9258be39fb7dd9bdfebe2ad085",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_n26_handoff_contract_trace.json": "0e418141439ec1f91a3241effbbdb346f1aa33c61c26633c28a83a988696dcc0",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_naturalization_debt_trace.json": "f956ff6ddbd10a666979081f8b7c39ed3e2fa2cdaec84cfc937f3e0d7f7edec4",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_n26_readiness_bounded_formation_gate_i7d_artifacts/n25_i7d_source_lineage_trace.json": "6502df1b6b19f07a350e66a9813da0f4b8b87eba281c33689605e5a7c74177e9"
+      },
+      "artifact_sha256_equal_manifest_sha256": true,
+      "basin_formation_claim_allowed": false,
+      "bf5_scope": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+      "bf6_or_independent_new_basin_supported": false,
+      "bf_ceiling": "BF5_native_high_margin_core_sub_basin_stress_candidate",
+      "bounded_formation_handoff_allowed": true,
+      "claim_ceiling": "N26-ready bounded basin-formation evidence with BF evidence ceiling held at scoped BF5; not BF6, not independent new-basin formation, not native support, not agency",
+      "control_results": [
+        {
+          "actual_result": "C6 supported as handoff/readiness while BF ceiling remains scoped BF5",
+          "blocked_condition": "N25-C6 handoff readiness is relabeled as BF6",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "c6_is_not_bf6_control",
+          "control_status": "passed",
+          "expected_result": "native_bf6_supported remains false",
+          "rung_effect": "N25-C6 may pass without BF6 upgrade"
+        },
+        {
+          "actual_result": "handoff constraints require bounded BF5-only consumption",
+          "blocked_condition": "N26 consumes N25 as general basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "n26_handoff_scope_control",
+          "control_status": "passed",
+          "expected_result": "N26 consumption is bounded to scoped BF5 prerequisite evidence",
+          "rung_effect": "N26-ready handoff allowed only inside recorded scope"
+        },
+        {
+          "actual_result": "independent new basin remains explicit naturalization debt",
+          "blocked_condition": "high-margin core sub-basin is relabeled as independent new basin",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "independent_new_basin_relabel_control",
+          "control_status": "passed",
+          "expected_result": "independent_new_basin_supported remains false",
+          "rung_effect": "BF5 scope preserved"
+        },
+        {
+          "actual_result": "native_flux_debt_bound = 1e-9 and native_flux_debt_widened = false",
+          "blocked_condition": "native flux routing above 1e-9 is treated as naturalized",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_above_bound_relabel_control",
+          "control_status": "passed",
+          "expected_result": "native flux debt remains carried forward",
+          "rung_effect": "flux debt preserved for N26"
+        },
+        {
+          "actual_result": "producer_assisted_success_does_not_overwrite_native_failure = true",
+          "blocked_condition": "I6 producer-assisted flux scaffold upgrades native BF evidence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_scaffold_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "producer-assisted result stays naturalization target only",
+          "rung_effect": "native and producer-assisted lanes remain separated"
+        },
+        {
+          "actual_result": "N26 consumption constraints carry AP4/AP5 ledger forward",
+          "blocked_condition": "AP4/AP5 dependencies disappear from N26 handoff",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap_gap_ledger_carry_forward_control",
+          "control_status": "passed",
+          "expected_result": "handoff requires AP4/AP5 ledger where route or proxy dependencies appear",
+          "rung_effect": "gap discipline preserved"
+        },
+        {
+          "actual_result": "unsafe_claim_flags all false",
+          "blocked_condition": "BF5/C6 handoff is relabeled as learning, choice, agency, native support, Phase 8, or ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "unsafe_claims_relabel_control",
+          "control_status": "passed",
+          "expected_result": "all unsafe claim flags remain false",
+          "rung_effect": "claim boundary preserved"
+        }
+      ],
+      "final_closeout_claim_pending_i8": true,
+      "final_supported_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+      "full_module_zero_margin_preserved": true,
+      "geometric_interpretation": "I7-D does not change the geometry discovered by I7-C. It packages the high-margin core/shell sub-basin as a bounded formation substrate that N26 may use as prerequisite geometry for proxy-divergence tests. The source geometry remains a core inside the inherited native 1e-9 flux envelope, with independent new-basin formation and broader flux routing still blocked.",
+      "independent_new_basin_supported": false,
+      "lane": "native",
+      "n25_c6_meaning": "N26-ready bounded basin-formation evidence with final BF evidence ceiling held at scoped BF5.",
+      "n25_c6_supported": true,
+      "n25_closeout_ceiling": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+      "n25_closeout_ladder_rung_assigned": false,
+      "n26_consumption_constraints": [
+        "consume_as_bounded_bf5_prerequisite_only",
+        "preserve_native_flux_debt_bound_1e-9",
+        "carry_independent_new_basin_not_supported",
+        "carry_full_module_zero_margin_preserved",
+        "do_not_import_producer_assisted_flux_scaffold_as_native_success",
+        "do_not_convert_sub_basin_candidate_into_proxy_collapse_by_label",
+        "keep_AP4_AP5_gap_ledger_visible_where_route_or_proxy_dependencies_appear",
+        "keep_all_unsafe_claim_flags_false"
+      ],
+      "n26_handoff_status": "ready",
+      "n26_handoff_target": "N26_proxy_divergence_proxy_collapse",
+      "native_bf5_supported": true,
+      "native_bf6_supported": false,
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_status": "preserved_for_n26",
+      "native_flux_debt_widened": false,
+      "native_flux_routing_above_1e-9_naturalized": false,
+      "naturalization_debt": [
+        "independent_new_basin_not_supported",
+        "native_flux_routing_above_1e-9_not_naturalized",
+        "full_module_zero_margin_preserved",
+        "producer_flux_scaffold_not_native",
+        "BF5_scope_not_BF6"
+      ],
+      "output_digest": "cc3a042ea8da60b87011702df306819bf7f7bcbc455dc6a30e3749d69bbf9158",
+      "producer_assisted_lane_consumed_as": "naturalization_debt_context_only",
+      "producer_assisted_success_does_not_overwrite_native_failure": true,
+      "row_decision": "supported",
+      "row_digest": "cc3a042ea8da60b87011702df306819bf7f7bcbc455dc6a30e3749d69bbf9158",
+      "row_id": "n25_i7d_n26_readiness_bounded_formation_gate",
+      "source_current_inputs": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c.json"
+      ],
+      "source_i6_output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "source_i7_output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+      "source_i7a_output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+      "source_i7b_output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+      "source_i7c_output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+      "source_iteration": "I7-D_n26_readiness_bounded_formation_gate",
+      "source_output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+      "unsafe_claim_flags": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      }
+    }
+  ],
+  "native_bf5_supported": true,
+  "native_bf6_supported": false,
+  "output_digest": "616d948629d7c27a23b8668bb5560dca2fff7e190748951e414b7ba608b76404",
+  "ready_for_iteration_8_closeout_and_n26_handoff": true,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_n26_readiness_bounded_formation_gate_i7d.py",
+  "source_digest_chain_audit": {
+    "i6_producer_assisted_flux_scaffold": {
+      "acceptance_state": "accepted_producer_assisted_flux_conditioned_bf4_scaffold_candidate_native_bf_unchanged",
+      "artifact_id": "n25_producer_assisted_formation_probe",
+      "output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+      "sha256": "08e0f78523f129d134046f58e765b0dfb08e4431f17dbf726584fe934723b22c",
+      "status": "passed"
+    },
+    "i7_comparative_stress_boundary_matrix": {
+      "acceptance_state": "accepted_comparative_bf4_boundary_matrix_bf5_blocked_n26_ready",
+      "artifact_id": "n25_comparative_stress_boundary_matrix",
+      "output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix.json",
+      "sha256": "ac74f4eacc57d7922b03fb1d17f2cd6ab9151ba2717d464f91f323cc6900170d",
+      "status": "passed"
+    },
+    "i7a_native_high_margin_core": {
+      "acceptance_state": "accepted_native_high_margin_core_candidate_bf5_pending_replay_stress",
+      "artifact_id": "n25_native_high_margin_formation_probe_i7a",
+      "output_digest": "f3137900d167f264fa30001be5e4f5d3f8991c6af30dc49e4b0aafa3b886bec3",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_high_margin_formation_probe_i7a.json",
+      "sha256": "efb3c0af0ef8aab146a97a444a28aef3f55da60421f34ab825a2be6d691cc1a3",
+      "status": "passed"
+    },
+    "i7b_high_margin_core_replay_controls": {
+      "acceptance_state": "accepted_high_margin_core_replay_control_backed_bf5_stress_ready",
+      "artifact_id": "n25_high_margin_core_replay_controls_i7b",
+      "output_digest": "dc33c7d5ee0d59152027753c8f287fab381b283bf4ee6910039074155c1cf5ce",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_high_margin_core_replay_controls_i7b.json",
+      "sha256": "9428cddc69ab5c3f9733e5f9722314616ba9ae7c8a530d02c75c8d102e4b05b8",
+      "status": "passed"
+    },
+    "i7c_bf5_core_stress_gate": {
+      "acceptance_state": "accepted_scoped_native_bf5_high_margin_core_sub_basin_stress_candidate",
+      "artifact_id": "n25_bf5_core_stress_gate_i7c",
+      "output_digest": "2af0f3eb0cb463df1565ce73458353f96259bc103e9d9c6198aeef9695595858",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_bf5_core_stress_gate_i7c.json",
+      "sha256": "1f5f3800ed3690d45ab69e93c8d81bbca37684ce4f2d73bc7e92ac23ffbd869c",
+      "status": "passed"
+    }
+  },
+  "status": "passed"
+}

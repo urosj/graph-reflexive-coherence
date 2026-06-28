@@ -1,0 +1,85 @@
+{
+  "candidate_external_edge_count": 9,
+  "candidate_internal_edge_ids": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "candidate_node_count": 5,
+  "candidate_region_node_ids": [
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "coherence_floor_margin_new_region": 0.0,
+  "declared_min_internal_edge_count": 4,
+  "declared_min_positive_coherence_nodes": 3,
+  "floor_margin_interpretation": "zero-margin candidate trace; enough to record a native bifurcation surface, not enough to close stable BF3/BF4 without I5",
+  "min_candidate_coherence": 0.0,
+  "node_records": [
+    {
+      "basin_id": "10",
+      "basin_mass": 0.0,
+      "coherence": 0.0,
+      "incident_edge_ids": [
+        9,
+        10,
+        11
+      ],
+      "node_id": 10
+    },
+    {
+      "basin_id": "11",
+      "basin_mass": 0.0,
+      "coherence": 3.3333333336666664,
+      "incident_edge_ids": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "node_id": 11
+    },
+    {
+      "basin_id": "12",
+      "basin_mass": 0.0,
+      "coherence": 3.3333333336666664,
+      "incident_edge_ids": [
+        1,
+        7,
+        10,
+        12
+      ],
+      "node_id": 12
+    },
+    {
+      "basin_id": "13",
+      "basin_mass": 0.0,
+      "coherence": 3.3333333336666664,
+      "incident_edge_ids": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "node_id": 13
+    },
+    {
+      "basin_id": "14",
+      "basin_mass": 0.0,
+      "coherence": 0.0,
+      "incident_edge_ids": [
+        4,
+        12
+      ],
+      "node_id": 14
+    }
+  ],
+  "positive_node_count": 3,
+  "positive_node_min_coherence": 3.3333333336666664,
+  "support_floor_definition": "I4 records source-current module support as emitted module nodes and internal edges plus preserved budget. Stability and replay are deferred to I5.",
+  "support_floor_margin_new_region": 0.0
+}

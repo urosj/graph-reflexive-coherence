@@ -1,0 +1,92 @@
+[
+  {
+    "actual_result": "BF5 scope is high-margin core sub-basin within native 1e-9 envelope",
+    "blocked_condition": "scoped core BF5 is relabeled as general independent new-basin formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "bf5_scope_control",
+    "control_status": "passed",
+    "expected_result": "independent_new_basin_supported remains false",
+    "rung_effect": "BF5 remains scoped; independent new-basin claim blocked"
+  },
+  {
+    "actual_result": "supported buffer ceiling recorded; 3.5 buffer fails closed",
+    "blocked_condition": "positive core fails nonzero support/coherence buffer stress",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "support_coherence_stress_control",
+    "control_status": "passed",
+    "expected_result": "core survives nonzero buffer and fails closed beyond margin",
+    "rung_effect": "support/coherence stress gate supports scoped BF5"
+  },
+  {
+    "actual_result": "boundary stress ceiling = 4; stress 5 fails closed",
+    "blocked_condition": "boundary distinguishability fails stress",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "boundary_stress_control",
+    "control_status": "passed",
+    "expected_result": "boundary survives through recorded margin and fails closed beyond it",
+    "rung_effect": "boundary stress gate supports scoped BF5"
+  },
+  {
+    "actual_result": "2e-9 native flux stress fails closed",
+    "blocked_condition": "merge/leakage or flux beyond native bound is counted as BF5",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+    "control_status": "passed",
+    "expected_result": "BF5 is bounded to native 1e-9 flux envelope",
+    "rung_effect": "broad flux robustness remains blocked"
+  },
+  {
+    "actual_result": "producer_assisted_result_class = not_applicable",
+    "blocked_condition": "producer-assisted flux scaffold is used to support native BF5",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "passed",
+    "expected_result": "I7-C consumes native I7-B core only",
+    "rung_effect": "producer-to-native relabel blocked"
+  },
+  {
+    "actual_result": "native_flux_envelope_widened = false",
+    "blocked_condition": "BF5 stress widens native 1e-9 bound",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "native flux envelope remains 1e-9",
+    "rung_effect": "native flux debt preserved"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_learning = false",
+    "blocked_condition": "BF5 core formation is relabeled as semantic learning",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_learning_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic learning claim flag remains false",
+    "rung_effect": "semantic learning relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.agency = false",
+    "blocked_condition": "BF5 core formation is relabeled as agency",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "agency_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "agency claim flag remains false",
+    "rung_effect": "agency relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.native_support = false",
+    "blocked_condition": "BF5 core formation is relabeled as native support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_support_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "native support claim flag remains false",
+    "rung_effect": "native support relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.phase8 = false",
+    "blocked_condition": "BF5 core formation is relabeled as Phase 8",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "phase8_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "phase8 claim flag remains false",
+    "rung_effect": "Phase 8 relabel blocked"
+  }
+]

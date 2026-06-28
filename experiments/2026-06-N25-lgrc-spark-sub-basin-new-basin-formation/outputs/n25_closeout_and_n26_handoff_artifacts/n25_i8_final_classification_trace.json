@@ -1,0 +1,48 @@
+{
+  "blocked": {
+    "BF6": true,
+    "LGRC9V3_multi_basin_native_formation": true,
+    "agency": true,
+    "ant_ecology": true,
+    "independent_new_basin_formation": true,
+    "native_flux_routing_above_1e-9": true,
+    "native_support": true,
+    "phase8": true,
+    "semantic_choice": true,
+    "semantic_learning": true,
+    "sentience": true
+  },
+  "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+  "final_n25_closeout_rung": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+  "handoff_lane": {
+    "bounded_formation_handoff_allowed": true,
+    "n26_handoff_status": "ready",
+    "source_row_id": "n25_i7d_n26_readiness_bounded_formation_gate"
+  },
+  "interpretation": "N25 closes as scoped native BF5 and N25-C6 readiness. It supports a high-margin sub-basin/core formation substrate, not independent multi-basin or BF6 formation. I7-E adds producer-assisted scaffold evidence for the missing native flux-routing mechanism.",
+  "native_lane": {
+    "coherence_floor_margin_new_region": 3.3333333336666664,
+    "independent_new_basin_supported": false,
+    "native_bf6_supported": false,
+    "native_flux_debt_bound": 1e-09,
+    "scope": "bounded_high_margin_core_sub_basin_within_native_1e-9_flux_envelope",
+    "source_row_id": "n25_i7c_bf5_core_stress_gate",
+    "status": "supported",
+    "support_floor_margin_new_region": 10.000000001,
+    "supported_bf_level": "BF5_scoped_native_high_margin_core_sub_basin"
+  },
+  "producer_assisted_lane": {
+    "native_bf_upgraded_by_producer": false,
+    "naturalization_targets": [
+      "native_flux_routing_or_rate_limiting_surface_for_high_margin_core",
+      "native_attempted_flux_windowing_without_producer",
+      "native_high_margin_core_preservation_under_larger_flux"
+    ],
+    "producer_assisted_bf6_supported": false,
+    "result_role": "missing_native_mechanism_probe",
+    "source_row_id": "n25_i7e_producer_assisted_high_margin_scaffold",
+    "status": "supported_as_scaffold_context",
+    "supported_level": "producer_assisted_BF5_scaffold_candidate"
+  },
+  "trace_id": "n25_i8_final_classification_trace"
+}

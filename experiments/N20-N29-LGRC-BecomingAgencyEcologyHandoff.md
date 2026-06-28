@@ -1,6 +1,6 @@
 # N20-N29 LGRC Becoming-Agency Ecology Handoff
 
-This handoff is the current pickup note after N24. It replaces the
+This handoff is the current pickup note after N25.1. It replaces the
 N12-N18 handoff as the active continuation record for the becoming-agency
 primitive arc. The N12-N18 handoff remains historical context for the closed
 agency-prerequisite stack.
@@ -18,7 +18,11 @@ N21 withdrawal resistance and naturalization depth = closed
 N22 susceptibility update and durable geometry modification = closed
 N23 live-continuation collapse and selection geometry = closed
 N24 abundance and surplus-supported optionality = closed
-current next experiment = N25_spark_sub_basin_new_basin_formation
+N25 spark / sub-basin / new-basin formation = closed
+N25.1 LGRC9V3 multi-basin formation extension requirements = closed
+current next implementation tranche = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+downstream primitive experiment = N26_proxy_divergence_proxy_collapse
+N26_unscoped_multi_basin_mode = blocked_until_future_MB6
 ```
 
 N20 closed as a contract/schema experiment only:
@@ -126,6 +130,50 @@ implementation, or a final global AP4 reclassification. I7-C records a
 producer-mediated flux-conditioning scaffold as a separate extension lane and
 naturalization target, not as native support or native N24-C6.
 
+N25 closed as bounded spark / sub-basin / high-margin core formation evidence:
+
+```text
+status = passed
+acceptance_state = accepted_n25_c6_n26_ready_scoped_bf5_with_multibasin_extension_debt
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+ready_for_n25_1_or_n26 = true
+```
+
+N25 supports scoped native high-margin core / sub-basin formation and a
+separate producer-assisted BF5 scaffold. It does not support independent
+new-basin formation, BF6, or native LGRC9V3 multi-basin formation.
+
+N25.1 closed as a requirements/spec bridge for a future Phase 8 LGRC9V3
+multi-basin formation extension:
+
+```text
+status = passed
+acceptance_state = closed_n25_1_c4_requirements_bridge_phase8_handoff_ready_no_runtime_evidence
+final_n25_1_closeout_rung = N25.1-C4_closeout_and_phase8_handoff_complete
+final_mb_ladder_ceiling = MB0_requirements_bridge_only_no_runtime_evidence
+requirements_bridge_closed = true
+phase8_extension_ready_to_implement = true
+runtime_implementation_opened = false
+phase8_extension_implemented = false
+multi_basin_evidence_opened = false
+native_multi_basin_formation_supported = false
+BF6_supported = false
+ready_for_n26_scoped_mode = true
+```
+
+N25.1 does not implement the runtime extension and does not claim multi-basin
+evidence. It defines the Phase 8 extension requirements, MB0...MB6 ladder,
+replay/control contract, and N26 consumption constraints. The immediate next
+branch should be a Phase 8 implementation tranche that consumes N25/N25.1 as
+frozen source evidence before unscoped N26 multi-basin use is allowed.
+
 ## Active Roadmap Source
 
 Use this handoff together with:
@@ -146,6 +194,12 @@ Use this handoff together with:
 - `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md`
 - `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/reports/n24_closeout_and_n25_handoff.md`
 - `experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json`
+- `experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md`
+- `experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/reports/n25_closeout_and_n26_handoff.md`
+- `experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json`
+- `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md`
+- `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/reports/n25_1_closeout_and_phase8_extension_handoff.md`
+- `experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/outputs/n25_1_closeout_and_phase8_extension_handoff.json`
 
 Historical prerequisite context remains in:
 
@@ -456,7 +510,7 @@ flux/leakage debt
 
 ## N25 Handoff
 
-N25 is the next experiment. It should test the next becoming primitive:
+N25 closed the next becoming primitive:
 
 ```text
 spark / sub-basin / new-basin formation
@@ -469,7 +523,73 @@ Can becoming pressure produce a new distinguishable basin or sub-basin, rather
 than only reinforcing an existing basin?
 ```
 
-N25 must consume N20 as the standing primitive contract and N24 as two
+N25 closeout result:
+
+```text
+final_bf_level = BF5_scoped_native_high_margin_core_sub_basin
+final_n25_closeout_rung = N25-C6_n26_ready_bounded_basin_formation_evidence
+native_bf5_supported = true
+native_bf6_supported = false
+independent_new_basin_supported = false
+producer_assisted_bf5_scaffold_supported = true
+lgrc9v3_multi_basin_native_formation_supported = false
+phase8_extension_required_for_multi_basin_formation = true
+```
+
+N25 supports bounded sub-basin / high-margin core formation and a separate
+producer-assisted BF5 scaffold/missing-native-mechanism probe. It does not
+support independent new-basin formation, BF6, or native LGRC9V3 multi-basin
+formation.
+
+## N25.1 Handoff
+
+N25.1 closed the requirements bridge before N26 for any future independent
+multi-basin substrate evidence. It defined the Phase 8 extension requirements
+for:
+
+```text
+LGRC9V3 multi-basin formation from causal refinement
+```
+
+N25.1 did not implement the runtime extension or claim multi-basin evidence.
+It produced a source crosswalk, MB0...MB6 ladder, extension requirement matrix,
+replay/control contract, and N26 consumption constraints.
+
+N25.1 closeout result:
+
+```text
+final_n25_1_closeout_rung = N25.1-C4_closeout_and_phase8_handoff_complete
+final_mb_ladder_ceiling = MB0_requirements_bridge_only_no_runtime_evidence
+phase8_extension_ready_to_implement = true
+runtime_implementation_opened = false
+phase8_extension_implemented = false
+multi_basin_evidence_opened = false
+native_multi_basin_formation_supported = false
+BF6_supported = false
+```
+
+Immediate implementation handoff:
+
+```text
+next_branch_role = Phase8_LGRC9V3_multi_basin_formation_from_causal_refinement
+consume_as_frozen_sources = N25_closeout, N25.1_closeout
+must_not_reopen_N25_or_N25.1_claims = true
+must_implement_against_N25_1_surfaces = true
+target_ladder = MB1...MB6
+initial_claim_ceiling = implementation_tranche_pending_runtime_evidence
+```
+
+N26 may proceed after N25.1 in one of two modes:
+
+```text
+scoped mode:
+  consume N25 sub-basin / high-margin core evidence only
+
+multi-basin mode:
+  wait for Phase 8 extension evidence reaching MB6
+```
+
+N25 consumed N20 as the standing primitive contract and N24 as two
 separate lanes:
 
 ```text
@@ -479,7 +599,7 @@ must_consume_n24_producer_extension_as_separate_lane = true
 must_preserve_AP4_AP5_gap_ledger = true
 ```
 
-N25 native lane question:
+N25 native lane question was:
 
 ```text
 Can one N24 optional continuation become a distinguishable sub-basin or
@@ -487,7 +607,7 @@ new-basin candidate while preserving the inherited native 1e-9 flux/leakage
 bound?
 ```
 
-N25 producer-assisted lane question:
+N25 producer-assisted lane question was:
 
 ```text
 Does producer-mediated flux conditioning permit a sub-basin or new-basin
@@ -495,7 +615,7 @@ candidate, and can that mechanism be specified as future native LGRC
 naturalization debt?
 ```
 
-N25 should distinguish:
+N25 distinguished:
 
 ```text
 reinforced old basin
@@ -506,7 +626,7 @@ transient fluctuation misread as basin
 producer-assisted new-basin scaffold
 ```
 
-N25 required controls:
+N25 required controls were:
 
 ```text
 label-only new basin rejected
@@ -518,7 +638,7 @@ producer-assisted success does not overwrite native failure
 native flux debt remains row-local
 ```
 
-N25 must not consume N24 as:
+N25 did not consume N24 as:
 
 ```text
 semantic_choice

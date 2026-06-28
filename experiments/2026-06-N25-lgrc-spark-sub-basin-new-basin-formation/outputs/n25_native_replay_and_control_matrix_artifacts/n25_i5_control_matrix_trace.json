@@ -1,0 +1,227 @@
+[
+  {
+    "actual_result": "artifact and runtime traces reconstruct with causal spark and module boundary digests",
+    "blocked_condition": "new basin exists only as a label",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "label_only_new_basin_rejected",
+    "control_status": "passed",
+    "expected_result": "source-current event and boundary traces reconstruct",
+    "rung_effect": "label-only path remains blocked"
+  },
+  {
+    "actual_result": "module nodes and internal edges replay identically",
+    "blocked_condition": "old basin merely thickens",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "single_basin_thickening_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "old center replacement and module/internal-edge boundary remain replay-stable",
+    "rung_effect": "old-basin-thickening interpretation remains blocked"
+  },
+  {
+    "actual_result": "boundary signature digest matches I4 and duplicate replay",
+    "blocked_condition": "old boundary reshaping is counted as basin formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "reshaped_old_boundary_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "new boundary candidate trace remains reconstructable",
+    "rung_effect": "reshaped-boundary-only interpretation remains blocked"
+  },
+  {
+    "actual_result": "budget_error = 0.0",
+    "blocked_condition": "merge or leakage budget error is counted as formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+    "control_status": "passed",
+    "expected_result": "budget error remains within native 1e-9 bound",
+    "rung_effect": "merge/leakage budget control clean for replay-backed candidate"
+  },
+  {
+    "actual_result": "runtime_replay_stable = True; artifact_reconstruction_stable = True",
+    "blocked_condition": "one-window transient spark is counted as formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "non_replayable_transient_rejected",
+    "control_status": "passed",
+    "expected_result": "duplicate runtime replay and artifact reconstruction are stable",
+    "rung_effect": "transient-only interpretation rejected"
+  },
+  {
+    "actual_result": "I5 consumes I4 native row and reruns native LGRC9V3 active topology path",
+    "blocked_condition": "producer inserts basin-like record without source-current native trace",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "hidden_producer_insertion_rejected",
+    "control_status": "passed",
+    "expected_result": "native LGRC9V3 path and no producer intervention ledger",
+    "rung_effect": "hidden producer path remains blocked"
+  },
+  {
+    "actual_result": "packet_amount = 1e-09; native_flux_debt_bound = 1e-09",
+    "blocked_condition": "native flux debt is omitted or widened",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_remains_row_local",
+    "control_status": "passed",
+    "expected_result": "packet amount and native flux bound remain 1e-9",
+    "rung_effect": "native row remains row-local under inherited N24 debt"
+  },
+  {
+    "actual_result": "I5 consumes I4 native spark/expansion artifacts and duplicate runtime replay, not N24 labels",
+    "blocked_condition": "N24 optionality context is relabeled as N25 formation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "n24_optionality_relabel_as_formation_rejected",
+    "control_status": "passed",
+    "expected_result": "I5 must replay/control the I4 LGRC9V3 source-current formation trace",
+    "rung_effect": "N24 optionality remains context only under replay/control"
+  },
+  {
+    "actual_result": "producer_assisted_result_class = not_applicable",
+    "blocked_condition": "producer-assisted result overwrites native lane result",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+    "control_status": "not_applicable",
+    "expected_result": "I5 native row has no producer-assisted result",
+    "rung_effect": "scope reason: producer lane not opened in I5"
+  },
+  {
+    "actual_result": "I5 replays the native LGRC9V3 path only",
+    "blocked_condition": "producer schedule is added after observing the result",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_schedule_post_hoc_control",
+    "control_status": "not_applicable",
+    "expected_result": "no producer schedule is present",
+    "rung_effect": "scope reason: native-only I5 matrix"
+  },
+  {
+    "actual_result": "I5 duplicate replay uses native LGRC9V3 path",
+    "blocked_condition": "hidden producer support carries the candidate",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_hidden_support_control",
+    "control_status": "not_applicable",
+    "expected_result": "no producer support is present",
+    "rung_effect": "scope reason: native-only I5 matrix"
+  },
+  {
+    "actual_result": "producer threshold relaxation absent",
+    "blocked_condition": "producer lane relaxes thresholds",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_threshold_relaxation_control",
+    "control_status": "not_applicable",
+    "expected_result": "I5 keeps I4 thresholds",
+    "rung_effect": "scope reason: native-only I5 matrix"
+  },
+  {
+    "actual_result": "runtime replay and artifact reconstruction are stable",
+    "blocked_condition": "basin-like record appears without source-current trace",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_basin_insertion_without_trace_control",
+    "control_status": "passed",
+    "expected_result": "I5 reconstructs I4 source-current traces",
+    "rung_effect": "producer insertion without trace remains blocked"
+  },
+  {
+    "actual_result": "producer_assisted_lane_opened = false",
+    "blocked_condition": "producer-assisted success overwrites native failure",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_overwrites_native_failure_control",
+    "control_status": "not_applicable",
+    "expected_result": "producer-assisted lane is not opened",
+    "rung_effect": "scope reason: native-only I5 matrix"
+  },
+  {
+    "actual_result": "LGRC9V3 causal spark and active topology traces replay",
+    "blocked_condition": "existing LGRC/LGRC9V3 spark sources are skipped",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_spark_source_policy_rejected",
+    "control_status": "passed",
+    "expected_result": "I5 consumes and replays I4 existing-native path",
+    "rung_effect": "native-spark-first policy remains satisfied"
+  },
+  {
+    "actual_result": "producer_assisted_lane_opened = false",
+    "blocked_condition": "producer path is tried before native spark path",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_before_native_spark_path_rejected",
+    "control_status": "passed",
+    "expected_result": "I5 remains native-only",
+    "rung_effect": "producer-before-native ordering remains blocked"
+  },
+  {
+    "actual_result": "ap4_dependency_status = required_recorded",
+    "blocked_condition": "AP4 dependency is handled only in prose",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "ap4_gap_prose_only_rejected",
+    "control_status": "passed",
+    "expected_result": "row records AP4 dependency status and reason",
+    "rung_effect": "AP4 gap remains explicit"
+  },
+  {
+    "actual_result": "ap5_dependency_status = not_applicable",
+    "blocked_condition": "AP5 proxy/target dependency is omitted when applicable",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "ap5_proxy_target_omission_rejected_when_applicable",
+    "control_status": "not_applicable",
+    "expected_result": "I5 has no proxy/target formation row",
+    "rung_effect": "scope reason: no AP5-dependent proxy/target formation in I5"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_learning = false",
+    "blocked_condition": "bifurcation is relabeled as semantic learning",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_learning_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic learning claim flag remains false",
+    "rung_effect": "semantic learning relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.semantic_choice = false",
+    "blocked_condition": "bifurcation is relabeled as semantic choice",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "semantic_choice_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "semantic choice claim flag remains false",
+    "rung_effect": "semantic choice relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.agency = false",
+    "blocked_condition": "bifurcation is relabeled as agency",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "agency_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "agency claim flag remains false",
+    "rung_effect": "agency relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.native_support = false",
+    "blocked_condition": "bifurcation is relabeled as native support",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_support_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "native support claim flag remains false",
+    "rung_effect": "native support relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.phase8 = false",
+    "blocked_condition": "bifurcation is relabeled as Phase 8 implementation",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "phase8_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "phase8 claim flag remains false",
+    "rung_effect": "Phase 8 relabel blocked"
+  },
+  {
+    "actual_result": "unsafe_claim_flags.ant_ecology = false",
+    "blocked_condition": "bifurcation is relabeled as ant ecology",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "ant_ecology_relabel_rejected",
+    "control_status": "passed",
+    "expected_result": "ant ecology claim flag remains false",
+    "rung_effect": "ant ecology relabel blocked"
+  },
+  {
+    "actual_result": "producer_assisted_lane_opened = false",
+    "blocked_condition": "producer-assisted success is relabeled as native",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_success_as_native_relabel_control",
+    "control_status": "not_applicable",
+    "expected_result": "I5 native matrix does not open producer-assisted lane",
+    "rung_effect": "scope reason: native-only replay/control matrix"
+  }
+]

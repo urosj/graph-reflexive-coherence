@@ -1,0 +1,14 @@
+{
+  "boundary_distinguishability_margin": 4,
+  "candidate_boundary_signature_digest": "b82aa347face8db87a20d776af10e8011002d214a2bb751b5c6b259738e260cc",
+  "core_connected_through_boundary_shell": true,
+  "core_external_edge_count": 8,
+  "core_shell_edge_count": 4,
+  "interpretation": "The positive core remains attached to the emitted module shell and old-basin refinement relation. That supports a high-margin sub-basin core candidate, not an independent new basin.",
+  "new_basin_independence_supported": false,
+  "old_basin_separation_margin": 1.0,
+  "old_to_candidate_separation_digest": "40747fcbc0eae8c5a717ce1a283ca27384a9a175f3509a2a47f68e60011c434d",
+  "positive_core_signature_digest": "e32ddec4337e4397569b04148739fbc750bb35424a40415be0e32d17db182083",
+  "sub_basin_core_candidate_supported": true,
+  "trace_id": "n25_i7a_core_shell_boundary_trace"
+}

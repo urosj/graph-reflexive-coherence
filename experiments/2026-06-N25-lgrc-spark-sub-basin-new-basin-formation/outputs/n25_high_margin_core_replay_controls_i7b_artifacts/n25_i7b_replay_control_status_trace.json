@@ -1,0 +1,9 @@
+{
+  "bf5_stress_gate_ready": true,
+  "independent_new_basin_supported": false,
+  "interpretation": "I7-B removes the replay/control blocker for the high-margin core, but does not itself run the BF5 stress gate.",
+  "native_flux_routing_or_rate_limiting_surface_not_naturalized": true,
+  "positive_core_replay_control_pending_before_i7b": true,
+  "positive_core_replay_control_supported_after_i7b": true,
+  "trace_id": "n25_i7b_replay_control_status_trace"
+}

@@ -1,0 +1,617 @@
+{
+  "acceptance_state": "accepted_source_crosswalk_gap_inventory_no_runtime_implementation",
+  "artifact_id": "n25_1_source_crosswalk_and_gap_inventory",
+  "checks": [
+    {
+      "check_id": "all_cited_sources_exist",
+      "detail": [
+        "papers/2026-04-GRC-9.md",
+        "papers/2026-02-GRC-V3.md",
+        "papers/2026-05-LGRC-9.md",
+        "papers/2026-05-LGRC9V3-Native-Packet-Loops.md",
+        "papers/2026-05-LGRC9V3-Causal-Pulse-Substrate-Surfaces.md",
+        "specs/grc-9-v3-spec.md",
+        "specs/lgrc-9-v3-spec.md",
+        "implementation/Phase-7-Closeout.md",
+        "implementation/Phase-8-LGRC9-ImplementationPlan.md",
+        "examples/lgrc9v3/README.md",
+        "examples/lgrc9v3/causal_spark_diagnostics.py",
+        "examples/lgrc9v3/refinement_packet_transport.py",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n25_closeout_consumed_as_boundary_not_success_upgrade",
+      "detail": {
+        "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+        "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+        "final_n25_closeout_rung": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+        "independent_new_basin_supported": false,
+        "lgrc9v3_multi_basin_native_formation_supported": false,
+        "n25_1_requirements_bridge_needed": true,
+        "native_bf5_supported": true,
+        "native_bf6_supported": false,
+        "output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+        "phase8_extension_required_for_multi_basin_formation": true,
+        "ready_for_n26_with_scope_constraints": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "existing_spark_surfaces_preserved",
+      "detail": {
+        "grc9_mechanical_sparks_exist_in_theory": true,
+        "grc9v3_hybrid_sparks_and_child_stabilization_exist_in_spec": true,
+        "lgrc9v3_causal_spark_candidate_examples_exist": true,
+        "lgrc9v3_refinement_packet_transport_examples_exist": true,
+        "n25_1_gap": "native LGRC9V3 causal refinement to replayable multi-basin formation, controls, and N26-ready substrate evidence",
+        "n25_1_gap_is_not_spark_absence": true,
+        "phase7_grc9v3_representative_spark_evidence_exists": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "missing_multi_basin_runtime_surface_recorded",
+      "detail": [
+        {
+          "must_be_built_from": [
+            "causal_spark_candidate_event",
+            "explicit_topology_integration_gate",
+            "lineage_preserving_refinement",
+            "node_plus_packet_budget_audit"
+          ],
+          "not_allowed_to_use": [
+            "post_hoc_topology_label",
+            "hidden_producer_topology_insertion",
+            "old_synchronous_expansion_relabel_as_causal_extension"
+          ],
+          "required_by": [
+            "MB1",
+            "MB2"
+          ],
+          "source_basis": [
+            "lgrc9v3_spec",
+            "grc9v3_spec",
+            "lgrc9v3_examples_readme"
+          ],
+          "status": "missing_as_native_multi_basin_extension_surface",
+          "surface_id": "causal_refinement_event_to_topology_integration"
+        },
+        {
+          "must_be_built_from": [
+            "post_refinement_flow_window",
+            "child_basin_core_ids",
+            "child_basin_support_floor_records",
+            "child_basin_coherence_floor_records",
+            "child_basin_boundary_records",
+            "child_basin_membership_digest"
+          ],
+          "not_allowed_to_use": [
+            "child_identity_label_only",
+            "module_node_created_equals_child_basin",
+            "transient_sink_as_persistent_child_basin"
+          ],
+          "required_by": [
+            "MB3"
+          ],
+          "source_basis": [
+            "grc9_paper",
+            "grcv3_paper",
+            "grc9v3_spec"
+          ],
+          "status": "missing_as_replayable_child_basin_surface",
+          "surface_id": "post_refinement_child_basin_extraction"
+        },
+        {
+          "must_be_built_from": [
+            "merge_leakage_trace",
+            "neighbor_leakage_records",
+            "old_basin_thickening_control",
+            "sub_basin_relabel_control",
+            "producer_insertion_control",
+            "replay_window"
+          ],
+          "not_allowed_to_use": [
+            "support_margin_only",
+            "producer_assisted_success_as_native_success",
+            "BF5_scoped_sub_basin_as_BF6"
+          ],
+          "required_by": [
+            "MB4",
+            "MB5",
+            "MB6"
+          ],
+          "source_basis": [
+            "grcv3_paper",
+            "n25_closeout"
+          ],
+          "status": "missing_as_control_matrix_for_multi_basin_claim",
+          "surface_id": "merge_leakage_and_relabel_controls"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "runtime_implementation_remains_closed",
+      "detail": {
+        "multi_basin_evidence_opened": false,
+        "phase8_extension_implemented": false,
+        "runtime_implementation_opened": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "bf6": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "independent_new_basin_formation": false,
+        "lgrc9v3_native_multi_basin_formation": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8_implementation_complete": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false,
+        "unrestricted_autonomy": false
+      },
+      "passed": true
+    },
+    {
+      "check_id": "no_absolute_paths_in_records",
+      "detail": "repo_relative_paths_only",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "BF6_supported": false,
+    "N26_unscoped_multi_basin_consumption_allowed": false,
+    "native_multi_basin_formation_supported": false,
+    "requirements_contract_allowed": true,
+    "runtime_evidence_allowed": false,
+    "unsafe_claim_flags": {
+      "agency": false,
+      "ant_ecology": false,
+      "bf6": false,
+      "fully_native_integration": false,
+      "identity_acceptance": false,
+      "independent_new_basin_formation": false,
+      "lgrc9v3_native_multi_basin_formation": false,
+      "native_support": false,
+      "organism_life": false,
+      "phase8_implementation_complete": false,
+      "semantic_choice": false,
+      "semantic_learning": false,
+      "sentience": false,
+      "unrestricted_autonomy": false
+    }
+  },
+  "existing_spark_surface_summary": {
+    "grc9_mechanical_sparks_exist_in_theory": true,
+    "grc9v3_hybrid_sparks_and_child_stabilization_exist_in_spec": true,
+    "lgrc9v3_causal_spark_candidate_examples_exist": true,
+    "lgrc9v3_refinement_packet_transport_examples_exist": true,
+    "n25_1_gap": "native LGRC9V3 causal refinement to replayable multi-basin formation, controls, and N26-ready substrate evidence",
+    "n25_1_gap_is_not_spark_absence": true,
+    "phase7_grc9v3_representative_spark_evidence_exists": true
+  },
+  "experiment": "N25.1",
+  "experiment_kind": "requirements_spec_bridge",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I1",
+  "mb_ladder_ceiling": "MB0_source_crosswalk_only",
+  "mb_ladder_rung_assigned": false,
+  "missing_runtime_surface_count": 3,
+  "missing_runtime_surfaces": [
+    {
+      "must_be_built_from": [
+        "causal_spark_candidate_event",
+        "explicit_topology_integration_gate",
+        "lineage_preserving_refinement",
+        "node_plus_packet_budget_audit"
+      ],
+      "not_allowed_to_use": [
+        "post_hoc_topology_label",
+        "hidden_producer_topology_insertion",
+        "old_synchronous_expansion_relabel_as_causal_extension"
+      ],
+      "required_by": [
+        "MB1",
+        "MB2"
+      ],
+      "source_basis": [
+        "lgrc9v3_spec",
+        "grc9v3_spec",
+        "lgrc9v3_examples_readme"
+      ],
+      "status": "missing_as_native_multi_basin_extension_surface",
+      "surface_id": "causal_refinement_event_to_topology_integration"
+    },
+    {
+      "must_be_built_from": [
+        "post_refinement_flow_window",
+        "child_basin_core_ids",
+        "child_basin_support_floor_records",
+        "child_basin_coherence_floor_records",
+        "child_basin_boundary_records",
+        "child_basin_membership_digest"
+      ],
+      "not_allowed_to_use": [
+        "child_identity_label_only",
+        "module_node_created_equals_child_basin",
+        "transient_sink_as_persistent_child_basin"
+      ],
+      "required_by": [
+        "MB3"
+      ],
+      "source_basis": [
+        "grc9_paper",
+        "grcv3_paper",
+        "grc9v3_spec"
+      ],
+      "status": "missing_as_replayable_child_basin_surface",
+      "surface_id": "post_refinement_child_basin_extraction"
+    },
+    {
+      "must_be_built_from": [
+        "merge_leakage_trace",
+        "neighbor_leakage_records",
+        "old_basin_thickening_control",
+        "sub_basin_relabel_control",
+        "producer_insertion_control",
+        "replay_window"
+      ],
+      "not_allowed_to_use": [
+        "support_margin_only",
+        "producer_assisted_success_as_native_success",
+        "BF5_scoped_sub_basin_as_BF6"
+      ],
+      "required_by": [
+        "MB4",
+        "MB5",
+        "MB6"
+      ],
+      "source_basis": [
+        "grcv3_paper",
+        "n25_closeout"
+      ],
+      "status": "missing_as_control_matrix_for_multi_basin_claim",
+      "surface_id": "merge_leakage_and_relabel_controls"
+    }
+  ],
+  "multi_basin_evidence_opened": false,
+  "n25_closeout_summary": {
+    "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+    "final_bf_level": "BF5_scoped_native_high_margin_core_sub_basin",
+    "final_n25_closeout_rung": "N25-C6_n26_ready_bounded_basin_formation_evidence",
+    "independent_new_basin_supported": false,
+    "lgrc9v3_multi_basin_native_formation_supported": false,
+    "n25_1_requirements_bridge_needed": true,
+    "native_bf5_supported": true,
+    "native_bf6_supported": false,
+    "output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+    "phase8_extension_required_for_multi_basin_formation": true,
+    "ready_for_n26_with_scope_constraints": true
+  },
+  "output_digest": "125a487cb0514535616ee5c7385f6ea566eca6fedac4c1657a77a75693bd845c",
+  "phase8_extension_implemented": false,
+  "reproduction_command": ".venv/bin/python experiments/2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/scripts/build_n25_1_source_crosswalk_and_gap_inventory.py",
+  "required_future_extension_chain": [
+    "causal_spark_or_boundary_birth_event",
+    "topology_integration_or_mechanical_refinement_event",
+    "post_refinement_flow_window",
+    "child_basin_core_extraction",
+    "child_basin_support_coherence_boundary_flux_records",
+    "merge_leakage_and_relabel_controls",
+    "replayable_child_basin_persistence"
+  ],
+  "runtime_implementation_opened": false,
+  "source_record_count": 13,
+  "source_records": [
+    {
+      "parseable_json": false,
+      "path": "papers/2026-04-GRC-9.md",
+      "sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08",
+      "source_role": "primary_theory",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "papers/2026-02-GRC-V3.md",
+      "sha256": "d26c29c70f8df2e4166451ccd9be6ee603cba6c1a023d251bf16de17e8bd3400",
+      "source_role": "primary_theory",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "papers/2026-05-LGRC-9.md",
+      "sha256": "4340a8b7b4be0d6b04127f4205630db59912e2a4a18ca326025517ece6a996cb",
+      "source_role": "primary_lgrc_theory",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "papers/2026-05-LGRC9V3-Native-Packet-Loops.md",
+      "sha256": "d95f745ed5b88c114448add49f84dd97cd3ef3140fbdde0d7c620e29dd368481",
+      "source_role": "validated_implementation_specialization",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "papers/2026-05-LGRC9V3-Causal-Pulse-Substrate-Surfaces.md",
+      "sha256": "82506f5b1fbf2aa7e60a2e67559be82bca4781e2becede75fb2f17c5a0a5c45e",
+      "source_role": "proposed_specialization_contract",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "specs/grc-9-v3-spec.md",
+      "sha256": "c3b26e02ec894649cf43606bada9194b2f5dde8792491ae493aa2e59c7cb68f9",
+      "source_role": "implementation_spec",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "specs/lgrc-9-v3-spec.md",
+      "sha256": "fae557f3bf3d10a7b0b749893bf6bfde6134da054410b3ff49b2c627f5280b84",
+      "source_role": "current_implementation_spec",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "implementation/Phase-7-Closeout.md",
+      "sha256": "677f4b4689fed54c6c0842481e3d4d61142a23db0148b2c5b3fe11d99cc59d5c",
+      "source_role": "historical_runtime_closeout",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "implementation/Phase-8-LGRC9-ImplementationPlan.md",
+      "sha256": "ca9ae57d6c49b28a32823b82b237c4a56ebd193acc1015000175219df3055854",
+      "source_role": "implementation_plan_boundary",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/README.md",
+      "sha256": "4d36dc8bcb248fcf75f19a096d4435ac13b80c1c0f983bd19540180cc80af233",
+      "source_role": "current_example_boundary",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "sha256": "065e6fb59618aa7a138b86e8b3221ba7f7e4de10e8b7dbbfe3baa72deb35ab93",
+      "source_role": "supporting_example_source",
+      "status": "text_source"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/refinement_packet_transport.py",
+      "sha256": "f70c3e53a68d83f8315a77e4b411d6ccad74bc998c281d5acd1a36f65e362b13",
+      "source_role": "supporting_example_source",
+      "status": "text_source"
+    },
+    {
+      "acceptance_state": "accepted_n25_c6_scoped_bf5_closeout_with_producer_scaffold_context",
+      "output_digest": "2a1f19a2ce760275a223989b886c6a006ab1ccea33961b7bcf834c6cb22a565f",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_closeout_and_n26_handoff.json",
+      "sha256": "cad9749abfe69c44bc6d54ac386de38b230e6542211a0277f018a160b1ad7739",
+      "source_role": "current_experiment_closeout",
+      "status": "passed"
+    }
+  ],
+  "source_row_count": 11,
+  "source_rows": [
+    {
+      "gap_contribution": "Provides refinement mechanics but leaves child-basin formation to later flow, persistence, and controls.",
+      "may_consume_as": [
+        "nine_port_mechanical_refinement_contract",
+        "spark_expansion_and_boundary_reassignment_basis",
+        "identity_basin_and_sink_definition_basis"
+      ],
+      "must_not_consume_as": [
+        "LGRC9V3_runtime_evidence",
+        "automatic_multi_basin_formation_evidence",
+        "identity_fission_imposed_by_spark_event"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_01_grc9_mechanical_spark_refinement",
+      "source_backed_claim": "GRC-9 defines deterministic mechanical spark expansion and states that post-expansion reflexive flow may realize child basins; the spark operator itself does not directly impose multiple basins.",
+      "source_classification": "theory_and_mechanical_spec",
+      "source_key": "grc9_paper"
+    },
+    {
+      "gap_contribution": "Defines what child-basin semantics must mean, but does not itself provide LGRC9V3 causal runtime evidence.",
+      "may_consume_as": [
+        "basin_attribute_bundle_basis",
+        "signed_hessian_spark_semantics_basis",
+        "parent_child_hierarchy_basis",
+        "completed_spark_requires_attractor_count_change_basis"
+      ],
+      "must_not_consume_as": [
+        "nine_port_runtime_implementation",
+        "LGRC causal_history_execution",
+        "native_multi_basin_evidence_without_runtime_rows"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_02_grcv3_basin_attribute_child_identity_semantics",
+      "source_backed_claim": "GRC-v3 defines basin charts, hierarchy labels, sink/basin validation, and tightened spark semantics where local degeneracy is not sufficient unless post-event child attractor structure stabilizes.",
+      "source_classification": "theory_and_semantic_spec",
+      "source_key": "grcv3_paper"
+    },
+    {
+      "gap_contribution": "Future multi-basin formation must be causal-history-safe, not a synchronous relabel or checkpoint artifact.",
+      "may_consume_as": [
+        "causal_ordering_contract",
+        "proper_time_and_event_queue_requirement_basis",
+        "lineage_preserving_refinement_constraint",
+        "node_plus_packet_budget_requirement_basis"
+      ],
+      "must_not_consume_as": [
+        "implemented_LGRC9V3_multi_basin_extension",
+        "automatic_topology_changing_causal_history_evidence"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_03_lgrc9_causal_history_constraints",
+      "source_backed_claim": "LGRC separates scheduler order, proper time, and checkpoints, and requires causal availability, lineage-preserving refinement, and budget preservation.",
+      "source_classification": "causal_history_theory_spec",
+      "source_key": "lgrc9_paper"
+    },
+    {
+      "gap_contribution": "Shows a valid producer/step boundary and packet budget model that a future multi-basin extension must preserve.",
+      "may_consume_as": [
+        "native_packet_execution_and_budget_precedent",
+        "producer_observes_and_schedules_boundary",
+        "artifact_validated_packet_loop_precedent"
+      ],
+      "must_not_consume_as": [
+        "native_GRC9V3_proposal_flux_loop",
+        "movement_evidence",
+        "multi_basin_formation_evidence",
+        "agency_evidence"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_04_native_packet_loop_specialization",
+      "source_backed_claim": "Native LGRC9V3 packetized causal execution can support conserved self-rearming packet loops under controls, with producers observing and scheduling rather than directly mutating coherence.",
+      "source_classification": "validated_implementation_specialization",
+      "source_key": "native_packet_loop_paper"
+    },
+    {
+      "gap_contribution": "Provides a disciplined extension pattern but cannot be used as runtime evidence that a multi-basin surface already exists.",
+      "may_consume_as": [
+        "default_off_surface_contract_pattern",
+        "policy_gated_producer_boundary_pattern",
+        "causal_surface_replay_and_digest_requirement_basis"
+      ],
+      "must_not_consume_as": [
+        "implemented_native_pulse_substrate_support",
+        "movement_evidence",
+        "identity_evidence",
+        "multi_basin_formation_evidence"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_05_causal_pulse_surface_proposal",
+      "source_backed_claim": "The causal pulse-substrate surface is proposed as a serializable, replayable, default-off surface with policy-gated producers; native implementation remains future work in the cited paper.",
+      "source_classification": "proposed_implementation_specialization",
+      "source_key": "causal_pulse_surface_paper"
+    },
+    {
+      "gap_contribution": "Establishes that spark/refinement is not invented by N25.1; the missing part is the LGRC9V3 causal extension surface.",
+      "may_consume_as": [
+        "GRC9V3_step_semantics_basis",
+        "mechanical_expansion_and_child_stabilization_requirement_basis",
+        "spark_lane_ownership_boundary"
+      ],
+      "must_not_consume_as": [
+        "LGRC9V3_event_queue_multi_basin_formation",
+        "causal_history_topology_integration_evidence"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_06_grc9v3_spec_current_hybrid_spark_contract",
+      "source_backed_claim": "GRC9V3 must detect spark candidates, execute mechanical expansion, and register completed sparks only after post-event child-basin stabilization.",
+      "source_classification": "implementation_spec",
+      "source_key": "grc9v3_spec"
+    },
+    {
+      "gap_contribution": "This is the central N25.1 gap: causal spark evidence exists, but the extension surface from causal refinement to replayable child-basin persistence is missing.",
+      "may_consume_as": [
+        "current_LGRC9V3_capability_boundary",
+        "causal_spark_candidate_boundary",
+        "packet_transport_through_refinement_boundary",
+        "missing_automatic_topology_integration_record"
+      ],
+      "must_not_consume_as": [
+        "full_event_queue_driven_topology_changing_step_loop",
+        "automatic_mechanical_expansion_from_causal_spark_candidates",
+        "native_multi_basin_formation_support"
+      ],
+      "row_decision": "supported_as_gap_boundary_source",
+      "row_id": "n25_1_i1_row_07_lgrc9v3_spec_current_slice_boundary",
+      "source_backed_claim": "The current LGRC9V3 slices include packet processing, causal spark-candidate wrapping, and refinement packet transport, while explicitly not implementing automatic mechanical expansion from causal spark candidates or the full topology-changing causal-history step loop.",
+      "source_classification": "current_implementation_spec_and_boundary",
+      "source_key": "lgrc9v3_spec"
+    },
+    {
+      "gap_contribution": "Confirms GRC9V3 spark-ish behavior exists, but keeps N25.1 from relabeling old synchronous evidence as LGRC9V3 native multi-basin formation.",
+      "may_consume_as": [
+        "GRC9V3_representative_spark_and_daughter_sink_evidence",
+        "synchronous_child_basin_stabilization_precedent"
+      ],
+      "must_not_consume_as": [
+        "LGRC9V3_causal_multi_basin_evidence",
+        "post_repair_basin_mass_final_evidence_for_old_artifacts"
+      ],
+      "row_decision": "supported_as_historical_context",
+      "row_id": "n25_1_i1_row_08_phase7_grc9v3_representative_evidence",
+      "source_backed_claim": "Phase 7 recorded an executable deterministic GRC9V3 core with hybrid spark, mechanical expansion, and representative daughter-sink evidence; it also records a later basin-mass correctness qualification for older mass-dependent claims.",
+      "source_classification": "historical_runtime_evidence",
+      "source_key": "phase7_closeout"
+    },
+    {
+      "gap_contribution": "N25.1 should follow the same explicit extension discipline rather than modifying the main runtime silently.",
+      "may_consume_as": [
+        "Phase8_surface_map",
+        "LGRC2_LGRC3_continuation_boundary",
+        "extension_governance_precedent"
+      ],
+      "must_not_consume_as": [
+        "completed_multi_basin_extension",
+        "general_LGRC_dynamics_validation"
+      ],
+      "row_decision": "supported_as_requirements_source",
+      "row_id": "n25_1_i1_row_09_phase8_lgrc9_implementation_plan_boundary",
+      "source_backed_claim": "The Phase 8 plan tracks LGRC0-LGRC3 slices and future surfaces through explicit gates, preventing later extension plans from retroactively widening completed evidence.",
+      "source_classification": "implementation_plan_boundary",
+      "source_key": "phase8_plan"
+    },
+    {
+      "gap_contribution": "Confirms N25.1 must not pretend sparks are absent; it must specify the missing child-basin formation and persistence surface after the existing spark/transport boundary.",
+      "may_consume_as": [
+        "current_causal_spark_candidate_example_context",
+        "current_refinement_packet_transport_example_context",
+        "producer_executor_boundary_context"
+      ],
+      "must_not_consume_as": [
+        "full_LGRC9V3_topology_changing_loop_evidence",
+        "native_multi_basin_formation_evidence"
+      ],
+      "row_decision": "supported_as_current_example_context",
+      "row_id": "n25_1_i1_row_10_lgrc9v3_examples_spark_and_transport_surfaces",
+      "source_backed_claim": "The examples show executable causal spark diagnostics and refinement packet transport surfaces, while keeping mechanical expansion and active topology-integration gates explicit.",
+      "source_classification": "current_example_boundary",
+      "source_key": "lgrc9v3_examples_readme",
+      "supporting_source_keys": [
+        "lgrc9v3_causal_spark_example",
+        "lgrc9v3_refinement_transport_example"
+      ]
+    },
+    {
+      "gap_contribution": "N25.1 exists because N25 reached N26 readiness only under scope constraints; independent multi-basin substrate requires a new extension contract.",
+      "may_consume_as": [
+        "N25_scoped_BF5_sub_basin_evidence",
+        "producer_assisted_scaffold_context",
+        "multi_basin_extension_requirement",
+        "N26_scope_constraint"
+      ],
+      "must_not_consume_as": [
+        "BF6",
+        "independent_new_basin_support",
+        "native_LGRC9V3_multi_basin_formation_support",
+        "producer_result_as_native_upgrade"
+      ],
+      "row_decision": "supported_as_current_boundary_source",
+      "row_id": "n25_1_i1_row_11_n25_closeout_scope_boundary",
+      "source_backed_claim": "N25 closed with scoped native BF5 sub-basin/core evidence and producer-assisted scaffold context, while BF6, independent new-basin formation, and native LGRC9V3 multi-basin formation remain blocked.",
+      "source_classification": "current_experiment_closeout",
+      "source_key": "n25_closeout"
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,82 @@
+{
+  "candidate_basin_signature_digest": "b53c6cd758dfc66a835c780958f1da6d4d5f33d07b3ef896c1481d94ab896e6f",
+  "candidate_boundary_signature_digest": "b82aa347face8db87a20d776af10e8011002d214a2bb751b5c6b259738e260cc",
+  "claim_boundary": "Producer-assisted flux conditioning can support a producer-mediated scaffold candidate and missing-native-mechanism probe only. It does not upgrade native BF, native support, agency, or Phase 8.",
+  "formation_class": "producer_assisted_scaffold",
+  "formation_source": "producer_flux_conditioned",
+  "geometric_interpretation": "Geometrically, I6 keeps the I5 spark-to-expansion sub-basin trace as the native object: the module boundary, old-center replacement, and replay-stable zero-margin support/coherence surface are unchanged. The added producer is not a new basin generator. It is a flux windowing surface that lets larger attempted flux arrive as multiple source-visible windows, each still capped at the native 1e-9 bound. That identifies the missing native mechanism: LGRC would need its own flux routing or rate-limiting surface before this producer lane could become native BF stress evidence.",
+  "native_bf5_supported": false,
+  "native_bf6_supported": false,
+  "native_coherence_floor_margin_preserved": 0.0,
+  "native_geometry_reused_from_i5": {
+    "bifurcation_trace": {
+      "digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_lgrc9v3_bifurcation_trace.json",
+      "summary": "causal spark candidate followed by active topology mechanical expansion"
+    },
+    "merge_leakage_trace": {
+      "budget_error": 0.0,
+      "digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+      "merge_leakage_control_status": "deferred_to_iteration_5",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json"
+    },
+    "new_basin_support_coherence_trace": {
+      "candidate_node_count": 5,
+      "digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e",
+      "min_candidate_coherence": 0.0,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_region_support_coherence_trace.json",
+      "positive_node_count": 3
+    },
+    "new_boundary_candidate_trace": {
+      "boundary_external_edge_count": 9,
+      "digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+      "internal_edge_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "module_node_ids": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_boundary_candidate_trace.json"
+    },
+    "old_basin_relation_trace": {
+      "digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+      "old_center_removed_after_expansion": true,
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_old_basin_relation_trace.json"
+    },
+    "replayable_distinction_trace": {
+      "artifact_reconstruction_stable": true,
+      "artifact_reconstruction_trace_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json",
+      "replay_distinction_persistence_ratio": 1.0,
+      "runtime_replay_stable": true,
+      "runtime_replay_trace_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json"
+    }
+  },
+  "native_support_floor_margin_preserved": 0.0,
+  "native_zero_margin_debt_preserved": true,
+  "old_to_candidate_separation_digest": "40747fcbc0eae8c5a717ce1a283ca27384a9a175f3509a2a47f68e60011c434d",
+  "producer_assisted_bf4_candidate_supported": true,
+  "producer_assisted_bf5_supported": false,
+  "producer_assisted_bf6_supported": false,
+  "producer_assisted_target": "sub_basin_candidate_flux_conditioning",
+  "producer_flux_conditioning": {
+    "first_fail_closed": 2e-08,
+    "per_window_bound": 1e-09,
+    "positive_row_count": 4,
+    "producer_flux_window_bound": 1e-08,
+    "window_count_bound": 10
+  },
+  "source_native_i4_output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+  "source_native_i5_matrix_output_digest": "b922ab52e616e94231905e626087c07258aeb2d9adfcee349ab270a386a300db",
+  "source_native_i5_row_digest": "13fe12d8daaf7aff44909a1d24fbe388e08ca43f0b6506bf400c14faedc1a94f",
+  "source_native_i5_row_id": "n25_i5_native_replay_and_control_matrix",
+  "source_producer_artifact_id": "n24_producer_flux_conditioning_probe_i7c",
+  "source_producer_output_digest": "8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de",
+  "trace_id": "n25_i6_producer_assisted_candidate_trace"
+}

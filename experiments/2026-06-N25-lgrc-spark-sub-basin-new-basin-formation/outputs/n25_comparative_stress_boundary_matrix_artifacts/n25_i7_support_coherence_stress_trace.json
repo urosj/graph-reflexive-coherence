@@ -1,0 +1,42 @@
+{
+  "bf5_blocker": "zero_margin_support_coherence_floor",
+  "bf5_support_coherence_gate_passes": false,
+  "interpretation": "Both lanes preserve the replayed support/coherence surface exactly at the floor. Any positive buffer requirement fails. This blocks BF5 and BF6 regardless of the producer's flux-windowing help.",
+  "native_zero_margin_support_coherence_debt": true,
+  "positive_support_coherence_buffer_supported": false,
+  "producer_zero_margin_support_coherence_debt": true,
+  "stress_kind": "required_positive_floor_buffer_stress",
+  "stress_rows": [
+    {
+      "native_coherence_margin": 0.0,
+      "native_support_coherence_passes": true,
+      "native_support_margin": 0.0,
+      "producer_coherence_margin": 0.0,
+      "producer_support_coherence_passes": true,
+      "producer_support_margin": 0.0,
+      "required_positive_buffer": 0.0,
+      "rung_effect": "zero-buffer replay ceiling only"
+    },
+    {
+      "native_coherence_margin": 0.0,
+      "native_support_coherence_passes": false,
+      "native_support_margin": 0.0,
+      "producer_coherence_margin": 0.0,
+      "producer_support_coherence_passes": false,
+      "producer_support_margin": 0.0,
+      "required_positive_buffer": 1e-12,
+      "rung_effect": "blocks BF5/BF6 stress-backed formation"
+    },
+    {
+      "native_coherence_margin": 0.0,
+      "native_support_coherence_passes": false,
+      "native_support_margin": 0.0,
+      "producer_coherence_margin": 0.0,
+      "producer_support_coherence_passes": false,
+      "producer_support_margin": 0.0,
+      "required_positive_buffer": 0.01,
+      "rung_effect": "blocks BF5/BF6 stress-backed formation"
+    }
+  ],
+  "trace_id": "n25_i7_support_coherence_stress_trace"
+}

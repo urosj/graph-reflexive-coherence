@@ -1,0 +1,47 @@
+{
+  "coherence_margin": 3.3333333336666664,
+  "first_fail_closed_buffer": 3.5,
+  "interpretation": "The positive core has enough margin to survive nonzero floor-buffer stress up to the declared core coherence margin. The 3.5 buffer fails closed.",
+  "stress_kind": "positive_core_support_coherence_buffer_stress",
+  "stress_rows": [
+    {
+      "coherence_margin": 3.3333333336666664,
+      "passes": true,
+      "required_positive_buffer": 0.0,
+      "rung_effect": "inside supported BF5 core stress envelope",
+      "support_margin": 10.000000001
+    },
+    {
+      "coherence_margin": 3.3333333336666664,
+      "passes": true,
+      "required_positive_buffer": 1.0,
+      "rung_effect": "inside supported BF5 core stress envelope",
+      "support_margin": 10.000000001
+    },
+    {
+      "coherence_margin": 3.3333333336666664,
+      "passes": true,
+      "required_positive_buffer": 3.0,
+      "rung_effect": "inside supported BF5 core stress envelope",
+      "support_margin": 10.000000001
+    },
+    {
+      "coherence_margin": 3.3333333336666664,
+      "passes": true,
+      "required_positive_buffer": 3.3333333336666664,
+      "rung_effect": "inside supported BF5 core stress envelope",
+      "support_margin": 10.000000001
+    },
+    {
+      "coherence_margin": 3.3333333336666664,
+      "passes": false,
+      "required_positive_buffer": 3.5,
+      "rung_effect": "outside supported BF5 core stress envelope",
+      "support_margin": 10.000000001
+    }
+  ],
+  "support_coherence_stress_supported": true,
+  "support_margin": 10.000000001,
+  "supported_buffer_ceiling": 3.3333333336666664,
+  "trace_id": "n25_i7c_support_coherence_stress_trace"
+}

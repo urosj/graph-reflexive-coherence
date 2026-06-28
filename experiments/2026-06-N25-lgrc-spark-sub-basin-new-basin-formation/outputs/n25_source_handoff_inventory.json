@@ -1,0 +1,342 @@
+{
+  "acceptance_state": "accepted_source_handoff_inventory_no_basin_formation_evidence",
+  "artifact_id": "n25_source_handoff_inventory",
+  "basin_formation_evidence_opened": false,
+  "bf_ladder_rung_assigned": false,
+  "blocked_claims": [
+    "agency",
+    "ant_ecology_implementation",
+    "consciousness",
+    "free_will",
+    "fully_native_integration",
+    "identity_acceptance",
+    "native_ant_agency",
+    "native_colony_agency",
+    "native_support",
+    "organism_life",
+    "phase8_implementation",
+    "reward_maximization",
+    "selfhood",
+    "semantic_action",
+    "semantic_choice",
+    "semantic_goal",
+    "semantic_goal_ownership",
+    "semantic_intention",
+    "semantic_learning",
+    "semantic_perception",
+    "sentience",
+    "ant_ecology_specification",
+    "unrestricted_autonomy"
+  ],
+  "checks": [
+    {
+      "check_id": "n20_source_contract_row_exists",
+      "detail": "n20_i4_row_06_spark_sub_basin_new_basin_formation",
+      "passed": true
+    },
+    {
+      "check_id": "n20_consumable_contract_row_exists",
+      "detail": "n20_i5_row_06_spark_sub_basin_new_basin_formation",
+      "passed": true
+    },
+    {
+      "check_id": "expected_source_current_fields_present",
+      "detail": [
+        "spark_sub_basin_new_basin_formation.bifurcation_trace",
+        "spark_sub_basin_new_basin_formation.new_boundary_candidate_trace",
+        "spark_sub_basin_new_basin_formation.new_basin_support_coherence_trace",
+        "spark_sub_basin_new_basin_formation.replayable_distinction_trace"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "naturalization_debt_fields_present",
+      "detail": [
+        "spark_sub_basin_new_basin_formation.source_current_basin_birth_state_mutation",
+        "spark_sub_basin_new_basin_formation.distinguishability_replay",
+        "spark_sub_basin_new_basin_formation.surplus_precondition_from_n24"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "blocked_relabel_fields_present",
+      "detail": [
+        "spark_sub_basin_new_basin_formation.blocked.label_only_new_basin",
+        "spark_sub_basin_new_basin_formation.blocked.transient_as_basin",
+        "spark_sub_basin_new_basin_formation.blocked.native_support",
+        "spark_sub_basin_new_basin_formation.blocked.semantic_choice",
+        "spark_sub_basin_new_basin_formation.blocked.agency",
+        "spark_sub_basin_new_basin_formation.blocked.phase8_implementation"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "expected_control_strings_present",
+      "detail": [
+        "label_only_new_basin_control",
+        "hidden_producer_insertion_control",
+        "hidden_producer_support_control",
+        "semantic_relabel_control",
+        "native_support_relabel_control",
+        "phase8_relabel_control"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "n24_native_lane_is_ab5",
+      "detail": {
+        "final_ab_ladder_rung": "AB5",
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n24_closeout_is_n24c5",
+      "detail": {
+        "final_ab_ladder_rung": "AB5",
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_n24c6_blocked",
+      "detail": {
+        "final_ab_ladder_rung": "AB5",
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_scaffold_available_separate_lane",
+      "detail": {
+        "final_ab_ladder_rung": "AB5",
+        "final_n24_closeout_rung": "N24-C5",
+        "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+        "native_n24_c6_supported": false,
+        "producer_mediated_claim_allowed_as_native": false,
+        "producer_mediated_flux_scaffold_supported": true,
+        "producer_mediated_highest_conditioned_attempted_flux": 1e-08
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_i7c_contract_declared",
+      "detail": {
+        "acceptance_state": "accepted_producer_mediated_flux_conditioning_scaffold_native_c6_still_blocked",
+        "max_conditioning_windows": 10,
+        "native_flux_or_leakage_bound": 1e-09,
+        "native_n24c6_relabel_allowed": false,
+        "naturalization_debt": "native_flux_routing_or_rate_limiting_surface",
+        "producer_contract_digest": "3083081e8f1f429362cf0d4e0b157d26218c5c064bcd790ca57e0bff7032dccb",
+        "producer_mediated_flux_scaffold_supported": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "existing_lgrc9v3_spark_examples_available",
+      "detail": [
+        "examples/lgrc9v3/README.md",
+        "examples/lgrc9v3/causal_spark_diagnostics.py",
+        "examples/lgrc9v3/refinement_packet_transport.py"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_n25_evidence_opened",
+      "detail": "I1 is source inventory only; BF rung remains unassigned.",
+      "passed": true
+    }
+  ],
+  "expected_blocked_relabels": [
+    "spark_sub_basin_new_basin_formation.blocked.label_only_new_basin",
+    "spark_sub_basin_new_basin_formation.blocked.transient_as_basin",
+    "spark_sub_basin_new_basin_formation.blocked.native_support",
+    "spark_sub_basin_new_basin_formation.blocked.semantic_choice",
+    "spark_sub_basin_new_basin_formation.blocked.agency",
+    "spark_sub_basin_new_basin_formation.blocked.phase8_implementation"
+  ],
+  "expected_naturalization_debt": [
+    "spark_sub_basin_new_basin_formation.source_current_basin_birth_state_mutation",
+    "spark_sub_basin_new_basin_formation.distinguishability_replay",
+    "spark_sub_basin_new_basin_formation.surplus_precondition_from_n24"
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "iteration": "I1",
+  "n24_native_lane": {
+    "consumption_rule": "context_only_not_basin_formation_evidence",
+    "native_flux_debt": "flux_envelope_not_widened_above_1e-9",
+    "native_n24_c6_supported": false,
+    "status": "AB5_N24-C5_surplus_supported_optionality",
+    "summary": {
+      "final_ab_ladder_rung": "AB5",
+      "final_n24_closeout_rung": "N24-C5",
+      "native_flux_leakage_debt": "flux_envelope_not_widened_above_1e-9",
+      "native_n24_c6_blocker": "flux_envelope_not_widened_above_1e-9",
+      "native_n24_c6_supported": false,
+      "producer_mediated_claim_allowed_as_native": false,
+      "producer_mediated_flux_scaffold_supported": true,
+      "producer_mediated_highest_conditioned_attempted_flux": 1e-08
+    }
+  },
+  "n24_producer_assisted_lane": {
+    "consumption_rule": "separate_lane_missing_native_mechanism_probe_only",
+    "status": "producer_mediated_flux_conditioning_scaffold",
+    "summary": {
+      "acceptance_state": "accepted_producer_mediated_flux_conditioning_scaffold_native_c6_still_blocked",
+      "max_conditioning_windows": 10,
+      "native_flux_or_leakage_bound": 1e-09,
+      "native_n24c6_relabel_allowed": false,
+      "naturalization_debt": "native_flux_routing_or_rate_limiting_surface",
+      "producer_contract_digest": "3083081e8f1f429362cf0d4e0b157d26218c5c064bcd790ca57e0bff7032dccb",
+      "producer_mediated_flux_scaffold_supported": true
+    }
+  },
+  "n25_closeout_ladder_rung": "N25-C0_inventory_only",
+  "native_lane_failure_overwritten": false,
+  "native_spark_source_policy": {
+    "example_sources": [
+      "examples/lgrc9v3/README.md",
+      "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "examples/lgrc9v3/refinement_packet_transport.py"
+    ],
+    "existing_examples_must_be_considered_before_new_producer_code": true,
+    "existing_lgrc_spark_behavior_expected": true,
+    "new_producer_code_allowed_only_if_needed": true,
+    "producer_extension_must_signal_missing_native_mechanism": true
+  },
+  "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
+  "primitive_id": "spark_sub_basin_new_basin_formation",
+  "producer_assisted_result_can_upgrade_native": false,
+  "ready_for_iteration_2_schema_freeze": true,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_source_handoff_inventory.py",
+  "required_future_source_current_fields": [
+    "spark_sub_basin_new_basin_formation.bifurcation_trace",
+    "spark_sub_basin_new_basin_formation.new_boundary_candidate_trace",
+    "spark_sub_basin_new_basin_formation.new_basin_support_coherence_trace",
+    "spark_sub_basin_new_basin_formation.replayable_distinction_trace"
+  ],
+  "source_consumable_contract_row": "n20_i5_row_06_spark_sub_basin_new_basin_formation",
+  "source_consumable_contract_row_digest": "4e51db0dbbe16192daff1cfcb04ff3294b7e8e42ea5f20e2eb88e62f46c0e202",
+  "source_contract_row": "n20_i4_row_06_spark_sub_basin_new_basin_formation",
+  "source_contract_row_digest": "0f34855cca2e63efc4b711cbe043f01d572c65177e59db9e58b4f3fac2e421d5",
+  "source_inventory": [
+    {
+      "acceptance_state": "accepted_native_function_proxy_scaffold_contract_no_primitive_evidence",
+      "output_digest": "44eac87775ae7e399e93a48ccf6ff020f157a0fbe3e3b77421a1a3ea059070c3",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_native_function_proxy_contract.json",
+      "sha256": "23e87346e05bb32347630b7ea3c688bf83096dfdb9ca11f99a35a82a2e602760",
+      "source_role": "n20_native_function_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_same_basin_control_contract_complete_no_primitive_evidence",
+      "output_digest": "6a1975e6811c6990ae882d4e5b59233c08784909ddbef823706cad31b61a3bb5",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N20-lgrc-becoming-primitive-producer-translation-contract/outputs/n20_same_basin_continuation_contract.json",
+      "sha256": "72c4297b923a5dc0226e67be97ff368d0b586278f8b93ef4bd6fa7b79d1fb4d0",
+      "source_role": "n20_same_basin_continuation_contract",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_ab5_n24c5_closeout_with_producer_flux_scaffold_n25_handoff",
+      "output_digest": "2301cdb702c935419f4eaeaf9b102cb4a975571beb9fd375baed5ec235edcbb0",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_closeout_and_n25_handoff.json",
+      "sha256": "60f8a62966153f52cc9f6be0ecad18233c7f6d948771ad07d3439f1e3d6be46c",
+      "source_role": "n24_ab5_n24c5_native_lane_and_handoff",
+      "status": "passed"
+    },
+    {
+      "acceptance_state": "accepted_producer_mediated_flux_conditioning_scaffold_native_c6_still_blocked",
+      "output_digest": "8b1b1bfab623cd986a317f9b71e49c70d4be445be3683cc36c81175ed25ce0de",
+      "parseable_json": true,
+      "path": "experiments/2026-06-N24-lgrc-abundance-surplus-supported-optionality/outputs/n24_producer_flux_conditioning_probe_i7c.json",
+      "sha256": "d432a39e2bc88e83e25ba7e98edb5270284b12f3c124a68b709b8e8a0ecbdb46",
+      "source_role": "n24_i7c_producer_flux_conditioning_scaffold",
+      "status": "passed"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/README.md",
+      "sha256": "4d36dc8bcb248fcf75f19a096d4435ac13b80c1c0f983bd19540180cc80af233",
+      "source_role": "lgrc9v3_native_spark_example_index",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "sha256": "065e6fb59618aa7a138b86e8b3221ba7f7e4de10e8b7dbbfe3baa72deb35ab93",
+      "source_role": "lgrc9v3_causal_spark_candidate_example",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "examples/lgrc9v3/refinement_packet_transport.py",
+      "sha256": "f70c3e53a68d83f8315a77e4b411d6ccad74bc998c281d5acd1a36f65e362b13",
+      "source_role": "lgrc9v3_refinement_transport_sparkish_example",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyHandoff.md",
+      "sha256": "3e6820d183716faa18139dd3b91ca3397a259ced422da36f0dc8313f19b9bd83",
+      "source_role": "n20_n29_handoff_context",
+      "status": "context_only"
+    },
+    {
+      "parseable_json": false,
+      "path": "experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md",
+      "sha256": "a9e004c6026cbc1e706548dd163b229750373973896c54f28514d608ae31c638",
+      "source_role": "n20_n29_roadmap_context",
+      "status": "context_only"
+    }
+  ],
+  "status": "passed",
+  "unsafe_claim_flags": {
+    "agency": false,
+    "ant_ecology_implementation": false,
+    "ant_ecology_specification": false,
+    "consciousness": false,
+    "free_will": false,
+    "fully_native_integration": false,
+    "identity_acceptance": false,
+    "native_ant_agency": false,
+    "native_colony_agency": false,
+    "native_support": false,
+    "organism_life": false,
+    "phase8_implementation": false,
+    "reward_maximization": false,
+    "selfhood": false,
+    "semantic_action": false,
+    "semantic_choice": false,
+    "semantic_goal": false,
+    "semantic_goal_ownership": false,
+    "semantic_intention": false,
+    "semantic_learning": false,
+    "semantic_perception": false,
+    "sentience": false,
+    "unrestricted_autonomy": false
+  }
+}

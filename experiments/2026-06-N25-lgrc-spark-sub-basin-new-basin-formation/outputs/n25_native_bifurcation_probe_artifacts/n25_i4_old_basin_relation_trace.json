@@ -1,0 +1,10 @@
+{
+  "module_attached_to_old_basin": true,
+  "old_basin_id": "root",
+  "old_basin_relation": "replacement/refinement of saturated root sink into module nodes",
+  "old_basin_thickening_only": false,
+  "old_center_node_id": 0,
+  "old_center_removed_after_expansion": true,
+  "parent_basin_id": "root",
+  "reshaped_old_boundary_only": false
+}

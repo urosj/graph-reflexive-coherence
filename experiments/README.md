@@ -49,6 +49,8 @@ machine-local state.
 | [N22 susceptibility update and durable geometry modification](2026-06-N22-lgrc-susceptibility-update-durable-geometry-modification/README.md) | Closed bounded artifact-level susceptibility-update candidate: producer-mediated SU5 durable geometry modification evidence with N22-C6/N23 handoff, while native route-conductance memory, semantic learning, choice, agency, native support, sentience, Phase 8, ant ecology, and SU6 remain blocked. | README, then closeout handoff, replay/control matrix, carrier and packet probes, implementation checklist, and hypotheses. |
 | [N23 live-continuation collapse and selection geometry](2026-06-N23-lgrc-live-continuation-collapse-selection-geometry/README.md) | Closed bounded artifact-level LC6 live-continuation collapse / selection-geometry evidence with N23-C6/N24 handoff and AP4 bridge candidate support, while final AP4, semantic choice, agency, native support, sentience, Phase 8, and ant ecology remain blocked. | README, then closeout handoff, replay/control matrix, AP4 selection geometry probes, live-branch collapse probes, implementation checklist, and hypotheses. |
 | [N24 abundance and surplus-supported optionality](2026-06-N24-lgrc-abundance-surplus-supported-optionality/README.md) | Closed bounded artifact-level AB5 surplus-supported optionality candidate with native N24-C5 closeout, explicit flux/leakage debt, and a separate producer-mediated flux-conditioning scaffold for N25. | README, then closeout handoff, native and producer flux probes, replay/control matrices, optional-continuation probes, implementation checklist, and hypotheses. |
+| [N25 spark / sub-basin / new-basin formation](2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/README.md) | Closed scoped native BF5 high-margin core / sub-basin formation with N25-C6 handoff readiness and producer-assisted BF5 scaffold context; independent new-basin, BF6, and native LGRC9V3 multi-basin formation remain blocked. | README, then closeout handoff, native BF5 core probes, producer-assisted scaffold probe, replay/control matrices, implementation checklist, and hypotheses. |
+| [N25.1 LGRC9V3 multi-basin formation extension requirements](2026-06-N25.1-lgrc9v3-multi-basin-formation-extension-requirements/README.md) | Closed requirements/spec bridge for a future Phase 8 LGRC9V3 multi-basin formation extension, with MB0 runtime ceiling, no multi-basin evidence opened, and N26 scoped consumption rules frozen. | README, then closeout handoff, extension requirement matrix, active-null matrix, source crosswalk, implementation checklist, and hypotheses. |
 
 ## Current Roadmap State
 
@@ -324,12 +326,19 @@ continuation collapse, surplus-supported optionality, spark/new-basin
 formation, proxy divergence, transfer, and generative persistence. N21 closed
 the first two primitives, N22 closed bounded producer-mediated susceptibility
 update / durable geometry modification, N23 closed bounded live-continuation
-collapse / selection geometry, and N24 closed bounded surplus-supported
-optionality with a producer-assisted flux scaffold. N25 is now the next
-spark/sub-basin/new-basin formation lane. N29 is the first formal convergence
-bridge into the agentic ecology project, where producer residue, medium debt,
-and first applied ant-ecology probes can be specified. Phase 8, native support,
-native ant agency, biological agency, and unrestricted agency remain unopened.
+collapse / selection geometry, N24 closed bounded surplus-supported optionality
+with a producer-assisted flux scaffold, N25 closed scoped high-margin
+core/sub-basin formation with N25-C6 handoff readiness, and N25.1 closed the
+requirements bridge for a future Phase 8 LGRC9V3 multi-basin formation
+extension. N25.1 keeps the runtime ceiling at MB0 and opens no multi-basin
+evidence. The next branch should be a Phase 8 implementation tranche for
+LGRC9V3 multi-basin formation from causal refinement, consuming N25/N25.1 as
+frozen source evidence. N26 remains downstream: it may proceed in scoped N25
+mode, but any unscoped multi-basin substrate claim must wait for Phase 8
+extension evidence reaching MB6. N29 is the first formal convergence bridge
+into the agentic ecology project, where producer residue, medium debt, and
+first applied ant-ecology probes can be specified. Native support, native ant
+agency, biological agency, and unrestricted agency remain unopened.
 The agency-specific essay sources include `From Structural Abundance to
 Agency`, `Agency of Becoming`, `Agency After Choice`, and `Sentience as
 Read-Back`; the last is a boundary source for separating agency from sentience,

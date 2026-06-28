@@ -1,0 +1,30 @@
+{
+  "agency_supported": false,
+  "ant_ecology_opened": false,
+  "basin_formation_claim_allowed": true,
+  "basin_formation_claim_scope": "BF5_scoped_native_high_margin_core_sub_basin",
+  "claim_ceiling": "artifact-level scoped native BF5 high-margin core/sub-basin formation with N25-C6 handoff readiness; producer-assisted BF5 scaffold remains non-native missing-mechanism context",
+  "independent_new_basin_supported": false,
+  "native_bf6_supported": false,
+  "native_support_supported": false,
+  "phase8_extension_implemented": false,
+  "phase8_opened": false,
+  "semantic_choice_supported": false,
+  "semantic_learning_supported": false,
+  "sentience_supported": false,
+  "trace_id": "n25_i8_claim_boundary_trace",
+  "unsafe_claim_flags": {
+    "agency": false,
+    "ant_ecology": false,
+    "fully_native_integration": false,
+    "identity_acceptance": false,
+    "intention": false,
+    "native_support": false,
+    "organism_life": false,
+    "phase8": false,
+    "selfhood": false,
+    "semantic_choice": false,
+    "semantic_learning": false,
+    "sentience": false
+  }
+}

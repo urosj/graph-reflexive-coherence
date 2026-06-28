@@ -1,0 +1,1109 @@
+{
+  "acceptance_state": "accepted_basin_formation_schema_controls_frozen_no_positive_evidence",
+  "active_null_sentinel_policy": {
+    "positive_row_boolean_fields": [
+      "all_artifact_sha256_match_file_contents",
+      "artifact_paths_equal_manifest_paths",
+      "artifact_sha256_equal_manifest_sha256"
+    ],
+    "positive_rows_must_use_strict_booleans": true,
+    "sentinel_values_allowed_only_when": {
+      "positive_evidence_admissible": false,
+      "schema_instantiation_only": true
+    }
+  },
+  "ap_gap_policy": {
+    "ap4_dependency_status_values": [
+      "required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "ap4_gap_prose_only_blocks_row": true,
+    "ap5_dependency_status_values": [
+      "conditional_required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "ap5_required_only_when_proxy_target_or_proxy_valuation_participates": true
+  },
+  "artifact_id": "n25_basin_formation_schema_and_controls",
+  "artifact_role_policy": {
+    "artifact_role_values": [
+      "bifurcation_trace",
+      "new_boundary_candidate_trace",
+      "new_basin_support_coherence_trace",
+      "replayable_distinction_trace",
+      "old_basin_relation_trace",
+      "merge_leakage_trace",
+      "native_flux_debt_trace",
+      "producer_intervention_ledger",
+      "formation_replay_trace",
+      "stress_boundary_trace",
+      "negative_control_trace",
+      "runtime_trace",
+      "threshold_record",
+      "active_null_trace",
+      "closeout",
+      "source_handoff",
+      "schema_control_freeze",
+      "source_contract",
+      "inherited_context",
+      "report"
+    ],
+    "positive_support_forbidden_if_only_roles": [
+      "report",
+      "inherited_context",
+      "source_contract"
+    ]
+  },
+  "basin_digest_policy": {
+    "bf3_plus_required_digests": [
+      "old_basin_signature_digest",
+      "candidate_basin_signature_digest",
+      "candidate_boundary_signature_digest",
+      "old_to_candidate_separation_digest"
+    ]
+  },
+  "basin_formation_evidence_opened": false,
+  "bf_ladder": {
+    "BF0": "no source-current basin-formation evidence",
+    "BF1": "run artifact with becoming-pressure / N24 optionality context",
+    "BF2": "bifurcation or spark trace observed, but distinguishable basin not yet stable",
+    "BF3": "source-current distinguishable sub-basin boundary/support candidate",
+    "BF4": "replay/control-backed sub-basin differentiation candidate",
+    "BF5": "stress/threshold-backed new-basin formation candidate with merge/leakage controls clean",
+    "BF6": "N26-ready bounded basin-formation evidence"
+  },
+  "bf_ladder_rung_assigned": false,
+  "candidate_evidence_row_schema": {
+    "ap4_dependency_status_values": [
+      "required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "ap5_dependency_status_values": [
+      "conditional_required_recorded",
+      "not_applicable",
+      "missing_blocks_row"
+    ],
+    "artifact_role_values": [
+      "bifurcation_trace",
+      "new_boundary_candidate_trace",
+      "new_basin_support_coherence_trace",
+      "replayable_distinction_trace",
+      "old_basin_relation_trace",
+      "merge_leakage_trace",
+      "native_flux_debt_trace",
+      "producer_intervention_ledger",
+      "formation_replay_trace",
+      "stress_boundary_trace",
+      "negative_control_trace",
+      "runtime_trace",
+      "threshold_record",
+      "active_null_trace",
+      "closeout",
+      "source_handoff",
+      "schema_control_freeze",
+      "source_contract",
+      "inherited_context",
+      "report"
+    ],
+    "formation_class_values": [
+      "bifurcation_partial",
+      "reinforced_old_basin",
+      "reshaped_old_boundary",
+      "sub_basin_candidate",
+      "new_basin_candidate",
+      "transient_fluctuation",
+      "merge_leakage_artifact",
+      "producer_assisted_scaffold"
+    ],
+    "formation_source_values": [
+      "native_source_current_bifurcation",
+      "native_old_basin_thickening",
+      "native_merge_leakage",
+      "producer_flux_conditioned",
+      "hidden_producer_insertion",
+      "label_only",
+      "report_derived"
+    ],
+    "lane_values": [
+      "native",
+      "producer_assisted"
+    ],
+    "native_flux_debt_status_values": [
+      "preserved",
+      "violated_blocks_native_row",
+      "not_applicable_producer_lane"
+    ],
+    "positive_support_forbidden_if_only_roles": [
+      "report",
+      "inherited_context",
+      "source_contract"
+    ],
+    "producer_assisted_result_class_values": [
+      "not_applicable",
+      "producer_mediated_scaffold_candidate",
+      "missing_native_mechanism_probe"
+    ],
+    "replay_control_status_values": [
+      "passed",
+      "failed_closed",
+      "failed_open",
+      "not_run",
+      "not_applicable"
+    ],
+    "required_fields": [
+      "row_id",
+      "source_iteration",
+      "source_contract_row_digest",
+      "source_consumable_contract_row_digest",
+      "source_output_digest",
+      "run_artifact_id",
+      "runtime_config_digest",
+      "source_commit_or_source_digest",
+      "source_current_inputs",
+      "artifact_manifest",
+      "artifact_paths",
+      "artifact_sha256",
+      "artifact_paths_equal_manifest_paths",
+      "artifact_sha256_equal_manifest_sha256",
+      "all_artifact_sha256_match_file_contents",
+      "row_digest",
+      "output_digest",
+      "row_specific_thresholds_declared_before_use",
+      "existing_lgrc_spark_sources_considered",
+      "native_spark_mechanism_reuse_status",
+      "new_producer_code_justification",
+      "lane",
+      "lane_success_can_upgrade_native",
+      "native_lane_failure_overwritten",
+      "producer_assisted_result_class",
+      "n20_source_contract_row",
+      "n20_consumable_contract_row",
+      "n24_native_lane_status",
+      "n24_producer_lane_status",
+      "formation_class",
+      "formation_source",
+      "bifurcation_trace",
+      "new_boundary_candidate_trace",
+      "new_basin_support_coherence_trace",
+      "replayable_distinction_trace",
+      "old_basin_relation_trace",
+      "merge_leakage_trace",
+      "formation_window",
+      "bifurcation_window",
+      "boundary_candidate_window",
+      "replay_window",
+      "old_basin_reference_window",
+      "bifurcation_window_order_valid",
+      "thresholds_declared_before_bifurcation_window",
+      "old_basin_signature_digest",
+      "candidate_basin_signature_digest",
+      "candidate_boundary_signature_digest",
+      "old_to_candidate_separation_digest",
+      "boundary_distinguishability_margin",
+      "support_floor_margin_new_region",
+      "coherence_floor_margin_new_region",
+      "old_basin_separation_margin",
+      "merge_leakage_margin",
+      "replay_distinction_persistence_ratio",
+      "old_basin_thickening_rejected",
+      "reshaped_old_boundary_rejected",
+      "merge_leakage_rejected",
+      "transient_rejected",
+      "label_only_rejected",
+      "native_flux_debt_bound",
+      "native_flux_debt_widened",
+      "native_flux_debt_status",
+      "producer_flux_window_bound",
+      "producer_flux_window_declared_before_use",
+      "native_flux_debt_not_overwritten",
+      "support_floor_result",
+      "coherence_floor_result",
+      "boundary_integrity_result",
+      "flux_or_leakage_result",
+      "control_results",
+      "producer_residue_classification",
+      "naturalization_debt",
+      "ap4_dependency_status",
+      "ap5_dependency_status",
+      "ap4_condition_reason",
+      "ap5_condition_reason",
+      "bf_ladder_rung",
+      "row_decision",
+      "basin_formation_claim_allowed",
+      "claim_ceiling",
+      "n25_closeout_ceiling",
+      "n25_closeout_ladder_rung_assigned",
+      "unsafe_claim_flags"
+    ],
+    "row_decision_values": [
+      "supported",
+      "partial",
+      "blocked",
+      "rejected",
+      "not_applicable"
+    ]
+  },
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": {
+        "acceptance_state": "accepted_source_handoff_inventory_no_basin_formation_evidence",
+        "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_source_handoff_inventory.json",
+        "sha256": "b738072dd8922dcfcc5d5be1ab3efc27b5f43b0738c7f8ea41ae09880b4cdf18",
+        "status": "passed"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "candidate_schema_has_all_required_fields",
+      "detail": [
+        "row_id",
+        "source_iteration",
+        "source_contract_row_digest",
+        "source_consumable_contract_row_digest",
+        "source_output_digest",
+        "run_artifact_id",
+        "runtime_config_digest",
+        "source_commit_or_source_digest",
+        "source_current_inputs",
+        "artifact_manifest",
+        "artifact_paths",
+        "artifact_sha256",
+        "artifact_paths_equal_manifest_paths",
+        "artifact_sha256_equal_manifest_sha256",
+        "all_artifact_sha256_match_file_contents",
+        "row_digest",
+        "output_digest",
+        "row_specific_thresholds_declared_before_use",
+        "existing_lgrc_spark_sources_considered",
+        "native_spark_mechanism_reuse_status",
+        "new_producer_code_justification",
+        "lane",
+        "lane_success_can_upgrade_native",
+        "native_lane_failure_overwritten",
+        "producer_assisted_result_class",
+        "n20_source_contract_row",
+        "n20_consumable_contract_row",
+        "n24_native_lane_status",
+        "n24_producer_lane_status",
+        "formation_class",
+        "formation_source",
+        "bifurcation_trace",
+        "new_boundary_candidate_trace",
+        "new_basin_support_coherence_trace",
+        "replayable_distinction_trace",
+        "old_basin_relation_trace",
+        "merge_leakage_trace",
+        "formation_window",
+        "bifurcation_window",
+        "boundary_candidate_window",
+        "replay_window",
+        "old_basin_reference_window",
+        "bifurcation_window_order_valid",
+        "thresholds_declared_before_bifurcation_window",
+        "old_basin_signature_digest",
+        "candidate_basin_signature_digest",
+        "candidate_boundary_signature_digest",
+        "old_to_candidate_separation_digest",
+        "boundary_distinguishability_margin",
+        "support_floor_margin_new_region",
+        "coherence_floor_margin_new_region",
+        "old_basin_separation_margin",
+        "merge_leakage_margin",
+        "replay_distinction_persistence_ratio",
+        "old_basin_thickening_rejected",
+        "reshaped_old_boundary_rejected",
+        "merge_leakage_rejected",
+        "transient_rejected",
+        "label_only_rejected",
+        "native_flux_debt_bound",
+        "native_flux_debt_widened",
+        "native_flux_debt_status",
+        "producer_flux_window_bound",
+        "producer_flux_window_declared_before_use",
+        "native_flux_debt_not_overwritten",
+        "support_floor_result",
+        "coherence_floor_result",
+        "boundary_integrity_result",
+        "flux_or_leakage_result",
+        "control_results",
+        "producer_residue_classification",
+        "naturalization_debt",
+        "ap4_dependency_status",
+        "ap5_dependency_status",
+        "ap4_condition_reason",
+        "ap5_condition_reason",
+        "bf_ladder_rung",
+        "row_decision",
+        "basin_formation_claim_allowed",
+        "claim_ceiling",
+        "n25_closeout_ceiling",
+        "n25_closeout_ladder_rung_assigned",
+        "unsafe_claim_flags"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "lane_enum_frozen",
+      "detail": [
+        "native",
+        "producer_assisted"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "lane_ceilings_frozen",
+      "detail": {
+        "native_lane": {
+          "may_support_native_bf_rungs_if_all_gates_pass": true,
+          "must_preserve_native_flux_debt": true,
+          "native_flux_debt_bound": 1e-09
+        },
+        "producer_assisted_lane": {
+          "can_open_phase8": false,
+          "can_support_native_support": false,
+          "can_upgrade_n24_native_lane": false,
+          "can_upgrade_native_bf": false,
+          "may_identify_naturalization_target": true,
+          "may_support_producer_assisted_bf_candidate": true
+        },
+        "required_fields": [
+          "lane",
+          "lane_success_can_upgrade_native",
+          "native_lane_failure_overwritten",
+          "producer_assisted_result_class"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "formation_class_and_source_frozen",
+      "detail": {
+        "formation_class": [
+          "bifurcation_partial",
+          "reinforced_old_basin",
+          "reshaped_old_boundary",
+          "sub_basin_candidate",
+          "new_basin_candidate",
+          "transient_fluctuation",
+          "merge_leakage_artifact",
+          "producer_assisted_scaffold"
+        ],
+        "formation_source": [
+          "native_source_current_bifurcation",
+          "native_old_basin_thickening",
+          "native_merge_leakage",
+          "producer_flux_conditioned",
+          "hidden_producer_insertion",
+          "label_only",
+          "report_derived"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "distinguishability_metrics_required",
+      "detail": "BF3+ distinguishability metrics are required candidate fields.",
+      "passed": true
+    },
+    {
+      "check_id": "native_flux_debt_policy_frozen",
+      "detail": {
+        "native_rows": {
+          "native_flux_debt_bound": 1e-09,
+          "native_flux_debt_status_allowed_values": [
+            "preserved",
+            "violated_blocks_native_row",
+            "not_applicable_producer_lane"
+          ],
+          "native_flux_debt_violation_effect": "blocks_native_row",
+          "native_flux_debt_widened_required_value": false
+        },
+        "producer_assisted_rows": {
+          "max_conditioning_windows": 10,
+          "native_flux_debt_not_overwritten_required": true,
+          "producer_conditioned_flux_bound_max": 1e-08,
+          "producer_flux_window_bound_required": true,
+          "producer_flux_window_declared_before_use_required": true,
+          "producer_threshold_relaxation_rejected_required": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "native_spark_source_policy_frozen",
+      "detail": {
+        "existing_examples_must_be_considered_before_new_producer_code": true,
+        "existing_lgrc_spark_behavior_expected": true,
+        "native_probe_order": [
+          "reuse_existing_lgrc9v3_causal_spark_diagnostics",
+          "reuse_existing_grc9v3_lane_b_spark_or_refinement_transport_where_applicable",
+          "add_producer_extension_only_if_native_sources_are_insufficient"
+        ],
+        "new_producer_code_policy": {
+          "allowed_only_if_needed": true,
+          "must_declare_why_existing_native_spark_path_is_insufficient": true,
+          "must_not_insert_new_basin_without_source_current_trace": true,
+          "must_record_naturalization_debt": true
+        },
+        "source_examples": [
+          "examples/lgrc9v3/README.md",
+          "examples/lgrc9v3/causal_spark_diagnostics.py",
+          "examples/lgrc9v3/refinement_packet_transport.py"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_flux_bounds_frozen",
+      "detail": {
+        "max_conditioning_windows": 10,
+        "native_flux_debt_not_overwritten_required": true,
+        "producer_conditioned_flux_bound_max": 1e-08,
+        "producer_flux_window_bound_required": true,
+        "producer_flux_window_declared_before_use_required": true,
+        "producer_threshold_relaxation_rejected_required": true
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_roles_frozen",
+      "detail": [
+        "bifurcation_trace",
+        "new_boundary_candidate_trace",
+        "new_basin_support_coherence_trace",
+        "replayable_distinction_trace",
+        "old_basin_relation_trace",
+        "merge_leakage_trace",
+        "native_flux_debt_trace",
+        "producer_intervention_ledger",
+        "formation_replay_trace",
+        "stress_boundary_trace",
+        "negative_control_trace",
+        "runtime_trace",
+        "threshold_record",
+        "active_null_trace",
+        "closeout",
+        "source_handoff",
+        "schema_control_freeze",
+        "source_contract",
+        "inherited_context",
+        "report"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "control_status_semantics_frozen",
+      "detail": {
+        "active_null_rows": {
+          "expected_status": "failed_closed",
+          "meaning": "blocker triggered and the false-positive claim was rejected"
+        },
+        "positive_candidate_rows": {
+          "blocker_absent_status": "passed",
+          "failed_closed_role": "may satisfy a negative-control row, not automatically a positive row",
+          "failed_open_effect": "blocks row and closeout upgrade",
+          "not_applicable_requirement": "scope reason required",
+          "not_run_effect": "blocks dependent rung"
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "control_results_schema_frozen",
+      "detail": {
+        "active_null_rows_may_carry_single_control_status_summary": true,
+        "positive_candidate_rows_require_full_list": true,
+        "required_fields": [
+          "control_id",
+          "control_status",
+          "blocked_condition",
+          "expected_result",
+          "actual_result",
+          "claim_allowed_when_control_triggers",
+          "rung_effect"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "active_null_sentinel_policy_frozen",
+      "detail": {
+        "positive_row_boolean_fields": [
+          "all_artifact_sha256_match_file_contents",
+          "artifact_paths_equal_manifest_paths",
+          "artifact_sha256_equal_manifest_sha256"
+        ],
+        "positive_rows_must_use_strict_booleans": true,
+        "sentinel_values_allowed_only_when": {
+          "positive_evidence_admissible": false,
+          "schema_instantiation_only": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "i1_i2_control_alias_map_frozen",
+      "detail": {
+        "hidden_producer_insertion_control": "hidden_producer_insertion_rejected",
+        "hidden_producer_support_control": "producer_hidden_support_control",
+        "label_only_new_basin_control": "label_only_new_basin_rejected",
+        "native_support_relabel_control": "native_support_relabel_rejected",
+        "phase8_relabel_control": "phase8_relabel_rejected",
+        "semantic_relabel_control": [
+          "semantic_choice_relabel_rejected",
+          "semantic_learning_relabel_rejected"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "lane_cross_field_invariants_frozen",
+      "detail": {
+        "native": {
+          "formation_source_required": "native_source_current_bifurcation",
+          "lane_success_can_upgrade_native_required": false,
+          "n24_producer_lane_status_required": "not_used_in_native_row",
+          "native_flux_debt_bound_required": 1e-09,
+          "native_flux_debt_status_required": "preserved",
+          "native_flux_debt_widened_required": false,
+          "native_lane_failure_overwritten_required": false,
+          "producer_assisted_result_class_required": "not_applicable"
+        },
+        "producer_assisted": {
+          "formation_source_required": "producer_flux_conditioned",
+          "lane_success_can_upgrade_native_required": false,
+          "native_flux_debt_not_overwritten_required": true,
+          "native_lane_failure_overwritten_required": false,
+          "producer_assisted_result_class_allowed": [
+            "producer_mediated_scaffold_candidate",
+            "missing_native_mechanism_probe"
+          ]
+        }
+      },
+      "passed": true
+    },
+    {
+      "check_id": "temporal_window_fields_required",
+      "detail": {
+        "ordering_rule": "bifurcation_window.end_step <= boundary_candidate_window.start_step",
+        "required_fields": [
+          "formation_window",
+          "bifurcation_window",
+          "boundary_candidate_window",
+          "replay_window",
+          "old_basin_reference_window"
+        ],
+        "threshold_rule": "thresholds_declared_before_bifurcation_window"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "basin_signature_digests_required",
+      "detail": {
+        "bf3_plus_required_digests": [
+          "old_basin_signature_digest",
+          "candidate_basin_signature_digest",
+          "candidate_boundary_signature_digest",
+          "old_to_candidate_separation_digest"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_controls_frozen",
+      "detail": [
+        "label_only_new_basin_rejected",
+        "single_basin_thickening_relabel_rejected",
+        "reshaped_old_boundary_relabel_rejected",
+        "merge_leakage_masquerading_as_new_basin_rejected",
+        "non_replayable_transient_rejected",
+        "hidden_producer_insertion_rejected",
+        "n24_optionality_relabel_as_formation_rejected",
+        "producer_assisted_success_does_not_overwrite_native_failure",
+        "native_flux_debt_remains_row_local",
+        "producer_schedule_post_hoc_control",
+        "producer_hidden_support_control",
+        "producer_threshold_relaxation_control",
+        "producer_basin_insertion_without_trace_control",
+        "producer_success_as_native_relabel_control",
+        "producer_success_overwrites_native_failure_control",
+        "native_spark_source_policy_rejected",
+        "producer_before_native_spark_path_rejected",
+        "ap4_gap_prose_only_rejected",
+        "ap5_proxy_target_omission_rejected_when_applicable",
+        "semantic_learning_relabel_rejected",
+        "semantic_choice_relabel_rejected",
+        "agency_relabel_rejected",
+        "native_support_relabel_rejected",
+        "phase8_relabel_rejected",
+        "ant_ecology_relabel_rejected"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "no_positive_n25_evidence_opened",
+      "detail": "I2 freezes schema/control rules only; no BF rung is assigned.",
+      "passed": true
+    }
+  ],
+  "claim_boundary": {
+    "basin_formation_candidate_is_not_agency_or_native_support": true,
+    "unsafe_claim_flags_required_false": true,
+    "unsafe_claims": [
+      "agency",
+      "ant_ecology_implementation",
+      "consciousness",
+      "free_will",
+      "fully_native_integration",
+      "identity_acceptance",
+      "native_ant_agency",
+      "native_colony_agency",
+      "native_support",
+      "organism_life",
+      "phase8_implementation",
+      "reward_maximization",
+      "selfhood",
+      "semantic_action",
+      "semantic_choice",
+      "semantic_goal",
+      "semantic_goal_ownership",
+      "semantic_intention",
+      "semantic_learning",
+      "semantic_perception",
+      "sentience",
+      "ant_ecology_specification",
+      "unrestricted_autonomy"
+    ]
+  },
+  "control_alias_map": {
+    "hidden_producer_insertion_control": "hidden_producer_insertion_rejected",
+    "hidden_producer_support_control": "producer_hidden_support_control",
+    "label_only_new_basin_control": "label_only_new_basin_rejected",
+    "native_support_relabel_control": "native_support_relabel_rejected",
+    "phase8_relabel_control": "phase8_relabel_rejected",
+    "semantic_relabel_control": [
+      "semantic_choice_relabel_rejected",
+      "semantic_learning_relabel_rejected"
+    ]
+  },
+  "control_result_schema": {
+    "active_null_rows_may_carry_single_control_status_summary": true,
+    "positive_candidate_rows_require_full_list": true,
+    "required_fields": [
+      "control_id",
+      "control_status",
+      "blocked_condition",
+      "expected_result",
+      "actual_result",
+      "claim_allowed_when_control_triggers",
+      "rung_effect"
+    ]
+  },
+  "control_status_policy": {
+    "active_null_rows": {
+      "expected_status": "failed_closed",
+      "meaning": "blocker triggered and the false-positive claim was rejected"
+    },
+    "positive_candidate_rows": {
+      "blocker_absent_status": "passed",
+      "failed_closed_role": "may satisfy a negative-control row, not automatically a positive row",
+      "failed_open_effect": "blocks row and closeout upgrade",
+      "not_applicable_requirement": "scope reason required",
+      "not_run_effect": "blocks dependent rung"
+    }
+  },
+  "controls": [
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "label_only_new_basin_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "single_basin_thickening_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "reshaped_old_boundary_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "non_replayable_transient_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "hidden_producer_insertion_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "n24_optionality_relabel_as_formation_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "native_flux_debt_remains_row_local",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_schedule_post_hoc_control",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_hidden_support_control",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_threshold_relaxation_control",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_basin_insertion_without_trace_control",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_success_as_native_relabel_control",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_success_overwrites_native_failure_control",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "native_spark_source_policy_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "producer_before_native_spark_path_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "ap4_gap_prose_only_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "ap5_proxy_target_omission_rejected_when_applicable",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "semantic_learning_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "semantic_choice_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "agency_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "native_support_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "phase8_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    },
+    {
+      "active_null_expected_status": "failed_closed",
+      "control_id": "ant_ecology_relabel_rejected",
+      "failed_closed_role": "negative_control_satisfied_not_positive_row_success",
+      "failed_open_effect": "blocks_row_and_closeout_upgrade",
+      "not_applicable_requires_scope_reason": true,
+      "not_run_effect": "blocks_dependent_rung",
+      "positive_row_blocker_absent_status": "passed"
+    }
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "formation_definitions": {
+    "bifurcation_partial": {
+      "bf_ceiling": "BF2",
+      "distinguishable_basin_not_yet_stable": true,
+      "spark_or_bifurcation_trace_observed": true
+    },
+    "new_basin_candidate": {
+      "boundary_distinguishable_region_with_replayable_floor": true,
+      "merge_leakage_controls_clean": true,
+      "not_reducible_to_old_basin_thickening": true,
+      "stress_threshold_persistence_required": true
+    },
+    "sub_basin_candidate": {
+      "boundary_distinguishable_region": "inside_or_attached_to_old_basin",
+      "old_basin_relation_required": true,
+      "support_coherence_floor_distinct_from_local_thickening": true
+    }
+  },
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "iteration": "I2",
+  "lane_ceiling_policy": {
+    "native_lane": {
+      "may_support_native_bf_rungs_if_all_gates_pass": true,
+      "must_preserve_native_flux_debt": true,
+      "native_flux_debt_bound": 1e-09
+    },
+    "producer_assisted_lane": {
+      "can_open_phase8": false,
+      "can_support_native_support": false,
+      "can_upgrade_n24_native_lane": false,
+      "can_upgrade_native_bf": false,
+      "may_identify_naturalization_target": true,
+      "may_support_producer_assisted_bf_candidate": true
+    },
+    "required_fields": [
+      "lane",
+      "lane_success_can_upgrade_native",
+      "native_lane_failure_overwritten",
+      "producer_assisted_result_class"
+    ]
+  },
+  "lane_cross_field_invariants": {
+    "native": {
+      "formation_source_required": "native_source_current_bifurcation",
+      "lane_success_can_upgrade_native_required": false,
+      "n24_producer_lane_status_required": "not_used_in_native_row",
+      "native_flux_debt_bound_required": 1e-09,
+      "native_flux_debt_status_required": "preserved",
+      "native_flux_debt_widened_required": false,
+      "native_lane_failure_overwritten_required": false,
+      "producer_assisted_result_class_required": "not_applicable"
+    },
+    "producer_assisted": {
+      "formation_source_required": "producer_flux_conditioned",
+      "lane_success_can_upgrade_native_required": false,
+      "native_flux_debt_not_overwritten_required": true,
+      "native_lane_failure_overwritten_required": false,
+      "producer_assisted_result_class_allowed": [
+        "producer_mediated_scaffold_candidate",
+        "missing_native_mechanism_probe"
+      ]
+    }
+  },
+  "n25_closeout_ladder": {
+    "N25-C0": "contract-only closeout",
+    "N25-C1": "active-null/control discipline established",
+    "N25-C2": "spark/bifurcation partial",
+    "N25-C3": "source-current sub-basin candidate",
+    "N25-C4": "replay/control-backed sub-basin differentiation candidate",
+    "N25-C5": "stress/threshold-backed basin-formation candidate",
+    "N25-C6": "N26-ready bounded basin-formation evidence"
+  },
+  "n25_closeout_ladder_rung": "N25-C0_schema_only",
+  "native_flux_debt_policy": {
+    "native_rows": {
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_status_allowed_values": [
+        "preserved",
+        "violated_blocks_native_row",
+        "not_applicable_producer_lane"
+      ],
+      "native_flux_debt_violation_effect": "blocks_native_row",
+      "native_flux_debt_widened_required_value": false
+    },
+    "producer_assisted_rows": {
+      "max_conditioning_windows": 10,
+      "native_flux_debt_not_overwritten_required": true,
+      "producer_conditioned_flux_bound_max": 1e-08,
+      "producer_flux_window_bound_required": true,
+      "producer_flux_window_declared_before_use_required": true,
+      "producer_threshold_relaxation_rejected_required": true
+    }
+  },
+  "native_spark_source_policy": {
+    "existing_examples_must_be_considered_before_new_producer_code": true,
+    "existing_lgrc_spark_behavior_expected": true,
+    "native_probe_order": [
+      "reuse_existing_lgrc9v3_causal_spark_diagnostics",
+      "reuse_existing_grc9v3_lane_b_spark_or_refinement_transport_where_applicable",
+      "add_producer_extension_only_if_native_sources_are_insufficient"
+    ],
+    "new_producer_code_policy": {
+      "allowed_only_if_needed": true,
+      "must_declare_why_existing_native_spark_path_is_insufficient": true,
+      "must_not_insert_new_basin_without_source_current_trace": true,
+      "must_record_naturalization_debt": true
+    },
+    "source_examples": [
+      "examples/lgrc9v3/README.md",
+      "examples/lgrc9v3/causal_spark_diagnostics.py",
+      "examples/lgrc9v3/refinement_packet_transport.py"
+    ]
+  },
+  "output_digest": "17511cc4a21aee172d0f80600c55636701e97af4c1c46f6578411b4e97c7192f",
+  "ready_for_iteration_3_active_nulls": true,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_basin_formation_schema_and_controls.py",
+  "rung_support_policy": {
+    "BF3_requires": [
+      "formation_source is native_source_current_bifurcation for native rows",
+      "formation_source is producer_flux_conditioned for producer-assisted rows",
+      "boundary_distinguishability_margin recorded",
+      "support/coherence floor margins recorded",
+      "old-basin thickening, label-only, merge/leakage, and transient controls rejected"
+    ],
+    "BF4_requires": [
+      "BF3 gates",
+      "replay/control-backed distinction"
+    ],
+    "BF5_requires": [
+      "BF4 gates",
+      "stress/threshold matrix",
+      "merge/leakage controls clean"
+    ],
+    "BF6_requires": [
+      "BF5 gates",
+      "N26 handoff ready",
+      "claim boundary clean"
+    ]
+  },
+  "source_consumable_contract_row": "n20_i5_row_06_spark_sub_basin_new_basin_formation",
+  "source_contract_row": "n20_i4_row_06_spark_sub_basin_new_basin_formation",
+  "source_inventory": {
+    "acceptance_state": "accepted_source_handoff_inventory_no_basin_formation_evidence",
+    "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
+    "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_source_handoff_inventory.json",
+    "sha256": "b738072dd8922dcfcc5d5be1ab3efc27b5f43b0738c7f8ea41ae09880b4cdf18",
+    "status": "passed"
+  },
+  "status": "passed",
+  "temporal_window_policy": {
+    "ordering_rule": "bifurcation_window.end_step <= boundary_candidate_window.start_step",
+    "required_fields": [
+      "formation_window",
+      "bifurcation_window",
+      "boundary_candidate_window",
+      "replay_window",
+      "old_basin_reference_window"
+    ],
+    "threshold_rule": "thresholds_declared_before_bifurcation_window"
+  }
+}

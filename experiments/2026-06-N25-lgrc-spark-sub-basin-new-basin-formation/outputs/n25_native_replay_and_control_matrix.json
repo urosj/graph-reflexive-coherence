@@ -1,0 +1,975 @@
+{
+  "acceptance_state": "accepted_native_bf4_replay_control_backed_sub_basin_candidate_zero_margin",
+  "artifact_id": "n25_native_replay_and_control_matrix",
+  "basin_formation_claim_allowed": false,
+  "bf_ceiling": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+  "bf_ladder_rung_assigned": false,
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": "accepted_source_handoff_inventory_no_basin_formation_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": "accepted_basin_formation_schema_controls_frozen_no_positive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_passed",
+      "detail": "accepted_active_nulls_fail_closed_no_positive_basin_formation_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i4_native_probe_passed",
+      "detail": "accepted_native_source_current_bf2_bifurcation_partial_pending_i5_controls",
+      "passed": true
+    },
+    {
+      "check_id": "duplicate_runtime_replay_stable",
+      "detail": {
+        "bifurcation_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+        "budget_error": 0.0,
+        "event_kinds": [
+          "lgrc9v3_packet_departure",
+          "lgrc9v3_packet_arrival",
+          "lgrc9v3_packet_arrival_eligibility",
+          "lgrc9v3_local_update",
+          "lgrc9v3_causal_spark_candidate",
+          "hybrid_mechanical_expansion",
+          "lgrc9v3_refinement_packet_transport",
+          "lgrc9v3_proper_time_inheritance"
+        ],
+        "internal_edge_ids": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "merge_leakage_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+        "module_node_ids": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "native_flux_debt_bound": 1e-09,
+        "native_flux_debt_trace_digest": "99cf507a23c414165839de6c2d64fe4613fe17bedbc5852b5289a6c8da20135e",
+        "new_boundary_candidate_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+        "old_basin_relation_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+        "packet_amount": 1e-09,
+        "support_coherence_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "artifact_reconstruction_stable",
+      "detail": [
+        {
+          "actual_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+          "artifact_role": "bifurcation_trace",
+          "digest_match": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_lgrc9v3_bifurcation_trace.json",
+          "recorded_trace_digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f"
+        },
+        {
+          "actual_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+          "artifact_role": "new_boundary_candidate_trace",
+          "digest_match": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_boundary_candidate_trace.json",
+          "recorded_trace_digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0"
+        },
+        {
+          "actual_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e",
+          "artifact_role": "new_basin_support_coherence_trace",
+          "digest_match": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_region_support_coherence_trace.json",
+          "recorded_trace_digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e"
+        },
+        {
+          "actual_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+          "artifact_role": "old_basin_relation_trace",
+          "digest_match": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_old_basin_relation_trace.json",
+          "recorded_trace_digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d"
+        },
+        {
+          "actual_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+          "artifact_role": "merge_leakage_trace",
+          "digest_match": true,
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json",
+          "recorded_trace_digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "required_controls_clean",
+      "detail": [
+        {
+          "actual_result": "artifact and runtime traces reconstruct with causal spark and module boundary digests",
+          "blocked_condition": "new basin exists only as a label",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "source-current event and boundary traces reconstruct",
+          "rung_effect": "label-only path remains blocked"
+        },
+        {
+          "actual_result": "module nodes and internal edges replay identically",
+          "blocked_condition": "old basin merely thickens",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "single_basin_thickening_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "old center replacement and module/internal-edge boundary remain replay-stable",
+          "rung_effect": "old-basin-thickening interpretation remains blocked"
+        },
+        {
+          "actual_result": "boundary signature digest matches I4 and duplicate replay",
+          "blocked_condition": "old boundary reshaping is counted as basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reshaped_old_boundary_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "new boundary candidate trace remains reconstructable",
+          "rung_effect": "reshaped-boundary-only interpretation remains blocked"
+        },
+        {
+          "actual_result": "budget_error = 0.0",
+          "blocked_condition": "merge or leakage budget error is counted as formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "budget error remains within native 1e-9 bound",
+          "rung_effect": "merge/leakage budget control clean for replay-backed candidate"
+        },
+        {
+          "actual_result": "runtime_replay_stable = True; artifact_reconstruction_stable = True",
+          "blocked_condition": "one-window transient spark is counted as formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "non_replayable_transient_rejected",
+          "control_status": "passed",
+          "expected_result": "duplicate runtime replay and artifact reconstruction are stable",
+          "rung_effect": "transient-only interpretation rejected"
+        },
+        {
+          "actual_result": "I5 consumes I4 native row and reruns native LGRC9V3 active topology path",
+          "blocked_condition": "producer inserts basin-like record without source-current native trace",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_insertion_rejected",
+          "control_status": "passed",
+          "expected_result": "native LGRC9V3 path and no producer intervention ledger",
+          "rung_effect": "hidden producer path remains blocked"
+        },
+        {
+          "actual_result": "packet_amount = 1e-09; native_flux_debt_bound = 1e-09",
+          "blocked_condition": "native flux debt is omitted or widened",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "packet amount and native flux bound remain 1e-9",
+          "rung_effect": "native row remains row-local under inherited N24 debt"
+        },
+        {
+          "actual_result": "I5 consumes I4 native spark/expansion artifacts and duplicate runtime replay, not N24 labels",
+          "blocked_condition": "N24 optionality context is relabeled as N25 formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "n24_optionality_relabel_as_formation_rejected",
+          "control_status": "passed",
+          "expected_result": "I5 must replay/control the I4 LGRC9V3 source-current formation trace",
+          "rung_effect": "N24 optionality remains context only under replay/control"
+        },
+        {
+          "actual_result": "producer_assisted_result_class = not_applicable",
+          "blocked_condition": "producer-assisted result overwrites native lane result",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+          "control_status": "not_applicable",
+          "expected_result": "I5 native row has no producer-assisted result",
+          "rung_effect": "scope reason: producer lane not opened in I5"
+        },
+        {
+          "actual_result": "I5 replays the native LGRC9V3 path only",
+          "blocked_condition": "producer schedule is added after observing the result",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_schedule_post_hoc_control",
+          "control_status": "not_applicable",
+          "expected_result": "no producer schedule is present",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "I5 duplicate replay uses native LGRC9V3 path",
+          "blocked_condition": "hidden producer support carries the candidate",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_hidden_support_control",
+          "control_status": "not_applicable",
+          "expected_result": "no producer support is present",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "producer threshold relaxation absent",
+          "blocked_condition": "producer lane relaxes thresholds",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_threshold_relaxation_control",
+          "control_status": "not_applicable",
+          "expected_result": "I5 keeps I4 thresholds",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "runtime replay and artifact reconstruction are stable",
+          "blocked_condition": "basin-like record appears without source-current trace",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_basin_insertion_without_trace_control",
+          "control_status": "passed",
+          "expected_result": "I5 reconstructs I4 source-current traces",
+          "rung_effect": "producer insertion without trace remains blocked"
+        },
+        {
+          "actual_result": "producer_assisted_lane_opened = false",
+          "blocked_condition": "producer-assisted success overwrites native failure",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_overwrites_native_failure_control",
+          "control_status": "not_applicable",
+          "expected_result": "producer-assisted lane is not opened",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "LGRC9V3 causal spark and active topology traces replay",
+          "blocked_condition": "existing LGRC/LGRC9V3 spark sources are skipped",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_spark_source_policy_rejected",
+          "control_status": "passed",
+          "expected_result": "I5 consumes and replays I4 existing-native path",
+          "rung_effect": "native-spark-first policy remains satisfied"
+        },
+        {
+          "actual_result": "producer_assisted_lane_opened = false",
+          "blocked_condition": "producer path is tried before native spark path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_before_native_spark_path_rejected",
+          "control_status": "passed",
+          "expected_result": "I5 remains native-only",
+          "rung_effect": "producer-before-native ordering remains blocked"
+        },
+        {
+          "actual_result": "ap4_dependency_status = required_recorded",
+          "blocked_condition": "AP4 dependency is handled only in prose",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap4_gap_prose_only_rejected",
+          "control_status": "passed",
+          "expected_result": "row records AP4 dependency status and reason",
+          "rung_effect": "AP4 gap remains explicit"
+        },
+        {
+          "actual_result": "ap5_dependency_status = not_applicable",
+          "blocked_condition": "AP5 proxy/target dependency is omitted when applicable",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap5_proxy_target_omission_rejected_when_applicable",
+          "control_status": "not_applicable",
+          "expected_result": "I5 has no proxy/target formation row",
+          "rung_effect": "scope reason: no AP5-dependent proxy/target formation in I5"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "bifurcation is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_choice = false",
+          "blocked_condition": "bifurcation is relabeled as semantic choice",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_choice_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic choice claim flag remains false",
+          "rung_effect": "semantic choice relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "bifurcation is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "bifurcation is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "bifurcation is relabeled as Phase 8 implementation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.ant_ecology = false",
+          "blocked_condition": "bifurcation is relabeled as ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ant_ecology_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "ant ecology claim flag remains false",
+          "rung_effect": "ant ecology relabel blocked"
+        },
+        {
+          "actual_result": "producer_assisted_lane_opened = false",
+          "blocked_condition": "producer-assisted success is relabeled as native",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "not_applicable",
+          "expected_result": "I5 native matrix does not open producer-assisted lane",
+          "rung_effect": "scope reason: native-only replay/control matrix"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "all_plan_controls_scoped_in_i5",
+      "detail": {
+        "actual": [
+          "label_only_new_basin_rejected",
+          "single_basin_thickening_relabel_rejected",
+          "reshaped_old_boundary_relabel_rejected",
+          "merge_leakage_masquerading_as_new_basin_rejected",
+          "non_replayable_transient_rejected",
+          "hidden_producer_insertion_rejected",
+          "native_flux_debt_remains_row_local",
+          "n24_optionality_relabel_as_formation_rejected",
+          "producer_assisted_success_does_not_overwrite_native_failure",
+          "producer_schedule_post_hoc_control",
+          "producer_hidden_support_control",
+          "producer_threshold_relaxation_control",
+          "producer_basin_insertion_without_trace_control",
+          "producer_success_overwrites_native_failure_control",
+          "native_spark_source_policy_rejected",
+          "producer_before_native_spark_path_rejected",
+          "ap4_gap_prose_only_rejected",
+          "ap5_proxy_target_omission_rejected_when_applicable",
+          "semantic_learning_relabel_rejected",
+          "semantic_choice_relabel_rejected",
+          "agency_relabel_rejected",
+          "native_support_relabel_rejected",
+          "phase8_relabel_rejected",
+          "ant_ecology_relabel_rejected",
+          "producer_success_as_native_relabel_control"
+        ],
+        "expected": [
+          "label_only_new_basin_rejected",
+          "single_basin_thickening_relabel_rejected",
+          "reshaped_old_boundary_relabel_rejected",
+          "merge_leakage_masquerading_as_new_basin_rejected",
+          "non_replayable_transient_rejected",
+          "hidden_producer_insertion_rejected",
+          "n24_optionality_relabel_as_formation_rejected",
+          "producer_assisted_success_does_not_overwrite_native_failure",
+          "native_flux_debt_remains_row_local",
+          "producer_schedule_post_hoc_control",
+          "producer_hidden_support_control",
+          "producer_threshold_relaxation_control",
+          "producer_basin_insertion_without_trace_control",
+          "producer_success_as_native_relabel_control",
+          "producer_success_overwrites_native_failure_control",
+          "native_spark_source_policy_rejected",
+          "producer_before_native_spark_path_rejected",
+          "ap4_gap_prose_only_rejected",
+          "ap5_proxy_target_omission_rejected_when_applicable",
+          "semantic_learning_relabel_rejected",
+          "semantic_choice_relabel_rejected",
+          "agency_relabel_rejected",
+          "native_support_relabel_rejected",
+          "phase8_relabel_rejected",
+          "ant_ecology_relabel_rejected"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check_id": "merge_leakage_trace_reference_unmodified",
+      "detail": {
+        "budget_error": 0.0,
+        "digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+        "merge_leakage_control_status": "deferred_to_iteration_5",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "bf4_ceiling_conservative",
+      "detail": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+      "passed": true
+    },
+    {
+      "check_id": "zero_margin_debt_preserved",
+      "detail": "stress/threshold work remains required",
+      "passed": true
+    },
+    {
+      "check_id": "native_flux_debt_preserved",
+      "detail": 1e-09,
+      "passed": true
+    },
+    {
+      "check_id": "n20_contract_rows_match_i4",
+      "detail": {
+        "n20_consumable_contract_row": "n20_i5_row_06_spark_sub_basin_new_basin_formation",
+        "n20_source_contract_row": "n20_i4_row_06_spark_sub_basin_new_basin_formation"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "n24_optionality_relabel_control_present",
+      "detail": "N24 optionality relabel remains blocked in I5.",
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_non_circular",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+        "examples/lgrc9v3/causal_spark_diagnostics.py",
+        "examples/lgrc9v3/refinement_packet_transport.py",
+        "examples/grc9v3/_fixtures.py"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_valid",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_native_bf_ceiling_trace.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      },
+      "passed": true
+    }
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "generated_at": "2026-06-27T00:00:00+00:00",
+  "iteration": "I5",
+  "n25_closeout_ceiling": "N25-C4_replay_control_backed_sub_basin_differentiation_candidate",
+  "n25_closeout_ladder_rung_assigned": false,
+  "native_bf4_candidate_supported": true,
+  "native_bf5_supported": false,
+  "native_bf6_supported": false,
+  "native_replay_control_row_count": 1,
+  "native_replay_control_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_condition_reason": "N25 remains downstream of N24 AP4 optionality context",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "no proxy/target formation row in I5 native replay matrix",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "formation_replay_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json",
+          "sha256": "d4dbbea5e33ad9b17d2840e9d4a9200aa33d35eadb421737ebc935654a1e3967"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_control_matrix_trace.json",
+          "sha256": "9f92fe4745d4313c306596a60799887d0bae527a28af8f3be7905ffff5faeabe"
+        },
+        {
+          "artifact_role": "replayable_distinction_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json",
+          "sha256": "6714fff43e48f2cc1824db030554d45bc1219d77b688959a44965a07a26bcc90"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_native_bf_ceiling_trace.json",
+          "sha256": "8aa9aa187cf39b9beafc5165cd5553f6e654b06e06f2ca62e20de58dbfa06264"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_native_bf_ceiling_trace.json"
+      ],
+      "artifact_paths_equal_manifest_paths": true,
+      "artifact_sha256": {
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json": "6714fff43e48f2cc1824db030554d45bc1219d77b688959a44965a07a26bcc90",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_control_matrix_trace.json": "9f92fe4745d4313c306596a60799887d0bae527a28af8f3be7905ffff5faeabe",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_native_bf_ceiling_trace.json": "8aa9aa187cf39b9beafc5165cd5553f6e654b06e06f2ca62e20de58dbfa06264",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json": "d4dbbea5e33ad9b17d2840e9d4a9200aa33d35eadb421737ebc935654a1e3967"
+      },
+      "artifact_sha256_equal_manifest_sha256": true,
+      "basin_formation_claim_allowed": false,
+      "bf_ladder_rung": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+      "bf_ladder_rung_status": "candidate_ceiling_not_final_closeout",
+      "bifurcation_trace": {
+        "digest": "f59429bd33a9d9d5287e8b817504c452bafd02409e41f790d80ba15b4c95b53f",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_lgrc9v3_bifurcation_trace.json",
+        "summary": "causal spark candidate followed by active topology mechanical expansion"
+      },
+      "bifurcation_window": {
+        "end_step": 1,
+        "event_kind": "lgrc9v3_causal_spark_candidate",
+        "event_time_key": 2.0,
+        "start_step": 1
+      },
+      "bifurcation_window_order_valid": true,
+      "boundary_candidate_window": {
+        "end_step": 1,
+        "event_kind": "hybrid_mechanical_expansion",
+        "event_time_key": 2.0,
+        "start_step": 1
+      },
+      "boundary_distinguishability_margin": 4,
+      "boundary_distinguishability_margin_formula": "module_node_count - minimum_distinguishable_module_node_count",
+      "boundary_integrity_result": "source_current_boundary_candidate_replay_stable",
+      "candidate_basin_signature_digest": "b53c6cd758dfc66a835c780958f1da6d4d5f33d07b3ef896c1481d94ab896e6f",
+      "candidate_boundary_signature_digest": "b82aa347face8db87a20d776af10e8011002d214a2bb751b5c6b259738e260cc",
+      "claim_ceiling": "native replay/control-backed sub-basin differentiation candidate; zero-margin and no BF5/BF6 stress support yet",
+      "coherence_floor_margin_new_region": 0.0,
+      "coherence_floor_result": "candidate_trace_replay_stable_zero_margin",
+      "control_results": [
+        {
+          "actual_result": "artifact and runtime traces reconstruct with causal spark and module boundary digests",
+          "blocked_condition": "new basin exists only as a label",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "label_only_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "source-current event and boundary traces reconstruct",
+          "rung_effect": "label-only path remains blocked"
+        },
+        {
+          "actual_result": "module nodes and internal edges replay identically",
+          "blocked_condition": "old basin merely thickens",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "single_basin_thickening_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "old center replacement and module/internal-edge boundary remain replay-stable",
+          "rung_effect": "old-basin-thickening interpretation remains blocked"
+        },
+        {
+          "actual_result": "boundary signature digest matches I4 and duplicate replay",
+          "blocked_condition": "old boundary reshaping is counted as basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "reshaped_old_boundary_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "new boundary candidate trace remains reconstructable",
+          "rung_effect": "reshaped-boundary-only interpretation remains blocked"
+        },
+        {
+          "actual_result": "budget_error = 0.0",
+          "blocked_condition": "merge or leakage budget error is counted as formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "budget error remains within native 1e-9 bound",
+          "rung_effect": "merge/leakage budget control clean for replay-backed candidate"
+        },
+        {
+          "actual_result": "runtime_replay_stable = True; artifact_reconstruction_stable = True",
+          "blocked_condition": "one-window transient spark is counted as formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "non_replayable_transient_rejected",
+          "control_status": "passed",
+          "expected_result": "duplicate runtime replay and artifact reconstruction are stable",
+          "rung_effect": "transient-only interpretation rejected"
+        },
+        {
+          "actual_result": "I5 consumes I4 native row and reruns native LGRC9V3 active topology path",
+          "blocked_condition": "producer inserts basin-like record without source-current native trace",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "hidden_producer_insertion_rejected",
+          "control_status": "passed",
+          "expected_result": "native LGRC9V3 path and no producer intervention ledger",
+          "rung_effect": "hidden producer path remains blocked"
+        },
+        {
+          "actual_result": "packet_amount = 1e-09; native_flux_debt_bound = 1e-09",
+          "blocked_condition": "native flux debt is omitted or widened",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "packet amount and native flux bound remain 1e-9",
+          "rung_effect": "native row remains row-local under inherited N24 debt"
+        },
+        {
+          "actual_result": "I5 consumes I4 native spark/expansion artifacts and duplicate runtime replay, not N24 labels",
+          "blocked_condition": "N24 optionality context is relabeled as N25 formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "n24_optionality_relabel_as_formation_rejected",
+          "control_status": "passed",
+          "expected_result": "I5 must replay/control the I4 LGRC9V3 source-current formation trace",
+          "rung_effect": "N24 optionality remains context only under replay/control"
+        },
+        {
+          "actual_result": "producer_assisted_result_class = not_applicable",
+          "blocked_condition": "producer-assisted result overwrites native lane result",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+          "control_status": "not_applicable",
+          "expected_result": "I5 native row has no producer-assisted result",
+          "rung_effect": "scope reason: producer lane not opened in I5"
+        },
+        {
+          "actual_result": "I5 replays the native LGRC9V3 path only",
+          "blocked_condition": "producer schedule is added after observing the result",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_schedule_post_hoc_control",
+          "control_status": "not_applicable",
+          "expected_result": "no producer schedule is present",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "I5 duplicate replay uses native LGRC9V3 path",
+          "blocked_condition": "hidden producer support carries the candidate",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_hidden_support_control",
+          "control_status": "not_applicable",
+          "expected_result": "no producer support is present",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "producer threshold relaxation absent",
+          "blocked_condition": "producer lane relaxes thresholds",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_threshold_relaxation_control",
+          "control_status": "not_applicable",
+          "expected_result": "I5 keeps I4 thresholds",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "runtime replay and artifact reconstruction are stable",
+          "blocked_condition": "basin-like record appears without source-current trace",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_basin_insertion_without_trace_control",
+          "control_status": "passed",
+          "expected_result": "I5 reconstructs I4 source-current traces",
+          "rung_effect": "producer insertion without trace remains blocked"
+        },
+        {
+          "actual_result": "producer_assisted_lane_opened = false",
+          "blocked_condition": "producer-assisted success overwrites native failure",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_overwrites_native_failure_control",
+          "control_status": "not_applicable",
+          "expected_result": "producer-assisted lane is not opened",
+          "rung_effect": "scope reason: native-only I5 matrix"
+        },
+        {
+          "actual_result": "LGRC9V3 causal spark and active topology traces replay",
+          "blocked_condition": "existing LGRC/LGRC9V3 spark sources are skipped",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_spark_source_policy_rejected",
+          "control_status": "passed",
+          "expected_result": "I5 consumes and replays I4 existing-native path",
+          "rung_effect": "native-spark-first policy remains satisfied"
+        },
+        {
+          "actual_result": "producer_assisted_lane_opened = false",
+          "blocked_condition": "producer path is tried before native spark path",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_before_native_spark_path_rejected",
+          "control_status": "passed",
+          "expected_result": "I5 remains native-only",
+          "rung_effect": "producer-before-native ordering remains blocked"
+        },
+        {
+          "actual_result": "ap4_dependency_status = required_recorded",
+          "blocked_condition": "AP4 dependency is handled only in prose",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap4_gap_prose_only_rejected",
+          "control_status": "passed",
+          "expected_result": "row records AP4 dependency status and reason",
+          "rung_effect": "AP4 gap remains explicit"
+        },
+        {
+          "actual_result": "ap5_dependency_status = not_applicable",
+          "blocked_condition": "AP5 proxy/target dependency is omitted when applicable",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ap5_proxy_target_omission_rejected_when_applicable",
+          "control_status": "not_applicable",
+          "expected_result": "I5 has no proxy/target formation row",
+          "rung_effect": "scope reason: no AP5-dependent proxy/target formation in I5"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "bifurcation is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_choice = false",
+          "blocked_condition": "bifurcation is relabeled as semantic choice",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_choice_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic choice claim flag remains false",
+          "rung_effect": "semantic choice relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "bifurcation is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "bifurcation is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "bifurcation is relabeled as Phase 8 implementation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.ant_ecology = false",
+          "blocked_condition": "bifurcation is relabeled as ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ant_ecology_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "ant ecology claim flag remains false",
+          "rung_effect": "ant ecology relabel blocked"
+        },
+        {
+          "actual_result": "producer_assisted_lane_opened = false",
+          "blocked_condition": "producer-assisted success is relabeled as native",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "not_applicable",
+          "expected_result": "I5 native matrix does not open producer-assisted lane",
+          "rung_effect": "scope reason: native-only replay/control matrix"
+        }
+      ],
+      "existing_lgrc_spark_sources_considered": true,
+      "flux_or_leakage_result": "budget_error_within_1e-9_replay_stable",
+      "formation_class": "sub_basin_candidate",
+      "formation_source": "native_source_current_bifurcation",
+      "formation_window": {
+        "end_event_time_key": 2.0,
+        "end_step": 1,
+        "start_event_time_key": 1.0,
+        "start_step": 0
+      },
+      "geometric_interpretation": "The same LGRC9V3 spark-to-expansion geometry reappears under duplicate runtime replay and artifact reconstruction. The module boundary, old-center replacement, budget-preserved expansion, and native 1e-9 packet bound are stable, so label-only, thickening, reshaped-boundary, transient, merge/leakage, and hidden-producer interpretations fail closed. The candidate remains narrow because its support/coherence floors have zero margin.",
+      "label_only_rejected": true,
+      "lane": "native",
+      "lane_success_can_upgrade_native": false,
+      "merge_leakage_i5_control_status": "passed",
+      "merge_leakage_margin": 1e-09,
+      "merge_leakage_rejected": true,
+      "merge_leakage_trace": {
+        "budget_error": 0.0,
+        "digest": "c6bf6c00038085c4edf5cc45f35afa1e3bf6d3fb2245eb883fd5f16591dface5",
+        "merge_leakage_control_status": "deferred_to_iteration_5",
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_merge_leakage_trace.json"
+      },
+      "n20_consumable_contract_row": "n20_i5_row_06_spark_sub_basin_new_basin_formation",
+      "n20_source_contract_row": "n20_i4_row_06_spark_sub_basin_new_basin_formation",
+      "n24_native_lane_status": "AB5_N24-C5_context_only_not_reclassified",
+      "n24_producer_lane_status": "not_used_in_native_row",
+      "n25_closeout_ceiling": "N25-C4_replay_control_backed_sub_basin_differentiation_candidate",
+      "n25_closeout_ladder_rung_assigned": false,
+      "native_flux_debt_bound": 1e-09,
+      "native_flux_debt_not_overwritten": true,
+      "native_flux_debt_status": "preserved",
+      "native_flux_debt_widened": false,
+      "native_lane_failure_overwritten": false,
+      "native_spark_mechanism_reuse_status": "reused_existing_lgrc9v3_causal_spark_and_active_topology_integration",
+      "naturalization_debt": [
+        "zero_margin_support_coherence_floor",
+        "stress_threshold_matrix",
+        "producer_assisted_flux_conditioned_comparison"
+      ],
+      "new_basin_support_coherence_trace": {
+        "candidate_node_count": 5,
+        "digest": "78edfbee15f751f58ea2a4e8c5051c3ffa55c0f8edc59541de1e89d97eb8809e",
+        "min_candidate_coherence": 0.0,
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_region_support_coherence_trace.json",
+        "positive_node_count": 3
+      },
+      "new_boundary_candidate_trace": {
+        "boundary_external_edge_count": 9,
+        "digest": "6b67321bde64dcd5137dd259aa70af3bec7d843272df1e6a9f108766e15ea4a0",
+        "internal_edge_ids": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "module_node_ids": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_new_boundary_candidate_trace.json"
+      },
+      "new_producer_code_justification": "not_applicable_native_replay_controls_reuse_i4_native_path",
+      "old_basin_reference_window": {
+        "event_time_key": 1.0,
+        "topology_digest": "36e6104b85169e3632467499a86f5c7a94daa0b3f36c7d655cec2f2a8be313b9"
+      },
+      "old_basin_relation_trace": {
+        "digest": "67547c730a2bd4b44673462023b2635621fe9d466f02113ebccf683023d8033d",
+        "old_center_removed_after_expansion": true,
+        "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe_artifacts/n25_i4_old_basin_relation_trace.json"
+      },
+      "old_basin_separation_margin": 1.0,
+      "old_basin_separation_margin_formula": "1.0 when old center removed by source-current expansion else 0.0",
+      "old_basin_separation_margin_kind": "binary_indicator",
+      "old_basin_signature_digest": "36e6104b85169e3632467499a86f5c7a94daa0b3f36c7d655cec2f2a8be313b9",
+      "old_basin_thickening_rejected": true,
+      "old_to_candidate_separation_digest": "40747fcbc0eae8c5a717ce1a283ca27384a9a175f3509a2a47f68e60011c434d",
+      "output_digest": "13fe12d8daaf7aff44909a1d24fbe388e08ca43f0b6506bf400c14faedc1a94f",
+      "producer_assisted_result_class": "not_applicable",
+      "producer_flux_window_bound": "not_applicable_native_lane",
+      "producer_flux_window_declared_before_use": "not_applicable_native_lane",
+      "producer_residue_classification": "not_applicable_native_row",
+      "replay_distinction_persistence_ratio": 1.0,
+      "replay_window": {
+        "mode": "duplicate_runtime_replay_and_artifact_reconstruction",
+        "replay_count": 3
+      },
+      "replayable_distinction_trace": {
+        "artifact_reconstruction_stable": true,
+        "artifact_reconstruction_trace_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_artifact_reconstruction_trace.json",
+        "replay_distinction_persistence_ratio": 1.0,
+        "runtime_replay_stable": true,
+        "runtime_replay_trace_path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix_artifacts/n25_i5_runtime_replay_trace.json"
+      },
+      "reshaped_old_boundary_rejected": true,
+      "row_decision": "supported",
+      "row_digest": "13fe12d8daaf7aff44909a1d24fbe388e08ca43f0b6506bf400c14faedc1a94f",
+      "row_id": "n25_i5_native_replay_and_control_matrix",
+      "row_specific_thresholds_declared_before_use": {
+        "bf3_closeout_requires_iteration_5_replay_controls": true,
+        "boundary_distinguishability_margin_formula": "module_node_count - minimum_distinguishable_module_node_count",
+        "declared_before_use": true,
+        "distinguishable_module_node_count_note": "The one-node threshold is only the distinguishability baseline; the I4 candidate gate separately requires the full five-node module.",
+        "minimum_distinguishable_module_node_count": 1,
+        "minimum_internal_edge_count_for_candidate": 4,
+        "minimum_module_node_count_for_candidate": 5,
+        "minimum_positive_coherence_nodes_for_candidate": 3,
+        "native_flux_debt_bound": 1e-09,
+        "old_basin_separation_margin_formula": "1.0 when old center removed by source-current expansion else 0.0",
+        "old_basin_separation_margin_kind": "binary_indicator",
+        "packet_amount": 1e-09,
+        "record_id": "n25_i4_thresholds_declared_before_use",
+        "temporal_window_schema": {
+          "bifurcation_window": [
+            "start_step",
+            "end_step",
+            "event_time_key"
+          ],
+          "boundary_candidate_window": [
+            "start_step",
+            "end_step",
+            "event_time_key"
+          ],
+          "ordering_rule": "bifurcation_window.end_step <= boundary_candidate_window.start_step"
+        }
+      },
+      "run_artifact_id": "n25_i5_native_replay_control_matrix",
+      "runtime_config_digest": "60478be49bfeb7d2b18fa4bff6f76f11e16daccfb14a298ba366b464b05a7a75",
+      "source_commit_or_source_digest": "736fe9a8b4d129d1e4945d5aa2c65302dc35c49e4d6558cbf10b4a27d08402ed",
+      "source_consumable_contract_row_digest": "4e51db0dbbe16192daff1cfcb04ff3294b7e8e42ea5f20e2eb88e62f46c0e202",
+      "source_contract_row_digest": "0f34855cca2e63efc4b711cbe043f01d572c65177e59db9e58b4f3fac2e421d5",
+      "source_current_inputs": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+        "examples/lgrc9v3/causal_spark_diagnostics.py",
+        "examples/lgrc9v3/refinement_packet_transport.py",
+        "examples/grc9v3/_fixtures.py"
+      ],
+      "source_iteration": "I5_native_replay_and_control_matrix",
+      "source_output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+      "support_floor_margin_new_region": 0.0,
+      "support_floor_result": "candidate_trace_replay_stable_zero_margin",
+      "thresholds_declared_before_bifurcation_window": true,
+      "transient_rejected": true,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      }
+    }
+  ],
+  "output_digest": "b922ab52e616e94231905e626087c07258aeb2d9adfcee349ab270a386a300db",
+  "producer_assisted_lane_opened": false,
+  "ready_for_iteration_6_producer_assisted_formation_probe": true,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_native_replay_and_control_matrix.py",
+  "source_digest_chain_audit": {
+    "i1": {
+      "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_source_handoff_inventory.json",
+      "sha256": "b738072dd8922dcfcc5d5be1ab3efc27b5f43b0738c7f8ea41ae09880b4cdf18"
+    },
+    "i2": {
+      "output_digest": "17511cc4a21aee172d0f80600c55636701e97af4c1c46f6578411b4e97c7192f",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_basin_formation_schema_and_controls.json",
+      "sha256": "964b5b348ad68c21881a6d49bb9039dc70ea7be998a035cd079559efa1742f17"
+    },
+    "i3": {
+      "output_digest": "857e88aa4efbbe55458e538a29803e4f7b4731c5bf1872a56c303073797441c9",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_active_nulls_and_failure_baselines.json",
+      "sha256": "91cae44648e1de61bb27ce9bdda59395ff50280202795bd885128fbda4ac9b51"
+    },
+    "i4": {
+      "output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+      "sha256": "98ee8337fb926e492ab800fd1ff464bbdf8fe9543b63ec459f0eecdaa61a39fa"
+    }
+  },
+  "status": "passed",
+  "zero_margin_native_support_coherence_debt": true
+}

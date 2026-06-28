@@ -1,0 +1,56 @@
+[
+  {
+    "actual_result": "final BF level is scoped BF5",
+    "blocked_condition": "N25-C6 closeout is relabeled as BF6",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "final_c6_not_bf6_control",
+    "control_status": "passed",
+    "expected_result": "BF6 remains false",
+    "rung_effect": "C6 closeout allowed without BF6"
+  },
+  {
+    "actual_result": "N25.1/Phase 8 extension required for multi-basin formation",
+    "blocked_condition": "sub-basin/high-margin core is relabeled as independent new basin",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "independent_new_basin_closeout_relabel_control",
+    "control_status": "passed",
+    "expected_result": "independent new-basin remains blocked",
+    "rung_effect": "new-basin claim blocked"
+  },
+  {
+    "actual_result": "native_bf_upgraded_by_producer = false",
+    "blocked_condition": "I7-E producer scaffold upgrades native BF",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "producer_scaffold_native_upgrade_control",
+    "control_status": "passed",
+    "expected_result": "producer-assisted lane remains separate",
+    "rung_effect": "lane split preserved"
+  },
+  {
+    "actual_result": "native_flux_debt_bound = 1e-9",
+    "blocked_condition": "native flux bound is widened above 1e-9",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "native_flux_debt_closeout_control",
+    "control_status": "passed",
+    "expected_result": "native flux debt remains visible",
+    "rung_effect": "flux debt carried to N26/N25.1"
+  },
+  {
+    "actual_result": "handoff constraints require scoped consumption",
+    "blocked_condition": "N26 consumes N25 as independent multi-basin substrate",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "n26_handoff_scope_control",
+    "control_status": "passed",
+    "expected_result": "N26 consumes scoped sub-basin/core only unless new evidence appears",
+    "rung_effect": "N26 handoff allowed with constraints"
+  },
+  {
+    "actual_result": "all unsafe flags false",
+    "blocked_condition": "N25 is relabeled as agency, native support, sentience, Phase 8, or ant ecology",
+    "claim_allowed_when_control_triggers": false,
+    "control_id": "unsafe_claims_closeout_control",
+    "control_status": "passed",
+    "expected_result": "unsafe claim flags remain false",
+    "rung_effect": "claim boundary preserved"
+  }
+]

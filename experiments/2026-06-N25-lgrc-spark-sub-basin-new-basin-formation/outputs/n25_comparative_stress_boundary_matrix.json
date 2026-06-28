@@ -1,0 +1,674 @@
+{
+  "acceptance_state": "accepted_comparative_bf4_boundary_matrix_bf5_blocked_n26_ready",
+  "artifact_id": "n25_comparative_stress_boundary_matrix",
+  "basin_formation_claim_allowed": false,
+  "bf5_or_stronger_supported": false,
+  "bf6_supported": false,
+  "bf_ceiling": "BF4_comparative_native_and_producer_scaffold_boundary",
+  "bf_ladder_rung_assigned": false,
+  "checks": [
+    {
+      "check_id": "i1_inventory_passed",
+      "detail": "accepted_source_handoff_inventory_no_basin_formation_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i2_schema_passed",
+      "detail": "accepted_basin_formation_schema_controls_frozen_no_positive_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i3_active_nulls_passed",
+      "detail": "accepted_active_nulls_fail_closed_no_positive_basin_formation_evidence",
+      "passed": true
+    },
+    {
+      "check_id": "i4_native_probe_passed",
+      "detail": "accepted_native_source_current_bf2_bifurcation_partial_pending_i5_controls",
+      "passed": true
+    },
+    {
+      "check_id": "i5_native_matrix_passed",
+      "detail": "accepted_native_bf4_replay_control_backed_sub_basin_candidate_zero_margin",
+      "passed": true
+    },
+    {
+      "check_id": "i6_producer_probe_passed",
+      "detail": "accepted_producer_assisted_flux_conditioned_bf4_scaffold_candidate_native_bf_unchanged",
+      "passed": true
+    },
+    {
+      "check_id": "native_and_producer_lane_ceiling_preserved",
+      "detail": {
+        "native_lane_ceiling": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+        "producer_assisted_lane_ceiling": "BF4_producer_assisted_flux_conditioned_scaffold_candidate"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "boundary_stress_axis_recorded",
+      "detail": {
+        "bf5_boundary_axis_only": true,
+        "bf5_overall_supported": false,
+        "boundary_axis_supports_stress_backing": true,
+        "interpretation": "Boundary distinguishability has stress room up to the recorded margin, but boundary margin alone cannot support BF5 while support/coherence margins are zero.",
+        "native_boundary_margin": 4,
+        "native_boundary_stress_ceiling": 4,
+        "producer_boundary_margin": 4,
+        "producer_boundary_stress_ceiling": 4,
+        "stress_kind": "artifact_metric_boundary_margin_stress",
+        "stress_rows": [
+          {
+            "interpretation": "boundary distinguishability retained",
+            "native_boundary_distinguishability_passes": true,
+            "producer_boundary_distinguishability_passes": true,
+            "stress_level": 0
+          },
+          {
+            "interpretation": "boundary distinguishability retained",
+            "native_boundary_distinguishability_passes": true,
+            "producer_boundary_distinguishability_passes": true,
+            "stress_level": 1
+          },
+          {
+            "interpretation": "boundary distinguishability retained",
+            "native_boundary_distinguishability_passes": true,
+            "producer_boundary_distinguishability_passes": true,
+            "stress_level": 2
+          },
+          {
+            "interpretation": "boundary distinguishability retained",
+            "native_boundary_distinguishability_passes": true,
+            "producer_boundary_distinguishability_passes": true,
+            "stress_level": 4
+          },
+          {
+            "interpretation": "boundary distinguishability stress exceeds recorded margin",
+            "native_boundary_distinguishability_passes": false,
+            "producer_boundary_distinguishability_passes": false,
+            "stress_level": 5
+          }
+        ],
+        "trace_id": "n25_i7_boundary_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "support_coherence_zero_margin_blocks_bf5",
+      "detail": {
+        "bf5_blocker": "zero_margin_support_coherence_floor",
+        "bf5_support_coherence_gate_passes": false,
+        "interpretation": "Both lanes preserve the replayed support/coherence surface exactly at the floor. Any positive buffer requirement fails. This blocks BF5 and BF6 regardless of the producer's flux-windowing help.",
+        "native_zero_margin_support_coherence_debt": true,
+        "positive_support_coherence_buffer_supported": false,
+        "producer_zero_margin_support_coherence_debt": true,
+        "stress_kind": "required_positive_floor_buffer_stress",
+        "stress_rows": [
+          {
+            "native_coherence_margin": 0.0,
+            "native_support_coherence_passes": true,
+            "native_support_margin": 0.0,
+            "producer_coherence_margin": 0.0,
+            "producer_support_coherence_passes": true,
+            "producer_support_margin": 0.0,
+            "required_positive_buffer": 0.0,
+            "rung_effect": "zero-buffer replay ceiling only"
+          },
+          {
+            "native_coherence_margin": 0.0,
+            "native_support_coherence_passes": false,
+            "native_support_margin": 0.0,
+            "producer_coherence_margin": 0.0,
+            "producer_support_coherence_passes": false,
+            "producer_support_margin": 0.0,
+            "required_positive_buffer": 1e-12,
+            "rung_effect": "blocks BF5/BF6 stress-backed formation"
+          },
+          {
+            "native_coherence_margin": 0.0,
+            "native_support_coherence_passes": false,
+            "native_support_margin": 0.0,
+            "producer_coherence_margin": 0.0,
+            "producer_support_coherence_passes": false,
+            "producer_support_margin": 0.0,
+            "required_positive_buffer": 0.01,
+            "rung_effect": "blocks BF5/BF6 stress-backed formation"
+          }
+        ],
+        "trace_id": "n25_i7_support_coherence_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "producer_flux_help_not_native",
+      "detail": {
+        "attempted_flux_rows": [
+          {
+            "attempted_flux": 1e-09,
+            "native_lane_passes": true,
+            "producer_lane_passes": true,
+            "reason": "within native per-window bound"
+          },
+          {
+            "attempted_flux": 2e-09,
+            "native_lane_passes": false,
+            "producer_lane_passes": true,
+            "producer_window_count": 2,
+            "reason": "producer windows the attempt into native-bound windows"
+          },
+          {
+            "attempted_flux": 1e-08,
+            "native_lane_passes": false,
+            "producer_lane_passes": true,
+            "producer_window_count": 10,
+            "reason": "producer reaches declared window cap"
+          },
+          {
+            "attempted_flux": 2e-08,
+            "native_lane_passes": false,
+            "producer_lane_passes": false,
+            "producer_window_count": 20,
+            "reason": "producer window cap fails closed"
+          }
+        ],
+        "bf5_flux_axis_only": true,
+        "bf5_overall_supported": false,
+        "interpretation": "The native lane remains capped at 1e-9. The producer-assisted lane can carry larger attempted flux by source-visible windowing up to 1e-8, with 2e-8 failing closed. This supports a producer-scaffold naturalization target, not native BF5.",
+        "native_flux_debt_bound": 1e-09,
+        "native_flux_envelope_widened": false,
+        "native_flux_stress_ceiling": 1e-09,
+        "native_merge_leakage_margin": 1e-09,
+        "producer_flux_help_supported": true,
+        "producer_flux_stress_ceiling": 1e-08,
+        "producer_flux_window_bound": 1e-08,
+        "producer_flux_window_cap_fail_closed": true,
+        "producer_flux_window_count_bound": 10,
+        "producer_merge_leakage_margin": 1e-09,
+        "stress_kind": "flux_leakage_and_window_cap_stress",
+        "trace_id": "n25_i7_merge_leakage_stress_trace"
+      },
+      "passed": true
+    },
+    {
+      "check_id": "naturalization_targets_recorded",
+      "detail": [
+        {
+          "evidence_status": "producer_scaffold_supported",
+          "native_status": "not_naturalized",
+          "source": "I6 producer-assisted flux windowing",
+          "target": "native_flux_routing_or_rate_limiting_surface"
+        },
+        {
+          "evidence_status": "required_for_BF5_BF6",
+          "native_status": "not_supported_zero_margin",
+          "source": "I7 support/coherence stress",
+          "target": "positive_support_coherence_margin_for_formed_region"
+        },
+        {
+          "evidence_status": "required_for_new_basin_candidate",
+          "native_status": "not_supported_sub_basin_candidate_only",
+          "source": "I5/I6 formation class comparison",
+          "target": "new_basin_independence_beyond_sub_basin_differentiation"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "controls_clean",
+      "detail": [
+        {
+          "actual_result": "I7 records separate native and producer-assisted stress ceilings",
+          "blocked_condition": "producer-assisted stress result overwrites native BF ceiling",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+          "control_status": "passed",
+          "expected_result": "native BF ceiling remains BF4 and BF5/BF6 remain false",
+          "rung_effect": "native BF5/BF6 remain blocked"
+        },
+        {
+          "actual_result": "native_flux_envelope_widened = false",
+          "blocked_condition": "producer flux windowing widens native 1e-9 bound",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "native flux bound remains 1e-9",
+          "rung_effect": "producer flux help stays producer-mediated"
+        },
+        {
+          "actual_result": "producer lane supports scaffold and naturalization target only",
+          "blocked_condition": "producer-assisted scaffold is relabeled as native basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "producer result remains producer_mediated_scaffold_candidate",
+          "rung_effect": "producer-to-native relabel blocked"
+        },
+        {
+          "actual_result": "I7 keeps new_basin_candidate_not_established as BF5 blocker",
+          "blocked_condition": "merge/leakage stress is counted as new-basin independence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "flux/window stress remains distinct from new-basin claim",
+          "rung_effect": "new-basin overclaim blocked"
+        },
+        {
+          "actual_result": "replay_distinction_persistence_ratio = 1.0",
+          "blocked_condition": "stress matrix treats non-replayable transient as formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "non_replayable_transient_rejected",
+          "control_status": "passed",
+          "expected_result": "I7 consumes I5 replay/control-backed row",
+          "rung_effect": "transient overclaim blocked"
+        },
+        {
+          "actual_result": "positive support/coherence buffer remains unsupported",
+          "blocked_condition": "producer lane relaxes support/coherence floors",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_threshold_relaxation_control",
+          "control_status": "passed",
+          "expected_result": "support/coherence zero margin remains visible",
+          "rung_effect": "threshold relaxation blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "stress-backed comparison is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_choice = false",
+          "blocked_condition": "formation comparison is relabeled as semantic choice",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_choice_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic choice claim flag remains false",
+          "rung_effect": "semantic choice relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "formation comparison is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "producer scaffold is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "N25 comparison is relabeled as Phase 8 implementation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.ant_ecology = false",
+          "blocked_condition": "N25 comparison is relabeled as ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ant_ecology_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "ant ecology claim flag remains false",
+          "rung_effect": "ant ecology relabel blocked"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "artifact_manifest_valid",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_merge_leakage_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_support_coherence_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_naturalization_target_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_lane_comparison_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_boundary_stress_trace.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "source_current_inputs_non_circular",
+      "detail": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json"
+      ],
+      "passed": true
+    },
+    {
+      "check_id": "unsafe_claim_flags_false",
+      "detail": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      },
+      "passed": true
+    }
+  ],
+  "comparative_stress_row_count": 1,
+  "comparative_stress_rows": [
+    {
+      "all_artifact_sha256_match_file_contents": true,
+      "ap4_condition_reason": "N25 comparison remains downstream of N24 AP4 optionality and producer flux conditioning context",
+      "ap4_dependency_status": "required_recorded",
+      "ap5_condition_reason": "I7 does not introduce proxy/target formation rows",
+      "ap5_dependency_status": "not_applicable",
+      "artifact_manifest": [
+        {
+          "artifact_role": "merge_leakage_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_merge_leakage_stress_trace.json",
+          "sha256": "cae6ece1a182c16bc14b8e9abebfb42384e0c91e32343362c933cc69f3f05e82"
+        },
+        {
+          "artifact_role": "negative_control_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_control_matrix_trace.json",
+          "sha256": "689cee31370e3e55224b758785c50c234c16e96ae30bc02876a064f595ebec9e"
+        },
+        {
+          "artifact_role": "new_basin_support_coherence_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_support_coherence_stress_trace.json",
+          "sha256": "6ebe413934b9d87f55e8764ab21f72c2d04b6d42478302d531b34d74e36498d8"
+        },
+        {
+          "artifact_role": "producer_intervention_ledger",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_naturalization_target_trace.json",
+          "sha256": "82c84c6026f676b2292b540ed10356ff4617b8f00fcc6a442cd6087fc667397f"
+        },
+        {
+          "artifact_role": "runtime_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_lane_comparison_trace.json",
+          "sha256": "d794b39e2bc6105836f3aee9ce066b27bbc2295b232de3d6249183f151af8b0c"
+        },
+        {
+          "artifact_role": "stress_boundary_trace",
+          "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_boundary_stress_trace.json",
+          "sha256": "c1ab3e6b1fc128b1c2afbaff67140bc6aef0ff31ac8e419a3347b1db2924d037"
+        }
+      ],
+      "artifact_paths": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_merge_leakage_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_control_matrix_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_support_coherence_stress_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_naturalization_target_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_lane_comparison_trace.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_boundary_stress_trace.json"
+      ],
+      "artifact_paths_equal_manifest_paths": true,
+      "artifact_sha256": {
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_boundary_stress_trace.json": "c1ab3e6b1fc128b1c2afbaff67140bc6aef0ff31ac8e419a3347b1db2924d037",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_control_matrix_trace.json": "689cee31370e3e55224b758785c50c234c16e96ae30bc02876a064f595ebec9e",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_lane_comparison_trace.json": "d794b39e2bc6105836f3aee9ce066b27bbc2295b232de3d6249183f151af8b0c",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_merge_leakage_stress_trace.json": "cae6ece1a182c16bc14b8e9abebfb42384e0c91e32343362c933cc69f3f05e82",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_naturalization_target_trace.json": "82c84c6026f676b2292b540ed10356ff4617b8f00fcc6a442cd6087fc667397f",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_comparative_stress_boundary_matrix_artifacts/n25_i7_support_coherence_stress_trace.json": "6ebe413934b9d87f55e8764ab21f72c2d04b6d42478302d531b34d74e36498d8"
+      },
+      "artifact_sha256_equal_manifest_sha256": true,
+      "basin_formation_claim_allowed": false,
+      "bf5_blockers": [
+        "zero_margin_support_coherence_floor",
+        "producer_flux_help_not_native",
+        "new_basin_candidate_not_established"
+      ],
+      "bf5_or_stronger_supported": false,
+      "bf6_supported": false,
+      "bf_ladder_rung": "BF4_comparative_native_and_producer_scaffold_boundary",
+      "bf_ladder_rung_status": "comparative_ceiling_not_final_closeout",
+      "boundary_stress_axis_supported": true,
+      "claim_ceiling": "comparative BF4 ceiling: native replay/control-backed sub-basin candidate plus producer-assisted flux scaffold; BF5/BF6 blocked by zero-margin support/coherence and non-native flux help",
+      "control_results": [
+        {
+          "actual_result": "I7 records separate native and producer-assisted stress ceilings",
+          "blocked_condition": "producer-assisted stress result overwrites native BF ceiling",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_assisted_success_does_not_overwrite_native_failure",
+          "control_status": "passed",
+          "expected_result": "native BF ceiling remains BF4 and BF5/BF6 remain false",
+          "rung_effect": "native BF5/BF6 remain blocked"
+        },
+        {
+          "actual_result": "native_flux_envelope_widened = false",
+          "blocked_condition": "producer flux windowing widens native 1e-9 bound",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_flux_debt_remains_row_local",
+          "control_status": "passed",
+          "expected_result": "native flux bound remains 1e-9",
+          "rung_effect": "producer flux help stays producer-mediated"
+        },
+        {
+          "actual_result": "producer lane supports scaffold and naturalization target only",
+          "blocked_condition": "producer-assisted scaffold is relabeled as native basin formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_success_as_native_relabel_control",
+          "control_status": "passed",
+          "expected_result": "producer result remains producer_mediated_scaffold_candidate",
+          "rung_effect": "producer-to-native relabel blocked"
+        },
+        {
+          "actual_result": "I7 keeps new_basin_candidate_not_established as BF5 blocker",
+          "blocked_condition": "merge/leakage stress is counted as new-basin independence",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "merge_leakage_masquerading_as_new_basin_rejected",
+          "control_status": "passed",
+          "expected_result": "flux/window stress remains distinct from new-basin claim",
+          "rung_effect": "new-basin overclaim blocked"
+        },
+        {
+          "actual_result": "replay_distinction_persistence_ratio = 1.0",
+          "blocked_condition": "stress matrix treats non-replayable transient as formation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "non_replayable_transient_rejected",
+          "control_status": "passed",
+          "expected_result": "I7 consumes I5 replay/control-backed row",
+          "rung_effect": "transient overclaim blocked"
+        },
+        {
+          "actual_result": "positive support/coherence buffer remains unsupported",
+          "blocked_condition": "producer lane relaxes support/coherence floors",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "producer_threshold_relaxation_control",
+          "control_status": "passed",
+          "expected_result": "support/coherence zero margin remains visible",
+          "rung_effect": "threshold relaxation blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_learning = false",
+          "blocked_condition": "stress-backed comparison is relabeled as semantic learning",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_learning_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic learning claim flag remains false",
+          "rung_effect": "semantic learning relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.semantic_choice = false",
+          "blocked_condition": "formation comparison is relabeled as semantic choice",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "semantic_choice_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "semantic choice claim flag remains false",
+          "rung_effect": "semantic choice relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.agency = false",
+          "blocked_condition": "formation comparison is relabeled as agency",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "agency_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "agency claim flag remains false",
+          "rung_effect": "agency relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.native_support = false",
+          "blocked_condition": "producer scaffold is relabeled as native support",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "native_support_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "native support claim flag remains false",
+          "rung_effect": "native support relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.phase8 = false",
+          "blocked_condition": "N25 comparison is relabeled as Phase 8 implementation",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "phase8_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "phase8 claim flag remains false",
+          "rung_effect": "Phase 8 relabel blocked"
+        },
+        {
+          "actual_result": "unsafe_claim_flags.ant_ecology = false",
+          "blocked_condition": "N25 comparison is relabeled as ant ecology",
+          "claim_allowed_when_control_triggers": false,
+          "control_id": "ant_ecology_relabel_rejected",
+          "control_status": "passed",
+          "expected_result": "ant ecology claim flag remains false",
+          "rung_effect": "ant ecology relabel blocked"
+        }
+      ],
+      "geometric_interpretation": "I7 separates the geometric axes. Boundary distinguishability has margin, and merge/leakage controls stay clean. The producer-assisted lane improves flux scheduling by windowing larger attempted flux into native-bound packets. But the formed region itself remains exactly at the support/coherence floor, and the producer does not create a new substrate-carried basin. Therefore I7 strengthens the diagnosis of what is missing rather than upgrading N25 to BF5/BF6.",
+      "lane_success_can_upgrade_native": false,
+      "merge_leakage_controls_clean": true,
+      "n25_closeout_ceiling": "N25-C4_comparative_bf4_with_producer_scaffold_debt",
+      "n25_closeout_ladder_rung_assigned": false,
+      "native_bf4_candidate_supported": true,
+      "native_bf5_supported": false,
+      "native_bf6_supported": false,
+      "native_flux_stress_axis_supported": false,
+      "native_lane": "native",
+      "native_lane_ceiling": "BF4_native_replay_control_backed_sub_basin_differentiation_candidate",
+      "native_lane_failure_overwritten": false,
+      "naturalization_targets": [
+        {
+          "evidence_status": "producer_scaffold_supported",
+          "native_status": "not_naturalized",
+          "source": "I6 producer-assisted flux windowing",
+          "target": "native_flux_routing_or_rate_limiting_surface"
+        },
+        {
+          "evidence_status": "required_for_BF5_BF6",
+          "native_status": "not_supported_zero_margin",
+          "source": "I7 support/coherence stress",
+          "target": "positive_support_coherence_margin_for_formed_region"
+        },
+        {
+          "evidence_status": "required_for_new_basin_candidate",
+          "native_status": "not_supported_sub_basin_candidate_only",
+          "source": "I5/I6 formation class comparison",
+          "target": "new_basin_independence_beyond_sub_basin_differentiation"
+        }
+      ],
+      "new_basin_candidate_supported": false,
+      "output_digest": "fd8aff0b0189e3f2dd6847cdca134bb2c533d7827199fc483c4a78d63ecb6af5",
+      "producer_assisted_bf4_candidate_supported": true,
+      "producer_assisted_bf5_supported": false,
+      "producer_assisted_bf6_supported": false,
+      "producer_assisted_lane": "producer_assisted",
+      "producer_assisted_lane_ceiling": "BF4_producer_assisted_flux_conditioned_scaffold_candidate",
+      "producer_assisted_success_does_not_overwrite_native_failure": true,
+      "producer_flux_stress_axis_supported": true,
+      "row_decision": "partial",
+      "row_digest": "fd8aff0b0189e3f2dd6847cdca134bb2c533d7827199fc483c4a78d63ecb6af5",
+      "row_id": "n25_i7_comparative_stress_boundary_matrix",
+      "run_artifact_id": "n25_i7_comparative_stress_boundary_matrix",
+      "runtime_config_digest": "60478be49bfeb7d2b18fa4bff6f76f11e16daccfb14a298ba366b464b05a7a75",
+      "source_commit_or_source_digest": "736fe9a8b4d129d1e4945d5aa2c65302dc35c49e4d6558cbf10b4a27d08402ed",
+      "source_consumable_contract_row_digest": "4e51db0dbbe16192daff1cfcb04ff3294b7e8e42ea5f20e2eb88e62f46c0e202",
+      "source_contract_row_digest": "0f34855cca2e63efc4b711cbe043f01d572c65177e59db9e58b4f3fac2e421d5",
+      "source_current_inputs": [
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix.json",
+        "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json"
+      ],
+      "source_iteration": "I7_comparative_stress_boundary_matrix",
+      "source_native_i5_output_digest": "b922ab52e616e94231905e626087c07258aeb2d9adfcee349ab270a386a300db",
+      "source_output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "source_producer_i6_output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "support_coherence_stress_axis_supported": false,
+      "unsafe_claim_flags": {
+        "agency": false,
+        "ant_ecology": false,
+        "fully_native_integration": false,
+        "identity_acceptance": false,
+        "intention": false,
+        "native_support": false,
+        "organism_life": false,
+        "phase8": false,
+        "selfhood": false,
+        "semantic_choice": false,
+        "semantic_learning": false,
+        "sentience": false
+      }
+    }
+  ],
+  "experiment": "2026-06-N25-lgrc-spark-sub-basin-new-basin-formation",
+  "failed_checks": [],
+  "generated_at": "2026-06-28T00:00:00+00:00",
+  "iteration": "I7",
+  "n25_closeout_ceiling": "N25-C4_comparative_bf4_with_producer_scaffold_debt",
+  "n25_closeout_ladder_rung_assigned": false,
+  "native_bf4_candidate_supported": true,
+  "native_bf5_supported": false,
+  "native_bf6_supported": false,
+  "native_lane_failure_overwritten": false,
+  "naturalization_targets_recorded": true,
+  "output_digest": "0cf5c7d42e775a2e34a9cbb6bc6e31a89b2aae09e1e0785b590efd24b18e8c79",
+  "producer_assisted_bf4_candidate_supported": true,
+  "producer_assisted_bf5_supported": false,
+  "producer_assisted_bf6_supported": false,
+  "producer_assisted_success_does_not_overwrite_native_failure": true,
+  "ready_for_iteration_8_closeout_and_n26_handoff": true,
+  "reconstruction_command": ".venv/bin/python experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/scripts/build_n25_comparative_stress_boundary_matrix.py",
+  "source_digest_chain_audit": {
+    "i1": {
+      "output_digest": "f266f8719937c4d2b84be5c87a1be460bc384d698300dc79ad443c839787bce2",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_source_handoff_inventory.json",
+      "sha256": "b738072dd8922dcfcc5d5be1ab3efc27b5f43b0738c7f8ea41ae09880b4cdf18"
+    },
+    "i2": {
+      "output_digest": "17511cc4a21aee172d0f80600c55636701e97af4c1c46f6578411b4e97c7192f",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_basin_formation_schema_and_controls.json",
+      "sha256": "964b5b348ad68c21881a6d49bb9039dc70ea7be998a035cd079559efa1742f17"
+    },
+    "i3": {
+      "output_digest": "857e88aa4efbbe55458e538a29803e4f7b4731c5bf1872a56c303073797441c9",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_active_nulls_and_failure_baselines.json",
+      "sha256": "91cae44648e1de61bb27ce9bdda59395ff50280202795bd885128fbda4ac9b51"
+    },
+    "i4": {
+      "output_digest": "9df1111ec04d785b7f037b208062d1b660faf85a18bbe09a01d24469b4bdd652",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_bifurcation_probe.json",
+      "sha256": "98ee8337fb926e492ab800fd1ff464bbdf8fe9543b63ec459f0eecdaa61a39fa"
+    },
+    "i5": {
+      "output_digest": "b922ab52e616e94231905e626087c07258aeb2d9adfcee349ab270a386a300db",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_native_replay_and_control_matrix.json",
+      "sha256": "aca3c13a7647f77abdb5f6c6fd030fa8b09503c3c329a9e6aa4d864d5939c13d"
+    },
+    "i6": {
+      "output_digest": "84dec8a317b7cf6abeb328b28c4ef1d58f9d52d5b8ae69caf0b0944b33959780",
+      "path": "experiments/2026-06-N25-lgrc-spark-sub-basin-new-basin-formation/outputs/n25_producer_assisted_formation_probe.json",
+      "sha256": "08e0f78523f129d134046f58e765b0dfb08e4431f17dbf726584fe934723b22c"
+    }
+  },
+  "status": "passed"
+}
